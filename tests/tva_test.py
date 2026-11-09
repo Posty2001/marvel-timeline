@@ -48,9 +48,10 @@ def run(vw=(390,844)):
         click('.a2-card'); 
         ev("()=>document.querySelector('.a2-row[data-go]').click()"); pg.wait_for_timeout(900)
         pg.evaluate("()=>{const b=document.getElementById('d4Scheda');if(b)b.click()}"); pg.wait_for_timeout(1200)  # Fase 4: N° -> Dossier Opera -> Scheda in guida
-        s=st(); ck(not s['on'] and s['tab']!='none','D1 Atlante chiuso, barra app visibile %s'%s)
-        ck(ev("()=>!document.getElementById('tvaBackBtn').hidden"),'D2 chip indietro')
-        backchip(); backchip() if st()['sc']=='opera' else None; s=st(); ck(s['on'] and s['sc']=='uni' and s['uid']==uid and s['tab']=='none','D3 ritorno al dossier %s'%s)
+        # TD2: «Scheda in guida» apre la pagina immersiva del titolo (barra app nascosta per progetto); Indietro e' il pulsante della pagina
+        s=st(); ck(not s['on'] and s['tab']=='none' and ev("()=>!!document.querySelector('.td-page')"),'D1 Atlante chiuso, pagina immersiva aperta %s'%s)
+        ck(ev("()=>!!document.querySelector('.td-page .td2-back')"),'D2 pulsante Indietro della pagina')
+        ev("()=>document.querySelector('.td-page .td2-back').click()"); pg.wait_for_timeout(1500); backchip() if st()['sc']=='opera' else None; s=st(); ck(s['on'] and s['sc']=='uni' and s['uid']==uid and s['tab']=='none','D3 ritorno al dossier %s'%s)
         # E App Marvel da dossier
         click('.a2-exit'); pg.wait_for_timeout(700); s=st()
         ck((not s['on']) and s['d']==0 and not s['hub'] and s['tab']!='none','E1 uscita ad app %s'%s)

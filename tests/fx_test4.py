@@ -8,7 +8,7 @@ def fresh(b,W=390,H=844,pre=None,rm=None):
     pg.evaluate("()=>{journeyStarted.checked=true;homeHubExited.checked=true;journeyStarted.dispatchEvent(new Event('change',{bubbles:true}))}"); pg.wait_for_timeout(300)
     return ctx,pg,errs
 def openc(pg,i='023'):
-    pg.evaluate("(i)=>{const c=document.querySelector('#item-'+i+' details.card');c.open=true}",i); pg.wait_for_timeout(250)
+    pg.evaluate("(i)=>{const c=document.querySelector('#item-'+i+' details.card');if(window.tvaTd2){window.tvaTd2.open('item-'+i,{fromTimeline:true})}else{c.open=true}}",i); pg.wait_for_timeout(250)
     pg.evaluate("(i)=>document.querySelector('#item-'+i+' .rw2').scrollIntoView({block:'center',behavior:'instant'})",i); pg.wait_for_timeout(250)
 def tap(pg,sel):
     r=pg.evaluate("(s)=>{const e=document.querySelector(s);e.scrollIntoView({block:'center',behavior:'instant'});const r=e.getBoundingClientRect();return [r.left+r.width/2,r.top+r.height/2]}",sel); pg.touchscreen.tap(r[0],r[1]); pg.wait_for_timeout(120)

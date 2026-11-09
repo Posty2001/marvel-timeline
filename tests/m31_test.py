@@ -33,8 +33,8 @@ r=run(V,tmdb_ok=False,fn=lambda pg,rq:hero(pg)); ck('TMDB in errore -> emblema (
 r=run(V,off=True,fn=lambda pg,rq:{**hero(pg),'rq':len(rq)}); ck('interruttore tvaTmdbOff',not r['has'] and r['rq']==0,r)
 def tl(pg,rq):
     pg.evaluate("()=>{const d=document.querySelector('#item-100 details.card');d.open=true;d.scrollIntoView()}"); pg.wait_for_timeout(1200)
-    return pg.evaluate("()=>{const i=document.querySelector('#item-100 .detail-panel .m3-tl');return {has:!!i,ok:!!i&&(i.getAttribute('src')||'').indexOf('https://image.tmdb.org/t/p/w154/')===0,vis:!!document.querySelector('#item-100').offsetParent,cur:i&&i.currentSrc,cmp:i&&i.complete,first:document.querySelector('#item-100 .detail-panel').firstElementChild.className}}")
-r=run(V,fn=tl); ck('timeline: (M3.2) locandina nella riga principale, non nel pannello',not r['has'] and r['first']=='detail-row',r)
+    return pg.evaluate("()=>{const i=document.querySelector('#item-100 .detail-panel .m3-tl');return {has:!!i,ok:!!i&&(i.getAttribute('src')||'').indexOf('https://image.tmdb.org/t/p/w154/')===0,vis:!!document.querySelector('#item-100').offsetParent,cur:i&&i.currentSrc,cmp:i&&i.complete,first:(f=>f.className==='td-info'&&f.firstElementChild?f.firstElementChild.className:f.className)(document.querySelector('#item-100 .detail-panel').firstElementChild)}}")
+r=run(V,fn=tl); ck('timeline: (M3.2) locandina nella riga principale, non nel pannello',not r['has'] and r['first']=='detail-row',r)  # TD1/TD2: le righe dati sono raggruppate in .td-info; il test verifica che la prima voce sia ancora una riga dati (nessuna locandina nel pannello)
 r=run({},fn=tl); ck('timeline: senza mappa nessuna miniatura',not r['has'],r)
 r=run(V,fn=lambda pg,rq:{**hero(pg)}); ck('nessun errore JS',not r['errs'],r['errs'])
 s=open('/home/claude/work/index.html',encoding='utf-8').read()

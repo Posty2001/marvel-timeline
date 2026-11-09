@@ -14,7 +14,13 @@ def start(b,w=390,h=844,tmdb=True):
     return pg
 with sync_playwright() as p:
     b=p.chromium.launch(); pg=start(b)
-    ck('build id',pg.evaluate("document.querySelector('meta[name=tva-build]').content")=='20261023-1730-m342')
+    _sw=open('/home/claude/work/sw.js',encoding='utf-8').read()
+    _mb=pg.evaluate("document.querySelector('meta[name=tva-build]').content")
+    _sb=re.search(r"SW_BUILD = '([^']+)'",_sw).group(1); _cn=re.search(r"CACHE_NAME = '([^']+)'",_sw).group(1)
+    ck('build id (meta, formato AAAAMMGG-HHMM-tag)',bool(re.fullmatch(r'\d{8}-\d{4}-[a-z0-9]+',_mb)),_mb)
+    ck('build id: meta HTML == SW_BUILD di sw.js',_mb==_sb,(_mb,_sb))
+    ck('build id: CACHE_NAME contiene la build',_cn.endswith(_sb),_cn)
+    ck('build id: build attesa 20261108-2050-td2',_mb=='20261108-2050-td2',_mb)
     n=pg.evaluate("()=>document.querySelectorAll('.card-wrap[id^=item-]').length"); ck('139 schede (138 + variante)',n==139,n)
     # 1/3 un solo widget voto per scheda, dentro summary, nessuno nel pannello
     r=pg.evaluate("()=>({tot:document.querySelectorAll('.rating-widget').length,inSum:document.querySelectorAll('details.card > summary .rating-widget').length,inPanel:document.querySelectorAll('.detail-panel .rating-widget').length,dup:[...document.querySelectorAll('.card-wrap[id^=item-]')].filter(c=>c.querySelectorAll('.rating-widget').length!==1).length})")
@@ -54,7 +60,8 @@ with sync_playwright() as p:
     ck('checkbox e preferiti presenti e cliccabili',pg.evaluate("()=>{const c=document.querySelector('#item-001');const a=c.querySelector('.watch-check'),f=c.querySelector('.fav-star');return !!a&&!!f&&f.getBoundingClientRect().height>20}"))
     # apertura/chiusura con tap su locandina e su titolo
     t=pg.evaluate("()=>{const r=document.querySelector('#item-001 .m3-tl').getBoundingClientRect();return [r.left+r.width/2,r.top+r.height/2]}"); pg.touchscreen.tap(*t); pg.wait_for_timeout(300); ck('tap sulla locandina apre',opened())
-    pg.touchscreen.tap(*t); pg.wait_for_timeout(300); ck('secondo tap chiude',not opened())
+    # TD2: la scheda si apre come pagina a schermo intero e si chiude con Indietro (non piu' con un secondo tap sulla stessa scheda)
+    ck('TD2: pagina immersiva aperta',pg.evaluate("()=>!!document.querySelector('#item-001.td-page')")); pg.click('#item-001 .td2-back'); pg.wait_for_timeout(600); ck('Indietro chiude (ex secondo tap)',not opened() and not pg.evaluate("()=>!!document.querySelector('.td-page')"))
     # overflow
     for w in (390,360,320):
         pg2=start(b,w); pg2.evaluate("()=>document.querySelector('#item-001').scrollIntoView()")

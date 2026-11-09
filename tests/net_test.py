@@ -35,7 +35,7 @@ with sync_playwright() as p:
     pg.evaluate("()=>window.scrollTo(0,0)")
     pg.evaluate("()=>tvaSettleScroll(document.getElementById('item-125'))"); pg.wait_for_timeout(2500)
     y0=pg.evaluate("()=>pageYOffset"); t0=pg.evaluate("()=>document.getElementById('item-125').getBoundingClientRect().top")
-    pg.evaluate("()=>document.querySelector('#item-125 details').setAttribute('open','')")
+    pg.evaluate("()=>window.tvaTd2?tvaTd2.open('item-125',{fromTimeline:true,restoring:true}):document.querySelector('#item-125 details').setAttribute('open','')")
     chip=pg.query_selector("#item-125 [data-go='uni:uni-earth-828']"); ck(chip is not None,'scheda 125 ha chip Earth-828')
     chip.scroll_into_view_if_needed(); chip.click(); pg.wait_for_timeout(900)
     st=pg.evaluate("()=>({a2:atlas2Toggle.checked,classic:tvaArchivesToggle.checked,tab:document.querySelector('.app-tab-active')?.dataset.tab,back:!document.getElementById('tvaBackBtn').hidden,depth:tvaNavStato().depth,scr:tvaAtlas2.stato().screen,uid:tvaAtlas2.stato().uid})")
@@ -45,11 +45,11 @@ with sync_playwright() as p:
     pg.evaluate("()=>{const b=document.getElementById('d4Scheda');if(b)b.click()}"); pg.wait_for_timeout(1200)  # Fase 4: N° -> Dossier Opera -> Scheda in guida
     st=pg.evaluate("()=>({a2:atlas2Toggle.checked,tab:document.querySelector('.app-tab-active')?.dataset.tab,depth:tvaNavStato().depth,top:document.getElementById('item-125').getBoundingClientRect().top,open:document.querySelector('#item-125 details').open})")
     print(st); ck((not st['a2']) and st['depth']==3 and st['tab']=='timeline' and st['open'] and abs(st['top'])<120,'Universo→Film apre la Timeline sulla scheda',st)
-    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(b.offsetParent!==null?b:document.querySelector('.a2-back')).click()}"); pg.wait_for_timeout(900)
-    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(b.offsetParent!==null?b:document.querySelector('.a2-back')).click()}"); pg.wait_for_timeout(900)
+    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(document.querySelector('.td-page .td2-back')||(b.offsetParent!==null?b:document.querySelector('.a2-back'))).click()}"); pg.wait_for_timeout(900)
+    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(document.querySelector('.td-page .td2-back')||(b.offsetParent!==null?b:document.querySelector('.a2-back'))).click()}"); pg.wait_for_timeout(900)
     st=pg.evaluate("()=>({a2:atlas2Toggle.checked,depth:tvaNavStato().depth,scr:tvaAtlas2.stato().screen,uid:tvaAtlas2.stato().uid})")
     ck(st['a2'] and st['depth']==1 and st['scr']=='uni' and st['uid']=='uni-earth-828','Back 1 → scheda universo 2.0',st)
-    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(b.offsetParent!==null?b:document.querySelector('.a2-back')).click()}"); pg.wait_for_timeout(1200)
+    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(document.querySelector('.td-page .td2-back')||(b.offsetParent!==null?b:document.querySelector('.a2-back'))).click()}"); pg.wait_for_timeout(1200)
     st=pg.evaluate("()=>({a2:atlas2Toggle.checked,depth:tvaNavStato().depth,hid:document.getElementById('tvaBackBtn').hidden})")
     t1=pg.evaluate("()=>document.getElementById('item-125').getBoundingClientRect().top")
     ck((not st['a2']) and st['depth']==0 and st['hid'] and abs(t1-t0)<12,'Back 2 → Timeline stessa posizione (scheda 125)',(st,y0,t0,t1))
@@ -59,7 +59,7 @@ with sync_playwright() as p:
     if a:
         a.scroll_into_view_if_needed(); a.click(); pg.wait_for_timeout(900)
         ck(pg.evaluate("()=>!tvaArchivesToggle.checked&&document.getElementById('item-089').getBoundingClientRect().top<150"),'Personaggio→Film apre la scheda 089')
-        pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(b.offsetParent!==null?b:document.querySelector('.a2-back')).click()}"); pg.wait_for_timeout(900)
+        pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(document.querySelector('.td-page .td2-back')||(b.offsetParent!==null?b:document.querySelector('.a2-back'))).click()}"); pg.wait_for_timeout(900)
         ck(pg.evaluate("()=>tvaArchivesToggle.checked&&document.querySelector('#char-peter-parker details').open"),'Back → scheda personaggio ancora aperta')
         # missioni
     pg.evaluate("()=>window.marvelUniFiltroReset()")
@@ -70,16 +70,16 @@ with sync_playwright() as p:
     pg.evaluate("()=>{window.marvelUniFiltroReset();window.marvelChiudiOverlay();}")
     pg.evaluate("()=>window.marvelEsploraUniverso('uni-earth-121698','Earth-121698')"); pg.wait_for_timeout(300)
     vis0=pg.evaluate("()=>[...document.querySelectorAll('li.card-wrap[id^=item-]')].filter(l=>l.offsetParent!==null).map(l=>l.id)")
-    pg.evaluate("()=>{document.querySelector('#item-029 details').setAttribute('open','')}")
+    pg.evaluate("()=>{window.tvaTd2?tvaTd2.open('item-029',{fromTimeline:true}):document.querySelector('#item-029 details').setAttribute('open','')}")
     pg.query_selector("#item-029 [data-go^='uni:']").click(); pg.wait_for_timeout(800)
-    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(b.offsetParent!==null?b:document.querySelector('.a2-back')).click()}"); pg.wait_for_timeout(900)
+    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(document.querySelector('.td-page .td2-back')||(b.offsetParent!==null?b:document.querySelector('.a2-back'))).click()}"); pg.wait_for_timeout(900)
     st=pg.evaluate("()=>({f:marvelUniFiltroStato().uid,atl:tvaArchivesToggle.checked,vis:[...document.querySelectorAll('li.card-wrap[id^=item-]')].filter(l=>l.offsetParent!==null).map(l=>l.id),ban:document.getElementById('mvUniversoBanner').hidden})")
     ck(st['f']=='uni-earth-121698' and not st['atl'] and st['vis']==vis0 and not st['ban'],'Filtro universo preservato dopo andata/ritorno',st)
     # filtro attivo + vado a un titolo non appartenente → il filtro viene tolto
     pg.evaluate("()=>tvaGo('item','item-089')"); pg.wait_for_timeout(1200)
     st=pg.evaluate("()=>({f:marvelUniFiltroStato().uid,vis:document.getElementById('item-089').offsetParent!==null})")
     ck(st['f'] is None and st['vis'],'Titolo fuori filtro: filtro rimosso e scheda raggiunta',st)
-    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(b.offsetParent!==null?b:document.querySelector('.a2-back')).click()}"); pg.wait_for_timeout(900)
+    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(document.querySelector('.td-page .td2-back')||(b.offsetParent!==null?b:document.querySelector('.a2-back'))).click()}"); pg.wait_for_timeout(900)
     ck(pg.evaluate("()=>marvelUniFiltroStato().uid")=='uni-earth-121698','Back ripristina il filtro universo')
     pg.evaluate("()=>window.marvelUniFiltroReset()")
     # --- progressi: universo mostra X/N
@@ -98,7 +98,7 @@ with sync_playwright() as p:
     pg.evaluate("g=>document.querySelector('.tva-mis [data-go=\"'+g+'\"]').click()",cid); pg.wait_for_timeout(1300)
     tid=cid.split(':')[1]
     ck(pg.evaluate("t=>document.getElementById(t).getBoundingClientRect().top<150&&document.getElementById(t).offsetParent!==null",tid),'Missione → titolo richiesto → scheda in Timeline')
-    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(b.offsetParent!==null?b:document.querySelector('.a2-back')).click()}"); pg.wait_for_timeout(1200)
+    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(document.querySelector('.td-page .td2-back')||(b.offsetParent!==null?b:document.querySelector('.a2-back'))).click()}"); pg.wait_for_timeout(1200)
     d2=pg.evaluate("()=>document.querySelector('.tva-mis').getBoundingClientRect().top")
     ck(abs(d2-dy)<12,'Back → di nuovo sulle Missioni nella stessa posizione',(dy,d2))
     # spunta XP/progressi: guardare il titolo non cambia altro che lo stato previsto

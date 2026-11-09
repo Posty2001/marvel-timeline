@@ -112,15 +112,15 @@ with sync_playwright() as p:
     ck(tgt is not None,'esiste un titolo dell’universo nascosto dai filtri attivi',tgt)
     pg.evaluate("(id)=>{document.querySelector('#atlas2 [data-go=\"item:'+id+'\"]').click()}",tgt); pg.wait_for_timeout(2500)
     pg.evaluate("()=>{const b=document.getElementById('d4Scheda');if(b)b.click()}"); pg.wait_for_timeout(1500)  # Fase 4: il chip N° apre il Dossier Opera; la scheda si raggiunge da 'Scheda in guida'
-    r=pg.evaluate("""(id)=>{const li=document.getElementById(id);const r=li.getBoundingClientRect();return {vis:li.offsetParent!==null&&li.style.display!=='none',top:r.top,depth:tvaNavStato().depth,q:document.getElementById('searchBox').value,a2:atlas2Toggle.checked}}""",tgt)
+    r=pg.evaluate("""(id)=>{const li=document.getElementById(id);const r=li.getBoundingClientRect();return {vis:(li.offsetParent!==null&&li.style.display!=='none')||li.classList.contains('td-page'),top:r.top,depth:tvaNavStato().depth,q:document.getElementById('searchBox').value,a2:atlas2Toggle.checked}}""",tgt)
     ck(r['vis'] and r['depth']==3 and not r['a2'] and r['top']<400,'link a titolo nascosto: la scheda viene mostrata (filtri responsabili azzerati)',r)
-    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(b.offsetParent!==null?b:document.querySelector('.a2-back')).click()}"); pg.wait_for_timeout(1200)  # Fase 4: scheda -> Dossier Opera
+    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(document.querySelector('.td-page .td2-back')||(b.offsetParent!==null?b:document.querySelector('.a2-back'))).click()}"); pg.wait_for_timeout(1200)  # Fase 4: scheda -> Dossier Opera
     ls2=pg.evaluate(LS)
     chg=[k for k in set(ls1)|set(ls2) if ls1.get(k)!=ls2.get(k) and k!='marvel-ultimate-timeline-auto-backup']   # auto-backup: copia di sicurezza ritardata scritta dall'app dopo la spunta iniziale, non dalla navigazione
     ck(not chg,'sbloccare la scheda non scrive nulla in localStorage (preferenze dei filtri salvate invariate)',chg)
-    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(b.offsetParent!==null?b:document.querySelector('.a2-back')).click()}"); pg.wait_for_timeout(1200)
+    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(document.querySelector('.td-page .td2-back')||(b.offsetParent!==null?b:document.querySelector('.a2-back'))).click()}"); pg.wait_for_timeout(1200)
     st=pg.evaluate("()=>({a2:atlas2Toggle.checked,depth:tvaNavStato().depth,scr:tvaAtlas2.stato().screen})"); ck(st['a2'] and st['depth']==1 and st['scr']=='uni','Back 1 -> scheda universo 2.0',st)
-    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(b.offsetParent!==null?b:document.querySelector('.a2-back')).click()}"); pg.wait_for_timeout(1800)
+    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(document.querySelector('.td-page .td2-back')||(b.offsetParent!==null?b:document.querySelector('.a2-back'))).click()}"); pg.wait_for_timeout(1800)
     s1=pg.evaluate(ST); top1=pg.evaluate("()=>document.getElementById(window.__first).getBoundingClientRect().top")
     ck(s1['q']==s0['q'] and s1['off']==s0['off'] and s1['vis']==s0['vis'],'Back 2: ricerca, filtri e schede visibili identici a prima',{'a':{k:s0[k] for k in('q','off','nvis')},'b':{k:s1[k] for k in('q','off','nvis')}})
     ck(abs(top1-top0)<=8 and pg.evaluate("()=>tvaNavStato().depth")==0,'Back 2: posizione di scorrimento ripristinata sulla stessa scheda',(top0,top1,s0['y'],s1['y']))
@@ -144,13 +144,13 @@ with sync_playwright() as p:
     pg.evaluate("()=>document.querySelector('#atlas2 [data-go=\"'+window.__row+'\"]').click()"); pg.wait_for_timeout(1800)
     pg.evaluate("()=>{const b=document.getElementById('d4Scheda');if(b)b.click()}"); pg.wait_for_timeout(1500)  # Fase 4: il chip N° apre il Dossier Opera; la scheda si raggiunge da 'Scheda in guida'
     st=pg.evaluate("()=>({a2:atlas2Toggle.checked,depth:tvaNavStato().depth})"); ck(not st['a2'] and st['depth']>=1,'Atlante -> Film -> Timeline',st)
-    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(b.offsetParent!==null?b:document.querySelector('.a2-back')).click()}"); pg.wait_for_timeout(1200)  # Fase 4: scheda -> Dossier Opera
-    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(b.offsetParent!==null?b:document.querySelector('.a2-back')).click()}"); pg.wait_for_timeout(1500)
+    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(document.querySelector('.td-page .td2-back')||(b.offsetParent!==null?b:document.querySelector('.a2-back'))).click()}"); pg.wait_for_timeout(1200)  # Fase 4: scheda -> Dossier Opera
+    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(document.querySelector('.td-page .td2-back')||(b.offsetParent!==null?b:document.querySelector('.a2-back'))).click()}"); pg.wait_for_timeout(1500)
     after=pg.evaluate("""()=>{const s=document.querySelector('.a2-scroll');const sr=s.getBoundingClientRect();const row=document.querySelector('#atlas2 [data-go="'+window.__row+'"]');
       return {a2:atlas2Toggle.checked,y:s.scrollTop,top:row?row.getBoundingClientRect().top-sr.top:null,win:pageYOffset,uid:tvaAtlas2.stato().uid}}""")
     print('a2 dopo Indietro',after)
     ck(after['a2'] and after['uid']==MCU and abs(after['y']-rec['y'])<=4 and abs(after['top']-rec['top'])<=4,'Back: .a2-scroll ripristinato (scrollTop e riga di riferimento), non solo window.pageYOffset',(rec,after))
-    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(b.offsetParent!==null?b:document.querySelector('.a2-back')).click()}"); pg.wait_for_timeout(1500)
+    pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(document.querySelector('.td-page .td2-back')||(b.offsetParent!==null?b:document.querySelector('.a2-back'))).click()}"); pg.wait_for_timeout(1500)
     t1=pg.evaluate("()=>document.getElementById('item-050').getBoundingClientRect().top")
     ck(abs(t1-t0)<=10 and not pg.evaluate("()=>atlas2Toggle.checked"),'Back finale: Timeline alla stessa posizione',(t0,t1))
     # home Atlante: ricerca + filtro + scroll -> scheda -> Indietro (freccia interna) 
@@ -198,8 +198,8 @@ with sync_playwright() as p:
     for i in range(25):
         pg.evaluate("()=>tvaGo('uni','uni-earth-828')"); pg.wait_for_timeout(120)
         pg.evaluate("()=>tvaGo('item','item-125')"); pg.wait_for_timeout(250)
-        pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(b.offsetParent!==null?b:document.querySelector('.a2-back')).click()}"); pg.wait_for_timeout(250)
-        pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(b.offsetParent!==null?b:document.querySelector('.a2-back')).click()}"); pg.wait_for_timeout(300)
+        pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(document.querySelector('.td-page .td2-back')||(b.offsetParent!==null?b:document.querySelector('.a2-back'))).click()}"); pg.wait_for_timeout(250)
+        pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');(document.querySelector('.td-page .td2-back')||(b.offsetParent!==null?b:document.querySelector('.a2-back'))).click()}"); pg.wait_for_timeout(300)
         x=pg.evaluate(H)
         if x['d']!=0 or x['a2']: bad+=1
     ck(bad==0,'25 cicli Timeline->Atlante->Film->Indietro x2: sempre depth 0 e Timeline',bad)

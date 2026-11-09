@@ -2,6 +2,14 @@
  "note": "Elenco delle suite eseguite da run_suites.py. Le suite c2/c3/c4 sono nuove (C2-C6); le altre sono storiche.",
  "suites": [
   {
+   "name": "td2_test",
+   "area": "TD2 pagina dettaglio immersiva"
+  },
+  {
+   "name": "td1_test",
+   "area": "TD1 restyling schede + Diario TVA"
+  },
+  {
    "name": "fa1_test",
    "area": "F-A1 Auth email/password (MOCK SDK)"
   },

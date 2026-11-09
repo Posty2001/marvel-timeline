@@ -13,9 +13,9 @@
 // URL dei file .woff2 referenziati, e li mette in cache esplicitamente — indipendentemente da
 // quando/come la pagina stessa li carica.
 
-const SW_BUILD = '20261023-2355-fa1';
+const SW_BUILD = '20261108-2050-td2';
 const CACHE_PREFIX = 'marvel-timeline-cache-';   // C26: si cancellano solo le cache di questa app
-const CACHE_NAME = 'marvel-timeline-cache-20261023-2355-fa1';
+const CACHE_NAME = 'marvel-timeline-cache-20261108-2050-td2';
 const FONT_CSS_URL = 'https://fonts.googleapis.com/css2?family=Special+Elite&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap';
 
 /* 3.2.4: ritratti avatar approvati, precaricati per l'uso offline (Tessera, editor, esportazione PNG). */

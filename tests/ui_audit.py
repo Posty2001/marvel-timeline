@@ -65,8 +65,9 @@ with sync_playwright() as p:
         # chip Indietro: non copre i controlli principali (si muove sopra la barra)
         pg.evaluate("()=>tvaGo('item','item-125',{scheda:true})"); pg.wait_for_timeout(1200)
         pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn');window.__bk=b.getBoundingClientRect().toJSON?b.getBoundingClientRect().toJSON():null}")
-        bk=pg.evaluate("()=>{const b=document.getElementById('tvaBackBtn').getBoundingClientRect(),t=document.getElementById('appTabbar').getBoundingClientRect();return {l:b.left,r:b.right,t:b.top,b:b.bottom,h:b.height,w:b.width,barTop:t.top,iw:innerWidth}}")
-        ck(bk['h']>=43.5 and bk['r']<=bk['iw']-sar+0.5 and bk['l']>=sal-0.5 and bk['b']<=bk['barTop']+0.5,'[%s] chip Indietro >= 44px, dentro safe area, sopra la barra'%tag,bk)
+        # TD2: «Scheda in guida» apre la pagina immersiva (barra app nascosta): Indietro e' il pulsante della pagina, che deve stare dentro le safe area
+        bk=pg.evaluate("()=>{const b=document.querySelector('.td-page .td2-back').getBoundingClientRect();return {l:b.left,r:b.right,t:b.top,b:b.bottom,h:b.height,w:b.width,barTop:innerHeight,iw:innerWidth}}")
+        ck(bk['h']>=43.5 and bk['w']>=43.5 and bk['r']<=bk['iw']-sar+0.5 and bk['l']>=sal-0.5 and bk['t']>=sat-0.5 and bk['b']<=bk['barTop']+0.5,'[%s] chip Indietro >= 44px, dentro safe area, sopra la barra'%tag,bk)
         ck(not errs,'[%s] nessun errore JS'%tag,errs)
         ctx.close()
     # contrasto (valori calcolati, luminanza relativa WCAG) sulle combinazioni reali dell'Atlante 2.0

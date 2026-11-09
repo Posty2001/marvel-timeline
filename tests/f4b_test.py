@@ -20,9 +20,9 @@ with sync_playwright() as p:
     # --- Scheda in guida e ritorno
     pg.evaluate("()=>tvaGo('item','item-023')"); pg.wait_for_timeout(400)
     pg.click('#d4Scheda'); pg.wait_for_timeout(1200)
-    r=pg.evaluate("()=>({atl:document.getElementById('atlas2Toggle').checked,card:(()=>{const c=document.getElementById('item-023');const r=c.getBoundingClientRect();return {open:c.querySelector('details').open,vis:c.offsetParent!==null,top:Math.round(r.top)}})()})")
-    ok('B6 «Scheda in guida» chiude l\'Atlante e apre la scheda originale',(not r['atl']) and r['card']['open'] and r['card']['vis'],r)
-    pg.click('#tvaBackBtn'); pg.wait_for_timeout(900)
+    r=pg.evaluate("()=>({atl:document.getElementById('atlas2Toggle').checked,card:(()=>{const c=document.getElementById('item-023');const r=c.getBoundingClientRect();return {open:c.querySelector('details').open,page:c.classList.contains('td-page'),vis:c.offsetParent!==null,top:Math.round(r.top)}})()})")
+    ok('B6 «Scheda in guida» chiude l\'Atlante e apre la scheda originale',(not r['atl']) and r['card']['open'] and (r['card']['vis'] or r['card']['page']),r)  # TD2: la scheda originale e' la pagina immersiva
+    pg.click('.td2-back:visible, #tvaBackBtn:visible')  # TD2: dalla pagina immersiva Indietro e' il pulsante della pagina; pg.wait_for_timeout(900)
     st=pg.evaluate("()=>({atl:document.getElementById('atlas2Toggle').checked,s:"+A+"})")
     ok('B7 Indietro dalla scheda riporta al Dossier Opera',st['atl'] and st['s']['screen']=='opera' and st['s']['eid']=='item-023',st)
     # --- tutti i contesti dell'Atlante portano al Dossier Opera

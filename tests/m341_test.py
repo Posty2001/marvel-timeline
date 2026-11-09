@@ -54,11 +54,11 @@ with sync_playwright() as p:
     # CTA apre esattamente il titolo
     want=nid(pg); pg.evaluate("()=>{const c=document.getElementById('missioneCelebrazioneChiudi');if(c&&!document.getElementById('missioneCelebrazione').hidden)c.click()}"); pg.wait_for_timeout(500)
     pg.touchscreen.tap(*pg.evaluate("()=>{const r=m34NextCta.getBoundingClientRect();return [r.left+r.width/2,r.top+r.height/2]}")); pg.wait_for_timeout(1000)
-    ck('«Continua» apre esattamente il titolo suggerito',pg.evaluate("(i)=>{const d=document.querySelector('#item-'+i+' details');return homeHubExited.checked&&d&&d.open}",want),want)
+    ck('«Continua» porta esattamente alla scheda del titolo suggerito (in vista, NON aperta)',pg.evaluate("(i)=>{const d=document.querySelector('#item-'+i+' details');const e=document.getElementById('item-'+i),r=e.getBoundingClientRect();return homeHubExited.checked&&!!d&&!d.open&&!document.querySelector('.card-wrap.td-page')&&r.bottom>0&&r.top<innerHeight&&e.offsetParent!==null}",want),want)
     cx.close()
     cx,pg=ctx(b); start(pg); want=nid(pg)
     pg.touchscreen.tap(*pg.evaluate("()=>{const r=m34NextCta.getBoundingClientRect();return [r.left+r.width/2,r.top+r.height/2]}")); pg.wait_for_timeout(1000)
-    ck('«Inizia» (standard) apre esattamente il titolo suggerito',pg.evaluate("(i)=>{const d=document.querySelector('#item-'+i+' details');return homeHubExited.checked&&d&&d.open}",want),want); cx.close()
+    ck('«Inizia» (standard) porta esattamente alla scheda del titolo suggerito (in vista, NON aperta)',pg.evaluate("(i)=>{const d=document.querySelector('#item-'+i+' details');const e=document.getElementById('item-'+i),r=e.getBoundingClientRect();return homeHubExited.checked&&!!d&&!d.open&&!document.querySelector('.card-wrap.td-page')&&r.bottom>0&&r.top<innerHeight&&e.offsetParent!==null}",want),want); cx.close()
     # 6 titoli mancanti, duplicati, sequenza vuota
     cx,pg=ctx(b,{MODE:'custom',ORD:[9999,5000,4,4,0,-3,'x',2]}); start(pg)
     ck('numeri mancanti/duplicati/non validi ignorati: primo valido = 004',nid(pg)=='004' and not pg.errs,(nid(pg),pg.errs)); cx.close()
