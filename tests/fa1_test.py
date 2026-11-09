@@ -114,7 +114,7 @@ with sync_playwright() as p:
     ck(st(pg)=='verify' and 'non risulta ancora' in msgt(pg),'«Ho verificato» senza verifica: resta in attesa',msgt(pg))
     pg.evaluate("()=>window.__mock.verify('a@test.it')"); pg.click('#faCheckBtn'); pg.wait_for_timeout(500)
     ck(st(pg)=='in' and 'ACCOUNT VERIFICATO' in pg.inner_text('#faViewIn'),'dopo la verifica: account attivo',st(pg))
-    ck('non sono ancora sincronizzati' in pg.inner_text('#faViewIn'),'avviso: nessuna sincronizzazione dati')
+    ck('non sono ancora sincronizzati' in pg.inner_text('#faViewIn') and pg.evaluate("()=>document.getElementById('faSync').hidden"),'F-A2/F-A3 non attivate: nota «non sincronizzati» e pannello sync nascosto')
     # --- logout
     pg.click('#faLogoutBtn'); pg.wait_for_timeout(500)
     ck(st(pg)=='out' and 'invariati' in msgt(pg),'logout: torna «out», dati locali dichiarati invariati',msgt(pg))

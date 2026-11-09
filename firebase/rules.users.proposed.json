@@ -1,0 +1,62 @@
+{
+  "_nota": "PROPOSTA F-A2/F-A3 - NON APPLICATA. Da AGGIUNGERE come nodo 'users' accanto ai nodi esistenti ('rooms', 'sync') nelle regole del Realtime Database: le regole esistenti NON vanno modificate. Default: tutto il resto resta negato.",
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid && auth.token.email_verified === true",
+        ".write": "auth != null && auth.uid === $uid && auth.token.email_verified === true",
+        ".validate": "newData.hasChildren(['profile','meta']) && ((newData.child('profile').val() === data.child('profile').val() && newData.child('meta/rev').val() === data.child('meta/rev').val()) || (data.exists() ? newData.child('meta/rev').val() === data.child('meta/rev').val() + 1 : newData.child('meta/rev').val() === 1))",
+        "profile": {
+          ".validate": "newData.isString() && newData.val().length <= 5242880"
+        },
+        "meta": {
+          ".validate": "newData.hasChildren(['schema','rev','updatedAt','device'])",
+          "schema": {
+            ".validate": "newData.val() === 1"
+          },
+          "rev": {
+            ".validate": "newData.isNumber() && newData.val() >= 1"
+          },
+          "updatedAt": {
+            ".validate": "newData.val() === now"
+          },
+          "device": {
+            ".validate": "newData.isString() && newData.val().length <= 40"
+          },
+          "$other": {
+            ".validate": false
+          }
+        },
+        "backups": {
+          "$bid": {
+            ".validate": "$bid.matches(/^[a-z0-9]{6,32}$/) && !data.exists() && newData.hasChildren(['at','device','size','sha256','reason','profile'])",
+            "at": {
+              ".validate": "newData.val() === now"
+            },
+            "device": {
+              ".validate": "newData.isString() && newData.val().length <= 40"
+            },
+            "size": {
+              ".validate": "newData.isNumber() && newData.val() >= 0"
+            },
+            "sha256": {
+              ".validate": "newData.isString() && newData.val().matches(/^([0-9a-f]{64}|weak-[0-9a-f]{8})$/)"
+            },
+            "reason": {
+              ".validate": "newData.isString() && newData.val().length <= 40"
+            },
+            "profile": {
+              ".validate": "newData.isString() && newData.val().length <= 5242880"
+            },
+            "$other": {
+              ".validate": false
+            }
+          }
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "_nota": "PROPOSTA TVA FRIENDS (cloud) - NON APPLICATA. Da AGGIUNGERE accanto a 'users' (rules.users.proposed.json), 'rooms' e 'sync' senza modificarli. Tutto il resto resta negato. Il cloud del client e' DISATTIVATO (CLOUD_ENABLED=false).",
+  "rules": {
+    "handles": {
+      "$vid": {
+        ".read": "auth != null && auth.token.email_verified === true",
+        ".write": "auth != null && auth.token.email_verified === true && (!data.exists() || data.child('uid').val() === auth.uid) && (!newData.exists() || newData.child('uid').val() === auth.uid)",
+        ".validate": "$vid.matches(/^v[a-z0-9]{8,12}$/) && newData.hasChildren(['uid','ts'])",
+        "uid": {
+          ".validate": "newData.isString() && newData.val() === auth.uid"
+        },
+        "ts": {
+          ".validate": "newData.val() === now"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "profiles": {
+      "$uid": {
+        ".read": "auth != null && auth.token.email_verified === true",
+        ".write": "auth != null && auth.uid === $uid && auth.token.email_verified === true",
+        ".validate": "newData.hasChildren(['vid','card','ts'])",
+        "vid": {
+          ".validate": "newData.isString() && newData.val().matches(/^v[a-z0-9]{8,12}$/) && root.child('handles/' + newData.val() + '/uid').val() === $uid"
+        },
+        "card": {
+          ".validate": "newData.isString() && newData.val().length <= 1000"
+        },
+        "ts": {
+          ".validate": "newData.val() === now"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "links": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid && auth.token.email_verified === true",
+        "$other": {
+          ".write": "auth != null && auth.uid === $uid && auth.token.email_verified === true",
+          ".validate": "newData.isBoolean() && $other.matches(/^[A-Za-z0-9]{20,40}$/)"
+        }
+      }
+    },
+    "inbox": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid && auth.token.email_verified === true",
+        "$mid": {
+          ".write": "auth != null && auth.token.email_verified === true && ((auth.uid === $uid) || (!data.exists() && newData.exists() && newData.child('from').val() === auth.uid && !root.child('blocked/' + $uid + '/' + auth.uid).exists() && (root.child('links/' + $uid + '/' + auth.uid).val() === true || newData.child('inv').val() === true)))",
+          ".validate": "$mid.matches(/^m_[a-z0-9]{12}$/) && newData.hasChildren(['code','from','inv','ts'])",
+          "code": {
+            ".validate": "newData.isString() && newData.val().length <= 24000 && newData.val().matches(/^TVA1\\.[A-Za-z0-9_-]+\\.[0-9a-f]{8}$/)"
+          },
+          "from": {
+            ".validate": "newData.isString() && newData.val() === auth.uid"
+          },
+          "inv": {
+            ".validate": "newData.isBoolean()"
+          },
+          "ts": {
+            ".validate": "newData.val() === now"
+          },
+          "$other": {
+            ".validate": false
+          }
+        }
+      }
+    },
+    "blocked": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid && auth.token.email_verified === true",
+        "$other": {
+          ".write": "auth != null && auth.uid === $uid && auth.token.email_verified === true",
+          ".validate": "newData.isBoolean() && $other.matches(/^[A-Za-z0-9]{20,40}$/)"
+        }
+      }
+    }
+  }
+}

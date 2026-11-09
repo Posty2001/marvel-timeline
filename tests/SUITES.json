@@ -14,6 +14,26 @@
    "area": "F-A1 Auth email/password (MOCK SDK)"
   },
   {
+   "name": "fa2_test",
+   "area": "F-A2/F-A3 sync account (MOCK SDK + DB simulato)"
+  },
+  {
+   "name": "fa2_rules_test",
+   "area": "F-A2 matrice autorizzazioni regole proposte (SIMULATORE)"
+  },
+  {
+   "name": "friends_rules_test",
+   "area": "TVA Friends regole proposte (SIMULATORE)"
+  },
+  {
+   "name": "friends_cloud_test",
+   "area": "TVA Friends cloud (SDK MOCK + DB SIMULATO, cloud forzato solo in test)"
+  },
+  {
+   "name": "friends_test",
+   "area": "TVA Friends moduli locali (2 dispositivi simulati, codici)"
+  },
+  {
    "name": "c2_test",
    "area": "C2 Timeline/backup"
   },
@@ -240,6 +260,10 @@
   {
    "name": "xm_test",
    "area": ""
+  },
+  {
+   "name": "friends_release_test",
+   "area": "TVA Friends: controlli pre-rilascio (cloud off, import/export sicuri)"
   }
  ]
 }

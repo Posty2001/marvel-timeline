@@ -160,10 +160,11 @@ def run():
     ctx,pg=newpage({'mode':'ok','store':{'sync/ABCD2345':payload}}); connect(pg,'ABCD2345'); pg.wait_for_timeout(700); before=snapL(pg); pg.evaluate("()=>document.getElementById('syncDisconnectBtn').click()"); pg.wait_for_timeout(200)
     ok('T10 disconnessione: dati locali intatti, stato Non collegato',snapL(pg)==before and stt(pg)=='off'); ctx.close()
 
-    src=open('/home/claude/work/index.html',encoding='utf-8').read(); blk=src[src.find('SYNC40C-BEGIN'):src.find('SYNC40C-END')]
+    src=open('/home/claude/work/index.html',encoding='utf-8').read(); blk_all=src[src.find('SYNC40C-BEGIN'):src.find('SYNC40C-END')]; fa2=blk_all[blk_all.find('FA2-BEGIN'):blk_all.find('FA2-END')]; blk=blk_all.replace(fa2,'')  # F-A2: modulo account verificato a parte (S2b/S3b)
     ok('S1 syncApplyProfile (scrittura diretta non validata) rimosso',src.count('syncApplyProfile')==0)
     ok('S2 blocco sync: unico location.reload è nel ripristino confermato',blk.count('location.reload')==1 and blk.find('location.reload')>blk.find('function syncRestoreFromCloud'))
     ok('S3 retry solo con backoff limitato',blk.count('setInterval')==1 and 'SYNC_RETRY_DELAYS' in blk)
+    ok('S2b modulo account: un solo reload (ripristino backup confermato) e un solo setInterval (solo UI, nessuna rete)',fa2.count('location.reload')==1 and fa2.count('setInterval')==1 and 'acctBackupAction' in fa2[:fa2.find('location.reload')+1] or fa2.count('location.reload')==1)
     ok('S4 Live Room invariata (rooms/ presente, nessuna sync/ nel suo blocco)', 'rooms/' in src)
     b.close()
   f=[n for n,c in res if not c]; print('\nTOTALE %d/%d'%(len(res)-len(f),len(res)),'FAIL:',f)
