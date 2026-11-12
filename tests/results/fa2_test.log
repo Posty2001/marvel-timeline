@@ -1,0 +1,70 @@
+PASS FIREBASE_CONFIG presente e non segnaposto (sync abilitabile) 
+PASS DB vuoto prima dell'attivazione (nessun upload automatico) 
+PASS pulsante «Attiva sincronizzazione» visibile 
+PASS migrazione RIFIUTATA: nulla inviato, flag non impostato 
+PASS migrazione rifiutata: dati locali identici 
+PASS migrazione confermata: stato synced 
+PASS consenso esplicito richiesto prima dell'upload 
+PASS profilo A nel cloud contiene note/voti locali 
+PASS meta: rev 1, schema 1, updatedAt server, device 
+PASS backup «migrazione» creato con SHA-256 e contenuto = profilo caricato 
+PASS migrazione: dati locali (progressi, voti, note, impostazioni) INVARIATI 
+PASS proprietario locale = uid A 
+PASS dopo ricarica: sync riattivata e allineata 
+PASS nessuna riscrittura inutile (rev ancora 1) 
+PASS B: migrazione e sync 
+PASS profilo B separato: contiene solo i dati di B 
+PASS profilo A non contiene dati di B 
+PASS AUTORIZZAZIONI: B non legge, non scrive, non enumera i dati di A 
+PASS AUTORIZZAZIONI: token con email non verificata respinto anche sul proprio uid 
+PASS dopo i tentativi di B il profilo di A e' intatto 
+PASS dispositivo 2 vuoto: cloud con dati -> conflitto, non applicato 
+PASS conflitto: dati locali del dispositivo 2 non modificati in automatico 
+PASS conflitto: il cloud non e' stato sovrascritto 
+PASS ripristino dal cloud scelto: dispositivo 2 allineato 
+PASS dispositivo 2 ha ora i dati di A 
+PASS A1: modifica locale inviata (cloud era la sua base) 
+PASS rev incrementata a 2 con CAS 
+PASS dispositivo 2 (invariato) vede lo stato «update» e non applica da solo 
+PASS stato update: dati locali ancora invariati 
+PASS «Applica aggiornamento»: dispositivo 2 allineato 
+PASS dispositivo 2 ha il nuovo voto 
+PASS A2 sincronizzato dopo modifica 
+PASS A2 ha scritto rev 3 
+PASS A1 offline: stato offline, modifica locale conservata 
+PASS A1 offline: dato locale non perso 
+PASS A1 (obsoleto) non in errore di autorizzazione 
+PASS CAS/conflitto: il cloud non e' stato sovrascritto dal dispositivo obsoleto 
+PASS A1: conflitto reale rilevato (modifiche locali + cloud cambiato) 
+PASS «Usa questo dispositivo»: backup cloud (Da A2) creato prima di sostituire 
+PASS cloud sostituito con A1 solo dopo scelta esplicita 
+PASS dispositivo con dati dell'account A, accesso come B: stato «foreign» 
+PASS nessun dato dell'account A e' stato caricato nello spazio di B 
+PASS nessuna proposta di upload dei dati altrui 
+PASS offline: stato offline e modifica locale conservata 
+PASS ritorno online: riallineamento automatico 
+PASS modifica fatta offline inviata al ritorno online 
+PASS backup alterato: ripristino rifiutato, dati locali invariati 
+PASS backup alterato: motivo (SHA-256) mostrato all'utente 
+PASS ripristino backup: conferma esplicita richiesta 
+PASS backup integro: ripristinato in locale 
+PASS logout: dati locali invariati 
+PASS logout: sincronizzazione sospesa 
+PASS C1: sync iniziale 
+PASS C2 allineato 
+PASS C1 torna online con cloud cambiato: conflitto (non sovrascrive in silenzio) 
+PASS conflitto aperto: la modifica offline e' ancora sul dispositivo 
+PASS conflitto aperto: il cloud non e' stato toccato 
+PASS ripristino dal cloud: dispositivo ora allineato 
+PASS copia di sicurezza locale contiene la modifica offline (recuperabile) 
+PASS prima del logout: elenco backup dell'account C presente 
+PASS dopo il logout: elenco backup non piu' visibile/vuoto 
+PASS dopo il logout: nessuna connessione al cloud 
+PASS dopo il logout: nessuna richiesta al database 
+PASS cambio account: l'account D NON si connette in automatico con il flag dell'account C 
+PASS cambio account: nulla scritto nello spazio di D 
+PASS cambio account: D su dispositivo con dati di C -> «foreign», nessun upload 
+PASS cambio account: dopo l'attivazione ancora nulla nel cloud di D 
+PASS cambio account: nessun contenuto di C nell'elenco backup di D 
+PASS nessun errore JS nella pagina 
+FAILS: []

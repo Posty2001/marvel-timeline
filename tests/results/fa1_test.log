@@ -1,0 +1,66 @@
+PASS analisi statica: il modulo non usa localStorage, RTDB, sync/, rooms/, users/ 
+PASS analisi statica: il modulo non referenzia chiavi, funzioni o strutture del profilo (progressi, voti, XP, badge, preferenze, Timeline) 
+PASS analisi statica: nessun accesso Google/anonimo/popup/redirect 
+PASS CSP: due host Auth aggiunti, nessun wildcard googleapis, nessun frame 
+PASS SDK Auth: stessa versione (10.13.0) e origine degli SDK esistenti 
+PASS pannello nel gruppo «Account personale (facoltativo)» di Operazioni 
+PASS avvio senza sessione: stato «out» (nessun login obbligatorio) 
+PASS auth.languageCode = it 
+PASS initializeApp una sola volta 
+PASS archivio locale utilizzabile senza account 
+PASS API pubblica minima e congelata 
+PASS vista registrazione 
+PASS campi password di tipo password 
+PASS attributi autocomplete corretti (password manager iOS) 
+PASS email non valida: errore e nessuna chiamata 
+PASS password corta: errore e nessuna chiamata 
+PASS conferma diversa: errore e nessuna chiamata 
+PASS campo errato marcato aria-invalid 
+PASS stato di caricamento: aria-busy e pulsante disabilitato 
+PASS doppio invio: una sola creazione 
+PASS dopo la registrazione: vista «email da verificare» 
+PASS email di verifica inviata con continue URL della pagina 
+PASS reinvio bloccato (cooldown) 
+PASS password cancellate dai campi dopo l'invio 
+PASS email mostrata 
+PASS sessione persistente dopo ricarica (utente non verificato) 
+PASS «Ho verificato» senza verifica: resta in attesa 
+PASS dopo la verifica: account attivo 
+PASS F-A2/F-A3 non attivate: nota «non sincronizzati» e pannello sync nascosto 
+PASS logout: torna «out», dati locali dichiarati invariati 
+PASS login errato: messaggio generico 
+PASS email inesistente: stesso messaggio (no enumerazione) 
+PASS login corretto: account verificato attivo 
+PASS email già in uso: messaggio chiaro 
+PASS vista recupero password 
+PASS reset email sconosciuta: risposta neutra 
+PASS reset email nota: stessa risposta neutra (nessuna enumerazione) 
+PASS reset: chiamato con continue URL 
+PASS offline: banner visibile 
+PASS offline: messaggio chiaro, nessuna chiamata 
+PASS ritorno online: banner nascosto 
+PASS errore di rete SDK: messaggio e pulsanti riabilitati 
+PASS localStorage identico dopo l'intero flusso (progressi, voti, XP, badge, Timeline, preferenze) 
+PASS Timeline personalizzata e modalità attiva invariate 
+PASS il modulo account non usa il database (nessun accesso a sync/rooms/users) 
+PASS nessuna violazione CSP in pagina 
+PASS nessun errore JS 
+PASS 390px: nessuno scroll orizzontale 
+PASS input a 16px (niente zoom automatico Safari iOS) 
+PASS bersagli tattili >= 44px 
+PASS sessione che non risponde: dopo 8 s «non disponibile», nessun blocco 
+PASS archivio locale comunque utilizzabile 
+PASS SDK Auth assente: stato «non disponibile» 
+PASS SDK assente: nessun errore JS 
+PASS invio verifica fallito: account creato, errore mostrato, reinvio disponibile 
+PASS senza login: l'archivio funziona (titolo segnato come visto e salvato) 
+PASS account A attivo 
+PASS con account: i progressi continuano a essere salvati e quelli precedenti restano 
+PASS logout: dati locali identici 
+PASS dopo il logout: archivio ancora utilizzabile e dati intatti 
+PASS cambio account (registrazione di un secondo account): dati locali identici 
+PASS cambio account (login del primo): dati locali identici e nessuna fusione tra account 
+  (chiavi cambiate al riavvio, per l'app: ['marvel-ultimate-timeline-auto-backup'] )
+PASS dopo riavvio con sessione attiva: dati identici (salvo la copia di sicurezza che l'app riscrive da sola) 
+PASS nessun errore JS/CSP nel flusso di uso/cambio account 
+FAILS: []

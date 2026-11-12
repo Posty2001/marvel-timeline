@@ -1,0 +1,39 @@
+PASS S0 nessun errore JS
+PASS B0 build id 3.2.1
+PASS M0 catalogo invariato: 48 ricompense, 12 cornici, 10 temi
+PASS M1 id motore = id catalogo (nessun id orfano)
+PASS E1 12 miniature cornice, larghezza >= 130px
+PASS E2 miniature tutte diverse e ricche (carta semplificata + cornice)
+PASS E3 elemento equipaggiato evidente (1 selezionato)
+PASS E4 anteprima aggiornata subito (tema in bozza), nessun salvataggio
+PASS E5 miniatura cornice usa il tema scelto in bozza
+PASS E6 10 miniature tema = superficie (non un quadratino), altezza >= 80px
+PASS E7 anteprima editor immediata (cornice Nexus in bozza)
+PASS E8 Annulla: nulla salvato
+PASS L0 quattro ricompense leggendarie
+PASS L1 Nexus Supremo + Fine del Tempo + Aura leggendaria visibili nella Tessera
+PASS L2 titolo leggendario "Colui che Rimane" equipaggiabile
+PASS X1 PNG verticale 1080x1800
+PASS X2 la cornice cambia davvero il PNG (bordo)
+PASS X3 PNG non piatto (varianza luminanza)
+PASS X4 niente errori JS dopo export
+PASS W320 Asgard+Fine del Tempo: no overflow, testo minimo >= 8.9px (compact, min 10.4)
+PASS W320 editor cornici: 12 miniature, larghezza min 128px, no overflow
+PASS W320 nessun errore JS
+PASS W375 Asgard+Fine del Tempo: no overflow, testo minimo >= 8.9px (compact, min 12.4)
+PASS W375 editor cornici: 12 miniature, larghezza min 155px, no overflow
+PASS W375 nessun errore JS
+PASS W390 Asgard+Fine del Tempo: no overflow, testo minimo >= 8.9px (compact, min 12.9)
+PASS W390 editor cornici: 12 miniature, larghezza min 163px, no overflow
+PASS W390 nessun errore JS
+PASS W393 Asgard+Fine del Tempo: no overflow, testo minimo >= 8.9px (compact, min 13.0)
+PASS W393 editor cornici: 12 miniature, larghezza min 164px, no overflow
+PASS W393 nessun errore JS
+PASS W430 Asgard+Fine del Tempo: no overflow, testo minimo >= 8.9px (compact, min 14.3)
+PASS W430 editor cornici: 12 miniature, larghezza min 183px, no overflow
+PASS W430 nessun errore JS
+PASS W1280 Asgard+Fine del Tempo: no overflow, testo minimo >= 8.9px (wide, min 9.0)
+PASS W1280 editor cornici: 12 miniature, larghezza min 197px, no overflow
+PASS W1280 nessun errore JS
+
+PASS 37 FAIL 0 []

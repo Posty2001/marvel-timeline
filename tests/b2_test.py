@@ -89,7 +89,7 @@ with sync_playwright() as p:
     # Atlante / Friends dalla Centrale
     pg.evaluate("()=>document.querySelector('.cen-sbtn[data-act=atlante]').click()"); pg.wait_for_timeout(700)
     ok('T11 collegamento Atlante: apre l\'Atlante esistente (home) senza enciclopedia parallela',pg.evaluate("()=>document.getElementById('atlas2Toggle').checked&&tvaAtlas2.getState().screen==='home'&&!document.querySelector('#dashboard [id^=atlas]')"))
-    tab(pg,'appTabFriends'); ok('T12 Friends si apre',pg.evaluate("()=>document.getElementById('friendsToggle').checked")); tab(pg,'appTabMissioni')
+    tab(pg,'appTabFriends'); ok('T12 Friends 2.0 si apre dalla barra (non la vecchia sala)',pg.evaluate("()=>{const r=document.getElementById('tfRoot');return !!r&&!r.hidden&&getComputedStyle(r).display!=='none'&&!document.getElementById('friendsToggle').checked}")); tab(pg,'appTabMissioni')
     ok('T12b nessun overlay residuo in Centrale',pg.evaluate("()=>![...document.querySelectorAll('input[type=checkbox][id$=Toggle]')].some(c=>c.checked&&c.id!=='sidebarToggle'&&c.id!=='expandAllToggle'&&c.id!=='darkModeToggle'&&!/spoiler/i.test(c.id))"))
     # ============ dati: nessuna scrittura per sola navigazione ============
     k0=ls(pg)

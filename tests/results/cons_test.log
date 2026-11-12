@@ -1,0 +1,95 @@
+PASS 27 universi: sezioni Appartenenza/Crossover coincidono con atlasData.ruolo (e serie animate multi-universo = crossover) 
+{'txt': ['Il tuo progresso', 'Titoli di appartenenza (0)', 'Crossover (1)', 'Personaggi (6)', 'Archivi nei suoi titoli (1)', 'Collegamenti del Multiverso', 'Raggruppamenti e famiglia editoriale', 'Non documentato'], 'primEmpty': 'Nessun titolo è assegnato in via esclusiva a questo universo dai dati della guida. Compare soltanto nei crossover qui sotto.', 'croRows': ["1Fantastic Four: First StepsFilm · uscita 2025 · N°125↗ insieme a: MCUAmbientazione: anni '60 stilizzati, universo alt.○"], 'h4': ['Originari di questo universo (2)', 'Presenti, con origine altrove (4)', 'Organizzazioni (1)', 'Da verificare (1)'], 'orig': ['char:char-franklin-richards|Franklin Richards', 'char:char-galactus|Galactus'], 'pres': ['char:char-ben-grimm|Ben Grimmorig.: Fantastic Four (1994)', 'char:char-johnny-storm-human-torch|Johnny Storm/Human Torchorig.: Fantastic Four (1994)', 'char:char-reed-richards|Reed Richardsorig.: Fantastic Four (1994)', 'char:char-sue-storm|Sue Stormorig.: Fantastic Four (1994)'], 'legend': True, 'info': 0}
+PASS Earth-828: nessun titolo di appartenenza esclusiva (stato vuoto esplicito) 
+PASS Earth-828: N°125 in Crossover, con altro universo e Ambientazione separata 
+PASS Earth-828: originari = Franklin Richards, Galactus 
+PASS Earth-828: 4 personaggi PRESENTI con origine altrove indicata (Reed, Sue, Ben, Johnny) 
+PASS legenda delle categorie presente nella scheda universo 
+PASS MCU: nota esplicativa Earth-199999 / Earth-616 
+PASS nessuna scheda/duplicato/link «616»; 27 universi invariati 
+PASS MCU: versione alternativa N°133 elencata a parte (non conteggiata) 
+PASS MCU: progresso distingue i crossover 
+PASS ricerca «616» nell’Atlante 2.0 mostra la nota di numerazione 
+PASS schede titolo: etichette Appartenenza / Crossover / Versione alternativa + Ambientazione 
+PASS schede personaggio: righe Origine / Compare anche in (Atlante) 
+{'itemUni': [0, 0], 'classico': [], 'itemChar': [0, 0], 'charUni': [0, 0, [], []], 'classicoChar': []}
+PASS titolo <-> universo bidirezionale (varianti incluse, 139 + serie animate) 
+PASS scheda universo classica elenca esattamente gli stessi titoli (+ variante) della 2.0 
+PASS titolo <-> personaggio bidirezionale 
+PASS personaggio <-> universo bidirezionale (origine + presenza) 
+PASS scheda universo classica elenca esattamente gli stessi personaggi (originari + presenti) della 2.0 
+PASS nessun errore JS (categorie/bidirezionalita) 
+stato iniziale {'q': 'man', 'off': ['rosso'], 'nvis': 17, 'y': 0}
+PASS prerequisito: ricerca «man» + priorita' rosso nascosta attive 
+PASS Timeline -> Atlante 2.0 (depth 1) 
+PASS esiste un titolo dell’universo nascosto dai filtri attivi 
+PASS link a titolo nascosto: la scheda viene mostrata (filtri responsabili azzerati) 
+PASS sbloccare la scheda non scrive nulla in localStorage (preferenze dei filtri salvate invariate) 
+PASS Back 1 -> scheda universo 2.0 
+PASS Back 2: ricerca, filtri e schede visibili identici a prima 
+FAIL Back 2: posizione di scorrimento ripristinata sulla stessa scheda (4408.828125, 4416.84375, 0, 0)
+PASS marvelFiltriStato riflette il ripristino 
+PASS dopo Indietro i salvataggi/filtri persistenti sono identici 
+PASS nessun errore JS (Indietro) 
+a2 prima del click {'y': 2300, 'id': 'item:item-061', 'top': 361.40625, 'win': 10026}
+PASS Atlante 2.0 scorso in profondita' dentro .a2-scroll 
+PASS Atlante -> Film -> Timeline 
+a2 dopo Indietro {'a2': True, 'y': 2300, 'top': 361.40625, 'win': 10026, 'uid': 'uni-earth-199999-mcu'}
+PASS Back: .a2-scroll ripristinato (scrollTop e riga di riferimento), non solo window.pageYOffset 
+PASS Back finale: Timeline alla stessa posizione 
+PASS Atlante 2.0: freccia interna ripristina filtro e scorrimento della panoramica 
+PASS nessun errore JS (.a2-scroll) 
+PASS tre livelli nello stack 
+gesto indietro x3 [{'d': 2, 'a2': True, 'uid': 'uni-earth-828', 'hl': 5, 'hs': 2}, {'d': 1, 'a2': True, 'uid': 'uni-earth-828', 'hl': 5, 'hs': 1}, {'d': 0, 'a2': False, 'uid': 'uni-earth-828', 'hl': 5, 'hs': None}]
+PASS gesto/tasto Indietro del browser: un livello alla volta, fino alla Timeline 
+PASS cambio di #frammento non estrae livelli dallo stack 
+PASS Indietro dal frammento torna alla voce del livello (nessun ripristino spurio) 
+PASS ulteriore Indietro ripristina il livello 
+Traceback (most recent call last):
+  File "/tmp/tva_suite_cons_test_6yh6kdg0/cons_test.py", line 189, in <module>
+    pg.click('.app-tab[data-tab="timeline"]'); pg.wait_for_timeout(500)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/sync_api/_generated.py", line 9927, in click
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.click(
+        ^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+        )
+        ^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_page.py", line 857, in click
+    return await self._main_frame.click(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_frame.py", line 549, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(".app-tab[data-tab=\"timeline\"]")
+    - locator resolved to <button type="button" class="app-tab" id="appTabTimeline" data-tab="timeline">…</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    19 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+

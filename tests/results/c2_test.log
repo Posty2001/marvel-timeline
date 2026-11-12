@@ -1,0 +1,29 @@
+PASS CSP presente nel documento 
+PASS export: customOrder presente 
+PASS export: preferredMode presente (compatibilita') 
+PASS export: modalita' attiva NON esportata 
+PASS riapertura: modalita' custom salvata con ordine -> Personalizzato 
+PASS mode release -> chiave standard 
+PASS mode custom -> chiave custom 
+PASS ricarica: resta Personalizzato 
+PASS ricarica: ordine intatto 
+PASS custom + ordine vuoto: riapre su Consigliato 
+PASS Home next con ordine vuoto: titolo standard calcolato 
+PASS import backup vecchio: modalita' locale intatta 
+PASS import backup vecchio senza customOrder: ordine locale intatto 
+PASS import completo: ordine ripristinato 
+PASS import completo: preferredMode ripristinato 
+PASS import completo: modalita' locale intatta 
+PASS import ordine vuoto: ordine azzerato 
+PASS import ordine vuoto + mode custom: Consigliato 
+PASS import invalido duplicato: nulla scritto 
+PASS import invalido fuori range: nulla scritto 
+PASS import invalido stringa: nulla scritto 
+PASS import invalido oggetto: nulla scritto 
+PASS reset progresso: ordine e modalita' intatti 
+PASS reset totale: ordine rimosso 
+PASS reset totale: modalita' attiva rimossa 
+PASS reset totale: copia di sicurezza automatica creata 
+PASS copia di sicurezza contiene l'ordine personalizzato 
+PASS nessun errore JS 
+PASS/FAIL FAILS 0 []

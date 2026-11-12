@@ -1,0 +1,21 @@
+PASS standard (nessuna modalita salvata): Spider-Man, come prima
+PASS UI: «Personalizzato» salva la modalita e aggiorna subito la Home (004 primo nell'ordine)
+PASS UI: altra modalita -> standard, Home torna a Spider-Man subito
+PASS riordino (2 sopra 4): ordine salvato aggiornato
+PASS riordino: la Home si aggiorna subito (prima 002 -> richiede 001 se prerequisito, altrimenti 002)
+PASS persistenza dopo ricarica: stessa modalita/ordine/suggerimento
+PASS alt timeline riapre sulla modalita salvata (Personalizzato attivo)
+PASS nessuna modifica a progressi/voti/XP (solo le 2 chiavi timeline)
+PASS nessun errore JS
+PASS custom seed: primo = 004
+PASS dopo completamento 004 la Home avanza subito (≠004, non visto)
+PASS nessun titolo gia visto suggerito
+PASS «Continua» porta esattamente alla scheda del titolo suggerito (in vista, NON aperta)
+PASS «Inizia» (standard) porta esattamente alla scheda del titolo suggerito (in vista, NON aperta)
+PASS numeri mancanti/duplicati/non validi ignorati: primo valido = 004
+PASS sequenza vuota -> comportamento standard
+PASS ordine corrotto -> standard, nessun errore
+PASS ordine parziale: i titoli non elencati seguono in coda
+PASS percorso completato (custom): «Tutto visto!», CTA nascosta
+PASS aggiornamento da altra scheda (evento storage)
+20 / 20

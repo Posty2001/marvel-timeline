@@ -1,0 +1,26 @@
+[dopo 390]  {'pos': 'static', 'h': 1080, 'ovSH': 1080, 'ovCH': 1080, 'docSH': 1080, 'ih': 844, 'fixedTransform': False}
+[dopo 390]  fondo pagina: {'footBottom': 788, 'ih': 844, 'gapBelowFootnote': 56, 'stageVisible': True} scroll tot 236
+PASS [dopo 390] contenuto finale (nota) raggiungibile e area vuota sotto <= 120px
+PASS [dopo 390] grafo dettagliato raggiungibile e colpibile; comandi zoom ok
+PASS [dopo 390] tocco su un nodo: pannello dettagli popolato
+PASS [dopo 390] viewport 744: nessun overflow orizzontale della pagina
+PASS [dopo 390] viewport 744: il fondo della pagina e' dietro al viewport (nessuna area scoperta)
+PASS [dopo 390] viewport 844: nessun overflow orizzontale della pagina
+PASS [dopo 390] viewport 844: il fondo della pagina e' dietro al viewport (nessuna area scoperta)
+PASS [dopo 390] viewport 774: nessun overflow orizzontale della pagina
+PASS [dopo 390] viewport 774: il fondo della pagina e' dietro al viewport (nessuna area scoperta)
+PASS [dopo 390] nessun errore JS
+[dopo 320]  {'pos': 'static', 'h': 1010, 'ovSH': 1010, 'ovCH': 1010, 'docSH': 1010, 'ih': 568, 'fixedTransform': False}
+[dopo 320]  fondo pagina: {'footBottom': 512, 'ih': 568, 'gapBelowFootnote': 56, 'stageVisible': True} scroll tot 442
+PASS [dopo 320] contenuto finale (nota) raggiungibile e area vuota sotto <= 120px
+PASS [dopo 320] grafo dettagliato raggiungibile e colpibile; comandi zoom ok
+PASS [dopo 320] tocco su un nodo: pannello dettagli popolato
+PASS [dopo 320] viewport 468: nessun overflow orizzontale della pagina
+PASS [dopo 320] viewport 468: il fondo della pagina e' dietro al viewport (nessuna area scoperta)
+PASS [dopo 320] viewport 568: nessun overflow orizzontale della pagina
+PASS [dopo 320] viewport 568: il fondo della pagina e' dietro al viewport (nessuna area scoperta)
+PASS [dopo 320] viewport 498: nessun overflow orizzontale della pagina
+PASS [dopo 320] viewport 498: il fondo della pagina e' dietro al viewport (nessuna area scoperta)
+PASS [dopo 320] nessun errore JS
+
+PASS 20 FAIL 0 []

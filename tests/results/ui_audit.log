@@ -1,0 +1,145 @@
+PASS [320x568 home] nessun testo < 11px 
+PASS [320x568 home] bersagli tattili >= 44px 
+PASS [320x568 home] nessun overflow orizzontale 
+PASS [320x568 MCU] nessun testo < 11px 
+PASS [320x568 MCU] bersagli tattili >= 44px 
+PASS [320x568 MCU] nessun overflow orizzontale 
+PASS [320x568 E-828] nessun testo < 11px 
+PASS [320x568 E-828] bersagli tattili >= 44px 
+PASS [320x568 E-828] nessun overflow orizzontale 
+PASS [320x568 Raimi] nessun testo < 11px 
+PASS [320x568 Raimi] bersagli tattili >= 44px 
+PASS [320x568 Raimi] nessun overflow orizzontale 
+320x568 {'topTop': 0, 'topH': 79.1875, 'hamTop': 0, 'hamBottom': 0, 'hamLeft': 0, 'hamRight': 0, 'hamW': 0, 'hamH': 0, 'hamVis': False, 'barTop': 0, 'barBottom': 0, 'barH': 0, 'lastBottom': None, 'ttlLeft': 54.390625, 'clTop': 26.6875, 'clLeft': 269.609375, 'clRight': 313.609375, 'iw': 320, 'ih': 568, 'tabs': [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], 'lblMin': 8}
+PASS [320x568] modalità immersiva: menu circolare nascosto 
+PASS  
+PASS [320x568] barra inferiore dell’app nascosta, nessuna seconda barra 
+PASS [320x568] header sotto la safe area superiore 
+PASS [320x568] pulsanti dell’header >= 44px 
+PASS [320x568] header dentro la safe area laterale 
+PASS [320x568] titolo dell’header leggibile (larghezza >= 70px) 
+PASS [320x568] ultimo contenuto sopra la safe area inferiore 
+PASS [320x568] chip Indietro >= 44px, dentro safe area, sopra la barra 
+PASS [320x568] nessun errore JS 
+PASS [375x667 home] nessun testo < 11px 
+PASS [375x667 home] bersagli tattili >= 44px 
+PASS [375x667 home] nessun overflow orizzontale 
+PASS [375x667 MCU] nessun testo < 11px 
+PASS [375x667 MCU] bersagli tattili >= 44px 
+PASS [375x667 MCU] nessun overflow orizzontale 
+PASS [375x667 E-828] nessun testo < 11px 
+PASS [375x667 E-828] bersagli tattili >= 44px 
+PASS [375x667 E-828] nessun overflow orizzontale 
+PASS [375x667 Raimi] nessun testo < 11px 
+PASS [375x667 Raimi] bersagli tattili >= 44px 
+PASS [375x667 Raimi] nessun overflow orizzontale 
+375x667 {'topTop': 0, 'topH': 86.015625, 'hamTop': 0, 'hamBottom': 0, 'hamLeft': 0, 'hamRight': 0, 'hamW': 0, 'hamH': 0, 'hamVis': False, 'barTop': 0, 'barBottom': 0, 'barH': 0, 'lastBottom': None, 'ttlLeft': 58.390625, 'clTop': 30.109375, 'clLeft': 253.71875, 'clRight': 365.40625, 'iw': 375, 'ih': 667, 'tabs': [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], 'lblMin': 8.64}
+PASS [375x667] modalità immersiva: menu circolare nascosto 
+PASS  
+PASS [375x667] barra inferiore dell’app nascosta, nessuna seconda barra 
+PASS [375x667] header sotto la safe area superiore 
+PASS [375x667] pulsanti dell’header >= 44px 
+PASS [375x667] header dentro la safe area laterale 
+PASS [375x667] titolo dell’header leggibile (larghezza >= 70px) 
+PASS [375x667] ultimo contenuto sopra la safe area inferiore 
+PASS [375x667] chip Indietro >= 44px, dentro safe area, sopra la barra 
+PASS [375x667] nessun errore JS 
+PASS [390x844 home] nessun testo < 11px 
+PASS [390x844 home] bersagli tattili >= 44px 
+PASS [390x844 home] nessun overflow orizzontale 
+PASS [390x844 MCU] nessun testo < 11px 
+PASS [390x844 MCU] bersagli tattili >= 44px 
+PASS [390x844 MCU] nessun overflow orizzontale 
+PASS [390x844 E-828] nessun testo < 11px 
+PASS [390x844 E-828] bersagli tattili >= 44px 
+PASS [390x844 E-828] nessun overflow orizzontale 
+PASS [390x844 Raimi] nessun testo < 11px 
+PASS [390x844 Raimi] bersagli tattili >= 44px 
+PASS [390x844 Raimi] nessun overflow orizzontale 
+390x844 {'topTop': 0, 'topH': 113.015625, 'hamTop': 0, 'hamBottom': 0, 'hamLeft': 0, 'hamRight': 0, 'hamW': 0, 'hamH': 0, 'hamVis': False, 'barTop': 0, 'barBottom': 0, 'barH': 0, 'lastBottom': None, 'ttlLeft': 58.390625, 'clTop': 57.109375, 'clLeft': 268.71875, 'clRight': 380.40625, 'iw': 390, 'ih': 844, 'tabs': [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], 'lblMin': 8.64}
+PASS [390x844] modalità immersiva: menu circolare nascosto 
+PASS  
+PASS [390x844] barra inferiore dell’app nascosta, nessuna seconda barra 
+PASS [390x844] header sotto la safe area superiore 
+PASS [390x844] pulsanti dell’header >= 44px 
+PASS [390x844] header dentro la safe area laterale 
+PASS [390x844] titolo dell’header leggibile (larghezza >= 70px) 
+PASS [390x844] ultimo contenuto sopra la safe area inferiore 
+PASS [390x844] chip Indietro >= 44px, dentro safe area, sopra la barra 
+PASS [390x844] nessun errore JS 
+PASS [393x852 home] nessun testo < 11px 
+PASS [393x852 home] bersagli tattili >= 44px 
+PASS [393x852 home] nessun overflow orizzontale 
+PASS [393x852 MCU] nessun testo < 11px 
+PASS [393x852 MCU] bersagli tattili >= 44px 
+PASS [393x852 MCU] nessun overflow orizzontale 
+PASS [393x852 E-828] nessun testo < 11px 
+PASS [393x852 E-828] bersagli tattili >= 44px 
+PASS [393x852 E-828] nessun overflow orizzontale 
+PASS [393x852 Raimi] nessun testo < 11px 
+PASS [393x852 Raimi] bersagli tattili >= 44px 
+PASS [393x852 Raimi] nessun overflow orizzontale 
+393x852 {'topTop': 0, 'topH': 125.015625, 'hamTop': 0, 'hamBottom': 0, 'hamLeft': 0, 'hamRight': 0, 'hamW': 0, 'hamH': 0, 'hamVis': False, 'barTop': 0, 'barBottom': 0, 'barH': 0, 'lastBottom': None, 'ttlLeft': 58.390625, 'clTop': 69.109375, 'clLeft': 271.71875, 'clRight': 383.40625, 'iw': 393, 'ih': 852, 'tabs': [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], 'lblMin': 8.64}
+PASS [393x852] modalità immersiva: menu circolare nascosto 
+PASS  
+PASS [393x852] barra inferiore dell’app nascosta, nessuna seconda barra 
+PASS [393x852] header sotto la safe area superiore 
+PASS [393x852] pulsanti dell’header >= 44px 
+PASS [393x852] header dentro la safe area laterale 
+PASS [393x852] titolo dell’header leggibile (larghezza >= 70px) 
+PASS [393x852] ultimo contenuto sopra la safe area inferiore 
+PASS [393x852] chip Indietro >= 44px, dentro safe area, sopra la barra 
+PASS [393x852] nessun errore JS 
+PASS [430x932 home] nessun testo < 11px 
+PASS [430x932 home] bersagli tattili >= 44px 
+PASS [430x932 home] nessun overflow orizzontale 
+PASS [430x932 MCU] nessun testo < 11px 
+PASS [430x932 MCU] bersagli tattili >= 44px 
+PASS [430x932 MCU] nessun overflow orizzontale 
+PASS [430x932 E-828] nessun testo < 11px 
+PASS [430x932 E-828] bersagli tattili >= 44px 
+PASS [430x932 E-828] nessun overflow orizzontale 
+PASS [430x932 Raimi] nessun testo < 11px 
+PASS [430x932 Raimi] bersagli tattili >= 44px 
+PASS [430x932 Raimi] nessun overflow orizzontale 
+430x932 {'topTop': 0, 'topH': 118.1875, 'hamTop': 0, 'hamBottom': 0, 'hamLeft': 0, 'hamRight': 0, 'hamW': 0, 'hamH': 0, 'hamVis': False, 'barTop': 0, 'barBottom': 0, 'barH': 0, 'lastBottom': None, 'ttlLeft': 58.390625, 'clTop': 65.6875, 'clLeft': 308.71875, 'clRight': 420.40625, 'iw': 430, 'ih': 932, 'tabs': [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], 'lblMin': 8.64}
+PASS [430x932] modalità immersiva: menu circolare nascosto 
+PASS  
+PASS [430x932] barra inferiore dell’app nascosta, nessuna seconda barra 
+PASS [430x932] header sotto la safe area superiore 
+PASS [430x932] pulsanti dell’header >= 44px 
+PASS [430x932] header dentro la safe area laterale 
+PASS [430x932] titolo dell’header leggibile (larghezza >= 70px) 
+PASS [430x932] ultimo contenuto sopra la safe area inferiore 
+PASS [430x932] chip Indietro >= 44px, dentro safe area, sopra la barra 
+PASS [430x932] nessun errore JS 
+PASS [844x390 home] nessun testo < 11px 
+PASS [844x390 home] bersagli tattili >= 44px 
+PASS [844x390 home] nessun overflow orizzontale 
+PASS [844x390 MCU] nessun testo < 11px 
+PASS [844x390 MCU] bersagli tattili >= 44px 
+PASS [844x390 MCU] nessun overflow orizzontale 
+PASS [844x390 E-828] nessun testo < 11px 
+PASS [844x390 E-828] bersagli tattili >= 44px 
+PASS [844x390 E-828] nessun overflow orizzontale 
+PASS [844x390 Raimi] nessun testo < 11px 
+PASS [844x390 Raimi] bersagli tattili >= 44px 
+PASS [844x390 Raimi] nessun overflow orizzontale 
+844x390 {'topTop': 0, 'topH': 59.1875, 'hamTop': 0, 'hamBottom': 0, 'hamLeft': 0, 'hamRight': 0, 'hamW': 0, 'hamH': 0, 'hamVis': False, 'barTop': 0, 'barBottom': 0, 'barH': 0, 'lastBottom': None, 'ttlLeft': 105.390625, 'clTop': 6.6875, 'clLeft': 675.71875, 'clRight': 787.40625, 'iw': 844, 'ih': 390, 'tabs': [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], 'lblMin': 8.64}
+PASS [844x390] modalità immersiva: menu circolare nascosto 
+PASS  
+PASS [844x390] barra inferiore dell’app nascosta, nessuna seconda barra 
+PASS [844x390] header sotto la safe area superiore 
+PASS [844x390] pulsanti dell’header >= 44px 
+PASS [844x390] header dentro la safe area laterale 
+PASS [844x390] titolo dell’header leggibile (larghezza >= 70px) 
+PASS [844x390] ultimo contenuto sopra la safe area inferiore 
+PASS [844x390] chip Indietro >= 44px, dentro safe area, sopra la barra 
+PASS [844x390] nessun errore JS 
+contrasto minimo [['ud-st ud-st-ok', 4.4, 11.2, '● Documentato nella gu'], ['ud-st ud-st-ok', 4.4, 11.2, '● Documentato nella gu'], ['ud-st ud-st-vf', 4.61, 11.2, '◇ Da verificare'], ['ud-st ud-st-vf', 4.61, 11.2, '◇ Da verificare'], ['hm-ch-n', 5.8, 11, 'Capitolo I']]
+FAIL contrasto testo >= 4.5:1 (WCAG AA) su tutte le combinazioni dell'Atlante 2.0 [['ud-st ud-st-ok', 4.4, 11.2, '● Documentato nella gu'], ['ud-st ud-st-ok', 4.4, 11.2, '● Documentato nella gu']]
+FAILS 1 ["contrasto testo >= 4.5:1 (WCAG AA) su tutte le combinazioni dell'Atlante 2.0"]
+PASS [320x568] collegamenti nelle schede: chip >= 44px, testo >= 11px, nessun overflow 
+PASS [390x844] collegamenti nelle schede: chip >= 44px, testo >= 11px, nessun overflow 
+PASS [430x932] collegamenti nelle schede: chip >= 44px, testo >= 11px, nessun overflow 
+FAILS (con schede) 1 ["contrasto testo >= 4.5:1 (WCAG AA) su tutte le combinazioni dell'Atlante 2.0"]

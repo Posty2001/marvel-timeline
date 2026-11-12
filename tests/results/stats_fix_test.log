@@ -1,0 +1,16 @@
+PASS build id 
+{'universi': 27, 'personaggi': 300, 'titoliTimeline': 138, 'opereTotali': 176}
+PASS stats() 27/300/138/176 
+[['176', 'opere totali (con varianti e serie animate)', 'opere'], ['138', 'titoli della Timeline', 'timeline'], ['27', 'universi', 'universi'], ['300', 'personaggi', 'personaggi'], ['~527', 'ore complessive di visione', '']]
+PASS intro = stats() {'opere': '176', 'timeline': '138', 'universi': '27', 'personaggi': '300'}
+PASS etichette esplicite 
+PASS ore invariato (~527) ['~527', 'ore complessive di visione', '']
+PASS niente "26" / "304" / "titoli" generico 
+PASS Home 27/300/138 [27, 300, 138]
+PASS Home e intro: stessi valori 
+404 al primo avvio: []
+PASS reload: 0 richieste 404 []
+PASS reload: asset dedicati presenti (niente SVG) 
+PASS dopo reprobe: eventi.webp si carica 
+PASS JS errors []
+FALLITI 0

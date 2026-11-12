@@ -1,0 +1,33 @@
+PASS tema scuro di default (classe html)
+PASS checkbox dark spuntato
+PASS sfondo body #101014
+PASS theme-color #101014
+PASS build id
+PASS home visibile
+PASS gerarchia home M3.4: saluto<prossimo<statistiche<accessi<missione
+PASS progress bar home
+PASS stat ids presenti
+PASS card missioni apre tab Missioni
+PASS tab Home: barra visibile, nessun overflow
+PASS tab Timeline: barra visibile, nessun overflow
+PASS Atlante: nuova TVA Archives immersiva, barra principale nascosta
+PASS tab Missioni: barra visibile, nessun overflow
+PASS tab Tessera: barra visibile, nessun overflow
+PASS tab Friends: barra visibile, nessun overflow
+PASS emoji sostituite da icone
+PASS tabbar: icone SVG, nessuna emoji
+PASS nessun blocco di testo in monospace
+PASS visto+preferito applicati
+PASS stato visto riconoscibile (check oro)
+PASS persistenza dopo reload
+PASS progresso home aggiornato (1/138)
+PASS tessera: nome, ID, rango, livello, XP, statistiche, condividi
+PASS friends: crea stanza, codice, gruppo, classifica presenti
+PASS tema chiaro legacy raggiungibile
+PASS ritorno al tema scuro salvato
+FAIL 320px: nessun overflow orizzontale [('Friends', [0, ['tf-tab', 'SPAN', 'tf-tl', 'rs-i']])]
+FAIL 360px: nessun overflow orizzontale [('Friends', [0, ['tf-tab', 'tf-tl', 'SPAN', 'rs-i']])]
+FAIL 430px: nessun overflow orizzontale [('Friends', [0, ['tf-tab', 'tf-tl', 'SPAN']])]
+PASS tabbar a filo schermo, menu 44px
+PASS nessun pageerror
+TOTALE 32 FAIL 3

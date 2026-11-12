@@ -1,0 +1,57 @@
+PASS A verificato: primo salvataggio profilo+meta (rev 1)
+PASS A legge il proprio profilo
+PASS B NON legge il profilo di A
+PASS B NON legge il nodo users/uidA
+PASS B NON legge i backup di A
+PASS anonimo/non autenticato NON legge il profilo di A
+PASS nessuno legge la radice users (niente enumerazione)
+PASS nessuno legge la radice del database
+PASS B NON scrive nel profilo di A
+PASS B NON scrive meta di A
+PASS B NON crea backup in uidA
+PASS B NON cancella i dati di A
+PASS anonimo NON scrive nel profilo di A
+PASS A con email NON verificata: lettura negata
+PASS A con email NON verificata: scrittura negata
+PASS A non scrive nel nodo di B
+PASS A: aggiornamento con rev+1 consentito
+PASS A: dispositivo obsoleto (rev ripetuto) RIFIUTATO
+PASS A: salto di rev (+2) RIFIUTATO
+PASS A: profilo cambiato SENZA aumentare rev RIFIUTATO
+PASS A: il profilo cloud e' rimasto quello valido
+PASS A: profilo non stringa RIFIUTATO
+PASS A: profilo oltre 5 MB RIFIUTATO
+PASS A: campo sconosciuto in users/uidA RIFIUTATO
+PASS A: campo sconosciuto in meta RIFIUTATO
+PASS A: updatedAt falsificato RIFIUTATO
+PASS A: schema diverso da 1 RIFIUTATO
+PASS A: crea backup valido
+PASS A: backup NON sovrascrivibile
+PASS A: backup con id non valido RIFIUTATO
+PASS A: backup con hash non valido RIFIUTATO
+PASS A: backup con campo extra RIFIUTATO
+PASS A: backup senza campo obbligatorio RIFIUTATO
+PASS A: legge i propri backup
+PASS A: puo' eliminare un proprio backup (potatura)
+PASS A: backup + aggiornamento profilo in un'unica scrittura
+PASS nessuna scrittura su nodi non previsti (sync/ABC)
+PASS nessuna scrittura su nodi non previsti (rooms/R1) dalle regole PROPOSTE
+PASS A: puo' eliminare tutti i propri dati (diritto di cancellazione)
+PASS REV: rev riportata a 1 con profilo invariato RIFIUTATA
+PASS REV: rev saltata (+5) con profilo invariato RIFIUTATA
+PASS REV: stessa rev + stesso profilo (solo device) consentito
+PASS CONCORRENZA: due scritture dalla stessa base: vince una sola, l'altra rifiutata dal DB
+PASS ATOMICITA': profilo cambiato con rev invariata in un'unica update RIFIUTATO e nulla scritto
+PASS ATOMICITA': update multi-percorso con un percorso non valido non scrive nessuno dei percorsi
+PASS UID: B non puo' scrivere in users/uidA dichiarandosi A nel payload
+PASS UID: campo «uid/owner» nel nodo proprio RIFIUTATO (il proprietario e' la chiave, non un dato)
+PASS UID: A non puo' creare users/uidB con il proprio token
+PASS UID: uid vuoto/null nel token: tutto negato
+PASS NON AUTENTICATO: nessuna lettura di users/*, profilo, meta, backups
+PASS NON AUTENTICATO: nessuna scrittura (profilo, meta, backup, creazione)
+PASS ROOMS/SYNC: stesse decisioni con e senza il nodo users (12 operazioni)
+PASS ROOMS/SYNC: il merge non rimuove ne' modifica rooms/sync
+PASS ROOMS/SYNC: users non e' raggiungibile da regole di rooms/sync (nessuna lettura di users via antenati)
+TOTALE 54 | FAIL 0
+
+

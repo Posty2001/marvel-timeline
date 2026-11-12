@@ -1,0 +1,43 @@
+PASS file home_hero: (1600, 1600) 249KB 
+PASS file eventi: (1680, 400) 76KB 
+PASS file luoghi: (960, 1260) 131KB 
+PASS file specie_civilta: (1200, 940) 129KB 
+PASS file organizzazioni: (1200, 940) 113KB 
+PASS file universi: (1200, 920) 124KB 
+PASS file attori: (1200, 830) 111KB 
+PASS file reliquiario: (1200, 920) 129KB 
+PASS [390] 8 immagini dedicate caricate [('home_hero.webp', 1600), ('multiverso.webp', 1280), ('universi.webp', 1200), ('cronologie.webp', 1280), ('eventi.webp', 1680), ('personaggi.webp', 1280), ('classifica_poteri.webp', 1280), ('relazioni.webp', 1280), ('attori.webp', 1200), ('entita_cosmiche.webp', 1280), ('luoghi.webp', 960), ('specie_civilta.webp', 1200), ('organizzazioni.webp', 1200), ('artefatti.webp', 1280), ('reliquiario.webp', 1200), ('arti_mistiche.webp', 1280)]
+PASS [390] tutte le copertine caricate (naturalWidth>0) []
+PASS [390] object-fit cover (nessuna deformazione) 
+PASS [390] nessuna risposta 4xx/5xx []
+PASS [390] nessun errore JS []
+PASS [390] fallback SVG non attivo 
+PASS [390] contrasto titoli >=4.5 (peggiore attori 5.3) 
+PASS [320] 8 immagini dedicate caricate [('home_hero.webp', 1600), ('multiverso.webp', 1280), ('universi.webp', 1200), ('cronologie.webp', 1280), ('eventi.webp', 1680), ('personaggi.webp', 1280), ('classifica_poteri.webp', 1280), ('relazioni.webp', 1280), ('attori.webp', 1200), ('entita_cosmiche.webp', 1280), ('luoghi.webp', 960), ('specie_civilta.webp', 1200), ('organizzazioni.webp', 1200), ('artefatti.webp', 1280), ('reliquiario.webp', 1200), ('arti_mistiche.webp', 1280)]
+PASS [320] tutte le copertine caricate (naturalWidth>0) []
+PASS [320] object-fit cover (nessuna deformazione) 
+PASS [320] nessuna risposta 4xx/5xx []
+PASS [320] nessun errore JS []
+PASS [320] fallback SVG non attivo 
+PASS [320] contrasto titoli >=4.5 (peggiore attori 5.3) 
+frame ms p50/p95/max 16.7 16.8 16.8 155
+PASS scorrimento: p95 frame < 50ms con CPU 4x piu lenta 
+PASS fallback home_hero (abort) []
+PASS fallback home_hero (corrotto) []
+PASS fallback eventi (abort) []
+PASS fallback eventi (corrotto) []
+PASS fallback luoghi (abort) []
+PASS fallback luoghi (corrotto) []
+PASS fallback specie_civilta (abort) []
+PASS fallback specie_civilta (corrotto) []
+PASS fallback organizzazioni (abort) []
+PASS fallback organizzazioni (corrotto) []
+PASS fallback universi (abort) []
+PASS fallback universi (corrotto) []
+PASS fallback attori (abort) []
+PASS fallback attori (corrotto) []
+PASS fallback reliquiario (abort) []
+PASS fallback reliquiario (corrotto) []
+FALLITI 0
+/tmp/tva_suite_assets_test_r44x4c0q/assets_test.py:40: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  ls=sorted(lum(px) for px in im.getdata()); l90=ls[int(len(ls)*0.9)]

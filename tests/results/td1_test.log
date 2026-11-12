@@ -1,0 +1,35 @@
+PASS analisi statica: il modulo di restyling non usa storage, rete, Firebase 
+PASS build HTML = build service worker 
+PASS tutte le 139 schede ristrutturate: Diario e info; pulsanti raggruppati su tutte le schede che li hanno (le altre, non ancora uscite, non ne hanno) 
+PASS note esistenti: storage byte-identico dopo il caricamento (nessuna scrittura/migrazione) 
+PASS Diario visibile senza note: titolo, sottotitolo con nome titolo, badge Privato, stato vuoto, CTA 
+PASS nota esistente: testo riutilizzato identico e leggibile/modificabile 
+PASS nota con caratteri speciali/HTML mostrata come testo, identica 
+PASS nessuna iniezione HTML dal testo della nota 
+PASS anteprima della nota nello stato chiuso 
+PASS "Modifica nota" apre l'editor e dà il focus alla nota 
+PASS modifica salvata (e le altre note intatte) 
+PASS persistenza dopo ricarica 
+PASS nuova nota scritta offline salvata (CTA "+ Aggiungi una nuova nota") 
+PASS anteprima e pulsante aggiornati dopo il salvataggio 
+PASS Elimina nota: chiede conferma 
+PASS Annulla: nota intatta 
+PASS Conferma: eliminata solo quella nota 
+PASS testo svuotato a mano: conferma richiesta e nota ancora in storage 
+PASS svuotamento annullato: testo ripristinato 
+PASS svuotamento confermato: nota eliminata 
+PASS nota lunga (5000 caratteri) salvata integralmente 
+PASS limite 100000 caratteri = validatore di import/export del profilo 
+PASS progressi, voto e preferiti continuano a funzionare 
+PASS nessun errore JS/CSP 
+NOT RUN confronto con build precedente (TD_OLD_INDEX_DIR non impostata)
+PASS 320 px: nessun overflow orizzontale né elementi fuori schermo (titolo lunghissimo incluso) 
+PASS 320 px: bersagli tattili >= 44px, nota a 16px (no zoom iOS) 
+PASS 360 px: nessun overflow orizzontale né elementi fuori schermo (titolo lunghissimo incluso) 
+PASS 360 px: bersagli tattili >= 44px, nota a 16px (no zoom iOS) 
+PASS 390 px: nessun overflow orizzontale né elementi fuori schermo (titolo lunghissimo incluso) 
+PASS 390 px: bersagli tattili >= 44px, nota a 16px (no zoom iOS) 
+PASS contrasto >= 4.5:1 su pulsanti e titoli del Diario (tema scuro) 
+PASS 430 px: nessun overflow orizzontale né elementi fuori schermo (titolo lunghissimo incluso) 
+PASS 430 px: bersagli tattili >= 44px, nota a 16px (no zoom iOS) 
+FAILS: [] | NOT RUN: ['confronto con build precedente (TD_OLD_INDEX_DIR non impostata)']

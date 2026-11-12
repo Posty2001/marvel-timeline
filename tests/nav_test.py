@@ -73,7 +73,7 @@ with sync_playwright() as p:
     pg.goto(U); pg.wait_for_timeout(1200)
     pg.evaluate("()=>{journeyStarted.checked=true; journeyStarted.dispatchEvent(new Event('change',{bubbles:true}))}"); pg.wait_for_timeout(500)
     pg.evaluate("()=>document.getElementById('appTabFriends').click()"); pg.wait_for_timeout(700); s=st(pg)
-    ok('Friends: UI nuova, barra presente, overlay Friends', s['ov']==['friendsToggle'] and s['tab'] and not s['shell'], s)
+    ok('Friends: UI nuova, barra presente, overlay Friends', pg.evaluate("()=>{const r=document.getElementById('tfRoot');return !!r&&!r.hidden&&getComputedStyle(r).display!=='none'}") and not s['ov'] and not s['shell'], s)
     pg.evaluate("()=>document.getElementById('appTabHome').click()"); pg.wait_for_timeout(700); s=st(pg)
     ok('Friends -> Home', s['home'] and not s['ov'] and s['tab'], s)
     # 9 Home -> Esplora il Multiverso -> Indietro -> Home

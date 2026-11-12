@@ -1,0 +1,16 @@
+PASS default: nessuna locandina, nessuna richiesta TMDB
+PASS TMDB: locandina caricata + attribuzione
+PASS TMDB: srcset w342 1x / w500 2x, https
+PASS priorita: personalizzata vince su TMDB
+PASS personalizzata rotta -> TMDB
+PASS non verificata ignorata -> TMDB
+PASS TMDB in errore -> emblema (nessuna img rotta)
+PASS interruttore tvaTmdbOff
+PASS timeline: (M3.2) locandina nella riga principale, non nel pannello
+PASS timeline: senza mappa nessuna miniatura
+PASS nessun errore JS
+PASS nessuna chiave/token nel codice
+PASS tool: film con match esatto
+PASS tool: ambiguo -> da rivedere (nessun abbinamento a caso)
+PASS tool: anno lontano rifiutato
+TOT 15 / 15

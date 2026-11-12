@@ -1,0 +1,49 @@
+PASS tree-ff: diagramma presente
+PASS tree-ff: n=5
+PASS tree-ff: marr=1
+PASS tree-ff: sib=1
+PASS tree-ff: linee genitore→figlio
+PASS tree-ff: nessuno scroll orizzontale
+PASS tree-ff: generazioni etichettate
+PASS tree-ff: dettagli per persona chiusi a diagramma ok
+PASS tree-asgard: diagramma presente
+PASS tree-asgard: n=5
+PASS tree-asgard: marr=1
+PASS tree-asgard: sib=3
+PASS tree-asgard: adopt=1
+PASS tree-asgard: linee genitore→figlio
+PASS tree-asgard: nessuno scroll orizzontale
+PASS tree-asgard: generazioni etichettate
+PASS tree-asgard: dettagli per persona chiusi a diagramma ok
+PASS tree-wakanda: diagramma presente
+PASS tree-wakanda: n=6
+PASS tree-wakanda: marr=1
+PASS tree-wakanda: sib=1
+PASS tree-wakanda: partner=1
+PASS tree-wakanda: linee genitore→figlio
+PASS tree-wakanda: nessuno scroll orizzontale
+PASS tree-wakanda: generazioni etichettate
+PASS tree-wakanda: dettagli per persona chiusi a diagramma ok
+PASS tree-stark: diagramma presente
+PASS tree-stark: n=5
+PASS tree-stark: marr=2
+PASS tree-stark: linee genitore→figlio
+PASS tree-stark: nessuno scroll orizzontale
+PASS tree-stark: generazioni etichettate
+PASS tree-stark: dettagli per persona chiusi a diagramma ok
+PASS tap su persona: apre scheda personaggio
+PASS Johnny Storm collegato a char-johnny-storm-human-torch
+PASS FF: continuità indicata
+PASS continuità separate (nota)
+PASS alberi: zoom +
+PASS alberi: adatta
+PASS 3 discipline documentate
+PASS Stregoneria: ≥3 schede, non limitata
+PASS Magia oscura/del caos: flag dati limitati
+PASS 3 lacune dichiarate senza schede
+PASS box lacune visibile
+PASS mis-stregoneria: sezioni Definizione + Artefatti
+PASS mis-magia-oscura: sezioni Definizione + Artefatti
+PASS mis-magia-del-caos: sezioni Definizione + Artefatti
+PASS nessun errore JS
+TOTALE 0 FAIL

@@ -1,0 +1,6 @@
+PASS senza asset: ambiente procedurale 
+PASS con asset: immagine di famiglia caricata 
+PASS con asset: testo ancora HTML leggibile (h2 presente) 
+PASS universo di altra famiglia senza asset: fallback 
+PASS nessun errore []
+FAILS 0

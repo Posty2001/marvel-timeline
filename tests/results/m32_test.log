@@ -1,0 +1,38 @@
+PASS build id (meta, formato AAAAMMGG-HHMM-tag)
+PASS build id: meta HTML == SW_BUILD di sw.js
+PASS build id: CACHE_NAME contiene la build
+PASS build id: build attesa 20261112-1300-friends2
+PASS 139 schede (138 + variante)
+PASS un solo controllo voto per scheda, nel riquadro principale
+PASS scheda chiusa: stelle visibili
+PASS stelle: area di tocco >= 24x36 px
+PASS 1° tocco su stella 4 = voto 4 (intero)
+PASS il tocco sulle stelle non apre la scheda
+PASS 2° tocco stessa stella = 3,5
+PASS 3° tocco = ripristino 4
+PASS stella diversa (2) = voto intero 2
+PASS una sola scrittura per tocco (valore coerente in UI)
+PASS persistenza dopo ricarica
+PASS a11y: slider, focusabile, valuenow/valuetext/labelledby
+PASS tastiera: freccia destra = +0,5 senza aprire la scheda
+PASS tastiera: barra spaziatrice sullo slider non apre la scheda
+PASS Azzera funziona e non apre la scheda
+PASS chiave voti invariata (stesso oggetto)
+PASS locandine nella riga principale (131), nessuna nel pannello
+PASS locandina a sinistra del titolo, proporzione 2:3, lazy, srcset
+PASS numero opera, anno, badge leggibili
+PASS checkbox e preferiti presenti e cliccabili
+PASS tap sulla locandina apre
+PASS TD2: pagina immersiva aperta
+PASS Indietro chiude (ex secondo tap)
+PASS nessun overflow orizzontale a 390px
+PASS nessun overflow orizzontale a 360px
+PASS nessun overflow orizzontale a 320px
+PASS fallback: senza locandina resta l'emblema, layout originale
+PASS titolo senza locandina: emblema + stelle
+PASS Atlante: 15 voci, Reliquiario presente nel catalogo
+PASS Reliquiario si apre dal catalogo (componente esistente)
+PASS Home Atlante: portale Reliquiario ancora presente
+PASS Azzera da tastiera (Invio) senza aprire la scheda
+PASS errori JS
+TOT 37 / 37

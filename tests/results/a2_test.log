@@ -1,0 +1,51 @@
+PASS [320] tab Atlante apre 2.0 con 27 universi
+PASS [320] titolo non sovrapposto al menu circolare
+PASS [320] nessun overflow orizzontale
+PASS [320] pulsante archivio classico dentro lo schermo
+PASS [320] header rispetta la safe area superiore
+PASS [320] target tattili >=40px
+PASS [320] ogni scheda universo mostra esattamente i suoi titoli (27 universi)
+PASS [320] ultimo elemento sopra la safe area inferiore (la barra dell’app è nascosta)
+PASS [320] nessun errore JS
+PASS [390] tab Atlante apre 2.0 con 27 universi
+PASS [390] titolo non sovrapposto al menu circolare
+PASS [390] nessun overflow orizzontale
+PASS [390] pulsante archivio classico dentro lo schermo
+PASS [390] header rispetta la safe area superiore
+PASS [390] target tattili >=40px
+PASS [390] ogni scheda universo mostra esattamente i suoi titoli (27 universi)
+  liste identiche (ammesse solo se i dati coincidono): []
+   uni-earth-828 1 ['item-125']
+   uni-earth-121698 2 ['item-029', 'item-030']
+   uni-earth-199999-mcu 93 ['item-041', 'item-042', 'item-043', 'item-044', 'item-045', 'item-046', 'item-047', 'item-048']
+   uni-earth-96283-raimi-verse 4 ['item-001', 'item-002', 'item-003', 'item-099']
+   uni-earth-120703-garfield-verse 3 ['item-004', 'item-005', 'item-099']
+   uni-sony-s-spider-man-universe-ssu 6 ['item-006', 'item-007', 'item-008', 'item-009', 'item-010', 'item-011']
+   uni-earth-10005-fox-verse 14 ['item-012', 'item-013', 'item-014', 'item-015', 'item-016', 'item-017', 'item-018', 'item-019']
+   uni-earth-838 0 []
+   uni-x-men-97-verse 4 ['anim-xmentheanimatedserie92', 'item-130', 'item-131', 'item-138']
+PASS Earth-828 = solo 125
+PASS Earth-121698 = 029, 030
+PASS Earth-838 vuoto
+PASS Universi Spider-Man diversi tra loro
+PASS ordine per data di uscita crescente (MCU, sezione appartenenza)
+PASS ricerca "spider": gruppi risultato + universi
+PASS ricerca → titolo cliccabile
+PASS Ricerca → Risultato → scheda in Timeline
+PASS Indietro dalla Timeline -> Dossier Opera
+PASS Back: ricerca conservata
+PASS filtro tipologia Diramazione = 5 universi
+PASS freccia in-app: scorrimento della panoramica ripristinato
+PASS il dossier universo non rimanda all'archivio classico
+PASS [390] ultimo elemento sopra la safe area inferiore (la barra dell’app è nascosta)
+PASS [390] nessun errore JS
+PASS [430] tab Atlante apre 2.0 con 27 universi
+PASS [430] titolo non sovrapposto al menu circolare
+PASS [430] nessun overflow orizzontale
+PASS [430] pulsante archivio classico dentro lo schermo
+PASS [430] header rispetta la safe area superiore
+PASS [430] target tattili >=40px
+PASS [430] ogni scheda universo mostra esattamente i suoi titoli (27 universi)
+PASS [430] ultimo elemento sopra la safe area inferiore (la barra dell’app è nascosta)
+PASS [430] nessun errore JS
+FAILS 0 []

@@ -1,0 +1,17 @@
+PASS build id
+PASS 075 niente "otto anni" come riferimento
+PASS 075 atlas amb+nota
+PASS 075 anno null
+PASS cronologia: tag post-Endgame pos.
+PASS cronologia: nessun "(senza anno)" per i post-Endgame con pos
+PASS ordine pos crescente nel gruppo senza anno
+PASS dossier opera: posizione Disney+
+PASS dossier: senza manifest nessuna locandina
+PASS non verificata: nessuna locandina
+PASS verificata: locandina presente e emblema nascosto
+PASS file mancante: fallback senza rottura
+PASS blob imageManifest vuoto
+PASS nessun errore JS
+PASS tool scan
+PASS tool list
+TOT 16 / 16

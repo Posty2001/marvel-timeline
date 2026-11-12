@@ -1944,7 +1944,7 @@ html.marvel-dark-mode body { background: var(--paper); }
   /* Home hub: dopo l'intro, prima di entrare nel documento vero e proprio. Le stesse eccezioni
      usate per gli altri overlay, così aprire Multiverso/Database/Tessera/Timeline dalla home hub
      funziona normalmente anche se homeHubExited non è ancora spuntato. */
-  #journeyStarted:checked ~ #homeHubExited:not(:checked) ~ *:not(.a2):not(.home-hub):not(.multiverse-graph-overlay):not(.tva-archives-overlay):not(.universe-timeline-overlay):not(.kang-tva-overlay):not(.relationship-graph-overlay):not(.alt-timeline-overlay):not(.tessera-overlay):not(.friends-overlay):not(.sidebar):not(.sidebar-open-btn):not(.app-tabbar):not(.missione-celebrazione):not(.info-overlay) { display: none !important; }
+  #journeyStarted:checked ~ #homeHubExited:not(:checked) ~ *:not(.a2):not(.home-hub):not(.multiverse-graph-overlay):not(.tva-archives-overlay):not(.universe-timeline-overlay):not(.kang-tva-overlay):not(.relationship-graph-overlay):not(.alt-timeline-overlay):not(.tessera-overlay):not(.friends-overlay):not(.sidebar):not(.sidebar-open-btn):not(.app-tabbar):not(.missione-celebrazione):not(.info-overlay):not(.rk-root) { display: none !important; }
   #journeyStarted:checked ~ #homeHubExited:checked ~ .home-hub { display: none !important; }
 }
 
@@ -5660,7 +5660,7 @@ html .hm-console .a2-sbox input:not(#rs) { min-height: 44px; }
 .tf-in, .tf-code { width: 100%; font: inherit; font-size: 16px; padding: .5rem .6rem; border: 1px solid var(--line); border-radius: 6px; background: rgba(255,255,255,.5); color: var(--ink); min-height: 44px; }
 .tf-code { font-family: 'IBM Plex Mono', monospace; font-size: 13px; word-break: break-all; }
 .tf-row { display: flex; flex-wrap: wrap; gap: .5rem; margin: .5rem 0; align-items: center; }
-.tf-btn { min-height: 44px; padding: .4rem .9rem; } .tf-primary { background: var(--marvel-red); color: #fff; border-color: var(--marvel-red); } .tf-danger { border-color: var(--rust); color: var(--rust); }
+.tf-btn { min-height: 44px; padding: .4rem .9rem; } html.marvel-dark-mode:not(#rs) #tfSalaOpen, html.marvel-dark-mode:not(#rs) #tfBkDl, html.marvel-dark-mode:not(#rs) #tfBkRestore, #tfSalaOpen, #tfBkDl, #tfBkRestore { min-height: 44px; } .tf-primary { background: var(--marvel-red); color: #fff; border-color: var(--marvel-red); } .tf-danger { border-color: var(--rust); color: var(--rust); }
 .tf-item { display: block; width: 100%; text-align: left; padding: .6rem .7rem; margin: .4rem 0; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,.35); font: inherit; color: inherit; }
 button.tf-link { cursor: pointer; min-height: 44px; } .tf-cancelled { opacity: .6; text-decoration: line-through; }
 .tf-card { display: flex; gap: .7rem; align-items: center; padding: .5rem; border-left: 5px solid var(--tfc, var(--marvel-red)); background: rgba(255,255,255,.4); border-radius: 6px; }
@@ -28175,13 +28175,27 @@ function marvelInit() {
       return esito;
     }
 
+    // Identita' e personalizzazione Tessera portano un timestamp "ts" di sola modifica (creato per dispositivo): non e' contenuto,
+    // quindi non deve generare un falso conflitto tra due dispositivi con gli stessi dati. Gli altri campi restano confrontati.
+    function syncSenzaTs(sc) {
+      var out = {}, ks = Object.keys(sc || {});
+      for (var i = 0; i < ks.length; i++) {
+        var k = ks[i], v = sc[k];
+        if (/-(identity-v1|tessera-style-v1|tessera-look)$/.test(k) && typeof v === 'string') {
+          try { var o = JSON.parse(v); if (o && typeof o === 'object' && !Array.isArray(o)) { delete o.ts; v = JSON.stringify(o); } } catch (eTs) {}
+        }
+        out[k] = v;
+      }
+      return out;
+    }
+
     // 'uguale' | 'diverso' | 'invalido'
     function syncConfronta(raw) {
       var rem = syncValidaRemoto(raw);
       if (!rem.ok) return { tipo: 'invalido', motivo: rem.motivo };
       var loc = null;
       try { loc = normalizzaProfilo(costruisciProfiloCompleto()); } catch(eL) { loc = null; }
-      if (loc && loc.ok && syncStabile(loc.scritture) === syncStabile(rem.scritture)) return { tipo: 'uguale', rem: rem };
+      if (loc && loc.ok && syncStabile(syncSenzaTs(loc.scritture)) === syncStabile(syncSenzaTs(rem.scritture))) return { tipo: 'uguale', rem: rem };
       return { tipo: 'diverso', rem: rem };
     }
 

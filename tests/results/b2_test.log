@@ -1,0 +1,122 @@
+PASS N0 barra: 6 voci invariate
+PASS N1 Centrale: Panoramica attiva, 4 sezioni, un solo pannello visibile
+PASS N1b ARIA: tablist/tab/tabpanel e aria-selected
+PASS N1c [B2.1] ordine e etichette: PANORAMICA · MISSIONI · OSSERVATORIO · OPERAZIONI; icona radar SVG, nessuna emoji attrezzi
+PASS N1d [B2.1] panoramica: scorciatoie nell'ordine Missioni, Osservatorio, Operazioni
+PASS N2 sezione missioni
+PASS N2 sezione strumenti
+PASS N2 sezione operazioni
+PASS N2 sezione panoramica
+PASS N3 tastiera: freccia destra attiva la sezione successiva
+PASS N4 contesto: la sotto-sezione Stagioni resta dopo il cambio di sezione
+PASS N4b contesto: posizione di scorrimento di Missioni ripristinata (193→193)
+PASS M1 4 missioni esistenti (stessi id) dentro Attive, una volta sola
+PASS M2 dossier settimanale: descrizione, requisiti, stato, ricompensa, scadenza
+PASS M2 dossier tematica: descrizione, requisiti, stato, ricompensa, scadenza
+PASS M2 dossier saga: descrizione, requisiti, stato, ricompensa, scadenza
+PASS M2 dossier segreta: descrizione, requisiti, stato, ricompensa, scadenza
+PASS M2s dossier segreta: nessun titolo rivelato (protezione spoiler)
+PASS M3 dossier tematica/saga: titoli idonei con link (componente esistente .tva-mis)
+PASS M4 Stagioni: «La Guerra delle Incursioni» 0/10, condizioni e ricompense
+PASS M5 Speciali: Road to Doomsday 0/16, 16 schede, distinzione watchlist ufficiale/editoriale, +300 XP
+PASS M6 Archivio: vuoto all'inizio, nessuna voce inventata
+PASS M7 openMission(rtd): Speciali attivo, elenco aperto
+PASS M7b openMission(saga): Attive, dossier aperto
+PASS M8a [B2.1] ancora #cen-osservatorio (alias) apre Osservatorio
+PASS M8 ancora #cen-operazioni
+PASS P1 Panoramica: agente, livello, progresso, prossimo titolo, 4 missioni + stagione
+PASS T1 titolo dalla Centrale: vista Timeline, scheda visibile, tab Timeline, Indietro «Centrale TVA»
+PASS T2 Indietro: ritorno alla Centrale (sezione Panoramica) e tab Centrale
+PASS T3 chip titolo di una missione: apre la scheda in Timeline
+PASS T4 Indietro: Missioni/Attive con dossier ancora aperto
+PASS T5 scheda dal percorso Road to Doomsday: Timeline
+PASS T6 Indietro da RTD: Speciali
+PASS T7 scrollIntoView verso un titolo dalla Centrale: Timeline + tab Timeline
+PASS T8 scrollIntoView verso la Centrale: vista Centrale + tab Centrale
+PASS T9 tvaGo item dalla Timeline: scheda visibile
+PASS T10 cambio tab: Centrale ripristinata nel contesto precedente (un solo pannello visibile)
+PASS T11 collegamento Atlante: apre l'Atlante esistente (home) senza enciclopedia parallela
+FAIL T12 Friends si apre 
+PASS T12b nessun overlay residuo in Centrale
+PASS D1 navigare/aprire dossier non scrive in localStorage
+PASS O1 operazioni presenti una volta sola nel pannello Operazioni e visibili
+PASS O1b modalità scura e backup automatico raggiungibili
+PASS O2 reset distruttivi in «Zona pericolosa»
+PASS O3 Resetta progresso: conferma 1 visibile (distinguibile)
+PASS O3b Annulla: nulla cambia
+PASS O3c seconda conferma richiesta
+PASS O3d reset: visti azzerati, voti/note/preferiti invariati (semantica invariata)
+PASS O4 Resetta tutto: seconda conferma con parola CANCELLA, pulsante disabilitato finché non digitata
+PASS O4b annullato: voto ancora presente
+PASS O5 Segna tutti visti: 138 schede
+PASS O5b etichetta cambia in «SEGNA TUTTI NON VISTI»
+PASS O5c «non visti» chiede conferma e non agisce subito
+PASS O5d annulla: progresso intatto
+PASS O5e conferma: visti azzerati (semantica del comando invariata)
+PASS X1 XP: titolo obbligatorio = +30 (regola esistente) (1940→1970)
+PASS X1b titolo consigliato = +20 (1940→1960)
+PASS X2 missione settimanale completata: ricompensa registrata una volta (+250)
+PASS X2b Attive: missione settimanale 3/3 completata
+PASS X2c dossier: «Completata · ricompensa già assegnata», titoli registrati con link
+PASS X3 dopo reload: XP invariati (2030=2030) e nessuna ricompensa duplicata
+PASS X4 Archivio: missione settimanale conclusa, +250 XP, senza duplicati
+PASS X5 nessun errore JS (funzionale)
+PASS L1 Timeline senza strumenti amministrativi/avanzati (nessuno visibile)
+PASS L2 Timeline conserva ricerca, filtri priorità, preferiti, weekend, espandi, filtri avanzati/spoiler, progresso
+PASS L2b nessun backup/sync/dark mode tra i filtri avanzati
+PASS L3 serie animate raggiungibili (sezione + voce d'indice)
+PASS L4 footer/promo non presenti in Timeline
+PASS L5 contenuti intatti: schede, Capitolo 0 (5), serie animate presenti
+PASS C1 Timeline Riassuntiva: un solo indice con 9 checkpoint, collassato
+PASS C2 i 9 collegamenti portano alla sezione (visibile nel viewport)
+PASS C3 Timeline Riassuntiva non compare nella Centrale
+PASS C4 la Centrale non mostra capitoli/controlli della Timeline
+PASS U1 nessun id duplicato (documento)
+PASS U2 componenti spostati: una sola copia ciascuno
+PASS U3 nessun errore JS (Timeline)
+PASS V320 panoramica: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V320 missioni/attive: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V320 missioni/stagioni: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V320 missioni/speciali: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V320 missioni/archivio: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V320 strumenti: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V320 operazioni: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V320 etichette delle 4 sezioni intere
+PASS V320 barra inferiore non copre i contenuti (ultimo elemento della Centrale sopra la barra)
+PASS V320 confronto: tabella senza scroll orizzontale, selettori leggibili (>=16px, >=44px), nessun overflow
+PASS V320 nessun errore JS
+PASS V375 panoramica: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V375 missioni/attive: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V375 missioni/stagioni: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V375 missioni/speciali: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V375 missioni/archivio: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V375 strumenti: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V375 operazioni: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V375 etichette delle 4 sezioni intere
+PASS V375 barra inferiore non copre i contenuti (ultimo elemento della Centrale sopra la barra)
+PASS V375 confronto: tabella senza scroll orizzontale, selettori leggibili (>=16px, >=44px), nessun overflow
+PASS V375 nessun errore JS
+PASS V390 panoramica: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V390 missioni/attive: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V390 missioni/stagioni: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V390 missioni/speciali: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V390 missioni/archivio: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V390 strumenti: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V390 operazioni: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V390 etichette delle 4 sezioni intere
+PASS V390 barra inferiore non copre i contenuti (ultimo elemento della Centrale sopra la barra)
+PASS V390 confronto: tabella senza scroll orizzontale, selettori leggibili (>=16px, >=44px), nessun overflow
+PASS V390 nessun errore JS
+PASS V393 panoramica: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V393 missioni/attive: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V393 missioni/stagioni: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V393 missioni/speciali: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V393 missioni/archivio: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V393 strumenti: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V393 operazioni: nessun overflow orizzontale (0), nessun elemento fuori schermo, controlli >=44px
+PASS V393 etichette delle 4 sezioni intere
+PASS V393 barra inferiore non copre i contenuti (ultimo elemento della Centrale sopra la barra)
+PASS V393 confronto: tabella senza scroll orizzontale, selettori leggibili (>=16px, >=44px), nessun overflow
+PASS V393 nessun errore JS
+
+PASS 119 FAIL 1 ['T12 Friends si apre']

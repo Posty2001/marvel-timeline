@@ -1,0 +1,38 @@
+PASS build id
+PASS una sola card prologo, chiusa
+PASS titolo/sottotitolo/5 letture
+PASS niente part-tab/part-head/h2/img in #cap0
+PASS 5 letture 0.1-0.5 intatte, id #cap0
+PASS letture chiuse e testi presenti
+PASS 390: card chiusa compatta (<=70px)
+PASS 390: Parte 1 segue subito (gap<=24px)
+PASS 390: tap apre
+PASS 390: nessun salto del summary
+PASS 390: 5 letture visibili
+PASS 390: lettura espandibile
+PASS 390: nessun overflow orizzontale
+PASS 390: tap richiude
+PASS ancora apre prologo: a.sidebar-content-link[href="#cap0"]
+PASS ancora apre prologo: #indice a.toc-group-title[href="#cap0"]
+PASS ancora apre prologo: a.tl-row[href="#cap0"]
+PASS apertura da hash #cap0
+PASS 390: nessun errore JS
+PASS 360: card chiusa compatta (<=70px)
+PASS 360: Parte 1 segue subito (gap<=24px)
+PASS 360: tap apre
+PASS 360: nessun salto del summary
+PASS 360: 5 letture visibili
+PASS 360: lettura espandibile
+PASS 360: nessun overflow orizzontale
+PASS 360: tap richiude
+PASS 360: nessun errore JS
+PASS 320: card chiusa compatta (<=70px)
+PASS 320: Parte 1 segue subito (gap<=24px)
+PASS 320: tap apre
+PASS 320: nessun salto del summary
+PASS 320: 5 letture visibili
+PASS 320: lettura espandibile
+PASS 320: nessun overflow orizzontale
+PASS 320: tap richiude
+PASS 320: nessun errore JS
+37 / 37

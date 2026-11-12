@@ -1,0 +1,38 @@
+PASS Personaggi → scheda nativa (non il classico)
+PASS scheda personaggio senza scroll orizzontale
+PASS nessun rimando "archivio classico" nella scheda
+PASS link correlato resta nell'Atlante
+PASS Indietro riporta alla scheda precedente
+PASS mvNavigateTo(char) → scheda nativa
+PASS cronologie nativa, 390px senza scroll orizzontale
+PASS cronologie ha contenuto
+PASS alberi nativa, 390px senza scroll orizzontale
+PASS alberi ha contenuto
+PASS attori nativa, 390px senza scroll orizzontale
+PASS attori ha contenuto
+PASS incursioni nativa, 390px senza scroll orizzontale
+PASS incursioni ha contenuto
+PASS maratona nativa, 390px senza scroll orizzontale
+PASS maratona ha contenuto
+PASS tutte le cronologie tematiche sono raggiungibili (7/7)
+PASS tutti gli attori elencati (49)
+PASS scheda attore nativa
+PASS il toggle classico viene reindirizzato all'Atlante
+PASS Reliquiario: 6 Gemme + Mjolnir classificati
+PASS ogni titolo verificato ha la provenienza; nessun titolo è insieme verificato e non confermato
+PASS Gemma della Mente: 051/062/084 verificati, 061 non confermato
+PASS Gemma del Tempo → Doctor Strange (070) verificato; 069 non confermato
+PASS Mjolnir: 050/076 verificati, 075 non confermato
+PASS il dossier mostra i riferimenti non confermati separati
+PASS Kang/TVA: vista iniziale intera, centrata, nessun nodo/nome tagliato
+PASS Relazioni: vista iniziale intera, centrata, nessun nodo/nome tagliato
+PASS Multiverso: vista iniziale intera, centrata, nessun nodo/nome tagliato
+PASS zoom + cambia il viewBox
+PASS trascinamento sposta il grafo
+PASS il trascinamento non chiude/naviga
+PASS pulsante "adatta" ripristina la vista intera
+PASS Timeline Universi: nome riga allineato alla linea (0.0px)
+PASS Timeline Universi: salti rapidi presenti
+PASS Back dal grafico non apre il classico
+PASS nessun pageerror
+TOTALE 0 FAIL

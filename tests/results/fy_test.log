@@ -1,0 +1,134 @@
+PASS 320 atlante apre home
+PASS 320 dossier aperto
+PASS 320 timeline: atlas chiuso
+PASS 320 tab→ATLANTE torna a home
+PASS 320 dossier→Home→ATLANTE
+PASS 320 appTabMissioni→ATLANTE
+PASS 320 appTabTessera→ATLANTE
+PASS 320 appTabFriends→ATLANTE
+PASS 320 back da dossier
+PASS 320 cover<=300 (291)
+PASS 320 niente scorri/sigillo
+PASS 320 hamburger non sovrapposto
+PASS 320 cover no overflow x
+PASS 320 continua: storage invariato
+PASS 320 continua scrolla
+PASS 320 continua → N°006 (N°006 · Venom)
+PASS 320 cap0 5 voci integre
+FAIL 320 cap0 tag 
+PASS 320 cap0 espandibile
+PASS 320 timeline no overflow x
+PASS 320 kangTvaGraphToggle statico
+PASS 320 kangTvaGraphToggle no gap/overflow
+PASS 320 kangTvaGraphToggle fondo raggiungibile
+PASS 320 relationshipGraphToggle statico
+PASS 320 relationshipGraphToggle no gap/overflow
+PASS 320 relationshipGraphToggle fondo raggiungibile
+PASS 320 universeTimelineToggle statico
+PASS 320 universeTimelineToggle no gap/overflow
+PASS 320 universeTimelineToggle fondo raggiungibile
+PASS 320 altTimelineToggle statico
+PASS 320 altTimelineToggle no gap/overflow
+PASS 320 altTimelineToggle fondo raggiungibile
+PASS 320 no errori JS
+PASS 375 atlante apre home
+PASS 375 dossier aperto
+PASS 375 timeline: atlas chiuso
+PASS 375 tab→ATLANTE torna a home
+PASS 375 dossier→Home→ATLANTE
+PASS 375 appTabMissioni→ATLANTE
+PASS 375 appTabTessera→ATLANTE
+PASS 375 appTabFriends→ATLANTE
+PASS 375 back da dossier
+PASS 375 cover<=300 (278)
+PASS 375 niente scorri/sigillo
+PASS 375 hamburger non sovrapposto
+PASS 375 cover no overflow x
+PASS 375 continua: storage invariato
+PASS 375 continua scrolla
+PASS 375 continua → N°006 (N°006 · Venom)
+PASS 375 cap0 5 voci integre
+FAIL 375 cap0 tag 
+PASS 375 cap0 espandibile
+PASS 375 timeline no overflow x
+PASS 375 kangTvaGraphToggle statico
+PASS 375 kangTvaGraphToggle no gap/overflow
+PASS 375 kangTvaGraphToggle fondo raggiungibile
+PASS 375 relationshipGraphToggle statico
+PASS 375 relationshipGraphToggle no gap/overflow
+PASS 375 relationshipGraphToggle fondo raggiungibile
+PASS 375 universeTimelineToggle statico
+PASS 375 universeTimelineToggle no gap/overflow
+PASS 375 universeTimelineToggle fondo raggiungibile
+PASS 375 altTimelineToggle statico
+PASS 375 altTimelineToggle no gap/overflow
+PASS 375 altTimelineToggle fondo raggiungibile
+PASS 375 no errori JS
+PASS 390 atlante apre home
+PASS 390 dossier aperto
+PASS 390 timeline: atlas chiuso
+PASS 390 tab→ATLANTE torna a home
+PASS 390 dossier→Home→ATLANTE
+PASS 390 appTabMissioni→ATLANTE
+PASS 390 appTabTessera→ATLANTE
+PASS 390 appTabFriends→ATLANTE
+PASS 390 back da dossier
+PASS 390 cover<=300 (279)
+PASS 390 niente scorri/sigillo
+PASS 390 hamburger non sovrapposto
+PASS 390 cover no overflow x
+PASS 390 continua: storage invariato
+PASS 390 continua scrolla
+PASS 390 continua → N°006 (N°006 · Venom)
+PASS 390 cap0 5 voci integre
+FAIL 390 cap0 tag 
+PASS 390 cap0 espandibile
+PASS 390 timeline no overflow x
+PASS 390 kangTvaGraphToggle statico
+PASS 390 kangTvaGraphToggle no gap/overflow
+PASS 390 kangTvaGraphToggle fondo raggiungibile
+PASS 390 relationshipGraphToggle statico
+PASS 390 relationshipGraphToggle no gap/overflow
+PASS 390 relationshipGraphToggle fondo raggiungibile
+PASS 390 universeTimelineToggle statico
+PASS 390 universeTimelineToggle no gap/overflow
+PASS 390 universeTimelineToggle fondo raggiungibile
+PASS 390 altTimelineToggle statico
+PASS 390 altTimelineToggle no gap/overflow
+PASS 390 altTimelineToggle fondo raggiungibile
+PASS 390 no errori JS
+PASS 393 atlante apre home
+PASS 393 dossier aperto
+PASS 393 timeline: atlas chiuso
+PASS 393 tab→ATLANTE torna a home
+PASS 393 dossier→Home→ATLANTE
+PASS 393 appTabMissioni→ATLANTE
+PASS 393 appTabTessera→ATLANTE
+PASS 393 appTabFriends→ATLANTE
+PASS 393 back da dossier
+PASS 393 cover<=300 (279)
+PASS 393 niente scorri/sigillo
+PASS 393 hamburger non sovrapposto
+PASS 393 cover no overflow x
+PASS 393 continua: storage invariato
+PASS 393 continua scrolla
+PASS 393 continua → N°006 (N°006 · Venom)
+PASS 393 cap0 5 voci integre
+FAIL 393 cap0 tag 
+PASS 393 cap0 espandibile
+PASS 393 timeline no overflow x
+PASS 393 kangTvaGraphToggle statico
+PASS 393 kangTvaGraphToggle no gap/overflow
+PASS 393 kangTvaGraphToggle fondo raggiungibile
+PASS 393 relationshipGraphToggle statico
+PASS 393 relationshipGraphToggle no gap/overflow
+PASS 393 relationshipGraphToggle fondo raggiungibile
+PASS 393 universeTimelineToggle statico
+PASS 393 universeTimelineToggle no gap/overflow
+PASS 393 universeTimelineToggle fondo raggiungibile
+PASS 393 altTimelineToggle statico
+PASS 393 altTimelineToggle no gap/overflow
+PASS 393 altTimelineToggle fondo raggiungibile
+PASS 393 no errori JS
+
+PASS 128 FAIL 4 ['320 cap0 tag', '375 cap0 tag', '390 cap0 tag', '393 cap0 tag']

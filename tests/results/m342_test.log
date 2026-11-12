@@ -1,0 +1,16 @@
+PASS standard: card Timeline == Home (Spider-Man)
+PASS standard invariato (Spider-Man)
+PASS cambio modalità -> custom (aggiornamento immediato): card Timeline == Home (The Amazing Spider-Man)
+PASS custom: The Amazing Spider-Man
+PASS riordino (prerequisito 001): card Timeline == Home (Spider-Man)
+PASS ritorno standard: card Timeline == Home (Spider-Man)
+PASS standard: Spider-Man
+PASS custom da storage: card Timeline == Home (The Amazing Spider-Man)
+PASS dopo completamento: card Timeline == Home (Spider-Man)
+PASS prerequisito: 001
+PASS persistenza dopo ricarica: card Timeline == Home (Spider-Man)
+PASS percorso concluso: Home «Tutto visto!» e card nascosta
+PASS nessun errore JS
+PASS sequenza vuota -> standard: card Timeline == Home (Spider-Man)
+PASS vuota: Spider-Man
+15 / 15

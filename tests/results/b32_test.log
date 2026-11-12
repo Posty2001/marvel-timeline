@@ -1,0 +1,137 @@
+PASS S0 nessun errore JS all'avvio
+PASS S1 struttura: Tessera in alto, poi PERSONALIZZA/CONDIVIDI, poi Carriera TVA e Collezione
+PASS S2 niente settima tab
+PASS H1 carta orizzontale presente, composizione stretta a 390
+PASS H2 mostra nickname, Variant ID, titolo, livello, XP, progresso
+PASS H3 Variant ID uguale a quello permanente esistente
+PASS H4 nessun dato riservato (UID/email/token/chiavi)
+PASS H5 tre badge scelti tra quelli ottenuti nella carta
+PASS H6 gerarchia: nickname più grande del Variant ID
+PASS V1 carta verticale: viewBox 720x1200 e contenuti distinti (non è la orizzontale ruotata)
+PASS V2 verticale senza dati privati
+PASS F1 12 cornici producono 12 disegni tutti diversi
+PASS F2 le cornici differiscono per geometria (anche eliminando i colori): 12 sagome distinte
+PASS F3 ogni cornice è leggera (< 18 KB) e senza filtri costosi
+PASS T1 10 temi producono 10 composizioni diverse
+PASS T2 palette riconoscibili: almeno 9 colori di accento/barra diversi
+PASS X1 6 effetti diversi tra loro e dal "nessuno", tutti con resa statica nel disegno
+PASS X2 effetti: nessun filtro SVG costoso e pochi elementi (< 80 nodi aggiunti)
+PASS X3 prefers-reduced-motion: nessuna animazione (resa statica); senza preferenza l'animazione c'è
+PASS K1 Carriera TVA riusa la scheda esistente (livello, XP, statistiche) senza duplicarla
+FAIL K2a Carriera: senza dati missioni calcolati, avviso (nessun calcolo forzato, nessun XP) 
+PASS K2 Carriera mostra le 4 missioni reali (dati esposti dalla Centrale, sola lettura) e i 14 distintivi, separati dalle 48 ricompense
+PASS K3 Carriera: niente identità duplicata (nome/ID/icona nascosti nella scheda)
+PASS K4 Collezione definitiva: 48 voci (20+12+10+6), nessuna ripetuta; il provvisorio 3.1 è sparito
+PASS K5 Collezione: intestazione con conteggio e voci distinte in sbloccate/bloccate
+FAIL E0 editor si apre con le cinque categorie 
+PASS E0b editor è un dialogo modale accessibile con focus dentro
+PASS A1 8 avatar predefiniti selezionabili, ognuno cambia l'anteprima
+PASS A2 avatar gratuiti: tutti disponibili (non fanno parte delle 48 ricompense)
+PASS P1 anteprima immediata nell'editor
+PASS P2 anteprima NON salva nulla: carta in-app, premi e look invariati
+PASS C1 Annulla chiude l'editor e ripristina le preferenze precedenti
+PASS C2 Annulla riporta il focus al pulsante PERSONALIZZA
+PASS G1 Salva: equipaggiati titolo/cornice/tema/effetto scelti (solo sbloccati)
+PASS G2 Salva: avatar nel look e carta in-app aggiornata
+PASS G3 una sola fonte di verità: equipaggiamento solo in tvaRewards (il look non lo duplica)
+PASS G4 la personalizzazione non tocca i dati di gioco (XP, livello, visti, missioni, badge)
+PASS R1 dopo riavvio: cosmetici, avatar e carta restano
+PASS B1 14 distintivi ottenuti proposti; massimo 3 selezionabili con avviso al quarto
+PASS B2 i 3 distintivi scelti compaiono nella carta e persistono
+PASS L1 profilo intermedio: cornici bloccate distinte da quelle disponibili (aria-disabled + stile)
+PASS L2 una voce bloccata mostra il requisito di sblocco (con avanzamento) e non viene selezionata
+PASS L3 equip diretto di una voce bloccata rifiutato dal sistema 3.1
+PASS L4 salvare dopo un tentativo su voce bloccata non cambia nulla
+PASS L5 effetti: "Nessuno" disponibile e selezionato per default
+PASS D1 profilo nuovo con preferenze incomplete/corrotte: carta valida con predefiniti, nessun errore
+PASS D2 senza badge: la carta lo dice senza inventare distintivi
+PASS D3 editor senza badge: messaggio informativo
+PASS PH0 nessuna foto salvata all'inizio (nessun caricamento automatico)
+PASS PH1 rifiuto controllato: note.txt
+PASS PH1 rifiuto controllato: a.svg
+PASS PH1 rifiuto controllato: fake.jpg
+PASS PH1 rifiuto controllato: huge.png
+PASS PH2 orientamento EXIF applicato (200x100 con orientamento 6 -> 100x200)
+PASS PH3 Annulla foto: nessuna foto, editor ancora aperto
+PASS PH4 immagine grande ridotta a lato massimo 1024 in memoria
+PASS PH5 zoom e spostamento dell'inquadratura funzionano
+PASS PH6 luminosità e contrasto applicati all'anteprima
+PASS PH7 Ripristina azzera zoom, luminosità, contrasto e inquadratura (non distruttivo)
+PASS PH8 Conferma: foto solo in bozza, niente salvato finché non si preme Salva
+PASS PH9 foto salvata localmente: JPEG 384x384 leggero (< 100 KB), nessuna richiesta di rete in uscita
+PASS PH10 la foto compare nella carta e il look la indica; il profilo/backup NON la contiene
+PASS PH11 dimensioni foto salvata 384x384
+PASS PH12 foto e scelta avatar persistono al riavvio
+PASS N1 tastiera: campo nome a 16px (niente zoom iOS) e anteprima nascosta durante la digitazione
+PASS N2 il nome salvato è lo stesso del campo storico (UserName) e della carta
+PASS PNG1 esportazione: PNG 1080x1800, opaco, non vuoto
+PASS PNG2 esportazione senza elementi UI: contiene solo la carta (sorgente SVG senza pulsanti/overlay/foreignObject/immagini esterne)
+PASS PNG3 carta verticale esportata include la foto locale, tema, cornice e effetto equipaggiati
+PASS SH1 modale Condividi: anteprima PNG reale (img) e pulsanti
+PASS SH2 senza condivisione nativa: pulsante Condividi nascosto, messaggio e fallback "Salva PNG"
+PASS SH3 "Salva PNG" scarica un file .png con il Variant ID nel nome
+PASS SH4 Esc chiude la finestra di condivisione e restituisce il focus
+PASS SH5 (emulato) con Web Share disponibile: pulsante Condividi attivo e condivide 1 file PNG
+PASS SH6 (emulato) share() riceve un File image/png
+PASS SH7 esportazione fallita: messaggio chiaro, nessun crash, nessun pulsante inutile
+PASS SH8 esportazione non assegna XP né modifica dati
+PASS Y1 sincronizzazione look: vince la scelta più recente
+PASS Y2 look valido solo se avatar/distintivi riconosciuti (sanitizzazione)
+PASS LN WWWWWW/wide: nessun testo fuori dalla carta
+PASS LN WWWWWW/compact: nessun testo fuori dalla carta
+PASS LN WWWWWW/vertical: nessun testo fuori dalla carta
+PASS LN Maximi/wide: nessun testo fuori dalla carta
+PASS LN Maximi/compact: nessun testo fuori dalla carta
+PASS LN Maximi/vertical: nessun testo fuori dalla carta
+PASS LN ÀÈÌÒÙ /wide: nessun testo fuori dalla carta
+PASS LN ÀÈÌÒÙ /compact: nessun testo fuori dalla carta
+PASS LN ÀÈÌÒÙ /vertical: nessun testo fuori dalla carta
+PASS LN iiiiii/wide: nessun testo fuori dalla carta
+PASS LN iiiiii/compact: nessun testo fuori dalla carta
+PASS LN iiiiii/vertical: nessun testo fuori dalla carta
+PASS W320 overflow orizzontale assente e carta interamente visibile
+PASS W320 testo più piccolo della carta >= 8.9px (composizione dedicata: compact)
+PASS W320 pulsanti PERSONALIZZA/CONDIVIDI >= 44px di altezza
+PASS W320 editor a schermo intero, senza overflow orizzontale, controlli entro lo schermo, target >= 43px
+PASS W320 tutti i pannelli senza overflow orizzontale
+PASS W320 chiusura editor: Tessera ancora aperta, carta intatta, nessun editor residuo
+PASS W320 finestra Condividi: PNG interamente visibile, pulsanti >=44px, nessun overflow
+PASS W375 overflow orizzontale assente e carta interamente visibile
+PASS W375 testo più piccolo della carta >= 8.9px (composizione dedicata: compact)
+PASS W375 pulsanti PERSONALIZZA/CONDIVIDI >= 44px di altezza
+PASS W375 editor a schermo intero, senza overflow orizzontale, controlli entro lo schermo, target >= 43px
+PASS W375 tutti i pannelli senza overflow orizzontale
+PASS W375 chiusura editor: Tessera ancora aperta, carta intatta, nessun editor residuo
+PASS W390 overflow orizzontale assente e carta interamente visibile
+PASS W390 testo più piccolo della carta >= 8.9px (composizione dedicata: compact)
+PASS W390 pulsanti PERSONALIZZA/CONDIVIDI >= 44px di altezza
+PASS W390 editor a schermo intero, senza overflow orizzontale, controlli entro lo schermo, target >= 43px
+PASS W390 tutti i pannelli senza overflow orizzontale
+PASS W390 chiusura editor: Tessera ancora aperta, carta intatta, nessun editor residuo
+PASS W393 overflow orizzontale assente e carta interamente visibile
+PASS W393 testo più piccolo della carta >= 8.9px (composizione dedicata: compact)
+PASS W393 pulsanti PERSONALIZZA/CONDIVIDI >= 44px di altezza
+PASS W393 editor a schermo intero, senza overflow orizzontale, controlli entro lo schermo, target >= 43px
+PASS W393 tutti i pannelli senza overflow orizzontale
+PASS W393 chiusura editor: Tessera ancora aperta, carta intatta, nessun editor residuo
+PASS W393 finestra Condividi: PNG interamente visibile, pulsanti >=44px, nessun overflow
+PASS W430 overflow orizzontale assente e carta interamente visibile
+PASS W430 testo più piccolo della carta >= 8.9px (composizione dedicata: compact)
+PASS W430 pulsanti PERSONALIZZA/CONDIVIDI >= 44px di altezza
+PASS W430 editor a schermo intero, senza overflow orizzontale, controlli entro lo schermo, target >= 43px
+PASS W430 tutti i pannelli senza overflow orizzontale
+PASS W430 chiusura editor: Tessera ancora aperta, carta intatta, nessun editor residuo
+PASS W1280 overflow orizzontale assente e carta interamente visibile
+PASS W1280 testo più piccolo della carta >= 8.9px (composizione dedicata: wide)
+PASS W1280 pulsanti PERSONALIZZA/CONDIVIDI >= 44px di altezza
+PASS W1280 editor a schermo intero, senza overflow orizzontale, controlli entro lo schermo, target >= 43px
+PASS W1280 tutti i pannelli senza overflow orizzontale
+PASS W1280 chiusura editor: Tessera ancora aperta, carta intatta, nessun editor residuo
+PASS FT1 focus trap: il Tab resta dentro l'editor
+PASS FT2 Esc chiude l'editor senza salvare
+PASS FT3 uscendo dalla Tessera con editor aperto, l'editor viene annullato (nessuna bozza residua)
+PASS FT4 sicurezza area sicura/tastiera: regole CSS env(safe-area-inset-*) presenti per editor e finestre (verifica statica, non su dispositivo)
+
+PASS 131 FAIL 2 ['K2a Carriera: senza dati missioni calcolati, avviso (nessun calcolo forzato, nessun XP)', 'E0 editor si apre con le cinque categorie']
+/tmp/tva_suite_b32_test_2vgz65c2/b32_test.py:201: SyntaxWarning: invalid escape sequence '\)'
+  ok('PNG3 carta verticale esportata include la foto locale, tema, cornice e effetto equipaggiati',pg.evaluate("()=>{const s=tvaTessera.buildSvg('vertical');return s.includes('<image')&&s.includes('data:image/jpeg')&&/nx\)/.test(s)&&s.includes('E5C879')&&s.includes('tc-fx')}"))

@@ -1,0 +1,53 @@
+{'n': 2986, 'kinds': {'item': 857, 'filter': 22, 'uni': 761, 'char': 978, 'arc': 368}, 'bad': [], 'nb': 0, 'tvaIdx': True, 'back': True, 'lkItems': 0, 'uniCards': 27}
+PASS tutti i data-go puntano a un ID esistente 
+PASS 27 schede universo arricchite 
+PASS link N° verso titoli 
+PASS nessun errore JS 
+PASS X-Men97: anim = atlas 
+PASS scheda 125 ha chip Earth-828 
+{'a2': True, 'classic': False, 'tab': 'atlante', 'back': True, 'depth': 1, 'scr': 'uni', 'uid': 'uni-earth-828'}
+PASS Timeline→Universo apre Atlante 2.0 sulla scheda 
+PASS scheda universo→titolo 125 
+{'a2': False, 'tab': 'timeline', 'depth': 3, 'top': 0, 'open': True}
+PASS Universo→Film apre la Timeline sulla scheda 
+PASS Back 1 → scheda universo 2.0 
+PASS Back 2 → Timeline stessa posizione (scheda 125) 
+PASS Peter Parker ha link N°089 
+Traceback (most recent call last):
+  File "/tmp/tva_suite_net_test_l8sreev7/net_test.py", line 60, in <module>
+    a.scroll_into_view_if_needed(); a.click(); pg.wait_for_timeout(900)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/sync_api/_generated.py", line 2021, in scroll_into_view_if_needed
+    self._sync(self._impl_obj.scroll_into_view_if_needed(timeout=timeout))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_element_handle.py", line 113, in scroll_into_view_if_needed
+    await self._channel.send(
+        "scrollIntoViewIfNeeded", self._frame._timeout, locals_to_params(locals())
+    )
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: ElementHandle.scroll_into_view_if_needed: Timeout 8000ms exceeded.
+Call log:
+  - attempting scroll into view action
+    2 × waiting for element to be stable
+      - element is not visible
+    - retrying scroll into view action
+    - waiting 20ms
+    2 × waiting for element to be stable
+      - element is not visible
+    - retrying scroll into view action
+      - waiting 100ms
+    15 × waiting for element to be stable
+       - element is not visible
+     - retrying scroll into view action
+       - waiting 500ms
+

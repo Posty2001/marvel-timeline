@@ -1,0 +1,15 @@
+PASS 1 export contiene customOrder [5, 2, 9, 1, 3]
+PASS 2 export senza ordine: campo vuoto {}
+PASS 3 import: ordine ripristinato [5,2,9,1,3]
+PASS 3b import: titoli visti e note del file presenti ['{"001":true}', '{"001":"nota"}']
+PASS 4 vecchio backup: ordine locale conservato [5, 2, 9, 1, 3]
+PASS 4b vecchio backup: profilo sostituito (watched del file) {"040":true}
+PASS 5 import rifiutato (stringa): nessuna modifica ['[7, 8]', '{"002": true}']
+PASS 5 import rifiutato (duplicati): nessuna modifica ['[7, 8]', '{"002": true}']
+PASS 5 import rifiutato (non intero): nessuna modifica ['[7, 8]', '{"002": true}']
+PASS 5 import rifiutato (testo nell elenco): nessuna modifica ['[7, 8]', '{"002": true}']
+PASS 5 import rifiutato (troppo lungo): nessuna modifica ['[7, 8]', '{"002": true}']
+PASS 6 ordine vuoto esplicito: rimosso 
+PASS 7 atGetCustomOrder invariato (chiave originale) 
+PASS 8 nessun errore JS []
+TOT 14 / 14

@@ -1,0 +1,15 @@
+tab ['appTabHome', 'appTabTimeline', 'appTabAtlante', 'appTabMissioni', 'appTabTessera', 'appTabFriends']
+PASS CSP: nessuna violazione nei flussi principali (tab, Atlante, Timeline, poster) 
+PASS nessun errore JS 
+PASS CSP: object-src none, base-uri self, niente unsafe-eval 
+PASS CSP: script-src senza wildcard 
+PASS CSP attiva: script da origine esterna non consentita bloccato 
+a11y {"total": 75, "noname": [], "clickDiv": 0, "imgs": 0}
+PASS a11y: controlli visibili senza nome accessibile 
+PASS a11y: immagini visibili senza attributo alt 
+PASS tastiera: Home, 16 Tab -> almeno 10 tappe 
+PASS tastiera: nessuna tappa nel menu laterale chiuso (fuori schermo) 
+PASS menu: Invio sul pulsante apre il menu 
+PASS menu: Esc chiude, aria-expanded=false, menu escluso dal focus 
+PASS menu: apertura con tocco/clic invariata 
+FAILS 0 []

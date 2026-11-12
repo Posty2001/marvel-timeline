@@ -1,0 +1,94 @@
+PASS 320 barra: 6 voci, ordine e id invariati
+PASS 320 barra: «Centrale TVA» al posto di Missioni
+PASS 320 barra: etichette dentro la propria voce
+PASS 320 barra: altezza ragionevole (56px)
+PASS 320 Timeline: nascosti dashboard/database/bollettino/footer/foot-mark
+PASS 320 Timeline: visibili cover, indice, controlli, capitoli
+PASS 320 Timeline: indice subito dopo la copertina, prima di controlli e capitoli
+PASS 320 DOM intatto: schede/varianti/Cap.0 ([138, 139, 5])
+PASS 320 Timeline fondo: ultimo contenuto sopra la barra
+PASS 320 Centrale [B2: intenzionale] dashboard e bollettino (in Panoramica) visibili, database/Atlante fuori dalla Centrale; capitoli nascosti
+PASS 320 Centrale [B2: intenzionale] strumenti di gestione raggiungibili in Operazioni
+PASS 320 Centrale: missioni popolate
+PASS 320 Timeline di nuovo: dashboard nascosta
+PASS 320 link #dashboard apre la Centrale
+PASS 320 scroll a un titolo dalla Centrale riporta alla Timeline
+PASS 320 scroll alla dashboard dalla Timeline apre la Centrale
+FAIL 320 card: stelle subito sotto il titolo, prima dei dettagli {'gapTitle': -45.59375, 'firstChild': False, 'border': ['0px', '0px', 'none', 'rgba(0, 0, 0, 0)'], 'labelVisible': False, 'beforeInfo': True, 'aria': True, 'labTxt': 'La tua valutazione'}
+PASS 320 card: nessun riquadro «La tua valutazione» visibile (etichetta solo per screen reader)
+PASS 320 card: spaziatura righe dettaglio ridotta (8 px)
+PASS 320 card: sezioni espandibili ['📜 Trama', '✨ Curiosità', '🎬 Dietro le quinte', '🔗 Collegamenti']
+PASS 320 card: widget dentro la scheda, no overflow x
+PASS 320 titolo gruppo: flex-wrap, id non spezzato, nessun overflow
+PASS 320 nessun errore JS
+PASS 375 barra: 6 voci, ordine e id invariati
+PASS 375 barra: «Centrale TVA» al posto di Missioni
+PASS 375 barra: etichette dentro la propria voce
+PASS 375 barra: altezza ragionevole (56px)
+PASS 375 Timeline: nascosti dashboard/database/bollettino/footer/foot-mark
+PASS 375 Timeline: visibili cover, indice, controlli, capitoli
+PASS 375 Timeline: indice subito dopo la copertina, prima di controlli e capitoli
+PASS 375 DOM intatto: schede/varianti/Cap.0 ([138, 139, 5])
+PASS 375 Timeline fondo: ultimo contenuto sopra la barra
+PASS 375 Centrale [B2: intenzionale] dashboard e bollettino (in Panoramica) visibili, database/Atlante fuori dalla Centrale; capitoli nascosti
+PASS 375 Centrale [B2: intenzionale] strumenti di gestione raggiungibili in Operazioni
+PASS 375 Centrale: missioni popolate
+PASS 375 Timeline di nuovo: dashboard nascosta
+PASS 375 link #dashboard apre la Centrale
+PASS 375 scroll a un titolo dalla Centrale riporta alla Timeline
+PASS 375 scroll alla dashboard dalla Timeline apre la Centrale
+FAIL 375 card: stelle subito sotto il titolo, prima dei dettagli {'gapTitle': -45.59375, 'firstChild': False, 'border': ['0px', '0px', 'none', 'rgba(0, 0, 0, 0)'], 'labelVisible': False, 'beforeInfo': True, 'aria': True, 'labTxt': 'La tua valutazione'}
+PASS 375 card: nessun riquadro «La tua valutazione» visibile (etichetta solo per screen reader)
+PASS 375 card: spaziatura righe dettaglio ridotta (8 px)
+PASS 375 card: sezioni espandibili ['📜 Trama', '✨ Curiosità', '🎬 Dietro le quinte', '🔗 Collegamenti']
+PASS 375 card: widget dentro la scheda, no overflow x
+PASS 375 titolo gruppo: flex-wrap, id non spezzato, nessun overflow
+PASS 375 nessun errore JS
+PASS 390 barra: 6 voci, ordine e id invariati
+PASS 390 barra: «Centrale TVA» al posto di Missioni
+PASS 390 barra: etichette dentro la propria voce
+PASS 390 barra: altezza ragionevole (56px)
+PASS 390 Timeline: nascosti dashboard/database/bollettino/footer/foot-mark
+PASS 390 Timeline: visibili cover, indice, controlli, capitoli
+PASS 390 Timeline: indice subito dopo la copertina, prima di controlli e capitoli
+PASS 390 DOM intatto: schede/varianti/Cap.0 ([138, 139, 5])
+PASS 390 Timeline fondo: ultimo contenuto sopra la barra
+PASS 390 Centrale [B2: intenzionale] dashboard e bollettino (in Panoramica) visibili, database/Atlante fuori dalla Centrale; capitoli nascosti
+PASS 390 Centrale [B2: intenzionale] strumenti di gestione raggiungibili in Operazioni
+PASS 390 Centrale: missioni popolate
+PASS 390 Timeline di nuovo: dashboard nascosta
+PASS 390 link #dashboard apre la Centrale
+PASS 390 scroll a un titolo dalla Centrale riporta alla Timeline
+PASS 390 scroll alla dashboard dalla Timeline apre la Centrale
+FAIL 390 card: stelle subito sotto il titolo, prima dei dettagli {'gapTitle': -45.59375, 'firstChild': False, 'border': ['0px', '0px', 'none', 'rgba(0, 0, 0, 0)'], 'labelVisible': False, 'beforeInfo': True, 'aria': True, 'labTxt': 'La tua valutazione'}
+PASS 390 card: nessun riquadro «La tua valutazione» visibile (etichetta solo per screen reader)
+PASS 390 card: spaziatura righe dettaglio ridotta (8 px)
+PASS 390 card: sezioni espandibili ['📜 Trama', '✨ Curiosità', '🎬 Dietro le quinte', '🔗 Collegamenti']
+PASS 390 card: widget dentro la scheda, no overflow x
+PASS 390 titolo gruppo: flex-wrap, id non spezzato, nessun overflow
+PASS 390 nessun errore JS
+PASS 393 barra: 6 voci, ordine e id invariati
+PASS 393 barra: «Centrale TVA» al posto di Missioni
+PASS 393 barra: etichette dentro la propria voce
+PASS 393 barra: altezza ragionevole (56px)
+PASS 393 Timeline: nascosti dashboard/database/bollettino/footer/foot-mark
+PASS 393 Timeline: visibili cover, indice, controlli, capitoli
+PASS 393 Timeline: indice subito dopo la copertina, prima di controlli e capitoli
+PASS 393 DOM intatto: schede/varianti/Cap.0 ([138, 139, 5])
+PASS 393 Timeline fondo: ultimo contenuto sopra la barra
+PASS 393 Centrale [B2: intenzionale] dashboard e bollettino (in Panoramica) visibili, database/Atlante fuori dalla Centrale; capitoli nascosti
+PASS 393 Centrale [B2: intenzionale] strumenti di gestione raggiungibili in Operazioni
+PASS 393 Centrale: missioni popolate
+PASS 393 Timeline di nuovo: dashboard nascosta
+PASS 393 link #dashboard apre la Centrale
+PASS 393 scroll a un titolo dalla Centrale riporta alla Timeline
+PASS 393 scroll alla dashboard dalla Timeline apre la Centrale
+FAIL 393 card: stelle subito sotto il titolo, prima dei dettagli {'gapTitle': -45.59375, 'firstChild': False, 'border': ['0px', '0px', 'none', 'rgba(0, 0, 0, 0)'], 'labelVisible': False, 'beforeInfo': True, 'aria': True, 'labTxt': 'La tua valutazione'}
+PASS 393 card: nessun riquadro «La tua valutazione» visibile (etichetta solo per screen reader)
+PASS 393 card: spaziatura righe dettaglio ridotta (8 px)
+PASS 393 card: sezioni espandibili ['📜 Trama', '✨ Curiosità', '🎬 Dietro le quinte', '🔗 Collegamenti']
+PASS 393 card: widget dentro la scheda, no overflow x
+PASS 393 titolo gruppo: flex-wrap, id non spezzato, nessun overflow
+PASS 393 nessun errore JS
+
+PASS 88 FAIL 4 ['320 card: stelle subito sotto il titolo, prima dei dettagli', '375 card: stelle subito sotto il titolo, prima dei dettagli', '390 card: stelle subito sotto il titolo, prima dei dettagli', '393 card: stelle subito sotto il titolo, prima dei dettagli']

@@ -1,0 +1,98 @@
+# Friends 2.0 + Tessera 3.0 integrati: navigazione, Sala storica, assenza Arena, layout 320/390/412/768. Emulazione Chromium (NON iPhone reale).
+import sys,os,re,json
+os.environ.setdefault('Q_ROOT',os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'_qcommon.py')).read())
+srv,base=start_server()
+ROOT_=os.environ['Q_ROOT']
+VIS="(s)=>{const e=document.querySelector(s);if(!e)return null;if(e.hidden)return false;const c=getComputedStyle(e);if(c.display==='none'||c.visibility==='hidden')return false;const r=e.getBoundingClientRect();return r.width>0&&r.height>0}"
+def home(pg):
+    pg.evaluate("document.getElementById('appTabHome').click()");pg.wait_for_timeout(500)
+# ---------- statico: nessuna dipendenza Arena ----------
+src=open(os.path.join(ROOT_,'index.html'),encoding='utf-8').read()
+hits=[m.group(0) for m in re.finditer(r'.{25}arena.{25}',src,re.I|re.S)]
+ck(all('Battleworld' in h or 'chrono' in h or 'Secret Wars' in h or 'scontrare' in h for h in hits) ,'A0 nessun riferimento Arena nel codice (residui ammessi: solo testo fumetti): %d'%len(hits),hits)
+ck(not re.search(r'tvaArena|appTabArena|tva-arena|tf-arena-mode|openArena|tva_arena|readArenaQuizWins|multiverse-arena',src),'A0b nessun id/classe/chiave/funzione Arena')
+ck(not os.path.exists(os.path.join(ROOT_,'multiverse-arena')),'A0c cartella multiverse-arena assente dal pacchetto')
+with sync_playwright() as p:
+    b=p.chromium.launch()
+    c=newctx(b);pg=c.new_page();errs=[];reqs=[]
+    pg.on('pageerror',lambda e:errs.append(str(e)[:150]));pg.on('request',lambda r:reqs.append(r.url))
+    enter(pg,base);home(pg)
+    bar=pg.evaluate("[...document.querySelectorAll('#appTabbar .app-tab')].map(e=>e.id)")
+    ck(bar==['appTabHome','appTabTimeline','appTabAtlante','appTabMissioni','appTabTessera','appTabFriends'],'N1 barra: 6 voci, nessuna voce Arena',bar)
+    api=pg.evaluate("Object.keys(window.tvaFriends).sort()")
+    ck(sorted(api)==sorted(['cloudEnabled','close','leave','open','unread','version']),'A1 API tvaFriends senza Arena',api)
+    ck(pg.evaluate("window.tvaFriends.cloudEnabled()") is False,'A2 Friends Cloud disattivo (CLOUD_ENABLED=false)')
+    ck(pg.evaluate("Object.keys(localStorage).filter(k=>/arena/i.test(k)).length")==0,'A3 nessuna chiave localStorage Arena')
+    # Home: due card sotto il saluto
+    g=pg.evaluate("(()=>{const q=s=>{const r=document.querySelector(s).getBoundingClientRect();return {t:r.top,b:r.bottom,l:r.left,w:r.width,h:r.height}};return {g:q('.home-hub-greeting'),p:q('#homeHubPlay'),s:q('#homeHubSummary'),a:q('#hhPlayQuiz'),r:q('#hhPlayRank')}})()")
+    ck(g['p']['t']>=g['g']['b']-1 and g['p']['b']<=g['s']['t']+1,'H1 card Home subito sotto il saluto e sopra "Prossimo titolo"',g)
+    ck(abs(g['a']['t']-g['r']['t'])<2 and abs(g['a']['w']-g['r']['w'])<3 and g['a']['l']<g['r']['l'],'H2 Quiz Marvel e TVA Rankings affiancate, stessa larghezza')
+    ck(pg.evaluate("document.querySelectorAll('#homeHubPlay > *').length")==2 and 'Friends' not in pg.evaluate("document.getElementById('homeHubPlay').textContent"),'H3 solo due card, nessuna card Friends in Home')
+    ck(pg.get_attribute('#hhPlayQuiz','href')=='./quiz/','H4 card Quiz porta a ./quiz/')
+    pg.click('#hhPlayRank');pg.wait_for_timeout(900)
+    ck(pg.evaluate(VIS,'#rkRoot'),'H5 card Rankings apre TVA Rankings (R1-R3 invariati)')
+    pg.evaluate("window.tvaRankingsUI.close()");pg.wait_for_timeout(300)
+    # launcher storici Quiz/Rankings ancora in Operazioni, nessun Friends
+    pg.evaluate("document.getElementById('appTabMissioni').click()");pg.wait_for_timeout(700)
+    ck(pg.evaluate("!!document.getElementById('quizLauncher')&&!!document.getElementById('rkLauncher')"),'N2 Quiz e Rankings restano anche in Centrale TVA > Operazioni')
+    ck(pg.evaluate("!document.getElementById('tfLauncher')&&!document.getElementById('tfOpen')"),'N3 nessuna card Friends in Centrale TVA > Operazioni')
+    # barra FRIENDS -> Friends 2.0 (non la vecchia sala)
+    pg.evaluate("document.getElementById('appTabFriends').click()");pg.wait_for_timeout(900)
+    ck(pg.evaluate(VIS,'#tfRoot') and not pg.evaluate("document.getElementById('friendsToggle').checked"),'N4 FRIENDS in barra apre Friends 2.0, non la Sala storica')
+    tabs=pg.evaluate("[...document.querySelectorAll('#tfRoot .tf-tab')].map(e=>e.getAttribute('data-tab'))")
+    ck(tabs==['varianti','nexus','squadre','serate','sfide','archivio','com'],'N5 Friends: 7 schede incl. Quiz e Duelli (sfide)',tabs)
+    ck(pg.evaluate("document.getElementById('tfHeading').textContent")=='Friends' and 'Arena' not in pg.evaluate("document.getElementById('tfRoot').innerText"),'N6 intestazione Friends, nessun testo Arena')
+    pg.evaluate("document.getElementById('tfTab-sfide').click()");pg.wait_for_timeout(500)
+    t=pg.evaluate("document.getElementById('tfBody').innerText")
+    ck('quiz singolo' in t.lower() and 'duelli' in t.lower() and pg.evaluate("!!document.getElementById('tfSolo5')&&!!document.getElementById('tfDuelNew')"),'N7 Quiz e Duelli dentro Friends (quiz singolo + duelli)')
+    xp0=pg.evaluate("[localStorage.getItem('marvel-ultimate-timeline-missioni-xp-bonus'),localStorage.getItem('marvel-ultimate-timeline-badges-earned')]")
+    pg.evaluate("document.getElementById('tfSolo5').click()");pg.wait_for_timeout(600)
+    ck(pg.evaluate(VIS,'#tfGame'),'N8 quiz singolo si avvia')
+    pg.evaluate("document.getElementById('tfTab-sfide').click()");pg.wait_for_timeout(300)
+    xp1=pg.evaluate("[localStorage.getItem('marvel-ultimate-timeline-missioni-xp-bonus'),localStorage.getItem('marvel-ultimate-timeline-badges-earned')]")
+    ck(xp0==xp1 and pg.evaluate("Object.keys(localStorage).filter(k=>/quiz.*wins|arena/i.test(k)).length")==0,'N9 il quiz in Friends non tocca XP/badge e non usa il ponte Quiz LAB',[xp0,xp1])
+    # Sala storica da Archivio
+    pg.evaluate("document.getElementById('tfTab-archivio').click()");pg.wait_for_timeout(400)
+    ck(pg.evaluate(VIS,'#tfSalaOpen'),'S1 Friends > Archivio: voce Sala storica presente')
+    pg.evaluate("document.getElementById('tfSalaOpen').click()");pg.wait_for_timeout(900)
+    ck(pg.evaluate("document.getElementById('friendsToggle').checked")and pg.evaluate(VIS,'#liveRoomBox') and not pg.evaluate(VIS,'#tfRoot'),'S2 la voce apre la Sala storica (Live Room + gruppi) e chiude Friends 2.0')
+    # dalla Sala: FRIENDS in barra torna a Friends 2.0
+    pg.evaluate("document.getElementById('appTabFriends').click()");pg.wait_for_timeout(900)
+    ck(pg.evaluate(VIS,'#tfRoot') and not pg.evaluate("document.getElementById('friendsToggle').checked"),'S3 dalla Sala storica, FRIENDS in barra riapre Friends 2.0 (nessuna versione concorrente)')
+    pg.evaluate("tvaFriends.close()");pg.wait_for_timeout(300)
+    # dalla Tessera
+    pg.evaluate("document.getElementById('appTabTessera').click()");pg.wait_for_timeout(900)
+    ck(pg.evaluate("!!document.getElementById('tesseraFriendsLink')"),'S4 la Tessera ha il collegamento alla Sala storica')
+    pg.evaluate("document.getElementById('tesseraFriendsLink').click()");pg.wait_for_timeout(900)
+    ck(pg.evaluate("document.getElementById('friendsToggle').checked")and pg.evaluate(VIS,'#liveRoomBox'),'S5 dal collegamento della Tessera si apre la Sala storica')
+    ck(not [u for u in reqs if re.search(r'arena',u,re.I)],'A4 nessuna richiesta di rete verso risorse Arena',[u for u in reqs if re.search(r'arena',u,re.I)])
+    ck(not errs,'E0 nessun errore JavaScript nel percorso',errs)
+    c.close()
+    # ---------- layout ----------
+    for W,H in [(320,568),(390,844),(412,915),(768,1024)]:
+        c=newctx(b,W,H);pg=c.new_page();errs=[]
+        pg.on('pageerror',lambda e:errs.append(str(e)[:150]))
+        enter(pg,base);home(pg)
+        ov=lambda:pg.evaluate("document.documentElement.scrollWidth-innerWidth")
+        ck(ov()<=0,'L%d-1 Home: nessun overflow orizzontale'%W,ov())
+        sm=pg.evaluate("[...document.querySelectorAll('#homeHubPlay .hh-play,#appTabbar .app-tab')].map(e=>{const r=e.getBoundingClientRect();return [e.id||e.className,Math.round(r.width),Math.round(r.height)]}).filter(x=>x[1]<44||x[2]<44)")
+        ck(not sm,'L%d-2 Home: card e barra con area touch >= 44px'%W,sm)
+        trunc=pg.evaluate("[...document.querySelectorAll('#homeHubPlay b,#homeHubPlay small')].filter(e=>e.scrollWidth>e.clientWidth+1).map(e=>e.textContent)")
+        ck(not trunc,'L%d-3 Home: nessun testo delle card troncato'%W,trunc)
+        pb=pg.evaluate("(()=>{const r=document.getElementById('homeHubPlay').getBoundingClientRect(),bar=document.getElementById('appTabbar').getBoundingClientRect();return r.bottom<=bar.top})()")
+        ck(pb or W>=768,'L%d-4 Home: le due card sono sopra la barra senza scorrere'%W)
+        pg.evaluate("document.getElementById('appTabFriends').click()");pg.wait_for_timeout(700)
+        for tb in ['varianti','nexus','squadre','serate','sfide','archivio','com']:
+            pg.evaluate("t=>document.getElementById('tfTab-'+t).click()",tb);pg.wait_for_timeout(250)
+            o=pg.evaluate("(()=>{const r=document.getElementById('tfRoot');const bad=[...r.querySelectorAll('#tfBody *')].filter(e=>{const b=e.getBoundingClientRect();return b.width>0&&(b.right>innerWidth+1)&&!e.closest('.tf-scroll,.tf-ep-tabs,pre,textarea')});return {sw:document.documentElement.scrollWidth-innerWidth,bad:bad.slice(0,3).map(e=>e.tagName+'.'+e.className)}})()")
+            ck(o['sw']<=0 and not o['bad'],'L%d-F %s: nessun overflow orizzontale'%(W,tb),o)
+        pg.evaluate("document.getElementById('tfTab-archivio').click()");pg.wait_for_timeout(300)
+        sm=pg.evaluate("['tfSalaOpen','tfBkFile'].map(i=>{const e=document.getElementById(i);if(!e)return [i,0,0];const r=e.getBoundingClientRect();return [i,Math.round(r.width),Math.round(r.height)]}).filter(x=>x[2]<44)")
+        ck(not sm,'L%d-5 Archivio: Sala storica e ripristino file con touch >= 44px'%W,sm)
+        bb=pg.evaluate("(()=>{const bar=document.querySelector('#tfRoot .tva-ov-bar'),body=document.getElementById('tfBody');if(!bar)return 'nobar';return body.getBoundingClientRect().bottom<=bar.getBoundingClientRect().top+1})()")
+        ck(bb is True,'L%d-6 Friends: il contenuto non finisce sotto la barra'%W,bb)
+        ck(not errs,'L%d-7 nessun errore JavaScript'%W,errs)
+        c.close()
+    b.close()
+summary()

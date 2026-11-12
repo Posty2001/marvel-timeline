@@ -1,0 +1,58 @@
+PASS build: CLOUD_ENABLED=false e ACCT_SYNC_ENABLED=false 
+PASS runtime: tvaFriends.cloudEnabled falso 
+PASS UI: nota cloud non attivo 
+PASS UI: nessun comando cloud esposto 
+PASS F-A2/F-A3: connect/backupNow inerti (stato invariato) 
+PASS rete: nessuna richiesta dati/auth Firebase (il solo SDK statico e' baseline F-A1) 
+PASS rete: nessun percorso handles/inbox/users 
+Traceback (most recent call last):
+  File "/tmp/tva_suite_friends_release_test_82ybn3qv/friends_release_test.py", line 66, in <module>
+    pg.evaluate("()=>tvaFriends.open('varianti')"); pg.wait_for_timeout(200); pg.fill('#tfName','Alice'); pg.click('#tfSaveMe'); pg.wait_for_timeout(200)
+                                                                              ~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/sync_api/_generated.py", line 10142, in fill
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.fill(
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        )
+        ^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_page.py", line 896, in fill
+    return await self._main_frame.fill(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_frame.py", line 590, in fill
+    await self._fill(**locals_to_params(locals()))
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_frame.py", line 602, in _fill
+    await self._channel.send("fill", self._timeout, locals_to_params(locals()))
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#tfName")
+    - locator resolved to <input value="" type="text" id="tfName" class="tf-in" maxlength="20" autocomplete="off" aria-label="Nome Variante"/>
+    - fill("Alice")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not visible
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not visible
+    - retrying fill action
+      - waiting 100ms
+    59 × waiting for element to be visible, enabled and editable
+       - element is not visible
+     - retrying fill action
+       - waiting 500ms
+

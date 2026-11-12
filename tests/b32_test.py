@@ -77,7 +77,7 @@ with sync_playwright() as p:
     # ---- editor: apertura / struttura ----
     base=sig(pg)
     pg.click('#tcPersonalizzaBtn'); pg.wait_for_timeout(400)
-    ok('E0 editor si apre con le cinque categorie',pg.evaluate("()=>[...document.querySelectorAll('#tcEdTabs .tc-tab')].map(x=>x.textContent).join(',')")=='Avatar,Titoli,Cornici,Temi,Effetti')
+    ok('E0 editor si apre con le sei categorie (Tessera 3.0: Stile)',pg.evaluate("()=>[...document.querySelectorAll('#tcEdTabs .tc-tab')].map(x=>x.textContent).join(',')")=='Avatar,Stile,Titoli,Cornici,Temi,Effetti')
     ok('E0b editor è un dialogo modale accessibile con focus dentro',pg.evaluate("()=>{const r=document.getElementById('tcEditor');return r.getAttribute('role')==='dialog'&&r.getAttribute('aria-modal')==='true'&&r.contains(document.activeElement)}"))
     pg.screenshot(path='/tmp/o_editor_avatar390.png')
     # ---- 13 avatar predefiniti ----

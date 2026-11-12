@@ -1,0 +1,42 @@
+PASS [390] primo accesso: introduzione visibile, onboarding nascosto
+PASS [390] step 1: l'introduzione e' smontata e solo l'onboarding e' visibile
+PASS [390] step 2 «Registrazione completata»: unica schermata
+PASS [390] testo registrazione presente e nessun «Inizia il viaggio» visibile
+PASS [390] viewport dinamica 754: ancora unica schermata
+PASS [390] viewport dinamica 844: ancora unica schermata
+PASS [390] viewport dinamica 784: ancora unica schermata
+PASS [390] pulsante «Inizia la timeline» raggiungibile e >=44px
+PASS [390] «Inizia la timeline» funziona: onboarding chiuso, home hub visibile, intro assente
+PASS [390] dopo refresh: solo introduzione, nessun residuo di stato
+PASS [390] accesso successivo: unica schermata
+PASS [390] accesso successivo: entra nella home
+PASS [390] nessun errore JS
+PASS [320] primo accesso: introduzione visibile, onboarding nascosto
+PASS [320] step 1: l'introduzione e' smontata e solo l'onboarding e' visibile
+PASS [320] step 2 «Registrazione completata»: unica schermata
+PASS [320] testo registrazione presente e nessun «Inizia il viaggio» visibile
+PASS [320] viewport dinamica 478: ancora unica schermata
+PASS [320] viewport dinamica 568: ancora unica schermata
+PASS [320] viewport dinamica 508: ancora unica schermata
+PASS [320] pulsante «Inizia la timeline» raggiungibile e >=44px
+PASS [320] «Inizia la timeline» funziona: onboarding chiuso, home hub visibile, intro assente
+PASS [320] dopo refresh: solo introduzione, nessun residuo di stato
+PASS [320] accesso successivo: unica schermata
+PASS [320] accesso successivo: entra nella home
+PASS [320] nessun errore JS
+PASS [430] primo accesso: introduzione visibile, onboarding nascosto
+PASS [430] step 1: l'introduzione e' smontata e solo l'onboarding e' visibile
+PASS [430] step 2 «Registrazione completata»: unica schermata
+PASS [430] testo registrazione presente e nessun «Inizia il viaggio» visibile
+PASS [430] viewport dinamica 842: ancora unica schermata
+PASS [430] viewport dinamica 932: ancora unica schermata
+PASS [430] viewport dinamica 872: ancora unica schermata
+PASS [430] pulsante «Inizia la timeline» raggiungibile e >=44px
+PASS [430] «Inizia la timeline» funziona: onboarding chiuso, home hub visibile, intro assente
+PASS [430] dopo refresh: solo introduzione, nessun residuo di stato
+PASS [430] accesso successivo: unica schermata
+PASS [430] accesso successivo: entra nella home
+PASS [430] nessun errore JS
+PASS reduced-motion: unica schermata
+
+PASS 40 FAIL 0 []

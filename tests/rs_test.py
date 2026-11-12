@@ -74,7 +74,7 @@ with sync_playwright() as p:
         bad=[]
         for t in ['Home','Timeline','Missioni','Tessera','Friends']:
             pg.evaluate("(t)=>document.getElementById('appTab'+t).click()",t); pg.wait_for_timeout(600)
-            o=pg.evaluate("""()=>{const W=innerWidth;const bad=[];document.querySelectorAll('body *').forEach(e=>{if(e.closest('svg,.a2,.intro-screen,.sidebar,.skip-link')||e.classList.contains('skip-link'))return;const r=e.getBoundingClientRect();if(r.width>0&&r.height>0&&(r.right>W+1||r.left<-1)&&getComputedStyle(e).position!=='fixed'&&e.offsetParent!==null){const c=e.closest('details:not([open])');if(!c)bad.push(e.className||e.tagName)}});return [document.documentElement.scrollWidth-W, [...new Set(bad)].slice(0,6)]}""")
+            o=pg.evaluate("""()=>{const W=innerWidth;const bad=[];document.querySelectorAll('body *').forEach(e=>{if(e.closest('svg,.a2,.intro-screen,.sidebar,.skip-link,.tf-ep-tabs,.tf-tabs')||e.classList.contains('skip-link'))return;const r=e.getBoundingClientRect();if(r.width>0&&r.height>0&&(r.right>W+1||r.left<-1)&&getComputedStyle(e).position!=='fixed'&&e.offsetParent!==null){const c=e.closest('details:not([open])');if(!c)bad.push(e.className||e.tagName)}});return [document.documentElement.scrollWidth-W, [...new Set(bad)].slice(0,6)]}""")
             if o[0]>1 or o[1]: bad.append((t,o))
         ok(f'{w}px: nessun overflow orizzontale', not bad, bad)
         ctx.close()

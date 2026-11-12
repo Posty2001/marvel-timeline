@@ -1,0 +1,17 @@
+PASS B1 pagina personaggio aperta
+PASS B2 la pagina ha chip N°
+PASS B3 chip N° apre il Dossier Opera
+PASS B4 Atlante ancora aperto (nessun salto nella Timeline)
+PASS B5 Indietro torna al personaggio
+PASS B6 «Scheda in guida» chiude l'Atlante e apre la scheda originale
+PASS B7 Indietro dalla scheda riporta al Dossier Opera
+PASS B8 contesti -> Dossier Opera
+PASS B9 3C ha titoli cliccabili
+PASS B10 3C: il titolo apre ancora la scheda in guida (invariato)
+PASS B11 Visto dal Dossier = clic sulla Timeline (stesso localStorage dopo la spunta)
+PASS B12 Visto togliendo la spunta = stesso stato di partenza e stesso risultato della Timeline
+PASS B13 la spunta cambia davvero (progressi salvati)
+PASS B14 aria-pressed coerente
+PASS B15 nessun errore JS
+
+PASS 15 FAIL 0 []

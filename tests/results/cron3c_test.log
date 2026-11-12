@@ -1,0 +1,4 @@
+  prev: ['027:prev-uff:2027-06-18', '039:prev-ver:2026-05-25', '133:prev-ver:2026-09-25', '127:prev-ver:2026-01-27', '128:prev-ver:2026-03-24', '129:prev-ver:2026-05-12', '132:prev-ver:2026-07-31', '134:prev-uff:2027-01-13', '136:prev-uff:2026-12-18', '137:prev-ann:', '138:prev-ann:', '139:prev-uff:2027-12-17']
+FAIL MCU: 64 con anno (49 certi + 15 approssimativi), 29 senza {'main': 51, 'c': 38, 'a': 13, 'k': 3, 'keyTitles': ['The Avengers', 'Avengers: Endgame', 'Avengers: Infinity War'], 'band': 'Senza anno di ambientazione · 42Nascondi ▴', 'und': 42}
+FAIL MCU ordine ambientazione monotono [-5000, -1260, 1943, 1946, 1946, 1947]
+TOTALE 113 FALLITI 2 ['MCU: 64 con anno (49 certi + 15 approssimativi), 29 senza', 'MCU ordine ambientazione monotono']

@@ -1,0 +1,50 @@
+PASS 15 portali distinti ['multiverso', 'universi', 'cronologie', 'eventi', 'personaggi', 'poteri', 'relazioni', 'attori', 'cosmiche', 'luoghi', 'specie', 'organizzazioni', 'artefatti', 'reliquiario', 'arti']
+PASS nessun link duplicato (quick vs portali) 
+PASS portale multiverso {'s': 'mappa', 'arc': None, 'g': False, 'h': 'TVA ARCHIVES\nMappa del Multiverso'}
+PASS   back->home multiverso 
+PASS portale universi {'s': 'universi', 'arc': None, 'g': False, 'h': 'TVA ARCHIVES\nMultiverso'}
+PASS   back->home universi 
+PASS portale cronologie {'s': 'cronologie', 'arc': None, 'g': False, 'h': 'TVA ARCHIVES\nCronologie'}
+PASS   back->home cronologie 
+PASS portale eventi {'s': 'arch', 'arc': 'evt', 'g': False, 'h': 'TVA ARCHIVES\nEventi'}
+PASS   back->home eventi 
+PASS portale personaggi {'s': 'personaggi', 'arc': None, 'g': False, 'h': 'TVA ARCHIVES\nPersonaggi'}
+PASS   back->home personaggi 
+PASS portale poteri {'s': 'potenza', 'arc': 'pot', 'g': False, 'h': 'TVA ARCHIVES\nPotenza TVA'}
+PASS   back->home poteri 
+PASS portale relazioni {'s': 'relazioni', 'arc': None, 'g': False, 'h': 'TVA ARCHIVES\nRelazioni'}
+PASS   back->home relazioni 
+PASS portale attori {'s': 'attori', 'arc': None, 'g': False, 'h': 'TVA ARCHIVES\nAttori'}
+PASS   back->home attori 
+PASS portale cosmiche {'s': 'arch', 'arc': 'cos', 'g': False, 'h': 'TVA ARCHIVES\nEntità Cosmiche'}
+PASS   back->home cosmiche 
+PASS portale luoghi {'s': 'arch', 'arc': 'luo', 'g': False, 'h': 'TVA ARCHIVES\nLuoghi'}
+PASS   back->home luoghi 
+PASS portale specie {'s': 'arch', 'arc': 'spe', 'g': False, 'h': 'TVA ARCHIVES\nSpecie e Civiltà'}
+PASS   back->home specie 
+PASS portale organizzazioni {'s': 'arch', 'arc': 'org', 'g': False, 'h': 'TVA ARCHIVES\nOrganizzazioni'}
+PASS   back->home organizzazioni 
+PASS portale artefatti {'s': 'arch', 'arc': 'art', 'g': False, 'h': 'TVA ARCHIVES\nArtefatti'}
+PASS   back->home artefatti 
+PASS portale reliquiario {'s': 'reliquiario', 'arc': 'art', 'g': False, 'h': 'TVA ARCHIVES\nReliquiario'}
+PASS   back->home reliquiario 
+PASS portale arti {'s': 'arch', 'arc': 'mis', 'g': False, 'h': 'TVA ARCHIVES\nArti Mistiche'}
+PASS   back->home arti 
+PASS quick confronto 
+PASS quick indice 
+PASS ricerca Thor 
+PASS stats 27/300/138 [27, 300, 138]
+PASS hero usa home_hero.webp 
+PASS asset dedicati caricati (niente SVG) 
+PASS overflow orizzontale 0 
+PASS safe-area / h1 unico 
+PASS tap target >=44 
+PASS JS errors []
+PASS no overflow 320px [320, 320, 0]
+PASS no overflow 360px [360, 360, 0]
+PASS no overflow 414px [414, 414, 0]
+PASS no overflow 430px [430, 430, 0]
+PASS reduced-motion: nessuna animazione 
+PASS slot hero auto-load 
+PASS slot eventi auto-load (niente SVG) 
+FALLITI 0

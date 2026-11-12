@@ -1,0 +1,23 @@
+PASS installazione: SW attivo e pagina controllata 
+PASS cache nominata con la build corrente 
+PASS cache di altra origine/app NON toccata 
+PASS SW dichiara la build della pagina 
+PASS pagina in precache (avvio offline subito dopo l'installazione) 
+PASS dati utente invariati dopo installazione 
+PASS offline: la guida si apre dalla cache 
+PASS offline: dati utente invariati 
+PASS aggiornamento: la pagina in esecuzione e' la nuova build 
+PASS aggiornamento: cache vecchia rimossa, nuova presente 
+PASS aggiornamento: cache di altra app ancora presente 
+PASS aggiornamento: cache obsoleta v9 della stessa app rimossa 
+PASS aggiornamento: ordine, modalita', voti e progressi invariati 
+PASS offline dopo aggiornamento: serve la build NUOVA (nessun file obsoleto) 
+PASS ritorno online: nuova build 
+PASS nessun errore JS 
+PASS deploy a meta': cache della build nuova creata 
+PASS deploy a meta': nessun HTML di altra build nella cache nuova 
+PASS deploy a meta': index non salvato (nessuna pagina in cache) 
+PASS deploy completato: la build coerente entra in cache alla navigazione online 
+PASS dopo il deploy completo: offline serve la build corretta 
+PASS dati utente intatti nel caso deploy a meta' 
+FAILS 0 []

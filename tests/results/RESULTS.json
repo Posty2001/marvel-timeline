@@ -1,0 +1,734 @@
+{
+ "build": "20261112-1300-friends2",
+ "results": [
+  {
+   "suite": "td2_test",
+   "pass": 67,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 134,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "td1_test",
+   "pass": 33,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 62,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "fa1_test",
+   "pass": 64,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 83,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "fa2_test",
+   "pass": 69,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 205,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "fa2_rules_test",
+   "pass": 54,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 0,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "friends_rules_test",
+   "pass": 40,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 0,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "friends_cloud_test",
+   "pass": 2,
+   "fail": 0,
+   "status": "BLOCKED",
+   "reason": "esecuzione interrotta: playwright._impl._errors.TimeoutError: Page.fill: Timeout 30000ms exceeded.",
+   "seconds": 49,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "friends_test",
+   "pass": 9,
+   "fail": 1,
+   "status": "BLOCKED",
+   "reason": "esecuzione interrotta: playwright._impl._errors.TimeoutError: Page.fill: Timeout 30000ms exceeded.",
+   "seconds": 46,
+   "fail_names": [
+    "FAIL Centrale TVA > Operazioni: pulsante «Apri TVA Friends» presente"
+   ],
+   "subs": []
+  },
+  {
+   "suite": "c2_test",
+   "pass": 29,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 62,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "c3_test",
+   "pass": 22,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 41,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "c4_test",
+   "pass": 12,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 17,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "c4_contrast",
+   "pass": 3,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 34,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "tva_test",
+   "pass": 0,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 371,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "a2_test",
+   "pass": 40,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 45,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "assets_test",
+   "pass": 39,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 146,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "b2_test",
+   "pass": 120,
+   "fail": 1,
+   "status": "FAIL",
+   "reason": "1 FAIL NON documentati (nuovi): FAIL T12 Friends si apre",
+   "seconds": 112,
+   "fail_names": [
+    "FAIL T12 Friends si apre"
+   ],
+   "subs": [],
+   "new": 1
+  },
+  {
+   "suite": "b31_test",
+   "pass": 0,
+   "fail": 0,
+   "status": "NOT RUN",
+   "reason": "dipendenza esterna non inclusa nel repo: server aggiuntivo (porte 8125-8129: altra build/cartella di riferimento)",
+   "seconds": 0,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "b321_test",
+   "pass": 38,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 83,
+   "fail_names": [],
+   "subs": [
+    "20261023-1730-m342 -> 20261112-1300-friends2"
+   ]
+  },
+  {
+   "suite": "b322_test",
+   "pass": 15,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 8,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "b324_test",
+   "pass": 27,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 52,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "b32_test",
+   "pass": 132,
+   "fail": 2,
+   "status": "FAIL",
+   "reason": "1 FAIL NON documentati (nuovi): FAIL E0 editor si apre con le cinque categorie",
+   "seconds": 197,
+   "fail_names": [
+    "FAIL K2a Carriera: senza dati missioni calcolati, avviso (nessun calcolo forzato, nessun XP)",
+    "FAIL E0 editor si apre con le cinque categorie"
+   ],
+   "subs": [],
+   "new": 1
+  },
+  {
+   "suite": "b40c_test",
+   "pass": 38,
+   "fail": 4,
+   "status": "FAIL",
+   "reason": "4 FAIL NON documentati (nuovi): FAIL T12a remoto identico al locale: sincronizzato, 0 scritture, nessun prompt (; FAIL T13a modifica locale da sincronizzato -> 1 scrittura confermata 0; FAIL T9c push con errori transitori: 1+4 tentativi (set totali=0) poi stop (0, '",
+   "seconds": 123,
+   "fail_names": [
+    "FAIL T12a remoto identico al locale: sincronizzato, 0 scritture, nessun prompt ('conflict', [])",
+    "FAIL T13a modifica locale da sincronizzato -> 1 scrittura confermata 0",
+    "FAIL T9c push con errori transitori: 1+4 tentativi (set totali=0) poi stop (0, '⚠️ Conflitto tra dati locali e cloud: scegli come procedere. Nulla è stato modificato.')",
+    "FAIL T1e push negato a metà sessione: 1 tentativo, errore autorizzazione, locale mantenuto (0, '⚠️ Conflitto tra dati locali e cloud: scegli come procedere. Nulla è stato modificato.')"
+   ],
+   "subs": [],
+   "new": 4
+  },
+  {
+   "suite": "b40e_test",
+   "pass": 0,
+   "fail": 0,
+   "status": "NOT RUN",
+   "reason": "dipendenza esterna non inclusa nel repo: server aggiuntivo (porte 8125-8129: altra build/cartella di riferimento)",
+   "seconds": 0,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "bl_test",
+   "pass": 89,
+   "fail": 4,
+   "status": "FAIL",
+   "reason": "4 FAIL documentati in KNOWN_FAILS.json (FAIL storico, identico pre-M3.4 (posizione del widget voto cambiata))",
+   "seconds": 47,
+   "fail_names": [
+    "FAIL 320 card: stelle subito sotto il titolo, prima dei dettagli {'gapTitle': -45.59375, 'firstChild': False, 'border': ['0px', '0px', 'none', 'rgba(0, 0, 0, 0)'], 'labelVisible': False, 'beforeInfo': True, 'aria': True, 'labTxt': 'La tua valutazione'}",
+    "FAIL 375 card: stelle subito sotto il titolo, prima dei dettagli {'gapTitle': -45.59375, 'firstChild': False, 'border': ['0px', '0px', 'none', 'rgba(0, 0, 0, 0)'], 'labelVisible': False, 'beforeInfo': True, 'aria': True, 'labTxt': 'La tua valutazione'}",
+    "FAIL 390 card: stelle subito sotto il titolo, prima dei dettagli {'gapTitle': -45.59375, 'firstChild': False, 'border': ['0px', '0px', 'none', 'rgba(0, 0, 0, 0)'], 'labelVisible': False, 'beforeInfo': True, 'aria': True, 'labTxt': 'La tua valutazione'}",
+    "FAIL 393 card: stelle subito sotto il titolo, prima dei dettagli {'gapTitle': -45.59375, 'firstChild': False, 'border': ['0px', '0px', 'none', 'rgba(0, 0, 0, 0)'], 'labelVisible': False, 'beforeInfo': True, 'aria': True, 'labTxt': 'La tua valutazione'}"
+   ],
+   "subs": [],
+   "new": 0
+  },
+  {
+   "suite": "cap0_test",
+   "pass": 37,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 21,
+   "fail_names": [],
+   "subs": [
+    "20261023-1730-m342 -> 20261112-1300-friends2"
+   ]
+  },
+  {
+   "suite": "cons_test",
+   "pass": 40,
+   "fail": 1,
+   "status": "BLOCKED",
+   "reason": "esecuzione interrotta: playwright._impl._errors.TimeoutError: Page.click: Timeout 10000ms exceeded. | causa: flusso obsoleto: dopo tvaGo(item) la barra .app-tab non e' visibile (shell immersiva); identico pre-M3.4",
+   "seconds": 65,
+   "fail_names": [
+    "FAIL Back 2: posizione di scorrimento ripristinata sulla stessa scheda (4408.828125, 4416.84375, 0, 0)"
+   ],
+   "subs": []
+  },
+  {
+   "suite": "cop_test",
+   "pass": 0,
+   "fail": 0,
+   "status": "BLOCKED",
+   "reason": "esecuzione interrotta: playwright._impl._errors.Error: Page.evaluate: TypeError: Cannot read properties of null (reading 'scrollIntoView') | causa: selettore obsoleto: .a2-tiles (Home Atlante ridisegnata con .hm-p)",
+   "seconds": 5,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "cron3c_test",
+   "pass": 0,
+   "fail": 2,
+   "status": "FAIL",
+   "reason": "2 FAIL documentati in KNOWN_FAILS.json (FAIL storico: conteggi fissi su tools/cron3c.js (indipendenti dalla build))",
+   "seconds": 57,
+   "fail_names": [
+    "FAIL MCU: 64 con anno (49 certi + 15 approssimativi), 29 senza {'main': 51, 'c': 38, 'a': 13, 'k': 3, 'keyTitles': ['The Avengers', 'Avengers: Endgame', 'Avengers: Infinity War'], 'band': 'Senza anno di ambientazione · 42Nascondi ▴', 'und': 42}",
+    "FAIL MCU ordine ambientazione monotono [-5000, -1260, 1943, 1946, 1946, 1947]"
+   ],
+   "subs": [],
+   "new": 0
+  },
+  {
+   "suite": "d3a_img_test",
+   "pass": 5,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 12,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "d3a_test",
+   "pass": 0,
+   "fail": 0,
+   "status": "NOT RUN",
+   "reason": "dipendenza esterna non inclusa nel repo: build di riferimento index.3c.frozen.html",
+   "seconds": 0,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "data_test",
+   "pass": 0,
+   "fail": 0,
+   "status": "NOT RUN",
+   "reason": "dipendenza esterna non inclusa nel repo: backup storico backups/N*.html",
+   "seconds": 0,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "f2_test",
+   "pass": 0,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 40,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "f3_test",
+   "pass": 0,
+   "fail": 0,
+   "status": "BLOCKED",
+   "reason": "esecuzione interrotta: playwright._impl._errors.Error: Page.evaluate: TypeError: Cannot read properties of null (reading 'click') | causa: selettore obsoleto: .a2-all (Home Atlante ridisegnata)",
+   "seconds": 5,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "f4b_test",
+   "pass": 16,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 28,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "f4e_test",
+   "pass": 13,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 46,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "fx_test1",
+   "pass": 41,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 44,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "fx_test2",
+   "pass": 0,
+   "fail": 1,
+   "status": "BLOCKED",
+   "reason": "esecuzione interrotta: playwright._impl._errors.Error: Page.evaluate: TypeError: Cannot read properties of null (reading 'getBoundingClientRect') | causa: selettore obsoleto: #homeHubMapBtn rimosso dalla Home (M3.4)",
+   "seconds": 6,
+   "fail_names": [
+    "FAIL [390] Home: il pulsante non e' piu' un collegamento al vecchio grafo"
+   ],
+   "subs": []
+  },
+  {
+   "suite": "fx_test3",
+   "pass": 21,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 18,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "fx_test4",
+   "pass": 24,
+   "fail": 12,
+   "status": "FAIL",
+   "reason": "12 FAIL documentati in KNOWN_FAILS.json (18 FAIL identici sulla build pre-M3.4: il test descrive il widget voto precedente a M3.2 (stelle nella riga principale); da riscrivere con la specifica attuale)",
+   "seconds": 67,
+   "fail_names": [
+    "FAIL R1 139 schede: widget subito sotto il titolo (primo elemento del pannello), 5 stelle, nessuna zona da 11px (due tocchi) {'n': 139, 'bad': ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010', '011', '012', '018', '015', '016', '017', '019', '013', '014', '020', '021', '022', '024', '023', '025', '026', '027', '028', '029', '030', '031', '032', '033', '034', '035', '036', '037', '038', '039', '040', '",
+    "FAIL R2 tocco 0.5: salvato, mostrato, aria, riempimento stelle {'ls': 0.5, 'txt': '0,5', 'now': '0.5', 'vt': '0,5 su 5', 'f': [0.5, 0, 0, 0, 0], 'reset': True}",
+    "FAIL R2 tocco 1: salvato, mostrato, aria, riempimento stelle {'ls': 1, 'txt': '1', 'now': '1', 'vt': '1 su 5', 'f': [1, 0, 0, 0, 0], 'reset': True}",
+    "FAIL R2 tocco 1.5: salvato, mostrato, aria, riempimento stelle {'ls': 1.5, 'txt': '1,5', 'now': '1.5', 'vt': '1,5 su 5', 'f': [1, 0.5, 0, 0, 0], 'reset': True}",
+    "FAIL R2 tocco 2: salvato, mostrato, aria, riempimento stelle {'ls': 2, 'txt': '2', 'now': '2', 'vt': '2 su 5', 'f': [1, 1, 0, 0, 0], 'reset': True}",
+    "FAIL R2 tocco 2.5: salvato, mostrato, aria, riempimento stelle {'ls': 2.5, 'txt': '2,5', 'now': '2.5', 'vt': '2,5 su 5', 'f': [1, 1, 0.5, 0, 0], 'reset': True}",
+    "FAIL R2 tocco 3: salvato, mostrato, aria, riempimento stelle {'ls': 3, 'txt': '3', 'now': '3', 'vt': '3 su 5', 'f': [1, 1, 1, 0, 0], 'reset': True}",
+    "FAIL R2 tocco 3.5: salvato, mostrato, aria, riempimento stelle {'ls': 3.5, 'txt': '3,5', 'now': '3.5', 'vt': '3,5 su 5', 'f': [1, 1, 1, 0.5, 0], 'reset': True}",
+    "FAIL R2 tocco 4: salvato, mostrato, aria, riempimento stelle {'ls': 4, 'txt': '4', 'now': '4', 'vt': '4 su 5', 'f': [1, 1, 1, 1, 0], 'reset': True}",
+    "FAIL R2 tocco 4.5: salvato, mostrato, aria, riempimento stelle {'ls': 4.5, 'txt': '4,5', 'now': '4.5', 'vt': '4,5 su 5', 'f': [1, 1, 1, 1, 0.5], 'reset': True}",
+    "FAIL R2 tocco 5: salvato, mostrato, aria, riempimento stelle {'ls': 5, 'txt': '5', 'now': '5', 'vt': '5 su 5', 'f': [1, 1, 1, 1, 1], 'reset': True}",
+    "FAIL R6 persistenza dopo refresh (4,5) {'ls': 4.5, 'txt': '4,5', 'now': '4.5', 'vt': '4,5 su 5', 'f': [1, 1, 1, 1, 0.5], 'reset': True}"
+   ],
+   "subs": [],
+   "new": 0
+  },
+  {
+   "suite": "fy_test",
+   "pass": 129,
+   "fail": 4,
+   "status": "FAIL",
+   "reason": "4 FAIL documentati in KNOWN_FAILS.json (FAIL storico, identico sulla build pre-M3.4 (tag Capitolo 0 cambiato))",
+   "seconds": 76,
+   "fail_names": [
+    "FAIL 320 cap0 tag",
+    "FAIL 375 cap0 tag",
+    "FAIL 390 cap0 tag",
+    "FAIL 393 cap0 tag"
+   ],
+   "subs": [],
+   "new": 0
+  },
+  {
+   "suite": "home2_test",
+   "pass": 49,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 80,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "leg_test",
+   "pass": 37,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 25,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "lm_test",
+   "pass": 0,
+   "fail": 0,
+   "status": "NOT RUN",
+   "reason": "dipendenza esterna non inclusa nel repo: backup storico backups/N*.html",
+   "seconds": 0,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "m1_test",
+   "pass": 14,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 71,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "m21_test",
+   "pass": 0,
+   "fail": 0,
+   "status": "NOT RUN",
+   "reason": "dipendenza esterna non inclusa nel repo: build di riferimento index.pre_*.html",
+   "seconds": 0,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "m2_test",
+   "pass": 0,
+   "fail": 0,
+   "status": "NOT RUN",
+   "reason": "dipendenza esterna non inclusa nel repo: build di riferimento index.pre_*.html",
+   "seconds": 0,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "m31_test",
+   "pass": 15,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 53,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "m32_test",
+   "pass": 37,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 41,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "m341_test",
+   "pass": 20,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 46,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "m342_test",
+   "pass": 15,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 22,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "m34_test",
+   "pass": 0,
+   "fail": 0,
+   "status": "NOT RUN",
+   "reason": "dipendenza esterna non inclusa nel repo: server aggiuntivo (porte 8125-8129: altra build/cartella di riferimento)",
+   "seconds": 0,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "m3_test",
+   "pass": 16,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 8,
+   "fail_names": [],
+   "subs": [
+    "20261023-1730-m342 -> 20261112-1300-friends2"
+   ]
+  },
+  {
+   "suite": "map3b_test",
+   "pass": 81,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 45,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "nav_test",
+   "pass": 27,
+   "fail": 1,
+   "status": "BLOCKED",
+   "reason": "esecuzione interrotta: playwright._impl._errors.Error: Page.evaluate: TypeError: Cannot read properties of null (reading 'click') | causa: selettore obsoleto: label[for=multiverseGraphToggle].home-hub-btn rimosso dalla Home (M3.4: la Mappa e' raggiungibile da Atlante); 28 controlli precedenti PASS",
+   "seconds": 46,
+   "fail_names": [
+    "FAIL Friends: UI nuova, barra presente, overlay Friends {'a2': False, 'ov': [], 'tab': True, 'menu': True, 'shell': False, 'title': 'none', 'home': True, 'a2vis': False, 'depth': 0, 'legacyBack': False}"
+   ],
+   "subs": []
+  },
+  {
+   "suite": "net_test",
+   "pass": 12,
+   "fail": 0,
+   "status": "BLOCKED",
+   "reason": "esecuzione interrotta: playwright._impl._errors.TimeoutError: ElementHandle.scroll_into_view_if_needed: Timeout 8000ms exceeded. | causa: selettore obsoleto: il link #char-peter-parker a.tva-lk[data-go=item:item-089] non e' piu' visibile/stabile nel Dossier personaggio (Fase 4)",
+   "seconds": 24,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "r320_test",
+   "pass": 0,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 42,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "rel_test",
+   "pass": 35,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 25,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "rs_test",
+   "pass": 29,
+   "fail": 3,
+   "status": "FAIL",
+   "reason": "3 FAIL NON documentati (nuovi): FAIL 320px: nessun overflow orizzontale [('Friends', [0, ['tf-tab', 'SPAN', 'tf-; FAIL 360px: nessun overflow orizzontale [('Friends', [0, ['tf-tab', 'tf-tl', 'SP; FAIL 430px: nessun overflow orizzontale [('Friends', [0, ['tf-tab', 'tf-tl', 'SP",
+   "seconds": 55,
+   "fail_names": [
+    "FAIL 320px: nessun overflow orizzontale [('Friends', [0, ['tf-tab', 'SPAN', 'tf-tl', 'rs-i']])]",
+    "FAIL 360px: nessun overflow orizzontale [('Friends', [0, ['tf-tab', 'tf-tl', 'SPAN', 'rs-i']])]",
+    "FAIL 430px: nessun overflow orizzontale [('Friends', [0, ['tf-tab', 'tf-tl', 'SPAN']])]"
+   ],
+   "subs": [
+    "20261023-1730-m342 -> 20261112-1300-friends2"
+   ],
+   "new": 3
+  },
+  {
+   "suite": "stats_fix_test",
+   "pass": 12,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 18,
+   "fail_names": [],
+   "subs": [
+    "20261023-1730-m342 -> 20261112-1300-friends2"
+   ]
+  },
+  {
+   "suite": "tree_arti_test",
+   "pass": 48,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 15,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "uf_test",
+   "pass": 0,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 41,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "uf_test_3b",
+   "pass": 0,
+   "fail": 0,
+   "status": "PASS",
+   "reason": "",
+   "seconds": 44,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "ui_audit",
+   "pass": 135,
+   "fail": 1,
+   "status": "FAIL",
+   "reason": "1 FAIL documentati in KNOWN_FAILS.json (il modello di composizione dello sfondo di ui_audit stima 4.40 su .ud-st-ok; la misura reale sui pixel (c4_contrast) e' 4.97: falso positivo del modello, non un difetto)",
+   "seconds": 64,
+   "fail_names": [
+    "FAIL contrasto testo >= 4.5:1 (WCAG AA) su tutte le combinazioni dell'Atlante 2.0 [['ud-st ud-st-ok', 4.4, 11.2, '● Documentato nella gu'], ['ud-st ud-st-ok', 4.4, 11.2, '● Documentato nella gu']]"
+   ],
+   "subs": [],
+   "new": 0
+  },
+  {
+   "suite": "xm_close_test",
+   "pass": 0,
+   "fail": 0,
+   "status": "NOT RUN",
+   "reason": "dipendenza esterna non inclusa nel repo: build di riferimento index.3c.frozen.html",
+   "seconds": 0,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "xm_test",
+   "pass": 0,
+   "fail": 0,
+   "status": "NOT RUN",
+   "reason": "dipendenza esterna non inclusa nel repo: build di riferimento index.3c.frozen.html",
+   "seconds": 0,
+   "fail_names": [],
+   "subs": []
+  },
+  {
+   "suite": "friends_release_test",
+   "pass": 7,
+   "fail": 0,
+   "status": "BLOCKED",
+   "reason": "esecuzione interrotta: playwright._impl._errors.TimeoutError: Page.fill: Timeout 30000ms exceeded.",
+   "seconds": 38,
+   "fail_names": [],
+   "subs": []
+  }
+ ]
+}

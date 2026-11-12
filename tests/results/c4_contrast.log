@@ -1,0 +1,4 @@
+unis 27
+PASS contrasto ud-st ud-st-ok >= 4.5:1 (min 4.97, bg (71, 65, 58), uni-earth-199999-mcu)
+PASS contrasto ud-st ud-st-lg >= 4.5:1 (min 11.98, bg (41, 41, 42), uni-earth-199999-mcu)
+PASS contrasto ud-st ud-st-vf >= 4.5:1 (min 5.31, bg (62, 49, 51), uni-earth-199999-mcu)

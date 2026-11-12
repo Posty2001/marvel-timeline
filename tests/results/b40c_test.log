@@ -1,0 +1,45 @@
+PASS T0 primo dispositivo: remoto vuoto -> 1 scrittura, poi «Sincronizzazione riuscita» ('✅ Sincronizzazione riuscita', 1)
+PASS T0b payload scritto con version/schemaVersion 
+PASS T11 ack lento: «Connessione in corso», «riuscita» solo dopo conferma ('🔄 Connessione in corso…', '✅ Sincronizzazione riuscita')
+PASS T1a PERMISSION_DENIED: errore di autorizzazione, mai «riuscita» ⛔ Errore di autorizzazione: il database rifiuta l’accesso a questo codice. Sincronizzazione sospesa; i tuoi dati locali non sono stati toccati e NON risultano sincronizzati.
+PASS T1b nessun tentativo automatico (1 lettura, 0 scritture in 200 s) ([['once', 'sync/ABCD2345']], [])
+PASS T1c dati locali intatti, codice non salvato come collegato 
+PASS T1d avvio con codice salvato + denied: 1 lettura, nessun retry, mai «Collegato e sincronizzato» ('⛔ Errore di autorizzazione: il database rifiuta l’accesso a questo codice. Sincronizzazione sospesa; i tuoi dati locali non sono stati toccati e NON risultano sincronizzati.', [['once', 'sync/ABCD2345']])
+PASS T2a errore di rete: «Connessione non disponibile», mai «riuscita» ⚠️ Connessione non disponibile. I dati locali sono al sicuro ma NON risultano sincronizzati. Nuovo tentativo tra 5 s (1/4).
+PASS T9a retry limitati: 1+4 letture poi stop (n=5, dopo 10 min n=5) (5, 5, '⚠️ Connessione non disponibile. I dati locali sono al sicuro ma NON risultano sincronizzati. Tentativi esauriti.')
+PASS T9b «Riprova» manuale visibile; dati locali intatti 
+PASS T2b nessuna risposta: timeout 10 s -> «Connessione non disponibile» ⚠️ Connessione non disponibile. I dati locali sono al sicuro ma NON risultano sincronizzati. Nuovo tentativo tra 5 s (1/4).
+PASS T2c avvio con codice salvato e rete assente: «Connessione in corso», mai «Collegato e sincronizzato» 🔄 Connessione in corso…
+PASS T3a 12 codici malformati rifiutati prima di qualsiasi riferimento Firebase []
+PASS T3b codice legittimo (minuscolo/trattino) -> sync/ABCD-2345 ['sync/ABCD-2345']
+PASS T3c codice salvato non valido non usato all’avvio ⚠️ Il codice salvato non è valido e non verrà usato: Codice non valido: usa solo lettere, numeri e, all’interno, “-” o “_” (niente spazi, “/”, “.”, “$”, “#”, “[”, “]”).
+PASS T3d codice generato 8 car. compatibile col validatore LS3VSQZ6
+PASS T4a profilo cloud vecchio NON applicato: stato Conflitto ⚠️ Conflitto tra dati locali e cloud: scegli come procedere. Nulla è stato modificato.
+PASS T4b locale invariato, nessuna scrittura remota, nessun reload 
+PASS T6a tre scelte visibili 
+PASS T6b «Visualizza differenze»: titoli visti locale 12 vs cloud 1 Titoli visti: locale 12 · cloud 1
+Identità condivisa: locale 7 · cloud 7
+PASS T7 ripristino annullato: nulla modificato, nessuna copia, nessun reload, ancora Conflitto ['Ripristinare il profilo dal cloud? Sostituirà TUTTO il profilo di questo dispositivo (12 titoli visti) con quello del cloud (1 titoli visti). Una copia di sicurezza del profilo attuale verrà salvata e potrai recuperarla da “Ripristina copia di sicurezza”.\n\nCampi assenti nel cloud, che verranno reimpostati: tesseraLook.']
+PASS T8a ripristino confermato via normalizzaProfilo: cloud applicato (1 titolo), copia recuperabile del locale (12) (1, 12)
+PASS T8b dopo reload nessun falso conflitto: sincronizzato e confermato ('synced', '✅ Sincronizzazione riuscita')
+PASS T5 cloud non valido (id sconosciuto): conflitto, ripristino disabilitato, locale intatto, 0 scritture ('conflict', True)
+PASS T5 cloud non valido (app diversa): conflitto, ripristino disabilitato, locale intatto, 0 scritture ('conflict', True)
+PASS T5 cloud non valido (schema futuro): conflitto, ripristino disabilitato, locale intatto, 0 scritture ('conflict', True)
+PASS T5 cloud non valido (tipo errato): conflitto, ripristino disabilitato, locale intatto, 0 scritture ('conflict', True)
+PASS T5 cloud non valido (non JSON): conflitto, ripristino disabilitato, locale intatto, 0 scritture ('conflict', True)
+PASS T5 cloud non valido (oggetto non stringa): conflitto, ripristino disabilitato, locale intatto, 0 scritture ('conflict', True)
+PASS T5b click forzato su ripristino con cloud non valido: rifiutato dal validatore, locale intatto 
+PASS T6c «Mantieni dati locali»: nulla modificato (locale/remoto), sync non attiva, codice non salvato 
+FAIL T12a remoto identico al locale: sincronizzato, 0 scritture, nessun prompt ('conflict', [])
+PASS T12b cambio remoto successivo: Conflitto, NON applicato, nessun reload conflict
+FAIL T13a modifica locale da sincronizzato -> 1 scrittura confermata 0
+FAIL T9c push con errori transitori: 1+4 tentativi (set totali=0) poi stop (0, '⚠️ Conflitto tra dati locali e cloud: scegli come procedere. Nulla è stato modificato.')
+FAIL T1e push negato a metà sessione: 1 tentativo, errore autorizzazione, locale mantenuto (0, '⚠️ Conflitto tra dati locali e cloud: scegli come procedere. Nulla è stato modificato.')
+PASS T10 disconnessione: dati locali intatti, stato Non collegato 
+PASS S1 syncApplyProfile (scrittura diretta non validata) rimosso 
+PASS S2 blocco sync: unico location.reload è nel ripristino confermato 
+PASS S3 retry solo con backoff limitato 
+PASS S2b modulo account: un solo reload (ripristino backup confermato) e un solo setInterval (solo UI, nessuna rete) 
+PASS S4 Live Room invariata (rooms/ presente, nessuna sync/ nel suo blocco) 
+
+TOTALE 38/42 FAIL: ['T12a remoto identico al locale: sincronizzato, 0 scritture, nessun prompt', 'T13a modifica locale da sincronizzato -> 1 scrittura confermata', 'T9c push con errori transitori: 1+4 tentativi (set totali=0) poi stop', 'T1e push negato a metà sessione: 1 tentativo, errore autorizzazione, locale mantenuto']

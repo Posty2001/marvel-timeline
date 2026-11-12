@@ -1,0 +1,29 @@
+PASS A1 asset agente: >=720 px, 4:5, <=120 KB (119 KB)
+PASS A1 asset variante: >=720 px, 4:5, <=120 KB (119 KB)
+PASS A1 asset esploratore: >=720 px, 4:5, <=120 KB (119 KB)
+PASS A1 asset tecnologico: >=720 px, 4:5, <=120 KB (117 KB)
+PASS A1 asset mistico: >=720 px, 4:5, <=120 KB (117 KB)
+PASS A1 asset astratto: >=720 px, 4:5, <=120 KB (119 KB)
+PASS A1 asset cronista: >=720 px, 4:5, <=120 KB (119 KB)
+PASS A1 asset sentinella: >=720 px, 4:5, <=120 KB (117 KB)
+PASS A2 loader: 8 ritratti caricati
+PASS A3 hero usa il ritratto WebP (agente)
+PASS A4 Cronista: ritratto WebP
+PASS E1 editor: 8 avatar con miniatura leggera (JPEG 160x200, solo href (3.2.5: xlink omesso nelle miniature leggere), nessun WebP completo nel DOM)
+PASS E2 anteprima immediata: la hero mostra la bozza (immagine) prima del salvataggio
+PASS E3 bozza NON salvata finche non si preme Salva (look ancora agente)
+PASS E4 Annulla: look invariato
+PASS E5 Salva: look = sentinella
+PASS E6 persistenza dopo ricarica: Sentinella con ritratto
+PASS X1 export: 1080x1800 con ritratto incorporato (data URL, nessuna risorsa esterna)
+PASS X2 export fedele all anteprima (differenza media per canale < 4)
+PASS X3 peso PNG < 2.5 MB (misurato: 1697 KB)
+PNG_KB 1697 DIFF 1.814
+PASS X4 nessun errore JS
+PASS F1 404 / file corrotto / rete interrotta: solo gli asset validi caricati, gli altri in fallback
+PASS F2 nessun errore JS con asset mancanti
+PASS O1 Service Worker: 8 ritratti nella cache (precache)
+PASS O2 offline: pagina e 8 ritratti disponibili da cache
+PASS O3 nessun errore JS offline
+
+PASS 26 FAIL 0 []

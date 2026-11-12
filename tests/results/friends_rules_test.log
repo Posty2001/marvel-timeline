@@ -1,0 +1,43 @@
+PASS handles: A pubblica il proprio handle
+PASS handles: B NON sovrascrive l'handle di A
+PASS handles: B NON registra un handle a nome di A
+PASS handles: B NON cancella l'handle di A
+PASS handles: email non verificata negata
+PASS handles: non autenticato non legge ne' scrive
+PASS handles: B (verificato) puo' risolvere un handle
+PASS handles: nessuna enumerazione della radice
+PASS handles: id non valido rifiutato
+PASS profiles: A scrive il proprio
+PASS profiles: B NON scrive il profilo di A
+PASS profiles: vid non di proprieta' rifiutato
+PASS profiles: non autenticato non legge
+PASS links: B NON scrive i legami di A
+PASS links: B NON legge i legami di A
+PASS inbox: B (non collegato) NON scrive messaggi non-invito nell'inbox di A
+PASS inbox: B puo' inviare un INVITO (inv=true) ad A
+PASS inbox: il messaggio NON e' sovrascrivibile da B
+PASS inbox: B NON legge l'inbox di A
+PASS inbox: B NON cancella il messaggio
+PASS inbox: A legge la propria inbox
+PASS inbox: A cancella (consuma) il messaggio
+PASS inbox: C NON puo' falsificare il mittente (from=B)
+PASS inbox: codice oltre 24000 caratteri rifiutato
+PASS inbox: formato del codice non valido rifiutato
+PASS inbox: campo sconosciuto rifiutato
+PASS inbox: id messaggio non valido rifiutato
+PASS inbox: email non verificata NON scrive
+PASS inbox: non autenticato NON scrive
+PASS links: A registra B come collegato
+PASS inbox: con legame, B invia anche messaggi non-invito
+PASS inbox: un legame di A NON abilita C
+PASS blocked: A blocca B -> B non scrive piu' nell'inbox di A (neanche inviti)
+PASS blocked: B NON puo' sbloccarsi da solo
+PASS blocked: B non legge la lista dei bloccati di A
+PASS USERS: B non legge users/A ne' scrive
+PASS USERS: A scrive il proprio profilo account (rev 1)
+PASS USERS: i dati account non sono raggiungibili tramite inbox/handles/profiles
+PASS ROOMS/SYNC: stesse decisioni con e senza users+friends (7 operazioni)
+PASS MERGE: users+friends non alterano rooms e sync
+TOTALE 40 | FAIL 0
+
+

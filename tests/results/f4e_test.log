@@ -1,0 +1,16 @@
+PASS E1 nessuna scrittura su localStorage navigando in tutti i dossier (0 azioni)
+chiavi scritte dal Visto: ['marvel-ultimate-timeline-badges-earned', 'marvel-ultimate-timeline-last-watched', 'marvel-ultimate-timeline-missione-settimana', 'marvel-ultimate-timeline-missione-snapshot', 'marvel-ultimate-timeline-rewards', 'marvel-ultimate-timeline-watch-days', 'marvel-ultimate-timeline-watched']
+PASS E2 il Visto scrive solo le chiavi della logica esistente (marvel-ultimate-timeline-*)
+PASS E3 nessun errore JS
+PASS E4 la pila cresce a ogni passo (5)
+PASS E5 Indietro x3 ripercorre uni -> opera -> personaggio
+PASS E6 posizione di scorrimento ripristinata sul personaggio (|dy|<=40)
+PASS E7 gesto Indietro del browser dal Dossier Opera
+PASS E8 il percorso (breadcrumb) riflette la pila
+opera ms (CPU 4x): med 284.7 p95 357.3 max 375.1 | personaggio: med 321.4 p95 369.9 max 391.9
+PASS E9 apertura Dossier Opera < 130 ms (p95, CPU 4x; baseline 3C 127)
+PASS E10 apertura Dossier Personaggio < 130 ms (p95, CPU 4x; baseline 3C 127)
+PASS E11 ricerca < 30 ms a query
+PASS E12 nessun errore JS
+
+PASS 12 FAIL 0 []

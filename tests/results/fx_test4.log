@@ -1,0 +1,45 @@
+FAIL R1 139 schede: widget subito sotto il titolo (primo elemento del pannello), 5 stelle, nessuna zona da 11px (due tocchi) {'n': 139, 'bad': ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010', '011', '012', '018', '015', '016', '017', '019', '013', '014', '020', '021', '022', '024', '023', '025', '026', '027', '028', '029', '030', '031', '032', '033', '034', '035', '036', '037', '038', '039', '040', '
+PASS R1b nessuna vecchia stella/etichetta «Il tuo voto» rimasta
+FAIL R2 tocco 0.5: salvato, mostrato, aria, riempimento stelle {'ls': 0.5, 'txt': '0,5', 'now': '0.5', 'vt': '0,5 su 5', 'f': [0.5, 0, 0, 0, 0], 'reset': True}
+FAIL R2 tocco 1: salvato, mostrato, aria, riempimento stelle {'ls': 1, 'txt': '1', 'now': '1', 'vt': '1 su 5', 'f': [1, 0, 0, 0, 0], 'reset': True}
+FAIL R2 tocco 1.5: salvato, mostrato, aria, riempimento stelle {'ls': 1.5, 'txt': '1,5', 'now': '1.5', 'vt': '1,5 su 5', 'f': [1, 0.5, 0, 0, 0], 'reset': True}
+FAIL R2 tocco 2: salvato, mostrato, aria, riempimento stelle {'ls': 2, 'txt': '2', 'now': '2', 'vt': '2 su 5', 'f': [1, 1, 0, 0, 0], 'reset': True}
+FAIL R2 tocco 2.5: salvato, mostrato, aria, riempimento stelle {'ls': 2.5, 'txt': '2,5', 'now': '2.5', 'vt': '2,5 su 5', 'f': [1, 1, 0.5, 0, 0], 'reset': True}
+FAIL R2 tocco 3: salvato, mostrato, aria, riempimento stelle {'ls': 3, 'txt': '3', 'now': '3', 'vt': '3 su 5', 'f': [1, 1, 1, 0, 0], 'reset': True}
+FAIL R2 tocco 3.5: salvato, mostrato, aria, riempimento stelle {'ls': 3.5, 'txt': '3,5', 'now': '3.5', 'vt': '3,5 su 5', 'f': [1, 1, 1, 0.5, 0], 'reset': True}
+FAIL R2 tocco 4: salvato, mostrato, aria, riempimento stelle {'ls': 4, 'txt': '4', 'now': '4', 'vt': '4 su 5', 'f': [1, 1, 1, 1, 0], 'reset': True}
+FAIL R2 tocco 4.5: salvato, mostrato, aria, riempimento stelle {'ls': 4.5, 'txt': '4,5', 'now': '4.5', 'vt': '4,5 su 5', 'f': [1, 1, 1, 1, 0.5], 'reset': True}
+FAIL R2 tocco 5: salvato, mostrato, aria, riempimento stelle {'ls': 5, 'txt': '5', 'now': '5', 'vt': '5 su 5', 'f': [1, 1, 1, 1, 1], 'reset': True}
+PASS R2b secondo tocco su stella 5 (=5) -> 4,5, non azzera
+PASS R2c terzo tocco: torna 5
+PASS R4 modifica voto esistente 3,5 -> 2
+PASS R5 Azzera: rimosso dallo storage, 0 stelle, pulsante nascosto
+FAIL R6 persistenza dopo refresh (4,5) {'ls': 4.5, 'txt': '4,5', 'now': '4.5', 'vt': '4,5 su 5', 'f': [1, 1, 1, 1, 0.5], 'reset': True}
+PASS R7 tastiera: frecce ±0,5, PageUp/Down ±1, Home/Delete azzera, End=5, cifre
+PASS R7b ruolo slider con valuemin/max/text
+PASS R8 note personali intatte (testo e chiave)
+  chiavi cambiate dal voto: ['marvel-ultimate-timeline-ratings']
+PASS R9 il voto modifica solo ratings (+ eventuali derivati XP/tessera)
+PASS R10 nessun errore JS
+PASS R11 voti interi gia' salvati (4,1,5) e un mezzo voto caricati
+PASS R11b storage non riscritto al caricamento
+  medie: ['3.3 ⭐', '3.3 ★', '3.3']
+PASS R12 voto medio con mezzi voti (4,1,5,3.5,3 -> 3.3)
+PASS R13 se il salvataggio fallisce la UI non mostra un voto non salvato
+PASS R13b messaggio per tecnologie assistive
+PASS R14 prefers-reduced-motion: nessuna animazione sulle stelle
+PASS R14b con animazioni attive la stella selezionata ha la microanimazione
+PASS R15 [320] blocco dentro la scheda, zone di tocco >=44px alto, nessun overflow, altezza 57px
+   mezza stella larga 27.2px
+PASS R15 [360] blocco dentro la scheda, zone di tocco >=44px alto, nessun overflow, altezza 57px
+   mezza stella larga 32.0px
+PASS R15 [375] blocco dentro la scheda, zone di tocco >=44px alto, nessun overflow, altezza 75px
+   mezza stella larga 32.0px
+PASS R15 [390] blocco dentro la scheda, zone di tocco >=44px alto, nessun overflow, altezza 75px
+   mezza stella larga 32.0px
+PASS R15 [393] blocco dentro la scheda, zone di tocco >=44px alto, nessun overflow, altezza 75px
+   mezza stella larga 32.0px
+PASS R15 [430] blocco dentro la scheda, zone di tocco >=44px alto, nessun overflow, altezza 75px
+   mezza stella larga 32.0px
+
+PASS 23 FAIL 12 ['R1 139 schede: widget subito sotto il titolo (primo elemento del pannello), 5 stelle, nessuna zona da 11px (due tocchi)', 'R2 tocco 0.5: salvato, mostrato, aria, riempimento stelle', 'R2 tocco 1: salvato, mostrato, aria, riempimento stelle', 'R2 tocco 1.5: salvato, mostrato, aria, riempimento stelle', 'R2 tocco 2: salvato, mostrato, aria, riempimento stelle', 'R2 tocco 2.5: salvato, mostrato, aria, riempimento stelle', 'R2 tocco 3: salvato, mostrato, aria, riempimento stelle', 'R2 tocco 3.5: salvato, mostrato, aria, riempimento stelle', 'R2 tocco 4: salvato, mostrato, aria, riempimento stelle', 'R2 tocco 4.5: salvato, mostrato, aria, riempimento stelle', 'R2 tocco 5: salvato, mostrato, aria, riempimento stelle', 'R6 persistenza dopo refresh (4,5)']

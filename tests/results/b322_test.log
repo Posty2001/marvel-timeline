@@ -1,0 +1,16 @@
+PASS V1 verticale: nomi di tutti i 14 distintivi interi (nessuna ellissi)
+PASS V2 verticale: nickname di 19 caratteri e titolo lungo interi
+PASS V3 verticale: ogni testo >= 20 unita (>= 10px a 360px di larghezza)
+PASS V4 verticale: nickname protagonista (>= 56 unita) e piu grande di ogni altro testo tranne LV
+PASS V5 verticale: ritratto = punto focale (>= 14% dell'area)
+PASS V6 verticale: composizione autonoma (ritratto ad arco, non rettangolo della wide)
+PASS A1 otto avatar: distanza minima a coppie (colore) >= 10 e (grigi) >= 7
+PASS T1 dieci temi: distanza minima a coppie (colore) >= 6 e (grigi) >= 3
+PASS F1 dodici cornici: distanza minima a coppie in scala di grigi >= 1.0
+PASS L1 Nexus Supremo: complessita (elementi) >= mediana delle altre
+PASS L2 combinazione leggendaria visivamente diversa da oro+oro
+PASS L3 titolo leggendario: ornamento (alloro) presente
+PASS P1 build SVG <= 25ms e <= 130KB per layout (caso peggiore Nexus+Fine del Tempo)
+PASS P2 nessun filtro SVG costoso (feGaussianBlur/filter) nel motore
+
+PASS 14 FAIL 0 []

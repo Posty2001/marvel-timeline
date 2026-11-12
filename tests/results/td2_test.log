@@ -1,0 +1,68 @@
+PASS analisi statica: TD2 non usa storage, rete, Firebase 
+PASS build HTML = build service worker 
+PASS CSS: safe area superiore e inferiore gestite 
+PASS 1. il tocco apre la pagina a schermo intero (390x844) 
+PASS 1. nessuna barra di navigazione inferiore nella pagina 
+PASS 1. a11y: dialog modale con nome, focus sul pulsante Indietro 
+PASS 1. segnaposto di pari altezza nella Timeline 
+PASS 1. segnaposto con altezza della scheda chiusa 
+PASS 1. Indietro chiude, rimuove segnaposto e blocco, la scheda torna chiusa 
+PASS 2. Indietro (pulsante): posizione di scorrimento della Timeline identica (814 -> 814) 
+PASS 1. DOM della scheda identico a prima dopo apertura+chiusura (nessun nodo perso o spostato) 
+PASS 2. apertura di un titolo a scorrimento avanzato (012) 
+PASS 2. gesto/tasto Indietro del browser: chiude la pagina e ripristina lo scorrimento (2511 -> 2511) 
+PASS 2. si resta nell'app (nessuna uscita dalla pagina) 
+PASS 3. ricerca e filtri conservati dopo apertura/chiusura (15 schede visibili) 
+PASS 4. Diario nella pagina: titolo, Privato, anteprima, Modifica nota (parte dall'anteprima) 
+PASS 4. note byte-identiche dopo l'apertura della pagina 
+PASS 4. modifica della nota dalla pagina salvata (stessa chiave, 1 nota per titolo) 
+PASS 4. dopo la chiusura la nota e' la stessa (nessun'altra chiave toccata) 
+PASS 4. eliminazione: chiede conferma e non cancella prima 
+PASS 4. Annulla: nota intatta 
+PASS 5. voto assegnato dalla pagina salvato 
+PASS 5. stato di visione modificabile dalla pagina (stesso storage) 
+PASS 5. etichetta di stato "Completato" dopo la selezione 
+PASS 5. preferito modificabile dalla pagina 
+PASS 5. la Timeline riflette voto, visione e preferito ({'w': True, 'f': True, 'r': '4'}) 
+PASS 6. chip personaggi presenti nella pagina (4) 
+PASS 6. chip personaggio: la pagina si chiude e si apre l'Atlante (livello di navigazione aggiunto) 
+PASS 6. Indietro dall'Atlante: si torna alla pagina del titolo (ripristino TD2) 
+PASS 6. collegamento ad altro titolo: resta nella pagina e mostra il nuovo titolo 
+PASS 6. Indietro: torna al titolo precedente 
+PASS 6. secondo Indietro: Timeline, nessun resto 
+PASS 7. film, serie e titoli senza pulsanti: Diario, voto, info, nessun overflow 
+PASS 7. azioni: Guarda/File locale presenti oppure stato esplicito "non disponibile" (nessun pulsante finto) 
+PASS 7. campione comprende film, serie e un titolo senza azioni ([('item-002', 'film', False), ('item-039', 'serie', False), ('item-132', 'film', True), ('item-027', 'film', True), ('item-100', 'serie', False)]) 
+PASS 8. offline: pagina e salvataggio nota funzionano 
+PASS 12. Tab resta dentro la pagina 
+PASS 12. focus intrappolato dopo molti Tab (nessuna fuga nella Timeline) 
+PASS 12. Esc chiude la pagina 
+PASS 13. prefers-reduced-motion: nessuna animazione di apertura 
+PASS 11. titolo nascosto dai filtri: apre comunque la pagina 
+PASS 11. Indietro: ricerca ripristinata com'era (titolo di nuovo nascosto) 
+PASS 11. link tra titoli (mvNavigateTo): apre la pagina 
+PASS 11. Indietro dal link: Timeline 
+PASS 11. dall'Atlante ("Scheda in guida"): pagina aperta, Atlante chiuso sotto 
+PASS 11. Indietro: si torna all'Atlante con il suo stato precedente 
+PASS 11. dalla Centrale TVA (data-cen-item): pagina aperta 
+PASS 11. Indietro: livello di navigazione azzerato 
+PASS 10. tutte le 139 schede si aprono a schermo intero e si chiudono (139) 
+PASS 10. dopo apertura+chiusura di tutte le schede il DOM e' identico a prima 
+PASS 10. nessuna pagina residua 
+PASS nessun errore JS 
+PASS nessuna violazione CSP 
+PASS 9. 320 px: nessun overflow orizzontale, titolo lunghissimo incluso 
+PASS 9. 320 px: pulsante Indietro >= 44px e dentro lo schermo 
+PASS 9. 320 px: bersagli tattili >= 44px 
+PASS 9. 360 px: nessun overflow orizzontale, titolo lunghissimo incluso 
+PASS 9. 360 px: pulsante Indietro >= 44px e dentro lo schermo 
+PASS 9. 360 px: bersagli tattili >= 44px 
+PASS 9. 390 px: nessun overflow orizzontale, titolo lunghissimo incluso 
+PASS 9. 390 px: pulsante Indietro >= 44px e dentro lo schermo 
+PASS 9. 390 px: bersagli tattili >= 44px 
+PASS 9. 430 px: nessun overflow orizzontale, titolo lunghissimo incluso 
+PASS 9. 430 px: pulsante Indietro >= 44px e dentro lo schermo 
+PASS 9. 430 px: bersagli tattili >= 44px 
+PASS contrasto >= 4.5:1 (tema scuro, testi su fondo della pagina) 
+PASS contrasto >= 4.5:1 (tema chiaro, testi su fondo della pagina) 
+FAILS: []

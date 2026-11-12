@@ -1,0 +1,37 @@
+  nodi di prova {'famiglia': ['char-howard-stark', 1], 'relazione': ['char-wanda-maximoff', 1], 'organizzazione': ['char-thor', 1], 'variante': ['char-loki', 1], 'universo': ['char-thor', 1], 'titolo': ['char-mrs-chen', 1], 'attore': ['char-loki', 1]}
+PASS filtro famiglia: solo relazioni di tipo famiglia (1 nodi)
+PASS filtro famiglia: insieme dei nodi = dati (1)
+PASS filtro relazione: solo relazioni di tipo relazione (1 nodi)
+PASS filtro relazione: insieme dei nodi = dati (1)
+PASS filtro organizzazione: solo relazioni di tipo organizzazione (1 nodi)
+PASS filtro organizzazione: insieme dei nodi = dati (1)
+PASS filtro variante: solo relazioni di tipo variante (1 nodi)
+PASS filtro variante: insieme dei nodi = dati (1)
+PASS filtro universo: solo relazioni di tipo universo (1 nodi)
+PASS filtro universo: insieme dei nodi = dati (1)
+PASS filtro titolo: solo relazioni di tipo titolo (1 nodi)
+PASS filtro titolo: insieme dei nodi = dati (1)
+PASS filtro attore: solo relazioni di tipo attore (1 nodi)
+PASS filtro attore: insieme dei nodi = dati (1)
+PASS combinazione famiglia+universo: nessun tipo estraneo (2)
+PASS combinazione famiglia+universo: conteggio = dati (atteso 2)
+PASS combinazione famiglia+titolo: nessun tipo estraneo (2)
+PASS combinazione famiglia+titolo: conteggio = dati (atteso 2)
+PASS combinazione universo+titolo: nessun tipo estraneo (2)
+PASS combinazione universo+titolo: conteggio = dati (atteso 2)
+PASS combinazione famiglia+universo+titolo: nessun tipo estraneo (3)
+PASS combinazione famiglia+universo+titolo: conteggio = dati (atteso 3)
+PASS tutti i filtri: totale = dati
+PASS nessun filtro attivo: messaggio esplicito, nessun nodo
+PASS zero risultati: messaggio nel pannello e nel grafo
+PASS Wanda + Relazione → Visione
+PASS badge dei filtri = collegamenti reali
+PASS nessuna sovrapposizione tra nomi/etichette (nodi con molti collegamenti, filtri diversi, pagine)
+PASS «Mostra altri» aggiunge nodi
+PASS tocco su un nodo: il grafo si ricentra
+PASS zoom con pulsante
+PASS adatta
+PASS nessun scroll orizzontale
+PASS vista iniziale: nessun nodo o nome tagliato
+PASS nessun errore JS
+TOTALE 0 FAIL

@@ -1,0 +1,62 @@
+PASS Home visibile
+PASS Home -> TVA Archives immersiva (no barra, no menu)
+PASS click "Tutti gli archivi"
+PASS Tutti gli archivi: nuova UI
+PASS click Multiverso
+PASS Multiverso (3B): apre la nuova mappa
+PASS Multiverso: Grafico in shell TVA, nessuna barra/menu, nessun vecchio Indietro
+PASS Grafico: titolo header
+PASS Grafico interattivo (rami presenti)
+PASS Grafico: click su ramo senza errori / resta nella shell
+PASS Indietro dal grafico -> mappa (3B), non legacy
+PASS Indietro dalla mappa -> Tutti gli archivi
+PASS click Artefatti
+PASS Artefatti: nuova UI
+PASS Artefatti: elenco con schede
+PASS Artefatti -> Dettaglio: dossier nuova UI
+link nel dossier: item:item-041
+PASS Collegamento dossier: resta in nuova UI o Timeline (mai overlay legacy)
+PASS Indietro dopo collegamento: torna al dossier/Atlante
+PASS universeTimelineToggle: shell TVA, no barra/menu/vecchio Indietro
+PASS universeTimelineToggle: Indietro -> Atlante
+PASS altTimelineToggle: shell TVA, no barra/menu/vecchio Indietro
+PASS altTimelineToggle: Indietro -> Atlante
+PASS relationshipGraphToggle: shell TVA, no barra/menu/vecchio Indietro
+PASS relationshipGraphToggle: Indietro -> Atlante
+PASS kangTvaGraphToggle: shell TVA, no barra/menu/vecchio Indietro
+PASS kangTvaGraphToggle: Indietro -> Atlante
+FAIL Friends: UI nuova, barra presente, overlay Friends {'a2': False, 'ov': [], 'tab': True, 'menu': True, 'shell': False, 'title': 'none', 'home': True, 'a2vis': False, 'depth': 0, 'legacyBack': False}
+PASS Friends -> Home
+Traceback (most recent call last):
+  File "/tmp/tva_suite_nav_test_xrzabehz/nav_test.py", line 80, in <module>
+    pg.evaluate("()=>document.querySelector('label[for=multiverseGraphToggle].home-hub-btn').click()"); pg.wait_for_timeout(800); s=st(pg)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/sync_api/_generated.py", line 8531, in evaluate
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.evaluate(expression=expression, arg=mapping.to_impl(arg))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_page.py", line 467, in evaluate
+    return await self._main_frame.evaluate(expression, arg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_frame.py", line 320, in evaluate
+    await self._channel.send(
+    ...<6 lines>...
+    )
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.evaluate: TypeError: Cannot read properties of null (reading 'click')
+    at eval (eval at evaluate (:290:30), <anonymous>:1:76)
+    at UtilityScript.evaluate (<anonymous>:297:18)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
