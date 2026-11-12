@@ -39045,5 +39045,28 @@ try { Object.defineProperty(window, 'tvaFriends', { value: Object.freeze({ open:
 } catch (errTf) { if (window.console) console.error('TVA Friends:', errTf); }
 })();
 </script>
+
+<script id="quiz-launcher">
+(function () {
+'use strict';
+/* Collegamento al Quiz Marvel in Centrale TVA > Operazioni. Il Quiz e' una pagina separata (./quiz/) della stessa app; nessun dato o XP condiviso. */
+function mount() {
+  if (document.getElementById('quizLauncher')) return true;
+  var acc = document.getElementById('faAccount'), grp = acc && acc.closest('.cen-grp'); if (!grp) return false;
+  var par = grp.parentNode, anchor = document.getElementById('rkLauncher'), i;
+  if (!anchor && mount.n < 40) return false;  /* attende il riquadro Rankings per mantenere l'ordine: Quiz, Rankings, resto */
+  if (!anchor) for (i = 0; i < par.children.length; i++) { var c = par.children[i]; if (c.classList && (c.classList.contains('cen-grp') || c.classList.contains('cen-card'))) { anchor = c; break; } }
+  if (!anchor) anchor = grp;
+  var sec = document.createElement('section'); sec.className = 'cen-card cen-grp'; sec.id = 'quizLauncher';
+  var h = document.createElement('h3'); h.textContent = 'Quiz Marvel';
+  var p = document.createElement('p'); p.className = 'cen-help'; p.textContent = 'Metti alla prova la tua conoscenza dell\u2019universo Marvel con domande su film, serie e fumetti. Funziona anche offline. I risultati restano su questo dispositivo e non assegnano XP.';
+  var a = document.createElement('a'); a.className = 'reset-btn'; a.id = 'quizOpen'; a.href = './quiz/'; a.textContent = '\ud83c\udfaf Apri il Quiz';
+  a.style.cssText = 'display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;box-sizing:border-box;text-decoration:none';
+  sec.appendChild(h); sec.appendChild(p); sec.appendChild(a); anchor.parentNode.insertBefore(sec, anchor); return true;
+}
+mount.n = 0;
+(function t() { mount.n++; if (mount() || mount.n > 60) return; setTimeout(t, 300); })();
+})();
+</script><!-- /quiz-launcher -->
 </body>
 </html>

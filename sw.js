@@ -38,6 +38,19 @@ function precacheShell(cache) {
   }));
 }
 
+/* Quiz Marvel (./quiz/): pagina della stessa origine, in cache per l'uso offline. Solo risorse same-origin; stessa regola di precacheShell (HTML di un'altra build non viene salvato). Le immagini TMDB del Quiz non vengono mai messe in cache da qui. */
+function precacheQuiz(cache) {
+  return Promise.all(['./quiz/', './quiz/index.html'].map(function (u) {
+    return fetch(new Request(u, { cache: 'no-cache' })).then(function (r) {
+      if (!r || r.status !== 200) return;
+      return r.clone().text().then(function (x) {
+        var m = /name="tva-build"\s+content="([^"]+)"/.exec(x.slice(0, 8192));
+        if (m && m[1] === SW_BUILD) return cache.put(u, r);
+      });
+    }).catch(function () { /* offline o assente: non blocca l'installazione */ });
+  }));
+}
+
 function precacheFonts(cache) {
   return fetch(FONT_CSS_URL, { mode: 'cors' })
     .then(function (cssResponse) {
@@ -62,7 +75,7 @@ function precacheFonts(cache) {
 self.addEventListener('install', function (event) {
   self.skipWaiting();
   event.waitUntil(
-    caches.open(CACHE_NAME).then(function (cache) { return Promise.all([precacheFonts(cache), precacheAvatars(cache), precacheShell(cache)]); })
+    caches.open(CACHE_NAME).then(function (cache) { return Promise.all([precacheFonts(cache), precacheAvatars(cache), precacheShell(cache), precacheQuiz(cache)]); })
   );
 });
 
