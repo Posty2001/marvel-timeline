@@ -47,8 +47,8 @@ def mk(b,email,uid,verified=True,enabled=True):
 def start(pg):
     pg.goto(U); pg.wait_for_timeout(1800)
     pg.evaluate("()=>{journeyStarted.checked=true;homeHubExited.checked=true;journeyStarted.dispatchEvent(new Event('change',{bubbles:true}))}"); pg.wait_for_timeout(300)
-def opn(pg,t=None): pg.evaluate("(t)=>tvaFriends.open(t)",t); pg.wait_for_timeout(250)
-def tab(pg,t): pg.click('#tfTab-'+t); pg.wait_for_timeout(200)
+def opn(pg,t=None): pg.evaluate("(t)=>tvaFriends.open(t)",t); pg.wait_for_timeout(250); pg.evaluate("()=>document.querySelectorAll('#tfRoot details.tf-sec').forEach(d=>{d.open=true})")
+def tab(pg,t): pg.click('#tfTab-'+t); pg.wait_for_timeout(200); pg.evaluate("()=>document.querySelectorAll('#tfRoot details.tf-sec').forEach(d=>{d.open=true})")
 def store(pg): return json.loads(pg.evaluate("()=>localStorage.getItem('marvel-ultimate-timeline-tvafriends-v1')") or 'null')
 def toast(pg): return pg.inner_text('#tfToast')
 FA='uidAAAAAAAAAAAAAAAAAAAA'; FB='uidBBBBBBBBBBBBBBBBBBBB'; FC='uidCCCCCCCCCCCCCCCCCCCC'

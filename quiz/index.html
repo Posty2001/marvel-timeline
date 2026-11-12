@@ -1,6 +1,6 @@
 <!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data: https://image.tmdb.org; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
-<meta name="theme-color" content="#100e0b"><meta name="color-scheme" content="dark"><meta name="robots" content="noindex,nofollow"><meta name="tva-quiz-lab" content="1.0.0"><meta name="tva-build" content="20261112-1300-friends2"><title>TVA Quiz LAB</title>
+<meta name="theme-color" content="#100e0b"><meta name="color-scheme" content="dark"><meta name="robots" content="noindex,nofollow"><meta name="tva-quiz-lab" content="1.0.0"><meta name="tva-build" content="20261112-1605-rankings2"><title>TVA Quiz LAB</title>
 <style>:root{--bg:#100e0b;--bg2:#1a1612;--panel:#221d17;--line:rgba(210,177,132,.24);--ink:#f3ecdf;--soft:#b9ad96;--gold:#d2b184;--tva:#e8742c;--good:#59c98b;--bad:#e5584b;--sab:env(safe-area-inset-bottom,0px);--sat:env(safe-area-inset-top,0px);--top-inset:env(safe-area-inset-top,0px);--next-h:0px;--tabs-h:0px;--vv-bottom:0px;--cc:#d2b184}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;min-height:100dvh}
@@ -3388,4 +3388,10 @@ function boot() {
 boot();
 
 })();
-</script></body></html>
+</script><script id="quiz-back-home">
+/* «Torna a TVA Archives»: il Quiz e' un documento separato, quindi il ritorno ricarica l'app; il flag monouso fa saltare l'intro e porta alla Home. replace(): il Quiz non resta nella cronologia. Senza JS resta il link normale. */
+(function () { var a = document.getElementById('tvaBackApp'); if (!a) return;
+  a.addEventListener('click', function (ev) { if (ev.defaultPrevented || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button) return; ev.preventDefault();
+    try { sessionStorage.setItem('tva-return-home', '1'); } catch (e) {} location.replace(a.getAttribute('href') || '../'); }); })();
+</script>
+</body></html>

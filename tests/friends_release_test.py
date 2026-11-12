@@ -41,7 +41,7 @@ def st(pg): return pg.evaluate("(k)=>localStorage.getItem(k)",KEY) or '{}'
 def imp(pg,c):
     pg.evaluate("()=>{const d=document.getElementById('tfImp'); if(d) d.open=true}")
     pg.fill('#tfImpText',c); pg.click('#tfImpBtn'); pg.wait_for_timeout(250); return pg.inner_text('#tfToast')
-def others(pg): return {k:v for k,v in pg.evaluate("()=>{const o={};for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);o[k]=localStorage.getItem(k)}return o}").items() if k not in (KEY,'marvel-ultimate-timeline-auto-backup')}
+def others(pg): return {k:v for k,v in pg.evaluate("()=>{const o={};for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);o[k]=localStorage.getItem(k)}return o}").items() if k not in (KEY,'marvel-ultimate-timeline-auto-backup','marvel-ultimate-timeline-user-name','marvel-ultimate-timeline-fav-char','marvel-ultimate-timeline-identity-v1','marvel-ultimate-timeline-identity-premigration-v1','marvel-ultimate-timeline-tessera-id')}  # Friends 2.0: nome/personaggio/identity sono l'identita' condivisa con la Tessera (per design)
 html=open(os.path.join(ROOT,'index.html'),encoding='utf-8').read()
 ck('var CLOUD_ENABLED = false;' in html and 'var ACCT_SYNC_ENABLED = false;' in html,'build: CLOUD_ENABLED=false e ACCT_SYNC_ENABLED=false')
 with sync_playwright() as p:
@@ -63,7 +63,7 @@ with sync_playwright() as p:
     base=others(pg)
     s_start=st(pg)
     pg.evaluate("()=>tvaFriends.open('nexus')"); pg.wait_for_timeout(200)
-    pg.evaluate("()=>tvaFriends.open('varianti')"); pg.wait_for_timeout(200); pg.fill('#tfName','Alice'); pg.click('#tfSaveMe'); pg.wait_for_timeout(200)
+    pg.evaluate("()=>tvaFriends.open('varianti')"); pg.wait_for_timeout(200); pg.evaluate("()=>document.querySelectorAll('#tfRoot details.tf-sec').forEach(d=>{d.open=true})"); pg.fill('#tfName','Alice'); pg.click('#tfSaveMe'); pg.wait_for_timeout(200)
     pg.evaluate("()=>tvaFriends.open('nexus')"); pg.wait_for_timeout(200); pg.click('text=Crea invito Nexus')
     pg.wait_for_timeout(200)
     code=pg.input_value('#tfOutCode') if pg.query_selector('#tfOutCode') else ''
@@ -82,7 +82,7 @@ with sync_playwright() as p:
     else: ck(False,'export: pulsante Scarica file presente')
     o1=others(pg); ck(o1==base,'dati locali Friends non alterano nessun altra chiave',[k for k in set(o1)|set(base) if o1.get(k)!=base.get(k)])
     ab=pg.evaluate("()=>localStorage.getItem('marvel-ultimate-timeline-auto-backup')") or ''
-    ck('tvafriends' not in ab and 'Alice' not in ab,'auto-backup dell\'app (scritto dall\'app stessa) non contiene dati Friends')
+    ck('tvafriends' not in ab and not any(('"'+k+'"') in ab for k in ('nexus','pendingOut','reqs','teams','evenings','duels','inbox','msgs')),'auto-backup dell\'app (scritto dall\'app stessa) non contiene dati Friends (nexus, squadre, serate, duelli, messaggi); il solo nome condiviso con la Tessera e\' nel profilo, come prima')
     # --- 3) import alterati/malformati
     s_before=st(pg)
     good=forge(msg('nx.invite',{'nonce':'abcdefgh12345678'}))

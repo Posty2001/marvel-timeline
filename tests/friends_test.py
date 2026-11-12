@@ -29,8 +29,8 @@ def start(pg):
     pg.goto(U); pg.wait_for_timeout(1500)
     pg.evaluate("()=>{journeyStarted.checked=true;homeHubExited.checked=true;journeyStarted.dispatchEvent(new Event('change',{bubbles:true}))}"); pg.wait_for_timeout(300)
 def opn(pg,tab=None):
-    pg.evaluate("(t)=>tvaFriends.open(t)",tab); pg.wait_for_timeout(250)
-def tab(pg,t): pg.click('#tfTab-'+t); pg.wait_for_timeout(200)
+    pg.evaluate("(t)=>tvaFriends.open(t)",tab); pg.wait_for_timeout(250); pg.evaluate("()=>document.querySelectorAll('#tfRoot details.tf-sec').forEach(d=>{d.open=true})")
+def tab(pg,t): pg.click('#tfTab-'+t); pg.wait_for_timeout(200); pg.evaluate("()=>document.querySelectorAll('#tfRoot details.tf-sec').forEach(d=>{d.open=true})")
 def tdet(pg):
     pg.click('#tfTab-squadre'); pg.wait_for_timeout(150)
     if not pg.query_selector('#tfTeamProg'): pg.click('[data-team]'); pg.wait_for_timeout(150)
@@ -62,11 +62,11 @@ with sync_playwright() as p:
     cxA,A=mk(b,LS); cxB,B=mk(b,LS); start(A); start(B)
     A.evaluate("()=>{document.getElementById('appTabMissioni').click();document.getElementById('cenTab-operazioni').click()}"); B.evaluate("()=>{document.getElementById('appTabMissioni').click();document.getElementById('cenTab-operazioni').click()}"); A.wait_for_timeout(6500); base=keys(A); baseB=keys(B); net0=len(A.net)+len(B.net)
     ck(store(A) is None and store(B) is None,'avvio: nessuna chiave Friends creata finche\' non si usa')
-    ck(A.evaluate("()=>{document.getElementById('appTabMissioni').click();document.getElementById('cenTab-operazioni').click();return !!document.getElementById('tfOpen')}"),'Centrale TVA > Operazioni: pulsante «Apri TVA Friends» presente')
+    ck(A.evaluate("()=>{document.getElementById('appTabMissioni').click();document.getElementById('cenTab-operazioni').click();return !document.getElementById('tfOpen')&&!document.getElementById('tfLauncher')&&!!document.getElementById('appTabFriends')}"),'Centrale TVA > Operazioni: nessun lancio Friends duplicato (rimosso per decisione); accesso dalla barra FRIENDS')
     ck(A.evaluate("()=>['cenTab-panoramica','cenTab-missioni','cenTab-strumenti','cenTab-operazioni'].every(i=>!!document.getElementById(i))"),'Centrale TVA: le 4 sezioni originali intatte')
     # ===== M1 Varianti
     opn(A); ck(A.evaluate("()=>document.querySelectorAll('.tf-tab').length")==7,'7 moduli presenti')
-    A.fill('#tfName','Alice'); A.fill('#tfMotto','Tempo al tempo'); A.click('.tf-pick:nth-child(3)'); A.click('#tfSaveMe'); A.wait_for_timeout(200)
+    A.evaluate("()=>{const d=document.getElementById('tfCustom');if(d)d.open=true}"); A.fill('#tfName','Alice'); A.fill('#tfMotto','Tempo al tempo'); A.click('.tf-pick:nth-child(3)'); A.click('#tfSaveMe'); A.wait_for_timeout(200)
     ck(store(A)['me']['name']=='Alice' and store(A)['me']['emblem']==2,'M1 Variante salvata (nome, emblema)')
     ck('Tempo al tempo' not in A.inner_text('#tfPrev'),'M1 anteprima: motto NON mostrato finche\' non condiviso')
     A.check('#tfSh-motto'); A.wait_for_timeout(100); ck('Tempo al tempo' in A.inner_text('#tfPrev'),'M1 anteprima aggiornata quando si abilita la condivisione del motto')
@@ -188,7 +188,9 @@ with sync_playwright() as p:
     allc=' '.join(CODES); dec_all=' '.join(json.dumps(dec(c)) for c in CODES)
     ck(CODES and not any(s in allc or s in dec_all for s in SECRETS) and '4.5' not in dec_all and '"favorites"' not in dec_all,'PRIVACY: nessuno dei %d codici generati contiene note/Diario, voti o preferiti'%len(CODES))
     ck(SECRETS[0] not in json.dumps(store(A)) and SECRETS[0] not in json.dumps(store(B)),'PRIVACY: archivio Friends senza dati privati')
-    dif=[k for k in set(keys(A))|set(base) if keys(A).get(k)!=base.get(k)]; ck(not dif,'PRIVACY: profilo, voti, note, progressi di A identici dopo tutti i flussi',dif)
+    IDENT=('marvel-ultimate-timeline-user-name','marvel-ultimate-timeline-fav-char','marvel-ultimate-timeline-identity-v1','marvel-ultimate-timeline-identity-premigration-v1','marvel-ultimate-timeline-tessera-id')
+    dif=[k for k in set(keys(A))|set(base) if keys(A).get(k)!=base.get(k) and k not in IDENT]; ck(not dif,'PRIVACY: voti, note, progressi, XP, badge, missioni di A identici dopo tutti i flussi (Friends 2.0 scrive solo l\'identita\' condivisa: nome, personaggio, identity)',dif)
+    ident_ok=all(k in IDENT for k in [k for k in set(keys(A))|set(base) if keys(A).get(k)!=base.get(k)]); ck(ident_ok,'PRIVACY: le sole chiavi esterne modificate sono quelle dell\'identita\' condivisa (per design Tessera 3.0)')
     ck(not [u for u in (A.net+B.net)[net0:] if 'firebase' in u or 'googleapis' in u or 'gstatic' in u],'CLOUD: nessuna richiesta verso Firebase/Google con il cloud disattivato')
     ck(A.evaluate("()=>tvaFriends.cloudEnabled()")==False,'CLOUD: disattivato')
     # ===== offline + errori
