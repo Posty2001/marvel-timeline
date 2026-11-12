@@ -39045,6 +39045,1458 @@ try { Object.defineProperty(window, 'tvaFriends', { value: Object.freeze({ open:
 } catch (errTf) { if (window.console) console.error('TVA Friends:', errTf); }
 })();
 </script>
+<script id="rankings-engine">
+/* TVA Rankings V1 — R1: motore (modelli, validazione, persistenza IndexedDB, CRUD, riordino, bozze, immagini).
+   Nessuna UI. Nessun accesso a localStorage, Firebase o rete. Dati non attendibili: tutto passa da normRanking().
+   Superficie pubblica: window.tvaRankings (oggetto congelato). IndexedDB si apre solo alla prima chiamata. */
+(function () {
+'use strict';
+if (window.tvaRankings) return;
+
+/* ---------- costanti e limiti (limiti TECNICI di sicurezza, non limiti di prodotto) ---------- */
+var SCHEMA = 1, DB_NAME = 'tva-rankings', DB_VERSION = 1, CHANNEL = 'tva-rankings-v1';
+var L = { rankings: 500, items: 500, tiers: 20, title: 80, desc: 500, note: 500, name: 80, tierName: 24,
+  images: 300, imgInput: 10 * 1024 * 1024, imgDim: 1024, imgMaxSide: 16000, imgMaxPixels: 60e6, imgStored: 1.5 * 1024 * 1024 };
+var KINDS = ['top', 'tier'];
+var PRESETS = [
+  { id: 'personaggi', label: 'Personaggi', cats: ['char'], hint: 'Dal catalogo personaggi della guida, oppure inseriti a mano.' },
+  { id: 'villain', label: 'Villain', cats: ['char'], hint: 'Il catalogo non distingue i villain: scegli tu dal catalogo personaggi o inserisci a mano.' },
+  { id: 'film', label: 'Film', cats: ['item'], filter: { type: 'film' }, hint: 'Dai film della guida.' },
+  { id: 'serie', label: 'Serie', cats: ['item'], filter: { type: 'serie' }, hint: 'Dalle serie della guida.' },
+  { id: 'fumetti', label: 'Fumetti', cats: [], hint: 'Nessun catalogo fumetti nell\'app: elementi inseriti a mano.' },
+  { id: 'saghe', label: 'Saghe', cats: ['saga', 'universe'], hint: 'Dalle saghe e dagli universi della guida.' },
+  { id: 'libera', label: 'Classifica libera', cats: ['item', 'char', 'saga', 'universe', 'org', 'actor'], hint: 'Qualsiasi argomento, anche non Marvel.' }
+];
+var PRESET_IDS = PRESETS.map(function (p) { return p.id; });
+var DEFAULT_TIERS = ['S', 'A', 'B', 'C', 'D'];
+var REF_RE = { item: /^[0-9]{3}$/, char: /^char-[a-z0-9-]{1,80}$/, universe: /^uni-[a-z0-9-]{1,80}$/, org: /^org-[a-z0-9-]{1,80}$/,
+  actor: /^att-[a-z0-9-]{1,80}$/, saga: /^saga-[a-z0-9-]{1,100}$/ };
+var CATS = Object.keys(REF_RE);
+var ID_RE = { rk: /^rk_[a-f0-9]{16}$/, it: /^it_[a-f0-9]{16}$/, ti: /^ti_[a-f0-9]{12}$/, im: /^im_[a-f0-9]{24}$/ };
+
+/* ---------- errori ---------- */
+function RkError(code, message, extra) { var e = new Error(message || code); e.name = 'RkError'; e.code = code; if (extra) e.detail = extra; return e; }
+function bad(path, why) { return RkError('invalid', 'Dato non valido: ' + path + (why ? ' (' + why + ')' : '')); }
+
+/* ---------- utilita' ---------- */
+function isObj(o) { return o !== null && typeof o === 'object' && !Array.isArray(o); }
+function own(o, k) { return Object.prototype.hasOwnProperty.call(o, k); }
+function hex(n) { var a = new Uint8Array(n / 2 | 0), s = '', i; (window.crypto || window.msCrypto).getRandomValues(a); for (i = 0; i < a.length; i++) s += ('0' + a[i].toString(16)).slice(-2); return s; }
+function rid(p, n) { return p + '_' + hex(n); }
+var CTRL = /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f\u200b-\u200f\u2028-\u202e\u2066-\u2069\ufeff]/g;
+function cleanLine(s, max) { return typeof s === 'string' ? s.replace(CTRL, ' ').replace(/\s+/g, ' ').trim().slice(0, max) : ''; }
+function cleanText(s, max) { return typeof s === 'string' ? s.replace(/\r\n?/g, '\n').replace(CTRL, ' ').replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim().slice(0, max) : ''; }
+function clone(x) { return JSON.parse(JSON.stringify(x)); }
+function now() { return Date.now(); }
+function ts(v, d) { return (typeof v === 'number' && isFinite(v) && v >= 0 && v <= 4e12) ? Math.floor(v) : d; }
+function normKey(s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim(); }
+function slug(s) { return normKey(s).replace(/ /g, '-').slice(0, 90); }
+
+/* ---------- adattatore dei cataloghi REALI dell'app (sola lettura; nessun catalogo inventato) ---------- */
+var CAT = { built: false, data: {} };
+function jdata(id) { try { var n = document.getElementById(id); return n ? JSON.parse(n.textContent) : null; } catch (e) { return null; } }
+function buildCatalog() {
+  if (CAT.built) return CAT.data; var d = CAT.data = { item: [], char: [], universe: [], org: [], actor: [], saga: [] };
+  var li = document.querySelectorAll('li.card-wrap[id^="item-"]'), i, g, k, n, e, seen;
+  for (i = 0; i < li.length; i++) {
+    var id = li[i].getAttribute('data-item') || li[i].id.slice(5), t = li[i].querySelector('.title');
+    if (REF_RE.item.test(id) && t) d.item.push({ cat: 'item', ref: id, name: cleanLine(t.textContent, L.name), type: li[i].getAttribute('data-type') || '' });
+  }
+  g = jdata('relationshipGraphData') || {};
+  Object.keys(g).forEach(function (key) {
+    var v = g[key]; if (!isObj(v) || typeof v.name !== 'string') return;
+    var c = v.type === 'char' ? 'char' : v.type === 'org' ? 'org' : v.type === 'attore' ? 'actor' : null;
+    if (c && REF_RE[c].test(key)) d[c].push({ cat: c, ref: key, name: cleanLine(v.name, L.name) });
+  });
+  var mv = jdata('mvMapData'); if (mv && isObj(mv.universi)) Object.keys(mv.universi).forEach(function (key) { var v = mv.universi[key]; if (REF_RE.universe.test(key) && isObj(v) && typeof v.nome === 'string') d.universe.push({ cat: 'universe', ref: key, name: cleanLine(v.nome, L.name) }); });
+  var alt = jdata('altTimelineData'); seen = {};
+  if (Array.isArray(alt)) alt.forEach(function (x) { if (isObj(x) && typeof x.saga === 'string' && x.saga) { var r = 'saga-' + slug(x.saga); if (!seen[r] && REF_RE.saga.test(r)) { seen[r] = 1; d.saga.push({ cat: 'saga', ref: r, name: cleanLine(x.saga, L.name) }); } } });
+  Object.keys(d).forEach(function (c) { d[c].forEach(function (e2) { e2.key = normKey(e2.name); }); });
+  CAT.built = true; return d;
+}
+function catGet(cat, ref) { var a = buildCatalog()[cat] || []; for (var i = 0; i < a.length; i++) if (a[i].ref === ref) return a[i]; return null; }
+function catSearch(cat, q, limit, filter) {
+  var a = buildCatalog()[cat]; if (!a) return []; var k = normKey(q), out = [];
+  for (var i = 0; i < a.length && out.length < (limit || 50); i++) { if (filter && filter.type && a[i].type !== filter.type) continue; if (!k || a[i].key.indexOf(k) >= 0) out.push({ cat: a[i].cat, ref: a[i].ref, name: a[i].name, type: a[i].type || undefined }); }
+  return out;
+}
+
+/* ---------- normalizzazione/validazione (unica porta d'ingresso di ogni dato) ---------- */
+function normImageRef(v, path) {
+  if (v === null || v === undefined) return null;
+  if (!isObj(v)) throw bad(path);
+  if (v.type === 'catalog') { if (CATS.indexOf(v.cat) < 0 || typeof v.ref !== 'string' || !REF_RE[v.cat].test(v.ref)) throw bad(path + '.catalog'); return { type: 'catalog', cat: v.cat, ref: v.ref }; }
+  if (v.type === 'user') { if (typeof v.id !== 'string' || !ID_RE.im.test(v.id)) throw bad(path + '.user'); return { type: 'user', id: v.id }; }
+  throw bad(path + '.type');
+}
+function normSource(v, path) {
+  if (!isObj(v)) throw bad(path);
+  if (v.type === 'manual') return { type: 'manual' };
+  if (v.type === 'catalog') { if (CATS.indexOf(v.cat) < 0 || typeof v.ref !== 'string' || !REF_RE[v.cat].test(v.ref)) throw bad(path + '.catalog'); return { type: 'catalog', cat: v.cat, ref: v.ref }; }
+  throw bad(path + '.type');
+}
+function normItem(r, path, w) {
+  if (!isObj(r)) throw bad(path);
+  var id = (typeof r.id === 'string' && ID_RE.it.test(r.id)) ? r.id : null; if (!id) throw bad(path + '.id');
+  var name = cleanLine(r.name, L.name); if (!name) throw bad(path + '.name', 'vuoto');
+  var it = { id: id, source: normSource(r.source, path + '.source'), name: name, note: cleanText(r.note, L.note), image: normImageRef(r.image, path + '.image'), tierId: null };
+  if (r.tierId !== null && r.tierId !== undefined) { if (typeof r.tierId !== 'string' || !ID_RE.ti.test(r.tierId)) { w.push(path + ': fascia non valida, elemento rimesso tra i non classificati'); } else it.tierId = r.tierId; }
+  return it;
+}
+/* ritorna { value, warnings }; lancia RkError('invalid') per strutture irrecuperabili. Mai perdita silenziosa: ogni scarto e' in warnings. */
+function normRanking(r) {
+  var w = [], i;
+  if (!isObj(r)) throw bad('classifica');
+  if (typeof r.id !== 'string' || !ID_RE.rk.test(r.id)) throw bad('id');
+  if (KINDS.indexOf(r.kind) < 0) throw bad('kind');
+  var out = { schema: SCHEMA, id: r.id, rev: (typeof r.rev === 'number' && r.rev >= 0 && r.rev < 1e9) ? Math.floor(r.rev) : 0, kind: r.kind };
+  out.title = cleanLine(r.title, L.title); if (!out.title) throw bad('title', 'vuoto');
+  out.description = cleanText(r.description, L.desc);
+  out.preset = PRESET_IDS.indexOf(r.preset) >= 0 ? r.preset : 'libera';
+  out.imageMode = r.imageMode === 'images' ? 'images' : 'text';
+  out.view = r.view === 'podium' && r.kind === 'top' ? 'podium' : 'list';
+  out.createdAt = ts(r.createdAt, now()); out.updatedAt = ts(r.updatedAt, out.createdAt);
+  out.tiers = [];
+  if (r.kind === 'tier') {
+    var tiers = Array.isArray(r.tiers) ? r.tiers : []; var tid = {};
+    for (i = 0; i < tiers.length && out.tiers.length < L.tiers; i++) {
+      var t = tiers[i]; if (!isObj(t) || typeof t.id !== 'string' || !ID_RE.ti.test(t.id) || tid[t.id]) { w.push('tiers[' + i + ']: fascia scartata'); continue; }
+      var tn = cleanLine(t.name, L.tierName); if (!tn) { w.push('tiers[' + i + ']: nome vuoto, scartata'); continue; }
+      tid[t.id] = 1; out.tiers.push({ id: t.id, name: tn });
+    }
+    if (!out.tiers.length) throw bad('tiers', 'almeno una fascia');
+  }
+  var items = Array.isArray(r.items) ? r.items : []; if (items.length > L.items) throw RkError('limit', 'Troppi elementi (massimo tecnico ' + L.items + ').');
+  out.items = []; var seenId = {}, seenCat = {}, tset = {}; out.tiers.forEach(function (t2) { tset[t2.id] = 1; });
+  for (i = 0; i < items.length; i++) {
+    var it = normItem(items[i], 'items[' + i + ']', w);
+    if (seenId[it.id]) { w.push('items[' + i + ']: id duplicato, scartato'); continue; } seenId[it.id] = 1;
+    if (it.source.type === 'catalog') { var ck = it.source.cat + ':' + it.source.ref; if (seenCat[ck]) { w.push('items[' + i + ']: elemento di catalogo duplicato, scartato'); continue; } seenCat[ck] = 1; }
+    if (r.kind === 'top') it.tierId = null; else if (it.tierId && !tset[it.tierId]) { w.push('items[' + i + ']: fascia inesistente, rimesso tra i non classificati'); it.tierId = null; }
+    out.items.push(it);
+  }
+  /* struttura per la futura condivisione: presente e validata, MAI usata in V1 */
+  var s = isObj(r.share) ? r.share : {};
+  out.share = { v: 1, visibility: 'private', ownerVid: (typeof s.ownerVid === 'string' && /^v[a-z0-9]{8,12}$/.test(s.ownerVid)) ? s.ownerVid : null, shareId: null, remoteRev: 0 };
+  return { value: out, warnings: w };
+}
+function mustNorm(r) { var n = normRanking(r); return n.value; }
+
+/* ---------- persistenza: IndexedDB con transazioni; fallback in memoria DICHIARATO (mai silenzioso) ---------- */
+var STORES = ['rankings', 'images', 'drafts', 'trash', 'meta'];
+var BACKEND = { kind: null, db: null, mem: null, error: null, opening: null };
+function mapErr(e) {
+  var n = e && (e.name || (e.target && e.target.error && e.target.error.name));
+  if (n === 'QuotaExceededError' || (e && e.code === 22)) return RkError('quota', 'Spazio esaurito sul dispositivo: nessuna modifica e\' stata salvata.');
+  if (e && e.name === 'RkError') return e;
+  return RkError('storage-error', 'Errore di salvataggio: ' + ((e && (e.message || (e.target && e.target.error && e.target.error.message))) || 'sconosciuto'));
+}
+function openBackend() {
+  if (BACKEND.kind) return Promise.resolve(BACKEND);
+  if (BACKEND.opening) return BACKEND.opening;
+  BACKEND.opening = new Promise(function (res) {
+    function mem(err) { BACKEND.kind = 'memory'; BACKEND.mem = {}; STORES.forEach(function (s) { BACKEND.mem[s] = {}; }); BACKEND.error = err ? String(err.message || err) : 'IndexedDB non disponibile'; res(BACKEND); }
+    try {
+      if (!window.indexedDB) return mem('IndexedDB non disponibile');
+      var rq = indexedDB.open(DB_NAME, DB_VERSION);
+      rq.onupgradeneeded = function (ev) {
+        var db = rq.result, old = ev.oldVersion;
+        if (old < 1) { db.createObjectStore('rankings', { keyPath: 'id' }); db.createObjectStore('images', { keyPath: 'id' }); db.createObjectStore('drafts', { keyPath: 'id' }); db.createObjectStore('trash', { keyPath: 'id' }); db.createObjectStore('meta', { keyPath: 'key' }); }
+        /* migrazioni future: if (old < 2) {...} */
+      };
+      rq.onsuccess = function () { BACKEND.kind = 'indexeddb'; BACKEND.db = rq.result; BACKEND.db.onversionchange = function () { try { BACKEND.db.close(); } catch (e) {} BACKEND.kind = null; BACKEND.db = null; BACKEND.opening = null; }; res(BACKEND); };
+      rq.onerror = function () { mem(rq.error); };
+      rq.onblocked = function () { mem('apertura bloccata da un\'altra scheda'); };
+    } catch (e) { mem(e); }
+  });
+  return BACKEND.opening;
+}
+/* tx(stores, mode, fn): fn(api) esegue operazioni sincrone-in-transazione; promise risolta SOLO a commit avvenuto. */
+function tx(stores, mode, fn) {
+  return openBackend().then(function (B) {
+    if (B.kind === 'memory') return memTx(B, stores, mode, fn);
+    return new Promise(function (resolve, reject) {
+      var t, result, failed = null;
+      try { t = B.db.transaction(stores, mode); } catch (e) { return reject(mapErr(e)); }
+      t.oncomplete = function () { resolve(result); };
+      t.onerror = function (ev) { failed = failed || mapErr(ev.target && ev.target.error ? ev.target.error : ev); };
+      t.onabort = function (ev) { reject(failed || mapErr(t.error || (ev && ev.target && ev.target.error) || { message: 'transazione annullata' })); };
+      var api = {
+        get: function (s, k) { return new Promise(function (r, j) { try { var q = t.objectStore(s).get(k); q.onsuccess = function () { r(q.result); }; q.onerror = function () { j(q.error); }; } catch (e) { j(e); } }); },
+        getAll: function (s) { return new Promise(function (r, j) { try { var q = t.objectStore(s).getAll(); q.onsuccess = function () { r(q.result || []); }; q.onerror = function () { j(q.error); }; } catch (e) { j(e); } }); },
+        put: function (s, v) { return new Promise(function (r, j) { try { var q = t.objectStore(s).put(v); q.onsuccess = function () { r(); }; q.onerror = function () { j(q.error); }; } catch (e) { j(e); } }); },
+        del: function (s, k) { return new Promise(function (r, j) { try { var q = t.objectStore(s).delete(k); q.onsuccess = function () { r(); }; q.onerror = function () { j(q.error); }; } catch (e) { j(e); } }); },
+        abort: function () { try { t.abort(); } catch (e) {} }
+      };
+      var p; try { p = Promise.resolve(fn(api)); } catch (e) { try { t.abort(); } catch (e2) {} return reject(mapErr(e)); }
+      p.then(function (v) { result = v; }, function (e) { failed = failed || mapErr(e); try { t.abort(); } catch (e2) {} });
+    });
+  });
+}
+function memTx(B, stores, mode, fn) { /* stessa semantica: tutto o niente (snapshot + rollback) */
+  var snap = mode === 'readwrite' ? clone(B.mem) : null, ok = true;
+  var api = {
+    get: function (s, k) { return Promise.resolve(B.mem[s][k] === undefined ? undefined : clone(B.mem[s][k])); },
+    getAll: function (s) { return Promise.resolve(Object.keys(B.mem[s]).map(function (k) { return clone(B.mem[s][k]); })); },
+    put: function (s, v) { B.mem[s][v.id !== undefined ? v.id : v.key] = clone(v); return Promise.resolve(); },
+    del: function (s, k) { delete B.mem[s][k]; return Promise.resolve(); },
+    abort: function () { ok = false; }
+  };
+  return Promise.resolve().then(function () { return fn(api); }).then(function (v) { if (!ok) { B.mem = snap; throw RkError('storage-error', 'transazione annullata'); } return v; }, function (e) { if (snap) B.mem = snap; throw mapErr(e); });
+}
+
+/* ---------- coda seriale per processo + eventi (anche tra schede) ---------- */
+var QUEUE = Promise.resolve(), LISTENERS = [], BC = null;
+function serial(fn) { var p = QUEUE.then(fn); QUEUE = p.then(function () {}, function () {}); return p; }
+function emit(ev, remote) { LISTENERS.slice().forEach(function (f) { try { f(ev); } catch (e) {} }); if (!remote) { try { if (!BC && window.BroadcastChannel) { BC = new BroadcastChannel(CHANNEL); BC.onmessage = function (m) { if (isObj(m.data)) emit(m.data, true); }; } if (BC) BC.postMessage(ev); } catch (e) {} } }
+function listenRemote() { try { if (!BC && window.BroadcastChannel) { BC = new BroadcastChannel(CHANNEL); BC.onmessage = function (m) { if (isObj(m.data)) emit(m.data, true); }; } } catch (e) {} }
+
+/* ---------- lettura ---------- */
+function loadAll(a) { /* ritorna { good:[ranking], corrupt:[{id,error}] } senza scartare nulla in silenzio */
+  return a.getAll('rankings').then(function (rows) {
+    var good = [], corrupt = [];
+    rows.forEach(function (row) { try { var n = normRanking(row); good.push(n.value); } catch (e) { corrupt.push({ id: row && typeof row.id === 'string' ? row.id.slice(0, 40) : '?', error: String(e.message || e).slice(0, 120) }); } });
+    return { good: good, corrupt: corrupt };
+  });
+}
+function summary(r) { var cover = null; for (var i = 0; i < r.items.length; i++) if (r.items[i].image) { cover = r.items[i].image; break; } return { id: r.id, kind: r.kind, title: r.title, description: r.description, preset: r.preset, count: r.items.length, updatedAt: r.updatedAt, createdAt: r.createdAt, rev: r.rev, cover: cover, imageMode: r.imageMode }; }
+function getRanking(id) { if (typeof id !== 'string' || !ID_RE.rk.test(id)) return Promise.reject(bad('id')); return tx(['rankings'], 'readonly', function (a) { return a.get('rankings', id); }).then(function (row) { if (!row) throw RkError('not-found', 'Classifica non trovata.'); return mustNorm(row); }); }
+function listRankings(opt) {
+  opt = isObj(opt) ? opt : {};
+  return tx(['rankings'], 'readonly', function (a) { return loadAll(a); }).then(function (res) {
+    var k = normKey(opt.query || ''), out = res.good.filter(function (r) {
+      if (opt.kind && r.kind !== opt.kind) return false; if (opt.preset && r.preset !== opt.preset) return false;
+      if (!k) return true; if (normKey(r.title).indexOf(k) >= 0 || normKey(r.description).indexOf(k) >= 0) return true;
+      return r.items.some(function (i) { return normKey(i.name).indexOf(k) >= 0 || normKey(i.note).indexOf(k) >= 0; });
+    });
+    var s = opt.sort === 'title' ? function (a, b) { return a.title < b.title ? -1 : 1; } : opt.sort === 'created' ? function (a, b) { return b.createdAt - a.createdAt; } : function (a, b) { return b.updatedAt - a.updatedAt; };
+    out.sort(s); var list = out.map(summary); list.corrupt = res.corrupt; return list;
+  });
+}
+
+/* ---------- scrittura: ogni operazione legge l'ULTIMA versione dentro la transazione (nessuna sovrascrittura tra schede) ---------- */
+function mutate(id, fn, opt) {
+  opt = opt || {};
+  return serial(function () {
+    var ev;
+    return tx(['rankings', 'images'], 'readwrite', function (a) {
+      return a.get('rankings', id).then(function (row) {
+        if (!row) throw RkError('not-found', 'Classifica non trovata.');
+        var cur = mustNorm(row);
+        if (opt.expectedRev !== undefined && opt.expectedRev !== cur.rev) throw RkError('conflict', 'La classifica e\' stata modificata altrove (revisione ' + cur.rev + ' invece di ' + opt.expectedRev + ').', { currentRev: cur.rev });
+        var draft = clone(cur); var extra = fn(draft, a);
+        return Promise.resolve(extra).then(function (ex) {
+          draft.rev = cur.rev + 1; draft.updatedAt = now();
+          var n = normRanking(draft); /* rivalida SEMPRE il risultato */
+          return checkImages(a, n.value).then(function () { return a.put('rankings', n.value).then(function () { ev = { type: 'changed', id: id, op: opt.op || 'update', rev: n.value.rev }; return { ranking: n.value, warnings: n.warnings, result: ex }; }); });
+        });
+      });
+    }).then(function (r) { emit(ev); return r; });
+  });
+}
+function checkImages(a, r) { /* integrita' referenziale: le immagini utente devono esistere */
+  var ids = []; r.items.forEach(function (i) { if (i.image && i.image.type === 'user' && ids.indexOf(i.image.id) < 0) ids.push(i.image.id); });
+  return ids.reduce(function (p, id) { return p.then(function () { return a.get('images', id).then(function (im) { if (!im) throw RkError('image-invalid', 'Immagine personale inesistente: ' + id); }); }); }, Promise.resolve());
+}
+function checkLimits(rows) { if (rows >= L.rankings) throw RkError('limit', 'Troppe classifiche (massimo tecnico ' + L.rankings + ').'); }
+
+function createRanking(spec) {
+  spec = isObj(spec) ? spec : {};
+  return serial(function () {
+    var ev, base = { id: rid('rk', 16), rev: 1, kind: spec.kind, title: spec.title, description: spec.description, preset: spec.preset, imageMode: spec.imageMode, view: 'list', createdAt: now(), updatedAt: now(), items: [], tiers: [] };
+    if (spec.kind === 'tier') base.tiers = (Array.isArray(spec.tiers) && spec.tiers.length ? spec.tiers.map(function (n) { return { id: rid('ti', 12), name: n }; }) : DEFAULT_TIERS.map(function (n) { return { id: rid('ti', 12), name: n }; }));
+    var n = normRanking(base); /* valida titolo/kind prima di toccare il disco */
+    return tx(['rankings'], 'readwrite', function (a) { return a.getAll('rankings').then(function (rows) { checkLimits(rows.length); return a.put('rankings', n.value); }); })
+      .then(function () { ev = { type: 'created', id: n.value.id, rev: 1 }; emit(ev); return n.value; });
+  });
+}
+function updateRankingMeta(id, patch, opt) {
+  patch = isObj(patch) ? patch : {};
+  return mutate(id, function (r) {
+    if (own(patch, 'title')) r.title = patch.title; if (own(patch, 'description')) r.description = patch.description;
+    if (own(patch, 'preset')) r.preset = patch.preset; if (own(patch, 'imageMode')) r.imageMode = patch.imageMode;
+    if (own(patch, 'view')) r.view = patch.view;
+  }, { expectedRev: opt && opt.expectedRev, op: 'meta' }).then(function (x) { return x.ranking; });
+}
+/* sostituzione completa (commit di una bozza / editor). Richiede expectedRev: protegge da modifiche simultanee. */
+function saveRanking(ranking, opt) {
+  if (!opt || typeof opt.expectedRev !== 'number') return Promise.reject(RkError('invalid', 'saveRanking richiede expectedRev.'));
+  var incoming; try { incoming = normRanking(ranking); } catch (e) { return Promise.reject(e); }
+  return mutate(incoming.value.id, function (r) { var v = incoming.value; r.title = v.title; r.description = v.description; r.preset = v.preset; r.imageMode = v.imageMode; r.view = v.view; r.items = v.items; r.tiers = v.tiers; r.kind === v.kind || (function () { throw bad('kind', 'non modificabile'); })(); }, { expectedRev: opt.expectedRev, op: 'save' }).then(function (x) { x.warnings = x.warnings.concat(incoming.warnings); return x; });
+}
+function deleteRanking(id) { /* sposta nel cestino, atomico; nessuna cancellazione definitiva */
+  return serial(function () { var ev;
+    return tx(['rankings', 'trash', 'drafts'], 'readwrite', function (a) { return a.get('rankings', id).then(function (row) { if (!row) throw RkError('not-found', 'Classifica non trovata.'); return a.put('trash', { id: id, deletedAt: now(), data: row }).then(function () { return a.del('rankings', id); }).then(function () { return a.del('drafts', id); }); }); })
+      .then(function () { ev = { type: 'deleted', id: id }; emit(ev); return true; }); });
+}
+function listTrash() { return tx(['trash'], 'readonly', function (a) { return a.getAll('trash'); }).then(function (rows) { return rows.map(function (t) { var title = isObj(t.data) ? cleanLine(t.data.title, L.title) : '?'; return { id: t.id, title: title, deletedAt: t.deletedAt, count: isObj(t.data) && Array.isArray(t.data.items) ? t.data.items.length : 0 }; }).sort(function (a, b) { return b.deletedAt - a.deletedAt; }); }); }
+function restoreRanking(id) {
+  return serial(function () { var out;
+    return tx(['rankings', 'trash'], 'readwrite', function (a) { return a.get('trash', id).then(function (t) { if (!t) throw RkError('not-found', 'Non presente nel cestino.'); return a.get('rankings', id).then(function (ex) { if (ex) throw RkError('duplicate', 'Esiste gia\' una classifica con questo id.'); var n = normRanking(t.data); return a.getAll('rankings').then(function (rows) { checkLimits(rows.length); n.value.rev += 1; n.value.updatedAt = now(); out = n.value; return a.put('rankings', n.value); }).then(function () { return a.del('trash', id); }); }); }); })
+      .then(function () { emit({ type: 'created', id: id, rev: out.rev }); return out; }); });
+}
+function purgeTrash(id) { return serial(function () { return tx(['trash'], 'readwrite', function (a) { return id ? a.del('trash', id) : a.getAll('trash').then(function (rows) { return Promise.all(rows.map(function (t) { return a.del('trash', t.id); })); }); }).then(function () { return true; }); }); }
+function duplicateRanking(id, opt) {
+  return serial(function () { var out;
+    return tx(['rankings'], 'readwrite', function (a) { return a.get('rankings', id).then(function (row) { if (!row) throw RkError('not-found', 'Classifica non trovata.'); return a.getAll('rankings').then(function (rows) { checkLimits(rows.length);
+      var src = mustNorm(row), c = clone(src), tmap = {}; c.id = rid('rk', 16); c.rev = 1; c.createdAt = c.updatedAt = now();
+      c.title = cleanLine((opt && opt.title) || (src.title + ' (copia)'), L.title);
+      c.tiers.forEach(function (t) { var n = rid('ti', 12); tmap[t.id] = n; t.id = n; });
+      c.items.forEach(function (i) { i.id = rid('it', 16); if (i.tierId) i.tierId = tmap[i.tierId] || null; });
+      out = mustNorm(c); return a.put('rankings', out); }); }); })
+      .then(function () { emit({ type: 'created', id: out.id, rev: 1 }); return out; }); });
+}
+
+/* ---------- elementi ---------- */
+function addItem(rankingId, spec, opt) {
+  spec = isObj(spec) ? spec : {}; opt = opt || {};
+  return mutate(rankingId, function (r) {
+    if (r.items.length >= L.items) throw RkError('limit', 'Troppi elementi (massimo tecnico ' + L.items + ').');
+    var src = isObj(spec.source) ? spec.source : { type: 'manual' }, name = spec.name;
+    if (src.type === 'catalog') {
+      var ce = (typeof src.ref === 'string' && CATS.indexOf(src.cat) >= 0) ? catGet(src.cat, src.ref) : null;
+      if (!ce) throw RkError('invalid', 'Elemento di catalogo inesistente.');
+      for (var i = 0; i < r.items.length; i++) { var s = r.items[i].source; if (s.type === 'catalog' && s.cat === src.cat && s.ref === src.ref) throw RkError('duplicate', 'Elemento gia\' presente in questa classifica: ' + r.items[i].name); }
+      if (!cleanLine(name, L.name)) name = ce.name; src = { type: 'catalog', cat: src.cat, ref: src.ref };
+    } else src = { type: 'manual' };
+    var it = { id: rid('it', 16), source: src, name: name, note: spec.note, image: spec.image === undefined ? null : spec.image, tierId: null };
+    if (r.kind === 'tier' && spec.tierId) { if (!r.tiers.some(function (t) { return t.id === spec.tierId; })) throw RkError('invalid', 'Fascia inesistente.'); it.tierId = spec.tierId; }
+    var at = (typeof opt.index === 'number' && opt.index >= 0 && opt.index <= r.items.length) ? Math.floor(opt.index) : r.items.length;
+    r.items.splice(at, 0, it); return it.id;
+  }, { op: 'item-add' }).then(function (x) { x.itemId = x.result; return x; });
+}
+function updateItem(rankingId, itemId, patch) {
+  patch = isObj(patch) ? patch : {};
+  return mutate(rankingId, function (r) { var it = find(r, itemId); if (own(patch, 'name')) { if (!cleanLine(patch.name, L.name)) throw bad('name', 'vuoto'); it.name = patch.name; } if (own(patch, 'note')) it.note = patch.note; if (own(patch, 'image')) it.image = patch.image; }, { op: 'item-update' });
+}
+function removeItem(rankingId, itemId) { return mutate(rankingId, function (r) { var it = find(r, itemId); r.items.splice(r.items.indexOf(it), 1); }, { op: 'item-remove' }); }
+function find(r, itemId) { for (var i = 0; i < r.items.length; i++) if (r.items[i].id === itemId) return r.items[i]; throw RkError('not-found', 'Elemento non trovato.'); }
+function tierList(r, tierId) { return r.items.filter(function (i) { return (i.tierId || null) === (tierId || null); }); }
+/* riordino Top: posizione 0-based nell'elenco completo. */
+function moveItem(rankingId, itemId, toIndex) {
+  if (typeof toIndex !== 'number' || !isFinite(toIndex)) return Promise.reject(bad('toIndex'));
+  return mutate(rankingId, function (r) { if (r.kind !== 'top') throw RkError('invalid', 'moveItem vale per le Top: usa moveItemToTier per le Tier List.'); var it = find(r, itemId), from = r.items.indexOf(it), to = Math.max(0, Math.min(r.items.length - 1, Math.floor(toIndex))); r.items.splice(from, 1); r.items.splice(to, 0, it); }, { op: 'item-move' });
+}
+/* alternativa a pulsanti (su/giu'): delta -1 / +1 */
+function moveItemBy(rankingId, itemId, delta) {
+  if (typeof delta !== 'number' || !isFinite(delta)) return Promise.reject(bad('delta'));
+  return mutate(rankingId, function (r) {
+    var it = find(r, itemId);
+    if (r.kind === 'top') { var from = r.items.indexOf(it), to = Math.max(0, Math.min(r.items.length - 1, from + Math.floor(delta))); r.items.splice(from, 1); r.items.splice(to, 0, it); return; }
+    var lst = tierList(r, it.tierId), pos = lst.indexOf(it), np = Math.max(0, Math.min(lst.length - 1, pos + Math.floor(delta)));
+    if (np === pos) return; var target = lst[np]; r.items.splice(r.items.indexOf(it), 1); r.items.splice(r.items.indexOf(target) + (np > pos ? 1 : 0), 0, it);
+  }, { op: 'item-move' });
+}
+/* Tier List: sposta in una fascia (null = non classificati) alla posizione toIndex DENTRO la fascia (default: in fondo). */
+function moveItemToTier(rankingId, itemId, tierId, toIndex) {
+  return mutate(rankingId, function (r) {
+    if (r.kind !== 'tier') throw RkError('invalid', 'Solo le Tier List hanno fasce.');
+    if (tierId !== null && tierId !== undefined && !r.tiers.some(function (t) { return t.id === tierId; })) throw RkError('invalid', 'Fascia inesistente.');
+    var it = find(r, itemId); r.items.splice(r.items.indexOf(it), 1); it.tierId = tierId || null;
+    var lst = tierList(r, it.tierId), at = (typeof toIndex === 'number' && isFinite(toIndex)) ? Math.max(0, Math.min(lst.length, Math.floor(toIndex))) : lst.length, pos;
+    if (at < lst.length) pos = r.items.indexOf(lst[at]);
+    else if (lst.length) pos = r.items.indexOf(lst[lst.length - 1]) + 1;
+    else pos = r.items.length;
+    r.items.splice(pos, 0, it);
+  }, { op: 'item-tier' });
+}
+
+/* ---------- fasce ---------- */
+function addTier(rankingId, name, index) { return mutate(rankingId, function (r) { if (r.kind !== 'tier') throw RkError('invalid', 'Solo le Tier List hanno fasce.'); if (r.tiers.length >= L.tiers) throw RkError('limit', 'Troppe fasce (massimo ' + L.tiers + ').'); var n = cleanLine(name, L.tierName); if (!n) throw bad('name', 'vuoto'); var t = { id: rid('ti', 12), name: n }; var at = (typeof index === 'number' && index >= 0 && index <= r.tiers.length) ? Math.floor(index) : r.tiers.length; r.tiers.splice(at, 0, t); return t.id; }, { op: 'tier-add' }).then(function (x) { x.tierId = x.result; return x; }); }
+function renameTier(rankingId, tierId, name) { return mutate(rankingId, function (r) { var t = r.tiers.filter(function (x) { return x.id === tierId; })[0]; if (!t) throw RkError('not-found', 'Fascia non trovata.'); var n = cleanLine(name, L.tierName); if (!n) throw bad('name', 'vuoto'); t.name = n; }, { op: 'tier-rename' }); }
+function removeTier(rankingId, tierId) { return mutate(rankingId, function (r) { var t = r.tiers.filter(function (x) { return x.id === tierId; })[0]; if (!t) throw RkError('not-found', 'Fascia non trovata.'); if (r.tiers.length <= 1) throw RkError('invalid', 'Serve almeno una fascia.'); r.tiers.splice(r.tiers.indexOf(t), 1); r.items.forEach(function (i) { if (i.tierId === tierId) i.tierId = null; }); /* gli elementi NON si perdono: tornano tra i non classificati */ }, { op: 'tier-remove' }); }
+function moveTier(rankingId, tierId, toIndex) { return mutate(rankingId, function (r) { var t = r.tiers.filter(function (x) { return x.id === tierId; })[0]; if (!t) throw RkError('not-found', 'Fascia non trovata.'); var from = r.tiers.indexOf(t), to = Math.max(0, Math.min(r.tiers.length - 1, Math.floor(toIndex))); r.tiers.splice(from, 1); r.tiers.splice(to, 0, t); }, { op: 'tier-move' }); }
+
+/* ---------- podio: vista derivata della Top (nessun dato separato) ---------- */
+function podium(r) {
+  if (!isObj(r) || r.kind !== 'top' || !Array.isArray(r.items)) return { eligible: false, top3: [], rest: [] };
+  var el = r.items.length >= 3;
+  return { eligible: el, top3: el ? r.items.slice(0, 3).map(function (it, i) { return { position: i + 1, item: it }; }) : [], rest: el ? r.items.slice(3).map(function (it, i) { return { position: i + 4, item: it }; }) : [] };
+}
+function tierView(r) { /* raggruppamento per fascia (ordine = ordine nell'elenco) */
+  if (!isObj(r) || r.kind !== 'tier') return null;
+  return { tiers: r.tiers.map(function (t) { return { id: t.id, name: t.name, items: r.items.filter(function (i) { return i.tierId === t.id; }) }; }), unranked: r.items.filter(function (i) { return !i.tierId; }) };
+}
+
+/* ---------- bozze (recupero lavoro non salvato) ---------- */
+function saveDraft(rankingId, snapshot, baseRev) {
+  var n; try { n = normRanking(snapshot); } catch (e) { return Promise.reject(e); }
+  if (n.value.id !== rankingId) return Promise.reject(bad('draft.id'));
+  return serial(function () { return tx(['drafts'], 'readwrite', function (a) { return a.put('drafts', { id: rankingId, baseRev: (typeof baseRev === 'number' && baseRev >= 0) ? Math.floor(baseRev) : n.value.rev, savedAt: now(), data: n.value }); }).then(function () { return true; }); });
+}
+function getDraft(rankingId) { return tx(['drafts', 'rankings'], 'readonly', function (a) { return a.get('drafts', rankingId).then(function (d) { return a.get('rankings', rankingId).then(function (cur) { return { d: d, cur: cur }; }); }); }).then(function (x) { if (!x.d) return null; var n; try { n = normRanking(x.d.data); } catch (e) { return { id: rankingId, corrupt: true, savedAt: x.d.savedAt }; } return { id: rankingId, savedAt: x.d.savedAt, baseRev: x.d.baseRev, data: n.value, stale: !!(x.cur && x.cur.rev !== x.d.baseRev), missingRanking: !x.cur }; }); }
+function listDrafts() { return tx(['drafts'], 'readonly', function (a) { return a.getAll('drafts'); }).then(function (rows) { return rows.map(function (d) { return { id: d.id, savedAt: d.savedAt, baseRev: d.baseRev, title: isObj(d.data) ? cleanLine(d.data.title, L.title) : '?' }; }).sort(function (a, b) { return b.savedAt - a.savedAt; }); }); }
+function discardDraft(rankingId) { return serial(function () { return tx(['drafts'], 'readwrite', function (a) { return a.del('drafts', rankingId); }).then(function () { return true; }); }); }
+function commitDraft(rankingId) { /* applica la bozza solo se la classifica non e' cambiata altrove; poi elimina la bozza */
+  return getDraft(rankingId).then(function (d) { if (!d) throw RkError('not-found', 'Nessuna bozza.'); if (d.corrupt) throw RkError('invalid', 'Bozza illeggibile.'); if (d.missingRanking) throw RkError('not-found', 'La classifica non esiste piu\'.'); return saveRanking(d.data, { expectedRev: d.baseRev }); }).then(function (x) { return discardDraft(rankingId).then(function () { return x; }); });
+}
+/* salvataggio automatico con debounce; flush su pagehide/visibilitychange (best effort su iOS: documentato) */
+var AUTOS = [];
+function autosave(rankingId, getSnapshot, opt) {
+  var delay = (opt && opt.delay) || 600, timer = null, baseRev = opt && opt.baseRev, stopped = false, last = Promise.resolve(true), onError = opt && opt.onError;
+  function run() { timer = null; if (stopped) return last; var snap; try { snap = getSnapshot(); } catch (e) { return last; } last = saveDraft(rankingId, snap, baseRev).catch(function (e) { if (onError) onError(e); return false; }); return last; }
+  var h = { touch: function () { if (stopped) return; if (timer) clearTimeout(timer); timer = setTimeout(run, delay); }, flush: function () { if (timer) { clearTimeout(timer); return run(); } return last; }, stop: function () { stopped = true; if (timer) clearTimeout(timer); var i = AUTOS.indexOf(h); if (i >= 0) AUTOS.splice(i, 1); } };
+  AUTOS.push(h); return h;
+}
+try { document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') AUTOS.slice().forEach(function (h) { h.flush(); }); }); window.addEventListener('pagehide', function () { AUTOS.slice().forEach(function (h) { h.flush(); }); }); } catch (e) {}
+
+/* ---------- immagini personali: validazione, ridimensionamento, ricodifica (elimina metadati e payload nascosti) ---------- */
+function sniff(u8) {
+  if (u8.length > 3 && u8[0] === 0xFF && u8[1] === 0xD8 && u8[2] === 0xFF) return 'image/jpeg';
+  if (u8.length > 8 && u8[0] === 0x89 && u8[1] === 0x50 && u8[2] === 0x4E && u8[3] === 0x47) return 'image/png';
+  if (u8.length > 12 && u8[0] === 0x52 && u8[1] === 0x49 && u8[2] === 0x46 && u8[3] === 0x46 && u8[8] === 0x57 && u8[9] === 0x45 && u8[10] === 0x42 && u8[11] === 0x50) return 'image/webp';
+  if (u8.length > 6 && u8[0] === 0x47 && u8[1] === 0x49 && u8[2] === 0x46 && u8[3] === 0x38) return 'image/gif';
+  return null;
+}
+function sha(buf) { return crypto.subtle.digest('SHA-256', buf).then(function (d) { var a = new Uint8Array(d), s = '', i; for (i = 0; i < 12; i++) s += ('0' + a[i].toString(16)).slice(-2); return s; }); }
+function toBlob(canvas, type, q) { return new Promise(function (res) { if (canvas.toBlob) canvas.toBlob(function (b) { res(b); }, type, q); else res(null); }); }
+function addImage(file) {
+  if (!(file instanceof Blob)) return Promise.reject(RkError('image-invalid', 'File non valido.'));
+  if (file.size === 0) return Promise.reject(RkError('image-invalid', 'File vuoto.'));
+  if (file.size > L.imgInput) return Promise.reject(RkError('image-too-large', 'Immagine troppo grande (massimo ' + Math.round(L.imgInput / 1048576) + ' MB).'));
+  return file.slice(0, 16).arrayBuffer().then(function (head) {
+    var mime = sniff(new Uint8Array(head)); if (!mime) throw RkError('image-invalid', 'Formato non supportato (ammessi: JPEG, PNG, WebP, GIF).');
+    return createImageBitmap(file).catch(function () { throw RkError('image-invalid', 'Immagine illeggibile o danneggiata.'); });
+  }).then(function (bmp) {
+    var w = bmp.width, h = bmp.height;
+    if (!w || !h || w > L.imgMaxSide || h > L.imgMaxSide || w * h > L.imgMaxPixels) { try { bmp.close(); } catch (e) {} throw RkError('image-too-large', 'Dimensioni dell\'immagine eccessive.'); }
+    var sc = Math.min(1, L.imgDim / Math.max(w, h)), cw = Math.max(1, Math.round(w * sc)), ch = Math.max(1, Math.round(h * sc));
+    var cv = document.createElement('canvas'); cv.width = cw; cv.height = ch; var cx = cv.getContext('2d'); if (!cx) { try { bmp.close(); } catch (e) {} throw RkError('image-invalid', 'Elaborazione immagine non disponibile.'); }
+    cx.drawImage(bmp, 0, 0, cw, ch); try { bmp.close(); } catch (e) {}
+    return toBlob(cv, 'image/webp', 0.82).then(function (b) { if (b && b.type === 'image/webp') return b; return toBlob(cv, 'image/jpeg', 0.85); }).then(function (b) {
+      if (!b || !b.size) throw RkError('image-invalid', 'Ricodifica non riuscita.');
+      if (b.size > L.imgStored) return toBlob(cv, 'image/jpeg', 0.6).then(function (b2) { if (!b2 || b2.size > L.imgStored) throw RkError('image-too-large', 'Immagine ancora troppo pesante dopo la compressione.'); return { blob: b2, w: cw, h: ch }; });
+      return { blob: b, w: cw, h: ch };
+    });
+  }).then(function (p) {
+    return p.blob.arrayBuffer().then(sha).then(function (hash) {
+      var id = 'im_' + hash; /* id = contenuto: la stessa immagine non si duplica */
+      return serial(function () { var created = false;
+        return tx(['images'], 'readwrite', function (a) { return a.get('images', id).then(function (ex) { if (ex) return; return a.getAll('images').then(function (rows) { if (rows.length >= L.images) throw RkError('limit', 'Troppe immagini personali (massimo ' + L.images + ').'); created = true; return a.put('images', { id: id, blob: p.blob, mime: p.blob.type, w: p.w, h: p.h, bytes: p.blob.size, createdAt: now() }); }); }); })
+          .then(function () { return { id: id, w: p.w, h: p.h, bytes: p.blob.size, mime: p.blob.type, created: created }; }); });
+    });
+  });
+}
+function getImage(id) { if (typeof id !== 'string' || !ID_RE.im.test(id)) return Promise.reject(bad('id immagine')); return tx(['images'], 'readonly', function (a) { return a.get('images', id); }).then(function (r) { if (!r) throw RkError('not-found', 'Immagine non trovata.'); return r.blob; }); }
+function imageUsage() { /* id immagine -> numero di riferimenti (classifiche, cestino, bozze) */
+  return tx(['rankings', 'trash', 'drafts', 'images'], 'readonly', function (a) { return Promise.all([a.getAll('rankings'), a.getAll('trash'), a.getAll('drafts'), a.getAll('images')]); }).then(function (x) {
+    var use = {}; function scan(r) { if (isObj(r) && Array.isArray(r.items)) r.items.forEach(function (i) { if (isObj(i) && isObj(i.image) && i.image.type === 'user' && typeof i.image.id === 'string') use[i.image.id] = (use[i.image.id] || 0) + 1; }); }
+    x[0].forEach(scan); x[1].forEach(function (t) { scan(t.data); }); x[2].forEach(function (d) { scan(d.data); });
+    return { use: use, all: x[3].map(function (i) { return { id: i.id, bytes: i.bytes, w: i.w, h: i.h }; }) };
+  });
+}
+function removeImage(id) { return serial(function () { return imageUsage().then(function (u) { if (u.use[id]) throw RkError('conflict', 'Immagine ancora usata da ' + u.use[id] + ' elemento/i.'); return tx(['images'], 'readwrite', function (a) { return a.del('images', id); }); }).then(function () { return true; }); }); }
+function gcImages() { return serial(function () { return imageUsage().then(function (u) { var orph = u.all.filter(function (i) { return !u.use[i.id]; }); return tx(['images'], 'readwrite', function (a) { return Promise.all(orph.map(function (i) { return a.del('images', i.id); })); }).then(function () { return { removed: orph.length, bytes: orph.reduce(function (s, i) { return s + (i.bytes || 0); }, 0) }; }); }); }); }
+
+/* ---------- R3: backup, importazione, copie di sicurezza, bozza "nuova classifica" ---------- */
+var BKL = { archive: 256 * 1048576, entries: 700, rankingsJson: 48 * 1048576, image: 2 * 1048576, snapshots: 5 };
+function needPersistent() { return openBackend().then(function (B) { if (B.kind !== 'indexeddb') throw RkError('storage-error', 'Archiviazione del dispositivo non disponibile: backup e ripristino sono disattivati.'); return B; }); }
+function imgIdsOf(r, out) { if (isObj(r) && Array.isArray(r.items)) r.items.forEach(function (i) { if (isObj(i) && isObj(i.image) && i.image.type === 'user' && typeof i.image.id === 'string') out[i.image.id] = 1; }); return out; }
+function sameContent(a, b) { function k(r) { return JSON.stringify([r.kind, r.title, r.description, r.preset, r.imageMode, r.view, r.tiers.map(function (t) { return [t.id, t.name]; }), r.items.map(function (i) { return [i.id, i.name, i.note, i.tierId, i.source, i.image]; })]); } return k(a) === k(b); }
+/* esporta lo stato corrente (solo lettura, una transazione coerente). Le immagini sono quelle realmente usate dalle classifiche. */
+function collectBackup() {
+  return needPersistent().then(function () { return tx(['rankings', 'images'], 'readonly', function (a) { return Promise.all([a.getAll('rankings'), a.getAll('images')]); }); }).then(function (x) {
+    var good = [], corrupt = [], used = {}, have = {}, imgs = [], missing = [];
+    x[0].forEach(function (row) { try { var v = normRanking(row).value; good.push(v); imgIdsOf(v, used); } catch (e) { corrupt.push(row && typeof row.id === 'string' ? row.id.slice(0, 40) : '?'); } });
+    x[1].forEach(function (im) { have[im.id] = im; });
+    Object.keys(used).forEach(function (id) { if (have[id] && have[id].blob instanceof Blob) imgs.push({ id: id, blob: have[id].blob, mime: have[id].mime, w: have[id].w, h: have[id].h, bytes: have[id].bytes }); else missing.push(id); });
+    good.sort(function (p, q) { return p.createdAt - q.createdAt; });
+    return { rankings: good, images: imgs, missingImages: missing, corrupt: corrupt };
+  });
+}
+/* un'immagine in ingresso e' accettata SOLO se: formato JPEG/WebP (quelli prodotti dal motore), <= 2 MB, id = hash del contenuto, decodificabile, lato <= 1024 */
+function validateIncomingImage(u8, id) {
+  if (!(u8 instanceof Uint8Array)) return Promise.reject(RkError('image-invalid', 'Immagine non valida.'));
+  if (typeof id !== 'string' || !ID_RE.im.test(id)) return Promise.reject(RkError('image-invalid', 'Identificativo immagine non valido.'));
+  if (!u8.length || u8.length > BKL.image) return Promise.reject(RkError('image-too-large', 'Immagine ' + id + ': dimensione non ammessa.'));
+  var mime = sniff(u8); if (mime !== 'image/webp' && mime !== 'image/jpeg') return Promise.reject(RkError('image-invalid', 'Immagine ' + id + ': formato non ammesso nel backup.'));
+  if (!(window.crypto && crypto.subtle)) return Promise.reject(RkError('image-invalid', 'Verifica di integrita\' non disponibile su questa connessione (serve HTTPS).'));
+  var copy = new Uint8Array(u8.length); copy.set(u8);
+  return sha(copy.buffer).then(function (h) {
+    if ('im_' + h !== id) throw RkError('image-invalid', 'Immagine ' + id + ': il contenuto non corrisponde all\'identificativo.');
+    var blob = new Blob([copy], { type: mime });
+    return createImageBitmap(blob).catch(function () { throw RkError('image-invalid', 'Immagine ' + id + ': illeggibile o danneggiata.'); }).then(function (bmp) {
+      var w = bmp.width, h2 = bmp.height; try { bmp.close(); } catch (e) {}
+      if (!w || !h2 || w > L.imgDim || h2 > L.imgDim) throw RkError('image-too-large', 'Immagine ' + id + ': dimensioni non ammesse.');
+      return { id: id, blob: blob, mime: mime, w: w, h: h2, bytes: copy.length };
+    });
+  });
+}
+/* normalizza le classifiche in ingresso: UNICA porta d'ingresso (stesso normRanking del motore). Un solo elemento non valido rifiuta tutto l'archivio. */
+function normIncoming(list) {
+  if (!Array.isArray(list)) throw RkError('invalid', 'Elenco classifiche mancante.');
+  if (list.length > L.rankings) throw RkError('limit', 'Troppe classifiche nel backup (massimo ' + L.rankings + ').');
+  var out = [], seen = {}, warnings = [];
+  list.forEach(function (raw, i) {
+    var n; try { n = normRanking(raw); } catch (e) { throw RkError('invalid', 'Classifica n. ' + (i + 1) + ' non valida: ' + String(e.message || e).slice(0, 140)); }
+    if (seen[n.value.id]) throw RkError('invalid', 'Identificativo duplicato nel backup: ' + n.value.id);
+    seen[n.value.id] = 1; out.push(n.value); n.warnings.forEach(function (w) { warnings.push(n.value.title + ': ' + w); });
+  });
+  return { rankings: out, warnings: warnings };
+}
+/* anteprima: sola lettura, nessuna modifica */
+function planImport(spec) {
+  return needPersistent().then(function () {
+    var inc = spec.rankings, imgs = {}; (spec.images || []).forEach(function (i) { imgs[i.id] = i; });
+    return tx(['rankings', 'images', 'trash'], 'readonly', function (a) { return Promise.all([a.getAll('rankings'), a.getAll('images'), a.getAll('trash')]); }).then(function (x) {
+      var cur = {}, trash = {}, have = {}; x[0].forEach(function (r) { if (r && r.id) cur[r.id] = r; }); x[2].forEach(function (t) { trash[t.id] = 1; }); x[1].forEach(function (i) { have[i.id] = i; });
+      var rows = inc.map(function (r) { var st = 'new', e = cur[r.id]; if (e) { var en = null; try { en = normRanking(e).value; } catch (er) {} st = (en && sameContent(en, r)) ? 'identical' : 'conflict'; } else if (trash[r.id]) st = 'conflict'; return { id: r.id, title: r.title, kind: r.kind, items: r.items.length, status: st, inTrash: !!trash[r.id] && !e }; });
+      var used = {}, missing = 0; inc.forEach(function (r) { r.items.forEach(function (i) { if (i.image && i.image.type === 'user') { used[i.image.id] = 1; if (!imgs[i.image.id] && !have[i.image.id]) missing++; } }); });
+      var ids = Object.keys(used), neu = ids.filter(function (id) { return imgs[id] && !have[id]; }).length;
+      return { rankings: rows, counts: { rankings: inc.length, items: inc.reduce(function (s, r) { return s + r.items.length; }, 0), new: rows.filter(function (r) { return r.status === 'new'; }).length, identical: rows.filter(function (r) { return r.status === 'identical'; }).length, conflicts: rows.filter(function (r) { return r.status === 'conflict'; }).length }, images: { referenced: ids.length, new: neu, existing: ids.filter(function (id) { return have[id]; }).length }, missingImageRefs: missing, current: { rankings: x[0].length, images: x[1].length } };
+    });
+  });
+}
+function snapIndex(a) { return a.get('meta', 'snapshots-index').then(function (r) { return (r && Array.isArray(r.list)) ? r.list : []; }); }
+function makeSnapshot(a, reason, curR, curI, curD, index) { /* tutto dentro la transazione chiamante: o c'e' la copia di sicurezza o non cambia nulla */
+  var id = 'sn_' + hex(12), counts = { rankings: curR.length, images: curI.length, drafts: curD.length }, entry = { id: id, createdAt: now(), reason: reason, counts: counts };
+  return a.put('meta', { key: 'snapshot:' + id, id: id, createdAt: entry.createdAt, reason: reason, rankings: curR, images: curI, drafts: curD, counts: counts }).then(function () { index.push(entry); return a.put('meta', { key: 'snapshots-index', list: index }); }).then(function () { return entry; });
+}
+function applyImport(spec) {
+  spec = isObj(spec) ? spec : {}; var mode = spec.mode === 'replace' ? 'replace' : 'merge', policy = spec.policy === 'skip' ? 'skip' : 'keep-both';
+  var inc = Array.isArray(spec.rankings) ? spec.rankings : null; if (!inc) return Promise.reject(RkError('invalid', 'Nessuna classifica da importare.'));
+  var imgs = {}; (spec.images || []).forEach(function (i) { imgs[i.id] = i; });
+  return needPersistent().then(function () { return serial(function () {
+    var rep = { mode: mode, imported: 0, skippedIdentical: 0, skippedConflict: 0, keptBoth: 0, replacedPrevious: 0, imagesAdded: 0, missingImages: 0, snapshotId: null, notes: [] }, ev;
+    return tx(['rankings', 'images', 'drafts', 'trash', 'meta'], 'readwrite', function (a) {
+      return Promise.all([a.getAll('rankings'), a.getAll('images'), a.getAll('drafts'), a.getAll('trash'), snapIndex(a)]).then(function (x) {
+        var curR = x[0], curI = x[1], curD = x[2], trash = x[3], index = x[4], have = {}, byId = {}, tIds = {}, trashImg = {};
+        curI.forEach(function (i) { have[i.id] = i; }); curR.forEach(function (r) { if (r && r.id) byId[r.id] = r; }); trash.forEach(function (t) { tIds[t.id] = 1; imgIdsOf(t.data, trashImg); });
+        var puts = [], pending = [];
+        function fixImages(r) { r.items.forEach(function (i) { if (i.image && i.image.type === 'user' && !imgs[i.image.id] && !have[i.image.id]) { i.image = null; rep.missingImages++; } }); }
+        inc.forEach(function (src) {
+          var r = clone(src);
+          if (mode === 'merge') {
+            var e = byId[r.id], conflict = false;
+            if (e) { var en = null; try { en = normRanking(e).value; } catch (er) {} if (en && sameContent(en, r)) { rep.skippedIdentical++; return; } conflict = true; } else if (tIds[r.id]) conflict = true;
+            if (conflict) { if (policy === 'skip') { rep.skippedConflict++; return; } r.id = rid('rk', 16); r.title = cleanLine(r.title + ' (importata)', L.title); rep.keptBoth++; }
+          }
+          r.rev = 1; fixImages(r); puts.push(r);
+        });
+        if (mode === 'merge' && curR.length + puts.length > L.rankings) throw RkError('limit', 'Troppe classifiche (massimo tecnico ' + L.rankings + '): nulla e\' stato importato.');
+        if (puts.length > L.rankings) throw RkError('limit', 'Troppe classifiche.');
+        var need = {}; puts.forEach(function (r) { imgIdsOf(r, need); });
+        var imgPuts = Object.keys(need).filter(function (id) { return imgs[id]; }).filter(function (id) { var ex = have[id]; if (!ex) return true; if (ex.bytes !== imgs[id].bytes || ex.mime !== imgs[id].mime) throw RkError('conflict', 'Immagine ' + id + ': esiste gia\' con contenuto diverso. Importazione annullata.'); return false; });
+        var totalImgs = mode === 'merge' ? Object.keys(have).length + imgPuts.length : Object.keys(need).length + Object.keys(trashImg).filter(function (id) { return !need[id]; }).length;
+        if (totalImgs > L.images) throw RkError('limit', 'Troppe immagini personali (massimo ' + L.images + '): nulla e\' stato importato.');
+        var chain = Promise.resolve();
+        if (mode === 'replace') {
+          if (index.length >= BKL.snapshots) throw RkError('limit', 'Ci sono gia\' ' + BKL.snapshots + ' copie di sicurezza: eliminane una prima di sostituire.');
+          chain = chain.then(function () { return makeSnapshot(a, 'replace', curR, curI, curD, index); }).then(function (en) { rep.snapshotId = en.id; rep.replacedPrevious = curR.length; })
+            .then(function () { return Promise.all(curR.map(function (r) { return a.del('rankings', r.id); }).concat(curD.map(function (d) { return a.del('drafts', d.id); }))); })
+            .then(function () { return Promise.all(curI.filter(function (i) { return !need[i.id] && !trashImg[i.id]; }).map(function (i) { return a.del('images', i.id); })); });
+        }
+        chain = chain.then(function () { return Promise.all(imgPuts.map(function (id) { var m = imgs[id]; return a.put('images', { id: id, blob: m.blob, mime: m.mime, w: m.w, h: m.h, bytes: m.bytes, createdAt: now() }); })); })
+          .then(function () { rep.imagesAdded = imgPuts.length; return Promise.all(puts.map(function (r) { return a.put('rankings', r); })); })
+          .then(function () { rep.imported = puts.length; ev = { type: 'imported', mode: mode }; return rep; });
+        return chain;
+      });
+    }).then(function (r) { emit(ev); return r; });
+  }); });
+}
+var snapshots = {
+  list: function () { return needPersistent().then(function () { return tx(['meta'], 'readonly', function (a) { return snapIndex(a); }); }).then(function (l) { return l.slice().sort(function (p, q) { return q.createdAt - p.createdAt; }); }); },
+  remove: function (id) { return needPersistent().then(function () { return serial(function () { return tx(['meta'], 'readwrite', function (a) { return snapIndex(a).then(function (idx) { return a.del('meta', 'snapshot:' + id).then(function () { return a.put('meta', { key: 'snapshots-index', list: idx.filter(function (e) { return e.id !== id; }) }); }); }); }).then(function () { return true; }); }); }); },
+  restore: function (id) { /* scambia: la copia ripristinata viene sostituita da una nuova copia dello stato attuale (nessuna perdita, il numero di copie non cresce) */
+    return needPersistent().then(function () { return serial(function () { var ev, rep;
+      return tx(['rankings', 'images', 'drafts', 'trash', 'meta'], 'readwrite', function (a) {
+        return Promise.all([a.get('meta', 'snapshot:' + id), a.getAll('rankings'), a.getAll('images'), a.getAll('drafts'), a.getAll('trash'), snapIndex(a)]).then(function (x) {
+          var s = x[0]; if (!s || !Array.isArray(s.rankings) || !Array.isArray(s.images) || !Array.isArray(s.drafts)) throw RkError('not-found', 'Copia di sicurezza non trovata o illeggibile.');
+          var curR = x[1], curI = x[2], curD = x[3], trash = x[4], idx = x[5].filter(function (e) { return e.id !== id; }), keep = {}, trashImg = {}; trash.forEach(function (t) { imgIdsOf(t.data, trashImg); });
+          s.images.forEach(function (i) { keep[i.id] = 1; });
+          return a.del('meta', 'snapshot:' + id).then(function () { return makeSnapshot(a, 'before-restore', curR, curI, curD, idx); })
+            .then(function (en) { rep = { restored: s.rankings.length, snapshotId: en.id }; return Promise.all(curR.map(function (r) { return a.del('rankings', r.id); }).concat(curD.map(function (d) { return a.del('drafts', d.id); }))); })
+            .then(function () { return Promise.all(curI.filter(function (i) { return !keep[i.id] && !trashImg[i.id]; }).map(function (i) { return a.del('images', i.id); })); })
+            .then(function () { return Promise.all(s.images.map(function (i) { return a.put('images', i); })); })
+            .then(function () { return Promise.all(s.rankings.map(function (r) { return a.put('rankings', r); }).concat(s.drafts.map(function (d) { return a.put('drafts', d); }))); })
+            .then(function () { ev = { type: 'imported', mode: 'restore' }; return rep; });
+        });
+      }).then(function (r) { emit(ev); return r; });
+    }); }); }
+};
+var newDraft = {
+  save: function (d) { if (!isObj(d)) return Promise.reject(bad('bozza')); var v = { kind: KINDS.indexOf(d.kind) >= 0 ? d.kind : 'top', title: cleanLine(d.title, L.title), description: cleanText(d.description, L.desc), preset: PRESET_IDS.indexOf(d.preset) >= 0 ? d.preset : 'libera', imageMode: d.imageMode === 'images' ? 'images' : 'text' };
+    return serial(function () { return tx(['meta'], 'readwrite', function (a) { return a.put('meta', { key: 'newdraft', savedAt: now(), data: v }); }); }).then(function () { return true; }); },
+  get: function () { return tx(['meta'], 'readonly', function (a) { return a.get('meta', 'newdraft'); }).then(function (r) { return (r && isObj(r.data)) ? { savedAt: r.savedAt, data: r.data } : null; }); },
+  discard: function () { return serial(function () { return tx(['meta'], 'readwrite', function (a) { return a.del('meta', 'newdraft'); }); }).then(function () { return true; }); }
+};
+var backup = Object.freeze({ limits: Object.freeze(clone(BKL)), collect: collectBackup, validateImage: validateIncomingImage, normalize: normIncoming, plan: planImport, apply: applyImport, snapshots: Object.freeze(snapshots) });
+
+/* ---------- stato e diagnostica ---------- */
+function status() {
+  return openBackend().then(function (B) {
+    var est = (navigator.storage && navigator.storage.estimate) ? navigator.storage.estimate().catch(function () { return null; }) : Promise.resolve(null);
+    return est.then(function (e) { return { schema: SCHEMA, backend: B.kind, persistent: B.kind === 'indexeddb', warning: B.kind === 'memory' ? ('I dati NON vengono salvati su questo dispositivo: ' + B.error) : null, usage: e && e.usage || null, quota: e && e.quota || null }; });
+  });
+}
+function requestPersistence() { try { if (navigator.storage && navigator.storage.persist) return navigator.storage.persist(); } catch (e) {} return Promise.resolve(false); }
+
+var API = {
+  version: 1, schema: SCHEMA, limits: Object.freeze(clone(L)), kinds: KINDS.slice(), defaultTiers: DEFAULT_TIERS.slice(),
+  presets: function () { return clone(PRESETS); },
+  catalog: Object.freeze({ cats: function () { return CATS.slice(); }, search: function (cat, q, limit, filter) { return catSearch(cat, q, limit, filter); }, get: function (cat, ref) { var e = (CATS.indexOf(cat) >= 0 && typeof ref === 'string') ? catGet(cat, ref) : null; return e ? { cat: e.cat, ref: e.ref, name: e.name, type: e.type } : null; } }),
+  status: status, requestPersistence: requestPersistence,
+  list: listRankings, get: getRanking, create: createRanking, updateMeta: updateRankingMeta, save: saveRanking, duplicate: duplicateRanking, remove: deleteRanking,
+  trash: Object.freeze({ list: listTrash, restore: restoreRanking, purge: purgeTrash }),
+  addItem: addItem, updateItem: updateItem, removeItem: removeItem, moveItem: moveItem, moveItemBy: moveItemBy, moveItemToTier: moveItemToTier,
+  addTier: addTier, renameTier: renameTier, removeTier: removeTier, moveTier: moveTier,
+  podium: podium, tierView: tierView,
+  drafts: Object.freeze({ save: saveDraft, get: getDraft, list: listDrafts, discard: discardDraft, commit: commitDraft, autosave: autosave }),
+  images: Object.freeze({ add: addImage, get: getImage, remove: removeImage, gc: gcImages, usage: imageUsage }),
+  backup: backup, newDraft: Object.freeze(newDraft),
+  validate: function (r) { try { var n = normRanking(r); return { ok: true, value: n.value, warnings: n.warnings }; } catch (e) { return { ok: false, code: e.code, error: String(e.message) }; } },
+  on: function (fn) { if (typeof fn !== 'function') return function () {}; listenRemote(); LISTENERS.push(fn); return function () { var i = LISTENERS.indexOf(fn); if (i >= 0) LISTENERS.splice(i, 1); }; }
+};
+try { Object.defineProperty(window, 'tvaRankings', { value: Object.freeze(API), configurable: false, writable: false }); } catch (e) {}
+})();
+
+</script><!-- /rankings-engine -->
+<script id="rankings-backup">
+/* TVA Rankings V1 - R3: formato di backup ZIP (metodo STORE, nessuna dipendenza), lettura rigorosa e anteprima.
+   Nessuna scrittura nel database qui: l'applicazione dell'importazione e' di window.tvaRankings.backup.apply (atomica). */
+(function () {
+'use strict';
+if (window.tvaRankingsBackup) return;
+var RK = window.tvaRankings; if (!RK || !RK.backup) return;
+var FORMAT = 'tva-rankings-backup', FORMAT_VERSION = 1, SCHEMA = 1;
+var Z = { archive: RK.backup.limits.archive, entries: RK.backup.limits.entries, name: 200, depth: 3, extra: 4096, comment: 1024, manifest: 1048576, rankingsJson: RK.backup.limits.rankingsJson, image: RK.backup.limits.image };
+function E(code, msg) { var e = new Error(msg); e.name = 'BackupError'; e.code = code; return e; }
+
+/* ---------- CRC32 ---------- */
+var T = (function () { var t = new Uint32Array(256), n, k, c; for (n = 0; n < 256; n++) { c = n; for (k = 0; k < 8; k++) c = (c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1); t[n] = c >>> 0; } return t; })();
+function crc32(u8) { var c = 0xFFFFFFFF, i, n = u8.length; for (i = 0; i < n; i++) c = T[(c ^ u8[i]) & 0xFF] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; }
+function hex8(n) { return ('00000000' + (n >>> 0).toString(16)).slice(-8); }
+
+/* ---------- nomi: path traversal e trucchi di nome ---------- */
+function checkName(name) {
+  if (typeof name !== 'string' || !name.length || name.length > Z.name) throw E('zip-path', 'Nome file non valido nell\'archivio.');
+  if (/[\u0000-\u001f\u007f\\:]/.test(name) || name.charAt(0) === '/') throw E('zip-path', 'Percorso non ammesso nell\'archivio: ' + name.replace(/[^\x20-\x7e]/g, '?').slice(0, 60));
+  var dir = name.charAt(name.length - 1) === '/', segs = (dir ? name.slice(0, -1) : name).split('/'), i;
+  if (segs.length > Z.depth) throw E('zip-path', 'Percorso troppo profondo nell\'archivio.');
+  for (i = 0; i < segs.length; i++) { var s = segs[i]; if (!s || s === '.' || s === '..' || /[. ]$/.test(s)) throw E('zip-path', 'Percorso non ammesso nell\'archivio: ' + name.replace(/[^\x20-\x7e]/g, '?').slice(0, 60)); }
+  return dir;
+}
+
+/* ---------- scrittura ZIP (STORE) ---------- */
+function dosDT(d) { var y = Math.max(1980, d.getFullYear()); return { date: ((y - 1980) << 9) | ((d.getMonth() + 1) << 5) | d.getDate(), time: (d.getHours() << 11) | (d.getMinutes() << 5) | (d.getSeconds() >> 1) }; }
+function zipWrite(files, when) {
+  var parts = [], cen = [], off = 0, dt = dosDT(when || new Date()), enc = new TextEncoder(), seen = {}, total = 0;
+  if (files.length > Z.entries) throw E('zip-limit', 'Troppi file nel backup.');
+  files.forEach(function (f) {
+    if (checkName(f.name)) throw E('zip-path', 'Nome non valido.'); var key = f.name.toLowerCase(); if (seen[key]) throw E('zip-path', 'Nome duplicato: ' + f.name); seen[key] = 1;
+    var nb = enc.encode(f.name), d = f.data, crc = crc32(d), lh = new Uint8Array(30 + nb.length), v = new DataView(lh.buffer);
+    v.setUint32(0, 0x04034b50, true); v.setUint16(4, 20, true); v.setUint16(6, 0x0800, true); v.setUint16(8, 0, true); v.setUint16(10, dt.time, true); v.setUint16(12, dt.date, true); v.setUint32(14, crc, true); v.setUint32(18, d.length, true); v.setUint32(22, d.length, true); v.setUint16(26, nb.length, true); v.setUint16(28, 0, true); lh.set(nb, 30);
+    var ch = new Uint8Array(46 + nb.length), c = new DataView(ch.buffer);
+    c.setUint32(0, 0x02014b50, true); c.setUint16(4, 20, true); c.setUint16(6, 20, true); c.setUint16(8, 0x0800, true); c.setUint16(10, 0, true); c.setUint16(12, dt.time, true); c.setUint16(14, dt.date, true); c.setUint32(16, crc, true); c.setUint32(20, d.length, true); c.setUint32(24, d.length, true); c.setUint16(28, nb.length, true); c.setUint16(30, 0, true); c.setUint16(32, 0, true); c.setUint16(34, 0, true); c.setUint16(36, 0, true); c.setUint32(38, 0, true); c.setUint32(42, off, true); ch.set(nb, 46);
+    parts.push(lh, d); cen.push(ch); off += lh.length + d.length; total += d.length;
+    if (off > Z.archive || total > Z.archive) throw E('zip-limit', 'Il backup supera la dimensione massima (' + Math.round(Z.archive / 1048576) + ' MB).');
+  });
+  var cdSize = 0; cen.forEach(function (c) { cdSize += c.length; });
+  var eo = new Uint8Array(22), e = new DataView(eo.buffer); e.setUint32(0, 0x06054b50, true); e.setUint16(4, 0, true); e.setUint16(6, 0, true); e.setUint16(8, files.length, true); e.setUint16(10, files.length, true); e.setUint32(12, cdSize, true); e.setUint32(16, off, true); e.setUint16(20, 0, true);
+  return new Blob(parts.concat(cen, [eo]), { type: 'application/zip' });
+}
+
+/* ---------- lettura ZIP rigorosa: STORE soltanto; nessuna decompressione (quindi nessuna amplificazione/zip bomb) ---------- */
+function zipRead(buf) {
+  if (!(buf instanceof ArrayBuffer)) throw E('zip-malformed', 'Dati non validi.');
+  var n = buf.byteLength; if (n > Z.archive) throw E('zip-limit', 'Archivio troppo grande (massimo ' + Math.round(Z.archive / 1048576) + ' MB).');
+  if (n < 22) throw E('zip-malformed', 'Il file non e\' un archivio ZIP valido.');
+  var u8 = new Uint8Array(buf), v = new DataView(buf), p = -1, i, minP = Math.max(0, n - 22 - 65535);
+  for (i = n - 22; i >= minP; i--) { if (v.getUint32(i, true) === 0x06054b50 && i + 22 + v.getUint16(i + 20, true) === n) { p = i; break; } }
+  if (p < 0) throw E('zip-malformed', 'Archivio ZIP non valido o troncato (fine archivio non trovata).');
+  var cl = v.getUint16(p + 20, true); if (cl > Z.comment) throw E('zip-malformed', 'Commento dell\'archivio non ammesso.');
+  for (i = p + 22; i + 3 < n; i++) if (v.getUint32(i, true) === 0x06054b50) throw E('zip-malformed', 'Archivio ambiguo (seconda fine archivio nel commento).');
+  var disk = v.getUint16(p + 4, true), cdDisk = v.getUint16(p + 6, true), cnt = v.getUint16(p + 8, true), cnt2 = v.getUint16(p + 10, true), cdSize = v.getUint32(p + 12, true), cdOff = v.getUint32(p + 16, true);
+  if (disk !== 0 || cdDisk !== 0) throw E('zip-unsupported', 'Archivi ZIP in piu\' parti non supportati.');
+  if (cnt === 0xFFFF || cdSize === 0xFFFFFFFF || cdOff === 0xFFFFFFFF) throw E('zip-unsupported', 'ZIP64 non supportato.');
+  if (cnt !== cnt2) throw E('zip-malformed', 'Conteggio file incoerente.');
+  if (cnt > Z.entries) throw E('zip-limit', 'Troppi file nell\'archivio (massimo ' + Z.entries + ').');
+  if (cdOff + cdSize !== p) throw E('zip-malformed', 'Directory centrale incoerente o dati estranei nell\'archivio.');
+  var dec = new TextDecoder('utf-8', { fatal: true }), pos = cdOff, out = [], names = {}, ranges = [], total = 0, k;
+  for (k = 0; k < cnt; k++) {
+    if (pos + 46 > p || v.getUint32(pos, true) !== 0x02014b50) throw E('zip-malformed', 'Directory centrale danneggiata.');
+    var flags = v.getUint16(pos + 8, true), method = v.getUint16(pos + 10, true), crc = v.getUint32(pos + 16, true), cs = v.getUint32(pos + 20, true), us = v.getUint32(pos + 24, true), nl = v.getUint16(pos + 28, true), xl = v.getUint16(pos + 30, true), ml = v.getUint16(pos + 32, true), ds = v.getUint16(pos + 34, true), lo = v.getUint32(pos + 42, true);
+    if (pos + 46 + nl + xl + ml > p) throw E('zip-malformed', 'Directory centrale danneggiata.');
+    if (flags & 0x0001 || flags & 0x0040) throw E('zip-unsupported', 'Archivio cifrato non supportato.');
+    if (ds !== 0) throw E('zip-unsupported', 'Archivi in piu\' parti non supportati.');
+    if (xl + ml > Z.extra) throw E('zip-malformed', 'Campi extra eccessivi.');
+    if (cs === 0xFFFFFFFF || us === 0xFFFFFFFF || lo === 0xFFFFFFFF) throw E('zip-unsupported', 'ZIP64 non supportato.');
+    var nb = u8.subarray(pos + 46, pos + 46 + nl), name;
+    if (flags & 0x0800) { try { name = dec.decode(nb); } catch (e) { throw E('zip-path', 'Nome file non valido (UTF-8).'); } } else { for (i = 0; i < nb.length; i++) if (nb[i] > 127) throw E('zip-path', 'Nome file non valido.'); name = String.fromCharCode.apply(null, nb); }
+    var isDir = checkName(name), low = name.toLowerCase(); if (names[low]) throw E('zip-path', 'Nome duplicato nell\'archivio: ' + name.slice(0, 60)); names[low] = 1;
+    pos += 46 + nl + xl + ml;
+    if (isDir) { if (us !== 0 || cs !== 0) throw E('zip-malformed', 'Cartella con contenuto.'); continue; }
+    if (method !== 0) throw E('zip-unsupported', 'L\'archivio e\' compresso (metodo ' + method + '). Sono supportati solo backup creati da TVA Archives o ZIP senza compressione (STORE).');
+    if (cs !== us) throw E('zip-malformed', 'Dimensioni incoerenti per ' + name.slice(0, 60) + '.');
+    total += us; if (total > Z.archive) throw E('zip-limit', 'Contenuto troppo grande.');
+    if (lo + 30 > cdOff || lo >= cdOff) throw E('zip-malformed', 'Posizione file non valida: ' + name.slice(0, 60));
+    if (v.getUint32(lo, true) !== 0x04034b50) throw E('zip-malformed', 'Intestazione locale non valida: ' + name.slice(0, 60));
+    var lflags = v.getUint16(lo + 6, true), lmethod = v.getUint16(lo + 8, true), lnl = v.getUint16(lo + 26, true), lxl = v.getUint16(lo + 28, true);
+    if (lmethod !== method || lnl !== nl || lflags & 0x0001) throw E('zip-malformed', 'Intestazione locale incoerente: ' + name.slice(0, 60));
+    for (i = 0; i < nl; i++) if (u8[lo + 30 + i] !== nb[i]) throw E('zip-malformed', 'Nome locale diverso dalla directory: ' + name.slice(0, 60));
+    if (!(lflags & 0x0008)) { if (v.getUint32(lo + 14, true) !== crc || v.getUint32(lo + 18, true) !== cs || v.getUint32(lo + 22, true) !== us) throw E('zip-malformed', 'Intestazione locale incoerente: ' + name.slice(0, 60)); }
+    var ds0 = lo + 30 + nl + lxl, de = ds0 + cs;
+    if (de > cdOff || de < ds0) throw E('zip-malformed', 'Dati oltre la fine dell\'archivio: ' + name.slice(0, 60));
+    ranges.push([lo, de]);
+    var data = u8.subarray(ds0, de); if (crc32(data) !== crc) throw E('zip-crc', 'CRC32 errato: ' + name.slice(0, 60) + ' (file danneggiato).');
+    out.push({ name: name, data: data, crc: crc });
+  }
+  if (pos !== p) throw E('zip-malformed', 'Directory centrale incoerente.');
+  ranges.sort(function (a, b) { return a[0] - b[0]; });
+  for (i = 1; i < ranges.length; i++) if (ranges[i][0] < ranges[i - 1][1]) throw E('zip-malformed', 'File sovrapposti nell\'archivio.');
+  return out;
+}
+
+/* ---------- creazione del backup ---------- */
+function buildId() { try { var m = document.querySelector('meta[name="tva-build"]'); return m ? String(m.getAttribute('content')).slice(0, 60) : ''; } catch (e) { return ''; } }
+function stamp(d) { function z(n) { return ('0' + n).slice(-2); } return d.getFullYear() + z(d.getMonth() + 1) + z(d.getDate()) + '-' + z(d.getHours()) + z(d.getMinutes()); }
+function create() {
+  var now = new Date();
+  return RK.backup.collect().then(function (c) {
+    var enc = new TextEncoder(), rj = enc.encode(JSON.stringify({ formatVersion: FORMAT_VERSION, schema: SCHEMA, rankings: c.rankings }));
+    if (rj.length > Z.rankingsJson) throw E('zip-limit', 'I dati delle classifiche sono troppo grandi per un singolo backup.');
+    return Promise.all(c.images.map(function (im) { return im.blob.arrayBuffer().then(function (ab) { return { meta: im, data: new Uint8Array(ab) }; }); })).then(function (imgs) {
+      var files = [], man = { format: FORMAT, formatVersion: FORMAT_VERSION, schema: SCHEMA, app: 'TVA Archives', appBuild: buildId(), createdAt: now.toISOString(), counts: { rankings: c.rankings.length, items: c.rankings.reduce(function (s, r) { return s + r.items.length; }, 0), images: imgs.length }, rankingIds: c.rankings.map(function (r) { return r.id; }), files: [], images: [], missingImages: c.missingImages.slice(0, 500) };
+      man.files.push({ name: 'rankings.json', size: rj.length, crc32: hex8(crc32(rj)) });
+      var ifs = imgs.map(function (x) { var ext = x.meta.mime === 'image/webp' ? 'webp' : 'jpg', name = 'images/' + x.meta.id + '.' + ext; if (x.data.length > Z.image) throw E('zip-limit', 'Immagine troppo grande per il backup.'); man.files.push({ name: name, size: x.data.length, crc32: hex8(crc32(x.data)) }); man.images.push({ id: x.meta.id, file: name, mime: x.meta.mime, w: x.meta.w, h: x.meta.h, bytes: x.data.length }); return { name: name, data: x.data }; });
+      var mj = enc.encode(JSON.stringify(man, null, 1));
+      files.push({ name: 'manifest.json', data: mj }, { name: 'rankings.json', data: rj }); ifs.forEach(function (f) { files.push(f); });
+      var blob = zipWrite(files, now), warnings = [];
+      if (c.missingImages.length) warnings.push(c.missingImages.length + ' immagini usate dalle classifiche non erano presenti sul dispositivo e non sono nel backup.');
+      if (c.corrupt.length) warnings.push(c.corrupt.length + ' record illeggibili non sono stati inclusi (restano sul dispositivo).');
+      /* verifica indipendente: rilegge l'archivio appena creato e confronta i conteggi prima di consegnarlo */
+      return blob.arrayBuffer().then(function (ab) { return inspect(ab, { skipImageDecode: true }); }).then(function (r) {
+        if (r.manifest.counts.rankings !== c.rankings.length || r.rankings.length !== c.rankings.length || r.images.length !== imgs.length) throw E('backup-invalid', 'Verifica del backup appena creato non riuscita.');
+        return { blob: blob, name: 'tva-rankings-backup-' + stamp(now) + '.zip', size: blob.size, counts: man.counts, warnings: warnings };
+      });
+    });
+  });
+}
+
+/* ---------- lettura/validazione completa (nessuna modifica al database) ---------- */
+var NAME_IMG = /^images\/(im_[a-f0-9]{24})\.(webp|jpg)$/;
+function parseJson(u8, what) { var t; try { t = new TextDecoder('utf-8', { fatal: true }).decode(u8); } catch (e) { throw E('manifest-invalid', what + ' non e\' testo valido.'); } try { var o = JSON.parse(t); if (o === null || typeof o !== 'object' || Array.isArray(o)) throw 0; return o; } catch (e) { throw E('manifest-invalid', what + ' non e\' JSON valido.'); } }
+function inspect(buf, opt) {
+  opt = opt || {}; var entries, map = {}, warnings = [];
+  return Promise.resolve().then(function () {
+    entries = zipRead(buf); entries.forEach(function (e) { map[e.name] = e; });
+    entries.forEach(function (e) { if (e.name !== 'manifest.json' && e.name !== 'rankings.json' && !NAME_IMG.test(e.name)) throw E('backup-invalid', 'File non previsto nel backup: ' + e.name.slice(0, 60)); });
+    if (!map['manifest.json']) throw E('manifest-missing', 'Manifest mancante: non e\' un backup di TVA Rankings.');
+    if (map['manifest.json'].data.length > Z.manifest) throw E('zip-limit', 'Manifest troppo grande.');
+    var man = parseJson(map['manifest.json'].data, 'Il manifest');
+    if (man.format !== FORMAT) throw E('manifest-invalid', 'Il file non e\' un backup di TVA Rankings.');
+    if (typeof man.formatVersion !== 'number' || Math.floor(man.formatVersion) !== man.formatVersion || man.formatVersion < 1) throw E('manifest-invalid', 'Versione del backup non valida.');
+    if (man.formatVersion > FORMAT_VERSION || man.schema > SCHEMA) throw E('version-incompatible', 'Questo backup e\' stato creato da una versione piu\' recente di Rankings (formato ' + man.formatVersion + ', schema ' + man.schema + '): aggiorna l\'app prima di importarlo.');
+    if (man.schema !== SCHEMA) throw E('version-incompatible', 'Schema dati del backup non supportato (' + String(man.schema).slice(0, 10) + ').');
+    if (!man.counts || typeof man.counts.rankings !== 'number' || typeof man.counts.images !== 'number' || !Array.isArray(man.files) || !Array.isArray(man.images)) throw E('manifest-invalid', 'Manifest incompleto.');
+    if (typeof man.createdAt !== 'string' || isNaN(Date.parse(man.createdAt))) throw E('manifest-invalid', 'Data del backup non valida.');
+    if (!map['rankings.json']) throw E('backup-invalid', 'rankings.json mancante.');
+    var declared = {}; man.files.forEach(function (f) { if (!f || typeof f.name !== 'string' || typeof f.size !== 'number' || typeof f.crc32 !== 'string') throw E('manifest-invalid', 'Elenco file del manifest non valido.'); declared[f.name] = f; });
+    entries.forEach(function (e) { if (e.name === 'manifest.json') return; var d = declared[e.name]; if (!d) throw E('backup-invalid', 'File non dichiarato nel manifest: ' + e.name.slice(0, 60)); if (d.size !== e.data.length) throw E('backup-invalid', 'Dimensione diversa dal manifest: ' + e.name.slice(0, 60)); if (d.crc32.toLowerCase() !== hex8(e.crc)) throw E('zip-crc', 'CRC32 diverso dal manifest: ' + e.name.slice(0, 60)); });
+    Object.keys(declared).forEach(function (nm) { if (!map[nm]) throw E('backup-invalid', 'File dichiarato ma assente: ' + nm.slice(0, 60)); });
+    if (map['rankings.json'].data.length > Z.rankingsJson) throw E('zip-limit', 'rankings.json troppo grande.');
+    var rj = parseJson(map['rankings.json'].data, 'rankings.json');
+    if (rj.formatVersion !== man.formatVersion || rj.schema !== man.schema) throw E('backup-invalid', 'Versioni incoerenti tra manifest e dati.');
+    var nr; try { nr = RK.backup.normalize(rj.rankings); } catch (e) { throw E('backup-invalid', e.message); }
+    if (nr.rankings.length !== man.counts.rankings) throw E('backup-invalid', 'Numero di classifiche diverso dal manifest (' + nr.rankings.length + ' invece di ' + man.counts.rankings + ').');
+    if (Array.isArray(man.rankingIds)) { var idset = {}; nr.rankings.forEach(function (r) { idset[r.id] = 1; }); if (man.rankingIds.length !== nr.rankings.length || man.rankingIds.some(function (id) { return !idset[id]; })) throw E('backup-invalid', 'Elenco classifiche diverso dal manifest.'); }
+    nr.warnings.forEach(function (w) { warnings.push(w); });
+    var imgFiles = entries.filter(function (e) { return NAME_IMG.test(e.name); });
+    if (man.counts.images !== imgFiles.length || man.images.length !== imgFiles.length) throw E('backup-invalid', 'Numero di immagini diverso dal manifest.');
+    var infos = man.images.map(function (m) { if (!m || typeof m.file !== 'string' || !map[m.file]) throw E('backup-invalid', 'Immagine dichiarata ma assente.'); var mm = NAME_IMG.exec(m.file); if (!mm || mm[1] !== m.id) throw E('backup-invalid', 'Nome immagine incoerente: ' + String(m.file).slice(0, 60)); return { id: m.id, data: map[m.file].data }; });
+    var used = {}; nr.rankings.forEach(function (r) { r.items.forEach(function (i) { if (i.image && i.image.type === 'user') used[i.image.id] = 1; }); });
+    var unused = infos.filter(function (i) { return !used[i.id]; }).length; if (unused) warnings.push(unused + ' immagini del backup non sono usate da nessuna classifica e non verranno importate.');
+    var todo = infos.filter(function (i) { return used[i.id]; }), good = [], chain = Promise.resolve();
+    todo.forEach(function (i) { chain = chain.then(function () { if (opt.skipImageDecode) { good.push({ id: i.id, data: i.data }); return; } return RK.backup.validateImage(i.data, i.id).then(function (v) { good.push(v); }); }); });
+    return chain.then(function () {
+      var result = { manifest: man, rankings: nr.rankings, images: good, warnings: warnings, archiveBytes: buf.byteLength };
+      if (opt.skipImageDecode) return result;
+      return RK.backup.plan({ rankings: nr.rankings, images: good }).then(function (plan) { result.plan = plan; if (plan.missingImageRefs) warnings.push(plan.missingImageRefs + ' elementi usano immagini non presenti nel backup: verranno importati senza immagine.'); return result; });
+    });
+  });
+}
+
+try { Object.defineProperty(window, 'tvaRankingsBackup', { value: Object.freeze({ formatVersion: FORMAT_VERSION, crc32: crc32, limits: Object.freeze(Z), zip: Object.freeze({ write: zipWrite, read: zipRead }), create: create, inspect: inspect }), configurable: false, writable: false }); } catch (e) {}
+})();
+
+</script><!-- /rankings-backup -->
+<style id="rankings-ui-css">
+/* TVA Rankings V1 - R2 interfaccia. Prefisso .rk-. Usa i token grafici dell'app (--paper, --ink, --line, --marvel-red...). */
+.rk-lock, .rk-lock body { overflow: hidden; }
+.rk-open { width: 100%; min-height: 48px; justify-content: center; }
+.rk-root { position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 9100; display: flex; flex-direction: column; background: var(--paper); color: var(--ink); font-family: 'Spectral', Georgia, serif; padding: var(--sat, 0px) var(--sar, 0px) var(--sab, 0px) var(--sal, 0px); box-sizing: border-box; -webkit-text-size-adjust: 100%; }
+.rk-root[hidden] { display: none; }
+.rk-root *, .rk-root *::before, .rk-root *::after { box-sizing: border-box; }
+.rk-root button, .rk-root [role="button"], .rk-root select, .rk-root label { touch-action: manipulation; }
+.rk-head { display: flex; align-items: center; gap: .5rem; padding: .4rem .7rem; border-bottom: 1px solid var(--line); min-height: 52px; }
+.rk-head h2 { flex: 1; min-width: 0; margin: 0; font-family: 'IBM Plex Mono', monospace; letter-spacing: .06em; text-transform: uppercase; font-size: .82rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rk-btn { min-height: 44px; min-width: 44px; padding: .4rem .85rem; border: 1px solid var(--line); border-radius: 8px; background: transparent; color: var(--ink); font: inherit; font-size: .9rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: .35rem; }
+.rk-btn:disabled, .rk-btn[aria-disabled="true"] { opacity: .45; cursor: default; }
+.rk-btn.rk-pri { background: var(--marvel-red); border-color: var(--marvel-red); color: #fff; }
+.rk-btn.rk-dng { border-color: var(--rust); color: var(--rust); }
+.rk-btn.rk-sm { min-height: 44px; padding: .25rem .6rem; font-size: .85rem; }
+.rk-btn[aria-pressed="true"], .rk-btn.rk-on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.rk-tabs { display: flex; flex-wrap: wrap; gap: .3rem; padding: .4rem .6rem; border-bottom: 1px solid var(--line); }
+.rk-tab { flex: 1 1 auto; min-height: 44px; padding: .3rem .6rem; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--ink); font: inherit; font-size: .85rem; cursor: pointer; }
+.rk-tab[aria-selected="true"] { background: var(--marvel-red); border-color: var(--marvel-red); color: #fff; }
+.rk-body { flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; padding: .8rem; padding-bottom: calc(5rem + var(--sab, 0px)); -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+.rk-body h3 { margin: .2rem 0 .5rem; font-size: 1.05rem; }
+.rk-help, .rk-sub, .rk-empty { color: var(--ink-soft); font-size: .88rem; margin: .25rem 0; overflow-wrap: anywhere; }
+.rk-banner { margin: 0 0 .7rem; padding: .6rem .75rem; border: 1px solid var(--rust); border-radius: 8px; background: rgba(156,59,46,.12); font-size: .88rem; overflow-wrap: anywhere; }
+.rk-banner.rk-ok { border-color: var(--verde); background: rgba(62,107,79,.12); }
+.rk-row-a { display: flex; flex-wrap: wrap; gap: .5rem; margin: .5rem 0; align-items: center; }
+.rk-l { display: block; margin: .7rem 0 .2rem; font-size: .85rem; }
+.rk-in { display: block; width: 100%; font: inherit; font-size: 16px; padding: .5rem .6rem; border: 1px solid var(--line); border-radius: 6px; background: rgba(255,255,255,.5); color: var(--ink); min-height: 44px; }
+textarea.rk-in { resize: vertical; min-height: 5.5rem; }
+.rk-seg { display: flex; flex-wrap: wrap; gap: .4rem; }
+.rk-seg .rk-btn { flex: 1 1 8rem; }
+.rk-card { border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,.35); margin: .5rem 0; overflow: hidden; }
+.rk-card-main { display: flex; gap: .7rem; align-items: center; width: 100%; padding: .6rem .7rem; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; min-height: 56px; }
+.rk-card-t { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .1rem; }
+.rk-card-t b { overflow-wrap: anywhere; }
+.rk-card-a { display: flex; gap: .4rem; padding: 0 .5rem .5rem; flex-wrap: wrap; }
+.rk-tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; padding: .05rem .45rem; border: 1px solid var(--line); border-radius: 999px; color: var(--brown); margin-right: .3rem; }
+/* miniature */
+.rk-th { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 8px; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; position: relative; background: hsl(var(--h, 20) 32% 34%); color: #f6ecd2; font-family: 'IBM Plex Mono', monospace; font-size: .8rem; font-weight: 600; }
+.rk-th.rk-big { width: 96px; height: 96px; font-size: 1.3rem; }
+.rk-th img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+/* Top */
+.rk-list { list-style: none; margin: .5rem 0; padding: 0; }
+.rk-rowi { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem; padding: .35rem .4rem; margin: .3rem 0; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,.35); position: relative; }
+.rk-rowi.rk-dragging { z-index: 5; box-shadow: 0 6px 18px rgba(0,0,0,.35); background: var(--paper-2); opacity: .96; pointer-events: none; }
+.rk-marker { height: 4px; margin: 0; padding: 0; border-radius: 2px; background: var(--marvel-red); list-style: none; }
+.rk-grip { flex: 0 0 auto; width: 44px; min-height: 44px; border: 0; background: transparent; color: var(--ink-soft); font-size: 1.3rem; cursor: grab; touch-action: none; }
+.rk-pos { flex: 0 0 auto; min-width: 2.2ch; font-family: 'IBM Plex Mono', monospace; font-weight: 700; color: var(--marvel-red); text-align: center; }
+.rk-main { flex: 1 1 8rem; min-width: 0; display: flex; flex-direction: column; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; padding: .2rem; min-height: 44px; justify-content: center; cursor: pointer; }
+.rk-main b { overflow-wrap: anywhere; font-weight: 600; }
+.rk-main small { color: var(--ink-soft); overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.rk-acts { display: flex; gap: .25rem; margin-left: auto; }
+.rk-acts .rk-btn { padding: .2rem; }
+/* Podio */
+.rk-podium { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .4rem; align-items: end; margin: .6rem 0 1rem; }
+.rk-pod { display: flex; flex-direction: column; align-items: center; gap: .3rem; text-align: center; min-width: 0; }
+.rk-pod button.rk-podbtn { width: 100%; border: 0; background: transparent; color: inherit; font: inherit; display: flex; flex-direction: column; align-items: center; gap: .3rem; padding: .3rem .1rem; cursor: pointer; min-height: 44px; }
+.rk-pod b { font-size: .9rem; overflow-wrap: anywhere; }
+.rk-step { width: 100%; display: flex; align-items: flex-start; justify-content: center; padding-top: .35rem; border-radius: 8px 8px 0 0; color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 1.4rem; font-weight: 700; }
+.rk-pod.p1 .rk-step { height: 6.5rem; background: var(--giallo); } .rk-pod.p2 .rk-step { height: 4.8rem; background: #7b7f86; } .rk-pod.p3 .rk-step { height: 3.6rem; background: var(--brown); }
+/* Tier */
+.rk-tier { display: flex; border: 1px solid var(--line); border-radius: 10px; margin: .4rem 0; overflow: hidden; background: rgba(255,255,255,.3); }
+.rk-tier-l { flex: 0 0 5.2rem; max-width: 36%; hyphens: auto; word-break: normal; overflow-wrap: break-word; font-size: .95rem; display: flex; align-items: center; justify-content: center; text-align: center; padding: .3rem; border: 0; border-right: 1px solid var(--line); background: hsl(var(--h, 20) 35% 36%); color: #f6ecd2; font-family: inherit; font-weight: 700; cursor: pointer; min-height: 56px; }
+.rk-zone { flex: 1; min-width: 0; min-height: 56px; display: flex; flex-wrap: wrap; gap: .35rem; padding: .35rem; align-content: flex-start; }
+.rk-zone.rk-over { outline: 3px dashed var(--marvel-red); outline-offset: -3px; background: rgba(194,37,40,.08); }
+.rk-zone-e { color: var(--ink-soft); font-size: .8rem; align-self: center; padding: 0 .3rem; }
+.rk-chip { min-width: 44px; justify-content: center; display: inline-flex; align-items: center; gap: .35rem; min-height: 44px; max-width: 100%; padding: .2rem .55rem; border: 1px solid var(--line); border-radius: 999px; background: var(--paper-2); color: inherit; font: inherit; font-size: .85rem; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+.rk-chip span.rk-t { overflow-wrap: anywhere; text-align: left; }
+.rk-chip .rk-th { width: 32px; height: 32px; font-size: .65rem; border-radius: 50%; }
+.rk-chip.rk-ghosted { opacity: .35; }
+.rk-ghost { position: fixed; z-index: 9400; pointer-events: none; opacity: .92; box-shadow: 0 6px 18px rgba(0,0,0,.4); }
+.rk-pool-h { margin: 1rem 0 .2rem; font-family: 'IBM Plex Mono', monospace; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--brown); }
+/* sheet */
+.rk-shwrap { position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 20; display: flex; align-items: flex-end; justify-content: center; background: rgba(0,0,0,.5); }
+.rk-sheet { width: 100%; max-width: 40rem; max-height: 92%; display: flex; flex-direction: column; background: var(--paper); border-radius: 14px 14px 0 0; border: 1px solid var(--line); border-bottom: 0; padding-bottom: var(--sab, 0px); }
+.rk-sh-h { display: flex; align-items: center; gap: .5rem; padding: .4rem .7rem; border-bottom: 1px solid var(--line); }
+.rk-sh-h h3 { flex: 1; margin: 0; font-size: 1rem; overflow-wrap: anywhere; }
+.rk-sh-b { overflow-y: auto; padding: .7rem .8rem 1rem; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+.rk-res { display: flex; align-items: center; gap: .5rem; padding: .3rem 0; border-bottom: 1px solid var(--line); }
+.rk-res span.rk-t { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.rk-imgs { display: grid; grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: .4rem; margin: .4rem 0; }
+.rk-imgs .rk-btn { padding: 0; width: 100%; height: 64px; }
+.rk-imgs .rk-th { width: 100%; height: 100%; border-radius: 6px; }
+.rk-toast { position: absolute; left: 1rem; right: 1rem; bottom: calc(1rem + var(--sab, 0px)); z-index: 40; margin: 0; padding: .7rem 1rem; background: var(--ink); color: var(--paper); border-radius: 8px; font-size: .9rem; overflow-wrap: anywhere; }
+.rk-toast[hidden] { display: none; }
+.rk-toast.rk-err { background: var(--rust); color: #fff; }
+.rk-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; font-size: 16px; }
+.rk-root :focus-visible { outline: 3px solid var(--blu); outline-offset: 2px; }
+.rk-sub-bar { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin: 0 0 .6rem; }
+@media (prefers-reduced-motion: no-preference) { .rk-rowi, .rk-chip { transition: opacity .15s; } }
+@media (max-width: 380px) { .rk-acts { width: 100%; justify-content: flex-end; } }
+.rk-l input[type="checkbox"] { width: 22px; height: 22px; font-size: 16px; vertical-align: middle; margin-right: .4rem; }
+label.rk-l:has(input[type="checkbox"]) { display: flex; align-items: center; min-height: 44px; }
+</style>
+<script id="rankings-ui">
+/* TVA Rankings V1 - R2: interfaccia. Usa SOLO window.tvaRankings (motore R1). Nessun innerHTML: tutti i dati utente passano da textContent.
+   Nessuna scrittura in localStorage, nessuna richiesta di rete propria. Superficie: window.tvaRankingsUI = { open, close }. */
+(function () {
+'use strict';
+if (window.tvaRankingsUI) return;
+var RK = window.tvaRankings; if (!RK) return;
+var UI = { root: null, head: null, body: null, live: null, toastEl: null, view: 'home', tab: 'mine', filter: 'all', query: '', cur: null, sheets: [], urls: {}, opener: null, draft: null, auto: null, drag: null, off: null, seq: 0, newPreset: 'libera', newKind: 'top', cache: { list: [], trash: 0 } };
+var CAT_LABEL = { item: 'Titoli', char: 'Personaggi', universe: 'Universi', saga: 'Saghe', org: 'Organizzazioni', actor: 'Attori' };
+var KIND_LABEL = { top: 'Top', tier: 'Tier List' };
+
+/* ---------- utilita' DOM (solo nodi di testo: nessun HTML interpretato) ---------- */
+function h(tag, a, kids) {
+  var e = document.createElement(tag), k, v;
+  if (a) for (k in a) { if (!Object.prototype.hasOwnProperty.call(a, k)) continue; v = a[k]; if (v === null || v === undefined || v === false) continue;
+    if (k === 'class') e.className = v; else if (k === 'value') e.value = v; else if (k.slice(0, 2) === 'on' && typeof v === 'function') e.addEventListener(k.slice(2), v); else e.setAttribute(k, v === true ? '' : String(v)); }
+  (kids || []).forEach(function (c) { if (c === null || c === undefined || c === false) return; e.appendChild(typeof c === 'string' || typeof c === 'number' ? document.createTextNode(String(c)) : c); });
+  return e;
+}
+function clear(n) { while (n.firstChild) n.removeChild(n.firstChild); }
+function clone(x) { return JSON.parse(JSON.stringify(x)); }
+function hue(s) { var x = 7, i; s = String(s || ''); for (i = 0; i < s.length; i++) x = (x * 31 + s.charCodeAt(i)) % 360; return x; }
+function initials(s) { var w = String(s || '?').trim().split(/\s+/).filter(Boolean); if (!w.length) return '?'; return (w.length === 1 ? w[0].slice(0, 2) : w[0].charAt(0) + w[w.length - 1].charAt(0)).toUpperCase(); }
+function fmtDate(t) { try { return new Date(t).toLocaleDateString('it-IT', { day: 'numeric', month: 'short', year: 'numeric' }); } catch (e) { return ''; } }
+function fmtBytes(n) { n = Number(n) || 0; return n > 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB'; }
+function say(msg) { if (!UI.live) return; UI.live.textContent = ''; setTimeout(function () { if (UI.live) UI.live.textContent = msg; }, 30); }
+var toastT = null;
+function toast(msg, err) { if (!UI.toastEl) return; UI.toastEl.textContent = msg; UI.toastEl.className = 'rk-toast' + (err ? ' rk-err' : ''); UI.toastEl.hidden = false; clearTimeout(toastT); toastT = setTimeout(function () { if (UI.toastEl) UI.toastEl.hidden = true; }, err ? 8000 : 3500); }
+function errMsg(e) {
+  var c = e && e.code, m = (e && e.message) || 'Errore imprevisto';
+  if (c === 'quota') return 'Spazio sul dispositivo esaurito: questa modifica NON è stata salvata. Libera spazio (per esempio elimina le immagini non usate) e riprova.';
+  if (c === 'storage-error') return 'Impossibile salvare sul dispositivo: la modifica NON è stata salvata. ' + m;
+  if (c === 'conflict') return 'La classifica è stata modificata altrove: ho ricaricato l\'ultima versione, ripeti l\'operazione.';
+  return m;
+}
+
+/* ---------- miniature (testo/iniziali sempre disponibili; immagine solo se esiste davvero) ---------- */
+function catImgInfo(cat, ref) { /* stessa priorità dell'app: manifest locale verificato -> TMDB già usato dall'app. Nessun URL salvato. */
+  try {
+    var M = window.TVA_IMG_MANIFEST || {}, kind = { item: 'item', char: 'chr', universe: 'uni', org: 'org' }[cat], m = kind ? M[kind + ':' + ref] : null;
+    if (m && m.src && m.licence && m.verified === true) return { src: m.src, w: m.w, h: m.h };
+    if (cat === 'item' && window.tvaTmdb && typeof window.tvaTmdb.poster === 'function') { var T = window.tvaTmdb.poster(ref, 'thumb'); if (T && T.src && T.kind !== 'tv-anim') return { src: T.src, srcset: T.srcset, w: T.w, h: T.h, tmdb: true }; }
+  } catch (e) {}
+  return null;
+}
+function userUrl(id) {
+  if (UI.urls[id]) return Promise.resolve(UI.urls[id]);
+  return RK.images.get(id).then(function (b) { var u = URL.createObjectURL(b); UI.urls[id] = u; return u; });
+}
+function freeUrls() { Object.keys(UI.urls).forEach(function (k) { try { URL.revokeObjectURL(UI.urls[k]); } catch (e) {} }); UI.urls = {}; }
+function thumb(name, ref, big) {
+  var s = h('span', { class: 'rk-th' + (big ? ' rk-big' : ''), 'aria-hidden': 'true' }, [initials(name)]); s.style.setProperty('--h', String(hue(name)));
+  if (!ref) return s;
+  function put(src, srcset) { var im = new Image(); im.alt = ''; im.decoding = 'async'; im.referrerPolicy = 'no-referrer'; im.onerror = function () { try { im.remove(); } catch (e) {} }; if (srcset) im.srcset = srcset; im.src = src; s.appendChild(im); }
+  if (ref.type === 'user') userUrl(ref.id).then(function (u) { put(u); }, function () {});
+  else if (ref.type === 'catalog') { var i = catImgInfo(ref.cat, ref.ref); if (i) put(i.src, i.srcset); }
+  return s;
+}
+
+/* ---------- operazioni sul motore ---------- */
+function reloadCur() { if (!UI.cur) return Promise.resolve(); return RK.get(UI.cur.id).then(function (r) { UI.cur = r; renderBody(); }, function () { UI.cur = null; go('home'); }); }
+function op(p, okMsg) {
+  return p.then(function (x) { if (x && x.ranking) UI.cur = x.ranking; renderBody(); if (okMsg) say(okMsg); return x || true; }, function (e) { toast(errMsg(e), true); if (e && e.code === 'conflict') reloadCur(); return null; });
+}
+function findItem(id) { var r = UI.cur; if (!r) return null; for (var i = 0; i < r.items.length; i++) if (r.items[i].id === id) return r.items[i]; return null; }
+function presetOf(id) { var p = RK.presets(), i; for (i = 0; i < p.length; i++) if (p[i].id === id) return p[i]; return p[p.length - 1]; }
+
+/* ---------- finestre (sheet) ---------- */
+function openSheet(title, build, opt) {
+  opt = opt || {}; var wrap = h('div', { class: 'rk-shwrap' }), body = h('div', { class: 'rk-sh-b' }), closeBtn = h('button', { type: 'button', class: 'rk-btn rk-sm', 'aria-label': 'Chiudi finestra', onclick: function () { H.close(); } }, ['Chiudi']);
+  var sh = h('div', { class: 'rk-sheet', role: 'dialog', 'aria-modal': 'true', 'aria-label': title }, [h('div', { class: 'rk-sh-h' }, [h('h3', {}, [title]), closeBtn]), body]);
+  var opener = document.activeElement, H = { el: sh, body: body, closed: false, close: function (res) { if (H.closed) return; if (opt.canClose && !opt.canClose()) return; H.closed = true; var i = UI.sheets.indexOf(H); if (i >= 0) UI.sheets.splice(i, 1); try { wrap.remove(); } catch (e) {} setInert(); if (opt.onClose) opt.onClose(res); if (opener && opener.focus && document.contains(opener)) try { opener.focus(); } catch (e) {} } };
+  wrap.addEventListener('click', function (ev) { if (ev.target === wrap && !opt.modal) H.close(); });
+  wrap.appendChild(sh); UI.root.appendChild(wrap); UI.sheets.push(H); setInert(); build(body, H);
+  var f = sh.querySelector('input,textarea,button:not(.rk-sm)') || closeBtn; try { f.focus(); } catch (e) {}
+  return H;
+}
+function setInert() { var on = UI.sheets.length > 0; [UI.head, UI.body, UI.tabsEl].forEach(function (n) { if (!n) return; if (on) n.setAttribute('inert', ''); else n.removeAttribute('inert'); }); }
+function ask(title, text, okLabel, danger) {
+  return new Promise(function (res) { var done = false; function fin(v, H) { if (done) return; done = true; res(v); if (H) H.close(); }
+    openSheet(title, function (b, H) { b.appendChild(h('p', {}, [text])); b.appendChild(h('div', { class: 'rk-row-a' }, [h('button', { type: 'button', class: 'rk-btn' + (danger ? ' rk-dng' : ' rk-pri'), onclick: function () { fin(true, H); } }, [okLabel || 'Conferma']), h('button', { type: 'button', class: 'rk-btn', onclick: function () { fin(false, H); } }, ['Annulla'])])); }, { modal: false, onClose: function () { fin(false); } }); });
+}
+
+/* ---------- bozze: salvataggio automatico dei campi testo (R1: drafts.autosave) ---------- */
+function beginDraft(getSnap) { endDraft(false); if (!UI.cur) return; var id = UI.cur.id; UI.auto = RK.drafts.autosave(id, getSnap, { baseRev: UI.cur.rev, delay: 600, onError: function (e) { toast('Bozza non salvata: ' + errMsg(e), true); } }); }
+function endDraft(discard) { if (UI.auto) { UI.auto.stop(); UI.auto = null; } if (discard && UI.cur) RK.drafts.discard(UI.cur.id).catch(function () {}); }
+function mergeDraftText(cur, d) { var m = clone(cur); m.title = d.title; m.description = d.description; m.items.forEach(function (i) { var x = d.items.filter(function (y) { return y.id === i.id; })[0]; if (x) { i.name = x.name; i.note = x.note; } }); return m; }
+function checkDraft() {
+  if (!UI.cur) return; var id = UI.cur.id;
+  RK.drafts.get(id).then(function (d) { if (!d || UI.cur === null || UI.cur.id !== id) return; UI.draft = d; renderBody(); }).catch(function () {});
+}
+
+/* ---------- navigazione ---------- */
+/* tasto/gesto Indietro (iPhone): UNA sola voce di cronologia mentre Rankings e' aperto, con lo stato corrente dell'app copiato
+   (cosi' la pila di navigazione esistente dell'app non reagisce). Indietro = chiude finestra -> torna all'elenco -> chiude Rankings. */
+function histArm() { if (UI.histOn) return; try { var st = history.state, b = {}, k; if (st && typeof st === 'object') for (k in st) if (Object.prototype.hasOwnProperty.call(st, k)) b[k] = st[k]; b.tvaRk = 1; history.pushState(b, ''); UI.histOn = true; } catch (e) {} }
+function histDisarm() { if (!UI.histOn) return; UI.histOn = false; UI.ignorePop = true; try { history.back(); } catch (e) { UI.ignorePop = false; } setTimeout(function () { UI.ignorePop = false; }, 700); }
+function uiBack() { if (UI.sheets.length) UI.sheets[UI.sheets.length - 1].close(); else if (UI.view === 'home') close(); else { if (UI.auto) UI.auto.flush(); go('home'); } }
+window.addEventListener('popstate', function () { if (UI.ignorePop) { UI.ignorePop = false; return; } if (!UI.root || UI.root.hidden || !UI.histOn) return; UI.histOn = false; uiBack(); if (!UI.root.hidden) histArm(); });
+function open() {
+  if (!UI.root) build(); UI.opener = document.activeElement; UI.root.hidden = false; document.documentElement.classList.add('rk-lock'); fit(); histArm();
+  go('home'); try { UI.root.querySelector('.rk-close').focus(); } catch (e) {}
+  if (!UI.off) UI.off = RK.on(onEvent);
+}
+function close() { if (!UI.root) return; UI.sheets.slice().forEach(function (s) { s.close(); }); endDraft(false); ndFlush(); histDisarm(); (UI.dl || []).forEach(function (u) { try { URL.revokeObjectURL(u); } catch (e) {} }); UI.dl = []; UI.root.hidden = true; document.documentElement.classList.remove('rk-lock'); freeUrls(); UI.cur = null; if (UI.off) { UI.off(); UI.off = null; } if (UI.opener && UI.opener.focus) try { UI.opener.focus(); } catch (e) {} }
+function go(view, data) {
+  if (UI.view === 'new' && view !== 'new') ndFlush();
+  UI.seq++; if (view !== 'editor') { endDraft(false); UI.cur = null; UI.draft = null; }
+  UI.view = view; if (view === 'editor') { UI.cur = data; UI.draft = null; checkDraft(); } if (view === 'new') UI.newState = data || {};
+  renderAll(); UI.body.scrollTop = 0;
+}
+function onEvent(ev) {
+  if (!UI.root || UI.root.hidden || !ev) return;
+  if (UI.view === 'home') refreshHome(true);
+  else if (UI.view === 'editor' && UI.cur && ev.id === UI.cur.id) { if (ev.type === 'deleted') { toast('Questa classifica è stata eliminata da un\'altra scheda.', true); go('home'); } else if (typeof ev.rev === 'number') { var cid = UI.cur.id, er = ev.rev; setTimeout(function () { if (UI.cur && UI.cur.id === cid && er > UI.cur.rev) { reloadCur(); toast('Classifica aggiornata da un\'altra scheda.'); } }, 150); } }
+}
+function fit() { /* tastiera iOS: segue il visual viewport per non coprire i campi */
+  var vv = window.visualViewport; if (!vv || !UI.root) return;
+  function f() { if (UI.root.hidden) return; var full = Math.abs(vv.height - window.innerHeight) < 80; UI.root.style.bottom = full ? '0px' : Math.max(0, window.innerHeight - vv.height - vv.offsetTop) + 'px'; var a = document.activeElement; if (!full && a && UI.root.contains(a) && a.scrollIntoView) try { a.scrollIntoView({ block: 'center' }); } catch (e) {} }
+  if (!UI.vvBound) { UI.vvBound = true; vv.addEventListener('resize', f); vv.addEventListener('scroll', f); } f();
+}
+
+/* ---------- scheletro ---------- */
+function build() {
+  UI.head = h('div', { class: 'rk-head' }); UI.tabsEl = h('div', { class: 'rk-tabs', role: 'tablist', 'aria-label': 'Sezioni Rankings' }); UI.body = h('div', { class: 'rk-body', tabindex: '-1' });
+  UI.live = h('div', { class: 'rk-sr', role: 'status', 'aria-live': 'polite' }); UI.toastEl = h('p', { class: 'rk-toast', role: 'status', hidden: true });
+  UI.root = h('div', { class: 'rk-root', id: 'rkRoot', role: 'dialog', 'aria-modal': 'true', 'aria-label': 'TVA Rankings', hidden: true }, [UI.head, UI.tabsEl, UI.body, UI.live, UI.toastEl]);
+  document.addEventListener('keydown', function (ev) { if (ev.key !== 'Escape' || !UI.root || UI.root.hidden || UI.drag) return; ev.preventDefault(); uiBack(); });
+  document.body.appendChild(UI.root);
+}
+function renderAll() { renderHead(); renderTabs(); renderBody(); }
+function renderHead() {
+  clear(UI.head); var t = 'Rankings', back = null;
+  if (UI.view !== 'home') back = h('button', { type: 'button', class: 'rk-btn', 'aria-label': 'Torna alle classifiche', onclick: function () { if (UI.sheets.length) return; UI.view === 'editor' && UI.auto && UI.auto.flush(); go('home'); } }, ['←']);
+  if (UI.view === 'editor' && UI.cur) t = UI.cur.title; else if (UI.view === 'new') t = 'Nuova classifica';
+  UI.head.appendChild(back || h('span', { class: 'rk-sr' }, [' ']));
+  UI.head.appendChild(h('h2', { id: 'rkTitle' }, [t]));
+  if (UI.view === 'editor' && UI.cur) UI.head.appendChild(h('button', { type: 'button', class: 'rk-btn', 'aria-label': 'Dettagli e impostazioni della classifica', onclick: detailsSheet }, ['✎ Dettagli']));
+  UI.head.appendChild(h('button', { type: 'button', class: 'rk-btn rk-close', 'aria-label': 'Chiudi Rankings', onclick: close }, ['Chiudi']));
+}
+var TABS = [['mine', 'Le mie Top'], ['cats', 'Categorie'], ['images', 'Immagini'], ['trash', 'Cestino'], ['backup', 'Backup']];
+function renderTabs() {
+  clear(UI.tabsEl); UI.tabsEl.hidden = UI.view !== 'home'; if (UI.view !== 'home') return;
+  TABS.forEach(function (t) { UI.tabsEl.appendChild(h('button', { type: 'button', role: 'tab', class: 'rk-tab', 'aria-selected': UI.tab === t[0] ? 'true' : 'false', onclick: function () { UI.tab = t[0]; renderTabs(); renderBody(); } }, [t[1] + (t[0] === 'trash' && UI.cache.trash ? ' (' + UI.cache.trash + ')' : '')])); });
+}
+function renderBody() {
+  var top = UI.body.scrollTop; clear(UI.body);
+  if (UI.view === 'home') { if (UI.tab === 'mine') homeMine(); else if (UI.tab === 'cats') homeCats(); else if (UI.tab === 'images') homeImages(); else if (UI.tab === 'trash') homeTrash(); else homeBackup(); }
+  else if (UI.view === 'new') newForm(); else if (UI.view === 'editor') editor();
+  UI.body.scrollTop = top;
+}
+
+/* ---------- HOME: Le mie Top ---------- */
+function refreshHome(soft) {
+  var my = UI.seq;
+  return Promise.all([RK.list({ query: UI.query, kind: UI.filter === 'all' ? undefined : UI.filter }), RK.trash.list()]).then(function (x) { if (my !== UI.seq && !soft) return; UI.cache.list = x[0]; UI.cache.corrupt = x[0].corrupt || 0; var tc = x[1].length, ch = tc !== UI.cache.trash; UI.cache.trash = tc; if (ch) renderTabs(); if (UI.view === 'home' && UI.tab === 'mine') fillList(); }, function (e) { toast(errMsg(e), true); });
+}
+function homeMine() {
+  var q = h('input', { class: 'rk-in', type: 'search', id: 'rkSearch', 'aria-label': 'Cerca classifiche', placeholder: 'Cerca per titolo, descrizione o elemento', value: UI.query, autocomplete: 'off', autocapitalize: 'off', spellcheck: 'false' }), t = null;
+  q.addEventListener('input', function () { clearTimeout(t); t = setTimeout(function () { UI.query = q.value; refreshHome(); }, 200); });
+  var seg = h('div', { class: 'rk-seg', role: 'group', 'aria-label': 'Filtra per tipo' }, [['all', 'Tutte'], ['top', 'Top'], ['tier', 'Tier List']].map(function (f) { return h('button', { type: 'button', class: 'rk-btn', 'aria-pressed': UI.filter === f[0] ? 'true' : 'false', onclick: function () { UI.filter = f[0]; refreshHome(); renderBody(); } }, [f[1]]); }));
+  UI.statusBox = h('div', {}); UI.listBox = h('div', { id: 'rkList' }); UI.ndBox = h('div', { id: 'rkNdBox' });
+  UI.body.appendChild(UI.statusBox); UI.body.appendChild(UI.ndBox); showNdBanner();
+  UI.body.appendChild(h('div', { class: 'rk-row-a' }, [h('button', { type: 'button', class: 'rk-btn rk-pri', id: 'rkNew', onclick: function () { RK.newDraft.get().then(function (d) { go('new', d ? { kind: d.data.kind, preset: d.data.preset, imageMode: d.data.imageMode, title: d.data.title, description: d.data.description, fromDraft: d.savedAt } : { kind: 'top', preset: 'libera' }); }, function () { go('new', { kind: 'top', preset: 'libera' }); }); } }, ['＋ Nuova classifica'])]));
+  UI.body.appendChild(h('label', { class: 'rk-l', for: 'rkSearch' }, ['Ricerca']));
+  UI.body.appendChild(q); UI.body.appendChild(h('div', { class: 'rk-row-a' }, [seg])); UI.body.appendChild(UI.listBox);
+  fillList(); refreshHome(true); showStatus();
+}
+function showStatus() {
+  RK.status().then(function (s) { if (!UI.statusBox || !UI.statusBox.isConnected) return; clear(UI.statusBox); if (!s.persistent) UI.statusBox.appendChild(h('p', { class: 'rk-banner', role: 'alert' }, [s.warning || 'Archiviazione non disponibile: le classifiche NON verranno salvate.'])); }, function () {});
+}
+function fillList() {
+  if (!UI.listBox) return; clear(UI.listBox); var L = UI.cache.list || [];
+  if (UI.cache.corrupt) UI.listBox.appendChild(h('p', { class: 'rk-banner', role: 'alert' }, [UI.cache.corrupt + ' record non leggibili sono stati lasciati intatti sul dispositivo (non cancellati).']));
+  if (!L.length) { UI.listBox.appendChild(h('p', { class: 'rk-empty' }, [UI.query ? 'Nessuna classifica corrisponde alla ricerca.' : 'Non hai ancora classifiche. Crea la prima: una Top numerata, una Tier List, su Marvel o su qualsiasi altro argomento.'])); return; }
+  UI.listBox.appendChild(h('p', { class: 'rk-sub' }, [L.length + (L.length === 1 ? ' classifica' : ' classifiche')]));
+  L.forEach(function (s) {
+    var nm = s.title;
+    UI.listBox.appendChild(h('div', { class: 'rk-card', 'data-rk': s.id }, [
+      h('button', { type: 'button', class: 'rk-card-main', onclick: function () { openRanking(s.id); } }, [s.imageMode === 'images' ? thumb(nm, s.cover) : null, h('span', { class: 'rk-card-t' }, [h('b', {}, [nm]), h('span', { class: 'rk-sub' }, [h('span', { class: 'rk-tag' }, [KIND_LABEL[s.kind] || s.kind]), presetOf(s.preset).label + ' · ' + s.count + (s.count === 1 ? ' elemento' : ' elementi') + ' · ' + fmtDate(s.updatedAt)]), s.description ? h('span', { class: 'rk-sub' }, [s.description.slice(0, 120)]) : null])]),
+      h('div', { class: 'rk-card-a' }, [
+        h('button', { type: 'button', class: 'rk-btn rk-sm', 'aria-label': 'Duplica ' + nm, onclick: function () { RK.duplicate(s.id).then(function (r) { toast('Duplicata: ' + r.title); refreshHome(true); }, function (e) { toast(errMsg(e), true); }); } }, ['Duplica']),
+        h('button', { type: 'button', class: 'rk-btn rk-sm rk-dng', 'aria-label': 'Elimina ' + nm, onclick: function () { ask('Eliminare la classifica?', '«' + nm + '» verrà spostata nel Cestino: potrai ripristinarla.', 'Sposta nel Cestino', true).then(function (ok) { if (ok) RK.remove(s.id).then(function () { toast('Spostata nel Cestino.'); refreshHome(true); }, function (e) { toast(errMsg(e), true); }); }); } }, ['Elimina'])])]));
+  });
+}
+function openRanking(id) { RK.get(id).then(function (r) { go('editor', r); }, function (e) { toast(errMsg(e), true); refreshHome(true); }); }
+
+/* ---------- HOME: Categorie (modelli = suggerimenti, nessuna classifica precompilata) ---------- */
+function homeCats() {
+  UI.body.appendChild(h('p', { class: 'rk-help' }, ['I modelli sono solo suggerimenti: scelgono da quali elenchi reali dell\'app puoi pescare. Nessuna classifica viene precompilata.']));
+  RK.presets().forEach(function (p) {
+    UI.body.appendChild(h('div', { class: 'rk-card' }, [h('div', { class: 'rk-card-main', style: 'cursor:default' }, [h('span', { class: 'rk-card-t' }, [h('b', {}, [p.label]), h('span', { class: 'rk-sub' }, [p.hint])])]),
+      h('div', { class: 'rk-card-a' }, [h('button', { type: 'button', class: 'rk-btn rk-sm rk-pri', 'aria-label': 'Nuova Top: ' + p.label, onclick: function () { go('new', { kind: 'top', preset: p.id }); } }, ['Nuova Top']), h('button', { type: 'button', class: 'rk-btn rk-sm', 'aria-label': 'Nuova Tier List: ' + p.label, onclick: function () { go('new', { kind: 'tier', preset: p.id }); } }, ['Nuova Tier List'])])]));
+  });
+}
+
+/* ---------- creazione ---------- */
+function newForm() {
+  var st = UI.newState || {}, kind = st.kind || 'top', preset = st.preset || 'libera', mode = st.imageMode || 'images';
+  function snapNew() { return { kind: kind, title: title.value, description: desc.value, preset: preset, imageMode: mode }; }
+  function touchNew() { ndTouch(snapNew); }
+  var title = h('input', { class: 'rk-in', id: 'rkNewTitle', type: 'text', maxlength: '80', autocomplete: 'off', value: st.title || '', placeholder: 'Es. I miei film Marvel preferiti' });
+  var desc = h('textarea', { class: 'rk-in', id: 'rkNewDesc', rows: '3', maxlength: '500', 'aria-label': 'Descrizione' }); desc.value = st.description || '';
+  function segment(name, opts, cur, onpick) { var box = h('div', { class: 'rk-seg', role: 'group', 'aria-label': name }); opts.forEach(function (o) { var b = h('button', { type: 'button', class: 'rk-btn', 'aria-pressed': cur() === o[0] ? 'true' : 'false', 'data-v': o[0], onclick: function () { onpick(o[0]); touchNew(); Array.prototype.forEach.call(box.children, function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-v') === cur() ? 'true' : 'false'); }); } }, [o[1]]); box.appendChild(b); }); return box; }
+  var hint = h('p', { class: 'rk-help' }, [presetOf(preset).hint]);
+  var err = h('p', { class: 'rk-banner', role: 'alert', hidden: true });
+  title.addEventListener('input', touchNew); desc.addEventListener('input', touchNew);
+  if (st.fromDraft) UI.body.appendChild(h('div', { class: 'rk-banner rk-ok', role: 'status', id: 'rkNewDraftBanner' }, ['Ho ripristinato la bozza non completata (' + fmtDate(st.fromDraft) + '). ', h('button', { type: 'button', class: 'rk-btn rk-sm', onclick: function () { ndDiscard().then(function () { go('new', { kind: 'top', preset: 'libera' }); }); } }, ['Ricomincia da zero'])]));
+  UI.body.appendChild(h('label', { class: 'rk-l', for: 'rkNewTitle' }, ['Titolo (obbligatorio)'])); UI.body.appendChild(title);
+  UI.body.appendChild(h('label', { class: 'rk-l', for: 'rkNewDesc' }, ['Descrizione (facoltativa)'])); UI.body.appendChild(desc);
+  UI.body.appendChild(h('p', { class: 'rk-l' }, ['Tipo'])); UI.body.appendChild(segment('Tipo', [['top', 'Top numerata'], ['tier', 'Tier List (S A B C D)']], function () { return kind; }, function (v) { kind = v; }));
+  UI.body.appendChild(h('p', { class: 'rk-l' }, ['Categoria suggerita'])); UI.body.appendChild(segment('Categoria', RK.presets().map(function (p) { return [p.id, p.label]; }), function () { return preset; }, function (v) { preset = v; hint.textContent = presetOf(v).hint; })); UI.body.appendChild(hint);
+  UI.body.appendChild(h('p', { class: 'rk-l' }, ['Immagini'])); UI.body.appendChild(segment('Immagini', [['images', 'Con immagini'], ['text', 'Solo testo']], function () { return mode; }, function (v) { mode = v; }));
+  UI.body.appendChild(err);
+  UI.body.appendChild(h('div', { class: 'rk-row-a' }, [h('button', { type: 'button', class: 'rk-btn rk-pri', id: 'rkCreate', onclick: function (ev) {
+    var btn = ev.currentTarget; btn.disabled = true; err.hidden = true;
+    RK.create({ kind: kind, title: title.value, description: desc.value, preset: preset, imageMode: mode }).then(function (r) { ndDiscard(); go('editor', r); if (presetOf(preset).cats.length) addSheet(); }, function (e) { btn.disabled = false; err.textContent = e && e.code === 'invalid' ? 'Inserisci un titolo.' : errMsg(e); err.hidden = false; title.focus(); });
+  } }, ['Crea']), h('button', { type: 'button', class: 'rk-btn', onclick: function () { ndDiscard().then(function () { go('home'); }); } }, ['Annulla'])]));
+}
+/* bozza "nuova classifica": salvataggio automatico (meta store del motore); resta finche' non crei o annulli esplicitamente */
+function ndTouch(getSnap) { UI.nd = { get: getSnap }; clearTimeout(UI.ndT); UI.ndT = setTimeout(ndFlush, 500); }
+function ndFlush() { clearTimeout(UI.ndT); UI.ndT = null; var n = UI.nd; if (!n) return Promise.resolve(); var d; try { d = n.get(); } catch (e) { return Promise.resolve(); } if (!d.title.trim() && !d.description.trim()) return RK.newDraft.discard().catch(function () {}); return RK.newDraft.save(d).catch(function (e) { toast('Bozza non salvata: ' + errMsg(e), true); }); }
+function ndDiscard() { clearTimeout(UI.ndT); UI.ndT = null; UI.nd = null; return RK.newDraft.discard().catch(function () {}); }
+function showNdBanner() {
+  RK.newDraft.get().then(function (d) { if (!d || !UI.ndBox || !UI.ndBox.isConnected || (!d.data.title && !d.data.description)) return; clear(UI.ndBox);
+    UI.ndBox.appendChild(h('div', { class: 'rk-banner rk-ok', role: 'status', id: 'rkNdBanner' }, ['Bozza di una nuova classifica non completata' + (d.data.title ? ': «' + d.data.title + '»' : '') + '. ', h('div', { class: 'rk-row-a' }, [h('button', { type: 'button', class: 'rk-btn rk-sm rk-pri', onclick: function () { go('new', { kind: d.data.kind, preset: d.data.preset, imageMode: d.data.imageMode, title: d.data.title, description: d.data.description, fromDraft: d.savedAt }); } }, ['Riprendi']), h('button', { type: 'button', class: 'rk-btn rk-sm', onclick: function () { ndDiscard().then(function () { clear(UI.ndBox); }); } }, ['Scarta'])])])); }, function () {});
+}
+document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') ndFlush(); }); window.addEventListener('pagehide', function () { ndFlush(); });
+
+/* ---------- dettagli classifica (bozza automatica sui campi testo) ---------- */
+function detailsSheet() {
+  var r = UI.cur; if (!r) return;
+  openSheet('Dettagli classifica', function (b, H) {
+    var title = h('input', { class: 'rk-in', id: 'rkDTitle', type: 'text', maxlength: '80', value: r.title }), desc = h('textarea', { class: 'rk-in', id: 'rkDDesc', rows: '3', maxlength: '500' }); desc.value = r.description;
+    var mode = r.imageMode, preset = r.preset, err = h('p', { class: 'rk-banner', role: 'alert', hidden: true });
+    function snap() { var c = clone(UI.cur); c.title = title.value.trim() || UI.cur.title; c.description = desc.value; return c; }
+    beginDraft(snap); title.addEventListener('input', function () { UI.auto && UI.auto.touch(); }); desc.addEventListener('input', function () { UI.auto && UI.auto.touch(); });
+    function seg(name, opts, cur, pick) { var box = h('div', { class: 'rk-seg', role: 'group', 'aria-label': name }); opts.forEach(function (o) { box.appendChild(h('button', { type: 'button', class: 'rk-btn', 'data-v': o[0], 'aria-pressed': cur() === o[0] ? 'true' : 'false', onclick: function () { pick(o[0]); Array.prototype.forEach.call(box.children, function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-v') === cur() ? 'true' : 'false'); }); } }, [o[1]])); }); return box; }
+    b.appendChild(h('label', { class: 'rk-l', for: 'rkDTitle' }, ['Titolo'])); b.appendChild(title); b.appendChild(h('label', { class: 'rk-l', for: 'rkDDesc' }, ['Descrizione'])); b.appendChild(desc);
+    b.appendChild(h('p', { class: 'rk-l' }, ['Categoria suggerita'])); b.appendChild(seg('Categoria', RK.presets().map(function (p) { return [p.id, p.label]; }), function () { return preset; }, function (v) { preset = v; }));
+    b.appendChild(h('p', { class: 'rk-l' }, ['Immagini'])); b.appendChild(seg('Immagini', [['images', 'Con immagini'], ['text', 'Solo testo']], function () { return mode; }, function (v) { mode = v; }));
+    b.appendChild(h('p', { class: 'rk-help' }, ['Tipo: ' + KIND_LABEL[r.kind] + ' (non modificabile). Le immagini personali restano salvate anche in modalità solo testo.']));
+    b.appendChild(err);
+    b.appendChild(h('div', { class: 'rk-row-a' }, [
+      h('button', { type: 'button', class: 'rk-btn rk-pri', onclick: function () { if (!title.value.trim()) { err.textContent = 'Il titolo non può essere vuoto.'; err.hidden = false; return; } op(RK.updateMeta(UI.cur.id, { title: title.value, description: desc.value, preset: preset, imageMode: mode }), 'Salvato').then(function (x) { if (x) { endDraft(true); H.close(); renderHead(); } }); } }, ['Salva']),
+      h('button', { type: 'button', class: 'rk-btn', onclick: function () { endDraft(true); H.close(); } }, ['Annulla']),
+      h('button', { type: 'button', class: 'rk-btn', onclick: function () { RK.duplicate(UI.cur.id).then(function (c) { endDraft(true); H.close(); toast('Duplicata: ' + c.title); openRanking(c.id); }, function (e) { toast(errMsg(e), true); }); } }, ['Duplica']),
+      h('button', { type: 'button', class: 'rk-btn rk-dng', onclick: function () { var nm = UI.cur.title; ask('Eliminare la classifica?', '«' + nm + '» verrà spostata nel Cestino: potrai ripristinarla.', 'Sposta nel Cestino', true).then(function (ok) { if (ok) { endDraft(false); RK.remove(UI.cur.id).then(function () { H.close(); toast('Spostata nel Cestino.'); go('home'); }, function (e) { toast(errMsg(e), true); }); } }); } }, ['Elimina'])]));
+  }, { onClose: function () { endDraft(false); } });
+}
+
+/* ---------- EDITOR ---------- */
+function editor() {
+  var r = UI.cur; if (!r) return;
+  if (UI.draft) draftBanner();
+  var bar = h('div', { class: 'rk-sub-bar' });
+  bar.appendChild(h('button', { type: 'button', class: 'rk-btn rk-pri', id: 'rkAdd', onclick: function () { addSheet(); } }, ['＋ Aggiungi elementi']));
+  if (r.kind === 'top') {
+    var can = r.items.length >= 3;
+    bar.appendChild(h('div', { class: 'rk-seg', role: 'group', 'aria-label': 'Visualizzazione' }, [h('button', { type: 'button', class: 'rk-btn', id: 'rkViewList', 'aria-pressed': r.view === 'list' ? 'true' : 'false', onclick: function () { op(RK.updateMeta(r.id, { view: 'list' })); } }, ['Elenco']), h('button', { type: 'button', class: 'rk-btn', id: 'rkViewPod', disabled: !can, title: can ? '' : 'Servono almeno tre elementi', 'aria-pressed': r.view === 'podium' && can ? 'true' : 'false', onclick: function () { op(RK.updateMeta(r.id, { view: 'podium' })); } }, ['Podio'])]));
+  }
+  UI.body.appendChild(bar);
+  if (r.description) UI.body.appendChild(h('p', { class: 'rk-help' }, [r.description]));
+  if (r.kind === 'top') { if (r.view === 'podium' && r.items.length >= 3) podiumView(); else topList(); } else tierEditor();
+}
+function draftBanner() {
+  var d = UI.draft, r = UI.cur;
+  if (d.corrupt) { UI.body.appendChild(h('div', { class: 'rk-banner', role: 'alert' }, ['Esiste una bozza illeggibile. ', h('button', { type: 'button', class: 'rk-btn rk-sm', onclick: function () { RK.drafts.discard(r.id).then(function () { UI.draft = null; renderBody(); }); } }, ['Scarta bozza'])])); return; }
+  UI.body.appendChild(h('div', { class: 'rk-banner', role: 'alert', id: 'rkDraftBanner' }, ['Ho trovato modifiche non salvate (' + fmtDate(d.savedAt) + ')' + (d.stale ? ', ma la classifica è cambiata dopo: ripristino solo i testi (titolo, descrizione, nomi e note).' : '.') + ' ',
+    h('div', { class: 'rk-row-a' }, [h('button', { type: 'button', class: 'rk-btn rk-sm rk-pri', onclick: function () {
+      var p = d.stale ? RK.save(mergeDraftText(UI.cur, d.data), { expectedRev: UI.cur.rev }).then(function (x) { return RK.drafts.discard(r.id).then(function () { return x; }); }) : RK.drafts.commit(r.id);
+      p.then(function (x) { UI.draft = null; UI.cur = x.ranking || UI.cur; renderAll(); toast('Bozza ripristinata.'); }, function (e) { toast(errMsg(e), true); }); } }, ['Ripristina']),
+    h('button', { type: 'button', class: 'rk-btn rk-sm', onclick: function () { RK.drafts.discard(r.id).then(function () { UI.draft = null; renderBody(); }); } }, ['Scarta'])])]));
+}
+function nameOf(it) { return it.name; }
+function itemThumb(it, big) { return UI.cur.imageMode === 'images' ? thumb(it.name, it.image || (it.source.type === 'catalog' && catImgInfo(it.source.cat, it.source.ref) ? { type: 'catalog', cat: it.source.cat, ref: it.source.ref } : null), big) : null; }
+
+function topList() {
+  var r = UI.cur; if (!r.items.length) { UI.body.appendChild(h('p', { class: 'rk-empty' }, ['Nessun elemento. Usa «Aggiungi elementi» per pescare dai cataloghi dell\'app o inserirli a mano.'])); return; }
+  var ol = h('ol', { class: 'rk-list', id: 'rkTop', 'aria-label': 'Elementi in ordine di classifica' });
+  r.items.forEach(function (it, i) {
+    var li = h('li', { class: 'rk-rowi', 'data-id': it.id }, [
+      h('button', { type: 'button', class: 'rk-grip', 'aria-label': 'Trascina per riordinare ' + it.name + ' (alternativa: pulsanti su e giù)', onpointerdown: function (ev) { dragTop(ev, li, it.id); } }, ['⠿']),
+      h('span', { class: 'rk-pos', 'aria-label': 'Posizione ' + (i + 1) }, [String(i + 1)]), itemThumb(it),
+      h('button', { type: 'button', class: 'rk-main', 'aria-label': 'Modifica ' + it.name, onclick: function () { itemSheet(it.id); } }, [h('b', {}, [it.name]), it.note ? h('small', {}, [it.note]) : null]),
+      h('span', { class: 'rk-acts' }, [
+        h('button', { type: 'button', class: 'rk-btn rk-up', 'aria-label': 'Sposta su ' + it.name, disabled: i === 0, onclick: function () { moveBy(it.id, -1, '.rk-up'); } }, ['↑']),
+        h('button', { type: 'button', class: 'rk-btn rk-dn', 'aria-label': 'Sposta giù ' + it.name, disabled: i === r.items.length - 1, onclick: function () { moveBy(it.id, 1, '.rk-dn'); } }, ['↓'])])]);
+    ol.appendChild(li);
+  });
+  UI.body.appendChild(ol);
+}
+function moveBy(itemId, d, sel) {
+  op(RK.moveItemBy(UI.cur.id, itemId, d)).then(function (x) { if (!x) return; var it = findItem(itemId), pos = UI.cur.items.indexOf(it) + 1; say(it.name + ': posizione ' + pos + ' di ' + UI.cur.items.length); var row = UI.body.querySelector('[data-id="' + itemId + '"]'), btn = row && (row.querySelector(sel + ':not([disabled])') || row.querySelector('.rk-main')); if (btn) btn.focus(); });
+}
+function podiumView() {
+  var r = UI.cur, P = RK.podium(r); if (!P.eligible) return topList();
+  function pod(n, cls) { var x = P.top3[n - 1], it = x.item; return h('div', { class: 'rk-pod ' + cls }, [h('button', { type: 'button', class: 'rk-podbtn', 'aria-label': n + '° posto: ' + it.name + '. Apri per modificare', onclick: function () { itemSheet(it.id); } }, [itemThumb(it, true), h('b', {}, [it.name])]), h('div', { class: 'rk-step', 'aria-hidden': 'true' }, [String(n)])]); }
+  UI.body.appendChild(h('div', { class: 'rk-podium', id: 'rkPodium' }, [pod(2, 'p2'), pod(1, 'p1'), pod(3, 'p3')]));
+  if (P.rest.length) {
+    UI.body.appendChild(h('h3', {}, ['Dal 4° posto in poi']));
+    var ol = h('ol', { class: 'rk-list', start: '4' }); P.rest.forEach(function (x) { ol.appendChild(h('li', { class: 'rk-rowi', 'data-id': x.item.id }, [h('span', { class: 'rk-pos' }, [String(x.position)]), itemThumb(x.item), h('button', { type: 'button', class: 'rk-main', 'aria-label': 'Modifica ' + x.item.name, onclick: function () { itemSheet(x.item.id); } }, [h('b', {}, [x.item.name]), x.item.note ? h('small', {}, [x.item.note]) : null])])); }); UI.body.appendChild(ol);
+  }
+  UI.body.appendChild(h('p', { class: 'rk-help' }, ['Il podio è una vista della stessa Top: per riordinare passa a «Elenco».']));
+}
+
+/* ---------- Tier List ---------- */
+function tierEditor() {
+  var r = UI.cur, V = RK.tierView(r);
+  V.tiers.forEach(function (t) {
+    var zone = h('div', { class: 'rk-zone', 'data-tier': t.id, role: 'list', 'aria-label': 'Fascia ' + t.name }); fillZone(zone, t.items);
+    var lab = h('button', { type: 'button', class: 'rk-tier-l', 'aria-label': 'Fascia ' + t.name + ': rinomina, sposta o elimina', onclick: function () { tierSheet(t.id); } }, [t.name]); lab.style.setProperty('--h', String(hue(t.id)));
+    UI.body.appendChild(h('div', { class: 'rk-tier', 'data-tier-row': t.id }, [lab, zone]));
+  });
+  UI.body.appendChild(h('div', { class: 'rk-row-a' }, [h('button', { type: 'button', class: 'rk-btn', id: 'rkAddTier', disabled: r.tiers.length >= RK.limits.tiers, onclick: function () { op(RK.addTier(r.id, 'Nuova fascia'), 'Fascia aggiunta').then(function (x) { if (x && x.tierId) tierSheet(x.tierId); }); } }, ['＋ Aggiungi fascia'])]));
+  UI.body.appendChild(h('h3', { class: 'rk-pool-h' }, ['Non classificati']));
+  var pool = h('div', { class: 'rk-zone', 'data-tier': '', role: 'list', 'aria-label': 'Elementi non classificati', id: 'rkPool', style: 'border:1px solid var(--line);border-radius:10px' }); fillZone(pool, V.unranked); UI.body.appendChild(pool);
+  UI.body.appendChild(h('p', { class: 'rk-help' }, ['Trascina un elemento (tieni premuto sul touch) oppure toccalo per scegliere la fascia con i pulsanti.']));
+}
+function fillZone(zone, items) {
+  if (!items.length) zone.appendChild(h('span', { class: 'rk-zone-e' }, ['Vuota']));
+  items.forEach(function (it) { var c = h('button', { type: 'button', class: 'rk-chip', role: 'listitem', 'data-id': it.id, 'aria-label': it.name + ': apri per modificare o cambiare fascia' }, [itemThumb(it), h('span', { class: 'rk-t' }, [it.name])]); bindChip(c, it); zone.appendChild(c); });
+}
+function tierSheet(tierId) {
+  var r = UI.cur, t = r.tiers.filter(function (x) { return x.id === tierId; })[0]; if (!t) return;
+  openSheet('Fascia «' + t.name + '»', function (b, H) {
+    var inp = h('input', { class: 'rk-in', id: 'rkTierName', type: 'text', maxlength: '24', value: t.name }), idx = r.tiers.indexOf(t);
+    b.appendChild(h('label', { class: 'rk-l', for: 'rkTierName' }, ['Nome della fascia'])); b.appendChild(inp);
+    b.appendChild(h('div', { class: 'rk-row-a' }, [h('button', { type: 'button', class: 'rk-btn rk-pri', onclick: function () { op(RK.renameTier(r.id, tierId, inp.value), 'Fascia rinominata').then(function (x) { if (x) H.close(); }); } }, ['Rinomina']),
+      h('button', { type: 'button', class: 'rk-btn', 'aria-label': 'Sposta la fascia più in alto', disabled: idx === 0, onclick: function () { op(RK.moveTier(r.id, tierId, idx - 1), 'Fascia spostata').then(function () { H.close(); }); } }, ['Sposta su']),
+      h('button', { type: 'button', class: 'rk-btn', 'aria-label': 'Sposta la fascia più in basso', disabled: idx === r.tiers.length - 1, onclick: function () { op(RK.moveTier(r.id, tierId, idx + 1), 'Fascia spostata').then(function () { H.close(); }); } }, ['Sposta giù']),
+      h('button', { type: 'button', class: 'rk-btn rk-dng', disabled: r.tiers.length <= 1, onclick: function () { ask('Eliminare la fascia?', 'Gli elementi della fascia «' + t.name + '» non vengono eliminati: tornano tra i non classificati.', 'Elimina fascia', true).then(function (ok) { if (ok) op(RK.removeTier(r.id, tierId), 'Fascia eliminata').then(function () { H.close(); }); }); } }, ['Elimina fascia'])]));
+  });
+}
+
+/* ---------- elemento: modifica, immagine, posizione/fascia ---------- */
+function itemSheet(itemId) {
+  var r0 = UI.cur, it0 = findItem(itemId); if (!it0) return;
+  openSheet('Elemento', function (b, H) {
+    var name = h('input', { class: 'rk-in', id: 'rkIName', type: 'text', maxlength: '80', value: it0.name }), note = h('textarea', { class: 'rk-in', id: 'rkINote', rows: '3', maxlength: '500' }); note.value = it0.note;
+    var err = h('p', { class: 'rk-banner', role: 'alert', hidden: true });
+    function snap() { var c = clone(UI.cur); c.items.forEach(function (i) { if (i.id === itemId) { i.name = name.value.trim() || i.name; i.note = note.value; } }); return c; }
+    beginDraft(snap); [name, note].forEach(function (n) { n.addEventListener('input', function () { UI.auto && UI.auto.touch(); }); });
+    b.appendChild(h('label', { class: 'rk-l', for: 'rkIName' }, ['Nome'])); b.appendChild(name); b.appendChild(h('label', { class: 'rk-l', for: 'rkINote' }, ['Nota personale'])); b.appendChild(note);
+    if (it0.source.type === 'catalog') b.appendChild(h('p', { class: 'rk-help' }, ['Dal catalogo dell\'app (' + (CAT_LABEL[it0.source.cat] || it0.source.cat) + ').'])); else b.appendChild(h('p', { class: 'rk-help' }, ['Elemento inserito a mano.']));
+    var place = h('div', {}); b.appendChild(place);
+    function fillPlace() {
+      clear(place); var r = UI.cur, it = findItem(itemId); if (!it) return;
+      if (r.kind === 'top') {
+        var pos = h('input', { class: 'rk-in', id: 'rkIPos', type: 'number', inputmode: 'numeric', min: '1', max: String(r.items.length), value: String(r.items.indexOf(it) + 1), 'aria-label': 'Posizione' });
+        place.appendChild(h('label', { class: 'rk-l', for: 'rkIPos' }, ['Posizione (1–' + r.items.length + ')'])); place.appendChild(h('div', { class: 'rk-row-a' }, [pos, h('button', { type: 'button', class: 'rk-btn', onclick: function () { var n = parseInt(pos.value, 10); if (!isFinite(n)) return; op(RK.moveItem(r.id, itemId, n - 1), it.name + ' spostato').then(fillPlace); } }, ['Sposta'])]));
+      } else {
+        place.appendChild(h('p', { class: 'rk-l' }, ['Fascia'])); var seg = h('div', { class: 'rk-seg', role: 'group', 'aria-label': 'Fascia' });
+        r.tiers.concat([{ id: null, name: 'Non classificato' }]).forEach(function (t) { seg.appendChild(h('button', { type: 'button', class: 'rk-btn', 'aria-pressed': (it.tierId || null) === t.id ? 'true' : 'false', onclick: function () { op(RK.moveItemToTier(r.id, itemId, t.id), 'Spostato in ' + t.name).then(fillPlace); } }, [t.name])); });
+        place.appendChild(seg);
+        place.appendChild(h('div', { class: 'rk-row-a' }, [h('button', { type: 'button', class: 'rk-btn', 'aria-label': 'Sposta prima nella fascia', onclick: function () { op(RK.moveItemBy(r.id, itemId, -1), 'Spostato prima').then(fillPlace); } }, ['← Prima']), h('button', { type: 'button', class: 'rk-btn', 'aria-label': 'Sposta dopo nella fascia', onclick: function () { op(RK.moveItemBy(r.id, itemId, 1), 'Spostato dopo').then(fillPlace); } }, ['Dopo →'])]));
+      }
+    }
+    fillPlace();
+    var imgBox = h('div', {}); b.appendChild(imgBox); if (UI.cur.imageMode === 'images') fillImg(imgBox, itemId, function () { beginDraft(snap); }); else b.appendChild(h('p', { class: 'rk-help' }, ['Modalità solo testo: le immagini non sono mostrate (attivale da «Dettagli»).']));
+    b.appendChild(err);
+    b.appendChild(h('div', { class: 'rk-row-a' }, [
+      h('button', { type: 'button', class: 'rk-btn rk-pri', onclick: function () { if (!name.value.trim()) { err.textContent = 'Il nome non può essere vuoto.'; err.hidden = false; return; } op(RK.updateItem(UI.cur.id, itemId, { name: name.value, note: note.value }), 'Salvato').then(function (x) { if (x) { endDraft(true); H.close(); } }); } }, ['Salva']),
+      h('button', { type: 'button', class: 'rk-btn', onclick: function () { endDraft(true); H.close(); } }, ['Annulla']),
+      h('button', { type: 'button', class: 'rk-btn rk-dng', onclick: function () { var nm = findItem(itemId) ? findItem(itemId).name : ''; ask('Rimuovere l\'elemento?', '«' + nm + '» verrà tolto da questa classifica.', 'Rimuovi', true).then(function (ok) { if (ok) { endDraft(false); op(RK.removeItem(UI.cur.id, itemId), 'Elemento rimosso').then(function (x) { if (x) H.close(); }); } }); } }, ['Rimuovi'])]));
+  }, { onClose: function () { endDraft(false); } });
+}
+function fillImg(box, itemId, redraft) {
+  clear(box); var it = findItem(itemId); if (!it) return;
+  var cur = it.image || (it.source.type === 'catalog' && catImgInfo(it.source.cat, it.source.ref) ? { type: 'catalog', cat: it.source.cat, ref: it.source.ref } : null);
+  var file = h('input', { type: 'file', accept: 'image/jpeg,image/png,image/webp,image/gif', class: 'rk-sr', tabindex: '-1', id: 'rkFile', 'aria-label': 'Scegli un\'immagine dal dispositivo' });
+  var msg = h('p', { class: 'rk-help', role: 'status' });
+  function setImg(ref, m) { op(RK.updateItem(UI.cur.id, itemId, { image: ref }), m).then(function (x) { if (x) { redraft(); fillImg(box, itemId, redraft); } }); }
+  file.addEventListener('change', function () { var f = file.files && file.files[0]; if (!f) return; msg.textContent = 'Elaborazione dell\'immagine…'; RK.images.add(f).then(function (im) { setImg({ type: 'user', id: im.id }, 'Immagine aggiunta'); }, function (e) { msg.textContent = ''; toast(errMsg(e), true); }); file.value = ''; });
+  box.appendChild(h('p', { class: 'rk-l' }, ['Immagine'])); box.appendChild(h('div', { class: 'rk-row-a' }, [thumb(it.name, cur, true), h('div', { class: 'rk-row-a' }, [
+    h('button', { type: 'button', class: 'rk-btn', id: 'rkUpload', onclick: function () { file.click(); } }, ['Carica dal dispositivo']), file,
+    it.source.type === 'catalog' && catImgInfo(it.source.cat, it.source.ref) ? h('button', { type: 'button', class: 'rk-btn', onclick: function () { setImg({ type: 'catalog', cat: it.source.cat, ref: it.source.ref }, 'Immagine del catalogo'); } }, ['Usa quella del catalogo']) : null,
+    cur ? h('button', { type: 'button', class: 'rk-btn', onclick: function () { setImg(null, 'Immagine rimossa'); } }, ['Nessuna immagine']) : null])]));
+  box.appendChild(msg);
+  RK.images.usage().then(function (u) { if (!box.isConnected || !u.all.length) return; box.appendChild(h('p', { class: 'rk-help' }, ['Immagini già caricate (' + u.all.length + '):'])); var g = h('div', { class: 'rk-imgs' }); u.all.slice(0, 60).forEach(function (i, n) { g.appendChild(h('button', { type: 'button', class: 'rk-btn', 'aria-label': 'Usa l\'immagine caricata numero ' + (n + 1), onclick: function () { setImg({ type: 'user', id: i.id }, 'Immagine assegnata'); } }, [thumb('?', { type: 'user', id: i.id })])); }); box.appendChild(g); }, function () {});
+}
+
+/* ---------- aggiunta elementi: catalogo reale + manuale ---------- */
+function addSheet() {
+  var r = UI.cur; if (!r) return; var P = presetOf(r.preset), cats = P.cats.slice(), tab = cats.length ? 'cat' : 'man', cat = cats[0] || null, onlyType = !!(P.filter && P.filter.type);
+  openSheet('Aggiungi elementi', function (b, H) {
+    var tabs = h('div', { class: 'rk-seg', role: 'group', 'aria-label': 'Origine' }), area = h('div', {}), added = h('p', { class: 'rk-sub', role: 'status' });
+    function paint() {
+      clear(tabs); if (cats.length) tabs.appendChild(h('button', { type: 'button', class: 'rk-btn', 'aria-pressed': tab === 'cat' ? 'true' : 'false', onclick: function () { tab = 'cat'; paint(); } }, ['Dal catalogo'])); tabs.appendChild(h('button', { type: 'button', class: 'rk-btn', id: 'rkTabMan', 'aria-pressed': tab === 'man' ? 'true' : 'false', onclick: function () { tab = 'man'; paint(); } }, ['Inserisci a mano']));
+      clear(area); if (tab === 'cat') catPane(area); else manPane(area);
+    }
+    function have(c, ref) { return UI.cur.items.some(function (i) { return i.source.type === 'catalog' && i.source.cat === c && i.source.ref === ref; }); }
+    function catPane(box) {
+      var seg = h('div', { class: 'rk-seg', role: 'group', 'aria-label': 'Catalogo' }); cats.forEach(function (c) { seg.appendChild(h('button', { type: 'button', class: 'rk-btn', 'aria-pressed': cat === c ? 'true' : 'false', 'data-cat': c, onclick: function () { cat = c; paint(); } }, [CAT_LABEL[c] || c])); });
+      box.appendChild(seg); box.appendChild(h('p', { class: 'rk-help' }, [P.hint]));
+      if (P.filter && P.filter.type && cat === 'item') box.appendChild(h('label', { class: 'rk-l' }, [h('input', { type: 'checkbox', id: 'rkOnlyType', checked: onlyType ? true : null, onchange: function (ev) { onlyType = ev.target.checked; list(); } }), ' Solo ' + P.label.toLowerCase()]));
+      var q = h('input', { class: 'rk-in', id: 'rkCatQ', type: 'search', 'aria-label': 'Cerca nel catalogo', placeholder: 'Cerca…', autocomplete: 'off' }), res = h('div', { id: 'rkCatRes' }), t = null;
+      function list() {
+        clear(res); var f = (onlyType && P.filter && cat === 'item') ? P.filter : undefined, rows = RK.catalog.search(cat, q.value, 60, f);
+        if (!rows.length) res.appendChild(h('p', { class: 'rk-empty' }, ['Nessun risultato.']));
+        rows.forEach(function (e) { var dup = have(e.cat, e.ref); res.appendChild(h('div', { class: 'rk-res' }, [UI.cur.imageMode === 'images' ? thumb(e.name, catImgInfo(e.cat, e.ref) ? { type: 'catalog', cat: e.cat, ref: e.ref } : null) : null, h('span', { class: 'rk-t' }, [e.name + (e.type ? ' · ' + e.type : '')]),
+          h('button', { type: 'button', class: 'rk-btn rk-sm', disabled: dup, 'aria-label': (dup ? 'Già presente: ' : 'Aggiungi ') + e.name, onclick: function (ev) { var btn = ev.currentTarget; btn.disabled = true; var useImg = UI.cur.imageMode === 'images' && (e.cat === 'item' || catImgInfo(e.cat, e.ref)); op(RK.addItem(UI.cur.id, { source: { type: 'catalog', cat: e.cat, ref: e.ref }, name: e.name, image: useImg ? { type: 'catalog', cat: e.cat, ref: e.ref } : null }), e.name + ' aggiunto').then(function (x) { if (x) { btn.textContent = 'Aggiunto'; added.textContent = UI.cur.items.length + ' elementi nella classifica.'; } else btn.disabled = false; }); } }, [dup ? 'Presente' : 'Aggiungi'])])); });
+      }
+      q.addEventListener('input', function () { clearTimeout(t); t = setTimeout(list, 120); }); box.appendChild(q); box.appendChild(res); list();
+    }
+    function manPane(box) {
+      var nm = h('input', { class: 'rk-in', id: 'rkManName', type: 'text', maxlength: '80', placeholder: 'Nome dell\'elemento', 'aria-label': 'Nome' }), nt = h('textarea', { class: 'rk-in', id: 'rkManNote', rows: '2', maxlength: '500', placeholder: 'Nota (facoltativa)', 'aria-label': 'Nota' }), er = h('p', { class: 'rk-banner', role: 'alert', hidden: true });
+      function go1() { er.hidden = true; if (!nm.value.trim()) { er.textContent = 'Inserisci un nome.'; er.hidden = false; nm.focus(); return; } op(RK.addItem(UI.cur.id, { source: { type: 'manual' }, name: nm.value, note: nt.value, image: null }), nm.value + ' aggiunto').then(function (x) { if (x) { nm.value = ''; nt.value = ''; added.textContent = UI.cur.items.length + ' elementi nella classifica.'; nm.focus(); } }); }
+      nm.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') { ev.preventDefault(); go1(); } });
+      box.appendChild(h('p', { class: 'rk-help' }, [cats.length ? 'Anche per elementi che non sono nei cataloghi dell\'app.' : P.hint])); box.appendChild(h('label', { class: 'rk-l', for: 'rkManName' }, ['Nome'])); box.appendChild(nm); box.appendChild(h('label', { class: 'rk-l', for: 'rkManNote' }, ['Nota'])); box.appendChild(nt); box.appendChild(er);
+      box.appendChild(h('div', { class: 'rk-row-a' }, [h('button', { type: 'button', class: 'rk-btn rk-pri', id: 'rkManAdd', onclick: go1 }, ['Aggiungi'])]));
+    }
+    b.appendChild(tabs); b.appendChild(area); b.appendChild(added); b.appendChild(h('div', { class: 'rk-row-a' }, [h('button', { type: 'button', class: 'rk-btn', onclick: function () { H.close(); } }, ['Fatto'])])); paint();
+  });
+}
+
+/* ---------- trascinamento: pulsanti sempre disponibili come alternativa ---------- */
+var noScroll = function (e) { if (UI.drag && UI.drag.active) e.preventDefault(); };
+function listenDrag(move, end) {
+  function up(e) { cleanup(); end(e, false); } function cancel(e) { cleanup(); end(e, true); }
+  function cleanup() { document.removeEventListener('pointermove', move); document.removeEventListener('pointerup', up); document.removeEventListener('pointercancel', cancel); document.removeEventListener('touchmove', noScroll); }
+  document.addEventListener('pointermove', move); document.addEventListener('pointerup', up); document.addEventListener('pointercancel', cancel); document.addEventListener('touchmove', noScroll, { passive: false });
+}
+function autoScroll(y) { var r = UI.body.getBoundingClientRect(), z = 56; if (y < r.top + z) UI.body.scrollTop -= 14; else if (y > r.bottom - z) UI.body.scrollTop += 14; }
+function dragTop(ev, row, itemId) {
+  if (ev.button > 0) return; ev.preventDefault(); var list = row.parentNode, from = Array.prototype.indexOf.call(list.children, row), y0 = ev.clientY, scroll0 = UI.body.scrollTop, k = from, marker = h('li', { class: 'rk-marker', 'aria-hidden': 'true' });
+  UI.drag = { active: true }; row.classList.add('rk-dragging'); try { ev.currentTarget.setPointerCapture(ev.pointerId); } catch (e) {}
+  function others() { return Array.prototype.filter.call(list.children, function (c) { return c !== row && c !== marker; }); }
+  function move(e) {
+    autoScroll(e.clientY); row.style.transform = 'translateY(' + (e.clientY - y0 + (UI.body.scrollTop - scroll0)) + 'px)';
+    var o = others(), n = 0; o.forEach(function (c) { var b = c.getBoundingClientRect(); if (e.clientY > b.top + b.height / 2) n++; }); k = n; if (marker.parentNode) marker.remove(); list.insertBefore(marker, o[n] || null);
+  }
+  listenDrag(move, function (e, canceled) {
+    UI.drag = null; row.classList.remove('rk-dragging'); row.style.transform = ''; if (marker.parentNode) marker.remove();
+    if (!canceled && k !== from) op(RK.moveItem(UI.cur.id, itemId, k), 'Spostato in posizione ' + (k + 1)).then(function () { var b = UI.body.querySelector('[data-id="' + itemId + '"] .rk-main'); if (b) b.focus(); });
+  });
+}
+function bindChip(chip, it) {
+  var sx = 0, sy = 0, timer = null, started = false, ghost = null, zoneOver = null, drop = null, suppress = false;
+  chip.addEventListener('click', function (e) { if (suppress) { suppress = false; e.preventDefault(); return; } itemSheet(it.id); });
+  chip.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+  chip.addEventListener('pointerdown', function (ev) {
+    if (ev.button > 0) return; sx = ev.clientX; sy = ev.clientY; started = false; var touch = ev.pointerType !== 'mouse', pid = ev.pointerId;
+    function begin(e) { started = true; suppress = true; UI.drag = { active: true }; var rc = chip.getBoundingClientRect(); ghost = chip.cloneNode(true); ghost.classList.add('rk-ghost'); ghost.removeAttribute('data-id'); ghost.style.width = rc.width + 'px'; document.body.appendChild(ghost); chip.classList.add('rk-ghosted'); place(e); }
+    function place(e) { if (!ghost) return; ghost.style.left = (e.clientX - 20) + 'px'; ghost.style.top = (e.clientY - 22) + 'px'; autoScroll(e.clientY);
+      var el = document.elementFromPoint(e.clientX, e.clientY), z = el && el.closest ? el.closest('.rk-zone') : null; if (zoneOver && zoneOver !== z) zoneOver.classList.remove('rk-over'); zoneOver = z; if (z) { z.classList.add('rk-over'); drop = { tier: z.getAttribute('data-tier') || null, idx: indexIn(z, e.clientX, e.clientY, chip) }; } else drop = null; }
+    function move(e) { if (!started) { var dx = e.clientX - sx, dy = e.clientY - sy; if (Math.abs(dx) + Math.abs(dy) > 8) { if (touch) { clearTimeout(timer); finish(true); } else begin(e); } return; } place(e); }
+    function finish(canceled, e) {
+      clearTimeout(timer); document.removeEventListener('pointermove', move); document.removeEventListener('pointerup', upH); document.removeEventListener('pointercancel', canH); document.removeEventListener('touchmove', noScroll);
+      if (ghost) { ghost.remove(); ghost = null; } chip.classList.remove('rk-ghosted'); if (zoneOver) { zoneOver.classList.remove('rk-over'); zoneOver = null; }
+      var d = drop; drop = null; UI.drag = null; if (started && !canceled && d) { op(RK.moveItemToTier(UI.cur.id, it.id, d.tier, d.idx), 'Spostato').then(function () { var c = UI.body.querySelector('[data-id="' + it.id + '"]'); if (c) c.focus(); }); } started = false;
+    }
+    function upH(e) { finish(false, e); } function canH(e) { finish(true, e); }
+    document.addEventListener('pointermove', move); document.addEventListener('pointerup', upH); document.addEventListener('pointercancel', canH); document.addEventListener('touchmove', noScroll, { passive: false });
+    if (touch) timer = setTimeout(function () { begin(ev); try { if (navigator.vibrate) navigator.vibrate(8); } catch (e) {} }, 350);
+  });
+}
+function indexIn(zone, x, y, self) { /* posizione di inserimento nella fascia (escluso l'elemento trascinato), in ordine di lettura */
+  var cs = Array.prototype.filter.call(zone.querySelectorAll('.rk-chip'), function (c) { return c !== self; }), n = 0, i, b;
+  for (i = 0; i < cs.length; i++) { b = cs[i].getBoundingClientRect(); if (y < b.top) break; if (y <= b.bottom && x < b.left + b.width / 2) break; n++; }
+  return n;
+}
+
+/* ---------- HOME: Immagini, Cestino, Backup ---------- */
+function homeImages() {
+  var box = h('div', {}); UI.body.appendChild(h('p', { class: 'rk-help' }, ['Le immagini personali restano solo su questo dispositivo, ridimensionate e ricodificate (JPEG/WebP/PNG/GIF fino a 10 MB). Un\'immagine usata da una classifica non può essere eliminata.'])); UI.body.appendChild(box);
+  RK.images.usage().then(function (u) {
+    clear(box); var total = u.all.reduce(function (s, i) { return s + (i.bytes || 0); }, 0), unused = u.all.filter(function (i) { return !u.use[i.id]; });
+    box.appendChild(h('p', { class: 'rk-sub' }, [u.all.length + ' immagini · ' + fmtBytes(total) + ' · ' + unused.length + ' non usate']));
+    if (!u.all.length) { box.appendChild(h('p', { class: 'rk-empty' }, ['Nessuna immagine personale. Puoi caricarne una da un elemento di una classifica.'])); return; }
+    if (unused.length) box.appendChild(h('div', { class: 'rk-row-a' }, [h('button', { type: 'button', class: 'rk-btn rk-dng', id: 'rkGc', onclick: function () { ask('Eliminare le immagini non usate?', unused.length + ' immagini (' + fmtBytes(unused.reduce(function (s, i) { return s + i.bytes; }, 0)) + ') non sono usate da nessuna classifica e verranno eliminate definitivamente.', 'Elimina', true).then(function (ok) { if (ok) RK.images.gc().then(function (g) { toast(g.removed + ' immagini eliminate.'); renderBody(); }, function (e) { toast(errMsg(e), true); }); }); } }, ['Elimina le non usate'])]));
+    u.all.forEach(function (i) { var n = u.use[i.id] || 0; box.appendChild(h('div', { class: 'rk-res' }, [thumb('?', { type: 'user', id: i.id }), h('span', { class: 'rk-t' }, [i.w + '×' + i.h + ' · ' + fmtBytes(i.bytes) + ' · ' + (n ? 'usata da ' + n : 'non usata')]), h('button', { type: 'button', class: 'rk-btn rk-sm rk-dng', disabled: n > 0, 'aria-label': n ? 'Immagine in uso: non eliminabile' : 'Elimina immagine', onclick: function () { RK.images.remove(i.id).then(function () { toast('Immagine eliminata.'); renderBody(); }, function (e) { toast(errMsg(e), true); }); } }, ['Elimina'])])); });
+  }, function (e) { clear(box); box.appendChild(h('p', { class: 'rk-banner', role: 'alert' }, [errMsg(e)])); });
+}
+function homeTrash() {
+  var box = h('div', {}); UI.body.appendChild(h('p', { class: 'rk-help' }, ['Le classifiche eliminate restano qui finché non le elimini definitivamente: il Cestino non si svuota da solo.'])); UI.body.appendChild(box);
+  RK.trash.list().then(function (L) {
+    clear(box); UI.cache.trash = L.length; if (!L.length) { box.appendChild(h('p', { class: 'rk-empty' }, ['Il Cestino è vuoto.'])); return; }
+    box.appendChild(h('div', { class: 'rk-row-a' }, [h('button', { type: 'button', class: 'rk-btn rk-dng', id: 'rkPurgeAll', onclick: function () { ask('Svuotare il Cestino?', L.length + ' classifiche verranno eliminate DEFINITIVAMENTE. L\'operazione non si può annullare.', 'Elimina definitivamente', true).then(function (ok) { if (ok) RK.trash.purge().then(function () { toast('Cestino svuotato.'); renderTabs(); renderBody(); }, function (e) { toast(errMsg(e), true); }); }); } }, ['Svuota il Cestino'])]));
+    L.forEach(function (t) { box.appendChild(h('div', { class: 'rk-card' }, [h('div', { class: 'rk-card-main', style: 'cursor:default' }, [h('span', { class: 'rk-card-t' }, [h('b', {}, [t.title]), h('span', { class: 'rk-sub' }, [t.count + ' elementi · eliminata il ' + fmtDate(t.deletedAt)])])]), h('div', { class: 'rk-card-a' }, [
+      h('button', { type: 'button', class: 'rk-btn rk-sm rk-pri', 'aria-label': 'Ripristina ' + t.title, onclick: function () { RK.trash.restore(t.id).then(function () { toast('Ripristinata: ' + t.title); renderTabs(); renderBody(); refreshHome(true); }, function (e) { toast(errMsg(e), true); }); } }, ['Ripristina']),
+      h('button', { type: 'button', class: 'rk-btn rk-sm rk-dng', 'aria-label': 'Elimina definitivamente ' + t.title, onclick: function () { ask('Eliminare definitivamente?', '«' + t.title + '» non potrà essere recuperata.', 'Elimina definitivamente', true).then(function (ok) { if (ok) RK.trash.purge(t.id).then(function () { renderTabs(); renderBody(); }, function (e) { toast(errMsg(e), true); }); }); } }, ['Elimina'])])])); });
+  }, function (e) { clear(box); box.appendChild(h('p', { class: 'rk-banner', role: 'alert' }, [errMsg(e)])); });
+}
+function homeBackup() {
+  var B = window.tvaRankingsBackup;
+  if (!B) { UI.body.appendChild(h('p', { class: 'rk-banner', role: 'alert' }, ['Modulo backup non disponibile.'])); return; }
+  var expOut = h('div', { id: 'rkExpOut', role: 'status' }), impOut = h('div', { id: 'rkImpOut', role: 'status' }), snapBox = h('div', { id: 'rkSnapBox' }), stBox = h('div', {});
+  var file = h('input', { type: 'file', id: 'rkImpFile', accept: '.zip,application/zip,application/x-zip-compressed', class: 'rk-sr', tabindex: '-1', 'aria-label': 'Scegli il file di backup (.zip)' });
+  UI.body.appendChild(h('h3', {}, ['Esporta']));
+  UI.body.appendChild(h('p', { class: 'rk-help' }, ['Crea un file ZIP con tutte le classifiche e le immagini personali (nessun dato esce dal dispositivo: il file lo salvi tu). Conservalo in un posto sicuro: su iPhone, Safari può cancellare i dati del sito dopo circa 7 giorni di inattività.']));
+  UI.body.appendChild(h('div', { class: 'rk-row-a' }, [h('button', { type: 'button', class: 'rk-btn rk-pri', id: 'rkExport', onclick: function (ev) {
+    var btn = ev.currentTarget; btn.disabled = true; clear(expOut); expOut.appendChild(h('p', { class: 'rk-sub' }, ['Creazione e verifica del backup…']));
+    B.create().then(function (r) { clear(expOut); var a = saveBlob(r.blob, r.name); expOut.appendChild(h('div', { class: 'rk-banner rk-ok' }, [r.counts.rankings + ' classifiche, ' + r.counts.items + ' elementi, ' + r.counts.images + ' immagini · ' + fmtBytes(r.size) + '. Backup creato e verificato: controlla che «' + r.name + '» sia stato salvato (su iPhone: app File › Download).', r.warnings.length ? h('div', {}, r.warnings.map(function (w) { return h('p', { class: 'rk-sub' }, ['⚠ ' + w]); })) : null, h('div', { class: 'rk-row-a' }, [a])])); btn.disabled = false; },
+      function (e) { clear(expOut); expOut.appendChild(h('p', { class: 'rk-banner', role: 'alert' }, ['Backup NON creato: ' + errMsg(e)])); btn.disabled = false; });
+  } }, ['Crea backup ZIP'])])); UI.body.appendChild(expOut);
+  UI.body.appendChild(h('h3', {}, ['Importa']));
+  UI.body.appendChild(h('p', { class: 'rk-help' }, ['Scegli un backup creato da Rankings. Prima di toccare qualsiasi dato vedrai un\'anteprima; ZIP compressi da altri programmi non sono supportati.']));
+  file.addEventListener('change', function () { var f = file.files && file.files[0]; file.value = ''; if (f) readBackup(f, impOut); });
+  UI.body.appendChild(h('div', { class: 'rk-row-a' }, [h('button', { type: 'button', class: 'rk-btn', id: 'rkImport', onclick: function () { file.click(); } }, ['Scegli file di backup…']), file])); UI.body.appendChild(impOut);
+  UI.body.appendChild(h('h3', {}, ['Copie di sicurezza'])); UI.body.appendChild(h('p', { class: 'rk-help' }, ['Create automaticamente prima di una sostituzione o di un ripristino, salvate nell\'app (massimo 5). Servono per tornare indietro.'])); UI.body.appendChild(snapBox); fillSnaps(snapBox);
+  UI.body.appendChild(h('h3', {}, ['Archiviazione'])); UI.body.appendChild(stBox);
+  RK.status().then(function (s) { clear(stBox); stBox.appendChild(h('p', { class: 'rk-sub' }, ['Archiviazione: ' + (s.persistent ? 'IndexedDB attivo' : 'NON attiva (dati solo in memoria)') + (s.usage != null && s.quota ? ' · usati ' + fmtBytes(s.usage) + ' su circa ' + fmtBytes(s.quota) : '')]));
+    var out = h('p', { class: 'rk-sub', role: 'status' }); stBox.appendChild(h('div', { class: 'rk-row-a' }, [h('button', { type: 'button', class: 'rk-btn', id: 'rkPersist', onclick: function () { RK.requestPersistence().then(function (ok) { out.textContent = ok ? 'Archiviazione persistente concessa dal browser.' : 'Il browser non ha concesso l\'archiviazione persistente (può succedere: non è un errore).'; }); } }, ['Richiedi archiviazione persistente'])])); stBox.appendChild(out); }, function (e) { stBox.appendChild(h('p', { class: 'rk-banner' }, [errMsg(e)])); });
+}
+function saveBlob(blob, name) { /* download locale (nessuna rete). Link di riserva se il browser non avvia il download. */
+  var url = URL.createObjectURL(blob); UI.dl = UI.dl || []; UI.dl.push(url);
+  var a = h('a', { class: 'rk-btn', href: url, download: name, id: 'rkDlLink' }, ['Scarica di nuovo «' + name + '»']);
+  try { var t = h('a', { href: url, download: name, class: 'rk-sr' }); document.body.appendChild(t); t.click(); t.remove(); } catch (e) {}
+  return a;
+}
+function fmtDT(t) { try { return new Date(t).toLocaleString('it-IT', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }); } catch (e) { return ''; } }
+function fillSnaps(box) {
+  RK.backup.snapshots.list().then(function (L) { clear(box); if (!L.length) { box.appendChild(h('p', { class: 'rk-empty' }, ['Nessuna copia di sicurezza.'])); return; }
+    L.forEach(function (s) { box.appendChild(h('div', { class: 'rk-card', 'data-snap': s.id }, [h('div', { class: 'rk-card-main', style: 'cursor:default' }, [h('span', { class: 'rk-card-t' }, [h('b', {}, [fmtDT(s.createdAt)]), h('span', { class: 'rk-sub' }, [(s.reason === 'replace' ? 'Prima di una sostituzione' : 'Prima di un ripristino') + ' · ' + s.counts.rankings + ' classifiche, ' + s.counts.images + ' immagini'])])]),
+      h('div', { class: 'rk-card-a' }, [h('button', { type: 'button', class: 'rk-btn rk-sm rk-pri', onclick: function () { ask('Ripristinare questa copia?', 'Le classifiche attuali verranno sostituite da quelle della copia del ' + fmtDT(s.createdAt) + ' (' + s.counts.rankings + ' classifiche). Lo stato attuale viene salvato in una nuova copia di sicurezza al suo posto.', 'Ripristina', false).then(function (ok) { if (ok) RK.backup.snapshots.restore(s.id).then(function (r) { toast('Ripristinate ' + r.restored + ' classifiche.'); fillSnaps(box); }, function (e) { toast('Ripristino NON eseguito: ' + errMsg(e), true); }); }); } }, ['Ripristina']),
+        h('button', { type: 'button', class: 'rk-btn rk-sm rk-dng', onclick: function () { ask('Eliminare la copia di sicurezza?', 'La copia del ' + fmtDT(s.createdAt) + ' verrà eliminata definitivamente.', 'Elimina', true).then(function (ok) { if (ok) RK.backup.snapshots.remove(s.id).then(function () { fillSnaps(box); }, function (e) { toast(errMsg(e), true); }); }); } }, ['Elimina'])])])); }); }, function (e) { clear(box); box.appendChild(h('p', { class: 'rk-banner' }, [errMsg(e)])); });
+}
+function readBackup(f, out) {
+  var B = window.tvaRankingsBackup; clear(out);
+  if (f.size > B.limits.archive) { out.appendChild(h('p', { class: 'rk-banner', role: 'alert' }, ['File rifiutato: troppo grande (massimo ' + Math.round(B.limits.archive / 1048576) + ' MB).'])); return; }
+  out.appendChild(h('p', { class: 'rk-sub' }, ['Lettura e verifica del file…']));
+  var rd = f.arrayBuffer ? f.arrayBuffer() : new Promise(function (res, rej) { var fr = new FileReader(); fr.onload = function () { res(fr.result); }; fr.onerror = function () { rej(new Error('Lettura del file non riuscita.')); }; fr.readAsArrayBuffer(f); });
+  rd.then(function (buf) { return B.inspect(buf); }).then(function (r) { clear(out); importSheet(r, f); }, function (e) { clear(out); out.appendChild(h('p', { class: 'rk-banner', role: 'alert', id: 'rkImpErr' }, ['Backup RIFIUTATO, nessun dato è stato modificato: ' + (e && e.message ? e.message : 'file non valido') + (e && e.code ? ' [' + e.code + ']' : '')])); });
+}
+var ST_LABEL = { new: 'Nuova', identical: 'Già presente, identica', conflict: 'Stesso identificativo, contenuto diverso' };
+function importSheet(r, f) {
+  var mode = 'merge', policy = 'keep-both', busy = false, c = r.plan.counts;
+  openSheet('Anteprima importazione', function (b, H) {
+    var info = h('div', {}), modeBox = h('div', {}), actBox = h('div', {}), res = h('div', { role: 'status', id: 'rkImpResult' }), ok1 = null;
+    info.appendChild(h('p', { class: 'rk-sub' }, [f.name + ' · ' + fmtBytes(f.size)])); info.appendChild(h('p', { class: 'rk-sub' }, ['Creato il ' + fmtDT(Date.parse(r.manifest.createdAt)) + (r.manifest.appBuild ? ' · build ' + r.manifest.appBuild : '')]));
+    info.appendChild(h('p', {}, [c.rankings + ' classifiche (' + c.items + ' elementi) · ' + r.images.length + ' immagini · ' + c.new + ' nuove, ' + c.identical + ' già presenti identiche, ' + c.conflicts + ' in conflitto']));
+    if (r.warnings.length) info.appendChild(h('div', { class: 'rk-banner', role: 'alert' }, r.warnings.slice(0, 8).map(function (w) { return h('p', { class: 'rk-sub' }, ['⚠ ' + w]); })));
+    var ul = h('ul', { class: 'rk-list', id: 'rkPrevList' }); r.plan.rankings.slice(0, 60).forEach(function (x) { ul.appendChild(h('li', { class: 'rk-res' }, [h('span', { class: 'rk-t' }, [h('b', {}, [x.title]), h('span', { class: 'rk-sub' }, [' · ' + (x.kind === 'top' ? 'Top' : 'Tier List') + ' · ' + x.items + ' elementi · ' + ST_LABEL[x.status] + (x.inTrash ? ' (nel Cestino)' : '')])])])); }); if (r.plan.rankings.length > 60) ul.appendChild(h('li', { class: 'rk-sub' }, ['…e altre ' + (r.plan.rankings.length - 60)])); info.appendChild(ul);
+    function seg(name, opts, cur, pick) { var box = h('div', { class: 'rk-seg', role: 'group', 'aria-label': name }); opts.forEach(function (o) { box.appendChild(h('button', { type: 'button', class: 'rk-btn', 'data-v': o[0], 'aria-pressed': cur() === o[0] ? 'true' : 'false', onclick: function () { if (busy) return; pick(o[0]); paint(); } }, [o[1]])); }); return box; }
+    function paint() {
+      clear(modeBox); clear(actBox);
+      modeBox.appendChild(h('p', { class: 'rk-l' }, ['Modalità'])); modeBox.appendChild(seg('Modalità', [['merge', 'Unisci'], ['replace', 'Sostituisci']], function () { return mode; }, function (v) { mode = v; }));
+      if (mode === 'merge') {
+        modeBox.appendChild(h('p', { class: 'rk-help' }, ['Aggiunge le classifiche del backup a quelle attuali, senza cancellare né modificare nulla. Le identiche vengono saltate.']));
+        modeBox.appendChild(h('p', { class: 'rk-l' }, ['Se l\'identificativo esiste già con contenuto diverso (' + c.conflicts + ')'])); modeBox.appendChild(seg('Conflitti', [['keep-both', 'Mantieni entrambe'], ['skip', 'Salta']], function () { return policy; }, function (v) { policy = v; }));
+        modeBox.appendChild(h('p', { class: 'rk-help' }, [policy === 'keep-both' ? 'La classifica importata riceve un nuovo identificativo e il titolo «(importata)».' : 'Le classifiche in conflitto non vengono importate.']));
+        actBox.appendChild(h('button', { type: 'button', class: 'rk-btn rk-pri', id: 'rkDoMerge', onclick: function () { run(); } }, ['Importa (Unisci)']));
+      } else {
+        modeBox.appendChild(h('div', { class: 'rk-banner', role: 'alert' }, ['Le ' + r.plan.current.rankings + ' classifiche attuali verranno SOSTITUITE da quelle del backup (' + c.rankings + '). Prima: creo e verifico un backup ZIP dello stato attuale (lo scarichi) e una copia di sicurezza ripristinabile nell\'app. Se uno dei due passaggi non riesce, non cambia nulla.']));
+        ok1 = h('input', { type: 'checkbox', id: 'rkReplaceOk' }); modeBox.appendChild(h('label', { class: 'rk-l' }, [ok1, ' Ho capito: sostituisci le classifiche attuali']));
+        var go = h('button', { type: 'button', class: 'rk-btn rk-dng', id: 'rkDoReplace', disabled: true, onclick: function () { run(); } }, ['Sostituisci']); ok1.addEventListener('change', function () { go.disabled = !ok1.checked || busy; }); actBox.appendChild(go);
+      }
+      actBox.appendChild(h('button', { type: 'button', class: 'rk-btn', onclick: function () { if (!busy) H.close(); } }, ['Annulla']));
+    }
+    function fail(msg) { busy = false; clear(res); res.appendChild(h('p', { class: 'rk-banner', role: 'alert', id: 'rkImpFail' }, [msg])); paint(); }
+    function run() {
+      if (busy) return; busy = true; clear(res); var spec = { mode: mode, policy: policy, rankings: r.rankings, images: r.images };
+      [].forEach.call(actBox.querySelectorAll('button'), function (x) { x.disabled = true; });
+      var pre = Promise.resolve(null);
+      if (mode === 'replace') { res.appendChild(h('p', { class: 'rk-sub' }, ['Backup preventivo dello stato attuale…'])); pre = window.tvaRankingsBackup.create().then(function (p) { var a = saveBlob(p.blob, 'prima-della-sostituzione-' + p.name.replace(/^tva-rankings-backup-/, '')); return { link: a, name: p.name }; }).catch(function (e) { throw new Error('Backup preventivo NON riuscito: ' + errMsg(e) + ' Sostituzione annullata, nessun dato modificato.'); }); }
+      pre.then(function (p) { return RK.backup.apply(spec).then(function (rep) { return { rep: rep, pre: p }; }); }).then(function (x) {
+        busy = false; var rep = x.rep; clear(res); clear(modeBox); clear(actBox); clear(info);
+        var lines = rep.mode === 'replace' ? ['Sostituzione completata: ' + rep.imported + ' classifiche importate (' + rep.replacedPrevious + ' precedenti salvate nella copia di sicurezza).'] : ['Importate ' + rep.imported + ' classifiche' + (rep.keptBoth ? ' (di cui ' + rep.keptBoth + ' in conflitto mantenute come copia)' : '') + '; saltate ' + rep.skippedIdentical + ' identiche' + (rep.skippedConflict ? ' e ' + rep.skippedConflict + ' in conflitto' : '') + '.'];
+        lines.push(rep.imagesAdded + ' immagini aggiunte' + (rep.missingImages ? '; ' + rep.missingImages + ' elementi importati senza immagine (mancante nel backup).' : '.'));
+        if (rep.snapshotId) lines.push('Per tornare indietro: scheda Backup › Copie di sicurezza › Ripristina.');
+        res.appendChild(h('div', { class: 'rk-banner rk-ok', id: 'rkImpDone' }, lines.map(function (l) { return h('p', {}, [l]); }))); if (x.pre) res.appendChild(h('div', { class: 'rk-row-a' }, [x.pre.link]));
+        actBox.appendChild(h('button', { type: 'button', class: 'rk-btn rk-pri', onclick: function () { H.close(); } }, ['Chiudi'])); UI.cur = null; refreshHome(true); if (UI.view === 'home' && UI.tab === 'backup') renderBody();
+      }, function (e) { fail(e && e.message && /Backup preventivo/.test(e.message) ? e.message : 'Importazione NON eseguita, nessun dato è stato modificato: ' + errMsg(e)); });
+    }
+    b.appendChild(info); b.appendChild(modeBox); b.appendChild(res); b.appendChild(actBox); paint();
+  }, { modal: true, canClose: function () { return !busy; } });
+}
+
+/* ---------- avvio: pulsante in Centrale TVA (come Friends), nessuna modifica alla navigazione esistente ---------- */
+function mountLauncher() {
+  if (document.getElementById('rkLauncher')) return true;
+  /* primo riquadro del pannello Operazioni della Centrale TVA (prima era in fondo, oltre uno schermo di scorrimento): 2 tocchi dalla barra inferiore, subito visibile */
+  var acc = document.getElementById('faAccount'), grp = acc && acc.closest('.cen-grp'); if (!grp) return false; var par = grp.parentNode, anchor = null, i;
+  for (i = 0; i < par.children.length; i++) { var c = par.children[i]; if (c.classList && (c.classList.contains('cen-grp') || c.classList.contains('cen-card'))) { anchor = c; break; } } if (!anchor) anchor = grp;
+  var b = h('button', { type: 'button', class: 'reset-btn rk-open', id: 'rkOpen', onclick: function () { open(); } }, ['🏆 Apri Rankings']);
+  var sec = h('section', { class: 'cen-card cen-grp', id: 'rkLauncher' }, [h('h3', {}, ['Rankings']), h('p', { class: 'cen-help' }, ['Le tue classifiche personali: Top numerate, Podio e Tier List, su Marvel o su qualsiasi argomento. Salvate solo su questo dispositivo, anche offline.']), b]);
+  anchor.parentNode.insertBefore(sec, anchor); return true;
+}
+(function boot() { var n = 0; (function t() { if (mountLauncher() || ++n > 60) return; setTimeout(t, 300); })(); })();
+try { Object.defineProperty(window, 'tvaRankingsUI', { value: Object.freeze({ open: open, close: close }), configurable: false, writable: false }); } catch (e) {}
+})();
+
+</script><!-- /rankings-ui -->
 
 <script id="quiz-launcher">
 (function () {
