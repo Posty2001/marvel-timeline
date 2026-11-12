@@ -201,7 +201,7 @@ with sync_playwright() as p:
                 ok('V%d %s%s: nessun overflow orizzontale (%d), nessun elemento fuori schermo, controlli >=44px'%(W,s,'/'+sb if sb else '',ov),ov<=1 and not m['ex'] and not m['bad'],m)
         # etichette tab non tagliate
         ok('V%d etichette delle 4 sezioni intere'%W,pg.evaluate("()=>[...document.querySelectorAll('.cen-tab-l')].every(l=>l.scrollWidth<=l.clientWidth+1)"))
-        ok('V%d barra inferiore non copre i contenuti (ultimo elemento della Centrale sopra la barra)'%W,(lambda: (sec(pg,'operazioni'),pg.evaluate("()=>window.scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'})"),pg.wait_for_timeout(200),pg.evaluate("()=>{const bt=document.getElementById('appTabbar').getBoundingClientRect().top;const l=[...document.querySelectorAll('#cenPan-operazioni .cen-card')].pop().getBoundingClientRect().bottom;return l<=bt+1}"))[-1])())
+        ok('V%d barra inferiore non copre i contenuti (ultimo elemento della Centrale sopra la barra)'%W,(lambda: (sec(pg,'operazioni'),pg.evaluate("()=>window.scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'})"),pg.wait_for_timeout(200),pg.evaluate("()=>{const bt=document.getElementById('appTabbar').getBoundingClientRect().top;const l=[...document.querySelectorAll('#cenPan-operazioni > .cen-card')].pop().getBoundingClientRect().bottom;return l<=bt+1}"))[-1])())
         # confronto
         sec(pg,'strumenti'); pg.evaluate("()=>document.getElementById('cmpToggleTitle').click()"); pg.wait_for_timeout(300)
         pg.evaluate("()=>{const d=document.querySelector('.variant-cmp-details');d.open=true}"); pg.wait_for_timeout(200)

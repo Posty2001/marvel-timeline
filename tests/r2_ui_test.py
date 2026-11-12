@@ -43,12 +43,12 @@ with sync_playwright() as p:
     ls0=ev(pg,"const o={};for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);o[k]=localStorage.getItem(k)}return o")
     # ===== A: aggancio e aperture =====
     r=ev(pg,"const l=document.getElementById('rkLauncher'),f=document.getElementById('tfLauncher');return {l:!!l,after:!!(l&&l.parentNode&&[...l.parentNode.children].find(e=>(e.classList.contains('cen-grp')||e.classList.contains('cen-card'))&&e.id!=='quizLauncher')===l),btn:!!document.getElementById('rkOpen'),ui:Object.isFrozen(window.tvaRankingsUI),root:!!document.getElementById('rkRoot')}")
-    ck(r['l'] and r['after'] and r['btn'],'A1 pulsante Rankings in Centrale TVA (R3: primo riquadro di Operazioni)',r)
+    ck(not r['l'] and not r['btn'] and ev(pg,"return !!document.getElementById('hhPlayRank')"),'A1 [adattato rifinitura] il riquadro in Operazioni e\' stato rimosso su richiesta; Rankings si apre dalla card Home (#hhPlayRank)',r)
     ck(r['ui'] and not r['root'],'A2 API UI congelata; nessun DOM della UI finche\' non la apri',r)
     ck(ev(pg,"const d=await indexedDB.databases();return !d.some(x=>x.name==='tva-rankings')") is True,'A3 aprire l\'app non crea il database')
-    pg.evaluate("document.getElementById('rkOpen').click()"); pg.wait_for_selector('#rkNew',timeout=5000)
+    pg.evaluate("tvaRankingsUI.open()"); pg.wait_for_selector('#rkNew',timeout=5000)
     r=ev(pg,"const r=document.getElementById('rkRoot');return {hid:r.hidden,role:r.getAttribute('role'),modal:r.getAttribute('aria-modal'),lock:document.documentElement.classList.contains('rk-lock'),focus:document.activeElement.className}")
-    ck(not r['hid'] and r['role']=='dialog' and r['modal']=='true' and r['lock'],'A4 apertura dal pulsante: dialog modale, scroll di pagina bloccato',r)
+    ck(not r['hid'] and r['role']=='dialog' and r['modal']=='true' and r['lock'],'A4 apertura (tvaRankingsUI.open, come la card Home): dialog modale, scroll di pagina bloccato',r)
     ck('rk-close' in r['focus'],'A5 focus iniziale sul pulsante Chiudi',r)
     ck('Non hai ancora classifiche' in pg.inner_text('#rkList'),'A6 stato vuoto spiegato')
     # ===== B: creazione Top da UI + hostile =====

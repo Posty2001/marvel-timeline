@@ -47,10 +47,9 @@ with sync_playwright() as p:
     for name,vp in (('390x844',{'width':390,'height':844}),('320x568',{'width':320,'height':568})):
         c=br.new_context(viewport=vp,has_touch=True,is_mobile=True); pg=c.new_page(); pg.route('**/*',lambda r: r.abort() if any(h in r.request.url for h in ('gstatic','googleapis','firebaseio','tmdb')) else r.continue_())
         pg.goto(U); pg.wait_for_function("()=>!!window.tvaRankingsUI"); pg.evaluate("()=>{journeyStarted.checked=true;homeHubExited.checked=true;journeyStarted.dispatchEvent(new Event('change',{bubbles:true}))}"); pg.wait_for_timeout(500)
-        pg.tap('#appTabMissioni'); pg.wait_for_timeout(500); pg.locator('.cen-tab-l:text-is("Operazioni")').tap(); pg.wait_for_timeout(500)
-        r=pg.evaluate("()=>{const e=document.getElementById('rkOpen');const rc=e.getBoundingClientRect();return {vis:e.offsetParent!==null,inview:rc.top>=0&&rc.bottom<=innerHeight,h:rc.height,w:rc.width}}")
-        ck(r['vis'] and r['inview'] and r['h']>=40,'N1 %s: "Apri Rankings" visibile subito in Centrale TVA > Operazioni (2 tocchi dalla barra inferiore), senza scorrere, bersaglio >=40px'%name,r)
-        pg.tap('#rkOpen'); pg.wait_for_selector('#rkNew',timeout=5000); ck(True,'N2 %s: il pulsante apre Rankings'%name); c.close()
+        r=pg.evaluate("()=>({card:!!document.getElementById('hhPlayRank'),launcherGone:!document.getElementById('rkLauncher')})")
+        ck(r['card'] and r['launcherGone'],'N1 %s: [adattato rifinitura] Rankings si apre dalla card Home (il riquadro in Operazioni e\' stato rimosso)'%name,r)
+        pg.evaluate('tvaRankingsUI.open()'); pg.wait_for_selector('#rkNew',timeout=5000); ck(True,'N2 %s: il pulsante apre Rankings'%name); c.close()
     br.close()
     ctx=p.chromium.launch_persistent_context(UD,viewport={'width':390,'height':844},has_touch=True,is_mobile=True,service_workers='block',accept_downloads=True,downloads_path=DL)
     pg=newpage(ctx); wipe(pg)

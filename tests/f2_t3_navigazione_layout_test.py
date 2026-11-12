@@ -35,7 +35,7 @@ with sync_playwright() as p:
     pg.evaluate("window.tvaRankingsUI.close()");pg.wait_for_timeout(300)
     # launcher storici Quiz/Rankings ancora in Operazioni, nessun Friends
     pg.evaluate("document.getElementById('appTabMissioni').click()");pg.wait_for_timeout(700)
-    ck(pg.evaluate("!!document.getElementById('quizLauncher')&&!!document.getElementById('rkLauncher')"),'N2 Quiz e Rankings restano anche in Centrale TVA > Operazioni')
+    ck(pg.evaluate("!document.getElementById('quizLauncher')&&!document.getElementById('rkLauncher')&&!!document.getElementById('hhPlayQuiz')&&!!document.getElementById('hhPlayRank')"),'N2 [aggiornato rifinitura] Quiz e Rankings NON duplicati in Centrale TVA > Operazioni; restano nelle card Home')
     ck(pg.evaluate("!document.getElementById('tfLauncher')&&!document.getElementById('tfOpen')"),'N3 nessuna card Friends in Centrale TVA > Operazioni')
     # barra FRIENDS -> Friends 2.0 (non la vecchia sala)
     pg.evaluate("document.getElementById('appTabFriends').click()");pg.wait_for_timeout(900)

@@ -20,7 +20,7 @@ with sync_playwright() as p:
     ck('build id (meta, formato AAAAMMGG-HHMM-tag)',bool(re.fullmatch(r'\d{8}-\d{4}-[a-z0-9]+',_mb)),_mb)
     ck('build id: meta HTML == SW_BUILD di sw.js',_mb==_sb,(_mb,_sb))
     ck('build id: CACHE_NAME contiene la build',_cn.endswith(_sb),_cn)
-    ck('build id: build attesa 20261112-1605-rankings2',_mb=='20261112-1605-rankings2',_mb)
+    ck('build id: build attesa 20261112-1905-rifinitura',_mb=='20261112-1905-rifinitura',_mb)
     n=pg.evaluate("()=>document.querySelectorAll('.card-wrap[id^=item-]').length"); ck('139 schede (138 + variante)',n==139,n)
     # 1/3 un solo widget voto per scheda, dentro summary, nessuno nel pannello
     r=pg.evaluate("()=>({tot:document.querySelectorAll('.rating-widget').length,inSum:document.querySelectorAll('details.card > summary .rating-widget').length,inPanel:document.querySelectorAll('.detail-panel .rating-widget').length,dup:[...document.querySelectorAll('.card-wrap[id^=item-]')].filter(c=>c.querySelectorAll('.rating-widget').length!==1).length})")
