@@ -1,7 +1,7 @@
 # Branch `test/tva-archives` — versione TEST
 
 - **Base:** `main` = `82a73c7` (produzione, build `20261112-1905-rifinitura`, congelata). `main` non è modificato.
-- **Build TEST:** `20261117-1900-arcade-draft31r` (identica allo ZIP `NETLIFY_TEST_arcade_draft31r` caricabile su Netlify TEST).
+- **Build TEST:** `20261120-1230-episodes` (build precedente: `20261117-1900-arcade-draft31r`).
 - **Pubblicazione:** il branch NON è pubblicato né su GitHub Pages né su Netlify; il TEST si carica a mano su Netlify.
 
 ## Differenze rispetto alla produzione
@@ -12,6 +12,10 @@
 | `quiz/index.html` | ID build; timer domanda 20 s → 30 s; ritorno a TVA Arcade se aperto con `?from=arcade` |
 | `sw.js` | ID build/cache; precache Arcade (pagine, script condivisi, manifest e 120 ritratti) |
 | `tools/arcade/`, `tests/arcade/`, `docs/arcade/` (nuovi) | Sorgenti del Draft, bilanciamento/simulazioni, validatore ritratti, test attuali, report e cataloghi |
+| `index.html` (TVA Episodes) | Pannello «Episodi e voti» nelle schede serie; chiave `marvel-ultimate-timeline-episodes-v1` (campo `episodes` in backup/sync); media episodi in Timeline al posto del voto originale (che resta salvato). |
+| `assets/episodes/`, `tools/tmdb_episodes.py`, `.github/workflows/tmdb-episodes.yml` | Catalogo episodi TMDB in JSON separati (`index.json` + `<tmdbId>.json`), generatore (token solo da ambiente) e workflow manuale che produce un artifact. |
+| `tests/episodes/ep_test.py` | Test mirati TVA Episodes (`python3 tests/episodes/ep_test.py`). |
+| `arcade/**/index.html`, `quiz/index.html`, `sw.js` | Solo ID build (stesso valore di `index.html`, richiesto dalla cache offline). |
 
 Invariati: Rankings, Friends 2.0, Tessera 3.0, Atlante, Timeline, dati, Firebase, workflow TMDB.
 
@@ -19,3 +23,6 @@ Invariati: Rankings, Friends 2.0, Tessera 3.0, Atlante, Timeline, dati, Firebase
 - I ritratti del Draft sono asset stilizzati di test (`status: test_stylized`), non ritratti Marvel definitivi né diritti confermati.
 - `docs/arcade/PATCH_disclaimer_DA_APPLICARE_DOPO_COLLAUDO.diff` è preparata e NON applicata.
 - I test in `tests/arcade/` usano un server locale sulla cartella del progetto (porta 8790 negli script).
+
+## TVA Episodes — dati
+`assets/episodes/index.json` è VUOTO finché non si genera il catalogo reale: `TMDB_READ_TOKEN=... python3 tools/tmdb_episodes.py` (oppure workflow «TMDB episodi (manuale)» e copia dell'artifact in `assets/episodes/`). Senza dati la scheda mostra «Episodi non ancora disponibili» e tutto il resto funziona. Attribuzione TMDB mostrata nel pannello.
