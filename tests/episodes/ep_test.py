@@ -12,7 +12,8 @@ SHOW_B = {'versione': 1, 'tmdb': 61550, 'nome': 'Fix B', 'lingua': 'it-IT', 'sta
     {'n': 1, 'nome': '', 'episodi': eps(3, False, False)}, {'n': 2, 'nome': '', 'episodi': eps(3) + [{'n': 4, 't': 'Futuro', 'd': '2999-01-01'}]}]}
 INDEX = {'versione': 1, 'fonte': 'TMDB', 'voci': {'039': {'tmdb': 220102, 'stagioni': 3, 'episodi': 19},
                                                    '043': {'tmdb': 61550, 's': 1, 'stagioni': 1, 'episodi': 3},
-                                                   '044': {'tmdb': 61550, 's': 2, 'stagioni': 1, 'episodi': 4}}}
+                                                   '044': {'tmdb': 61550, 's': 2, 'stagioni': 1, 'episodi': 4},
+                                                   '137': {'tmdb': 202555, 's': 3, 'stagioni': 0, 'episodi': 0, 'speciali': 0, 'in_attesa': True}}}
 FILES = {'index.json': INDEX, '220102.json': SHOW_A, '61550.json': SHOW_B}
 res = []
 def ok(n, c, x=''): res.append((n, bool(c))); print('PASS' if c else 'FAIL', n, x)
@@ -79,6 +80,7 @@ with sync_playwright() as p:
     def snapshot():
         return pg.evaluate("()=>({h:(document.getElementById('hhsRating')||{}).textContent,t:(document.getElementById('tesseraVoto')||{}).textContent,d:(document.getElementById('dashAvgRating')||{}).textContent,x:(document.getElementById('tesseraXp')||document.querySelector('[id*=Xp]')||{}).textContent})")
     pre = snapshot(); raw0 = ls(pg, RK)
+    others0 = pg.evaluate("(k)=>{const o={};for(let i=0;i<localStorage.length;i++){const n=localStorage.key(i);if(n!==k)o[n]=localStorage.getItem(n)}return o}", KEY)
     ok('originale: stelle visibili prima di votare episodi', stars_visible(pg, '039'))
     open_eps(pg, '039'); vote(pg, '039', 1, 0, 6)
     ok('originale: in Timeline compare la media episodi', '6,0' in (badge(pg, '039') or '') and not stars_visible(pg, '039'))
@@ -95,6 +97,8 @@ with sync_playwright() as p:
     ok('cancellati tutti: badge via, stelle originali tornano', badge(pg, '039') is None and stars_visible(pg, '039'))
     ok('cancellati tutti: chiave episodi pulita e voto 4,5 intatto', ls(pg, KEY) is None and ls(pg, RK) == raw0 and pg.evaluate("()=>document.querySelector('.rating-widget[data-item=\"039\"] .rw-val b').textContent") == '4,5')
     ok('Home/Tessera invariati dopo cancellazione', snapshot() == pre)
+    others1 = pg.evaluate("(k)=>{const o={};for(let i=0;i<localStorage.length;i++){const n=localStorage.key(i);if(n!==k)o[n]=localStorage.getItem(n)}return o}", KEY)
+    ok('XP/missioni/classifiche/badge: nessuna altra chiave locale modificata dal voto episodi', others1 == others0, str([k for k in others1 if others1.get(k) != others0.get(k)] + [k for k in others0 if k not in others1]))
     # visto + recensione + progresso
     pg.evaluate("""()=>{const r=document.querySelectorAll('#item-039 .ep-season')[1].querySelectorAll('.ep-row');r[0].querySelector('.ep-w').click();r[1].querySelector('.ep-w').click();
       const ta=r[2].querySelector('.ep-note');ta.hidden=false;ta.value='Bello';ta.dispatchEvent(new Event('input',{bubbles:true}));ta.dispatchEvent(new Event('blur'));}""")
@@ -107,17 +111,18 @@ with sync_playwright() as p:
     ok('recensione svuotata = eliminata', 'S01E03' not in json.loads(ls(pg, KEY))['039'])
     # ---- 4. backup e ripristino ----
     vote(pg, '039', 1, 0, 9); vote(pg, '039', 2, 3, 4)
-    pg.evaluate("(k)=>{const o=JSON.parse(localStorage.getItem(k));o['043']={S01E02:{r:10,w:1}};localStorage.setItem(k,JSON.stringify(o))}", KEY)
+    pg.evaluate("(k)=>{const o=JSON.parse(localStorage.getItem(k));o['043']={S01E02:{r:10,w:1,n:'Ottimo episodio'}};localStorage.setItem(k,JSON.stringify(o))}", KEY)
     saved = ls(pg, KEY)
     with pg.expect_download() as dl: pg.evaluate("()=>document.getElementById('exportBtn').click()")
     path = dl.value.path(); prof = json.load(open(path))
     ok('backup: campo episodes presente e uguale al locale', json.loads(json.dumps(prof.get('episodes'))) == json.loads(saved))
+    ok('backup: voti, recensioni e visti conservati', prof['episodes']['043']['S01E02'] == {'r': 10, 'w': 1, 'n': 'Ottimo episodio'} and prof['episodes']['039']['S01E01'].get('w') == 1 and prof['episodes']['039']['S01E01'].get('r') == 9)
     ok('backup: voto originale in ratings invariato', prof['ratings'] == json.loads(raw0))
     pg.evaluate("(k)=>localStorage.removeItem(k)", KEY)
     pg.on('dialog', lambda d: d.accept())
     with pg.expect_navigation(): pg.set_input_files('#importFile', path)
     pg.wait_for_selector('#item-039', state='attached'); pg.wait_for_timeout(500)
-    ok('ripristino: episodi ripristinati identici', json.loads(ls(pg, KEY)) == json.loads(saved))
+    ok('ripristino: episodi ripristinati identici (voti, recensioni, visti)', json.loads(ls(pg, KEY)) == json.loads(saved) and json.loads(ls(pg, KEY))['043']['S01E02']['n'] == 'Ottimo episodio')
     ok('ripristino: badge ricalcolato in Timeline', '6,5' in (badge(pg, '039') or '') or badge(pg, '039') is not None, badge(pg, '039'))
     # import non valido: voto 11 -> rifiutato, nessun dato toccato
     bad = json.loads(json.dumps(prof)); bad['episodes']['039']['S01E01']['r'] = 11
@@ -143,8 +148,12 @@ with sync_playwright() as p:
     pg.close()
     # ---- 6. dati mancanti ----
     pg = new_page(b); open_eps(pg, '043')
+    at = pg.locator('#item-043 .ep-attr').text_content()
+    ok('attribuzione TMDB: avviso ufficiale e link a themoviedb.org', 'This product uses the TMDB API but is not endorsed or certified by TMDB.' in at and pg.locator('#item-043 .ep-attr a[href="https://www.themoviedb.org"]').count() == 1)
     ok('stagione singola (card S1): solo la stagione 1', pg.locator('#item-043 .ep-season').count() == 1)
     ok('episodio senza titolo -> "Episodio N"; senza data -> vuoto', pg.locator('#item-043 .ep-row').first.locator('.ep-title').text_content() == 'Episodio 1' and pg.locator('#item-043 .ep-row').first.locator('.ep-date').text_content() == '')
+    pg.locator('.td2-back:visible').first.click(); pg.wait_for_timeout(300); open_eps(pg, '137')
+    ok('stagione futura (137): messaggio chiaro, nessun episodio inventato', 'non ancora disponibile' in pg.locator('#item-137 .ep-body').text_content() and pg.locator('#item-137 .ep-row').count() == 0)
     pg.locator('.td2-back:visible').first.click(); pg.wait_for_timeout(300); open_eps(pg, '057')
     ok('serie senza catalogo: messaggio, nessun errore', 'non ancora disponibili' in pg.locator('#item-057 .ep-body').text_content())
     ok('film: nessun pannello episodi', pg.locator('li.card-wrap[data-type="film"] .ep-group').count() == 0)

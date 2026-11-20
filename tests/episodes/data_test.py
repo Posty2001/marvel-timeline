@@ -10,6 +10,7 @@ bad = []
 def chk(n, c, x=''):
     print('PASS' if c else 'FAIL', n, x); (bad.append(n) if not c else None)
 chk('ogni voce indice e\' una scheda serie', all(k in cards for k in ix))
+chk('137/138 presenti come stagioni in attesa, senza episodi inventati', all(ix.get(k, {}).get('in_attesa') and ix[k]['episodi'] == 0 for k in ('137', '138')))
 chk('Runaways (67466) non associata a nessuna scheda', all(v['tmdb'] != 67466 for v in ix.values()))
 chk('file referenziati esistono e coincidono (id, stagione)', all(os.path.exists(A + '%d.json' % v['tmdb']) for v in ix.values()))
 ok_names = True; tot = sp = 0
@@ -18,6 +19,9 @@ for k, v in ix.items():
     exp = (ov.get(k) or tmap.get(k) or {}).get('id')
     if d['tmdb'] != v['tmdb'] or exp != v['tmdb']: ok_names = False; print('  incoerenza', k, v, exp)
     sel = [s for s in d['stagioni'] if v.get('s') is None or s['n'] == v['s']]
+    if v.get('in_attesa'):
+        if sel or v['episodi'] or v['speciali']: ok_names = False; print('  in_attesa con dati', k)
+        continue
     m = sum(len(s['episodi']) for s in sel if s['n'] > 0); x = sum(len(s['episodi']) for s in sel if s['n'] == 0)
     if (m, x) != (v['episodi'], v['speciali']): ok_names = False; print('  conteggi', k, m, x, v)
     if v.get('s') is not None and not sel: ok_names = False; print('  stagione assente', k)
@@ -28,5 +32,6 @@ def n(x): return re.sub(r'[^a-z0-9]+', '', x.lower())
 mism = [(k, cards[k], v['nome']) for k, v in ix.items() if not (n(v['nome'])[:6] in n(cards[k]) or n(cards[k])[:6] in n(v['nome']))]
 print('  nomi da verificare a mano:', mism)
 chk('segnalazione nomi: solo traduzioni note (Spider-Man di quartiere, Daredevil Rinascita, VisionQuest)', all(k in ('120', '134', '122', '128', '135') for k, _, _ in mism))
-print('serie coperte', len(ix), '/', len(cards), '| episodi principali', tot, '| speciali', sp, '| non coperte', sorted(set(cards) - set(ix)))
+att = [k for k, v in ix.items() if v.get('in_attesa')]
+print('serie con dati', len(ix) - len(att), '| in attesa (stagione futura)', att, '/', len(cards), '| episodi principali', tot, '| speciali', sp, '| non coperte', sorted(set(cards) - set(ix) - set(att)))
 sys.exit(1 if bad else 0)

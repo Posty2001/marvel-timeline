@@ -1,7 +1,7 @@
 # Branch `test/tva-archives` — versione TEST
 
 - **Base:** `main` = `82a73c7` (produzione, build `20261112-1905-rifinitura`, congelata). `main` non è modificato.
-- **Build TEST:** `20261120-1230-episodes` (build precedente: `20261117-1900-arcade-draft31r`).
+- **Build TEST:** `20261120-2000-episodes2` (build precedente: `20261117-1900-arcade-draft31r`).
 - **Pubblicazione:** il branch NON è pubblicato né su GitHub Pages né su Netlify; il TEST si carica a mano su Netlify.
 
 ## Differenze rispetto alla produzione
@@ -25,4 +25,4 @@ Invariati: Rankings, Friends 2.0, Tessera 3.0, Atlante, Timeline, dati, Firebase
 - I test in `tests/arcade/` usano un server locale sulla cartella del progetto (porta 8790 negli script).
 
 ## TVA Episodes — dati
-`assets/episodes/` contiene il catalogo reale TMDB (artifact «TMDB sync» #5): 46 schede serie su 49, 488 episodi principali + 2 speciali (WandaVision). Non coperte: 073 The Defenders (ID corretto 62285, da rigenerare: rilanciare il workflow con `solo_episodi`), 137 Daredevil: Born Again S3 e 138 X-Men '97 S3 (stagioni non ancora presenti su TMDB). Gli episodi con data futura sono mostrati «In arrivo» e non votabili. Verifica integrita': `python3 tests/episodes/data_test.py`. Attribuzione TMDB nel pannello.
+`assets/episodes/` contiene il catalogo reale TMDB (artifact «TMDB sync» #5): 46 schede serie con dati, 488 episodi principali + 2 speciali (WandaVision). 137 (Daredevil: Born Again S3) e 138 (X-Men '97 S3) sono «in attesa» (stagione non ancora su TMDB, nessun dato inventato). 073 The Defenders NON ha ancora dati: ID corretto 62285 in `tmdb_overrides.json`; rilanciare il workflow «TMDB sync (manuale)» con `solo_episodi` e copiare `episodes/` in `assets/episodes/`. Episodi con data futura: «In arrivo», non votabili. Attribuzione: sezione Credits + pannello episodi; il logo ufficiale va messo (non modificato) in `assets/images/tmdb-logo.svg`: finche' manca, resta il testo con link. Verifica: `python3 tests/episodes/data_test.py` e `ep_test.py`.

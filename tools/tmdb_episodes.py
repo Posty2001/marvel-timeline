@@ -80,6 +80,9 @@ def main():
         s = tv[k].get('s')
         sel = [x for x in show['stagioni'] if s is None or x['n'] == s]
         if not sel:
+            if s is not None and s > max(x['n'] for x in show['stagioni']):   # stagione futura: non su TMDB (ancora); nessun dato inventato
+                indice['voci'][k] = {'nome': show['nome'], 'tmdb': tmdb, 's': s, 'stagioni': 0, 'episodi': 0, 'speciali': 0, 'in_attesa': True}
+                falliti.append((k, 'stagione %s non ancora su TMDB (in attesa)' % s)); continue
             falliti.append((k, 'stagione %s assente' % s)); continue
         with open(os.path.join(a.out, '%d.json' % tmdb), 'w', encoding='utf-8') as f:
             json.dump(show, f, ensure_ascii=False, separators=(',', ':'))

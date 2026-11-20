@@ -356,6 +356,24 @@
    "speciali": 0,
    "stagioni": 1,
    "tmdb": 213375
+  },
+  "137": {
+   "episodi": 0,
+   "in_attesa": true,
+   "nome": "Daredevil: Rinascita",
+   "s": 3,
+   "speciali": 0,
+   "stagioni": 0,
+   "tmdb": 202555
+  },
+  "138": {
+   "episodi": 0,
+   "in_attesa": true,
+   "nome": "X-Men '97",
+   "s": 3,
+   "speciali": 0,
+   "stagioni": 0,
+   "tmdb": 138502
   }
  }
 }
