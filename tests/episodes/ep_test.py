@@ -9,9 +9,10 @@ def eps(n, titled=True, dated=True):
 SHOW_A = {'versione': 1, 'tmdb': 220102, 'nome': 'Fix A', 'lingua': 'it-IT', 'stagioni': [
     {'n': 0, 'nome': 'Speciali', 'episodi': eps(1)}, {'n': 1, 'nome': 'Stagione 1', 'episodi': eps(8)}, {'n': 2, 'nome': 'Stagione 2', 'episodi': eps(10)}]}
 SHOW_B = {'versione': 1, 'tmdb': 61550, 'nome': 'Fix B', 'lingua': 'it-IT', 'stagioni': [
-    {'n': 1, 'nome': '', 'episodi': eps(3, False, False)}, {'n': 2, 'nome': '', 'episodi': eps(4)}]}
+    {'n': 1, 'nome': '', 'episodi': eps(3, False, False)}, {'n': 2, 'nome': '', 'episodi': eps(3) + [{'n': 4, 't': 'Futuro', 'd': '2999-01-01'}]}]}
 INDEX = {'versione': 1, 'fonte': 'TMDB', 'voci': {'039': {'tmdb': 220102, 'stagioni': 3, 'episodi': 19},
-                                                   '043': {'tmdb': 61550, 's': 1, 'stagioni': 1, 'episodi': 3}}}
+                                                   '043': {'tmdb': 61550, 's': 1, 'stagioni': 1, 'episodi': 3},
+                                                   '044': {'tmdb': 61550, 's': 2, 'stagioni': 1, 'episodi': 4}}}
 FILES = {'index.json': INDEX, '220102.json': SHOW_A, '61550.json': SHOW_B}
 res = []
 def ok(n, c, x=''): res.append((n, bool(c))); print('PASS' if c else 'FAIL', n, x)
@@ -144,9 +145,17 @@ with sync_playwright() as p:
     pg = new_page(b); open_eps(pg, '043')
     ok('stagione singola (card S1): solo la stagione 1', pg.locator('#item-043 .ep-season').count() == 1)
     ok('episodio senza titolo -> "Episodio N"; senza data -> vuoto', pg.locator('#item-043 .ep-row').first.locator('.ep-title').text_content() == 'Episodio 1' and pg.locator('#item-043 .ep-row').first.locator('.ep-date').text_content() == '')
-    open_eps(pg, '044')
-    ok('serie senza catalogo: messaggio, nessun errore', 'non ancora disponibili' in pg.locator('#item-044 .ep-body').text_content())
+    pg.locator('.td2-back:visible').first.click(); pg.wait_for_timeout(300); open_eps(pg, '057')
+    ok('serie senza catalogo: messaggio, nessun errore', 'non ancora disponibili' in pg.locator('#item-057 .ep-body').text_content())
     ok('film: nessun pannello episodi', pg.locator('li.card-wrap[data-type="film"] .ep-group').count() == 0)
+    pg.close()
+    pg = new_page(b, init="localStorage.setItem('%s', JSON.stringify({'043':{S01E01:{r:3}},'044':{S02E01:{r:9,w:1}}}));" % KEY)
+    ok('stessa serie TMDB, due schede: voti separati (043=3,0 / 044=9,0)', '3,0' in (badge(pg, '043') or '') and '9,0' in (badge(pg, '044') or ''))
+    open_eps(pg, '044')
+    ok('scheda 044: solo stagione 2, voto e visto suoi', pg.locator('#item-044 .ep-season').count() == 1 and pg.locator('#item-044 .ep-vote').first.input_value() == '9' and pg.locator('#item-044 .ep-w').first.get_attribute('aria-pressed') == 'true')
+    last = pg.locator('#item-044 .ep-row').nth(3)
+    ok('episodio non ancora uscito: "In arrivo", controlli disattivati', 'In arrivo' in last.locator('.ep-date').text_content() and last.locator('.ep-vote').is_disabled() and last.locator('.ep-w').is_disabled())
+    ok('episodi usciti restano attivi; totale visti esclude gli episodi futuri', pg.locator('#item-044 .ep-row').first.locator('.ep-vote').is_enabled() and '1/3 visti' in pg.locator('#item-044 .ep-smeta').text_content())
     pg.close()
     pg = new_page(b, missing_index=True); open_eps(pg, '039')
     ok('indice non raggiungibile: messaggio chiaro', 'non raggiungibile' in pg.locator('#item-039 .ep-body').text_content())

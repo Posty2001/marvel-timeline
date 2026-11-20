@@ -1,6 +1,361 @@
 {
- "versione": 1,
+ "aggiornato": "2026-11-20",
  "fonte": "TMDB",
- "aggiornato": "",
- "voci": {}
+ "versione": 1,
+ "voci": {
+  "039": {
+   "episodi": 8,
+   "nome": "Spider-Noir",
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 220102
+  },
+  "043": {
+   "episodi": 8,
+   "nome": "Agent Carter",
+   "s": 1,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 61550
+  },
+  "044": {
+   "episodi": 10,
+   "nome": "Agent Carter",
+   "s": 2,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 61550
+  },
+  "057": {
+   "episodi": 22,
+   "nome": "Agents of S.H.I.E.L.D.",
+   "s": 1,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 1403
+  },
+  "060": {
+   "episodi": 13,
+   "nome": "Daredevil",
+   "s": 1,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 61889
+  },
+  "061": {
+   "episodi": 13,
+   "nome": "Jessica Jones",
+   "s": 1,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 38472
+  },
+  "064": {
+   "episodi": 22,
+   "nome": "Agents of S.H.I.E.L.D.",
+   "s": 2,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 1403
+  },
+  "065": {
+   "episodi": 13,
+   "nome": "Daredevil",
+   "s": 2,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 61889
+  },
+  "066": {
+   "episodi": 22,
+   "nome": "Agents of S.H.I.E.L.D.",
+   "s": 3,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 1403
+  },
+  "068": {
+   "episodi": 13,
+   "nome": "Luke Cage",
+   "s": 1,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 62126
+  },
+  "071": {
+   "episodi": 22,
+   "nome": "Agents of S.H.I.E.L.D.",
+   "s": 4,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 1403
+  },
+  "072": {
+   "episodi": 13,
+   "nome": "Iron Fist",
+   "s": 1,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 62127
+  },
+  "074": {
+   "episodi": 13,
+   "nome": "Marvel's The Punisher",
+   "s": 1,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 67178
+  },
+  "079": {
+   "episodi": 13,
+   "nome": "Jessica Jones",
+   "s": 2,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 38472
+  },
+  "080": {
+   "episodi": 13,
+   "nome": "Luke Cage",
+   "s": 2,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 62126
+  },
+  "081": {
+   "episodi": 10,
+   "nome": "Iron Fist",
+   "s": 2,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 62127
+  },
+  "082": {
+   "episodi": 13,
+   "nome": "Daredevil",
+   "s": 3,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 61889
+  },
+  "083": {
+   "episodi": 22,
+   "nome": "Agents of S.H.I.E.L.D.",
+   "s": 5,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 1403
+  },
+  "086": {
+   "episodi": 13,
+   "nome": "Marvel's The Punisher",
+   "s": 2,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 67178
+  },
+  "087": {
+   "episodi": 13,
+   "nome": "Jessica Jones",
+   "s": 3,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 38472
+  },
+  "091": {
+   "episodi": 13,
+   "nome": "Agents of S.H.I.E.L.D.",
+   "s": 6,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 1403
+  },
+  "092": {
+   "episodi": 13,
+   "nome": "Agents of S.H.I.E.L.D.",
+   "s": 7,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 1403
+  },
+  "093": {
+   "episodi": 9,
+   "nome": "WandaVision",
+   "speciali": 2,
+   "stagioni": 1,
+   "tmdb": 85271
+  },
+  "094": {
+   "episodi": 6,
+   "nome": "The Falcon and the Winter Soldier",
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 88396
+  },
+  "095": {
+   "episodi": 6,
+   "nome": "Loki",
+   "s": 1,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 84958
+  },
+  "096": {
+   "episodi": 9,
+   "nome": "What If...?",
+   "s": 1,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 91363
+  },
+  "100": {
+   "episodi": 6,
+   "nome": "Hawkeye",
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 88329
+  },
+  "101": {
+   "episodi": 6,
+   "nome": "Moon Knight",
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 92749
+  },
+  "103": {
+   "episodi": 6,
+   "nome": "Ms. Marvel",
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 92782
+  },
+  "105": {
+   "episodi": 9,
+   "nome": "She-Hulk: Attorney at Law",
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 92783
+  },
+  "111": {
+   "episodi": 6,
+   "nome": "Secret Invasion",
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 114472
+  },
+  "112": {
+   "episodi": 6,
+   "nome": "Loki",
+   "s": 2,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 84958
+  },
+  "114": {
+   "episodi": 9,
+   "nome": "What If...?",
+   "s": 2,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 91363
+  },
+  "116": {
+   "episodi": 5,
+   "nome": "Echo",
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 122226
+  },
+  "118": {
+   "episodi": 9,
+   "nome": "Agatha All Along",
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 138501
+  },
+  "119": {
+   "episodi": 8,
+   "nome": "What If...?",
+   "s": 3,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 91363
+  },
+  "120": {
+   "episodi": 10,
+   "nome": "Il vostro amichevole Spider-Man di quartiere",
+   "s": 1,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 138503
+  },
+  "122": {
+   "episodi": 9,
+   "nome": "Daredevil: Rinascita",
+   "s": 1,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 202555
+  },
+  "124": {
+   "episodi": 6,
+   "nome": "Ironheart",
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 114471
+  },
+  "126": {
+   "episodi": 4,
+   "nome": "Eyes of Wakanda",
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 241388
+  },
+  "127": {
+   "episodi": 8,
+   "nome": "Wonder Man",
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 198178
+  },
+  "128": {
+   "episodi": 8,
+   "nome": "Daredevil: Rinascita",
+   "s": 2,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 202555
+  },
+  "130": {
+   "episodi": 10,
+   "nome": "X-Men '97",
+   "s": 1,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 138502
+  },
+  "131": {
+   "episodi": 9,
+   "nome": "X-Men '97",
+   "s": 2,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 138502
+  },
+  "134": {
+   "episodi": 1,
+   "nome": "Il vostro amichevole Spider-Man di quartiere",
+   "s": 2,
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 138503
+  },
+  "135": {
+   "episodi": 8,
+   "nome": "VisionQuest",
+   "speciali": 0,
+   "stagioni": 1,
+   "tmdb": 213375
+  }
+ }
 }

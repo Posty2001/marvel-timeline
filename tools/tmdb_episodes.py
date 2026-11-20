@@ -83,7 +83,8 @@ def main():
             falliti.append((k, 'stagione %s assente' % s)); continue
         with open(os.path.join(a.out, '%d.json' % tmdb), 'w', encoding='utf-8') as f:
             json.dump(show, f, ensure_ascii=False, separators=(',', ':'))
-        v = {'nome': show['nome'], 'tmdb': tmdb, 'stagioni': len(sel), 'episodi': sum(len(x['episodi']) for x in sel)}
+        v = {'nome': show['nome'], 'tmdb': tmdb, 'stagioni': len([x for x in sel if x['n'] > 0]),
+             'episodi': sum(len(x['episodi']) for x in sel if x['n'] > 0), 'speciali': sum(len(x['episodi']) for x in sel if x['n'] == 0)}
         if s is not None:
             v['s'] = s
         indice['voci'][k] = v

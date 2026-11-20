@@ -4953,6 +4953,8 @@ html:not(#rs) #homeHub .m34-mgo { margin-left: auto; min-height: 2.25rem; paddin
 .ep-vote { grid-area: vote; min-height: 2.4rem; min-width: 3.4rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 6px; }
 .ep-rv { grid-area: rv; width: 2.4rem; height: 2.4rem; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--ink-soft); cursor: pointer; font-size: 1rem; padding: 0; }
 .ep-rv.ep-has { color: var(--orange); border-color: var(--orange); }
+.ep-up { opacity: 0.55; }
+.ep-up button, .ep-up select { cursor: not-allowed; }
 .ep-note { grid-area: note; width: 100%; box-sizing: border-box; margin-top: 0.3rem; font: inherit; font-size: 0.85rem; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 0.4rem; resize: vertical; }
 .rw2 .rw-top { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; min-height: 1.4rem; }
 .rw2 .rw-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(210,177,132,0.85); white-space: nowrap; }
@@ -27297,6 +27299,8 @@ function marvelInit() {
       return showP[u];
     }
     function fmtDate(d) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d || ''); return m ? m[3] + '/' + m[2] + '/' + m[1] : ''; }
+    function todayStr() { var d = new Date(); return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()); }
+    function isUpcoming(ep, cur) { return !!(ep.d && ep.d > todayStr() && !(cur && (cur.r || cur.w || cur.n))); }  // non ancora uscito (e senza dati personali gia' salvati)
     function seasonLabel(n) { return n === 0 ? 'Speciali' : 'Stagione ' + n; }
 
     function render(body, id) {
@@ -27342,7 +27346,7 @@ function marvelInit() {
         var bar = ratingEl('span', 'ep-bar'), fill = document.createElement('i'); bar.appendChild(fill);
         sum.appendChild(ttl); sum.appendChild(meta); sum.appendChild(bar); det.appendChild(sum);
         if (seasons.length === 1 || si === 0 && seasons.length <= 2) det.open = true;
-        var prefix = 'S' + pad2(se.n) + 'E', total = se.episodi.length;
+        var prefix = 'S' + pad2(se.n) + 'E', t0 = todayStr(), total = se.episodi.filter(function(x) { return !(x.d && x.d > t0); }).length;
         var rows = ratingEl('div', 'ep-list'); det.appendChild(rows);
         function paintSeason(all) {
           var s = (all || load())[id] || {}, seen = 0;
@@ -27360,7 +27364,8 @@ function marvelInit() {
           var main = ratingEl('div', 'ep-main'), meta = ratingEl('span', 'ep-meta');
           var num = ratingEl('span', 'ep-num', 'E' + pad2(ep.n));
           var tt = ratingEl('span', 'ep-title', ep.t && String(ep.t).trim() ? String(ep.t) : 'Episodio ' + ep.n);
-          var dt = ratingEl('span', 'ep-date', fmtDate(ep.d));
+          var up = isUpcoming(ep, cur);
+          var dt = ratingEl('span', 'ep-date', (up ? 'In arrivo \u00b7 ' : '') + fmtDate(ep.d));
           meta.appendChild(num); meta.appendChild(dt); main.appendChild(tt); main.appendChild(meta);
           var sel = ratingEl('select', 'ep-vote'); sel.setAttribute('aria-label', 'Voto episodio ' + ep.n + ' (1-10)');
           var o0 = ratingEl('option', '', '—'); o0.value = ''; sel.appendChild(o0);
@@ -27370,6 +27375,7 @@ function marvelInit() {
           var ta = ratingEl('textarea', 'ep-note'); ta.maxLength = 2000; ta.rows = 3; ta.hidden = true; ta.placeholder = 'La tua recensione (solo per te)'; ta.value = cur.n || '';
           ta.setAttribute('aria-label', 'Recensione episodio ' + ep.n);
           row.appendChild(w); row.appendChild(main); row.appendChild(sel); row.appendChild(rv); row.appendChild(ta);
+          if (up) { row.classList.add('ep-up'); w.disabled = true; sel.disabled = true; rv.disabled = true; }
           w.addEventListener('click', function() {
             var on = w.getAttribute('aria-pressed') !== 'true';
             if (mutate(k, function(e) { if (on) e.w = 1; else delete e.w; })) w.setAttribute('aria-pressed', on ? 'true' : 'false');

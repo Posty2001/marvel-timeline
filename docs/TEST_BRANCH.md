@@ -25,4 +25,4 @@ Invariati: Rankings, Friends 2.0, Tessera 3.0, Atlante, Timeline, dati, Firebase
 - I test in `tests/arcade/` usano un server locale sulla cartella del progetto (porta 8790 negli script).
 
 ## TVA Episodes — dati
-`assets/episodes/index.json` è VUOTO finché non si genera il catalogo reale: `TMDB_READ_TOKEN=... python3 tools/tmdb_episodes.py` (oppure workflow «TMDB sync (manuale)» con solo_episodi e copia dell'artifact in `assets/episodes/`). Senza dati la scheda mostra «Episodi non ancora disponibili» e tutto il resto funziona. Attribuzione TMDB mostrata nel pannello.
+`assets/episodes/` contiene il catalogo reale TMDB (artifact «TMDB sync» #5): 46 schede serie su 49, 488 episodi principali + 2 speciali (WandaVision). Non coperte: 073 The Defenders (ID corretto 62285, da rigenerare: rilanciare il workflow con `solo_episodi`), 137 Daredevil: Born Again S3 e 138 X-Men '97 S3 (stagioni non ancora presenti su TMDB). Gli episodi con data futura sono mostrati «In arrivo» e non votabili. Verifica integrita': `python3 tests/episodes/data_test.py`. Attribuzione TMDB nel pannello.
