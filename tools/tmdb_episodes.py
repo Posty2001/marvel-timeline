@@ -2,48 +2,22 @@
 """TVA Episodes - genera il catalogo episodi (titoli IT, date) da TMDB.
 
 Uso:   TMDB_READ_TOKEN=... python3 tools/tmdb_episodes.py [--out assets/episodes] [--only 043,044]
-Il token (Read Access Token v4, oppure TMDB_API_KEY v3) si legge SOLO da variabile d'ambiente: non viene mai
-scritto su file, ne' stampato. Le richieste vanno a api.themoviedb.org (uso non commerciale, con attribuzione TMDB).
-Input : assets/images/catalog/tmdb_map.json  (voci t='tv': senza 's' = intera serie, con 's' = singola stagione)
+Riusa tools/tmdb_sync.py (stesso TMDB_READ_TOKEN/TMDB_API_KEY da ambiente, mai scritti ne' stampati).
+Input : assets/images/catalog/tmdb_map.json + tmdb_overrides.json  (voci t='tv': senza 's' = intera serie, con 's' = singola stagione)
 Output: <out>/<tmdbId>.json   {versione, tmdb, nome, lingua, stagioni:[{n, nome, episodi:[{n, t, d}]}]}
         <out>/index.json      {versione, fonte, aggiornato, voci:{idTimeline:{tmdb, s?, stagioni, episodi}}}
 Un'esecuzione parziale (errore di rete) non sovrascrive i file gia' buoni: l'indice cita solo serie scaricate.
 """
-import argparse, datetime, json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
+import argparse, datetime, json, os, re, sys
 
-API = 'https://api.themoviedb.org/3'
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import tmdb_sync   # riuso dell'integrazione esistente: stesso token (env), retry 429, nessun URL/chiave in output
+
 DATE_RE = re.compile(r'^\d{4}-\d{2}-\d{2}$')
 
 
-def _auth():
-    tok, key = os.environ.get('TMDB_READ_TOKEN', '').strip(), os.environ.get('TMDB_API_KEY', '').strip()
-    if not tok and not key:
-        sys.exit('Manca TMDB_READ_TOKEN (o TMDB_API_KEY) nell\'ambiente.')
-    return tok, key
-
-
-def get(path, params=None, retries=4):
-    tok, key = _auth()
-    q = dict(params or {})
-    headers = {'Accept': 'application/json'}
-    if tok:
-        headers['Authorization'] = 'Bearer ' + tok
-    else:
-        q['api_key'] = key
-    url = API + path + '?' + urllib.parse.urlencode(q)
-    for i in range(retries):
-        try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=30) as r:
-                return json.load(r)
-        except urllib.error.HTTPError as e:
-            if e.code == 404:
-                return None
-            if e.code == 429 or e.code >= 500:
-                time.sleep(2 * (i + 1) + int(e.headers.get('Retry-After', '0') or 0)); continue
-            raise RuntimeError('HTTP %s su %s' % (e.code, path))   # niente URL (potrebbe contenere la chiave)
-        except (urllib.error.URLError, TimeoutError):
-            time.sleep(2 * (i + 1))
-    raise RuntimeError('rete non raggiungibile per ' + path)
+def get(path, params=None):
+    return tmdb_sync.api(path, **(params or {}))
 
 
 def clean_show(tmdb):
@@ -78,6 +52,11 @@ def main():
     ap.add_argument('--only', default='')
     a = ap.parse_args()
     voci = json.load(open(a.map, encoding='utf-8'))['voci']
+    ovp = os.path.join(os.path.dirname(a.map), 'tmdb_overrides.json')   # correzioni manuali gia' usate da tmdb_sync
+    if os.path.exists(ovp):
+        for k, o in json.load(open(ovp, encoding='utf-8')).get('voci', {}).items():
+            if o.get('t') == 'tv' and o.get('id'):
+                voci[k] = dict(voci.get(k, {}), **o)
     only = set(x for x in a.only.split(',') if x)
     tv = {k: v for k, v in voci.items() if v.get('t') == 'tv' and (not only or k in only)}
     os.makedirs(a.out, exist_ok=True)
@@ -104,7 +83,7 @@ def main():
             falliti.append((k, 'stagione %s assente' % s)); continue
         with open(os.path.join(a.out, '%d.json' % tmdb), 'w', encoding='utf-8') as f:
             json.dump(show, f, ensure_ascii=False, separators=(',', ':'))
-        v = {'tmdb': tmdb, 'stagioni': len(sel), 'episodi': sum(len(x['episodi']) for x in sel)}
+        v = {'nome': show['nome'], 'tmdb': tmdb, 'stagioni': len(sel), 'episodi': sum(len(x['episodi']) for x in sel)}
         if s is not None:
             v['s'] = s
         indice['voci'][k] = v

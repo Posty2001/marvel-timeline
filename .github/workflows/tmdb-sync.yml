@@ -4,6 +4,11 @@ name: TMDB sync (manuale)
 # Risultati: artifact scaricabile "tmdb-sync" (tmdb_map.json + tmdb_review.json).
 on:
   workflow_dispatch:
+    inputs:
+      solo_episodi:
+        description: Genera solo il catalogo episodi (senza rifare l abbinamento delle locandine)
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -33,10 +38,17 @@ jobs:
           echo "Secret presente."
 
       - name: Sincronizza con TMDB
+        if: ${{ !inputs.solo_episodi }}
         env:
           TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: python3 tools/tmdb_sync.py
+
+      - name: Genera catalogo episodi (TVA Episodes)
+        env:
+          TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: python3 tools/tmdb_episodes.py
 
       - name: Salva i risultati
         uses: actions/upload-artifact@v4
@@ -45,5 +57,6 @@ jobs:
           path: |
             assets/images/catalog/tmdb_map.json
             assets/images/catalog/tmdb_review.json
+            assets/episodes/
           if-no-files-found: error
           retention-days: 30

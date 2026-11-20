@@ -13,7 +13,7 @@
 | `sw.js` | ID build/cache; precache Arcade (pagine, script condivisi, manifest e 120 ritratti) |
 | `tools/arcade/`, `tests/arcade/`, `docs/arcade/` (nuovi) | Sorgenti del Draft, bilanciamento/simulazioni, validatore ritratti, test attuali, report e cataloghi |
 | `index.html` (TVA Episodes) | Pannello «Episodi e voti» nelle schede serie; chiave `marvel-ultimate-timeline-episodes-v1` (campo `episodes` in backup/sync); media episodi in Timeline al posto del voto originale (che resta salvato). |
-| `assets/episodes/`, `tools/tmdb_episodes.py`, `.github/workflows/tmdb-episodes.yml` | Catalogo episodi TMDB in JSON separati (`index.json` + `<tmdbId>.json`), generatore (token solo da ambiente) e workflow manuale che produce un artifact. |
+| `assets/episodes/`, `tools/tmdb_episodes.py`, `.github/workflows/tmdb-sync.yml` (esteso) | Catalogo episodi TMDB in JSON separati (`index.json` + `<tmdbId>.json`), generatore (token solo da ambiente) e workflow manuale che produce un artifact. |
 | `tests/episodes/ep_test.py` | Test mirati TVA Episodes (`python3 tests/episodes/ep_test.py`). |
 | `arcade/**/index.html`, `quiz/index.html`, `sw.js` | Solo ID build (stesso valore di `index.html`, richiesto dalla cache offline). |
 
@@ -25,4 +25,4 @@ Invariati: Rankings, Friends 2.0, Tessera 3.0, Atlante, Timeline, dati, Firebase
 - I test in `tests/arcade/` usano un server locale sulla cartella del progetto (porta 8790 negli script).
 
 ## TVA Episodes — dati
-`assets/episodes/index.json` è VUOTO finché non si genera il catalogo reale: `TMDB_READ_TOKEN=... python3 tools/tmdb_episodes.py` (oppure workflow «TMDB episodi (manuale)» e copia dell'artifact in `assets/episodes/`). Senza dati la scheda mostra «Episodi non ancora disponibili» e tutto il resto funziona. Attribuzione TMDB mostrata nel pannello.
+`assets/episodes/index.json` è VUOTO finché non si genera il catalogo reale: `TMDB_READ_TOKEN=... python3 tools/tmdb_episodes.py` (oppure workflow «TMDB sync (manuale)» con solo_episodi e copia dell'artifact in `assets/episodes/`). Senza dati la scheda mostra «Episodi non ancora disponibili» e tutto il resto funziona. Attribuzione TMDB mostrata nel pannello.
