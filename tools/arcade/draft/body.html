@@ -1,0 +1,35 @@
+<body><main><h1>Secret Wars <span>Draft</span></h1><p class="lead">A ogni turno ricevi 5 offerte di forza comparabile (ordine A‑B‑B‑A‑A‑B‑B‑A‑A‑B): scegli, assegna 5 ruoli distinti sfruttando le contromosse e affronta la CPU. Valori di gioco, non scale canoniche.</p>
+<div class="panel" id="setup"><div class="opts"><div><label class="fl" for="scenario">Scenario</label><select id="scenario"><option value="asgard">Asgard</option><option value="wakanda">Wakanda</option><option value="quantum">Regno Quantico</option><option value="battleworld">Battleworld</option></select></div><div><label class="fl" for="cpu">CPU</label><select id="cpu"><option value="recluta">Recluta</option><option value="stratega" selected>Stratega</option><option value="maestro">Maestro</option></select></div></div><div id="scnprev"></div><button id="new" class="gold full">Nuova partita</button></div>
+<div id="game" hidden>
+ <div class="topbar"><div class="turn"><div class="t1 cmic" id="t1"></div><p id="status" role="status" aria-live="polite"></p></div><div class="scn" id="scn"></div><button id="quit" type="button" aria-label="Abbandona partita">Esci</button></div>
+ <section id="poolp" aria-label="Scelta del combattente">
+  <div id="scnbn"></div>
+  <div class="pips" id="order" aria-label="Ordine dei turni"></div>
+  <div class="tray" aria-label="Le due squadre"><div class="side" id="trme"></div><div class="vs cmic" aria-hidden="true">VS</div><div class="side" id="trcpu"></div></div>
+  <div class="hero" id="hero" aria-live="polite" aria-label="Personaggio selezionato"></div>
+  <div class="grid" id="pool" role="group" aria-label="Combattenti disponibili"></div>
+  <div class="actbar"><div class="in"><button class="btn gold" id="recruit" type="button"><span id="rtxt">Recluta</span></button></div></div>
+ </section>
+ <section id="rolesp" hidden aria-label="Assegnazione dei ruoli">
+  <p class="s2lead">Tocca una tua carta e scegli il ruolo: ognuno vale una statistica (+8%). Servono 5 ruoli distinti. Ogni carta sfida quella con lo stesso numero.</p>
+  <details class="cdet"><summary>Contromosse (+5% a chi ha il vantaggio)</summary><p>Difensore batte Avanguardia · Avanguardia batte Specialista · Specialista batte Stratega · Stratega batte Ricognitore · Ricognitore batte Difensore. La CPU sceglie i ruoli in segreto e li svela in battaglia: ▲/▼ sulle tue carte indicano il confronto con il ruolo ideale della carta avversaria.</p></details>
+  <div class="team cpu" id="tcpu2"></div>
+  <div class="versus cmic" aria-hidden="true"><span>VS</span></div>
+  <div class="team me" id="tme2"></div>
+  <div class="duel" id="duel"></div>
+  <div class="actbar"><div class="rolebar" id="roles" role="group" aria-label="Ruolo della carta selezionata"></div><div class="in"><button class="btn ghost" id="auto" type="button">Auto ruoli</button><button class="btn gold" id="go" type="button" disabled><span>Combatti!</span></button></div></div>
+ </section>
+ <section id="battle" hidden aria-label="Battaglia" aria-live="polite">
+  <div class="arena" id="arena">
+   <div class="scene" id="scene" aria-hidden="true"></div><div class="amb" id="amb" aria-hidden="true"><i class="a1"></i><i class="a2"></i></div><div class="spot" id="spot" aria-hidden="true"></div><div class="fxl" id="fxl" aria-hidden="true"></div>
+   <div class="aside cpu" id="bcpu" aria-hidden="true"></div>
+   <div class="stage" id="stage"><div class="flash" id="flash"></div><div class="vsb cmic" id="vsb" aria-hidden="true">VS</div></div>
+   <div class="cap cmic" id="cap">&nbsp;</div><div class="cap2" id="cap2">&nbsp;</div>
+   <div class="tug"><div class="labs cmic"><span class="a">Tu <span id="sa">0</span></span><span class="b"><span id="sb">0</span> CPU</span></div><div class="bar" aria-hidden="true"><div class="a" id="tugA" style="width:50%"></div><div class="b"></div></div></div>
+   <div class="aside me" id="bme" aria-hidden="true" style="padding-bottom:6px"></div>
+  </div>
+  <div class="actbar"><div class="in"><button class="btn ghost" id="skip" type="button">Salta animazione</button></div></div>
+ </section>
+ <section id="result" hidden aria-label="Esito della battaglia"></section>
+ <div class="endsp" aria-hidden="true"></div>
+</div></main>

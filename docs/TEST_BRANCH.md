@@ -1,0 +1,21 @@
+# Branch `test/tva-archives` — versione TEST
+
+- **Base:** `main` = `82a73c7` (produzione, build `20261112-1905-rifinitura`, congelata). `main` non è modificato.
+- **Build TEST:** `20261117-1900-arcade-draft31r` (identica allo ZIP `NETLIFY_TEST_arcade_draft31r` caricabile su Netlify TEST).
+- **Pubblicazione:** il branch NON è pubblicato né su GitHub Pages né su Netlify; il TEST si carica a mano su Netlify.
+
+## Differenze rispetto alla produzione
+| File | Differenza |
+|---|---|
+| `arcade/**` (nuovo, 367 file) | TVA Arcade: hub e 5 giochi (Quiz Marvel, Who Am I?, Time Crisis, Secret Wars Draft 3.1 con 120 carte e 120 ritratti di test, Multiverse Escape) |
+| `index.html` | ID build; Home: carta «TVA Arcade» al posto di «Quiz Marvel»; rimossi dalla Home i due pulsanti «Atlante» e «Tessera TVA» (restano nella barra inferiore); evento additivo `tva-identity-changed`; `f3Slot()` (predisposizione Friends 3.0) |
+| `quiz/index.html` | ID build; timer domanda 20 s → 30 s; ritorno a TVA Arcade se aperto con `?from=arcade` |
+| `sw.js` | ID build/cache; precache Arcade (pagine, script condivisi, manifest e 120 ritratti) |
+| `tools/arcade/`, `tests/arcade/`, `docs/arcade/` (nuovi) | Sorgenti del Draft, bilanciamento/simulazioni, validatore ritratti, test attuali, report e cataloghi |
+
+Invariati: Rankings, Friends 2.0, Tessera 3.0, Atlante, Timeline, dati, Firebase, workflow TMDB.
+
+## Note
+- I ritratti del Draft sono asset stilizzati di test (`status: test_stylized`), non ritratti Marvel definitivi né diritti confermati.
+- `docs/arcade/PATCH_disclaimer_DA_APPLICARE_DOPO_COLLAUDO.diff` è preparata e NON applicata.
+- I test in `tests/arcade/` usano un server locale sulla cartella del progetto (porta 8790 negli script).

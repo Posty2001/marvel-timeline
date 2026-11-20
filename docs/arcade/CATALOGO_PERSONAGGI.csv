@@ -1,0 +1,121 @@
+﻿ID;Nome;Gruppo;Versione;Base;Potenza;Intelligenza;Velocità;Resistenza;Versatilità;Ruolo ideale;Valore Asgard;Valore Wakanda;Valore Quantico;Valore Battleworld;Capacità;Limiti
+iron-man;Iron Man;Avengers e alleati;standard;;78;96;80;78;92;Stratega;82.2;87.1;86.6;84.8;armatura modulare, volo, repulsori, ingegno;"dipende dall'armatura; corpo umano fragile"
+captain-america;Captain America;Avengers e alleati;standard;;62;86;68;74;70;Stratega;70.1;74.2;73.0;72.0;scudo, tattica, forza al picco umano;"nessun potere a distanza; vulnerabile ai colpi cosmici"
+thor;Thor;Avengers e alleati;standard;;98;72;86;97;84;Avanguardia;91.2;85.3;84.3;87.4;Mjolnir, fulmini, forza divina;"impulsivo; dipende da Mjolnir"
+hulk;Hulk;Avengers e alleati;standard;;99;44;58;98;55;Avanguardia;80.5;67.2;61.9;70.8;forza crescente con la rabbia, rigenerazione;"strategia quasi nulla; poca agilità"
+black-widow;Black Widow;Avengers e alleati;standard;;38;84;82;52;80;Stratega;59.7;69.5;74.6;67.2;spionaggio, arti marziali, infiltrazione;"nessun potere; corpo umano"
+hawkeye;Hawkeye;Avengers e alleati;standard;;45;80;74;48;80;Stratega;59.0;67.8;71.5;65.4;arco con frecce speciali, mira infallibile;portata e riserve di frecce limitate
+scarlet-witch;Scarlet Witch;Avengers e alleati;standard;;96;72;66;66;98;Specialista;80.4;80.3;78.5;79.6;magia del caos, alterazione della realtà;"instabile; fisicamente fragile"
+vision;Vision;Avengers e alleati;standard;;82;90;78;88;84;Stratega;84.3;85.7;83.9;84.4;densità variabile, volo, raggio solare;"dipende dalla Gemma/energia; vulnerabile alla magia"
+doctor-strange;Doctor Strange;Avengers e alleati;standard;;84;94;66;72;98;Specialista;80.8;86.3;83.4;82.8;magia, portali, artefatti mistici;"serve concentrazione e gesti; lento a reagire"
+captain-marvel;Captain Marvel;Avengers e alleati;standard;;94;72;90;90;78;Avanguardia;87.6;82.2;82.9;84.8;energia fotonica, volo supersonico;poco versatile fuori dall'energia
+black-panther;Black Panther;Avengers e alleati;standard;;66;92;80;70;74;Stratega;73.1;78.0;79.1;76.4;tuta in vibranio, stratega e combattente;nessun potere cosmico
+ant-man;Ant-Man;Avengers e alleati;standard;;52;80;70;60;88;Specialista;65.3;72.8;74.2;70.0;ridimensionamento, tecnologia Pym;molto fragile se colpito
+wasp;Wasp;Avengers e alleati;standard;;54;76;88;58;76;Ricognitore;65.8;70.3;75.6;70.4;volo, riduzione, stinger bioelettrici;poca resistenza
+falcon;Falcon;Avengers e alleati;standard;;55;76;84;56;66;Ricognitore;63.4;67.2;71.8;67.4;ali tecnologiche, volo, leadership;nessun potere intrinseco
+war-machine;War Machine;Avengers e alleati;standard;;76;74;62;80;80;Difensore;75.5;75.8;72.7;74.4;armatura pesante, arsenale versatile;"più lento di Iron Man; armatura-dipendente"
+she-hulk;She-Hulk;Avengers e alleati;standard;;90;68;62;90;62;Avanguardia;79.4;73.6;69.1;74.4;forza gamma, mantiene la lucidità;meno estrema di Hulk
+luke-cage;Luke Cage;Avengers e alleati;standard;;80;58;52;94;44;Difensore;72.4;64.4;58.5;65.6;pelle impenetrabile, forza elevata;nessuna capacità a distanza
+iron-fist;Iron Fist;Avengers e alleati;standard;;72;64;80;70;74;Ricognitore;72.1;70.5;72.7;72.0;pugno del chi, arti marziali;dipende dalla concentrazione
+daredevil;Daredevil;Avengers e alleati;standard;;52;78;78;58;70;Stratega;63.0;68.1;71.4;67.2;senso radar, acrobazia, combattimento;nessun potere offensivo reale
+ms-marvel-kamala-khan;Ms. Marvel (Kamala Khan);Avengers e alleati;standard;;66;66;70;64;86;Specialista;69.0;71.0;72.0;70.4;ingrandimento e modifica del corpo;esperienza limitata
+quicksilver;Quicksilver;Avengers e alleati;standard;;54;62;98;60;60;Ricognitore;64.1;63.5;71.3;66.8;velocità estrema;fragile e impulsivo
+hercules;Hercules;Avengers e alleati;standard;;96;56;70;94;56;Avanguardia;81.5;71.0;68.0;74.4;forza semidivina, combattente leggendario;poca strategia
+rune-king-thor;Rune King Thor;Avengers e alleati;trasformazione;thor;99;76;88;97;96;Avanguardia;94.0;89.9;89.0;91.2;Thor trasformato dal potere delle rune, magia e fulmini;"forma estrema e rara; costo narrativo elevato"
+winter-soldier;Winter Soldier;Avengers e alleati;standard;;64;72;80;66;74;Ricognitore;69.3;70.9;73.5;71.2;braccio cibernetico, assassino addestrato;nessun potere cosmico
+captain-britain;Captain Britain;Avengers e alleati;standard;;90;66;84;82;82;Avanguardia;83.1;78.6;79.4;80.8;forza e volo dall'Amuleto del Diritto;dipende dall'amuleto
+punisher;Punisher;Avengers e alleati;standard;;38;74;60;44;74;Stratega;52.1;61.2;63.2;58.0;arsenale, pianificazione tattica;"nessun potere; molto vulnerabile"
+mr-fantastic;Mr. Fantastic;Avengers e alleati;standard;;56;99;58;82;94;Stratega;74.1;83.8;79.5;77.8;corpo elastico, scienziato supremo;poco offensivo in sé
+invisible-woman;Invisible Woman;Avengers e alleati;standard;;80;74;62;78;90;Specialista;77.6;78.5;75.4;76.8;campi di forza, invisibilità;richiede concentrazione
+human-torch;Human Torch;Avengers e alleati;standard;;82;56;88;60;70;Ricognitore;71.9;67.4;72.1;71.2;fiamme, volo, nova;"può esaurirsi; poca pianificazione"
+the-thing;The Thing;Avengers e alleati;standard;;90;60;46;94;40;Difensore;74.1;64.9;57.2;66.0;pelle rocciosa, forza enorme;lento e poco versatile
+wolverine;Wolverine;X-Men e mutanti;standard;;68;70;76;94;60;Difensore;76.0;72.6;71.5;73.6;artigli in adamantio, rigenerazione;portata ravvicinata
+jean-grey;Jean Grey;X-Men e mutanti;standard;;86;80;70;64;92;Specialista;77.3;79.7;79.0;78.4;telepatia e telecinesi;"fisicamente delicata; instabile sotto stress"
+cyclops;Cyclops;X-Men e mutanti;standard;;72;84;66;56;62;Stratega;66.0;69.3;69.1;68.0;raggi ottici, leader tattico;raggio non controllabile senza visore
+storm;Storm;X-Men e mutanti;standard;;90;70;78;72;86;Avanguardia;80.2;78.2;78.6;79.2;controllo del meteo, volo;dipende dalla concentrazione
+magneto;Magneto;X-Men e mutanti;standard;;96;90;74;86;94;Avanguardia;88.8;89.5;86.4;88.0;controllo del magnetismo;vulnerabile ai blocchi psichici
+professor-x;Professor X;X-Men e mutanti;standard;;72;99;38;42;94;Stratega;63.9;76.2;71.0;69.0;telepatia suprema;corpo fragile, quasi immobile
+rogue;Rogue;X-Men e mutanti;standard;;86;60;80;86;80;Avanguardia;81.6;76.1;76.2;78.4;forza, volo, assorbe i poteri;il contatto è necessario
+gambit;Gambit;X-Men e mutanti;standard;;62;66;78;56;76;Ricognitore;65.1;67.1;70.7;67.6;energia cinetica, carte esplosive;portata limitata, resistenza bassa
+nightcrawler;Nightcrawler;X-Men e mutanti;standard;;48;68;88;56;78;Ricognitore;62.9;67.1;73.3;67.6;teletrasporto, acrobazia;poca forza
+colossus;Colossus;X-Men e mutanti;standard;;84;56;48;92;44;Difensore;72.2;63.6;57.0;64.8;corpo d'acciaio organico, forza;lento, poco versatile
+mystique;Mystique;X-Men e mutanti;standard;;44;82;70;56;90;Specialista;62.2;71.9;74.0;68.4;metamorfosi, infiltrazione;poca forza diretta
+deadpool;Deadpool;X-Men e mutanti;standard;;56;54;74;86;78;Difensore;70.8;68.7;69.4;69.6;rigenerazione, maestria con le armi;imprevedibile
+cable;Cable;X-Men e mutanti;standard;;84;82;66;70;86;Specialista;77.2;79.3;77.2;77.6;telecinesi, tecnologia futura;virus tecno-organico limita le energie
+psylocke;Psylocke;X-Men e mutanti;standard;;66;78;82;56;78;Ricognitore;68.4;72.2;75.8;72.0;lama psichica, ninja;fragile
+apocalypse;Apocalypse;X-Men e mutanti;standard;;96;92;66;94;94;Avanguardia;90.2;90.9;85.3;88.4;mutazione dell'aspetto, immortalità;"arrogante; superbo"
+phoenix;Phoenix;X-Men e mutanti;trasformazione;jean-grey;99;82;88;92;98;Avanguardia;93.4;91.2;90.5;91.8;Jean Grey con la Forza Fenice, potere cosmico;"instabile e rara; la Forza può corrompere"
+beast;Beast;X-Men e mutanti;standard;;62;94;78;68;76;Stratega;71.5;77.9;78.9;75.6;genio scientifico, agilità animale;poco potente senza tecnologia
+iceman;Iceman;X-Men e mutanti;standard;;82;56;68;74;86;Specialista;75.5;72.2;71.5;73.2;ghiaccio, scivoli, barriere;poca tattica
+archangel;Archangel;X-Men e mutanti;standard;;68;62;90;66;66;Ricognitore;69.8;67.5;72.4;70.4;ali metalliche, volo veloce;corpo delicato
+emma-frost;Emma Frost;X-Men e mutanti;standard;;68;88;52;90;84;Difensore;76.6;80.8;74.4;76.4;telepatia e forma di diamante;la forma diamante riduce la mobilità
+jubilee;Jubilee;X-Men e mutanti;standard;;46;58;68;52;66;Ricognitore;55.3;58.0;61.2;58.0;plasmoidi luminosi, agilità;potere limitato
+bishop;Bishop;X-Men e mutanti;standard;;74;72;66;74;64;Avanguardia;71.1;70.1;68.6;70.0;assorbe energia e la rilascia;dipende da quanta energia assorbe
+havok;Havok;X-Men e mutanti;standard;;80;60;60;62;58;Avanguardia;66.3;62.9;61.7;64.0;esplosioni di energia cosmica;poca precisione
+sabretooth;Sabretooth;X-Men e mutanti;standard;;70;52;78;88;54;Difensore;72.4;65.0;65.7;68.4;artigli, rigenerazione, istinto;poca strategia
+juggernaut;Juggernaut;X-Men e mutanti;standard;;98;42;44;97;40;Avanguardia;75.3;61.1;53.2;64.2;forza inarrestabile, quasi invulnerabile;lento e vulnerabile alla magia
+magik;Magik;X-Men e mutanti;standard;;84;70;76;72;94;Specialista;79.3;79.1;79.4;79.2;teletrasporto, spada dell'anima;potere dipendente da Limbo
+x-23;X-23;X-Men e mutanti;standard;;58;60;82;86;62;Difensore;70.8;67.6;69.5;69.6;artigli, rigenerazione, addestramento;meno potente del modello originale
+domino;Domino;X-Men e mutanti;standard;;36;76;70;50;86;Specialista;56.8;66.7;70.1;63.6;fortuna probabilistica, tiratrice;nessuna difesa speciale
+cannonball;Cannonball;X-Men e mutanti;standard;;70;52;82;84;50;Difensore;71.2;63.6;65.5;67.6;razzo blast-field, volo;direzione rigida
+legion;Legion;X-Men e mutanti;standard;;93;72;56;66;99;Specialista;78.2;79.1;75.5;77.2;molte personalità e poteri;instabile e imprevedibile
+spider-man-peter-parker;Spider-Man (Peter Parker);Spider-Verse e simbionti;standard;;66;88;90;68;86;Ricognitore;75.4;80.4;83.9;79.6;forza e riflessi, ragnatele, senso di ragno;poco resistente ai colpi forti
+spider-man-miles-morales;Spider-Man (Miles Morales);Spider-Verse e simbionti;standard;;62;72;86;62;84;Ricognitore;69.9;72.9;77.2;73.2;veleno bio-elettrico, camuffamento;meno esperto
+spider-gwen;Spider-Gwen;Spider-Verse e simbionti;standard;;60;76;90;56;76;Ricognitore;67.3;71.0;76.6;71.6;acrobazia superiore, riflessi;difese basse
+venom;Venom;Spider-Verse e simbionti;standard;;82;62;74;84;76;Difensore;78.5;74.1;73.3;75.6;simbionte, forza e rigenerazione;vulnerabile a suono e fuoco
+carnage;Carnage;Spider-Verse e simbionti;standard;;86;48;80;86;80;Avanguardia;80.4;72.5;73.2;76.0;simbionte irregolare, armi organiche;caotico e poco tattico
+green-goblin;Green Goblin;Spider-Verse e simbionti;standard;;64;82;72;66;80;Stratega;70.0;74.6;75.1;72.8;aliante, bombe zucca, tattica;follia e fragilità
+doctor-octopus;Doctor Octopus;Spider-Verse e simbionti;standard;;62;94;54;68;80;Stratega;68.5;76.5;72.7;71.6;tentacoli meccanici, genio;lento
+mysterio;Mysterio;Spider-Verse e simbionti;standard;;38;86;52;42;90;Specialista;53.9;67.6;67.6;61.6;illusioni e inganno;fragile quando l'illusione cade
+black-cat;Black Cat;Spider-Verse e simbionti;standard;;40;68;82;46;80;Ricognitore;56.9;63.8;70.2;63.2;furto, fortuna alterata;combattente limitata
+knull;Knull;Spider-Verse e simbionti;standard;;99;82;74;96;98;Avanguardia;92.5;90.5;86.7;89.8;dio dei simbionti, potere del nulla;"rarissimo; forma finale estrema"
+spider-man-2099;Spider-Man 2099;Spider-Verse e simbionti;standard;;68;90;90;68;84;Stratega;75.9;80.8;84.1;80.0;tecnologia futura, riflessi;meno forza bruta
+spider-woman-jessica-drew;Spider-Woman (Jessica Drew);Spider-Verse e simbionti;standard;;62;70;82;62;76;Ricognitore;67.9;69.9;73.5;70.4;feromoni, bio-elettricità, volo;poteri contenuti
+scarlet-spider-ben-reilly;Scarlet Spider (Ben Reilly);Spider-Verse e simbionti;standard;;68;76;86;70;72;Ricognitore;72.7;73.6;76.6;74.4;clone di Peter, esperienza sul campo;nessun potere nuovo
+silk;Silk;Spider-Verse e simbionti;standard;;54;70;88;56;74;Ricognitore;64.3;67.6;73.4;68.4;senso di ragno, agilità;forza ridotta
+agent-venom;Agent Venom;Spider-Verse e simbionti;standard;;78;70;76;78;74;Avanguardia;76.3;74.4;74.4;75.2;simbionte disciplinato, addestramento;il simbionte può prevalere
+anti-venom;Anti-Venom;Spider-Verse e simbionti;standard;;80;60;70;82;70;Difensore;75.6;70.9;69.7;72.4;guarigione e purificazione;nemici simbionti specifici
+kingpin;Kingpin;Spider-Verse e simbionti;standard;;70;92;34;76;70;Stratega;68.6;74.2;65.3;68.4;forza e dominio criminale;molto lento
+sandman;Sandman;Spider-Verse e simbionti;standard;;84;52;54;88;86;Difensore;77.8;72.7;67.9;72.8;corpo di sabbia, forme variabili;vulnerabile all'acqua
+electro;Electro;Spider-Verse e simbionti;standard;;86;58;80;66;76;Avanguardia;74.8;70.5;72.7;73.2;elettricità, controllo dei campi;isolanti e acqua riducono l'efficacia
+kraven-the-hunter;Kraven the Hunter;Spider-Verse e simbionti;standard;;62;74;80;70;56;Ricognitore;67.4;67.5;69.7;68.4;caccia, forza ed agilità;nessun potere speciale
+thanos;Thanos;Cosmici e altri;standard;;98;92;72;96;94;Avanguardia;92.3;92.2;87.5;90.4;forza titanica, strategia cosmica;"arroganza; sconfitto dall'eccesso"
+loki;Loki;Cosmici e altri;standard;;70;94;74;64;96;Specialista;75.1;82.9;83.1;79.6;inganno, magia e metamorfosi;poca forza pura
+hela;Hela;Cosmici e altri;standard;;93;78;72;94;86;Difensore;87.6;84.8;81.3;84.6;magia della morte, forza asgardiana;limitata fuori da Hel
+doctor-doom;Doctor Doom;Cosmici e altri;standard;;90;99;60;90;98;Stratega;87.6;91.7;85.2;87.4;scienza e magia, armatura;ego e rischi
+ultron;Ultron;Cosmici e altri;standard;;90;96;72;94;88;Stratega;88.8;90.3;86.0;88.0;intelligenza artificiale, corpi multipli;dipende dall'hardware
+silver-surfer;Silver Surfer;Cosmici e altri;standard;;96;74;98;94;90;Ricognitore;92.6;87.7;89.4;90.4;Potere Cosmico, tavola spaziale;più cauto che aggressivo
+galactus;Galactus;Cosmici e altri;standard;;99;92;72;99;98;Avanguardia;94.1;94.0;88.9;92.0;divora mondi, energia cosmica;lento a reagire
+adam-warlock;Adam Warlock;Cosmici e altri;standard;;92;82;78;84;92;Avanguardia;86.5;86.0;84.5;85.6;gemma dell'anima, potere cosmico;resistenza psicologica limitata
+star-lord;Star-Lord;Cosmici e altri;standard;;54;74;70;56;76;Specialista;62.3;67.5;69.5;66.0;pistole elementali, leader carismatico;poteri modesti
+gamora;Gamora;Cosmici e altri;standard;;70;70;82;68;62;Ricognitore;70.0;68.8;71.4;70.4;addestramento d'élite, spadaccina;nessun potere cosmico
+rocket-raccoon;Rocket Raccoon;Cosmici e altri;standard;;48;88;76;46;90;Specialista;61.9;72.9;76.7;69.6;ingegneria, armi e piani;molto fragile
+groot;Groot;Cosmici e altri;standard;;80;38;40;90;74;Difensore;71.9;63.9;57.0;64.4;corpo di legno, rigenerazione;lento e poco versatile
+drax;Drax;Cosmici e altri;standard;;88;40;56;90;38;Difensore;71.5;58.3;54.1;62.4;forza smisurata, resistenza;nessuna strategia
+nebula;Nebula;Cosmici e altri;standard;;68;72;70;76;62;Difensore;70.2;69.5;68.9;69.6;cyborg, combattimento letale;poca creatività
+mantis;Mantis;Cosmici e altri;standard;;48;74;66;52;80;Specialista;59.3;66.4;68.3;64.0;empatia e controllo emotivo;debole in lotta
+shang-chi;Shang-Chi;Cosmici e altri;standard;;62;78;86;68;70;Ricognitore;70.2;72.4;75.8;72.8;maestro di arti marziali, Dieci Anelli;nessun potere cosmico
+moon-knight;Moon Knight;Cosmici e altri;standard;;62;70;76;74;76;Ricognitore;70.6;71.7;72.9;71.6;forza lunare, identità multiple;instabile
+ghost-rider;Ghost Rider;Cosmici e altri;standard;;86;52;78;86;80;Avanguardia;80.5;73.5;73.6;76.4;fuoco infernale, sguardo di penitenza;dipende dallo spirito
+namor;Namor;Cosmici e altri;standard;;92;74;82;88;78;Avanguardia;85.4;81.3;80.6;82.8;forza atlantidea, volo, comando;indebolito fuori dall'acqua
+sentry;Sentry;Cosmici e altri;standard;;99;56;92;97;88;Avanguardia;91.4;82.2;83.2;86.4;potere di mille soli, Void;mente instabile
+zarathos;Zarathos;Cosmici e altri;trasformazione;ghost-rider;96;66;74;96;84;Avanguardia;87.9;81.8;78.9;83.2;Spirito della Vendetta originario;"fiamma incontrollata; forma rara"
+nova-richard-rider;Nova (Richard Rider);Cosmici e altri;standard;;76;66;84;72;76;Ricognitore;75.0;73.0;75.5;74.8;Forza Nova, volo, resistenza;energia limitata
+beta-ray-bill;Beta Ray Bill;Cosmici e altri;standard;;92;68;80;88;72;Avanguardia;83.6;77.8;77.0;80.0;martello Stormbreaker, combattente alieno;poche abilità extra
+black-bolt;Black Bolt;Cosmici e altri;standard;;96;66;70;78;58;Avanguardia;78.0;71.3;69.4;73.6;voce distruttiva;non può parlare
+ronan-the-accuser;Ronan the Accuser;Cosmici e altri;standard;;92;70;60;90;68;Avanguardia;80.8;75.8;70.7;76.0;martello cosmico, forza Kree;rigido nelle tattiche
+annihilus;Annihilus;Cosmici e altri;standard;;92;64;80;94;70;Difensore;84.7;77.3;76.1;80.0;bacchetta del controllo cosmico;affidabile solo con la bacchetta
+gladiator-kallark;Gladiator (Kallark);Cosmici e altri;standard;;94;58;90;92;66;Avanguardia;85.0;75.4;76.6;80.0;forza e volo super-imperiali;poco strategico
+hyperion;Hyperion;Cosmici e altri;standard;;94;54;90;92;62;Avanguardia;84.0;73.2;74.6;78.4;forza, volo e visione calorica;rigido nelle azioni
+odin;Odin;Cosmici e altri;standard;;97;96;70;96;96;Avanguardia;92.4;93.5;88.3;91.0;Padre di Tutti, magia e forza;raramente impegnato direttamente
+doctor-voodoo;Doctor Voodoo;Cosmici e altri;standard;;80;80;62;68;96;Specialista;76.1;79.8;77.4;77.2;magia dei loa, controllo dei fantasmi;potere richiede spiriti
+dormammu;Dormammu;Cosmici e altri;standard;;97;88;70;95;98;Specialista;91.6;91.5;86.7;89.6;energia mistica, dimensione oscura;vincolato alla Dimensione Oscura
+baron-mordo;Baron Mordo;Cosmici e altri;standard;;70;90;52;60;88;Stratega;69.0;76.7;73.1;72.0;magia nera, rivale di Strange;meno potente dei maghi supremi
+mephisto;Mephisto;Cosmici e altri;standard;;90;96;66;92;98;Specialista;88.8;91.8;86.5;88.4;inganno infernale, magia;vincolato dai patti
+enchantress;Enchantress;Cosmici e altri;standard;;56;82;60;58;90;Specialista;64.9;73.1;72.4;69.2;incantesimi, seduzione;fragile
+kang-the-conqueror;Kang the Conqueror;Cosmici e altri;standard;;68;98;70;80;94;Stratega;78.8;86.1;83.8;82.0;tecnologia temporale, strategia;fragile senza apparati
+red-skull;Red Skull;Cosmici e altri;standard;;50;90;56;54;74;Stratega;59.7;69.4;68.2;64.8;propaganda, complotti;nessun potere
+surtur;Surtur;Cosmici e altri;standard;;98;70;52;97;68;Avanguardia;83.5;77.3;69.6;77.0;fuoco primordiale, spada Twilight;lento
+abomination;Abomination;Cosmici e altri;standard;;90;52;54;92;44;Difensore;74.5;63.9;58.4;66.4;forza gamma, rigenerazione;poca strategia
+gorr-the-god-butcher;Gorr the God Butcher;Cosmici e altri;standard;;94;70;64;88;78;Avanguardia;82.9;78.6;74.4;78.8;Necrospada, forza divina;obiettivo ossessivo
+ikaris;Ikaris;Cosmici e altri;standard;;90;66;90;86;66;Avanguardia;82.8;76.0;77.6;79.6;raggi cosmici, volo, forza degli Eterni;poche difese mentali

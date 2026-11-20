@@ -1,6 +1,6 @@
 <!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data: https://image.tmdb.org; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
-<meta name="theme-color" content="#100e0b"><meta name="color-scheme" content="dark"><meta name="robots" content="noindex,nofollow"><meta name="tva-quiz-lab" content="1.0.0"><meta name="tva-build" content="20261112-1905-rifinitura"><title>TVA Quiz LAB</title>
+<meta name="theme-color" content="#100e0b"><meta name="color-scheme" content="dark"><meta name="robots" content="noindex,nofollow"><meta name="tva-quiz-lab" content="1.0.0"><meta name="tva-build" content="20261117-1900-arcade-draft31r"><title>TVA Quiz LAB</title>
 <style>:root{--bg:#100e0b;--bg2:#1a1612;--panel:#221d17;--line:rgba(210,177,132,.24);--ink:#f3ecdf;--soft:#b9ad96;--gold:#d2b184;--tva:#e8742c;--good:#59c98b;--bad:#e5584b;--sab:env(safe-area-inset-bottom,0px);--sat:env(safe-area-inset-top,0px);--top-inset:env(safe-area-inset-top,0px);--next-h:0px;--tabs-h:0px;--vv-bottom:0px;--cc:#d2b184}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;min-height:100dvh}
@@ -2572,7 +2572,7 @@ return { factExtra: factExtra, topicPlan: topicPlan, fbStats: fbStats, fbReset: 
 </script><script>(function () {
 'use strict';
 /* TVA Quiz LAB — interfaccia. Nessun innerHTML: tutto via DOM/textContent. */
-var E = window.TVAQuiz, app = document.getElementById('app'), cur = { screen: 'home' }, timerH = null, tLeft = 20, audio = null;
+var E = window.TVAQuiz, app = document.getElementById('app'), cur = { screen: 'home' }, timerH = null, tLeft = 30, audio = null;
 var TAB = [['home', 'Gioca'], ['camp', 'Campagna'], ['coll', 'Collezione'], ['stats', 'Statistiche'], ['rules', 'Regole']];
 var NOTABS = { play: 1, result: 1, bossintro: 1 };
 var CI = { mcu: 'M12 2a10 10 0 100 20 10 10 0 000-20zm0 5a5 5 0 110 10 5 5 0 010-10z', fumetti: 'M3 4h18v12H11l-5 4v-4H3z', spider: 'M12 2v20M2 12h20M5 5l14 14M19 5L5 19', xmen: 'M4 3l16 18M20 3L4 21', avengers: 'M12 2l3 7 7 .8-5.3 4.7 1.6 7.5L12 18l-6.3 4 1.6-7.5L2 9.8 9 9z', multiverso: 'M12 12m-2 0a2 2 0 104 0 2 2 0 10-4 0M12 12c0-6 9-6 9 0s-12 8-12 0 7-10 12-4', nonmcu: 'M3 4h18v16H3zM3 9h18M3 15h18M8 4v16M16 4v16', animazione: 'M7 3l14 9-14 9z', mix: 'M12 2l9 5v10l-9 5-9-5V7z', catalogo: 'M4 4h16v16H4z', tva: 'M12 3l9 5-9 5-9-5zM3 13l9 5 9-5' };
@@ -2777,7 +2777,7 @@ function setup() {
   if (mode === 'cpu') { kids.push(h('div', { class: 'kicker' }, ['Avversario CPU'])); var cr = h('div', { class: 'row', role: 'group', 'aria-label': 'Livello CPU' }); [[1, 'Apprendista'], [2, 'Agente'], [3, 'Maestro'], [4, 'Leggenda']].forEach(function (c) { cr.appendChild(h('button', { type: 'button', class: 'chip' + (o.cpu === c[0] ? ' on' : ''), 'aria-pressed': o.cpu === c[0] ? 'true' : 'false', id: 'cpu-' + c[0], onclick: function () { o.cpu = c[0]; render(); } }, [c[1]])); }); kids.push(cr); }
   kids.push(h('div', { class: 'kicker' }, ['Lunghezza'])); var nr = h('div', { class: 'row', role: 'group', 'aria-label': 'Numero di domande' });
   [5, 10, 15, 20].forEach(function (n) { nr.appendChild(h('button', { type: 'button', class: 'chip' + (o.n === n ? ' on' : ''), 'aria-pressed': o.n === n ? 'true' : 'false', id: 'sn-' + n, onclick: function () { o.n = n; render(); } }, [n + ' domande' + (n < E.CFG.missionMin ? ' · no missione' : '')])); }); kids.push(nr);
-  var t = h('label', { class: 'row', style: 'min-height:44px' }, [h('input', { type: 'checkbox', id: 'optTimer', checked: st().settings.timer ? true : null, onchange: function (e) { st().settings.timer = e.target.checked; E.save(); }, style: 'width:22px;height:22px' }), 'Timer di 20 secondi per domanda (facoltativo)']);
+  var t = h('label', { class: 'row', style: 'min-height:44px' }, [h('input', { type: 'checkbox', id: 'optTimer', checked: st().settings.timer ? true : null, onchange: function (e) { st().settings.timer = e.target.checked; E.save(); }, style: 'width:22px;height:22px' }), 'Timer di 30 secondi per domanda (facoltativo)']);
   kids.push(t);
   kids.push(h('button', { type: 'button', class: 'btn pri', id: 'btnStart', onclick: function () { start(mode, o); } }, ['Inizia']));
   shell(kids); }
@@ -3033,7 +3033,7 @@ function question(g, q) {
   kids.push(fb); shell(kids, cat.color, { cls: 'q-screen' });
   if (locked) { fb.textContent = ''; fb.appendChild(learnPanel(q, ans.ok, ans.ok ? 'Esatto!' : 'Non esatto')); fb.appendChild(nextBtn()); var lw0 = document.getElementById('lifes'); if (lw0) lw0.remove(); }
   /* timer facoltativo, sospeso dalla pausa */
-  if (timerChip) { tLeft = 20; var tc = document.getElementById('timer'); var tick = function () { tLeft--; if (tc) tc.textContent = tLeft + 's'; if (tLeft <= 0) { clearTimer(); if (!locked) { var res = E.answer(g, { choice: -1, order: [], skipped: true }); if (res) { res.timeout = true; finishAns(res, function () { [].forEach.call(area.querySelectorAll('button,input'), function (b) { b.disabled = true; }); }); } } } }; timerH = setInterval(tick, 1000); resumeTimerFn = function () { if (!timerH && !locked && tLeft > 0) timerH = setInterval(tick, 1000); }; }
+  if (timerChip) { tLeft = 30; var tc = document.getElementById('timer'); var tick = function () { tLeft--; if (tc) tc.textContent = tLeft + 's'; if (tLeft <= 0) { clearTimer(); if (!locked) { var res = E.answer(g, { choice: -1, order: [], skipped: true }); if (res) { res.timeout = true; finishAns(res, function () { [].forEach.call(area.querySelectorAll('button,input'), function (b) { b.disabled = true; }); }); } } } }; timerH = setInterval(tick, 1000); resumeTimerFn = function () { if (!timerH && !locked && tLeft > 0) timerH = setInterval(tick, 1000); }; }
 }
 
 /* ---- campagna ---- */
@@ -3394,4 +3394,11 @@ boot();
   a.addEventListener('click', function (ev) { if (ev.defaultPrevented || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button) return; ev.preventDefault();
     try { sessionStorage.setItem('tva-return-home', '1'); } catch (e) {} location.replace(a.getAttribute('href') || '../'); }); })();
 </script>
-</body></html>
+<script id="quiz-arcade-route">/* Arcade: aperto da TVA Arcade (?from=arcade) il ritorno porta all'hub Arcade; senza il parametro il comportamento e' identico a prima. */
+(function () { try {
+  if (!/[?&]from=arcade(&|$)/.test(location.search)) return;
+  var a = document.getElementById('tvaBackApp'); if (!a) return;
+  var n = a.cloneNode(true); n.setAttribute('href', '../arcade/'); n.textContent = '\u2190 Torna a TVA Arcade'; n.setAttribute('aria-label', 'Torna a TVA Arcade');   /* clone: toglie il gestore «torna alla Home» */
+  a.parentNode.replaceChild(n, a);
+} catch (e) {} })();
+</script></body></html>

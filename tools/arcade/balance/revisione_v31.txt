@@ -1,0 +1,50 @@
+# id | modifiche (P potenza, I intelligenza, V velocità, R resistenza, S versatilità) | motivazione (fumetti Marvel, non MCU)
+thor|P=98 I=72 V=86 R=97 S=84|Odinson: sopravvive a colpi di livello cosmico, vola oltre la velocità della luce, millenni di battaglie, controllo di tempesta e dimensioni con Mjolnir
+hela|P=93 I=78 V=72 R=94 S=86|Regina di Hel: necromanzia e Necrospada, millenni di governo, resistenza divina
+odin|P=97 I=96 V=70 R=96 S=96|Padre degli Dei: Forza di Odino, magia di livello cosmico, rivale dei Celestiali
+surtur|I=70 R=97 S=68|Signore dei demoni di fuoco: Spada del Crepuscolo e capacità di distruggere i regni
+beta-ray-bill|P=92 V=80 S=72|Portatore di Stormbreaker: volo interstellare, forza paragonabile a Thor
+hercules|P=96 I=56 R=94|Principe del Potere, tra i più forti dei Panteon: forza e resistenza olimpiche
+loki|P=70 I=94 S=96|Dio dell'inganno: magia, mutaforma e illusioni di alto livello
+enchantress|P=56|Forza e resistenza asgardiane, oltre alla magia
+galactus|I=92 V=72 S=98|Divoratore di mondi: viaggia fra le galassie, Potere Cosmico, manipolazione della materia
+thanos|I=92 V=72 S=94|Titano: volo FTL, telepatia, energia cosmica, teletrasporto
+silver-surfer|P=96 I=74 S=90|Araldo con Potere Cosmico: manipola materia ed energia, viaggio FTL
+adam-warlock|P=92 I=82 S=92|Gemma dell'Anima e potere cosmico, resurrezione e manipolazione dell'anima
+black-bolt|V=70 R=78 S=58|Re degli Inumani: voce dagli effetti multipli, volo veloce, resistenza elevata
+ronan-the-accuser|P=92 R=90 S=68|Accusatore Supremo con l'Arma Universale
+annihilus|S=70|Controllo della Verga del Controllo Cosmico
+nova-richard-rider|S=76|Forza Nova: volo, controllo gravitazionale, rigenerazione
+gamora|P=70|Donna più letale della galassia: addestramento e forza superiore
+groot|S=74|Rigenerazione e controllo delle piante
+gorr-the-god-butcher|P=94 I=70 S=78|Macellaio degli Dei: Necrospada All-Black, uccide divinità
+namor|P=92 S=78|Atlantideo/mutante: forza, volo, comando del mare e telepatia acquatica
+ikaris|S=66|Eterno: energia cosmica e volo
+ghost-rider|S=80|Spirito della Vendetta: Fuoco infernale e Sguardo della Penitenza
+doctor-strange|P=84 V=66 R=72|Stregone Supremo: incantesimi di livello cosmico, viaggio astrale e portali
+scarlet-witch|P=96 I=72 R=66|Magia del caos: ha riscritto la realtà mutante
+dormammu|P=97 I=88 V=70 R=95 S=98|Signore della Dimensione Oscura: magia cosmica, teletrasporto, quasi indistruttibile
+mephisto|P=90 R=92 S=98|Signore degli inferi: manipolazione di anime e realtà
+doctor-voodoo|P=80 S=96|Stregone Supremo: loa Damballah e magia spirituale
+baron-mordo|P=70 I=90|Mago potenziato da Dormammu: fra i migliori stregoni terrestri
+doctor-doom|P=90 I=99 S=98|Scienza e magia unite: tecnologia, stregoneria, dio di Battleworld
+magik|P=84 R=72 S=94|Spada d'Anima, Limbo e teletrasporto
+magneto|P=96 V=74 R=86 S=94|Controllo dell'elettromagnetismo planetario: campi di forza, volo veloce
+professor-x|P=72 I=99 S=94|Telepatia di livello cosmico: controllo mentale, proiezione astrale
+jean-grey|P=86 S=92|Omega: telecinesi e telepatia immense
+phoenix|I=82 V=88 R=92 S=98|Ospite della Forza Fenice: potere cosmico e rinascita
+legion|P=93 R=66|Poteri multipli e realtà alterata (Omega)
+apocalypse|P=96 I=92 R=94 S=94|Primo mutante: forma molecolare, proiezione energetica
+storm|P=90 V=78 R=72 S=86|Mutante Omega: controllo del clima su scala planetaria
+cable|P=84 S=86|Telepatia e telecinesi di livello molto alto, tecnologia futuristica
+emma-frost|P=68 S=84|Telepatia di livello superiore e forma di diamante
+juggernaut|P=98 R=97|Potenziato da Cyttorak: inarrestabile
+wolverine|I=70|Centinaia d'anni di esperienza tattica
+rogue|P=86 V=80 R=86|Assorbe poteri: forza e volo permanenti di Ms. Marvel
+iceman|P=82 S=86|Mutante Omega: ghiaccio organico, forma di ghiaccio
+captain-marvel|P=94 V=90 R=90 S=78|Energia fotonica: viaggia a velocità FTL, assorbe energia
+hulk|I=44|Il più forte di tutti: forza illimitata con la rabbia
+captain-britain|P=90 S=82|Guardiano dell'Omniverso: forza e realtà
+invisible-woman|P=80|Campi di forza di livello superiore
+kingpin|P=70|Forza massima umana con grande massa: non superumana, il valore precedente lo equiparava a Luke Cage
+deadpool|R=86|Fattore di guarigione, non corpo realmente invulnerabile: subisce danni gravi prima di rigenerare

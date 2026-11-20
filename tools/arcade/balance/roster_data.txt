@@ -1,0 +1,121 @@
+# id|Nome|gruppo(A=Avengers e alleati,X=X-Men e mutanti,S=Spider-Verse e simbionti,C=Cosmici e altri)|versione|P,I,V,R,Vs (Potenza,Intelligenza,Velocità,Resistenza,Versatilità)|capacità|limiti
+iron-man|Iron Man|A|standard|78,96,80,78,92|armatura modulare, volo, repulsori, ingegno|dipende dall'armatura; corpo umano fragile
+captain-america|Captain America|A|standard|62,86,68,74,70|scudo, tattica, forza al picco umano|nessun potere a distanza; vulnerabile ai colpi cosmici
+thor|Thor|A|standard|98,72,86,97,84|Mjolnir, fulmini, forza divina|impulsivo; dipende da Mjolnir
+hulk|Hulk|A|standard|99,44,58,98,55|forza crescente con la rabbia, rigenerazione|strategia quasi nulla; poca agilità
+black-widow|Black Widow|A|standard|38,84,82,52,80|spionaggio, arti marziali, infiltrazione|nessun potere; corpo umano
+hawkeye|Hawkeye|A|standard|45,80,74,48,80|arco con frecce speciali, mira infallibile|portata e riserve di frecce limitate
+scarlet-witch|Scarlet Witch|A|standard|96,72,66,66,98|magia del caos, alterazione della realtà|instabile; fisicamente fragile
+vision|Vision|A|standard|82,90,78,88,84|densità variabile, volo, raggio solare|dipende dalla Gemma/energia; vulnerabile alla magia
+doctor-strange|Doctor Strange|A|standard|84,94,66,72,98|magia, portali, artefatti mistici|serve concentrazione e gesti; lento a reagire
+captain-marvel|Captain Marvel|A|standard|94,72,90,90,78|energia fotonica, volo supersonico|poco versatile fuori dall'energia
+black-panther|Black Panther|A|standard|66,92,80,70,74|tuta in vibranio, stratega e combattente|nessun potere cosmico
+ant-man|Ant-Man|A|standard|52,80,70,60,88|ridimensionamento, tecnologia Pym|molto fragile se colpito
+wasp|Wasp|A|standard|54,76,88,58,76|volo, riduzione, stinger bioelettrici|poca resistenza
+falcon|Falcon|A|standard|55,76,84,56,66|ali tecnologiche, volo, leadership|nessun potere intrinseco
+war-machine|War Machine|A|standard|76,74,62,80,80|armatura pesante, arsenale versatile|più lento di Iron Man; armatura-dipendente
+she-hulk|She-Hulk|A|standard|90,68,62,90,62|forza gamma, mantiene la lucidità|meno estrema di Hulk
+luke-cage|Luke Cage|A|standard|80,58,52,94,44|pelle impenetrabile, forza elevata|nessuna capacità a distanza
+iron-fist|Iron Fist|A|standard|72,64,80,70,74|pugno del chi, arti marziali|dipende dalla concentrazione
+daredevil|Daredevil|A|standard|52,78,78,58,70|senso radar, acrobazia, combattimento|nessun potere offensivo reale
+ms-marvel-kamala-khan|Ms. Marvel (Kamala Khan)|A|standard|66,66,70,64,86|ingrandimento e modifica del corpo|esperienza limitata
+quicksilver|Quicksilver|A|standard|54,62,98,60,60|velocità estrema|fragile e impulsivo
+hercules|Hercules|A|standard|96,56,70,94,56|forza semidivina, combattente leggendario|poca strategia
+rune-king-thor|Rune King Thor|A|trasformazione|99,76,88,97,96|Thor trasformato dal potere delle rune, magia e fulmini|forma estrema e rara; costo narrativo elevato
+winter-soldier|Winter Soldier|A|standard|64,72,80,66,74|braccio cibernetico, assassino addestrato|nessun potere cosmico
+captain-britain|Captain Britain|A|standard|90,66,84,82,82|forza e volo dall'Amuleto del Diritto|dipende dall'amuleto
+punisher|Punisher|A|standard|38,74,60,44,74|arsenale, pianificazione tattica|nessun potere; molto vulnerabile
+mr-fantastic|Mr. Fantastic|A|standard|56,99,58,82,94|corpo elastico, scienziato supremo|poco offensivo in sé
+invisible-woman|Invisible Woman|A|standard|80,74,62,78,90|campi di forza, invisibilità|richiede concentrazione
+human-torch|Human Torch|A|standard|82,56,88,60,70|fiamme, volo, nova|può esaurirsi; poca pianificazione
+the-thing|The Thing|A|standard|90,60,46,94,40|pelle rocciosa, forza enorme|lento e poco versatile
+wolverine|Wolverine|X|standard|68,70,76,94,60|artigli in adamantio, rigenerazione|portata ravvicinata
+jean-grey|Jean Grey|X|standard|86,80,70,64,92|telepatia e telecinesi|fisicamente delicata; instabile sotto stress
+cyclops|Cyclops|X|standard|72,84,66,56,62|raggi ottici, leader tattico|raggio non controllabile senza visore
+storm|Storm|X|standard|90,70,78,72,86|controllo del meteo, volo|dipende dalla concentrazione
+magneto|Magneto|X|standard|96,90,74,86,94|controllo del magnetismo|vulnerabile ai blocchi psichici
+professor-x|Professor X|X|standard|72,99,38,42,94|telepatia suprema|corpo fragile, quasi immobile
+rogue|Rogue|X|standard|86,60,80,86,80|forza, volo, assorbe i poteri|il contatto è necessario
+gambit|Gambit|X|standard|62,66,78,56,76|energia cinetica, carte esplosive|portata limitata, resistenza bassa
+nightcrawler|Nightcrawler|X|standard|48,68,88,56,78|teletrasporto, acrobazia|poca forza
+colossus|Colossus|X|standard|84,56,48,92,44|corpo d'acciaio organico, forza|lento, poco versatile
+mystique|Mystique|X|standard|44,82,70,56,90|metamorfosi, infiltrazione|poca forza diretta
+deadpool|Deadpool|X|standard|56,54,74,86,78|rigenerazione, maestria con le armi|imprevedibile
+cable|Cable|X|standard|84,82,66,70,86|telecinesi, tecnologia futura|virus tecno-organico limita le energie
+psylocke|Psylocke|X|standard|66,78,82,56,78|lama psichica, ninja|fragile
+apocalypse|Apocalypse|X|standard|96,92,66,94,94|mutazione dell'aspetto, immortalità|arrogante; superbo
+phoenix|Phoenix|X|trasformazione|99,82,88,92,98|Jean Grey con la Forza Fenice, potere cosmico|instabile e rara; la Forza può corrompere
+beast|Beast|X|standard|62,94,78,68,76|genio scientifico, agilità animale|poco potente senza tecnologia
+iceman|Iceman|X|standard|82,56,68,74,86|ghiaccio, scivoli, barriere|poca tattica
+archangel|Archangel|X|standard|68,62,90,66,66|ali metalliche, volo veloce|corpo delicato
+emma-frost|Emma Frost|X|standard|68,88,52,90,84|telepatia e forma di diamante|la forma diamante riduce la mobilità
+jubilee|Jubilee|X|standard|46,58,68,52,66|plasmoidi luminosi, agilità|potere limitato
+bishop|Bishop|X|standard|74,72,66,74,64|assorbe energia e la rilascia|dipende da quanta energia assorbe
+havok|Havok|X|standard|80,60,60,62,58|esplosioni di energia cosmica|poca precisione
+sabretooth|Sabretooth|X|standard|70,52,78,88,54|artigli, rigenerazione, istinto|poca strategia
+juggernaut|Juggernaut|X|standard|98,42,44,97,40|forza inarrestabile, quasi invulnerabile|lento e vulnerabile alla magia
+magik|Magik|X|standard|84,70,76,72,94|teletrasporto, spada dell'anima|potere dipendente da Limbo
+x-23|X-23|X|standard|58,60,82,86,62|artigli, rigenerazione, addestramento|meno potente del modello originale
+domino|Domino|X|standard|36,76,70,50,86|fortuna probabilistica, tiratrice|nessuna difesa speciale
+cannonball|Cannonball|X|standard|70,52,82,84,50|razzo blast-field, volo|direzione rigida
+legion|Legion|X|standard|93,72,56,66,99|molte personalità e poteri|instabile e imprevedibile
+spider-man-peter-parker|Spider-Man (Peter Parker)|S|standard|66,88,90,68,86|forza e riflessi, ragnatele, senso di ragno|poco resistente ai colpi forti
+spider-man-miles-morales|Spider-Man (Miles Morales)|S|standard|62,72,86,62,84|veleno bio-elettrico, camuffamento|meno esperto
+spider-gwen|Spider-Gwen|S|standard|60,76,90,56,76|acrobazia superiore, riflessi|difese basse
+venom|Venom|S|standard|82,62,74,84,76|simbionte, forza e rigenerazione|vulnerabile a suono e fuoco
+carnage|Carnage|S|standard|86,48,80,86,80|simbionte irregolare, armi organiche|caotico e poco tattico
+green-goblin|Green Goblin|S|standard|64,82,72,66,80|aliante, bombe zucca, tattica|follia e fragilità
+doctor-octopus|Doctor Octopus|S|standard|62,94,54,68,80|tentacoli meccanici, genio|lento
+mysterio|Mysterio|S|standard|38,86,52,42,90|illusioni e inganno|fragile quando l'illusione cade
+black-cat|Black Cat|S|standard|40,68,82,46,80|furto, fortuna alterata|combattente limitata
+knull|Knull|S|standard|99,82,74,96,98|dio dei simbionti, potere del nulla|rarissimo; forma finale estrema
+spider-man-2099|Spider-Man 2099|S|standard|68,90,90,68,84|tecnologia futura, riflessi|meno forza bruta
+spider-woman-jessica-drew|Spider-Woman (Jessica Drew)|S|standard|62,70,82,62,76|feromoni, bio-elettricità, volo|poteri contenuti
+scarlet-spider-ben-reilly|Scarlet Spider (Ben Reilly)|S|standard|68,76,86,70,72|clone di Peter, esperienza sul campo|nessun potere nuovo
+silk|Silk|S|standard|54,70,88,56,74|senso di ragno, agilità|forza ridotta
+agent-venom|Agent Venom|S|standard|78,70,76,78,74|simbionte disciplinato, addestramento|il simbionte può prevalere
+anti-venom|Anti-Venom|S|standard|80,60,70,82,70|guarigione e purificazione|nemici simbionti specifici
+kingpin|Kingpin|S|standard|70,92,34,76,70|forza e dominio criminale|molto lento
+sandman|Sandman|S|standard|84,52,54,88,86|corpo di sabbia, forme variabili|vulnerabile all'acqua
+electro|Electro|S|standard|86,58,80,66,76|elettricità, controllo dei campi|isolanti e acqua riducono l'efficacia
+kraven-the-hunter|Kraven the Hunter|S|standard|62,74,80,70,56|caccia, forza ed agilità|nessun potere speciale
+thanos|Thanos|C|standard|98,92,72,96,94|forza titanica, strategia cosmica|arroganza; sconfitto dall'eccesso
+loki|Loki|C|standard|70,94,74,64,96|inganno, magia e metamorfosi|poca forza pura
+hela|Hela|C|standard|93,78,72,94,86|magia della morte, forza asgardiana|limitata fuori da Hel
+doctor-doom|Doctor Doom|C|standard|90,99,60,90,98|scienza e magia, armatura|ego e rischi
+ultron|Ultron|C|standard|90,96,72,94,88|intelligenza artificiale, corpi multipli|dipende dall'hardware
+silver-surfer|Silver Surfer|C|standard|96,74,98,94,90|Potere Cosmico, tavola spaziale|più cauto che aggressivo
+galactus|Galactus|C|standard|99,92,72,99,98|divora mondi, energia cosmica|lento a reagire
+adam-warlock|Adam Warlock|C|standard|92,82,78,84,92|gemma dell'anima, potere cosmico|resistenza psicologica limitata
+star-lord|Star-Lord|C|standard|54,74,70,56,76|pistole elementali, leader carismatico|poteri modesti
+gamora|Gamora|C|standard|70,70,82,68,62|addestramento d'élite, spadaccina|nessun potere cosmico
+rocket-raccoon|Rocket Raccoon|C|standard|48,88,76,46,90|ingegneria, armi e piani|molto fragile
+groot|Groot|C|standard|80,38,40,90,74|corpo di legno, rigenerazione|lento e poco versatile
+drax|Drax|C|standard|88,40,56,90,38|forza smisurata, resistenza|nessuna strategia
+nebula|Nebula|C|standard|68,72,70,76,62|cyborg, combattimento letale|poca creatività
+mantis|Mantis|C|standard|48,74,66,52,80|empatia e controllo emotivo|debole in lotta
+shang-chi|Shang-Chi|C|standard|62,78,86,68,70|maestro di arti marziali, Dieci Anelli|nessun potere cosmico
+moon-knight|Moon Knight|C|standard|62,70,76,74,76|forza lunare, identità multiple|instabile
+ghost-rider|Ghost Rider|C|standard|86,52,78,86,80|fuoco infernale, sguardo di penitenza|dipende dallo spirito
+namor|Namor|C|standard|92,74,82,88,78|forza atlantidea, volo, comando|indebolito fuori dall'acqua
+sentry|Sentry|C|standard|99,56,92,97,88|potere di mille soli, Void|mente instabile
+zarathos|Zarathos|C|trasformazione|96,66,74,96,84|Spirito della Vendetta originario|fiamma incontrollata; forma rara
+nova-richard-rider|Nova (Richard Rider)|C|standard|76,66,84,72,76|Forza Nova, volo, resistenza|energia limitata
+beta-ray-bill|Beta Ray Bill|C|standard|92,68,80,88,72|martello Stormbreaker, combattente alieno|poche abilità extra
+black-bolt|Black Bolt|C|standard|96,66,70,78,58|voce distruttiva|non può parlare
+ronan-the-accuser|Ronan the Accuser|C|standard|92,70,60,90,68|martello cosmico, forza Kree|rigido nelle tattiche
+annihilus|Annihilus|C|standard|92,64,80,94,70|bacchetta del controllo cosmico|affidabile solo con la bacchetta
+gladiator-kallark|Gladiator (Kallark)|C|standard|94,58,90,92,66|forza e volo super-imperiali|poco strategico
+hyperion|Hyperion|C|standard|94,54,90,92,62|forza, volo e visione calorica|rigido nelle azioni
+odin|Odin|C|standard|97,96,70,96,96|Padre di Tutti, magia e forza|raramente impegnato direttamente
+doctor-voodoo|Doctor Voodoo|C|standard|80,80,62,68,96|magia dei loa, controllo dei fantasmi|potere richiede spiriti
+dormammu|Dormammu|C|standard|97,88,70,95,98|energia mistica, dimensione oscura|vincolato alla Dimensione Oscura
+baron-mordo|Baron Mordo|C|standard|70,90,52,60,88|magia nera, rivale di Strange|meno potente dei maghi supremi
+mephisto|Mephisto|C|standard|90,96,66,92,98|inganno infernale, magia|vincolato dai patti
+enchantress|Enchantress|C|standard|56,82,60,58,90|incantesimi, seduzione|fragile
+kang-the-conqueror|Kang the Conqueror|C|standard|68,98,70,80,94|tecnologia temporale, strategia|fragile senza apparati
+red-skull|Red Skull|C|standard|50,90,56,54,74|propaganda, complotti|nessun potere
+surtur|Surtur|C|standard|98,70,52,97,68|fuoco primordiale, spada Twilight|lento
+abomination|Abomination|C|standard|90,52,54,92,44|forza gamma, rigenerazione|poca strategia
+gorr-the-god-butcher|Gorr the God Butcher|C|standard|94,70,64,88,78|Necrospada, forza divina|obiettivo ossessivo
+ikaris|Ikaris|C|standard|90,66,90,86,66|raggi cosmici, volo, forza degli Eterni|poche difese mentali

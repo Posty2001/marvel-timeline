@@ -1,0 +1,3362 @@
+[
+{
+"id": "iron-man",
+"name": "Iron Man",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 78,
+"intelligence": 96,
+"speed": 80,
+"durability": 78,
+"versatility": 92
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "armatura modulare, volo, repulsori, ingegno",
+"lim": "dipende dall'armatura; corpo umano fragile",
+"nota": "Picco Intelligenza 96, punto debole Potenza 78. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/iron-man.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "captain-america",
+"name": "Captain America",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 62,
+"intelligence": 86,
+"speed": 68,
+"durability": 74,
+"versatility": 70
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "scudo, tattica, forza al picco umano",
+"lim": "nessun potere a distanza; vulnerabile ai colpi cosmici",
+"nota": "Picco Intelligenza 86, punto debole Potenza 62. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/captain-america.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "thor",
+"name": "Thor",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 98,
+"intelligence": 72,
+"speed": 86,
+"durability": 97,
+"versatility": 84
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "Mjolnir, fulmini, forza divina",
+"lim": "impulsivo; dipende da Mjolnir",
+"nota": "Picco Potenza 98, punto debole Intelligenza 72. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/thor.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "hulk",
+"name": "Hulk",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 99,
+"intelligence": 44,
+"speed": 58,
+"durability": 98,
+"versatility": 55
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "forza crescente con la rabbia, rigenerazione",
+"lim": "strategia quasi nulla; poca agilità",
+"nota": "Picco Potenza 99, punto debole Intelligenza 44. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/hulk.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "black-widow",
+"name": "Black Widow",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 38,
+"intelligence": 84,
+"speed": 82,
+"durability": 52,
+"versatility": 80
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "spionaggio, arti marziali, infiltrazione",
+"lim": "nessun potere; corpo umano",
+"nota": "Picco Intelligenza 84, punto debole Potenza 38. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/black-widow.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "hawkeye",
+"name": "Hawkeye",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 45,
+"intelligence": 80,
+"speed": 74,
+"durability": 48,
+"versatility": 80
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "arco con frecce speciali, mira infallibile",
+"lim": "portata e riserve di frecce limitate",
+"nota": "Picco Intelligenza 80, punto debole Potenza 45. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/hawkeye.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "scarlet-witch",
+"name": "Scarlet Witch",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 96,
+"intelligence": 72,
+"speed": 66,
+"durability": 66,
+"versatility": 98
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "magia del caos, alterazione della realtà",
+"lim": "instabile; fisicamente fragile",
+"nota": "Picco Versatilità 98, punto debole Velocità 66. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/scarlet-witch.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "vision",
+"name": "Vision",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 82,
+"intelligence": 90,
+"speed": 78,
+"durability": 88,
+"versatility": 84
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "densità variabile, volo, raggio solare",
+"lim": "dipende dalla Gemma/energia; vulnerabile alla magia",
+"nota": "Picco Intelligenza 90, punto debole Velocità 78. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/vision.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "doctor-strange",
+"name": "Doctor Strange",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 84,
+"intelligence": 94,
+"speed": 66,
+"durability": 72,
+"versatility": 98
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "magia, portali, artefatti mistici",
+"lim": "serve concentrazione e gesti; lento a reagire",
+"nota": "Picco Versatilità 98, punto debole Velocità 66. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/doctor-strange.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "captain-marvel",
+"name": "Captain Marvel",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 94,
+"intelligence": 72,
+"speed": 90,
+"durability": 90,
+"versatility": 78
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "energia fotonica, volo supersonico",
+"lim": "poco versatile fuori dall'energia",
+"nota": "Picco Potenza 94, punto debole Intelligenza 72. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/captain-marvel.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "black-panther",
+"name": "Black Panther",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 66,
+"intelligence": 92,
+"speed": 80,
+"durability": 70,
+"versatility": 74
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "tuta in vibranio, stratega e combattente",
+"lim": "nessun potere cosmico",
+"nota": "Picco Intelligenza 92, punto debole Potenza 66. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/black-panther.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "ant-man",
+"name": "Ant-Man",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 52,
+"intelligence": 80,
+"speed": 70,
+"durability": 60,
+"versatility": 88
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "ridimensionamento, tecnologia Pym",
+"lim": "molto fragile se colpito",
+"nota": "Picco Versatilità 88, punto debole Potenza 52. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/ant-man.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "wasp",
+"name": "Wasp",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 54,
+"intelligence": 76,
+"speed": 88,
+"durability": 58,
+"versatility": 76
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "volo, riduzione, stinger bioelettrici",
+"lim": "poca resistenza",
+"nota": "Picco Velocità 88, punto debole Potenza 54. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/wasp.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "falcon",
+"name": "Falcon",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 55,
+"intelligence": 76,
+"speed": 84,
+"durability": 56,
+"versatility": 66
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "ali tecnologiche, volo, leadership",
+"lim": "nessun potere intrinseco",
+"nota": "Picco Velocità 84, punto debole Potenza 55. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/falcon.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "war-machine",
+"name": "War Machine",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 76,
+"intelligence": 74,
+"speed": 62,
+"durability": 80,
+"versatility": 80
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "armatura pesante, arsenale versatile",
+"lim": "più lento di Iron Man; armatura-dipendente",
+"nota": "Picco Resistenza 80, punto debole Velocità 62. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/war-machine.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "she-hulk",
+"name": "She-Hulk",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 90,
+"intelligence": 68,
+"speed": 62,
+"durability": 90,
+"versatility": 62
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "forza gamma, mantiene la lucidità",
+"lim": "meno estrema di Hulk",
+"nota": "Picco Potenza 90, punto debole Velocità 62. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "luke-cage",
+"name": "Luke Cage",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 80,
+"intelligence": 58,
+"speed": 52,
+"durability": 94,
+"versatility": 44
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "pelle impenetrabile, forza elevata",
+"lim": "nessuna capacità a distanza",
+"nota": "Picco Resistenza 94, punto debole Versatilità 44. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "iron-fist",
+"name": "Iron Fist",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 72,
+"intelligence": 64,
+"speed": 80,
+"durability": 70,
+"versatility": 74
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "pugno del chi, arti marziali",
+"lim": "dipende dalla concentrazione",
+"nota": "Picco Velocità 80, punto debole Intelligenza 64. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "daredevil",
+"name": "Daredevil",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 52,
+"intelligence": 78,
+"speed": 78,
+"durability": 58,
+"versatility": 70
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "senso radar, acrobazia, combattimento",
+"lim": "nessun potere offensivo reale",
+"nota": "Picco Intelligenza 78, punto debole Potenza 52. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "ms-marvel-kamala-khan",
+"name": "Ms. Marvel (Kamala Khan)",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 66,
+"intelligence": 66,
+"speed": 70,
+"durability": 64,
+"versatility": 86
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "ingrandimento e modifica del corpo",
+"lim": "esperienza limitata",
+"nota": "Picco Versatilità 86, punto debole Resistenza 64. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "quicksilver",
+"name": "Quicksilver",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 54,
+"intelligence": 62,
+"speed": 98,
+"durability": 60,
+"versatility": 60
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "velocità estrema",
+"lim": "fragile e impulsivo",
+"nota": "Picco Velocità 98, punto debole Potenza 54. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "hercules",
+"name": "Hercules",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 96,
+"intelligence": 56,
+"speed": 70,
+"durability": 94,
+"versatility": 56
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "forza semidivina, combattente leggendario",
+"lim": "poca strategia",
+"nota": "Picco Potenza 96, punto debole Intelligenza 56. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "rune-king-thor",
+"name": "Rune King Thor",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 99,
+"intelligence": 76,
+"speed": 88,
+"durability": 97,
+"versatility": 96
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "trasformazione",
+"base": "thor",
+"cap": "Thor trasformato dal potere delle rune, magia e fulmini",
+"lim": "forma estrema e rara; costo narrativo elevato",
+"nota": "Picco Potenza 99, punto debole Intelligenza 76. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "winter-soldier",
+"name": "Winter Soldier",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 64,
+"intelligence": 72,
+"speed": 80,
+"durability": 66,
+"versatility": 74
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "braccio cibernetico, assassino addestrato",
+"lim": "nessun potere cosmico",
+"nota": "Picco Velocità 80, punto debole Potenza 64. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "captain-britain",
+"name": "Captain Britain",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 90,
+"intelligence": 66,
+"speed": 84,
+"durability": 82,
+"versatility": 82
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "forza e volo dall'Amuleto del Diritto",
+"lim": "dipende dall'amuleto",
+"nota": "Picco Potenza 90, punto debole Intelligenza 66. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "punisher",
+"name": "Punisher",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 38,
+"intelligence": 74,
+"speed": 60,
+"durability": 44,
+"versatility": 74
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "arsenale, pianificazione tattica",
+"lim": "nessun potere; molto vulnerabile",
+"nota": "Picco Intelligenza 74, punto debole Potenza 38. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "mr-fantastic",
+"name": "Mr. Fantastic",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 56,
+"intelligence": 99,
+"speed": 58,
+"durability": 82,
+"versatility": 94
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "corpo elastico, scienziato supremo",
+"lim": "poco offensivo in sé",
+"nota": "Picco Intelligenza 99, punto debole Potenza 56. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "invisible-woman",
+"name": "Invisible Woman",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 80,
+"intelligence": 74,
+"speed": 62,
+"durability": 78,
+"versatility": 90
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "campi di forza, invisibilità",
+"lim": "richiede concentrazione",
+"nota": "Picco Versatilità 90, punto debole Velocità 62. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "human-torch",
+"name": "Human Torch",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 82,
+"intelligence": 56,
+"speed": 88,
+"durability": 60,
+"versatility": 70
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "fiamme, volo, nova",
+"lim": "può esaurirsi; poca pianificazione",
+"nota": "Picco Velocità 88, punto debole Intelligenza 56. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "the-thing",
+"name": "The Thing",
+"group": "Avengers e alleati",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 90,
+"intelligence": 60,
+"speed": 46,
+"durability": 94,
+"versatility": 40
+},
+"tags": [
+"avengers-e-alleati"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "pelle rocciosa, forza enorme",
+"lim": "lento e poco versatile",
+"nota": "Picco Resistenza 94, punto debole Versatilità 40. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "wolverine",
+"name": "Wolverine",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 68,
+"intelligence": 70,
+"speed": 76,
+"durability": 94,
+"versatility": 60
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "artigli in adamantio, rigenerazione",
+"lim": "portata ravvicinata",
+"nota": "Picco Resistenza 94, punto debole Versatilità 60. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/wolverine.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "jean-grey",
+"name": "Jean Grey",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 86,
+"intelligence": 80,
+"speed": 70,
+"durability": 64,
+"versatility": 92
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "telepatia e telecinesi",
+"lim": "fisicamente delicata; instabile sotto stress",
+"nota": "Picco Versatilità 92, punto debole Resistenza 64. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/jean-grey.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "cyclops",
+"name": "Cyclops",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 72,
+"intelligence": 84,
+"speed": 66,
+"durability": 56,
+"versatility": 62
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "raggi ottici, leader tattico",
+"lim": "raggio non controllabile senza visore",
+"nota": "Picco Intelligenza 84, punto debole Resistenza 56. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/cyclops.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "storm",
+"name": "Storm",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 90,
+"intelligence": 70,
+"speed": 78,
+"durability": 72,
+"versatility": 86
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "controllo del meteo, volo",
+"lim": "dipende dalla concentrazione",
+"nota": "Picco Potenza 90, punto debole Intelligenza 70. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/storm.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "magneto",
+"name": "Magneto",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 96,
+"intelligence": 90,
+"speed": 74,
+"durability": 86,
+"versatility": 94
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "controllo del magnetismo",
+"lim": "vulnerabile ai blocchi psichici",
+"nota": "Picco Potenza 96, punto debole Velocità 74. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/magneto.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "professor-x",
+"name": "Professor X",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 72,
+"intelligence": 99,
+"speed": 38,
+"durability": 42,
+"versatility": 94
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "telepatia suprema",
+"lim": "corpo fragile, quasi immobile",
+"nota": "Picco Intelligenza 99, punto debole Velocità 38. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/professor-x.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "rogue",
+"name": "Rogue",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 86,
+"intelligence": 60,
+"speed": 80,
+"durability": 86,
+"versatility": 80
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "forza, volo, assorbe i poteri",
+"lim": "il contatto è necessario",
+"nota": "Picco Potenza 86, punto debole Intelligenza 60. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/rogue.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "gambit",
+"name": "Gambit",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 62,
+"intelligence": 66,
+"speed": 78,
+"durability": 56,
+"versatility": 76
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "energia cinetica, carte esplosive",
+"lim": "portata limitata, resistenza bassa",
+"nota": "Picco Velocità 78, punto debole Resistenza 56. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/gambit.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "nightcrawler",
+"name": "Nightcrawler",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 48,
+"intelligence": 68,
+"speed": 88,
+"durability": 56,
+"versatility": 78
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "teletrasporto, acrobazia",
+"lim": "poca forza",
+"nota": "Picco Velocità 88, punto debole Potenza 48. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/nightcrawler.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "colossus",
+"name": "Colossus",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 84,
+"intelligence": 56,
+"speed": 48,
+"durability": 92,
+"versatility": 44
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "corpo d'acciaio organico, forza",
+"lim": "lento, poco versatile",
+"nota": "Picco Resistenza 92, punto debole Versatilità 44. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/colossus.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "mystique",
+"name": "Mystique",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 44,
+"intelligence": 82,
+"speed": 70,
+"durability": 56,
+"versatility": 90
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "metamorfosi, infiltrazione",
+"lim": "poca forza diretta",
+"nota": "Picco Versatilità 90, punto debole Potenza 44. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/mystique.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "deadpool",
+"name": "Deadpool",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 56,
+"intelligence": 54,
+"speed": 74,
+"durability": 86,
+"versatility": 78
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "rigenerazione, maestria con le armi",
+"lim": "imprevedibile",
+"nota": "Picco Resistenza 86, punto debole Intelligenza 54. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/deadpool.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "cable",
+"name": "Cable",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 84,
+"intelligence": 82,
+"speed": 66,
+"durability": 70,
+"versatility": 86
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "telecinesi, tecnologia futura",
+"lim": "virus tecno-organico limita le energie",
+"nota": "Picco Versatilità 86, punto debole Velocità 66. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/cable.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "psylocke",
+"name": "Psylocke",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 66,
+"intelligence": 78,
+"speed": 82,
+"durability": 56,
+"versatility": 78
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "lama psichica, ninja",
+"lim": "fragile",
+"nota": "Picco Velocità 82, punto debole Resistenza 56. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/psylocke.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "apocalypse",
+"name": "Apocalypse",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 96,
+"intelligence": 92,
+"speed": 66,
+"durability": 94,
+"versatility": 94
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "mutazione dell'aspetto, immortalità",
+"lim": "arrogante; superbo",
+"nota": "Picco Potenza 96, punto debole Velocità 66. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/apocalypse.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "phoenix",
+"name": "Phoenix",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 99,
+"intelligence": 82,
+"speed": 88,
+"durability": 92,
+"versatility": 98
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "trasformazione",
+"base": "jean-grey",
+"cap": "Jean Grey con la Forza Fenice, potere cosmico",
+"lim": "instabile e rara; la Forza può corrompere",
+"nota": "Picco Potenza 99, punto debole Intelligenza 82. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "beast",
+"name": "Beast",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 62,
+"intelligence": 94,
+"speed": 78,
+"durability": 68,
+"versatility": 76
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "genio scientifico, agilità animale",
+"lim": "poco potente senza tecnologia",
+"nota": "Picco Intelligenza 94, punto debole Potenza 62. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "iceman",
+"name": "Iceman",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 82,
+"intelligence": 56,
+"speed": 68,
+"durability": 74,
+"versatility": 86
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "ghiaccio, scivoli, barriere",
+"lim": "poca tattica",
+"nota": "Picco Versatilità 86, punto debole Intelligenza 56. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "archangel",
+"name": "Archangel",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 68,
+"intelligence": 62,
+"speed": 90,
+"durability": 66,
+"versatility": 66
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "ali metalliche, volo veloce",
+"lim": "corpo delicato",
+"nota": "Picco Velocità 90, punto debole Intelligenza 62. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "emma-frost",
+"name": "Emma Frost",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 68,
+"intelligence": 88,
+"speed": 52,
+"durability": 90,
+"versatility": 84
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "telepatia e forma di diamante",
+"lim": "la forma diamante riduce la mobilità",
+"nota": "Picco Resistenza 90, punto debole Velocità 52. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "jubilee",
+"name": "Jubilee",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 46,
+"intelligence": 58,
+"speed": 68,
+"durability": 52,
+"versatility": 66
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "plasmoidi luminosi, agilità",
+"lim": "potere limitato",
+"nota": "Picco Velocità 68, punto debole Potenza 46. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "bishop",
+"name": "Bishop",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 74,
+"intelligence": 72,
+"speed": 66,
+"durability": 74,
+"versatility": 64
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "assorbe energia e la rilascia",
+"lim": "dipende da quanta energia assorbe",
+"nota": "Picco Potenza 74, punto debole Versatilità 64. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "havok",
+"name": "Havok",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 80,
+"intelligence": 60,
+"speed": 60,
+"durability": 62,
+"versatility": 58
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "esplosioni di energia cosmica",
+"lim": "poca precisione",
+"nota": "Picco Potenza 80, punto debole Versatilità 58. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "sabretooth",
+"name": "Sabretooth",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 70,
+"intelligence": 52,
+"speed": 78,
+"durability": 88,
+"versatility": 54
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "artigli, rigenerazione, istinto",
+"lim": "poca strategia",
+"nota": "Picco Resistenza 88, punto debole Intelligenza 52. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "juggernaut",
+"name": "Juggernaut",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 98,
+"intelligence": 42,
+"speed": 44,
+"durability": 97,
+"versatility": 40
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "forza inarrestabile, quasi invulnerabile",
+"lim": "lento e vulnerabile alla magia",
+"nota": "Picco Potenza 98, punto debole Versatilità 40. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "magik",
+"name": "Magik",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 84,
+"intelligence": 70,
+"speed": 76,
+"durability": 72,
+"versatility": 94
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "teletrasporto, spada dell'anima",
+"lim": "potere dipendente da Limbo",
+"nota": "Picco Versatilità 94, punto debole Intelligenza 70. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "x-23",
+"name": "X-23",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 58,
+"intelligence": 60,
+"speed": 82,
+"durability": 86,
+"versatility": 62
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "artigli, rigenerazione, addestramento",
+"lim": "meno potente del modello originale",
+"nota": "Picco Resistenza 86, punto debole Potenza 58. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "domino",
+"name": "Domino",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 36,
+"intelligence": 76,
+"speed": 70,
+"durability": 50,
+"versatility": 86
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "fortuna probabilistica, tiratrice",
+"lim": "nessuna difesa speciale",
+"nota": "Picco Versatilità 86, punto debole Potenza 36. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "cannonball",
+"name": "Cannonball",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 70,
+"intelligence": 52,
+"speed": 82,
+"durability": 84,
+"versatility": 50
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "razzo blast-field, volo",
+"lim": "direzione rigida",
+"nota": "Picco Resistenza 84, punto debole Versatilità 50. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "legion",
+"name": "Legion",
+"group": "X-Men e mutanti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 93,
+"intelligence": 72,
+"speed": 56,
+"durability": 66,
+"versatility": 99
+},
+"tags": [
+"x-men-e-mutanti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "molte personalità e poteri",
+"lim": "instabile e imprevedibile",
+"nota": "Picco Versatilità 99, punto debole Velocità 56. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "spider-man-peter-parker",
+"name": "Spider-Man (Peter Parker)",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 66,
+"intelligence": 88,
+"speed": 90,
+"durability": 68,
+"versatility": 86
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "forza e riflessi, ragnatele, senso di ragno",
+"lim": "poco resistente ai colpi forti",
+"nota": "Picco Velocità 90, punto debole Potenza 66. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/spider-man-peter-parker.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "spider-man-miles-morales",
+"name": "Spider-Man (Miles Morales)",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 62,
+"intelligence": 72,
+"speed": 86,
+"durability": 62,
+"versatility": 84
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "veleno bio-elettrico, camuffamento",
+"lim": "meno esperto",
+"nota": "Picco Velocità 86, punto debole Potenza 62. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/spider-man-miles-morales.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "spider-gwen",
+"name": "Spider-Gwen",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 60,
+"intelligence": 76,
+"speed": 90,
+"durability": 56,
+"versatility": 76
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "acrobazia superiore, riflessi",
+"lim": "difese basse",
+"nota": "Picco Velocità 90, punto debole Resistenza 56. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/spider-gwen.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "venom",
+"name": "Venom",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 82,
+"intelligence": 62,
+"speed": 74,
+"durability": 84,
+"versatility": 76
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "simbionte, forza e rigenerazione",
+"lim": "vulnerabile a suono e fuoco",
+"nota": "Picco Resistenza 84, punto debole Intelligenza 62. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/venom.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "carnage",
+"name": "Carnage",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 86,
+"intelligence": 48,
+"speed": 80,
+"durability": 86,
+"versatility": 80
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "simbionte irregolare, armi organiche",
+"lim": "caotico e poco tattico",
+"nota": "Picco Potenza 86, punto debole Intelligenza 48. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/carnage.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "green-goblin",
+"name": "Green Goblin",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 64,
+"intelligence": 82,
+"speed": 72,
+"durability": 66,
+"versatility": 80
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "aliante, bombe zucca, tattica",
+"lim": "follia e fragilità",
+"nota": "Picco Intelligenza 82, punto debole Potenza 64. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/green-goblin.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "doctor-octopus",
+"name": "Doctor Octopus",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 62,
+"intelligence": 94,
+"speed": 54,
+"durability": 68,
+"versatility": 80
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "tentacoli meccanici, genio",
+"lim": "lento",
+"nota": "Picco Intelligenza 94, punto debole Velocità 54. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/doctor-octopus.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "mysterio",
+"name": "Mysterio",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 38,
+"intelligence": 86,
+"speed": 52,
+"durability": 42,
+"versatility": 90
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "illusioni e inganno",
+"lim": "fragile quando l'illusione cade",
+"nota": "Picco Versatilità 90, punto debole Potenza 38. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/mysterio.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "black-cat",
+"name": "Black Cat",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 40,
+"intelligence": 68,
+"speed": 82,
+"durability": 46,
+"versatility": 80
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "furto, fortuna alterata",
+"lim": "combattente limitata",
+"nota": "Picco Velocità 82, punto debole Potenza 40. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/black-cat.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "knull",
+"name": "Knull",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 99,
+"intelligence": 82,
+"speed": 74,
+"durability": 96,
+"versatility": 98
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "dio dei simbionti, potere del nulla",
+"lim": "rarissimo; forma finale estrema",
+"nota": "Picco Potenza 99, punto debole Velocità 74. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/knull.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "spider-man-2099",
+"name": "Spider-Man 2099",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 68,
+"intelligence": 90,
+"speed": 90,
+"durability": 68,
+"versatility": 84
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "tecnologia futura, riflessi",
+"lim": "meno forza bruta",
+"nota": "Picco Intelligenza 90, punto debole Potenza 68. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "spider-woman-jessica-drew",
+"name": "Spider-Woman (Jessica Drew)",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 62,
+"intelligence": 70,
+"speed": 82,
+"durability": 62,
+"versatility": 76
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "feromoni, bio-elettricità, volo",
+"lim": "poteri contenuti",
+"nota": "Picco Velocità 82, punto debole Potenza 62. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "scarlet-spider-ben-reilly",
+"name": "Scarlet Spider (Ben Reilly)",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 68,
+"intelligence": 76,
+"speed": 86,
+"durability": 70,
+"versatility": 72
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "clone di Peter, esperienza sul campo",
+"lim": "nessun potere nuovo",
+"nota": "Picco Velocità 86, punto debole Potenza 68. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "silk",
+"name": "Silk",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 54,
+"intelligence": 70,
+"speed": 88,
+"durability": 56,
+"versatility": 74
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "senso di ragno, agilità",
+"lim": "forza ridotta",
+"nota": "Picco Velocità 88, punto debole Potenza 54. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "agent-venom",
+"name": "Agent Venom",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 78,
+"intelligence": 70,
+"speed": 76,
+"durability": 78,
+"versatility": 74
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "simbionte disciplinato, addestramento",
+"lim": "il simbionte può prevalere",
+"nota": "Picco Potenza 78, punto debole Intelligenza 70. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "anti-venom",
+"name": "Anti-Venom",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 80,
+"intelligence": 60,
+"speed": 70,
+"durability": 82,
+"versatility": 70
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "guarigione e purificazione",
+"lim": "nemici simbionti specifici",
+"nota": "Picco Resistenza 82, punto debole Intelligenza 60. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "kingpin",
+"name": "Kingpin",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 70,
+"intelligence": 92,
+"speed": 34,
+"durability": 76,
+"versatility": 70
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "forza e dominio criminale",
+"lim": "molto lento",
+"nota": "Picco Intelligenza 92, punto debole Velocità 34. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "sandman",
+"name": "Sandman",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 84,
+"intelligence": 52,
+"speed": 54,
+"durability": 88,
+"versatility": 86
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "corpo di sabbia, forme variabili",
+"lim": "vulnerabile all'acqua",
+"nota": "Picco Resistenza 88, punto debole Intelligenza 52. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "electro",
+"name": "Electro",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 86,
+"intelligence": 58,
+"speed": 80,
+"durability": 66,
+"versatility": 76
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "elettricità, controllo dei campi",
+"lim": "isolanti e acqua riducono l'efficacia",
+"nota": "Picco Potenza 86, punto debole Intelligenza 58. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "kraven-the-hunter",
+"name": "Kraven the Hunter",
+"group": "Spider-Verse e simbionti",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 62,
+"intelligence": 74,
+"speed": 80,
+"durability": 70,
+"versatility": 56
+},
+"tags": [
+"spider-verse-e-simbionti"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "caccia, forza ed agilità",
+"lim": "nessun potere speciale",
+"nota": "Picco Velocità 80, punto debole Versatilità 56. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "thanos",
+"name": "Thanos",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 98,
+"intelligence": 92,
+"speed": 72,
+"durability": 96,
+"versatility": 94
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "forza titanica, strategia cosmica",
+"lim": "arroganza; sconfitto dall'eccesso",
+"nota": "Picco Potenza 98, punto debole Velocità 72. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/thanos.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "loki",
+"name": "Loki",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 70,
+"intelligence": 94,
+"speed": 74,
+"durability": 64,
+"versatility": 96
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "inganno, magia e metamorfosi",
+"lim": "poca forza pura",
+"nota": "Picco Versatilità 96, punto debole Resistenza 64. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/loki.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "hela",
+"name": "Hela",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 93,
+"intelligence": 78,
+"speed": 72,
+"durability": 94,
+"versatility": 86
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "magia della morte, forza asgardiana",
+"lim": "limitata fuori da Hel",
+"nota": "Picco Resistenza 94, punto debole Velocità 72. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/hela.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "doctor-doom",
+"name": "Doctor Doom",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 90,
+"intelligence": 99,
+"speed": 60,
+"durability": 90,
+"versatility": 98
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "scienza e magia, armatura",
+"lim": "ego e rischi",
+"nota": "Picco Intelligenza 99, punto debole Velocità 60. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/doctor-doom.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "ultron",
+"name": "Ultron",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 90,
+"intelligence": 96,
+"speed": 72,
+"durability": 94,
+"versatility": 88
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "intelligenza artificiale, corpi multipli",
+"lim": "dipende dall'hardware",
+"nota": "Picco Intelligenza 96, punto debole Velocità 72. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/ultron.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "silver-surfer",
+"name": "Silver Surfer",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 96,
+"intelligence": 74,
+"speed": 98,
+"durability": 94,
+"versatility": 90
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "Potere Cosmico, tavola spaziale",
+"lim": "più cauto che aggressivo",
+"nota": "Picco Velocità 98, punto debole Intelligenza 74. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/silver-surfer.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "galactus",
+"name": "Galactus",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 99,
+"intelligence": 92,
+"speed": 72,
+"durability": 99,
+"versatility": 98
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "divora mondi, energia cosmica",
+"lim": "lento a reagire",
+"nota": "Picco Potenza 99, punto debole Velocità 72. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/galactus.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "adam-warlock",
+"name": "Adam Warlock",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 92,
+"intelligence": 82,
+"speed": 78,
+"durability": 84,
+"versatility": 92
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "gemma dell'anima, potere cosmico",
+"lim": "resistenza psicologica limitata",
+"nota": "Picco Potenza 92, punto debole Velocità 78. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/adam-warlock.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "star-lord",
+"name": "Star-Lord",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 54,
+"intelligence": 74,
+"speed": 70,
+"durability": 56,
+"versatility": 76
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "pistole elementali, leader carismatico",
+"lim": "poteri modesti",
+"nota": "Picco Versatilità 76, punto debole Potenza 54. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/star-lord.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "gamora",
+"name": "Gamora",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 70,
+"intelligence": 70,
+"speed": 82,
+"durability": 68,
+"versatility": 62
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "addestramento d'élite, spadaccina",
+"lim": "nessun potere cosmico",
+"nota": "Picco Velocità 82, punto debole Versatilità 62. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/gamora.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "rocket-raccoon",
+"name": "Rocket Raccoon",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 48,
+"intelligence": 88,
+"speed": 76,
+"durability": 46,
+"versatility": 90
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "ingegneria, armi e piani",
+"lim": "molto fragile",
+"nota": "Picco Versatilità 90, punto debole Resistenza 46. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/rocket-raccoon.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "groot",
+"name": "Groot",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 80,
+"intelligence": 38,
+"speed": 40,
+"durability": 90,
+"versatility": 74
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "corpo di legno, rigenerazione",
+"lim": "lento e poco versatile",
+"nota": "Picco Resistenza 90, punto debole Intelligenza 38. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/groot.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "drax",
+"name": "Drax",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 88,
+"intelligence": 40,
+"speed": 56,
+"durability": 90,
+"versatility": 38
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "forza smisurata, resistenza",
+"lim": "nessuna strategia",
+"nota": "Picco Resistenza 90, punto debole Versatilità 38. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/drax.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "nebula",
+"name": "Nebula",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 68,
+"intelligence": 72,
+"speed": 70,
+"durability": 76,
+"versatility": 62
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "cyborg, combattimento letale",
+"lim": "poca creatività",
+"nota": "Picco Resistenza 76, punto debole Versatilità 62. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/nebula.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "mantis",
+"name": "Mantis",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 48,
+"intelligence": 74,
+"speed": 66,
+"durability": 52,
+"versatility": 80
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "empatia e controllo emotivo",
+"lim": "debole in lotta",
+"nota": "Picco Versatilità 80, punto debole Potenza 48. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/mantis.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "shang-chi",
+"name": "Shang-Chi",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 62,
+"intelligence": 78,
+"speed": 86,
+"durability": 68,
+"versatility": 70
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "maestro di arti marziali, Dieci Anelli",
+"lim": "nessun potere cosmico",
+"nota": "Picco Velocità 86, punto debole Potenza 62. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/shang-chi.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "moon-knight",
+"name": "Moon Knight",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 62,
+"intelligence": 70,
+"speed": 76,
+"durability": 74,
+"versatility": 76
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "forza lunare, identità multiple",
+"lim": "instabile",
+"nota": "Picco Velocità 76, punto debole Potenza 62. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/moon-knight.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "ghost-rider",
+"name": "Ghost Rider",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 86,
+"intelligence": 52,
+"speed": 78,
+"durability": 86,
+"versatility": 80
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "fuoco infernale, sguardo di penitenza",
+"lim": "dipende dallo spirito",
+"nota": "Picco Potenza 86, punto debole Intelligenza 52. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/ghost-rider.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "namor",
+"name": "Namor",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 92,
+"intelligence": 74,
+"speed": 82,
+"durability": 88,
+"versatility": 78
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "forza atlantidea, volo, comando",
+"lim": "indebolito fuori dall'acqua",
+"nota": "Picco Potenza 92, punto debole Intelligenza 74. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/namor.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "sentry",
+"name": "Sentry",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 99,
+"intelligence": 56,
+"speed": 92,
+"durability": 97,
+"versatility": 88
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "potere di mille soli, Void",
+"lim": "mente instabile",
+"nota": "Picco Potenza 99, punto debole Intelligenza 56. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": "assets/draft_identity_cards/sentry.webp",
+"identity_card_kind": "typographic_placeholder_not_character_portrait",
+"origin": "roster_v1"
+},
+{
+"id": "zarathos",
+"name": "Zarathos",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 96,
+"intelligence": 66,
+"speed": 74,
+"durability": 96,
+"versatility": 84
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "trasformazione",
+"base": "ghost-rider",
+"cap": "Spirito della Vendetta originario",
+"lim": "fiamma incontrollata; forma rara",
+"nota": "Picco Potenza 96, punto debole Intelligenza 66. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "nova-richard-rider",
+"name": "Nova (Richard Rider)",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 76,
+"intelligence": 66,
+"speed": 84,
+"durability": 72,
+"versatility": 76
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "Forza Nova, volo, resistenza",
+"lim": "energia limitata",
+"nota": "Picco Velocità 84, punto debole Intelligenza 66. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "beta-ray-bill",
+"name": "Beta Ray Bill",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 92,
+"intelligence": 68,
+"speed": 80,
+"durability": 88,
+"versatility": 72
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "martello Stormbreaker, combattente alieno",
+"lim": "poche abilità extra",
+"nota": "Picco Potenza 92, punto debole Intelligenza 68. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "black-bolt",
+"name": "Black Bolt",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 96,
+"intelligence": 66,
+"speed": 70,
+"durability": 78,
+"versatility": 58
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "voce distruttiva",
+"lim": "non può parlare",
+"nota": "Picco Potenza 96, punto debole Versatilità 58. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "ronan-the-accuser",
+"name": "Ronan the Accuser",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 92,
+"intelligence": 70,
+"speed": 60,
+"durability": 90,
+"versatility": 68
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "martello cosmico, forza Kree",
+"lim": "rigido nelle tattiche",
+"nota": "Picco Potenza 92, punto debole Velocità 60. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "annihilus",
+"name": "Annihilus",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 92,
+"intelligence": 64,
+"speed": 80,
+"durability": 94,
+"versatility": 70
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "bacchetta del controllo cosmico",
+"lim": "affidabile solo con la bacchetta",
+"nota": "Picco Resistenza 94, punto debole Intelligenza 64. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "gladiator-kallark",
+"name": "Gladiator (Kallark)",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 94,
+"intelligence": 58,
+"speed": 90,
+"durability": 92,
+"versatility": 66
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "forza e volo super-imperiali",
+"lim": "poco strategico",
+"nota": "Picco Potenza 94, punto debole Intelligenza 58. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "hyperion",
+"name": "Hyperion",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 94,
+"intelligence": 54,
+"speed": 90,
+"durability": 92,
+"versatility": 62
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "forza, volo e visione calorica",
+"lim": "rigido nelle azioni",
+"nota": "Picco Potenza 94, punto debole Intelligenza 54. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "odin",
+"name": "Odin",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 97,
+"intelligence": 96,
+"speed": 70,
+"durability": 96,
+"versatility": 96
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "Padre di Tutti, magia e forza",
+"lim": "raramente impegnato direttamente",
+"nota": "Picco Potenza 97, punto debole Velocità 70. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "doctor-voodoo",
+"name": "Doctor Voodoo",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 80,
+"intelligence": 80,
+"speed": 62,
+"durability": 68,
+"versatility": 96
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "magia dei loa, controllo dei fantasmi",
+"lim": "potere richiede spiriti",
+"nota": "Picco Versatilità 96, punto debole Velocità 62. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "dormammu",
+"name": "Dormammu",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 97,
+"intelligence": 88,
+"speed": 70,
+"durability": 95,
+"versatility": 98
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "energia mistica, dimensione oscura",
+"lim": "vincolato alla Dimensione Oscura",
+"nota": "Picco Versatilità 98, punto debole Velocità 70. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "baron-mordo",
+"name": "Baron Mordo",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 70,
+"intelligence": 90,
+"speed": 52,
+"durability": 60,
+"versatility": 88
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "magia nera, rivale di Strange",
+"lim": "meno potente dei maghi supremi",
+"nota": "Picco Intelligenza 90, punto debole Velocità 52. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "mephisto",
+"name": "Mephisto",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 90,
+"intelligence": 96,
+"speed": 66,
+"durability": 92,
+"versatility": 98
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "inganno infernale, magia",
+"lim": "vincolato dai patti",
+"nota": "Picco Versatilità 98, punto debole Velocità 66. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "enchantress",
+"name": "Enchantress",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 56,
+"intelligence": 82,
+"speed": 60,
+"durability": 58,
+"versatility": 90
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "incantesimi, seduzione",
+"lim": "fragile",
+"nota": "Picco Versatilità 90, punto debole Potenza 56. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "kang-the-conqueror",
+"name": "Kang the Conqueror",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 68,
+"intelligence": 98,
+"speed": 70,
+"durability": 80,
+"versatility": 94
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "tecnologia temporale, strategia",
+"lim": "fragile senza apparati",
+"nota": "Picco Intelligenza 98, punto debole Potenza 68. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "red-skull",
+"name": "Red Skull",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 50,
+"intelligence": 90,
+"speed": 56,
+"durability": 54,
+"versatility": 74
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "propaganda, complotti",
+"lim": "nessun potere",
+"nota": "Picco Intelligenza 90, punto debole Potenza 50. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "surtur",
+"name": "Surtur",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 98,
+"intelligence": 70,
+"speed": 52,
+"durability": 97,
+"versatility": 68
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "fuoco primordiale, spada Twilight",
+"lim": "lento",
+"nota": "Picco Potenza 98, punto debole Velocità 52. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "abomination",
+"name": "Abomination",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 90,
+"intelligence": 52,
+"speed": 54,
+"durability": 92,
+"versatility": 44
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "forza gamma, rigenerazione",
+"lim": "poca strategia",
+"nota": "Picco Resistenza 92, punto debole Versatilità 44. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "gorr-the-god-butcher",
+"name": "Gorr the God Butcher",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 94,
+"intelligence": 70,
+"speed": 64,
+"durability": 88,
+"versatility": 78
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "Necrospada, forza divina",
+"lim": "obiettivo ossessivo",
+"nota": "Picco Potenza 94, punto debole Velocità 64. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+},
+{
+"id": "ikaris",
+"name": "Ikaris",
+"group": "Cosmici e altri",
+"continuity": "Marvel Comics / Terra-616 (interpretazione ludica; verificare eccezioni)",
+"portrait": null,
+"stats": {
+"power": 90,
+"intelligence": 66,
+"speed": 90,
+"durability": 86,
+"versatility": 66
+},
+"tags": [
+"cosmici-e-altri"
+],
+"synergies": [],
+"status": "playable_game_balance_v3",
+"balance_version": "v3.0-gameplay",
+"version": "standard",
+"base": null,
+"cap": "raggi cosmici, volo, forza degli Eterni",
+"lim": "poche difese mentali",
+"nota": "Picco Potenza 90, punto debole Intelligenza 66. Valori di gioco assegnati con la scala v3 (vedi CRITERI_VALORI.md), non misure canoniche.",
+"identity_card": null,
+"identity_card_kind": null,
+"origin": "roster_v3"
+}
+]

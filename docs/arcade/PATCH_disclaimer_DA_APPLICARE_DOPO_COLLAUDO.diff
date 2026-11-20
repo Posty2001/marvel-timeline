@@ -1,0 +1,7 @@
+--- int4/index.html
++++ int4+disclaimer/index.html
+@@ -13859,3 +13859,3 @@
+       <summary class="dash-missioni-summary">&#127917; Credits</summary>
+-      <p class="info-text">Marvel, i personaggi, i film e le serie citati sono propriet&agrave; di Marvel Studios e The Walt Disney Company. Questo &egrave; un progetto non ufficiale e non commerciale, realizzato da un fan, senza alcuna affiliazione con Marvel o Disney.</p>
++      <p class="info-text">Marvel, i personaggi, i film e le serie citati sono propriet&agrave; di Marvel Studios e The Walt Disney Company. Questo &egrave; un progetto non commerciale, realizzato da un fan. <b>Progetto fan non ufficiale, non affiliato, sponsorizzato o approvato da Marvel o Disney.</b></p>
+       <p class="info-text m3-tmdb-credit"><img class="m3-tmdb-logo" src="assets/images/tmdb-logo.svg" alt="TMDB" height="12" hidden onload="this.hidden=false" onerror="this.remove()"> Le locandine, quando disponibili, provengono da <a href="https://www.themoviedb.org" target="_blank" rel="noopener noreferrer">TMDB</a>. This product uses the TMDB API but is not endorsed or certified by TMDB.</p>

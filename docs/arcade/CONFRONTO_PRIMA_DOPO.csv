@@ -1,0 +1,121 @@
+﻿ID;Nome;Versione;Potenza prima;Intelligenza prima;Velocità prima;Resistenza prima;Versatilità prima;Potenza dopo;Intelligenza dopo;Velocità dopo;Resistenza dopo;Versatilità dopo;Modificata
+iron-man;Iron Man;standard;78;96;80;78;92;78;96;80;78;92;no
+captain-america;Captain America;standard;62;86;68;74;70;62;86;68;74;70;no
+thor;Thor;standard;97;68;82;95;80;98;72;86;97;84;sì
+hulk;Hulk;standard;99;40;58;98;55;99;44;58;98;55;sì
+black-widow;Black Widow;standard;38;84;82;52;80;38;84;82;52;80;no
+hawkeye;Hawkeye;standard;45;80;74;48;80;45;80;74;48;80;no
+scarlet-witch;Scarlet Witch;standard;92;72;66;60;98;96;72;66;66;98;sì
+vision;Vision;standard;82;90;78;88;84;82;90;78;88;84;no
+doctor-strange;Doctor Strange;standard;80;94;58;66;98;84;94;66;72;98;sì
+captain-marvel;Captain Marvel;standard;92;72;88;88;72;94;72;90;90;78;sì
+black-panther;Black Panther;standard;66;92;80;70;74;66;92;80;70;74;no
+ant-man;Ant-Man;standard;52;80;70;60;88;52;80;70;60;88;no
+wasp;Wasp;standard;54;76;88;58;76;54;76;88;58;76;no
+falcon;Falcon;standard;55;76;84;56;66;55;76;84;56;66;no
+war-machine;War Machine;standard;76;74;62;80;80;76;74;62;80;80;no
+she-hulk;She-Hulk;standard;90;68;62;90;62;90;68;62;90;62;no
+luke-cage;Luke Cage;standard;80;58;52;94;44;80;58;52;94;44;no
+iron-fist;Iron Fist;standard;72;64;80;70;74;72;64;80;70;74;no
+daredevil;Daredevil;standard;52;78;78;58;70;52;78;78;58;70;no
+ms-marvel-kamala-khan;Ms. Marvel (Kamala Khan);standard;66;66;70;64;86;66;66;70;64;86;no
+quicksilver;Quicksilver;standard;54;62;98;60;60;54;62;98;60;60;no
+hercules;Hercules;standard;94;52;70;92;56;96;56;70;94;56;sì
+rune-king-thor;Rune King Thor;trasformazione;99;76;88;97;96;99;76;88;97;96;no
+winter-soldier;Winter Soldier;standard;64;72;80;66;74;64;72;80;66;74;no
+captain-britain;Captain Britain;standard;86;66;84;82;78;90;66;84;82;82;sì
+punisher;Punisher;standard;38;74;60;44;74;38;74;60;44;74;no
+mr-fantastic;Mr. Fantastic;standard;56;99;58;82;94;56;99;58;82;94;no
+invisible-woman;Invisible Woman;standard;76;74;62;78;90;80;74;62;78;90;sì
+human-torch;Human Torch;standard;82;56;88;60;70;82;56;88;60;70;no
+the-thing;The Thing;standard;90;60;46;94;40;90;60;46;94;40;no
+wolverine;Wolverine;standard;68;66;76;94;60;68;70;76;94;60;sì
+jean-grey;Jean Grey;standard;82;80;70;64;88;86;80;70;64;92;sì
+cyclops;Cyclops;standard;72;84;66;56;62;72;84;66;56;62;no
+storm;Storm;standard;86;70;76;70;82;90;70;78;72;86;sì
+magneto;Magneto;standard;94;90;70;82;92;96;90;74;86;94;sì
+professor-x;Professor X;standard;66;98;38;42;90;72;99;38;42;94;sì
+rogue;Rogue;standard;82;60;76;82;80;86;60;80;86;80;sì
+gambit;Gambit;standard;62;66;78;56;76;62;66;78;56;76;no
+nightcrawler;Nightcrawler;standard;48;68;88;56;78;48;68;88;56;78;no
+colossus;Colossus;standard;84;56;48;92;44;84;56;48;92;44;no
+mystique;Mystique;standard;44;82;70;56;90;44;82;70;56;90;no
+deadpool;Deadpool;standard;56;54;74;90;78;56;54;74;86;78;sì
+cable;Cable;standard;80;82;66;70;82;84;82;66;70;86;sì
+psylocke;Psylocke;standard;66;78;82;56;78;66;78;82;56;78;no
+apocalypse;Apocalypse;standard;94;90;66;92;90;96;92;66;94;94;sì
+phoenix;Phoenix;trasformazione;99;78;82;88;96;99;82;88;92;98;sì
+beast;Beast;standard;62;94;78;68;76;62;94;78;68;76;no
+iceman;Iceman;standard;76;56;68;74;82;82;56;68;74;86;sì
+archangel;Archangel;standard;68;62;90;66;66;68;62;90;66;66;no
+emma-frost;Emma Frost;standard;66;88;52;90;82;68;88;52;90;84;sì
+jubilee;Jubilee;standard;46;58;68;52;66;46;58;68;52;66;no
+bishop;Bishop;standard;74;72;66;74;64;74;72;66;74;64;no
+havok;Havok;standard;80;60;60;62;58;80;60;60;62;58;no
+sabretooth;Sabretooth;standard;70;52;78;88;54;70;52;78;88;54;no
+juggernaut;Juggernaut;standard;96;42;44;96;40;98;42;44;97;40;sì
+magik;Magik;standard;82;70;76;70;92;84;70;76;72;94;sì
+x-23;X-23;standard;58;60;82;86;62;58;60;82;86;62;no
+domino;Domino;standard;36;76;70;50;86;36;76;70;50;86;no
+cannonball;Cannonball;standard;70;52;82;84;50;70;52;82;84;50;no
+legion;Legion;standard;90;72;56;62;99;93;72;56;66;99;sì
+spider-man-peter-parker;Spider-Man (Peter Parker);standard;66;88;90;68;86;66;88;90;68;86;no
+spider-man-miles-morales;Spider-Man (Miles Morales);standard;62;72;86;62;84;62;72;86;62;84;no
+spider-gwen;Spider-Gwen;standard;60;76;90;56;76;60;76;90;56;76;no
+venom;Venom;standard;82;62;74;84;76;82;62;74;84;76;no
+carnage;Carnage;standard;86;48;80;86;80;86;48;80;86;80;no
+green-goblin;Green Goblin;standard;64;82;72;66;80;64;82;72;66;80;no
+doctor-octopus;Doctor Octopus;standard;62;94;54;68;80;62;94;54;68;80;no
+mysterio;Mysterio;standard;38;86;52;42;90;38;86;52;42;90;no
+black-cat;Black Cat;standard;40;68;82;46;80;40;68;82;46;80;no
+knull;Knull;standard;99;82;74;96;98;99;82;74;96;98;no
+spider-man-2099;Spider-Man 2099;standard;68;90;90;68;84;68;90;90;68;84;no
+spider-woman-jessica-drew;Spider-Woman (Jessica Drew);standard;62;70;82;62;76;62;70;82;62;76;no
+scarlet-spider-ben-reilly;Scarlet Spider (Ben Reilly);standard;68;76;86;70;72;68;76;86;70;72;no
+silk;Silk;standard;54;70;88;56;74;54;70;88;56;74;no
+agent-venom;Agent Venom;standard;78;70;76;78;74;78;70;76;78;74;no
+anti-venom;Anti-Venom;standard;80;60;70;82;70;80;60;70;82;70;no
+kingpin;Kingpin;standard;76;92;34;76;70;70;92;34;76;70;sì
+sandman;Sandman;standard;84;52;54;88;86;84;52;54;88;86;no
+electro;Electro;standard;86;58;80;66;76;86;58;80;66;76;no
+kraven-the-hunter;Kraven the Hunter;standard;62;74;80;70;56;62;74;80;70;56;no
+thanos;Thanos;standard;98;90;66;96;90;98;92;72;96;94;sì
+loki;Loki;standard;66;92;74;64;94;70;94;74;64;96;sì
+hela;Hela;standard;90;74;70;92;82;93;78;72;94;86;sì
+doctor-doom;Doctor Doom;standard;88;98;60;90;96;90;99;60;90;98;sì
+ultron;Ultron;standard;90;96;72;94;88;90;96;72;94;88;no
+silver-surfer;Silver Surfer;standard;94;70;98;94;84;96;74;98;94;90;sì
+galactus;Galactus;standard;99;88;54;99;92;99;92;72;99;98;sì
+adam-warlock;Adam Warlock;standard;90;78;78;84;86;92;82;78;84;92;sì
+star-lord;Star-Lord;standard;54;74;70;56;76;54;74;70;56;76;no
+gamora;Gamora;standard;66;70;82;68;62;70;70;82;68;62;sì
+rocket-raccoon;Rocket Raccoon;standard;48;88;76;46;90;48;88;76;46;90;no
+groot;Groot;standard;80;38;40;90;70;80;38;40;90;74;sì
+drax;Drax;standard;88;40;56;90;38;88;40;56;90;38;no
+nebula;Nebula;standard;68;72;70;76;62;68;72;70;76;62;no
+mantis;Mantis;standard;48;74;66;52;80;48;74;66;52;80;no
+shang-chi;Shang-Chi;standard;62;78;86;68;70;62;78;86;68;70;no
+moon-knight;Moon Knight;standard;62;70;76;74;76;62;70;76;74;76;no
+ghost-rider;Ghost Rider;standard;86;52;78;86;76;86;52;78;86;80;sì
+namor;Namor;standard;90;74;82;88;74;92;74;82;88;78;sì
+sentry;Sentry;standard;99;56;92;97;88;99;56;92;97;88;no
+zarathos;Zarathos;trasformazione;96;66;74;96;84;96;66;74;96;84;no
+nova-richard-rider;Nova (Richard Rider);standard;76;66;84;72;72;76;66;84;72;76;sì
+beta-ray-bill;Beta Ray Bill;standard;90;68;76;88;70;92;68;80;88;72;sì
+black-bolt;Black Bolt;standard;96;66;62;68;50;96;66;70;78;58;sì
+ronan-the-accuser;Ronan the Accuser;standard;90;70;60;88;64;92;70;60;90;68;sì
+annihilus;Annihilus;standard;92;64;80;94;66;92;64;80;94;70;sì
+gladiator-kallark;Gladiator (Kallark);standard;94;58;90;92;66;94;58;90;92;66;no
+hyperion;Hyperion;standard;94;54;90;92;62;94;54;90;92;62;no
+odin;Odin;standard;94;94;66;94;92;97;96;70;96;96;sì
+doctor-voodoo;Doctor Voodoo;standard;72;80;62;68;94;80;80;62;68;96;sì
+dormammu;Dormammu;standard;95;84;64;92;94;97;88;70;95;98;sì
+baron-mordo;Baron Mordo;standard;62;88;52;60;88;70;90;52;60;88;sì
+mephisto;Mephisto;standard;86;96;66;88;96;90;96;66;92;98;sì
+enchantress;Enchantress;standard;52;82;60;58;90;56;82;60;58;90;sì
+kang-the-conqueror;Kang the Conqueror;standard;68;98;70;80;94;68;98;70;80;94;no
+red-skull;Red Skull;standard;50;90;56;54;74;50;90;56;54;74;no
+surtur;Surtur;standard;98;66;52;96;62;98;70;52;97;68;sì
+abomination;Abomination;standard;90;52;54;92;44;90;52;54;92;44;no
+gorr-the-god-butcher;Gorr the God Butcher;standard;92;66;64;88;70;94;70;64;88;78;sì
+ikaris;Ikaris;standard;90;66;90;86;62;90;66;90;86;66;sì

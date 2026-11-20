@@ -1,0 +1,126 @@
+﻿ID;Nome;Statistica;Prima;Dopo;Delta;Motivazione (fumetti Marvel)
+thor;Thor;Potenza;97;98;1;Odinson: sopravvive a colpi di livello cosmico, vola oltre la velocità della luce, millenni di battaglie, controllo di tempesta e dimensioni con Mjolnir
+thor;Thor;Intelligenza;68;72;4;Odinson: sopravvive a colpi di livello cosmico, vola oltre la velocità della luce, millenni di battaglie, controllo di tempesta e dimensioni con Mjolnir
+thor;Thor;Velocità;82;86;4;Odinson: sopravvive a colpi di livello cosmico, vola oltre la velocità della luce, millenni di battaglie, controllo di tempesta e dimensioni con Mjolnir
+thor;Thor;Resistenza;95;97;2;Odinson: sopravvive a colpi di livello cosmico, vola oltre la velocità della luce, millenni di battaglie, controllo di tempesta e dimensioni con Mjolnir
+thor;Thor;Versatilità;80;84;4;Odinson: sopravvive a colpi di livello cosmico, vola oltre la velocità della luce, millenni di battaglie, controllo di tempesta e dimensioni con Mjolnir
+hulk;Hulk;Intelligenza;40;44;4;Il più forte di tutti: forza illimitata con la rabbia
+scarlet-witch;Scarlet Witch;Potenza;92;96;4;Magia del caos: ha riscritto la realtà mutante
+scarlet-witch;Scarlet Witch;Resistenza;60;66;6;Magia del caos: ha riscritto la realtà mutante
+doctor-strange;Doctor Strange;Potenza;80;84;4;Stregone Supremo: incantesimi di livello cosmico, viaggio astrale e portali
+doctor-strange;Doctor Strange;Velocità;58;66;8;Stregone Supremo: incantesimi di livello cosmico, viaggio astrale e portali
+doctor-strange;Doctor Strange;Resistenza;66;72;6;Stregone Supremo: incantesimi di livello cosmico, viaggio astrale e portali
+captain-marvel;Captain Marvel;Potenza;92;94;2;Energia fotonica: viaggia a velocità FTL, assorbe energia
+captain-marvel;Captain Marvel;Velocità;88;90;2;Energia fotonica: viaggia a velocità FTL, assorbe energia
+captain-marvel;Captain Marvel;Resistenza;88;90;2;Energia fotonica: viaggia a velocità FTL, assorbe energia
+captain-marvel;Captain Marvel;Versatilità;72;78;6;Energia fotonica: viaggia a velocità FTL, assorbe energia
+hercules;Hercules;Potenza;94;96;2;Principe del Potere, tra i più forti dei Panteon: forza e resistenza olimpiche
+hercules;Hercules;Intelligenza;52;56;4;Principe del Potere, tra i più forti dei Panteon: forza e resistenza olimpiche
+hercules;Hercules;Resistenza;92;94;2;Principe del Potere, tra i più forti dei Panteon: forza e resistenza olimpiche
+captain-britain;Captain Britain;Potenza;86;90;4;Guardiano dell'Omniverso: forza e realtà
+captain-britain;Captain Britain;Versatilità;78;82;4;Guardiano dell'Omniverso: forza e realtà
+invisible-woman;Invisible Woman;Potenza;76;80;4;Campi di forza di livello superiore
+wolverine;Wolverine;Intelligenza;66;70;4;Centinaia d'anni di esperienza tattica
+jean-grey;Jean Grey;Potenza;82;86;4;Omega: telecinesi e telepatia immense
+jean-grey;Jean Grey;Versatilità;88;92;4;Omega: telecinesi e telepatia immense
+storm;Storm;Potenza;86;90;4;Mutante Omega: controllo del clima su scala planetaria
+storm;Storm;Velocità;76;78;2;Mutante Omega: controllo del clima su scala planetaria
+storm;Storm;Resistenza;70;72;2;Mutante Omega: controllo del clima su scala planetaria
+storm;Storm;Versatilità;82;86;4;Mutante Omega: controllo del clima su scala planetaria
+magneto;Magneto;Potenza;94;96;2;Controllo dell'elettromagnetismo planetario: campi di forza, volo veloce
+magneto;Magneto;Velocità;70;74;4;Controllo dell'elettromagnetismo planetario: campi di forza, volo veloce
+magneto;Magneto;Resistenza;82;86;4;Controllo dell'elettromagnetismo planetario: campi di forza, volo veloce
+magneto;Magneto;Versatilità;92;94;2;Controllo dell'elettromagnetismo planetario: campi di forza, volo veloce
+professor-x;Professor X;Potenza;66;72;6;Telepatia di livello cosmico: controllo mentale, proiezione astrale
+professor-x;Professor X;Intelligenza;98;99;1;Telepatia di livello cosmico: controllo mentale, proiezione astrale
+professor-x;Professor X;Versatilità;90;94;4;Telepatia di livello cosmico: controllo mentale, proiezione astrale
+rogue;Rogue;Potenza;82;86;4;Assorbe poteri: forza e volo permanenti di Ms. Marvel
+rogue;Rogue;Velocità;76;80;4;Assorbe poteri: forza e volo permanenti di Ms. Marvel
+rogue;Rogue;Resistenza;82;86;4;Assorbe poteri: forza e volo permanenti di Ms. Marvel
+deadpool;Deadpool;Resistenza;90;86;-4;Fattore di guarigione, non corpo realmente invulnerabile: subisce danni gravi prima di rigenerare
+cable;Cable;Potenza;80;84;4;Telepatia e telecinesi di livello molto alto, tecnologia futuristica
+cable;Cable;Versatilità;82;86;4;Telepatia e telecinesi di livello molto alto, tecnologia futuristica
+apocalypse;Apocalypse;Potenza;94;96;2;Primo mutante: forma molecolare, proiezione energetica
+apocalypse;Apocalypse;Intelligenza;90;92;2;Primo mutante: forma molecolare, proiezione energetica
+apocalypse;Apocalypse;Resistenza;92;94;2;Primo mutante: forma molecolare, proiezione energetica
+apocalypse;Apocalypse;Versatilità;90;94;4;Primo mutante: forma molecolare, proiezione energetica
+phoenix;Phoenix;Intelligenza;78;82;4;Ospite della Forza Fenice: potere cosmico e rinascita
+phoenix;Phoenix;Velocità;82;88;6;Ospite della Forza Fenice: potere cosmico e rinascita
+phoenix;Phoenix;Resistenza;88;92;4;Ospite della Forza Fenice: potere cosmico e rinascita
+phoenix;Phoenix;Versatilità;96;98;2;Ospite della Forza Fenice: potere cosmico e rinascita
+iceman;Iceman;Potenza;76;82;6;Mutante Omega: ghiaccio organico, forma di ghiaccio
+iceman;Iceman;Versatilità;82;86;4;Mutante Omega: ghiaccio organico, forma di ghiaccio
+emma-frost;Emma Frost;Potenza;66;68;2;Telepatia di livello superiore e forma di diamante
+emma-frost;Emma Frost;Versatilità;82;84;2;Telepatia di livello superiore e forma di diamante
+juggernaut;Juggernaut;Potenza;96;98;2;Potenziato da Cyttorak: inarrestabile
+juggernaut;Juggernaut;Resistenza;96;97;1;Potenziato da Cyttorak: inarrestabile
+magik;Magik;Potenza;82;84;2;Spada d'Anima, Limbo e teletrasporto
+magik;Magik;Resistenza;70;72;2;Spada d'Anima, Limbo e teletrasporto
+magik;Magik;Versatilità;92;94;2;Spada d'Anima, Limbo e teletrasporto
+legion;Legion;Potenza;90;93;3;Poteri multipli e realtà alterata (Omega)
+legion;Legion;Resistenza;62;66;4;Poteri multipli e realtà alterata (Omega)
+kingpin;Kingpin;Potenza;76;70;-6;Forza massima umana con grande massa: non superumana, il valore precedente lo equiparava a Luke Cage
+thanos;Thanos;Intelligenza;90;92;2;Titano: volo FTL, telepatia, energia cosmica, teletrasporto
+thanos;Thanos;Velocità;66;72;6;Titano: volo FTL, telepatia, energia cosmica, teletrasporto
+thanos;Thanos;Versatilità;90;94;4;Titano: volo FTL, telepatia, energia cosmica, teletrasporto
+loki;Loki;Potenza;66;70;4;Dio dell'inganno: magia, mutaforma e illusioni di alto livello
+loki;Loki;Intelligenza;92;94;2;Dio dell'inganno: magia, mutaforma e illusioni di alto livello
+loki;Loki;Versatilità;94;96;2;Dio dell'inganno: magia, mutaforma e illusioni di alto livello
+hela;Hela;Potenza;90;93;3;Regina di Hel: necromanzia e Necrospada, millenni di governo, resistenza divina
+hela;Hela;Intelligenza;74;78;4;Regina di Hel: necromanzia e Necrospada, millenni di governo, resistenza divina
+hela;Hela;Velocità;70;72;2;Regina di Hel: necromanzia e Necrospada, millenni di governo, resistenza divina
+hela;Hela;Resistenza;92;94;2;Regina di Hel: necromanzia e Necrospada, millenni di governo, resistenza divina
+hela;Hela;Versatilità;82;86;4;Regina di Hel: necromanzia e Necrospada, millenni di governo, resistenza divina
+doctor-doom;Doctor Doom;Potenza;88;90;2;Scienza e magia unite: tecnologia, stregoneria, dio di Battleworld
+doctor-doom;Doctor Doom;Intelligenza;98;99;1;Scienza e magia unite: tecnologia, stregoneria, dio di Battleworld
+doctor-doom;Doctor Doom;Versatilità;96;98;2;Scienza e magia unite: tecnologia, stregoneria, dio di Battleworld
+silver-surfer;Silver Surfer;Potenza;94;96;2;Araldo con Potere Cosmico: manipola materia ed energia, viaggio FTL
+silver-surfer;Silver Surfer;Intelligenza;70;74;4;Araldo con Potere Cosmico: manipola materia ed energia, viaggio FTL
+silver-surfer;Silver Surfer;Versatilità;84;90;6;Araldo con Potere Cosmico: manipola materia ed energia, viaggio FTL
+galactus;Galactus;Intelligenza;88;92;4;Divoratore di mondi: viaggia fra le galassie, Potere Cosmico, manipolazione della materia
+galactus;Galactus;Velocità;54;72;18;Divoratore di mondi: viaggia fra le galassie, Potere Cosmico, manipolazione della materia
+galactus;Galactus;Versatilità;92;98;6;Divoratore di mondi: viaggia fra le galassie, Potere Cosmico, manipolazione della materia
+adam-warlock;Adam Warlock;Potenza;90;92;2;Gemma dell'Anima e potere cosmico, resurrezione e manipolazione dell'anima
+adam-warlock;Adam Warlock;Intelligenza;78;82;4;Gemma dell'Anima e potere cosmico, resurrezione e manipolazione dell'anima
+adam-warlock;Adam Warlock;Versatilità;86;92;6;Gemma dell'Anima e potere cosmico, resurrezione e manipolazione dell'anima
+gamora;Gamora;Potenza;66;70;4;Donna più letale della galassia: addestramento e forza superiore
+groot;Groot;Versatilità;70;74;4;Rigenerazione e controllo delle piante
+ghost-rider;Ghost Rider;Versatilità;76;80;4;Spirito della Vendetta: Fuoco infernale e Sguardo della Penitenza
+namor;Namor;Potenza;90;92;2;Atlantideo/mutante: forza, volo, comando del mare e telepatia acquatica
+namor;Namor;Versatilità;74;78;4;Atlantideo/mutante: forza, volo, comando del mare e telepatia acquatica
+nova-richard-rider;Nova (Richard Rider);Versatilità;72;76;4;Forza Nova: volo, controllo gravitazionale, rigenerazione
+beta-ray-bill;Beta Ray Bill;Potenza;90;92;2;Portatore di Stormbreaker: volo interstellare, forza paragonabile a Thor
+beta-ray-bill;Beta Ray Bill;Velocità;76;80;4;Portatore di Stormbreaker: volo interstellare, forza paragonabile a Thor
+beta-ray-bill;Beta Ray Bill;Versatilità;70;72;2;Portatore di Stormbreaker: volo interstellare, forza paragonabile a Thor
+black-bolt;Black Bolt;Velocità;62;70;8;Re degli Inumani: voce dagli effetti multipli, volo veloce, resistenza elevata
+black-bolt;Black Bolt;Resistenza;68;78;10;Re degli Inumani: voce dagli effetti multipli, volo veloce, resistenza elevata
+black-bolt;Black Bolt;Versatilità;50;58;8;Re degli Inumani: voce dagli effetti multipli, volo veloce, resistenza elevata
+ronan-the-accuser;Ronan the Accuser;Potenza;90;92;2;Accusatore Supremo con l'Arma Universale
+ronan-the-accuser;Ronan the Accuser;Resistenza;88;90;2;Accusatore Supremo con l'Arma Universale
+ronan-the-accuser;Ronan the Accuser;Versatilità;64;68;4;Accusatore Supremo con l'Arma Universale
+annihilus;Annihilus;Versatilità;66;70;4;Controllo della Verga del Controllo Cosmico
+odin;Odin;Potenza;94;97;3;Padre degli Dei: Forza di Odino, magia di livello cosmico, rivale dei Celestiali
+odin;Odin;Intelligenza;94;96;2;Padre degli Dei: Forza di Odino, magia di livello cosmico, rivale dei Celestiali
+odin;Odin;Velocità;66;70;4;Padre degli Dei: Forza di Odino, magia di livello cosmico, rivale dei Celestiali
+odin;Odin;Resistenza;94;96;2;Padre degli Dei: Forza di Odino, magia di livello cosmico, rivale dei Celestiali
+odin;Odin;Versatilità;92;96;4;Padre degli Dei: Forza di Odino, magia di livello cosmico, rivale dei Celestiali
+doctor-voodoo;Doctor Voodoo;Potenza;72;80;8;Stregone Supremo: loa Damballah e magia spirituale
+doctor-voodoo;Doctor Voodoo;Versatilità;94;96;2;Stregone Supremo: loa Damballah e magia spirituale
+dormammu;Dormammu;Potenza;95;97;2;Signore della Dimensione Oscura: magia cosmica, teletrasporto, quasi indistruttibile
+dormammu;Dormammu;Intelligenza;84;88;4;Signore della Dimensione Oscura: magia cosmica, teletrasporto, quasi indistruttibile
+dormammu;Dormammu;Velocità;64;70;6;Signore della Dimensione Oscura: magia cosmica, teletrasporto, quasi indistruttibile
+dormammu;Dormammu;Resistenza;92;95;3;Signore della Dimensione Oscura: magia cosmica, teletrasporto, quasi indistruttibile
+dormammu;Dormammu;Versatilità;94;98;4;Signore della Dimensione Oscura: magia cosmica, teletrasporto, quasi indistruttibile
+baron-mordo;Baron Mordo;Potenza;62;70;8;Mago potenziato da Dormammu: fra i migliori stregoni terrestri
+baron-mordo;Baron Mordo;Intelligenza;88;90;2;Mago potenziato da Dormammu: fra i migliori stregoni terrestri
+mephisto;Mephisto;Potenza;86;90;4;Signore degli inferi: manipolazione di anime e realtà
+mephisto;Mephisto;Resistenza;88;92;4;Signore degli inferi: manipolazione di anime e realtà
+mephisto;Mephisto;Versatilità;96;98;2;Signore degli inferi: manipolazione di anime e realtà
+enchantress;Enchantress;Potenza;52;56;4;Forza e resistenza asgardiane, oltre alla magia
+surtur;Surtur;Intelligenza;66;70;4;Signore dei demoni di fuoco: Spada del Crepuscolo e capacità di distruggere i regni
+surtur;Surtur;Resistenza;96;97;1;Signore dei demoni di fuoco: Spada del Crepuscolo e capacità di distruggere i regni
+surtur;Surtur;Versatilità;62;68;6;Signore dei demoni di fuoco: Spada del Crepuscolo e capacità di distruggere i regni
+gorr-the-god-butcher;Gorr the God Butcher;Potenza;92;94;2;Macellaio degli Dei: Necrospada All-Black, uccide divinità
+gorr-the-god-butcher;Gorr the God Butcher;Intelligenza;66;70;4;Macellaio degli Dei: Necrospada All-Black, uccide divinità
+gorr-the-god-butcher;Gorr the God Butcher;Versatilità;70;78;8;Macellaio degli Dei: Necrospada All-Black, uccide divinità
+ikaris;Ikaris;Versatilità;62;66;4;Eterno: energia cosmica e volo
