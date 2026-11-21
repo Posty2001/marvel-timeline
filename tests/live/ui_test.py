@@ -82,13 +82,14 @@ with sync_playwright() as pw:
     go_live(pg)
     ok('ui: 4 sotto-schede', pg.locator('.tvl-stab').count() == 4)
     ok('ui: stato dati mostra data di aggiornamento', 'aggiornato' in txt(pg, '.tvl-status').lower())
-    for w in (320, 375, 414):
+    for w in (320, 340, 360, 375, 414):
         pg.set_viewport_size({'width': w, 'height': 800}); pg.wait_for_timeout(250)
         ok('mobile %dpx: nessun overflow orizzontale (calendario)' % w, overflow(pg) <= 0, overflow(pg))
         for s in ('trl', 'avv', 'pref', 'cal'):
             pg.evaluate("(s)=>document.getElementById('tvlSub-'+s).click()", s); pg.wait_for_timeout(120)
             if overflow(pg) > 0: ok('mobile %dpx: overflow in %s' % (w, s), False, overflow(pg))
         ok('mobile %dpx: schede Centrale a 5 colonne senza overflow' % w, pg.evaluate("()=>[...document.querySelectorAll('.cen-nav .cen-tab')].every(b=>b.getBoundingClientRect().right<=window.innerWidth+0.5)"))
+        ok('mobile %dpx: nessuna etichetta delle 5 schede Centrale troncata (Osservatorio intera)' % w, pg.evaluate("()=>[...document.querySelectorAll('.cen-nav .cen-tab-l')].every(l=>l.scrollWidth<=l.clientWidth)"))
         ok('mobile %dpx: tap target sotto-schede >= 44px' % w, pg.evaluate("()=>[...document.querySelectorAll('.tvl-stab')].every(b=>b.getBoundingClientRect().height>=43)"))
     pg.set_viewport_size({'width': 390, 'height': 820})
     # ---------- 2. calendario ----------

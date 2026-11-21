@@ -5024,9 +5024,10 @@ html:not(#rs) #homeHub .m34-mgo { margin-left: auto; min-height: 2.25rem; paddin
 <style id="pre5-css">
 /* LIVE-CSS-BEGIN: TVA Live (TEST) - sezione "Live" della Centrale TVA. Solo stili con prefisso .tvl-; nessuna regola globale. */
 .cen-nav:has(#cenTab-live) { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.2rem; padding: 0.25rem; }
-.cen-nav:has(#cenTab-live) .cen-tab-l { font-size: 0.46rem; }
-@media (min-width: 360px) { .cen-nav:has(#cenTab-live) .cen-tab-l { font-size: 0.52rem; } }
-@media (min-width: 420px) { .cen-nav:has(#cenTab-live) .cen-tab-l { font-size: 0.58rem; } }
+.cen-nav:has(#cenTab-live) .cen-tab { padding-left: 0; padding-right: 0; }
+.cen-nav:has(#cenTab-live) .cen-tab-l { font-size: 0.46rem; letter-spacing: -0.05em; }   /* 5 schede: «Osservatorio» intera anche a 320 px, senza ridurre il corpo del testo */
+@media (min-width: 360px) { .cen-nav:has(#cenTab-live) .cen-tab-l { font-size: 0.52rem; letter-spacing: -0.04em; } }
+@media (min-width: 420px) { .cen-nav:has(#cenTab-live) .cen-tab-l { font-size: 0.58rem; letter-spacing: -0.01em; } }
 .cen-tab { position: relative; }
 .tvl-badge { position: absolute; top: 0.1rem; right: 0.15rem; min-width: 1.05rem; height: 1.05rem; padding: 0 0.25rem; border-radius: 999px; background: #c8503c; color: #fff; font: 700 0.62rem/1.05rem 'IBM Plex Mono', monospace; text-align: center; box-sizing: border-box; pointer-events: none; }
 #appTabbar .app-tab .tvl-badge { top: 0.2rem; right: 0.9rem; }
