@@ -1,7 +1,7 @@
 # Branch `test/tva-archives` — versione TEST
 
 - **Base:** `main` = `82a73c7` (produzione, build `20261112-1905-rifinitura`, congelata). `main` non è modificato.
-- **Build TEST:** `20261120-2230-episodes3` (build precedente: `20261117-1900-arcade-draft31r`).
+- **Build TEST:** `20261121-1700-episodes4` (build precedente: `20261117-1900-arcade-draft31r`).
 - **Pubblicazione:** il branch NON è pubblicato né su GitHub Pages né su Netlify; il TEST si carica a mano su Netlify.
 
 ## Differenze rispetto alla produzione
@@ -25,4 +25,4 @@ Invariati: Rankings, Friends 2.0, Tessera 3.0, Atlante, Timeline, dati, Firebase
 - I test in `tests/arcade/` usano un server locale sulla cartella del progetto (porta 8790 negli script).
 
 ## TVA Episodes — dati
-`assets/episodes/` contiene il catalogo reale TMDB (artifact «TMDB sync» #5 + #6): 47 schede serie con dati, 496 episodi principali + 2 speciali (WandaVision). 073 The Defenders = TMDB 62285 (8 episodi). 137 (Daredevil: Born Again S3) e 138 (X-Men '97 S3) sono «in attesa» (stagione non ancora su TMDB, nessun dato inventato). Episodi con data futura: «In arrivo», non votabili. Attribuzione: sezione Credits + pannello episodi; il logo ufficiale TMDB va messo, non modificato, in `assets/images/tmdb-logo.svg` (NON ancora presente: finche' manca resta il testo con link). Rigenerazione: workflow «TMDB sync (manuale)» con `solo_episodi`. Verifica: `python3 tests/episodes/data_test.py` e `ep_test.py`.
+`assets/episodes/` contiene il catalogo reale TMDB (artifact «TMDB sync» #5 + #6): 47 schede serie con dati, 496 episodi principali + 2 speciali (WandaVision). 073 The Defenders = TMDB 62285 (8 episodi). 137 (Daredevil: Born Again S3) e 138 (X-Men '97 S3) sono «in attesa» (stagione non ancora su TMDB, nessun dato inventato). Episodi con data futura: «In arrivo», non votabili. Attribuzione: sezione Credits + pannello episodi; logo TMDB (variante «blue short», byte-identico all'originale: sha256 8e7b30f73a40…95f6c = hash nel nome del file ufficiale su themoviedb.org) in `assets/images/tmdb-logo.svg`, copiato da GitHub lhomD/movies. Rigenerazione: workflow «TMDB sync (manuale)» con `solo_episodi`. Verifica: `python3 tests/episodes/data_test.py` e `ep_test.py`.
