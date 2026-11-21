@@ -2,6 +2,7 @@ name: TMDB sync (manuale)
 
 # Solo avvio manuale. Non modifica il repository, non fa deploy, non tocca Firebase.
 # Risultati: artifact scaricabile "tmdb-sync" (tmdb_map.json + tmdb_review.json).
+# TVA Live Fase 0: con solo_live_probe=true esegue solo la sonda di lettura (tools/live_probe.py) e produce l artifact "live-probe".
 on:
   workflow_dispatch:
     inputs:
@@ -9,6 +10,10 @@ on:
         description: Genera solo il catalogo episodi (senza rifare l abbinamento delle locandine)
         type: boolean
         default: true
+      solo_live_probe:
+        description: TVA Live Fase 0 - esegui SOLO la sonda in lettura sulle fonti (artifact live-probe) e salta il resto
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -38,19 +43,42 @@ jobs:
           echo "Secret presente."
 
       - name: Sincronizza con TMDB
-        if: ${{ !inputs.solo_episodi }}
+        if: ${{ !inputs.solo_episodi && !inputs.solo_live_probe }}
         env:
           TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: python3 tools/tmdb_sync.py
 
       - name: Genera catalogo episodi (TVA Episodes)
+        if: ${{ !inputs.solo_live_probe }}
         env:
           TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: python3 tools/tmdb_episodes.py
 
+      - name: TVA Live Fase 0 - sonda fonti (sola lettura)
+        if: ${{ inputs.solo_live_probe }}
+        env:
+          TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: python3 tools/live_probe.py --out live-probe-out
+
+      - name: Riepilogo sonda nel job
+        if: ${{ always() && inputs.solo_live_probe }}
+        run: |
+          if [ -f live-probe-out/REPORT.md ]; then cat live-probe-out/REPORT.md >> "$GITHUB_STEP_SUMMARY"; fi
+
+      - name: Salva i risultati della sonda
+        if: ${{ always() && inputs.solo_live_probe }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-probe
+          path: live-probe-out/
+          if-no-files-found: warn
+          retention-days: 30
+
       - name: Salva i risultati
+        if: ${{ !inputs.solo_live_probe }}
         uses: actions/upload-artifact@v4
         with:
           name: tmdb-sync
