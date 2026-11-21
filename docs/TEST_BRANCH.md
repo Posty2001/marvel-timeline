@@ -1,7 +1,7 @@
 # Branch `test/tva-archives` — versione TEST
 
 - **Base:** `main` = `82a73c7` (produzione, build `20261112-1905-rifinitura`, congelata). `main` non è modificato.
-- **Build TEST:** `20261121-1830-episodes5` (build precedente: `20261117-1900-arcade-draft31r`).
+- **Build TEST:** `20261121-1930-episodes6` (build precedente: `20261117-1900-arcade-draft31r`).
 - **Pubblicazione:** il branch NON è pubblicato né su GitHub Pages né su Netlify; il TEST si carica a mano su Netlify.
 
 ## Differenze rispetto alla produzione
@@ -26,3 +26,6 @@ Invariati: Rankings, Friends 2.0, Tessera 3.0, Atlante, Timeline, dati, Firebase
 
 ## TVA Episodes — dati
 `assets/episodes/` contiene il catalogo reale TMDB (artifact «TMDB sync» #5 + #6): 47 schede serie con dati, 496 episodi principali + 2 speciali (WandaVision). 073 The Defenders = TMDB 62285 (8 episodi). 137 (Daredevil: Born Again S3) e 138 (X-Men '97 S3) sono «in attesa» (stagione non ancora su TMDB, nessun dato inventato). Episodi con data futura: «In arrivo», non votabili. Attribuzione: sezione Credits + pannello episodi; logo TMDB (variante «blue short», byte-identico all'originale: sha256 8e7b30f73a40…95f6c = hash nel nome del file ufficiale su themoviedb.org) in `assets/images/tmdb-logo.svg`, copiato da GitHub lhomD/movies. Rigenerazione: workflow «TMDB sync (manuale)» con `solo_episodi`. Verifica: `python3 tests/episodes/data_test.py` e `ep_test.py`.
+
+## TVA Episodes ↔ casella «visto» della Timeline
+Per scheda (solo i suoi episodi, speciali esclusi, «usciti» = senza data futura): episodio visto e tutti gli usciti visti → scheda completata; episodio tolto → scheda non completata; scheda completata a mano → tutti gli usciti visti; scheda tolta a mano con tutto visto → visti azzerati (voti/recensioni intatti), con visti parziali nessuna modifica; all'apertura del pannello: scheda già completata senza episodi visti → segnati tutti, tutti visti e scheda vuota → scheda completata. Un episodio che esce dopo non annulla mai il completamento. Test: `python3 tests/episodes/link_test.py`.
