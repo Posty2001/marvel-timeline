@@ -5022,6 +5022,75 @@ html:not(#rs) #homeHub .m34-mgo { margin-left: auto; min-height: 2.25rem; paddin
 /* FX-CSS-END */
 </style>
 <style id="pre5-css">
+/* LIVE-CSS-BEGIN: TVA Live (TEST) - sezione "Live" della Centrale TVA. Solo stili con prefisso .tvl-; nessuna regola globale. */
+.cen-nav:has(#cenTab-live) { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.2rem; padding: 0.25rem; }
+.cen-nav:has(#cenTab-live) .cen-tab-l { font-size: 0.46rem; }
+@media (min-width: 360px) { .cen-nav:has(#cenTab-live) .cen-tab-l { font-size: 0.52rem; } }
+@media (min-width: 420px) { .cen-nav:has(#cenTab-live) .cen-tab-l { font-size: 0.58rem; } }
+.cen-tab { position: relative; }
+.tvl-badge { position: absolute; top: 0.1rem; right: 0.15rem; min-width: 1.05rem; height: 1.05rem; padding: 0 0.25rem; border-radius: 999px; background: #c8503c; color: #fff; font: 700 0.62rem/1.05rem 'IBM Plex Mono', monospace; text-align: center; box-sizing: border-box; pointer-events: none; }
+#appTabbar .app-tab .tvl-badge { top: 0.2rem; right: 0.9rem; }
+.tvl { color: rgba(239,228,201,0.9); }
+.tvl *, .tvl *::before, .tvl *::after { box-sizing: border-box; }
+.tvl-status { margin: 0 0 0.6rem; padding: 0.55rem 0.7rem; border: 1px solid rgba(210,177,132,0.22); border-radius: 12px; background: rgba(15,13,10,0.6); font-size: 0.74rem; line-height: 1.4; color: rgba(239,228,201,0.7); }
+.tvl-status b { color: #D2B184; font-family: 'IBM Plex Mono', monospace; font-size: 0.64rem; letter-spacing: 0.08em; }
+.tvl-status.tvl-warn { border-color: rgba(224,164,88,0.5); }
+.tvl-sub { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.3rem; margin: 0 0 0.7rem; }
+.tvl-stab { position: relative; min-height: 2.75rem; padding: 0.3rem 0.15rem; border: 1px solid rgba(210,177,132,0.22); border-radius: 10px; background: rgba(15,13,10,0.55); color: rgba(239,228,201,0.75); font: inherit; font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; letter-spacing: 0.02em; text-transform: uppercase; cursor: pointer; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.tvl-stab.tvl-on { background: #D2B184; color: #1a120c; border-color: #D2B184; }
+.tvl-stab .tvl-badge { top: 0.1rem; right: 0.1rem; }
+.tvl button:focus-visible, .tvl a:focus-visible { outline: 2px solid #D2B184; outline-offset: 2px; }
+.tvl-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0 0 0.7rem; }
+.tvl-chip { min-height: 2.2rem; padding: 0.25rem 0.7rem; border: 1px solid rgba(210,177,132,0.3); border-radius: 999px; background: transparent; color: rgba(239,228,201,0.8); font: inherit; font-size: 0.74rem; cursor: pointer; }
+.tvl-chip[aria-pressed="true"] { background: rgba(143,211,192,0.16); border-color: #8fd3c0; color: #bfe9dc; }
+.tvl-hero { margin: 0 0 0.8rem; padding: 0.8rem; border: 1px solid rgba(210,177,132,0.35); border-radius: 14px; background: linear-gradient(135deg, rgba(110,30,36,0.4), rgba(15,13,10,0.8)); display: grid; grid-template-columns: 4.2rem minmax(0, 1fr); gap: 0.75rem; align-items: start; }
+.tvl-kick { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; color: #D2B184; text-transform: uppercase; }
+.tvl-hero h3 { margin: 0.15rem 0 0.2rem; font-size: 1.05rem; line-height: 1.2; overflow-wrap: anywhere; }
+.tvl-count { font-size: 1.35rem; font-weight: 700; color: #bfe9dc; }
+.tvl-month { margin: 0.9rem 0 0.35rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: #D2B184; }
+.tvl-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.tvl-row { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 0.6rem; padding: 0.6rem; border: 1px solid rgba(210,177,132,0.2); border-radius: 12px; background: rgba(20,17,13,0.75); }
+.tvl-poster { width: 3rem; aspect-ratio: 2 / 3; border-radius: 6px; background: #2a231b; object-fit: cover; display: block; max-width: 100%; }
+.tvl-hero .tvl-poster { width: 4.2rem; }
+.tvl-ph { width: 3rem; aspect-ratio: 2 / 3; border-radius: 6px; border: 1px dashed rgba(210,177,132,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: rgba(210,177,132,0.5); }
+.tvl-hero .tvl-ph { width: 4.2rem; }
+.tvl-main { min-width: 0; display: flex; flex-direction: column; gap: 0.25rem; }
+.tvl-title { margin: 0; font-size: 0.95rem; line-height: 1.25; font-weight: 600; overflow-wrap: anywhere; }
+.tvl-meta { font-size: 0.74rem; color: rgba(239,228,201,0.65); display: flex; flex-wrap: wrap; gap: 0.2rem 0.6rem; }
+.tvl-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; }
+.tvl-tag { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.1rem 0.5rem; border-radius: 999px; border: 1px solid currentColor; font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+.tvl-t-conf { color: #8fd3c0; }
+.tvl-t-prov { color: #e0a458; }
+.tvl-t-rel { color: #a79f8c; }
+.tvl-t-ann { color: #b9a4e0; border-style: dashed; }
+.tvl-t-kind { color: rgba(239,228,201,0.6); border-color: rgba(239,228,201,0.25); }
+.tvl-t-tl { color: #D2B184; }
+.tvl-acts { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.15rem; }
+.tvl-btn { min-height: 2.25rem; padding: 0.25rem 0.7rem; border: 1px solid rgba(210,177,132,0.4); border-radius: 10px; background: rgba(210,177,132,0.08); color: #ecd9b4; font: inherit; font-size: 0.74rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; }
+.tvl-btn[aria-pressed="true"] { background: rgba(143,211,192,0.16); border-color: #8fd3c0; color: #bfe9dc; }
+.tvl-det { margin-top: 0.3rem; padding: 0.5rem 0.6rem; border-left: 2px solid rgba(210,177,132,0.4); background: rgba(0,0,0,0.25); font-size: 0.74rem; line-height: 1.45; color: rgba(239,228,201,0.8); }
+.tvl-det a { color: #bfe9dc; overflow-wrap: anywhere; }
+.tvl-det p { margin: 0 0 0.3rem; }
+.tvl-empty { padding: 1rem; border: 1px dashed rgba(210,177,132,0.35); border-radius: 12px; text-align: center; font-size: 0.82rem; line-height: 1.45; color: rgba(239,228,201,0.7); }
+.tvl-legend { margin: 0.9rem 0 0; padding: 0.6rem 0.7rem; border: 1px solid rgba(210,177,132,0.18); border-radius: 12px; font-size: 0.72rem; line-height: 1.5; color: rgba(239,228,201,0.65); }
+.tvl-legend p { margin: 0 0 0.25rem; }
+.tvl-credit { margin: 0.8rem 0 0; font-size: 0.7rem; color: rgba(239,228,201,0.6); display: flex; gap: 0.5rem; align-items: center; }
+.tvl-credit img { height: 12px; width: auto; flex: none; }
+.tvl-grp { margin: 0.9rem 0 0; }
+.tvl-grp > summary { cursor: pointer; min-height: 2.5rem; display: flex; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: #D2B184; }
+.tvl-alert { grid-template-columns: 1.6rem minmax(0, 1fr); }
+.tvl-alert.tvl-unread { border-color: rgba(143,211,192,0.55); background: rgba(31,74,69,0.22); }
+.tvl-alert-ic { font-size: 1.1rem; line-height: 1.4; text-align: center; }
+.tvl-alert-t { font-size: 0.86rem; line-height: 1.35; }
+.tvl-alert.tvl-unread .tvl-alert-t { font-weight: 600; }
+.tvl-pref { padding: 0.6rem 0.7rem; margin: 0 0 0.6rem; border: 1px solid rgba(210,177,132,0.2); border-radius: 12px; background: rgba(20,17,13,0.75); }
+.tvl-pref h4 { margin: 0 0 0.35rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: #D2B184; font-weight: 500; }
+.tvl-sw { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; min-height: 2.75rem; font-size: 0.86rem; cursor: pointer; }
+.tvl-sw input { width: 1.4rem; height: 1.4rem; accent-color: #8fd3c0; flex: none; }
+.tvl-note { font-size: 0.72rem; line-height: 1.45; color: rgba(239,228,201,0.6); margin: 0.3rem 0 0; }
+@media (max-width: 340px) { .tvl-hero { grid-template-columns: 3.4rem minmax(0, 1fr); } .tvl-hero .tvl-poster, .tvl-hero .tvl-ph { width: 3.4rem; } .tvl-stab { font-size: 0.52rem; } }
+@media (prefers-reduced-motion: reduce) { .tvl * { transition: none !important; animation: none !important; } }
+/* LIVE-CSS-END */
 /* PRE5-CSS-BEGIN: sprint di rifinitura pre-Fase 5 (Timeline compatta, Capitolo 0, overlay iOS) */
 /* ---- 3) Overlay iOS: stesso rimedio del Grafo classico per Kang/TVA, Relazioni, Timeline degli Universi, Timeline alternativa ---- */
 @media screen {
@@ -27756,6 +27825,7 @@ function marvelInit() {
       identity: 'marvel-ultimate-timeline-identity-v1',          /* 2B: identita' condivisa Tessera<->Variante */
       tesseraStyle: 'marvel-ultimate-timeline-tessera-style-v1', /* 2B: personalizzazione estetica Tessera 3.0 */
       customOrder: 'marvelGuideCustomTimelineOrder', /* M1 */
+      live: 'marvel-ultimate-timeline-live-v1', /* TVA Live: preferenze e avvisi */
       episodes: 'marvel-ultimate-timeline-episodes-v1' /* TVA Episodes: voti/visti/recensioni per episodio (il voto serie originale resta in 'ratings') */
     };
     var PROFILE_STR_KEYS = {
@@ -27887,6 +27957,11 @@ function marvelInit() {
             if (Object.keys(o).length) out[id] = o;
           });
           return Object.keys(out).length ? JSON.stringify(out) : null;
+        },
+        live: function(v) { /* TVA Live: preferenze e avvisi (validatore condiviso con il modulo Live) */
+          var fLive = window.tvaLiveNorm;
+          if (typeof fLive !== 'function') return null;
+          return fLive(v, function(m) { throw erroreProfilo(m); });
         },
         lastWatched: function(v) {
           if (oggettoVuoto(v)) return null;
@@ -28101,7 +28176,7 @@ function marvelInit() {
         campi.forEach(function(campo) {
           var chiaveStorage = PROFILE_OBJ_KEYS[campo] || PROFILE_STR_KEYS[campo];
           if (data[campo] === undefined) {
-            if (campo === 'customOrder' || campo === 'episodes') { /* M1: profili precedenti non contengono l'ordine personalizzato: quello locale resta com'e' */
+            if (campo === 'customOrder' || campo === 'episodes' || campo === 'live') { /* M1: profili precedenti non contengono l'ordine personalizzato: quello locale resta com'e' */
               try { scritture[chiaveStorage] = localStorage.getItem(chiaveStorage); } catch(eCo) { scritture[chiaveStorage] = null; }
               return;
             }
@@ -36727,7 +36802,7 @@ window.addEventListener('load', function() {
   var head = dash.querySelector('.dash-head');
   if (head) { var h2 = head.querySelector('h2'); if (h2) h2.textContent = 'Centrale TVA'; var sub = head.querySelector('.part-sub'); if (sub) sub.textContent = 'Il centro operativo della tua Variante: stato, missioni, osservatorio e operazioni.'; head.classList.add('cen-head'); }
   var RADAR = '<svg class="cen-radar" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12L18.4 5.6"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/><circle cx="16.5" cy="15" r="1" fill="currentColor" stroke="none"/></svg>';
-  var SECS = [['panoramica', '📊', 'Panoramica'], ['missioni', '🎯', 'Missioni'], ['strumenti', RADAR, 'Osservatorio'], ['operazioni', '🛠️', 'Operazioni']];
+  var SECS = [['panoramica', '📊', 'Panoramica'], ['missioni', '🎯', 'Missioni'], ['strumenti', RADAR, 'Osservatorio'], ['operazioni', '🛠️', 'Operazioni'], ['live', '📡', 'Live']];
   var nav = el('div', 'cen-nav'); nav.setAttribute('role', 'tablist'); nav.setAttribute('aria-label', 'Sezioni della Centrale TVA');
   var panels = {};
   SECS.forEach(function (s) {
@@ -37022,7 +37097,7 @@ window.addEventListener('load', function() {
   }, true);
   // ancore #cen-<sezione>[-sub] e #dashboard
   function fromHash() {
-    var h = (W.location.hash || '').replace(/^#/, ''), m = /^cen-(panoramica|missioni|operazioni|strumenti|osservatorio)(?:-(attive|stagioni|speciali|archivio))?$/.exec(h);
+    var h = (W.location.hash || '').replace(/^#/, ''), m = /^cen-(panoramica|missioni|operazioni|strumenti|osservatorio|live)(?:-(attive|stagioni|speciali|archivio))?$/.exec(h);
     if (m) { openSec(m[1] === 'osservatorio' ? 'strumenti' : m[1], { sub: m[2], fresh: true }); return true; } return false;
   }
   D.addEventListener('click', function (e) {
@@ -37060,6 +37135,372 @@ window.addEventListener('load', function() {
   H.setAttribute('data-cen', 'ready');
 })();
 /* B2-JS-END */
+</script>
+<script id="tva-live-js">
+/* LIVE-JS-BEGIN: TVA Live (TEST). Sezione "Live" della Centrale TVA: calendario uscite, trailer, avvisi interni, preferenze.
+   Legge SOLO JSON statici same-origin (assets/live/*.json, generati da GitHub Actions). Non scrive mai in Timeline/Episodes/XP/Rankings;
+   l'unico dato utente e' la chiave marvel-ultimate-timeline-live-v1 (inclusa in backup/sync tramite PROFILE_OBJ_KEYS). Nessun innerHTML con dati esterni. */
+(function () {
+  'use strict';
+  var D = document, W = window;
+  if (W.tvaLive) return;
+  var KEY = 'marvel-ultimate-timeline-live-v1', KEY_S = 'marvel-ultimate-timeline-live-state-v1', BASE = 'assets/live/';   // KEY = preferenze (backup/sync); KEY_S = stato locale per dispositivo (avvisi, visti)
+  var KEY_RE = /^(tmdb:(movie|tv):\d+(:S\d{2})?|manual:[a-z0-9\-]{3,60})$/, YT_KEY = /^yt:[\w\-]{11}$/, DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+  var LEADS = [14, 7, 3, 1, 0], ALERT_T = ['new', 'date', 'confirmed', 'trailer', 'soon'];
+  var MONTHS = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'], MONTHS_L = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+  var KIND_L = { movie: 'Film', series: 'Serie', season: 'Stagione', special: 'Speciale' };
+
+  /* ---------- preferenze (un'unica funzione per caricamento tollerante e import rigoroso) ---------- */
+  function defaults() { return { v: 1, cats: { film: true, serie: true, trailer: true }, lead: [7, 1, 0], followed: [], muted: [], onlyUnwatched: false, init: false, lastVisit: 0, seen: {}, seenT: [], fired: [], inbox: [] }; }
+  function isObj(o) { return o && typeof o === 'object' && !Array.isArray(o); }
+  function norm(v, fail) {
+    var strict = typeof fail === 'function', bad = function (m) { if (strict) fail('“live” ' + m); return false; };
+    var o = defaults();
+    if (!isObj(v)) { bad('deve essere un oggetto.'); return o; }
+    if (v.cats !== undefined) { if (!isObj(v.cats)) bad('“cats” non valido.'); else ['film', 'serie', 'trailer'].forEach(function (k) { if (v.cats[k] !== undefined) { if (typeof v.cats[k] !== 'boolean') bad('“cats.' + k + '” non valido.'); else o.cats[k] = v.cats[k]; } }); }
+    if (v.lead !== undefined) { if (!Array.isArray(v.lead) || v.lead.length > 5 || v.lead.some(function (n) { return LEADS.indexOf(n) < 0; })) bad('“lead” non valido.'); else o.lead = LEADS.filter(function (n) { return v.lead.indexOf(n) >= 0; }); }
+    ['followed', 'muted'].forEach(function (f) {
+      if (v[f] === undefined) return;
+      if (!Array.isArray(v[f]) || v[f].length > 200 || v[f].some(function (k) { return typeof k !== 'string' || !KEY_RE.test(k); })) { bad('“' + f + '” non valido.'); return; }
+      o[f] = v[f].filter(function (k, i, a) { return a.indexOf(k) === i; });
+    });
+    if (v.onlyUnwatched !== undefined) { if (typeof v.onlyUnwatched !== 'boolean') bad('“onlyUnwatched” non valido.'); else o.onlyUnwatched = v.onlyUnwatched; }
+    if (v.init !== undefined) o.init = v.init === true || v.init === 1;
+    if (v.lastVisit !== undefined) { if (typeof v.lastVisit !== 'number' || !isFinite(v.lastVisit) || v.lastVisit < 0) bad('“lastVisit” non valido.'); else o.lastVisit = v.lastVisit; }
+    if (v.seen !== undefined) {
+      if (!isObj(v.seen) || Object.keys(v.seen).length > 400) bad('“seen” non valido.');
+      else Object.keys(v.seen).forEach(function (k) {
+        var e = v.seen[k];
+        if (!KEY_RE.test(k) || !isObj(e) || (e.d !== null && e.d !== undefined && !(typeof e.d === 'string' && DATE_RE.test(e.d))) || [null, undefined, 'confirmed', 'provisional'].indexOf(e.c) < 0) { bad('“seen” contiene una voce non valida.'); return; }
+        o.seen[k] = { d: e.d || null, c: e.c || null, s: ['upcoming', 'released', 'announced'].indexOf(e.s) >= 0 ? e.s : 'upcoming' };
+      });
+    }
+    ['seenT', 'fired'].forEach(function (f) {
+      if (v[f] === undefined) return;
+      if (!Array.isArray(v[f]) || v[f].length > 200 || v[f].some(function (k) { return typeof k !== 'string' || k.length > 160 || (f === 'seenT' && !YT_KEY.test(k)); })) { bad('“' + f + '” non valido.'); return; }
+      o[f] = v[f].slice();
+    });
+    if (v.inbox !== undefined) {
+      if (!Array.isArray(v.inbox) || v.inbox.length > 60) bad('“inbox” non valido.');
+      else v.inbox.forEach(function (a) {
+        var m = isObj(a) && isObj(a.m) ? a.m : null;
+        if (!isObj(a) || typeof a.id !== 'string' || a.id.length > 200 || ALERT_T.indexOf(a.t) < 0 || (a.k !== '' && typeof a.k !== 'string') || typeof a.ts !== 'number' || !isFinite(a.ts) || !m || typeof m.title !== 'string' || m.title.length > 160 ||
+          (m.from != null && !(typeof m.from === 'string' && DATE_RE.test(m.from))) || (m.to != null && !(typeof m.to === 'string' && DATE_RE.test(m.to))) || (m.days != null && !(typeof m.days === 'number' && m.days >= 0 && m.days <= 3650 && m.days % 1 === 0))) { bad('“inbox” contiene un avviso non valido.'); return; }
+        o.inbox.push({ id: a.id, t: a.t, k: a.k || '', ts: a.ts, r: a.r ? 1 : 0, m: { title: m.title, from: m.from || null, to: m.to || null, days: m.days == null ? null : m.days } });
+      });
+    }
+    return o;
+  }
+  var PREF_F = ['v', 'cats', 'lead', 'followed', 'muted', 'onlyUnwatched'], STATE_F = ['init', 'lastVisit', 'seen', 'seenT', 'fired', 'inbox'];
+  function pick(o, fs) { var r = {}; fs.forEach(function (f) { r[f] = o[f]; }); return r; }
+  W.tvaLiveNorm = function (v, fail) {                      // usato da NORM.live dell'import profilo: nel profilo (backup/sync) restano SOLO le preferenze
+    var o = pick(norm(v, fail), PREF_F);
+    return JSON.stringify(o) === JSON.stringify(pick(defaults(), PREF_F)) ? null : JSON.stringify(o);
+  };
+
+  var P = defaults();
+  function loadPrefs() {
+    P = defaults();
+    try { var r = localStorage.getItem(KEY); if (r) { var a = norm(JSON.parse(r)); PREF_F.forEach(function (f) { P[f] = a[f]; }); } } catch (e) {}
+    try { var q = localStorage.getItem(KEY_S); if (q) { var b = norm(JSON.parse(q)); STATE_F.forEach(function (f) { P[f] = b[f]; }); } } catch (e2) {}
+  }
+  function savePrefs() {
+    try {
+      var pr = pick(P, PREF_F), isDef = JSON.stringify(pr) === JSON.stringify(pick(defaults(), PREF_F));
+      if (isDef) localStorage.removeItem(KEY); else localStorage.setItem(KEY, JSON.stringify(pr));
+      localStorage.setItem(KEY_S, JSON.stringify(pick(P, STATE_F)));
+    } catch (e) {}
+  }
+
+  /* ---------- dati ---------- */
+  var DATA = { status: 'idle', manifest: null, calendar: [], trailers: [], err: null }, loading = null;
+  function getJson(name, ms) {
+    var ctl = typeof AbortController === 'function' ? new AbortController() : null, t = ctl ? setTimeout(function () { ctl.abort(); }, ms || 8000) : null;
+    return fetch(BASE + name + '.json', { cache: 'no-cache', signal: ctl ? ctl.signal : undefined }).then(function (r) { if (t) clearTimeout(t); if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+  }
+  function validItem(i) { return isObj(i) && KEY_RE.test(i.key || '') && typeof i.title === 'string' && i.title && (i.date === null || DATE_RE.test(i.date || '')) && ['movie', 'series', 'season', 'special'].indexOf(i.kind) >= 0 && ['upcoming', 'released', 'announced'].indexOf(i.state) >= 0; }
+  function validTrailer(t) { return isObj(t) && YT_KEY.test(t.key || '') && typeof t.title === 'string' && DATE_RE.test(t.published || '') && /^https:\/\/(www\.youtube\.com\/watch\?v=|youtu\.be\/)[\w\-]{11}/.test(t.url || ''); }
+  function load(force) {
+    if (loading && !force) return loading;
+    DATA.status = 'loading';
+    loading = Promise.all([getJson('manifest'), getJson('calendar'), getJson('trailers').catch(function () { return { items: [] }; })]).then(function (r) {
+      DATA.manifest = isObj(r[0]) ? r[0] : null;
+      DATA.calendar = ((r[1] && r[1].items) || []).filter(validItem);
+      DATA.trailers = ((r[2] && r[2].items) || []).filter(validTrailer);
+      DATA.status = 'ok'; DATA.err = null;
+      computeAlerts(); paintBadges();
+    }).catch(function (e) { DATA.status = 'error'; DATA.err = String(e && e.message || e); loading = null; });
+    return loading;
+  }
+
+  /* ---------- utilita' data ---------- */
+  function todayStr() { var d = new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  function dayNum(s) { var p = s.split('-'); return Date.UTC(+p[0], +p[1] - 1, +p[2]) / 864e5; }
+  function daysTo(s) { return Math.round(dayNum(s) - dayNum(todayStr())); }
+  function fmt(s) { var p = s.split('-'); return +p[2] + ' ' + MONTHS[+p[1] - 1] + ' ' + p[0]; }
+  function when(it) {
+    if (it.date && it.precision === 'year') return it.date.slice(0, 4) + ' (solo anno indicativo)';
+    if (it.date) return fmt(it.date);
+    return it.window ? 'Finestra dichiarata: ' + it.window : 'Data non annunciata';
+  }
+  function countdown(n) { return n < 0 ? 'uscito' : n === 0 ? 'oggi' : n === 1 ? 'domani' : n < 60 ? 'tra ' + n + ' giorni' : 'tra ' + Math.round(n / 30) + ' mesi'; }
+  function catOf(it) { return it.kind === 'movie' ? 'film' : 'serie'; }
+
+  /* ---------- avvisi ---------- */
+  function addAlert(a) { if (P.inbox.some(function (x) { return x.id === a.id; })) return; P.inbox.unshift({ id: a.id, t: a.t, k: a.k || '', ts: Date.now(), r: 0, m: a.m }); }
+  function computeAlerts() {
+    var items = DATA.calendar;
+    if (!items.length && !DATA.trailers.length) return;                  // dati assenti/vuoti: nessun avviso (evita rumore)
+    var first = !P.init, seen = {}, muted = P.muted;
+    items.forEach(function (it) {
+      var prev = P.seen[it.key], live = it.state !== 'released';
+      seen[it.key] = { d: it.date || null, c: it.confidence || null, s: it.state };
+      if (first || !live || muted.indexOf(it.key) >= 0 || !P.cats[catOf(it)]) return;
+      var m = { title: it.title, from: null, to: it.date || null, days: null };
+      if (!prev) addAlert({ id: it.key + '|new', t: 'new', k: it.key, m: m });
+      else {
+        if (prev.d && it.date && prev.d !== it.date) addAlert({ id: it.key + '|date|' + it.date, t: 'date', k: it.key, m: { title: it.title, from: prev.d, to: it.date, days: null } });
+        if (prev.c === 'provisional' && it.confidence === 'confirmed') addAlert({ id: it.key + '|conf', t: 'confirmed', k: it.key, m: m });
+      }
+      if (P.followed.indexOf(it.key) >= 0 && it.date && it.precision === 'day') {
+        var n = daysTo(it.date), lead = P.lead.slice().sort(function (a, b) { return a - b; }).filter(function (l) { return n >= 0 && n <= l; })[0];
+        if (lead !== undefined && P.fired.indexOf(it.key + '|soon|' + lead + '|' + it.date) < 0) {
+          P.fired.push(it.key + '|soon|' + lead + '|' + it.date);
+          addAlert({ id: it.key + '|soon|' + lead + '|' + it.date, t: 'soon', k: it.key, m: { title: it.title, from: null, to: it.date, days: n } });
+        }
+      }
+    });
+    P.seen = seen;
+    var st = P.seenT.slice();
+    DATA.trailers.forEach(function (t) {
+      if (st.indexOf(t.key) >= 0) return;
+      st.push(t.key);
+      if (!first && P.cats.trailer) addAlert({ id: t.key + '|trailer', t: 'trailer', k: t.relatesTo || '', m: { title: t.title.slice(0, 150), from: null, to: t.published, days: null } });
+    });
+    P.seenT = st.slice(-200); P.fired = P.fired.slice(-200); P.inbox = P.inbox.slice(0, 60); P.init = true;
+    savePrefs();
+  }
+  function unread() { return P.inbox.filter(function (a) { return !a.r; }).length; }
+
+  /* ---------- DOM ---------- */
+  function el(t, c, x) { var e = D.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+  function btn(txt, cls, fn, pressed) { var b = el('button', cls, txt); b.type = 'button'; if (pressed !== undefined) b.setAttribute('aria-pressed', pressed ? 'true' : 'false'); b.addEventListener('click', fn); return b; }
+  var panel = null, root = null, ST = { sub: 'cal', filter: 'all', open: {} };
+
+  function paintBadges() {
+    var n = unread(), txt = n > 99 ? '99+' : String(n);
+    [['cenTab-live', 0], ['appTabMissioni', 0], ['tvlSub-avv', 0]].forEach(function (p) {
+      var host = D.getElementById(p[0]); if (!host) return;
+      var b = host.querySelector(':scope > .tvl-badge');
+      if (!n) { if (b) b.remove(); return; }
+      if (!b) { b = el('span', 'tvl-badge'); b.setAttribute('role', 'img'); host.appendChild(b); }
+      b.textContent = txt; b.setAttribute('aria-label', n + (n === 1 ? ' avviso non letto' : ' avvisi non letti'));
+    });
+  }
+
+  function tag(cls, txt) { return el('span', 'tvl-tag ' + cls, txt); }
+  function badgeFor(it) {
+    if (it.state === 'released') return tag('tvl-t-rel', '● Uscito');
+    if (it.state === 'announced') return tag('tvl-t-ann', '◌ Annunciato');
+    return it.confidence === 'confirmed' ? tag('tvl-t-conf', '✓ Confermato') : tag('tvl-t-prov', '◔ Provvisorio');
+  }
+  function poster(it) {
+    if (it.poster && /^\/[\w\-.]+\.(jpg|png|webp)$/.test(it.poster)) {
+      var im = el('img', 'tvl-poster'); im.alt = ''; im.loading = 'lazy'; im.decoding = 'async'; im.referrerPolicy = 'no-referrer'; im.width = 92; im.height = 138;
+      im.src = 'https://image.tmdb.org/t/p/w92' + it.poster; im.addEventListener('error', function () { var ph = el('div', 'tvl-ph', '🎬'); ph.setAttribute('aria-hidden', 'true'); if (im.parentNode) im.parentNode.replaceChild(ph, im); });
+      return im;
+    }
+    var ph = el('div', 'tvl-ph', '🎬'); ph.setAttribute('aria-hidden', 'true'); return ph;
+  }
+  function watched(it) { if (!it.timelineId) return false; var c = D.querySelector('.watch-check[data-item="' + it.timelineId + '"]'); return !!(c && c.checked); }
+  function openTimeline(id) { try { if (W.tvaPushNav) W.tvaPushNav('Centrale TVA'); if (W.tvaGo) W.tvaGo('item', id); } catch (e) {} }
+  function setPref(fn) { fn(); savePrefs(); render(); }
+  function toggleIn(arr, k) { var i = arr.indexOf(k); if (i >= 0) arr.splice(i, 1); else arr.push(k); }
+
+  function rowFor(it) {
+    var li = el('li', 'tvl-row'); li.setAttribute('data-key', it.key);
+    li.appendChild(poster(it));
+    var m = el('div', 'tvl-main');
+    m.appendChild(el('h4', 'tvl-title', it.title));
+    var meta = el('div', 'tvl-meta'); meta.appendChild(el('span', '', when(it)));
+    if (it.dateIT && it.dateIT !== it.date) meta.appendChild(el('span', '', 'Italia: ' + fmt(it.dateIT)));
+    if (it.state === 'upcoming' && it.date && it.precision === 'day') meta.appendChild(el('span', '', countdown(daysTo(it.date))));
+    m.appendChild(meta);
+    var tg = el('div', 'tvl-tags'); tg.appendChild(badgeFor(it)); tg.appendChild(tag('tvl-t-kind', KIND_L[it.kind] || it.kind));
+    if (it.timelineId) tg.appendChild(tag('tvl-t-tl', watched(it) ? '✓ In Timeline · visto' : 'In Timeline')); else tg.appendChild(tag('tvl-t-kind', 'Solo in Live'));
+    m.appendChild(tg);
+    var acts = el('div', 'tvl-acts');
+    acts.appendChild(btn(P.followed.indexOf(it.key) >= 0 ? '🔔 Seguito' : '🔕 Segui', 'tvl-btn', function () { setPref(function () { toggleIn(P.followed, it.key); }); }, P.followed.indexOf(it.key) >= 0));
+    if (it.timelineId) acts.appendChild(btn('Apri in Timeline', 'tvl-btn', function () { openTimeline(it.timelineId); }));
+    var open = !!ST.open[it.key];
+    var det = btn(open ? 'Nascondi dettagli' : 'Perché questa etichetta?', 'tvl-btn', function () { ST.open[it.key] = !open; render(); }); det.setAttribute('aria-expanded', open ? 'true' : 'false');
+    acts.appendChild(det); m.appendChild(acts);
+    if (open) {
+      var d = el('div', 'tvl-det'); d.appendChild(el('p', '', it.reason || ''));
+      (it.sources || []).forEach(function (s) { if (/^https:\/\//.test(s.url || '')) { var a = el('a', '', (s.official ? 'Fonte ufficiale: ' : 'Fonte: ') + s.name); a.href = s.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; var p = el('p'); p.appendChild(a); d.appendChild(p); } });
+      if ((it.history || []).length) d.appendChild(el('p', '', 'Cronologia: ' + it.history.map(function (h) { return h.date !== undefined || h.to ? (h.from ? fmt(h.from) : '—') + ' → ' + (h.to ? fmt(h.to) : '—') + ' (' + fmt(h.at) + ')' : 'confermato (' + fmt(h.at) + ')'; }).join(' · ')));
+      if ((it.missing || []).length) d.appendChild(el('p', '', 'Dati mancanti: ' + it.missing.join(', ')));
+      m.appendChild(d);
+    }
+    li.appendChild(m); return li;
+  }
+
+  function statusBox() {
+    var box = el('div', 'tvl-status'), mf = DATA.manifest;
+    if (DATA.status === 'loading' || DATA.status === 'idle') { box.textContent = 'Caricamento dei dati…'; return box; }
+    if (DATA.status === 'error' || !mf) { box.classList.add('tvl-warn'); box.appendChild(el('b', '', 'DATI NON DISPONIBILI')); box.appendChild(el('div', '', 'Impossibile leggere i dati di TVA Live (' + (DATA.err || 'manifest assente') + '). Controlla la connessione: il resto dell’app non è coinvolto.')); return box; }
+    if (mf.seed) { box.appendChild(el('b', '', 'IN ATTESA DEI PRIMI DATI')); box.appendChild(el('div', '', 'I file di TVA Live non sono ancora stati generati. Dopo la prima generazione (workflow manuale) qui compariranno calendario e trailer.')); return box; }
+    var src = mf.sources || {}, bad = [];
+    ['tmdb', 'youtube'].forEach(function (k) { var s = src[k]; if (s && ['ok', 'partial'].indexOf(s.status) < 0) bad.push(k === 'tmdb' ? 'Calendario' : 'Trailer'); });
+    var g = mf.generated_at ? new Date(mf.generated_at) : null;
+    box.appendChild(el('b', '', 'AGGIORNATO ')); box.appendChild(D.createTextNode(g && !isNaN(g) ? g.toLocaleDateString('it-IT', { day: 'numeric', month: 'short', year: 'numeric' }) + ' ' + g.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }) : 'data sconosciuta'));
+    if (bad.length) { box.classList.add('tvl-warn'); box.appendChild(el('div', '', 'Attenzione: ' + bad.join(' e ') + ' non aggiornato/i nell’ultima generazione (stato: ' + bad.map(function (n) { return (src[n === 'Calendario' ? 'tmdb' : 'youtube'] || {}).status; }).join(', ') + '). Si mostrano gli ultimi dati validi.')); }
+    return box;
+  }
+
+  function renderCal(host) {
+    var cal = DATA.calendar.filter(function (it) { return P.cats[catOf(it)]; });
+    if (P.onlyUnwatched) cal = cal.filter(function (it) { return !watched(it); });
+    var f = ST.filter;
+    var chips = el('div', 'tvl-chips'); chips.setAttribute('role', 'group'); chips.setAttribute('aria-label', 'Filtri calendario');
+    [['all', 'Tutti'], ['film', 'Film'], ['serie', 'Serie'], ['confirmed', 'Confermati'], ['followed', 'Seguiti']].forEach(function (c) { chips.appendChild(btn(c[1], 'tvl-chip', function () { ST.filter = c[0]; render(); }, f === c[0])); });
+    host.appendChild(chips);
+    cal = cal.filter(function (it) { return f === 'all' || (f === 'film' && it.kind === 'movie') || (f === 'serie' && it.kind !== 'movie') || (f === 'confirmed' && it.confidence === 'confirmed') || (f === 'followed' && P.followed.indexOf(it.key) >= 0); });
+    var up = cal.filter(function (i) { return i.state === 'upcoming'; }).sort(function (a, b) { return (a.date || '9') < (b.date || '9') ? -1 : 1; });
+    var ann = cal.filter(function (i) { return i.state === 'announced'; }), rel = cal.filter(function (i) { return i.state === 'released'; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+    if (!DATA.calendar.length) { host.appendChild(el('div', 'tvl-empty', DATA.status === 'ok' ? 'Il calendario è vuoto: i dati non sono ancora stati generati oppure non ci sono uscite nella finestra analizzata.' : 'Nessun dato disponibile.')); return; }
+    var next = up.filter(function (i) { return i.date && i.precision === 'day' && daysTo(i.date) >= 0; })[0];
+    if (next) {
+      var h = el('section', 'tvl-hero'); h.setAttribute('aria-label', 'Prossima uscita'); h.appendChild(poster(next));
+      var hm = el('div'); hm.appendChild(el('div', 'tvl-kick', 'Prossima uscita')); hm.appendChild(el('h3', '', next.title)); hm.appendChild(el('div', 'tvl-count', countdown(daysTo(next.date))));
+      var mm = el('div', 'tvl-meta'); mm.appendChild(el('span', '', fmt(next.date))); hm.appendChild(mm);
+      var tg = el('div', 'tvl-tags'); tg.appendChild(badgeFor(next)); hm.appendChild(tg); h.appendChild(hm); host.appendChild(h);
+    }
+    if (!up.length && !ann.length && !rel.length) host.appendChild(el('div', 'tvl-empty', 'Nessun risultato con i filtri attuali.'));
+    var cur = '', ul = null;
+    up.forEach(function (it) {
+      var lab = it.date ? (MONTHS_L[+it.date.slice(5, 7) - 1] + ' ' + it.date.slice(0, 4)) : 'Senza data';
+      if (it.precision === 'year') lab = 'Anno ' + it.date.slice(0, 4) + ' (data indicativa)';
+      if (lab !== cur) { cur = lab; host.appendChild(el('h4', 'tvl-month', lab)); ul = el('ul', 'tvl-list'); host.appendChild(ul); }
+      ul.appendChild(rowFor(it));
+    });
+    function grp(title, arr) { if (!arr.length) return; var d = el('details', 'tvl-grp'); d.appendChild(el('summary', '', title + ' (' + arr.length + ')')); var u = el('ul', 'tvl-list'); arr.forEach(function (i) { u.appendChild(rowFor(i)); }); d.appendChild(u); host.appendChild(d); }
+    grp('Annunciati senza data', ann); grp('Usciti di recente', rel);
+    var lg = el('div', 'tvl-legend');
+    lg.appendChild(el('p', '', '✓ Confermato: la data è riportata da una fonte ufficiale verificabile (indicata nei dettagli).'));
+    lg.appendChild(el('p', '', '◔ Provvisorio: data non confermata ufficialmente (es. solo TMDB): può cambiare. ◌ Annunciato: senza data.'));
+    lg.appendChild(el('p', '', 'Le indiscrezioni non sono incluse.'));
+    host.appendChild(lg);
+  }
+
+  function renderTrl(host) {
+    var tr = DATA.trailers;
+    var mf = DATA.manifest && DATA.manifest.sources && DATA.manifest.sources.youtube;
+    if (!P.cats.trailer) { host.appendChild(el('div', 'tvl-empty', 'Hai disattivato i trailer nelle Preferenze.')); return; }
+    if (!tr.length) { host.appendChild(el('div', 'tvl-empty', mf && mf.status === 'unverified' ? 'Identità del canale ufficiale non verificata: nessun trailer pubblicato.' : 'Nessun trailer disponibile.')); return; }
+    host.appendChild(el('p', 'tvl-note', 'Video dal canale ufficiale Marvel Entertainment. Si aprono su YouTube in una nuova scheda: TVA Archives non incorpora né scarica i video.'));
+    var ul = el('ul', 'tvl-list'), byKey = {}; DATA.calendar.forEach(function (i) { byKey[i.key] = i; });
+    tr.forEach(function (t) {
+      var li = el('li', 'tvl-row'); li.appendChild(el('div', 'tvl-ph', '▶'));
+      var m = el('div', 'tvl-main'); m.appendChild(el('h4', 'tvl-title', t.title));
+      var meta = el('div', 'tvl-meta'); meta.appendChild(el('span', '', fmt(t.published))); meta.appendChild(el('span', '', t.channel || 'Canale ufficiale')); m.appendChild(meta);
+      var tg = el('div', 'tvl-tags'); tg.appendChild(tag('tvl-t-conf', '✓ Canale ufficiale')); tg.appendChild(tag('tvl-t-kind', t.kind === 'teaser' ? 'Teaser' : 'Trailer'));
+      if (t.relatesTo && byKey[t.relatesTo]) tg.appendChild(tag('tvl-t-tl', byKey[t.relatesTo].title));
+      m.appendChild(tg);
+      var a = el('a', 'tvl-btn', 'Guarda su YouTube ↗'); a.href = t.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; var acts = el('div', 'tvl-acts'); acts.appendChild(a); m.appendChild(acts);
+      li.appendChild(m); ul.appendChild(li);
+    });
+    host.appendChild(ul);
+  }
+
+  var AL_IC = { new: '🆕', date: '📅', confirmed: '✓', trailer: '🎬', soon: '⏰' };
+  function alertText(a) {
+    var m = a.m, t = a.t;
+    if (t === 'new') return 'Nuova uscita in calendario: ' + m.title + (m.to ? ' (' + fmt(m.to) + ')' : '');
+    if (t === 'date') return 'Data cambiata per ' + m.title + ': ' + (m.from ? fmt(m.from) : '—') + ' → ' + fmt(m.to);
+    if (t === 'confirmed') return 'Ora confermato da fonte ufficiale: ' + m.title;
+    if (t === 'trailer') return 'Nuovo video ufficiale: ' + m.title;
+    return m.title + ' esce ' + (m.days === 0 ? 'oggi' : m.days === 1 ? 'domani' : 'tra ' + m.days + ' giorni') + (m.to ? ' (' + fmt(m.to) + ')' : '');
+  }
+  function renderAvv(host) {
+    host.appendChild(el('p', 'tvl-note', 'Gli avvisi compaiono quando apri TVA Archives: l’app non invia notifiche in background.'));
+    if (!P.inbox.length) { host.appendChild(el('div', 'tvl-empty', 'Nessun avviso. Segui un titolo dal Calendario per ricevere promemoria prima dell’uscita; riceverai anche cambi di data, conferme e nuovi trailer.')); return; }
+    var acts = el('div', 'tvl-acts'); acts.style.margin = '0 0 0.6rem';
+    acts.appendChild(btn('Segna tutto come letto', 'tvl-btn', function () { setPref(function () { P.inbox.forEach(function (a) { a.r = 1; }); }); paintBadges(); }));
+    acts.appendChild(btn('Svuota', 'tvl-btn', function () { setPref(function () { P.inbox = []; }); paintBadges(); }));
+    host.appendChild(acts);
+    var ul = el('ul', 'tvl-list');
+    P.inbox.forEach(function (a) {
+      var li = el('li', 'tvl-row tvl-alert' + (a.r ? '' : ' tvl-unread')); var ic = el('div', 'tvl-alert-ic', AL_IC[a.t] || '•'); ic.setAttribute('aria-hidden', 'true'); li.appendChild(ic);
+      var m = el('div', 'tvl-main'); m.appendChild(el('div', 'tvl-alert-t', alertText(a)));
+      m.appendChild(el('div', 'tvl-meta', (a.r ? 'Letto' : 'Nuovo') + ' · ' + new Date(a.ts).toLocaleDateString('it-IT', { day: 'numeric', month: 'short' })));
+      var ac = el('div', 'tvl-acts');
+      if (a.k && a.t !== 'trailer') ac.appendChild(btn('Vai al calendario', 'tvl-btn', function () { a.r = 1; savePrefs(); ST.sub = 'cal'; ST.filter = 'all'; ST.open[a.k] = true; paintBadges(); render(); var row = panel.querySelector('[data-key="' + a.k + '"]'); if (row && row.scrollIntoView) row.scrollIntoView({ block: 'center' }); }));
+      if (!a.r) ac.appendChild(btn('Segna come letto', 'tvl-btn', function () { a.r = 1; savePrefs(); paintBadges(); render(); }));
+      if (ac.childNodes.length) m.appendChild(ac);
+      li.appendChild(m); ul.appendChild(li);
+    });
+    host.appendChild(ul);
+  }
+
+  function sw(label, on, fn) { var l = el('label', 'tvl-sw'); l.appendChild(el('span', '', label)); var i = el('input'); i.type = 'checkbox'; i.checked = !!on; i.addEventListener('change', function () { fn(i.checked); }); l.appendChild(i); return l; }
+  function renderPref(host) {
+    var a = el('div', 'tvl-pref'); a.appendChild(el('h4', '', 'Categorie')); 
+    [['film', 'Film'], ['serie', 'Serie e stagioni'], ['trailer', 'Trailer e teaser']].forEach(function (c) { a.appendChild(sw(c[1], P.cats[c[0]], function (v) { setPref(function () { P.cats[c[0]] = v; }); paintBadges(); })); });
+    host.appendChild(a);
+    var b = el('div', 'tvl-pref'); b.appendChild(el('h4', '', 'Promemoria per i titoli seguiti'));
+    [[7, '7 giorni prima'], [3, '3 giorni prima'], [1, 'Il giorno prima'], [0, 'Il giorno dell’uscita']].forEach(function (l) { b.appendChild(sw(l[1], P.lead.indexOf(l[0]) >= 0, function (v) { setPref(function () { P.lead = LEADS.filter(function (n) { return n === l[0] ? v : P.lead.indexOf(n) >= 0; }); }); })); });
+    b.appendChild(el('p', 'tvl-note', 'Titoli seguiti: ' + P.followed.length + '. Segui un titolo dal Calendario con «Segui».')); host.appendChild(b);
+    var c = el('div', 'tvl-pref'); c.appendChild(el('h4', '', 'Calendario'));
+    c.appendChild(sw('Nascondi i titoli già visti in Timeline', P.onlyUnwatched, function (v) { setPref(function () { P.onlyUnwatched = v; }); }));
+    host.appendChild(c);
+    var d = el('div', 'tvl-pref'); d.appendChild(el('h4', '', 'Dati e limiti'));
+    d.appendChild(el('p', 'tvl-note', 'I dati sono file statici aggiornati manualmente da GitHub Actions: non sono in tempo reale. Le date non confermate ufficialmente sono sempre contrassegnate come provvisorie. Le indiscrezioni non sono incluse. Le preferenze fanno parte del backup del profilo.'));
+    var r = el('div', 'tvl-acts'); r.appendChild(btn('Reimposta avvisi e preferenze di Live', 'tvl-btn', function () { setPref(function () { P = defaults(); }); computeAlerts(); paintBadges(); render(); })); d.appendChild(r);
+    host.appendChild(d);
+  }
+
+  function render() {
+    if (!panel) return;
+    root.textContent = '';
+    root.appendChild(statusBox());
+    var sub = el('div', 'tvl-sub'); sub.setAttribute('role', 'tablist'); sub.setAttribute('aria-label', 'Sezioni di Live');
+    [['cal', 'Calendario'], ['trl', 'Trailer'], ['avv', 'Avvisi'], ['pref', 'Preferenze']].forEach(function (s) {
+      var b = el('button', 'tvl-stab' + (ST.sub === s[0] ? ' tvl-on' : ''), s[1]); b.type = 'button'; b.id = 'tvlSub-' + s[0]; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', ST.sub === s[0] ? 'true' : 'false'); b.tabIndex = ST.sub === s[0] ? 0 : -1;
+      b.addEventListener('click', function () { ST.sub = s[0]; render(); }); sub.appendChild(b);
+    });
+    root.appendChild(sub);
+    var body = el('div', 'tvl-body'); body.setAttribute('role', 'tabpanel'); root.appendChild(body);
+    if (DATA.status === 'ok') { (ST.sub === 'cal' ? renderCal : ST.sub === 'trl' ? renderTrl : ST.sub === 'avv' ? renderAvv : renderPref)(body); }
+    else if (ST.sub === 'pref') renderPref(body); else if (ST.sub === 'avv') renderAvv(body);
+    var cr = el('div', 'tvl-credit'); var lg = el('img'); lg.alt = 'TMDB'; lg.height = 12; lg.hidden = true; lg.onload = function () { lg.hidden = false; }; lg.src = 'assets/images/tmdb-logo.svg'; cr.appendChild(lg);
+    cr.appendChild(el('span', '', 'Date di uscita: TMDB. This product uses the TMDB API but is not endorsed or certified by TMDB.')); root.appendChild(cr);
+    paintBadges();
+  }
+
+  /* ---------- montaggio nella Centrale TVA ---------- */
+  function show() {
+    P.lastVisit = Date.now(); savePrefs();
+    render();
+    load().then(function () { render(); });
+  }
+  function mount() {
+    panel = D.getElementById('cenPan-live'); if (!panel || panel.__lv) return !!panel; panel.__lv = true;
+    root = el('div', 'tvl'); panel.appendChild(root);
+    new MutationObserver(function () { if (!panel.hidden) show(); }).observe(panel, { attributes: true, attributeFilter: ['hidden'] });
+    if (!panel.hidden) show(); else render();
+    return true;
+  }
+  loadPrefs();
+  function boot() { mount(); paintBadges(); setTimeout(function () { load(); }, 3000); }   // il badge si aggiorna anche senza aprire Live
+  if (D.readyState === 'complete') boot(); else W.addEventListener('load', boot);
+
+  W.tvaLive = {
+    prefs: function () { return JSON.parse(JSON.stringify(P)); }, data: function () { return DATA; }, load: load, render: render, unread: unread, norm: norm, key: KEY,
+    _setState: function (s) { P = norm(s); savePrefs(); }, _reset: function () { P = defaults(); savePrefs(); loading = null; try { localStorage.removeItem(KEY); localStorage.removeItem(KEY_S); } catch (e) {} DATA = { status: 'idle', manifest: null, calendar: [], trailers: [], err: null }; }
+  };
+})();
+/* LIVE-JS-END */
 </script>
 <script id="rw-js">
 /* RW-JS-BEGIN: Blocco 3.1 - Ricompense cosmetiche TVA (48). Quattro strati separati: 1) CATALOGO statico, 2) VALUTAZIONE dei requisiti

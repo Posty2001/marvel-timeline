@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "seed": true,
+  "generated_at": null,
+  "sources": {
+    "tmdb": {"status": "pending", "count": 0},
+    "youtube": {"status": "pending", "count": 0},
+    "manual": {"status": "ok", "count": 0},
+    "news": {"status": "disabled", "reason": "TVA News non sviluppato in 1.0"}
+  },
+  "counts": {"calendar": 0, "trailers": 0},
+  "attribution": {"tmdb": true},
+  "notes": ["File iniziale: sostituire con l'artifact tva-live-data generato dal workflow."]
+}
