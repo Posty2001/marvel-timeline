@@ -2,6 +2,7 @@ name: TMDB sync (manuale)
 
 # Solo avvio manuale. Non modifica il repository, non fa deploy, non tocca Firebase.
 # Risultati: artifact scaricabile "tmdb-sync" (tmdb_map.json + tmdb_review.json).
+# TVA Live: solo_live_build=true genera calendar/trailers/manifest.json (artifact tva-live-data, nessun commit).
 # TVA Live Fase 0: con solo_live_probe=true esegue solo la sonda di lettura (tools/live_probe.py) e produce l artifact "live-probe".
 on:
   workflow_dispatch:
@@ -12,6 +13,10 @@ on:
         default: true
       solo_live_probe:
         description: TVA Live Fase 0 - esegui SOLO la sonda in lettura sulle fonti (artifact live-probe) e salta il resto
+        type: boolean
+        default: false
+      solo_live_build:
+        description: TVA Live - genera i JSON statici (calendario, trailer, manifest) e salta il resto (artifact tva-live-data, nessun commit)
         type: boolean
         default: false
 
@@ -43,14 +48,14 @@ jobs:
           echo "Secret presente."
 
       - name: Sincronizza con TMDB
-        if: ${{ !inputs.solo_episodi && !inputs.solo_live_probe }}
+        if: ${{ !inputs.solo_episodi && !inputs.solo_live_probe && !inputs.solo_live_build }}
         env:
           TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: python3 tools/tmdb_sync.py
 
       - name: Genera catalogo episodi (TVA Episodes)
-        if: ${{ !inputs.solo_live_probe }}
+        if: ${{ !inputs.solo_live_probe && !inputs.solo_live_build }}
         env:
           TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
@@ -77,8 +82,29 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
 
+      - name: TVA Live - genera i JSON statici
+        if: ${{ inputs.solo_live_build }}
+        env:
+          TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: python3 tools/tva_live_build.py --out live-data --prev assets/live
+
+      - name: Riepilogo TVA Live nel job
+        if: ${{ always() && inputs.solo_live_build }}
+        run: |
+          if [ -f live-data/REPORT.md ]; then cat live-data/REPORT.md >> "$GITHUB_STEP_SUMMARY"; fi
+
+      - name: Salva i JSON TVA Live
+        if: ${{ always() && inputs.solo_live_build }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: tva-live-data
+          path: live-data/
+          if-no-files-found: warn
+          retention-days: 30
+
       - name: Salva i risultati
-        if: ${{ !inputs.solo_live_probe }}
+        if: ${{ !inputs.solo_live_probe && !inputs.solo_live_build }}
         uses: actions/upload-artifact@v4
         with:
           name: tmdb-sync

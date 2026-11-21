@@ -1,0 +1,6 @@
+{
+  "schema": 1,
+  "_istruzioni": "Lista manuale VERIFICABILE per produzioni annunciate senza data (o non presenti in TMDB). Ogni voce richiede una fonte ufficiale https (source_url), il nome della fonte, la data di verifica (verified_on, YYYY-MM-DD) e il testo letterale della finestra dichiarata (window, es. 2027) oppure null se non dichiarata. NON inserire indiscrezioni ne informazioni non presenti nella fonte. Facoltativi: tmdb {type,id} per agganciare Timeline/poster, date (solo se la fonte ufficiale la riporta, formato YYYY-MM-DD), kind (movie|series|season|special). Chiave 'exclude' per escludere manualmente un titolo TMDB (key tmdb:movie:ID).",
+  "entries": [],
+  "exclude": []
+}
