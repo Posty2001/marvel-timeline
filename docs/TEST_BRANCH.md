@@ -1,7 +1,7 @@
 # Branch `test/tva-archives` — versione TEST
 
 - **Base:** `main` = `82a73c7` (produzione, build `20261112-1905-rifinitura`, congelata). `main` non è modificato.
-- **Build TEST:** `20261121-1700-episodes4` (build precedente: `20261117-1900-arcade-draft31r`).
+- **Build TEST:** `20261121-1830-episodes5` (build precedente: `20261117-1900-arcade-draft31r`).
 - **Pubblicazione:** il branch NON è pubblicato né su GitHub Pages né su Netlify; il TEST si carica a mano su Netlify.
 
 ## Differenze rispetto alla produzione
