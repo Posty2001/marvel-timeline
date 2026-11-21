@@ -1,0 +1,52 @@
+name: live-probe (TVA Live Fase 0)
+
+# Solo avvio manuale. SOLA LETTURA: non fa commit, non fa deploy, non modifica il repository,
+# non usa secret diversi da TMDB_READ_TOKEN / TMDB_API_KEY gia esistenti.
+# Risultati: artifact scaricabile "live-probe" (REPORT.md, report.json, samples/).
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: Giorni futuri da analizzare per le uscite (default 900)
+        default: '900'
+      handles:
+        description: Handle YouTube aggiuntivi da provare, separati da virgola (facoltativo)
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Esegui le sonde
+        env:
+          TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          PROBE_DAYS: ${{ inputs.days }}
+          PROBE_HANDLES: ${{ inputs.handles }}
+        run: python3 tools/live_probe.py --out live-probe-out --days "${PROBE_DAYS:-900}" --handles "${PROBE_HANDLES}"
+
+      - name: Riepilogo nel job
+        if: always()
+        run: |
+          if [ -f live-probe-out/REPORT.md ]; then cat live-probe-out/REPORT.md >> "$GITHUB_STEP_SUMMARY"; fi
+
+      - name: Salva i risultati
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-probe
+          path: live-probe-out/
+          if-no-files-found: warn
+          retention-days: 30
