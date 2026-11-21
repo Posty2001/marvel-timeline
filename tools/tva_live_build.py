@@ -19,6 +19,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCHEMA = 1
 UA = 'TVA-Archives-live-build/1.0 (read-only)'
 TMDB = 'https://api.themoviedb.org/3'
+CATEGORIES = ('film', 'serie', 'animazione', 'videogioco')
+WARNINGS = ('tmdb_canceled',)
+TV_STATUS_IT = {'Returning Series': 'Serie in corso', 'In Production': 'In produzione', 'Planned': 'Progetto pianificato', 'Pilot': 'Episodio pilota', 'Ended': 'Serie conclusa', 'Canceled': 'Serie segnata come cancellata'}
 KEY_RE = re.compile(r'^(tmdb:(movie|tv):\d+(:S\d{2})?|manual:[a-z0-9\-]{3,60})$')
 DATE_RE = re.compile(r'^\d{4}-\d{2}-\d{2}$')
 SECRETS = [v for v in (os.environ.get('TMDB_READ_TOKEN'), os.environ.get('TMDB_API_KEY')) if v]
@@ -167,7 +170,7 @@ def classify_tmdb(date, status, today, official_dates, cfg):
         return 'upcoming', 'confirmed', 'day', 'Data riportata da un contenuto ufficiale verificato (vedi fonte)'
     if is_placeholder(date, cfg):
         return 'upcoming', 'provisional', 'year', 'Data segnaposto TMDB (inizio/fine anno): solo l anno e indicativo'
-    why = {'Planned': 'Progetto pianificato', 'In Production': 'In produzione', 'Post Production': 'In post-produzione', 'Released': 'Gia uscito'}.get(status or '', 'Stato non specificato')
+    why = {'Planned': 'Progetto pianificato', 'In Production': 'In produzione', 'Post Production': 'In post-produzione', 'Released': 'Gia uscito', **TV_STATUS_IT}.get(status or '', 'Stato non specificato')
     return 'upcoming', 'provisional', 'day', 'Data da TMDB, non confermata da una fonte ufficiale. ' + why
 
 
@@ -233,8 +236,9 @@ def build_calendar(tmdb, cfg, idx, today, manual, official_text_by_title, log):
         marvel_co = any(comp_re.search(x) for x in cos)
         genres = [g.get('id') for g in d.get('genres') or []]
         why = None
-        if d.get('status') in c['exclude_status']:
-            why = 'Stato TMDB %s (non e una produzione confermata)' % d.get('status')
+        status = d.get('status')
+        if status in (c['exclude_status_movie'] if kind == 'movie' else c['exclude_status_tv']):
+            why = 'Stato TMDB %s (%s)' % (status, 'film: non e una produzione confermata' if kind == 'movie' else 'non e una produzione confermata')
         elif re.search(c['exclude_title_regex'], title, re.I) and not in_tl:
             why = 'Contenuto non filmico/seriale (titolo: podcast/extra)'
         elif any(g in c['exclude_genre_ids'] for g in genres) and not in_tl:
@@ -245,6 +249,8 @@ def build_calendar(tmdb, cfg, idx, today, manual, official_text_by_title, log):
             excluded.append({'key': key0, 'title': title, 'reason': why})
             continue
         poster = d.get('poster_path')
+        category = 'animazione' if c['animation_genre_id'] in genres else ('film' if kind == 'movie' else 'serie')
+        warn = ['tmdb_canceled'] if (kind == 'tv' and status == 'Canceled') else []
         src = [{'name': 'TMDB', 'url': 'https://www.themoviedb.org/%s/%d' % (kind, tid), 'official': False}]
         cand = []   # (key, kind, date, dateIT, season, poster)
         if kind == 'movie':
@@ -265,6 +271,14 @@ def build_calendar(tmdb, cfg, idx, today, manual, official_text_by_title, log):
             if not cand and ne.get('air_date') and d0 <= ne['air_date'] <= d1 and ne.get('season_number'):
                 n = ne['season_number']
                 cand.append(('%s:S%02d' % (key0, n), 'season', ne['air_date'], None, n, poster))
+        if kind == 'tv':     # diagnostica: lo stato generale della serie NON e una prova; contano stagioni/episodi datati
+            ne0 = d.get('next_episode_to_air') or {}
+            log.setdefault('tv_diagnostics', []).append({'key': key0, 'title': title, 'status': status, 'in_production': d.get('in_production'), 'last_air': d.get('last_air_date'),
+                'seasons': [{'n': s.get('season_number'), 'air_date': s.get('air_date')} for s in (d.get('seasons') or [])][-6:], 'next_episode': ne0.get('air_date'),
+                'in_timeline': in_tl, 'items_in_window': [k for k, *_ in cand]})
+            if not cand and status == 'Canceled':
+                excluded.append({'key': key0, 'title': title, 'reason': 'Stato TMDB Canceled e nessuna stagione/episodio con data nella finestra: dati insufficienti (non inserito, non e una prova di cancellazione)'})
+                continue
         for key, ikind, date, date_it, season, post in cand:
             if date and not (d0 <= date <= d1):
                 continue
@@ -277,7 +291,9 @@ def build_calendar(tmdb, cfg, idx, today, manual, official_text_by_title, log):
                         odates |= dates_in_text(t['text'], yr)
                         if date in dates_in_text(t['text'], yr):
                             src.append({'name': 'YouTube - ' + t['channel'], 'url': t['url'], 'official': True})
-            state, conf, prec, reason = classify_tmdb(date, d.get('status'), today, odates, cfg['tmdb'])
+            state, conf, prec, reason = classify_tmdb(date, status, today, odates, cfg['tmdb'])
+            if warn and state != 'released':
+                reason += '. Attenzione: TMDB segna la serie come cancellata ma riporta una stagione/episodio con data: da verificare con una fonte ufficiale'
             if state == 'released' and (dt.date.fromisoformat(today) - dt.date.fromisoformat(date)).days > cfg['window']['past_days']:
                 continue
             missing = [k for k, v in (('poster', post), ('dateIT', date_it if ikind == 'movie' else 'n/a'), ('date', date)) if not v]
@@ -285,7 +301,7 @@ def build_calendar(tmdb, cfg, idx, today, manual, official_text_by_title, log):
                 'key': key, 'kind': ikind, 'title': title if season is None else '%s - Stagione %d' % (title, season),
                 'date': date, 'precision': prec, 'window': None, 'dateIT': date_it, 'state': state, 'confidence': conf, 'reason': reason,
                 'timelineId': link_timeline(idx, kind, tid, season), 'tmdb': {'type': kind, 'id': tid, **({'season': season} if season else {})},
-                'poster': post, 'sources': src[:3], 'signals': sorted(sigs), 'missing': missing}
+                'poster': post, 'sources': src[:3], 'signals': sorted(sigs), 'missing': missing, 'category': category, 'warnings': warn}
     # voci manuali (verificate): annunci senza data o titoli assenti in TMDB
     for e in manual.get('entries') or []:
         k = e['key']
@@ -304,7 +320,24 @@ def build_calendar(tmdb, cfg, idx, today, manual, official_text_by_title, log):
                     'window': e.get('window'), 'dateIT': None, 'state': 'upcoming' if e.get('date') else 'announced', 'confidence': conf,
                     'reason': ('Data riportata da fonte ufficiale (verificata il %s)' % e['verified_on']) if e.get('date') else 'Annunciato dalla fonte ufficiale senza data (verificato il %s)' % e['verified_on'],
                     'timelineId': link_timeline(idx, tm['type'], tm['id']) if tm else None, 'tmdb': tm, 'poster': None,
-                    'sources': [{'name': e['source_name'], 'url': e['source_url'], 'official': True}], 'signals': ['manual'], 'missing': ['poster']}
+                    'sources': [{'name': e['source_name'], 'url': e['source_url'], 'official': True}], 'signals': ['manual'], 'missing': ['poster'],
+                    'category': e.get('category') or ('film' if e.get('kind', 'movie') == 'movie' else 'serie'), 'warnings': []}
+    # completezza: produzioni TV pianificate/in produzione SENZA data (discover per data non le vede). Solo diagnostica: non si pubblicano
+    # senza fonte ufficiale; vanno verificate a mano e, se confermate, inserite in tools/live/manual.json.
+    undated = []
+    if core:
+        have = {k for k in items} | {'tmdb:tv:%d' % t for (kk, t) in found if kk == 'tv'}
+        for pg in (1, 2):
+            j = tmdb.get('/discover/tv', page=pg, with_companies='|'.join(map(str, core)), with_status=c['undated_tv_status']) or {}
+            for it in j.get('results') or []:
+                k = 'tmdb:tv:%d' % it['id']
+                if k in have or any(u['key'] == k for u in undated) or k in excl_manual:
+                    continue
+                undated.append({'key': k, 'title': it.get('name'), 'first_air_date': it.get('first_air_date') or None, 'url': 'https://www.themoviedb.org/tv/%d' % it['id']})
+            if pg >= (j.get('total_pages') or 1):
+                break
+    log['undated_candidates'] = undated[:40]
+    log['limits'] = ['I film senza data non sono rilevabili con discover/movie (richiede un intervallo di date): usare tools/live/manual.json con fonte ufficiale.']
     return list(items.values()), excluded
 
 
@@ -362,6 +395,15 @@ def verify_channel(ch, fetch):
     return checks
 
 
+def trailer_category(title, desc, yt):
+    """(categoria, base). Solo con evidenza: parole chiave di videogioco nel titolo/descrizione; altrimenti None (poi eventualmente dal titolo collegato)."""
+    if re.search(yt['game_title_regex'], title or '', re.I):
+        return 'videogioco', 'titolo'
+    if re.search(yt['game_desc_regex'], desc or '', re.I):
+        return 'videogioco', 'descrizione'
+    return None, 'nessuna'
+
+
 def build_trailers(cfg, fetch, today, log):
     yt, out, ident, seen = cfg['youtube'], [], [], set()
     status = 'ok'
@@ -404,9 +446,11 @@ def build_trailers(cfg, fetch, today, log):
                 continue
             seen.add(e['id'])
             kind = 'teaser' if re.search(r'teaser', ttl, re.I) else 'trailer'
+            cat, basis = trailer_category(ttl, e['desc'], yt)
             out.append({'key': 'yt:' + e['id'], 'title': ttl, 'published': e['published'], 'url': e['url'] or 'https://www.youtube.com/watch?v=' + e['id'],
-                        'channel': ch['label'], 'kind': kind, 'official': True, 'relatesTo': None, '_desc': e['desc']})
-            official_text.setdefault(title_base(ttl), []).append({'text': ttl + ' ' + e['desc'], 'url': e['url'], 'channel': ch['label']})
+                        'channel': ch['label'], 'kind': kind, 'official': True, 'relatesTo': None, 'category': cat, 'categoryBasis': basis, '_desc': e['desc']})
+            if cat != 'videogioco':          # un video di videogioco non conferma date di film/serie
+                official_text.setdefault(title_base(ttl), []).append({'text': ttl + ' ' + e['desc'], 'url': e['url'], 'channel': ch['label']})
     cut = (dt.date.fromisoformat(today) - dt.timedelta(days=yt['retention_days'])).isoformat()
     out = sorted([t for t in out if t['published'] >= cut], key=lambda t: t['published'], reverse=True)[:yt['max_items']]
     log['youtube_identity'] = ident
@@ -415,10 +459,14 @@ def build_trailers(cfg, fetch, today, log):
 
 def link_trailers(trailers, calendar, idx_titles):
     cal = [(norm(i['title']), i['key']) for i in calendar if i['title']]
+    cat_of = {i['key']: i.get('category') for i in calendar}
     for t in trailers:
         base = title_base(t['title'])
-        hits = [k for n, k in cal if base and len(base) >= 4 and (base in n or n in base)]
-        t['relatesTo'] = hits[0] if len(hits) == 1 else None      # solo se univoco
+        hits = [k for n, k in cal if base and len(base) >= 4 and (base in n or n in base)] if t.get('category') != 'videogioco' else []
+        t['relatesTo'] = hits[0] if len(hits) == 1 else None      # solo se univoco (mai per i videogiochi)
+        if t.get('category') is None and t['relatesTo'] and cat_of.get(t['relatesTo']):
+            t['category'], t['categoryBasis'] = cat_of[t['relatesTo']], 'titolo collegato'
+        t.setdefault('category', None); t.setdefault('categoryBasis', 'nessuna')      # nessuna categoria senza evidenza (mai "film" per default)
         t.pop('_desc', None)
 
 
@@ -451,6 +499,8 @@ def validate(calendar, trailers, manifest, cfg):
         need(isinstance(it.get('sources'), list) and it['sources'] and all(str(s.get('url', '')).startswith('https://') for s in it['sources']), '%s: fonti' % k)
         need(it.get('timelineId') is None or re.match(r'^\d{3}$', str(it['timelineId'])), '%s: timelineId' % k)
         need(isinstance(it.get('missing'), list), '%s: missing' % k)
+        need(it.get('category') in CATEGORIES + (None,), '%s: category' % k)
+        need(isinstance(it.get('warnings', []), list) and all(w in WARNINGS for w in it.get('warnings', [])), '%s: warnings' % k)
     tl = [i['timelineId'] for i in calendar['items'] if i.get('timelineId') and i['kind'] != 'season']
     need(len(tl) == len(set(tl)), 'stessa scheda Timeline agganciata a piu voci (movie/series)')
     tk = set()
@@ -460,6 +510,7 @@ def validate(calendar, trailers, manifest, cfg):
         need(str(t.get('url', '')).startswith('https://www.youtube.com/') or str(t.get('url', '')).startswith('https://youtu.be/'), '%s: url' % t['key'])
         need(t.get('relatesTo') is None or t['relatesTo'] in keys, '%s: relatesTo inesistente' % t['key'])
         need(DATE_RE.match(t.get('published', '')), '%s: data' % t['key'])
+        need(t.get('category') in CATEGORIES + (None,), '%s: category' % t['key'])
     for name, obj in (('calendar', calendar), ('trailers', trailers), ('manifest', manifest)):
         n = len(json.dumps(obj, ensure_ascii=False, separators=(',', ':')).encode())
         need(n <= cfg['budget_bytes'][name], '%s supera il budget (%d B)' % (name, n))
@@ -484,6 +535,8 @@ def validate_manual(manual):
             errs.append('manuale %s: verified_on' % k)
         if e.get('date') and not DATE_RE.match(e['date']):
             errs.append('manuale %s: date' % k)
+        if e.get('category') and e['category'] not in CATEGORIES:
+            errs.append('manuale %s: category (%s)' % (k, ', '.join(CATEGORIES)))
         if e.get('tmdb') and not (e['tmdb'].get('type') in ('movie', 'tv') and isinstance(e['tmdb'].get('id'), int)):
             errs.append('manuale %s: tmdb' % k)
     if errs:
@@ -541,7 +594,8 @@ def run(args, fetch=http, root=ROOT):
     counts = {'calendar': len(calendar['items']), 'confirmed': sum(1 for i in calendar['items'] if i['confidence'] == 'confirmed'),
               'provisional': sum(1 for i in calendar['items'] if i['confidence'] == 'provisional'), 'released': sum(1 for i in calendar['items'] if i['state'] == 'released'),
               'in_timeline': sum(1 for i in calendar['items'] if i['timelineId']), 'not_in_timeline': sum(1 for i in calendar['items'] if not i['timelineId']),
-              'excluded': len(excluded), 'trailers': len(trailers)}
+              'excluded': len(excluded), 'trailers': len(trailers), 'undated_candidates': len(log.get('undated_candidates', [])),
+              'by_category': {c: sum(1 for i in calendar['items'] if i.get('category') == c) for c in CATEGORIES}, 'trailers_by_category': {str(c): sum(1 for t in trailers if t.get('category') == c) for c in CATEGORIES + (None,)}}
     manifest = {'schema': SCHEMA, 'generated_at': now, 'sources': manifest_sources, 'counts': counts, 'attribution': {'tmdb': True},
                 'content_hash': hashlib.sha256((canon(calendar['items']) + canon(trailers)).encode()).hexdigest()[:16],
                 'notes': ['Confermato = fonte ufficiale verificabile; altrimenti provvisorio.', 'Indiscrezioni escluse in 1.0.']}
@@ -560,8 +614,10 @@ def write_all(out, calendar, trailers, manifest, excluded, log):
     for i in calendar['items']:
         L.append('- %s | %s | %s | %s | Timeline: %s | %s' % (i['date'] or i['window'] or 's.d.', i['title'], i['state'], i['confidence'] or '-', i['timelineId'] or 'NO', i['reason']))
     L += ['', '## Esclusi (%d)' % len(excluded), ''] + ['- %s %s: %s' % (e['key'], e.get('title', ''), e['reason']) for e in excluded]
+    ud = log.get('undated_candidates') or []
+    L += ['', '## Candidati senza data (solo TMDB, NON pubblicati: verificare con fonte ufficiale e, se confermati, inserire in tools/live/manual.json)', ''] + (['- %s %s (%s)' % (u['key'], u['title'], u['url']) for u in ud] or ['- nessuno'])
     L += ['', '## Identita canali YouTube', '', '```json', json.dumps(log.get('youtube_identity'), indent=1, ensure_ascii=False), '```', '', '## Diagnostica', '', '```json',
-          json.dumps({k: v for k, v in log.items() if k != 'youtube_identity'}, indent=1, ensure_ascii=False), '```']
+          json.dumps({k: v for k, v in log.items() if k not in ('youtube_identity', 'undated_candidates')}, indent=1, ensure_ascii=False), '```']
     open(os.path.join(out, 'REPORT.md'), 'w', encoding='utf-8').write(scrub('\n'.join(L)))
     for dp, _, fs in os.walk(out):
         for f in fs:

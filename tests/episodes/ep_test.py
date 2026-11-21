@@ -86,6 +86,7 @@ with sync_playwright() as p:
     pg = new_page(b, init=init)
     def snapshot():
         return pg.evaluate("()=>({h:(document.getElementById('hhsRating')||{}).textContent,t:(document.getElementById('tesseraVoto')||{}).textContent,d:(document.getElementById('dashAvgRating')||{}).textContent,x:(document.getElementById('tesseraXp')||document.querySelector('[id*=Xp]')||{}).textContent})")
+    pg.wait_for_function("()=>!!localStorage.getItem('marvel-ultimate-timeline-live-state-v1')", timeout=8000)   # Live (asincrono) scrive il proprio stato al primo caricamento dati: attenderlo prima dello snapshot
     pre = snapshot(); raw0 = ls(pg, RK)
     others0 = pg.evaluate("(k)=>{const o={};for(let i=0;i<localStorage.length;i++){const n=localStorage.key(i);if(n!==k)o[n]=localStorage.getItem(n)}return o}", KEY)
     ok('originale: stelle visibili prima di votare episodi', stars_visible(pg, '039'))

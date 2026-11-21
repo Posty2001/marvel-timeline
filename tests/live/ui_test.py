@@ -238,6 +238,23 @@ with sync_playwright() as pw:
     src = open(os.path.join(ROOT, 'index.html'), encoding='utf-8').read()
     ok('sync: chiave Live registrata in PROFILE_OBJ_KEYS (stessi costruttori di profilo)', "live: 'marvel-ultimate-timeline-live-v1'" in src and src.count('for (var ok in PROFILE_OBJ_KEYS) { profile[ok] = safeGetObj') >= 3)
     ok('isolamento: la chiave dello stato volatile NON e nel profilo', 'live-state-v1' not in src.split('PROFILE_OBJ_KEYS = {')[1].split('};')[0])
+    # --- categorie (film/serie/animazione/videogiochi), avvisi "da verificare", trailer game
+    reset_state()
+    STATE['cal'] = copy.deepcopy(CAL) + [item('tmdb:movie:60', 'Film Animato', d(220), category='animazione'), item('tmdb:tv:61', 'Serie Cancellata Con Data', d(230), kind='season', category='serie', warnings=['tmdb_canceled'])]
+    for i in STATE['cal'][:len(CAL)]: i.setdefault('category', None)
+    STATE['tr'] = copy.deepcopy(TR) + [{'key': 'yt:GGGGGGGGGGG', 'title': 'Marvel Cosmic Invasion DLC | Launch Trailer', 'published': d(-2), 'url': 'https://www.youtube.com/watch?v=GGGGGGGGGGG', 'channel': 'Marvel Entertainment', 'kind': 'trailer', 'official': True, 'relatesTo': None, 'category': 'videogioco'}]
+    ctx = new_ctx(b); pg = open_page(ctx); go_live(pg)
+    def chipc(n): pg.locator('.tvl-chip', has_text=n).first.click(); pg.wait_for_timeout(100)
+    chipc('Animazione'); ok('categorie: filtro Animazione mostra solo animati', pg.locator('.tvl-row').count() == 1 and pg.locator('.tvl-row[data-key="tmdb:movie:60"]').count() == 1)
+    chipc('Serie'); ok('categorie: filtro Serie non include animati', pg.locator('.tvl-row[data-key="tmdb:movie:60"]').count() == 0 and pg.locator('.tvl-row[data-key="tmdb:tv:61"]').count() == 1)
+    chipc('Tutti'); ok('avviso: serie con stato TMDB cancellato mostra "Da verificare"', 'da verificare' in txt(pg, '.tvl-row[data-key="tmdb:tv:61"]').lower())
+    ok('avviso: nessuna etichetta Confermato aggiunta', pg.locator('.tvl-row .tvl-t-conf').count() == 1)
+    go_live(pg, 'trl')
+    ok('trailer: DLC classificato Videogioco', 'videogioc' in txt(pg, '.tvl-row[data-key="yt:GGGGGGGGGGG"]').lower())
+    ok('trailer: senza categoria dimostrata -> Non classificato', 'non classificato' in txt(pg, '.tvl-row[data-key="yt:AAAAAAAAAAA"]').lower() or 'film' in txt(pg, '.tvl-row[data-key="yt:AAAAAAAAAAA"]').lower())
+    chipc('Videogiochi'); ok('trailer: filtro Videogiochi isola il DLC', pg.locator('.tvl-row').count() == 1 and pg.locator('.tvl-row[data-key="yt:GGGGGGGGGGG"]').count() == 1)
+    ok('errori JS categorie', not pg.errs, pg.errs)
+    ctx.close()
     ctx.close(); b.close()
 bad = [n for n, c in res if not c]
 print('\nRISULTATO: %d ok, %d falliti' % (len(res) - len(bad), len(bad)))

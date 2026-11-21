@@ -1,26 +1,69 @@
 {
   "schema": 1,
-  "window": {"past_days": 14, "future_days": 900},
+  "window": {
+    "past_days": 14,
+    "future_days": 900
+  },
   "tmdb": {
     "company_name_regex": "^marvel (studios|entertainment|animation|television)\\b",
-    "keyword_names": ["marvel cinematic universe (mcu)"],
+    "keyword_names": [
+      "marvel cinematic universe (mcu)"
+    ],
     "keyword_only_policy": "exclude",
-    "exclude_status": ["Rumored", "Canceled"],
-    "exclude_genre_ids": [10767, 10763, 10764, 99],
+    "exclude_genre_ids": [
+      10767,
+      10763,
+      10764,
+      99
+    ],
     "exclude_title_regex": "podcast|making of|behind the scenes|dietro le quinte|assembled|recap|reaction|\\bquiz\\b|\\bgame\\b",
-    "placeholder_dates_mmdd": ["01-01", "12-31"],
-    "max_detail_requests": 120
+    "placeholder_dates_mmdd": [
+      "01-01",
+      "12-31"
+    ],
+    "max_detail_requests": 120,
+    "exclude_status_movie": [
+      "Rumored",
+      "Canceled"
+    ],
+    "exclude_status_tv": [
+      "Rumored"
+    ],
+    "undated_tv_status": "1|2",
+    "animation_genre_id": 16
   },
   "youtube": {
     "channels": [
-      {"handle": "@marvel", "channel_id": "UCvC4D8onUfXzvjTOM-dBfEA", "label": "Marvel Entertainment", "enabled": true, "expect_author_regex": "^marvel", "role": "ufficiale"},
-      {"handle": "@MarvelHQ", "channel_id": null, "label": "Marvel HQ", "enabled": false, "role": "da valutare separatamente"}
+      {
+        "handle": "@marvel",
+        "channel_id": "UCvC4D8onUfXzvjTOM-dBfEA",
+        "label": "Marvel Entertainment",
+        "enabled": true,
+        "expect_author_regex": "^marvel",
+        "role": "ufficiale"
+      },
+      {
+        "handle": "@MarvelHQ",
+        "channel_id": null,
+        "label": "Marvel HQ",
+        "enabled": false,
+        "role": "da valutare separatamente"
+      }
     ],
     "include_title_regex": "\\b(official )?(trailer|teaser)\\b|\\bofficial\\b.*\\b(trailer|teaser)\\b|\\bfirst look\\b|\\bnew look\\b",
     "exclude_title_regex": "podcast|reaction|recap|explained|\\bquiz\\b|\\bshorts?\\b|behind the scenes|featurette|interview",
     "max_items": 30,
-    "retention_days": 120
+    "retention_days": 120,
+    "game_title_regex": "\\b(dlc|gameplay|video ?game|game ?play|playstation|xbox|nintendo|switch 2|steam|pc game|season pass|early access)\\b|\\bmarvel (cosmic invasion|rivals|snap|tokon|1943|ultimate alliance|midnight suns|future fight|strike force|contest of champions|puzzle quest|champions)\\b|\\bsiege of castle doom\\b",
+    "game_desc_regex": "\\b(playstation|xbox|nintendo switch|steam|epic games store|dlc|available now on (pc|consoles?))\\b"
   },
-  "news": {"enabled": false, "reason": "Nessun feed ufficiale accessibile (8 candidati falliti, HTTP 403): TVA News non sviluppato in 1.0."},
-  "budget_bytes": {"calendar": 90000, "trailers": 40000, "manifest": 8000}
+  "news": {
+    "enabled": false,
+    "reason": "Nessun feed ufficiale accessibile (8 candidati falliti, HTTP 403): TVA News non sviluppato in 1.0."
+  },
+  "budget_bytes": {
+    "calendar": 90000,
+    "trailers": 40000,
+    "manifest": 8000
+  }
 }

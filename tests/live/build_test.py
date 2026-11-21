@@ -37,10 +37,17 @@ MOVIES = {
   8: D('Just Released', '2026-11-10', status='Released'),
   9: D('Doc About Making', '2027-04-04', genres=(99,)),
   10: D('Stale Date Film', '2026-11-15', status='Post Production'),
+  12: D('Cancelled Film', '2027-06-06', status='Canceled'),
+  13: D('Animated Wonder', '2027-10-10', genres=(16,)),
 }
 TV = {
   61550: {'name': 'Known Show', 'status': 'Returning Series', 'poster_path': '/s.jpg', 'genres': [], 'production_companies': [{'name': 'Marvel Television'}],
           'seasons': [{'season_number': 0, 'air_date': '2026-12-01'}, {'season_number': 1, 'air_date': '2015-04-10'}, {'season_number': 2, 'air_date': '2027-03-01', 'poster_path': '/s2.jpg'}]},
+  40: {'name': 'Canceled But Dated', 'status': 'Canceled', 'in_production': False, 'poster_path': '/c.jpg', 'genres': [], 'production_companies': [{'name': 'Marvel Studios'}],
+       'seasons': [{'season_number': 1, 'air_date': '2020-01-01'}, {'season_number': 2, 'air_date': '2027-04-04'}]},
+  41: {'name': 'Canceled Truly Undated', 'status': 'Canceled', 'poster_path': None, 'genres': [], 'production_companies': [{'name': 'Marvel Studios'}], 'seasons': [{'season_number': 1, 'air_date': '2019-01-01'}]},
+  30: {'name': 'Planned Without Date', 'status': 'Planned', 'poster_path': None, 'genres': [], 'production_companies': [{'name': 'Marvel Studios'}], 'seasons': []},
+  50: {'name': 'Animated Series', 'status': 'Returning Series', 'poster_path': '/an.jpg', 'genres': [{'id': 16}], 'production_companies': [{'name': 'Marvel Animation'}], 'seasons': [{'season_number': 1, 'air_date': '2027-02-02'}]},
   20: {'name': 'Brand New Series', 'status': 'In Production', 'poster_path': None, 'genres': [], 'production_companies': [{'name': 'Marvel Studios'}],
        'seasons': [{'season_number': 1, 'air_date': '2027-08-20'}]},
 }
@@ -53,6 +60,8 @@ def yt_feed(author='Marvel Entertainment'):
             + e('BBBBBBBBBBB', 'New Hero | Official Teaser', 'Coming soon.')
             + e('CCCCCCCCCCC', 'Marvel Podcast Episode 5 trailer', '')
             + e('DDDDDDDDDDD', 'Hot Toys unboxing', '')
+            + e('FFFFFFFFFFF', 'Marvel Cosmic Invasion | The Siege of Castle Doom DLC #2 Launch Trailer', 'Available now on PlayStation, Xbox, Switch and PC.')
+            + e('GGGGGGGGGGG', 'Mystery Project | Official Trailer', 'Nothing about its type.')
             + e('EEEEEEEEEEE', 'Doomsday Test | Official Trailer', 'dup title, other id', '2020-01-01')   # troppo vecchio
             + '</feed>')
 
@@ -70,9 +79,9 @@ class Net:
             elif p == '/search/company': j = {'results': [{'id': 420, 'name': 'Marvel Studios'}, {'id': 77, 'name': 'Marvel Productions'}, {'id': 5, 'name': 'Other'}]}
             elif p == '/search/keyword': j = {'results': [{'id': 180547, 'name': 'marvel cinematic universe (mcu)'}]}
             elif p == '/discover/movie':
-                ids = [1, 2, 3, 4, 5, 7, 8, 9, 10] if 'with_companies' in q else [1, 6]
+                ids = [1, 2, 3, 4, 5, 7, 8, 9, 10, 12, 13] if 'with_companies' in q else [1, 6]
                 j = {'total_pages': 1, 'results': [{'id': i} for i in ids]}
-            elif p == '/discover/tv': j = {'total_pages': 1, 'results': [{'id': 20}] if 'with_companies' in q else []}
+            elif p == '/discover/tv': j = {'total_pages': 1, 'results': ([{'id': 30, 'name': 'Planned Without Date'}, {'id': 20, 'name': 'Brand New Series'}] if 'with_status' in q else [{'id': 20}, {'id': 40}, {'id': 41}, {'id': 50}]) if 'with_companies' in q else []}
             elif p.startswith('/movie/'): j = MOVIES.get(int(p.split('/')[2]))
             elif p.startswith('/tv/'): j = TV.get(int(p.split('/')[2]))
             return R(200, json.dumps(j)) if j is not None else R(404)
@@ -121,14 +130,26 @@ ok(len(tl) == len(set(tl)), 'nessuna scheda Timeline duplicata')
 
 print('2) trailer: identita, filtri, collegamenti')
 T = {t['key']: t for t in tr['items']}
-ok(set(T) == {'yt:AAAAAAAAAAA', 'yt:BBBBBBBBBBB'}, 'solo trailer/teaser ufficiali recenti: %s' % sorted(T))
+ok(set(T) == {'yt:AAAAAAAAAAA', 'yt:BBBBBBBBBBB', 'yt:FFFFFFFFFFF', 'yt:GGGGGGGGGGG'}, 'solo trailer/teaser ufficiali recenti: %s' % sorted(T))
 ok(T['yt:AAAAAAAAAAA']['relatesTo'] == 'tmdb:movie:7' and T['yt:BBBBBBBBBBB']['relatesTo'] == 'tmdb:movie:2', 'collegamento trailer->titolo univoco')
 ok(T['yt:BBBBBBBBBBB']['kind'] == 'teaser', 'teaser riconosciuto')
+ok(T['yt:FFFFFFFFFFF']['category'] == 'videogioco' and T['yt:FFFFFFFFFFF']['relatesTo'] is None, 'DLC di videogioco classificato videogioco, mai collegato a film/serie')
+ok(T['yt:GGGGGGGGGGG']['category'] is None and T['yt:GGGGGGGGGGG']['categoryBasis'] == 'nessuna', 'trailer senza evidenza: nessuna categoria inventata')
+ok(T['yt:AAAAAAAAAAA']['category'] == 'film' and T['yt:AAAAAAAAAAA']['categoryBasis'] == 'titolo collegato', 'categoria ereditata solo dal titolo collegato')
 ok(man['sources']['youtube']['status'] == 'ok' and man['sources']['youtube']['identity'][0]['verified'] is True, 'identita @marvel verificata')
 ok(man['sources']['youtube']['identity'][1]['enabled'] is False, '@MarvelHQ non abilitato')
 ok(not any('MarvelHQ' in u or 'marvelstudios' in u.lower() or 'MarvelItalia' in u for u in net.log), 'nessuna richiesta a canali non autorizzati')
 ok(man['sources']['news']['status'] == 'disabled' and not any('marvel.com' in u for u in net.log), 'News disabilitato, nessuna richiesta a marvel.com')
 
+print('2b) stato Canceled, categorie, completezza')
+ok('tmdb:tv:40:S02' in K and 'tmdb:tv:40:S02' in K and K['tmdb:tv:40:S02']['warnings'] == ['tmdb_canceled'] and K['tmdb:tv:40:S02']['confidence'] == 'provisional' and 'Attenzione' in K['tmdb:tv:40:S02']['reason'], 'serie Canceled con stagione datata: inclusa, provvisoria, con avviso (lo stato non e una prova)')
+ok('tmdb:tv:41' not in K and 'tmdb:tv:41:S01' not in K and any(e['key'] == 'tmdb:tv:41' and 'dati insufficienti' in e['reason'] for e in excl), 'serie Canceled senza date: non reinserita, motivo trasparente')
+ok('tmdb:movie:12' not in K and any(e['key'] == 'tmdb:movie:12' for e in excl), 'film Canceled escluso')
+ok(K['tmdb:movie:13']['category'] == 'animazione' and K['tmdb:tv:50:S01']['category'] == 'animazione' and K['tmdb:movie:1']['category'] == 'film' and K['tmdb:tv:20:S01']['category'] == 'serie', 'categorie: animazione solo con genere TMDB, altrimenti film/serie dal tipo')
+ok(any(d['key'] == 'tmdb:tv:40' and d['status'] == 'Canceled' and d['items_in_window'] == ['tmdb:tv:40:S02'] for d in log['tv_diagnostics']), 'diagnostica TV: stato, stagioni e decisione')
+ok([u['key'] for u in log['undated_candidates']] == ['tmdb:tv:30'] and 'tmdb:tv:30' not in K, 'produzione TV pianificata senza data: solo in diagnostica, non pubblicata')
+ok(any('film senza data' in l for l in log['limits']), 'limite dichiarato: film senza data non rilevabili')
+ok(all(i['category'] in B.CATEGORIES for i in cal['items']), 'ogni voce ha una categoria valida')
 print('3) identita non verificata -> nessun trailer')
 _, tr2, man2, _, _ = run(mkroot(), Net(author='Qualcun Altro'))
 ok(tr2['items'] == [] and man2['sources']['youtube']['status'] == 'unverified', 'autore incoerente: trailer non pubblicati')
@@ -176,6 +197,13 @@ txt = ''.join(open(os.path.join(out, f), encoding='utf-8').read() for f in os.li
 ok('FAKE_TOKEN' not in txt and 'Bearer' not in txt and 'api_key' not in txt, 'nessun token/credenziale nei file')
 ok(not any('FAKE_TOKEN' in u for u in net.log), 'token mai nell URL (solo intestazione)')
 
+print('6b) dati reali integrati (assets/live)')
+if os.path.exists(ROOT + '/assets/live/calendar.json') and not (B.load_json(ROOT + '/assets/live/manifest.json') or {}).get('seed'):
+    rc, rt, rm = [B.load_json(ROOT + '/assets/live/%s.json' % n) for n in ('calendar', 'trailers', 'manifest')]
+    try: B.validate(rc, rt, rm, cfg); ok(True, 'JSON reali validi')
+    except B.ValidationError as e: ok(False, 'JSON reali validi: %s' % e)
+    ok(all(i['confidence'] == 'provisional' for i in rc['items'] if i['state'] == 'upcoming'), 'tutte le date reali restano provvisorie')
+    ok(all(i['timelineId'] is None or i['key'].startswith('tmdb') for i in rc['items']) and len({i['timelineId'] for i in rc['items'] if i['timelineId']}) == sum(1 for i in rc['items'] if i['timelineId']), 'Timeline: nessuna scheda doppia, voci nuove solo in Live')
 print('7) date da testo ufficiale')
 ok(B.dates_in_text('In theaters December 18', 2027) == {'2027-12-18'}, 'Month D')
 ok(B.dates_in_text('Coming 18 Dec 2027', 2026) == {'2027-12-18'}, 'D Mon YYYY')

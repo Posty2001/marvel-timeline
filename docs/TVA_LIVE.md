@@ -18,6 +18,9 @@ Test locali: `python3 tests/live/build_test.py` (generatore, fixture) e `python3
 - **Nessuna indiscrezione** in 1.0 (stato TMDB Rumored/Canceled escluso).
 - Esclusi (con motivo nel REPORT): podcast/extra, generi talk/news/reality/documentario, titoli senza societa Marvel (solo keyword), esclusioni manuali.
 - YouTube: solo `@marvel` (UCvC4D8onUfXzvjTOM-dBfEA), pubblicato solo se l'identita risulta verificata (handle→channel_id e autore del feed). `@MarvelHQ` disabilitato (valutazione separata). Nessun canale diverso.
+- **Stato TMDB "Canceled" delle serie**: non e mai una prova di cancellazione. Una serie Canceled entra solo se TMDB riporta una stagione/episodio con data nella finestra (con avviso "Da verificare" e `warnings: ["tmdb_canceled"]`, resta Provvisorio); senza dati datati viene esclusa con il motivo "dati insufficienti" nel REPORT, senza dichiarare la cancellazione. I film Canceled restano esclusi. Diagnostica per serie (stato, stagioni, prossimo episodio) in `log.tv_diagnostics` del REPORT.
+- **Categorie**: `film`, `serie`, `animazione` (solo se TMDB riporta il genere Animazione), `videogioco` (solo trailer riconosciuti da titolo/descrizione, es. DLC). Nessuna categoria viene attribuita senza evidenza: i trailer non classificabili mostrano "Non classificato"; i trailer di videogiochi non alimentano mai conferme di date. L'app ha filtri distinti Film / Serie / Animazione / Videogiochi (calendario e trailer) e interruttori nelle Preferenze.
+- **Completezza**: TMDB `discover` non puo elencare film senza data. Le serie annunciate senza data (stato Planned/In Production) sono elencate nel REPORT come "Candidati senza data (solo TMDB, NON pubblicati)" da verificare a mano; si pubblicano solo tramite `manual.json` con fonte ufficiale.
 - Notizie: **non sviluppate** (nessun feed ufficiale accessibile).
 
 ### Timeline senza duplicati
