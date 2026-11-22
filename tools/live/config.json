@@ -30,7 +30,11 @@
       "Rumored"
     ],
     "undated_tv_status": "1|2",
-    "animation_genre_id": 16
+    "animation_genre_id": 16,
+    "diagnose_titles": [
+      "Wonder Man",
+      "Spider-Noir"
+    ]
   },
   "youtube": {
     "channels": [

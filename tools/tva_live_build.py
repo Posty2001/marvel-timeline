@@ -341,6 +341,37 @@ def build_calendar(tmdb, cfg, idx, today, manual, official_text_by_title, log):
     return list(items.values()), excluded
 
 
+def diagnose_titles(tmdb, cfg, today, log):
+    """Diagnostica (NON pubblicata) per titoli richiesti: separa lo stato generale della serie dalle stagioni/episodi effettivamente datati in futuro."""
+    out = []
+    for name in cfg['tmdb'].get('diagnose_titles') or []:
+        res = (tmdb.get('/search/tv', query=name) or {}).get('results') or []
+        exact = [r for r in res if (r.get('name') or '').strip().lower() == name.lower() or (r.get('original_name') or '').strip().lower() == name.lower()][:3]
+        entry = {'query': name, 'search_results': [{'id': r.get('id'), 'name': r.get('name'), 'first_air_date': r.get('first_air_date') or None} for r in res[:5]], 'matches': []}
+        for r in exact:
+            d = tmdb.get('/tv/%d' % r['id']) or {}
+            if not d:
+                continue
+            seasons = [{'n': x.get('season_number'), 'air_date': x.get('air_date') or None, 'episodes': x.get('episode_count')} for x in d.get('seasons') or []]
+            nxt, last = d.get('next_episode_to_air') or {}, d.get('last_episode_to_air') or {}
+            future = [x for x in seasons if x['n'] and x['air_date'] and x['air_date'] > today]
+            has_future = bool(future) or bool(nxt.get('air_date') and nxt['air_date'] > today)
+            status = d.get('status')
+            if has_future:
+                verdict = 'Stagioni/episodi futuri con data in TMDB: %s%s. Resta provvisorio finche manca una fonte ufficiale.' % (', '.join('S%02d %s' % (x['n'], x['air_date']) for x in future) or '-', ('; prossimo episodio ' + nxt['air_date']) if nxt.get('air_date') else '')
+            elif status == 'Canceled':
+                verdict = 'Stato generale TMDB Canceled; nessuna stagione/episodio futuro con data: dati insufficienti (NON e una prova di cancellazione di stagioni previste).'
+            else:
+                verdict = 'Nessuna stagione/episodio futuro con data in TMDB (stato generale: %s).' % status
+            entry['matches'].append({'id': r['id'], 'name': d.get('name'), 'status': status, 'in_production': d.get('in_production'), 'number_of_seasons': d.get('number_of_seasons'),
+                'companies': [c.get('name') for c in d.get('production_companies') or []][:6], 'seasons': seasons, 'last_episode': last.get('air_date'), 'next_episode': nxt.get('air_date'),
+                'future_dated': has_future, 'verdict': verdict, 'url': 'https://www.themoviedb.org/tv/%d' % r['id']})
+        if not entry['matches']:
+            entry['note'] = 'Nessuna serie TMDB con questo titolo esatto: nulla da dedurre.'
+        out.append(entry)
+    log['requested_diagnostics'] = out
+
+
 def dedupe(items, log):
     """Una sola voce per chiave; stesso titolo normalizzato + stessa data + stesso tipo con chiavi diverse -> si tiene la piu ricca."""
     by_key, out, seen = {}, [], {}
@@ -574,12 +605,18 @@ def run(args, fetch=http, root=ROOT):
             tstatus = 'error'; log['tmdb_error'] = 'Accesso TMDB non riuscito'
         else:
             calendar_items, excluded = build_calendar(tm, cfg, idx, today, manual, official_text, log)
+            diagnose_titles(tm, cfg, today, log)
             if tm.errors:
                 tstatus = 'partial' if calendar_items else 'error'
     if tstatus == 'error' and prev_cal:
         calendar_items, tstatus = prev_cal, 'stale'
     elif tstatus in ('ok', 'partial'):
         calendar_items = dedupe(calendar_items, log)
+        if tstatus == 'partial':      # errori parziali: le voci del catalogo valido precedente non vengono perse
+            have = {i['key'] for i in calendar_items}
+            kept = [p for p in prev_cal if p['key'] not in have and p.get('state') != 'released']
+            calendar_items += kept
+            log['partial_carried_over'] = [p['key'] for p in kept]
         merge_history(calendar_items, prev_cal, today)
     manifest_sources['tmdb'] = {'status': tstatus, 'count': len(calendar_items), 'requests': tm.calls, 'errors': tm.errors[:10]}
     manifest_sources['manual'] = {'status': 'ok', 'count': len(manual.get('entries') or [])}
@@ -616,8 +653,19 @@ def write_all(out, calendar, trailers, manifest, excluded, log):
     L += ['', '## Esclusi (%d)' % len(excluded), ''] + ['- %s %s: %s' % (e['key'], e.get('title', ''), e['reason']) for e in excluded]
     ud = log.get('undated_candidates') or []
     L += ['', '## Candidati senza data (solo TMDB, NON pubblicati: verificare con fonte ufficiale e, se confermati, inserire in tools/live/manual.json)', ''] + (['- %s %s (%s)' % (u['key'], u['title'], u['url']) for u in ud] or ['- nessuno'])
+    rd = log.get('requested_diagnostics') or []
+    L += ['', '## Diagnostica titoli richiesti (NON pubblicata: stato generale della serie vs stagioni/episodi datati)', '']
+    for e in rd:
+        L.append('### %s' % e['query'])
+        L += ['- Risultati ricerca TMDB: ' + (', '.join('%s (%s, %s)' % (r['name'], r['id'], r['first_air_date'] or 's.d.') for r in e['search_results']) or 'nessuno')]
+        for m in e['matches']:
+            L += ['- **%s** (id %s) stato generale: **%s**; in produzione: %s; stagioni: %s' % (m['name'], m['id'], m['status'], m['in_production'], m['number_of_seasons']),
+                  '  - stagioni: ' + (', '.join('S%s %s (%s ep)' % (x['n'], x['air_date'] or 's.d.', x['episodes']) for x in m['seasons']) or 'nessuna'),
+                  '  - ultimo episodio: %s; prossimo: %s; societa: %s' % (m['last_episode'] or '-', m['next_episode'] or '-', ', '.join(m['companies']) or '-'),
+                  '  - esito: ' + m['verdict'], '  - ' + m['url']]
+        if e.get('note'): L.append('- ' + e['note'])
     L += ['', '## Identita canali YouTube', '', '```json', json.dumps(log.get('youtube_identity'), indent=1, ensure_ascii=False), '```', '', '## Diagnostica', '', '```json',
-          json.dumps({k: v for k, v in log.items() if k not in ('youtube_identity', 'undated_candidates')}, indent=1, ensure_ascii=False), '```']
+          json.dumps({k: v for k, v in log.items() if k not in ('youtube_identity', 'undated_candidates', 'requested_diagnostics')}, indent=1, ensure_ascii=False), '```']
     open(os.path.join(out, 'REPORT.md'), 'w', encoding='utf-8').write(scrub('\n'.join(L)))
     for dp, _, fs in os.walk(out):
         for f in fs:

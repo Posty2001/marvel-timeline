@@ -37232,9 +37232,13 @@ window.addEventListener('load', function() {
       DATA.manifest = isObj(r[0]) ? r[0] : null;
       DATA.calendar = ((r[1] && r[1].items) || []).filter(validItem);
       DATA.trailers = ((r[2] && r[2].items) || []).filter(validTrailer);
-      DATA.status = 'ok'; DATA.err = null;
+      DATA.status = 'ok'; DATA.err = null; DATA.refreshFailed = false;
       computeAlerts(); paintBadges();
-    }).catch(function (e) { DATA.status = 'error'; DATA.err = String(e && e.message || e); loading = null; });
+    }).catch(function (e) {
+      loading = null; DATA.err = String(e && e.message || e);
+      if (DATA.manifest && (DATA.calendar.length || DATA.trailers.length)) { DATA.status = 'ok'; DATA.refreshFailed = true; }   // aggiornamento fallito: si conserva l'ultimo catalogo valido gia caricato
+      else DATA.status = 'error';
+    });
     return loading;
   }
 
@@ -37370,6 +37374,9 @@ window.addEventListener('load', function() {
     ['tmdb', 'youtube'].forEach(function (k) { var s = src[k]; if (s && ['ok', 'partial'].indexOf(s.status) < 0) bad.push(k === 'tmdb' ? 'Calendario' : 'Trailer'); });
     var g = mf.generated_at ? new Date(mf.generated_at) : null;
     box.appendChild(el('b', '', 'AGGIORNATO ')); box.appendChild(D.createTextNode(g && !isNaN(g) ? g.toLocaleDateString('it-IT', { day: 'numeric', month: 'short', year: 'numeric' }) + ' ' + g.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }) : 'data sconosciuta'));
+    var age = g && !isNaN(g) ? Math.floor((Date.now() - g.getTime()) / 86400000) : null;
+    if (DATA.refreshFailed) { box.classList.add('tvl-warn'); box.appendChild(el('div', '', 'Aggiornamento non riuscito (' + DATA.err + '): si mostra l’ultimo catalogo valido.')); }
+    if (age !== null && age >= 21) { box.classList.add('tvl-warn'); box.appendChild(el('div', '', 'Dati non aggiornati da ' + age + ' giorni: date e trailer potrebbero essere cambiati.')); }
     if (bad.length) { box.classList.add('tvl-warn'); box.appendChild(el('div', '', 'Attenzione: ' + bad.join(' e ') + ' non aggiornato/i nell’ultima generazione (stato: ' + bad.map(function (n) { return (src[n === 'Calendario' ? 'tmdb' : 'youtube'] || {}).status; }).join(', ') + '). Si mostrano gli ultimi dati validi.')); }
     return box;
   }

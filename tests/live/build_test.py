@@ -51,6 +51,11 @@ TV = {
   20: {'name': 'Brand New Series', 'status': 'In Production', 'poster_path': None, 'genres': [], 'production_companies': [{'name': 'Marvel Studios'}],
        'seasons': [{'season_number': 1, 'air_date': '2027-08-20'}]},
 }
+TV[70] = {'name': 'Wonder Man', 'status': 'Canceled', 'in_production': False, 'poster_path': None, 'genres': [], 'production_companies': [{'name': 'Marvel Studios'}], 'number_of_seasons': 1,
+          'seasons': [{'season_number': 1, 'air_date': '2026-01-27', 'episode_count': 8}], 'last_episode_to_air': {'air_date': '2026-03-10'}}
+TV[71] = {'name': 'Spider-Noir', 'status': 'Returning Series', 'in_production': True, 'poster_path': None, 'genres': [], 'production_companies': [{'name': 'Amazon MGM'}], 'number_of_seasons': 2,
+          'seasons': [{'season_number': 1, 'air_date': '2026-05-27', 'episode_count': 8}, {'season_number': 2, 'air_date': '2027-09-01', 'episode_count': 8}]}
+SEARCH_TV = [{'id': 70, 'name': 'Wonder Man', 'first_air_date': '2026-01-27'}, {'id': 71, 'name': 'Spider-Noir', 'first_air_date': '2026-05-27'}, {'id': 72, 'name': 'Spider-Noir: Behind the Scenes', 'first_air_date': '2026-06-01'}]
 CH = 'UCvC4D8onUfXzvjTOM-dBfEA'
 def yt_feed(author='Marvel Entertainment'):
     def e(i, t, d, pub='2026-11-15'):
@@ -66,7 +71,8 @@ def yt_feed(author='Marvel Entertainment'):
             + '</feed>')
 
 class Net:
-    def __init__(self, tmdb_ok=True, yt_ok=True, author='Marvel Entertainment', channel_in_page=True):
+    def __init__(self, tmdb_ok=True, yt_ok=True, author='Marvel Entertainment', channel_in_page=True, fail_paths=()):
+        self.fail_paths = fail_paths
         self.tmdb_ok, self.yt_ok, self.author, self.cip, self.log = tmdb_ok, yt_ok, author, channel_in_page, []
     def __call__(self, url, headers=None, **kw):
         self.log.append(url)
@@ -75,7 +81,9 @@ class Net:
             if not self.tmdb_ok: return R(500)
             p = urllib.parse.urlsplit(url).path.replace('/3', '', 1); q = urllib.parse.parse_qs(urllib.parse.urlsplit(url).query)
             j = None
-            if p == '/configuration': j = {'images': {}}
+            if any(p.startswith(x) for x in self.fail_paths): return R(500)
+            if p == '/search/tv': j = {'results': [r for r in SEARCH_TV if q.get('query', [''])[0].lower() in r['name'].lower()]}
+            elif p == '/configuration': j = {'images': {}}
             elif p == '/search/company': j = {'results': [{'id': 420, 'name': 'Marvel Studios'}, {'id': 77, 'name': 'Marvel Productions'}, {'id': 5, 'name': 'Other'}]}
             elif p == '/search/keyword': j = {'results': [{'id': 180547, 'name': 'marvel cinematic universe (mcu)'}]}
             elif p == '/discover/movie':
@@ -172,6 +180,21 @@ ok(man_d['sources']['tmdb']['status'] == 'stale' and cal_d['items'] == cal['item
 ok(man_d['sources']['youtube']['status'] == 'stale' and tr_d['items'] == tr['items'], 'YouTube giu: ultimi trailer validi mantenuti (stale)')
 cal_e, _, man_e, _, _ = run(mkroot(), Net(tmdb_ok=False))
 ok(man_e['sources']['tmdb']['status'] == 'error' and cal_e['items'] == [], 'TMDB giu senza precedente: errore dichiarato, calendario vuoto valido')
+
+print('4b) diagnostica titoli richiesti e errori parziali')
+diag = {e['query']: e for e in log['requested_diagnostics']}
+wm, sn = diag['Wonder Man']['matches'][0], diag['Spider-Noir']['matches'][0]
+ok(wm['status'] == 'Canceled' and wm['future_dated'] is False and 'NON e una prova' in wm['verdict'], 'Wonder Man: stato generale Canceled, nessuna stagione futura: dati insufficienti, non prova di cancellazione')
+ok(sn['status'] == 'Returning Series' and sn['future_dated'] is True and 'S02 2027-09-01' in sn['verdict'], 'Spider-Noir: stagione futura datata distinta dallo stato generale')
+ok(len(diag['Spider-Noir']['matches']) == 1 and diag['Spider-Noir']['search_results'][1]['id'] == 72, 'diagnostica: solo corrispondenza esatta del titolo, altri risultati solo elencati')
+ok('tmdb:tv:70' not in K and 'tmdb:tv:71:S02' not in K and 'tmdb:tv:71' not in K, 'diagnostica NON pubblica nulla nel calendario')
+rep_txt = open(os.path.join(tempfile.mkdtemp(), 'x'), 'w') if False else None
+dd = tempfile.mkdtemp(); B.write_all(dd, cal, tr, man, excl, log); R = open(dd + '/REPORT.md', encoding='utf-8').read()
+ok('Diagnostica titoli richiesti' in R and 'Wonder Man' in R and 'Spider-Noir' in R and 'stato generale' in R, 'REPORT: sezione diagnostica titoli richiesti')
+prevp = tempfile.mkdtemp(); B.write_all(prevp, cal, tr, man, excl, log)
+cal_p, _, man_p, _, log_p = run(root, Net(fail_paths=('/movie/2',)), prev=prevp)
+ok(man_p['sources']['tmdb']['status'] == 'partial' and 'tmdb:movie:2' in by_key(cal_p) and 'tmdb:movie:2' in log_p['partial_carried_over'], 'errore parziale TMDB: la voce del catalogo valido non viene persa')
+ok(by_key(cal_p)['tmdb:movie:2'] == by_key(cal)['tmdb:movie:2'], 'voce mantenuta identica (nessuna modifica inventata)')
 
 print('5) validazione')
 cfg = B.load_json(ROOT + '/tools/live/config.json')

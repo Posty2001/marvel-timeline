@@ -23,6 +23,15 @@ Test locali: `python3 tests/live/build_test.py` (generatore, fixture) e `python3
 - **Completezza**: TMDB `discover` non puo elencare film senza data. Le serie annunciate senza data (stato Planned/In Production) sono elencate nel REPORT come "Candidati senza data (solo TMDB, NON pubblicati)" da verificare a mano; si pubblicano solo tramite `manual.json` con fonte ufficiale.
 - Notizie: **non sviluppate** (nessun feed ufficiale accessibile).
 
+### Diagnostica e affidabilita
+- `tmdb.diagnose_titles` (config): per ogni titolo cerca la serie su TMDB e, solo nel REPORT (mai nel calendario), separa **stato generale** (es. Canceled) da **stagioni/episodi futuri datati**. Oggi: Wonder Man, Spider-Noir.
+- Errore TMDB totale: si tiene l'ultimo calendario valido (`stale`). Errore parziale (`partial`): le voci non-uscite del catalogo precedente non presenti nel nuovo vengono mantenute (`partial_carried_over` nel REPORT).
+- App: se un aggiornamento fallisce dopo un caricamento riuscito, resta visibile l'ultimo catalogo valido con l'avviso "Aggiornamento non riuscito"; catalogo piu vecchio di 21 giorni -> avviso "Dati non aggiornati da N giorni". Il service worker (network-first) serve l'ultima copia in cache se offline.
+- Avvisi solo interni all'app (nessuna notifica di sistema o push). Nessun aggiornamento crea schede Timeline.
+
+### Test
+`python3 tests/live/build_test.py` (generatore), `tests/live/ui_test.py` (interfaccia), `tests/live/alerts_test.py` (avvisi con orologio simulato, dati isolati, affidabilita, controlli statici su workflow/link/costi).
+
 ### Timeline senza duplicati
 Aggancio per TMDB id tramite `tmdb_map.json`/`tmdb_overrides.json` (film→scheda; serie→scheda della stagione, altrimenti scheda "intera serie"). Le voci non agganciate restano solo in Live ("Solo in Live"): nessuna scheda viene creata. Una scheda Timeline non puo essere agganciata a due voci film/serie.
 
