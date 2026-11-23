@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T14:54:44+00:00",
+ "generated_at": "2026-11-23T19:52:31+00:00",
  "items": [
   {
    "category": "film",
@@ -24,18 +24,6 @@
    "relatesTo": "tmdb:movie:1003596",
    "title": "Avengers: Doomsday | Final Trailer | In Theaters December 18",
    "url": "https://www.youtube.com/watch?v=Wb8Tq_HD4E8"
-  },
-  {
-   "category": "videogioco",
-   "categoryBasis": "titolo",
-   "channel": "Marvel Entertainment",
-   "key": "yt:UOSuiilBPlk",
-   "kind": "trailer",
-   "official": true,
-   "published": "2026-11-17",
-   "relatesTo": null,
-   "title": "Marvel Cosmic Invasion | The Siege of Castle Doom DLC #2 Launch Trailer",
-   "url": "https://www.youtube.com/watch?v=UOSuiilBPlk"
   }
  ],
  "schema": 1
