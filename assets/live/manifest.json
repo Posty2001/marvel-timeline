@@ -2,8 +2,14 @@
  "attribution": {
   "tmdb": true
  },
- "content_hash": "3dd8072cc37492dc",
+ "content_hash": "5984e2c7471f0e7a",
  "counts": {
+  "by_category": {
+   "animazione": 2,
+   "film": 5,
+   "serie": 0,
+   "videogioco": 0
+  },
   "calendar": 7,
   "confirmed": 0,
   "excluded": 8,
@@ -11,9 +17,17 @@
   "not_in_timeline": 3,
   "provisional": 7,
   "released": 0,
-  "trailers": 1
+  "trailers": 1,
+  "trailers_by_category": {
+   "None": 0,
+   "animazione": 0,
+   "film": 0,
+   "serie": 0,
+   "videogioco": 1
+  },
+  "undated_candidates": 2
  },
- "generated_at": "2026-11-21T21:46:09+00:00",
+ "generated_at": "2026-11-23T07:57:04+00:00",
  "notes": [
   "Confermato = fonte ufficiale verificabile; altrimenti provvisorio.",
   "Indiscrezioni escluse in 1.0."
@@ -31,7 +45,7 @@
   "tmdb": {
    "count": 7,
    "errors": [],
-   "requests": 44,
+   "requests": 49,
    "status": "ok"
   },
   "youtube": {

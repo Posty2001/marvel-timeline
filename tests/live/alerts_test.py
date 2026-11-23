@@ -90,6 +90,16 @@ with sync_playwright() as pw:
     ok('B9 rigenerazione: titoli seguiti e preferenze invariati', pg.evaluate("()=>window.tvaLive.prefs().followed") == fol == ['tmdb:movie:902'])
     ctx.close()
 
+    # ---- B10 dati reali: dal catalogo del 21/11 a quello del 23/11 (stesse 7 uscite, solo categorie nuove) nessun falso avviso
+    fx = os.path.join(HERE, 'fixtures', 'real_v1'); old_c = json.load(open(fx + '/calendar.json'))['items']; old_t = json.load(open(fx + '/trailers.json'))['items']; old_m = json.load(open(fx + '/manifest.json'))
+    new_c = json.load(open(os.path.join(ROOT, 'assets/live/calendar.json')))['items']; new_t = json.load(open(os.path.join(ROOT, 'assets/live/trailers.json')))['items']; new_m = json.load(open(os.path.join(ROOT, 'assets/live/manifest.json')))
+    ctx, pg = setup(b, cal=old_c, trs=old_t); STATE['man'] = old_m; setprefs(pg, followed=[old_c[0]['key']]); visit(ctx, pg, 0)
+    STATE['cal'], STATE['tr'], STATE['man'] = new_c, new_t, new_m
+    for day in (0, 0, 1): visit(ctx, pg, day)
+    ok('B10 catalogo reale 21/11 -> 23/11: nessun falso avviso (categorie nuove, stesse date)', len(inbox(pg)) == 0 and len(new_c) == len(old_c) == 7, inbox(pg))
+    ok('B10 titolo seguito conservato', pg.evaluate("()=>window.tvaLive.prefs().followed") == [old_c[0]['key']])
+    ctx.close()
+
     # ---- B6 preferenze disabilitate -> nessun avviso indesiderato
     ctx, pg = setup(b)
     cats = {'film': False, 'serie': True, 'animazione': True, 'game': True, 'trailer': False}

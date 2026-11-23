@@ -1,7 +1,8 @@
 {
- "generated_at": "2026-11-21T21:46:09+00:00",
+ "generated_at": "2026-11-23T07:57:04+00:00",
  "items": [
   {
+   "category": "film",
    "confidence": "provisional",
    "date": "2026-12-16",
    "dateIT": "2026-12-16",
@@ -32,9 +33,11 @@
     "type": "movie"
    },
    "updatedAt": "2026-11-21",
+   "warnings": [],
    "window": null
   },
   {
+   "category": "animazione",
    "confidence": "provisional",
    "date": "2027-01-13",
    "dateIT": null,
@@ -45,7 +48,7 @@
    "missing": [],
    "poster": "/rAgl03cfcLgPSzeozownXAdhDkw.jpg",
    "precision": "day",
-   "reason": "Data da TMDB, non confermata da una fonte ufficiale. Stato non specificato",
+   "reason": "Data da TMDB, non confermata da una fonte ufficiale. Serie in corso",
    "signals": [
     "timeline"
    ],
@@ -65,9 +68,11 @@
     "type": "tv"
    },
    "updatedAt": "2026-11-21",
+   "warnings": [],
    "window": null
   },
   {
+   "category": "animazione",
    "confidence": "provisional",
    "date": "2027-06-16",
    "dateIT": null,
@@ -99,9 +104,11 @@
     "type": "movie"
    },
    "updatedAt": "2026-11-21",
+   "warnings": [],
    "window": null
   },
   {
+   "category": "film",
    "confidence": "provisional",
    "date": "2027-12-15",
    "dateIT": null,
@@ -134,9 +141,11 @@
     "type": "movie"
    },
    "updatedAt": "2026-11-21",
+   "warnings": [],
    "window": null
   },
   {
+   "category": "film",
    "confidence": "provisional",
    "date": "2028-05-04",
    "dateIT": null,
@@ -169,9 +178,11 @@
     "type": "movie"
    },
    "updatedAt": "2026-11-21",
+   "warnings": [],
    "window": null
   },
   {
+   "category": "film",
    "confidence": "provisional",
    "date": "2028-07-27",
    "dateIT": null,
@@ -204,9 +215,11 @@
     "type": "movie"
    },
    "updatedAt": "2026-11-21",
+   "warnings": [],
    "window": null
   },
   {
+   "category": "film",
    "confidence": "provisional",
    "date": "2028-12-13",
    "dateIT": null,
@@ -239,6 +252,7 @@
     "type": "movie"
    },
    "updatedAt": "2026-11-21",
+   "warnings": [],
    "window": null
   }
  ],

@@ -1,0 +1,68 @@
+{
+ "attribution": {
+  "tmdb": true
+ },
+ "content_hash": "3dd8072cc37492dc",
+ "counts": {
+  "calendar": 7,
+  "confirmed": 0,
+  "excluded": 8,
+  "in_timeline": 4,
+  "not_in_timeline": 3,
+  "provisional": 7,
+  "released": 0,
+  "trailers": 1
+ },
+ "generated_at": "2026-11-21T21:46:09+00:00",
+ "notes": [
+  "Confermato = fonte ufficiale verificabile; altrimenti provvisorio.",
+  "Indiscrezioni escluse in 1.0."
+ ],
+ "schema": 1,
+ "sources": {
+  "manual": {
+   "count": 0,
+   "status": "ok"
+  },
+  "news": {
+   "reason": "Nessun feed ufficiale accessibile (8 candidati falliti, HTTP 403): TVA News non sviluppato in 1.0.",
+   "status": "disabled"
+  },
+  "tmdb": {
+   "count": 7,
+   "errors": [],
+   "requests": 44,
+   "status": "ok"
+  },
+  "youtube": {
+   "count": 1,
+   "identity": [
+    {
+     "author": "Marvel Entertainment",
+     "channel_id": "UCvC4D8onUfXzvjTOM-dBfEA",
+     "checks": [
+      {
+       "check": "handle->channel_id",
+       "detail": "HTTP 200",
+       "ok": true
+      },
+      {
+       "check": "autore feed",
+       "detail": "Marvel Entertainment",
+       "ok": true
+      }
+     ],
+     "enabled": true,
+     "handle": "@marvel",
+     "verified": true
+    },
+    {
+     "enabled": false,
+     "handle": "@MarvelHQ",
+     "note": "da valutare separatamente"
+    }
+   ],
+   "status": "ok"
+  }
+ }
+}
