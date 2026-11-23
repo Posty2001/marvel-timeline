@@ -34,6 +34,7 @@ jobs:
       outcome: ${{ steps.run.outputs.outcome }}
       verified: ${{ steps.run.outputs.verified }}
       content_hash: ${{ steps.run.outputs.content_hash }}
+      head_sha: ${{ steps.run.outputs.head_sha }}
     steps:
       - name: Avvia, attendi e verifica l aggiornamento
         id: run
@@ -102,7 +103,7 @@ jobs:
             summary "PROVA A SECCO: $outcome" "Nessuna scrittura (come previsto).
           $reasons"; exit 0
           fi
-          rd() { gh api "repos/$TARGET_REPO/contents/assets/live/$1?ref=$TARGET_REF" --jq .content | base64 -d; }
+          rd() { gh api "repos/$TARGET_REPO/contents/assets/live/$1?ref=$head_after" --jq .content | base64 -d; }
           bh="$(rd manifest.json | jq -r '.content_hash // ""')" || bh=""
           [ -n "$HASH" ] && [ "$bh" = "$HASH" ] || fail "Il manifest sul branch ($bh) non corrisponde al contenuto validato ($HASH)." "$outcome"
           if [ "$outcome" = "update" ] || [ "$outcome" = "heartbeat" ]; then
@@ -110,7 +111,7 @@ jobs:
           elif [ "$head_after" != "$head_before" ]; then
             echo "::notice::Il branch e avanzato durante il run (altro commit), il catalogo e comunque coerente."
           fi
-          echo "verified=true" >> "$GITHUB_OUTPUT"
+          echo "verified=true" >> "$GITHUB_OUTPUT"; echo "head_sha=$head_after" >> "$GITHUB_OUTPUT"     # i dati verificati sono quelli di QUESTO commit
           case "$outcome" in
             unchanged) m="Catalogo invariato: nessun commit (comportamento corretto)." ;;
             heartbeat) m="Contenuto identico: registrata soltanto la verifica periodica." ;;
@@ -119,10 +120,105 @@ jobs:
           summary "$(echo "$outcome" | tr a-z A-Z)" "$m
           $reasons"
 
+  publish:
+    # Pubblica SOLO dati verificati: rivalida in modo indipendente, registra una versione immutabile in catalog/ (Git) e prepara il sito.
+    if: ${{ needs.update.outputs.verified == 'true' && github.ref == 'refs/heads/main' }}
+    needs: update
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write               # solo per registrare catalog/ in QUESTO repository
+    outputs:
+      deploy: ${{ steps.pub.outputs.deploy }}
+      version: ${{ steps.pub.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Dati verificati (SHA fissato del branch TEST, sola lettura, repository pubblico)
+        uses: actions/checkout@v4
+        with:
+          repository: Posty2001/marvel-timeline
+          ref: ${{ needs.update.outputs.head_sha }}
+          path: src
+          sparse-checkout: assets/live
+          persist-credentials: false
+      - name: Valida, registra la versione e costruisci il sito
+        id: pub
+        run: |
+          python3 scripts/publish_catalog.py --src src/assets/live --store catalog --site _site \
+            --live-pointer "https://${GITHUB_REPOSITORY_OWNER,,}.github.io/${GITHUB_REPOSITORY#*/}/v1/current.json" \
+            --github-output "$GITHUB_OUTPUT"
+      - name: Registra la versione nel repository (solo se nuova)
+        run: |
+          git config user.name "tva-live-bot"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalog
+          if git diff --cached --quiet; then echo "Nessuna nuova versione da registrare."; else
+            git commit -q -m "catalogo ${{ steps.pub.outputs.version }}"
+            for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break || sleep 5; done
+          fi
+      - name: Prepara il sito per GitHub Pages
+        if: ${{ steps.pub.outputs.deploy == 'true' }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    if: ${{ needs.publish.outputs.deploy == 'true' }}
+    needs: publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.d.outputs.page_url }}
+    steps:
+      - id: d
+        uses: actions/deploy-pages@v4
+
+  verify-endpoint:
+    # Misura l endpoint PUBBLICO reale (HTTPS, CORS, cache, tipo, integrita) e rende rosso lo scheduler se qualcosa non va.
+    if: ${{ needs.deploy.result == 'success' }}
+    needs: [publish, deploy]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions: {}
+    steps:
+      - name: Verifica endpoint
+        env:
+          VERSION: ${{ needs.publish.outputs.version }}
+          ORIGIN: https://tva-archives-test-1110.netlify.app
+        run: |
+          set -uo pipefail
+          B="https://${GITHUB_REPOSITORY_OWNER,,}.github.io/${GITHUB_REPOSITORY#*/}"
+          bad=0; err() { echo "::error::$1"; bad=1; }
+          hv() { grep -i "^$1:" "$2" | head -1 | tr -d '\r' || true; }
+          ok=0
+          for i in $(seq 1 18); do
+            curl -sS --max-time 20 -D h.txt -H "Origin: $ORIGIN" -o cur.json "$B/v1/current.json" 2>/dev/null
+            if [ "$(head -1 h.txt | cut -d' ' -f2)" = "200" ] && [ "$(jq -r .version cur.json 2>/dev/null)" = "$VERSION" ]; then ok=1; break; fi
+            sleep 10
+          done
+          [ "$ok" = 1 ] || { echo "::error::Il puntatore pubblicato non mostra la versione $VERSION entro 3 minuti."; exit 1; }
+          { echo "## Endpoint TVA Live"; echo; echo "URL: \`$B/v1/current.json\` - versione \`$VERSION\`"; echo; echo '```'; sed -n '1p' h.txt | tr -d '\r'; for h in content-type access-control-allow-origin cache-control etag last-modified age server via; do hv $h h.txt; done; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          hv access-control-allow-origin h.txt | grep -qiE ': (\*|'"$ORIGIN"')$' || err "CORS assente o ristretto: manca Access-Control-Allow-Origin per $ORIGIN"
+          hv content-type h.txt | grep -qi 'json' || err "Content-Type non JSON"
+          for n in calendar trailers manifest; do
+            path="$(jq -r ".files.$n.path" cur.json)"; want="$(jq -r ".files.$n.sha256" cur.json)"
+            curl -sS --max-time 20 -D hf.txt -H "Origin: $ORIGIN" -o f.json "$B/v1/$path" || err "$n non raggiungibile"
+            [ "$(sha256sum f.json | cut -d' ' -f1)" = "$want" ] || err "$n: sha256 diverso dal puntatore"
+            hv access-control-allow-origin hf.txt | grep -qiE ': (\*|'"$ORIGIN"')$' || err "$n: CORS assente"
+            { echo; echo "- \`$path\`: $(hv cache-control hf.txt)"; } >> "$GITHUB_STEP_SUMMARY"
+          done
+          loc="$(curl -sS --max-time 20 -o /dev/null -w '%{http_code} %{redirect_url}' "http://${B#https://}/v1/current.json")"
+          case "$loc" in 301*https://*|302*https://*|308*https://*) ;; *) err "HTTP non reindirizzato a HTTPS ($loc)";; esac
+          code="$(curl -sS --max-time 20 -o /dev/null -w '%{http_code}' "$B/status.json")"; [ "$code" = 404 ] || err "file interno raggiungibile (status.json: $code)"
+          exit $bad
+
   keepalive:
     # Evita la disattivazione dei cron dopo 60 giorni senza attivita nel repository scheduler. Parte anche se l aggiornamento fallisce.
     if: ${{ always() && github.event_name == 'schedule' }}
-    needs: update
+    needs: [update, publish]
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
@@ -135,5 +231,5 @@ jobs:
             date -u +%Y-%m-%d > .keepalive
             git config user.name "tva-live-bot"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add .keepalive
-            git diff --cached --quiet || { git commit -q -m "keepalive"; git push -q; }
+            git diff --cached --quiet || { git commit -q -m "keepalive"; git pull -q --rebase origin main; git push -q; }
           fi

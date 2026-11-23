@@ -43,3 +43,11 @@ Il workflow `docs/tva-live-scheduler/repo/.github/workflows/live-scheduler.yml` 
 
 Prova a secco: `workflow_dispatch` con `dry_run=true` esegue tutti i controlli senza scrivere (il branch deve restare allo stesso SHA).
 Test: `python3 tests/live/scheduler_test.py` (36 controlli con `gh` simulato).
+
+
+## Fase 2: endpoint pubblico (GitHub Pages del repository scheduler)
+
+- `scripts/publish_catalog.py` (nel repository scheduler, testato da `tests/live/publish_test.py`, 38 controlli): rivalida i tre JSON in modo indipendente (schema, `generated_at` identico nei tre file, `content_hash` e conteggi coerenti, chiavi/duplicati, link solo https su host noti, dimensioni, nessun segreto), registra una **versione immutabile** `catalog/c/<id>/` (id = hash dei tre file; mai riscritta), rifiuta un catalogo piu vecchio del pubblicato e aggiorna `catalog/current.json`.
+- Sito: `v1/current.json` + ultime 10 versioni `v1/c/<id>/*.json`. Il puntatore elenca per ogni file percorso, sha256 e byte: chi legge scarica i tre file immutabili e ne verifica l'hash, quindi non esistono letture miste.
+- Workflow: `update` -> `publish` (solo se `verified == true`, dati letti dallo SHA verificato) -> `deploy` (Pages) -> `verify-endpoint` (HTTPS, CORS con Origin del sito TEST, cache, sha256, file interni non raggiungibili). Se un passo fallisce, il deploy precedente resta online.
+- Impostazione manuale richiesta una tantum: Settings -> Pages -> Source: **GitHub Actions**.

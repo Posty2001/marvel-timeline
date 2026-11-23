@@ -58,7 +58,7 @@ def sc(result, conclusion='success', **kw):
 ok('struttura: cron giornaliero + avvio manuale con dry_run', ON.keys() == {'schedule', 'workflow_dispatch'} and re.match(r'^\d+ \d+ \* \* \*$', ON['schedule'][0]['cron']) and 'dry_run' in ON['workflow_dispatch']['inputs'])
 ok('permessi: globali vuoti, job update senza permessi, solo keepalive con contents: write', Y['permissions'] == {} and Y['jobs']['update']['permissions'] == {} and Y['jobs']['keepalive']['permissions'] == {'contents': 'write'})
 ok('branch bersaglio fisso (non e un input) e mai main come ref', Y['env']['TARGET_REF'] == 'test/tva-archives' and set(ON['workflow_dispatch']['inputs']) == {'dry_run'} and '--ref main' not in src)
-ok('token solo da secrets.TVA_DISPATCH_TOKEN; nessuna stampa del token; nessun upload di artifact; nessun Netlify', 'secrets.TVA_DISPATCH_TOKEN' in src and not re.search(r'echo[^\n]*GH_TOKEN|upload-artifact|netlify|github_pat_|ghp_', src, re.I))
+ok('token solo da secrets.TVA_DISPATCH_TOKEN; nessuna stampa del token; nessun upload di artifact', 'secrets.TVA_DISPATCH_TOKEN' in src and not re.search(r'echo[^\n]*GH_TOKEN|upload-artifact|github_pat_|ghp_', src, re.I))
 ok('keepalive parte anche se update fallisce e solo da cron', 'always()' in Y['jobs']['keepalive']['if'] and 'schedule' in Y['jobs']['keepalive']['if'])
 ok('nessun contesto non fidato interpolato nello script (solo env/costanti)', '${{ github.event' not in script and '${{ inputs' not in script)
 
@@ -66,7 +66,7 @@ for oc in ('unchanged', 'heartbeat', 'update'):
     rc, o, s, out, calls = run(sc(oc))
     ok('%s: scheduler verde, verified=true, outcome corretto' % oc, rc == 0 and o.get('outcome') == oc and o.get('verified') == 'true' and o.get('content_hash') == H, (rc, o, out[-300:]))
     ok('%s: dispatch sul branch TEST con live_commit e correlazione, mai main' % oc, '--ref test/tva-archives' in calls and 'live_commit=true' in calls and 'dispatch_id=77-1' in calls and 'live_dry_run=false' in calls and re.findall(r'--ref (\S+)', calls) == ['test/tva-archives'])
-    ok('%s: riepilogo con esito' % oc, oc.upper() in s)
+    ok('%s: riepilogo con esito e head_sha = commit verificato' % oc, oc.upper() in s and o.get('head_sha') == 'h2', o)
     ok('%s: il token non compare in log, riepilogo, output, chiamate' % oc, 'FAKE_SECRET' not in out + s + json.dumps(o) + calls)
 rc, o, s, out, _ = run(sc('rejected', 'failure', res={'blocking': ['Troppe nuove uscite (7 > 5)']}))
 ok('rejected: scheduler rosso, verified=false, motivi nel riepilogo', rc == 1 and o.get('outcome') == 'rejected' and o.get('verified') == 'false' and 'Troppe nuove uscite' in s and 'RIFIUTATO' in s, (rc, o))
