@@ -1,5 +1,8 @@
 name: TMDB sync (manuale)
 
+# Nome del run: se avviato dallo scheduler porta l identificativo di correlazione (il run si ritrova senza ambiguita).
+run-name: ${{ inputs.dispatch_id != '' && format('TVA Live update {0}', inputs.dispatch_id) || github.workflow }}
+
 # Solo avvio manuale. Non modifica il repository, non fa deploy, non tocca Firebase.
 # Risultati: artifact scaricabile "tmdb-sync" (tmdb_map.json + tmdb_review.json).
 # TVA Live: solo_live_build=true genera calendar/trailers/manifest.json (artifact tva-live-data, nessun commit).
@@ -30,6 +33,14 @@ on:
         description: TVA Live 1.1 - supera le soglie anti-anomalia (mai i controlli su fonti, schema e sicurezza)
         type: boolean
         default: false
+      live_dry_run:
+        description: TVA Live 1.1 - prova a secco con live_commit - esegue tutti i controlli ma non scrive e non fa commit
+        type: boolean
+        default: false
+      dispatch_id:
+        description: TVA Live 1.1 - identificativo di correlazione impostato dallo scheduler (lasciare vuoto a mano)
+        type: string
+        default: ''
 
 permissions:
   contents: read
@@ -170,9 +181,11 @@ jobs:
           TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           LIVE_FORCE: ${{ inputs.live_force }}
+          LIVE_DRY: ${{ inputs.live_dry_run }}
         run: |
           args=(--out live-update-out --github-output "$GITHUB_OUTPUT")
           if [ "$LIVE_FORCE" = "true" ]; then args+=(--force); fi
+          if [ "$LIVE_DRY" = "true" ]; then args+=(--dry-run); fi
           python3 tools/live_update.py "${args[@]}"
 
       - name: Riepilogo nel job
@@ -181,7 +194,7 @@ jobs:
           if [ -f live-update-out/SUMMARY.md ]; then cat live-update-out/SUMMARY.md >> "$GITHUB_STEP_SUMMARY"; fi
 
       - name: Commit dei soli dati su test/tva-archives
-        if: ${{ steps.upd.outputs.result == 'update' || steps.upd.outputs.result == 'heartbeat' }}
+        if: ${{ !inputs.live_dry_run && (steps.upd.outputs.result == 'update' || steps.upd.outputs.result == 'heartbeat') }}
         run: bash tools/live_git_commit.sh live-update-out/COMMIT_MSG.txt origin
 
       - name: Salva candidato, report e (se rifiutato) i dati bloccati

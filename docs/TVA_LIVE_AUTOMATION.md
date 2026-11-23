@@ -6,7 +6,7 @@ Due operazioni DIVERSE: (1) **aggiornare i dati nel repository** (questa fase, a
 - `tools/live_update.py`: riusa `tools/tva_live_build.py`, genera un candidato, lo confronta col catalogo in `assets/live/` e decide `unchanged | heartbeat | update | rejected`.
 - `tools/live_git_commit.sh`: commit dei soli 4 file di dati (`calendar/trailers/manifest/status.json`), solo se cambiano, solo verso `test/tva-archives` (refspec fisso), rebase+retry se il branch e avanzato.
 - `tmdb-sync.yml` (job `live-update`): `solo_live_build=true` + `live_commit=true`, ref `test/tva-archives`. Concorrenza `tva-live-update` (nessuna sovrapposizione), `contents: write` solo in quel job.
-- Scheduler: repository separato (modello in `docs/tva-live-scheduler/`), perche i cron girano solo sul branch predefinito (main, congelato).
+- Scheduler: repository separato (modello in `docs/tva-live-scheduler/repo/`), perche i cron girano solo sul branch predefinito (main, congelato).
 
 ## Regole di promozione (catalogo valido mai sostituito da dati dubbi)
 Bloccano sempre (nemmeno con `live_force`): TMDB non `ok` (stale/partial/error), schema o sicurezza non validi (Confermato senza fonte ufficiale, link non https, budget), chiavi duplicate.
@@ -29,3 +29,17 @@ Actions > TMDB sync (manuale) > Run workflow, **Branch: test/tva-archives**, `so
 
 ## Test
 `python3 tests/live/update_test.py` (generatore simulato, repository Git temporaneo con remoto locale, app con orologio simulato, controlli statici).
+
+
+## Scheduler (Fase 1): verifica dell'esito
+
+Il workflow `docs/tva-live-scheduler/repo/.github/workflows/live-scheduler.yml` (da installare nel repository separato `tva-live-scheduler`):
+
+1. controlla token e raggiungibilita, memorizza lo SHA di `main` e del branch TEST;
+2. avvia `tmdb-sync.yml` su `test/tva-archives` con `dispatch_id` (nome del run `TVA Live update <id>`: ritrovamento univoco);
+3. attende la fine del run (max 15 minuti), scarica l'artifact `tva-live-update` e legge `RESULT.json` (`unchanged | heartbeat | update | rejected`);
+4. verifica la coerenza: `main` invariato; esito coerente con la conclusione del run; per `update`/`heartbeat` il branch contiene davvero il `content_hash` validato e `status.json` registra l'esito;
+5. scrive il riepilogo; `rejected`, errori e incoerenze rendono rosso lo scheduler (email di GitHub). `verified=true` e un output del job: l'eventuale pubblicazione dei JSON (Fase 2) dipendera **solo** da `verified == 'true'`.
+
+Prova a secco: `workflow_dispatch` con `dry_run=true` esegue tutti i controlli senza scrivere (il branch deve restare allo stesso SHA).
+Test: `python3 tests/live/scheduler_test.py` (36 controlli con `gh` simulato).

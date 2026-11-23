@@ -61,6 +61,8 @@ ok('nuovo trailer: update con un solo trailer in piu', res_of(out) == 'update' a
 s_ok = snap(root)
 
 print('3) fonte irraggiungibile, catalogo parziale, errori di generazione')
+rc, out = go(root, Net2(extra=[80], tmdb_ok=False), day(11)); _rj = json.load(open(os.path.join(out, 'RESULT.json')))
+ok('RESULT.json: esito leggibile da macchina anche se rifiutato (motivi, hash, nessun dato sensibile)', _rj['schema'] == 1 and _rj['result'] == 'rejected' and _rj['blocking'] and set(_rj) == {'schema', 'result', 'dry_run', 'forced', 'content_changed', 'generated_at', 'content_hash', 'blocking', 'warnings'} and 'token' not in json.dumps(_rj).lower())
 rc, out = go(root, Net2(extra=[80], tmdb_ok=False), day(11)); ok('TMDB irraggiungibile: rifiutato (exit 1), catalogo valido intatto', rc == 1 and res_of(out) == 'rejected' and snap(root) == s_ok and os.path.exists(os.path.join(out, 'rejected/calendar.json')) and 'TMDB non ok' in open(out + '/SUMMARY.md').read())
 rc, out = go(root, Net2(extra=[80], fail_paths=('/movie/2',)), day(11)); ok('catalogo parziale (errore su un dettaglio): rifiutato, nulla scritto', rc == 1 and res_of(out) == 'rejected' and snap(root) == s_ok and 'partial' in open(out + '/SUMMARY.md').read())
 rc, out = go(root, Net2(extra=[80], yt_ok=False), day(11)); ok('YouTube irraggiungibile: trailer validi mantenuti byte per byte, nessuna perdita, avviso nel riepilogo', rc == 0 and snap(root)['trailers.json'] == s_ok['trailers.json'] and 'YouTube non ok' in open(out + '/SUMMARY.md').read(), res_of(out))
@@ -196,9 +198,9 @@ up = open(os.path.join(ROOT, 'tools/live_update.py'), encoding='utf-8').read()
 ok('aggiornatore: solo libreria standard, nessun accesso a index.html/preferenze/dati personali', not re.search(r'^\s*(import|from)\s+(requests|boto3|openai|anthropic)', up, re.M) and 'index.html' not in up and 'localStorage' not in up)
 ok('nessun file dell\'app toccato da questa fase (index.html/sw.js invariati rispetto a HEAD)', subprocess.run(['git', 'diff', '--quiet', 'HEAD', '--', 'index.html', 'sw.js', 'arcade', 'quiz'], cwd=ROOT).returncode == 0)
 
-tpl = open(os.path.join(ROOT, 'docs/tva-live-scheduler/live-scheduler.yml.template'), encoding='utf-8').read(); TY = yaml.safe_load(tpl)
-ok('modello scheduler: YAML valido, cron giornaliero + manuale, token solo da secret, avvia solo il branch TEST', (TY.get('on') or TY.get(True)).keys() == {'schedule', 'workflow_dispatch'} and 'secrets.TVA_DISPATCH_TOKEN' in tpl and '--ref test/tva-archives' in tpl and not re.search(r'ghp_|github_pat_', tpl) and TY['concurrency']['cancel-in-progress'] is False)
-ok('modello scheduler: nessun Netlify/deploy e nessun riferimento a main per il dispatch', not re.search(r'netlify|--ref main', tpl, re.I))
+tpl = open(os.path.join(ROOT, 'docs/tva-live-scheduler/repo/.github/workflows/live-scheduler.yml'), encoding='utf-8').read(); TY = yaml.safe_load(tpl)
+ok('scheduler: YAML valido, cron giornaliero + manuale, token solo da secret, avvia solo il branch TEST (test completi: scheduler_test.py)', (TY.get('on') or TY.get(True)).keys() == {'schedule', 'workflow_dispatch'} and 'secrets.TVA_DISPATCH_TOKEN' in tpl and TY['env']['TARGET_REF'] == 'test/tva-archives' and not re.search(r'ghp_|github_pat_', tpl) and TY['concurrency']['cancel-in-progress'] is False)
+ok('scheduler: nessun Netlify/deploy e nessun riferimento a main per il dispatch', not re.search(r'netlify|--ref main', tpl, re.I))
 wfs = os.listdir(os.path.join(ROOT, '.github/workflows')); ok('il modello NON e installato come workflow di questo repository', sorted(wfs) == ['live-probe.yml', 'tmdb-sync.yml'])
 bad = [n for n, c in RES if not c]
 print('\nRISULTATO: %d ok, %d falliti' % (len(RES) - len(bad), len(bad)))

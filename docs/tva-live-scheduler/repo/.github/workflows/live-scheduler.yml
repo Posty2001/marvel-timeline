@@ -1,0 +1,139 @@
+# TVA Live - scheduler giornaliero. Repository: tva-live-scheduler (pubblico, branch predefinito: main).
+# Fa UNA cosa: avvia l aggiornamento del catalogo sul branch TEST di marvel-timeline, ne attende l esito e lo verifica.
+# Non contiene codice dell app, non pubblica nulla (la pubblicazione dei JSON e una fase successiva, separata) e non tocca mai main.
+name: TVA Live - scheduler
+run-name: TVA Live scheduler (${{ github.event_name }})
+
+on:
+  schedule:
+    - cron: '17 5 * * *'            # una volta al giorno (UTC), minuto non tondo per evitare i picchi di GitHub
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Prova a secco - esegue tutti i controlli ma non scrive e non fa commit
+        type: boolean
+        default: false
+
+permissions: {}                     # nessun permesso di default; ogni job dichiara solo il necessario
+
+concurrency:
+  group: tva-live-scheduler
+  cancel-in-progress: false
+
+env:
+  TARGET_REPO: Posty2001/marvel-timeline
+  TARGET_REF: test/tva-archives     # unico branch ammesso; non e un input, non si puo cambiare dall esterno
+  TARGET_WORKFLOW: tmdb-sync.yml
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions: {}                 # nessun checkout, nessun GITHUB_TOKEN: si usa solo il token fine-grained (Actions: Read and write)
+    outputs:
+      outcome: ${{ steps.run.outputs.outcome }}
+      verified: ${{ steps.run.outputs.verified }}
+      content_hash: ${{ steps.run.outputs.content_hash }}
+    steps:
+      - name: Avvia, attendi e verifica l aggiornamento
+        id: run
+        env:
+          GH_TOKEN: ${{ secrets.TVA_DISPATCH_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run == true && 'true' || 'false' }}
+        run: |
+          set -uo pipefail
+          fail() { echo "::error::$1"; { echo "outcome=${2:-error}"; echo "verified=false"; } >> "$GITHUB_OUTPUT"; summary "ERRORE" "$1"; exit 1; }
+          summary() { { echo "## TVA Live - scheduler"; echo; echo "**Esito: $1**"; echo; echo "$2"; echo; echo "- Repository: \`$TARGET_REPO\`, branch \`$TARGET_REF\`"; echo "- Prova a secco: $DRY_RUN"; [ -n "${RUN_URL:-}" ] && echo "- Run: $RUN_URL"; [ -n "${HASH:-}" ] && echo "- Contenuto (hash): \`$HASH\`"; } >> "$GITHUB_STEP_SUMMARY"; }
+
+          [ -n "${GH_TOKEN:-}" ] || fail "Secret TVA_DISPATCH_TOKEN mancante: crealo in Settings > Secrets and variables > Actions."
+          main_before="$(gh api "repos/$TARGET_REPO/commits/main" --jq .sha)" || fail "Token non valido o scaduto, oppure repository non raggiungibile."
+          head_before="$(gh api "repos/$TARGET_REPO/commits/$TARGET_REF" --jq .sha)" || fail "Branch $TARGET_REF non raggiungibile."
+
+          # 1) Avvio, con identificativo di correlazione (nome del run) per ritrovare esattamente questo run.
+          did="${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          title="TVA Live update $did"
+          gh workflow run "$TARGET_WORKFLOW" -R "$TARGET_REPO" --ref "$TARGET_REF" \
+            -f solo_live_build=true -f live_commit=true -f live_dry_run="$DRY_RUN" -f dispatch_id="$did" \
+            || fail "Avvio del workflow rifiutato (token senza permesso Actions: Read and write, o workflow non trovato)."
+          id=""
+          for i in $(seq 1 18); do
+            sleep 10
+            id="$(gh run list -R "$TARGET_REPO" -w "$TARGET_WORKFLOW" --branch "$TARGET_REF" --event workflow_dispatch --limit 20 \
+                  --json databaseId,displayTitle --jq "[.[] | select(.displayTitle == \"$title\")][0].databaseId // empty" 2>/dev/null)"
+            [ -n "$id" ] && break
+          done
+          [ -n "$id" ] || fail "Run di aggiornamento non trovato entro 3 minuti."
+          RUN_URL="https://github.com/$TARGET_REPO/actions/runs/$id"; echo "Run: $RUN_URL"
+
+          # 2) Attesa dell esito effettivo (massimo 15 minuti).
+          status=""; conclusion=""
+          for i in $(seq 1 60); do
+            read -r status conclusion < <(gh run view "$id" -R "$TARGET_REPO" --json status,conclusion --jq '[.status, (.conclusion // "-")] | @tsv' 2>/dev/null || echo "unknown -")
+            [ "$status" = "completed" ] && break
+            sleep 15
+          done
+          [ "$status" = "completed" ] || fail "Il run non e terminato entro 15 minuti (stato: $status)."
+          echo "Conclusione del run: $conclusion"
+
+          # 3) Esito leggibile da macchina (artifact del run: nessun token dentro, non viene ripubblicato).
+          dir="$(mktemp -d)"
+          gh run download "$id" -R "$TARGET_REPO" -n tva-live-update -D "$dir" >/dev/null 2>&1 || true
+          [ -s "$dir/RESULT.json" ] || fail "Nessun RESULT.json: generazione fallita prima della decisione (conclusione del run: $conclusion)."
+          outcome="$(jq -r '.result' "$dir/RESULT.json")"
+          HASH="$(jq -r '.content_hash // ""' "$dir/RESULT.json")"
+          case "$outcome" in unchanged|heartbeat|update|rejected) ;; *) fail "Esito sconosciuto nel RESULT.json: $outcome" ;; esac
+          reasons="$(jq -r '(.blocking + .warnings) | map("- " + .) | join("\n")' "$dir/RESULT.json")"
+          echo "outcome=$outcome" >> "$GITHUB_OUTPUT"; echo "content_hash=$HASH" >> "$GITHUB_OUTPUT"
+
+          # 4) Controlli di coerenza: main intatto, esito coerente con la conclusione del run, branch coerente con l esito.
+          [ "$(gh api "repos/$TARGET_REPO/commits/main" --jq .sha)" = "$main_before" ] || fail "main e cambiato durante l esecuzione: verificare subito." 
+          if [ "$outcome" = "rejected" ]; then
+            echo "verified=false" >> "$GITHUB_OUTPUT"
+            summary "RIFIUTATO" "L aggiornamento e stato bloccato dai controlli e NON e stato scritto. Il catalogo valido precedente resta invariato.
+          $reasons"
+            echo "::error::Aggiornamento rifiutato dai controlli di qualita (vedi riepilogo)."; exit 1
+          fi
+          [ "$conclusion" = "success" ] || fail "Esito $outcome ma il run e terminato con '$conclusion' (commit non riuscito?). Nulla da pubblicare." "$outcome"
+
+          head_after="$(gh api "repos/$TARGET_REPO/commits/$TARGET_REF" --jq .sha)"
+          if [ "$DRY_RUN" = "true" ]; then
+            [ "$head_after" = "$head_before" ] || fail "Prova a secco ma il branch e cambiato."
+            echo "verified=false" >> "$GITHUB_OUTPUT"      # in prova a secco non si pubblica mai nulla
+            summary "PROVA A SECCO: $outcome" "Nessuna scrittura (come previsto).
+          $reasons"; exit 0
+          fi
+          rd() { gh api "repos/$TARGET_REPO/contents/assets/live/$1?ref=$TARGET_REF" --jq .content | base64 -d; }
+          bh="$(rd manifest.json | jq -r '.content_hash // ""')" || bh=""
+          [ -n "$HASH" ] && [ "$bh" = "$HASH" ] || fail "Il manifest sul branch ($bh) non corrisponde al contenuto validato ($HASH)." "$outcome"
+          if [ "$outcome" = "update" ] || [ "$outcome" = "heartbeat" ]; then
+            [ "$(rd status.json | jq -r '.content_hash + "|" + .result')" = "$HASH|$outcome" ] || fail "status.json sul branch non registra l esito $outcome." "$outcome"
+          elif [ "$head_after" != "$head_before" ]; then
+            echo "::notice::Il branch e avanzato durante il run (altro commit), il catalogo e comunque coerente."
+          fi
+          echo "verified=true" >> "$GITHUB_OUTPUT"
+          case "$outcome" in
+            unchanged) m="Catalogo invariato: nessun commit (comportamento corretto)." ;;
+            heartbeat) m="Contenuto identico: registrata soltanto la verifica periodica." ;;
+            update)    m="Catalogo aggiornato e registrato sul branch TEST." ;;
+          esac
+          summary "$(echo "$outcome" | tr a-z A-Z)" "$m
+          $reasons"
+
+  keepalive:
+    # Evita la disattivazione dei cron dopo 60 giorni senza attivita nel repository scheduler. Parte anche se l aggiornamento fallisce.
+    if: ${{ always() && github.event_name == 'schedule' }}
+    needs: update
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write               # solo per il file .keepalive di QUESTO repository
+    steps:
+      - uses: actions/checkout@v4
+      - name: Keepalive mensile
+        run: |
+          if [ "$(date -u +%d)" = "01" ]; then
+            date -u +%Y-%m-%d > .keepalive
+            git config user.name "tva-live-bot"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add .keepalive
+            git diff --cached --quiet || { git commit -q -m "keepalive"; git push -q; }
+          fi

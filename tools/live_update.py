@@ -216,6 +216,10 @@ def main(argv=None, fetch=None):
             st = {'schema': 1, 'last_check': now, 'last_change': now if res['content_changed'] else ((cur.get('status') or {}).get('last_change') or now), 'content_hash': man['content_hash'], 'result': res['result']}
             write_atomic(live_dir, {'calendar.json': B.scrub(B.canon(cal)), 'trailers.json': B.scrub(B.canon(trl)), 'manifest.json': B.scrub(B.canon(man)), STATUS: jdump(st)})
     print('Esito: %s%s' % (res['result'], ' | ' + ' | '.join(res['blocking']) if res['blocking'] else ''))
+    # RESULT.json: esito leggibile da macchina (lo scheduler lo confronta con il branch). Solo campi sintetici, gia ripuliti.
+    rj = {'schema': 1, 'result': res['result'], 'dry_run': bool(a.dry_run), 'forced': bool(a.force), 'content_changed': bool(res['content_changed']),
+          'generated_at': man.get('generated_at'), 'content_hash': man.get('content_hash'), 'blocking': res['blocking'], 'warnings': res['warnings']}
+    open(os.path.join(a.out, 'RESULT.json'), 'w', encoding='utf-8').write(B.scrub(json.dumps(rj, ensure_ascii=False, indent=2)) + '\n')
     if a.github_output:
         with open(a.github_output, 'a', encoding='utf-8') as f: f.write('result=%s\n' % res['result'])
     return 1 if res['result'] == 'rejected' else 0
