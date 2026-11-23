@@ -13,9 +13,9 @@
 // URL dei file .woff2 referenziati, e li mette in cache esplicitamente — indipendentemente da
 // quando/come la pagina stessa li carica.
 
-const SW_BUILD = '20261123-2330-live4';
+const SW_BUILD = '20261124-0030-live5';
 const CACHE_PREFIX = 'marvel-timeline-cache-';   // C26: si cancellano solo le cache di questa app
-const CACHE_NAME = 'marvel-timeline-cache-20261123-2330-live4';
+const CACHE_NAME = 'marvel-timeline-cache-20261124-0030-live5';
 const FONT_CSS_URL = 'https://fonts.googleapis.com/css2?family=Special+Elite&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap';
 
 /* 3.2.4: ritratti avatar approvati, precaricati per l'uso offline (Tessera, editor, esportazione PNG). */
@@ -117,6 +117,15 @@ self.addEventListener('message', function (event) {
   }
 });
 
+/* F3b: un JSON servito dalla CACHE (rete assente) porta l'intestazione X-TVA-From-Cache: la pagina (TVA Live) cosi' non scambia una copia salvata per una lettura online. Solo .json same/cross-origin con risposta leggibile; ogni altro contenuto resta identico. */
+function markFromCache(req, cached) {
+  try {
+    if (req.mode === 'navigate' || cached.redirected || (cached.type !== 'basic' && cached.type !== 'cors') || !/\.json$/.test(new URL(req.url).pathname)) return cached;
+    var h = new Headers(cached.headers); h.set('X-TVA-From-Cache', '1');
+    return new Response(cached.body, { status: cached.status, statusText: cached.statusText, headers: h });
+  } catch (e) { return cached; }
+}
+
 self.addEventListener('fetch', function (event) {
   var req = event.request;
   if (req.method !== 'GET') return;
@@ -143,7 +152,7 @@ self.addEventListener('fetch', function (event) {
       })
       .catch(function () {
         return caches.match(req, { ignoreSearch: req.mode === 'navigate' }).then(function (cached) {   // C26: la navigazione ignora la query
-          if (cached) return cached;
+          if (cached) return markFromCache(req, cached);   // F3b
           return new Response(
             'Contenuto non disponibile offline. Apri la guida almeno una volta con connessione attiva.',
             { status: 503, statusText: 'Offline', headers: { 'Content-Type': 'text/plain; charset=utf-8' } }

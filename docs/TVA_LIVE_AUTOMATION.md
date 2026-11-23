@@ -68,3 +68,11 @@ Regole del caricamento (blocco `tva-live-js` di `index.html`, nessun'altra sezio
 CSP: `connect-src` aggiunge solo il prefisso `https://posty2001.github.io/tva-live-scheduler/v1/`. Service worker: invariato (solo build stamp); il gestore generico network-first inoltra gia le GET cross-origin CORS e salva le risposte 200.
 
 Test: `tests/live/remote_test.py` (67), `tests/live/sw_remote_test.py` (6, service worker reale).
+
+### Fase 3.1: indicatore della fonte (correzione dal collaudo iPhone)
+
+Causa: offline il service worker (network-first con ripiego sulla cache) serviva il vecchio `current.json` con stato 200; l'app lo trattava come lettura online (riprodotto in `sw_remote_test.py`). Secondo percorso: app ripresa dalla memoria senza ricaricamento, che manteneva l'etichetta della sessione precedente.
+Correzione:
+- `sw.js`: i soli `.json` serviti dalla cache portano `X-TVA-From-Cache: 1` (mai navigazioni, redirect, risposte opache; resto invariato).
+- App: un puntatore con quella intestazione e una copia verificata ma NON una verifica online (fonte `cache`, motivo "rete non raggiungibile"). "Aggiornamento online verificato" solo se il puntatore e stato letto dalla rete; mostra l'orario. In copia salvata mostra l'ultima verifica online reale (`at`, registrata solo in caso di lettura live).
+- Eventi `online`/`offline` e rientro in primo piano ricontrollano la fonte (cambio di connettivita, 30 min, tentativo precedente fallito); con `navigator.onLine === false` e dati in memoria compare l'avviso "ora offline".

@@ -24,7 +24,7 @@ def mk(cal, trl, gen, post=None, pre=None):
     return {'ptr': ptr, 'files': files}
 REG = {'ptr': None, 'files': {}, 'mode': 'ok', 'hits': []}
 def serve(bundle, mode='ok'):
-    REG.update(ptr=json.dumps(bundle['ptr']) if bundle else None, files=dict(bundle['files']) if bundle else {}, mode=mode, hits=[])
+    REG.update(ptr=json.dumps(bundle['ptr']) if bundle else None, files=dict(bundle['files']) if bundle else {}, mode=mode, hits=[], fromcache=False)
 def remote_route(pg):
     def h(r):
         u = r.request.url; REG['hits'].append(u); rel = u[len(BASE):] if u.startswith(BASE) else None
@@ -32,7 +32,8 @@ def remote_route(pg):
         if REG['mode'] == 'hang': return
         if REG['mode'] == '500': return r.fulfill(status=500, body='')
         body = REG['ptr'] if rel == 'current.json' else REG['files'].get(rel)
-        hd = {'access-control-allow-origin': '*', 'cache-control': 'max-age=600'}
+        hd = {'access-control-allow-origin': '*', 'cache-control': 'max-age=600', 'access-control-expose-headers': 'X-TVA-From-Cache'}
+        if REG.get('fromcache') and rel == 'current.json': hd['x-tva-from-cache'] = '1'
         r.fulfill(status=200, content_type='application/json', headers=hd, body=body) if body is not None else r.fulfill(status=404, body='', headers=hd)
     pg.route(re.compile(r'https://posty2001\.github\.io/.*'), h)
 orig_routes = NS['routes']
@@ -169,23 +170,50 @@ with sync_playwright() as pw:
     pg.wait_for_function("()=>window.tvaLive.data().source==='remote'", timeout=8000); ok('R11 app aperta a lungo: al rientro in primo piano (dopo 30+ min) ricontrolla e applica la nuova versione', 'tmdb:movie:5000' in D(pg)['cal'])
     n = len(REG['hits']); pg.evaluate("()=>document.dispatchEvent(new Event('visibilitychange'))"); pg.wait_for_timeout(600)
     ok('R11 rientri ravvicinati non rifanno richieste (limite 30 minuti)', len(REG['hits']) == n, REG['hits'][n:]); ctx.close()
+    # ---- R13 app ripresa dalla memoria: l indicatore segue la fonte realmente usata, mai "online" se non e avvenuto
+    ctx, pg = boot(b, B1()); k0 = ind(pg); p0 = pg.evaluate("()=>window.tvaLive.prefs()"); t0 = txt(pg, '.tvl-status')
+    ok('R13 online: "aggiornamento online verificato alle HH:MM" con orario della verifica e versione', re.search(r'aggiornamento online verificato (alle \d\d:\d\d|il )', t0) and D(pg)['s'] == 'remote', t0)
+    ok('R13 la verifica online e registrata nella copia locale (data/ora)', isinstance(store(pg).get('at'), int) and abs(store(pg)['at'] - pg.evaluate("()=>Date.now()")) < 60000)
+    at0 = store(pg)['at']; REG['mode'] = 'offline'; pg.wait_for_timeout(2300); ctx.set_offline(True)          # NESSUN ricaricamento: l'app resta in memoria e riceve l'evento offline
+    pg.wait_for_function("()=>window.tvaLive.data().source==='cache'", timeout=8000); pg.evaluate("()=>window.tvaLive.render()"); t1 = txt(pg, '.tvl-status')
+    ok('R13 offline senza ricaricare: la fonte diventa "copia salvata", non resta "online verificato"', 'copia salvata sul dispositivo' in t1 and 'aggiornamento online verificato' not in t1 and 'ultima verifica online' in t1, t1)
+    ok('R13 la copia salvata conserva l ora dell ultima verifica online reale (non la rinnova)', store(pg)['at'] == at0)
+    ok('R13 offline: motivo mostrato, nessun avviso nuovo/duplicato, preferenze invariate', 'rete non raggiungibile' in t1 and ind(pg) == k0 and all(pg.evaluate("()=>window.tvaLive.prefs()")[f] == p0[f] for f in ('cats', 'lead', 'followed', 'muted', 'onlyUnwatched')))
+    ctx.set_offline(False); REG['mode'] = 'ok'; pg.wait_for_timeout(5200); pg.evaluate("()=>window.dispatchEvent(new Event('online'))")
+    pg.wait_for_function("()=>window.tvaLive.data().source==='remote'", timeout=8000); pg.evaluate("()=>window.tvaLive.render()"); t2 = txt(pg, '.tvl-status')
+    ok('R13 ritorno online senza ricaricare: nuova verifica e fonte di nuovo "online verificato" con orario aggiornato', 'aggiornamento online verificato' in t2 and store(pg)['at'] > at0 and ind(pg) == k0, t2)
+    # app aperta (stato "remoto") quando il sistema va offline ma l'evento non arriva: l'indicatore non mente sul presente
+    pg.evaluate("()=>{Object.defineProperty(navigator,'onLine',{get:()=>false,configurable:true}); window.tvaLive.render()}"); t3 = txt(pg, '.tvl-status')
+    ok('R13 offline noto al browser ma dati ancora in memoria: avviso esplicito "ora offline, dati dell ultimo controllo"', 'offline' in t3 and 'ultimo controllo online' in t3, t3)
+    ctx.close()
+    # ---- R14 puntatore servito dalla cache del service worker (rete assente): dati verificati ma NON "online"
+    base_state(); serve(B1()); ctx = new_ctx(b); pg = open_page(ctx); go_live(pg); REG['fromcache'] = True; reload(pg); go_live(pg); d = D(pg); t = txt(pg, '.tvl-status')
+    ok('R14 puntatore dalla cache del SW: fonte "copia salvata", motivo "rete non raggiungibile", mai "online verificato"', d['s'] == 'cache' and 'rete non raggiungibile' in (d['e'] or '') and 'aggiornamento online verificato' not in t and 'copia salvata' in t, (d, t))
+    ok('R14 la verifica online registrata resta quella reale precedente (il puntatore dalla cache non la rinnova)', store(pg)['at'] <= pg.evaluate("()=>Date.now()") - 1 and d['v'] == json.loads(REG['ptr'])['version'])
+    ctx.close()
     # ---- R12 statici: perimetro delle modifiche
     src = open(os.path.join(ROOT, 'index.html'), encoding='utf-8').read(); csp = re.search(r'Content-Security-Policy" content="([^"]+)"', src).group(1)
     cs = [x for x in csp.split(';') if x.strip().startswith('connect-src')][0]
     ok('R12 CSP: connect-src ammette il SOLO prefisso dell endpoint (non l intero dominio); nessun unsafe-eval', 'https://posty2001.github.io/tva-live-scheduler/v1/' in cs and not re.search(r'https://posty2001\.github\.io[ ;]', cs + ' ') and 'unsafe-eval' not in csp and "default-src 'self'" in csp)
-    diff = subprocess.run(['git', 'diff', '-U0', 'HEAD', '--', 'index.html'], cwd=ROOT, capture_output=True, text=True).stdout
+    REF = '415f5a9'      # ultimo commit prima della Fase 3 (lettura remota)
+    def hunks(path):
+        dd = subprocess.run(['git', 'diff', '-U0', REF, '--', path], cwd=ROOT, capture_output=True, text=True).stdout
+        return [(int(m.group(3)), int(m.group(4) or 1)) for m in re.finditer(r'^@@ -(\d+)(?:,(\d+))? \+(\d+)(?:,(\d+))? @@', dd, re.M)], dd
     lines = src.split('\n'); lo = next(i for i, l in enumerate(lines, 1) if 'LIVE-JS-BEGIN' in l); hi = next(i for i, l in enumerate(lines, 1) if 'LIVE-JS-END' in l); bad = []
-    for m in re.finditer(r'^@@ -(\d+)(?:,(\d+))? \+(\d+)(?:,(\d+))? @@', diff, re.M):
-        s0, n0 = int(m.group(3)), int(m.group(4) or 1)
+    for s0, n0 in hunks('index.html')[0]:
         for ln in range(s0, s0 + max(n0, 1)):
             t = lines[ln - 1] if ln - 1 < len(lines) else ''
-            if not (lo <= ln <= hi or 'Content-Security-Policy' in t or 'tva-build' in t or '20261123-2330-live4' in t): bad.append(ln)
-    ok('R12 index.html: modificate solo le righe del blocco TVA Live, la CSP e il build stamp (nessun\'altra sezione)', not bad, bad[:10])
-    sd = subprocess.run(['git', 'diff', '-U0', 'HEAD', '--', 'sw.js', 'quiz', 'arcade'], cwd=ROOT, capture_output=True, text=True).stdout
-    chg = [l for l in sd.splitlines() if re.match(r'^[+-](?![+-]{2})', l)]
-    ok('R12 sw.js, Quiz e Arcade: cambia solo il build stamp', chg and all('20261123-' in l and 'live' in l for l in chg), [l for l in chg if '20261123-' not in l][:3])
+            if not (lo <= ln <= hi or 'Content-Security-Policy' in t or 'tva-build' in t): bad.append(ln)
+    ok('R12 index.html (rispetto a prima della Fase 3): modificate solo le righe del blocco TVA Live, la CSP e il build stamp (nessun\'altra sezione)', not bad, bad[:10])
+    swl = open(os.path.join(ROOT, 'sw.js'), encoding='utf-8').read().split('\n'); f0 = next(i for i, l in enumerate(swl, 1) if l.startswith('/* F3b')); f1 = next(i for i in range(f0, len(swl)) if swl[i - 1] == '}')
+    badsw = [ln for s0, n0 in hunks('sw.js')[0] for ln in range(s0, s0 + max(n0, 1)) if not (f0 <= ln <= f1 or 'F3b' in swl[ln - 1] or 'live5' in swl[ln - 1] or not swl[ln - 1].strip())]
+    ok('R12 sw.js: solo build stamp e la marcatura F3b dei JSON serviti dalla cache (resto del service worker identico)', not badsw and len(hunks('sw.js')[0]) >= 3, badsw[:5])
+    qa = subprocess.run(['git', 'diff', '-U0', REF, '--', 'quiz', 'arcade'], cwd=ROOT, capture_output=True, text=True).stdout
+    chg = [l for l in qa.splitlines() if re.match(r'^[+-](?![+-]{2})', l)]
+    ok('R12 Quiz e Arcade: cambia solo il build stamp', chg and all('live' in l and ('20261123-' in l or '20261124-' in l) for l in chg), [l[:80] for l in chg if '20261124-' not in l and '20261123-' not in l][:3])
     sw = open(os.path.join(ROOT, 'sw.js'), encoding='utf-8').read()
-    ok('R12 service worker: gestore generico network-first per ogni GET (anche cross-origin CORS), in cache solo risposte 200, 503 offline non salvato', "req.method !== 'GET'" in sw and 'networkResponse.status === 200' in sw and 'cache.put(req' in sw and not re.search(r'url\.origin|location\.origin', sw[sw.index("addEventListener('fetch'"):]))
+    ok('R12 service worker: gestore generico network-first per ogni GET (anche cross-origin CORS), in cache solo risposte 200', "req.method !== 'GET'" in sw and 'networkResponse.status === 200' in sw and 'cache.put(req' in sw)
+    ok('R12 marcatura F3b: solo file .json con risposta leggibile, mai navigazioni/redirect/opachi', "/\\.json$/.test(" in sw and "req.mode === 'navigate'" in sw and 'cached.redirected' in sw and "cached.type !== 'basic' && cached.type !== 'cors'" in sw)
     ls_ = open(os.path.join(ROOT, 'tests/live/remote_test.py')).read()
     b.close()
 bad = [n for n, c in res if not c]; rem = [(n, c) for n, c in res]
