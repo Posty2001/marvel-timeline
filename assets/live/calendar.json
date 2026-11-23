@@ -1,19 +1,24 @@
 {
- "generated_at": "2026-11-23T07:57:04+00:00",
+ "generated_at": "2026-11-23T14:54:44+00:00",
  "items": [
   {
    "category": "film",
-   "confidence": "provisional",
+   "confidence": "confirmed",
    "date": "2026-12-16",
    "dateIT": "2026-12-16",
    "firstSeen": "2026-11-21",
-   "history": [],
+   "history": [
+    {
+     "at": "2026-11-23",
+     "confidence": "confirmed"
+    }
+   ],
    "key": "tmdb:movie:1003596",
    "kind": "movie",
    "missing": [],
    "poster": "/6uOkzW0gF1ANWz2flhwXfTUQuLY.jpg",
    "precision": "day",
-   "reason": "Data da TMDB, non confermata da una fonte ufficiale. In post-produzione",
+   "reason": "Data riportata da un contenuto ufficiale verificato (vedi fonte)",
    "signals": [
     "company",
     "keyword"
@@ -23,6 +28,11 @@
      "name": "TMDB",
      "official": false,
      "url": "https://www.themoviedb.org/movie/1003596"
+    },
+    {
+     "name": "YouTube - Marvel Entertainment",
+     "official": true,
+     "url": "https://www.youtube.com/watch?v=hGaXQ8L_Z28"
     }
    ],
    "state": "upcoming",
@@ -32,7 +42,7 @@
     "id": 1003596,
     "type": "movie"
    },
-   "updatedAt": "2026-11-21",
+   "updatedAt": "2026-11-23",
    "warnings": [],
    "window": null
   },
