@@ -69,5 +69,16 @@
     "calendar": 90000,
     "trailers": 40000,
     "manifest": 8000
+  },
+  "update_gate": {
+    "max_removed_abs": 2,
+    "max_removed_frac": 0.3,
+    "max_new": 5,
+    "max_date_changes": 3,
+    "trailer_drop_frac": 0.5,
+    "trailer_drop_min": 4,
+    "max_new_trailers": 10,
+    "heartbeat_days": 7,
+    "_note": "Soglie anti-anomalia per l aggiornamento automatico (tools/live_update.py). Superarle blocca la promozione (il catalogo valido resta); --force/live_force le supera, MAI i controlli di fonte, schema e sicurezza."
   }
 }

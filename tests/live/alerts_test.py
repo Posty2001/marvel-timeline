@@ -154,7 +154,9 @@ with sync_playwright() as pw:
 wf = open(os.path.join(ROOT, '.github/workflows/tmdb-sync.yml'), encoding='utf-8').read()
 gen = open(os.path.join(ROOT, 'tools/tva_live_build.py'), encoding='utf-8').read()
 cfg = json.load(open(os.path.join(ROOT, 'tools/live/config.json'), encoding='utf-8'))
-ok('C workflow: permessi in sola lettura, nessun push/commit, trigger solo manuale', 'contents: read' in wf and not re.search(r'git (push|commit)|contents: write|^\s*schedule:|^\s*push:', wf, re.M) and 'workflow_dispatch' in wf)
+import yaml
+_Y = yaml.safe_load(wf)
+ok('C workflow: permessi globali in sola lettura; scrittura solo nel job live-update; nessun push diretto; trigger solo manuale', _Y['permissions'] == {'contents': 'read'} and [j for j, v in _Y['jobs'].items() if 'permissions' in v] == ['live-update'] and not re.search(r'git (push|commit)|^\s*schedule:|^\s*push:', wf, re.M) and list(_Y.get('on') or _Y.get(True)) == ['workflow_dispatch'])
 ok('C generatore: solo libreria standard (nessun pacchetto a pagamento/esterno)', not re.search(r'^\s*(import|from)\s+(requests|googleapiclient|openai|anthropic|boto3|feedparser)', gen, re.M))
 ok('C generatore: non scrive index.html, schede Timeline o cataloghi esistenti', not re.search(r"open\([^)]*(index\.html|tmdb_map|tmdb_overrides|timeline)[^)]*['\"]w", gen))
 ok('C fonti: nessun endpoint a pagamento, YouTube solo feed pubblico e canale @marvel', all(h in ('api.themoviedb.org', 'www.youtube.com') for h in set(re.findall(r'https://([\w.]+)/', json.dumps(cfg)) + re.findall(r"https://(api\.themoviedb\.org|www\.youtube\.com)", gen))) and 'googleapis.com/youtube' not in gen)

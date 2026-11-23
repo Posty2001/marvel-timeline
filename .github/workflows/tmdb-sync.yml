@@ -3,6 +3,9 @@ name: TMDB sync (manuale)
 # Solo avvio manuale. Non modifica il repository, non fa deploy, non tocca Firebase.
 # Risultati: artifact scaricabile "tmdb-sync" (tmdb_map.json + tmdb_review.json).
 # TVA Live: solo_live_build=true genera calendar/trailers/manifest.json (artifact tva-live-data, nessun commit).
+# TVA Live 1.1: con solo_live_build=true e live_commit=true il job live-update aggiorna i dati in assets/live/ SOLO sul branch
+#   test/tva-archives (commit dei soli 4 file di dati, solo se cambiano o per la verifica settimanale). NON pubblica su Netlify, NON tocca main.
+#   Si avvia da un repository scheduler separato (docs/TVA_LIVE_AUTOMATION.md) oppure a mano. Va lanciato con ref test/tva-archives.
 # TVA Live Fase 0: con solo_live_probe=true esegue solo la sonda di lettura (tools/live_probe.py) e produce l artifact "live-probe".
 on:
   workflow_dispatch:
@@ -19,12 +22,21 @@ on:
         description: TVA Live - genera i JSON statici (calendario, trailer, manifest) e salta il resto (artifact tva-live-data, nessun commit)
         type: boolean
         default: false
+      live_commit:
+        description: TVA Live 1.1 - con solo_live_build, aggiorna assets/live sul branch test/tva-archives se i dati validi sono cambiati (nessun deploy)
+        type: boolean
+        default: false
+      live_force:
+        description: TVA Live 1.1 - supera le soglie anti-anomalia (mai i controlli su fonti, schema e sicurezza)
+        type: boolean
+        default: false
 
 permissions:
   contents: read
 
 jobs:
   sync:
+    if: ${{ !(inputs.solo_live_build && inputs.live_commit) }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -113,4 +125,70 @@ jobs:
             assets/images/catalog/tmdb_review.json
             assets/episodes/
           if-no-files-found: error
+          retention-days: 30
+
+  live-update:
+    # Aggiornamento automatico del CATALOGO (solo dati). Pubblicazione dell app = operazione separata.
+    if: ${{ inputs.solo_live_build && inputs.live_commit }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write        # minimo necessario per il push dei soli dati; nessun altro permesso
+    concurrency:
+      group: tva-live-update
+      cancel-in-progress: false
+    steps:
+      - name: Verifica che il workflow giri sul branch TEST
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/test/tva-archives" ]; then
+            echo "::error::live_commit e consentito solo con ref test/tva-archives (ref attuale: $GITHUB_REF)."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+        with:
+          ref: test/tva-archives
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Verifica presenza del secret (senza stamparlo)
+        env:
+          TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: |
+          if [ -z "$TMDB_READ_TOKEN" ] && [ -z "$TMDB_API_KEY" ]; then
+            echo "::error::Nessun secret TMDB trovato."
+            exit 1
+          fi
+
+      - name: Genera, valida e decidi (nessuna scrittura se rifiutato o invariato)
+        id: upd
+        env:
+          TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          LIVE_FORCE: ${{ inputs.live_force }}
+        run: |
+          args=(--out live-update-out --github-output "$GITHUB_OUTPUT")
+          if [ "$LIVE_FORCE" = "true" ]; then args+=(--force); fi
+          python3 tools/live_update.py "${args[@]}"
+
+      - name: Riepilogo nel job
+        if: ${{ always() }}
+        run: |
+          if [ -f live-update-out/SUMMARY.md ]; then cat live-update-out/SUMMARY.md >> "$GITHUB_STEP_SUMMARY"; fi
+
+      - name: Commit dei soli dati su test/tva-archives
+        if: ${{ steps.upd.outputs.result == 'update' || steps.upd.outputs.result == 'heartbeat' }}
+        run: bash tools/live_git_commit.sh live-update-out/COMMIT_MSG.txt origin
+
+      - name: Salva candidato, report e (se rifiutato) i dati bloccati
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: tva-live-update
+          path: live-update-out/
+          if-no-files-found: warn
           retention-days: 30
