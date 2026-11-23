@@ -51,3 +51,20 @@ Test: `python3 tests/live/scheduler_test.py` (36 controlli con `gh` simulato).
 - Sito: `v1/current.json` + ultime 10 versioni `v1/c/<id>/*.json`. Il puntatore elenca per ogni file percorso, sha256 e byte: chi legge scarica i tre file immutabili e ne verifica l'hash, quindi non esistono letture miste.
 - Workflow: `update` -> `publish` (solo se `verified == true`, dati letti dallo SHA verificato) -> `deploy` (Pages) -> `verify-endpoint` (HTTPS, CORS con Origin del sito TEST, cache, sha256, file interni non raggiungibili). Se un passo fallisce, il deploy precedente resta online.
 - Impostazione manuale richiesta una tantum: Settings -> Pages -> Source: **GitHub Actions**.
+
+## Fase 3: lettura remota nell'app (TVA Live)
+
+Endpoint: `https://posty2001.github.io/tva-live-scheduler/v1/current.json` (puntatore) + `v1/c/<versione>/{calendar,trailers,manifest}.json` (immutabili).
+
+Regole del caricamento (blocco `tva-live-js` di `index.html`, nessun'altra sezione toccata):
+1. Si leggono in parallelo: dati inclusi nell'app, copia locale dell'ultima versione verificata, endpoint remoto (timeout 9 s, `credentials: omit`, nessun referrer).
+2. Un catalogo remoto o locale e accettato solo se: dimensioni e SHA-256 dei tre file coincidono col puntatore; l'id di versione e l'hash dei tre hash (nessuna combinazione di versioni diverse); `generated_at` identico nei tre file e nel puntatore, non nel futuro (> 2 giorni); schema 1; conteggi coerenti; ogni voce valida, chiavi uniche, link https verso host noti; percorsi solo `c/<versione>/<nome>.json`. Senza `crypto.subtle` non si accetta nulla di remoto.
+3. Tra i candidati validi vince il `generated_at` piu recente (a parita: remoto > copia locale > dati inclusi). Un catalogo piu vecchio non sostituisce mai uno piu recente.
+4. Chiave locale `marvel-ultimate-timeline-live-remote-v1`: copia (puntatore + testi, rivalidata a ogni lettura) e soglia `floor` (generated_at piu recente accettato). Non e nel profilo/backup.
+5. Se i dati mostrati sono piu vecchi della soglia (copia locale persa, rete assente) non si generano avvisi: niente avvisi "all'indietro".
+6. Avvisi, preferenze, titoli seguiti: logica invariata (`computeAlerts` e le chiavi utente non sono stati modificati).
+7. Rientro in primo piano dopo 30+ minuti: nuovo controllo dell'endpoint.
+
+CSP: `connect-src` aggiunge solo il prefisso `https://posty2001.github.io/tva-live-scheduler/v1/`. Service worker: invariato (solo build stamp); il gestore generico network-first inoltra gia le GET cross-origin CORS e salva le risposte 200.
+
+Test: `tests/live/remote_test.py` (67), `tests/live/sw_remote_test.py` (6, service worker reale).

@@ -196,11 +196,11 @@ sc = open(os.path.join(ROOT, 'tools/live_git_commit.sh'), encoding='utf-8').read
 ok('script commit: refspec fisso sul branch TEST, mai main, file consentiti solo assets/live', 'HEAD:refs/heads/$BRANCH' in sc and 'BRANCH="test/tva-archives"' in sc and 'main' not in re.sub(r'#.*', '', sc) and 'index.html' not in sc)
 up = open(os.path.join(ROOT, 'tools/live_update.py'), encoding='utf-8').read()
 ok('aggiornatore: solo libreria standard, nessun accesso a index.html/preferenze/dati personali', not re.search(r'^\s*(import|from)\s+(requests|boto3|openai|anthropic)', up, re.M) and 'index.html' not in up and 'localStorage' not in up)
-ok('nessun file dell\'app toccato da questa fase (index.html/sw.js invariati rispetto a HEAD)', subprocess.run(['git', 'diff', '--quiet', 'HEAD', '--', 'index.html', 'sw.js', 'arcade', 'quiz'], cwd=ROOT).returncode == 0)
+# (Fase 3: index.html e sw.js cambiano legittimamente - verifiche dedicate in remote_test.py)
 
 tpl = open(os.path.join(ROOT, 'docs/tva-live-scheduler/repo/.github/workflows/live-scheduler.yml'), encoding='utf-8').read(); TY = yaml.safe_load(tpl)
 ok('scheduler: YAML valido, cron giornaliero + manuale, token solo da secret, avvia solo il branch TEST (test completi: scheduler_test.py)', (TY.get('on') or TY.get(True)).keys() == {'schedule', 'workflow_dispatch'} and 'secrets.TVA_DISPATCH_TOKEN' in tpl and TY['env']['TARGET_REF'] == 'test/tva-archives' and not re.search(r'ghp_|github_pat_', tpl) and TY['concurrency']['cancel-in-progress'] is False)
-ok('scheduler: nessun Netlify/deploy e nessun riferimento a main per il dispatch', not re.search(r'netlify|--ref main', tpl, re.I))
+ok('scheduler: nessun Netlify/deploy e nessun riferimento a main per il dispatch', not re.search(r'--ref main', tpl) and [l.strip() for l in tpl.splitlines() if 'netlify' in l.lower()] == ['ORIGIN: https://tva-archives-test-1110.netlify.app'])   # Netlify solo come Origin del test CORS
 wfs = os.listdir(os.path.join(ROOT, '.github/workflows')); ok('il modello NON e installato come workflow di questo repository', sorted(wfs) == ['live-probe.yml', 'tmdb-sync.yml'])
 bad = [n for n, c in RES if not c]
 print('\nRISULTATO: %d ok, %d falliti' % (len(RES) - len(bad), len(bad)))

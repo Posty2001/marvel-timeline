@@ -16,6 +16,7 @@ def route_fixtures(pg, missing_index=False):   # ridefinisce: opzione "episodio 
             return r.fulfill(status=200, content_type='application/json', body=json.dumps(d))
         r.fulfill(status=404, body='')
     pg.route(re.compile(r'.*/assets/episodes/.*'), h)
+    pg.route(re.compile(r'https://posty2001\.github\.io/.*'), lambda r: r.abort('internetdisconnected'))   # Live: endpoint remoto non raggiungibile nei test Episodes
 def seed(**kw):
     js = ''
     for k, v in kw.items(): js += "localStorage.setItem('%s', JSON.stringify(%s));" % (k, json.dumps(v))

@@ -44,6 +44,7 @@ def routes(pg):
         body = {'manifest.json': STATE['man'], 'calendar.json': {'schema': 1, 'items': STATE['cal']}, 'trailers.json': {'schema': 1, 'items': STATE['tr']}}.get(n)
         r.fulfill(status=200, content_type='application/json', body=json.dumps(body)) if body is not None else r.fulfill(status=404, body='')
     pg.route(re.compile(r'.*/assets/live/.*'), h)
+    pg.route(re.compile(r'https://posty2001\.github\.io/.*'), lambda r: r.abort('internetdisconnected'))   # endpoint remoto: nei test esistenti non raggiungibile (ripiego sui dati inclusi); i test remoti sono in remote_test.py
     pg.route(re.compile(r'https://image\.tmdb\.org/.*'), lambda r: r.fulfill(status=200, content_type='image/svg+xml', body='<svg xmlns="http://www.w3.org/2000/svg" width="2" height="3"/>'))
 
 def new_ctx(b, w=390):

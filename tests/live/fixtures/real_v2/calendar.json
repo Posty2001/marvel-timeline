@@ -1,0 +1,260 @@
+{
+ "generated_at": "2026-11-23T07:57:04+00:00",
+ "items": [
+  {
+   "category": "film",
+   "confidence": "provisional",
+   "date": "2026-12-16",
+   "dateIT": "2026-12-16",
+   "firstSeen": "2026-11-21",
+   "history": [],
+   "key": "tmdb:movie:1003596",
+   "kind": "movie",
+   "missing": [],
+   "poster": "/6uOkzW0gF1ANWz2flhwXfTUQuLY.jpg",
+   "precision": "day",
+   "reason": "Data da TMDB, non confermata da una fonte ufficiale. In post-produzione",
+   "signals": [
+    "company",
+    "keyword"
+   ],
+   "sources": [
+    {
+     "name": "TMDB",
+     "official": false,
+     "url": "https://www.themoviedb.org/movie/1003596"
+    }
+   ],
+   "state": "upcoming",
+   "timelineId": "136",
+   "title": "Avengers: Doomsday",
+   "tmdb": {
+    "id": 1003596,
+    "type": "movie"
+   },
+   "updatedAt": "2026-11-21",
+   "warnings": [],
+   "window": null
+  },
+  {
+   "category": "animazione",
+   "confidence": "provisional",
+   "date": "2027-01-13",
+   "dateIT": null,
+   "firstSeen": "2026-11-21",
+   "history": [],
+   "key": "tmdb:tv:138503:S02",
+   "kind": "season",
+   "missing": [],
+   "poster": "/rAgl03cfcLgPSzeozownXAdhDkw.jpg",
+   "precision": "day",
+   "reason": "Data da TMDB, non confermata da una fonte ufficiale. Serie in corso",
+   "signals": [
+    "timeline"
+   ],
+   "sources": [
+    {
+     "name": "TMDB",
+     "official": false,
+     "url": "https://www.themoviedb.org/tv/138503"
+    }
+   ],
+   "state": "upcoming",
+   "timelineId": "134",
+   "title": "Il vostro amichevole Spider-Man di quartiere - Stagione 2",
+   "tmdb": {
+    "id": 138503,
+    "season": 2,
+    "type": "tv"
+   },
+   "updatedAt": "2026-11-21",
+   "warnings": [],
+   "window": null
+  },
+  {
+   "category": "animazione",
+   "confidence": "provisional",
+   "date": "2027-06-16",
+   "dateIT": null,
+   "firstSeen": "2026-11-21",
+   "history": [],
+   "key": "tmdb:movie:911916",
+   "kind": "movie",
+   "missing": [
+    "dateIT"
+   ],
+   "poster": "/9KAe39xqyZnv9J4W3DRGdQqX82h.jpg",
+   "precision": "day",
+   "reason": "Data da TMDB, non confermata da una fonte ufficiale. In produzione",
+   "signals": [
+    "company"
+   ],
+   "sources": [
+    {
+     "name": "TMDB",
+     "official": false,
+     "url": "https://www.themoviedb.org/movie/911916"
+    }
+   ],
+   "state": "upcoming",
+   "timelineId": "027",
+   "title": "Spider-Man: Beyond the Spider-Verse",
+   "tmdb": {
+    "id": 911916,
+    "type": "movie"
+   },
+   "updatedAt": "2026-11-21",
+   "warnings": [],
+   "window": null
+  },
+  {
+   "category": "film",
+   "confidence": "provisional",
+   "date": "2027-12-15",
+   "dateIT": null,
+   "firstSeen": "2026-11-21",
+   "history": [],
+   "key": "tmdb:movie:1003598",
+   "kind": "movie",
+   "missing": [
+    "dateIT"
+   ],
+   "poster": "/f0YBuh4hyiAheXhh4JnJWoKi9g5.jpg",
+   "precision": "day",
+   "reason": "Data da TMDB, non confermata da una fonte ufficiale. Progetto pianificato",
+   "signals": [
+    "company",
+    "keyword"
+   ],
+   "sources": [
+    {
+     "name": "TMDB",
+     "official": false,
+     "url": "https://www.themoviedb.org/movie/1003598"
+    }
+   ],
+   "state": "upcoming",
+   "timelineId": "139",
+   "title": "Avengers: Secret Wars",
+   "tmdb": {
+    "id": 1003598,
+    "type": "movie"
+   },
+   "updatedAt": "2026-11-21",
+   "warnings": [],
+   "window": null
+  },
+  {
+   "category": "film",
+   "confidence": "provisional",
+   "date": "2028-05-04",
+   "dateIT": null,
+   "firstSeen": "2026-11-21",
+   "history": [],
+   "key": "tmdb:movie:1293690",
+   "kind": "movie",
+   "missing": [
+    "dateIT"
+   ],
+   "poster": "/jSn3jOzI91dOx4aVdfMrirWXH6R.jpg",
+   "precision": "day",
+   "reason": "Data da TMDB, non confermata da una fonte ufficiale. Progetto pianificato",
+   "signals": [
+    "company",
+    "keyword"
+   ],
+   "sources": [
+    {
+     "name": "TMDB",
+     "official": false,
+     "url": "https://www.themoviedb.org/movie/1293690"
+    }
+   ],
+   "state": "upcoming",
+   "timelineId": null,
+   "title": "Untitled X-Men Film",
+   "tmdb": {
+    "id": 1293690,
+    "type": "movie"
+   },
+   "updatedAt": "2026-11-21",
+   "warnings": [],
+   "window": null
+  },
+  {
+   "category": "film",
+   "confidence": "provisional",
+   "date": "2028-07-27",
+   "dateIT": null,
+   "firstSeen": "2026-11-21",
+   "history": [],
+   "key": "tmdb:movie:1738010",
+   "kind": "movie",
+   "missing": [
+    "dateIT"
+   ],
+   "poster": "/zgC1zo3lyujoEiIMnUrHltvPmZg.jpg",
+   "precision": "day",
+   "reason": "Data da TMDB, non confermata da una fonte ufficiale. Progetto pianificato",
+   "signals": [
+    "company",
+    "keyword"
+   ],
+   "sources": [
+    {
+     "name": "TMDB",
+     "official": false,
+     "url": "https://www.themoviedb.org/movie/1738010"
+    }
+   ],
+   "state": "upcoming",
+   "timelineId": null,
+   "title": "Ghost Rider",
+   "tmdb": {
+    "id": 1738010,
+    "type": "movie"
+   },
+   "updatedAt": "2026-11-21",
+   "warnings": [],
+   "window": null
+  },
+  {
+   "category": "film",
+   "confidence": "provisional",
+   "date": "2028-12-13",
+   "dateIT": null,
+   "firstSeen": "2026-11-21",
+   "history": [],
+   "key": "tmdb:movie:1386618",
+   "kind": "movie",
+   "missing": [
+    "dateIT"
+   ],
+   "poster": "/zJc9fYZxgq4yzI0Oru2e1Cf3a3V.jpg",
+   "precision": "day",
+   "reason": "Data da TMDB, non confermata da una fonte ufficiale. Progetto pianificato",
+   "signals": [
+    "company",
+    "keyword"
+   ],
+   "sources": [
+    {
+     "name": "TMDB",
+     "official": false,
+     "url": "https://www.themoviedb.org/movie/1386618"
+    }
+   ],
+   "state": "upcoming",
+   "timelineId": null,
+   "title": "Black Panther 3",
+   "tmdb": {
+    "id": 1386618,
+    "type": "movie"
+   },
+   "updatedAt": "2026-11-21",
+   "warnings": [],
+   "window": null
+  }
+ ],
+ "schema": 1
+}

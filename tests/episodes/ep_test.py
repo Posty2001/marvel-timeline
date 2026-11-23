@@ -33,6 +33,7 @@ def route_fixtures(pg, missing_index=False):
         if name in FILES: return r.fulfill(status=200, content_type='application/json', body=json.dumps(FILES[name]))
         r.fulfill(status=404, body='')
     pg.route(re.compile(r'.*/assets/episodes/.*'), h)
+    pg.route(re.compile(r'https://posty2001\.github\.io/.*'), lambda r: r.abort('internetdisconnected'))   # Live: endpoint remoto non raggiungibile nei test Episodes
 
 def new_page(b, w=390, init=None, missing_index=False):
     ctx = b.new_context(viewport={'width': w, 'height': 800}, accept_downloads=True, service_workers='block')

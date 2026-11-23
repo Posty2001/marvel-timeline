@@ -1,0 +1,82 @@
+{
+ "attribution": {
+  "tmdb": true
+ },
+ "content_hash": "5984e2c7471f0e7a",
+ "counts": {
+  "by_category": {
+   "animazione": 2,
+   "film": 5,
+   "serie": 0,
+   "videogioco": 0
+  },
+  "calendar": 7,
+  "confirmed": 0,
+  "excluded": 8,
+  "in_timeline": 4,
+  "not_in_timeline": 3,
+  "provisional": 7,
+  "released": 0,
+  "trailers": 1,
+  "trailers_by_category": {
+   "None": 0,
+   "animazione": 0,
+   "film": 0,
+   "serie": 0,
+   "videogioco": 1
+  },
+  "undated_candidates": 2
+ },
+ "generated_at": "2026-11-23T07:57:04+00:00",
+ "notes": [
+  "Confermato = fonte ufficiale verificabile; altrimenti provvisorio.",
+  "Indiscrezioni escluse in 1.0."
+ ],
+ "schema": 1,
+ "sources": {
+  "manual": {
+   "count": 0,
+   "status": "ok"
+  },
+  "news": {
+   "reason": "Nessun feed ufficiale accessibile (8 candidati falliti, HTTP 403): TVA News non sviluppato in 1.0.",
+   "status": "disabled"
+  },
+  "tmdb": {
+   "count": 7,
+   "errors": [],
+   "requests": 49,
+   "status": "ok"
+  },
+  "youtube": {
+   "count": 1,
+   "identity": [
+    {
+     "author": "Marvel Entertainment",
+     "channel_id": "UCvC4D8onUfXzvjTOM-dBfEA",
+     "checks": [
+      {
+       "check": "handle->channel_id",
+       "detail": "HTTP 200",
+       "ok": true
+      },
+      {
+       "check": "autore feed",
+       "detail": "Marvel Entertainment",
+       "ok": true
+      }
+     ],
+     "enabled": true,
+     "handle": "@marvel",
+     "verified": true
+    },
+    {
+     "enabled": false,
+     "handle": "@MarvelHQ",
+     "note": "da valutare separatamente"
+    }
+   ],
+   "status": "ok"
+  }
+ }
+}

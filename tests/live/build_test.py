@@ -225,7 +225,7 @@ if os.path.exists(ROOT + '/assets/live/calendar.json') and not (B.load_json(ROOT
     rc, rt, rm = [B.load_json(ROOT + '/assets/live/%s.json' % n) for n in ('calendar', 'trailers', 'manifest')]
     try: B.validate(rc, rt, rm, cfg); ok(True, 'JSON reali validi')
     except B.ValidationError as e: ok(False, 'JSON reali validi: %s' % e)
-    ok(all(i['confidence'] == 'provisional' for i in rc['items'] if i['state'] == 'upcoming'), 'tutte le date reali restano provvisorie')
+    ok(all(i['confidence'] == 'provisional' or any(s.get('official') for s in i['sources']) for i in rc['items'] if i['state'] == 'upcoming'), 'date reali: Confermato solo con fonte ufficiale (il resto resta provvisorio)')
     ok(all(i['timelineId'] is None or i['key'].startswith('tmdb') for i in rc['items']) and len({i['timelineId'] for i in rc['items'] if i['timelineId']}) == sum(1 for i in rc['items'] if i['timelineId']), 'Timeline: nessuna scheda doppia, voci nuove solo in Live')
 print('7) date da testo ufficiale')
 ok(B.dates_in_text('In theaters December 18', 2027) == {'2027-12-18'}, 'Month D')
