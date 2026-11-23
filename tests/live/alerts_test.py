@@ -78,6 +78,18 @@ with sync_playwright() as pw:
     ok('B5 data spostata: promemoria coerente con la nuova data (tra 7 giorni dal 12)', any(a['m']['to'] == sd(12) and a['m']['days'] == 7 for a in kinds(pg, 'soon')) and len(kinds(pg, 'date')) == 1)
     ctx.close()
 
+    # ---- B9 rigenerazione con catalogo invariato (cambiano solo generated_at / updatedAt / content_hash): nessun falso avviso
+    cal0 = base() + [item('tmdb:tv:950:S01', 'Serie Animata S1', sd(90), kind='season', category='animazione')]
+    ctx, pg = setup(b, cal=copy.deepcopy(cal0), trs=[tr('JJJJJJJJJJJ', 'Trailer Stabile')]); setprefs(pg, followed=['tmdb:movie:902'])
+    visit(ctx, pg, 1); n_before = len(inbox(pg)); fol = pg.evaluate("()=>window.tvaLive.prefs().followed")
+    cal1 = copy.deepcopy(cal0)
+    for i in cal1: i['updatedAt'] = sd(2); i['firstSeen'] = sd(-30)
+    STATE['cal'] = cal1; STATE['man'] = manifest(generated_at=(SIM0 + dt.timedelta(days=2)).isoformat() + '+00:00', content_hash='ffffffffffffffff')
+    for day in (2, 2, 3): visit(ctx, pg, day)
+    ok('B9 stesso catalogo rigenerato: nessun nuovo avviso (updatedAt/generated_at non sono segnali di cambiamento)', len(inbox(pg)) == n_before == 0, inbox(pg))
+    ok('B9 rigenerazione: titoli seguiti e preferenze invariati', pg.evaluate("()=>window.tvaLive.prefs().followed") == fol == ['tmdb:movie:902'])
+    ctx.close()
+
     # ---- B6 preferenze disabilitate -> nessun avviso indesiderato
     ctx, pg = setup(b)
     cats = {'film': False, 'serie': True, 'animazione': True, 'game': True, 'trailer': False}
