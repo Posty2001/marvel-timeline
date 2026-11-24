@@ -278,8 +278,8 @@ Si registrano inoltre versione, commit, eventuale ZIP, problemi aperti e approva
 
 | N. | Funzionalità | Stato | Versione | Commit | ZIP | Problemi aperti | Approvazione utente |
 |---|---|---|---|---|---|---|---|
-| 01 | Miss Minutes 1.0 | **Completata e approvata** (25/11/2026, collaudo reale iPhone/Safari superato) — **congelata** | mm6 definitiva (`20261125-0030-mm6`), nessun mm7 previsto | `8330576` (app, tag `miss-minutes-1.0-mm6`); gateway `tva-live-scheduler` `86262a9` | `MISS_MINUTES_1.0_APPROVATA_mm6.zip` (SHA-256 86e52669c2e794e1c5029a1a75d01df60bfb27c876ca73f7f9e916ba6e8a4bab) | Nessuno. Quiz/Arcade non montano il componente (decisione aperta, non bloccante). Il gateway deve restare quello distribuito con il prompt mm6 | **Sì** (25/11/2026) |
-| 02 | Atlante 2.0 | Da sviluppare | — | — | — | Esistono già Atlante, dossier, mappa, cronologie, grafo relazioni (v. «Punti da chiarire») | No |
+| 01 | Miss Minutes 1.0 | **Completata e approvata** (25/11/2026, collaudo reale iPhone/Safari superato) — **congelata** | mm6 definitiva (`20261125-0030-mm6`), nessun mm7 previsto | `8330576` (app, riferimento Git stabile: branch `release/miss-minutes-1.0-mm6`; il tag locale non è pubblicabile dal proxy); gateway `tva-live-scheduler` `86262a9` | `MISS_MINUTES_1.0_APPROVATA_mm6.zip` (SHA-256 86e52669c2e794e1c5029a1a75d01df60bfb27c876ca73f7f9e916ba6e8a4bab) | Nessuno. Quiz/Arcade non montano il componente (decisione aperta, non bloccante). Il gateway deve restare quello distribuito con il prompt mm6 | **Sì** (25/11/2026) |
+| 02 | Atlante 2.0 | **In progettazione** (25/11/2026): analisi del database e proposta pronte, **in attesa di approvazione del progetto**; nessun codice scritto | — | — | — | Proposta in `docs/ATLANTE_2_0_ANALISI_E_PROPOSTA.md`; 13 decisioni sulle identità tutte aperte; correzioni audit da riconciliare con fonti; decisioni D1–D8 richieste all'utente | No |
 | 03 | Marvel Database Expansion | Da sviluppare | — | — | — | Consistenza attuale del database da misurare prima di fissare la baseline | No |
 | 04 | Tessera TVA 3.0 | Da sviluppare (requisiti nuovi); base esistente da preservare | — | — | — | Verificare quali requisiti sono già coperti dal codice (nessuno considerato completato) | No |
 | 05 | Missioni TVA 2.0 / Evolution | Da sviluppare | — | — | — | Missioni, XP, ranghi e badge esistenti da preservare. Road to Doomsday: miglioramento a tre livelli programmato (v. 09), nessuna modalità separata | No |
@@ -342,6 +342,17 @@ Si registrano inoltre versione, commit, eventuale ZIP, problemi aperti e approva
 | Domande del quiz (banco statico) | **216** in 9 categorie (mcu 27, fumetti 27, xmen 27, animazione 27, spider 26, avengers 26, multiverso 26, nonmcu 26, tva 4), 0 id duplicati | `quiz/index.html`; il pool effettivo include anche domande generate da catalogo e «fatti» (non misurate qui) |
 | Voci catalogo episodi | **49** (`assets/episodes/index.json`) | file JSON |
 
+### Conteggi verificati nel codice – Atlante (25/11/2026)
+Misurati in sola lettura su `index.html` (build `20261125-0030-mm6`); dettaglio e anomalie in `docs/ATLANTE_2_0_ANALISI_E_PROPOSTA.md`.
+| Elemento | Valore verificato |
+|---|---|
+| Schede totali (`card-wrap`) | **622**: char 304 (300 «contano»), item 139, att 49, anim 37, uni 27, org 17, art 16, p4 10, luo 9, pia 7, bat 4, evt 3 |
+| Varianti | **14** dossier `var-` + 4 archi «variante» nel grafo (nessun tipo strutturato) |
+| Relazioni | grafo 386 nodi (304 char, 49 attori, 17 org, 16 universi senza scheda), **2.454 archi orientati**: titolo 1.522, universo 692, attore 106, org 98, famiglia 28, variante 4, relazione 4; 6 non reciproci; 5 nodi isolati |
+| Integrità link | `mvNavigate` 1.065, **0 rotti**; 0 riferimenti N° inesistenti |
+| Lacune sui 304 personaggi | UNIVERSI assente 5 · CORRELATI 8 · POTERI 141 · NEI FUMETTI 73 · RELAZIONI 290 · 192 con una sola apparizione · campo UNIVERSI = testo libero (56 stringhe vs 27 schede `uni-`) |
+| Identità | 13 gruppi candidati, **0 risolti** (5 identità dichiarate in `atlasData.identita`) |
+
 **Da misurare prima di avviare le aree 03 e 06:** consistenza del database Atlante per tipologia (personaggi, varianti, artefatti, universi, organizzazioni, luoghi, eventi, specie ed entità) e dimensione effettiva del pool del quiz (domande per categoria dopo deduplicazione e controllo di correttezza).
 
 ---
@@ -352,6 +363,7 @@ Si registrano inoltre versione, commit, eventuale ZIP, problemi aperti e approva
 |---|---|---|
 | 24/11/2026 | Creazione del documento; nessuna modifica al codice applicativo | `d99d7fd` |
 | 24/11/2026 | Riallineamento branch locale/remoto (merge, no force push), pubblicazione commit Miss Minutes, verifica ZIP mm4, decisione Road to Doomsday, conferma area 12 | v. `git log` |
+| 25/11/2026 | Atlante 2.0: analisi del database (misure verificate, duplicati, incongruenze, lacune), recupero delle 13 decisioni identità e delle correzioni audit, proposta di architettura/funzionalità/grafica/piano A0–A7; **solo documentazione, nessun codice**; area 02 «In progettazione» in attesa di approvazione | `docs/ATLANTE_2_0_ANALISI_E_PROPOSTA.md` |
 | 25/11/2026 | Approvazione ufficiale di Miss Minutes 1.0 (mm6) dopo collaudo reale; funzionalità congelata, nessun mm7; tag Git `miss-minutes-1.0-mm6`, ZIP approvato conservato; si passa all'analisi di Atlante 2.0 (nessun codice) | tag `miss-minutes-1.0-mm6` |
 | 25/11/2026 | Miss Minutes mm6: componente globale, X/Indietro, persistenza e ciclo di vita, attesa compatta, instradamento Gemini, rifiniture UI, dicitura cronologia; ZIP `NETLIFY_TEST_mm6.zip`; stato «in rifinitura»; Atlante 2.0 non avviato | `8330576` |
 | 24/11/2026 | Miss Minutes mm5 «Holographic Intelligence»: nuova interfaccia a sei schermate, affidabilità (retry limitato, Riprova, interruzione), fix duplicati, prompt di precisione, ZIP `NETLIFY_TEST_mm5.zip`; stato «in rifinitura»; Atlante 2.0 non avviato | `87879c5` |
