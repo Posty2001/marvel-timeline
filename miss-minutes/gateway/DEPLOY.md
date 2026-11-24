@@ -30,7 +30,7 @@ Repository tva-live-scheduler → **Settings → Secrets and variables → Actio
 2. A fine esecuzione il riepilogo del run mostra l'**indirizzo del gateway** (`https://miss-minutes-api.….workers.dev`). Incollalo in **Miss Minutes → ⚙ Impostazioni → Indirizzo del gateway → Salva**: l'app verifica che risponda (deve dire «AI ancora spenta»).
 
 ### D. Attivazione dell'AI (solo dopo la verifica del piano gratuito)
-1. Google AI Studio: la chiave deve appartenere a un progetto **senza account di fatturazione** e il modello (`GEMINI_MODEL`, default `gemini-2.5-flash-lite`, verificato da te con 10 RPM e 20 richieste/giorno) deve avere in «Rate limits» un limite gratuito > 0.
+1. Google AI Studio: la chiave deve appartenere a un progetto **senza account di fatturazione** e il modello (`GEMINI_MODEL`, default `gemini-3.5-flash-lite`, verificato da te con 10 RPM e 20 richieste/giorno) deve avere in «Rate limits» un limite gratuito > 0.
 2. GitHub: aggiungi il secret `GEMINI_KEY`.
 3. Run workflow con `action = deploy`, `enable_gemini` e `free_tier_checked` entrambi acceso. Il workflow carica la chiave su Cloudflare e imposta `FREE_TIER_VERIFIED=yes`. Per spegnere di nuovo: nuovo deploy con `enable_gemini` spento.
 

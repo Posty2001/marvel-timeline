@@ -10,7 +10,7 @@ keep_vars = true
 FREE_TIER_VERIFIED = "no"
 # Origini esatte dell'app (https, senza slash finale), separate da virgola.
 APP_ORIGINS = "https://tva-archives-test-1110.netlify.app"
-GEMINI_MODEL = "gemini-2.5-flash-lite"
+GEMINI_MODEL = "gemini-3.5-flash-lite"
 DAILY_CAP = "18"
 MONTHLY_CAP = "500"
 IP_DAILY_CAP = "10"
