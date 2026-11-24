@@ -10,4 +10,4 @@ Decisioni dell'utente da rispettare (v. «DECISIONI DELL'UTENTE» nella roadmap)
 
 Rendicontazione: tieni separati i conteggi storici (da documenti) e quelli verificati nel codice (sezione «Conteggi»); non dichiarare «completata» una funzionalità solo perché implementata o con test superati: serve l'approvazione esplicita dell'utente; non inventare specifiche mancanti, segnalale.
 
-**Miss Minutes 1.0 è COMPLETATA, APPROVATA e CONGELATA** (versione definitiva mm6, tag Git `miss-minutes-1.0-mm6`, ZIP `MISS_MINUTES_1.0_APPROVATA_mm6.zip`). Non modificarla né avviare mm7 senza richiesta esplicita dell'utente. Atlante 2.0: prima di scrivere codice serve l'approvazione del progetto da parte dell'utente.
+**Miss Minutes 1.0 è COMPLETATA, APPROVATA e CONGELATA** (versione definitiva mm6, riferimento Git stabile `release/miss-minutes-1.0-mm6` (commit `8330576`), ZIP `MISS_MINUTES_1.0_APPROVATA_mm6.zip`). Non modificarla né avviare mm7 senza richiesta esplicita dell'utente. Atlante 2.0: prima di scrivere codice serve l'approvazione del progetto da parte dell'utente.
