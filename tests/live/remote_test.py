@@ -212,7 +212,7 @@ with sync_playwright() as pw:
     qa = subprocess.run(['git', 'diff', '-U0', REF, '--', 'quiz', 'arcade'], cwd=ROOT, capture_output=True, text=True).stdout
     chg = [l for l in qa.splitlines() if re.match(r'^[+-](?![+-]{2})', l)]
     ARC_OK = ('100svh', 'dvh - 400px', '.th .nm{font-size')   # correzioni Arcade approvate: fallback vh per iOS vecchi, nome tagliato a 320px
-    ok('R12 Quiz e Arcade: cambia solo il build stamp (e le 3 correzioni Arcade approvate)', chg and all(('20261124-' in l and ('live' in l or 'final' in l or 'mm4' in l)) or '20261123-' in l or any(k in l for k in ARC_OK) for l in chg), [l[:80] for l in chg if '20261124-' not in l and '20261123-' not in l][:3])
+    ok('R12 Quiz e Arcade: cambia solo il build stamp (e le 3 correzioni Arcade approvate)', chg and all(('20261124-' in l and ('live' in l or 'final' in l or 'mm5' in l or 'mm4' in l)) or '20261123-' in l or any(k in l for k in ARC_OK) for l in chg), [l[:80] for l in chg if '20261124-' not in l and '20261123-' not in l][:3])
     sw = open(os.path.join(ROOT, 'sw.js'), encoding='utf-8').read()
     ok('R12 service worker: gestore generico network-first per ogni GET (anche cross-origin CORS), in cache solo risposte 200', "req.method !== 'GET'" in sw and 'networkResponse.status === 200' in sw and 'cache.put(req' in sw)
     ok('R12 marcatura F3b: solo file .json con risposta leggibile, mai navigazioni/redirect/opachi', "/\\.json$/.test(" in sw and "req.mode === 'navigate'" in sw and 'cached.redirected' in sw and "cached.type !== 'basic' && cached.type !== 'cors'" in sw)

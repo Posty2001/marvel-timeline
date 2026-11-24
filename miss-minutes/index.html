@@ -3,36 +3,85 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#060403">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://*.workers.dev; base-uri 'none'; form-action 'none'; frame-ancestors 'self'">
 <meta name="referrer" content="no-referrer">
 <title>Miss Minutes | TVA</title>
 <link rel="stylesheet" href="mm.css">
 </head>
 <body>
-<div class="mm">
-  <header class="mm-head">
-    <div id="mmMascot" class="mm-mascot" data-state="idle" role="img" aria-label="Miss Minutes, l'orologio della TVA"></div>
-    <div class="mm-title"><h1>Miss Minutes</h1><p id="mmSub">TVA · assistente</p></div>
-    <div class="mm-tools">
-      <button type="button" id="mmNew" aria-label="Nuova chat" title="Nuova chat">＋</button>
-      <button type="button" id="mmHist" aria-label="Cronologia" title="Cronologia">🕘</button>
-      <button type="button" id="mmSet" aria-label="Impostazioni" title="Impostazioni">⚙</button>
-      <button type="button" id="mmClose" aria-label="Chiudi Miss Minutes" title="Chiudi">✕</button>
+<div class="mm" id="mmRoot" data-view="home">
+  <div class="mm-bg" id="mmBg" aria-hidden="true"></div>
+
+  <header class="mm-top" id="mmTop">
+    <div class="hd hd-home">
+      <button type="button" id="mmClose" class="mm-logo" aria-label="Torna a TVA Archives" title="Torna a TVA Archives"><b>TVA</b><small>ARCHIVES</small></button>
+      <div class="mm-ttl"><h1>Miss Minutes</h1><p id="mmSub">Assistente del Multiverso</p></div>
+      <button type="button" id="mmHist" class="mm-ibtn" aria-label="Cronologia" title="Cronologia" data-ic="history"></button>
+      <button type="button" id="mmSet" class="mm-ibtn" aria-label="Impostazioni" title="Impostazioni" data-ic="gear"></button>
+    </div>
+    <div class="hd hd-chat">
+      <button type="button" id="mmBack" class="mm-ibtn flat" aria-label="Indietro" title="Indietro" data-ic="back"></button>
+      <div class="mm-av" id="mmAvChat" aria-hidden="true"></div>
+      <div class="mm-ttl"><h1>Miss Minutes</h1><p id="mmSubChat">Assistente del Multiverso</p></div>
+      <button type="button" id="mmMenu" class="mm-ibtn flat" aria-label="Altre azioni" aria-haspopup="true" aria-expanded="false" data-ic="more"></button>
+    </div>
+    <div class="hd hd-hist">
+      <span class="mm-ibtn flat" aria-hidden="true" data-ic="history"></span>
+      <div class="mm-ttl"><h1>Cronologia</h1></div>
+      <button type="button" id="mmHistMenu" class="mm-ibtn flat" aria-label="Altre azioni" aria-haspopup="true" aria-expanded="false" data-ic="more"></button>
+    </div>
+    <div class="hd hd-set">
+      <span class="mm-ibtn flat" aria-hidden="true" data-ic="gear"></span>
+      <div class="mm-ttl"><h1>Impostazioni</h1></div>
+      <button type="button" id="mmSetClose" class="mm-ibtn flat" aria-label="Torna a TVA Archives" title="Torna a TVA Archives" data-ic="close"></button>
     </div>
   </header>
   <p id="mmBanner" class="mm-banner" role="status" hidden></p>
-  <main id="mmChat" class="mm-chat" aria-live="polite"></main>
-  <section id="mmWelcome" class="mm-welcome">
-    <h2>Bentornato, Variante.</h2>
-    <p>Chiedimi di personaggi, universi, fumetti e varianti, oppure di cosa guardare e dei tuoi progressi.</p>
-    <div id="mmTopics" class="mm-topics"></div>
-    <p class="mm-note" id="mmMode"></p>
-  </section>
+
+  <div class="mm-views">
+    <section id="vHome" class="mm-view" aria-label="Schermata iniziale">
+      <div class="mm-hero">
+        <div id="mmMascot" class="mm-mascot-big" role="img" aria-label="Miss Minutes, l'orologio della TVA, in forma olografica"></div>
+        <div class="mm-bubble">
+          <h2 id="mmGreet">Buongiorno, Agente!</h2>
+          <p>Sono Miss Minutes, la tua assistente personale della TVA.</p>
+          <p>Chiedimi tutto sul Multiverso!</p>
+          <div class="mm-wave" id="mmWave" aria-hidden="true"></div>
+        </div>
+      </div>
+      <button type="button" id="mmResume" class="mm-resume" hidden></button>
+      <div class="mm-sect">Prova a chiedermi…</div>
+      <div id="mmTopics"></div>
+      <p class="mm-note" id="mmMode"></p>
+    </section>
+
+    <section id="mmChat" class="mm-view" aria-label="Conversazione" aria-live="polite"></section>
+
+    <section id="vHist" class="mm-view" aria-label="Cronologia">
+      <div class="mm-search"><span data-ic="search" aria-hidden="true"></span><input id="mmSearch" type="search" placeholder="Cerca nelle conversazioni…" aria-label="Cerca nelle conversazioni" autocomplete="off" enterkeyhint="search"></div>
+      <div id="mmHistList"></div>
+    </section>
+
+    <section id="vSet" class="mm-view" aria-label="Impostazioni"><div id="mmSetBody"></div></section>
+  </div>
+
   <form id="mmForm" class="mm-bar" autocomplete="off">
-    <button type="button" id="mmMic" class="mm-ic" aria-label="Detta la domanda" hidden>🎤</button>
-    <input id="mmQ" type="text" maxlength="600" placeholder="Chiedi a Miss Minutes…" aria-label="Domanda" enterkeyhint="send">
-    <button type="submit" id="mmSend" class="mm-send">Invia</button>
+    <button type="button" id="mmPlus" class="mm-plus" aria-label="Nuova conversazione" title="Nuova conversazione" data-ic="plus"></button>
+    <div class="mm-field">
+      <input id="mmQ" type="text" maxlength="600" placeholder="Fai una domanda…" aria-label="Domanda" enterkeyhint="send">
+      <button type="button" id="mmMic" class="mm-mic" aria-label="Detta la domanda" aria-pressed="false" data-ic="mic" hidden></button>
+    </div>
+    <button type="submit" id="mmSend" class="mm-send" aria-label="Invia" data-ic="send"></button>
   </form>
+
+  <nav class="mm-nav" aria-label="Sezioni di Miss Minutes">
+    <button type="button" id="navChat" data-ic="chat" data-label="Chat"></button>
+    <button type="button" id="navHist" data-ic="history" data-label="Cronologia"></button>
+    <button type="button" id="navAtl" data-ic="book" data-label="Atlante"></button>
+  </nav>
+
+  <div id="mmMenuBox" class="mm-menu" role="menu" hidden></div>
   <dialog id="mmDlg"><div id="mmDlgBody"></div><div class="mm-dlg-actions"><button type="button" id="mmDlgClose">Chiudi</button></div></dialog>
 </div>
 <script src="config.js"></script>

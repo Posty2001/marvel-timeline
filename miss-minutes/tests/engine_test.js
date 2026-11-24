@@ -43,4 +43,16 @@ const bare = E.create({ data: {}, knowledge: kc }); a = bare.ask('Cosa guardo?')
 for (const bad of ['', '   ', '<script>alert(1)</script>', 'a'.repeat(5000), '\u0000\u0001']) { try { eng.ask(bad); ok(true); } catch (e) { ok(false, 'throw su ' + bad.slice(0, 10)); } }
 // rendimento
 let t0 = Date.now(); for (let i = 0; i < 200; i++) eng.ask('Chi è Peter Parker e che differenza c\'è con Miles Morales?'); ok(Date.now() - t0 < 4000, '200 risposte < 4 s (' + (Date.now() - t0) + ' ms)');
+// seguiti: il motore locale recupera le entita' dai messaggi precedenti
+{
+  const a1 = eng.ask('Chi è Loki?', {}); const L = a1.entities || [];
+  ok(L.length >= 1, 'entita Loki trovata');
+  const a2 = eng.ask('E i suoi poteri?', { lastEntities: L });
+  ok(a2.followUp === true && /Loki/.test(a2.text), 'seguito "E i suoi poteri?" usa l\'ultima entita');
+  const a3 = eng.ask('Qual è la sua origine?', { lastEntities: L });
+  ok(a3.followUp === true && /Loki/.test(a3.text), 'seguito senza "e" iniziale ma con riferimento ("sua origine")');
+  const t = eng.ask('Chi è Thor?', {}).entities || [];
+  const a4 = eng.ask('Confrontali', { lastEntities: [t[0], L[0]] });
+  ok(a4.intent === 'confronto' && /Thor/.test(a4.text) && /Loki/.test(a4.text), 'confrontali usa le ultime due entita');
+}
 console.log(`engine_test: ${p} ok, ${f} falliti`); process.exit(f ? 1 : 0);

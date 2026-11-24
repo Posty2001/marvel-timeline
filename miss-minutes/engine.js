@@ -275,13 +275,21 @@
         var pa = answerPersonal(pk, q, ctx);
         if (pa) { pa.intent = 'personale:' + pk; pa.confidence = 1; pa.tag = 'locale'; pa.entities = []; pa.withheld = []; return pa; }
       }
-      if (/\b(differenza|differenze|confronta|confronto|paragona|vs|contro)\b/.test(n) || /\be\b.*\bo\b/.test(n) && /\bmeglio|piu forte\b/.test(n)) {
+      if (/\b(differenza|differenze|confronta\w*|confronto|paragona\w*|vs|contro)\b/.test(n) || /\be\b.*\bo\b/.test(n) && /\bmeglio|piu forte\b/.test(n)) {
         var c = compare(ctx, q);
+        // "confrontali", "qual e la differenza?": senza nomi espliciti si usano le ultime due entita' della conversazione
+        if (!c && !ents0.length && state.lastEntities && state.lastEntities.length >= 2) {
+          var pv = state.lastEntities.map(function (id) { return ix.byId[id]; }).filter(function (e) { return e && e.kind !== 'titolo'; }).slice(0, 2);
+          if (pv.length === 2) c = compare(ctx, pv[0].name + ' vs ' + pv[1].name);
+        }
         if (c) { c.intent = 'confronto'; c.confidence = 0.8; c.tag = 'locale'; c.withheld = []; return finalize(c, state); }
       }
       var ents = ents0;
       // domande di continuita' sull'ultimo soggetto
-      if (!ents.length && /^(e |ma |approfondisci|dimmi di piu|piu dettagli|e lui|e lei|e suo|e sua|e i suoi|e le sue)/.test(n) && state.lastEntities && state.lastEntities.length) {
+      var nW = n.split(' ').filter(Boolean).length;
+      var refersBack = /^(e |ma |approfondisci|dimmi di piu|piu dettagli|e lui|e lei|e suo|e sua|e i suoi|e le sue)/.test(n) ||
+        (nW <= 8 && /\b(lui|lei|loro|suo|sua|suoi|sue|quello|quella|quelli|quelle|costui|poteri|origini?|debolezz\w+|alleat\w+|nemic\w+|famiglia|parenti|storia|motivo|perche)\b/.test(n));
+      if (!ents.length && refersBack && state.lastEntities && state.lastEntities.length) {
         var prev = state.lastEntities.map(function (id) { return ix.byId[id]; }).filter(Boolean);
         if (prev.length) { ents = prev.slice(0, 1); out.followUp = true; }
       }
