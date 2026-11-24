@@ -1,7 +1,7 @@
 # Atlante 2.0 — Analisi del database e proposta di progetto
 
 > Branch: `test/tva-archives` · Data: 25/11/2026 · **Solo documentazione: nessun codice applicativo è stato scritto o modificato.**
-> Stato: **PROPOSTA IN ATTESA DI APPROVAZIONE** dell'utente (CLAUDE.md: «Atlante 2.0: prima di scrivere codice serve l'approvazione del progetto»).
+> Stato: **IMPOSTAZIONE ARCHITETTURALE APPROVATA il 25/11/2026 (v. §10); interfaccia definitiva NON ancora approvata**. Storico: proposta del 25/11 in attesa di approvazione dell'utente (CLAUDE.md: «Atlante 2.0: prima di scrivere codice serve l'approvazione del progetto»).
 > Misure eseguite in sola lettura su `index.html` (build `20261125-0030-mm6`) con script Python/BeautifulSoup; nessun dato personale coinvolto.
 
 ---
@@ -183,3 +183,25 @@ L'**espansione numerica (area 03)** parte **dopo A2–A3**, per lotti (es. 50 vo
 - **D8 – Specie ed entità cosmiche:** tipologia nuova (oggi inesistente): la creo come tipo a sé o dentro «personaggi»?
 
 **Cosa NON farò senza tuo ordine:** scrivere codice Atlante, modificare `main`, pubblicare, attivare servizi esterni, toccare Miss Minutes mm6, rimuovere funzionalità, dichiarare «completata» l'area 02.
+
+---
+
+## 10. Approvazione dell'utente del 25/11/2026 e integrazioni (recepite)
+
+**Approvato:** impostazione architetturale generale (registro JSON statico, ID conservati, alias, migrazione non distruttiva). **Non approvata:** interfaccia definitiva (si procede con anteprime grafiche prima dell'implementazione). Nessun codice ancora scritto.
+
+**Visione:** enciclopedia interattiva dell'intero universo Marvel — MCU, fumetti, universi Sony e Fox, animazione, videogiochi, continuità alternative — **non limitata alle opere della Timeline**; continuità narrative sempre distinte.
+
+**Obiettivi progressivi (sostituiscono, per l'Atlante, quelli del §1; non autorizzano dati inventati né conteggi gonfiati):** 1.000+ personaggi · 300+ varianti · 100+ universi · 100+ organizzazioni · 150+ artefatti e armi · 150+ luoghi e pianeti · 100+ eventi · 100+ battaglie · **10.000+ relazioni significative** · categorie dedicate a specie ed entità cosmiche. *(Valori verificati oggi: 304 · 14 · 27 · 17 · 16 · 16 · 3 (+11 saghe) · 4 · 2.454 archi orientati, di cui solo ~1,2k coppie e in gran parte derivati da co-apparizioni: le relazioni «significative» tipizzate sono oggi poche decine.)*
+
+**Schema esteso:** campi per tipologia — identità, biografia, origini, storia, poteri, debolezze, equipaggiamento, affiliazioni, relazioni, varianti, apparizioni, eventi, riferimenti bibliografici, fonti; identificatori stabili; relazioni tipizzate; `fonte` e `verifica` per ogni dato. **Una sola scheda per entità con più categorie** (`categorie[]`): un'entità cosmica può essere anche «personaggio» senza duplicati.
+
+**Fonti autorizzate:** Marvel.com, pubblicazioni Marvel, Marvel Database, TMDB e altre fonti attendibili e pertinenti, **nel rispetto di licenze, condizioni d'uso e limiti API**; testi **sempre originali**, nessuna copia integrale di descrizioni protette; per immagini e locandine il diritto d'uso si verifica a parte e si mantengono i segnaposto.
+
+**Interfaccia da progettare insieme (anteprime prima del codice):** Home Atlante · Esplorazione del Multiverso · Catalogo personaggi · Dossier · Confronto personaggi/varianti · Nexus interattivo delle relazioni · Eventi e saghe · Artefatti, organizzazioni, specie ed entità cosmiche · Ricerca globale, filtri, collegamenti · Preferiti e collezioni. Identità grafica premium TVA Archives.
+
+**Progressione:** XP e badge legati all'esplorazione, integrati nel sistema esistente, **senza azzerare/duplicare progressi e senza XP ripetibili con la stessa azione**. **Le regole di assegnazione vanno presentate a te prima di qualsiasi implementazione.** Risposta a D6.
+
+**Miss Minutes:** autorizzate solo modifiche minime per consultare nuovi tipi e relazioni; nessuna modifica a interfaccia, comportamento o gateway senza necessità documentata. Risposta a D7.
+
+**Fasi:** A0 e A1 invariate; **A2** usa `docs/ATLANTE_2_0_DECISIONI_IDENTITA.md`; prima di A3 si preparano le **anteprime grafiche** da approvare.
