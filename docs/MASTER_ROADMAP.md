@@ -3,7 +3,7 @@
 > **Documento permanente e riferimento ufficiale del progetto.** Va consultato **prima** di qualsiasi sviluppo e aggiornato **dopo** ogni intervento.
 > Branch: `test/tva-archives` · Creato il 24/11/2026 · Questo file non contiene codice applicativo.
 > Gli elementi non ancora decisi o da chiarire sono nella sezione «Punti da chiarire» in fondo: **nessuna decisione è stata presa in autonomia** e nessun requisito è stato eliminato.
-> Ultimo aggiornamento: 24/11/2026 (21:01) — integrate le decisioni dell'utente (v. «DECISIONI DELL'UTENTE»).
+> Ultimo aggiornamento: 24/11/2026 (22:00) — integrate le decisioni dell'utente (v. «DECISIONI DELL'UTENTE»).
 
 ---
 
@@ -21,6 +21,10 @@
 **Firebase:** si mantengono **Realtime Database e l'autenticazione esistente**. Nessuna migrazione a Firestore e nessun servizio a pagamento senza autorizzazione esplicita. *(Questa decisione supera l'ipotesi, registrata il 12/11/2026, di usare Firestore con namespace `/f3/test` per Friends 3.0: l'impianto va riprogettato su Realtime Database e Auth esistenti, senza Cloud Functions.)*
 
 **Arena e Arcade:** Multiverse Arena 2.0 è cancellata dalla programmazione. Si preservano tutti i giochi, i progressi e le funzionalità attualmente presenti in TVA Arcade.
+
+**Road to Doomsday (conferma del 24/11/2026, 21:53):** **non si crea una modalità separata** («Modalità Prima di Doomsday» non va programmata). Si mantiene la funzione esistente e se ne programma il **miglioramento attraverso i tre livelli Essenziale, Consigliato e Facoltativo**, preservando missione, 16 opere, progressi, badge e XP (nessuna assegnazione duplicata). Nessuna implementazione ora.
+
+**Area 12 – TVA Arcade e Rankings:** confermata dall'utente (verifica e rifinitura, senza reintrodurre Arena 2.0).
 
 **Principi di rendicontazione**
 * I **conteggi storici** (da documenti) sono tenuti **separati** dai conteggi **verificati nel codice** (sezione «CONTEGGI»).
@@ -164,18 +168,20 @@ Le Squadre Marvel sono escluse da Friends.
 * Integrazione Atlante ed Episodes.
 * Protezione intelligente dagli spoiler.
 
-### Requisito recuperato: «Modalità Prima di Doomsday» (NON da implementare ora)
+### Road to Doomsday – miglioramento della funzione esistente (decisione del 24/11/2026)
 
-*Stato: Da sviluppare — solo specifica, nessuna implementazione. Si attende la conferma dell'utente.*
+*Stato: Da sviluppare — solo programmazione, nessuna implementazione. **Nessuna modalità separata** («Modalità Prima di Doomsday» non verrà creata): si migliora la funzione esistente.*
 
-**Ricerca delle specifiche originali (24/11/2026):** il nome «Modalità Prima di Doomsday» **non compare** nel codice né nei documenti del repository (0 occorrenze, v. `docs/REGISTRO_MASTER_TVA_ARCHIVES.md`), nei file di prompt e audit caricati, né nelle conversazioni archiviate consultate. **Non esiste quindi una specifica originale con questo nome: non ne è stata inventata alcuna.** Le uniche specifiche documentate sul tema, che potrebbero coincidere o essere correlate (da confermare), sono:
+**Funzione esistente da mantenere:** missione speciale «Road to Doomsday — Operazione Incursione», 16 schede (N°015, 016, 041, 051, 084, 089, 095, 097, 099, 102, 108, 112, 117, 121, 123, 125), +300 XP, distinzione tra watchlist ufficiale «Countdown to Avengers: Doomsday» di Marvel/Disney+ (un consiglio, non un obbligo) e classificazioni editoriali TVA Archives (`docs/REPORT_BLOCCO2.md`).
 
-1. **Road to Doomsday (esistente nel codice):** missione speciale «Operazione Incursione», 16 schede (N°015, 016, 041, 051, 084, 089, 095, 097, 099, 102, 108, 112, 117, 121, 123, 125), +300 XP, distinzione tra watchlist ufficiale «Countdown to Avengers: Doomsday» di Marvel/Disney+ (un consiglio, non un obbligo) e classificazioni editoriali TVA Archives (`docs/REPORT_BLOCCO2.md`).
-2. **Specifica di revisione del percorso (prompt di ottobre 2026):** riorganizzare la preparazione ad *Avengers: Doomsday* (N°136) su tre livelli — *Essenziale* (necessario per capire personaggi e sviluppi già documentati), *Consigliato*, *Facoltativo*; non classificare un titolo come essenziale solo perché si ipotizza la presenza di un personaggio; distinguere collegamenti ufficialmente confermati, collegamenti narrativi dimostrabili e ipotesi editoriali; mantenere coerenti missione, 16 opere, progressi, badge e XP, preservando i premi già ottenuti ed evitando assegnazioni duplicate.
-3. **Audit del 15/10/2026:** il percorso di 16 schede omette 16 titoli distinti che le sue stesse tappe dichiarano essenziali (aggiungerli porterebbe a 32 schede, 35 con Civil War); possibili soluzioni indicate: dichiarare la selezione «ripasso per chi conosce già gli antecedenti» oppure estenderla. Le mappe N°136 e N°139 vanno trattate come preparazione editoriale, non come prerequisiti ufficiali.
-4. **Data di uscita (TVA Live):** per Doomsday lo stato «Confermato» è valutato per mercato; la data italiana ha priorità nell'interfaccia, quelle UK/USA stanno nei dettagli.
+**Miglioramento programmato — tre livelli:**
+* **Essenziale:** necessario per comprendere personaggi e sviluppi già documentati.
+* **Consigliato:** approfondisce vicende, personaggi e universi potenzialmente rilevanti.
+* **Facoltativo:** contesto aggiuntivo o collegamenti tematici.
 
-**Domanda aperta per l'utente:** la «Modalità Prima di Doomsday» coincide con Road to Doomsday (eventualmente rivista come sopra) o è una modalità autonoma (es. Timeline limitata ai titoli utili prima di Doomsday)? Finché non è chiarito non si implementa nulla.
+**Regole:** non classificare un titolo come essenziale solo perché si ipotizza la presenza di un personaggio in *Avengers: Doomsday* (N°136); distinguere collegamenti ufficialmente confermati, collegamenti narrativi dimostrabili e ipotesi editoriali; mantenere coerenti missione, 16 opere, progressi, badge e XP, preservando i premi già ottenuti ed evitando assegnazioni duplicate se una classificazione cambia.
+
+**Punti emersi dall'audit del 15/10/2026 da risolvere in fase di progetto (decisioni dell'utente):** il percorso di 16 schede omette 16 titoli che le sue stesse tappe dichiarano essenziali (estenderlo porterebbe a 32 schede, 35 con Civil War): scegliere se dichiarare la selezione «ripasso per chi conosce già gli antecedenti» o estenderla; le mappe N°136 e N°139 sono preparazione editoriale, non prerequisiti ufficiali; peso contestuale di N°069/073/094. Date di Doomsday: «Confermato» valutato per mercato, data italiana prioritaria nell'interfaccia (v. TVA Live).
 
 ## 10. TVA Live – Completamento
 
@@ -205,13 +211,14 @@ Le Squadre Marvel sono escluse da Friends.
 * **Prove su iPhone reale** per tutte le build non ancora verificate (Safari, PWA offline/installazione, safe area, VoiceOver): da eseguire dall'utente; nessun esito è considerato superato finché non lo riferisce.
 * **Risoluzione dei test BLOCKED o NOT RUN** (8 BLOCKED e 10 NOT RUN nell'ultimo esito documentato `tests/RESULTS_C26.md`; FAIL preesistenti in `docs/PROBLEMI_PREESISTENTI.md`): riscrivere o ritirare in modo documentato, senza alterare i risultati per ottenere PASS.
 
-## 12. TVA Arcade e TVA Rankings – Preservazione, verifica e rifinitura *(area recuperata, 24/11/2026)*
+## 12. TVA Arcade e TVA Rankings – Preservazione, verifica e rifinitura *(area confermata, 24/11/2026)*
 
 * **Preservare tutti i giochi, i progressi e le funzionalità attualmente presenti in TVA Arcade** (Quiz Marvel, Who Am I?, Time Crisis, Secret Wars Draft, Multiverse Escape), compresi XP, missioni, ranghi e badge collegati.
 * **Verifica e rifinitura di TVA Arcade e di TVA Rankings** (Rankings: classifiche personali Top numerate, Podio, Tier List, modelli per categoria, backup ZIP). Nessuna modifica senza anteprima approvata.
 * **Verifica dei diritti d'uso dei 120 ritratti del Draft:** oggi 0/120 con diritti verificati; sono segnaposto/asset stilizzati di test (`docs/arcade/REPORT_RITRATTI.md`, `docs/arcade/PROBLEMI_APERTI.md`). Nessuna immagine Marvel senza i diritti necessari; applicazione della patch disclaimer («Progetto fan non ufficiale…») solo su indicazione dell'utente.
 * Bilanciamento dei cosmici di vertice da osservare nel collaudo; verifica su iPhone reale (safe area, scroll, tocchi, prestazioni).
-* **Multiverse Arena 2.0: cancellata** (v. sotto). Preservare l'Arena attualmente funzionante.
+* **Multiverse Arena 2.0: cancellata** (v. sotto), senza reintrodurla. Preservare l'Arena attualmente funzionante.
+* *Area confermata dall'utente il 24/11/2026.*
 
 ---
 
@@ -261,19 +268,19 @@ Si registrano inoltre versione, commit, eventuale ZIP, problemi aperti e approva
 
 *Aggiornare questa tabella dopo ogni intervento. «Completata e approvata» solo dopo approvazione esplicita dell’utente (regola 12): implementazione e test superati non bastano. Ultimo aggiornamento: 24/11/2026.*
 
-*Nota sui commit: i commit dell'app citati (es. `0b71861`) sono presenti nel repository locale ma, al 24/11/2026, **non sono stati pubblicati** sul branch remoto `test/tva-archives`: sul remoto sono stati pubblicati solo i documenti.*
+*Nota sui commit: i commit dell'app sono pubblicati sul branch `test/tva-archives` dal riallineamento del 24/11/2026. `NETLIFY_TEST_mm4.zip` è stato confrontato con l'albero risultante: i file dell'app coincidono (nessun ZIP aggiornato necessario). Il caricamento su Netlify TEST resta un'operazione manuale dell'utente.*
 
 | N. | Funzionalità | Stato | Versione | Commit | ZIP | Problemi aperti | Approvazione utente |
 |---|---|---|---|---|---|---|---|
-| 01 | Miss Minutes – Intelligence Upgrade | In collaudo | mm4 (`20261124-1930-mm4`) | `0b71861` (app); gateway repo `tva-live-scheduler` `000799e` | `NETLIFY_TEST_mm4.zip` | Collaudo reale di mm4 su Gemini (workflow gateway da rilanciare + ZIP da caricare); qualità risposte su Knull/continuità da riverificare | No |
+| 01 | Miss Minutes – Intelligence Upgrade | **In collaudo** (fino all'approvazione dell'utente nell'app reale) | mm4 (`20261124-1930-mm4`) | `0b71861` (app, pubblicato su `test/tva-archives`); gateway repo `tva-live-scheduler` `000799e` | `NETLIFY_TEST_mm4.zip` (verificato conforme al branch) | Da fare dall'utente: rilanciare il workflow del gateway, caricare lo ZIP su Netlify TEST, collaudo reale di mm4 (qualità risposte, Knull/continuità, spoiler) | No |
 | 02 | Atlante 2.0 | Da sviluppare | — | — | — | Esistono già Atlante, dossier, mappa, cronologie, grafo relazioni (v. «Punti da chiarire») | No |
 | 03 | Marvel Database Expansion | Da sviluppare | — | — | — | Consistenza attuale del database da misurare prima di fissare la baseline | No |
 | 04 | Tessera TVA 3.0 | Da sviluppare (requisiti nuovi); base esistente da preservare | — | — | — | Verificare quali requisiti sono già coperti dal codice (nessuno considerato completato) | No |
-| 05 | Missioni TVA 2.0 / Evolution | Da sviluppare | — | — | — | Missioni, XP, ranghi e badge esistenti da preservare | No |
+| 05 | Missioni TVA 2.0 / Evolution | Da sviluppare | — | — | — | Missioni, XP, ranghi e badge esistenti da preservare. Road to Doomsday: miglioramento a tre livelli programmato (v. 09), nessuna modalità separata | No |
 | 06 | Quiz Marvel Expansion | Da sviluppare | — | — | — | Consistenza attuale del banco domande da misurare | No |
 | 07 | TVA Friends 3.0 | In progettazione (da riprogettare su Realtime Database + Auth esistenti, solo coppia) | — | — | — | TVA Live Room da valutare per la coppia; SRI e regole F-A2 aperte (v. 11) | No |
 | 08 | TVA Comics Library | Da sviluppare | — | — | — | — | No |
-| 09 | Timeline Immersive | Da sviluppare | — | — | — | TVA Episodes già presente | No |
+| 09 | Timeline Immersive (incl. miglioramento Road to Doomsday) | Da sviluppare | — | — | — | TVA Episodes già presente; Road to Doomsday esistente da migliorare con Essenziale/Consigliato/Facoltativo | No |
 | 10 | TVA Live – Completamento | In collaudo | v. `docs/TVA_LIVE.md` | — | — | Il primo cron del 24/11 (05:17 UTC) non risulta eseguito: ricontrollare dopo il 25/11 05:17 UTC distinguendo evento `schedule` da avvio manuale | No |
 | 11 | Rifinitura globale e pubblicazione | Da sviluppare | — | — | — | SRI, regole F-A2, prove iPhone reale, test BLOCKED/NOT RUN. Produzione ferma a `main` = `82a73c7`; verdetto precedente NO-GO | No |
 | 12 | TVA Arcade e TVA Rankings (preservazione, verifica, rifinitura) | In collaudo (implementati, non approvati) | build TEST `mm4` (Arcade invariato) | — | — | Ritratti Draft 0/120 con diritti verificati; disclaimer non applicato; iPhone reale da verificare | No |
@@ -294,12 +301,12 @@ Si registrano inoltre versione, commit, eventuale ZIP, problemi aperti e approva
 4. ~~Arena~~ → Multiverse Arena 2.0 cancellata; si preserva tutto TVA Arcade.
 
 ### Ancora aperti
-5. **«Modalità Prima di Doomsday»:** specifiche originali non reperite; coincide con Road to Doomsday o è autonoma? (v. area 09).
+5. ~~«Modalità Prima di Doomsday»~~ → risolto: nessuna modalità separata; si migliora Road to Doomsday con i tre livelli (v. area 09).
 6. **Tessera 3.0:** stabilire, requisito per requisito, cosa è già coperto dal codice e cosa no, senza dare nulla per completato.
 7. **TVA Live Room nella coppia:** definire come adattarla (accesso, privacy) prima di qualunque sviluppo.
 8. **Altri requisiti storici da decidere:** quiz «da dove inizio» (riesporlo o no), `preferredMode` come default iniziale, locandine per titolo, peso contestuale di N°069/073/094 nel percorso Doomsday.
 9. **Infrastruttura Miss Minutes:** gateway Cloudflare Worker (`miss-minutes-api`) con Gemini 3.5 Flash Lite, deploy via GitHub Actions nel repo `tva-live-scheduler`, quote 12/min, 450/giorno, 12.000/mese: rientra nel tetto di costo; da monitorare.
-10. **Pubblicazione del codice TEST non ancora sul remoto:** i commit di Miss Minutes (mm4 e precedenti) sono solo locali; il push richiede autorizzazione separata.
+10. ~~Pubblicazione del codice TEST~~ → risolto il 24/11/2026: branch locale riallineato al remoto (merge, senza force push) e commit di Miss Minutes pubblicati su `test/tva-archives`.
 
 ---
 
@@ -338,4 +345,5 @@ Si registrano inoltre versione, commit, eventuale ZIP, problemi aperti e approva
 | Data | Intervento | Commit |
 |---|---|---|
 | 24/11/2026 | Creazione del documento; nessuna modifica al codice applicativo | `d99d7fd` |
+| 24/11/2026 | Riallineamento branch locale/remoto (merge, no force push), pubblicazione commit Miss Minutes, verifica ZIP mm4, decisione Road to Doomsday, conferma area 12 | v. `git log` |
 | 24/11/2026 | Integrate le decisioni dell'utente (Friends, Tessera 3.0, Firebase, Arcade/Arena), i requisiti recuperati, l'area 12 e la sezione Conteggi; solo documentazione | v. `git log -- docs/MASTER_ROADMAP.md` |
