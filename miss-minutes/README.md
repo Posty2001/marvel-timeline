@@ -1,4 +1,4 @@
-# Miss Minutes 1.0 (TEST) — build mm6
+# Miss Minutes 1.0 (TEST) — build mm6.1 (hotfix scorrimento)
 
 Assistente della TVA integrato in TVA Archives. Pagina in iframe a stessa origine (`miss-minutes/index.html`), aperta dal pulsante rapido ⏱ presente in tutte le sezioni dell'app.
 
@@ -18,6 +18,9 @@ Predisposto per Dossier, Quiz e Arena: basta leggere `knowledge/core.json` (stes
 ## Protezione spoiler: cosa fa e cosa no
 Le schede con `spoiler: true` sono nascoste finché l'utente non preme «Mostra comunque». Le schede spoiler non vengono mai inviate all'AI online. L'app non conosce i contenuti narrativi dei titoli e l'AI online può rivelare dettagli: la protezione è un aiuto **non garantito** e l'interfaccia lo dice.
 
+
+## mm6.1 — hotfix scorrimento (25/11/2026)
+Solo comportamento di scorrimento della chat: all'arrivo di una risposta la vista parte dall'**inizio** del nuovo messaggio (nessuno scorrimento automatico fino in fondo); all'invio restano visibili domanda e indicatore di attesa; una freccia verso il basso (`#mmDown`) compare solo quando la fine della conversazione è fuori vista; la persistenza dello scorrimento di mm6 è invariata. Nessuna modifica a grafica, gateway, prompt o altre funzioni. Test: `miss-minutes/tests/ui_mm61_test.py` (10 controlli).
 
 ## mm6 — componente globale, persistenza, instradamento
 - **Componente globale** (`mm-host` in `index.html`): pulsante e overlay sono figli di `<html>`, non di `<body>`, quindi non sono raggiungibili dalle regole dell'app che nascondono i fratelli di `#homeHubExited` (era la causa della scomparsa in Home, Tessera, Friends, Classifiche). Nessuna sezione deve registrarlo: le sezioni future lo ereditano. Il pulsante è trascinabile in verticale (posizione salvata in `tva-mm-fab-y`) per evitare i controlli di una sezione. Quiz e Arcade sono documenti separati e **non** lo includono (decisione da prendere: i giochi hanno timer in tempo reale).

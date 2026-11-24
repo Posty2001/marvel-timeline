@@ -318,3 +318,10 @@ dialog input[type=url],dialog input[type=text]{flex:1;min-width:0;background:#0b
 .mm-ttl{overflow:visible}
 @media (max-height:700px){.mm-hero{min-height:158px}.mm-hero .mm-mascot-big{max-width:116px}.mm-bubble p+p{display:none}.mm-bubble h2{font-size:1.08rem}.mm-wave{display:none}.mm-sect{margin:4px 0 6px}.mm-topic>button{min-height:42px;padding:6px 12px}.mm-topic{margin-bottom:6px}.mm-note{display:none}}
 @media (max-width:420px){.hd-home .mm-logo{display:none}}
+
+/* mm6.1: freccia verso il fondo, visibile solo se serve */
+.mm-down[hidden]{display:none}
+.mm-down{position:absolute;z-index:3;right:max(14px,env(safe-area-inset-right));bottom:10px;width:44px;height:44px;border-radius:50%;display:none;align-items:center;justify-content:center;border:1.5px solid var(--line2);background:rgba(20,12,6,.92);color:var(--acc2);box-shadow:var(--glow);padding:0}
+.mm[data-view=chat] .mm-down{display:flex}
+.mm-down[hidden]{display:none!important}
+.mm-down .ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}

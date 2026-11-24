@@ -25,7 +25,7 @@
   var EP_RE = /^https:\/\/[a-z0-9-]+(\.[a-z0-9-]+)?\.workers\.dev$/;
   function endpointNow() { var e = CFG.endpoint || (store && store.state.prefs.endpoint) || ''; return EP_RE.test(e) ? e : ''; }
   function makeGw() { return window.MMGateway.create({ endpoint: endpointNow(), storage: window.sessionStorage }); }
-  var VERSION = 'mm6';
+  var VERSION = 'mm6.1';
 
   /* ---------- utilita' ---------- */
   function el(tag, cls, txt) { var n = D.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; }
@@ -51,6 +51,7 @@
     volume: 'M4 9.5h3.5L12 6v12l-4.5-3.5H4z M15.5 9a4 4 0 0 1 0 6 M18 6.5a8 8 0 0 1 0 11',
     more: 'M12 5v.01 M12 12v.01 M12 19v.01',
     back: 'M15 5l-7 7 7 7',
+    down: 'M6 9l6 6 6-6',
     right: 'M9 5l7 7-7 7',
     search: 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14z M16 16l5 5',
     trash: 'M4 7h16 M9 7V4h6v3 M6 7l1 13h10l1-13 M10 11v6 M14 11v6',
@@ -220,7 +221,7 @@
     $('navChat').setAttribute('aria-current', v === 'home' || v === 'chat' ? 'page' : 'false'); $('navHist').setAttribute('aria-current', v === 'hist' ? 'page' : 'false'); $('navAtl').setAttribute('aria-current', 'false');
     if (v === 'home') renderHome(); if (v === 'chat') render(); if (v === 'hist') renderHistory(); if (v === 'set') renderSettings();
     var vw = SCR[v]; if (v !== 'chat') $(vw).scrollTop = 0;
-    ui.view = v; ui.prev = prevView; uiSave();
+    ui.view = v; ui.prev = prevView; uiSave(); updateDown();
   }
   // Indietro: torna alla schermata da cui si proveniva (non chiude l'assistente)
   function goBack() { stopSpeaking(); var t = prevView; if (t === view || ['home', 'chat', 'hist', 'set'].indexOf(t) < 0 || (t === 'chat' && !hasChat())) t = hasChat() && view !== 'chat' ? 'chat' : 'home'; prevView = 'home'; setView(t, { noPush: true }); }
@@ -292,12 +293,25 @@
     meta.appendChild(acts); body.appendChild(meta);
     return d;
   }
-  function render() {
+  // mm6.1: dopo una risposta la vista parte dall'INIZIO del nuovo messaggio (come ChatGPT), senza scorrere in fondo
+  var focusNext = false;
+  function scrollToAnswerTop() {
+    var c = $('mmChat'), a = c.querySelectorAll('.mm-msg.assistant'); if (!a.length) { scrollEnd(); return; }
+    var n = a[a.length - 1]; c.scrollTop = Math.max(0, n.offsetTop - 8);
+  }
+  function updateDown() {
+    var b = $('mmDown'), c = $('mmChat'); if (!b || !c) return;
+    var far = view === 'chat' && c.scrollHeight - c.scrollTop - c.clientHeight > 120; b.hidden = !far;
+  }
+  function render(mode) {
     var c = $('mmChat'); while (c.firstChild) c.removeChild(c.firstChild); waitNode = null; errNode = null;
     var s = store.current(); var msgs = s ? s.messages : [];
     msgs.forEach(function (m, i) { if (extra && s && extra.sid === s.id && extra.i === i) m = Object.assign({}, m, { action: extra.action, flair: extra.flair }); c.appendChild(renderMsg(m, i === msgs.length - 1, i > 0 && msgs[i - 1].role === 'user' && !busy)); });
     if (msgs.length && msgs[msgs.length - 1].role === 'user' && !busy) showError({ code: 'pending' }, msgs[msgs.length - 1].text);
-    scrollEnd();
+    if ((mode === 'answer' || focusNext) && !(msgs.length && msgs[msgs.length - 1].role === 'user')) {
+      if (view === 'chat' && c.clientHeight) { focusNext = false; scrollToAnswerTop(); } else focusNext = true;
+    } else scrollEnd();
+    updateDown();
   }
   function appendLive(m, last) { var d = renderMsg(m, !!last, !!last); $('mmChat').appendChild(d); scrollEnd(); return d; }
   function dropRegenButtons() { [].forEach.call($('mmChat').querySelectorAll('.mm-acts button[aria-label="Rigenera la risposta"]'), function (b) { b.remove(); }); }
@@ -450,7 +464,7 @@
     // memoria dei soggetti: entita' trovate dal motore locale + schede citate dall'AI (per i seguiti, anche offline)
     if (p.memory) { var ids = (ans.entities || []).slice(0, 2).concat(cited); var prev = s.last || []; s.last = ids.concat(prev).filter(function (x, i, a) { return x && a.indexOf(x) === i; }).slice(0, 4); }
     msg.personal = !!ans.personal; store.push(s, msg); extra = { sid: s.id, i: s.messages.length - 1, action: msg.action, flair: msg.flair }; if (!store.save()) banner('Memoria locale piena o non disponibile: la cronologia potrebbe non essere salvata.');
-    setBusy(false); render();
+    setBusy(false); render('answer');
     if (p.voice) speak(msg.text, null);
     mood('talk'); setTimeout(function () { mood('idle'); }, Math.min(4000, 600 + msg.text.length * 12));
   }
@@ -644,7 +658,8 @@
     window.addEventListener('blur', function () { flushUi('blur'); }); window.addEventListener('focus', function () { life('focus'); });
     D.addEventListener('freeze', function () { flushUi('freeze'); }); D.addEventListener('resume', function () { life('resume'); });
     var tmr = null; function later(f) { clearTimeout(tmr); tmr = setTimeout(f, 250); }
-    ['vHome', 'mmChat', 'vHist', 'vSet'].forEach(function (id) { $(id).addEventListener('scroll', function () { later(function () { flushUi(); }); }, { passive: true }); });
+    ['vHome', 'mmChat', 'vHist', 'vSet'].forEach(function (id) { $(id).addEventListener('scroll', function () { updateDown(); later(function () { flushUi(); }); }, { passive: true }); });
+    $('mmDown').onclick = function () { var c = $('mmChat'); try { c.scrollTo({ top: c.scrollHeight, behavior: 'smooth' }); } catch (e) { c.scrollTop = c.scrollHeight; } };
     $('mmQ').addEventListener('input', function () { later(function () { flushUi(); }); });
     // tastiera iOS: la barra inferiore cede spazio mentre si scrive
     maxH = window.innerHeight;
