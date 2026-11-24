@@ -12,7 +12,7 @@ const lim = new Limiter({ storage: { sql } });
 const env = {
   LIMITER: { idFromName: n => n, get: () => ({ fetch: (u, init) => lim.fetch(new Request(u, init)) }) },
   GEMINI_KEY: 'k', GEMINI_MODEL: 'm', SESSION_SECRET: 'x'.repeat(40), APP_ORIGINS: 'https://app.test', FREE_TIER_VERIFIED: 'yes',
-  DAILY_CAP: '5', MONTHLY_CAP: '100', IP_DAILY_CAP: '40', DEVICE_DAILY_CAP: '30', POW_BITS: '10',
+  DAILY_CAP: '5', MONTHLY_CAP: '100', GLOBAL_RPM_CAP: '100', IP_DAILY_CAP: '40', DEVICE_DAILY_CAP: '30', POW_BITS: '10',
 };
 const O = { Origin: 'https://app.test' };
 let ipN = 1;
@@ -30,7 +30,8 @@ globalThis.fetch = async (u, init) => { if (String(u).includes('generativelangua
 ok((await worker.fetch(new Request('https://gw/v1/health', { headers: { Origin: 'https://evil.test' } }), env)).status === 403, 'origin errata -> 403');
 ok((await worker.fetch(new Request('https://gw/v1/health'), env)).status === 403, 'senza Origin -> 403');
 const pre = await call('/v1/chat', { method: 'OPTIONS' }); ok(pre.status === 204 && pre.headers.get('access-control-allow-origin') === 'https://app.test', 'preflight');
-ok((await (await call('/v1/health')).json()).enabled === true, 'health enabled');
+const hh = await (await call('/v1/health')).json(); ok(hh.enabled === true && hh.missing.length === 0, 'health enabled');
+const hm = await (await call('/v1/health', {}, { ...env, GEMINI_KEY: undefined, FREE_TIER_VERIFIED: 'no' })).json(); ok(hm.enabled === false && hm.missing.join() === 'FREE_TIER_VERIFIED,GEMINI_KEY' && !JSON.stringify(hm).includes('xxxx'), 'health indica SOLO i nomi dei prerequisiti mancanti');
 // disabilitato se mancano segreti / guard
 for (const k of ['GEMINI_KEY', 'SESSION_SECRET', 'LIMITER']) { const e = { ...env }; delete e[k]; ok((await call('/v1/challenge', {}, e)).status === 503, 'disabled senza ' + k); }
 ok((await call('/v1/challenge', {}, { ...env, FREE_TIER_VERIFIED: 'no' })).status === 503, 'disabled senza FREE_TIER_VERIFIED');
@@ -62,6 +63,9 @@ ok(/Evita di rivelare/.test(lastBody.systemInstruction.parts[0].text), 'istruzio
 let st = []; for (let i = 0; i < 6; i++) st.push((await chat(token, { question: 'q' + i })).status);
 ok(st.slice(0, 4).every(s => s === 200) && st[4] === 429 && st[5] === 429, 'cap globale giornaliero ' + st);
 ok(providerCalls === before + 5, 'provider chiamato esattamente 5 volte (' + (providerCalls - before) + ')');
+const dbR = new DatabaseSync(':memory:'); const sqlR = { exec(q, ...b) { const st = dbR.prepare(q); const up = /^\s*select/i.test(q); const rows = up ? st.all(...b) : (st.run(...b), []); return { toArray: () => rows, one: () => rows[0] }; } }; const limR = new Limiter({ storage: { sql: sqlR } });
+const envR = { ...env, GLOBAL_RPM_CAP: '2', DAILY_CAP: '100', MONTHLY_CAP: '1000', LIMITER: { idFromName: n => n, get: () => ({ fetch: (u, i) => limR.fetch(new Request(u, i)) }) } }; const mm = await (async () => { const c = await (await call('/v1/challenge', {}, envR, '5.5.5.5')).json(); let n = 0; for (;;) { const h = createHash('sha256').update(`${c.salt}.${c.ts}.${n}`).digest(); let z = 0; for (const b of h) { if (b === 0) { z += 8; continue; } z += Math.clz32(b) - 24; break; } if (z >= c.bits) break; n++; } return (await call('/v1/session', { method: 'POST', body: JSON.stringify({ ...c, n: String(n) }) }, envR, '5.5.5.5')).json(); })();
+const rr = []; for (let i = 0; i < 3; i++) { const x = await call('/v1/chat', { method: 'POST', headers: { Authorization: 'Bearer ' + mm.token }, body: JSON.stringify({ question: 'r' + i }) }, envR, '5.5.5.5'); rr.push(x.status); if (x.status === 429) console.log(JSON.stringify(await x.json())); }; ok(rr.join() === '200,200,429', 'tetto globale al minuto (10 RPM Google) ' + rr);
 // quota persiste: nuova istanza Limiter sullo stesso db
 const lim2 = new Limiter({ storage: { sql } }); const env2 = { ...env, LIMITER: { idFromName: n => n, get: () => ({ fetch: (u, i) => lim2.fetch(new Request(u, i)) }) } };
 const m2 = await (async () => { const c = await (await call('/v1/challenge', {}, env2, '2.2.2.2')).json(); let n = 0; for (;;) { const h = createHash('sha256').update(`${c.salt}.${c.ts}.${n}`).digest(); let z = 0; for (const b of h) { if (b === 0) { z += 8; continue; } z += Math.clz32(b) - 24; break; } if (z >= c.bits) break; n++; } return (await call('/v1/session', { method: 'POST', body: JSON.stringify({ ...c, n: String(n) }) }, env2, '2.2.2.2')).json(); })();

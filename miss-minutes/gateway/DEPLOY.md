@@ -30,13 +30,13 @@ Repository tva-live-scheduler → **Settings → Secrets and variables → Actio
 2. A fine esecuzione il riepilogo del run mostra l'**indirizzo del gateway** (`https://miss-minutes-api.….workers.dev`). Incollalo in **Miss Minutes → ⚙ Impostazioni → Indirizzo del gateway → Salva**: l'app verifica che risponda (deve dire «AI ancora spenta»).
 
 ### D. Attivazione dell'AI (solo dopo la verifica del piano gratuito)
-1. Google AI Studio: la chiave deve appartenere a un progetto **senza account di fatturazione** e il modello (`GEMINI_MODEL`, default `gemini-3.5-flash-lite`: controlla il nome esatto) deve avere in «Rate limits» un limite gratuito > 0.
+1. Google AI Studio: la chiave deve appartenere a un progetto **senza account di fatturazione** e il modello (`GEMINI_MODEL`, default `gemini-2.5-flash-lite`, verificato da te con 10 RPM e 20 richieste/giorno) deve avere in «Rate limits» un limite gratuito > 0.
 2. GitHub: aggiungi il secret `GEMINI_KEY`.
 3. Run workflow con `action = deploy`, `enable_gemini` e `free_tier_checked` entrambi acceso. Il workflow carica la chiave su Cloudflare e imposta `FREE_TIER_VERIFIED=yes`. Per spegnere di nuovo: nuovo deploy con `enable_gemini` spento.
 
 ## Come funzionano sicurezza e costi
 - **Nessuna chiave nell'app.** Ogni dispositivo ottiene un token firmato (24 h) dopo una piccola proof-of-work (qualche decimo di secondo) e un limite di 8 sessioni/ora per IP. Nessun token condiviso nel codice pubblico.
-- **Limiti persistenti** (Durable Object, contati prima di chiamare Google): globale 150/giorno e 3000/mese (UTC), per IP 40/giorno e 6/minuto, per dispositivo 30/giorno. Dopo 20 richieste non valide in un'ora l'IP viene bloccato. Modificabili in `wrangler.toml`; tienili sotto il limite gratuito di Google.
+- **Limiti persistenti** (Durable Object, contati prima di chiamare Google, tarati sul piano gratuito 10 RPM / 20 al giorno): globale 8 al minuto, 18 al giorno (giorno Pacific, come le quote Google) e 500 al mese; per IP 10/giorno e 6/minuto; per dispositivo 10/giorno. Dopo 20 richieste non valide in un'ora l'IP viene bloccato. Modificabili in `wrangler.toml`.
 - **Nessun costo automatico:** Cloudflare Workers resta sul piano Free (non attivare «Workers Paid»); la chiave Gemini è in un progetto senza fatturazione, quindi superata la quota le richieste falliscono e l'app usa il motore locale. Nessun retry automatico.
 - **Limite onesto:** senza CAPTCHA, un automatismo ostinato potrebbe consumare la quota giornaliera (denial of service sul solo servizio AI, mai costi). L'app continua a funzionare in locale.
 - **Privacy:** al gateway arrivano domanda, fino a 4 schede pubbliche e gli ultimi messaggi; mai visti, voti, note, amici. Nel piano gratuito Google può usare i contenuti inviati per migliorare i propri prodotti (l'app lo dice nel consenso).

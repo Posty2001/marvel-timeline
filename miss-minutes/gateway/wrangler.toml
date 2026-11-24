@@ -3,17 +3,19 @@ name = "miss-minutes-api"
 main = "worker.ts"
 compatibility_date = "2025-08-01"
 workers_dev = true
+keep_vars = true
 
 [vars]
 # Metti "yes" SOLO dopo aver letto in Google AI Studio che il modello scelto è gratuito (vedi DEPLOY.md).
 FREE_TIER_VERIFIED = "no"
 # Origini esatte dell'app (https, senza slash finale), separate da virgola.
 APP_ORIGINS = "https://tva-archives-test-1110.netlify.app"
-GEMINI_MODEL = "gemini-3.5-flash-lite"
-DAILY_CAP = "150"
-MONTHLY_CAP = "3000"
-IP_DAILY_CAP = "40"
-DEVICE_DAILY_CAP = "30"
+GEMINI_MODEL = "gemini-2.5-flash-lite"
+DAILY_CAP = "18"
+MONTHLY_CAP = "500"
+IP_DAILY_CAP = "10"
+DEVICE_DAILY_CAP = "10"
+GLOBAL_RPM_CAP = "8"
 POW_BITS = "16"
 
 [[durable_objects.bindings]]

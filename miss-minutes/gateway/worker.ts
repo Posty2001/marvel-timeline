@@ -30,6 +30,7 @@ export interface Env {
   IP_DAILY_CAP?: string;
   DEVICE_DAILY_CAP?: string;
   POW_BITS?: string;
+  GLOBAL_RPM_CAP?: string;
 }
 
 type Role = 'user' | 'assistant';
@@ -205,18 +206,26 @@ export default {
     if (!okOrigin) return out(403, { error: 'origin' });
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: h });
 
-    const enabled = env.FREE_TIER_VERIFIED === 'yes' && !!env.GEMINI_KEY && !!env.GEMINI_MODEL &&
-      !!env.SESSION_SECRET && env.SESSION_SECRET.length >= 24 && !!env.LIMITER;
+    // Prerequisiti dell'AI: solo i NOMI di cio che manca vengono riportati, mai i valori.
+    const missing: string[] = [];
+    if (env.FREE_TIER_VERIFIED !== 'yes') missing.push('FREE_TIER_VERIFIED');
+    if (!env.GEMINI_KEY) missing.push('GEMINI_KEY');
+    if (!env.GEMINI_MODEL) missing.push('GEMINI_MODEL');
+    if (!env.SESSION_SECRET || env.SESSION_SECRET.length < 24) missing.push('SESSION_SECRET');
+    if (!env.LIMITER) missing.push('LIMITER');
+    const enabled = missing.length === 0;
 
-    if (url.pathname === '/v1/health' && req.method === 'GET') return out(200, { ok: true, enabled });
+    if (url.pathname === '/v1/health' && req.method === 'GET') return out(200, { ok: true, enabled, missing });
     if (!enabled) return out(503, { error: 'disabled' });
     const secret = env.SESSION_SECRET as string;
     const bits = num(env.POW_BITS, 16, 8, 24);
     const ip = req.headers.get('CF-Connecting-IP') || 'unknown';
     const ih = await hashIp(secret, ip);
     const now = Math.floor(Date.now() / 1000);
-    const day = new Date().toISOString().slice(0, 10);
+    const day = new Date().toISOString().slice(0, 10);   // limiti per IP/dispositivo: giorno UTC
     const month = day.slice(0, 7);
+    // le quote giornaliere del piano gratuito Google si azzerano a mezzanotte (fuso Pacific): il tetto globale segue lo stesso giorno
+    const gday = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(new Date());
 
     // IP bloccato dopo troppi tentativi falliti
     const failKey = `f:${ih}:${Math.floor(now / 3600)}`;
@@ -273,10 +282,11 @@ export default {
         op: 'admit',
         checks: [
           { k: `i:${ih}:m:${Math.floor(now / 60)}`, max: 6, ttl: 90 },
-          { k: `i:${ih}:d:${day}`, max: num(env.IP_DAILY_CAP, 40, 1, 1000), ttl: 90000 },
-          { k: `v:${did}:d:${day}`, max: num(env.DEVICE_DAILY_CAP, 30, 1, 1000), ttl: 90000 },
-          { k: `g:d:${day}`, max: num(env.DAILY_CAP, 150, 1, 100000), ttl: 90000 },
-          { k: `g:m:${month}`, max: num(env.MONTHLY_CAP, 3000, 1, 1000000), ttl: 32 * 86400 },
+          { k: `i:${ih}:d:${day}`, max: num(env.IP_DAILY_CAP, 10, 1, 1000), ttl: 90000 },
+          { k: `v:${did}:d:${day}`, max: num(env.DEVICE_DAILY_CAP, 10, 1, 1000), ttl: 90000 },
+          { k: `g:r:${Math.floor(now / 60)}`, max: num(env.GLOBAL_RPM_CAP, 8, 1, 1000), ttl: 90 },
+          { k: `g:d:${gday}`, max: num(env.DAILY_CAP, 15, 1, 100000), ttl: 129600 },
+          { k: `g:m:${month}`, max: num(env.MONTHLY_CAP, 450, 1, 1000000), ttl: 32 * 86400 },
         ],
       });
       if (adm.status !== 200) return out(429, { error: 'quota', scope: String(adm.json.k || '') });
