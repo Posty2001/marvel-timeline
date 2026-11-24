@@ -1,11 +1,13 @@
 {
- "generated_at": "2026-11-23T19:52:31+00:00",
+ "generated_at": "2026-11-24T10:54:43+00:00",
  "items": [
   {
    "category": "film",
-   "confidence": "confirmed",
+   "confidence": "provisional",
    "date": "2026-12-16",
+   "dateBasis": "IT",
    "dateIT": "2026-12-16",
+   "dateTMDB": "2026-12-16",
    "firstSeen": "2026-11-21",
    "history": [
     {
@@ -16,9 +18,25 @@
    "key": "tmdb:movie:1003596",
    "kind": "movie",
    "missing": [],
+   "officialDates": [
+    {
+     "channel": "Marvel Entertainment",
+     "date": "2026-12-16",
+     "market": "UK",
+     "title": "Avengers: Doomsday | Final Trailer | In UK Cinemas December 16",
+     "url": "https://www.youtube.com/watch?v=hGaXQ8L_Z28"
+    },
+    {
+     "channel": "Marvel Entertainment",
+     "date": "2026-12-18",
+     "market": "US",
+     "title": "Avengers: Doomsday | Final Trailer | In Theaters December 18",
+     "url": "https://www.youtube.com/watch?v=Wb8Tq_HD4E8"
+    }
+   ],
    "poster": "/6uOkzW0gF1ANWz2flhwXfTUQuLY.jpg",
    "precision": "day",
-   "reason": "Data riportata da un contenuto ufficiale verificato (vedi fonte)",
+   "reason": "Data da TMDB, non confermata da una fonte ufficiale. In post-produzione. Fonti ufficiali per altri mercati, non valide per l Italia: Regno Unito 16 dic 2026; USA 18 dic 2026",
    "signals": [
     "company",
     "keyword"
@@ -28,11 +46,6 @@
      "name": "TMDB",
      "official": false,
      "url": "https://www.themoviedb.org/movie/1003596"
-    },
-    {
-     "name": "YouTube - Marvel Entertainment",
-     "official": true,
-     "url": "https://www.youtube.com/watch?v=hGaXQ8L_Z28"
     }
    ],
    "state": "upcoming",
@@ -42,7 +55,7 @@
     "id": 1003596,
     "type": "movie"
    },
-   "updatedAt": "2026-11-23",
+   "updatedAt": "2026-11-24",
    "warnings": [],
    "window": null
   },
@@ -50,12 +63,15 @@
    "category": "animazione",
    "confidence": "provisional",
    "date": "2027-01-13",
+   "dateBasis": "GLOBAL",
    "dateIT": null,
+   "dateTMDB": "2027-01-13",
    "firstSeen": "2026-11-21",
    "history": [],
    "key": "tmdb:tv:138503:S02",
    "kind": "season",
    "missing": [],
+   "officialDates": [],
    "poster": "/rAgl03cfcLgPSzeozownXAdhDkw.jpg",
    "precision": "day",
    "reason": "Data da TMDB, non confermata da una fonte ufficiale. Serie in corso",
@@ -85,7 +101,9 @@
    "category": "animazione",
    "confidence": "provisional",
    "date": "2027-06-16",
+   "dateBasis": "TMDB",
    "dateIT": null,
+   "dateTMDB": "2027-06-16",
    "firstSeen": "2026-11-21",
    "history": [],
    "key": "tmdb:movie:911916",
@@ -93,6 +111,7 @@
    "missing": [
     "dateIT"
    ],
+   "officialDates": [],
    "poster": "/9KAe39xqyZnv9J4W3DRGdQqX82h.jpg",
    "precision": "day",
    "reason": "Data da TMDB, non confermata da una fonte ufficiale. In produzione",
@@ -121,7 +140,9 @@
    "category": "film",
    "confidence": "provisional",
    "date": "2027-12-15",
+   "dateBasis": "TMDB",
    "dateIT": null,
+   "dateTMDB": "2027-12-15",
    "firstSeen": "2026-11-21",
    "history": [],
    "key": "tmdb:movie:1003598",
@@ -129,6 +150,7 @@
    "missing": [
     "dateIT"
    ],
+   "officialDates": [],
    "poster": "/f0YBuh4hyiAheXhh4JnJWoKi9g5.jpg",
    "precision": "day",
    "reason": "Data da TMDB, non confermata da una fonte ufficiale. Progetto pianificato",
@@ -158,7 +180,9 @@
    "category": "film",
    "confidence": "provisional",
    "date": "2028-05-04",
+   "dateBasis": "TMDB",
    "dateIT": null,
+   "dateTMDB": "2028-05-04",
    "firstSeen": "2026-11-21",
    "history": [],
    "key": "tmdb:movie:1293690",
@@ -166,6 +190,7 @@
    "missing": [
     "dateIT"
    ],
+   "officialDates": [],
    "poster": "/jSn3jOzI91dOx4aVdfMrirWXH6R.jpg",
    "precision": "day",
    "reason": "Data da TMDB, non confermata da una fonte ufficiale. Progetto pianificato",
@@ -195,7 +220,9 @@
    "category": "film",
    "confidence": "provisional",
    "date": "2028-07-27",
+   "dateBasis": "TMDB",
    "dateIT": null,
+   "dateTMDB": "2028-07-27",
    "firstSeen": "2026-11-21",
    "history": [],
    "key": "tmdb:movie:1738010",
@@ -203,6 +230,7 @@
    "missing": [
     "dateIT"
    ],
+   "officialDates": [],
    "poster": "/zgC1zo3lyujoEiIMnUrHltvPmZg.jpg",
    "precision": "day",
    "reason": "Data da TMDB, non confermata da una fonte ufficiale. Progetto pianificato",
@@ -232,7 +260,9 @@
    "category": "film",
    "confidence": "provisional",
    "date": "2028-12-13",
+   "dateBasis": "TMDB",
    "dateIT": null,
+   "dateTMDB": "2028-12-13",
    "firstSeen": "2026-11-21",
    "history": [],
    "key": "tmdb:movie:1386618",
@@ -240,6 +270,7 @@
    "missing": [
     "dateIT"
    ],
+   "officialDates": [],
    "poster": "/zJc9fYZxgq4yzI0Oru2e1Cf3a3V.jpg",
    "precision": "day",
    "reason": "Data da TMDB, non confermata da una fonte ufficiale. Progetto pianificato",
