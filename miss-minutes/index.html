@@ -15,26 +15,29 @@
 
   <header class="mm-top" id="mmTop">
     <div class="hd hd-home">
-      <button type="button" id="mmClose" class="mm-logo" aria-label="Torna a TVA Archives" title="Torna a TVA Archives"><b>TVA</b><small>ARCHIVES</small></button>
+      <span class="mm-logo" aria-hidden="true"><b>TVA</b><small>ARCHIVES</small></span>
       <div class="mm-ttl"><h1>Miss Minutes</h1><p id="mmSub">Assistente del Multiverso</p></div>
       <button type="button" id="mmHist" class="mm-ibtn" aria-label="Cronologia" title="Cronologia" data-ic="history"></button>
       <button type="button" id="mmSet" class="mm-ibtn" aria-label="Impostazioni" title="Impostazioni" data-ic="gear"></button>
+      <button type="button" id="mmClose" class="mm-ibtn mm-x" aria-label="Chiudi Miss Minutes" title="Chiudi Miss Minutes" data-ic="close"></button>
     </div>
     <div class="hd hd-chat">
-      <button type="button" id="mmBack" class="mm-ibtn flat" aria-label="Indietro" title="Indietro" data-ic="back"></button>
+      <button type="button" id="mmBack" class="mm-ibtn flat" aria-label="Torna alla schermata precedente" title="Indietro" data-ic="back"></button>
       <div class="mm-av" id="mmAvChat" aria-hidden="true"></div>
       <div class="mm-ttl"><h1>Miss Minutes</h1><p id="mmSubChat">Assistente del Multiverso</p></div>
-      <button type="button" id="mmMenu" class="mm-ibtn flat" aria-label="Altre azioni" aria-haspopup="true" aria-expanded="false" data-ic="more"></button>
+      <button type="button" id="mmMenu" class="mm-ibtn" aria-label="Altre azioni" aria-haspopup="true" aria-expanded="false" data-ic="more"></button>
+      <button type="button" id="mmCloseChat" class="mm-ibtn mm-x" aria-label="Chiudi Miss Minutes" title="Chiudi Miss Minutes" data-ic="close"></button>
     </div>
     <div class="hd hd-hist">
-      <span class="mm-ibtn flat" aria-hidden="true" data-ic="history"></span>
+      <button type="button" id="mmBackHist" class="mm-ibtn flat" aria-label="Torna alla schermata precedente" title="Indietro" data-ic="back"></button>
       <div class="mm-ttl"><h1>Cronologia</h1></div>
-      <button type="button" id="mmHistMenu" class="mm-ibtn flat" aria-label="Altre azioni" aria-haspopup="true" aria-expanded="false" data-ic="more"></button>
+      <button type="button" id="mmHistMenu" class="mm-ibtn" aria-label="Altre azioni" aria-haspopup="true" aria-expanded="false" data-ic="more"></button>
+      <button type="button" id="mmCloseHist" class="mm-ibtn mm-x" aria-label="Chiudi Miss Minutes" title="Chiudi Miss Minutes" data-ic="close"></button>
     </div>
     <div class="hd hd-set">
-      <span class="mm-ibtn flat" aria-hidden="true" data-ic="gear"></span>
+      <button type="button" id="mmBackSet" class="mm-ibtn flat" aria-label="Torna alla schermata precedente" title="Indietro" data-ic="back"></button>
       <div class="mm-ttl"><h1>Impostazioni</h1></div>
-      <button type="button" id="mmSetClose" class="mm-ibtn flat" aria-label="Torna a TVA Archives" title="Torna a TVA Archives" data-ic="close"></button>
+      <button type="button" id="mmSetClose" class="mm-ibtn mm-x" aria-label="Chiudi Miss Minutes" title="Chiudi Miss Minutes" data-ic="close"></button>
     </div>
   </header>
   <p id="mmBanner" class="mm-banner" role="status" hidden></p>
@@ -73,6 +76,7 @@
       <button type="button" id="mmMic" class="mm-mic" aria-label="Detta la domanda" aria-pressed="false" data-ic="mic" hidden></button>
     </div>
     <button type="submit" id="mmSend" class="mm-send" aria-label="Invia" data-ic="send"></button>
+    <button type="button" id="mmStop" class="mm-send mm-stop" aria-label="Interrompi la risposta" title="Interrompi" data-ic="stop" hidden></button>
   </form>
 
   <nav class="mm-nav" aria-label="Sezioni di Miss Minutes">

@@ -7,10 +7,9 @@
     try { var r = JSON.parse(storage.getItem(KEY) || 'null'); if (r && r.v === 1 && Array.isArray(r.sessions)) { st.sessions = r.sessions.filter(function (s) { return s && typeof s.id === 'string' && Array.isArray(s.messages); }).slice(0, MAX_S); st.active = typeof r.active === 'string' ? r.active : null; st.prefs = Object.assign(st.prefs, r.prefs || {}); } } catch (e) {}
     var ok = true;
     function save() {
-      for (var tries = 0; tries < 4; tries++) {
-        try { storage.setItem(KEY, JSON.stringify(st)); ok = true; return true; } catch (e) { ok = false; st.sessions = st.sessions.slice(0, Math.max(1, Math.floor(st.sessions.length / 2))); }
-      }
-      return false;
+      /* mm6: nessuna cancellazione silenziosa. Se lo spazio e' pieno si prova a salvare le sole conversazioni piu' recenti
+         in una copia di sicurezza separata, ma l'elenco in memoria non viene mai ridotto: l'interfaccia avvisa l'utente. */
+      try { storage.setItem(KEY, JSON.stringify(st)); ok = true; return true; } catch (e) { ok = false; return false; }
     }
     function find(id) { for (var i = 0; i < st.sessions.length; i++) if (st.sessions[i].id === id) return st.sessions[i]; return null; }
     return {

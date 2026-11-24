@@ -43,7 +43,9 @@
 * Restyling «Holographic Intelligence» (mm5): sei schermate (Home, Conversazione, Elaborazione AI, Cronologia, Impostazioni, Gestione anomalie), mascotte olografica animata disegnata in SVG, icone vettoriali, nessuna emoji.
 * Affidabilità: un solo nuovo tentativo automatico per errori temporanei del provider (500/502/503/504/529), pulsante Riprova, interruzione dell'attesa, archivio locale come alternativa, memoria locale dei soggetti per i seguiti, nessuna domanda duplicata in cronologia.
 * Qualità: corretta la causa dei termini duplicati (i marcatori `[[id]]` sostituivano le parole), prompt con regole su precisione narrativa, fonti, confronti e ordini di lettura; preferenze lunghezza risposte e riferimenti bibliografici.
-* Stato: **in rifinitura**, versione mm5 (non completata: serve l'approvazione dell'utente dopo la prova delle sei schermate nell'app reale).
+* mm6 (consolidamento dopo il collaudo su iPhone): componente globale visibile in tutte le sezioni dell'app (era nascosto in Home, Tessera, Friends, Classifiche da una regola CSS dell'app), X sempre visibile e distinta dalla freccia Indietro con ripristino di sezione e scorrimento, persistenza di schermata/bozza/scorrimento e registro del ciclo di vita in Diagnostica, attesa AI compatta nella chat con Interrompi sempre accessibile, instradamento verso Gemini delle domande teoriche/comparative/contestuali, prompt su confermato/ipotesi/indiscrezioni, rifiniture grafiche e correzione della dicitura sulla cronologia.
+* Non incluso in mm6: Quiz e Arcade (documenti separati con timer in tempo reale) non montano il componente; la mascotte è un personaggio originale (orologio retro-cartoon con braccia, guanti e gambe), non una riproduzione del personaggio della serie; si possono fornire illustrazioni proprie in `miss-minutes/mascot/` con `manifest.json`.
+* Stato: **in rifinitura**, versione mm6 (ultimo aggiornamento mm5 (non completata: serve l'approvazione dell'utente dopo la prova delle sei schermate nell'app reale).
 
 ## 02. Atlante 2.0
 
@@ -275,7 +277,7 @@ Si registrano inoltre versione, commit, eventuale ZIP, problemi aperti e approva
 
 | N. | Funzionalità | Stato | Versione | Commit | ZIP | Problemi aperti | Approvazione utente |
 |---|---|---|---|---|---|---|---|
-| 01 | Miss Minutes – Intelligence Upgrade (mm5 Holographic Intelligence) | **In rifinitura** (non completata; serve l'approvazione dell'utente nell'app reale) | mm5 (`20261124-2330-mm5`) | `87879c5` (app, `test/tva-archives`); gateway repo `tva-live-scheduler` `GW_MM5` | `NETLIFY_TEST_mm5.zip` (440 file, verificato conforme al branch) | Da fare dall'utente: rilanciare il workflow del gateway (prompt, `length`, `cite` cambiati), caricare lo ZIP su Netlify TEST, provare le sei schermate e i casi Gemini reali (503, Riprova, duplicati, precisione Marvel). Non verificato su iPhone/Safari reale: solo Chromium simulato a 390 px | No |
+| 01 | Miss Minutes – Intelligence Upgrade (mm6 consolidamento collaudo iPhone) | **In rifinitura** (non completata; serve l'approvazione dell'utente nell'app reale) | mm6 (`20261125-0030-mm6`) | `COMMIT_MM6` (app, `test/tva-archives`); gateway repo `tva-live-scheduler` `GW_MM6` | `NETLIFY_TEST_mm6.zip` (verificato conforme al branch) | Da fare dall'utente: rilanciare il workflow del gateway (prompt cambiato), caricare lo ZIP su Netlify TEST, riprovare su iPhone lo screenshot con conversazione aperta (la causa esatta del riavvio non è riproducibile fuori da iOS: ora la Diagnostica registra avvii e eventi), verificare Home/Tessera/Friends, X, tastiera iOS. Quiz/Arcade senza componente (decisione aperta). Nessuna verifica su iPhone/Safari reale | No |
 | 02 | Atlante 2.0 | Da sviluppare | — | — | — | Esistono già Atlante, dossier, mappa, cronologie, grafo relazioni (v. «Punti da chiarire») | No |
 | 03 | Marvel Database Expansion | Da sviluppare | — | — | — | Consistenza attuale del database da misurare prima di fissare la baseline | No |
 | 04 | Tessera TVA 3.0 | Da sviluppare (requisiti nuovi); base esistente da preservare | — | — | — | Verificare quali requisiti sono già coperti dal codice (nessuno considerato completato) | No |
@@ -349,5 +351,6 @@ Si registrano inoltre versione, commit, eventuale ZIP, problemi aperti e approva
 |---|---|---|
 | 24/11/2026 | Creazione del documento; nessuna modifica al codice applicativo | `d99d7fd` |
 | 24/11/2026 | Riallineamento branch locale/remoto (merge, no force push), pubblicazione commit Miss Minutes, verifica ZIP mm4, decisione Road to Doomsday, conferma area 12 | v. `git log` |
+| 25/11/2026 | Miss Minutes mm6: componente globale, X/Indietro, persistenza e ciclo di vita, attesa compatta, instradamento Gemini, rifiniture UI, dicitura cronologia; ZIP `NETLIFY_TEST_mm6.zip`; stato «in rifinitura»; Atlante 2.0 non avviato | `COMMIT_MM6` |
 | 24/11/2026 | Miss Minutes mm5 «Holographic Intelligence»: nuova interfaccia a sei schermate, affidabilità (retry limitato, Riprova, interruzione), fix duplicati, prompt di precisione, ZIP `NETLIFY_TEST_mm5.zip`; stato «in rifinitura»; Atlante 2.0 non avviato | `87879c5` |
 | 24/11/2026 | Integrate le decisioni dell'utente (Friends, Tessera 3.0, Firebase, Arcade/Arena), i requisiti recuperati, l'area 12 e la sezione Conteggi; solo documentazione | v. `git log -- docs/MASTER_ROADMAP.md` |

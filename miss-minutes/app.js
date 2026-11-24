@@ -5,12 +5,27 @@
   var D = document, $ = function (id) { return D.getElementById(id); };
   var host = null; try { host = window.parent !== window && window.parent.tvaMissMinutesHost && window.parent.tvaMissMinutesHost.version === 1 ? window.parent.tvaMissMinutesHost : null; } catch (e) { host = null; }
   var store, eng, gw, busy = false, lastCtx = [], waitCtl = null, waitNode = null, errNode = null, heroSvg = null, speakingNode = null;
-  var diag = { last: null }, extra = null;
+  var diag = { last: null }, extra = null, prevView = 'home', maxH = 0;
+  /* Stato dell'interfaccia (schermata, bozza, scorrimento) e registro del ciclo di vita della pagina. Chiave separata dalla
+     cronologia: nessuna migrazione, nessuna scrittura sulle conversazioni. Nessun testo delle conversazioni, solo UI. */
+  var UIK = 'marvel-ultimate-timeline-miss-minutes-ui-v1', ui = { view: 'home', prev: 'home', draft: '', scroll: {}, stick: {}, sid: null, life: [], boots: 0, restored: false };
+  function uiLoad() { try { var r = JSON.parse(localStorage.getItem(UIK) || 'null'); if (r && typeof r === 'object') ui = Object.assign(ui, r); } catch (e) {} if (!Array.isArray(ui.life)) ui.life = []; if (!ui.scroll || typeof ui.scroll !== 'object') ui.scroll = {}; if (!ui.stick || typeof ui.stick !== 'object') ui.stick = {}; }
+  function uiSave() { try { ui.t = Date.now(); localStorage.setItem(UIK, JSON.stringify(ui)); } catch (e) {} }
+  function life(ev) { ui.life.push({ e: ev, t: Date.now() }); if (ui.life.length > 14) ui.life = ui.life.slice(-14); uiSave(); }
+  function wipeUi() { ui.draft = ''; ui.scroll = {}; ui.stick = {}; ui.sid = null; try { $('mmQ').value = ''; } catch (e) {} uiSave(); }
+  var SCR = { home: 'vHome', chat: 'mmChat', hist: 'vHist', set: 'vSet' };
+  function capture() { try { var n = $(SCR[view]); if (n) { ui.scroll[view] = n.scrollTop; ui.stick[view] = n.scrollHeight - n.scrollTop - n.clientHeight < 48; } ui.draft = $('mmQ').value; ui.view = view; ui.prev = prevView; ui.sid = store ? store.state.active : null; } catch (e) {} }
+  function flushUi(ev) { capture(); if (ev) life(ev); else uiSave(); }
+  function restoreScroll(v) {
+    var n = $(SCR[v]); if (!n) return; var go = function () { if (ui.stick[v] && v === 'chat') n.scrollTop = n.scrollHeight; else if (typeof ui.scroll[v] === 'number') n.scrollTop = ui.scroll[v]; };
+    go(); requestAnimationFrame(function () { go(); setTimeout(go, 200); });
+  }
+
   var CFG = window.MISS_MINUTES_CONFIG || { endpoint: '' };
   var EP_RE = /^https:\/\/[a-z0-9-]+(\.[a-z0-9-]+)?\.workers\.dev$/;
   function endpointNow() { var e = CFG.endpoint || (store && store.state.prefs.endpoint) || ''; return EP_RE.test(e) ? e : ''; }
   function makeGw() { return window.MMGateway.create({ endpoint: endpointNow(), storage: window.sessionStorage }); }
-  var VERSION = 'mm5';
+  var VERSION = 'mm6';
 
   /* ---------- utilita' ---------- */
   function el(tag, cls, txt) { var n = D.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; }
@@ -78,20 +93,38 @@
     var pt = mk('pattern', { id: id + 'p', width: 4, height: 4, patternUnits: 'userSpaceOnUse' }, df); mk('rect', { x: 0, y: 0, width: 4, height: 1.3, fill: '#000', 'fill-opacity': .38 }, pt);
     var cp = mk('clipPath', { id: id + 'c' }, df); mk('circle', { cx: 100, cy: 110, r: 56 }, cp);
     if (!head) {
-      mk('polygon', { points: '66,236 134,236 120,160 80,160', fill: 'url(#' + id + 'm)' }, s);
-      mk('ellipse', { cx: 100, cy: 238, rx: 66, ry: 11, fill: 'rgba(255,150,30,.14)', stroke: '#f59a23', 'stroke-width': 2, class: 'holo-ring' }, s);
-      mk('ellipse', { cx: 100, cy: 238, rx: 46, ry: 7, fill: 'none', stroke: '#ffc766', 'stroke-width': 1.4, 'stroke-opacity': .8, class: 'holo-ring2' }, s);
+      mk('polygon', { points: '62,238 138,238 122,150 78,150', fill: 'url(#' + id + 'm)' }, s);
+      mk('ellipse', { cx: 100, cy: 240, rx: 70, ry: 11, fill: 'rgba(255,150,30,.14)', stroke: '#f59a23', 'stroke-width': 2, class: 'holo-ring' }, s);
+      mk('ellipse', { cx: 100, cy: 240, rx: 48, ry: 7, fill: 'none', stroke: '#ffc766', 'stroke-width': 1.4, 'stroke-opacity': .8, class: 'holo-ring2' }, s);
     }
-    var g = mk('g', { class: head ? '' : 'holo-float' }, s), f = mk('g', { class: head ? '' : 'holo-flick' }, g);
+    var g = mk('g', { class: head ? '' : 'holo-float' }, s);
+    if (!head) {
+      // Personaggio originale: orologio retro-cartoon con braccia, guanti, gambe e scarpe (non riproduce personaggi esistenti)
+      var LIMB = { fill: 'none', stroke: '#ffb347', 'stroke-width': 5.5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' };
+      function glove(parent, cx, cy, flip) {
+        var gg = mk('g', {}, parent), k = flip ? -1 : 1;
+        mk('rect', { x: cx - 7, y: cy - 13, width: 14, height: 8, rx: 3, fill: '#ffe7b8', stroke: '#b4560a', 'stroke-width': 1.4 }, gg);
+        mk('ellipse', { cx: cx, cy: cy, rx: 9.5, ry: 9, fill: '#fff4dc', stroke: '#b4560a', 'stroke-width': 1.5 }, gg);
+        mk('ellipse', { cx: cx + 8.5 * k, cy: cy - 1, rx: 3.6, ry: 6, fill: '#fff4dc', stroke: '#b4560a', 'stroke-width': 1.3, transform: 'rotate(' + (22 * k) + ' ' + (cx + 8.5 * k) + ' ' + (cy - 1) + ')' }, gg);
+        mk('path', { d: 'M' + (cx - 3) + ' ' + (cy + 2) + 'v6 M' + (cx + 2) + ' ' + (cy + 2) + 'v7', stroke: '#b4560a', 'stroke-width': 1.1, 'stroke-linecap': 'round', fill: 'none' }, gg);
+      }
+      var legL = mk('g', { class: 'm-leg m-leg-l' }, g), legR = mk('g', { class: 'm-leg m-leg-r' }, g);
+      mk('path', Object.assign({ d: 'M88 148L84 212' }, LIMB), legL); mk('ellipse', { cx: 77, cy: 221, rx: 15, ry: 8, fill: '#ffe7b8', stroke: '#b4560a', 'stroke-width': 1.6 }, legL); mk('path', { d: 'M70 217q7-4 14 0', fill: 'none', stroke: '#b4560a', 'stroke-width': 1.2 }, legL);
+      mk('path', Object.assign({ d: 'M112 148L116 212' }, LIMB), legR); mk('ellipse', { cx: 123, cy: 221, rx: 15, ry: 8, fill: '#ffe7b8', stroke: '#b4560a', 'stroke-width': 1.6 }, legR); mk('path', { d: 'M116 217q7-4 14 0', fill: 'none', stroke: '#b4560a', 'stroke-width': 1.2 }, legR);
+      var armL = mk('g', { class: 'm-arm m-arm-l' }, g); mk('path', Object.assign({ d: 'M46 96Q22 100 24 126' }, LIMB), armL); glove(armL, 24, 134, true);
+      var armR = mk('g', { class: 'm-arm m-arm-r' }, g); mk('path', Object.assign({ d: 'M154 96Q180 92 178 66' }, LIMB), armR); glove(armR, 178, 58, false);
+      mk('rect', { x: 91, y: 24, width: 18, height: 11, rx: 3.5, fill: '#2a1608', stroke: '#f59a23', 'stroke-width': 2.4 }, g);
+    }
+    var f = mk('g', { class: head ? '' : 'holo-flick', transform: head ? '' : 'translate(0,-18)' }, g);
     mk('circle', { cx: 100, cy: 110, r: 58, fill: 'url(#' + id + 'b)' }, f);
     mk('circle', { cx: 100, cy: 110, r: 58, fill: 'none', stroke: 'url(#' + id + 'r)', 'stroke-width': 5 }, f);
     mk('circle', { cx: 100, cy: 110, r: 49, fill: 'none', stroke: '#ffc766', 'stroke-opacity': .3, 'stroke-width': 1 }, f);
     var tk = mk('g', { stroke: '#ffc766', 'stroke-linecap': 'round', 'stroke-opacity': .75 }, f);
     for (var i = 0; i < 12; i++) { var a = i * Math.PI / 6, r1 = i % 3 ? 44 : 41, r2 = 48; mk('line', { x1: 100 + Math.sin(a) * r1, y1: 110 - Math.cos(a) * r1, x2: 100 + Math.sin(a) * r2, y2: 110 - Math.cos(a) * r2, 'stroke-width': i % 3 ? 1.4 : 2.6 }, tk); }
-    var ob = mk('g', { class: 'o-orbit' }, f);
-    mk('circle', { cx: 100, cy: 36, r: 3.6, fill: '#ffd98a' }, ob); mk('circle', { cx: 100, cy: 184, r: 2.6, fill: '#f59a23' }, ob);
-    mk('circle', { cx: 100, cy: 110, r: 70, fill: 'none', stroke: '#f59a23', 'stroke-opacity': .22, 'stroke-dasharray': '2 6' }, ob);
     if (!head) {
+      var ob = mk('g', { class: 'o-orbit' }, f);
+      mk('circle', { cx: 100, cy: 36, r: 3.6, fill: '#ffd98a' }, ob); mk('circle', { cx: 100, cy: 184, r: 2.6, fill: '#f59a23' }, ob);
+      mk('circle', { cx: 100, cy: 110, r: 70, fill: 'none', stroke: '#f59a23', 'stroke-opacity': .22, 'stroke-dasharray': '2 6' }, ob);
       var hh = mk('g', { class: 'o-hand-h' }, f); mk('line', { x1: 100, y1: 110, x2: 100, y2: 93, stroke: '#ffc766', 'stroke-width': 3.2, 'stroke-linecap': 'round' }, hh);
       var hm = mk('g', { class: 'o-hand-m' }, f); mk('line', { x1: 100, y1: 110, x2: 100, y2: 80, stroke: '#ffd98a', 'stroke-width': 2.2, 'stroke-linecap': 'round' }, hm);
     }
@@ -104,8 +137,10 @@
     mk('path', Object.assign({ d: 'M84 152Q100 138 116 152', class: 'o-frown' }, mo), f);
     mk('path', Object.assign({ d: 'M86 147H114', class: 'o-flat' }, mo), f);
     mk('path', Object.assign({ d: 'M86 147q7-6 14 0t14 0', class: 'o-wavy' }, mo), f);
-    var gl = { 'font-size': 30, 'font-weight': 800, fill: '#ffd98a', 'text-anchor': 'middle', 'font-family': 'system-ui,sans-serif' };
-    [['!', 'g-err'], ['?', 'g-q'], ['zZ', 'g-z']].forEach(function (p) { var t = mk('text', Object.assign({ x: 160, y: 66, class: 'o-glyph ' + p[1] }, gl), g); t.textContent = p[0]; });
+    if (!head) {
+      var gl = { 'font-size': 30, 'font-weight': 800, fill: '#ffd98a', 'text-anchor': 'middle', 'font-family': 'system-ui,sans-serif' };
+      [['!', 'g-err'], ['?', 'g-q'], ['zZ', 'g-z']].forEach(function (p) { var t = mk('text', Object.assign({ x: 164, y: 40, class: 'o-glyph ' + p[1] }, gl), g); t.textContent = p[0]; });
+    }
     mk('circle', { cx: 100, cy: 110, r: 56, fill: 'url(#' + id + 'p)' }, f);
     if (!head) { var sw = mk('g', { 'clip-path': 'url(#' + id + 'c)' }, f); mk('rect', { x: 40, y: 40, width: 120, height: 44, fill: 'url(#' + id + 'w)', class: 'holo-sweep' }, sw); }
     return s;
@@ -118,7 +153,12 @@
   function setMood(node, m) { if (node) node.setAttribute('data-state', m); }
   function mood(m) { setMood(heroSvg, m); }
   // avatar piccolo: simbolo condiviso (una sola definizione, riusata con <use>)
-  function avatar() { var w = el('div', 'mm-av'); w.setAttribute('aria-hidden', 'true'); var s = mk('svg', { viewBox: '36 46 128 128' }, w); var u = mk('use', {}, s); u.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#mm-head'); u.setAttribute('href', '#mm-head'); return w; }
+  // avatar: <use> di un simbolo condiviso. Il viewBox esterno parte da 0,0 (l'offset di mm5 lo faceva apparire decentrato).
+  function avatar(state) {
+    var w = el('div', 'mm-av'); w.setAttribute('aria-hidden', 'true');
+    if (state) { w.appendChild(holo({ head: true, state: state })); return w; }
+    var s = mk('svg', { viewBox: '0 0 128 128', focusable: 'false' }, w); var u = mk('use', { href: '#mm-head', width: 128, height: 128 }, s); u.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#mm-head'); return w;
+  }
   function installHeadSymbol() { var hs = holo({ head: true }); var sp = mk('svg', { width: 0, height: 0, style: 'position:absolute', 'aria-hidden': 'true' }); var sy = mk('symbol', { id: 'mm-head', viewBox: '36 46 128 128' }, sp); [].slice.call(hs.childNodes).forEach(function (n) { sy.appendChild(n); }); D.body.appendChild(sp); }
   function drawBackground() {
     var s = mk('svg', { viewBox: '0 0 400 380', preserveAspectRatio: 'xMidYMin slice' }); var seed = 7; function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
@@ -174,12 +214,16 @@
 
   /* ---------- schermate e navigazione ---------- */
   var view = 'home';
-  function setView(v) {
+  function setView(v, o) {
+    if (v !== view) { capture(); if (!(o && o.noPush)) prevView = view; }
     view = v; $('mmRoot').setAttribute('data-view', v); closeMenu();
     $('navChat').setAttribute('aria-current', v === 'home' || v === 'chat' ? 'page' : 'false'); $('navHist').setAttribute('aria-current', v === 'hist' ? 'page' : 'false'); $('navAtl').setAttribute('aria-current', 'false');
     if (v === 'home') renderHome(); if (v === 'chat') render(); if (v === 'hist') renderHistory(); if (v === 'set') renderSettings();
-    var vw = { home: 'vHome', chat: 'mmChat', hist: 'vHist', set: 'vSet' }[v]; if (v !== 'chat') $(vw).scrollTop = 0;
+    var vw = SCR[v]; if (v !== 'chat') $(vw).scrollTop = 0;
+    ui.view = v; ui.prev = prevView; uiSave();
   }
+  // Indietro: torna alla schermata da cui si proveniva (non chiude l'assistente)
+  function goBack() { stopSpeaking(); var t = prevView; if (t === view || ['home', 'chat', 'hist', 'set'].indexOf(t) < 0 || (t === 'chat' && !hasChat())) t = hasChat() && view !== 'chat' ? 'chat' : 'home'; prevView = 'home'; setView(t, { noPush: true }); }
   function hasChat() { var s = store.current(); return !!(s && s.messages.length); }
   function openLink(link) {
     if (!host) { banner('Per aprire le schede usa Miss Minutes dall’app TVA Archives.'); return; }
@@ -279,18 +323,22 @@
 
   // Decide se la domanda merita l'AI online (spiegazioni, confronti, ragionamenti, seguiti) o basta il motore locale
   var APP_INTENTS = /^(avanzamento|mancanti|progress|missing|live|classifiche|ratings|amici|friends|gioca|play|episodi|episodes|missioni|missions|saluto|personale|consigli|advice|scheda-?utente)/;
+  // Con l'AI online attiva l'archivio locale risponde solo alle richieste semplici (scheda anagrafica, dato puntuale, dati dell'app);
+  // domande teoriche, comparative, ipotetiche, sul futuro o contestuali vanno a Gemini con l'archivio come contesto.
+  var COMPLEX = /\b(perche|come mai|come funziona|differenz\w*|confront\w*|parago\w*|contro|vs|versus|vinc\w+|batt\w+|sconfigg\w+|perd\w+|piu forte|piu potente|piu veloce|spiega\w*|raccont\w+|riassum\w+|teori\w*|ipotes\w*|indiscrezion\w*|rumor\w*|leak\w*|secondo te|pensi|credi|cosa succede\w*|cosa accad\w*|succeder\w*|accader\w*|sara|saranno|diventer\w*|torner\w*|morir\w*|apparir\w*|potrebbe|potrebbero|futuro|retcon|saga|evento|fumett\w+|easter egg|riferiment\w+|collegament\w+|connession\w+|ordine|da dove|conviene|canon\w*|origine|origini|storia|trama|significa\w*|ruolo|importanza|dopo|prima di|doomsday|secret wars)\b/;
+  var SIMPLE = /^(chi e|chi sono|chi era|cos e|cosa e|che cos e|cosa sono|che poteri|quali poteri|poteri di|scheda|mostra|apri|dimmi di|parlami di|dove si trova|quando e uscit\w*|chi ha interpretato|chi interpreta|chi ha creato|quanti|quante|quali sono i miei)\b/;
   function needsDepth(q, ans, s) {
-    if (ans.needsOnline || ans.confidence < 0.6) return true;
+    if (ans.needsOnline) return true;
     if (ans.personal || APP_INTENTS.test(String(ans.intent || ''))) return false;
     var n = eng.norm(q), words = n.split(' ').filter(Boolean).length;
-    if (ans.intent === 'confronto') return true;
-    if (/\b(perche|come mai|come funziona|differenza|differenze|confronta\w*|paragona\w*|contro|vs|vincerebbe|piu forte|piu potente|spiega\w*|raccont\w+|riassum\w+|teoria|teorie|secondo te|pensi|cosa succede|cosa succedera|futuro|retcon|saga|evento|fumett\w+|easter egg|riferiment\w+|collegament\w+|connession\w+|ordine|da dove|conviene|canon\w*|ipotes\w+|origine|storia)\b/.test(n)) return true;
+    if (ans.intent === 'confronto' || COMPLEX.test(n)) return true;
     var prev = s && s.messages ? s.messages.slice(-3, -1) : [];
     var follow = prev.some(function (m) { return m.role === 'assistant' && m.tag && m.tag.indexOf('online') === 0; });
     var refer = /\b(lui|lei|loro|lo|la|li|le|quello|quella|quelli|questo|questa|invece|anche|ancora|poi|altrimenti|confrontali|confrontalo|e se|e lui|e lei|prima)\b/.test(n);
     if (follow && words <= 12 && (refer || !eng.find(q, 1).length)) return true;
-    if (words >= 9) return true;
-    return false;
+    if (ans.confidence < 0.75) return true;
+    if (SIMPLE.test(n) && words <= 6) return false;
+    return words >= 5;
   }
 
   function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
@@ -319,14 +367,15 @@
 
   /* attesa e anomalie */
   function clearTransient() { if (waitNode) { waitNode.remove(); waitNode = null; } if (errNode) { errNode.remove(); errNode = null; } }
+  function abortWait() { if (waitCtl) waitCtl.abort(); }
+  // Attesa compatta dentro la conversazione: i messaggi precedenti restano visibili; Interrompi anche nella barra di input
   function showWait(online) {
     clearTransient();
-    var w = el('div', 'mm-state wait'); w.setAttribute('role', 'status');
-    var m = el('div', 'mm-mascot-big'); m.appendChild(bigMascot('think')); w.appendChild(m);
-    w.appendChild(el('h3', 'wt', 'Consulto gli archivi del Multiverso…'));
-    w.appendChild(el('p', '', online ? 'Attendo la risposta dell’AI online.' : 'Cerco nell’archivio locale.'));
-    var bar = el('div', 'mm-bar-ind'); bar.setAttribute('role', 'progressbar'); bar.setAttribute('aria-label', 'Elaborazione in corso'); bar.appendChild(el('i')); w.appendChild(bar);
-    var st = btn('mm-bigbtn sub', null); st.appendChild(ic('stop')); st.appendChild(el('span', '', 'Interrompi')); st.onclick = function () { if (waitCtl) waitCtl.abort(); }; w.appendChild(st);
+    var w = el('div', 'mm-think'); w.setAttribute('role', 'status'); w.setAttribute('aria-live', 'polite');
+    w.appendChild(avatar('think'));
+    var tx = el('div', 'tx'); tx.appendChild(el('b', 'wt', 'Consulto gli archivi del Multiverso…')); tx.appendChild(el('small', '', online ? 'Attendo la risposta dell’AI online.' : 'Cerco nell’archivio locale.'));
+    var bar = el('div', 'mm-bar-ind'); bar.setAttribute('role', 'progressbar'); bar.setAttribute('aria-label', 'Elaborazione in corso'); bar.appendChild(el('i')); tx.appendChild(bar); w.appendChild(tx);
+    var st = btn('stopmini', 'Interrompi la risposta'); st.appendChild(ic('stop')); st.appendChild(el('span', '', 'Interrompi')); st.onclick = abortWait; w.appendChild(st);
     $('mmChat').appendChild(w); waitNode = w; scrollEnd();
   }
   var ERR = {
@@ -359,7 +408,7 @@
     if (e.code !== 'pending') { var dg = btn('mm-link', null); dg.textContent = 'Dettagli tecnici nella Diagnostica'; dg.onclick = function () { setView('set'); diagnostics(); }; w.appendChild(dg); }
     $('mmChat').appendChild(w); errNode = w; scrollEnd();
   }
-  function setBusy(b) { busy = b; $('mmSend').disabled = b; }
+  function setBusy(b) { busy = b; $('mmSend').disabled = b; $('mmSend').hidden = b; $('mmStop').hidden = !b; $('mmRoot').classList.toggle('busy', b); }
 
   function makeTitle(q) { var t = String(q).replace(/\s+/g, ' ').trim().replace(/[?!.]+$/, ''); t = t.charAt(0).toUpperCase() + t.slice(1); if (t.length > 48) { t = t.slice(0, 48); t = t.replace(/\s+\S*$/, '') + '…'; } return t || 'Nuova conversazione'; }
 
@@ -369,7 +418,7 @@
     var s = store.current() || store.fresh(q);
     if (!s.messages.length) s.title = makeTitle(q);
     store.push(s, { role: 'user', text: q, personal: eng.isPersonal(q) }); store.save();
-    $('mmQ').value = ''; stopSpeaking();
+    $('mmQ').value = ''; ui.draft = ''; stopSpeaking();
     if (view !== 'chat') setView('chat'); else { dropRegenButtons(); appendLive({ role: 'user', text: q }); }
     return answer(q, s, opts);
   }
@@ -383,9 +432,9 @@
     msg = { role: 'assistant', text: ans.text, refs: ans.refs || [], tag: ans.personal ? 'dati locali' : 'archivio locale', flair: ans.flair };
     var cited = [];
     if (wantOnline) {
-      $('mmSub').textContent = $('mmSubChat').textContent = 'Consulto l’AI online…'; mood('think'); showWait(true);
+      mood('think'); showWait(true);
       var o = await askOnline(q, s);
-      clearTransient(); $('mmSub').textContent = $('mmSubChat').textContent = subtitle();
+      clearTransient();
       if (o.ok) { cited = o.cited; msg = { role: 'assistant', text: o.text, refs: o.refs, tag: 'online · AI · non verificato' + (p.spoiler ? ' · spoiler non garantiti' : '') }; }
       else if (o.code === 'aborted') { msg.tag = 'archivio locale (attesa interrotta)'; msg.action = { label: 'Riprova con l’AI online', run: function () { retryOnline(q); } }; banner('Attesa interrotta: ecco l’archivio locale.'); }
       else { setBusy(false); mood('idle'); render(); showError(o, q); return; }
@@ -437,7 +486,7 @@
       };
       r.appendChild(o); r.appendChild(ed); r.appendChild(x); list.appendChild(r);
     });
-    box.appendChild(el('p', 'mm-note', 'La cronologia resta su questo dispositivo e non viene inviata a nessuno.'));
+    box.appendChild(el('p', 'mm-note', 'L’archivio completo delle conversazioni resta su questo dispositivo. Con AI online e memoria contestuale attive, i messaggi più recenti (fino a 6, esclusi quelli sui tuoi dati personali) e le schede pertinenti possono essere inviati a Gemini per rispondere.'));
   }
   function rename(row, s) {
     while (row.firstChild) row.removeChild(row.firstChild);
@@ -486,8 +535,8 @@
     linkRow(g3, 'info', 'Informazioni e crediti', VERSION + ' · Holographic Intelligence', about);
     b.appendChild(g3);
   }
-  function updateSub() { var t = subtitle(); $('mmSub').textContent = t; $('mmSubChat').textContent = t; }
-  function subtitle() { return onlineOK() ? 'Assistente del Multiverso · AI online' : 'Assistente del Multiverso · archivio locale'; }
+  function updateSub() { var on = onlineOK(); $('mmRoot').setAttribute('data-ai', on ? 'on' : 'off'); var t = 'Assistente del Multiverso'; $('mmSub').textContent = t; $('mmSubChat').textContent = t; var lab = on ? 'AI online attiva' : 'Modalità locale'; $('mmSub').title = lab; $('mmSubChat').title = lab; if (view === 'home') renderHome(); }
+  function subtitle() { return 'Assistente del Multiverso'; }
   function consent() {
     dlg('Attivare l’AI online?', function (b) {
       b.appendChild(el('p', '', 'Per rispondere a domande aperte, Miss Minutes invia a un servizio AI di Google (Gemini, piano gratuito) la tua domanda, fino a 5 schede pubbliche dell’archivio e gli ultimi messaggi della chat.'));
@@ -502,10 +551,10 @@
     dlg('Privacy e consenso', function (b) {
       b.appendChild(el('p', '', 'Con l’AI online attiva, a Google (Gemini, piano gratuito) vengono inviati: la tua domanda, fino a 5 schede pubbliche dell’archivio e gli ultimi messaggi della chat non personali.'));
       b.appendChild(el('p', '', 'Non vengono mai inviati titoli visti, voti, note, amici, progressi o altri dati personali. Le domande sui tuoi dati restano sempre sul dispositivo.'));
-      b.appendChild(el('p', 'mm-small', 'Nel piano gratuito Google può usare i contenuti inviati per migliorare i propri prodotti: non scrivere informazioni private. La cronologia resta in questo browser.'));
+      b.appendChild(el('p', 'mm-small', 'Nel piano gratuito Google può usare i contenuti inviati per migliorare i propri prodotti: non scrivere informazioni private. L’archivio completo delle conversazioni resta in questo browser; a Gemini arrivano solo i messaggi recenti quando AI online e memoria contestuale sono attive.'));
       var w = el('div', 'mm-dlg-actions');
       if (store.state.prefs.consent) { var rv = btn('', null); rv.textContent = 'Revoca il consenso'; rv.onclick = function () { store.state.prefs.consent = false; store.state.prefs.online = false; store.save(); $('mmDlg').close(); banner('Consenso revocato: AI online disattivata.'); updateSub(); renderSettings(); }; w.appendChild(rv); }
-      var cl = btn('', null); cl.textContent = 'Cancella cronologia'; cl.onclick = function () { if (cl.getAttribute('data-arm') === 'true') { store.clear(); store.save(); $('mmDlg').close(); toast('Cronologia cancellata'); return; } cl.setAttribute('data-arm', 'true'); cl.textContent = 'Tocca di nuovo per confermare'; };
+      var cl = btn('', null); cl.textContent = 'Cancella cronologia'; cl.onclick = function () { if (cl.getAttribute('data-arm') === 'true') { store.clear(); store.save(); wipeUi(); $('mmDlg').close(); toast('Cronologia cancellata'); return; } cl.setAttribute('data-arm', 'true'); cl.textContent = 'Tocca di nuovo per confermare'; };
       w.appendChild(cl); b.appendChild(w);
     });
   }
@@ -526,6 +575,9 @@
       if (!d.ok) L.push('Codice: ' + d.code + ' · stadio: ' + (d.stage || '-') + ' · HTTP: ' + (d.http || '-') + (d.detail ? ' · ' + d.detail : ''));
       else L.push('Marcatori scheda nella risposta grezza: ' + d.markers, 'Parole ripetute adiacenti — risposta grezza: ' + d.dupRaw + ' · testo mostrato: ' + d.dupShown);
     }
+    L.push('Avvii della pagina: ' + ui.boots + ' · ripristino schermata: ' + (ui.restored ? 'sì' : 'no'));
+    var ev = ui.life.slice(-6).map(function (x) { var d = new Date(x.t); return x.e + '@' + ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2) + ':' + ('0' + d.getSeconds()).slice(-2); });
+    L.push('Ultimi eventi: ' + (ev.join(', ') || '-'));
     return L.join('\n');
   }
   function diagnostics() {
@@ -583,6 +635,22 @@
     $('mmAvChat').appendChild(avatar().firstChild);
     store = window.MMStore.create(window.localStorage);
     gw = makeGw();
+    uiLoad(); ui.boots = (ui.boots || 0) + 1; var navT = ''; try { var ne = performance.getEntriesByType('navigation')[0]; navT = ne ? ne.type : ''; } catch (e) {}
+    var hadState = !!ui.t; life('avvio:' + (navT || '?') + (hadState ? ':con-stato' : ':nuovo'));
+    // ciclo di vita: il salvataggio avviene a ogni uscita dal primo piano (iOS puo' scartare la pagina senza altri avvisi)
+    D.addEventListener('visibilitychange', function () { flushUi('visibilita:' + D.visibilityState); });
+    window.addEventListener('pagehide', function (e) { flushUi('pagehide' + (e.persisted ? ':bfcache' : '')); });
+    window.addEventListener('pageshow', function (e) { life('pageshow' + (e.persisted ? ':bfcache' : '')); });
+    window.addEventListener('blur', function () { flushUi('blur'); }); window.addEventListener('focus', function () { life('focus'); });
+    D.addEventListener('freeze', function () { flushUi('freeze'); }); D.addEventListener('resume', function () { life('resume'); });
+    var tmr = null; function later(f) { clearTimeout(tmr); tmr = setTimeout(f, 250); }
+    ['vHome', 'mmChat', 'vHist', 'vSet'].forEach(function (id) { $(id).addEventListener('scroll', function () { later(function () { flushUi(); }); }, { passive: true }); });
+    $('mmQ').addEventListener('input', function () { later(function () { flushUi(); }); });
+    // tastiera iOS: la barra inferiore cede spazio mentre si scrive
+    maxH = window.innerHeight;
+    function kbCheck() { var f = D.activeElement, typing = f && (f.id === 'mmQ' || f.id === 'mmSearch' || (f.tagName === 'INPUT' && f.type !== 'checkbox')); maxH = Math.max(maxH, window.innerHeight); var small = window.innerHeight < maxH - 120; $('mmRoot').classList.toggle('kb', !!(typing && small)); if (typing && small && view === 'chat') scrollEnd(); }
+    window.addEventListener('resize', kbCheck); D.addEventListener('focusin', function () { setTimeout(kbCheck, 250); }); D.addEventListener('focusout', function () { setTimeout(kbCheck, 120); });
+    window.addEventListener('orientationchange', function () { setTimeout(function () { maxH = window.innerHeight; kbCheck(); }, 400); });
     try { var ar = await fetch('mascot/manifest.json', { cache: 'no-store' }); if (ar.ok) { var aj = await ar.json(); if (aj && typeof aj === 'object' && aj.idle) ART = aj; } } catch (e) { ART = null; }
     buildHome();
     var kc = []; try { var r = await fetch('knowledge/core.json'); kc = (await r.json()).records || []; } catch (e) { banner('Archivio locale non caricato: riapri Miss Minutes.'); }
@@ -600,22 +668,28 @@
     $('mmHist').onclick = function () { setView('hist'); }; $('mmSet').onclick = function () { setView('set'); };
     $('navChat').onclick = function () { setView(hasChat() ? 'chat' : 'home'); }; $('navHist').onclick = function () { setView('hist'); };
     $('navAtl').onclick = function () { openLink('tab:atlante'); };
-    $('mmBack').onclick = function () { stopSpeaking(); setView('home'); };
-    $('mmClose').onclick = closeApp; $('mmSetClose').onclick = closeApp;
+    ['mmBack', 'mmBackHist', 'mmBackSet'].forEach(function (id) { $(id).onclick = goBack; });
+    ['mmClose', 'mmCloseChat', 'mmCloseHist', 'mmSetClose'].forEach(function (id) { $(id).onclick = function () { stopSpeaking(); flushUi('chiusura'); closeApp(); }; });
+    $('mmStop').onclick = abortWait;
     $('mmMenu').onclick = function () { if (!$('mmMenuBox').hidden) return closeMenu(); openMenu($('mmMenu'), [
       { icon: 'plus', label: 'Nuova conversazione', run: newChat }, { icon: 'history', label: 'Cronologia', run: function () { setView('hist'); } },
-      { icon: 'gear', label: 'Impostazioni', run: function () { setView('set'); } }, { icon: 'close', label: 'Torna a TVA Archives', run: closeApp }]); };
+      { icon: 'gear', label: 'Impostazioni', run: function () { setView('set'); } }, { icon: 'close', label: 'Chiudi Miss Minutes', run: closeApp }]); };
     $('mmHistMenu').onclick = function () { if (!$('mmMenuBox').hidden) return closeMenu(); openMenu($('mmHistMenu'), [
       { icon: 'plus', label: 'Nuova conversazione', run: newChat },
-      { icon: 'trash', label: 'Cancella tutta la cronologia', run: function () { dlg('Cancellare la cronologia?', function (b) { b.appendChild(el('p', '', 'Tutte le conversazioni salvate su questo dispositivo verranno eliminate. L’operazione non si può annullare.')); var y = btn('', null); y.textContent = 'Cancella tutto'; y.onclick = function () { store.clear(); store.save(); $('mmDlg').close(); renderHistory(); toast('Cronologia cancellata'); }; var w = el('div', 'mm-dlg-actions'); w.appendChild(y); b.appendChild(w); }); } },
-      { icon: 'close', label: 'Torna a TVA Archives', run: closeApp }]); };
+      { icon: 'trash', label: 'Cancella tutta la cronologia', run: function () { dlg('Cancellare la cronologia?', function (b) { b.appendChild(el('p', '', 'Tutte le conversazioni salvate su questo dispositivo verranno eliminate. L’operazione non si può annullare.')); var y = btn('', null); y.textContent = 'Cancella tutto'; y.onclick = function () { store.clear(); store.save(); wipeUi(); $('mmDlg').close(); renderHistory(); toast('Cronologia cancellata'); }; var w = el('div', 'mm-dlg-actions'); w.appendChild(y); b.appendChild(w); }); } },
+      { icon: 'close', label: 'Chiudi Miss Minutes', run: closeApp }]); };
     $('mmSearch').oninput = renderHistory;
     $('mmDlgClose').onclick = function () { $('mmDlg').close(); };
     D.addEventListener('click', function (e) { var box = $('mmMenuBox'); if (!box.hidden && !box.contains(e.target) && !(box._anchor && box._anchor.contains(e.target))) closeMenu(); });
     D.addEventListener('keydown', function (e) { if (e.key !== 'Escape') return; if (!$('mmMenuBox').hidden) { closeMenu(); return; } if (!$('mmDlg').open) { try { host && host.close(); } catch (x) {} } });
     if (!store.usable()) banner('Memoria locale non disponibile: la cronologia non sarà salvata.');
-    setView('home');
-    try { window.__mm = { ask: submit, engine: eng, store: store, view: function () { return view; }, diag: function () { return diag.last; }, resolveRefs: resolveRefs }; } catch (e) {}
+    // ripristino: schermata, bozza e scorrimento (mai una nuova chat senza richiesta esplicita)
+    var start = ['home', 'chat', 'hist', 'set'].indexOf(ui.view) >= 0 ? ui.view : 'home'; if (start === 'chat' && !hasChat()) start = 'home';
+    prevView = ['home', 'chat', 'hist', 'set'].indexOf(ui.prev) >= 0 ? ui.prev : 'home';
+    if (ui.draft) $('mmQ').value = String(ui.draft).slice(0, 600);
+    ui.restored = !!(hadState && (start !== 'home' || ui.draft));
+    setView(start, { noPush: true }); if (ui.restored) restoreScroll(start);
+    try { window.__mm = { ask: submit, engine: eng, store: store, view: function () { return view; }, diag: function () { return diag.last; }, resolveRefs: resolveRefs, go: function (v) { setView(v); }, ui: function () { return ui; }, back: goBack }; } catch (e) {}
   }
   init();
 })();

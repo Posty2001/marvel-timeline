@@ -1,5 +1,5 @@
 /* Miss Minutes mm5 — Holographic Intelligence. Nero profondo + ambra TVA. Solo CSS locale (CSP: style-src 'self'). */
-:root{--bg:#060403;--bg2:#0d0905;--panel:#140e08;--panel2:#1c130a;--line:rgba(245,154,35,.28);--line2:rgba(245,154,35,.55);--fg:#f4e8d3;--mut:#b8a283;--dim:#7d6b52;--acc:#f59a23;--acc2:#ffc766;--hot:#ff7a1a;--ok:#9bd37b;--usr:#2a1b0c;--glow:0 0 18px rgba(245,154,35,.28);color-scheme:dark}
+:root{--bg:#060403;--bg2:#0d0905;--panel:#140e08;--panel2:#1c130a;--line:rgba(245,154,35,.28);--line2:rgba(245,154,35,.55);--fg:#f4e8d3;--mut:#cdb894;--dim:#a39070;--acc:#f59a23;--acc2:#ffc766;--hot:#ff7a1a;--ok:#9bd37b;--usr:#2a1b0c;--glow:0 0 18px rgba(245,154,35,.28);color-scheme:dark}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;margin:0;background:var(--bg)}
 body{color:var(--fg);font:16px/1.5 -apple-system,"SF Pro Text","Avenir Next","Segoe UI",Roboto,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overscroll-behavior:none}
@@ -249,3 +249,72 @@ dialog input[type=url],dialog input[type=text]{flex:1;min-width:0;background:#0b
 [data-state=puzzled] .o-eye{transform:translateX(2px)}
 @media (prefers-reduced-motion:reduce){.o-orbit,.o-hand-h,.o-hand-m,.o-eye,.holo-float,.holo-flick,.holo-sweep,.holo-ring,.holo-ring2{animation:none!important}}
 .mm-srow:has(.seg){flex-wrap:wrap}.mm-srow:has(.seg) .t{flex:1 1 60%}.mm-srow:has(.seg) .seg{flex:1 1 100%;margin-left:calc(1.6em + 14px)}
+
+/* ===== mm6 ===== */
+/* intestazioni uniformi: [indietro/logo] [titolo] [azioni] [X] */
+.mm-top{gap:0;padding-bottom:6px}
+.hd{gap:8px}
+.mm-ibtn{width:40px;height:40px}
+.mm-ibtn.mm-x{border-color:var(--line2);color:var(--acc2);background:rgba(245,154,35,.14)}
+.mm-ibtn.flat{color:var(--fg)}
+.mm-logo{pointer-events:none;cursor:default}
+.mm-ttl h1{font-size:.95rem;letter-spacing:.1em}
+.mm-ttl p{color:var(--mut)}
+.hd .mm-av{width:38px;height:38px}
+.mm[data-ai=on] .mm-ttl p:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ok);margin-right:6px;box-shadow:0 0 7px var(--ok);vertical-align:1px}
+@media (max-width:360px){.mm-logo small{display:none}.mm-ttl h1{letter-spacing:.05em;font-size:.88rem}.hd{gap:5px}.mm-ibtn{width:38px;height:38px}}
+.mm-av svg{overflow:hidden}
+/* home compatta */
+.mm-hero{min-height:196px;margin:0 0 2px}
+.mm-hero .mm-mascot-big{flex:0 0 40%;max-width:158px}
+.mm-bubble{padding:11px 12px 10px}
+.mm-bubble h2{font-size:1.2rem;margin-bottom:4px}
+.mm-bubble p{font-size:.88rem;margin:1px 0}
+.mm-wave{height:16px;margin-top:6px}
+.mm-sect{margin:8px 0 8px}
+.mm-topic{margin-bottom:8px}
+.mm-topic>button{min-height:46px;padding:8px 14px}
+.mm-note{color:var(--mut)}
+/* attesa nella chat */
+.mm-think{display:flex;gap:10px;align-items:center;margin:12px 0 4px;padding:10px 12px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(160deg,rgba(40,24,8,.72),rgba(14,9,5,.85));box-shadow:var(--glow)}
+.mm-think .mm-av{width:46px;height:46px;border-color:var(--line2)}
+.mm-think .tx{flex:1;min-width:0}
+.mm-think .tx b{display:block;color:var(--acc2);font-size:.92rem}
+.mm-think .tx small{display:block;color:var(--mut);font-size:.78rem;margin-top:1px}
+.mm-think .mm-bar-ind{width:100%;height:6px;margin:7px 0 0}
+.mm-think .stopmini{display:flex;align-items:center;gap:6px;padding:8px 12px;border-radius:12px;border:1.5px solid var(--line2);color:var(--acc2);font-size:.85rem;font-weight:700;flex:none;min-height:40px}
+.mm-think .stopmini .ic{width:1.1em;height:1.1em}
+.mm-stop{display:grid}
+.mm-stop[hidden],.mm-send[hidden]{display:none}
+.mm-state .mm-mascot-big{width:min(46%,160px)}
+.mm-state h3{font-size:1.3rem}
+/* tastiera iOS / viewport dinamica: durante la digitazione la barra inferiore cede lo spazio */
+.mm.kb .mm-nav{display:none}
+.mm.kb .mm-hero{min-height:0}
+.mm.kb .mm-hero .mm-mascot-big{display:none}
+.mm-views{overscroll-behavior:contain}
+.mm-view{overscroll-behavior:contain;scroll-padding-bottom:16px}
+/* mascotte: arti, guanti e gambe */
+.m-arm-r,.m-arm-l,.m-leg-l,.m-leg-r{transform-box:view-box}
+.m-arm-r{transform-origin:154px 96px;animation:wave 3.6s ease-in-out infinite}
+.m-arm-l{transform-origin:46px 96px;animation:wave2 5.2s ease-in-out infinite}
+.m-leg-l{transform-origin:88px 148px;animation:step 4.4s ease-in-out infinite}
+.m-leg-r{transform-origin:112px 148px;animation:step 4.4s ease-in-out infinite 2.2s}
+@keyframes wave2{0%,100%{transform:rotate(0)}50%{transform:rotate(6deg)}}
+@keyframes step{0%,100%{transform:rotate(0)}50%{transform:rotate(3deg)}}
+@keyframes gest{to{transform:rotate(-16deg)}}
+@keyframes gest2{to{transform:rotate(14deg)}}
+@keyframes panic{to{transform:rotate(-32deg)}}
+[data-state=think] .m-arm-r,[data-state=puzzled] .m-arm-r{animation:none;transform:rotate(-153deg)}
+[data-state=talk] .m-arm-r{animation:gest .55s ease-in-out infinite alternate}
+[data-state=talk] .m-arm-l{animation:gest2 .75s ease-in-out infinite alternate}
+[data-state=err] .m-arm-r{animation:panic .28s ease-in-out infinite alternate}
+[data-state=err] .m-arm-l{animation:none;transform:rotate(26deg)}
+[data-state=tired] .m-arm-r{animation:none;transform:rotate(72deg)}
+[data-state=tired] .m-arm-l{animation:none;transform:rotate(-72deg)}
+[data-state=tired] .m-leg-l,[data-state=tired] .m-leg-r{animation:none}
+@media (prefers-reduced-motion:reduce){.m-arm-r,.m-arm-l,.m-leg-l,.m-leg-r{animation:none!important}}
+.mm-ttl p{overflow:visible;text-overflow:clip}
+.mm-ttl{overflow:visible}
+@media (max-height:700px){.mm-hero{min-height:158px}.mm-hero .mm-mascot-big{max-width:116px}.mm-bubble p+p{display:none}.mm-bubble h2{font-size:1.08rem}.mm-wave{display:none}.mm-sect{margin:4px 0 6px}.mm-topic>button{min-height:42px;padding:6px 12px}.mm-topic{margin-bottom:6px}.mm-note{display:none}}
+@media (max-width:420px){.hd-home .mm-logo{display:none}}

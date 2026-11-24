@@ -68,10 +68,7 @@ with sync_playwright() as p:
     a = ask('<img src=x onerror=window.__pwn=1> Chi è Thor?'); ok('input HTML non eseguito', frame.evaluate("()=>!window.__pwn&&!document.querySelector('.mm-msg img')"))
     def view(): return frame.evaluate("()=>window.__mm.view()")
     def go_home():
-        for _ in range(4):
-            v = view()
-            if v == 'home': return
-            frame.click('#mmBack' if v == 'chat' else '#navChat'); pg.wait_for_timeout(200)
+        frame.evaluate("()=>window.__mm.go('home')"); pg.wait_for_timeout(150)
     def to_set():
         go_home(); frame.click('#mmSet'); pg.wait_for_timeout(300)
     def wait_idle(): pg.wait_for_timeout(100); frame.wait_for_function("()=>!document.getElementById('mmSend').disabled", timeout=20000); pg.wait_for_timeout(400)
@@ -95,7 +92,7 @@ with sync_playwright() as p:
     saved = pg.evaluate("()=>localStorage.getItem('marvel-ultimate-timeline-miss-minutes-v1')"); ok('cronologia salvata in locale', saved and 'Loki' in saved and 'Titolo di prova' in saved)
     frame.locator('.mm-row >> text=Titolo di prova').first.click(); pg.wait_for_timeout(300); ok('cronologia: apre la conversazione', view() == 'chat' and frame.locator('.mm-msg').count() >= 2)
     # impostazioni
-    frame.click('#mmBack'); frame.click('#mmSet'); pg.wait_for_timeout(300)
+    to_set()
     ok('impostazioni: tutti i controlli', all(frame.locator('#set-' + k).count() == 1 for k in ['online', 'local', 'memory', 'voice', 'cite', 'spoiler']) and frame.locator('.seg button').count() == 3)
     frame.locator('.seg button >> text=Brevi').click(); pg.wait_for_timeout(200)
     ok('impostazioni: lunghezza salvata', '"length":"short"' in pg.evaluate("()=>localStorage.getItem('marvel-ultimate-timeline-miss-minutes-v1')").replace(' ', ''))
@@ -113,7 +110,7 @@ with sync_playwright() as p:
     ok('marcatori: titolo solo dopo parola funzione, mai duplicato', rr == ['Il potere di Loki è enorme.', 'Venom è un simbionte.', 'Nella continuità dei fumetti Gorr colpisce.'], rr)
     # con endpoint configurato: riavvia il frame con config simulata
     ctx.route('**/miss-minutes/config.js', lambda r: r.fulfill(status=200, content_type='application/javascript', body="globalThis.MISS_MINUTES_CONFIG=Object.freeze({endpoint:'https://miss-minutes-api.test.workers.dev'});"))
-    pg.reload(wait_until='load'); pg.wait_for_timeout(1200); pg.evaluate(START); pg.wait_for_timeout(500); pg.click('#mmFab'); pg.wait_for_timeout(2000)
+    pg.reload(wait_until='load'); pg.wait_for_timeout(1200); pg.evaluate(START); pg.wait_for_timeout(500); (pg.click('#mmFab') if pg.locator('#mmOverlay.on').count() == 0 else None); pg.wait_for_timeout(2000)
     frame = [f for f in pg.frames if 'miss-minutes' in f.url][0]; frame.wait_for_function("()=>window.__mm&&window.__mm.engine")
     to_set(); frame.locator('#set-online').click(force=True); pg.wait_for_timeout(400)
     ok('consenso richiesto prima dell\'attivazione', 'Attivare l’AI online' in frame.inner_text('#mmDlgBody') and 'Non vengono inviati titoli visti' in frame.inner_text('#mmDlgBody'))
@@ -142,9 +139,10 @@ with sync_playwright() as p:
     frame.locator('.mm-state.err >> text=Consulta l’archivio locale').click(); wait_idle()
     ok('archivio locale dopo anomalia', frame.locator('.mm-state').count() == 0 and 'locale' in frame.evaluate("()=>[...document.querySelectorAll('.mm-tag')].pop().textContent") and nuser(q2) == 1)
     GW['mode'] = 'hang'; frame.fill('#mmQ', q2 + ' tre'); frame.click('#mmSend'); pg.wait_for_timeout(800)
-    ok('attesa: pannello senza percentuali né passi simulati', frame.locator('.mm-state.wait').count() == 1 and '%' not in frame.inner_text('.mm-state.wait') and frame.locator('.mm-state.wait .mm-bar-ind').count() == 1)
-    frame.locator('.mm-state.wait >> text=Interrompi').click(); wait_idle()
-    ok('attesa interrompibile', frame.locator('.mm-state.wait').count() == 0 and 'interrotta' in frame.inner_text('#mmBanner').lower())
+    ok('attesa compatta nella chat: messaggi precedenti visibili, nessun pannello invasivo', frame.locator('.mm-think').count() == 1 and frame.locator('.mm-state.wait').count() == 0 and frame.locator('.mm-msg').count() >= 3 and frame.locator('.mm-msg').first.is_visible() or frame.locator('.mm-msg.user').last.is_visible())
+    ok('attesa: senza percentuali né passi simulati, Interrompi nella barra e nella chat', '%' not in frame.inner_text('.mm-think') and frame.locator('.mm-think .mm-bar-ind').count() == 1 and frame.locator('#mmStop').is_visible() and not frame.locator('#mmSend').is_visible() and frame.locator('.mm-think >> text=Interrompi').is_visible())
+    frame.click('#mmStop'); wait_idle()
+    ok('attesa interrompibile', frame.locator('.mm-think').count() == 0 and 'interrotta' in frame.inner_text('#mmBanner').lower() and frame.locator('#mmSend').is_visible() and nuser(q2 + ' tre') == 1)
     GW['mode'] = 'ok'
     # rigenera
     frame.locator('button[aria-label="Rigenera la risposta"]').last.click() if frame.locator('button[aria-label="Rigenera la risposta"]').count() else None
