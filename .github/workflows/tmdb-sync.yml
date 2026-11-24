@@ -41,13 +41,17 @@ on:
         description: TVA Live 1.1 - identificativo di correlazione impostato dallo scheduler (lasciare vuoto a mano)
         type: string
         default: ''
+      live_recover_from:
+        description: TVA Live RECUPERO di emergenza - SHA di un commit precedente di questo branch con un catalogo valido; con live_commit lo ripristina con generated_at nuovo (senza TMDB)
+        type: string
+        default: ''
 
 permissions:
   contents: read
 
 jobs:
   sync:
-    if: ${{ !(inputs.solo_live_build && inputs.live_commit) }}
+    if: ${{ !((inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit) }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -60,6 +64,7 @@ jobs:
           python-version: '3.12'
 
       - name: Verifica presenza del secret (senza stamparlo)
+        if: ${{ inputs.live_recover_from == '' }}
         env:
           TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
@@ -140,7 +145,7 @@ jobs:
 
   live-update:
     # Aggiornamento automatico del CATALOGO (solo dati). Pubblicazione dell app = operazione separata.
-    if: ${{ inputs.solo_live_build && inputs.live_commit }}
+    if: ${{ (inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -175,8 +180,20 @@ jobs:
             exit 1
           fi
 
+      - name: RECUPERO - ripristina un catalogo noto e valido (solo se richiesto)
+        id: rec
+        if: ${{ inputs.live_recover_from != '' }}
+        env:
+          REC_SHA: ${{ inputs.live_recover_from }}
+          LIVE_DRY: ${{ inputs.live_dry_run }}
+        run: |
+          args=(--from "$REC_SHA" --out live-update-out --github-output "$GITHUB_OUTPUT")
+          if [ "$LIVE_DRY" = "true" ]; then args+=(--dry-run); fi
+          python3 tools/live_recover.py "${args[@]}"
+
       - name: Genera, valida e decidi (nessuna scrittura se rifiutato o invariato)
         id: upd
+        if: ${{ inputs.live_recover_from == '' }}
         env:
           TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
@@ -194,7 +211,7 @@ jobs:
           if [ -f live-update-out/SUMMARY.md ]; then cat live-update-out/SUMMARY.md >> "$GITHUB_STEP_SUMMARY"; fi
 
       - name: Commit dei soli dati su test/tva-archives
-        if: ${{ !inputs.live_dry_run && (steps.upd.outputs.result == 'update' || steps.upd.outputs.result == 'heartbeat') }}
+        if: ${{ !inputs.live_dry_run && (steps.upd.outputs.result == 'update' || steps.upd.outputs.result == 'heartbeat' || steps.rec.outputs.result == 'recovery') }}
         run: bash tools/live_git_commit.sh live-update-out/COMMIT_MSG.txt origin
 
       - name: Salva candidato, report e (se rifiutato) i dati bloccati

@@ -278,6 +278,27 @@ with sync_playwright() as pw:
     ok('segui: persistenza invariata dopo ricarica', 'tmdb:movie:1' in (jl(pg, PK) or {}).get('followed', []))
     ok('rifiniture: nessun errore JS', not pg.errs, pg.errs)
     ctx.close()
+    # ---------- mercati: la data italiana ha priorita, le date ufficiali degli altri mercati stanno nei dettagli ----------
+    reset_state()
+    for i in STATE['cal']:
+        if i['key'] == 'tmdb:movie:7':
+            i.update(dateBasis='IT', dateTMDB=d(400), officialDates=[
+                {'market': 'UK', 'date': d(400), 'channel': 'Marvel Entertainment', 'url': 'https://www.youtube.com/watch?v=AAAAAAAAAAA', 'title': 'x'},
+                {'market': 'US', 'date': d(402), 'channel': 'Marvel Entertainment', 'url': 'javascript:alert(1)', 'title': 'y'},
+                {'market': 'ZZ', 'date': d(403), 'url': 'https://evil.example/', 'title': 'z'}], confidence='provisional')
+            i['sources'] = [i['sources'][-1]]
+    ctx = new_ctx(b); pg = open_page(ctx); go_live(pg)
+    r = pg.locator('.tvl-row[data-key="tmdb:movie:7"]')
+    ok('mercati: badge Provvisorio e etichetta data italiana', r.locator('.tvl-t-prov').count() == 1 and r.locator('.tvl-mk').inner_text() == 'Italia')
+    r.locator('button:has-text("Perché")').click(); pg.wait_for_timeout(150)
+    t = r.inner_text()
+    ok('mercati: dettagli con date ufficiali per mercato (UK, USA), mercato sconosciuto scartato', 'Regno Unito' in t and 'USA' in t and 'ZZ' not in t)
+    ok('mercati: avviso "non conferma la data italiana"', 'non conferma la data italiana' in t)
+    hrefs = r.locator('.tvl-det a').evaluate_all("els=>els.map(e=>e.href)")
+    ok('mercati: solo link https verso host noti (niente javascript:)', all(h.startswith('https://www.youtube.com/') or h.startswith('https://www.themoviedb.org/') for h in hrefs) and not any('javascript' in h or 'evil' in h for h in hrefs), hrefs)
+    STATE['cal'][1].update(dateBasis='TMDB')
+    ok('mercati: nessun errore JS', not pg.errs, pg.errs)
+    ctx.close()
     ctx.close(); b.close()
 bad = [n for n, c in res if not c]
 print('\nRISULTATO: %d ok, %d falliti' % (len(res) - len(bad), len(bad)))

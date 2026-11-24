@@ -76,3 +76,7 @@ Correzione:
 - `sw.js`: i soli `.json` serviti dalla cache portano `X-TVA-From-Cache: 1` (mai navigazioni, redirect, risposte opache; resto invariato).
 - App: un puntatore con quella intestazione e una copia verificata ma NON una verifica online (fonte `cache`, motivo "rete non raggiungibile"). "Aggiornamento online verificato" solo se il puntatore e stato letto dalla rete; mostra l'orario. In copia salvata mostra l'ultima verifica online reale (`at`, registrata solo in caso di lettura live).
 - Eventi `online`/`offline` e rientro in primo piano ricontrollano la fonte (cambio di connettivita, 30 min, tentativo precedente fallito); con `navigator.onLine === false` e dati in memoria compare l'avviso "ora offline".
+
+## Regola dei mercati e recupero (build 20261124-0240-final)
+- **Conferma per mercato** (`tools/tva_live_build.py`): il mercato di un video ufficiale si legge dal TITOLO (UK, USA, Italia, altro paese, non qualificato). Un film e "Confermato" solo con una fonte ufficiale per l'Italia; una serie anche con un video non qualificato per paese; mai con quello di un solo altro paese. La data italiana (`dateIT`) ha priorita (`date`), la data TMDB resta in `dateTMDB`; `dateBasis` = IT|TMDB|GLOBAL; `officialDates` elenca le date ufficiali per mercato (mostrate in "Perche?").
+- **Recupero di emergenza**: `tools/live_recover.py` + input `live_recover_from` di `tmdb-sync.yml` + `publish_only` dello scheduler. Procedura completa e rollback: `docs/TVA_LIVE_ROLLBACK.md`.

@@ -13,6 +13,10 @@ on:
         description: Prova a secco - esegue tutti i controlli ma non scrive e non fa commit
         type: boolean
         default: false
+      publish_only:
+        description: RECUPERO - non rigenera nulla - ripubblica il catalogo GIA presente sul branch TEST (dopo un ripristino con live_recover_from)
+        type: boolean
+        default: false
 
 permissions: {}                     # nessun permesso di default; ogni job dichiara solo il necessario
 
@@ -41,6 +45,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.TVA_DISPATCH_TOKEN }}
           DRY_RUN: ${{ inputs.dry_run == true && 'true' || 'false' }}
+          PUBLISH_ONLY: ${{ inputs.publish_only == true && 'true' || 'false' }}
         run: |
           set -uo pipefail
           fail() { echo "::error::$1"; { echo "outcome=${2:-error}"; echo "verified=false"; } >> "$GITHUB_OUTPUT"; summary "ERRORE" "$1"; exit 1; }
@@ -49,6 +54,19 @@ jobs:
           [ -n "${GH_TOKEN:-}" ] || fail "Secret TVA_DISPATCH_TOKEN mancante: crealo in Settings > Secrets and variables > Actions."
           main_before="$(gh api "repos/$TARGET_REPO/commits/main" --jq .sha)" || fail "Token non valido o scaduto, oppure repository non raggiungibile."
           head_before="$(gh api "repos/$TARGET_REPO/commits/$TARGET_REF" --jq .sha)" || fail "Branch $TARGET_REF non raggiungibile."
+
+          # 0) RECUPERO: nessuna rigenerazione. Si pubblica il catalogo che il branch TEST contiene gia, solo se manifest e status.json sono coerenti tra loro.
+          if [ "$PUBLISH_ONLY" = "true" ]; then
+            rd0() { gh api "repos/$TARGET_REPO/contents/assets/live/$1?ref=$head_before" --jq .content | base64 -d; }
+            bh="$(rd0 manifest.json | jq -r '.content_hash // ""')" || bh=""
+            sh="$(rd0 status.json | jq -r '.content_hash // ""')" || sh=""
+            [ -n "$bh" ] && [ "$bh" = "$sh" ] || fail "Recupero: manifest ($bh) e status.json ($sh) non coerenti sul branch. Nulla pubblicato."
+            echo "outcome=republish" >> "$GITHUB_OUTPUT"; echo "content_hash=$bh" >> "$GITHUB_OUTPUT"
+            if [ "$DRY_RUN" = "true" ]; then echo "verified=false" >> "$GITHUB_OUTPUT"; summary "PROVA A SECCO: ripubblicazione" "Dati coerenti (hash $bh). Nulla pubblicato (prova a secco)."; exit 0; fi
+            [ "$(gh api "repos/$TARGET_REPO/commits/main" --jq .sha)" = "$main_before" ] || fail "main e cambiato durante l esecuzione: verificare subito."
+            echo "verified=true" >> "$GITHUB_OUTPUT"; echo "head_sha=$head_before" >> "$GITHUB_OUTPUT"
+            summary "RIPUBBLICAZIONE" "Ripubblicato il catalogo gia presente sul branch TEST (hash $bh), senza rigenerarlo. L app lo accetta solo se il suo generated_at e piu recente di quello gia visto."; exit 0
+          fi
 
           # 1) Avvio, con identificativo di correlazione (nome del run) per ritrovare esattamente questo run.
           did="${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"

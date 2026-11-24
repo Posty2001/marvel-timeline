@@ -27,6 +27,7 @@ DATE_RE = re.compile(r'^\d{4}-\d{2}-\d{2}$')
 SECRETS = [v for v in (os.environ.get('TMDB_READ_TOKEN'), os.environ.get('TMDB_API_KEY')) if v]
 ATOM = {'a': 'http://www.w3.org/2005/Atom', 'yt': 'http://www.youtube.com/xml/schemas/2015', 'media': 'http://search.yahoo.com/mrss/'}
 MONTHS = {m: i + 1 for i, m in enumerate(['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'])}
+MONTHS.update({m: i + 1 for i, m in enumerate(['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'])})   # titoli ufficiali in italiano
 MONTHS.update({k[:3]: v for k, v in list(MONTHS.items())})
 MONTHS['sept'] = 9
 
@@ -153,6 +154,40 @@ def dates_in_text(text, ref_year):
     return out
 
 
+# ------------------------------------------------------------------ mercati (conferma valida solo per il mercato della data)
+MARKET_L = {'IT': 'Italia', 'UK': 'Regno Unito', 'US': 'USA', 'GLOBAL': 'internazionale', 'XX': 'altro mercato'}
+MARKET_RE = [
+    ('UK', re.compile(r'\b(uk|u\.k\.|united kingdom|british|britain)\b', re.I)),
+    ('XX', re.compile(r'\b(australia|canada|india|france|germany|spain|brazil|brasil|japan|korea|mexico|ireland|new zealand|philippines|singapore|hong kong|china)\b', re.I)),
+    ('US', re.compile(r'\bin\s+theaters\b|\b(usa|u\.s\.|united states|north america)\b', re.I)),
+]
+IT_MONTHS = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic']
+
+
+def market_of(title):
+    """Mercato dichiarato dal TITOLO del video ufficiale. Senza qualificatore: GLOBAL. Il testo libero della descrizione NON conta."""
+    t = title or ''
+    if re.search(r'\b(italia|italy|italian[oa]?)\b', t, re.I):
+        return 'IT'
+    for m, rx in MARKET_RE:
+        if rx.search(t):
+            return m
+    return 'GLOBAL'
+
+
+def fmt_it(d):
+    y, m, dd = d.split('-')
+    return '%d %s %s' % (int(dd), IT_MONTHS[int(m) - 1], y)
+
+
+def confirming_market(kind, market):
+    """Un film ha date diverse per mercato: la data mostrata e quella italiana, quindi solo una fonte ufficiale per l Italia la conferma.
+    Una serie in streaming ha una data unica: la conferma una fonte ufficiale per l Italia o non qualificata per paese (non quella di un solo altro paese)."""
+    if market == 'IT':
+        return True
+    return kind != 'movie' and market in ('GLOBAL', 'US')
+
+
 # ------------------------------------------------------------------ TMDB -> voci calendario
 def is_placeholder(date, cfg):
     return bool(date) and date[5:] in cfg['placeholder_dates_mmdd']
@@ -252,7 +287,7 @@ def build_calendar(tmdb, cfg, idx, today, manual, official_text_by_title, log):
         category = 'animazione' if c['animation_genre_id'] in genres else ('film' if kind == 'movie' else 'serie')
         warn = ['tmdb_canceled'] if (kind == 'tv' and status == 'Canceled') else []
         src = [{'name': 'TMDB', 'url': 'https://www.themoviedb.org/%s/%d' % (kind, tid), 'official': False}]
-        cand = []   # (key, kind, date, dateIT, season, poster)
+        cand = []   # (key, kind, date, dateIT, season, poster, dateTMDB)
         if kind == 'movie':
             rel = {}
             for ctry in ((d.get('release_dates') or {}).get('results') or []):
@@ -260,17 +295,17 @@ def build_calendar(tmdb, cfg, idx, today, manual, official_text_by_title, log):
                     ds = sorted((x.get('release_date') or '')[:10] for x in ctry.get('release_dates', []) if x.get('type') in (2, 3) and x.get('release_date'))
                     rel[ctry['iso_3166_1']] = ds[0] if ds else None
             date = d.get('release_date') or rel.get('US') or None
-            cand.append((key0, 'movie', date or None, rel.get('IT'), None, poster))
+            cand.append((key0, 'movie', rel.get('IT') or date or None, rel.get('IT'), None, poster, date or None))
         else:
             for s in d.get('seasons') or []:
                 n, ad = s.get('season_number'), s.get('air_date')
                 if not isinstance(n, int) or n < 1 or not ad or not (d0 <= ad <= d1):
                     continue
-                cand.append(('%s:S%02d' % (key0, n), 'series' if n == 1 and not in_tl else 'season', ad, None, n, s.get('poster_path') or poster))
+                cand.append(('%s:S%02d' % (key0, n), 'series' if n == 1 and not in_tl else 'season', ad, None, n, s.get('poster_path') or poster, ad))
             ne = d.get('next_episode_to_air') or {}
             if not cand and ne.get('air_date') and d0 <= ne['air_date'] <= d1 and ne.get('season_number'):
                 n = ne['season_number']
-                cand.append(('%s:S%02d' % (key0, n), 'season', ne['air_date'], None, n, poster))
+                cand.append(('%s:S%02d' % (key0, n), 'season', ne['air_date'], None, n, poster, ne['air_date']))
         if kind == 'tv':     # diagnostica: lo stato generale della serie NON e una prova; contano stagioni/episodi datati
             ne0 = d.get('next_episode_to_air') or {}
             log.setdefault('tv_diagnostics', []).append({'key': key0, 'title': title, 'status': status, 'in_production': d.get('in_production'), 'last_air': d.get('last_air_date'),
@@ -279,19 +314,27 @@ def build_calendar(tmdb, cfg, idx, today, manual, official_text_by_title, log):
             if not cand and status == 'Canceled':
                 excluded.append({'key': key0, 'title': title, 'reason': 'Stato TMDB Canceled e nessuna stagione/episodio con data nella finestra: dati insufficienti (non inserito, non e una prova di cancellazione)'})
                 continue
-        for key, ikind, date, date_it, season, post in cand:
+        for key, ikind, date, date_it, season, post, date_tmdb in cand:
             if date and not (d0 <= date <= d1):
                 continue
             nt = norm(title)
             yr = int((date or today)[:4])
-            odates = set()
+            odates, ev = set(), []      # odates: date che confermano per questo mercato; ev: tutte le date ufficiali per mercato (dettagli)
             for ttl, txts in official_text_by_title.items():
                 if len(nt) >= 4 and len(ttl) >= 4 and (nt in ttl or ttl in nt):
                     for t in txts:
-                        odates |= dates_in_text(t['text'], yr)
-                        if date in dates_in_text(t['text'], yr):
+                        mk = market_of(t.get('title') or '')
+                        text_dates, title_dates = dates_in_text(t['text'], yr), dates_in_text(t.get('title') or '', yr)
+                        for dd in sorted(title_dates | ({date} & text_dates)):
+                            if d0 <= dd <= d1 and not any(x['market'] == mk and x['date'] == dd and x['url'] == t['url'] for x in ev):
+                                ev.append({'market': mk, 'date': dd, 'channel': t['channel'], 'url': t['url'], 'title': (t.get('title') or '')[:120]})
+                        if date in text_dates and confirming_market(ikind, mk):
+                            odates.add(date)
                             src.append({'name': 'YouTube - ' + t['channel'], 'url': t['url'], 'official': True})
             state, conf, prec, reason = classify_tmdb(date, status, today, odates, cfg['tmdb'])
+            others = [e for e in ev if not (confirming_market(ikind, e['market']) and e['date'] == date)]
+            if state == 'upcoming' and conf != 'confirmed' and others:
+                reason += '. Fonti ufficiali per altri mercati, non valide per l Italia: ' + '; '.join('%s %s' % (MARKET_L.get(e['market'], e['market']), fmt_it(e['date'])) for e in others[:4])
             if warn and state != 'released':
                 reason += '. Attenzione: TMDB segna la serie come cancellata ma riporta una stagione/episodio con data: da verificare con una fonte ufficiale'
             if state == 'released' and (dt.date.fromisoformat(today) - dt.date.fromisoformat(date)).days > cfg['window']['past_days']:
@@ -301,7 +344,9 @@ def build_calendar(tmdb, cfg, idx, today, manual, official_text_by_title, log):
                 'key': key, 'kind': ikind, 'title': title if season is None else '%s - Stagione %d' % (title, season),
                 'date': date, 'precision': prec, 'window': None, 'dateIT': date_it, 'state': state, 'confidence': conf, 'reason': reason,
                 'timelineId': link_timeline(idx, kind, tid, season), 'tmdb': {'type': kind, 'id': tid, **({'season': season} if season else {})},
-                'poster': post, 'sources': src[:3], 'signals': sorted(sigs), 'missing': missing, 'category': category, 'warnings': warn}
+                'poster': post, 'sources': src[:3], 'signals': sorted(sigs), 'missing': missing, 'category': category, 'warnings': warn,
+                'dateBasis': ('IT' if date_it else 'TMDB') if ikind == 'movie' else 'GLOBAL', 'dateTMDB': date_tmdb,
+                'officialDates': sorted(ev, key=lambda x: (x['date'], x['market']))[:6]}
     # voci manuali (verificate): annunci senza data o titoli assenti in TMDB
     for e in manual.get('entries') or []:
         k = e['key']
@@ -311,7 +356,7 @@ def build_calendar(tmdb, cfg, idx, today, manual, official_text_by_title, log):
             hit = items.get(tk) or next((v for kk, v in items.items() if kk.startswith(tk + ':S')), None)
             if hit:                              # dedup: la voce manuale arricchisce quella TMDB, non la duplica
                 hit['sources'].insert(0, {'name': e['source_name'], 'url': e['source_url'], 'official': True})
-                if e.get('date') == hit['date']:
+                if e.get('date') == hit['date'] and confirming_market(hit['kind'], e.get('market') or 'GLOBAL'):
                     hit.update(confidence='confirmed', reason='Data riportata da fonte ufficiale (voce manuale verificata il %s)' % e['verified_on'])
                 log.setdefault('manual_merged', []).append(k)
                 continue
@@ -481,7 +526,7 @@ def build_trailers(cfg, fetch, today, log):
             out.append({'key': 'yt:' + e['id'], 'title': ttl, 'published': e['published'], 'url': e['url'] or 'https://www.youtube.com/watch?v=' + e['id'],
                         'channel': ch['label'], 'kind': kind, 'official': True, 'relatesTo': None, 'category': cat, 'categoryBasis': basis, '_desc': e['desc']})
             if cat != 'videogioco':          # un video di videogioco non conferma date di film/serie
-                official_text.setdefault(title_base(ttl), []).append({'text': ttl + ' ' + e['desc'], 'url': e['url'], 'channel': ch['label']})
+                official_text.setdefault(title_base(ttl), []).append({'text': ttl + ' ' + e['desc'], 'title': ttl, 'url': e['url'], 'channel': ch['label']})
     cut = (dt.date.fromisoformat(today) - dt.timedelta(days=yt['retention_days'])).isoformat()
     out = sorted([t for t in out if t['published'] >= cut], key=lambda t: t['published'], reverse=True)[:yt['max_items']]
     log['youtube_identity'] = ident

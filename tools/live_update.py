@@ -121,6 +121,8 @@ def carry_trailers(cand, cur):
     for n, i in enumerate(items):          # senza il feed ufficiale le conferme precedenti (stessa data) non vengono declassate
         o = cm.get(i['key'])
         if o and o.get('confidence') == 'confirmed' and i.get('confidence') != 'confirmed' and o.get('date') == i.get('date'): items[n] = o
+        elif o and o.get('date') == i.get('date') and o.get('confidence') == i.get('confidence') and o.get('officialDates') and not i.get('officialDates'):
+            items[n] = dict(i, officialDates=o['officialDates'], reason=o.get('reason') or i.get('reason'), sources=o.get('sources') or i.get('sources'))   # senza il feed le date ufficiali per mercato gia note non spariscono
     m = cand['manifest']; m['sources']['youtube'] = dict(m['sources'].get('youtube') or {}, status='stale', count=len(keep))
     m['counts']['trailers'] = len(keep)
     m['counts']['trailers_by_category'] = {str(c): sum(1 for t in keep if t.get('category') == c) for c in B.CATEGORIES + (None,)}

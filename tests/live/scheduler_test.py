@@ -35,13 +35,13 @@ if a[:2] == ['run', 'download']:
     D = a[a.index('-D') + 1]; json.dump(S['result'], open(os.path.join(D, 'RESULT.json'), 'w')); sys.exit(0)
 sys.exit(9)
 '''
-def run(sc, dry=False):
+def run(sc, dry=False, po=False):
     d = tempfile.mkdtemp(); b = os.path.join(d, 'bin'); os.makedirs(b)
     for n, body in (('gh', GH), ('sleep', '#!/bin/sh\nexit 0\n')):
         open(os.path.join(b, n), 'w').write(body); os.chmod(os.path.join(b, n), 0o755)
     json.dump(sc, open(os.path.join(d, 'sc.json'), 'w')); go = os.path.join(d, 'out'); open(go, 'w').close(); sm = os.path.join(d, 'sum'); open(sm, 'w').close()
     env = dict(os.environ, PATH=b + ':' + os.environ['PATH'], SC=os.path.join(d, 'sc.json'), SD=d, GITHUB_OUTPUT=go, GITHUB_STEP_SUMMARY=sm, GITHUB_RUN_ID='77', GITHUB_RUN_ATTEMPT='1',
-               GH_TOKEN=sc.get('token', 'github_pat_FAKE_SECRET_VALUE'), DRY_RUN='true' if dry else 'false', TARGET_REPO='Posty2001/marvel-timeline', TARGET_REF='test/tva-archives', TARGET_WORKFLOW='tmdb-sync.yml')
+               GH_TOKEN=sc.get('token', 'github_pat_FAKE_SECRET_VALUE'), DRY_RUN='true' if dry else 'false', PUBLISH_ONLY='true' if po else 'false', TARGET_REPO='Posty2001/marvel-timeline', TARGET_REF='test/tva-archives', TARGET_WORKFLOW='tmdb-sync.yml')
     p = subprocess.run(['bash', '-c', script], env=env, capture_output=True, text=True, timeout=60)
     outs = dict(l.split('=', 1) for l in open(go).read().splitlines() if '=' in l)
     cl = os.path.join(d, 'calls.log')
@@ -57,7 +57,7 @@ def sc(result, conclusion='success', **kw):
 
 ok('struttura: cron giornaliero + avvio manuale con dry_run', ON.keys() == {'schedule', 'workflow_dispatch'} and re.match(r'^\d+ \d+ \* \* \*$', ON['schedule'][0]['cron']) and 'dry_run' in ON['workflow_dispatch']['inputs'])
 ok('permessi: globali vuoti, job update senza permessi, solo keepalive con contents: write', Y['permissions'] == {} and Y['jobs']['update']['permissions'] == {} and Y['jobs']['keepalive']['permissions'] == {'contents': 'write'})
-ok('branch bersaglio fisso (non e un input) e mai main come ref', Y['env']['TARGET_REF'] == 'test/tva-archives' and set(ON['workflow_dispatch']['inputs']) == {'dry_run'} and '--ref main' not in src)
+ok('branch bersaglio fisso (non e un input) e mai main come ref', Y['env']['TARGET_REF'] == 'test/tva-archives' and set(ON['workflow_dispatch']['inputs']) == {'dry_run', 'publish_only'} and '--ref main' not in src)
 ok('token solo da secrets.TVA_DISPATCH_TOKEN; nessuna stampa del token; nessun upload di artifact', 'secrets.TVA_DISPATCH_TOKEN' in src and not re.search(r'echo[^\n]*GH_TOKEN|upload-artifact|github_pat_|ghp_', src, re.I))
 ok('keepalive parte anche se update fallisce e solo da cron', 'always()' in Y['jobs']['keepalive']['if'] and 'schedule' in Y['jobs']['keepalive']['if'])
 ok('nessun contesto non fidato interpolato nello script (solo env/costanti)', '${{ github.event' not in script and '${{ inputs' not in script)
@@ -102,6 +102,17 @@ ok('tmdb-sync.yml espone gli input usati dallo scheduler', all(k in TI for k in 
 ok('tmdb-sync.yml: run-name con correlazione e dry-run senza commit', "run-name:" in tsrc and "format('TVA Live update {0}', inputs.dispatch_id)" in tsrc and '!inputs.live_dry_run &&' in tsrc)
 ok('il titolo cercato dallo scheduler coincide con il run-name del workflow', 'title="TVA Live update $did"' in script)
 ok('tmdb-sync.yml: permessi invariati (globale read, write solo in live-update)', T['permissions'] == {'contents': 'read'} and T['jobs']['live-update']['permissions'] == {'contents': 'write'} and 'permissions' not in T['jobs']['sync'])
+
+# ---- RECUPERO: ripubblicazione senza rigenerare (publish_only)
+rc, o, sm, lg, calls = run(sc('update'), po=True)
+ok('recupero: coerente -> verified=true, head_sha del branch, nessun nuovo workflow avviato', rc == 0 and o.get('verified') == 'true' and o.get('head_sha') == 'h1' and o.get('outcome') == 'republish' and 'workflow run' not in calls, (rc, o, calls))
+rc, o, sm, lg, calls = run(sc('update', branch={'manifest.json': {'content_hash': H}, 'status.json': {'content_hash': 'sha256:diverso', 'result': 'recovery'}}), po=True)
+ok('recupero: manifest e status incoerenti -> rifiutato, nulla pubblicato', rc == 1 and o.get('verified') == 'false', (rc, o))
+rc, o, sm, lg, calls = run(sc('update'), dry=True, po=True)
+ok('recupero: in prova a secco non pubblica mai', rc == 0 and o.get('verified') == 'false' and 'workflow run' not in calls, (rc, o))
+rc, o, sm, lg, calls = run(sc('update', main=['m1', 'm2']), po=True)
+ok('recupero: se main cambia durante il run -> rifiutato', rc == 1 and o.get('verified') == 'false', (rc, o))
+ok('recupero: nessun token nei log', 'github_pat_FAKE_SECRET_VALUE' not in lg + sm)
 bad = [n for n, c in RES if not c]
 print('\n%d/%d PASS' % (len(RES) - len(bad), len(RES)))
 for n in bad: print('FAIL: ' + n)

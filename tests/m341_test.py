@@ -19,7 +19,7 @@ with sync_playwright() as p:
     b=p.chromium.launch()
     # 1 standard
     cx,pg=ctx(b); start(pg); ck('standard (nessuna modalita salvata): Spider-Man, come prima',nid(pg)=='001' and shown(pg)=='Spider-Man',(nid(pg),shown(pg)))
-    snap0=pg.evaluate("()=>JSON.stringify(Object.fromEntries(Object.keys(localStorage).filter(k=>k.startsWith('marvel-ultimate')).sort().map(k=>[k,localStorage.getItem(k)])))")
+    snap0=pg.evaluate("()=>JSON.stringify(Object.fromEntries(Object.keys(localStorage).filter(k=>k.startsWith('marvel-ultimate')&&!/-live-(state|remote)-v1$/.test(k)).sort().map(k=>[k,localStorage.getItem(k)])))")
     # 2 cambio modalita da UI
     pg.evaluate("()=>{altTimelineToggle.checked=true;altTimelineToggle.dispatchEvent(new Event('change',{bubbles:true}))}"); pg.wait_for_timeout(500)
     pg.evaluate("()=>localStorage.setItem('%s',JSON.stringify([4,2,1,3,5]))"%ORD)
@@ -41,7 +41,7 @@ with sync_playwright() as p:
     ck('persistenza dopo ricarica: stessa modalita/ordine/suggerimento',nid(pg)==first and pg.evaluate("()=>localStorage.getItem('%s')"%MODE)=='custom',(nid(pg),first))
     pg.evaluate("()=>{altTimelineToggle.checked=true;altTimelineToggle.dispatchEvent(new Event('change',{bubbles:true}))}"); pg.wait_for_timeout(500)
     ck('alt timeline riapre sulla modalita salvata (Personalizzato attivo)',pg.evaluate("()=>document.querySelector('#atModes .at-mode-btn.at-mode-active').getAttribute('data-mode')")=='custom')
-    ck('nessuna modifica a progressi/voti/XP (solo le 2 chiavi timeline)',pg.evaluate("()=>JSON.stringify(Object.fromEntries(Object.keys(localStorage).filter(k=>k.startsWith('marvel-ultimate')).sort().map(k=>[k,localStorage.getItem(k)])))")==snap0)
+    ck('nessuna modifica a progressi/voti/XP (solo le 2 chiavi timeline)',pg.evaluate("()=>JSON.stringify(Object.fromEntries(Object.keys(localStorage).filter(k=>k.startsWith('marvel-ultimate')&&!/-live-(state|remote)-v1$/.test(k)).sort().map(k=>[k,localStorage.getItem(k)])))")==snap0)
     ck('nessun errore JS',not pg.errs,pg.errs); cx.close()
     # 5 completamento + vincoli
     cx,pg=ctx(b,{MODE:'custom',ORD:[4,2,1,3,5]}); start(pg)

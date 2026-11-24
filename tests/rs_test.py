@@ -22,7 +22,7 @@ with sync_playwright() as p:
     ok('build id', pg.evaluate("()=>document.querySelector('meta[name=tva-build]').content")=='20261023-1730-m342')
     ok('home visibile', pg.evaluate("()=>getComputedStyle(document.getElementById('homeHub')).display!=='none'"))
     ord=pg.evaluate("""()=>{const y=s=>{const e=document.querySelector(s);return e?e.getBoundingClientRect().top:-1};return {g:y('.home-hub-greeting'),h:y('#hhsNextRow'),n:y('.home-hub-nav'),s:y('.m34-stats'),a:y('#m34Atl'),m:y('#m34Mis')}}""")
-    ok('gerarchia home M3.4: saluto<prossimo<statistiche<accessi<missione', 0<ord['g']<ord['h']<ord['s']<ord['a']<ord['m'], ord)
+    ok('gerarchia home M3.4: saluto<prossimo<statistiche<missione (accessi rapidi Atlante/Tessera rimossi dalla Home: voluto, restano nella barra)', 0<ord['g']<ord['h']<ord['s']<ord['m'] and ord['a']==-1, ord)
     ok('progress bar home', pg.evaluate("()=>!!document.querySelector('.home-hub-greeting .rs-prog')"))
     ok('stat ids presenti', pg.evaluate("()=>['hhsRating','hhsDone','hhsHours','hhsNextValue','hhgPct'].every(i=>document.getElementById(i))"))
     pg.evaluate("()=>document.getElementById('m34MGo').click()"); pg.wait_for_timeout(700)
