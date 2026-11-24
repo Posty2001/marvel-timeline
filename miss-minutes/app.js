@@ -80,7 +80,7 @@
     var ctx = eng.contextFor(q, convState(s)); lastCtx = ctx;
     var hist = s.messages.slice(-9, -1).filter(function (m) { return (m.role === 'user' || m.role === 'assistant') && !m.personal; }).slice(-6).map(function (m) { return { role: m.role, text: m.text.slice(0, 800) }; });
     var r = await gw.ask({ question: q, history: hist, context: ctx, spoiler: store.state.prefs.spoiler ? 'avoid' : 'off' });
-    if (!r.ok) return { ok: false, message: r.message };
+    if (!r.ok) return { ok: false, message: r.message + (r.detail ? ' [' + r.stage + ' · ' + r.detail + ']' : '') };
     var rr = resolveRefs(r.answer, ctx);
     return { ok: true, text: rr.text, refs: rr.refs };
   }
@@ -148,6 +148,17 @@
         r.appendChild(inp); r.appendChild(sv); b.appendChild(r); b.appendChild(msg);
       }
       toggleRow(b, 'Leggi le risposte ad alta voce', 'voice', function (v) { store.state.prefs.voice = v; store.save(); if (!v) try { speechSynthesis.cancel(); } catch (e) {} });
+      if (gw.available()) {
+        var dg = el('button', '', 'Prova AI online (usa 1 richiesta)'); dg.type = 'button'; var dm = el('p', 'mm-small', 'Controlla gateway, sessione e risposta reale di Gemini.');
+        dg.onclick = async function () {
+          dg.disabled = true; dm.textContent = '1/2 gateway…'; var h = await gw.health();
+          if (!h.ok) { dm.textContent = 'Gateway: non raggiungibile o origine non autorizzata (CORS).'; dg.disabled = false; return; }
+          if (!h.enabled) { dm.textContent = 'Gateway raggiungibile ma AI spenta lato Cloudflare' + (h.missing && h.missing.length ? ' (manca: ' + h.missing.join(', ') + ')' : '') + '.'; dg.disabled = false; return; }
+          dm.textContent = '2/2 sessione e Gemini…'; var r = await gw.ask({ question: 'Rispondi solo con la parola OK.', history: [], context: [], spoiler: 'avoid' });
+          dm.textContent = r.ok ? 'Tutto funziona. Gemini ha risposto: «' + r.answer.slice(0, 60) + '»' : 'Fallito allo stadio «' + r.stage + '»: ' + r.message + (r.detail ? ' [' + r.detail + ']' : ''); dg.disabled = false;
+        };
+        b.appendChild(dg); b.appendChild(dm);
+      }
       var st = eng.stats(); b.appendChild(el('p', 'mm-small', 'Archivio locale: ' + st.entries + ' voci (' + st.curated + ' schede curate, riferimenti da verificare su fonti primarie). Dati dell’app: ' + (host ? 'collegati in sola lettura' : 'non collegati') + '.'));
     });
   }

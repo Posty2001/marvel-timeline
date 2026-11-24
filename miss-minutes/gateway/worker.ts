@@ -193,6 +193,17 @@ const callLimiter = async (env: Env, payload: Record<string, unknown>): Promise<
   return { status: r.status, json };
 };
 
+/** Dettaglio sicuro dell'errore Google: solo stato HTTP, codice e messaggio breve, con qualsiasi sequenza simile a una chiave oscurata. */
+const upstream = async (r: Response): Promise<{ http: number; status: string; message: string }> => {
+  let status = '', message = '';
+  try {
+    const j = JSON.parse((await r.text()).slice(0, 4000)) as { error?: { status?: string; message?: string } };
+    status = String(j.error?.status ?? '').replace(/[^A-Z_]/g, '').slice(0, 40);
+    message = String(j.error?.message ?? '').replace(/AIza[\w-]{10,}/g, '[chiave]').replace(/[\u0000-\u001f]/g, ' ').slice(0, 160);
+  } catch { /* corpo non JSON */ }
+  return { http: r.status, status, message };
+};
+
 /* ---------- handler ---------- */
 export default {
   async fetch(req: Request, env: Env): Promise<Response> {
@@ -292,10 +303,15 @@ export default {
       if (adm.status !== 200) return out(429, { error: 'quota', scope: String(adm.json.k || '') });
 
       const user = JSON.stringify({ domanda: input.question, schede: input.context });
-      const contents = [
-        ...input.history.map(m => ({ role: m.role === 'assistant' ? 'model' : 'user', parts: [{ text: m.text }] })),
-        { role: 'user', parts: [{ text: user }] },
-      ];
+      // Gemini richiede turni alternati user/model che iniziano da user: si scartano i modelli iniziali e si fondono i turni consecutivi
+      const contents: { role: 'user' | 'model'; parts: { text: string }[] }[] = [];
+      const turn = (role: 'user' | 'model', text: string): void => {
+        const last = contents[contents.length - 1];
+        if (!last && role !== 'user') return;
+        if (last && last.role === role) last.parts[0]!.text += '\n' + text; else contents.push({ role, parts: [{ text }] });
+      };
+      for (const m of input.history) turn(m.role === 'assistant' ? 'model' : 'user', m.text);
+      turn('user', user);
       try {
         const r = await fetch(
           `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(env.GEMINI_MODEL as string)}:generateContent`,
@@ -309,12 +325,17 @@ export default {
             }),
             signal: AbortSignal.timeout(20000),
           });
-        if (!r.ok) return out(r.status === 429 ? 429 : 502, { error: r.status === 429 ? 'provider-quota' : 'provider' });
+        if (!r.ok) {
+          const up = await upstream(r);
+          const code = r.status === 429 ? 'provider-quota' : r.status === 400 ? 'provider-request' : (r.status === 401 || r.status === 403) ? 'provider-auth' : r.status === 404 ? 'provider-model' : 'provider';
+          return out(r.status === 429 ? 429 : 502, { error: code, upstream: up });
+        }
         const j = (await r.json()) as { candidates?: { content?: { parts?: { text?: string; thought?: boolean }[] } }[] };
         const answer = (j.candidates?.[0]?.content?.parts || []).filter(p => !p.thought).map(p => p.text || '').join('').trim();
         return answer ? out(200, { answer: answer.slice(0, 4000) }) : out(502, { error: 'empty' });
-      } catch {
-        return out(502, { error: 'provider' });
+      } catch (e) {
+        const n = e instanceof Error ? e.name : '';
+        return out(502, { error: n === 'TimeoutError' || n === 'AbortError' ? 'provider-timeout' : 'provider-network' });
       }
     }
     return out(404, { error: 'notfound' });

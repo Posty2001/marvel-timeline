@@ -7,6 +7,8 @@
     quota: 'Limite giornaliero dell’AI online raggiunto: uso solo il motore locale.', 'provider-quota': 'Il servizio AI gratuito ha raggiunto il suo limite: uso il motore locale.',
     rate: 'Troppe richieste ravvicinate: riprova tra poco.', blocked: 'Troppi tentativi non validi da questa rete: riprova più tardi.',
     auth: 'Sessione non valida: riprovo al prossimo invio.', expired: 'Sessione scaduta: riprovo al prossimo invio.', provider: 'Il servizio AI non risponde: uso il motore locale.',
+    'provider-request': 'Google ha rifiutato la richiesta (formato non valido): uso il motore locale.', 'provider-auth': 'Google ha rifiutato la chiave AI (non valida o senza permessi): uso il motore locale.',
+    'provider-model': 'Il modello AI configurato non esiste o non è disponibile: uso il motore locale.', 'provider-timeout': 'Google non ha risposto in tempo: uso il motore locale.', 'provider-network': 'Il gateway non riesce a raggiungere Google: uso il motore locale.',
     empty: 'Risposta AI vuota: uso il motore locale.', size: 'Domanda troppo lunga.', input: 'Domanda non valida.', network: 'Gateway non raggiungibile: uso il motore locale.', timeout: 'Il gateway non ha risposto in tempo: uso il motore locale.'
   };
   function lz(bytes) { var n = 0; for (var i = 0; i < bytes.length; i++) { var b = bytes[i]; if (b === 0) { n += 8; continue; } n += Math.clz32(b) - 24; break; } return n; }
@@ -20,7 +22,7 @@
     var token = null, exp = 0, enc = new TextEncoder();
     try { var raw = store && JSON.parse(store.getItem(SK) || 'null'); if (raw && raw.exp > now() + 60 && typeof raw.token === 'string') { token = raw.token; exp = raw.exp; } } catch (e) {}
 
-    function err(code) { return { ok: false, code: code, message: MSG[code] || MSG.provider }; }
+    function err(code, stage, up, http) { var d = up ? 'HTTP ' + up.http + (up.status ? ' ' + up.status : '') + (up.message ? ': ' + up.message : '') : (http ? 'HTTP ' + http : ''); return { ok: false, code: code, stage: stage || 'chat', http: http || (up && up.http) || 0, detail: d, message: MSG[code] || MSG.provider }; }
     function timeout(ms) { if (typeof AbortSignal !== 'undefined' && AbortSignal.timeout) return AbortSignal.timeout(ms); var c = new AbortController(); setTimeout(function () { c.abort(); }, ms); return c.signal; }
     async function req(path, init) {
       try { var r = await f(endpoint + path, Object.assign({ signal: timeout(25000), credentials: 'omit', cache: 'no-store' }, init)); var j = null; try { j = await r.json(); } catch (e) {} return { status: r.status, json: j || {} }; }
@@ -37,10 +39,10 @@
     async function ensureSession() {
       if (token && exp > now() + 60) return { ok: true };
       var ch = await req('/v1/challenge', { method: 'GET' });
-      if (ch.status !== 200 || !ch.json.salt) return err(ch.status === 0 ? (ch.timeout ? 'timeout' : 'network') : (ch.json.error || 'provider'));
-      var n = await solve(ch.json); if (n === null) return err('provider');
+      if (ch.status !== 200 || !ch.json.salt) return err(ch.status === 0 ? (ch.timeout ? 'timeout' : 'network') : (ch.json.error || 'provider'), 'sfida', null, ch.status);
+      var n = await solve(ch.json); if (n === null) return err('provider', 'sfida');
       var s = await req('/v1/session', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ salt: ch.json.salt, ts: ch.json.ts, bits: ch.json.bits, sig: ch.json.sig, n: n }) });
-      if (s.status !== 200 || !s.json.token) return err(s.status === 0 ? 'network' : (s.json.error || 'provider'));
+      if (s.status !== 200 || !s.json.token) return err(s.status === 0 ? 'network' : (s.json.error || 'provider'), 'sessione', null, s.status);
       token = s.json.token; exp = s.json.exp;
       try { store && store.setItem(SK, JSON.stringify({ token: token, exp: exp })); } catch (e) {}
       return { ok: true };
@@ -51,9 +53,9 @@
       var r = await req('/v1/chat', { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token }, body: JSON.stringify(payload) });
       if (r.status === 200 && typeof r.json.answer === 'string') return { ok: true, answer: r.json.answer };
       if (r.status === 401) { token = null; exp = 0; try { store && store.removeItem(SK); } catch (e) {} }
-      return r.status === 0 ? err(r.timeout ? 'timeout' : 'network') : err(r.json.error || 'provider');
+      return r.status === 0 ? err(r.timeout ? 'timeout' : 'network', 'chat') : err(r.json.error || 'provider', r.json.error && /^provider/.test(r.json.error) ? 'gemini' : 'gateway', r.json.upstream, r.status);
     }
-    async function health() { if (!endpoint) return { ok: false, enabled: false }; var r = await req('/v1/health', { method: 'GET' }); return { ok: r.status === 200, enabled: !!r.json.enabled }; }
+    async function health() { if (!endpoint) return { ok: false, enabled: false }; var r = await req('/v1/health', { method: 'GET' }); return { ok: r.status === 200, enabled: !!r.json.enabled, missing: Array.isArray(r.json.missing) ? r.json.missing.slice(0, 6).map(String) : [] }; }
     return { ask: ask, health: health, available: function () { return !!endpoint; }, forget: function () { token = null; exp = 0; try { store && store.removeItem(SK); } catch (e) {} } };
   }
   var API = { create: create, MSG: MSG };
