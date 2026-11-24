@@ -275,7 +275,7 @@ Si registrano inoltre versione, commit, eventuale ZIP, problemi aperti e approva
 
 | N. | Funzionalità | Stato | Versione | Commit | ZIP | Problemi aperti | Approvazione utente |
 |---|---|---|---|---|---|---|---|
-| 01 | Miss Minutes – Intelligence Upgrade (mm5 Holographic Intelligence) | **In rifinitura** (non completata; serve l'approvazione dell'utente nell'app reale) | mm5 (`20261124-2330-mm5`) | `2596c6e` (app, `test/tva-archives`); gateway repo `tva-live-scheduler` `GW_MM5` | `NETLIFY_TEST_mm5.zip` (440 file, verificato conforme al branch) | Da fare dall'utente: rilanciare il workflow del gateway (prompt, `length`, `cite` cambiati), caricare lo ZIP su Netlify TEST, provare le sei schermate e i casi Gemini reali (503, Riprova, duplicati, precisione Marvel). Non verificato su iPhone/Safari reale: solo Chromium simulato a 390 px | No |
+| 01 | Miss Minutes – Intelligence Upgrade (mm5 Holographic Intelligence) | **In rifinitura** (non completata; serve l'approvazione dell'utente nell'app reale) | mm5 (`20261124-2330-mm5`) | `87879c5` (app, `test/tva-archives`); gateway repo `tva-live-scheduler` `GW_MM5` | `NETLIFY_TEST_mm5.zip` (440 file, verificato conforme al branch) | Da fare dall'utente: rilanciare il workflow del gateway (prompt, `length`, `cite` cambiati), caricare lo ZIP su Netlify TEST, provare le sei schermate e i casi Gemini reali (503, Riprova, duplicati, precisione Marvel). Non verificato su iPhone/Safari reale: solo Chromium simulato a 390 px | No |
 | 02 | Atlante 2.0 | Da sviluppare | — | — | — | Esistono già Atlante, dossier, mappa, cronologie, grafo relazioni (v. «Punti da chiarire») | No |
 | 03 | Marvel Database Expansion | Da sviluppare | — | — | — | Consistenza attuale del database da misurare prima di fissare la baseline | No |
 | 04 | Tessera TVA 3.0 | Da sviluppare (requisiti nuovi); base esistente da preservare | — | — | — | Verificare quali requisiti sono già coperti dal codice (nessuno considerato completato) | No |
@@ -349,5 +349,5 @@ Si registrano inoltre versione, commit, eventuale ZIP, problemi aperti e approva
 |---|---|---|
 | 24/11/2026 | Creazione del documento; nessuna modifica al codice applicativo | `d99d7fd` |
 | 24/11/2026 | Riallineamento branch locale/remoto (merge, no force push), pubblicazione commit Miss Minutes, verifica ZIP mm4, decisione Road to Doomsday, conferma area 12 | v. `git log` |
-| 24/11/2026 | Miss Minutes mm5 «Holographic Intelligence»: nuova interfaccia a sei schermate, affidabilità (retry limitato, Riprova, interruzione), fix duplicati, prompt di precisione, ZIP `NETLIFY_TEST_mm5.zip`; stato «in rifinitura»; Atlante 2.0 non avviato | `2596c6e` |
+| 24/11/2026 | Miss Minutes mm5 «Holographic Intelligence»: nuova interfaccia a sei schermate, affidabilità (retry limitato, Riprova, interruzione), fix duplicati, prompt di precisione, ZIP `NETLIFY_TEST_mm5.zip`; stato «in rifinitura»; Atlante 2.0 non avviato | `87879c5` |
 | 24/11/2026 | Integrate le decisioni dell'utente (Friends, Tessera 3.0, Firebase, Arcade/Arena), i requisiti recuperati, l'area 12 e la sezione Conteggi; solo documentazione | v. `git log -- docs/MASTER_ROADMAP.md` |
