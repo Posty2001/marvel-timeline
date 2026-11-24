@@ -325,8 +325,14 @@
 
     // schede da inviare al gateway: solo archivio pubblico, MAI dati personali; le schede spoiler sono escluse
     function contextFor(question, state) {
-      var ents = findEntities(ix, question, 6).filter(function (e) { return !e.spoiler && e.kind !== 'titolo'; });
-      return ents.slice(0, 4).map(function (e) {
+      // solo archivio pubblico, MAI dati personali; le schede spoiler restano escluse se la protezione e' attiva
+      var guard = !(state && state.spoilerOff);
+      var ok = function (e) { return e && (!guard || !e.spoiler) && e.kind !== 'titolo'; };
+      var ents = findEntities(ix, question, 6).filter(ok);
+      // domande di seguito ("e lui?", "confrontali"): si aggiungono le entita' dell'ultimo turno
+      var last = ((state && state.lastEntities) || []).map(function (id) { return ix.byId[id]; }).filter(ok);
+      last.forEach(function (e) { if (ents.indexOf(e) < 0) ents.push(e); });
+      return ents.slice(0, 5).map(function (e) {
         var txt = (e.text || '') + (e.host && e.host.power ? ' Poteri: ' + e.host.power : '') + (e.universe ? ' Universo: ' + e.universe : '') + (e.source ? ' Rif.: ' + e.source : '');
         return { id: e.id, title: e.name, text: txt.trim().slice(0, 700) };
       });

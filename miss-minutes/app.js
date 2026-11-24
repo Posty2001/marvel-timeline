@@ -34,10 +34,34 @@
   function speak(t) { try { if (!store.state.prefs.voice || !window.speechSynthesis) return; window.speechSynthesis.cancel(); var u = new SpeechSynthesisUtterance(t.replace(/\[[^\]]*\]/g, '').slice(0, 600)); u.lang = 'it-IT'; window.speechSynthesis.speak(u); } catch (e) {} }
 
   /* ---------- rendering ---------- */
+  // mini-formattazione sicura (solo DOM, niente HTML): titoli, elenchi, grassetto
+  function inline(parent, t) {
+    t = String(t).replace(/`/g, '');
+    t.split(/(\*\*[^*]+\*\*)/).forEach(function (p) {
+      if (!p) return;
+      if (/^\*\*[^*]+\*\*$/.test(p)) parent.appendChild(el('strong', '', p.slice(2, -2))); else parent.appendChild(D.createTextNode(p.replace(/\*/g, '')));
+    });
+  }
+  function rich(text) {
+    var root = el('div', 'mm-rich'), list = null, para = [];
+    function flush() { if (para.length) { var p = el('p'); inline(p, para.join(' ')); root.appendChild(p); para = []; } }
+    String(text).split(/\r?\n/).forEach(function (ln) {
+      var t = ln.trim(), m;
+      if (!t) { flush(); list = null; return; }
+      if ((m = /^#{1,4}\s+(.+)$/.exec(t))) { flush(); list = null; var h = el('div', 'mm-h'); inline(h, m[1]); root.appendChild(h); return; }
+      if ((m = /^(?:[-*•]|\d+[.)])\s+(.+)$/.exec(t))) {
+        flush(); var ord = /^\d/.test(t);
+        if (!list || list.tagName !== (ord ? 'OL' : 'UL')) { list = el(ord ? 'ol' : 'ul'); root.appendChild(list); }
+        var li = el('li'); inline(li, m[1]); list.appendChild(li); return;
+      }
+      list = null; para.push(t);
+    });
+    flush(); return root;
+  }
   function renderMsg(m, idx) {
     var d = el('div', 'mm-msg ' + (m.role === 'user' ? 'user' : 'assistant'));
     if (m.role !== 'user' && m.tag) d.appendChild(el('div', 'mm-tag' + (m.tag.indexOf('online') === 0 ? ' online' : ''), m.tag));
-    d.appendChild(el('div', '', m.text));
+    d.appendChild(m.role !== 'user' && m.tag && m.tag.indexOf('online') === 0 ? rich(m.text) : el('div', '', m.text));
     if (m.refs && m.refs.length) {
       var r = el('div', 'mm-refs');
       m.refs.forEach(function (x) { var b = el('button', 'mm-chip', x.label); b.type = 'button'; b.onclick = function () { open(x.link); }; r.appendChild(b); });
@@ -76,9 +100,25 @@
     return { text: out.trim(), refs: refs.filter(function (r, i, a) { return a.findIndex(function (z) { return z.link === r.link; }) === i; }).slice(0, 5) };
   }
 
+  // Decide se la domanda merita l'AI online (spiegazioni, confronti, ragionamenti, seguiti) o basta il motore locale
+  var APP_INTENTS = /^(avanzamento|mancanti|progress|missing|live|classifiche|ratings|amici|friends|gioca|play|episodi|episodes|missioni|missions|saluto|personale|consigli|advice|scheda-?utente)/;
+  function needsDepth(q, ans, s) {
+    if (ans.needsOnline || ans.confidence < 0.6) return true;
+    if (ans.personal || APP_INTENTS.test(String(ans.intent || ''))) return false;
+    var n = eng.norm(q), words = n.split(' ').filter(Boolean).length;
+    if (ans.intent === 'confronto') return true;
+    if (/\b(perche|come mai|come funziona|differenza|differenze|confronta\w*|paragona\w*|contro|vs|vincerebbe|piu forte|piu potente|spiega\w*|raccont\w+|riassum\w+|teoria|teorie|secondo te|pensi|cosa succede|cosa succedera|futuro|retcon|saga|evento|fumett\w+|easter egg|riferiment\w+|collegament\w+|connession\w+|ordine|da dove|conviene|canon\w*|ipotes\w+|origine|storia)\b/.test(n)) return true;
+    var prev = s && s.messages ? s.messages.slice(-3, -1) : [];
+    var follow = prev.some(function (m) { return m.role === 'assistant' && m.tag && m.tag.indexOf('online') === 0; });
+    var refer = /\b(lui|lei|loro|lo|la|li|le|quello|quella|quelli|questo|questa|invece|anche|ancora|poi|altrimenti|confrontali|confrontalo|e se|e lui|e lei|prima)\b/.test(n);
+    if (follow && words <= 12 && (refer || !eng.find(q, 1).length)) return true;   // seguito ("e lui?", "confrontali") di una conversazione gia' online
+    if (words >= 9) return true;                            // domanda articolata
+    return false;
+  }
+
   async function askOnline(q, s, local) {
-    var ctx = eng.contextFor(q, convState(s)); lastCtx = ctx;
-    var hist = s.messages.slice(-9, -1).filter(function (m) { return (m.role === 'user' || m.role === 'assistant') && !m.personal; }).slice(-6).map(function (m) { return { role: m.role, text: m.text.slice(0, 800) }; });
+    var ctx = eng.contextFor(q, Object.assign(convState(s), { spoilerOff: !store.state.prefs.spoiler })); lastCtx = ctx;
+    var hist = s.messages.slice(-9, -1).filter(function (m) { return (m.role === 'user' || m.role === 'assistant') && !m.personal; }).slice(-6).map(function (m) { return { role: m.role, text: m.text.slice(0, 1200) }; });
     var r = await gw.ask({ question: q, history: hist, context: ctx, spoiler: store.state.prefs.spoiler ? 'avoid' : 'off' });
     if (!r.ok) return { ok: false, message: r.message + (r.detail ? ' [' + r.stage + ' · ' + r.detail + ']' : '') };
     var rr = resolveRefs(r.answer, ctx);
@@ -95,7 +135,7 @@
     mood('think');
     var ans;
     try { ans = eng.ask(q, Object.assign(convState(s), { reveal: !!opts.reveal })); } catch (e) { ans = { text: 'Qualcosa si è inceppato negli archivi. Riprova.', refs: [], tag: 'locale', confidence: 0 }; }
-    var wantOnline = !opts.forceLocal && onlineOK() && !eng.isPersonal(q) && (opts.forceOnline || ans.needsOnline || ans.confidence < 0.6);
+    var wantOnline = !opts.forceLocal && onlineOK() && !eng.isPersonal(q) && (opts.forceOnline || needsDepth(q, ans, s));
     var msg = { role: 'assistant', text: ans.text, refs: ans.refs || [], tag: ans.personal ? 'dati locali' : 'archivio locale', flair: ans.flair };
     if (wantOnline) {
       $('mmSub').textContent = 'consulto l’AI online…';

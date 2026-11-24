@@ -50,3 +50,5 @@ dialog .hist{display:block;width:100%;text-align:left;margin:6px 0}
 @keyframes wob{50%{transform:rotate(-4deg)}}
 @keyframes talk{to{transform:scaleY(.4)}}
 @media (prefers-reduced-motion:reduce){.eye,.hand-m,.mm-mascot,.mouth{animation:none!important}}
+
+.mm-rich{white-space:normal}.mm-rich p{margin:0 0 .6em}.mm-rich p:last-child{margin-bottom:0}.mm-rich .mm-h{font-weight:700;color:var(--acc);margin:.7em 0 .3em}.mm-rich .mm-h:first-child{margin-top:0}.mm-rich ul,.mm-rich ol{margin:.2em 0 .6em;padding-left:1.3em}.mm-rich li{margin:.15em 0}
