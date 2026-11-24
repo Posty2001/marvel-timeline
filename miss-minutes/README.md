@@ -9,7 +9,7 @@ Assistente della TVA integrato in TVA Archives. Pagina in iframe a stessa origin
 | `store.js` | cronologia locale (max 40 chat × 120 messaggi), preferenze |
 | `gateway-client.js` | sessione per dispositivo (proof-of-work), chiamata al gateway, messaggi d'errore espliciti |
 | `app.js`, `index.html`, `mm.css` | interfaccia, mascotte animata, voce (dettatura e lettura dove supportate), consenso AI |
-| `gateway/` | Worker Cloudflare + Durable Object, `DEPLOY.md` |
+| `gateway/` | Worker Cloudflare + Durable Object; deploy via GitHub Actions (`DEPLOY.md`) |
 | `tests/` | `engine_test.js`, `gateway_test.mjs`, `e2e_gateway_test.mjs`, `ui_test.py` |
 
 Contratto con l'app (`window.tvaMissMinutesHost`, in `index.html`, blocco `mm-host`): oggetto congelato, sola lettura — `titles()`, `live()`, `blob(nome)` (solo 6 JSON statici in whitelist), `open(link)`, `close()`. Link: `item:089`, `char:char-loki`, `uni:…`, `arc:cat:id`, `tab:timeline|atlante|tessera|friends|home|missioni`, `cen:live|missioni|…`, `page:arcade|quiz|rankings`.

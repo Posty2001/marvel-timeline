@@ -6,6 +6,9 @@
   var host = null; try { host = window.parent !== window && window.parent.tvaMissMinutesHost && window.parent.tvaMissMinutesHost.version === 1 ? window.parent.tvaMissMinutesHost : null; } catch (e) { host = null; }
   var store, eng, gw, busy = false, lastCtx = [];
   var CFG = window.MISS_MINUTES_CONFIG || { endpoint: '' };
+  var EP_RE = /^https:\/\/[a-z0-9-]+(\.[a-z0-9-]+)?\.workers\.dev$/;
+  function endpointNow() { var e = CFG.endpoint || (store && store.state.prefs.endpoint) || ''; return EP_RE.test(e) ? e : ''; }
+  function makeGw() { return window.MMGateway.create({ endpoint: endpointNow(), storage: window.sessionStorage }); }
 
   /* ---------- mascotte ---------- */
   var SVG = 'http://www.w3.org/2000/svg';
@@ -130,6 +133,20 @@
         if (!store.state.prefs.consent) { inp.checked = false; consent(); return; }
         store.state.prefs.online = true; store.save();
       }, gw.available() ? 'Quando la domanda non è coperta dall’archivio locale, la domanda, fino a 4 schede pubbliche e gli ultimi messaggi vengono inviati al servizio AI. I tuoi dati personali (visti, voti, note, amici) non vengono mai inviati.' : 'Gateway non configurato: funziona solo il motore locale.');
+      if (!CFG.endpoint) {
+        var r = el('div', 'row'); var inp = el('input'); inp.type = 'url'; inp.id = 'set-endpoint'; inp.placeholder = 'https://miss-minutes-api.….workers.dev'; inp.value = store.state.prefs.endpoint || ''; inp.setAttribute('aria-label', 'Indirizzo del gateway'); inp.autocapitalize = 'off'; inp.spellcheck = false; inp.style.cssText = 'flex:1;min-width:0;background:#262f23;color:inherit;border:1px solid #5a4a2e;border-radius:10px;padding:8px';
+        var sv = el('button', '', 'Salva'); sv.type = 'button'; var msg = el('p', 'mm-small', 'Indirizzo del gateway AI (non è un segreto). Vuoto = solo motore locale.');
+        sv.onclick = async function () {
+          var v = inp.value.trim().replace(/\/+$/, '');
+          if (v && !EP_RE.test(v)) { msg.textContent = 'Indirizzo non valido: deve essere https://…workers.dev'; return; }
+          store.state.prefs.endpoint = v; if (!v) { store.state.prefs.online = false; } store.save(); gw = makeGw();
+          if (!v) { msg.textContent = 'Gateway rimosso: solo motore locale.'; return; }
+          msg.textContent = 'Verifico…'; var h = await gw.health();
+          msg.textContent = !h.ok ? 'Gateway non raggiungibile o origine non autorizzata.' : h.enabled ? 'Gateway raggiungibile, AI attiva.' : 'Gateway raggiungibile, AI ancora spenta (attivazione da fare lato Cloudflare).';
+          $('mmSub').textContent = subtitle();
+        };
+        r.appendChild(inp); r.appendChild(sv); b.appendChild(r); b.appendChild(msg);
+      }
       toggleRow(b, 'Leggi le risposte ad alta voce', 'voice', function (v) { store.state.prefs.voice = v; store.save(); if (!v) try { speechSynthesis.cancel(); } catch (e) {} });
       var st = eng.stats(); b.appendChild(el('p', 'mm-small', 'Archivio locale: ' + st.entries + ' voci (' + st.curated + ' schede curate, riferimenti da verificare su fonti primarie). Dati dell’app: ' + (host ? 'collegati in sola lettura' : 'non collegati') + '.'));
     });
@@ -179,7 +196,7 @@
   async function init() {
     drawMascot(); setupVoice();
     store = window.MMStore.create(window.localStorage);
-    gw = window.MMGateway.create({ endpoint: CFG.endpoint, storage: window.sessionStorage });
+    gw = makeGw();
     var kc = []; try { var r = await fetch('knowledge/core.json'); kc = (await r.json()).records || []; } catch (e) { banner('Archivio locale non caricato: riapri Miss Minutes.'); }
     var data = {};
     if (host) {

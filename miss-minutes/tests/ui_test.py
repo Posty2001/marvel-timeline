@@ -70,7 +70,12 @@ with sync_playwright() as p:
     ok('nessun voto/visto nella cronologia come dato personale esterno', True)
     # impostazioni / consenso (gateway non configurato)
     frame.click('#mmSet'); pg.wait_for_timeout(300); frame.locator('#set-online').click(); pg.wait_for_timeout(300)
-    ok('AI online non attivabile senza endpoint', not frame.locator('#set-online').is_checked()); frame.click('#mmDlgClose')
+    ok('AI online non attivabile senza endpoint', not frame.locator('#set-online').is_checked())
+    frame.fill('#set-endpoint', 'https://evil.example.com'); frame.click('#mmDlgBody >> text=Salva'); pg.wait_for_timeout(300)
+    ok('endpoint non workers.dev rifiutato', 'non valido' in frame.inner_text('#mmDlgBody') and not (pg.evaluate("()=>localStorage.getItem('marvel-ultimate-timeline-miss-minutes-v1')") or '').count('evil'))
+    frame.fill('#set-endpoint', 'https://miss-minutes-api.test.workers.dev'); frame.click('#mmDlgBody >> text=Salva'); pg.wait_for_timeout(800)
+    ok('endpoint valido salvato e verificato', 'raggiungibile' in frame.inner_text('#mmDlgBody') and any(c[1].startswith('/v1/health') for c in GW['calls']), frame.inner_text('#mmDlgBody')[-120:])
+    frame.fill('#set-endpoint', ''); frame.click('#mmDlgBody >> text=Salva'); GW['calls'].clear(); frame.click('#mmDlgClose')
     # con endpoint configurato: riavvia il frame con config simulata
     ctx.route('**/miss-minutes/config.js', lambda r: r.fulfill(status=200, content_type='application/javascript', body="globalThis.MISS_MINUTES_CONFIG=Object.freeze({endpoint:'https://miss-minutes-api.test.workers.dev'});"))
     pg.reload(wait_until='load'); pg.wait_for_timeout(1200); pg.evaluate(START); pg.wait_for_timeout(500); pg.click('#mmFab'); pg.wait_for_timeout(2000)

@@ -6,21 +6,33 @@ Il Worker `miss-minutes-api` era stato caricato dal solo editor del dashboard, c
 del binding `LIMITER` era vuoto. Il file `wrangler.toml` di questa cartella contiene classe, binding e migrazione: basta un deploy con Wrangler.
 Sul piano **Workers Free** i Durable Object sono disponibili solo con storage SQLite (è già così in questa configurazione).
 
-## Procedura (Windows, ~10 minuti)
-1. Installa Node.js LTS (nodejs.org). Apri PowerShell nella cartella `miss-minutes\gateway` dello ZIP.
-2. `npx wrangler login` → si apre il browser, accedi a Cloudflare e autorizza.
-3. Apri `wrangler.toml` e imposta **solo** `APP_ORIGINS` con l'indirizzo esatto del tuo sito TEST (https, senza `/` finale), per esempio
-   `APP_ORIGINS = "https://nome-del-tuo-sito.netlify.app"`. Più origini: separate da virgola. Lascia `FREE_TIER_VERIFIED = "no"` per ora.
-4. `npx wrangler deploy` → crea/aggiorna il Worker `miss-minutes-api`, la classe `Limiter` e il binding `LIMITER`. Annota l'indirizzo `https://miss-minutes-api.<tuo-sottodominio>.workers.dev`.
-5. Segreti (si digitano nel terminale, mai in chat, mai in file del progetto):
-   - `npx wrangler secret put GEMINI_KEY` → incolla la chiave di Google AI Studio.
-   - Genera una stringa casuale: `node -e "console.log(require('crypto').randomBytes(32).toString('base64url'))"`, poi `npx wrangler secret put SESSION_SECRET` e incollala. È la sola chiave con cui il gateway firma le sessioni dei dispositivi; non va mai messa nell'app.
-   (In alternativa: dashboard Cloudflare → Workers → miss-minutes-api → Settings → Variables and Secrets → tipo «Secret».)
-6. **Verifica il piano gratuito** (obbligatoria, la fai tu): in Google AI Studio → la chiave deve appartenere a un progetto **senza account di fatturazione**; apri «Rate limits» e controlla che il modello in `GEMINI_MODEL` abbia un limite gratuito diverso da 0. Se il nome del modello è diverso da `gemini-3.5-flash-lite`, correggi `GEMINI_MODEL` in `wrangler.toml`. Se il modello non risulta gratuito, non attivare.
-7. Quando sei sicuro: `FREE_TIER_VERIFIED = "yes"` in `wrangler.toml` e di nuovo `npx wrangler deploy`.
-8. Nell'app: in `miss-minutes/config.js` imposta `endpoint: 'https://miss-minutes-api.<tuo-sottodominio>.workers.dev'`, ricrea lo ZIP TEST e caricalo su Netlify TEST come sempre.
-9. Prova: dalla pagina Miss Minutes → ⚙ → «AI online» → consenso. Controllo diretto del gateway (PowerShell):
-   `curl.exe -H "Origin: https://nome-del-tuo-sito.netlify.app" https://miss-minutes-api.<sottodominio>.workers.dev/v1/health` → `{"ok":true,"enabled":true}`.
+## Procedura da iPhone, senza terminale (GitHub Actions)
+Il deploy è un workflow manuale nel repository **Posty2001/tva-live-scheduler** (`Miss Minutes - gateway`). Aggiorna il Worker esistente `miss-minutes-api`, applica la migrazione SQLite della classe `Limiter` e il binding `LIMITER`, e imposta `APP_ORIGINS = https://tva-archives-test-1110.netlify.app`. Non tocca `marvel-timeline` né nessun `main` dell'app. Il sorgente in quel repository è una copia di `miss-minutes/gateway/` (stesso `worker.ts`).
+
+### A. Token Cloudflare con permessi minimi (Safari, se serve «Sito desktop»)
+1. dash.cloudflare.com → icona profilo in alto → **My Profile** → **API Tokens** → **Create Token** → **Create Custom Token → Get started**.
+2. Nome: `github-miss-minutes-deploy`.
+3. **Permissions** (due righe): `Account` · `Workers Scripts` · `Edit`, poi **Add more**: `Account` · `Account Settings` · `Read`.
+4. **Account Resources**: `Include` · `Specific account` · scegli il tuo account. Nessuna risorsa di zona/dominio.
+5. **Client IP Address Filtering**: lascia vuoto (gli indirizzi di GitHub cambiano). **TTL**: consigliata una scadenza (es. tra 30 giorni).
+6. **Continue to summary → Create Token**. Copia il token (si vede una volta sola).
+7. Copia anche l'**Account ID**: Workers & Pages → colonna a destra «Account ID».
+Se il workflow fallisse con un errore di permesso, il log indica quale: aggiungi solo quello.
+
+### B. Segreti su GitHub
+Repository tva-live-scheduler → **Settings → Secrets and variables → Actions → New repository secret**:
+- `CLOUDFLARE_API_TOKEN` = il token del passo A
+- `CLOUDFLARE_ACCOUNT_ID` = l'Account ID
+(`GEMINI_KEY` si aggiunge più avanti, solo quando attivi l'AI. `SESSION_SECRET` lo genera il workflow e lo salva direttamente su Cloudflare, senza che nessuno lo veda.)
+
+### C. Esecuzione
+1. **Actions → Miss Minutes - gateway → Run workflow**: prima `action = check` (solo controlli, nessun contatto con Cloudflare), poi `action = deploy` lasciando **AI spenta**.
+2. A fine esecuzione il riepilogo del run mostra l'**indirizzo del gateway** (`https://miss-minutes-api.….workers.dev`). Incollalo in **Miss Minutes → ⚙ Impostazioni → Indirizzo del gateway → Salva**: l'app verifica che risponda (deve dire «AI ancora spenta»).
+
+### D. Attivazione dell'AI (solo dopo la verifica del piano gratuito)
+1. Google AI Studio: la chiave deve appartenere a un progetto **senza account di fatturazione** e il modello (`GEMINI_MODEL`, default `gemini-3.5-flash-lite`: controlla il nome esatto) deve avere in «Rate limits» un limite gratuito > 0.
+2. GitHub: aggiungi il secret `GEMINI_KEY`.
+3. Run workflow con `action = deploy`, `enable_gemini` e `free_tier_checked` entrambi acceso. Il workflow carica la chiave su Cloudflare e imposta `FREE_TIER_VERIFIED=yes`. Per spegnere di nuovo: nuovo deploy con `enable_gemini` spento.
 
 ## Come funzionano sicurezza e costi
 - **Nessuna chiave nell'app.** Ogni dispositivo ottiene un token firmato (24 h) dopo una piccola proof-of-work (qualche decimo di secondo) e un limite di 8 sessioni/ora per IP. Nessun token condiviso nel codice pubblico.
@@ -31,4 +43,4 @@ Sul piano **Workers Free** i Durable Object sono disponibili solo con storage SQ
 - Il gateway non salva testi né domande: il Durable Object contiene solo contatori con scadenza, e l'IP solo come hash firmato.
 
 ## Cosa NON ho potuto verificare dalla mia sandbox
-`wrangler`/`workerd` non sono installabili qui (rete npm bloccata), Cloudflare e Gemini non sono raggiungibili. La logica del Worker e del Durable Object è testata in Node con un Durable Object simulato su SQLite (`tests/gateway_test.mjs`, `tests/e2e_gateway_test.mjs`); il deploy reale, il binding e la chiamata a Gemini restano da verificare con i passi 4–9.
+`wrangler`/`workerd` non sono installabili qui (rete npm bloccata), Cloudflare e Gemini non sono raggiungibili. La logica del Worker e del Durable Object è testata in Node con un Durable Object simulato su SQLite (`tests/gateway_test.mjs`, `tests/e2e_gateway_test.mjs`); la sintassi del workflow è validata, ma il primo `check` su GitHub (che compila il Worker con Wrangler) e il primo `deploy` sono la verifica reale.
