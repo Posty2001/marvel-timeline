@@ -293,11 +293,11 @@ export default {
         op: 'admit',
         checks: [
           { k: `i:${ih}:m:${Math.floor(now / 60)}`, max: 6, ttl: 90 },
-          { k: `i:${ih}:d:${day}`, max: num(env.IP_DAILY_CAP, 10, 1, 1000), ttl: 90000 },
-          { k: `v:${did}:d:${day}`, max: num(env.DEVICE_DAILY_CAP, 10, 1, 1000), ttl: 90000 },
-          { k: `g:r:${Math.floor(now / 60)}`, max: num(env.GLOBAL_RPM_CAP, 8, 1, 1000), ttl: 90 },
-          { k: `g:d:${gday}`, max: num(env.DAILY_CAP, 15, 1, 100000), ttl: 129600 },
-          { k: `g:m:${month}`, max: num(env.MONTHLY_CAP, 450, 1, 1000000), ttl: 32 * 86400 },
+          { k: `i:${ih}:d:${day}`, max: num(env.IP_DAILY_CAP, 100, 1, 1000), ttl: 90000 },
+          { k: `v:${did}:d:${day}`, max: num(env.DEVICE_DAILY_CAP, 100, 1, 1000), ttl: 90000 },
+          { k: `g:r:${Math.floor(now / 60)}`, max: num(env.GLOBAL_RPM_CAP, 12, 1, 1000), ttl: 90 },
+          { k: `g:d:${gday}`, max: num(env.DAILY_CAP, 450, 1, 100000), ttl: 129600 },
+          { k: `g:m:${month}`, max: num(env.MONTHLY_CAP, 12000, 1, 1000000), ttl: 32 * 86400 },
         ],
       });
       if (adm.status !== 200) return out(429, { error: 'quota', scope: String(adm.json.k || '') });
@@ -321,7 +321,7 @@ export default {
             body: JSON.stringify({
               systemInstruction: { parts: [{ text: SYSTEM + ' ' + spoilerLine(input.spoiler) }] },
               contents,
-              generationConfig: { maxOutputTokens: 700, temperature: 0.5 },
+              generationConfig: { maxOutputTokens: 1500, temperature: 0.5 },
             }),
             signal: AbortSignal.timeout(20000),
           });
@@ -330,9 +330,9 @@ export default {
           const code = r.status === 429 ? 'provider-quota' : r.status === 400 ? 'provider-request' : (r.status === 401 || r.status === 403) ? 'provider-auth' : r.status === 404 ? 'provider-model' : 'provider';
           return out(r.status === 429 ? 429 : 502, { error: code, upstream: up });
         }
-        const j = (await r.json()) as { candidates?: { content?: { parts?: { text?: string; thought?: boolean }[] } }[] };
+        const j = (await r.json()) as { candidates?: { finishReason?: string; content?: { parts?: { text?: string; thought?: boolean }[] } }[] };
         const answer = (j.candidates?.[0]?.content?.parts || []).filter(p => !p.thought).map(p => p.text || '').join('').trim();
-        return answer ? out(200, { answer: answer.slice(0, 4000) }) : out(502, { error: 'empty' });
+        return answer ? out(200, { answer: answer.slice(0, 4000) }) : out(502, { error: 'empty', upstream: { http: 200, status: 'EMPTY', message: 'finishReason ' + String(j.candidates?.[0]?.finishReason || 'none').slice(0, 40) } });
       } catch (e) {
         const n = e instanceof Error ? e.name : '';
         return out(502, { error: n === 'TimeoutError' || n === 'AbortError' ? 'provider-timeout' : 'provider-network' });
