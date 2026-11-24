@@ -1,0 +1,52 @@
+:root{--bg:#121712;--panel:#1c241b;--panel2:#262f23;--line:#5a4a2e;--fg:#eee8d8;--mut:#b5b7a6;--acc:#f4b052;--acc2:#f4a43c;--usr:#4a3b25;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--fg);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.mm{display:flex;flex-direction:column;height:100%;height:100dvh;max-width:760px;margin:0 auto}
+.mm-head{display:flex;align-items:center;gap:10px;padding:max(10px,env(safe-area-inset-top)) 14px 10px;border-bottom:1px solid var(--line)}
+.mm-mascot{width:44px;height:44px;flex:none}
+.mm-mascot svg{width:100%;height:100%;display:block}
+.mm-title{flex:1;min-width:0}.mm-title h1{margin:0;font-size:1rem;color:var(--acc);letter-spacing:.02em;text-transform:uppercase;white-space:nowrap}.mm-title p{margin:0;font-size:.78rem;color:var(--mut)}
+.mm-tools{display:flex;gap:4px}
+button,input{font:inherit;color:inherit}
+.mm-tools button,.mm-ic{background:var(--panel2);border:1px solid var(--line);border-radius:12px;min-width:38px;min-height:40px;padding:0 4px;cursor:pointer}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.mm-banner{margin:0;padding:8px 14px;background:#3a2d17;color:#ffd9a0;font-size:.85rem;border-bottom:1px solid var(--line)}
+.mm-chat{flex:1;overflow-y:auto;padding:12px 14px;-webkit-overflow-scrolling:touch}
+.mm-msg{margin:10px 0;padding:11px 13px;border-radius:14px;background:var(--panel);white-space:pre-wrap;overflow-wrap:anywhere;max-width:92%}
+.mm-msg.user{background:var(--usr);margin-left:auto}
+.mm-tag{display:inline-block;margin-bottom:6px;padding:1px 8px;border-radius:99px;font-size:.7rem;border:1px solid var(--line);color:var(--mut)}
+.mm-tag.online{color:#ffd9a0;border-color:#a97b36}
+.mm-refs{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.mm-chip,.mm-act{background:var(--panel2);border:1px solid var(--acc2);color:var(--acc);border-radius:99px;padding:6px 12px;font-size:.85rem;cursor:pointer;min-height:36px}
+.mm-act{border-color:var(--line);color:var(--mut)}
+.mm-flair{margin-top:8px;font-size:.8rem;color:var(--mut);font-style:italic}
+.mm-welcome{padding:6px 14px 10px}
+.mm-welcome h2{margin:0 0 4px;color:var(--acc);font-size:1.1rem}.mm-welcome p{margin:4px 0}
+.mm-topics{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.mm-topics button{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:left;min-height:48px;cursor:pointer}
+.mm-note{font-size:.78rem;color:var(--mut)}
+.mm-bar{display:flex;gap:8px;padding:10px 14px max(10px,env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--bg)}
+.mm-bar input{flex:1;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:11px 12px}
+.mm-send{background:var(--acc2);color:#1a1409;border:0;border-radius:12px;padding:0 16px;font-weight:700;cursor:pointer;min-height:44px}
+.mm-send[disabled]{opacity:.5}
+dialog{background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:16px;width:min(92vw,480px);max-height:80vh;overflow:auto}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+dialog h2{margin:0 0 8px;color:var(--acc);font-size:1.05rem}
+dialog .row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 0}
+dialog .row label{flex:1}
+dialog button{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer}
+dialog .hist{display:block;width:100%;text-align:left;margin:6px 0}
+.mm-dlg-actions{margin-top:12px;text-align:right}
+.mm-small{font-size:.8rem;color:var(--mut)}
+/* mascotte */
+.eye{transform-origin:center;transform-box:fill-box;animation:blink 5s infinite}
+.hand-m{transform-origin:50px 50px;animation:tick 60s linear infinite}
+.mm-mascot[data-state=think] .hand-m{animation-duration:2s}
+.mm-mascot[data-state=think]{animation:wob .6s ease-in-out infinite}
+.mm-mascot[data-state=talk] .mouth{animation:talk .35s ease-in-out infinite alternate;transform-origin:50px 62px;transform-box:fill-box}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+@keyframes tick{to{transform:rotate(360deg)}}
+@keyframes wob{50%{transform:rotate(-4deg)}}
+@keyframes talk{to{transform:scaleY(.4)}}
+@media (prefers-reduced-motion:reduce){.eye,.hand-m,.mm-mascot,.mouth{animation:none!important}}

@@ -1,0 +1,947 @@
+{
+ "schema": 1,
+ "note": "Schede editoriali curate: ogni riferimento va ancora verificato su fonti primarie. Campo spoiler=true: la scheda viene nascosta finche l utente non la rivela.",
+ "records": [
+  {
+   "id": "knull",
+   "name": "Knull",
+   "aliases": [
+    "Knull",
+    "knull",
+    "simbionti",
+    "necrospada"
+   ],
+   "category": "personaggio",
+   "universe": "Marvel Comics · Terra-616",
+   "text": "Knull è una divinità primordiale dell’oscurità, creatore dei simbionti e della spada All-Black. La sua storia è approfondita nelle serie Venom e King in Black.",
+   "source": "Venom (2018) #3–4; King in Black (2020) #1–5",
+   "spoiler": true,
+   "verification": "da verificare"
+  },
+  {
+   "id": "616",
+   "name": "Terra-616",
+   "aliases": [
+    "Terra-616",
+    "616",
+    "terra 616",
+    "earth 616",
+    "terra 616"
+   ],
+   "category": "universo",
+   "universe": "Marvel Comics",
+   "text": "Terra-616 è la realtà principale dei fumetti Marvel. Il MCU usa anch’esso la denominazione 616 in alcuni film: le due continuità vanno distinte.",
+   "source": "The Daredevils #7 (1983); Doctor Strange in the Multiverse of Madness (2022)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "1610",
+   "name": "Terra-1610",
+   "aliases": [
+    "Terra-1610",
+    "1610",
+    "ultimate spider",
+    "ultimate marvel"
+   ],
+   "category": "universo",
+   "universe": "Marvel Comics · Ultimate",
+   "text": "Terra-1610 è la realtà dell’universo Ultimate originale, inaugurato da Ultimate Spider-Man nel 2000. Non coincide con il nuovo universo Ultimate Terra-6160.",
+   "source": "Ultimate Spider-Man (2000) #1; Ultimate Invasion (2023) #1–4",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "spider-raimi",
+   "name": "Spider-Man di Raimi",
+   "aliases": [
+    "Spider-Man di Raimi",
+    "raimi",
+    "tobey",
+    "96283"
+   ],
+   "category": "adattamento",
+   "universe": "Cinema · Terra-96283",
+   "text": "La trilogia di Sam Raimi segue Peter Parker interpretato da Tobey Maguire, in una continuità distinta dal MCU.",
+   "source": "Spider-Man (2002), Spider-Man 2 (2004), Spider-Man 3 (2007)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "doom",
+   "name": "Doctor Doom",
+   "aliases": [
+    "Doctor Doom",
+    "doom",
+    "destino",
+    "victor von",
+    "dottor destino",
+    "dr doom"
+   ],
+   "category": "personaggio",
+   "universe": "Marvel Comics · Terra-616",
+   "text": "Victor von Doom è il sovrano di Latveria, esperto di scienza e magia e storico avversario dei Fantastici Quattro.",
+   "source": "Fantastic Four (1961) #5",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "galactus",
+   "name": "Galactus",
+   "aliases": [
+    "Galactus",
+    "galactus"
+   ],
+   "category": "personaggio",
+   "universe": "Marvel Comics · Terra-616",
+   "text": "Galactus è un’entità cosmica che si nutre dell’energia dei pianeti, introdotta nella saga dei Fantastici Quattro.",
+   "source": "Fantastic Four (1961) #48–50",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "peter",
+   "name": "Peter Parker",
+   "aliases": [
+    "Peter Parker",
+    "peter parker",
+    "spider-man",
+    "spiderman",
+    "uomo ragno",
+    "uomo ragno"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Peter Parker acquisisce poteri aracnidi dopo il morso di un ragno radioattivo. Usa lancia-ragnatele costruiti da lui.",
+   "source": "Amazing Fantasy #15 (1962)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "miles",
+   "name": "Miles Morales",
+   "aliases": [
+    "Miles Morales",
+    "miles morales",
+    "miles"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Ultimate",
+   "text": "Miles debutta nell’universo Ultimate originale e possiede anche mimetismo e scariche bioelettriche.",
+   "source": "Ultimate Fallout #4 (2011)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "gwen",
+   "name": "Spider-Gwen",
+   "aliases": [
+    "Spider-Gwen",
+    "spider-gwen",
+    "gwen stacy",
+    "ghost-spider"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-65",
+   "text": "In questa realtà Gwen Stacy riceve i poteri del ragno.",
+   "source": "Edge of Spider-Verse #2 (2014)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "venom",
+   "name": "Venom",
+   "aliases": [
+    "Venom",
+    "venom",
+    "eddie brock"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Venom nasce dal legame tra Eddie Brock e un simbionte alieno precedentemente legato a Spider-Man.",
+   "source": "Amazing Spider-Man #300 (1988)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "carnage",
+   "name": "Carnage",
+   "aliases": [
+    "Carnage",
+    "carnage",
+    "cletus kasady"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Cletus Kasady si lega a una progenie del simbionte Venom.",
+   "source": "Amazing Spider-Man #361 (1992)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "thor",
+   "name": "Thor",
+   "aliases": [
+    "Thor",
+    "thor",
+    "mjolnir"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Thor è il dio del tuono di Asgard; Mjolnir è il suo celebre martello incantato.",
+   "source": "Journey into Mystery #83 (1962)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "loki",
+   "name": "Loki",
+   "aliases": [
+    "Loki",
+    "loki"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Loki è una figura asgardiana associata alla magia, agli inganni e alla rivalità con Thor.",
+   "source": "Journey into Mystery #85 (1962)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "wanda",
+   "name": "Scarlet Witch",
+   "aliases": [
+    "Scarlet Witch",
+    "wanda",
+    "scarlet witch",
+    "wanda maximoff"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Wanda Maximoff manipola la magia e la realtà; le sue origini sono state reinterpretate nel corso delle pubblicazioni.",
+   "source": "X-Men #4 (1964); Scarlet Witch (2015)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "strange",
+   "name": "Doctor Strange",
+   "aliases": [
+    "Doctor Strange",
+    "doctor strange",
+    "stephen strange",
+    "dottor strange",
+    "dottor strange",
+    "stephen strange"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Stephen Strange è un ex chirurgo che studia le arti mistiche.",
+   "source": "Strange Tales #110 (1963)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "surfer",
+   "name": "Silver Surfer",
+   "aliases": [
+    "Silver Surfer",
+    "silver surfer",
+    "norrin radd"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Norrin Radd è un araldo di Galactus dotato del Potere Cosmico.",
+   "source": "Fantastic Four #48–50 (1966)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "thanos",
+   "name": "Thanos",
+   "aliases": [
+    "Thanos",
+    "thanos"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Thanos è un Titano legato a numerosi conflitti cosmici e alla ricerca delle Gemme dell’Infinito.",
+   "source": "Iron Man #55 (1973); Infinity Gauntlet (1991)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "deadpool",
+   "name": "Deadpool",
+   "aliases": [
+    "Deadpool",
+    "deadpool",
+    "wade wilson"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Wade Wilson è un mercenario con capacità rigenerative e umorismo metanarrativo.",
+   "source": "New Mutants #98 (1991)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "wolverine",
+   "name": "Wolverine",
+   "aliases": [
+    "Wolverine",
+    "wolverine",
+    "logan"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Mutante con fattore rigenerante, sensi acuti e artigli; lo scheletro è comunemente rivestito di adamantio.",
+   "source": "Incredible Hulk #181 (1974)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "xavier",
+   "name": "Charles Xavier",
+   "aliases": [
+    "Charles Xavier",
+    "xavier",
+    "professor x"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Telepate e fondatore degli X-Men, promuove la convivenza tra umani e mutanti.",
+   "source": "X-Men #1 (1963)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "magneto",
+   "name": "Magneto",
+   "aliases": [
+    "Magneto",
+    "magneto",
+    "max eisenhardt"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Mutante capace di controllare il magnetismo, spesso in conflitto ideologico con Xavier.",
+   "source": "X-Men #1 (1963)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "reed",
+   "name": "Mister Fantastic",
+   "aliases": [
+    "Mister Fantastic",
+    "reed richards",
+    "mister fantastic"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Reed Richards è uno scienziato con poteri di elasticità e membro dei Fantastici Quattro.",
+   "source": "Fantastic Four #1 (1961)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "kang",
+   "name": "Kang",
+   "aliases": [
+    "Kang",
+    "kang",
+    "nathaniel richards"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Kang è un conquistatore che utilizza tecnologia avanzata e viaggi temporali; possiede numerose identità alternative.",
+   "source": "Avengers #8 (1964)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "6160",
+   "name": "Terra-6160",
+   "aliases": [
+    "Terra-6160",
+    "6160",
+    "nuovo ultimate"
+   ],
+   "category": "universo",
+   "universe": "Comics · Ultimate",
+   "text": "Realtà del nuovo universo Ultimate introdotto nel 2023, distinta dalla Terra-1610.",
+   "source": "Ultimate Invasion #1–4 (2023)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "tva",
+   "name": "TVA",
+   "aliases": [
+    "TVA",
+    "tva",
+    "time variance authority",
+    "autorita delle variazioni temporali"
+   ],
+   "category": "organizzazione",
+   "universe": "MCU",
+   "text": "La TVA è un’organizzazione che sorveglia le ramificazioni temporali nella serie Loki.",
+   "source": "Loki (2021), episodio 1",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "mcu",
+   "name": "MCU",
+   "aliases": [
+    "MCU",
+    "mcu",
+    "marvel cinematic universe"
+   ],
+   "category": "universo",
+   "universe": "Cinema e streaming",
+   "text": "Il Marvel Cinematic Universe è una continuità audiovisiva condivisa iniziata con Iron Man nel 2008, distinta dai fumetti.",
+   "source": "Iron Man (2008)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "secret",
+   "name": "Secret Wars",
+   "aliases": [
+    "Secret Wars",
+    "secret wars",
+    "guerre segrete"
+   ],
+   "category": "evento",
+   "universe": "Comics",
+   "text": "Esistono eventi distinti chiamati Secret Wars, tra cui le serie del 1984 e del 2015. Non vanno confusi con gli adattamenti cinematografici.",
+   "source": "Marvel Super Heroes Secret Wars (1984); Secret Wars (2015)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "ultimate",
+   "name": "Ultimate Spider-Man",
+   "aliases": [
+    "Ultimate Spider-Man",
+    "ultimate spider-man",
+    "ultimate spiderman"
+   ],
+   "category": "fumetto",
+   "universe": "Comics · Ultimate",
+   "text": "Per la serie originale parti da Ultimate Spider-Man #1 del 2000 di Brian Michael Bendis e Mark Bagley. La serie del 2024 appartiene a una realtà diversa.",
+   "source": "Ultimate Spider-Man #1 (2000); Ultimate Spider-Man #1 (2024)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "ironman",
+   "name": "Iron Man",
+   "aliases": [
+    "Iron Man",
+    "tony stark",
+    "iron man"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Tony Stark usa armature tecnologiche di propria progettazione.",
+   "source": "Tales of Suspense #39 (1963)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "cap",
+   "name": "Captain America",
+   "aliases": [
+    "Captain America",
+    "steve rogers",
+    "capitan america"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Steve Rogers riceve il siero del supersoldato e usa uno scudo.",
+   "source": "Captain America Comics #1 (1941)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "hulk",
+   "name": "Hulk",
+   "aliases": [
+    "Hulk",
+    "bruce banner",
+    "hulk"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Bruce Banner si trasforma in Hulk dopo esposizione a radiazioni gamma.",
+   "source": "Incredible Hulk #1 (1962)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "blackpanther",
+   "name": "Black Panther",
+   "aliases": [
+    "Black Panther",
+    "t challa",
+    "pantera nera",
+    "black panther"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "T’Challa è un eroe e sovrano del Wakanda.",
+   "source": "Fantastic Four #52 (1966)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "moonknight",
+   "name": "Moon Knight",
+   "aliases": [
+    "Moon Knight",
+    "marc spector",
+    "moon knight"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Marc Spector è un vigilante legato alla divinità Khonshu.",
+   "source": "Werewolf by Night #32 (1975)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "daredevil",
+   "name": "Daredevil",
+   "aliases": [
+    "Daredevil",
+    "matt murdock",
+    "daredevil"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Avvocato cieco con sensi potenziati, combatte il crimine a Hell’s Kitchen.",
+   "source": "Daredevil #1 (1964)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "punisher",
+   "name": "Punisher",
+   "aliases": [
+    "Punisher",
+    "frank castle",
+    "punisher"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Frank Castle è un vigilante che combatte il crimine con metodi letali.",
+   "source": "Amazing Spider-Man #129 (1974)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "blade",
+   "name": "Blade",
+   "aliases": [
+    "Blade",
+    "eric brooks",
+    "blade"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Cacciatore di vampiri dotato di capacità sovrumane.",
+   "source": "Tomb of Dracula #10 (1973)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "storm",
+   "name": "Storm",
+   "aliases": [
+    "Storm",
+    "ororo munroe",
+    "tempesta",
+    "storm"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Mutante capace di controllare il clima.",
+   "source": "Giant-Size X-Men #1 (1975)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "cyclops",
+   "name": "Cyclops",
+   "aliases": [
+    "Cyclops",
+    "scott summers",
+    "ciclope",
+    "cyclops"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Mutante che emette raggi di forza dagli occhi.",
+   "source": "X-Men #1 (1963)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "jean",
+   "name": "Jean Grey",
+   "aliases": [
+    "Jean Grey",
+    "jean grey"
+   ],
+   "category": "personaggio",
+   "universe": "Comics · Terra-616",
+   "text": "Mutante dotata di telepatia e telecinesi.",
+   "source": "X-Men #1 (1963)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "phoenix",
+   "name": "Phoenix Force",
+   "aliases": [
+    "Phoenix Force",
+    "forza fenice",
+    "phoenix force"
+   ],
+   "category": "entita",
+   "universe": "Comics",
+   "text": "Entità cosmica associata alla vita e alla rinascita.",
+   "source": "Uncanny X-Men #101 (1976)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "2099",
+   "name": "Spider-Man 2099",
+   "aliases": [
+    "Spider-Man 2099",
+    "miguel o hara",
+    "spider man 2099"
+   ],
+   "category": "variante",
+   "universe": "Comics · Terra-928",
+   "text": "Miguel O’Hara è uno Spider-Man di un futuro alternativo.",
+   "source": "Spider-Man 2099 #1 (1992)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "noir",
+   "name": "Spider-Man Noir",
+   "aliases": [
+    "Spider-Man Noir",
+    "spider man noir"
+   ],
+   "category": "variante",
+   "universe": "Comics · Terra-90214",
+   "text": "Versione di Peter Parker ambientata in un mondo ispirato agli anni Trenta.",
+   "source": "Spider-Man Noir #1 (2009)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "65",
+   "name": "Terra-65",
+   "aliases": [
+    "Terra-65",
+    "terra 65",
+    "earth 65"
+   ],
+   "category": "universo",
+   "universe": "Comics",
+   "text": "Realtà alternativa in cui Gwen Stacy acquisisce poteri aracnidi.",
+   "source": "Edge of Spider-Verse #2 (2014)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "928",
+   "name": "Terra-928",
+   "aliases": [
+    "Terra-928",
+    "terra 928",
+    "earth 928"
+   ],
+   "category": "universo",
+   "universe": "Comics",
+   "text": "Realtà associata al futuro Marvel 2099.",
+   "source": "Spider-Man 2099 #1 (1992)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "negative",
+   "name": "Zona Negativa",
+   "aliases": [
+    "Zona Negativa",
+    "zona negativa",
+    "negative zone"
+   ],
+   "category": "dimensione",
+   "universe": "Comics",
+   "text": "Dimensione esplorata dai Fantastici Quattro.",
+   "source": "Fantastic Four #51 (1966)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "asgard",
+   "name": "Asgard",
+   "aliases": [
+    "Asgard",
+    "asgard"
+   ],
+   "category": "luogo",
+   "universe": "Comics · Terra-616",
+   "text": "Regno associato alle divinità asgardiane.",
+   "source": "Journey into Mystery #85 (1962)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "wakanda",
+   "name": "Wakanda",
+   "aliases": [
+    "Wakanda",
+    "wakanda"
+   ],
+   "category": "luogo",
+   "universe": "Comics · Terra-616",
+   "text": "Nazione africana immaginaria associata a Black Panther e al vibranio.",
+   "source": "Fantastic Four #52–53 (1966)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "latveria",
+   "name": "Latveria",
+   "aliases": [
+    "Latveria",
+    "latveria"
+   ],
+   "category": "luogo",
+   "universe": "Comics · Terra-616",
+   "text": "Nazione europea immaginaria governata da Doctor Doom.",
+   "source": "Fantastic Four #5 (1962); Fantastic Four Annual #2 (1964) per la storia di Doom",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "allblack",
+   "name": "All-Black",
+   "aliases": [
+    "All-Black",
+    "all black",
+    "necrospada"
+   ],
+   "category": "artefatto",
+   "universe": "Comics · Terra-616",
+   "text": "Arma simbionte legata a Knull e Gorr.",
+   "source": "Thor: God of Thunder #2 (2012); Venom #4 (2018)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "infinity",
+   "name": "Gemme dell’Infinito",
+   "aliases": [
+    "Gemme dell’Infinito",
+    "gemme dell infinito",
+    "infinity gems",
+    "infinity stones"
+   ],
+   "category": "artefatto",
+   "universe": "Comics · Terra-616",
+   "text": "Sei gemme associate a diversi aspetti della realtà.",
+   "source": "Infinity Gauntlet #1–6 (1991)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "cosmiccube",
+   "name": "Cubo Cosmico",
+   "aliases": [
+    "Cubo Cosmico",
+    "cubo cosmico",
+    "cosmic cube"
+   ],
+   "category": "artefatto",
+   "universe": "Comics · Terra-616",
+   "text": "Oggetto capace di alterare la realtà.",
+   "source": "Tales of Suspense #79 (1966)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "avengers",
+   "name": "Avengers",
+   "aliases": [
+    "Avengers",
+    "avengers",
+    "vendicatori"
+   ],
+   "category": "organizzazione",
+   "universe": "Comics · Terra-616",
+   "text": "Squadra di supereroi fondata da Iron Man, Thor, Hulk, Ant-Man e Wasp.",
+   "source": "Avengers #1 (1963)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "xmen",
+   "name": "X-Men",
+   "aliases": [
+    "X-Men",
+    "x men",
+    "xmen"
+   ],
+   "category": "organizzazione",
+   "universe": "Comics · Terra-616",
+   "text": "Squadra di mutanti fondata da Charles Xavier.",
+   "source": "X-Men #1 (1963)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "f4",
+   "name": "Fantastici Quattro",
+   "aliases": [
+    "Fantastici Quattro",
+    "fantastici quattro",
+    "fantastic four"
+   ],
+   "category": "organizzazione",
+   "universe": "Comics · Terra-616",
+   "text": "Squadra composta originariamente da Reed, Sue, Johnny e Ben.",
+   "source": "Fantastic Four #1 (1961)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "shield",
+   "name": "S.H.I.E.L.D.",
+   "aliases": [
+    "S.H.I.E.L.D.",
+    "shield",
+    "s h i e l d"
+   ],
+   "category": "organizzazione",
+   "universe": "Comics · Terra-616",
+   "text": "Organizzazione di intelligence associata a Nick Fury.",
+   "source": "Strange Tales #135 (1965)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "hydra",
+   "name": "HYDRA",
+   "aliases": [
+    "HYDRA",
+    "hydra"
+   ],
+   "category": "organizzazione",
+   "universe": "Comics · Terra-616",
+   "text": "Organizzazione criminale ricorrente nelle storie Marvel.",
+   "source": "Strange Tales #135 (1965)",
+   "spoiler": false,
+   "verification": "da verificare"
+  },
+  {
+   "id": "kinginblack",
+   "name": "King in Black",
+   "aliases": [
+    "King in Black",
+    "king in black",
+    "re in nero"
+   ],
+   "category": "evento",
+   "universe": "Comics · Terra-616",
+   "text": "Evento incentrato sulla minaccia cosmica di Knull.",
+   "source": "King in Black #1–5 (2020–2021)",
+   "spoiler": true,
+   "verification": "da verificare"
+  },
+  {
+   "id": "civilwar",
+   "name": "Civil War",
+   "aliases": [
+    "Civil War",
+    "civil war",
+    "guerra civile"
+   ],
+   "category": "evento",
+   "universe": "Comics · Terra-616",
+   "text": "Conflitto tra supereroi sul tema della registrazione governativa.",
+   "source": "Civil War #1–7 (2006–2007)",
+   "spoiler": true,
+   "verification": "da verificare"
+  },
+  {
+   "id": "housem",
+   "name": "House of M",
+   "aliases": [
+    "House of M",
+    "house of m",
+    "casa di m"
+   ],
+   "category": "evento",
+   "universe": "Comics · Terra-616",
+   "text": "Evento legato a Wanda Maximoff e a una realtà alterata.",
+   "source": "House of M #1–8 (2005)",
+   "spoiler": true,
+   "verification": "da verificare"
+  },
+  {
+   "id": "spiderverse",
+   "name": "Spider-Verse",
+   "aliases": [
+    "Spider-Verse",
+    "spider verse",
+    "ragnoverso"
+   ],
+   "category": "evento",
+   "universe": "Comics",
+   "text": "Evento che riunisce numerose varianti di Spider-Man.",
+   "source": "Amazing Spider-Man (2014) #9–15",
+   "spoiler": true,
+   "verification": "da verificare"
+  },
+  {
+   "id": "annihilation",
+   "name": "Annihilation",
+   "aliases": [
+    "Annihilation",
+    "annihilation",
+    "annientamento"
+   ],
+   "category": "evento",
+   "universe": "Comics",
+   "text": "Saga cosmica incentrata sulla minaccia di Annihilus.",
+   "source": "Annihilation #1–6 (2006–2007)",
+   "spoiler": true,
+   "verification": "da verificare"
+  },
+  {
+   "id": "missminutes",
+   "name": "Miss Minutes",
+   "aliases": [
+    "Miss Minutes",
+    "miss minutes"
+   ],
+   "category": "personaggio",
+   "universe": "MCU",
+   "text": "Mascotte animata e assistente della TVA nella serie Loki.",
+   "source": "Loki (2021), episodio 1",
+   "spoiler": false,
+   "verification": "da verificare"
+  }
+ ]
+}

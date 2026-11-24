@@ -1,0 +1,28 @@
+# Gateway Miss Minutes — nome identico al Worker già creato su Cloudflare.
+name = "miss-minutes-api"
+main = "worker.ts"
+compatibility_date = "2025-08-01"
+workers_dev = true
+
+[vars]
+# Metti "yes" SOLO dopo aver letto in Google AI Studio che il modello scelto è gratuito (vedi DEPLOY.md).
+FREE_TIER_VERIFIED = "no"
+# Origini esatte dell'app (https, senza slash finale), separate da virgola.
+APP_ORIGINS = ""
+GEMINI_MODEL = "gemini-3.5-flash-lite"
+DAILY_CAP = "150"
+MONTHLY_CAP = "3000"
+IP_DAILY_CAP = "40"
+DEVICE_DAILY_CAP = "30"
+POW_BITS = "16"
+
+[[durable_objects.bindings]]
+name = "LIMITER"
+class_name = "Limiter"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Limiter"]
+
+[observability]
+enabled = false

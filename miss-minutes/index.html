@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://*.workers.dev; base-uri 'none'; form-action 'none'; frame-ancestors 'self'">
+<meta name="referrer" content="no-referrer">
+<title>Miss Minutes | TVA</title>
+<link rel="stylesheet" href="mm.css">
+</head>
+<body>
+<div class="mm">
+  <header class="mm-head">
+    <div id="mmMascot" class="mm-mascot" data-state="idle" role="img" aria-label="Miss Minutes, l'orologio della TVA"></div>
+    <div class="mm-title"><h1>Miss Minutes</h1><p id="mmSub">TVA · assistente</p></div>
+    <div class="mm-tools">
+      <button type="button" id="mmNew" aria-label="Nuova chat" title="Nuova chat">＋</button>
+      <button type="button" id="mmHist" aria-label="Cronologia" title="Cronologia">🕘</button>
+      <button type="button" id="mmSet" aria-label="Impostazioni" title="Impostazioni">⚙</button>
+      <button type="button" id="mmClose" aria-label="Chiudi Miss Minutes" title="Chiudi">✕</button>
+    </div>
+  </header>
+  <p id="mmBanner" class="mm-banner" role="status" hidden></p>
+  <main id="mmChat" class="mm-chat" aria-live="polite"></main>
+  <section id="mmWelcome" class="mm-welcome">
+    <h2>Bentornato, Variante.</h2>
+    <p>Chiedimi di personaggi, universi, fumetti e varianti, oppure di cosa guardare e dei tuoi progressi.</p>
+    <div id="mmTopics" class="mm-topics"></div>
+    <p class="mm-note" id="mmMode"></p>
+  </section>
+  <form id="mmForm" class="mm-bar" autocomplete="off">
+    <button type="button" id="mmMic" class="mm-ic" aria-label="Detta la domanda" hidden>🎤</button>
+    <input id="mmQ" type="text" maxlength="600" placeholder="Chiedi a Miss Minutes…" aria-label="Domanda" enterkeyhint="send">
+    <button type="submit" id="mmSend" class="mm-send">Invia</button>
+  </form>
+  <dialog id="mmDlg"><div id="mmDlgBody"></div><div class="mm-dlg-actions"><button type="button" id="mmDlgClose">Chiudi</button></div></dialog>
+</div>
+<script src="config.js"></script>
+<script src="engine.js"></script>
+<script src="store.js"></script>
+<script src="gateway-client.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
