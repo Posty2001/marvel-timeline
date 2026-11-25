@@ -15,3 +15,4 @@ Rendicontazione: tieni separati i conteggi storici (da documenti) e quelli verif
 Hotfix **mm6.1** (solo scorrimento chat, richiesto dall'utente il 25/11/2026): in attesa di collaudo/approvazione; dopo l'approvazione Miss Minutes torna congelata. Nessun altro intervento su Miss Minutes senza richiesta esplicita.
 
 Atlante 2.0: Revisione 2 grafica APPROVATA (riferimento definitivo, `docs/atlante2/revisione2/`). Fasi A0–A1 eseguite (registro dati `data/atlante/`, estrattore `tools/atlante_estrai.py`, verifica con `--verifica`); runtime invariato (strangler). Vietato inventare dati; Bishop e Janet sospese; Miss Minutes protetta.
+Atlante 2.0 A2 (identità) eseguita a livello registro: `data/atlante/identita.json`, verifica `python3 tools/atlante_identita.py --verifica`. Nessuna unificazione di persone distinte; hub e mantelli non contano come personaggi; co-apparizioni ≠ relazioni narrative; A3 non avviare senza approvazione.
