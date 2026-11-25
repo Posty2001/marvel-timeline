@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Atlante A4 – Osservatorio Multiverso e Nexus (anteprima v2)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--ink:#0b0906;--paper:#1c1812;--line:#4a3f2f;--text:#ede0c0;--soft:#b8a888;--gold:#E3C79B;--amber:#F59A23;--teal:#4fa89e;--vio:#b48ae0;--rose:#ff8a8d;--warn:#ffcf70}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{background:#07050a}
+body{margin:0;color:var(--text);font:14px/1.4 Inter,system-ui,sans-serif;background:#07050a;padding-bottom:env(safe-area-inset-bottom)}
+.app{max-width:430px;margin:0 auto;min-height:100vh;background:radial-gradient(110% 40% at 50% -6%,#3a2a10 0%,var(--ink) 62%);position:relative}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+header{padding:12px 16px 4px}
+.kick{font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.26em;color:var(--amber);text-transform:uppercase;display:flex;justify-content:space-between;gap:8px}
+.kick i{font-style:normal;color:var(--soft)}
+h1{margin:4px 0 0;font:700 25px/1.08 Spectral,Georgia,serif;color:#f6ecd2}
+.sub{font-size:12px;color:var(--soft);margin-top:2px}
+.seg{display:flex;margin:10px 16px 6px;border:1px solid var(--line);border-radius:23px;overflow:hidden;background:rgba(20,16,10,.85)}
+.seg button{flex:1;min-height:46px;border:0;background:none;color:var(--soft);font:600 12.5px Inter,sans-serif;display:flex;align-items:center;justify-content:center;gap:6px}
+.seg button[aria-selected=true]{background:var(--amber);color:#1a1208}
+.row{display:flex;gap:8px;overflow-x:auto;padding:4px 16px 6px;scrollbar-width:none;align-items:center}
+.row::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:44px;padding:0 13px;border-radius:22px;border:1px solid var(--line);background:rgba(30,25,18,.9);color:var(--text);font:500 12px Inter,sans-serif;display:inline-flex;align-items:center;gap:7px}
+.chip[aria-pressed=true]{background:var(--gold);border-color:var(--gold);color:#1a1208;font-weight:600}
+.chip .sw{width:24px;height:16px;border-radius:8px;background:#120d07;display:inline-flex;align-items:center;justify-content:center}.chip .sw i{display:block;width:16px;height:0;border-top:2.5px solid}
+.lbl{white-space:nowrap;flex:none;font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);padding:0 16px}
+.stage{position:relative;margin:4px 8px 0;border:1px solid var(--line);border-radius:20px;background:#0a0805;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none}
+.stage svg{display:block;width:100%;height:100%}
+.stage.fs{position:fixed;inset:0;margin:0;border-radius:0;z-index:60;padding-top:env(safe-area-inset-top)}
+.tools{position:absolute;right:8px;top:8px;display:flex;flex-direction:column;gap:6px;z-index:3}
+.tb{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(14,11,8,.82);color:var(--gold);font:600 18px Inter,sans-serif;display:flex;align-items:center;justify-content:center;padding:0}
+.hud{position:absolute;left:10px;top:8px;z-index:3;font:500 9.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:var(--soft);text-transform:uppercase;pointer-events:none;line-height:1.5}
+.hud b{color:var(--amber);font-weight:500}
+.node{cursor:pointer;outline:none}
+.node:focus-visible .ring{stroke:#fff;stroke-width:3}
+.t{font:500 10px Inter,sans-serif;fill:var(--text);paint-order:stroke;stroke:#0a0805;stroke-width:3.2px;pointer-events:none}
+.t.m{font:500 8.5px 'IBM Plex Mono',monospace;fill:var(--soft);letter-spacing:.08em}
+.sheet{margin:10px 8px 0;border:1px solid var(--line);border-radius:18px;background:linear-gradient(160deg,rgba(46,37,26,.92),rgba(22,18,13,.96));padding:14px;display:flex;flex-direction:column;gap:9px}
+.sheet h2{margin:0;font:700 20px/1.1 Spectral,serif;color:var(--gold)}
+.sheet .hd{display:flex;gap:12px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:5px;padding:2px 9px;border-radius:12px;border:1px solid currentColor;font:500 10.5px Inter,sans-serif;letter-spacing:.03em;white-space:nowrap}
+.pill.ver{color:#8fd6a8}.pill.gui{color:var(--gold)}.pill.dv{color:var(--warn);border-style:dashed}
+.note{font-size:12px;color:var(--soft)}
+.btn{min-height:46px;border-radius:23px;border:1px solid var(--amber);background:var(--amber);color:#1a1208;font:600 13px Inter,sans-serif;padding:0 18px;flex:1}
+.btn.o{background:transparent;color:var(--amber)}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kv div{border:1px solid var(--line);border-radius:12px;padding:8px;background:rgba(12,9,6,.5)}
+.kv b{display:block;font:700 18px Spectral,serif;color:var(--gold)}
+.kv span{font-size:10.5px;color:var(--soft)}
+input[type=search],select{min-height:46px;width:100%;border-radius:23px;border:1px solid var(--line);background:#120e09;color:var(--text);padding:0 16px;font:500 14px Inter,sans-serif}
+.res{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#120e09}
+.res[hidden]{display:none}.res button{min-height:44px;border:0;border-bottom:1px solid #2a2218;background:none;color:var(--text);text-align:left;padding:6px 14px;font:500 13px Inter,sans-serif;display:flex;justify-content:space-between;gap:8px}
+.res button small{color:var(--soft);font-size:11px;white-space:nowrap}
+.trail{display:flex;gap:4px;flex-wrap:wrap;padding:6px 16px 0;font-size:12px;color:var(--soft);align-items:center}
+.trail button{background:none;border:0;color:var(--gold);font:inherit;text-decoration:underline;min-height:36px;padding:0 3px}
+.legend{margin:8px 8px 0;border:1px solid var(--line);border-radius:16px;background:rgba(18,14,9,.7)}
+.legend summary{min-height:44px;display:flex;align-items:center;padding:0 14px;cursor:pointer;font:500 12px Inter,sans-serif;color:var(--gold)}
+.legend .g{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;padding:2px 14px 12px;font-size:11.5px;color:var(--soft)}
+.legend .g div{display:flex;align-items:center;gap:8px}
+.legend svg{width:34px;height:10px;flex:none}
+ol.path{list-style:none;margin:0;padding:0}
+.step{display:flex;gap:10px}
+.step .rail{display:flex;flex-direction:column;align-items:center;width:34px;flex:none}
+.step .dot{width:34px;height:34px;border-radius:50%;border:2px solid var(--amber);background:#150f08;display:flex;align-items:center;justify-content:center;font:600 11px 'IBM Plex Mono',monospace;color:var(--gold)}
+.step .bar{flex:1;width:0;border-left:2px dotted var(--line);min-height:14px}
+.step .body{flex:1;min-width:0;padding-bottom:10px}
+.link{border:1px solid var(--line);border-radius:12px;padding:9px 11px;margin:2px 0 8px;background:rgba(12,9,6,.55);font-size:12px;color:var(--soft);display:flex;flex-direction:column;gap:5px}
+.link b{color:var(--text);font-weight:600}
+footer{padding:14px 16px 30px;font-size:11.5px;color:var(--soft)}
+.toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#241c11;border:1px solid var(--amber);color:var(--text);border-radius:14px;padding:10px 14px;font-size:12px;max-width:380px;z-index:80}
+@keyframes sweep{to{transform:rotate(360deg)}}
+.sweepg{transform-origin:0 0;animation:sweep 28s linear infinite}
+@keyframes pulse{50%{opacity:.55}}
+.pulse{animation:pulse 3.4s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.sweepg,.pulse{animation:none}}
+</style></head><body>
+<div class="app">
+<header>
+ <div class="kick"><span>TVA · Osservatorio multiversale</span><i id="clock">SEZ. A4</i></div>
+ <h1>Multiverso e Nexus</h1>
+ <div class="sub">Anteprima v2 su dati reali del registro · nessuna distanza o gerarchia canonica inventata</div>
+</header>
+<div class="seg" role="tablist" aria-label="Modalità">
+ <button role="tab" id="t0" aria-selected="true">◎ Multiverso</button>
+ <button role="tab" id="t1" aria-selected="false">⌘ Nexus</button>
+ <button role="tab" id="t2" aria-selected="false">⇢ Percorso</button>
+</div>
+<main id="v"></main>
+<footer id="foot"></footer>
+</div>
+<script>
+var D=__DATA__;
+/* ======================= utilità ======================= */
+var NS='http://www.w3.org/2000/svg',$=function(s,r){return(r||document).querySelector(s)};
+function h(t,a,x){var e=document.createElement(t);for(var k in a||{})e.setAttribute(k,a[k]);if(x!=null)e.textContent=x;return e}
+function s(t,a,x){var e=document.createElementNS(NS,t);for(var k in a||{})e.setAttribute(k,a[k]);if(x!=null)e.textContent=x;return e}
+function hash(str){var x=2166136261;for(var i=0;i<str.length;i++){x^=str.charCodeAt(i);x=Math.imul(x,16777619)}return x>>>0}
+function toast(t){var o=$('.toast');if(o)o.remove();var n=h('div',{class:'toast',role:'status'},t);document.body.appendChild(n);setTimeout(function(){n.remove()},3600)}
+var CL={P:['Continuità principale','#F59A23'],D:['Diramazione','#b48ae0'],A:['Universo autonomo','#E3C79B'],E:['Raggruppamento editoriale','#6fb3d9'],L:['Fuori dal multiverso','#4fa89e']};
+var UI={},ND=D.nodes,NI={};D.uni.forEach(function(u,i){UI[u.id]=i;u.i=i;u.col=hue(u)});ND.forEach(function(n,i){NI[n.id]=i;n.i=i});
+function hue(u){if(u.c==='P')return'#F59A23';if(u.c==='L')return'#4fa89e';var a=(hash(u.id)%360);return'hsl('+a+',62%,64%)'}
+function hueSoft(u,al){return u.col.replace(')',',.'+al+')').replace('hsl(','hsla(').replace('#F59A23','rgba(245,154,35,.'+al+')').replace('#4fa89e','rgba(79,168,158,.'+al+')')}
+/* emblema originale deterministico (nessun simbolo reale: geometrie generate dall'ID) */
+function emblem(g,u,cx,cy,r){var sd=hash(u.id),k=sd%6,c=u.col,a={fill:'none',stroke:c,'stroke-width':Math.max(1,r*.07),'stroke-linecap':'round'};var e=s('g',{transform:'translate('+cx+','+cy+')'});
+ e.appendChild(s('circle',Object.assign({r:r*.86},a)));var n=3+(sd>>3)%6,rot=(sd>>7)%60;
+ if(k===0){var p=[];for(var i=0;i<n;i++){var t=(rot+i*360/n)*Math.PI/180;p.push((Math.cos(t)*r*.62).toFixed(1)+','+(Math.sin(t)*r*.62).toFixed(1))}e.appendChild(s('polygon',Object.assign({points:p.join(' ')},a)))}
+ else if(k===1){for(var i=0;i<8;i++){var t=(rot+i*45)*Math.PI/180;e.appendChild(s('line',Object.assign({x1:Math.cos(t)*r*.2,y1:Math.sin(t)*r*.2,x2:Math.cos(t)*r*.7,y2:Math.sin(t)*r*.7},a)))}}
+ else if(k===2){for(var i=0;i<3;i++){e.appendChild(s('path',Object.assign({d:'M'+r*.15+' 0A'+r*(.3+i*.17)+' '+r*(.3+i*.17)+' 0 1 1 0 '+r*(.3+i*.17),transform:'rotate('+(rot+i*120)+')'},a)))}}
+ else if(k===3){for(var i=0;i<3;i++){var q=r*(.62-i*.17);e.appendChild(s('rect',Object.assign({x:-q,y:-q,width:2*q,height:2*q,transform:'rotate('+(rot/2+i*18)+')'},a)))}}
+ else if(k===4){e.appendChild(s('ellipse',Object.assign({rx:r*.66,ry:r*.28,transform:'rotate('+rot+')'},a)));for(var i=0;i<3;i++){var t=(rot+i*120)*Math.PI/180;e.appendChild(s('circle',{cx:Math.cos(t)*r*.5,cy:Math.sin(t)*r*.5,r:r*.09,fill:c}))}}
+ else{e.appendChild(s('circle',{r:r*.1,fill:c}));for(var i=0;i<6;i++){var t=(rot+i*60)*Math.PI/180;e.appendChild(s('circle',Object.assign({cx:Math.cos(t)*r*.42,cy:Math.sin(t)*r*.42,r:r*.2},a)))}}
+ e.appendChild(s('circle',{r:r*.06,fill:c}));g.appendChild(e);return e}
+function initials(n){var w=n.replace(/\(.*?\)/g,'').replace(/\//g,' ').trim().split(/\s+/);return(w[0][0]+(w.length>1?w[w.length-1][0]:'')).toUpperCase()}
+/* pan/zoom con puntatore, pizzico, rotella */
+function panzoom(svg,g,o){var st={x:0,y:0,k:1},pts={},d0=0,k0=1,mn=o.min||.6,mx=o.max||5;
+ function ap(){g.setAttribute('transform','translate('+st.x+','+st.y+') scale('+st.k+')');if(o.onzoom)o.onzoom(st.k)}
+ function pt(e){var r=svg.getBoundingClientRect(),vb=svg.viewBox.baseVal;return{x:(e.clientX-r.left)*vb.width/r.width,y:(e.clientY-r.top)*vb.height/r.height}}
+ function zoomAt(p,f){var nk=Math.max(mn,Math.min(mx,st.k*f));f=nk/st.k;st.x=p.x-(p.x-st.x)*f;st.y=p.y-(p.y-st.y)*f;st.k=nk;ap()}
+ svg.addEventListener('pointerdown',function(e){svg.setPointerCapture(e.pointerId);pts[e.pointerId]=pt(e);var ks=Object.keys(pts);if(ks.length===2){d0=dist();k0=st.k}svg._m=0});
+ function dist(){var a=Object.values(pts);return Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)}
+ svg.addEventListener('pointermove',function(e){if(!pts[e.pointerId])return;var p=pt(e),ks=Object.keys(pts);if(ks.length===1){st.x+=p.x-pts[e.pointerId].x;st.y+=p.y-pts[e.pointerId].y;svg._m+=Math.abs(p.x-pts[e.pointerId].x)+Math.abs(p.y-pts[e.pointerId].y);pts[e.pointerId]=p;ap()}else if(ks.length===2){pts[e.pointerId]=p;var m=Object.values(pts),c={x:(m[0].x+m[1].x)/2,y:(m[0].y+m[1].y)/2};var nd=dist();if(d0>0){zoomAt(c,(k0*nd/d0)/st.k)}svg._m=99}});
+ function up(e){delete pts[e.pointerId]}svg.addEventListener('pointerup',up);svg.addEventListener('pointercancel',up);
+ svg.addEventListener('wheel',function(e){e.preventDefault();zoomAt(pt(e),e.deltaY<0?1.15:1/1.15)},{passive:false});
+ return{zoom:function(f){var vb=svg.viewBox.baseVal;zoomAt({x:vb.width/2,y:vb.height/2},f)},reset:function(){st.x=0;st.y=0;st.k=1;ap()},focus:function(x,y,k){var vb=svg.viewBox.baseVal;st.k=k||st.k;st.x=vb.width/2-x*st.k;st.y=vb.height/2-y*st.k;ap()},moved:function(){return svg._m>6},get k(){return st.k}}}
+function stage(vbw,vbh,hpx,extra){var w=h('div',{class:'stage',style:'height:'+hpx+'px'}),svg=s('svg',{viewBox:'0 0 '+vbw+' '+vbh,preserveAspectRatio:'xMidYMid meet',role:'img'}),g=s('g');svg.appendChild(g);w.appendChild(svg);
+ var tl=h('div',{class:'tools'});[['+','Ingrandisci',function(){pz.zoom(1.4)}],['−','Riduci',function(){pz.zoom(1/1.4)}],['⌖','Ricentra',function(){pz.reset()}],['⛶','Schermo intero',function(){w.classList.toggle('fs');if(w.classList.contains('fs')){w.style.height='';try{w.requestFullscreen&&w.requestFullscreen()}catch(e){}}else{w.style.height=hpx+'px';try{document.fullscreenElement&&document.exitFullscreen()}catch(e){}}}]].forEach(function(b){var x=h('button',{class:'tb',type:'button','aria-label':b[1]},b[0]);x.onclick=b[2];tl.appendChild(x)});w.appendChild(tl);
+ var pz=panzoom(svg,g,extra||{});return{w:w,svg:svg,g:g,pz:pz}}
+/* ======================= stato ======================= */
+var S={tab:0,lay:{P:1,D:1,A:1,E:1,L:1},sel:'uni-earth-199999-mcu',inside:null,cmp:null,pick:false,ego:'id-thor',trail:[],f:{n:1,c:1,e:1,k:1},thr:2,cap:20,a:'id-hulk',b:'id-bucky-barnes-soldato-d-inverno',pm:'misto',alt:0,q:'',sim:false};
+var TT={};Object.keys(D.tit).forEach(function(k){TT[+k]=D.tit[k]});
+function tname(n){return'N°'+('00'+n).slice(-3)+' '+(TT[n]||'')}
+/* indice titolo -> identità (solo personaggi) per co-apparizioni */
+var BYT={};ND.forEach(function(n){if(n.k!=='i')return;n.a.forEach(function(t){(BYT[t]=BYT[t]||[]).push(n.i)})});
+function coapp(i,thr){var m={};ND[i].a.forEach(function(t){(BYT[t]||[]).forEach(function(j){if(j!==i){(m[j]=m[j]||[]).push(t)}})});var o=[];for(var j in m)if(m[j].length>=thr)o.push([+j,m[j]]);return o}
+/* registro relazioni: adiacenza per nodo */
+var RA={};D.rel.forEach(function(r,ix){(RA[r[0]]=RA[r[0]]||[]).push(ix);(RA[r[1]]=RA[r[1]]||[]).push(ix)});
+var TY={ // tipo -> [etichetta, colore, tratteggio, spessore, famiglia]
+ famiglia_genitore:['Genitore','#E3C79B','',3.2,'n'],famiglia_fratelli:['Fratelli','#E3C79B','',2.4,'n'],famiglia_coniugi:['Coniugi','#ff8a8d','',3,'n'],partner:['Partner','#ff8a8d','',2.6,'n'],famiglia_discendente:['Discendenza','#E3C79B','6 3',2.4,'n'],
+ appartenenza:['Appartenenza','#6fb3d9','',2.2,'n'],successione:['Successione','#F59A23','',3,'n'],copia:['Copia','#F59A23','2 3',2.4,'n'],controparte:['Controparte multiversale','#b48ae0','7 4',2.6,'c'],
+ correlato:['Correlato (editoriale)','#4fa89e','1 4',1.4,'e'],ispirato_a:['Ispirato a (editoriale)','#4fa89e','1 4',1.6,'e'],stessa_scheda:['Stessa scheda (editoriale)','#4fa89e','1 4',1.6,'e'],segnaposto:['Segnaposto','#4fa89e','1 4',1.4,'e'],
+ alleanza:['Alleanza','#8fd6a8','',2.6,'n'],amicizia:['Amicizia','#ffcf70','',2.4,'n'],rivalita:['Rivalità','#ff5c5f','4 3',2.8,'n'],mentorato:['Mentorato','#7fb0ff','',2.6,'n'],coapp:['Co-apparizione','#8f8267','1 5',1.6,'k']};
+function vpill(v){return v==='verificata'?'<span class="pill ver">✓ verificata</span>':v==='guida'?'<span class="pill gui">● documentata nella guida</span>':'<span class="pill dv">◇ DA VERIFICARE</span>'}
+function nameOf(i){return ND[i].n}
+function open(tab){S.tab=tab;[0,1,2].forEach(function(k){$('#t'+k).setAttribute('aria-selected',k===tab)});draw()}
+[0,1,2].forEach(function(k){$('#t'+k).onclick=function(){open(k)}});
+function draw(){var v=$('#v');v.innerHTML='';[mv,nx,pc][S.tab](v)}
+function chips(items){var r=h('div',{class:'row',role:'group'});items.forEach(function(it){var b=h('button',{class:'chip','aria-pressed':!!it.on,type:'button'});b.innerHTML=it.html;b.onclick=it.fn;r.appendChild(b)});return r}
+function nodeDisc(g,n,x,y,r,sim){ // fallback del ritratto privato: disco con iniziali + glifo dell'universo
+ var u=n.u>=0?D.uni[n.u]:{id:n.id,col:'#b8a888'};var c=s('g');
+ c.appendChild(s('circle',{cx:x,cy:y,r:r+3,fill:hueSoft(u,'18'),stroke:'none'}));
+ if(sim&&n.k==='i'){var gid='sg'+n.i;c.appendChild(s('circle',{class:'ring',cx:x,cy:y,r:r,fill:'url(#ph'+(hash(n.id)%4)+')',stroke:u.col,'stroke-width':2.4}))}
+ else{c.appendChild(s('circle',{class:'ring',cx:x,cy:y,r:r,fill:'#17120b',stroke:u.col,'stroke-width':2}));
+  var tx=s('text',{x:x,y:y+r*.2,'text-anchor':'middle',style:'font:600 '+(r*.62)+'px Spectral,serif;fill:'+u.col+';pointer-events:none'},n.k==='o'?'⬡':initials(n.n));c.appendChild(tx)}
+ g.appendChild(c);return c}
+function defs(svg){var d=s('defs');for(var i=0;i<4;i++){var gr=s('radialGradient',{id:'ph'+i,cx:'40%',cy:'30%',r:'80%'});[['0','hsl('+(30+i*60)+',35%,62%)'],['1','hsl('+(20+i*70)+',25%,18%)']].forEach(function(z){gr.appendChild(s('stop',{offset:z[0],'stop-color':z[1]}))});d.appendChild(gr)}svg.insertBefore(d,svg.firstChild)}
+/* ======================= MULTIVERSO ======================= */
+function mv(v){
+ var tools=chips(Object.keys(CL).map(function(k){return{on:S.lay[k],html:'<span style="color:'+CL[k][1]+'">●</span> '+CL[k][0],fn:function(){S.lay[k]=!S.lay[k];draw()}}}).concat([{on:S.sim,html:'◐ Ritratti (simulati)',fn:function(){S.sim=!S.sim;draw()}}]));
+ if(S.inside)return inside(v);
+ v.appendChild(tools);
+ var W=390,H=470,cx=W/2,cy=H/2+10,st=stage(W,H,470,{min:.7,max:5,onzoom:function(k){lab(k)}});defs(st.svg);var g=st.g;
+ // atmosfera da osservatorio: reticolo polare, tacche, anelli orbitali con etichette, sweep radar
+ var bg=s('g');for(var i=0;i<70;i++){var hh=hash('s'+i);bg.appendChild(s('circle',{cx:hh%W,cy:(hh>>>9)%H,r:.5+(hh>>>18)%3*.35,fill:'#b8a888','fill-opacity':.25+(hh%5)/14}))}g.appendChild(bg);
+ var RR=[0,78,138,184];[78,138,184].forEach(function(r,ix){g.appendChild(s('circle',{cx:cx,cy:cy,r:r,fill:'none',stroke:'#4a3f2f','stroke-dasharray':'1 6','stroke-width':1.2}))});
+ for(var a=0;a<360;a+=10){var t=a*Math.PI/180,L=a%30?4:9;g.appendChild(s('line',{x1:cx+Math.cos(t)*184,y1:cy+Math.sin(t)*184,x2:cx+Math.cos(t)*(184+L),y2:cy+Math.sin(t)*(184+L),stroke:'#6b5a40','stroke-width':a%30?.6:1}))}
+ [['ORBITA I · DIRAMAZIONI',78],['ORBITA II · UNIVERSI AUTONOMI',138],['ORBITA III · RAGGRUPPAMENTI EDITORIALI',184]].forEach(function(o,ix){var tp=s('text',{x:cx,y:cy-o[1]-3,'text-anchor':'middle',class:'t m'},ix===2?'ORBITA III · EDITORIALE':o[0].replace('UNIVERSI AUTONOMI','AUTONOMI'));tp.setAttribute('style','font-size:7.5px');g.appendChild(tp)});
+ var sw=s('g',{transform:'translate('+cx+','+cy+')'});var sg=s('g',{class:'sweepg'});sg.appendChild(s('path',{d:'M0 0L190 0A190 190 0 0 1 150 117Z',fill:'rgba(245,154,35,.045)'}));sg.appendChild(s('line',{x1:0,y1:0,x2:190,y2:0,stroke:'rgba(245,154,35,.45)','stroke-width':.8}));sw.appendChild(sg);g.appendChild(sw);
+ var grp={};D.uni.forEach(function(u){(grp[u.c]=grp[u.c]||[]).push(u)});var pos={};
+ [['D',78,0],['A',138,.18],['E',184,.5]].forEach(function(o){var l=grp[o[0]]||[];l.forEach(function(u,i){var a=o[2]+i/l.length*Math.PI*2-Math.PI/2;pos[u.id]=[cx+Math.cos(a)*o[1],cy+Math.sin(a)*o[1]]})});
+ pos['uni-earth-199999-mcu']=[cx,cy];pos['uni-tva-fuori-dal-tempo']=[cx+142,cy-168];
+ // collegamenti dichiarati tra universi (controparti documentate): linee viola tratteggiate
+ D.rel.forEach(function(r){if(r[2]!=='controparte')return;var a=ND[r[0]].u,b=ND[r[1]].u;if(a<0||b<0||a===b)return;var pa=pos[D.uni[a].id],pb=pos[D.uni[b].id];if(pa&&pb&&S.lay[D.uni[a].c]&&S.lay[D.uni[b].c])g.appendChild(s('path',{d:'M'+pa[0]+' '+pa[1]+'Q'+(cx+(pa[0]+pb[0]-2*cx)*.2)+' '+(cy+(pa[1]+pb[1]-2*cy)*.2)+' '+pb[0]+' '+pb[1],fill:'none',stroke:'#b48ae0','stroke-width':1.6,'stroke-dasharray':'7 4','stroke-opacity':.8}))});
+ var labs=[];
+ D.uni.forEach(function(u){if(!S.lay[u.c])return;var p=pos[u.id];if(!p)return;var r=Math.max(11,Math.min(31,7+Math.sqrt(u.k)*2.3)),sel=u.id===S.sel||u.id===S.cmp;
+  var n=s('g',{class:'node',tabindex:0,role:'button','aria-label':u.n+', '+u.k+' identità'});
+  n.appendChild(s('circle',{cx:p[0],cy:p[1],r:r*2.1,fill:hueSoft(u,'16')}));n.appendChild(s('circle',{cx:p[0],cy:p[1],r:r*1.45,fill:hueSoft(u,'12')}));
+  n.appendChild(s('circle',{class:'ring',cx:p[0],cy:p[1],r:r+(sel?3:0),fill:'#120d07',stroke:sel?'#fff':u.col,'stroke-width':sel?2.4:1.4,'stroke-dasharray':u.c==='L'?'3 3':'none'}));
+  if(u.c==='L'){var cl=s('g');cl.appendChild(s('circle',{cx:p[0],cy:p[1],r:r*.55,fill:'none',stroke:u.col,'stroke-width':1.4}));cl.appendChild(s('line',{x1:p[0],y1:p[1],x2:p[0],y2:p[1]-r*.45,stroke:u.col,'stroke-width':1.4}));cl.appendChild(s('line',{x1:p[0],y1:p[1],x2:p[0]+r*.32,y2:p[1]+r*.12,stroke:u.col,'stroke-width':1.4}));n.appendChild(cl)}else emblem(n,u,p[0],p[1],r*.92);
+  var tx=s('text',{x:p[0],y:p[1]+r+11,'text-anchor':'middle',class:'t'},u.n.replace(/ — /,' · ').replace(/^Earth-/,'T-').slice(0,22));tx.setAttribute('data-r',r);tx.style.display=(r>17||sel)?'':'none';n.appendChild(tx);labs.push(tx);
+  var pick=function(){if(st.pz.moved())return;if(S.pick&&u.id!==S.sel){S.cmp=u.id;S.pick=false;draw();return}S.sel=u.id;S.cmp=null;draw()};n.onclick=pick;n.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick()}};g.appendChild(n)});
+ function lab(k){labs.forEach(function(t){t.style.display=(+t.getAttribute('data-r')*k>15)?'':'none'})}
+ var hud=h('div',{class:'hud'});hud.innerHTML='<b>◎ MULTIVERSO</b><br>'+D.uni.length+' voci · trascina / pizzica';st.w.appendChild(hud);
+ v.appendChild(st.w);
+ var u=D.uni[UI[S.sel]],sh=h('div',{class:'sheet'});
+ var hd=h('div',{class:'hd'}),es=s('svg',{viewBox:'0 0 64 64',width:64,height:64,style:'flex:none;background:radial-gradient(circle,'+hueSoft(u,'30')+',transparent 70%);border-radius:50%'});if(u.c==='L'){es.appendChild(s('circle',{cx:32,cy:32,r:22,fill:'none',stroke:u.col,'stroke-width':2}));es.appendChild(s('path',{d:'M32 32V16M32 32l9 4',stroke:u.col,'stroke-width':2.4,fill:'none','stroke-linecap':'round'}))}else emblem(es,u,32,32,28);hd.appendChild(es);
+ var tt=h('div');tt.innerHTML='<span class="pill" style="color:'+CL[u.c][1]+'">'+CL[u.c][0]+'</span><h2></h2>';tt.querySelector('h2').textContent=u.n;hd.appendChild(tt);sh.appendChild(hd);
+ sh.appendChild(h('div',{class:'note'},u.d||u.nat));
+ var kv=h('div',{class:'kv'});kv.innerHTML='<div><b>'+u.k+'</b><span>identità</span></div><div><b>'+u.t.length+'</b><span>titoli</span></div><div><b>'+(u.c==='L'?'—':CL[u.c][0].split(' ')[0])+'</b><span>natura</span></div>';sh.appendChild(kv);
+ var bs=h('div',{class:'btns'});
+ if(u.c!=='L'){var b1=h('button',{class:'btn',type:'button'},'Esplora l’universo');b1.onclick=function(){S.inside=u.id;draw()};bs.appendChild(b1)}
+ var b2=h('button',{class:'btn o',type:'button'},S.pick?'Tocca un secondo universo…':'Confronta con…');b2.onclick=function(){S.pick=!S.pick;draw()};bs.appendChild(b2);sh.appendChild(bs);
+ v.appendChild(sh);if(S.cmp)cmpPanel(v);
+ $('#foot').textContent='La posizione sulle orbite dipende solo dal campo NATURA del registro (diramazione, autonomo, raggruppamento): non misura distanze né gerarchie canoniche. La TVA è un luogo fuori dal multiverso, non un universo.'}
+function cmpPanel(v){var a=D.uni[UI[S.sel]],b=D.uni[UI[S.cmp]],sh=h('div',{class:'sheet'});sh.appendChild(h('h2',{},'Confronto tra universi'));
+ var tb=h('div',{class:'kv',style:'grid-template-columns:1fr 1fr'});[a,b].forEach(function(u){var d=h('div');d.innerHTML='<b style="font-size:14px;line-height:1.15">'+u.n.replace(/ — /,' · ')+'</b><span>'+CL[u.c][0]+'</span><br><span>'+u.k+' identità · '+u.t.length+' titoli</span>';tb.appendChild(d)});sh.appendChild(tb);
+ var sh_t=a.t.filter(function(t){return b.t.indexOf(t)>=0});
+ sh.appendChild(h('div',{class:'note'},sh_t.length?'Titoli condivisi ('+sh_t.length+'): '+sh_t.slice(0,5).map(tname).join(' · ')+(sh_t.length>5?' …':''):'Nessun titolo condiviso nei dati.'));
+ var cp=D.rel.filter(function(r){if(r[6]!=='c')return false;var x=ND[r[0]].u,y=ND[r[1]].u;return(x===a.i&&y===b.i)||(x===b.i&&y===a.i)});
+ if(cp.length)cp.forEach(function(r){var d=h('div',{class:'link'});d.innerHTML='<b>'+nameOf(r[0])+' ↔ '+nameOf(r[1])+'</b>'+vpill(r[4])+'<span>Controparte dichiarata: non unifica le identità.</span>';sh.appendChild(d)});
+ else sh.appendChild(h('div',{class:'note'},'Controparti dichiarate tra questi due universi: 0 nel registro (in tutto ne esistono '+D.rel.filter(function(r){return r[6]==='c'}).length+', l’espansione è in A4.0). Nessuna controparte viene dedotta dai nomi.'));
+ var bb=h('button',{class:'btn o',type:'button'},'Chiudi confronto');bb.onclick=function(){S.cmp=null;draw()};sh.appendChild(bb);v.appendChild(sh)}
+/* esplorazione interna: costellazione di identità (ritratti privati se presenti, altrimenti iniziali + glifo) */
+function inside(v){var u=D.uni[UI[S.inside]],W=390,H=520;
+ var bk=h('div',{class:'row'});var b=h('button',{class:'chip',type:'button'},'← Multiverso');b.onclick=function(){S.inside=null;draw()};bk.appendChild(b);bk.appendChild(h('span',{class:'note'},u.n));v.appendChild(bk);
+ v.appendChild(chips([{on:S.sim,html:'◐ Ritratti (simulati)',fn:function(){S.sim=!S.sim;draw()}}]));
+ var labs=[],st=stage(W,H,520,{min:.5,max:6,onzoom:function(k){labs.forEach(function(l){l.t.style.display=(l.i<10||k>=2.2||(k>=1.5&&l.i<40))?'':'none'})}});defs(st.svg);var g=st.g;g.appendChild(s('ellipse',{cx:W/2,cy:H/2,rx:196,ry:246,fill:hueSoft(u,'10'),stroke:hueSoft(u,'30'),'stroke-dasharray':'2 6'}));
+ var m=ND.filter(function(n){return n.k==='i'&&n.u===u.i}).sort(function(a,b){return b.a.length-a.a.length});
+ var ga=Math.PI*(3-Math.sqrt(5)),RX=178,RY=228,dd=Math.sqrt(Math.PI*RX*RY/Math.max(1,m.length)),rb=Math.max(8,Math.min(22,dd*.4));
+ m.forEach(function(n,i){var f=Math.sqrt((i+.5)/m.length),th=i*ga,x=W/2+Math.cos(th)*RX*f,y=H/2+Math.sin(th)*RY*f,r=rb*(.8+Math.min(.5,n.a.length/40));
+  var nd=s('g',{class:'node',tabindex:0,role:'button','aria-label':n.n});nodeDisc(nd,n,x,y,r,S.sim);var tx=s('text',{x:x,y:y+r+10,'text-anchor':'middle',class:'t'},n.n.replace(/\(.*?\)/g,'').trim().slice(0,16));tx.style.display=i<10?'':'none';labs.push({t:tx,i:i});nd.appendChild(tx);
+  var go=function(){if(st.pz.moved())return;S.ego=n.id;S.trail=[];sheetId(n.i)};nd.onclick=go;nd.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}};g.appendChild(nd)});
+ st.pz.onz=null;var hud=h('div',{class:'hud'});hud.innerHTML='<b>'+m.length+' identità</b><br>più apparizioni al centro';st.w.appendChild(hud);v.appendChild(st.w);
+ var box=h('div',{id:'idbox'});v.appendChild(box);
+ function sheetId(i){var n=ND[i],bx=$('#idbox');bx.innerHTML='';var sh=h('div',{class:'sheet'});sh.appendChild(h('h2',{},n.n));sh.appendChild(h('div',{class:'note'},n.a.length+' titoli: '+n.a.slice(0,4).map(tname).join(' · ')+(n.a.length>4?' …':'')));var bs=h('div',{class:'btns'});var d=h('button',{class:'btn',type:'button'},'Apri il dossier');d.onclick=function(){toast('Anteprima: aprirebbe il Dossier A3 di '+n.n)};var x=h('button',{class:'btn o',type:'button'},'Apri nel Nexus');x.onclick=function(){S.ego=n.id;S.trail=[];open(1)};bs.appendChild(d);bs.appendChild(x);sh.appendChild(bs);bx.appendChild(sh);bx.scrollIntoView({behavior:'smooth',block:'nearest'})}
+ $('#foot').textContent='Esplorazione interna: ogni nodo è un’identità del registro (ID univoco). Nell’app reale il disco mostra il ritratto privato salvato (IndexedDB) e, in sua assenza, iniziali + glifo dell’universo; qui i ritratti sono simulati con sfumature perché le immagini non fanno mai parte del repository.'}
+/* ======================= grafo: archi ======================= */
+function edgesOf(i,opt){ // tutti gli archi dell'identità, classificati
+ var o=[];(RA[i]||[]).forEach(function(ix){var r=D.rel[ix],j=r[0]===i?r[1]:r[0],cls=r[6];if(cls==='n'&&!opt.n)return;if(cls==='c'&&!opt.c)return;if(cls==='e'&&!opt.e)return;o.push({j:j,t:r[2],q:r[3],v:r[4],cls:cls,ix:ix,dir:r[5]?0:(r[0]===i?1:-1),src:r[7]})});
+ if(opt.k&&ND[i].k==='i')coapp(i,opt.thr).forEach(function(c){o.push({j:c[0],t:'coapp',cls:'k',titles:c[1],q:'',v:'',dir:0})});return o}
+var PRI={n:0,c:1,e:2,k:3};
+function dedupe(es){var m={};es.forEach(function(e){var k=e.j+e.t;if(!m[k]||m[k].cls==='k')m[k]=e});var l=Object.keys(m).map(function(k){return m[k]});return l}
+/* ======================= NEXUS ======================= */
+function search(v,onpick,ph,cur){var w=h('div',{style:'padding:2px 16px 4px;display:flex;flex-direction:column;gap:6px'});var i=h('input',{type:'search',placeholder:ph||'Cerca un personaggio…','aria-label':'Cerca','autocomplete':'off',value:''});var r=h('div',{class:'res',hidden:''});w.appendChild(i);w.appendChild(r);
+ i.oninput=function(){var q=i.value.trim().toLowerCase();r.innerHTML='';if(q.length<2){r.hidden=true;return}var m=ND.filter(function(n){return n.k!=='s'&&n.n.toLowerCase().indexOf(q)>=0}).slice(0,7);r.hidden=!m.length;m.forEach(function(n){var b=h('button',{type:'button'});b.innerHTML='<span></span><small></small>';b.firstChild.textContent=n.n;b.lastChild.textContent=n.u>=0?D.uni[n.u].n.replace(/ — /,' · ').slice(0,22):(n.k==='o'?'organizzazione':'');b.onclick=function(){onpick(n.i)};r.appendChild(b)})};v.appendChild(w);return i}
+function nx(v){
+ var ego=NI[S.ego];
+ search(v,function(i){S.trail.push(S.ego);S.ego=ND[i].id;draw()},'Cerca tra le '+ND.filter(function(n){return n.k==='i'}).length+' identità (o un’organizzazione)…');
+ v.appendChild(chips([{on:S.f.n,html:'<span class="sw"><i style="border-color:#E3C79B"></i></span>Narrative',fn:function(){S.f.n=!S.f.n;draw()}},{on:S.f.c,html:'<span class="sw"><i style="border-color:#b48ae0;border-top-style:dashed"></i></span>Controparti',fn:function(){S.f.c=!S.f.c;draw()}},{on:S.f.e,html:'<span class="sw"><i style="border-color:#4fa89e;border-top-style:dotted"></i></span>Editoriali',fn:function(){S.f.e=!S.f.e;draw()}},{on:S.f.k,html:'<span class="sw"><i style="border-color:#8f8267;border-top-style:dotted"></i></span>Co-apparizioni',fn:function(){S.f.k=!S.f.k;draw()}}]));
+ var ctl=h('div',{class:'row'});ctl.appendChild(h('span',{class:'lbl',style:'padding:0 4px 0 0'},'Soglia co-app.'));[1,2,3,4].forEach(function(t){var b=h('button',{class:'chip','aria-pressed':S.thr===t,type:'button'},t===4?'4+':String(t));b.onclick=function(){S.thr=t;draw()};ctl.appendChild(b)});ctl.appendChild(h('span',{class:'lbl',style:'padding:0 4px'},'Nodi max'));[12,20,30].forEach(function(t){var b=h('button',{class:'chip','aria-pressed':S.cap===t,type:'button'},String(t));b.onclick=function(){S.cap=t;draw()};ctl.appendChild(b)});v.appendChild(ctl);
+ if(S.trail.length){var tr=h('div',{class:'trail'});tr.appendChild(h('span',{},'Cronologia:'));var bb=h('button',{type:'button'},'← indietro');bb.onclick=function(){S.ego=S.trail.pop();draw()};tr.appendChild(bb);S.trail.slice(-3).forEach(function(id,ix){var b=h('button',{type:'button'},ND[NI[id]].n.replace(/\(.*?\)/g,'').trim().slice(0,14));b.onclick=function(){var p=S.trail.lastIndexOf(id);S.ego=id;S.trail=S.trail.slice(0,p);draw()};tr.appendChild(b);tr.appendChild(h('span',{},'›'))});tr.appendChild(h('b',{},ND[ego].n.replace(/\(.*?\)/g,'').trim().slice(0,16)));v.appendChild(tr)}
+ var W=390,H=540,cx=W/2,cy=H/2,st=stage(W,H,540,{min:.6,max:4});defs(st.svg);var g=st.g;
+ var all=dedupe(edgesOf(ego,{n:S.f.n,c:S.f.c,e:S.f.e,k:S.f.k,thr:S.thr}));all.sort(function(a,b){return PRI[a.cls]-PRI[b.cls]||(b.titles?b.titles.length:0)-(a.titles?a.titles.length:0)});
+ // selezione con quote: narrative e controparti sempre per prime; editoriali e co-apparizioni si dividono lo spazio rimasto
+ var gr={n:[],c:[],e:[],k:[]};all.forEach(function(e){gr[e.cls].push(e)});var rest=S.cap-gr.n.length-gr.c.length,qe=Math.max(0,Math.min(gr.e.length,Math.ceil(rest/2))),qk=Math.max(0,Math.min(gr.k.length,rest-qe));qe=Math.min(gr.e.length,Math.max(qe,rest-qk));
+ var shown=gr.n.slice(0,S.cap).concat(gr.c).concat(gr.e.slice(0,qe)).concat(gr.k.slice(0,qk)).slice(0,S.cap),hidden=all.length-shown.length;
+ var pos={};pos[ego]=[cx,cy];var byc={};shown.forEach(function(e){(byc[e.cls]=byc[e.cls]||[]).push(e)});var order=['n','c','e','k'],ix=0,N=shown.length;
+ order.forEach(function(c){(byc[c]||[]).forEach(function(e){var t=-Math.PI/2+ix/N*Math.PI*2+.15,off=(ix%2)*(N>12?20:0),R=(c==='n'||c==='c'?112:c==='e'?132:148)+off;pos[e.j]=[cx+Math.cos(t)*R*1.0,cy+Math.sin(t)*R*1.32];ix++})});
+ var byclsMeta=byc;
+ // anelli di fondo
+ [70,112,148].forEach(function(r){g.appendChild(s('ellipse',{cx:cx,cy:cy,rx:r*1.0,ry:r*1.32,fill:'none',stroke:'#2a2218','stroke-dasharray':'1 6'}))});
+ // archi tra vicini (relazioni del registro fra i nodi mostrati), tenui
+ var shownIdx={};shown.forEach(function(e){shownIdx[e.j]=1});
+ shown.forEach(function(e){(RA[e.j]||[]).forEach(function(ix){var r=D.rel[ix],o=r[0]===e.j?r[1]:r[0];if(o===ego||!shownIdx[o]||r[0]!==e.j&&r[1]!==e.j)return;if(r[0]!==e.j&&r[5]===0)return;if(e.j>o&&r[5])return;var T=TY[r[2]]||TY.correlato;if(r[6]==='e')return;var p=pos[e.j],q=pos[o];if(!p||!q)return;g.appendChild(s('line',{x1:p[0],y1:p[1],x2:q[0],y2:q[1],stroke:T[1],'stroke-width':1.2,'stroke-dasharray':T[2],'stroke-opacity':.45}))})});
+ var sel=null,box=h('div',{id:'nxbox'});
+ shown.forEach(function(e){var p=pos[e.j],T=TY[e.t]||TY.correlato;var dv=e.v==='da verificare';
+  var ln=s('g',{class:'node',tabindex:0,role:'button','aria-label':'Relazione: '+T[0]+' con '+ND[e.j].n});
+  ln.appendChild(s('line',{x1:cx,y1:cy,x2:p[0],y2:p[1],stroke:'transparent','stroke-width':16}));
+  ln.appendChild(s('line',{x1:cx,y1:cy,x2:p[0],y2:p[1],stroke:T[1],'stroke-width':T[3]*(e.cls==='k'?Math.min(2.2,.6+(e.titles.length)/4):1),'stroke-dasharray':dv?'3 4':T[2],'stroke-linecap':'round','stroke-opacity':e.cls==='k'?.6:.95}));
+  if(e.dir!==0&&e.cls!=='e'){var ang=Math.atan2(p[1]-cy,p[0]-cx),mx=(cx+p[0])/2,my=(cy+p[1])/2,sg=e.dir;ln.appendChild(s('path',{d:'M-5 -4L4 0L-5 4Z',transform:'translate('+mx+','+my+') rotate('+(ang*180/Math.PI+(sg<0?180:0))+')',fill:T[1]}))}
+  if(e.cls==='n'||e.cls==='c'){var lt=s('text',{x:(cx+p[0])/2,y:(cy+p[1])/2-6,'text-anchor':'middle',class:'t m'},(e.q?e.q:T[0]).slice(0,14));ln.appendChild(lt)}
+  var oc=function(){if(st.pz.moved())return;edgeSheet(e,box)};ln.onclick=oc;ln.onkeydown=function(k){if(k.key==='Enter'||k.key===' '){k.preventDefault();oc()}};g.appendChild(ln)});
+ shown.forEach(function(e){var p=pos[e.j],n=ND[e.j],r=n.k==='o'?15:13+Math.min(6,Math.sqrt(n.a.length)*1.3);var nd=s('g',{class:'node',tabindex:0,role:'button','aria-label':'Ricentra su '+n.n});nodeDisc(nd,n,p[0],p[1],r,S.sim);nd.appendChild(s('text',{x:p[0],y:p[1]+r+10,'text-anchor':'middle',class:'t'},n.n.replace(/\(.*?\)/g,'').trim().slice(0,16)));
+  var go=function(){if(st.pz.moved())return;if(n.k==='s')return toast('Segnaposto: nessuna scheda da aprire');S.trail.push(S.ego);S.ego=n.id;draw()};nd.onclick=go;nd.onkeydown=function(k){if(k.key==='Enter'||k.key===' '){k.preventDefault();go()}};g.appendChild(nd)});
+ var en=ND[ego],ec=s('g',{class:'node','aria-label':en.n});nodeDisc(ec,en,cx,cy,28,S.sim);ec.appendChild(s('circle',{cx:cx,cy:cy,r:33,fill:'none',stroke:'#F59A23','stroke-width':2,class:'pulse'}));ec.appendChild(s('text',{x:cx,y:cy+46,'text-anchor':'middle',class:'t',style:'font-size:11.5px;font-weight:600'},en.n.replace(/\(.*?\)/g,'').trim().slice(0,22)));g.appendChild(ec);
+ var hud=h('div',{class:'hud'});hud.innerHTML='<b>⌘ NEXUS</b><br>'+all.length+' collegamenti · '+shown.length+' mostrati';st.w.appendChild(hud);
+ v.appendChild(st.w);
+ if(hidden>0){var hb=h('div',{class:'note',style:'padding:6px 16px 0'},'+'+hidden+' collegamenti non mostrati per evitare sovraffollamento: alza il limite, alza la soglia delle co-apparizioni o filtra per tipo.');v.appendChild(hb)}
+ legend(v);
+ // scheda identità
+ var sh=h('div',{class:'sheet'}),cn=0,cc=0,ce=0;(RA[ego]||[]).forEach(function(ix){var c=D.rel[ix][6];if(c==='n')cn++;else if(c==='c')cc++;else ce++});var ck=ND[ego].k==='i'?coapp(ego,S.thr).length:0;
+ sh.appendChild(h('h2',{},en.n));sh.appendChild(h('div',{class:'note'},(en.u>=0?D.uni[en.u].n+' · ':'')+en.a.length+' titoli'));
+ var kv=h('div',{class:'kv',style:'grid-template-columns:repeat(4,1fr)'});kv.innerHTML='<div><b>'+cn+'</b><span>narrative</span></div><div><b>'+cc+'</b><span>controparti</span></div><div><b>'+ce+'</b><span>editoriali</span></div><div><b>'+ck+'</b><span>co-app. ≥'+S.thr+'</span></div>';sh.appendChild(kv);
+ if(cn+cc===0)sh.appendChild(h('div',{class:'note'},'Nessuna relazione narrativa documentata nel registro per questa identità: il Nexus non ne inventa. Le co-apparizioni mostrano solo titoli in comune.'));
+ var bs=h('div',{class:'btns'});var d=h('button',{class:'btn',type:'button'},'Apri il dossier');d.onclick=function(){toast('Anteprima: aprirebbe il Dossier A3 di '+en.n)};var pp=h('button',{class:'btn o',type:'button'},'Percorso da qui');pp.onclick=function(){S.a=en.id;open(2)};bs.appendChild(d);bs.appendChild(pp);sh.appendChild(bs);v.appendChild(sh);v.appendChild(box);
+ $('#foot').textContent='Registro: '+D.cnt.relazioni_totali+' relazioni ('+D.cnt.narrative+' narrative, '+(D.cnt.per_classe.controparte||0)+' controparti, '+D.cnt.per_classe.editoriale+' editoriali); co-apparizioni calcolate al volo dai titoli e mai contate come relazioni. Tipi previsti ma ancora con 0 relazioni documentate: alleanza, amicizia, rivalità, mentorato (A4.0 in corso).'}
+function edgeSheet(e,box){box.innerHTML='';var T=TY[e.t]||TY.correlato,sh=h('div',{class:'sheet'});var a=ND[NI[S.ego]],b=ND[e.j];
+ sh.appendChild(h('h2',{},T[0]+(e.q?' · '+e.q:'')));
+ var l=h('div',{class:'note'});l.textContent=(e.dir===-1?b.n+' → '+a.n:e.dir===1?a.n+' → '+b.n:a.n+' ↔ '+b.n);sh.appendChild(l);
+ if(e.cls==='k'){sh.appendChild(h('div',{class:'note'},'Co-apparizione: '+e.titles.length+' titoli in comune. Non è una relazione narrativa.'));sh.appendChild(h('div',{class:'note'},e.titles.slice(0,6).map(tname).join(' · ')+(e.titles.length>6?' …':'')))}
+ else{var p=h('div');p.innerHTML=vpill(e.v);sh.appendChild(p);if(e.cls==='e')sh.appendChild(h('div',{class:'note'},'Associazione editoriale della scheda: non implica alcuna relazione narrativa.'));if(e.cls==='c')sh.appendChild(h('div',{class:'note'},'Controparte multiversale: le identità restano distinte e non unificate.'));if(e.src)sh.appendChild(h('div',{class:'note'},'Fonte: '+e.src))}
+ var bs=h('div',{class:'btns'});[a,b].forEach(function(n){if(n.k==='s')return;var x=h('button',{class:'btn o',type:'button'},'Dossier: '+n.n.replace(/\(.*?\)/g,'').trim().slice(0,18));x.onclick=function(){toast('Anteprima: aprirebbe il Dossier A3 di '+n.n)};bs.appendChild(x)});sh.appendChild(bs);box.appendChild(sh);box.scrollIntoView({behavior:'smooth',block:'nearest'})}
+function legend(v){var d=h('details',{class:'legend'});d.appendChild(h('summary',{},'Legenda dei collegamenti'));var g=h('div',{class:'g'});
+ var cnt={};D.rel.forEach(function(r){cnt[r[2]]=(cnt[r[2]]||0)+1});
+ ['famiglia_genitore','famiglia_fratelli','famiglia_coniugi','partner','successione','appartenenza','controparte','correlato','alleanza','amicizia','rivalita','mentorato','coapp'].forEach(function(t){var T=TY[t],c=t==='coapp'?'calcolate':(cnt[t]||0)+' doc.';var it=h('div');var sv=s('svg',{viewBox:'0 0 34 10'});sv.appendChild(s('line',{x1:2,y1:5,x2:32,y2:5,stroke:T[1],'stroke-width':T[3],'stroke-dasharray':T[2],'stroke-linecap':'round'}));it.appendChild(sv);var sp=h('span');sp.textContent=T[0]+' · '+c;if(t!=='coapp'&&!cnt[t])sp.style.opacity=.6;it.appendChild(sp);g.appendChild(it)});
+ var dv=h('div');var sv=s('svg',{viewBox:'0 0 34 10'});sv.appendChild(s('line',{x1:2,y1:5,x2:32,y2:5,stroke:'#ffcf70','stroke-width':2.4,'stroke-dasharray':'3 4','stroke-linecap':'round'}));dv.appendChild(sv);dv.appendChild(h('span',{},'Da verificare (mai come verificata)'));g.appendChild(dv);d.appendChild(g);v.appendChild(d)}
+/* ======================= PERCORSO ======================= */
+function nbrP(i,mode,thr){ // vicini: [j, tipo, edgeinfo]
+ var o=[];if(mode!=='co')(RA[i]||[]).forEach(function(ix){var r=D.rel[ix];if(r[6]==='e')return;var j=r[0]===i?r[1]:r[0];if(ND[j].k==='s')return;o.push({j:j,kind:'reg',ix:ix})});
+ if(mode!=='nar'&&ND[i].k==='i')coapp(i,thr).forEach(function(c){o.push({j:c[0],kind:'co',titles:c[1]})});return o}
+function bfs(a,b,mode,thr,ban){var q=[a],pr={};pr[a]=null;while(q.length){var x=q.shift();if(x===b)break;nbrP(x,mode,thr).forEach(function(e){if(ban.n[e.j]&&e.j!==b)return;if(ban.e[x+'>'+e.j])return;if(!(e.j in pr)){pr[e.j]=[x,e];q.push(e.j)}})}
+ if(!(b in pr))return null;var p=[],c=b;while(pr[c]){p.unshift({from:pr[c][0],to:c,e:pr[c][1]});c=pr[c][0]}return p}
+function alts(a,b,mode,thr){var res=[],ban={n:{},e:{}},seen={};var p=bfs(a,b,mode,thr,ban);
+ for(var k=0;k<6&&p&&res.length<3;k++){var key=p.map(function(x){return x.to}).join('>');if(!seen[key]){seen[key]=1;res.push(p)}
+  // percorso alternativo: vieta un nodo intermedio (o l'arco se diretto) del percorso precedente
+  if(p.length>1)ban.n[p[Math.min(p.length-2,k%(p.length-1))].to]=1;else ban.e[p[0].from+'>'+p[0].to]=1,ban.e[p[0].to+'>'+p[0].from]=1;p=bfs(a,b,mode,thr,ban)}
+ return res}
+function picker(lab,key){var w=h('div',{style:'display:flex;flex-direction:column;gap:6px'});w.appendChild(h('span',{class:'lbl',style:'padding:0'},lab));var i=h('input',{type:'search','aria-label':lab,placeholder:'Cerca…',value:ND[NI[S[key]]].n});var r=h('div',{class:'res',hidden:''});w.appendChild(i);w.appendChild(r);
+ i.onfocus=function(){i.select()};i.oninput=function(){var q=i.value.trim().toLowerCase();r.innerHTML='';if(q.length<2){r.hidden=true;return}var m=ND.filter(function(n){return n.k!=='s'&&n.n.toLowerCase().indexOf(q)>=0}).slice(0,6);r.hidden=!m.length;m.forEach(function(n){var b=h('button',{type:'button'});b.innerHTML='<span></span><small></small>';b.firstChild.textContent=n.n;b.lastChild.textContent=n.u>=0?D.uni[n.u].n.replace(/ — /,' · ').slice(0,22):'org.';b.onclick=function(){S[key]=n.id;S.alt=0;draw()};r.appendChild(b)})};return w}
+function pc(v){
+ var sh=h('div',{class:'sheet'});sh.appendChild(picker('Da','a'));sh.appendChild(picker('A','b'));
+ var sw=h('button',{class:'chip',type:'button',style:'align-self:flex-start'},'⇅ Inverti');sw.onclick=function(){var t=S.a;S.a=S.b;S.b=t;S.alt=0;draw()};sh.appendChild(sw);v.appendChild(sh);
+ var seg=h('div',{class:'seg'});[['nar','Narrativo'],['co','Co-apparizioni'],['misto','Misto']].forEach(function(m){var b=h('button',{role:'tab','aria-selected':S.pm===m[0]},m[1]);b.onclick=function(){S.pm=m[0];S.alt=0;draw()};seg.appendChild(b)});v.appendChild(seg);
+ if(S.pm!=='nar'){var r=h('div',{class:'row'});r.appendChild(h('span',{class:'lbl',style:'padding:0 4px 0 0'},'Soglia co-app.'));[1,2,3,4].forEach(function(t){var b=h('button',{class:'chip','aria-pressed':S.thr===t,type:'button'},t===4?'4+':String(t));b.onclick=function(){S.thr=t;S.alt=0;draw()};r.appendChild(b)});v.appendChild(r)}
+ var a=NI[S.a],b=NI[S.b],P=alts(a,b,S.pm,S.thr),box=h('div',{class:'sheet'});
+ if(!P.length){box.appendChild(h('h2',{},'Nessun percorso documentato'));box.appendChild(h('div',{class:'note'},'Tra '+ND[a].n+' e '+ND[b].n+' non esiste un collegamento nel modo «'+({nar:'narrativo',co:'co-apparizioni',misto:'misto'})[S.pm]+'»'+(S.pm!=='nar'?' con soglia ≥ '+S.thr:'')+'. Non ne viene inventato uno.'));
+  box.appendChild(h('div',{class:'note'},S.pm==='nar'?'Prova il modo «Misto» o «Co-apparizioni»: mostrerà solo titoli in comune, mai relazioni narrative.':S.thr>1?'Prova ad abbassare la soglia delle co-apparizioni.':'Le due identità non condividono catene di titoli nei dati.'));v.appendChild(box)}
+ else{S.alt=Math.min(S.alt,P.length-1);var p=P[S.alt];
+  var hd=h('div',{style:'display:flex;justify-content:space-between;gap:8px;align-items:center'});hd.appendChild(h('h2',{},p.length+' passagg'+(p.length===1?'io':'i')+' · percorso '+(S.alt+1)+'/'+P.length));box.appendChild(hd);
+  // mini mappa lineare del percorso
+  var W=360,mm=s('svg',{viewBox:'0 0 '+W+' 74',style:'width:100%;height:auto'}),n=p.length+1;mm.appendChild(s('line',{x1:24,y1:30,x2:W-24,y2:30,stroke:'#2a2218','stroke-width':1}));
+  var xs=[];for(var i=0;i<n;i++)xs.push(40+i*(W-80)/(n-1));
+  p.forEach(function(st,i){var e=st.e,T=e.kind==='reg'?TY[D.rel[e.ix][2]]:TY.coapp,dv=e.kind==='reg'&&D.rel[e.ix][4]==='da verificare';mm.appendChild(s('line',{x1:xs[i],y1:30,x2:xs[i+1],y2:30,stroke:T[1],'stroke-width':T[3],'stroke-dasharray':dv?'3 4':T[2],'stroke-linecap':'round'}))});
+  var ids=[a].concat(p.map(function(x){return x.to}));ids.forEach(function(id,i){var nn=ND[id],g=s('g');nodeDisc(g,nn,xs[i],30,13,S.sim);g.appendChild(s('text',{x:xs[i],y:62,'text-anchor':'middle',class:'t',style:'font-size:9px'},nn.n.replace(/\(.*?\)/g,'').trim().slice(0,13)));mm.appendChild(g)});box.appendChild(mm);
+  if(P.length>1){var ab=h('button',{class:'btn o',type:'button'},'Mostra un percorso alternativo');ab.onclick=function(){S.alt=(S.alt+1)%P.length;draw()};box.appendChild(ab)}
+  v.appendChild(box);
+  var sh2=h('div',{class:'sheet'});var ol=h('ol',{class:'path'});
+  ids.forEach(function(id,i){var nn=ND[id],li=h('li',{class:'step'});var rail=h('div',{class:'rail'});rail.appendChild(h('div',{class:'dot'},String(i+1)));if(i<ids.length-1)rail.appendChild(h('div',{class:'bar'}));li.appendChild(rail);var body=h('div',{class:'body'});var t=h('b',{style:'display:block;font:700 15px Spectral,serif;color:#f6ecd2'},nn.n);body.appendChild(t);
+   var bt=h('button',{class:'chip',type:'button',style:'min-height:44px;margin:4px 0'},'Apri il dossier');bt.onclick=function(){toast('Anteprima: aprirebbe il Dossier A3 di '+nn.n)};body.appendChild(bt);
+   if(i<p.length){var e=p[i].e,lk=h('div',{class:'link'});if(e.kind==='reg'){var r=D.rel[e.ix],T=TY[r[2]],dir=r[5]?'↔':(r[0]===p[i].from?'→':'←');lk.innerHTML='<b></b>'+vpill(r[4])+'<span></span>';lk.querySelector('b').textContent=T[0]+(r[3]?' · '+r[3]:'')+' '+dir;lk.querySelector('span').textContent=(r[6]==='c'?'Controparte multiversale: identità distinte, non unificate. ':'')+(r[7]?'Fonte: '+r[7]:'')}
+    else{lk.innerHTML='<b>Co-apparizione · '+e.titles.length+' titol'+(e.titles.length===1?'o':'i')+' in comune</b><span></span><span class="note">Non è una relazione narrativa.</span>';lk.querySelector('span').textContent=e.titles.slice(0,4).map(tname).join(' · ')+(e.titles.length>4?' · +'+(e.titles.length-4):'')}
+    body.appendChild(lk)}
+   li.appendChild(body);ol.appendChild(li)});sh2.appendChild(ol);v.appendChild(sh2)}
+ $('#foot').textContent='Narrativo = solo relazioni documentate nel registro (incluse controparti e appartenenze comuni); Co-apparizioni = soli titoli in comune; Misto = entrambi, ogni passaggio dichiara di che tipo è. I percorsi alternativi escludono un nodo intermedio del precedente.'}
+draw();
+</script></body></html>
