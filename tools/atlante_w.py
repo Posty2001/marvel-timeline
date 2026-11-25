@@ -99,7 +99,8 @@ def candidati(out):
 import re
 WALL = os.path.join(ROOT, 'data/atlante/engine/waveall.json'); BLOCCO = 30
 ESPANDI = {'id-harry-osborn-green-goblin': 120}   # identità per cui la ricerca è ampliata (più scene per titolo + immagini taggate dell'interprete)
-PR_EXTRA = {'id-harry-osborn-webb': 'the Green Goblin in dark green armor on a glider|Harry Osborn, a pale young man with slicked hair in a suit',
+PR_EXTRA = {'id-harry-osborn-ynfsm': 'Harry Osborn, a young man in a suit, animated series|the Green Goblin, animated series',
+            'id-harry-osborn-webb': 'the Green Goblin in dark green armor on a glider|Harry Osborn, a pale young man with slicked hair in a suit',
             'id-harry-osborn-green-goblin': 'the Green Goblin in green armor with a mask on a glider|Harry Osborn, a young man with dark hair in a suit|the New Goblin in black and gray armor with a mask'}
 ATTORE_HINT = {'id-harry-osborn-green-goblin': ('Harry Osborn', '001')}   # (personaggio, titolo da cui leggere il cast) per le immagini taggate
 def gruppo(tl, vis2id, num):

@@ -1,0 +1,3 @@
+# Formato intake (un JSON per riga, file *.jsonl in questa cartella). Solo ID univoci; fonte = elenco di URL https.
+# Resta «da verificare» finche' non c'e' almeno una fonte https E "verifica_umana": true (decisione dell'utente).
+{"tipo": "mentorato", "da": "id-stick", "a": "id-matt-murdock-daredevil", "qualifica": "mentore", "fonte": ["https://example.org/fonte"], "nota": "ESEMPIO: non importato (il file ha estensione .txt)"}

@@ -173,7 +173,7 @@
     "personaggio"
    ],
    "conta_come_personaggio": true,
-   "universo": null,
+   "universo": "uni-earth-10005-fox-verse",
    "pagine": [
     "char-peter"
    ],
@@ -188,9 +188,12 @@
     "Peter"
    ],
    "fonte": [
-    "mvMapData (titoliIds per universo)"
+    "mvMapData (titoliIds per universo)",
+    "https://marvel-movies.fandom.com/wiki/Peter_Wisdom",
+    "https://marvelcinematicuniverse.fandom.com/wiki/2020s/Earth-10005",
+    "https://slashfilm.com/2306570/deadpool-2-rob-delaney-debunk-x-men-fan-theory-peter"
    ],
-   "verifica": "verificata (fonti secondarie affidabili + dati interni; pagine Marvel.com/Marvel Database non consultate una per una)",
+   "verifica": "verificata sulle fonti consultate il 25/11/2026 (Marvel Movies Wiki, Marvel Cinematic Universe Wiki, GamesRadar, SlashFilm): personaggio originale di Earth-10005, prima apparizione Deadpool 2 (2018), riappare in Deadpool & Wolverine nella stessa Earth-10005; nota: alcune fonti lo identificano con Pete Wisdom, l'attore lo ha smentito (SlashFilm) -> nessuna identificazione applicata",
    "nota": "Personaggio creato per il film Deadpool 2 (2018), senza controparte nei fumetti (campo NEI FUMETTI della scheda). Alias di visualizzazione: «Peter (Deadpool)»."
   },
   {
@@ -3631,8 +3634,7 @@
    "apparizioni": [
     "001",
     "002",
-    "003",
-    "120"
+    "003"
    ],
    "incarnazioni": [],
    "alias": [
@@ -3642,9 +3644,10 @@
     "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro"
    ],
    "verifica": "invariata (nessuna decisione di identita' applicata)",
-   "nota": "N°005 (The Amazing Spider-Man 2) appartiene alla continuita' Webb: spostato in id-harry-osborn-webb (decisione dell'utente 25/11/2026). N°120 (serie animata) resta qui in attesa di una decisione separata.",
+   "nota": "N°005 (Webb) e N°120 (Your Friendly Neighborhood Spider-Man) appartengono ad altre continuita': spostati in id-harry-osborn-webb e id-harry-osborn-ynfsm (decisioni dell'utente 25/11/2026). Raimi mantiene N°001-003.",
    "apparizioni_spostate": {
-    "005": "id-harry-osborn-webb"
+    "005": "id-harry-osborn-webb",
+    "120": "id-harry-osborn-ynfsm"
    }
   },
   {
@@ -7895,6 +7898,34 @@
    ],
    "verifica": "parziale: continuita' dichiarata da mvMapData (N°005 in uni-earth-120703-garfield-verse) e dalla scheda Atlante (UNIVERSI: Earth-96283 · Earth-120703 · YFNSM); nessun dato biografico specifico attribuito",
    "nota": "Separato da id-harry-osborn-green-goblin (Raimi) per decisione dell'utente (25/11/2026). La scheda char-harry-osborn-green-goblin descrive insieme piu' continuita': i suoi campi restano attribuiti all'identita' Raimi e non a questa."
+  },
+  {
+   "id": "id-harry-osborn-ynfsm",
+   "nome": "Harry Osborn/Green Goblin (Your Friendly Neighborhood Spider-Man)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-your-friendly-neighborhood-spider-man-verse",
+   "pagine": [
+    "char-harry-osborn-green-goblin"
+   ],
+   "pagina_principale": "char-harry-osborn-green-goblin",
+   "interpreti": [],
+   "apparizioni": [
+    "120"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Harry Osborn/Green Goblin"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "parziale: continuita' dichiarata da mvMapData (N°120 in uni-your-friendly-neighborhood-spider-man-verse) e dalla scheda Atlante (UNIVERSI); nessun dato biografico specifico attribuito",
+   "nota": "Separato dalle identita' Raimi e Webb per decisione dell'utente (25/11/2026). I campi della scheda condivisa restano attribuiti all'identita' Raimi."
   }
  ],
  "hub": [
@@ -8201,6 +8232,32 @@
    ],
    "verifica": "dati interni: la scheda char-harry-osborn-green-goblin copre piu' continuita'; nessuna parentela narrativa dichiarata",
    "nota": "Continuita' distinte (Raimi-Verse / Garfield-Verse): identita' distinte, non unificate."
+  },
+  {
+   "da": "id-harry-osborn-green-goblin",
+   "a": "id-harry-osborn-ynfsm",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda char-harry-osborn-green-goblin copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
+  },
+  {
+   "da": "id-harry-osborn-webb",
+   "a": "id-harry-osborn-ynfsm",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda char-harry-osborn-green-goblin copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
   }
  ],
  "redirect": {
@@ -10896,13 +10953,13 @@
  "conteggi": {
   "pagine_char": 304,
   "pagine_che_contavano": 300,
-  "identita_totali": 297,
-  "identita_che_contano": 297,
+  "identita_totali": 298,
+  "identita_che_contano": 298,
   "hub": 2,
   "mantelli": 2,
   "segnaposto": 7,
   "relazioni_narrative": 5,
-  "relazioni_non_narrative": 4,
+  "relazioni_non_narrative": 6,
   "collegamenti_da_classificare": 76,
   "di_cui_proposta_automatica": 44
  }

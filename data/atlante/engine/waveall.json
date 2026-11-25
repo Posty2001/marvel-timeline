@@ -297,6 +297,9 @@
   ],
   [
    "id-harry-osborn-webb"
+  ],
+  [
+   "id-harry-osborn-ynfsm"
   ]
  ],
  "identita": [
@@ -3146,12 +3149,7 @@
      "gruppo": "1A"
     }
    ],
-   "esclusi_continuita": [
-    {
-     "num": "120",
-     "gruppo": "Canone"
-    }
-   ],
+   "esclusi_continuita": [],
    "ambigui": []
   },
   {
@@ -3170,6 +3168,27 @@
      "tipo": "movie",
      "titolo": "The Amazing Spider-Man 2",
      "gruppo": "1B"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-harry-osborn-ynfsm",
+   "nome": "Harry Osborn/Green Goblin (Your Friendly Neighborhood Spider-Man)",
+   "prompt": "Harry Osborn, a young man in a suit, animated series|the Green Goblin, animated series",
+   "generico": false,
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "120",
+     "item": "120",
+     "tmdb_id": 138503,
+     "tipo": "tv",
+     "titolo": "Your Friendly Neighborhood Spider-Man S1",
+     "gruppo": "Canone"
     }
    ],
    "esclusi_continuita": [],
@@ -5736,15 +5755,20 @@
    "famiglia": [],
    "titoli": [
     {
-     "num": "117",
-     "item": "117",
-     "tmdb_id": 533535,
+     "num": "024",
+     "item": "023",
+     "tmdb_id": 383498,
      "tipo": "movie",
-     "titolo": "Deadpool & Wolverine",
+     "titolo": "Deadpool 2",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "117",
      "gruppo": "Canone"
     }
    ],
-   "esclusi_continuita": [],
    "ambigui": []
   },
   {
