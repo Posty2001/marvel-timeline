@@ -1,0 +1,258 @@
+{
+ "stadi_s": {
+  "download": 190.5,
+  "qualita": 7.4,
+  "carica_clip": 9.3,
+  "carica_siglip": 17.2,
+  "scena_clip": 102.7,
+  "scena_siglip": 373.3
+ },
+ "candidati_totali": 5606,
+ "immagini_uniche": 2003,
+ "immagini_nitide": 1980,
+ "totale_s": 1232.0,
+ "ram_picco_mb": 3057,
+ "cpu": 4,
+ "identita": {
+  "id-iron-man": {
+   "conf": "alta",
+   "buoni": 15,
+   "proposte": 5,
+   "secondi": 12.8
+  },
+  "id-thor": {
+   "conf": "alta",
+   "buoni": 14,
+   "proposte": 5,
+   "secondi": 12.3
+  },
+  "id-loki": {
+   "conf": "alta",
+   "buoni": 11,
+   "proposte": 5,
+   "secondi": 14.1
+  },
+  "id-peter-parker-mcu": {
+   "conf": "alta",
+   "buoni": 15,
+   "proposte": 4,
+   "secondi": 13.8
+  },
+  "id-peter-parker-raimi": {
+   "conf": "alta",
+   "buoni": 16,
+   "proposte": 5,
+   "secondi": 13.3
+  },
+  "id-peter-parker-garfield": {
+   "conf": "alta",
+   "buoni": 16,
+   "proposte": 4,
+   "secondi": 12.9
+  },
+  "id-wolverine": {
+   "conf": "alta",
+   "buoni": 15,
+   "proposte": 5,
+   "secondi": 13.6
+  },
+  "id-wade-wilson-deadpool": {
+   "conf": "alta",
+   "buoni": 14,
+   "proposte": 5,
+   "secondi": 13.1
+  },
+  "id-wanda-maximoff": {
+   "conf": "alta",
+   "buoni": 12,
+   "proposte": 5,
+   "secondi": 12.8
+  },
+  "id-thanos": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 4,
+   "secondi": 12.1
+  },
+  "id-hulk": {
+   "conf": "alta",
+   "buoni": 16,
+   "proposte": 4,
+   "secondi": 13.9
+  },
+  "id-steve-rogers-capitan-america": {
+   "conf": "alta",
+   "buoni": 10,
+   "proposte": 5,
+   "secondi": 14.4
+  },
+  "id-natasha-romanoff": {
+   "conf": "alta",
+   "buoni": 16,
+   "proposte": 5,
+   "secondi": 13.6
+  },
+  "id-matt-murdock-daredevil": {
+   "conf": "alta",
+   "buoni": 6,
+   "proposte": 5,
+   "secondi": 13.7
+  },
+  "id-bucky-barnes-soldato-d-inverno": {
+   "conf": "bassa",
+   "buoni": 2,
+   "proposte": 6,
+   "secondi": 13.7
+  },
+  "id-sam-wilson-capitan-america": {
+   "conf": "alta",
+   "buoni": 3,
+   "proposte": 5,
+   "secondi": 13.2
+  },
+  "id-scott-lang-ant-man": {
+   "conf": "alta",
+   "buoni": 13,
+   "proposte": 4,
+   "secondi": 13.6
+  },
+  "id-rocket": {
+   "conf": "alta",
+   "buoni": 8,
+   "proposte": 5,
+   "secondi": 13.5
+  },
+  "id-peter-quill-star-lord": {
+   "conf": "alta",
+   "buoni": 13,
+   "proposte": 5,
+   "secondi": 11.7
+  },
+  "id-gamora": {
+   "conf": "alta",
+   "buoni": 5,
+   "proposte": 5,
+   "secondi": 13.6
+  },
+  "id-nebula": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 6,
+   "secondi": 13.4
+  },
+  "id-drax": {
+   "conf": "bassa",
+   "buoni": 2,
+   "proposte": 6,
+   "secondi": 14.1
+  },
+  "id-t-challa-black-panther": {
+   "conf": "alta",
+   "buoni": 11,
+   "proposte": 3,
+   "secondi": 14.9
+  },
+  "id-stephen-strange": {
+   "conf": "alta",
+   "buoni": 14,
+   "proposte": 3,
+   "secondi": 14.4
+  },
+  "id-clint-barton": {
+   "conf": "alta",
+   "buoni": 16,
+   "proposte": 3,
+   "secondi": 14.6
+  },
+  "id-carol-danvers-captain-marvel": {
+   "conf": "alta",
+   "buoni": 16,
+   "proposte": 4,
+   "secondi": 14.7
+  },
+  "id-james-rhodes-war-machine": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 6,
+   "secondi": 13.2
+  },
+  "id-nick-fury": {
+   "conf": "alta",
+   "buoni": 6,
+   "proposte": 4,
+   "secondi": 13.6
+  },
+  "id-visione": {
+   "conf": "alta",
+   "buoni": 9,
+   "proposte": 4,
+   "secondi": 13.8
+  },
+  "id-magneto": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 9,
+   "secondi": 13.6
+  },
+  "id-charles-xavier-fox": {
+   "conf": "alta",
+   "buoni": 7,
+   "proposte": 5,
+   "secondi": 11.9
+  },
+  "id-mystica": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 5,
+   "secondi": 12.1
+  },
+  "id-ciclope": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 5,
+   "secondi": 13.7
+  },
+  "id-jean-grey-fenice": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 4,
+   "secondi": 13.7
+  },
+  "id-reed-richards": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 9,
+   "secondi": 11.9
+  },
+  "id-sue-storm": {
+   "conf": "alta",
+   "buoni": 10,
+   "proposte": 5,
+   "secondi": 12.2
+  },
+  "id-johnny-storm-human-torch": {
+   "conf": "alta",
+   "buoni": 13,
+   "proposte": 5,
+   "secondi": 13.8
+  },
+  "id-ben-grimm": {
+   "conf": "bassa",
+   "buoni": 2,
+   "proposte": 6,
+   "secondi": 13.1
+  },
+  "id-victor-von-doom": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 5,
+   "secondi": 11.0
+  },
+  "id-harry-osborn-green-goblin": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 9,
+   "secondi": 12.2
+  }
+ }
+}
