@@ -43,7 +43,7 @@ with sync_playwright() as p:
     pg.evaluate("()=>document.querySelector('#atlas2 .a3-ritlink').click()"); pg.wait_for_timeout(1200)
     wait(pg, "()=>document.querySelectorAll('#atlas2 .a3r-item').length>=10")
     ok('manager: 10 identita del pilota in testa', pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3r-item b')].slice(0,10).map(x=>x.textContent).join('|')") == 'Iron Man MCU|Thor MCU|Loki MCU|Spider-Man MCU|Spider-Man Raimi|Spider-Man Garfield|Wolverine Fox|Deadpool|Wanda Maximoff MCU|Thanos MCU')
-    ok('manager: scene candidate e nessun ritratto', pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3r-item .s')].every(s=>/scene candidate · nessun ritratto/.test(s.textContent))"))
+    ok('manager: scene candidate e nessun ritratto', pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3r-item .s')].every(s=>/scen[ea] candidat[ae] · nessun ritratto/.test(s.textContent))"))
     ok('esporta/importa presenti', pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3r-mgr .a3r-b')].map(b=>b.textContent).join('|')").startswith('Esporta ritratti|Importa da file'))
     # ---- scena TMDB per Iron Man
     pg.evaluate("()=>document.querySelector('#atlas2 .a3r-item').click()"); wait(pg, "()=>!!document.querySelector('.a3r .a3r-prev')")
