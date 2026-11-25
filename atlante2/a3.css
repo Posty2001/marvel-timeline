@@ -63,7 +63,7 @@
 .a3-em { display: block; width: 100%; height: 100%; }
 
 /* ---------- Catalogo ---------- */
-.a3-tools { position: sticky; top: 0; z-index: 20; background: rgba(14,11,8,.96); border-bottom: 1px solid #2a2218; padding: 8px 0 8px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+.a3-tools { position: sticky; top: 0; z-index: 20; background: #0e0b08; border-bottom: 1px solid #2a2218; padding: 8px 0 8px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
 .a3-tools .line { display: flex; gap: 8px; padding: 0 16px; align-items: center; }
 .a3-in { flex: 1; min-width: 0; min-height: 42px; border-radius: 21px; border: 1px solid var(--a3-line); background: rgba(20,16,10,.85); color: var(--a3-text); padding: 0 16px; font-size: 16px; }
 .a3-sel { flex: 1; min-width: 0; min-height: 40px; border-radius: 20px; border: 1px solid var(--a3-line); background: rgba(20,16,10,.85); color: var(--a3-text); padding: 0 12px; font-size: 14px; }
@@ -104,7 +104,7 @@
 .a3-bds { display: flex; gap: 6px; flex-wrap: wrap; }
 .a3-bd { font-size: 10.5px; padding: 3px 10px; border-radius: 12px; border: 1px solid var(--acc); color: var(--acc); background: rgba(14,11,8,.7); }
 .a3-bd.warn { border-color: #c98a4a; color: #e7b274; }
-.a3-jump { min-width: 0; position: sticky; top: 0; z-index: 20; background: rgba(14,11,8,.96); border-bottom: 1px solid #2a2218; padding: 8px 0 6px; }
+.a3-jump { min-width: 0; position: sticky; top: 0; z-index: 20; background: #0e0b08; border-bottom: 1px solid #2a2218; padding: 8px 0 6px; }
 .a3-prog { padding: 0 16px 2px; font-size: 11px; color: var(--a3-soft); display: flex; align-items: center; gap: 8px; }
 .a3-prog i { flex: 1; height: 3px; border-radius: 2px; background: #2a2218; overflow: hidden; }
 .a3-prog i b { display: block; height: 100%; width: 0; background: var(--acc); transition: width .4s; }

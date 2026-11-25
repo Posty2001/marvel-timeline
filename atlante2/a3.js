@@ -53,17 +53,86 @@
     get('data/d/' + ('00' + v.sh).slice(-3) + '.json').then(function (b) { SH[v.sh] = b; cb(b[id] || null); }).catch(function () { cb(null); });
   }
   function initials(n) { var w = (n || '').replace(/\(.*?\)/g, ' ').split(/[\s\/\-]+/).map(function (x) { return (x.match(/[A-Za-z0-9À-ÿ]/) || [''])[0]; }).filter(Boolean); var r = w.length > 1 ? w[0] + w[1] : (w[0] || '·'); return r.toUpperCase(); }
+
+  /* ---------- Emblemi originali per le categorie senza ritratto (nessuna iniziale): grafica procedurale deterministica, unica per ogni voce ---------- */
+  var NSV = 'http://www.w3.org/2000/svg';
+  function S(n, a, par) { var e = D.createElementNS(NSV, n); Object.keys(a || {}).forEach(function (k) { e.setAttribute(k, String(a[k])); }); if (par) par.appendChild(e); return e; }
+  function rngOf(seed) { var s = seed >>> 0; return function () { s = (s + 0x6D2B79F5) >>> 0; var x = s; x = Math.imul(x ^ (x >>> 15), x | 1); x ^= x + Math.imul(x ^ (x >>> 7), x | 61); return ((x ^ (x >>> 14)) >>> 0) / 4294967296; }; }
+  function terraNum(v) { var m = v.t === 'U' ? /^Earth-([0-9A-Z]+)\b/.exec(v.n) : null; return m && /\d/.test(m[1]) ? m[1] : null; }
+  function emblemGen(v, big) {
+    var p = PAL[v.t] || PAL.p, hs = hash(v.i), R = rngOf(hs), s = S('svg', { viewBox: '0 0 160 100', preserveAspectRatio: 'xMidYMid slice', 'class': 'a3-em', 'aria-hidden': 'true' });
+    var gid = 'g' + hs.toString(36), defs = S('defs', {}, s), lg = S('linearGradient', { id: gid, x1: 0, y1: 0, x2: 1, y2: 1 }, defs);
+    S('stop', { offset: 0, 'stop-color': p[0] }, lg); S('stop', { offset: 1, 'stop-color': '#0e0b08' }, lg); S('rect', { width: 160, height: 100, fill: 'url(#' + gid + ')' }, s);
+    var cx = 80, cy = 44, st = { fill: 'none', stroke: p[1], 'stroke-linecap': 'round', 'stroke-linejoin': 'round' };
+    function ln(a, o) { var q = {}; Object.keys(st).forEach(function (k) { q[k] = st[k]; }); Object.keys(a).forEach(function (k) { q[k] = a[k]; }); return S(o || 'path', q, s); }
+    function pt(r, a) { return [cx + r * Math.cos(a), cy + r * Math.sin(a)]; }
+    function pt0(x0, y0, r, a) { return [x0 + r * Math.cos(a), y0 + r * Math.sin(a)]; }
+    var i, a, q, k, n;
+    if (v.t === 'U') {
+      var num = terraNum(v);
+      for (i = 0; i < 4; i++) ln({ cx: cx, cy: cy, r: 12 + i * 8, 'stroke-opacity': .5 - i * .1, 'stroke-width': 1 }, 'circle');
+      if (num) {
+        var tx = S('text', { x: cx, y: cy + (num.length > 5 ? 8 : 12), 'text-anchor': 'middle', 'font-family': 'Spectral, Georgia, serif', 'font-weight': 700, 'font-size': num.length > 5 ? 26 : num.length > 3 ? 32 : 40, fill: p[1], 'fill-opacity': .92 }, s); tx.textContent = num;
+      } else {   // universo senza numerazione documentata: costellazione unica (nessun numero inventato)
+        n = 7 + Math.floor(R() * 5); var pts = [];
+        for (i = 0; i < n; i++) { a = R() * 6.2832; q = 8 + R() * 28; pts.push(pt(q, a)); }
+        for (i = 1; i < n; i++) ln({ d: 'M' + pts[i - 1][0].toFixed(1) + ' ' + pts[i - 1][1].toFixed(1) + 'L' + pts[i][0].toFixed(1) + ' ' + pts[i][1].toFixed(1), 'stroke-opacity': .5, 'stroke-width': 1 });
+        pts.forEach(function (c, j) { S('circle', { cx: c[0].toFixed(1), cy: c[1].toFixed(1), r: j === 0 ? 3.6 : 1.8 + R() * 1.4, fill: p[1], 'fill-opacity': j === 0 ? 1 : .8 }, s); });
+      }
+    } else if (v.t === 'h') {   // hub: una ramificazione con tanti rami quante sono le voci collegate
+      n = Math.max(2, Math.min(8, v.a || 3)); var off = R() * 6.28;
+      for (i = 0; i < n; i++) { a = off + i * 6.2832 / n; var e1 = pt(30, a), mid = pt(15, a + .35); ln({ d: 'M' + cx + ' ' + cy + 'Q' + mid[0].toFixed(1) + ' ' + mid[1].toFixed(1) + ' ' + e1[0].toFixed(1) + ' ' + e1[1].toFixed(1), 'stroke-width': 1.4 }); S('circle', { cx: e1[0].toFixed(1), cy: e1[1].toFixed(1), r: 3.4, fill: p[1] }, s); }
+      S('circle', { cx: cx, cy: cy, r: 6, fill: p[1] }, s); ln({ cx: cx, cy: cy, r: 11, 'stroke-opacity': .6 }, 'circle');
+    } else if (v.t === 'm') {   // mantello: mantelli sovrapposti e fermaglio
+      var w0 = 20 + R() * 8;
+      for (i = 0; i < 3; i++) { var w = w0 + i * 7, hh = 22 + i * 6; ln({ d: 'M' + (cx - w) + ' ' + (cy - hh + 4) + 'Q' + cx + ' ' + (cy - hh - 10 + i * 2) + ' ' + (cx + w) + ' ' + (cy - hh + 4) + 'L' + (cx + w * .8) + ' ' + (cy + hh) + 'Q' + cx + ' ' + (cy + hh - 8) + ' ' + (cx - w * .8) + ' ' + (cy + hh) + 'Z', 'stroke-opacity': .85 - i * .22, 'stroke-width': 1.3 }); }
+      S('circle', { cx: cx, cy: cy - 22, r: 4, fill: p[1] }, s);
+    } else if (v.t === 'a') {   // artefatto: sigillo unico (poligono stellato ruotato, anello, cuore interno, tacche)
+      n = 5 + Math.floor(R() * 5); k = 2 + Math.floor(R() * Math.max(1, (n - 3) / 2)); if (n % k === 0) k = (k % 2) ? 2 : 3; if (n % k === 0) k = 1; var rot = R() * 6.2832, d = '', n2 = 3 + Math.floor(R() * 4), r2 = 8 + R() * 8, dash = R() > .55;
+      for (i = 0; i <= n; i++) { q = pt(30 - R() * 2, rot + (i * k % n) * 6.2832 / n); d += (i ? 'L' : 'M') + q[0].toFixed(1) + ' ' + q[1].toFixed(1); }
+      ln({ d: d + 'Z', 'stroke-width': 1.2 + R() * .8 }); ln({ cx: cx, cy: cy, r: 33, 'stroke-opacity': .6, 'stroke-dasharray': dash ? '2 3' : '0' }, 'circle');
+      d = ''; for (i = 0; i <= n2; i++) { q = pt(r2, rot * 2 + i * 6.2832 / n2); d += (i ? 'L' : 'M') + q[0].toFixed(1) + ' ' + q[1].toFixed(1); } ln({ d: d + 'Z', 'stroke-opacity': .8 });
+      var tk = 6 + Math.floor(R() * 14); for (i = 0; i < tk; i++) { var q0 = pt(33, i * 6.2832 / tk), q1 = pt(33 + 3 + R() * 3, i * 6.2832 / tk); ln({ d: 'M' + q0[0].toFixed(1) + ' ' + q0[1].toFixed(1) + 'L' + q1[0].toFixed(1) + ' ' + q1[1].toFixed(1), 'stroke-opacity': .7 }); }
+      S('circle', { cx: cx, cy: cy, r: 1.8 + R() * 1.6, fill: p[1] }, s);
+    } else if (v.t === 'o') {   // organizzazione: scudo (4 sagome) con partizione (6) e figura (5) uniche
+      var sw = 22 + R() * 6, sk = Math.floor(R() * 3), top = cy - 30, bot = cy + 34, sh;
+      if (sk === 0) sh = 'M' + (cx - sw) + ' ' + top + 'H' + (cx + sw) + 'V' + (cy + 4) + 'Q' + (cx + sw) + ' ' + (cy + 24) + ' ' + cx + ' ' + bot + 'Q' + (cx - sw) + ' ' + (cy + 24) + ' ' + (cx - sw) + ' ' + (cy + 4) + 'Z';
+      else if (sk === 1) sh = 'M' + (cx - sw) + ' ' + (top + 4) + 'Q' + cx + ' ' + (top - 6) + ' ' + (cx + sw) + ' ' + (top + 4) + 'V' + (cy + 8) + 'L' + cx + ' ' + bot + 'L' + (cx - sw) + ' ' + (cy + 8) + 'Z';
+      else sh = 'M' + (cx - sw) + ' ' + top + 'H' + (cx + sw) + 'V' + (cy + 10) + 'Q' + (cx + sw) + ' ' + (bot) + ' ' + cx + ' ' + bot + 'Q' + (cx - sw) + ' ' + (bot) + ' ' + (cx - sw) + ' ' + (cy + 10) + 'Z';
+      ln({ d: sh, 'stroke-width': 1.8 }); k = Math.floor(R() * 6); var X0 = cx - sw, X1 = cx + sw;
+      if (k === 0) ln({ d: 'M' + cx + ' ' + top + 'V' + bot + 'M' + X0 + ' ' + (cy - 6) + 'H' + X1 }); else if (k === 1) ln({ d: 'M' + X0 + ' ' + (cy - 14) + 'L' + cx + ' ' + (cy + 4) + 'L' + X1 + ' ' + (cy - 14) }); else if (k === 2) ln({ d: 'M' + X0 + ' ' + top + 'L' + X1 + ' ' + (cy + 12) }); else if (k === 3) ln({ d: 'M' + X0 + ' ' + (cy - 8) + 'H' + X1 }); else if (k === 4) ln({ d: 'M' + X0 + ' ' + (cy + 12) + 'L' + cx + ' ' + (cy - 10) + 'L' + X1 + ' ' + (cy + 12) }); else ln({ d: 'M' + (cx - sw / 3) + ' ' + top + 'V' + bot + 'M' + (cx + sw / 3) + ' ' + top + 'V' + bot });
+      var ch = Math.floor(R() * 5), my = cy - 4 + R() * 6;
+      if (ch === 0) S('circle', { cx: cx, cy: my, r: 6, fill: p[1], 'fill-opacity': .85 }, s);
+      else if (ch === 1) { var dd = ''; for (i = 0; i < 10; i++) { q = pt0(cx, my, i % 2 ? 3 : 7, -1.5708 + i * .6283); dd += (i ? 'L' : 'M') + q[0].toFixed(1) + ' ' + q[1].toFixed(1); } S('path', { d: dd + 'Z', fill: p[1], 'fill-opacity': .85 }, s); }
+      else if (ch === 2) S('path', { d: 'M' + cx + ' ' + (my - 7) + 'L' + (cx + 6) + ' ' + my + 'L' + cx + ' ' + (my + 7) + 'L' + (cx - 6) + ' ' + my + 'Z', fill: p[1], 'fill-opacity': .85 }, s);
+      else if (ch === 3) S('path', { d: 'M' + cx + ' ' + (my - 7) + 'L' + (cx + 7) + ' ' + (my + 6) + 'H' + (cx - 7) + 'Z', fill: p[1], 'fill-opacity': .85 }, s);
+      else { ln({ cx: cx, cy: my, r: 7 }, 'circle'); S('circle', { cx: cx, cy: my, r: 2.6, fill: p[1] }, s); }
+    } else if (v.t === 'l') {   // luogo: curve di livello uniche
+      n = 5; var ph = [R() * 6.28, R() * 6.28, R() * 6.28], am = [.12 + R() * .1, .08 + R() * .08, .05 + R() * .05];
+      for (i = 0; i < n; i++) { var rr = 8 + i * 6.5, dd = ''; for (var j = 0; j <= 48; j++) { a = j * 6.2832 / 48; var w2 = rr * (1 + am[0] * Math.sin(2 * a + ph[0]) + am[1] * Math.sin(3 * a + ph[1]) + am[2] * Math.sin(5 * a + ph[2])); q = pt(w2, a); dd += (j ? 'L' : 'M') + q[0].toFixed(1) + ' ' + (cy + (q[1] - cy) * .85).toFixed(1); } ln({ d: dd + 'Z', 'stroke-opacity': .85 - i * .12, 'stroke-width': 1.2 }); }
+      S('circle', { cx: cx + (R() - .5) * 8, cy: cy + (R() - .5) * 6, r: 2.4, fill: p[1] }, s);
+    } else if (v.t === 'P') {   // pianeta: sfera con fasce e, a volte, anello e luna
+      var cp = S('clipPath', { id: gid + 'c' }, defs); S('circle', { cx: cx, cy: cy, r: 26 }, cp); S('circle', { cx: cx, cy: cy, r: 26, fill: p[1], 'fill-opacity': .22 }, s);
+      var g2 = S('g', { 'clip-path': 'url(#' + gid + 'c)' }, s); n = 3 + Math.floor(R() * 3);
+      for (i = 0; i < n; i++) { var by = cy - 20 + R() * 40; S('path', { d: 'M' + (cx - 30) + ' ' + by.toFixed(1) + 'Q' + cx + ' ' + (by + 4 + R() * 6).toFixed(1) + ' ' + (cx + 30) + ' ' + by.toFixed(1), fill: 'none', stroke: p[1], 'stroke-opacity': .35 + R() * .4, 'stroke-width': 2 + R() * 3 }, g2); }
+      S('circle', { cx: cx - 8, cy: cy - 8, r: 26, fill: 'none', stroke: '#0e0b08', 'stroke-opacity': .0 }, s); ln({ cx: cx, cy: cy, r: 26, 'stroke-width': 1.4 }, 'circle');
+      if (R() > .4) ln({ d: 'M' + (cx - 42) + ' ' + (cy + 6) + 'Q' + cx + ' ' + (cy + 20) + ' ' + (cx + 42) + ' ' + (cy - 6), 'stroke-opacity': .7, 'stroke-width': 1.6 });
+      q = pt(36, R() * 6.28); S('circle', { cx: q[0].toFixed(1), cy: q[1].toFixed(1), r: 3, fill: p[1] }, s);
+    } else if (v.t === 'e') {   // evento: esplosione di raggi
+      n = 14 + Math.floor(R() * 8); for (i = 0; i < n; i++) { a = i * 6.2832 / n + R() * .1; var r0 = 9 + R() * 4, r1 = 20 + R() * 20, p0 = pt(r0, a), p1 = pt(r1, a); ln({ d: 'M' + p0[0].toFixed(1) + ' ' + p0[1].toFixed(1) + 'L' + p1[0].toFixed(1) + ' ' + p1[1].toFixed(1), 'stroke-width': 1 + R() * 1.4, 'stroke-opacity': .9 - R() * .4 }); }
+      S('circle', { cx: cx, cy: cy, r: 5, fill: p[1] }, s); ln({ cx: cx, cy: cy, r: 8, 'stroke-opacity': .6 }, 'circle');
+    }
+    return s;
+  }
   function emblem(v, big) {
+    if (v.t !== 'p' && v.t !== 't') return emblemGen(v, big);
     var p = PAL[v.t] || PAL.p, hs = hash(v.i), a = hs % 360, ini = initials(v.n);
     var ns = 'http://www.w3.org/2000/svg', s = D.createElementNS(ns, 'svg'); s.setAttribute('viewBox', '0 0 120 160'); s.setAttribute('preserveAspectRatio', 'xMidYMid slice'); s.setAttribute('class', 'a3-em'); s.setAttribute('aria-hidden', 'true');
     var gid = 'g' + hs.toString(36), defs = D.createElementNS(ns, 'defs'), lg = D.createElementNS(ns, 'linearGradient'); lg.setAttribute('id', gid); lg.setAttribute('x1', '0'); lg.setAttribute('y1', '0'); lg.setAttribute('x2', '1'); lg.setAttribute('y2', '1');
     [['0', p[0]], ['1', '#0e0b08']].forEach(function (st) { var e = D.createElementNS(ns, 'stop'); e.setAttribute('offset', st[0]); e.setAttribute('stop-color', st[1]); lg.appendChild(e); }); defs.appendChild(lg); s.appendChild(defs);
     var r = D.createElementNS(ns, 'rect'); r.setAttribute('width', '120'); r.setAttribute('height', '160'); r.setAttribute('fill', 'url(#' + gid + ')'); s.appendChild(r);
     for (var i = 0; i < 3; i++) { var c = D.createElementNS(ns, 'circle'); c.setAttribute('cx', String(30 + (hs >> (i * 3)) % 60)); c.setAttribute('cy', String(40 + (hs >> (i * 2 + 1)) % 50)); c.setAttribute('r', String(22 + i * 16)); c.setAttribute('fill', 'none'); c.setAttribute('stroke', p[1]); c.setAttribute('stroke-opacity', String(0.45 - i * 0.12)); s.appendChild(c); }
-    var nm = v.t === 'U' ? /^Earth-([0-9A-Z]+)\b/.exec(v.n) : null, num = nm && /\d/.test(nm[1]) ? nm[1] : null;
-    if (v.t === 'U' && !num) return s;   // universo senza numerazione documentata: solo anelli, la denominazione esistente resta nel titolo
-    if (num) ini = num;
-    var tx = D.createElementNS(ns, 'text'); tx.setAttribute('x', '60'); tx.setAttribute('y', v.t === 'U' ? (big ? '84' : '64') : big ? '84' : '78'); tx.setAttribute('text-anchor', 'middle'); tx.setAttribute('font-family', 'Spectral, Georgia, serif'); tx.setAttribute('font-size', ini.length > 5 ? '19' : ini.length > 3 ? '26' : '38'); tx.setAttribute('font-weight', '700'); tx.setAttribute('fill', p[1]); tx.setAttribute('fill-opacity', '.85'); tx.textContent = ini; s.appendChild(tx);
+    var tx = D.createElementNS(ns, 'text'); tx.setAttribute('x', '60'); tx.setAttribute('y', big ? '84' : '78'); tx.setAttribute('text-anchor', 'middle'); tx.setAttribute('font-family', 'Spectral, Georgia, serif'); tx.setAttribute('font-size', '38'); tx.setAttribute('font-weight', '700'); tx.setAttribute('fill', p[1]); tx.setAttribute('fill-opacity', '.85'); tx.textContent = ini; s.appendChild(tx);
     return s;
   }
   function bgImg(el, name, kb) { var im = new Image(); im.onload = function () { el.style.backgroundImage = 'url("' + im.src + '")'; el.classList.add('ld'); }; im.decoding = 'async'; im.src = BASE + 'img/' + name + '.webp'; if (kb) el.classList.add('a3-kb'); }
@@ -91,17 +160,24 @@
   function badge(v) { return v.s ? 'In verifica' : (KIND[v.k] || ''); }
 
   /* ---------- tile / riga ---------- */
+  function nk(s) { return norm(String(s || '').replace(/^Earth-/i, 'Terra ')); }
+  function shown(v) {   // titolo e sottotitolo senza ripetizioni (il nome completo resta in aria-label e nel dossier)
+    var n = v.n, sub = v.u ? uniNome(v.u) : (v.a ? v.a + (v.t === 'h' ? ' voci collegate' : v.t === 'm' ? ' titolari' : ' apparizioni') : '');
+    if (v.t === 'U') { var m = /^Earth-[0-9A-Z]+ — (.+)$/.exec(v.n); if (terraNum(v)) { if (m) { n = m[1]; sub = uniCont(v.i) && nk(uniCont(v.i)) !== nk(n) ? uniCont(v.i) : ''; } else { n = uniCont(v.i) || 'Terra ' + terraNum(v); sub = ''; } } else sub = uniCont(v.i) && nk(uniCont(v.i)) !== nk(n) ? uniCont(v.i) : ''; }
+    else if (sub && (nk(sub) === nk(n) || nk(n).indexOf(nk(sub)) >= 0)) sub = '';
+    return { n: n, s: sub };
+  }
   function tile(v, compact) {
     var b = btn('a3-tile t-' + v.t, null, function () { openId(v.i); }, { 'aria-label': v.n + (badge(v) ? ' — ' + badge(v) : '') });
     var em = h('span', 'em'); em.appendChild(emblem(v)); b.appendChild(em); paintRit(em, v.i, false);
     if (v.s) b.appendChild(h('span', 'bd', badge(v)));
-    var t = h('span', 't'); t.appendChild(h('b', '', v.n)); var sub = v.u ? uniNome(v.u) : (v.a ? v.a + (v.t === 'h' ? ' voci collegate' : v.t === 'm' ? ' titolari' : ' apparizioni') : ''); if (sub && norm(sub) !== norm(v.n) && norm(v.n).indexOf(norm(sub)) < 0) t.appendChild(h('span', '', sub)); b.appendChild(t);
+    var sh = shown(v), t = h('span', 't'); t.appendChild(h('b', '', sh.n)); if (sh.s) t.appendChild(h('span', '', sh.s)); b.appendChild(t);
     return b;
   }
   function li(v) {
     var b = btn('a3-li t-' + v.t, null, function () { openId(v.i); });
     var em = h('span', 'em'); em.appendChild(emblem(v)); b.appendChild(em); paintRit(em, v.i, false);
-    var t = h('span'); t.appendChild(h('b', '', v.n)); var sub = (v.u ? uniNome(v.u) : '') || (v.a ? v.a + ' apparizioni' : ''); if (sub) t.appendChild(h('span', 's', sub)); b.appendChild(t);
+    var sh = shown(v), t = h('span'); t.appendChild(h('b', '', sh.n)); var sub = (v.t === 'U' ? sh.s : (sh.s || (v.a ? v.a + ' apparizioni' : ''))); if (sub) t.appendChild(h('span', 's', sub)); b.appendChild(t);
     if (v.s) b.appendChild(h('span', 'bd', badge(v)));
     return b;
   }
