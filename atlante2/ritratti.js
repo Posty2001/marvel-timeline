@@ -148,7 +148,7 @@
         if (rec && rec.kind === 'copy') row.appendChild(btn('a3r-b', 'Ritaglia di nuovo', function () { recrop(rec); }));
         if (rec && rec.kind === 'ref') row.appendChild(btn('a3r-b', 'Ritaglia di nuovo', function () { recropRef(rec); }));
         if (rec) row.appendChild(btn('a3r-b warn', 'Rimuovi', function () { confirmDel(); }));
-        main.appendChild(row); main.appendChild(h('p', 'a3r-fine', 'Archivio, esportazione e importazione di tutti i ritratti: voce «Ritratti privati» nella Home dell’Atlante 2.0.'));
+        main.appendChild(row); main.appendChild(h('p', 'a3r-fine', 'Archivio, esportazione e importazione di tutti i ritratti: voce «Ritratti privati» nella Home dell’TVA Atlas.'));
       });
     }
     function confirmDel() { var m = h('div', 'a3r-conf'); m.appendChild(h('p', '', 'Rimuovere il ritratto di «' + nome + '»? L’emblema tornerà come segnaposto. Non è annullabile, salvo reimportazione da un’esportazione.')); m.appendChild(btn('a3r-b warn', 'Rimuovi', function () { delRec(id).then(home); })); m.appendChild(btn('a3r-b', 'Annulla', home)); clear(); main.appendChild(m); }

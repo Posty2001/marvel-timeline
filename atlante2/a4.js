@@ -12,7 +12,7 @@
   var VL = ['Da verificare', 'Guida classica', 'Fonte consultata'];
   function sv(n, a, p) { var e = D.createElementNS(NS, n); Object.keys(a || {}).forEach(function (k) { e.setAttribute(k, String(a[k])); }); if (p) p.appendChild(e); return e; }
   function load(cb) {
-    if (G) return cb(); C.get('data/nexus/g.json').then(function (d) { G = d; build(); cb(); }).catch(function () { C.body.textContent = ''; C.body.appendChild(h('div', 'empty', 'Dati del Nexus non disponibili offline.')); });
+    if (G) return cb(); C.get('data/nexus/g.json').then(function (d) { G = d; build(); cb(); }).catch(function () { C.body.textContent = ''; C.body.appendChild(h('div', 'empty', 'Dati di TVA Nexus non disponibili offline.')); });
   }
   function build() {
     G.coT = 2; ADJ = {}; G.r.forEach(function (r, i) { (ADJ[r[0]] = ADJ[r[0]] || []).push([i, r[1]]); (ADJ[r[1]] = ADJ[r[1]] || []).push([i, r[0]]); });
@@ -103,13 +103,13 @@
   }
   function renderNx() {
     C.frame(); var s = C.A3(); s.c = s.c || 'id-iron-man'; if (!BY[s.c]) s.c = (C.ORD.p[0] || {}).i; var S = s.S = s.S || { co: 0, cap: 20, ed: false, un: true, tp: {} }; s.hist = s.hist || [];
-    C.api.setTitle('Nexus', nm(s.c)); var root = h('div', 'a4-root'); C.body.appendChild(root);
+    C.api.setTitle('TVA Nexus', nm(s.c)); var root = h('div', 'a4-root'); C.body.appendChild(root);
     pickList(root, function (id) { go(id); }, 'Cerca un’identità, un’organizzazione…');
     var bar = h('div', 'a4-bar'), tools = h('div', 'a4-tools'); root.appendChild(bar); root.appendChild(tools);
     var host = h('div', 'a4-vp a4-nx'), world = h('div', 'a4-world'); bgStars(host); host.appendChild(world); root.appendChild(host);
     var leg = h('div', 'a4-leg'); root.appendChild(leg); var list = h('div', 'a4-rl'); root.appendChild(list);
     var pz = panzoom(host, world, { min: .4, max: 3, k: 1 }); controls(host, pz, function () { pz.reset(500, 500, .8); }); function lay() { pz.reset(500, 500, .8); } setTimeout(lay, 120); setTimeout(lay, 450);
-    function go(id, back) { if (!back && s.c !== id) s.hist.push(s.c); s.c = id; C.api.setTitle('Nexus', nm(id)); draw(); }
+    function go(id, back) { if (!back && s.c !== id) s.hist.push(s.c); s.c = id; C.api.setTitle('TVA Nexus', nm(id)); draw(); }
     function chipT(txt, on, fn, title) { var b = btn('chip' + (on ? ' on' : ''), txt, fn, { 'aria-pressed': on ? 'true' : 'false' }); if (title) b.title = title; return b; }
     function toolbar() {
       tools.textContent = ''; bar.textContent = ''; bar.appendChild(btn('btn ghost', '← Indietro', function () { var p = s.hist.pop(); if (p) go(p, true); }, s.hist.length ? {} : { disabled: 'disabled' })); bar.appendChild(btn('btn ghost', 'Apri il dossier', function () { C.openId(s.c); })); bar.appendChild(btn('btn ghost', 'Percorso da qui', function () { C.api.nav('a3', { a3: { v: 'pc', a: s.c, b: '', m: 'mix' } }); }));
