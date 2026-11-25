@@ -1,0 +1,197 @@
+{
+ "stadi_s": {
+  "download": 16.4,
+  "qualita": 5.4,
+  "scena_clip": 72.6,
+  "scena_siglip": 272.9
+ },
+ "candidati_totali": 2157,
+ "immagini_uniche": 1392,
+ "immagini_nitide": 1359,
+ "totale_s": 747.9,
+ "ram_picco_mb": 2895,
+ "identita": {
+  "id-dracula": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 12.2
+  },
+  "id-druig": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 11.0
+  },
+  "id-ebony-maw": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 13.9
+  },
+  "id-eddie-brock-venom": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 12.5
+  },
+  "id-edwin-jarvis": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 13.4
+  },
+  "id-ego": {
+   "conf": "alta",
+   "buoni": 3,
+   "proposte": 3,
+   "secondi": 13.1
+  },
+  "id-elektra-natchios": {
+   "conf": "alta",
+   "buoni": 6,
+   "proposte": 4,
+   "secondi": 12.6
+  },
+  "id-elsa-bloodstone": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 12.4
+  },
+  "id-emil-blonsky-abominio": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 11.4
+  },
+  "id-enoch": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 7,
+   "secondi": 12.9
+  },
+  "id-blade": {
+   "conf": "alta",
+   "buoni": 16,
+   "proposte": 5,
+   "secondi": 11.8
+  },
+  "id-erik-gelden": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 11.7
+  },
+  "id-erik-killmonger": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 11.8
+  },
+  "id-magneto": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 11.7
+  },
+  "id-everett-ross": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 9,
+   "secondi": 12.9
+  },
+  "id-ezekiel-sims": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 13.4
+  },
+  "id-fitz": {
+   "conf": "alta",
+   "buoni": 9,
+   "proposte": 3,
+   "secondi": 12.8
+  },
+  "id-flint-marko-sandman": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 9,
+   "secondi": 10.3
+  },
+  "id-foggy-nelson": {
+   "conf": "alta",
+   "buoni": 3,
+   "proposte": 3,
+   "secondi": 13.6
+  },
+  "id-frances-barrison-shriek": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 12.9
+  },
+  "id-frank-castle-punisher": {
+   "conf": "alta",
+   "buoni": 7,
+   "proposte": 3,
+   "secondi": 12.9
+  },
+  "id-frigga": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 12.4
+  },
+  "id-gambit": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 14.0
+  },
+  "id-ghost": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 11.7
+  },
+  "id-gilgamesh": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 8,
+   "secondi": 11.8
+  },
+  "id-gorr": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 13.2
+  },
+  "id-grant-ward-hive": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 7,
+   "secondi": 13.7
+  },
+  "id-gravik": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 13.7
+  },
+  "id-groot-originale": {
+   "conf": "alta",
+   "buoni": 10,
+   "proposte": 3,
+   "secondi": 12.6
+  },
+  "id-groot-successore": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 12.5
+  }
+ },
+ "blocco": 2,
+ "cpu": 4
+}

@@ -1,0 +1,197 @@
+{
+ "stadi_s": {
+  "download": 23.3,
+  "qualita": 5.3,
+  "scena_clip": 74.1,
+  "scena_siglip": 293.5
+ },
+ "candidati_totali": 2176,
+ "immagini_uniche": 1555,
+ "immagini_nitide": 1531,
+ "totale_s": 752.2,
+ "ram_picco_mb": 2895,
+ "identita": {
+  "id-guardiani-della-galassia": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 12.7
+  },
+  "id-gwen-stacy-spider-woman": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 13.3
+  },
+  "id-hank-pym": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 12.8
+  },
+  "id-hannibal-king": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 9.0
+  },
+  "id-harry-osborn-green-goblin": {
+   "conf": "alta",
+   "buoni": 13,
+   "proposte": 5,
+   "secondi": 11.4
+  },
+  "id-he-who-remains": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 13.1
+  },
+  "id-hela": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 13.3
+  },
+  "id-hope-van-dyne": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 13.8
+  },
+  "id-howard-stark": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 13.8
+  },
+  "id-hunter-b-15": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 14.0
+  },
+  "id-ikaris": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 11.5
+  },
+  "id-illyana-rasputin-magik": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 9,
+   "secondi": 5.9
+  },
+  "id-ivan-vanko-whiplash": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 12.8
+  },
+  "id-jack-russell-werewolf-by-night": {
+   "conf": "alta",
+   "buoni": 6,
+   "proposte": 3,
+   "secondi": 9.5
+  },
+  "id-jackson-norriss": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 5,
+   "secondi": 4.2
+  },
+  "id-jane-foster-mighty-thor": {
+   "conf": "alta",
+   "buoni": 3,
+   "proposte": 5,
+   "secondi": 12.2
+  },
+  "id-janet": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 12.3
+  },
+  "id-janet-van-dyne": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 13.6
+  },
+  "id-jasper-sitwell": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 7,
+   "secondi": 5.3
+  },
+  "id-jennifer-walters-she-hulk": {
+   "conf": "alta",
+   "buoni": 12,
+   "proposte": 3,
+   "secondi": 13.4
+  },
+  "id-jessica-jones": {
+   "conf": "alta",
+   "buoni": 16,
+   "proposte": 3,
+   "secondi": 11.7
+  },
+  "id-joaquin-torres-falcon": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 12.3
+  },
+  "id-john-walker": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 12.9
+  },
+  "id-johnny-blaze-ghost-rider": {
+   "conf": "alta",
+   "buoni": 15,
+   "proposte": 4,
+   "secondi": 8.9
+  },
+  "id-johnny-storm-human-torch": {
+   "conf": "alta",
+   "buoni": 12,
+   "proposte": 5,
+   "secondi": 13.4
+  },
+  "id-julia-cornwall": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 3,
+   "secondi": 13.4
+  },
+  "id-kamala-khan-ms-marvel": {
+   "conf": "alta",
+   "buoni": 5,
+   "proposte": 4,
+   "secondi": 13.4
+  },
+  "id-kang-il-conquistatore": {
+   "conf": "alta",
+   "buoni": 7,
+   "proposte": 3,
+   "secondi": 12.7
+  },
+  "id-karen-page": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 13.3
+  },
+  "id-karl-mordo": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 12.2
+  }
+ },
+ "blocco": 3,
+ "cpu": 4
+}

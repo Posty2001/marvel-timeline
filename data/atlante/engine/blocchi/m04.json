@@ -1,0 +1,197 @@
+{
+ "stadi_s": {
+  "download": 14.2,
+  "qualita": 4.1,
+  "scena_clip": 56.9,
+  "scena_siglip": 215.1
+ },
+ "candidati_totali": 1716,
+ "immagini_uniche": 1222,
+ "immagini_nitide": 1190,
+ "totale_s": 626.2,
+ "ram_picco_mb": 2895,
+ "identita": {
+  "id-kate-bishop": {
+   "conf": "alta",
+   "buoni": 13,
+   "proposte": 3,
+   "secondi": 13.3
+  },
+  "id-katy": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 10.7
+  },
+  "id-khonshu": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 11.2
+  },
+  "id-kilgrave": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 12.3
+  },
+  "id-kingo": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 8,
+   "secondi": 4.0
+  },
+  "id-kingpin-spider-verse": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 11.8
+  },
+  "id-knull": {
+   "conf": "alta",
+   "buoni": 5,
+   "proposte": 3,
+   "secondi": 12.8
+  },
+  "id-l-antico": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 12.3
+  },
+  "id-laura-x-23": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 3,
+   "secondi": 12.9
+  },
+  "id-wolverine-x-men-97": {
+   "conf": "alta",
+   "buoni": 6,
+   "proposte": 3,
+   "secondi": 12.8
+  },
+  "id-luke-cage": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 4,
+   "secondi": 12.6
+  },
+  "id-m-baku": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 13.6
+  },
+  "id-major-glenn-talbot": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 13.2
+  },
+  "id-makkari": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 0,
+   "secondi": 4.0
+  },
+  "id-malekith": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 10.5
+  },
+  "id-man-thing": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 7.6
+  },
+  "id-mandarino": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 12.9
+  },
+  "id-mantis": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 11.1
+  },
+  "id-maria-stark": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 12.3
+  },
+  "id-mariah-dillard": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 1,
+   "secondi": 4.4
+  },
+  "id-mariko-yashida": {
+   "conf": "alta",
+   "buoni": 3,
+   "proposte": 3,
+   "secondi": 12.8
+  },
+  "id-mark-miller": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 7.8
+  },
+  "id-martine-bancroft": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 11.8
+  },
+  "id-mary-jane-watson-raimi": {
+   "conf": "alta",
+   "buoni": 9,
+   "proposte": 5,
+   "secondi": 13.3
+  },
+  "id-matt-murdock-daredevil": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 11.7
+  },
+  "id-mattie-franklin": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 13.5
+  },
+  "id-max-dillon-electro": {
+   "conf": "alta",
+   "buoni": 11,
+   "proposte": 3,
+   "secondi": 11.8
+  },
+  "id-maya-lopez-echo": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 8.9
+  },
+  "id-mefisto-roarke": {
+   "conf": "alta",
+   "buoni": 3,
+   "proposte": 4,
+   "secondi": 11.1
+  },
+  "id-melina": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 13.4
+  }
+ },
+ "blocco": 4,
+ "cpu": 4
+}
