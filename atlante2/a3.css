@@ -137,3 +137,46 @@
 .a3 .t-p { --acc: #E3C79B; } .a3 .t-h { --acc: #ff5c5f; } .a3 .t-m { --acc: #b48ae0; } .a3 .t-U { --acc: #4fd0ff; } .a3 .t-o { --acc: #F59A23; }
 .a3 .t-a { --acc: #d46aff; } .a3 .t-l { --acc: #6fb3d9; } .a3 .t-P { --acc: #9fe0d4; } .a3 .t-e { --acc: #ff8a3c; } .a3 .t-t { --acc: #e9a0a6; }
 @media (prefers-reduced-motion: reduce) { .a3-kb, .a3-spin, .a3-tw { animation: none; } .a3 .rev { opacity: 1; transform: none; transition: none; } }
+
+/* ---------- A3.1: ritratti privati (archivio locale) ---------- */
+.a3-li .em, .a3-resume .em { position: relative; }
+.a3-pt { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background-color: #0e0b08; }
+.a3-ptr { background-repeat: no-repeat; }
+.a3-ritbtn { margin-top: 10px; align-self: flex-start; padding: 8px 14px; border-radius: 999px; border: 1px solid rgba(227,199,155,.5); background: rgba(14,11,8,.55); color: #E3C79B; font: 600 13px/1 inherit; min-height: 36px; }
+.a3-ritlink { display: flex; align-items: center; gap: 10px; width: 100%; margin: 14px 0 0; padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(227,199,155,.35); background: rgba(227,199,155,.06); color: #E3C79B; text-align: left; font: 600 14px/1.3 inherit; }
+.a3r { position: fixed; inset: 0; z-index: 2000; background: #0e0b08; color: #f1e6d3; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: env(safe-area-inset-top, 0px) max(16px, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(16px, env(safe-area-inset-left, 0px)); }
+.a3r-top { display: flex; align-items: center; gap: 12px; padding: 12px 0; position: sticky; top: 0; background: #0e0b08; z-index: 2; }
+.a3r-top b { font-size: 16px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.a3r-x, .a3r-b, .a3r-tab { min-height: 44px; padding: 0 16px; border-radius: 12px; border: 1px solid rgba(227,199,155,.45); background: transparent; color: #E3C79B; font: 600 14px/1 inherit; }
+.a3r-b.pri { background: #E3C79B; color: #1a140c; border-color: #E3C79B; }
+.a3r-b.warn { border-color: #ff6b6b; color: #ff9b9b; }
+.a3r-main { display: flex; flex-direction: column; gap: 12px; padding: 4px 0 28px; max-width: 520px; margin: 0 auto; }
+.a3r-prev { position: relative; width: min(60vw, 240px); aspect-ratio: 3 / 4; align-self: center; border-radius: 14px; overflow: hidden; background: #1a140c; display: grid; place-items: center; }
+.a3r-none { color: #9c8f7a; font-size: 13px; }
+.a3r-info, .a3r-fine { margin: 0; font-size: 13px; line-height: 1.45; color: #cdbfa8; }
+.a3r-fine { font-size: 12px; color: #9c8f7a; }
+.a3r-msg { margin: 0; padding: 10px 12px; border-radius: 10px; background: rgba(227,199,155,.12); font-size: 13px; }
+.a3r-msg.bad { background: rgba(255,107,107,.15); color: #ffb0b0; }
+.a3r-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.a3r-conf { display: flex; flex-direction: column; gap: 10px; padding: 14px; border: 1px solid rgba(227,199,155,.35); border-radius: 14px; }
+.a3r-tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+.a3r-tab { flex: none; min-height: 38px; font-size: 12px; }
+.a3r-tab.on { background: rgba(227,199,155,.2); }
+.a3r-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.a3r-th { position: relative; padding: 0; border: 1px solid rgba(227,199,155,.25); border-radius: 10px; overflow: hidden; background: #1a140c; aspect-ratio: 16 / 9; }
+.a3r-th img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.a3r-th .tg { position: absolute; right: 6px; top: 4px; color: #E3C79B; font-style: normal; text-shadow: 0 0 4px #000; }
+.a3r-crop { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.a3r-frame { position: relative; overflow: hidden; border-radius: 12px; background: #1a140c; touch-action: none; outline: 2px solid #E3C79B; user-select: none; -webkit-user-select: none; }
+.a3r-pic { user-select: none; -webkit-user-drag: none; pointer-events: none; }
+.a3r-zoom { width: min(300px, 100%); }
+.a3r-lbl { font-size: 12px; color: #9c8f7a; }
+.a3r-list { display: flex; flex-direction: column; gap: 8px; }
+.a3r-item { display: flex; align-items: center; gap: 12px; width: 100%; padding: 8px; border: 1px solid rgba(227,199,155,.25); border-radius: 12px; background: transparent; color: inherit; text-align: left; min-height: 64px; }
+.a3r-mini { position: relative; flex: none; width: 36px; height: 48px; border-radius: 6px; overflow: hidden; background: #1a140c; }
+.a3r-item .s { display: block; font-size: 12px; color: #9c8f7a; }
+.a3r-ck { font-size: 13px; color: #cdbfa8; }
+.a3-ritmgr { padding: 12px max(16px, env(safe-area-inset-right, 0px)) 28px max(16px, env(safe-area-inset-left, 0px)); }
+.a3r-mgr { display: flex; flex-direction: column; gap: 12px; }
+/* nel dossier il ritratto 3:4 e' una scheda intera (nessun ritaglio nell'intestazione panoramica) */
+.a3-dh .em.has-pt > .a3-pt { inset: auto; top: 16px; right: 16px; left: auto; bottom: auto; width: 132px; height: 176px; border-radius: 12px; border: 1px solid rgba(227,199,155,.55); box-shadow: 0 8px 24px rgba(0,0,0,.5); }

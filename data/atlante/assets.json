@@ -1,0 +1,347 @@
+{
+ "schema": 1,
+ "descrizione": "Registro asset visivi Atlante 2.0 (A3.1 pilota). Solo metadati: nessuna immagine protetta nel repository.",
+ "regole": [
+  "Un ritratto appartiene a UNA identita e UNA continuita (campo continuita = universo dell'identita).",
+  "Stessa scena TMDB su due identita: l'app chiede conferma esplicita (le varianti devono avere ritratti distinti).",
+  "Nessun archetipo condiviso o ricolorato; nessuna locandina come ritratto; fotografie degli attori solo per voci di tipo t (interprete).",
+  "Le immagini protette non entrano nel repository: asset di tipo ritratto hanno modalita privata-locale; il repository conserva solo metadati.",
+  "Illustrazioni originali (universi, luoghi, artefatti, eventi): modalita originale, da produrre e verificare separatamente (non nel pilota)."
+ ],
+ "asset": [
+  {
+   "asset_id": "ast-iron-man-001",
+   "entita": "id-iron-man",
+   "nome": "Tony Stark/Iron Man",
+   "tipo": "ritratto",
+   "continuita": "uni-earth-199999-mcu",
+   "livello": "L4",
+   "modalita": "privata-locale",
+   "fonte": {
+    "nome": "TMDB",
+    "tipo": "scena-da-titolo",
+    "interprete": "Robert Downey Jr.",
+    "titoli": [
+     "Iron Man",
+     "Iron Man 2",
+     "The Avengers",
+     "Iron Man 3",
+     "Avengers: Age of Ultron",
+     "Captain America: Civil War",
+     "Spider-Man: Homecoming",
+     "Avengers: Infinity War",
+     "Avengers: Endgame"
+    ]
+   },
+   "attribuzione": "Fotogramma © studio titolare; indice TMDB (questo prodotto usa le API TMDB ma non e' approvato o certificato da TMDB)",
+   "licenza_o_condizioni": "Nessun diritto concesso da TMDB sulle immagini: fotogramma di proprieta' dello studio titolare. Uso personale e non commerciale; non ridistribuire; non incluso nel repository, nello ZIP o nel deploy.",
+   "formato": "WebP 3:4 480x640 (JPEG se WebP non codificabile)",
+   "risoluzione_origine_min": "1280 px di larghezza",
+   "candidati": 216,
+   "stato": "in-attesa-selezione",
+   "verifica": {
+    "stato": "non-verificato",
+    "verificato_da": null,
+    "data": null
+   },
+   "nota": ""
+  },
+  {
+   "asset_id": "ast-thor-001",
+   "entita": "id-thor",
+   "nome": "Thor",
+   "tipo": "ritratto",
+   "continuita": "uni-earth-199999-mcu",
+   "livello": "L4",
+   "modalita": "privata-locale",
+   "fonte": {
+    "nome": "TMDB",
+    "tipo": "scena-da-titolo",
+    "interprete": "Chris Hemsworth",
+    "titoli": [
+     "Thor",
+     "The Avengers",
+     "Thor: The Dark World",
+     "Avengers: Age of Ultron",
+     "Thor: Ragnarok",
+     "Avengers: Infinity War",
+     "Avengers: Endgame",
+     "Thor: Love and Thunder"
+    ]
+   },
+   "attribuzione": "Fotogramma © studio titolare; indice TMDB (questo prodotto usa le API TMDB ma non e' approvato o certificato da TMDB)",
+   "licenza_o_condizioni": "Nessun diritto concesso da TMDB sulle immagini: fotogramma di proprieta' dello studio titolare. Uso personale e non commerciale; non ridistribuire; non incluso nel repository, nello ZIP o nel deploy.",
+   "formato": "WebP 3:4 480x640 (JPEG se WebP non codificabile)",
+   "risoluzione_origine_min": "1280 px di larghezza",
+   "candidati": 192,
+   "stato": "in-attesa-selezione",
+   "verifica": {
+    "stato": "non-verificato",
+    "verificato_da": null,
+    "data": null
+   },
+   "nota": ""
+  },
+  {
+   "asset_id": "ast-loki-001",
+   "entita": "id-loki",
+   "nome": "Loki",
+   "tipo": "ritratto",
+   "continuita": "uni-earth-199999-mcu",
+   "livello": "L4",
+   "modalita": "privata-locale",
+   "fonte": {
+    "nome": "TMDB",
+    "tipo": "scena-da-titolo",
+    "interprete": "Tom Hiddleston",
+    "titoli": [
+     "Thor",
+     "The Avengers",
+     "Thor: The Dark World",
+     "Thor: Ragnarok",
+     "Loki"
+    ]
+   },
+   "attribuzione": "Fotogramma © studio titolare; indice TMDB (questo prodotto usa le API TMDB ma non e' approvato o certificato da TMDB)",
+   "licenza_o_condizioni": "Nessun diritto concesso da TMDB sulle immagini: fotogramma di proprieta' dello studio titolare. Uso personale e non commerciale; non ridistribuire; non incluso nel repository, nello ZIP o nel deploy.",
+   "formato": "WebP 3:4 480x640 (JPEG se WebP non codificabile)",
+   "risoluzione_origine_min": "1280 px di larghezza",
+   "candidati": 120,
+   "stato": "in-attesa-selezione",
+   "verifica": {
+    "stato": "non-verificato",
+    "verificato_da": null,
+    "data": null
+   },
+   "nota": ""
+  },
+  {
+   "asset_id": "ast-peter-parker-mcu-001",
+   "entita": "id-peter-parker-mcu",
+   "nome": "Peter Parker (MCU)",
+   "tipo": "ritratto",
+   "continuita": "uni-earth-199999-mcu",
+   "livello": "L4",
+   "modalita": "privata-locale",
+   "fonte": {
+    "nome": "TMDB",
+    "tipo": "scena-da-titolo",
+    "interprete": "Tom Holland",
+    "titoli": [
+     "Captain America: Civil War",
+     "Spider-Man: Homecoming",
+     "Avengers: Infinity War",
+     "Avengers: Endgame",
+     "Spider-Man: Far From Home",
+     "Spider-Man: No Way Home"
+    ]
+   },
+   "attribuzione": "Fotogramma © studio titolare; indice TMDB (questo prodotto usa le API TMDB ma non e' approvato o certificato da TMDB)",
+   "licenza_o_condizioni": "Nessun diritto concesso da TMDB sulle immagini: fotogramma di proprieta' dello studio titolare. Uso personale e non commerciale; non ridistribuire; non incluso nel repository, nello ZIP o nel deploy.",
+   "formato": "WebP 3:4 480x640 (JPEG se WebP non codificabile)",
+   "risoluzione_origine_min": "1280 px di larghezza",
+   "candidati": 144,
+   "stato": "in-attesa-selezione",
+   "verifica": {
+    "stato": "non-verificato",
+    "verificato_da": null,
+    "data": null
+   },
+   "nota": "No Way Home contiene tre Peter: scegli solo scene con Holland"
+  },
+  {
+   "asset_id": "ast-peter-parker-raimi-001",
+   "entita": "id-peter-parker-raimi",
+   "nome": "Peter Parker (Raimi-Verse)",
+   "tipo": "ritratto",
+   "continuita": "uni-earth-96283-raimi-verse",
+   "livello": "L4",
+   "modalita": "privata-locale",
+   "fonte": {
+    "nome": "TMDB",
+    "tipo": "scena-da-titolo",
+    "interprete": "Tobey Maguire",
+    "titoli": [
+     "Spider-Man",
+     "Spider-Man 2",
+     "Spider-Man 3",
+     "Spider-Man: No Way Home"
+    ]
+   },
+   "attribuzione": "Fotogramma © studio titolare; indice TMDB (questo prodotto usa le API TMDB ma non e' approvato o certificato da TMDB)",
+   "licenza_o_condizioni": "Nessun diritto concesso da TMDB sulle immagini: fotogramma di proprieta' dello studio titolare. Uso personale e non commerciale; non ridistribuire; non incluso nel repository, nello ZIP o nel deploy.",
+   "formato": "WebP 3:4 480x640 (JPEG se WebP non codificabile)",
+   "risoluzione_origine_min": "1280 px di larghezza",
+   "candidati": 96,
+   "stato": "in-attesa-selezione",
+   "verifica": {
+    "stato": "non-verificato",
+    "verificato_da": null,
+    "data": null
+   },
+   "nota": "No Way Home contiene tre Peter: scegli solo scene con Maguire"
+  },
+  {
+   "asset_id": "ast-peter-parker-garfield-001",
+   "entita": "id-peter-parker-garfield",
+   "nome": "Peter Parker (Garfield-Verse)",
+   "tipo": "ritratto",
+   "continuita": "uni-earth-120703-garfield-verse",
+   "livello": "L4",
+   "modalita": "privata-locale",
+   "fonte": {
+    "nome": "TMDB",
+    "tipo": "scena-da-titolo",
+    "interprete": "Andrew Garfield",
+    "titoli": [
+     "The Amazing Spider-Man",
+     "The Amazing Spider-Man 2",
+     "Spider-Man: No Way Home"
+    ]
+   },
+   "attribuzione": "Fotogramma © studio titolare; indice TMDB (questo prodotto usa le API TMDB ma non e' approvato o certificato da TMDB)",
+   "licenza_o_condizioni": "Nessun diritto concesso da TMDB sulle immagini: fotogramma di proprieta' dello studio titolare. Uso personale e non commerciale; non ridistribuire; non incluso nel repository, nello ZIP o nel deploy.",
+   "formato": "WebP 3:4 480x640 (JPEG se WebP non codificabile)",
+   "risoluzione_origine_min": "1280 px di larghezza",
+   "candidati": 72,
+   "stato": "in-attesa-selezione",
+   "verifica": {
+    "stato": "non-verificato",
+    "verificato_da": null,
+    "data": null
+   },
+   "nota": "No Way Home contiene tre Peter: scegli solo scene con Garfield"
+  },
+  {
+   "asset_id": "ast-wolverine-001",
+   "entita": "id-wolverine",
+   "nome": "Logan/Wolverine",
+   "tipo": "ritratto",
+   "continuita": "uni-earth-10005-fox-verse",
+   "livello": "L4",
+   "modalita": "privata-locale",
+   "fonte": {
+    "nome": "TMDB",
+    "tipo": "scena-da-titolo",
+    "interprete": "Hugh Jackman",
+    "titoli": [
+     "X-Men Origins: Wolverine",
+     "X-Men",
+     "X2",
+     "X-Men: The Last Stand",
+     "The Wolverine",
+     "X-Men: Days of Future Past",
+     "Logan",
+     "Deadpool & Wolverine"
+    ]
+   },
+   "attribuzione": "Fotogramma © studio titolare; indice TMDB (questo prodotto usa le API TMDB ma non e' approvato o certificato da TMDB)",
+   "licenza_o_condizioni": "Nessun diritto concesso da TMDB sulle immagini: fotogramma di proprieta' dello studio titolare. Uso personale e non commerciale; non ridistribuire; non incluso nel repository, nello ZIP o nel deploy.",
+   "formato": "WebP 3:4 480x640 (JPEG se WebP non codificabile)",
+   "risoluzione_origine_min": "1280 px di larghezza",
+   "candidati": 192,
+   "stato": "in-attesa-selezione",
+   "verifica": {
+    "stato": "non-verificato",
+    "verificato_da": null,
+    "data": null
+   },
+   "nota": "Solo titoli Fox: esclusa la serie animata X-Men 97 (variante diversa)"
+  },
+  {
+   "asset_id": "ast-wade-wilson-deadpool-001",
+   "entita": "id-wade-wilson-deadpool",
+   "nome": "Wade Wilson/Deadpool",
+   "tipo": "ritratto",
+   "continuita": "uni-earth-10005-fox-verse",
+   "livello": "L4",
+   "modalita": "privata-locale",
+   "fonte": {
+    "nome": "TMDB",
+    "tipo": "scena-da-titolo",
+    "interprete": "Ryan Reynolds",
+    "titoli": [
+     "Deadpool",
+     "Deadpool 2",
+     "Deadpool & Wolverine"
+    ]
+   },
+   "attribuzione": "Fotogramma © studio titolare; indice TMDB (questo prodotto usa le API TMDB ma non e' approvato o certificato da TMDB)",
+   "licenza_o_condizioni": "Nessun diritto concesso da TMDB sulle immagini: fotogramma di proprieta' dello studio titolare. Uso personale e non commerciale; non ridistribuire; non incluso nel repository, nello ZIP o nel deploy.",
+   "formato": "WebP 3:4 480x640 (JPEG se WebP non codificabile)",
+   "risoluzione_origine_min": "1280 px di larghezza",
+   "candidati": 72,
+   "stato": "in-attesa-selezione",
+   "verifica": {
+    "stato": "non-verificato",
+    "verificato_da": null,
+    "data": null
+   },
+   "nota": "Deadpool & Wolverine: variante Fox nel MCU"
+  },
+  {
+   "asset_id": "ast-wanda-maximoff-001",
+   "entita": "id-wanda-maximoff",
+   "nome": "Wanda Maximoff",
+   "tipo": "ritratto",
+   "continuita": "uni-earth-199999-mcu",
+   "livello": "L4",
+   "modalita": "privata-locale",
+   "fonte": {
+    "nome": "TMDB",
+    "tipo": "scena-da-titolo",
+    "interprete": "Elizabeth Olsen",
+    "titoli": [
+     "Avengers: Age of Ultron",
+     "Avengers: Infinity War",
+     "Avengers: Endgame",
+     "WandaVision",
+     "Doctor Strange in the Multiverse of Madness"
+    ]
+   },
+   "attribuzione": "Fotogramma © studio titolare; indice TMDB (questo prodotto usa le API TMDB ma non e' approvato o certificato da TMDB)",
+   "licenza_o_condizioni": "Nessun diritto concesso da TMDB sulle immagini: fotogramma di proprieta' dello studio titolare. Uso personale e non commerciale; non ridistribuire; non incluso nel repository, nello ZIP o nel deploy.",
+   "formato": "WebP 3:4 480x640 (JPEG se WebP non codificabile)",
+   "risoluzione_origine_min": "1280 px di larghezza",
+   "candidati": 120,
+   "stato": "in-attesa-selezione",
+   "verifica": {
+    "stato": "non-verificato",
+    "verificato_da": null,
+    "data": null
+   },
+   "nota": ""
+  },
+  {
+   "asset_id": "ast-thanos-001",
+   "entita": "id-thanos",
+   "nome": "Thanos",
+   "tipo": "ritratto",
+   "continuita": "uni-earth-199999-mcu",
+   "livello": "L4",
+   "modalita": "privata-locale",
+   "fonte": {
+    "nome": "TMDB",
+    "tipo": "scena-da-titolo",
+    "interprete": "Josh Brolin",
+    "titoli": [
+     "Avengers: Infinity War",
+     "Avengers: Endgame"
+    ]
+   },
+   "attribuzione": "Fotogramma © studio titolare; indice TMDB (questo prodotto usa le API TMDB ma non e' approvato o certificato da TMDB)",
+   "licenza_o_condizioni": "Nessun diritto concesso da TMDB sulle immagini: fotogramma di proprieta' dello studio titolare. Uso personale e non commerciale; non ridistribuire; non incluso nel repository, nello ZIP o nel deploy.",
+   "formato": "WebP 3:4 480x640 (JPEG se WebP non codificabile)",
+   "risoluzione_origine_min": "1280 px di larghezza",
+   "candidati": 48,
+   "stato": "in-attesa-selezione",
+   "verifica": {
+    "stato": "non-verificato",
+    "verificato_da": null,
+    "data": null
+   },
+   "nota": ""
+  }
+ ],
+ "sha256_candidati": "a76d29ce4a22eb8c35205dc37b0cbeb880c3b2e6e66cb30cfa3076243fe065f7"
+}

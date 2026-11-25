@@ -29,6 +29,13 @@
   function get(path) { return fetch(BASE + path, { credentials: 'same-origin' }).then(function (r) { if (!r.ok) throw new Error(path + ' ' + r.status); return r.json(); }); }
   function save(k, v) { try { W.localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* storage non disponibile: nessun effetto */ } }
   function load(k) { try { return JSON.parse(W.localStorage.getItem(k) || 'null'); } catch (e) { return null; } }
+  /* ritratti privati (A3.1): modulo lazy, archivio locale; nessun effetto se non ci sono ritratti */
+  var RITQ = [], RITL = 0;
+  function withRit(fn) {
+    if (W.tvaRit) return fn(W.tvaRit); RITQ.push(fn); if (RITL) return; RITL = 1;
+    var s = D.createElement('script'); s.src = BASE + 'ritratti.js'; s.async = true; s.onload = function () { var q = RITQ.splice(0); q.forEach(function (f) { f(W.tvaRit); }); }; s.onerror = function () { RITL = 0; RITQ.length = 0; }; D.head.appendChild(s);
+  }
+  function paintRit(el, id, big) { withRit(function (r) { r.paint(el, id, big); }); }
   function A3() { return ST.a3 || (ST.a3 = { v: 'home' }); }
   function ensure(cb) {
     if (IDX) return cb();
@@ -80,14 +87,14 @@
   /* ---------- tile / riga ---------- */
   function tile(v) {
     var b = btn('a3-tile t-' + v.t, null, function () { openId(v.i); }, { 'aria-label': v.n + (badge(v) ? ' — ' + badge(v) : '') });
-    var em = h('span', 'em'); em.appendChild(emblem(v)); b.appendChild(em);
+    var em = h('span', 'em'); em.appendChild(emblem(v)); b.appendChild(em); paintRit(em, v.i, false);
     if (badge(v)) b.appendChild(h('span', 'bd', badge(v)));
     var t = h('span', 't'); t.appendChild(h('b', '', v.n)); var sub = v.u ? uniNome(v.u) : (v.a ? v.a + (v.t === 'h' ? ' voci collegate' : v.t === 'm' ? ' titolari' : ' apparizioni') : ''); if (sub) t.appendChild(h('span', '', sub)); b.appendChild(t);
     return b;
   }
   function li(v) {
     var b = btn('a3-li t-' + v.t, null, function () { openId(v.i); });
-    var em = h('span', 'em'); em.appendChild(emblem(v)); b.appendChild(em);
+    var em = h('span', 'em'); em.appendChild(emblem(v)); b.appendChild(em); paintRit(em, v.i, false);
     var t = h('span'); t.appendChild(h('b', '', v.n)); var sub = (v.u ? uniNome(v.u) : '') || (v.a ? v.a + ' apparizioni' : ''); if (sub) t.appendChild(h('span', 's', sub)); b.appendChild(t);
     if (badge(v)) b.appendChild(h('span', 'bd', badge(v)));
     return b;
@@ -126,6 +133,7 @@
       var sh = h('section', 'a3-sec'); var hh = h('header'); hh.appendChild(h('h2', '', 'Hub multiversali')); hh.appendChild(h('p', '', 'Una pagina per ogni personaggio che vive in più continuità. Nessuna parentela narrativa è attribuita senza fonte.')); sh.appendChild(hh);
       var hw = h('div', 'a3-hubs'); hubs.forEach(function (v) { var c = btn('a3-hc rev t-h', null, function () { openId(v.i); }); c.appendChild(h('span', 'kick', 'Hub')); c.appendChild(h('b', '', v.n)); c.appendChild(h('span', 'soft', v.a + ' voci collegate')); hw.appendChild(c); }); sh.appendChild(hw); body.appendChild(sh);
     }
+    body.appendChild(btn('a3-ritlink', 'Ritratti privati — pilota A3.1: scene, importazione, esportazione', function () { api.nav('a3', { a3: { v: 'rit' } }); }));
     body.appendChild(h('p', 'a3-note', 'Anteprima A3 in collaudo: l’Atlante classico resta disponibile e invariato. I ritratti specifici compariranno solo quando disponibili e utilizzabili; fino ad allora ogni voce mostra un emblema. Fonti: registro dati dell’Atlante e fonti secondarie dichiarate nella scheda.'));
     reveal(body); parallax(bg);
   }
@@ -271,10 +279,10 @@
   function renderDossier() {
     frame(); var s = A3(), v = BY[s.id]; if (!v) { body.appendChild(h('div', 'empty', 'Voce non trovata.')); return; }
     api.setTitle(v.n, 'Dossier');
-    var root = h('div', 't-' + v.t); body.appendChild(root); var hd = h('header', 'a3-dh'); var em = h('div', 'em'); em.appendChild(emblem(v, true)); hd.appendChild(em);
+    var root = h('div', 't-' + v.t); body.appendChild(root); var hd = h('header', 'a3-dh'); var em = h('div', 'em'); em.appendChild(emblem(v, true)); hd.appendChild(em); paintRit(em, v.i, true);
     var t = h('div', 't'); t.appendChild(h('span', 'kick', SING[v.t] || '')); t.appendChild(h('h1', '', v.n));
     var bds = h('div', 'a3-bds'); if (badge(v)) bds.appendChild(h('span', 'a3-bd' + (v.s ? ' warn' : ''), badge(v))); if (v.u) { bds.appendChild(h('span', 'a3-bd', uniNome(v.u))); var c = uniCont(v.u); if (c) bds.appendChild(h('span', 'a3-bd', c)); } t.appendChild(bds);
-    hd.appendChild(t); root.appendChild(hd); parallax(em);
+    t.appendChild(btn('a3-ritbtn', 'Ritratto privato', function () { withRit(function (r) { r.openEditor(v.i, v.n, function (i) { return BY[i] && BY[i].n; }); }); }, { 'aria-label': 'Ritratto privato di ' + v.n })); hd.appendChild(t); root.appendChild(hd); parallax(em);
     var holder = h('div', 'a3-load', 'Caricamento del dossier…'); root.appendChild(holder);
     dossier(s.id, function (d) {
       if (ST.a3 !== s || !root.isConnected) return; holder.remove();
@@ -298,7 +306,7 @@
   function renderHub() {
     frame(); var s = A3(), v = BY[s.id]; if (!v) { body.appendChild(h('div', 'empty', 'Voce non trovata.')); return; }
     api.setTitle(v.n, v.t === 'h' ? 'Hub multiversale' : 'Mantello');
-    var root = h('div', 't-' + v.t); body.appendChild(root); var hd = h('header', 'a3-dh'); var em = h('div', 'em'); em.appendChild(emblem(v, true)); hd.appendChild(em);
+    var root = h('div', 't-' + v.t); body.appendChild(root); var hd = h('header', 'a3-dh'); var em = h('div', 'em'); em.appendChild(emblem(v, true)); hd.appendChild(em); paintRit(em, v.i, true);
     var t = h('div', 't'); t.appendChild(h('span', 'kick', v.t === 'h' ? 'Hub multiversale' : 'Mantello')); t.appendChild(h('h1', '', v.n)); hd.appendChild(t); root.appendChild(hd);
     var holder = h('div', 'a3-load', 'Caricamento…'); root.appendChild(holder);
     dossier(s.id, function (d) {
@@ -322,10 +330,14 @@
   }
 
   /* ---------- regia ---------- */
-  var VIEWS = { home: renderHome, cat: renderCat, search: renderSearch, dos: renderDossier, hub: renderHub };
+  function renderRit() {
+    frame(); api.setTitle('Ritratti privati', 'Pilota A3.1'); var host = h('div', 'a3-ritmgr'); body.appendChild(host);
+    withRit(function (r) { r.renderManager(host, function (i) { return BY[i] && BY[i].n; }); });
+  }
+  var VIEWS = { rit: renderRit, home: renderHome, cat: renderCat, search: renderSearch, dos: renderDossier, hub: renderHub };
   W.tvaA3 = {
     render: function () { ensure(function () { (VIEWS[A3().v] || renderHome)(); reveal(body); }); },
-    label: function (s) { var a = s.a3 || {}; if (a.v === 'dos' || a.v === 'hub') return (BY[a.id] && BY[a.id].n) || 'Dossier'; if (a.v === 'cat') return 'Catalogo'; if (a.v === 'search') return 'Ricerca'; return 'Atlante 2.0'; },
+    label: function (s) { var a = s.a3 || {}; if (a.v === 'dos' || a.v === 'hub') return (BY[a.id] && BY[a.id].n) || 'Dossier'; if (a.v === 'cat') return 'Catalogo'; if (a.v === 'rit') return 'Ritratti privati'; if (a.v === 'search') return 'Ricerca'; return 'Atlante 2.0'; },
     open: openId, search: function (q) { return IDX ? search(q) : null; }, state: function () { return { idx: !!IDX, shards: Object.keys(SH).length }; }, ensure: ensure
   };
   if (W.tvaA3Boot) W.tvaA3Boot();
