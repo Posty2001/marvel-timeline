@@ -1,0 +1,50 @@
+{
+"versione": 1,
+"sorgente": "index.html",
+"voci": [
+{
+"id": "sec-1a",
+"html": "<h3 class=\"sec-h\" id=\"sec-1a\">1A · Sam Raimi Spider-Man Trilogy <span class=\"sec-sub\">Earth-96283</span></h3>"
+},
+{
+"id": "sec-1b",
+"html": "<h3 class=\"sec-h\" id=\"sec-1b\">1B · The Amazing Spider-Man Duology <span class=\"sec-sub\">Earth-120703</span></h3>"
+},
+{
+"id": "sec-1c",
+"html": "<h3 class=\"sec-h\" id=\"sec-1c\">1C · Sony's Spider-Man Universe </h3>"
+},
+{
+"id": "sec-1d",
+"html": "<h3 class=\"sec-h\" id=\"sec-1d\">1D · Il Fox-Verse — universo X-Men <span class=\"sec-sub\">Earth-10005</span></h3>"
+},
+{
+"id": "sec-1e",
+"html": "<h3 class=\"sec-h\" id=\"sec-1e\">1E · Sony's Spider-Verse animato <span class=\"sec-sub\">NON canonico con la MCU live-action</span></h3>"
+},
+{
+"id": "sec-1f",
+"html": "<h3 class=\"sec-h\" id=\"sec-1f\">1F · I Fantastic Four pre-MCU <span class=\"sec-sub\">tre continuità distinte</span></h3>"
+},
+{
+"id": "sec-1g",
+"html": "<h3 class=\"sec-h\" id=\"sec-1g\">1G · La trilogia Blade originale <span class=\"sec-sub\">New Line Cinema</span></h3>"
+},
+{
+"id": "sec-1h",
+"html": "<h3 class=\"sec-h\" id=\"sec-1h\">1H · Daredevil/Elektra <span class=\"sec-sub\">20th Century Fox</span></h3>"
+},
+{
+"id": "sec-1i",
+"html": "<h3 class=\"sec-h\" id=\"sec-1i\">1I · Ghost Rider <span class=\"sec-sub\">Columbia Pictures/Sony</span></h3>"
+},
+{
+"id": "sec-1j",
+"html": "<h3 class=\"sec-h\" id=\"sec-1j\">1J · Spider-Noir <span class=\"sec-sub\">Sony Pictures Television/Prime Video/MGM+</span></h3>"
+},
+{
+"id": "sec-1k",
+"html": "<h3 class=\"sec-h\" id=\"sec-1k\">1K · Hulk (Ang Lee) <span class=\"sec-sub\">Universal Pictures</span></h3>"
+}
+]
+}

@@ -1,0 +1,888 @@
+{
+"versione": 1,
+"sorgente": "index.html",
+"voci": [
+{
+"id": "att-willem-dafoe",
+"tipo": "attore",
+"nome": "Willem Dafoe",
+"ricerca": "willem dafoe",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Norman Osborn/Green Goblin <span class=\"us-result-ref\">— N°001, Raimi-Verse</span></li><li>Norman Osborn/Green Goblin <span class=\"us-result-ref\">— N°099, MCU (No Way Home)</span></li></ul>",
+"testo": "Norman Osborn/Green Goblin — N°001, Raimi-Verse Norman Osborn/Green Goblin — N°099, MCU (No Way Home)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"willem dafoe\" id=\"att-willem-dafoe\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Willem Dafoe</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Norman Osborn/Green Goblin <span class=\"us-result-ref\">— N°001, Raimi-Verse</span></li><li>Norman Osborn/Green Goblin <span class=\"us-result-ref\">— N°099, MCU (No Way Home)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-alfred-molina",
+"tipo": "attore",
+"nome": "Alfred Molina",
+"ricerca": "alfred molina",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Otto Octavius/Doc Ock <span class=\"us-result-ref\">— N°002, Raimi-Verse</span></li><li>Otto Octavius/Doc Ock <span class=\"us-result-ref\">— N°099, MCU (No Way Home)</span></li></ul>",
+"testo": "Otto Octavius/Doc Ock — N°002, Raimi-Verse Otto Octavius/Doc Ock — N°099, MCU (No Way Home)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"alfred molina\" id=\"att-alfred-molina\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Alfred Molina</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Otto Octavius/Doc Ock <span class=\"us-result-ref\">— N°002, Raimi-Verse</span></li><li>Otto Octavius/Doc Ock <span class=\"us-result-ref\">— N°099, MCU (No Way Home)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-tobey-maguire",
+"tipo": "attore",
+"nome": "Tobey Maguire",
+"ricerca": "tobey maguire",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Peter Parker/Spider-Man <span class=\"us-result-ref\">— N°001, Raimi-Verse</span></li><li>Peter Parker/Spider-Man <span class=\"us-result-ref\">— N°099, MCU (No Way Home)</span></li></ul>",
+"testo": "Peter Parker/Spider-Man — N°001, Raimi-Verse Peter Parker/Spider-Man — N°099, MCU (No Way Home)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"tobey maguire\" id=\"att-tobey-maguire\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Tobey Maguire</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Peter Parker/Spider-Man <span class=\"us-result-ref\">— N°001, Raimi-Verse</span></li><li>Peter Parker/Spider-Man <span class=\"us-result-ref\">— N°099, MCU (No Way Home)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-andrew-garfield",
+"tipo": "attore",
+"nome": "Andrew Garfield",
+"ricerca": "andrew garfield",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Peter Parker/Spider-Man <span class=\"us-result-ref\">— N°004, Garfield-Verse</span></li><li>Peter Parker/Spider-Man <span class=\"us-result-ref\">— N°099, MCU (No Way Home)</span></li></ul>",
+"testo": "Peter Parker/Spider-Man — N°004, Garfield-Verse Peter Parker/Spider-Man — N°099, MCU (No Way Home)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"andrew garfield\" id=\"att-andrew-garfield\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Andrew Garfield</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Peter Parker/Spider-Man <span class=\"us-result-ref\">— N°004, Garfield-Verse</span></li><li>Peter Parker/Spider-Man <span class=\"us-result-ref\">— N°099, MCU (No Way Home)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-jamie-foxx",
+"tipo": "attore",
+"nome": "Jamie Foxx",
+"ricerca": "jamie foxx",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Max Dillon/Electro <span class=\"us-result-ref\">— N°005, Garfield-Verse</span></li><li>Max Dillon/Electro <span class=\"us-result-ref\">— N°099, MCU (No Way Home)</span></li></ul>",
+"testo": "Max Dillon/Electro — N°005, Garfield-Verse Max Dillon/Electro — N°099, MCU (No Way Home)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"jamie foxx\" id=\"att-jamie-foxx\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Jamie Foxx</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Max Dillon/Electro <span class=\"us-result-ref\">— N°005, Garfield-Verse</span></li><li>Max Dillon/Electro <span class=\"us-result-ref\">— N°099, MCU (No Way Home)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-thomas-haden-church",
+"tipo": "attore",
+"nome": "Thomas Haden Church",
+"ricerca": "thomas haden church",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Flint Marko/Sandman <span class=\"us-result-ref\">— N°003, Raimi-Verse</span></li><li>Flint Marko/Sandman <span class=\"us-result-ref\">— N°099, MCU (No Way Home)</span></li></ul>",
+"testo": "Flint Marko/Sandman — N°003, Raimi-Verse Flint Marko/Sandman — N°099, MCU (No Way Home)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"thomas haden church\" id=\"att-thomas-haden-church\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Thomas Haden Church</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Flint Marko/Sandman <span class=\"us-result-ref\">— N°003, Raimi-Verse</span></li><li>Flint Marko/Sandman <span class=\"us-result-ref\">— N°099, MCU (No Way Home)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-rhys-ifans",
+"tipo": "attore",
+"nome": "Rhys Ifans",
+"ricerca": "rhys ifans",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Curt Connors/Lizard <span class=\"us-result-ref\">— N°004, Garfield-Verse</span></li><li>Curt Connors/Lizard <span class=\"us-result-ref\">— N°099, MCU (No Way Home)</span></li></ul>",
+"testo": "Curt Connors/Lizard — N°004, Garfield-Verse Curt Connors/Lizard — N°099, MCU (No Way Home)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"rhys ifans\" id=\"att-rhys-ifans\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Rhys Ifans</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Curt Connors/Lizard <span class=\"us-result-ref\">— N°004, Garfield-Verse</span></li><li>Curt Connors/Lizard <span class=\"us-result-ref\">— N°099, MCU (No Way Home)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-hugh-jackman",
+"tipo": "attore",
+"nome": "Hugh Jackman",
+"ricerca": "hugh jackman",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Logan/Wolverine <span class=\"us-result-ref\">— N°012, Fox-Verse</span></li><li>Logan/Wolverine <span class=\"us-result-ref\">— N°117, MCU (Deadpool &amp; Wolverine)</span></li></ul>",
+"testo": "Logan/Wolverine — N°012, Fox-Verse Logan/Wolverine — N°117, MCU (Deadpool & Wolverine)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"hugh jackman\" id=\"att-hugh-jackman\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Hugh Jackman</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Logan/Wolverine <span class=\"us-result-ref\">— N°012, Fox-Verse</span></li><li>Logan/Wolverine <span class=\"us-result-ref\">— N°117, MCU (Deadpool &amp; Wolverine)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-ryan-reynolds",
+"tipo": "attore",
+"nome": "Ryan Reynolds",
+"ricerca": "ryan reynolds",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Wade Wilson/Deadpool <span class=\"us-result-ref\">— N°022, Fox-Verse</span></li><li>Wade Wilson/Deadpool <span class=\"us-result-ref\">— N°117, MCU (Deadpool &amp; Wolverine)</span></li></ul>",
+"testo": "Wade Wilson/Deadpool — N°022, Fox-Verse Wade Wilson/Deadpool — N°117, MCU (Deadpool & Wolverine)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"ryan reynolds\" id=\"att-ryan-reynolds\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Ryan Reynolds</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Wade Wilson/Deadpool <span class=\"us-result-ref\">— N°022, Fox-Verse</span></li><li>Wade Wilson/Deadpool <span class=\"us-result-ref\">— N°117, MCU (Deadpool &amp; Wolverine)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-wesley-snipes",
+"tipo": "attore",
+"nome": "Wesley Snipes",
+"ricerca": "wesley snipes",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Eric Brooks/Blade <span class=\"us-result-ref\">— N°032, Legacy (Blade)</span></li><li>Blade (cameo) <span class=\"us-result-ref\">— N°117, MCU (Deadpool &amp; Wolverine, Void)</span></li></ul>",
+"testo": "Eric Brooks/Blade — N°032, Legacy (Blade) Blade (cameo) — N°117, MCU (Deadpool & Wolverine, Void)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"wesley snipes\" id=\"att-wesley-snipes\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Wesley Snipes</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Eric Brooks/Blade <span class=\"us-result-ref\">— N°032, Legacy (Blade)</span></li><li>Blade (cameo) <span class=\"us-result-ref\">— N°117, MCU (Deadpool &amp; Wolverine, Void)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-jennifer-garner",
+"tipo": "attore",
+"nome": "Jennifer Garner",
+"ricerca": "jennifer garner",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Elektra Natchios <span class=\"us-result-ref\">— N°035, Legacy (Daredevil/Elektra)</span></li><li>Elektra (cameo) <span class=\"us-result-ref\">— N°117, MCU (Deadpool &amp; Wolverine, Void)</span></li></ul>",
+"testo": "Elektra Natchios — N°035, Legacy (Daredevil/Elektra) Elektra (cameo) — N°117, MCU (Deadpool & Wolverine, Void)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"jennifer garner\" id=\"att-jennifer-garner\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Jennifer Garner</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Elektra Natchios <span class=\"us-result-ref\">— N°035, Legacy (Daredevil/Elektra)</span></li><li>Elektra (cameo) <span class=\"us-result-ref\">— N°117, MCU (Deadpool &amp; Wolverine, Void)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-channing-tatum",
+"tipo": "attore",
+"nome": "Channing Tatum",
+"ricerca": "channing tatum",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Remy LeBeau/Gambit <span class=\"us-result-ref\">— N°117, MCU (Deadpool &amp; Wolverine, cameo)</span></li><li>Remy LeBeau/Gambit <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermato)</span></li></ul>",
+"testo": "Remy LeBeau/Gambit — N°117, MCU (Deadpool & Wolverine, cameo) Remy LeBeau/Gambit — N°136, MCU (Avengers: Doomsday, confermato)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"channing tatum\" id=\"att-channing-tatum\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Channing Tatum</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Remy LeBeau/Gambit <span class=\"us-result-ref\">— N°117, MCU (Deadpool &amp; Wolverine, cameo)</span></li><li>Remy LeBeau/Gambit <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermato)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-chris-evans",
+"tipo": "attore",
+"nome": "Chris Evans",
+"ricerca": "chris evans",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Johnny Storm/Human Torch <span class=\"us-result-ref\">— N°029, Legacy (Fox, FF 2005)</span></li><li>Steve Rogers/Capitan America <span class=\"us-result-ref\">— N°041, MCU (praticamente ogni film Cap/Avengers)</span></li><li>Steve Rogers <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, ritorno confermato)</span></li></ul>",
+"testo": "Johnny Storm/Human Torch — N°029, Legacy (Fox, FF 2005) Steve Rogers/Capitan America — N°041, MCU (praticamente ogni film Cap/Avengers) Steve Rogers — N°136, MCU (Avengers: Doomsday, ritorno confermato)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"chris evans\" id=\"att-chris-evans\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Chris Evans</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Johnny Storm/Human Torch <span class=\"us-result-ref\">— N°029, Legacy (Fox, FF 2005)</span></li><li>Steve Rogers/Capitan America <span class=\"us-result-ref\">— N°041, MCU (praticamente ogni film Cap/Avengers)</span></li><li>Steve Rogers <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, ritorno confermato)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-patrick-stewart",
+"tipo": "attore",
+"nome": "Patrick Stewart",
+"ricerca": "patrick stewart",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Charles Xavier/Professor X <span class=\"us-result-ref\">— N°014, Fox-Verse</span></li><li>Professor X (variante) <span class=\"us-result-ref\">— N°102, Earth-838 (Doctor Strange 2)</span></li><li>Charles Xavier <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermato)</span></li></ul>",
+"testo": "Charles Xavier/Professor X — N°014, Fox-Verse Professor X (variante) — N°102, Earth-838 (Doctor Strange 2) Charles Xavier — N°136, MCU (Avengers: Doomsday, confermato)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"patrick stewart\" id=\"att-patrick-stewart\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Patrick Stewart</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Charles Xavier/Professor X <span class=\"us-result-ref\">— N°014, Fox-Verse</span></li><li>Professor X (variante) <span class=\"us-result-ref\">— N°102, Earth-838 (Doctor Strange 2)</span></li><li>Charles Xavier <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermato)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-ian-mckellen",
+"tipo": "attore",
+"nome": "Ian McKellen",
+"ricerca": "ian mckellen",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Erik Lehnsherr/Magneto <span class=\"us-result-ref\">— N°012, Fox-Verse</span></li><li>Magneto <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermato)</span></li></ul>",
+"testo": "Erik Lehnsherr/Magneto — N°012, Fox-Verse Magneto — N°136, MCU (Avengers: Doomsday, confermato)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"ian mckellen\" id=\"att-ian-mckellen\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Ian McKellen</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Erik Lehnsherr/Magneto <span class=\"us-result-ref\">— N°012, Fox-Verse</span></li><li>Magneto <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermato)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-rebecca-romijn",
+"tipo": "attore",
+"nome": "Rebecca Romijn",
+"ricerca": "rebecca romijn",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Raven/Mystica <span class=\"us-result-ref\">— N°012, Fox-Verse</span></li><li>Mystica <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermato)</span></li></ul>",
+"testo": "Raven/Mystica — N°012, Fox-Verse Mystica — N°136, MCU (Avengers: Doomsday, confermato)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"rebecca romijn\" id=\"att-rebecca-romijn\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Rebecca Romijn</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Raven/Mystica <span class=\"us-result-ref\">— N°012, Fox-Verse</span></li><li>Mystica <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermato)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-alan-cumming",
+"tipo": "attore",
+"nome": "Alan Cumming",
+"ricerca": "alan cumming",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Nightcrawler <span class=\"us-result-ref\">— N°015, Fox-Verse (X2)</span></li><li>Nightcrawler <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermato)</span></li></ul>",
+"testo": "Nightcrawler — N°015, Fox-Verse (X2) Nightcrawler — N°136, MCU (Avengers: Doomsday, confermato)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"alan cumming\" id=\"att-alan-cumming\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Alan Cumming</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Nightcrawler <span class=\"us-result-ref\">— N°015, Fox-Verse (X2)</span></li><li>Nightcrawler <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermato)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-james-marsden",
+"tipo": "attore",
+"nome": "James Marsden",
+"ricerca": "james marsden",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Scott Summers/Ciclope <span class=\"us-result-ref\">— N°012, Fox-Verse</span></li><li>Ciclope <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermato)</span></li></ul>",
+"testo": "Scott Summers/Ciclope — N°012, Fox-Verse Ciclope — N°136, MCU (Avengers: Doomsday, confermato)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"james marsden\" id=\"att-james-marsden\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">James Marsden</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Scott Summers/Ciclope <span class=\"us-result-ref\">— N°012, Fox-Verse</span></li><li>Ciclope <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermato)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-kelsey-grammer",
+"tipo": "attore",
+"nome": "Kelsey Grammer",
+"ricerca": "kelsey grammer",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Hank McCoy/Beast <span class=\"us-result-ref\">— N°016, Fox-Verse (X-Men 3)</span></li><li>Beast <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermato)</span></li></ul>",
+"testo": "Hank McCoy/Beast — N°016, Fox-Verse (X-Men 3) Beast — N°136, MCU (Avengers: Doomsday, confermato)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"kelsey grammer\" id=\"att-kelsey-grammer\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Kelsey Grammer</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Hank McCoy/Beast <span class=\"us-result-ref\">— N°016, Fox-Verse (X-Men 3)</span></li><li>Beast <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermato)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-nicolas-cage",
+"tipo": "attore",
+"nome": "Nicolas Cage",
+"ricerca": "nicolas cage",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Johnny Blaze/Ghost Rider <span class=\"us-result-ref\">— N°037, Legacy (Ghost Rider)</span></li><li>Spider-Man Noir (voce) <span class=\"us-result-ref\">— N°025, Spider-Verse animato</span></li><li>Ben Reilly/The Spider <span class=\"us-result-ref\">— N°039, Legacy (Spider-Noir, personaggio diverso)</span></li></ul>",
+"testo": "Johnny Blaze/Ghost Rider — N°037, Legacy (Ghost Rider) Spider-Man Noir (voce) — N°025, Spider-Verse animato Ben Reilly/The Spider — N°039, Legacy (Spider-Noir, personaggio diverso)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"nicolas cage\" id=\"att-nicolas-cage\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Nicolas Cage</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Johnny Blaze/Ghost Rider <span class=\"us-result-ref\">— N°037, Legacy (Ghost Rider)</span></li><li>Spider-Man Noir (voce) <span class=\"us-result-ref\">— N°025, Spider-Verse animato</span></li><li>Ben Reilly/The Spider <span class=\"us-result-ref\">— N°039, Legacy (Spider-Noir, personaggio diverso)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-robert-downey-jr",
+"tipo": "attore",
+"nome": "Robert Downey Jr.",
+"ricerca": "robert downey jr.",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Tony Stark/Iron Man <span class=\"us-result-ref\">— N°045, MCU (praticamente ogni film Avengers)</span></li><li>Dottor Destino (MCU, incarnazione distinta dal Victor von Doom dei film Fantastic Four) <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, nuovo ruolo confermato)</span></li></ul>",
+"testo": "Tony Stark/Iron Man — N°045, MCU (praticamente ogni film Avengers) Dottor Destino (MCU, incarnazione distinta dal Victor von Doom dei film Fantastic Four) — N°136, MCU (Avengers: Doomsday, nuovo ruolo confermato)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"robert downey jr.\" id=\"att-robert-downey-jr\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Robert Downey Jr.</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Tony Stark/Iron Man <span class=\"us-result-ref\">— N°045, MCU (praticamente ogni film Avengers)</span></li><li>Dottor Destino (MCU, incarnazione distinta dal Victor von Doom dei film Fantastic Four) <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, nuovo ruolo confermato)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-hayley-atwell",
+"tipo": "attore",
+"nome": "Hayley Atwell",
+"ricerca": "hayley atwell",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Peggy Carter <span class=\"us-result-ref\">— N°041, MCU (Capitan America e serie collegate)</span></li><li>Peggy Carter/Captain Carter <span class=\"us-result-ref\">— N°102, Earth-838 (Doctor Strange 2)</span></li><li>Peggy Carter <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermata)</span></li></ul>",
+"testo": "Peggy Carter — N°041, MCU (Capitan America e serie collegate) Peggy Carter/Captain Carter — N°102, Earth-838 (Doctor Strange 2) Peggy Carter — N°136, MCU (Avengers: Doomsday, confermata)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"hayley atwell\" id=\"att-hayley-atwell\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Hayley Atwell</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Peggy Carter <span class=\"us-result-ref\">— N°041, MCU (Capitan America e serie collegate)</span></li><li>Peggy Carter/Captain Carter <span class=\"us-result-ref\">— N°102, Earth-838 (Doctor Strange 2)</span></li><li>Peggy Carter <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermata)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-chris-hemsworth",
+"tipo": "attore",
+"nome": "Chris Hemsworth",
+"ricerca": "chris hemsworth",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Thor Odinson <span class=\"us-result-ref\">— N°050, MCU (Thor e film Avengers)</span></li></ul>",
+"testo": "Thor Odinson — N°050, MCU (Thor e film Avengers)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"chris hemsworth\" id=\"att-chris-hemsworth\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Chris Hemsworth</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Thor Odinson <span class=\"us-result-ref\">— N°050, MCU (Thor e film Avengers)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-scarlett-johansson",
+"tipo": "attore",
+"nome": "Scarlett Johansson",
+"ricerca": "scarlett johansson",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Natasha Romanoff/Black Widow <span class=\"us-result-ref\">— N°051, MCU (The Avengers e film successivi)</span></li></ul>",
+"testo": "Natasha Romanoff/Black Widow — N°051, MCU (The Avengers e film successivi)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"scarlett johansson\" id=\"att-scarlett-johansson\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Scarlett Johansson</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Natasha Romanoff/Black Widow <span class=\"us-result-ref\">— N°051, MCU (The Avengers e film successivi)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-mark-ruffalo",
+"tipo": "attore",
+"nome": "Mark Ruffalo",
+"ricerca": "mark ruffalo",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Bruce Banner/Hulk <span class=\"us-result-ref\">— N°051, MCU (The Avengers e film successivi)</span></li></ul>",
+"testo": "Bruce Banner/Hulk — N°051, MCU (The Avengers e film successivi)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"mark ruffalo\" id=\"att-mark-ruffalo\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Mark Ruffalo</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Bruce Banner/Hulk <span class=\"us-result-ref\">— N°051, MCU (The Avengers e film successivi)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-chadwick-boseman",
+"tipo": "attore",
+"nome": "Chadwick Boseman",
+"ricerca": "chadwick boseman",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>T'Challa/Black Panther <span class=\"us-result-ref\">— N°078, MCU (Black Panther e film Avengers)</span></li></ul>",
+"testo": "T'Challa/Black Panther — N°078, MCU (Black Panther e film Avengers)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"chadwick boseman\" id=\"att-chadwick-boseman\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Chadwick Boseman</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>T'Challa/Black Panther <span class=\"us-result-ref\">— N°078, MCU (Black Panther e film Avengers)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-elizabeth-olsen",
+"tipo": "attore",
+"nome": "Elizabeth Olsen",
+"ricerca": "elizabeth olsen",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Wanda Maximoff/Scarlet Witch <span class=\"us-result-ref\">— N°084, MCU (dagli Avengers a WandaVision)</span></li></ul>",
+"testo": "Wanda Maximoff/Scarlet Witch — N°084, MCU (dagli Avengers a WandaVision)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"elizabeth olsen\" id=\"att-elizabeth-olsen\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Elizabeth Olsen</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Wanda Maximoff/Scarlet Witch <span class=\"us-result-ref\">— N°084, MCU (dagli Avengers a WandaVision)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-paul-bettany",
+"tipo": "attore",
+"nome": "Paul Bettany",
+"ricerca": "paul bettany",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Visione <span class=\"us-result-ref\">— N°084, MCU (dagli Avengers a WandaVision)</span></li></ul>",
+"testo": "Visione — N°084, MCU (dagli Avengers a WandaVision)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"paul bettany\" id=\"att-paul-bettany\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Paul Bettany</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Visione <span class=\"us-result-ref\">— N°084, MCU (dagli Avengers a WandaVision)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-benedict-cumberbatch",
+"tipo": "attore",
+"nome": "Benedict Cumberbatch",
+"ricerca": "benedict cumberbatch",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Stephen Strange/Doctor Strange <span class=\"us-result-ref\">— N°070, MCU (Doctor Strange e film Avengers)</span></li></ul>",
+"testo": "Stephen Strange/Doctor Strange — N°070, MCU (Doctor Strange e film Avengers)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"benedict cumberbatch\" id=\"att-benedict-cumberbatch\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Benedict Cumberbatch</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Stephen Strange/Doctor Strange <span class=\"us-result-ref\">— N°070, MCU (Doctor Strange e film Avengers)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-tom-holland",
+"tipo": "attore",
+"nome": "Tom Holland",
+"ricerca": "tom holland",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Peter Parker/Spider-Man <span class=\"us-result-ref\">— N°067, MCU (Captain America: Civil War in poi)</span></li></ul>",
+"testo": "Peter Parker/Spider-Man — N°067, MCU (Captain America: Civil War in poi)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"tom holland\" id=\"att-tom-holland\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Tom Holland</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Peter Parker/Spider-Man <span class=\"us-result-ref\">— N°067, MCU (Captain America: Civil War in poi)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-sebastian-stan",
+"tipo": "attore",
+"nome": "Sebastian Stan",
+"ricerca": "sebastian stan",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Bucky Barnes/Winter Soldier <span class=\"us-result-ref\">— N°056, MCU (dal Capitan America 2 in poi)</span></li></ul>",
+"testo": "Bucky Barnes/Winter Soldier — N°056, MCU (dal Capitan America 2 in poi)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"sebastian stan\" id=\"att-sebastian-stan\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Sebastian Stan</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Bucky Barnes/Winter Soldier <span class=\"us-result-ref\">— N°056, MCU (dal Capitan America 2 in poi)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-anthony-mackie",
+"tipo": "attore",
+"nome": "Anthony Mackie",
+"ricerca": "anthony mackie",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Sam Wilson/Falcon poi Capitan America <span class=\"us-result-ref\">— N°056, MCU (dal Capitan America 2 in poi)</span></li></ul>",
+"testo": "Sam Wilson/Falcon poi Capitan America — N°056, MCU (dal Capitan America 2 in poi)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"anthony mackie\" id=\"att-anthony-mackie\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Anthony Mackie</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Sam Wilson/Falcon poi Capitan America <span class=\"us-result-ref\">— N°056, MCU (dal Capitan America 2 in poi)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-brie-larson",
+"tipo": "attore",
+"nome": "Brie Larson",
+"ricerca": "brie larson",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Carol Danvers/Captain Marvel <span class=\"us-result-ref\">— N°088, MCU (Captain Marvel e sequel)</span></li></ul>",
+"testo": "Carol Danvers/Captain Marvel — N°088, MCU (Captain Marvel e sequel)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"brie larson\" id=\"att-brie-larson\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Brie Larson</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Carol Danvers/Captain Marvel <span class=\"us-result-ref\">— N°088, MCU (Captain Marvel e sequel)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-chris-pratt",
+"tipo": "attore",
+"nome": "Chris Pratt",
+"ricerca": "chris pratt",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Peter Quill/Star-Lord <span class=\"us-result-ref\">— N°058, MCU (Guardiani della Galassia)</span></li></ul>",
+"testo": "Peter Quill/Star-Lord — N°058, MCU (Guardiani della Galassia)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"chris pratt\" id=\"att-chris-pratt\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Chris Pratt</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Peter Quill/Star-Lord <span class=\"us-result-ref\">— N°058, MCU (Guardiani della Galassia)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-zoe-saldana",
+"tipo": "attore",
+"nome": "Zoe Saldana",
+"ricerca": "zoe saldana",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Gamora <span class=\"us-result-ref\">— N°058, MCU (Guardiani della Galassia)</span></li></ul>",
+"testo": "Gamora — N°058, MCU (Guardiani della Galassia)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"zoe saldana\" id=\"att-zoe-saldana\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Zoe Saldana</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Gamora <span class=\"us-result-ref\">— N°058, MCU (Guardiani della Galassia)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-dave-bautista",
+"tipo": "attore",
+"nome": "Dave Bautista",
+"ricerca": "dave bautista",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Drax il Distruttore <span class=\"us-result-ref\">— N°058, MCU (Guardiani della Galassia)</span></li></ul>",
+"testo": "Drax il Distruttore — N°058, MCU (Guardiani della Galassia)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"dave bautista\" id=\"att-dave-bautista\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Dave Bautista</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Drax il Distruttore <span class=\"us-result-ref\">— N°058, MCU (Guardiani della Galassia)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-karen-gillan",
+"tipo": "attore",
+"nome": "Karen Gillan",
+"ricerca": "karen gillan",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Nebula <span class=\"us-result-ref\">— N°058, MCU (Guardiani della Galassia)</span></li></ul>",
+"testo": "Nebula — N°058, MCU (Guardiani della Galassia)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"karen gillan\" id=\"att-karen-gillan\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Karen Gillan</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Nebula <span class=\"us-result-ref\">— N°058, MCU (Guardiani della Galassia)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-josh-brolin",
+"tipo": "attore",
+"nome": "Josh Brolin",
+"ricerca": "josh brolin",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Thanos <span class=\"us-result-ref\">— N°059, MCU (da Guardiani Vol. 2 a Endgame)</span></li></ul>",
+"testo": "Thanos — N°059, MCU (da Guardiani Vol. 2 a Endgame)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"josh brolin\" id=\"att-josh-brolin\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Josh Brolin</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Thanos <span class=\"us-result-ref\">— N°059, MCU (da Guardiani Vol. 2 a Endgame)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-tom-hiddleston",
+"tipo": "attore",
+"nome": "Tom Hiddleston",
+"ricerca": "tom hiddleston",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Loki <span class=\"us-result-ref\">— N°050, MCU (da Thor a Loki S1-S2)</span></li></ul>",
+"testo": "Loki — N°050, MCU (da Thor a Loki S1-S2)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"tom hiddleston\" id=\"att-tom-hiddleston\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Tom Hiddleston</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Loki <span class=\"us-result-ref\">— N°050, MCU (da Thor a Loki S1-S2)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-anthony-hopkins",
+"tipo": "attore",
+"nome": "Anthony Hopkins",
+"ricerca": "anthony hopkins",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Odino <span class=\"us-result-ref\">— N°050, MCU (Thor e sequel)</span></li></ul>",
+"testo": "Odino — N°050, MCU (Thor e sequel)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"anthony hopkins\" id=\"att-anthony-hopkins\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Anthony Hopkins</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Odino <span class=\"us-result-ref\">— N°050, MCU (Thor e sequel)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-cate-blanchett",
+"tipo": "attore",
+"nome": "Cate Blanchett",
+"ricerca": "cate blanchett",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Hela <span class=\"us-result-ref\">— N°076, MCU (Thor: Ragnarok)</span></li></ul>",
+"testo": "Hela — N°076, MCU (Thor: Ragnarok)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"cate blanchett\" id=\"att-cate-blanchett\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Cate Blanchett</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Hela <span class=\"us-result-ref\">— N°076, MCU (Thor: Ragnarok)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-letitia-wright",
+"tipo": "attore",
+"nome": "Letitia Wright",
+"ricerca": "letitia wright",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Shuri/Black Panther <span class=\"us-result-ref\">— N°078, MCU (da Black Panther a Wakanda Forever)</span></li></ul>",
+"testo": "Shuri/Black Panther — N°078, MCU (da Black Panther a Wakanda Forever)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"letitia wright\" id=\"att-letitia-wright\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Letitia Wright</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Shuri/Black Panther <span class=\"us-result-ref\">— N°078, MCU (da Black Panther a Wakanda Forever)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-danai-gurira",
+"tipo": "attore",
+"nome": "Danai Gurira",
+"ricerca": "danai gurira",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Okoye <span class=\"us-result-ref\">— N°078, MCU (da Black Panther in poi)</span></li></ul>",
+"testo": "Okoye — N°078, MCU (da Black Panther in poi)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"danai gurira\" id=\"att-danai-gurira\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Danai Gurira</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Okoye <span class=\"us-result-ref\">— N°078, MCU (da Black Panther in poi)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-lupita-nyong-o",
+"tipo": "attore",
+"nome": "Lupita Nyong'o",
+"ricerca": "lupita nyong'o",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Nakia <span class=\"us-result-ref\">— N°078, MCU (Black Panther e sequel)</span></li></ul>",
+"testo": "Nakia — N°078, MCU (Black Panther e sequel)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"lupita nyong'o\" id=\"att-lupita-nyong-o\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Lupita Nyong'o</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Nakia <span class=\"us-result-ref\">— N°078, MCU (Black Panther e sequel)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-angela-bassett",
+"tipo": "attore",
+"nome": "Angela Bassett",
+"ricerca": "angela bassett",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Ramonda <span class=\"us-result-ref\">— N°078, MCU (da Black Panther a Wakanda Forever)</span></li></ul>",
+"testo": "Ramonda — N°078, MCU (da Black Panther a Wakanda Forever)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"angela bassett\" id=\"att-angela-bassett\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Angela Bassett</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Ramonda <span class=\"us-result-ref\">— N°078, MCU (da Black Panther a Wakanda Forever)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-oscar-isaac",
+"tipo": "attore",
+"nome": "Oscar Isaac",
+"ricerca": "oscar isaac",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Marc Spector/Moon Knight <span class=\"us-result-ref\">— N°101, MCU (Moon Knight)</span></li></ul>",
+"testo": "Marc Spector/Moon Knight — N°101, MCU (Moon Knight)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"oscar isaac\" id=\"att-oscar-isaac\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Oscar Isaac</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Marc Spector/Moon Knight <span class=\"us-result-ref\">— N°101, MCU (Moon Knight)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-iman-vellani",
+"tipo": "attore",
+"nome": "Iman Vellani",
+"ricerca": "iman vellani",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Kamala Khan/Ms. Marvel <span class=\"us-result-ref\">— N°103, MCU (Ms. Marvel e The Marvels)</span></li></ul>",
+"testo": "Kamala Khan/Ms. Marvel — N°103, MCU (Ms. Marvel e The Marvels)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"iman vellani\" id=\"att-iman-vellani\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Iman Vellani</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Kamala Khan/Ms. Marvel <span class=\"us-result-ref\">— N°103, MCU (Ms. Marvel e The Marvels)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-xochitl-gomez",
+"tipo": "attore",
+"nome": "Xochitl Gomez",
+"ricerca": "xochitl gomez",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>America Chavez <span class=\"us-result-ref\">— N°102, Multiverso (Doctor Strange 2, poi Avengers giovani)</span></li></ul>",
+"testo": "America Chavez — N°102, Multiverso (Doctor Strange 2, poi Avengers giovani)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"xochitl gomez\" id=\"att-xochitl-gomez\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Xochitl Gomez</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>America Chavez <span class=\"us-result-ref\">— N°102, Multiverso (Doctor Strange 2, poi Avengers giovani)</span></li></ul></span></div>\n</div>\n</details></li>"
+},
+{
+"id": "att-florence-pugh",
+"tipo": "attore",
+"nome": "Florence Pugh",
+"ricerca": "florence pugh",
+"campi": [
+{
+"k": "RUOLI",
+"html": "<ul class=\"readings-list\"><li>Yelena Belova <span class=\"us-result-ref\">— N°069, MCU (Black Widow, poi Thunderbolts*)</span></li><li>Yelena Belova <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermata)</span></li></ul>",
+"testo": "Yelena Belova — N°069, MCU (Black Widow, poi Thunderbolts*) Yelena Belova — N°136, MCU (Avengers: Doomsday, confermata)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"florence pugh\" id=\"att-florence-pugh\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🎭</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Florence Pugh</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">RUOLI</span><span class=\"detail-v\"><ul class=\"readings-list\"><li>Yelena Belova <span class=\"us-result-ref\">— N°069, MCU (Black Widow, poi Thunderbolts*)</span></li><li>Yelena Belova <span class=\"us-result-ref\">— N°136, MCU (Avengers: Doomsday, confermata)</span></li></ul></span></div>\n</div>\n</details></li>"
+}
+]
+}

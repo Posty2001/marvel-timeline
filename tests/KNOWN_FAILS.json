@@ -52,10 +52,13 @@
  },
  "cron3c_test": {
   "checks": [
+   "MCU ordine ambientazione monotono",
+   "MCU ordine ambientazione monotono [-5000, -1260, 1943, 1946, 1946, 1947]",
    "MCU: 64 con anno",
-   "MCU ordine ambientazione monotono"
+   "MCU: 64 con anno (49 certi + 15 approssimativi), 29 senza {'main': 51, 'c': 38, 'a': 13, 'k': 3, 'keyTitles': ['The Avengers', 'Avengers: Endgame', 'Avengers: Infinity War'], 'band': 'Senza anno di ambientazione · 42Nascondi ▴', 'und': 42}",
+   "localStorage invariato ['marvel-ultimate-timeline-live-state-v1']"
   ],
-  "why": "FAIL storico: conteggi fissi su tools/cron3c.js (indipendenti dalla build)"
+  "why": "FAIL storico: conteggi fissi su tools/cron3c.js (indipendenti dalla build) · + FAIL di baseline A0 (25/11/2026), non causato da Atlante: TV… (live-state-v1)"
  },
  "ui_audit": {
   "checks": [
@@ -72,5 +75,24 @@
   "f3_test": "selettore obsoleto: .a2-all (Home Atlante ridisegnata)",
   "uf_test": "selettore obsoleto/flusso: #mvUniversoBannerChiudi non cliccabile (banner non presente nel flusso)",
   "uf_test_3b": "idem uf_test"
+ },
+ "f4b_test": {
+  "checks": [
+   "B11 Visto dal Dossier = clic sulla Timeline (stesso localStorage ",
+   "B12 Visto togliendo la spunta = stesso stato di partenza e stesso"
+  ],
+  "why": "FAIL di baseline A0 (25/11/2026), non causato da Atlante: TVA Live scrive/migra la chiave 'marvel-ultimate-timeline-live-state-v1' al caricamento; il test pre-esistente la considera una scrittura inattesa. Indipendente dalle fasi A0/A1 (index.html invariato); da riallineare in un intervento separato"
+ },
+ "f4e_test": {
+  "checks": [
+   "E1 nessuna scrittura su localStorage navigando in tutti i dossier"
+  ],
+  "why": "FAIL di baseline A0 (25/11/2026), non causato da Atlante: TVA Live scrive/migra la chiave 'marvel-ultimate-timeline-live-state-v1' al caricamento; il test pre-esistente la considera una scrittura inattesa. Indipendente dalle fasi A0/A1 (index.html invariato); da riallineare in un intervento separato"
+ },
+ "map3b_test": {
+  "checks": [
+   "localStorage: nessuna chiave nuova oltre alla cache asset ['marve"
+  ],
+  "why": "FAIL di baseline A0 (25/11/2026), non causato da Atlante: TVA Live scrive/migra la chiave 'marvel-ultimate-timeline-live-state-v1' al caricamento; il test pre-esistente la considera una scrittura inattesa. Indipendente dalle fasi A0/A1 (index.html invariato); da riallineare in un intervento separato"
  }
 }

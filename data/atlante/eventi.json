@@ -1,0 +1,90 @@
+{
+"versione": 1,
+"sorgente": "index.html",
+"voci": [
+{
+"id": "evt-il-blip",
+"tipo": "evento",
+"nome": "Il Blip",
+"ricerca": "il blip",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Lo schiocco di Thanos con il Guanto dell'Infinito cancella metà degli esseri viventi dell'universo; l'effetto dura cinque anni prima di essere annullato.",
+"testo": "Lo schiocco di Thanos con il Guanto dell'Infinito cancella metà degli esseri viventi dell'universo; l'effetto dura cinque anni prima di essere annullato."
+},
+{
+"k": "CAUSE/CONSEG.",
+"html": "Cause: raccolta delle sei Gemme. Conseguenze: cinque anni di assenza, poi il ritorno simultaneo.",
+"testo": "Cause: raccolta delle sei Gemme. Conseguenze: cinque anni di assenza, poi il ritorno simultaneo."
+},
+{
+"k": "TITOLI",
+"html": "N°083, N°088 — Avengers: Infinity War, Avengers: Endgame",
+"testo": "N°083, N°088 — Avengers: Infinity War, Avengers: Endgame"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"il blip\" id=\"evt-il-blip\"><details class=\"card\">\n<summary>\n<span class=\"ic\">📜</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Il Blip</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Lo schiocco di Thanos con il Guanto dell'Infinito cancella metà degli esseri viventi dell'universo; l'effetto dura cinque anni prima di essere annullato.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">CAUSE/CONSEG.</span><span class=\"detail-v\">Cause: raccolta delle sei Gemme. Conseguenze: cinque anni di assenza, poi il ritorno simultaneo.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">TITOLI</span><span class=\"detail-v\">N°083, N°088 — Avengers: Infinity War, Avengers: Endgame</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "evt-caduta-dello-s-h-i-e-l-d",
+"tipo": "evento",
+"nome": "Caduta dello S.H.I.E.L.D.",
+"ricerca": "caduta dello s.h.i.e.l.d.",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "La scoperta che Hydra ha infiltrato l'agenzia fin dalla fondazione porta al suo smantellamento pubblico.",
+"testo": "La scoperta che Hydra ha infiltrato l'agenzia fin dalla fondazione porta al suo smantellamento pubblico."
+},
+{
+"k": "CAUSE/CONSEG.",
+"html": "Cause: infiltrazione Hydra decennale. Conseguenze: scioglimento ufficiale dell'agenzia.",
+"testo": "Cause: infiltrazione Hydra decennale. Conseguenze: scioglimento ufficiale dell'agenzia."
+},
+{
+"k": "TITOLI",
+"html": "N°055 — Captain America: The Winter Soldier",
+"testo": "N°055 — Captain America: The Winter Soldier"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"caduta dello s.h.i.e.l.d.\" id=\"evt-caduta-dello-s-h-i-e-l-d\"><details class=\"card\">\n<summary>\n<span class=\"ic\">📜</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Caduta dello S.H.I.E.L.D.</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">La scoperta che Hydra ha infiltrato l'agenzia fin dalla fondazione porta al suo smantellamento pubblico.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">CAUSE/CONSEG.</span><span class=\"detail-v\">Cause: infiltrazione Hydra decennale. Conseguenze: scioglimento ufficiale dell'agenzia.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">TITOLI</span><span class=\"detail-v\">N°055 — Captain America: The Winter Soldier</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "evt-accordi-di-sokovia",
+"tipo": "evento",
+"nome": "Accordi di Sokovia",
+"ricerca": "accordi di sokovia",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Un trattato internazionale che impone supervisione governativa sugli Avengers spacca il gruppo in due fazioni.",
+"testo": "Un trattato internazionale che impone supervisione governativa sugli Avengers spacca il gruppo in due fazioni."
+},
+{
+"k": "CAUSE/CONSEG.",
+"html": "Cause: danni collaterali delle missioni Avengers. Conseguenze: frattura del gruppo, esilio di una parte della squadra.",
+"testo": "Cause: danni collaterali delle missioni Avengers. Conseguenze: frattura del gruppo, esilio di una parte della squadra."
+},
+{
+"k": "TITOLI",
+"html": "N°066 — Captain America: Civil War",
+"testo": "N°066 — Captain America: Civil War"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"accordi di sokovia\" id=\"evt-accordi-di-sokovia\"><details class=\"card\">\n<summary>\n<span class=\"ic\">📜</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Accordi di Sokovia</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Un trattato internazionale che impone supervisione governativa sugli Avengers spacca il gruppo in due fazioni.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">CAUSE/CONSEG.</span><span class=\"detail-v\">Cause: danni collaterali delle missioni Avengers. Conseguenze: frattura del gruppo, esilio di una parte della squadra.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">TITOLI</span><span class=\"detail-v\">N°066 — Captain America: Civil War</span></div>\n</div>\n</details></li>"
+}
+]
+}

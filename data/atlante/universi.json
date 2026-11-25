@@ -1,0 +1,762 @@
+{
+"versione": 1,
+"sorgente": "index.html",
+"voci": [
+{
+"id": "uni-earth-199999-mcu",
+"tipo": "universo",
+"nome": "Earth-199999 — MCU",
+"ricerca": "earth-199999 — mcu",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "L'universo principale della saga, la Terra \"primaria\" della maggior parte di questa guida.",
+"testo": "L'universo principale della saga, la Terra \"primaria\" della maggior parte di questa guida."
+},
+{
+"k": "NATURA",
+"html": "<b>Continuità principale</b> — Linea di riferimento di questa guida.",
+"testo": "Continuità principale — Linea di riferimento di questa guida."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 2, Parte 3",
+"testo": "Parte 2, Parte 3"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"earth-199999 — mcu\" id=\"uni-earth-199999-mcu\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Earth-199999 — MCU</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">L'universo principale della saga, la Terra \"primaria\" della maggior parte di questa guida.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Continuità principale</b> — Linea di riferimento di questa guida.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 2, Parte 3</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-earth-96283-raimi-verse",
+"tipo": "universo",
+"nome": "Earth-96283 — Raimi-Verse",
+"ricerca": "earth-96283 — raimi-verse",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "L'universo dei tre Spider-Man diretti da Sam Raimi con Tobey Maguire.",
+"testo": "L'universo dei tre Spider-Man diretti da Sam Raimi con Tobey Maguire."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Continuità cinematografica propria; ricompare nel MCU come variante in N°099.",
+"testo": "Universo autonomo — Continuità cinematografica propria; ricompare nel MCU come variante in N°099."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 1A",
+"testo": "Parte 1A"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"earth-96283 — raimi-verse\" id=\"uni-earth-96283-raimi-verse\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Earth-96283 — Raimi-Verse</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">L'universo dei tre Spider-Man diretti da Sam Raimi con Tobey Maguire.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Continuità cinematografica propria; ricompare nel MCU come variante in N°099.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 1A</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-earth-120703-garfield-verse",
+"tipo": "universo",
+"nome": "Earth-120703 — Garfield-Verse",
+"ricerca": "earth-120703 — garfield-verse",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "L'universo dei due Amazing Spider-Man con Andrew Garfield.",
+"testo": "L'universo dei due Amazing Spider-Man con Andrew Garfield."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Continuità cinematografica propria; ricompare nel MCU come variante in N°099.",
+"testo": "Universo autonomo — Continuità cinematografica propria; ricompare nel MCU come variante in N°099."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 1B",
+"testo": "Parte 1B"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"earth-120703 — garfield-verse\" id=\"uni-earth-120703-garfield-verse\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Earth-120703 — Garfield-Verse</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">L'universo dei due Amazing Spider-Man con Andrew Garfield.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Continuità cinematografica propria; ricompare nel MCU come variante in N°099.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 1B</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-sony-s-spider-man-universe-ssu",
+"tipo": "universo",
+"nome": "Sony's Spider-Man Universe (SSU)",
+"ricerca": "sony's spider-man universe (ssu)",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Universo condiviso di Venom, Morbius e altri villain di Spider-Man, tecnicamente legato a Earth-616 con variazioni mai del tutto chiarite.",
+"testo": "Universo condiviso di Venom, Morbius e altri villain di Spider-Man, tecnicamente legato a Earth-616 con variazioni mai del tutto chiarite."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Il legame con l’MCU non è mai stato chiarito del tutto.",
+"testo": "Universo autonomo — Il legame con l’MCU non è mai stato chiarito del tutto."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 1C",
+"testo": "Parte 1C"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"sony's spider-man universe (ssu)\" id=\"uni-sony-s-spider-man-universe-ssu\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Sony's Spider-Man Universe (SSU)</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Universo condiviso di Venom, Morbius e altri villain di Spider-Man, tecnicamente legato a Earth-616 con variazioni mai del tutto chiarite.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Il legame con l’MCU non è mai stato chiarito del tutto.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 1C</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-earth-10005-fox-verse",
+"tipo": "universo",
+"nome": "Earth-10005 — Fox-Verse",
+"ricerca": "earth-10005 — fox-verse",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "L'universo degli X-Men prodotti da 20th Century Fox, comprese le trilogie originale e prequel.",
+"testo": "L'universo degli X-Men prodotti da 20th Century Fox, comprese le trilogie originale e prequel."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Continuità propria dei film Fox, non una linea unica e continua.",
+"testo": "Universo autonomo — Continuità propria dei film Fox, non una linea unica e continua."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 1D",
+"testo": "Parte 1D"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"earth-10005 — fox-verse\" id=\"uni-earth-10005-fox-verse\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Earth-10005 — Fox-Verse</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">L'universo degli X-Men prodotti da 20th Century Fox, comprese le trilogie originale e prequel.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Continuità propria dei film Fox, non una linea unica e continua.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 1D</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-fantastic-four-1994",
+"tipo": "universo",
+"nome": "Fantastic Four (1994)",
+"ricerca": "fantastic four (1994)",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Universo isolato del film Fantastic Four (1994), prodotto da Roger Corman su commissione e mai distribuito ufficialmente.",
+"testo": "Universo isolato del film Fantastic Four (1994), prodotto da Roger Corman su commissione e mai distribuito ufficialmente."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Film isolato, senza collegamenti con altri titoli.",
+"testo": "Universo autonomo — Film isolato, senza collegamenti con altri titoli."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 1bis · 1F",
+"testo": "Parte 1bis · 1F"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"fantastic four (1994)\" id=\"uni-fantastic-four-1994\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Fantastic Four (1994)</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Universo isolato del film Fantastic Four (1994), prodotto da Roger Corman su commissione e mai distribuito ufficialmente.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Film isolato, senza collegamenti con altri titoli.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 1bis · 1F</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-earth-121698",
+"tipo": "universo",
+"nome": "Earth-121698",
+"ricerca": "earth-121698",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Universo dei Fantastic Four diretti da Tim Story (2005-2007).",
+"testo": "Universo dei Fantastic Four diretti da Tim Story (2005-2007)."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Duologia isolata, senza collegamenti con altri titoli della guida.",
+"testo": "Universo autonomo — Duologia isolata, senza collegamenti con altri titoli della guida."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 1bis · 1F",
+"testo": "Parte 1bis · 1F"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"earth-121698\" id=\"uni-earth-121698\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Earth-121698</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Universo dei Fantastic Four diretti da Tim Story (2005-2007).</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Duologia isolata, senza collegamenti con altri titoli della guida.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 1bis · 1F</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-earth-trn123",
+"tipo": "universo",
+"nome": "Earth-TRN123",
+"ricerca": "earth-trn123",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Universo isolato del reboot Fantastic Four (2015) di Josh Trank.",
+"testo": "Universo isolato del reboot Fantastic Four (2015) di Josh Trank."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Film isolato, senza collegamenti con altri titoli.",
+"testo": "Universo autonomo — Film isolato, senza collegamenti con altri titoli."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 1bis · 1F",
+"testo": "Parte 1bis · 1F"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"earth-trn123\" id=\"uni-earth-trn123\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Earth-TRN123</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Universo isolato del reboot Fantastic Four (2015) di Josh Trank.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Film isolato, senza collegamenti con altri titoli.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 1bis · 1F</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-blade-verse",
+"tipo": "universo",
+"nome": "Blade-verse",
+"ricerca": "blade-verse",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "New Line Cinema, Wesley Snipes: continuità senza designazione Earth ufficiale nel canone.",
+"testo": "New Line Cinema, Wesley Snipes: continuità senza designazione Earth ufficiale nel canone."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Continuità propria della trilogia.",
+"testo": "Universo autonomo — Continuità propria della trilogia."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 1bis · 1G",
+"testo": "Parte 1bis · 1G"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"blade-verse\" id=\"uni-blade-verse\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Blade-verse</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">New Line Cinema, Wesley Snipes: continuità senza designazione Earth ufficiale nel canone.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Continuità propria della trilogia.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 1bis · 1G</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-daredevil-elektra-verse",
+"tipo": "universo",
+"nome": "Daredevil/Elektra-verse",
+"ricerca": "daredevil/elektra-verse",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "20th Century Fox, Ben Affleck/Jennifer Garner: continuità isolata, distinta dal Fox-Verse degli X-Men.",
+"testo": "20th Century Fox, Ben Affleck/Jennifer Garner: continuità isolata, distinta dal Fox-Verse degli X-Men."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Continuità propria dei due film.",
+"testo": "Universo autonomo — Continuità propria dei due film."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 1bis · 1H",
+"testo": "Parte 1bis · 1H"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"daredevil/elektra-verse\" id=\"uni-daredevil-elektra-verse\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Daredevil/Elektra-verse</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">20th Century Fox, Ben Affleck/Jennifer Garner: continuità isolata, distinta dal Fox-Verse degli X-Men.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Continuità propria dei due film.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 1bis · 1H</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-ghost-rider-verse",
+"tipo": "universo",
+"nome": "Ghost Rider-verse",
+"ricerca": "ghost rider-verse",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Columbia Pictures/Sony, Nicolas Cage: continuità isolata, nessun collegamento con altri titoli della guida.",
+"testo": "Columbia Pictures/Sony, Nicolas Cage: continuità isolata, nessun collegamento con altri titoli della guida."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Continuità propria dei due film.",
+"testo": "Universo autonomo — Continuità propria dei due film."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 1bis · 1I",
+"testo": "Parte 1bis · 1I"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"ghost rider-verse\" id=\"uni-ghost-rider-verse\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Ghost Rider-verse</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Columbia Pictures/Sony, Nicolas Cage: continuità isolata, nessun collegamento con altri titoli della guida.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Continuità propria dei due film.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 1bis · 1I</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-spider-noir-verse",
+"tipo": "universo",
+"nome": "Spider-Noir-verse",
+"ricerca": "spider-noir-verse",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Sony Pictures Television/Prime Video/MGM+, Nicolas Cage: dichiarata esplicitamente non collegata ai film animati Spider-Verse nonostante lo stesso attore/personaggio.",
+"testo": "Sony Pictures Television/Prime Video/MGM+, Nicolas Cage: dichiarata esplicitamente non collegata ai film animati Spider-Verse nonostante lo stesso attore/personaggio."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Dichiarata non collegata ai film animati Spider-Verse.",
+"testo": "Universo autonomo — Dichiarata non collegata ai film animati Spider-Verse."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 1bis · 1J",
+"testo": "Parte 1bis · 1J"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"spider-noir-verse\" id=\"uni-spider-noir-verse\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Spider-Noir-verse</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Sony Pictures Television/Prime Video/MGM+, Nicolas Cage: dichiarata esplicitamente non collegata ai film animati Spider-Verse nonostante lo stesso attore/personaggio.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Dichiarata non collegata ai film animati Spider-Verse.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 1bis · 1J</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-hulk-2003-verse",
+"tipo": "universo",
+"nome": "Hulk (2003)-verse",
+"ricerca": "hulk (2003)-verse",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Universal Pictures, Ang Lee/Eric Bana: continuità isolata, non collegata a The Incredible Hulk (2008) nonostante il personaggio condiviso.",
+"testo": "Universal Pictures, Ang Lee/Eric Bana: continuità isolata, non collegata a The Incredible Hulk (2008) nonostante il personaggio condiviso."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Film isolato, senza collegamenti con altri titoli.",
+"testo": "Universo autonomo — Film isolato, senza collegamenti con altri titoli."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 1bis · 1K",
+"testo": "Parte 1bis · 1K"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"hulk (2003)-verse\" id=\"uni-hulk-2003-verse\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Hulk (2003)-verse</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Universal Pictures, Ang Lee/Eric Bana: continuità isolata, non collegata a The Incredible Hulk (2008) nonostante il personaggio condiviso.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Film isolato, senza collegamenti con altri titoli.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 1bis · 1K</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-earth-828",
+"tipo": "universo",
+"nome": "Earth-828",
+"ricerca": "earth-828",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Universo alternativo dei Fantastic Four MCU (First Steps), separato dalla linea principale; il collegamento atteso con Doomsday non è ancora mostrato.",
+"testo": "Universo alternativo dei Fantastic Four MCU (First Steps), separato dalla linea principale; il collegamento atteso con Doomsday non è ancora mostrato."
+},
+{
+"k": "NATURA",
+"html": "<b>Diramazione / universo alternativo</b> — Universo alternativo del multiverso MCU, separato dalla linea principale.",
+"testo": "Diramazione / universo alternativo — Universo alternativo del multiverso MCU, separato dalla linea principale."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 3, voce #125",
+"testo": "Parte 3, voce #125"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"earth-828\" id=\"uni-earth-828\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Earth-828</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Universo alternativo dei Fantastic Four MCU (First Steps), separato dalla linea principale; il collegamento atteso con Doomsday non è ancora mostrato.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Diramazione / universo alternativo</b> — Universo alternativo del multiverso MCU, separato dalla linea principale.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 3, voce #125</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-earth-838",
+"tipo": "universo",
+"nome": "Earth-838",
+"ricerca": "earth-838",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Universo alternativo visto in Doctor Strange nel Multiverso della Follia, sede degli Illuminati.",
+"testo": "Universo alternativo visto in Doctor Strange nel Multiverso della Follia, sede degli Illuminati."
+},
+{
+"k": "NATURA",
+"html": "<b>Diramazione / universo alternativo</b> — Universo alternativo del multiverso MCU, separato dalla linea principale.",
+"testo": "Diramazione / universo alternativo — Universo alternativo del multiverso MCU, separato dalla linea principale."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 3, voce #102",
+"testo": "Parte 3, voce #102"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"earth-838\" id=\"uni-earth-838\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Earth-838</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Universo alternativo visto in Doctor Strange nel Multiverso della Follia, sede degli Illuminati.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Diramazione / universo alternativo</b> — Universo alternativo del multiverso MCU, separato dalla linea principale.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 3, voce #102</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-tva-fuori-dal-tempo",
+"tipo": "universo",
+"nome": "TVA — fuori dal tempo",
+"ricerca": "tva — fuori dal tempo",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Sede extra-dimensionale della Time Variance Authority: non un vero \"Earth\", ma un luogo al di fuori del multiverso stesso.",
+"testo": "Sede extra-dimensionale della Time Variance Authority: non un vero \"Earth\", ma un luogo al di fuori del multiverso stesso."
+},
+{
+"k": "NATURA",
+"html": "<b>Luogo narrativo (non un universo)</b> — Luogo fuori dal multiverso: non è una linea temporale.",
+"testo": "Luogo narrativo (non un universo) — Luogo fuori dal multiverso: non è una linea temporale."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 3, voci #095, #112",
+"testo": "Parte 3, voci #095, #112"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"tva — fuori dal tempo\" id=\"uni-tva-fuori-dal-tempo\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">TVA — fuori dal tempo</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Sede extra-dimensionale della Time Variance Authority: non un vero \"Earth\", ma un luogo al di fuori del multiverso stesso.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Luogo narrativo (non un universo)</b> — Luogo fuori dal multiverso: non è una linea temporale.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 3, voci #095, #112</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-rami-di-what-if",
+"tipo": "universo",
+"nome": "Rami di What If...?",
+"ricerca": "rami di what if...?",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Decine di linee temporali alternative, ciascuna derivata da un singolo evento divergente rispetto a Earth-199999.",
+"testo": "Decine di linee temporali alternative, ciascuna derivata da un singolo evento divergente rispetto a Earth-199999."
+},
+{
+"k": "NATURA",
+"html": "<b>Diramazione / universo alternativo</b> — Raccoglie linee temporali distinte, ciascuna nata da un evento divergente da Earth-199999: non è una continuità unica.",
+"testo": "Diramazione / universo alternativo — Raccoglie linee temporali distinte, ciascuna nata da un evento divergente da Earth-199999: non è una continuità unica."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 3, voci #096, #114, #119",
+"testo": "Parte 3, voci #096, #114, #119"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"rami di what if...?\" id=\"uni-rami-di-what-if\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Rami di What If...?</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Decine di linee temporali alternative, ciascuna derivata da un singolo evento divergente rispetto a Earth-199999.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Diramazione / universo alternativo</b> — Raccoglie linee temporali distinte, ciascuna nata da un evento divergente da Earth-199999: non è una continuità unica.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 3, voci #096, #114, #119</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-x-men-97-verse",
+"tipo": "universo",
+"nome": "X-Men '97-verse",
+"ricerca": "x-men '97-verse",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Continuazione diretta di X-Men: The Animated Series (1992-97): la serie del 2024 ne riprende letteralmente la trama dal punto in cui si era interrotta, oltre 25 anni dopo. Continuità propria mai confermata collegata al MCU.",
+"testo": "Continuazione diretta di X-Men: The Animated Series (1992-97): la serie del 2024 ne riprende letteralmente la trama dal punto in cui si era interrotta, oltre 25 anni dopo. Continuità propria mai confermata collegata al MCU."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Continua X-Men: The Animated Series (1992-97); nessun collegamento confermato con il MCU principale.",
+"testo": "Universo autonomo — Continua X-Men: The Animated Series (1992-97); nessun collegamento confermato con il MCU principale."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 4, Parte 1bis · 1N",
+"testo": "Parte 4, Parte 1bis · 1N"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"x-men '97-verse\" id=\"uni-x-men-97-verse\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">X-Men '97-verse</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Continuazione diretta di X-Men: The Animated Series (1992-97): la serie del 2024 ne riprende letteralmente la trama dal punto in cui si era interrotta, oltre 25 anni dopo. Continuità propria mai confermata collegata al MCU.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Continua X-Men: The Animated Series (1992-97); nessun collegamento confermato con il MCU principale.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 4, Parte 1bis · 1N</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-your-friendly-neighborhood-spider-man-verse",
+"tipo": "universo",
+"nome": "Your Friendly Neighborhood Spider-Man-verse",
+"ricerca": "your friendly neighborhood spider-man-verse",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Serie animata Marvel Studios ambientata in una linea temporale alternativa del multiverso, distinta dalla linea principale dell'MCU.",
+"testo": "Serie animata Marvel Studios ambientata in una linea temporale alternativa del multiverso, distinta dalla linea principale dell'MCU."
+},
+{
+"k": "NATURA",
+"html": "<b>Diramazione / universo alternativo</b> — Linea alternativa del multiverso MCU, distinta dalla principale; i collegamenti con il MCU principale non sono dimostrati dalla scheda.",
+"testo": "Diramazione / universo alternativo — Linea alternativa del multiverso MCU, distinta dalla principale; i collegamenti con il MCU principale non sono dimostrati dalla scheda."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 3, voci #120, #134",
+"testo": "Parte 3, voci #120, #134"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"your friendly neighborhood spider-man-verse\" id=\"uni-your-friendly-neighborhood-spider-man-verse\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Your Friendly Neighborhood Spider-Man-verse</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Serie animata Marvel Studios ambientata in una linea temporale alternativa del multiverso, distinta dalla linea principale dell'MCU.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Diramazione / universo alternativo</b> — Linea alternativa del multiverso MCU, distinta dalla principale; i collegamenti con il MCU principale non sono dimostrati dalla scheda.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 3, voci #120, #134</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-marvel-productions-universe-anni-80",
+"tipo": "universo",
+"nome": "Marvel Productions Universe (anni '80)",
+"ricerca": "marvel productions universe (anni '80)",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Spider-Man, Spider-Man and His Amazing Friends e The Incredible Hulk (1981-83): stesso studio, stesso stile visivo, debutto lo stesso giorno e trasmesse insieme nello stesso blocco orario.",
+"testo": "Spider-Man, Spider-Man and His Amazing Friends e The Incredible Hulk (1981-83): stesso studio, stesso stile visivo, debutto lo stesso giorno e trasmesse insieme nello stesso blocco orario."
+},
+{
+"k": "NATURA",
+"html": "<b>Raggruppamento editoriale</b> — Raggruppamento editoriale (stesso studio e stesso blocco di programmazione): non è dimostrata una continuità narrativa condivisa.",
+"testo": "Raggruppamento editoriale — Raggruppamento editoriale (stesso studio e stesso blocco di programmazione): non è dimostrata una continuità narrativa condivisa."
+},
+{
+"k": "COMPARE IN",
+"html": "Serie Animate",
+"testo": "Serie Animate"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"marvel productions universe (anni '80)\" id=\"uni-marvel-productions-universe-anni-80\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Marvel Productions Universe (anni '80)</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Spider-Man, Spider-Man and His Amazing Friends e The Incredible Hulk (1981-83): stesso studio, stesso stile visivo, debutto lo stesso giorno e trasmesse insieme nello stesso blocco orario.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Raggruppamento editoriale</b> — Raggruppamento editoriale (stesso studio e stesso blocco di programmazione): non è dimostrata una continuità narrativa condivisa.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Serie Animate</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-marvel-productions-universe-anni-90",
+"tipo": "universo",
+"nome": "Marvel Productions Universe (anni '90)",
+"ricerca": "marvel productions universe (anni '90)",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Iron Man, Fantastic Four, Spider-Man: The Animated Series e The Incredible Hulk (1994-97): quattro serie con crossover diretto documentato, stessi attori che riprendono gli stessi ruoli da una serie all'altra.",
+"testo": "Iron Man, Fantastic Four, Spider-Man: The Animated Series e The Incredible Hulk (1994-97): quattro serie con crossover diretto documentato, stessi attori che riprendono gli stessi ruoli da una serie all'altra."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Universo condiviso con crossover diretto documentato tra le serie.",
+"testo": "Universo autonomo — Universo condiviso con crossover diretto documentato tra le serie."
+},
+{
+"k": "COMPARE IN",
+"html": "Serie Animate",
+"testo": "Serie Animate"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"marvel productions universe (anni '90)\" id=\"uni-marvel-productions-universe-anni-90\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Marvel Productions Universe (anni '90)</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Iron Man, Fantastic Four, Spider-Man: The Animated Series e The Incredible Hulk (1994-97): quattro serie con crossover diretto documentato, stessi attori che riprendono gli stessi ruoli da una serie all'altra.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Universo condiviso con crossover diretto documentato tra le serie.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Serie Animate</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-marvel-animation-universe-2006-2017",
+"tipo": "universo",
+"nome": "Marvel Animation Universe (2006-2017)",
+"ricerca": "marvel animation universe (2006-2017)",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Il più esteso universo condiviso animato mai catalogato in questa guida: gli undici film Marvel Animated Features più sette serie TV che ne condividono cast e continuity, da Ultimate Avengers (2006) a Marvel's Spider-Man (2017).",
+"testo": "Il più esteso universo condiviso animato mai catalogato in questa guida: gli undici film Marvel Animated Features più sette serie TV che ne condividono cast e continuity, da Ultimate Avengers (2006) a Marvel's Spider-Man (2017)."
+},
+{
+"k": "NATURA",
+"html": "<b>Raggruppamento editoriale</b> — Etichetta editoriale della guida: riunisce film e serie con cast e linea produttiva comuni. La continuità comune non è dimostrata per ogni opera, quindi non va letta come un'unica linea narrativa.",
+"testo": "Raggruppamento editoriale — Etichetta editoriale della guida: riunisce film e serie con cast e linea produttiva comuni. La continuità comune non è dimostrata per ogni opera, quindi non va letta come un'unica linea narrativa."
+},
+{
+"k": "COMPARE IN",
+"html": "Serie Animate",
+"testo": "Serie Animate"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"marvel animation universe (2006-2017)\" id=\"uni-marvel-animation-universe-2006-2017\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Marvel Animation Universe (2006-2017)</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Il più esteso universo condiviso animato mai catalogato in questa guida: gli undici film Marvel Animated Features più sette serie TV che ne condividono cast e continuity, da Ultimate Avengers (2006) a Marvel's Spider-Man (2017).</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Raggruppamento editoriale</b> — Etichetta editoriale della guida: riunisce film e serie con cast e linea produttiva comuni. La continuità comune non è dimostrata per ogni opera, quindi non va letta come un'unica linea narrativa.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Serie Animate</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-continuity-animate-isolate-minori",
+"tipo": "universo",
+"nome": "Continuity animate isolate minori",
+"ricerca": "continuity animate isolate minori",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Undici serie animate Marvel senza crossover documentato con nessun altro titolo della guida, ciascuna con la propria continuità a sé: The Marvel Super Heroes (1966), Spider-Man (1967), Fantastic Four (1967), Spider-Woman (1979), Silver Surfer (1998), Spider-Man Unlimited (1999), X-Men: Evolution (2000), Iron Man: Armored Adventures (2009), Fantastic Four: World's Greatest Heroes (2006), The Spectacular Spider-Man (2008), Spidey and His Amazing Friends (2021).",
+"testo": "Undici serie animate Marvel senza crossover documentato con nessun altro titolo della guida, ciascuna con la propria continuità a sé: The Marvel Super Heroes (1966), Spider-Man (1967), Fantastic Four (1967), Spider-Woman (1979), Silver Surfer (1998), Spider-Man Unlimited (1999), X-Men: Evolution (2000), Iron Man: Armored Adventures (2009), Fantastic Four: World's Greatest Heroes (2006), The Spectacular Spider-Man (2008), Spidey and His Amazing Friends (2021)."
+},
+{
+"k": "NATURA",
+"html": "<b>Raggruppamento editoriale</b> — Contenitore editoriale: ogni serie ha una continuità separata e nessun crossover documentato.",
+"testo": "Raggruppamento editoriale — Contenitore editoriale: ogni serie ha una continuità separata e nessun crossover documentato."
+},
+{
+"k": "COMPARE IN",
+"html": "Serie Animate",
+"testo": "Serie Animate"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"continuity animate isolate minori\" id=\"uni-continuity-animate-isolate-minori\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Continuity animate isolate minori</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Undici serie animate Marvel senza crossover documentato con nessun altro titolo della guida, ciascuna con la propria continuità a sé: The Marvel Super Heroes (1966), Spider-Man (1967), Fantastic Four (1967), Spider-Woman (1979), Silver Surfer (1998), Spider-Man Unlimited (1999), X-Men: Evolution (2000), Iron Man: Armored Adventures (2009), Fantastic Four: World's Greatest Heroes (2006), The Spectacular Spider-Man (2008), Spidey and His Amazing Friends (2021).</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Raggruppamento editoriale</b> — Contenitore editoriale: ogni serie ha una continuità separata e nessun crossover documentato.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Serie Animate</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-spider-verse-sony-animato",
+"tipo": "universo",
+"nome": "Spider-Verse Sony (animato)",
+"ricerca": "spider-verse sony (animato)",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Universo animato di Miles Morales e le sue varianti, esplicitamente non canonico con la MCU live-action.",
+"testo": "Universo animato di Miles Morales e le sue varianti, esplicitamente non canonico con la MCU live-action."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Dichiarato non canonico rispetto al MCU live-action.",
+"testo": "Universo autonomo — Dichiarato non canonico rispetto al MCU live-action."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 1E",
+"testo": "Parte 1E"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"spider-verse sony (animato)\" id=\"uni-spider-verse-sony-animato\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Spider-Verse Sony (animato)</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Universo animato di Miles Morales e le sue varianti, esplicitamente non canonico con la MCU live-action.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Dichiarato non canonico rispetto al MCU live-action.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 1E</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-legion-verse",
+"tipo": "universo",
+"nome": "Legion-verse",
+"ricerca": "legion-verse",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "FX/Marvel Television, dichiarato esplicitamente separato sia dai film X-Men sia da The Gifted.",
+"testo": "FX/Marvel Television, dichiarato esplicitamente separato sia dai film X-Men sia da The Gifted."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Dichiarato separato sia dai film X-Men sia da The Gifted.",
+"testo": "Universo autonomo — Dichiarato separato sia dai film X-Men sia da The Gifted."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 4",
+"testo": "Parte 4"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"legion-verse\" id=\"uni-legion-verse\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Legion-verse</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">FX/Marvel Television, dichiarato esplicitamente separato sia dai film X-Men sia da The Gifted.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Dichiarato separato sia dai film X-Men sia da The Gifted.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 4</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-the-gifted-verse",
+"tipo": "universo",
+"nome": "The Gifted-verse",
+"ricerca": "the gifted-verse",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Fox, linea temporale alternativa dove gli X-Men sono \"scomparsi\", dichiarata separata da Legion e dai film.",
+"testo": "Fox, linea temporale alternativa dove gli X-Men sono \"scomparsi\", dichiarata separata da Legion e dai film."
+},
+{
+"k": "NATURA",
+"html": "<b>Universo autonomo</b> — Dichiarato separato sia da Legion sia dai film.",
+"testo": "Universo autonomo — Dichiarato separato sia da Legion sia dai film."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 4",
+"testo": "Parte 4"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"the gifted-verse\" id=\"uni-the-gifted-verse\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">The Gifted-verse</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Fox, linea temporale alternativa dove gli X-Men sono \"scomparsi\", dichiarata separata da Legion e dai film.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Universo autonomo</b> — Dichiarato separato sia da Legion sia dai film.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 4</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "uni-marvel-zombies-verse",
+"tipo": "universo",
+"nome": "Marvel Zombies-verse",
+"ricerca": "marvel zombies-verse",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Ramo zombie derivato da What If...? S1, continuità propria.",
+"testo": "Ramo zombie derivato da What If...? S1, continuità propria."
+},
+{
+"k": "NATURA",
+"html": "<b>Diramazione / universo alternativo</b> — Ramo derivato da What If…? S1, con continuità propria.",
+"testo": "Diramazione / universo alternativo — Ramo derivato da What If…? S1, con continuità propria."
+},
+{
+"k": "COMPARE IN",
+"html": "Parte 4",
+"testo": "Parte 4"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"marvel zombies-verse\" id=\"uni-marvel-zombies-verse\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌐</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Marvel Zombies-verse</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Ramo zombie derivato da What If...? S1, continuità propria.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">NATURA</span><span class=\"detail-v\"><b>Diramazione / universo alternativo</b> — Ramo derivato da What If…? S1, con continuità propria.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Parte 4</span></div>\n</div>\n</details></li>"
+}
+]
+}

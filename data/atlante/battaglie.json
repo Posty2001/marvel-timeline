@@ -1,0 +1,98 @@
+{
+"versione": 1,
+"sorgente": "index.html",
+"voci": [
+{
+"id": "bat-battaglia-di-new-york",
+"tipo": "battaglia",
+"nome": "Battaglia di New York",
+"ricerca": "battaglia di new york",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Primo grande scontro corale degli Avengers, contro l'esercito Chitauri invocato da Loki.",
+"testo": "Primo grande scontro corale degli Avengers, contro l'esercito Chitauri invocato da Loki."
+},
+{
+"k": "COMPARE IN",
+"html": "N°051 — The Avengers",
+"testo": "N°051 — The Avengers"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"battaglia di new york\" id=\"bat-battaglia-di-new-york\"><details class=\"card\">\n<summary>\n<span class=\"ic\">⚔️</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Battaglia di New York</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Primo grande scontro corale degli Avengers, contro l'esercito Chitauri invocato da Loki.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°051 — The Avengers</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "bat-battaglia-di-sokovia",
+"tipo": "battaglia",
+"nome": "Battaglia di Sokovia",
+"ricerca": "battaglia di sokovia",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Scontro finale contro Ultron, culminato nel sollevamento e nella distruzione della città di Sokovia.",
+"testo": "Scontro finale contro Ultron, culminato nel sollevamento e nella distruzione della città di Sokovia."
+},
+{
+"k": "COMPARE IN",
+"html": "N°061 — Avengers: Age of Ultron",
+"testo": "N°061 — Avengers: Age of Ultron"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"battaglia di sokovia\" id=\"bat-battaglia-di-sokovia\"><details class=\"card\">\n<summary>\n<span class=\"ic\">⚔️</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Battaglia di Sokovia</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Scontro finale contro Ultron, culminato nel sollevamento e nella distruzione della città di Sokovia.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°061 — Avengers: Age of Ultron</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "bat-battaglia-di-wakanda",
+"tipo": "battaglia",
+"nome": "Battaglia di Wakanda",
+"ricerca": "battaglia di wakanda",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Scontro tra le forze alleate della Terra e l'esercito di Thanos, poco prima dello schiocco.",
+"testo": "Scontro tra le forze alleate della Terra e l'esercito di Thanos, poco prima dello schiocco."
+},
+{
+"k": "COMPARE IN",
+"html": "N°083 — Avengers: Infinity War",
+"testo": "N°083 — Avengers: Infinity War"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"battaglia di wakanda\" id=\"bat-battaglia-di-wakanda\"><details class=\"card\">\n<summary>\n<span class=\"ic\">⚔️</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Battaglia di Wakanda</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Scontro tra le forze alleate della Terra e l'esercito di Thanos, poco prima dello schiocco.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°083 — Avengers: Infinity War</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "bat-battaglia-finale-contro-thanos",
+"tipo": "battaglia",
+"nome": "Battaglia finale contro Thanos",
+"ricerca": "battaglia finale contro thanos",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Lo scontro conclusivo tra tutti gli eroi sopravvissuti e riportati indietro dal Blip, contro Thanos e il suo esercito.",
+"testo": "Lo scontro conclusivo tra tutti gli eroi sopravvissuti e riportati indietro dal Blip, contro Thanos e il suo esercito."
+},
+{
+"k": "COMPARE IN",
+"html": "N°088 — Avengers: Endgame",
+"testo": "N°088 — Avengers: Endgame"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"battaglia finale contro thanos\" id=\"bat-battaglia-finale-contro-thanos\"><details class=\"card\">\n<summary>\n<span class=\"ic\">⚔️</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Battaglia finale contro Thanos</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Lo scontro conclusivo tra tutti gli eroi sopravvissuti e riportati indietro dal Blip, contro Thanos e il suo esercito.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°088 — Avengers: Endgame</span></div>\n</div>\n</details></li>"
+}
+]
+}

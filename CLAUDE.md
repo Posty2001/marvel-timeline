@@ -13,3 +13,5 @@ Rendicontazione: tieni separati i conteggi storici (da documenti) e quelli verif
 **Miss Minutes 1.0 è COMPLETATA, APPROVATA e CONGELATA** (versione definitiva mm6, riferimento Git stabile `release/miss-minutes-1.0-mm6` (commit `8330576`), ZIP `MISS_MINUTES_1.0_APPROVATA_mm6.zip`). Non modificarla né avviare mm7 senza richiesta esplicita dell'utente. Atlante 2.0: prima di scrivere codice serve l'approvazione del progetto da parte dell'utente.
 
 Hotfix **mm6.1** (solo scorrimento chat, richiesto dall'utente il 25/11/2026): in attesa di collaudo/approvazione; dopo l'approvazione Miss Minutes torna congelata. Nessun altro intervento su Miss Minutes senza richiesta esplicita.
+
+Atlante 2.0: Revisione 2 grafica APPROVATA (riferimento definitivo, `docs/atlante2/revisione2/`). Fasi A0–A1 eseguite (registro dati `data/atlante/`, estrattore `tools/atlante_estrai.py`, verifica con `--verifica`); runtime invariato (strangler). Vietato inventare dati; Bishop e Janet sospese; Miss Minutes protetta.

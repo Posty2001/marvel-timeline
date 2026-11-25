@@ -1,0 +1,737 @@
+{
+"versione": 1,
+"sorgente": "index.html",
+"voci": [
+{
+"id": "org-s-h-i-e-l-d",
+"tipo": "organizzazione",
+"nome": "S.H.I.E.L.D.",
+"ricerca": "s.h.i.e.l.d.",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Agenzia di sicurezza globale nata dalla SSR nel dopoguerra, infiltrata da Hydra per decenni prima del suo smantellamento pubblico.",
+"testo": "Agenzia di sicurezza globale nata dalla SSR nel dopoguerra, infiltrata da Hydra per decenni prima del suo smantellamento pubblico."
+},
+{
+"k": "FONDATA",
+"html": "Dopo la Seconda Guerra Mondiale, erede diretta della S.S.R.",
+"testo": "Dopo la Seconda Guerra Mondiale, erede diretta della S.S.R."
+},
+{
+"k": "LEADER",
+"html": "Nick Fury (nel periodo coperto da questa guida)",
+"testo": "Nick Fury (nel periodo coperto da questa guida)"
+},
+{
+"k": "MEMBRI",
+"html": "Phil Coulson, Maria Hill, Melinda May, Daisy Johnson",
+"testo": "Phil Coulson, Maria Hill, Melinda May, Daisy Johnson"
+},
+{
+"k": "SCOPO",
+"html": "Sicurezza globale contro minacce straordinarie",
+"testo": "Sicurezza globale contro minacce straordinarie"
+},
+{
+"k": "COMPARE IN",
+"html": "Voci #045, #056 e successive",
+"testo": "Voci #045, #056 e successive"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"s.h.i.e.l.d.\" id=\"org-s-h-i-e-l-d\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">S.H.I.E.L.D.</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Agenzia di sicurezza globale nata dalla SSR nel dopoguerra, infiltrata da Hydra per decenni prima del suo smantellamento pubblico.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">Dopo la Seconda Guerra Mondiale, erede diretta della S.S.R.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">Nick Fury (nel periodo coperto da questa guida)</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Phil Coulson, Maria Hill, Melinda May, Daisy Johnson</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Sicurezza globale contro minacce straordinarie</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voci #045, #056 e successive</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "org-s-s-r-strategic-scientific-reserve",
+"tipo": "organizzazione",
+"nome": "S.S.R. (Strategic Scientific Reserve)",
+"ricerca": "s.s.r. (strategic scientific reserve)",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Precursore di SHIELD, attivo dagli anni '40.",
+"testo": "Precursore di SHIELD, attivo dagli anni '40."
+},
+{
+"k": "FONDATA",
+"html": "Durante la Seconda Guerra Mondiale",
+"testo": "Durante la Seconda Guerra Mondiale"
+},
+{
+"k": "LEADER",
+"html": "Chester Phillips",
+"testo": "Chester Phillips"
+},
+{
+"k": "MEMBRI",
+"html": "Peggy Carter, Howard Stark",
+"testo": "Peggy Carter, Howard Stark"
+},
+{
+"k": "SCOPO",
+"html": "Operazioni scientifiche e militari speciali contro Hydra",
+"testo": "Operazioni scientifiche e militari speciali contro Hydra"
+},
+{
+"k": "COMPARE IN",
+"html": "Voci #041-044",
+"testo": "Voci #041-044"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"s.s.r. (strategic scientific reserve)\" id=\"org-s-s-r-strategic-scientific-reserve\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">S.S.R. (Strategic Scientific Reserve)</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Precursore di SHIELD, attivo dagli anni '40.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">Durante la Seconda Guerra Mondiale</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">Chester Phillips</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Peggy Carter, Howard Stark</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Operazioni scientifiche e militari speciali contro Hydra</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voci #041-044</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "org-hydra",
+"tipo": "organizzazione",
+"nome": "HYDRA",
+"ricerca": "hydra",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Organizzazione paramilitare nata dal regime nazista, sopravvissuta infiltrandosi in SHIELD per decenni.",
+"testo": "Organizzazione paramilitare nata dal regime nazista, sopravvissuta infiltrandosi in SHIELD per decenni."
+},
+{
+"k": "FONDATA",
+"html": "Come divisione scientifica del regime nazista",
+"testo": "Come divisione scientifica del regime nazista"
+},
+{
+"k": "LEADER",
+"html": "Johann Schmidt/Teschio Rosso; poi Alexander Pierce nell'infiltrazione SHIELD",
+"testo": "Johann Schmidt/Teschio Rosso; poi Alexander Pierce nell'infiltrazione SHIELD"
+},
+{
+"k": "MEMBRI",
+"html": "Arnim Zola, Baron von Strucker",
+"testo": "Arnim Zola, Baron von Strucker"
+},
+{
+"k": "SCOPO",
+"html": "Dominio mondiale attraverso il caos controllato",
+"testo": "Dominio mondiale attraverso il caos controllato"
+},
+{
+"k": "COMPARE IN",
+"html": "Voci #041, #056",
+"testo": "Voci #041, #056"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"hydra\" id=\"org-hydra\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">HYDRA</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Organizzazione paramilitare nata dal regime nazista, sopravvissuta infiltrandosi in SHIELD per decenni.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">Come divisione scientifica del regime nazista</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">Johann Schmidt/Teschio Rosso; poi Alexander Pierce nell'infiltrazione SHIELD</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Arnim Zola, Baron von Strucker</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Dominio mondiale attraverso il caos controllato</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voci #041, #056</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "org-tva-time-variance-authority",
+"tipo": "organizzazione",
+"nome": "TVA (Time Variance Authority)",
+"ricerca": "tva (time variance authority)",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Burocrazia extra-dimensionale che sorveglia la Linea Sacra del tempo e pota i rami divergenti.",
+"testo": "Burocrazia extra-dimensionale che sorveglia la Linea Sacra del tempo e pota i rami divergenti."
+},
+{
+"k": "FONDATA",
+"html": "Da He Who Remains, dopo una guerra multiversale tra le proprie varianti",
+"testo": "Da He Who Remains, dopo una guerra multiversale tra le proprie varianti"
+},
+{
+"k": "LEADER",
+"html": "He Who Remains; poi Loki nel finale della serie",
+"testo": "He Who Remains; poi Loki nel finale della serie"
+},
+{
+"k": "MEMBRI",
+"html": "Mobius M. Mobius, Ravonna Renslayer, Miss Minutes",
+"testo": "Mobius M. Mobius, Ravonna Renslayer, Miss Minutes"
+},
+{
+"k": "SCOPO",
+"html": "Sorvegliare e mantenere la Linea Sacra del tempo, potando le divergenze",
+"testo": "Sorvegliare e mantenere la Linea Sacra del tempo, potando le divergenze"
+},
+{
+"k": "COMPARE IN",
+"html": "Voci #095, #112, #117",
+"testo": "Voci #095, #112, #117"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"tva (time variance authority)\" id=\"org-tva-time-variance-authority\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">TVA (Time Variance Authority)</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Burocrazia extra-dimensionale che sorveglia la Linea Sacra del tempo e pota i rami divergenti.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">Da He Who Remains, dopo una guerra multiversale tra le proprie varianti</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">He Who Remains; poi Loki nel finale della serie</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Mobius M. Mobius, Ravonna Renslayer, Miss Minutes</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Sorvegliare e mantenere la Linea Sacra del tempo, potando le divergenze</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voci #095, #112, #117</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "org-illuminati",
+"tipo": "organizzazione",
+"nome": "Illuminati",
+"ricerca": "illuminati",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Consiglio segreto di menti brillanti di Earth-838 che decide unilateralmente il destino del proprio mondo.",
+"testo": "Consiglio segreto di menti brillanti di Earth-838 che decide unilateralmente il destino del proprio mondo."
+},
+{
+"k": "FONDATA",
+"html": "Non specificato con precisione nel film",
+"testo": "Non specificato con precisione nel film"
+},
+{
+"k": "LEADER",
+"html": "Nessuno formale: consiglio collettivo",
+"testo": "Nessuno formale: consiglio collettivo"
+},
+{
+"k": "MEMBRI",
+"html": "Professor X, Captain Carter, Mr. Fantastic (Reed Richards), Captain Marvel (Maria Rambeau), Black Bolt, Karl Mordo",
+"testo": "Professor X, Captain Carter, Mr. Fantastic (Reed Richards), Captain Marvel (Maria Rambeau), Black Bolt, Karl Mordo"
+},
+{
+"k": "SCOPO",
+"html": "Proteggere Earth-838 tramite decisioni unilaterali segrete",
+"testo": "Proteggere Earth-838 tramite decisioni unilaterali segrete"
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #102",
+"testo": "Voce #102"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"illuminati\" id=\"org-illuminati\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Illuminati</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Consiglio segreto di menti brillanti di Earth-838 che decide unilateralmente il destino del proprio mondo.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">Non specificato con precisione nel film</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">Nessuno formale: consiglio collettivo</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Professor X, Captain Carter, Mr. Fantastic (Reed Richards), Captain Marvel (Maria Rambeau), Black Bolt, Karl Mordo</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Proteggere Earth-838 tramite decisioni unilaterali segrete</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #102</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "org-avengers",
+"tipo": "organizzazione",
+"nome": "Avengers",
+"ricerca": "avengers",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Squadra di eroi d'élite terrestri, fondata dopo l'invasione di New York del 2012.",
+"testo": "Squadra di eroi d'élite terrestri, fondata dopo l'invasione di New York del 2012."
+},
+{
+"k": "FONDATA",
+"html": "2012, dopo l'invasione di New York (Iniziativa Avengers di Nick Fury)",
+"testo": "2012, dopo l'invasione di New York (Iniziativa Avengers di Nick Fury)"
+},
+{
+"k": "LEADER",
+"html": "Nessun leader unico formale; Capitan America e Iron Man come guide di fatto",
+"testo": "Nessun leader unico formale; Capitan America e Iron Man come guide di fatto"
+},
+{
+"k": "MEMBRI",
+"html": "Iron Man, Capitan America, Thor, Hulk, Black Widow, Hawkeye (nucleo fondatore)",
+"testo": "Iron Man, Capitan America, Thor, Hulk, Black Widow, Hawkeye (nucleo fondatore)"
+},
+{
+"k": "SCOPO",
+"html": "Rispondere a minacce troppo grandi per un singolo eroe",
+"testo": "Rispondere a minacce troppo grandi per un singolo eroe"
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #051 e successive",
+"testo": "Voce #051 e successive"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"avengers\" id=\"org-avengers\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Avengers</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Squadra di eroi d'élite terrestri, fondata dopo l'invasione di New York del 2012.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">2012, dopo l'invasione di New York (Iniziativa Avengers di Nick Fury)</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">Nessun leader unico formale; Capitan America e Iron Man come guide di fatto</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Iron Man, Capitan America, Thor, Hulk, Black Widow, Hawkeye (nucleo fondatore)</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Rispondere a minacce troppo grandi per un singolo eroe</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #051 e successive</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "org-new-avengers",
+"tipo": "organizzazione",
+"nome": "New Avengers",
+"ricerca": "new avengers",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Evoluzione del gruppo, formata dai Thunderbolts nel 2025.",
+"testo": "Evoluzione del gruppo, formata dai Thunderbolts nel 2025."
+},
+{
+"k": "FONDATA",
+"html": "2025, evoluzione diretta dei Thunderbolts",
+"testo": "2025, evoluzione diretta dei Thunderbolts"
+},
+{
+"k": "LEADER",
+"html": "Variabile a seconda della scena",
+"testo": "Variabile a seconda della scena"
+},
+{
+"k": "MEMBRI",
+"html": "Ex membri dei Thunderbolts",
+"testo": "Ex membri dei Thunderbolts"
+},
+{
+"k": "SCOPO",
+"html": "Nuova generazione di difensori della Terra",
+"testo": "Nuova generazione di difensori della Terra"
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #123",
+"testo": "Voce #123"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"new avengers\" id=\"org-new-avengers\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">New Avengers</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Evoluzione del gruppo, formata dai Thunderbolts nel 2025.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">2025, evoluzione diretta dei Thunderbolts</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">Variabile a seconda della scena</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Ex membri dei Thunderbolts</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Nuova generazione di difensori della Terra</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #123</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "org-x-men",
+"tipo": "organizzazione",
+"nome": "X-Men",
+"ricerca": "x-men",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Squadra di mutanti guidata da Charles Xavier nel Fox-Verse.",
+"testo": "Squadra di mutanti guidata da Charles Xavier nel Fox-Verse."
+},
+{
+"k": "FONDATA",
+"html": "Nella scuola di Charles Xavier, Fox-Verse",
+"testo": "Nella scuola di Charles Xavier, Fox-Verse"
+},
+{
+"k": "LEADER",
+"html": "Charles Xavier/Professor X",
+"testo": "Charles Xavier/Professor X"
+},
+{
+"k": "MEMBRI",
+"html": "Ciclope, Jean Grey, Tempesta, Wolverine, tra gli altri",
+"testo": "Ciclope, Jean Grey, Tempesta, Wolverine, tra gli altri"
+},
+{
+"k": "SCOPO",
+"html": "Proteggere umani e mutanti, promuovendo la convivenza pacifica",
+"testo": "Proteggere umani e mutanti, promuovendo la convivenza pacifica"
+},
+{
+"k": "COMPARE IN",
+"html": "Voci #12-24",
+"testo": "Voci #12-24"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"x-men\" id=\"org-x-men\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">X-Men</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Squadra di mutanti guidata da Charles Xavier nel Fox-Verse.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">Nella scuola di Charles Xavier, Fox-Verse</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">Charles Xavier/Professor X</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Ciclope, Jean Grey, Tempesta, Wolverine, tra gli altri</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Proteggere umani e mutanti, promuovendo la convivenza pacifica</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voci #12-24</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "org-fantastic-four",
+"tipo": "organizzazione",
+"nome": "Fantastic Four",
+"ricerca": "fantastic four",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Famiglia di esploratori con superpoteri, sia nella continuità Legacy sia in quella MCU.",
+"testo": "Famiglia di esploratori con superpoteri, sia nella continuità Legacy sia in quella MCU."
+},
+{
+"k": "FONDATA",
+"html": "Dopo l'esposizione ai raggi cosmici durante un volo spaziale",
+"testo": "Dopo l'esposizione ai raggi cosmici durante un volo spaziale"
+},
+{
+"k": "LEADER",
+"html": "Reed Richards/Mr. Fantastic",
+"testo": "Reed Richards/Mr. Fantastic"
+},
+{
+"k": "MEMBRI",
+"html": "Reed Richards, Sue Storm, Johnny Storm, Ben Grimm",
+"testo": "Reed Richards, Sue Storm, Johnny Storm, Ben Grimm"
+},
+{
+"k": "SCOPO",
+"html": "Esplorazione scientifica e protezione della Terra",
+"testo": "Esplorazione scientifica e protezione della Terra"
+},
+{
+"k": "COMPARE IN",
+"html": "Voci #028-031, #125",
+"testo": "Voci #028-031, #125"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"fantastic four\" id=\"org-fantastic-four\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Fantastic Four</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Famiglia di esploratori con superpoteri, sia nella continuità Legacy sia in quella MCU.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">Dopo l'esposizione ai raggi cosmici durante un volo spaziale</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">Reed Richards/Mr. Fantastic</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Reed Richards, Sue Storm, Johnny Storm, Ben Grimm</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Esplorazione scientifica e protezione della Terra</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voci #028-031, #125</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "org-defenders",
+"tipo": "organizzazione",
+"nome": "Defenders",
+"ricerca": "defenders",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Alleanza informale degli eroi di strada di New York: Daredevil, Jessica Jones, Luke Cage, Iron Fist.",
+"testo": "Alleanza informale degli eroi di strada di New York: Daredevil, Jessica Jones, Luke Cage, Iron Fist."
+},
+{
+"k": "FONDATA",
+"html": "Alleanza informale, non un'organizzazione strutturata",
+"testo": "Alleanza informale, non un'organizzazione strutturata"
+},
+{
+"k": "LEADER",
+"html": "Nessuno",
+"testo": "Nessuno"
+},
+{
+"k": "MEMBRI",
+"html": "Daredevil, Jessica Jones, Luke Cage, Iron Fist",
+"testo": "Daredevil, Jessica Jones, Luke Cage, Iron Fist"
+},
+{
+"k": "SCOPO",
+"html": "Fermare una minaccia comune (la Mano) a New York",
+"testo": "Fermare una minaccia comune (la Mano) a New York"
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #072",
+"testo": "Voce #072"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"defenders\" id=\"org-defenders\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Defenders</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Alleanza informale degli eroi di strada di New York: Daredevil, Jessica Jones, Luke Cage, Iron Fist.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">Alleanza informale, non un'organizzazione strutturata</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">Nessuno</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Daredevil, Jessica Jones, Luke Cage, Iron Fist</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Fermare una minaccia comune (la Mano) a New York</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #072</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "org-the-hand",
+"tipo": "organizzazione",
+"nome": "The Hand",
+"ricerca": "the hand",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Antica organizzazione di ninja mistici, antagonista ricorrente nelle serie Netflix.",
+"testo": "Antica organizzazione di ninja mistici, antagonista ricorrente nelle serie Netflix."
+},
+{
+"k": "FONDATA",
+"html": "Secoli fa, non specificato con precisione nei titoli",
+"testo": "Secoli fa, non specificato con precisione nei titoli"
+},
+{
+"k": "LEADER",
+"html": "Alexandra (nella serie Daredevil)",
+"testo": "Alexandra (nella serie Daredevil)"
+},
+{
+"k": "MEMBRI",
+"html": "Ninja mistici, Elektra Natchios (resuscitata)",
+"testo": "Ninja mistici, Elektra Natchios (resuscitata)"
+},
+{
+"k": "SCOPO",
+"html": "Potere e immortalità tramite pratiche mistiche",
+"testo": "Potere e immortalità tramite pratiche mistiche"
+},
+{
+"k": "COMPARE IN",
+"html": "Voci #065, #071, #073",
+"testo": "Voci #065, #071, #073"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"the hand\" id=\"org-the-hand\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">The Hand</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Antica organizzazione di ninja mistici, antagonista ricorrente nelle serie Netflix.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">Secoli fa, non specificato con precisione nei titoli</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">Alexandra (nella serie Daredevil)</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Ninja mistici, Elektra Natchios (resuscitata)</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Potere e immortalità tramite pratiche mistiche</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voci #065, #071, #073</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "org-a-i-m-advanced-idea-mechanics",
+"tipo": "organizzazione",
+"nome": "A.I.M. (Advanced Idea Mechanics)",
+"ricerca": "a.i.m. (advanced idea mechanics)",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Organizzazione paramilitare/scientifica dietro il vero Mandarino in Iron Man 3.",
+"testo": "Organizzazione paramilitare/scientifica dietro il vero Mandarino in Iron Man 3."
+},
+{
+"k": "FONDATA",
+"html": "Non specificato con precisione in Iron Man 3",
+"testo": "Non specificato con precisione in Iron Man 3"
+},
+{
+"k": "LEADER",
+"html": "Aldrich Killian",
+"testo": "Aldrich Killian"
+},
+{
+"k": "MEMBRI",
+"html": "Maya Hansen come collaboratrice chiave",
+"testo": "Maya Hansen come collaboratrice chiave"
+},
+{
+"k": "SCOPO",
+"html": "Sviluppo della tecnologia Extremis",
+"testo": "Sviluppo della tecnologia Extremis"
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #053",
+"testo": "Voce #053"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"a.i.m. (advanced idea mechanics)\" id=\"org-a-i-m-advanced-idea-mechanics\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">A.I.M. (Advanced Idea Mechanics)</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Organizzazione paramilitare/scientifica dietro il vero Mandarino in Iron Man 3.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">Non specificato con precisione in Iron Man 3</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">Aldrich Killian</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Maya Hansen come collaboratrice chiave</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Sviluppo della tecnologia Extremis</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #053</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "org-i-dieci-anelli-organizzazione",
+"tipo": "organizzazione",
+"nome": "I Dieci Anelli (organizzazione)",
+"ricerca": "i dieci anelli (organizzazione)",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Organizzazione criminale millenaria legata alla famiglia di Shang-Chi.",
+"testo": "Organizzazione criminale millenaria legata alla famiglia di Shang-Chi."
+},
+{
+"k": "FONDATA",
+"html": "Millenni fa",
+"testo": "Millenni fa"
+},
+{
+"k": "LEADER",
+"html": "Xu Wenwu",
+"testo": "Xu Wenwu"
+},
+{
+"k": "MEMBRI",
+"html": "Guerrieri fedeli a Wenwu",
+"testo": "Guerrieri fedeli a Wenwu"
+},
+{
+"k": "SCOPO",
+"html": "Potere e controllo tramite i dieci anelli mistici",
+"testo": "Potere e controllo tramite i dieci anelli mistici"
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #097",
+"testo": "Voce #097"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"i dieci anelli (organizzazione)\" id=\"org-i-dieci-anelli-organizzazione\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">I Dieci Anelli (organizzazione)</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Organizzazione criminale millenaria legata alla famiglia di Shang-Chi.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">Millenni fa</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">Xu Wenwu</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Guerrieri fedeli a Wenwu</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Potere e controllo tramite i dieci anelli mistici</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #097</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "org-weapon-x",
+"tipo": "organizzazione",
+"nome": "Weapon X",
+"ricerca": "weapon x",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Programma di sperimentazione sui mutanti nel Fox-Verse, origine dello scheletro d'adamantio di Wolverine.",
+"testo": "Programma di sperimentazione sui mutanti nel Fox-Verse, origine dello scheletro d'adamantio di Wolverine."
+},
+{
+"k": "FONDATA",
+"html": "Programma governativo/militare segreto, Fox-Verse",
+"testo": "Programma governativo/militare segreto, Fox-Verse"
+},
+{
+"k": "LEADER",
+"html": "William Stryker",
+"testo": "William Stryker"
+},
+{
+"k": "MEMBRI",
+"html": "Soggetti sperimentali come Logan/Wolverine",
+"testo": "Soggetti sperimentali come Logan/Wolverine"
+},
+{
+"k": "SCOPO",
+"html": "Creare soldati mutanti potenziati artificialmente",
+"testo": "Creare soldati mutanti potenziati artificialmente"
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #18",
+"testo": "Voce #18"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"weapon x\" id=\"org-weapon-x\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Weapon X</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Programma di sperimentazione sui mutanti nel Fox-Verse, origine dello scheletro d'adamantio di Wolverine.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">Programma governativo/militare segreto, Fox-Verse</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">William Stryker</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Soggetti sperimentali come Logan/Wolverine</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Creare soldati mutanti potenziati artificialmente</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #18</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "org-s-w-o-r-d",
+"tipo": "organizzazione",
+"nome": "S.W.O.R.D.",
+"ricerca": "s.w.o.r.d.",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Agenzia gemella di SHIELD focalizzata su minacce extraterrestri.",
+"testo": "Agenzia gemella di SHIELD focalizzata su minacce extraterrestri."
+},
+{
+"k": "FONDATA",
+"html": "Non specificato con precisione",
+"testo": "Non specificato con precisione"
+},
+{
+"k": "LEADER",
+"html": "Tyler Hayward (nel periodo coperto da WandaVision)",
+"testo": "Tyler Hayward (nel periodo coperto da WandaVision)"
+},
+{
+"k": "MEMBRI",
+"html": "Monica Rambeau",
+"testo": "Monica Rambeau"
+},
+{
+"k": "SCOPO",
+"html": "Monitorare minacce extraterrestri e anomale",
+"testo": "Monitorare minacce extraterrestri e anomale"
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #093",
+"testo": "Voce #093"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"s.w.o.r.d.\" id=\"org-s-w-o-r-d\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">S.W.O.R.D.</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Agenzia gemella di SHIELD focalizzata su minacce extraterrestri.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">Non specificato con precisione</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">Tyler Hayward (nel periodo coperto da WandaVision)</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Monica Rambeau</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Monitorare minacce extraterrestri e anomale</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #093</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "org-thunderbolts",
+"tipo": "organizzazione",
+"nome": "Thunderbolts",
+"ricerca": "thunderbolts",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Squadra di anti-eroi ed ex-criminali riunita da Valentina de Fontaine, poi New Avengers.",
+"testo": "Squadra di anti-eroi ed ex-criminali riunita da Valentina de Fontaine, poi New Avengers."
+},
+{
+"k": "FONDATA",
+"html": "2025, da Valentina de Fontaine",
+"testo": "2025, da Valentina de Fontaine"
+},
+{
+"k": "LEADER",
+"html": "Valentina de Fontaine dietro le quinte; Yelena Belova come guida operativa",
+"testo": "Valentina de Fontaine dietro le quinte; Yelena Belova come guida operativa"
+},
+{
+"k": "MEMBRI",
+"html": "Yelena Belova, Bucky Barnes, Red Guardian, Ghost, John Walker/US Agent, Bob/Sentry",
+"testo": "Yelena Belova, Bucky Barnes, Red Guardian, Ghost, John Walker/US Agent, Bob/Sentry"
+},
+{
+"k": "SCOPO",
+"html": "Inizialmente una squadra di comodo per Valentina, poi veri difensori",
+"testo": "Inizialmente una squadra di comodo per Valentina, poi veri difensori"
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #123",
+"testo": "Voce #123"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"thunderbolts\" id=\"org-thunderbolts\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Thunderbolts</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Squadra di anti-eroi ed ex-criminali riunita da Valentina de Fontaine, poi New Avengers.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">2025, da Valentina de Fontaine</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">Valentina de Fontaine dietro le quinte; Yelena Belova come guida operativa</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Yelena Belova, Bucky Barnes, Red Guardian, Ghost, John Walker/US Agent, Bob/Sentry</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Inizialmente una squadra di comodo per Valentina, poi veri difensori</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #123</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "org-fratellanza-dei-mutanti",
+"tipo": "organizzazione",
+"nome": "Fratellanza dei Mutanti",
+"ricerca": "fratellanza dei mutanti",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Fazione di mutanti radicali guidata da Magneto nel Fox-Verse.",
+"testo": "Fazione di mutanti radicali guidata da Magneto nel Fox-Verse."
+},
+{
+"k": "FONDATA",
+"html": "Da Magneto, Fox-Verse",
+"testo": "Da Magneto, Fox-Verse"
+},
+{
+"k": "LEADER",
+"html": "Magneto",
+"testo": "Magneto"
+},
+{
+"k": "MEMBRI",
+"html": "Mystica, Toad, Sabretooth, Pyro (a seconda del film)",
+"testo": "Mystica, Toad, Sabretooth, Pyro (a seconda del film)"
+},
+{
+"k": "SCOPO",
+"html": "Difesa aggressiva dei mutanti, anche contro l'umanità se necessario",
+"testo": "Difesa aggressiva dei mutanti, anche contro l'umanità se necessario"
+},
+{
+"k": "COMPARE IN",
+"html": "Voci #12-17",
+"testo": "Voci #12-17"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"fratellanza dei mutanti\" id=\"org-fratellanza-dei-mutanti\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🏢</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Fratellanza dei Mutanti</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Fazione di mutanti radicali guidata da Magneto nel Fox-Verse.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">FONDATA</span><span class=\"detail-v\">Da Magneto, Fox-Verse</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">LEADER</span><span class=\"detail-v\">Magneto</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">MEMBRI</span><span class=\"detail-v\">Mystica, Toad, Sabretooth, Pyro (a seconda del film)</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">SCOPO</span><span class=\"detail-v\">Difesa aggressiva dei mutanti, anche contro l'umanità se necessario</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voci #12-17</span></div>\n</div>\n</details></li>"
+}
+]
+}

@@ -1,0 +1,167 @@
+{
+"versione": 1,
+"sorgente": "index.html",
+"voci": [
+{
+"id": "pia-sakaar",
+"tipo": "pianeta",
+"nome": "Sakaar",
+"ricerca": "sakaar",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Pianeta discarica cosmica governato dal Grandmaster, dove si svolgono i combattimenti gladiatori.",
+"testo": "Pianeta discarica cosmica governato dal Grandmaster, dove si svolgono i combattimenti gladiatori."
+},
+{
+"k": "COMPARE IN",
+"html": "N°075 — Thor: Ragnarok",
+"testo": "N°075 — Thor: Ragnarok"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"sakaar\" id=\"pia-sakaar\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌏</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Sakaar</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Pianeta discarica cosmica governato dal Grandmaster, dove si svolgono i combattimenti gladiatori.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°075 — Thor: Ragnarok</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "pia-xandar",
+"tipo": "pianeta",
+"nome": "Xandar",
+"ricerca": "xandar",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Pianeta natale del Corpo Nova, distrutto da Thanos prima degli eventi di Infinity War.",
+"testo": "Pianeta natale del Corpo Nova, distrutto da Thanos prima degli eventi di Infinity War."
+},
+{
+"k": "COMPARE IN",
+"html": "N°057 — Guardians of the Galaxy",
+"testo": "N°057 — Guardians of the Galaxy"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"xandar\" id=\"pia-xandar\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌏</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Xandar</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Pianeta natale del Corpo Nova, distrutto da Thanos prima degli eventi di Infinity War.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°057 — Guardians of the Galaxy</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "pia-titan",
+"tipo": "pianeta",
+"nome": "Titan",
+"ricerca": "titan",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Pianeta natale di Thanos, ormai desertificato dopo che il suo stesso piano lo ha portato al collasso.",
+"testo": "Pianeta natale di Thanos, ormai desertificato dopo che il suo stesso piano lo ha portato al collasso."
+},
+{
+"k": "COMPARE IN",
+"html": "N°083 — Avengers: Infinity War",
+"testo": "N°083 — Avengers: Infinity War"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"titan\" id=\"pia-titan\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌏</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Titan</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Pianeta natale di Thanos, ormai desertificato dopo che il suo stesso piano lo ha portato al collasso.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°083 — Avengers: Infinity War</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "pia-ego",
+"tipo": "pianeta",
+"nome": "Ego",
+"ricerca": "ego",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Pianeta vivente e senziente, vera identità del padre biologico di Peter Quill.",
+"testo": "Pianeta vivente e senziente, vera identità del padre biologico di Peter Quill."
+},
+{
+"k": "COMPARE IN",
+"html": "N°058 — Guardians of the Galaxy Vol. 2",
+"testo": "N°058 — Guardians of the Galaxy Vol. 2"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"ego\" id=\"pia-ego\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌏</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Ego</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Pianeta vivente e senziente, vera identità del padre biologico di Peter Quill.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°058 — Guardians of the Galaxy Vol. 2</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "pia-hala",
+"tipo": "pianeta",
+"nome": "Hala",
+"ricerca": "hala",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Pianeta natale dell'Impero Kree, sede della Suprema Intelligenza.",
+"testo": "Pianeta natale dell'Impero Kree, sede della Suprema Intelligenza."
+},
+{
+"k": "COMPARE IN",
+"html": "N°087 — Captain Marvel",
+"testo": "N°087 — Captain Marvel"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"hala\" id=\"pia-hala\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌏</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Hala</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Pianeta natale dell'Impero Kree, sede della Suprema Intelligenza.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°087 — Captain Marvel</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "pia-morag",
+"tipo": "pianeta",
+"nome": "Morag",
+"ricerca": "morag",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Pianeta dove Peter Quill recupera la Gemma del Potere all'inizio della saga cosmica.",
+"testo": "Pianeta dove Peter Quill recupera la Gemma del Potere all'inizio della saga cosmica."
+},
+{
+"k": "COMPARE IN",
+"html": "N°057 — Guardians of the Galaxy",
+"testo": "N°057 — Guardians of the Galaxy"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"morag\" id=\"pia-morag\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌏</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Morag</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Pianeta dove Peter Quill recupera la Gemma del Potere all'inizio della saga cosmica.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°057 — Guardians of the Galaxy</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "pia-vormir",
+"tipo": "pianeta",
+"nome": "Vormir",
+"ricerca": "vormir",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Pianeta desolato dove è custodita la Gemma dell'Anima, sorvegliata da Teschio Rosso.",
+"testo": "Pianeta desolato dove è custodita la Gemma dell'Anima, sorvegliata da Teschio Rosso."
+},
+{
+"k": "COMPARE IN",
+"html": "N°083 — Avengers: Infinity War",
+"testo": "N°083 — Avengers: Infinity War"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"vormir\" id=\"pia-vormir\"><details class=\"card\">\n<summary>\n<span class=\"ic\">🌏</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Vormir</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Pianeta desolato dove è custodita la Gemma dell'Anima, sorvegliata da Teschio Rosso.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°083 — Avengers: Infinity War</span></div>\n</div>\n</details></li>"
+}
+]
+}

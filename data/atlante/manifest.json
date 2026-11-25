@@ -1,0 +1,41 @@
+{
+ "build": "20261125-0100-mm6",
+ "conteggi": {
+  "personaggi": 304,
+  "universi": 27,
+  "organizzazioni": 17,
+  "artefatti": 16,
+  "luoghi": 9,
+  "pianeti": 7,
+  "eventi": 3,
+  "battaglie": 4,
+  "attori": 49,
+  "sezioni_saghe": 11
+ },
+ "link_mvNavigate": 1065,
+ "link_rotti": 0,
+ "ids_sha256": "cc8727d33aa901c76f3e8adf4038cc629cbf9b0798c367a3c17898914160c2ae",
+ "html_sha256": "d20f622046c1ad363700dfc5bc3ba07cf9a33f961c5628235c6e8b5e5ae769aa",
+ "blob": {
+  "atlasData": "01184c69636b628a72be29726f1dfc522af60c7a65c899fb05bb0ef7f836ef0e",
+  "relationshipGraphData": "cd900bc657080f6924ea52fbfa0ed7e2754bb51b714f5e0025e2c9f8666a7cb3",
+  "mvMapData": "a9afbd816cda979987af6169133ec487efdded8945be903dfcbc6b0c9a838c71",
+  "tesseraCharIdsData": "84e417680e734f8e6f5288d5018217e15c256ce0081a4faa8a263a15f0247ca3",
+  "tesseraCharPowersData": "eeba945b7ce430db4a5505b918df226c1fac5ca09770153679a2470c0ad20bfb",
+  "tesseraCharLevelsData": "59828725e24bca75ff1b2eb9dccd4c2b50798f4bc34c743346e2ca5810fbeaec",
+  "altTimelineData": "d6149f9ac1477e16e77d783e78447c4a166ee49aae21434119d7159c70c7fc47",
+  "cmpActorData": "b5e90308f33d13e9f35dff41a2ad60995f17c212aec6c3a9fc7d69155fe34c19",
+  "tmdbMap": "46a1d1d2c82191b8ea499df9090b68fde490b8cd6e1ad42d8c18afd3519d25dd"
+ },
+ "blob_raw_sha256": {
+  "atlasData": "ad9870fb224c69b39e7efd6963696b80ecec54ca22ff8715aa52a878940d0c4f",
+  "relationshipGraphData": "fa1d48ab509dbc0f748e8e27071c0370f40a997592711f6a2d00b6c0a8ada130",
+  "mvMapData": "9258038601b4971a133343f4134cb477d4be940725bab3ebb0e33284cf42fcef",
+  "tesseraCharIdsData": "2a978dc2c7ad6d775dbdb3403d3567f370a3532a218ae28fc837ec5ebe38713c",
+  "tesseraCharPowersData": "12597e20a566956518a2453347ba3b0fdc299c2ed50544b4643a53df5d6fe574",
+  "tesseraCharLevelsData": "5a177b9c419c1561756fe2a43a884428d821937fd1028b47270966c47f723b5a",
+  "altTimelineData": "d8d112fce45476c86522a4daa0a0e11b29a1604b5a9269285b943f6a3e25e4ec",
+  "cmpActorData": "9d22019655c1e4d1fa8c5e77a42392c75ec5e7273c86c9312ddd697e73e65c91",
+  "tmdbMap": "46a1d1d2c82191b8ea499df9090b68fde490b8cd6e1ad42d8c18afd3519d25dd"
+ }
+}

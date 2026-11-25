@@ -1,0 +1,213 @@
+{
+"versione": 1,
+"sorgente": "index.html",
+"voci": [
+{
+"id": "luo-kamar-taj",
+"tipo": "luogo",
+"nome": "Kamar-Taj",
+"ricerca": "kamar-taj",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Rifugio nepalese degli Stregoni Supremi, dove Stephen Strange apprende le arti mistiche.",
+"testo": "Rifugio nepalese degli Stregoni Supremi, dove Stephen Strange apprende le arti mistiche."
+},
+{
+"k": "COMPARE IN",
+"html": "N°069 — Doctor Strange",
+"testo": "N°069 — Doctor Strange"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"kamar-taj\" id=\"luo-kamar-taj\"><details class=\"card\">\n<summary>\n<span class=\"ic\">📍</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Kamar-Taj</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Rifugio nepalese degli Stregoni Supremi, dove Stephen Strange apprende le arti mistiche.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°069 — Doctor Strange</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "luo-avengers-tower",
+"tipo": "luogo",
+"nome": "Avengers Tower",
+"ricerca": "avengers tower",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Grattacielo newyorkese di Tony Stark, quartier generale iniziale degli Avengers.",
+"testo": "Grattacielo newyorkese di Tony Stark, quartier generale iniziale degli Avengers."
+},
+{
+"k": "COMPARE IN",
+"html": "N°051 — The Avengers",
+"testo": "N°051 — The Avengers"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"avengers tower\" id=\"luo-avengers-tower\"><details class=\"card\">\n<summary>\n<span class=\"ic\">📍</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Avengers Tower</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Grattacielo newyorkese di Tony Stark, quartier generale iniziale degli Avengers.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°051 — The Avengers</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "luo-avengers-compound",
+"tipo": "luogo",
+"nome": "Avengers Compound",
+"ricerca": "avengers compound",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Struttura rurale che sostituisce la Tower come base operativa degli Avengers.",
+"testo": "Struttura rurale che sostituisce la Tower come base operativa degli Avengers."
+},
+{
+"k": "COMPARE IN",
+"html": "N°061 — Avengers: Age of Ultron",
+"testo": "N°061 — Avengers: Age of Ultron"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"avengers compound\" id=\"luo-avengers-compound\"><details class=\"card\">\n<summary>\n<span class=\"ic\">📍</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Avengers Compound</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Struttura rurale che sostituisce la Tower come base operativa degli Avengers.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°061 — Avengers: Age of Ultron</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "luo-wakanda",
+"tipo": "luogo",
+"nome": "Wakanda",
+"ricerca": "wakanda",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Nazione africana tecnologicamente avanzata, isolazionista fino alla rivelazione pubblica delle sue risorse.",
+"testo": "Nazione africana tecnologicamente avanzata, isolazionista fino alla rivelazione pubblica delle sue risorse."
+},
+{
+"k": "COMPARE IN",
+"html": "N°077 — Black Panther",
+"testo": "N°077 — Black Panther"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"wakanda\" id=\"luo-wakanda\"><details class=\"card\">\n<summary>\n<span class=\"ic\">📍</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Wakanda</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Nazione africana tecnologicamente avanzata, isolazionista fino alla rivelazione pubblica delle sue risorse.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°077 — Black Panther</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "luo-sanctum-sanctorum",
+"tipo": "luogo",
+"nome": "Sanctum Sanctorum",
+"ricerca": "sanctum sanctorum",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Dimora newyorkese di Doctor Strange, uno dei tre Santuari che proteggono la Terra.",
+"testo": "Dimora newyorkese di Doctor Strange, uno dei tre Santuari che proteggono la Terra."
+},
+{
+"k": "COMPARE IN",
+"html": "N°069 — Doctor Strange",
+"testo": "N°069 — Doctor Strange"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"sanctum sanctorum\" id=\"luo-sanctum-sanctorum\"><details class=\"card\">\n<summary>\n<span class=\"ic\">📍</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Sanctum Sanctorum</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Dimora newyorkese di Doctor Strange, uno dei tre Santuari che proteggono la Terra.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°069 — Doctor Strange</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "luo-il-void",
+"tipo": "luogo",
+"nome": "Il Void",
+"ricerca": "il void",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Dimensione residuale della TVA dove finiscono le linee temporali cancellate.",
+"testo": "Dimensione residuale della TVA dove finiscono le linee temporali cancellate."
+},
+{
+"k": "COMPARE IN",
+"html": "N°116 — Deadpool &amp;amp; Wolverine",
+"testo": "N°116 — Deadpool &amp; Wolverine"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"il void\" id=\"luo-il-void\"><details class=\"card\">\n<summary>\n<span class=\"ic\">📍</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Il Void</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Dimensione residuale della TVA dove finiscono le linee temporali cancellate.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°116 — Deadpool &amp;amp; Wolverine</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "luo-new-asgard",
+"tipo": "luogo",
+"nome": "New Asgard",
+"ricerca": "new asgard",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Cittadina norvegese dove si stabiliscono i sopravvissuti asgardiani dopo la distruzione del loro regno.",
+"testo": "Cittadina norvegese dove si stabiliscono i sopravvissuti asgardiani dopo la distruzione del loro regno."
+},
+{
+"k": "COMPARE IN",
+"html": "N°075 — Thor: Ragnarok",
+"testo": "N°075 — Thor: Ragnarok"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"new asgard\" id=\"luo-new-asgard\"><details class=\"card\">\n<summary>\n<span class=\"ic\">📍</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">New Asgard</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Cittadina norvegese dove si stabiliscono i sopravvissuti asgardiani dopo la distruzione del loro regno.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°075 — Thor: Ragnarok</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "luo-latveria",
+"tipo": "luogo",
+"nome": "Latveria",
+"ricerca": "latveria",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Piccola nazione sovrana dell'Europa orientale, governata con pugno di ferro da Victor von Doom.",
+"testo": "Piccola nazione sovrana dell'Europa orientale, governata con pugno di ferro da Victor von Doom."
+},
+{
+"k": "COMPARE IN",
+"html": "N°031 — Fantastic Four (2015)",
+"testo": "N°031 — Fantastic Four (2015)"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"latveria\" id=\"luo-latveria\"><details class=\"card\">\n<summary>\n<span class=\"ic\">📍</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Latveria</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Piccola nazione sovrana dell'Europa orientale, governata con pugno di ferro da Victor von Doom.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°031 — Fantastic Four (2015)</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "luo-celestial-island",
+"tipo": "luogo",
+"nome": "Celestial Island",
+"ricerca": "celestial island",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Isola formata dalla testa del Celestiale Tiamut, addormentato per millenni sotto la crosta terrestre; base operativa segreta degli Eterni sulla Terra, e luogo dell'Emergenza — il risveglio di Tiamut — al centro della minaccia del film.",
+"testo": "Isola formata dalla testa del Celestiale Tiamut, addormentato per millenni sotto la crosta terrestre; base operativa segreta degli Eterni sulla Terra, e luogo dell'Emergenza — il risveglio di Tiamut — al centro della minaccia del film."
+},
+{
+"k": "COMPARE IN",
+"html": "N°097 — Eternals",
+"testo": "N°097 — Eternals"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"celestial island\" id=\"luo-celestial-island\"><details class=\"card\">\n<summary>\n<span class=\"ic\">📍</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Celestial Island</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Isola formata dalla testa del Celestiale Tiamut, addormentato per millenni sotto la crosta terrestre; base operativa segreta degli Eterni sulla Terra, e luogo dell'Emergenza — il risveglio di Tiamut — al centro della minaccia del film.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">N°097 — Eternals</span></div>\n</div>\n</details></li>"
+}
+]
+}

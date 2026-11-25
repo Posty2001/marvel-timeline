@@ -1,0 +1,374 @@
+{
+"versione": 1,
+"sorgente": "index.html",
+"voci": [
+{
+"id": "art-gemma-dello-spazio-tesseract",
+"tipo": "artefatto",
+"nome": "Gemma dello Spazio (Tesseract)",
+"ricerca": "gemma dello spazio (tesseract)",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Permette il teletrasporto istantaneo; contenuta nel Cubo Cosmico.",
+"testo": "Permette il teletrasporto istantaneo; contenuta nel Cubo Cosmico."
+},
+{
+"k": "COMPARE IN",
+"html": "Voci #041, #051",
+"testo": "Voci #041, #051"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"gemma dello spazio (tesseract)\" id=\"art-gemma-dello-spazio-tesseract\"><details class=\"card\">\n<summary>\n<span class=\"ic\">💎</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Gemma dello Spazio (Tesseract)</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Permette il teletrasporto istantaneo; contenuta nel Cubo Cosmico.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voci #041, #051</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "art-gemma-della-mente",
+"tipo": "artefatto",
+"nome": "Gemma della Mente",
+"ricerca": "gemma della mente",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Contenuta nello scettro di Loki, poi nella gemma sulla fronte di Visione.",
+"testo": "Contenuta nello scettro di Loki, poi nella gemma sulla fronte di Visione."
+},
+{
+"k": "COMPARE IN",
+"html": "Voci #051, #061",
+"testo": "Voci #051, #061"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"gemma della mente\" id=\"art-gemma-della-mente\"><details class=\"card\">\n<summary>\n<span class=\"ic\">💎</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Gemma della Mente</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Contenuta nello scettro di Loki, poi nella gemma sulla fronte di Visione.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voci #051, #061</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "art-gemma-della-realta-etere",
+"tipo": "artefatto",
+"nome": "Gemma della Realtà (Etere)",
+"ricerca": "gemma della realtà (etere)",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Sostanza capace di alterare la materia stessa.",
+"testo": "Sostanza capace di alterare la materia stessa."
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #055",
+"testo": "Voce #055"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"gemma della realtà (etere)\" id=\"art-gemma-della-realta-etere\"><details class=\"card\">\n<summary>\n<span class=\"ic\">💎</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Gemma della Realtà (Etere)</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Sostanza capace di alterare la materia stessa.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #055</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "art-gemma-del-potere",
+"tipo": "artefatto",
+"nome": "Gemma del Potere",
+"ricerca": "gemma del potere",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "La più grezza e distruttiva delle sei Gemme.",
+"testo": "La più grezza e distruttiva delle sei Gemme."
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #057",
+"testo": "Voce #057"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"gemma del potere\" id=\"art-gemma-del-potere\"><details class=\"card\">\n<summary>\n<span class=\"ic\">💎</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Gemma del Potere</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">La più grezza e distruttiva delle sei Gemme.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #057</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "art-gemma-dell-anima",
+"tipo": "artefatto",
+"nome": "Gemma dell'Anima",
+"ricerca": "gemma dell'anima",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Richiede un sacrificio per essere ottenuta.",
+"testo": "Richiede un sacrificio per essere ottenuta."
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #083",
+"testo": "Voce #083"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"gemma dell'anima\" id=\"art-gemma-dell-anima\"><details class=\"card\">\n<summary>\n<span class=\"ic\">💎</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Gemma dell'Anima</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Richiede un sacrificio per essere ottenuta.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #083</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "art-gemma-del-tempo",
+"tipo": "artefatto",
+"nome": "Gemma del Tempo",
+"ricerca": "gemma del tempo",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Contenuta nell'Occhio di Agamotto, permette di manipolare il flusso temporale.",
+"testo": "Contenuta nell'Occhio di Agamotto, permette di manipolare il flusso temporale."
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #069",
+"testo": "Voce #069"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"gemma del tempo\" id=\"art-gemma-del-tempo\"><details class=\"card\">\n<summary>\n<span class=\"ic\">💎</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Gemma del Tempo</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Contenuta nell'Occhio di Agamotto, permette di manipolare il flusso temporale.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #069</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "art-guanto-dell-infinito",
+"tipo": "artefatto",
+"nome": "Guanto dell'Infinito",
+"ricerca": "guanto dell'infinito",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Forgiato dai nani di Nidavellir per Thanos, unico manufatto in grado di contenere ed evocare il potere di tutte e sei le Gemme dell'Infinito insieme.",
+"testo": "Forgiato dai nani di Nidavellir per Thanos, unico manufatto in grado di contenere ed evocare il potere di tutte e sei le Gemme dell'Infinito insieme."
+},
+{
+"k": "COMPARE IN",
+"html": "Voci #083, #088",
+"testo": "Voci #083, #088"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"guanto dell'infinito\" id=\"art-guanto-dell-infinito\"><details class=\"card\">\n<summary>\n<span class=\"ic\">💎</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Guanto dell'Infinito</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Forgiato dai nani di Nidavellir per Thanos, unico manufatto in grado di contenere ed evocare il potere di tutte e sei le Gemme dell'Infinito insieme.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voci #083, #088</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "art-mjolnir",
+"tipo": "artefatto",
+"nome": "Mjolnir",
+"ricerca": "mjolnir",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Martello incantato di Thor, forgiato da una stella morente; distrutto in Thor: Ragnarok.",
+"testo": "Martello incantato di Thor, forgiato da una stella morente; distrutto in Thor: Ragnarok."
+},
+{
+"k": "COMPARE IN",
+"html": "Voci #050, #075",
+"testo": "Voci #050, #075"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"mjolnir\" id=\"art-mjolnir\"><details class=\"card\">\n<summary>\n<span class=\"ic\">💎</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Mjolnir</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Martello incantato di Thor, forgiato da una stella morente; distrutto in Thor: Ragnarok.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voci #050, #075</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "art-stormbreaker",
+"tipo": "artefatto",
+"nome": "Stormbreaker",
+"ricerca": "stormbreaker",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Ascia forgiata a Nidavellir come sostituto di Mjolnir.",
+"testo": "Ascia forgiata a Nidavellir come sostituto di Mjolnir."
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #083",
+"testo": "Voce #083"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"stormbreaker\" id=\"art-stormbreaker\"><details class=\"card\">\n<summary>\n<span class=\"ic\">💎</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Stormbreaker</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Ascia forgiata a Nidavellir come sostituto di Mjolnir.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #083</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "art-darkhold",
+"tipo": "artefatto",
+"nome": "Darkhold",
+"ricerca": "darkhold",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Antico libro di magia oscura, fonte di conoscenza proibita.",
+"testo": "Antico libro di magia oscura, fonte di conoscenza proibita."
+},
+{
+"k": "COMPARE IN",
+"html": "Voci #092, #102, #117",
+"testo": "Voci #092, #102, #117"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"darkhold\" id=\"art-darkhold\"><details class=\"card\">\n<summary>\n<span class=\"ic\">💎</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Darkhold</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Antico libro di magia oscura, fonte di conoscenza proibita.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voci #092, #102, #117</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "art-libro-dei-vishanti",
+"tipo": "artefatto",
+"nome": "Libro dei Vishanti",
+"ricerca": "libro dei vishanti",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Controparte \"benevola\" del Darkhold nell'arte mistica.",
+"testo": "Controparte \"benevola\" del Darkhold nell'arte mistica."
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #101",
+"testo": "Voce #101"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"libro dei vishanti\" id=\"art-libro-dei-vishanti\"><details class=\"card\">\n<summary>\n<span class=\"ic\">💎</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Libro dei Vishanti</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Controparte \"benevola\" del Darkhold nell'arte mistica.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #101</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "art-dieci-anelli",
+"tipo": "artefatto",
+"nome": "Dieci Anelli",
+"ricerca": "dieci anelli",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Manufatti alieni di potere immenso legati alla famiglia di Shang-Chi.",
+"testo": "Manufatti alieni di potere immenso legati alla famiglia di Shang-Chi."
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #097",
+"testo": "Voce #097"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"dieci anelli\" id=\"art-dieci-anelli\"><details class=\"card\">\n<summary>\n<span class=\"ic\">💎</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Dieci Anelli</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Manufatti alieni di potere immenso legati alla famiglia di Shang-Chi.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #097</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "art-bracciale-di-kamala-khan",
+"tipo": "artefatto",
+"nome": "Bracciale di Kamala Khan",
+"ricerca": "bracciale di kamala khan",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Manufatto di origine cosmica che dà i poteri a Ms. Marvel.",
+"testo": "Manufatto di origine cosmica che dà i poteri a Ms. Marvel."
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #103",
+"testo": "Voce #103"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"bracciale di kamala khan\" id=\"art-bracciale-di-kamala-khan\"><details class=\"card\">\n<summary>\n<span class=\"ic\">💎</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Bracciale di Kamala Khan</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Manufatto di origine cosmica che dà i poteri a Ms. Marvel.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #103</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "art-occhio-di-agamotto",
+"tipo": "artefatto",
+"nome": "Occhio di Agamotto",
+"ricerca": "occhio di agamotto",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Amuleto che custodisce la Gemma del Tempo.",
+"testo": "Amuleto che custodisce la Gemma del Tempo."
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #069",
+"testo": "Voce #069"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"occhio di agamotto\" id=\"art-occhio-di-agamotto\"><details class=\"card\">\n<summary>\n<span class=\"ic\">💎</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Occhio di Agamotto</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Amuleto che custodisce la Gemma del Tempo.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #069</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "art-scudo-di-vibranio",
+"tipo": "artefatto",
+"nome": "Scudo di Vibranio",
+"ricerca": "scudo di vibranio",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Arma e simbolo di Capitan America, forgiato in Wakanda.",
+"testo": "Arma e simbolo di Capitan America, forgiato in Wakanda."
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #041 e successive",
+"testo": "Voce #041 e successive"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"scudo di vibranio\" id=\"art-scudo-di-vibranio\"><details class=\"card\">\n<summary>\n<span class=\"ic\">💎</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Scudo di Vibranio</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Arma e simbolo di Capitan America, forgiato in Wakanda.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #041 e successive</span></div>\n</div>\n</details></li>"
+},
+{
+"id": "art-adamantio",
+"tipo": "artefatto",
+"nome": "Adamantio",
+"ricerca": "adamantio",
+"campi": [
+{
+"k": "DESCRIZIONE",
+"html": "Metallo indistruttibile usato per lo scheletro di Wolverine nel Fox-Verse.",
+"testo": "Metallo indistruttibile usato per lo scheletro di Wolverine nel Fox-Verse."
+},
+{
+"k": "COMPARE IN",
+"html": "Voce #18",
+"testo": "Voce #18"
+}
+],
+"collegamenti": [],
+"ha_fumetto": false,
+"verifica": "da_verificare",
+"fonte": "schede attuali di index.html",
+"html": "<li class=\"card-wrap\" data-search=\"adamantio\" id=\"art-adamantio\"><details class=\"card\">\n<summary>\n<span class=\"ic\">💎</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Adamantio</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">DESCRIZIONE</span><span class=\"detail-v\">Metallo indistruttibile usato per lo scheletro di Wolverine nel Fox-Verse.</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">COMPARE IN</span><span class=\"detail-v\">Voce #18</span></div>\n</div>\n</details></li>"
+}
+]
+}
