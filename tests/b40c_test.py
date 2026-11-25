@@ -48,6 +48,12 @@ def run():
         if clock: pg.clock.install()
         pg.goto(URL); pg.wait_for_timeout(1800)
         if clock: pg.clock.run_for(2000)
+        # Causa dell'instabilita' storica (indagine 25/11/2026, dati sintetici): il modulo TVA Live crea la chiave 'live-state-v1' in modo asincrono dopo il
+        # caricamento; l'istantanea «before» veniva presa prima o dopo quella scrittura (race del test, non del ripristino). Si attende l'inizializzazione.
+        for _ in range(8):
+            if pg.evaluate("()=>localStorage.getItem('marvel-ultimate-timeline-live-state-v1')!==null"): break
+            if clock: pg.clock.run_for(2000)
+            pg.wait_for_timeout(400)
         pg.evaluate("()=>{window.__m=1}")
         return ctx,pg
     def snapL(pg): return pg.evaluate("()=>{const o={};for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k.indexOf('marvel-ultimate-timeline')===0&&k.indexOf('sync-code')<0&&k.indexOf('auto-backup')<0)o[k]=localStorage.getItem(k)}return o}")
@@ -118,8 +124,9 @@ def run():
     pg.evaluate("()=>document.getElementById('syncShowDiffBtn').click()"); d=pg.evaluate("()=>document.getElementById('syncConflictDiff').textContent")
     ok('T6b «Visualizza differenze»: titoli visti locale 12 vs cloud 1','Titoli visti: locale 12 · cloud 1' in d,d)
     pg.on('dialog',lambda dl:(pg.dialogs.append(dl.message),dl.dismiss()))
+    ab0=LS(pg,'marvel-ultimate-timeline-auto-backup')  # il salvataggio automatico generale parte 5 s dopo il caricamento: si confronta prima/dopo l'annullamento
     pg.evaluate("()=>document.getElementById('syncRestoreBtn').click()"); pg.wait_for_timeout(400)
-    ok('T7 ripristino annullato: nulla modificato, nessuna copia, nessun reload, ancora Conflitto',snapL(pg)==before and LS(pg,'marvel-ultimate-timeline-auto-backup') is None and pg.evaluate("()=>window.__m")==1 and stt(pg)=='conflict' and len(pg.dialogs)==1,pg.dialogs)
+    ok('T7 ripristino annullato: nulla modificato, nessuna copia, nessun reload, ancora Conflitto',snapL(pg)==before and LS(pg,'marvel-ultimate-timeline-auto-backup')==ab0 and pg.evaluate("()=>window.__m")==1 and stt(pg)=='conflict' and len(pg.dialogs)==1,pg.dialogs)
     ctx.close()
     # T8
     ctx,pg=newpage({'mode':'ok','store':{'sync/ABCD2345':json.dumps(old)}}); connect(pg,'ABCD2345'); pg.wait_for_timeout(1000)

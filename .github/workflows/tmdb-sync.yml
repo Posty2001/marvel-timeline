@@ -342,7 +342,7 @@ jobs:
           python-version: '3.12'
       - name: Dipendenze (CPU, gratuite)
         run: |
-          pip install --quiet torch --index-url https://download.pytorch.org/whl/cpu
+          pip install --quiet torch torchvision --index-url https://download.pytorch.org/whl/cpu
           pip install --quiet open_clip_torch pillow numpy requests
       - name: Motore
         run: |
