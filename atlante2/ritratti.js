@@ -265,11 +265,13 @@
   /** Solo METADATI delle scelte (nessuna immagine): serve a misurare la precisione del motore (posizione della proposta scelta). */
   function valutazioni() {
     return all().then(function (l) {
-      var voci = l.filter(function (r) { return r.scena; }).map(function (r) { return { id: r.id, num: r.scena.num || null, rk: r.scena.rk || null, sc: r.scena.sc == null ? null : r.scena.sc, fonte: r.fonte }; });
+      var voci = l.map(function (r) { return { id: r.id, kind: r.kind, fonte: r.fonte, num: r.scena ? (r.scena.num || null) : null, rk: r.scena && r.scena.rk ? r.scena.rk : null, sc: r.scena && r.scena.sc != null ? r.scena.sc : null, origine: r.scena ? (r.scena.rk ? 'proposta' : 'scena-manuale') : 'file-locale' }; });
       var con = voci.filter(function (v) { return v.rk; }), at = function (k) { return con.filter(function (v) { return v.rk <= k; }).length; };
-      return { formato: 'tva-valutazioni', versione: 1, creato: new Date().toISOString(), totale: voci.length, da_proposta: con.length, manuali: voci.length - con.length, rk1: at(1), rk3: at(3), rk5: at(5), rk10: at(10), voci: voci };
+      return { formato: 'tva-valutazioni', versione: 2, creato: new Date().toISOString(), totale: voci.length, da_proposta: con.length, scene_manuali: voci.filter(function (v) { return v.origine === 'scena-manuale'; }).length, file_locali: voci.filter(function (v) { return v.origine === 'file-locale'; }).length, rk1: at(1), rk3: at(3), rk5: at(5), rk10: at(10), voci: voci };
     });
   }
+  /** Contatori sul totale delle identità dell'indice: completati / mancanti. */
+  function conteggio() { return Promise.all([indice(), ids()]).then(function (a) { var f = a[0].filter(function (i) { return a[1][i]; }).length; return { totale: a[0].length, fatti: f, mancanti: a[0].length - f }; }); }
   function revisione(known) {
     var ov = h('div', 'a3r'); ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-modal', 'true'); ov.setAttribute('aria-label', 'Revisione rapida dei ritratti');
     var top = h('header', 'a3r-top'); top.appendChild(btn('a3r-x', 'Chiudi', close)); top.appendChild(h('b', '', 'Revisione rapida')); ov.appendChild(top);
@@ -294,7 +296,7 @@
     }
     function draw(id, inf, pr) {
       main.textContent = ''; var P = pr.proposte, x = P[pi], t = inf.titoli.filter(function (y) { return y.num === x.num; })[0];
-      main.appendChild(h('p', 'a3r-info', (qi + 1) + ' / ' + Q.length + ' · salvati ' + saved));
+      var cn = h('p', 'a3r-info', (qi + 1) + ' / ' + Q.length + ' · salvati ' + saved); main.appendChild(cn); conteggio().then(function (c) { cn.textContent += ' · completati ' + c.fatti + ' di ' + c.totale + ', mancanti ' + c.mancanti; });
       main.appendChild(h('h3', '', inf.nome || id));
       main.appendChild(h('p', 'a3r-info', 'Interprete: ' + (inf.attore ? inf.attore.nome : '—') + ' · ' + (t ? t.titolo_tmdb : '') + ' · proposta ' + (pi + 1) + ' di ' + P.length + (pr.conf === 'bassa' ? ' · confidenza BASSA' : '') + (x.ck ? ' · ★' : '')));
       if (note) { main.appendChild(h('p', 'a3r-msg', note)); note = ''; }
@@ -331,22 +333,24 @@
     row.appendChild(btn('a3r-b pri', 'Esporta ritratti', function () { downloadExport().then(function (n) { res.hidden = false; res.className = 'a3r-msg'; res.textContent = 'Esportati ' + n + ' ritratti.'; }, function () { res.hidden = false; res.className = 'a3r-msg bad'; res.textContent = 'Esportazione non riuscita.'; }); }));
     var ow = h('label', 'a3r-ck'); var cb = h('input', '', null, { type: 'checkbox' }); ow.appendChild(cb); ow.appendChild(D.createTextNode(' sovrascrivi quelli già presenti'));
     row.appendChild(btn('a3r-b', 'Importa da file', function () { var f = h('input', '', null, { type: 'file', accept: 'application/json,.json' }); f.addEventListener('change', function () { var file = f.files && f.files[0]; if (!file) return; file.text().then(function (t) { return importJson(t, { known: function (id) { return !!(known && known(id)); }, sovrascrivi: cb.checked }); }).then(function (r) { res.hidden = false; res.className = 'a3r-msg' + (r.errori.length && !r.importati ? ' bad' : ''); res.textContent = 'Importati ' + r.importati + ', saltati ' + r.saltati + (r.errori.length ? ' — ' + r.errori.slice(0, 3).join('; ') : '') + '.'; list(); }); }); f.click(); }));
-    row.appendChild(btn('a3r-b', 'Esporta valutazioni (solo metadati)', function () { valutazioni().then(function (o) { downloadJson('tva-valutazioni-' + new Date().toISOString().slice(0, 10) + '.json', o); res.hidden = false; res.className = 'a3r-msg'; res.textContent = 'Valutazioni esportate: ' + o.da_proposta + ' da proposta (prima: ' + o.rk1 + ', entro la 3ª: ' + o.rk3 + '), ' + o.manuali + ' manuali.'; }); }));
+    row.appendChild(btn('a3r-b', 'Esporta valutazioni (solo metadati)', function () { valutazioni().then(function (o) { downloadJson('tva-valutazioni-' + new Date().toISOString().slice(0, 10) + '.json', o); res.hidden = false; res.className = 'a3r-msg'; res.textContent = 'Valutazioni esportate: ' + o.totale + ' ritratti (' + o.da_proposta + ' da proposta, prima: ' + o.rk1 + ', entro la 3ª: ' + o.rk3 + '; ' + o.scene_manuali + ' scene manuali; ' + o.file_locali + ' da file locale).'; }); }));
     var rv = btn('a3r-b pri', 'Revisione rapida…', function () { revisione(known); }); row.appendChild(rv);
     root.appendChild(row); root.appendChild(ow); root.appendChild(res);
+    var cnt = h('p', 'a3r-info a3r-cnt'); var sol = h('label', 'a3r-ck'); var cb2 = h('input', '', null, { type: 'checkbox' }); sol.appendChild(cb2); sol.appendChild(D.createTextNode(' solo identità senza ritratto')); cb2.addEventListener('change', function () { list(); }); root.appendChild(cnt); root.appendChild(sol);
     var lh = h('div', 'a3r-list'); root.appendChild(lh); root.appendChild(h('p', 'a3r-fine', ATTR));
     function list() {
-      lh.textContent = ''; indice().then(function (arr) {
+      lh.textContent = ''; conteggio().then(function (c) { cnt.textContent = 'Completati ' + c.fatti + ' di ' + c.totale + ' · mancanti ' + c.mancanti; }); Promise.all([indice(), ids()]).then(function (z) {
+        var arr = cb2.checked ? z[0].filter(function (i) { return !z[1][i]; }) : z[0];
         if (!arr.length) { lh.appendChild(h('p', 'a3r-info', 'Candidati non ancora disponibili.')); return; }
         arr.forEach(function (id) {
-          var r = btn('a3r-item', null, null), th = h('span', 'a3r-mini'); r.appendChild(th); var t = h('span'), nm = h('b', '', id.replace(/^id-/, '').replace(/-/g, ' ')); t.appendChild(nm); var s = h('span', 's', 'Verifica in corso…'); t.appendChild(s); r.appendChild(t);
+          var r = btn('a3r-item', null, null), th = h('span', 'a3r-mini'); r.appendChild(th); var t = h('span'), kn = known && known(id), nm = h('b', '', typeof kn === 'string' && kn ? kn : id.replace(/^id-/, '').replace(/-/g, ' ')); t.appendChild(nm); var s = h('span', 's', 'Verifica in corso…'); t.appendChild(s); r.appendChild(t);
           var nome = nm.textContent; r.addEventListener('click', function () { openEditor(id, nome, known); }); lh.appendChild(r);
-          Promise.all([getRec(id), candId(id)]).then(function (a) { var rec = a[0], inf = a[1]; if (inf && inf.nome) { nome = inf.nome; nm.textContent = nome; } s.textContent = rec ? (rec.kind === 'copy' ? 'Copia privata' : 'Riferimento a scena') + (rec.titolo ? ' · ' + rec.titolo : '') : ((inf ? inf.immagini.length : 0) + ' scene candidate · nessun ritratto'); var n = rec && node(rec, false); if (n) th.appendChild(n); });
+          Promise.all([getRec(id), candId(id)]).then(function (a) { var rec = a[0], inf = a[1]; if (inf && inf.nome) { nome = inf.nome; nm.textContent = nome; } s.textContent = rec ? (rec.kind === 'copy' ? 'Copia privata' : 'Riferimento a scena') + (rec.titolo ? ' · ' + rec.titolo : '') : (inf ? inf.immagini.length + ' scene candidate · nessun ritratto' : 'nessuna scena candidata · nessun ritratto'); var n = rec && node(rec, false); if (n) th.appendChild(n); });
         });
       });
     }
     list(); WAIT.push(function () { /* aggiornamento dell'elenco alla modifica */ if (root.isConnected) list(); });
   }
 
-  W.tvaRit = { revisione: revisione, valutazioni: valutazioni, paint: paint, ids: ids, get: getRec, put: putRec, del: delRec, all: all, openEditor: openEditor, renderManager: renderManager, exportAll: exportAll, importJson: importJson, refStyle: refStyle, clamp: clamp, cropBlob: cropBlob, persisted: persisted, usingMemory: function () { return USING_MEM; }, _v: 1 };
+  W.tvaRit = { conteggio: conteggio, revisione: revisione, valutazioni: valutazioni, paint: paint, ids: ids, get: getRec, put: putRec, del: delRec, all: all, openEditor: openEditor, renderManager: renderManager, exportAll: exportAll, importJson: importJson, refStyle: refStyle, clamp: clamp, cropBlob: cropBlob, persisted: persisted, usingMemory: function () { return USING_MEM; }, _v: 1 };
 })();

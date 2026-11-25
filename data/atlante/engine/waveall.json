@@ -1,0 +1,8310 @@
+{
+ "schema": 1,
+ "ondata": "tutte",
+ "blocco_dim": 30,
+ "rifare_ondata1": [
+  "id-hulk",
+  "id-ciclope",
+  "id-magneto",
+  "id-harry-osborn-green-goblin",
+  "id-johnny-storm-human-torch",
+  "id-matt-murdock-daredevil",
+  "id-reed-richards"
+ ],
+ "senza_titoli": [
+  "id-a-bomb",
+  "id-alexandra-the-hand",
+  "id-amy-bendix",
+  "id-billy-russo-jigsaw",
+  "id-darryl-jacobson",
+  "id-firestar-angelica-jones",
+  "id-franklin-richards",
+  "id-galactus",
+  "id-i-quattro-protagonisti",
+  "id-james-rogers",
+  "id-kevin-bacon-se-stesso",
+  "id-skaar",
+  "id-torunn"
+ ],
+ "blocchi": [
+  [
+   "id-abby-miller",
+   "id-abigail-whistler",
+   "id-adam-warlock",
+   "id-adrian-toomes-avvoltoio",
+   "id-agatha-harkness",
+   "id-ajak",
+   "id-aldrich-killian",
+   "id-aleksei-sytsevich-rhino",
+   "id-alexei-guardiano-rosso",
+   "id-alisa-jones",
+   "id-alto-evoluzionario",
+   "id-america-chavez",
+   "id-anne-weying",
+   "id-anya-corazon",
+   "id-apocalypse",
+   "id-arishem",
+   "id-arthur-harrow",
+   "id-ayesha",
+   "id-beast",
+   "id-ben-reilly-the-spider",
+   "id-benny-pollack",
+   "id-betty-ross",
+   "id-bishop",
+   "id-blind-al",
+   "id-bob-sentry",
+   "id-bonnie-lopez",
+   "id-hulk",
+   "id-bruno",
+   "id-bullseye",
+   "id-bushmaster"
+  ],
+  [
+   "id-cable",
+   "id-capitano-stacy",
+   "id-carlton-drake-riot",
+   "id-cassandra-nova",
+   "id-cassandra-webb",
+   "id-cassie-lang",
+   "id-cat-hardy",
+   "id-cecilia-reyes",
+   "id-ciclope",
+   "id-claire-wise",
+   "id-cletus-kasady-carnage",
+   "id-colleen-wing",
+   "id-colossus",
+   "id-corvus-glaive",
+   "id-cottonmouth",
+   "id-coulson-lmd",
+   "id-cull-obsidian",
+   "id-curt-connors-lizard",
+   "id-daniel-sousa",
+   "id-danielle-moonstar",
+   "id-danny-rand-iron-fist",
+   "id-dar-benn",
+   "id-darren-cross",
+   "id-david-banner",
+   "id-davos",
+   "id-deacon-frost",
+   "id-deke-shaw",
+   "id-dmitri-smerdyakov-chameleon",
+   "id-domino",
+   "id-dopinder"
+  ],
+  [
+   "id-dracula",
+   "id-druig",
+   "id-ebony-maw",
+   "id-eddie-brock-venom",
+   "id-edwin-jarvis",
+   "id-ego",
+   "id-elektra-natchios",
+   "id-elsa-bloodstone",
+   "id-emil-blonsky-abominio",
+   "id-enoch",
+   "id-blade",
+   "id-erik-gelden",
+   "id-erik-killmonger",
+   "id-magneto",
+   "id-everett-ross",
+   "id-ezekiel-sims",
+   "id-fitz",
+   "id-flint-marko-sandman",
+   "id-foggy-nelson",
+   "id-frances-barrison-shriek",
+   "id-frank-castle-punisher",
+   "id-frigga",
+   "id-gambit",
+   "id-ghost",
+   "id-gilgamesh",
+   "id-gorr",
+   "id-grant-ward-hive",
+   "id-gravik",
+   "id-groot-originale",
+   "id-groot-successore"
+  ],
+  [
+   "id-guardiani-della-galassia",
+   "id-gwen-stacy-spider-woman",
+   "id-hank-pym",
+   "id-hannibal-king",
+   "id-harry-osborn-green-goblin",
+   "id-he-who-remains",
+   "id-hela",
+   "id-hope-van-dyne",
+   "id-howard-stark",
+   "id-hunter-b-15",
+   "id-ikaris",
+   "id-illyana-rasputin-magik",
+   "id-ivan-vanko-whiplash",
+   "id-jack-russell-werewolf-by-night",
+   "id-jackson-norriss",
+   "id-jane-foster-mighty-thor",
+   "id-janet",
+   "id-janet-van-dyne",
+   "id-jasper-sitwell",
+   "id-jennifer-walters-she-hulk",
+   "id-jessica-jones",
+   "id-joaquin-torres-falcon",
+   "id-john-walker",
+   "id-johnny-blaze-ghost-rider",
+   "id-johnny-storm-human-torch",
+   "id-julia-cornwall",
+   "id-kamala-khan-ms-marvel",
+   "id-kang-il-conquistatore",
+   "id-karen-page",
+   "id-karl-mordo"
+  ],
+  [
+   "id-kate-bishop",
+   "id-katy",
+   "id-khonshu",
+   "id-kilgrave",
+   "id-kingo",
+   "id-kingpin-spider-verse",
+   "id-knull",
+   "id-l-antico",
+   "id-laura-x-23",
+   "id-wolverine-x-men-97",
+   "id-luke-cage",
+   "id-m-baku",
+   "id-major-glenn-talbot",
+   "id-makkari",
+   "id-malekith",
+   "id-man-thing",
+   "id-mandarino",
+   "id-mantis",
+   "id-maria-stark",
+   "id-mariah-dillard",
+   "id-mariko-yashida",
+   "id-mark-miller",
+   "id-martine-bancroft",
+   "id-mary-jane-watson-raimi",
+   "id-matt-murdock-daredevil",
+   "id-mattie-franklin",
+   "id-max-dillon-electro",
+   "id-maya-lopez-echo",
+   "id-mefisto-roarke",
+   "id-melina"
+  ],
+  [
+   "id-melinda-may",
+   "id-michael-morbius",
+   "id-miguel-o-hara-spider-man-2099",
+   "id-miles-morales",
+   "id-milo-loxias-crown",
+   "id-misty-knight",
+   "id-michelle-jones-watson-mcu",
+   "id-mobius",
+   "id-monica-rambeau",
+   "id-morgan-stark",
+   "id-mr-paradox",
+   "id-mrs-chen",
+   "id-nadya",
+   "id-najma",
+   "id-nakia",
+   "id-namor",
+   "id-ned-leeds",
+   "id-negasonic-teenage-warhead",
+   "id-nightcrawler",
+   "id-nomak",
+   "id-noni",
+   "id-norman-osborn-green-goblin",
+   "id-nyssa",
+   "id-obadiah-stane",
+   "id-odino",
+   "id-okoye",
+   "id-otto-octavius-doc-ock",
+   "id-parker-robbins-the-hood",
+   "id-peggy-carter-captain-carter",
+   "id-peni-parker"
+  ],
+  [
+   "id-pepper-potts",
+   "id-peter",
+   "id-peter-b-parker",
+   "id-peter-parker-ynfsm",
+   "id-phastos",
+   "id-phil-coulson",
+   "id-professor-x-terra-838",
+   "id-proxima-midnight",
+   "id-pyro",
+   "id-quentin-beck-mysterio",
+   "id-ramonda",
+   "id-ravonna-renslayer",
+   "id-red-guardian",
+   "id-reed-richards",
+   "id-rio-vidal",
+   "id-riri-williams-ironheart",
+   "id-robbie-reyes-ghost-rider",
+   "id-robbie-robertson",
+   "id-robert-downey-jr-dottor-destino",
+   "id-rogue",
+   "id-ronan-l-accusatore",
+   "id-roxanne-simpson",
+   "id-sebastian-shaw",
+   "id-sergei-kravinoff-kraven",
+   "id-sersi",
+   "id-shang-chi",
+   "id-sharon-carter",
+   "id-shuri",
+   "id-silver-surfer",
+   "id-simmons"
+  ],
+  [
+   "id-simon-williams-wonder-man",
+   "id-daisy-johnson",
+   "id-spider-ham",
+   "id-spider-man-noir",
+   "id-sprite",
+   "id-steven-grant-marc-spector-moon-knight",
+   "id-stick",
+   "id-sylvie",
+   "id-t-chaka",
+   "id-talos",
+   "id-teen-billy-maximoff",
+   "id-teschio-rosso",
+   "id-ross-hulk-2003",
+   "id-thaddeus-ross-mcu",
+   "id-the-lion-n-kati",
+   "id-the-watcher",
+   "id-thena",
+   "id-toussaint",
+   "id-trevor-slattery",
+   "id-trish-walker",
+   "id-ultron",
+   "id-ulysses-klaue",
+   "id-valchiria",
+   "id-valentina-de-fontaine",
+   "id-vanessa",
+   "id-sabretooth",
+   "id-victor-timely-variante-kang",
+   "id-viper",
+   "id-wenwu",
+   "id-whistler"
+  ],
+  [
+   "id-whitney-frost",
+   "id-william-stryker",
+   "id-fisk-fox-2003",
+   "id-fisk-mcu",
+   "id-wong",
+   "id-xialing",
+   "id-yelena-belova",
+   "id-yondu",
+   "id-yukio",
+   "id-zemo"
+  ]
+ ],
+ "identita": [
+  {
+   "id": "id-a-bomb",
+   "nome": "A-Bomb",
+   "prompt": "A-Bomb, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-abby-miller",
+   "nome": "Abby Miller",
+   "prompt": "Abby Miller, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "036",
+     "item": "036",
+     "tmdb_id": 9947,
+     "tipo": "movie",
+     "titolo": "Elektra",
+     "gruppo": "1H"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-abigail-whistler",
+   "nome": "Abigail Whistler",
+   "prompt": "Abigail Whistler, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "034",
+     "item": "034",
+     "tmdb_id": 36648,
+     "tipo": "movie",
+     "titolo": "Blade: Trinity",
+     "gruppo": "1G"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-adam-warlock",
+   "nome": "Adam Warlock",
+   "prompt": "Adam Warlock, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "110",
+     "item": "110",
+     "tmdb_id": 447365,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 3",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-adrian-toomes-avvoltoio",
+   "nome": "Adrian Toomes/Avvoltoio",
+   "prompt": "Adrian Toomes / Avvoltoio, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "075",
+     "item": "075",
+     "tmdb_id": 315635,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Homecoming",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-agatha-harkness",
+   "nome": "Agatha Harkness",
+   "prompt": "Agatha Harkness, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "093",
+     "item": "093",
+     "tmdb_id": 85271,
+     "tipo": "tv",
+     "titolo": "WandaVision",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "118",
+     "item": "118",
+     "tmdb_id": 138501,
+     "tipo": "tv",
+     "titolo": "Agatha All Along",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ajak",
+   "nome": "Ajak",
+   "prompt": "Ajak, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "098",
+     "item": "098",
+     "tmdb_id": 524434,
+     "tipo": "movie",
+     "titolo": "Eternals",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-aldrich-killian",
+   "nome": "Aldrich Killian",
+   "prompt": "Aldrich Killian, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "053",
+     "item": "053",
+     "tmdb_id": 68721,
+     "tipo": "movie",
+     "titolo": "Iron Man 3",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-aleksei-sytsevich-rhino",
+   "nome": "Aleksei Sytsevich/Rhino",
+   "prompt": "Aleksei Sytsevich / Rhino, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "010",
+     "item": "010",
+     "tmdb_id": 539972,
+     "tipo": "movie",
+     "titolo": "Kraven the Hunter",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-alexandra-the-hand",
+   "nome": "Alexandra/The Hand",
+   "prompt": "Alexandra / The Hand, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-alexei-guardiano-rosso",
+   "nome": "Alexei/Guardiano Rosso",
+   "prompt": "Alexei / Guardiano Rosso, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "069",
+     "item": "069",
+     "tmdb_id": 497698,
+     "tipo": "movie",
+     "titolo": "Black Widow",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-alisa-jones",
+   "nome": "Alisa Jones",
+   "prompt": "Alisa Jones, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "079",
+     "item": "079",
+     "tmdb_id": 38472,
+     "tipo": "tv",
+     "titolo": "Jessica Jones S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-alto-evoluzionario",
+   "nome": "Alto Evoluzionario",
+   "prompt": "Alto Evoluzionario, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "110",
+     "item": "110",
+     "tmdb_id": 447365,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 3",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-america-chavez",
+   "nome": "America Chavez",
+   "prompt": "America Chavez, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "102",
+     "item": "102",
+     "tmdb_id": 453395,
+     "tipo": "movie",
+     "titolo": "Doctor Strange in the Multiverse of Madness",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-amy-bendix",
+   "nome": "Amy Bendix",
+   "prompt": "Amy Bendix, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-anne-weying",
+   "nome": "Anne Weying",
+   "prompt": "Anne Weying, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "006",
+     "item": "006",
+     "tmdb_id": 335983,
+     "tipo": "movie",
+     "titolo": "Venom",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-anya-corazon",
+   "nome": "Anya Corazon",
+   "prompt": "Anya Corazon, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "009",
+     "item": "009",
+     "tmdb_id": 634492,
+     "tipo": "movie",
+     "titolo": "Madame Web",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-apocalypse",
+   "nome": "Apocalypse",
+   "prompt": "Apocalypse, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "019",
+     "item": "014",
+     "tmdb_id": 246655,
+     "tipo": "movie",
+     "titolo": "X-Men: Apocalypse",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-arishem",
+   "nome": "Arishem",
+   "prompt": "Arishem, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "098",
+     "item": "098",
+     "tmdb_id": 524434,
+     "tipo": "movie",
+     "titolo": "Eternals",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-arthur-harrow",
+   "nome": "Arthur Harrow",
+   "prompt": "Arthur Harrow, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "101",
+     "item": "101",
+     "tmdb_id": 92749,
+     "tipo": "tv",
+     "titolo": "Moon Knight",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ayesha",
+   "nome": "Ayesha",
+   "prompt": "Ayesha, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "059",
+     "item": "059",
+     "tmdb_id": 283995,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-beast",
+   "nome": "Beast",
+   "prompt": "Beast, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "016",
+     "item": "017",
+     "tmdb_id": 36668,
+     "tipo": "movie",
+     "titolo": "X-Men: The Last Stand",
+     "gruppo": "1D"
+    },
+    {
+     "num": "020",
+     "item": "020",
+     "tmdb_id": 320288,
+     "tipo": "movie",
+     "titolo": "Dark Phoenix",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ben-grimm",
+   "nome": "Ben Grimm",
+   "prompt": "The Thing, a rocky orange creature",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "028",
+     "item": "028",
+     "tmdb_id": 22059,
+     "tipo": "movie",
+     "titolo": "The Fantastic Four",
+     "gruppo": "1F"
+    },
+    {
+     "num": "029",
+     "item": "029",
+     "tmdb_id": 9738,
+     "tipo": "movie",
+     "titolo": "Fantastic Four",
+     "gruppo": "1F"
+    },
+    {
+     "num": "030",
+     "item": "030",
+     "tmdb_id": 1979,
+     "tipo": "movie",
+     "titolo": "Fantastic Four: Rise of the Silver Surfer",
+     "gruppo": "1F"
+    },
+    {
+     "num": "031",
+     "item": "031",
+     "tmdb_id": 166424,
+     "tipo": "movie",
+     "titolo": "Fantastic Four",
+     "gruppo": "1F"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ben-reilly-the-spider",
+   "nome": "Ben Reilly/The Spider",
+   "prompt": "Ben Reilly / The Spider, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "039",
+     "item": "039",
+     "tmdb_id": 220102,
+     "tipo": "tv",
+     "titolo": "Spider-Noir",
+     "gruppo": "1J"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-benny-pollack",
+   "nome": "Benny Pollack",
+   "prompt": "Benny Pollack, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "052",
+     "item": "052",
+     "tmdb_id": 119569,
+     "tipo": "movie",
+     "titolo": "Marvel One-Shot: Item 47",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-betty-ross",
+   "nome": "Betty Ross",
+   "prompt": "Betty Ross, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "040",
+     "item": "040",
+     "tmdb_id": 1927,
+     "tipo": "movie",
+     "titolo": "Hulk",
+     "gruppo": "1K"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "049",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-billy-russo-jigsaw",
+   "nome": "Billy Russo/Jigsaw",
+   "prompt": "Billy Russo / Jigsaw, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-bishop",
+   "nome": "Bishop",
+   "prompt": "Bishop, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "018",
+     "item": "013",
+     "tmdb_id": 127585,
+     "tipo": "movie",
+     "titolo": "X-Men: Days of Future Past",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-blind-al",
+   "nome": "Blind Al",
+   "prompt": "Blind Al, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "117",
+     "item": "117",
+     "tmdb_id": 533535,
+     "tipo": "movie",
+     "titolo": "Deadpool & Wolverine",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-bob-sentry",
+   "nome": "Bob/Sentry",
+   "prompt": "Bob / Sentry, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "123",
+     "item": "123",
+     "tmdb_id": 986056,
+     "tipo": "movie",
+     "titolo": "Thunderbolts*",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-bonnie-lopez",
+   "nome": "Bonnie Lopez",
+   "prompt": "Bonnie Lopez, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "116",
+     "item": "116",
+     "tmdb_id": 122226,
+     "tipo": "tv",
+     "titolo": "Echo",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-hulk",
+   "nome": "Bruce Banner/Hulk",
+   "prompt": "the Hulk, a giant green muscular monster",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "049",
+     "item": "049",
+     "tmdb_id": 1724,
+     "tipo": "movie",
+     "titolo": "The Incredible Hulk",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "051",
+     "item": "051",
+     "tmdb_id": 24428,
+     "tipo": "movie",
+     "titolo": "The Avengers",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "062",
+     "item": "062",
+     "tmdb_id": 99861,
+     "tipo": "movie",
+     "titolo": "Avengers: Age of Ultron",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "076",
+     "item": "076",
+     "tmdb_id": 284053,
+     "tipo": "movie",
+     "titolo": "Thor: Ragnarok",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "097",
+     "item": "097",
+     "tmdb_id": 566525,
+     "tipo": "movie",
+     "titolo": "Shang-Chi and the Legend of the Ten Rings",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "105",
+     "item": "105",
+     "tmdb_id": 92783,
+     "tipo": "tv",
+     "titolo": "She-Hulk: Attorney at Law",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "132",
+     "item": "132",
+     "tmdb_id": 969681,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Brand New Day",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "040",
+     "gruppo": "1K"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-bruno",
+   "nome": "Bruno",
+   "prompt": "Bruno, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "103",
+     "item": "103",
+     "tmdb_id": 92782,
+     "tipo": "tv",
+     "titolo": "Ms. Marvel",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-bucky-barnes-soldato-d-inverno",
+   "nome": "Bucky Barnes/Soldato d'Inverno",
+   "prompt": "the Winter Soldier with a metal arm and tactical gear",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "041",
+     "item": "041",
+     "tmdb_id": 1771,
+     "tipo": "movie",
+     "titolo": "Captain America: The First Avenger",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "056",
+     "item": "056",
+     "tmdb_id": 100402,
+     "tipo": "movie",
+     "titolo": "Captain America: The Winter Soldier",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "094",
+     "item": "094",
+     "tmdb_id": 88396,
+     "tipo": "tv",
+     "titolo": "The Falcon and the Winter Soldier",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "123",
+     "item": "123",
+     "tmdb_id": 986056,
+     "tipo": "movie",
+     "titolo": "Thunderbolts*",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-bullseye",
+   "nome": "Bullseye",
+   "prompt": "Bullseye, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "035",
+     "item": "035",
+     "tmdb_id": 9480,
+     "tipo": "movie",
+     "titolo": "Daredevil",
+     "gruppo": "1H"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "082",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-bushmaster",
+   "nome": "Bushmaster",
+   "prompt": "Bushmaster, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "080",
+     "item": "080",
+     "tmdb_id": 62126,
+     "tipo": "tv",
+     "titolo": "Luke Cage S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-cable",
+   "nome": "Cable",
+   "prompt": "Cable, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "024",
+     "item": "023",
+     "tmdb_id": 383498,
+     "tipo": "movie",
+     "titolo": "Deadpool 2",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-capitano-stacy",
+   "nome": "capitano Stacy",
+   "prompt": "capitano Stacy, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "004",
+     "item": "004",
+     "tmdb_id": 1930,
+     "tipo": "movie",
+     "titolo": "The Amazing Spider-Man",
+     "gruppo": "1B"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-carlton-drake-riot",
+   "nome": "Carlton Drake/Riot",
+   "prompt": "Carlton Drake / Riot, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "006",
+     "item": "006",
+     "tmdb_id": 335983,
+     "tipo": "movie",
+     "titolo": "Venom",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-carol-danvers-captain-marvel",
+   "nome": "Carol Danvers/Captain Marvel",
+   "prompt": "Captain Marvel in a blue and red suit glowing with energy",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "088",
+     "item": "088",
+     "tmdb_id": 299537,
+     "tipo": "movie",
+     "titolo": "Captain Marvel",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "097",
+     "item": "097",
+     "tmdb_id": 566525,
+     "tipo": "movie",
+     "titolo": "Shang-Chi and the Legend of the Ten Rings",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "113",
+     "item": "113",
+     "tmdb_id": 609681,
+     "tipo": "movie",
+     "titolo": "The Marvels",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-cassandra-nova",
+   "nome": "Cassandra Nova",
+   "prompt": "Cassandra Nova, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "117",
+     "item": "117",
+     "tmdb_id": 533535,
+     "tipo": "movie",
+     "titolo": "Deadpool & Wolverine",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-cassandra-webb",
+   "nome": "Cassandra Webb",
+   "prompt": "Cassandra Webb, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "009",
+     "item": "009",
+     "tmdb_id": 634492,
+     "tipo": "movie",
+     "titolo": "Madame Web",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-cassie-lang",
+   "nome": "Cassie Lang",
+   "prompt": "Cassie Lang, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "085",
+     "item": "085",
+     "tmdb_id": 363088,
+     "tipo": "movie",
+     "titolo": "Ant-Man and the Wasp",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "109",
+     "item": "109",
+     "tmdb_id": 640146,
+     "tipo": "movie",
+     "titolo": "Ant-Man and the Wasp: Quantumania",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "136",
+     "item": "136",
+     "tmdb_id": 1003596,
+     "tipo": "movie",
+     "titolo": "Avengers: Doomsday",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-cat-hardy",
+   "nome": "Cat Hardy",
+   "prompt": "Cat Hardy, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "039",
+     "item": "039",
+     "tmdb_id": 220102,
+     "tipo": "tv",
+     "titolo": "Spider-Noir",
+     "gruppo": "1J"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-cecilia-reyes",
+   "nome": "Cecilia Reyes",
+   "prompt": "Cecilia Reyes, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "021",
+     "item": "021",
+     "tmdb_id": 340102,
+     "tipo": "movie",
+     "titolo": "The New Mutants",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-charles-xavier-fox",
+   "nome": "Charles Xavier (Fox-Verse)",
+   "prompt": "Professor X, a bald man in a wheelchair",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "012",
+     "item": "012",
+     "tmdb_id": 49538,
+     "tipo": "movie",
+     "titolo": "X-Men: First Class",
+     "gruppo": "1D"
+    },
+    {
+     "num": "014",
+     "item": "015",
+     "tmdb_id": 36657,
+     "tipo": "movie",
+     "titolo": "X-Men",
+     "gruppo": "1D"
+    },
+    {
+     "num": "015",
+     "item": "016",
+     "tmdb_id": 36658,
+     "tipo": "movie",
+     "titolo": "X2",
+     "gruppo": "1D"
+    },
+    {
+     "num": "016",
+     "item": "017",
+     "tmdb_id": 36668,
+     "tipo": "movie",
+     "titolo": "X-Men: The Last Stand",
+     "gruppo": "1D"
+    },
+    {
+     "num": "018",
+     "item": "013",
+     "tmdb_id": 127585,
+     "tipo": "movie",
+     "titolo": "X-Men: Days of Future Past",
+     "gruppo": "1D"
+    },
+    {
+     "num": "019",
+     "item": "014",
+     "tmdb_id": 246655,
+     "tipo": "movie",
+     "titolo": "X-Men: Apocalypse",
+     "gruppo": "1D"
+    },
+    {
+     "num": "020",
+     "item": "020",
+     "tmdb_id": 320288,
+     "tipo": "movie",
+     "titolo": "Dark Phoenix",
+     "gruppo": "1D"
+    },
+    {
+     "num": "023",
+     "item": "024",
+     "tmdb_id": 263115,
+     "tipo": "movie",
+     "titolo": "Logan",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ciclope",
+   "nome": "Ciclope",
+   "prompt": "Cyclops with a red visor",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "014",
+     "item": "015",
+     "tmdb_id": 36657,
+     "tipo": "movie",
+     "titolo": "X-Men",
+     "gruppo": "1D"
+    },
+    {
+     "num": "019",
+     "item": "014",
+     "tmdb_id": 246655,
+     "tipo": "movie",
+     "titolo": "X-Men: Apocalypse",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "131",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-claire-wise",
+   "nome": "Claire Wise",
+   "prompt": "Claire Wise, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "052",
+     "item": "052",
+     "tmdb_id": 119569,
+     "tipo": "movie",
+     "titolo": "Marvel One-Shot: Item 47",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-cletus-kasady-carnage",
+   "nome": "Cletus Kasady/Carnage",
+   "prompt": "Cletus Kasady / Carnage, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "007",
+     "item": "007",
+     "tmdb_id": 580489,
+     "tipo": "movie",
+     "titolo": "Venom: Let There Be Carnage",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-clint-barton",
+   "nome": "Clint Barton/Occhio di Falco",
+   "prompt": "Hawkeye with a bow and arrow",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "051",
+     "item": "051",
+     "tmdb_id": 24428,
+     "tipo": "movie",
+     "titolo": "The Avengers",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "100",
+     "item": "100",
+     "tmdb_id": 88329,
+     "tipo": "tv",
+     "titolo": "Hawkeye",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-colleen-wing",
+   "nome": "Colleen Wing",
+   "prompt": "Colleen Wing, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "072",
+     "item": "072",
+     "tmdb_id": 62127,
+     "tipo": "tv",
+     "titolo": "Iron Fist S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "081",
+     "item": "081",
+     "tmdb_id": 62127,
+     "tipo": "tv",
+     "titolo": "Iron Fist S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-colossus",
+   "nome": "Colossus",
+   "prompt": "Colossus, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "022",
+     "item": "022",
+     "tmdb_id": 293660,
+     "tipo": "movie",
+     "titolo": "Deadpool",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "117",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-corvus-glaive",
+   "nome": "Corvus Glaive",
+   "prompt": "Corvus Glaive, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-cottonmouth",
+   "nome": "Cottonmouth",
+   "prompt": "Cottonmouth, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "068",
+     "item": "068",
+     "tmdb_id": 62126,
+     "tipo": "tv",
+     "titolo": "Luke Cage S1",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-coulson-lmd",
+   "nome": "Coulson (LMD)",
+   "prompt": "Coulson, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "091",
+     "item": "091",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S6",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-cull-obsidian",
+   "nome": "Cull Obsidian",
+   "prompt": "Cull Obsidian, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-curt-connors-lizard",
+   "nome": "Curt Connors/Lizard",
+   "prompt": "Curt Connors / Lizard, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "004",
+     "item": "004",
+     "tmdb_id": 1930,
+     "tipo": "movie",
+     "titolo": "The Amazing Spider-Man",
+     "gruppo": "1B"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-daniel-sousa",
+   "nome": "Daniel Sousa",
+   "prompt": "Daniel Sousa, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "043",
+     "item": "043",
+     "tmdb_id": 61550,
+     "tipo": "tv",
+     "titolo": "Agent Carter S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "044",
+     "item": "044",
+     "tmdb_id": 61550,
+     "tipo": "tv",
+     "titolo": "Agent Carter S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-danielle-moonstar",
+   "nome": "Danielle Moonstar",
+   "prompt": "Danielle Moonstar, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "021",
+     "item": "021",
+     "tmdb_id": 340102,
+     "tipo": "movie",
+     "titolo": "The New Mutants",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-danny-rand-iron-fist",
+   "nome": "Danny Rand/Iron Fist",
+   "prompt": "Danny Rand / Iron Fist, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "072",
+     "item": "072",
+     "tmdb_id": 62127,
+     "tipo": "tv",
+     "titolo": "Iron Fist S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "081",
+     "item": "081",
+     "tmdb_id": 62127,
+     "tipo": "tv",
+     "titolo": "Iron Fist S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-dar-benn",
+   "nome": "Dar-Benn",
+   "prompt": "Dar-Benn, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "113",
+     "item": "113",
+     "tmdb_id": 609681,
+     "tipo": "movie",
+     "titolo": "The Marvels",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-darren-cross",
+   "nome": "Darren Cross",
+   "prompt": "Darren Cross, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "063",
+     "item": "063",
+     "tmdb_id": 102899,
+     "tipo": "movie",
+     "titolo": "Ant-Man",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-darryl-jacobson",
+   "nome": "Darryl Jacobson",
+   "prompt": "Darryl Jacobson, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-david-banner",
+   "nome": "David Banner",
+   "prompt": "David Banner, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "040",
+     "item": "040",
+     "tmdb_id": 1927,
+     "tipo": "movie",
+     "titolo": "Hulk",
+     "gruppo": "1K"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-davos",
+   "nome": "Davos",
+   "prompt": "Davos, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "081",
+     "item": "081",
+     "tmdb_id": 62127,
+     "tipo": "tv",
+     "titolo": "Iron Fist S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-deacon-frost",
+   "nome": "Deacon Frost",
+   "prompt": "Deacon Frost, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "032",
+     "item": "032",
+     "tmdb_id": 36647,
+     "tipo": "movie",
+     "titolo": "Blade",
+     "gruppo": "1G"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-deke-shaw",
+   "nome": "Deke Shaw",
+   "prompt": "Deke Shaw, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "092",
+     "item": "092",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S7",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-dmitri-smerdyakov-chameleon",
+   "nome": "Dmitri Smerdyakov/Chameleon",
+   "prompt": "Dmitri Smerdyakov / Chameleon, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "010",
+     "item": "010",
+     "tmdb_id": 539972,
+     "tipo": "movie",
+     "titolo": "Kraven the Hunter",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-domino",
+   "nome": "Domino",
+   "prompt": "Domino, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "024",
+     "item": "023",
+     "tmdb_id": 383498,
+     "tipo": "movie",
+     "titolo": "Deadpool 2",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-dopinder",
+   "nome": "Dopinder",
+   "prompt": "Dopinder, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "117",
+     "item": "117",
+     "tmdb_id": 533535,
+     "tipo": "movie",
+     "titolo": "Deadpool & Wolverine",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-dracula",
+   "nome": "Dracula",
+   "prompt": "Dracula, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "034",
+     "item": "034",
+     "tmdb_id": 36648,
+     "tipo": "movie",
+     "titolo": "Blade: Trinity",
+     "gruppo": "1G"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-drax",
+   "nome": "Drax",
+   "prompt": "Drax, a muscular gray-skinned warrior with red scars",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "058",
+     "item": "058",
+     "tmdb_id": 118340,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-druig",
+   "nome": "Druig",
+   "prompt": "Druig, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "098",
+     "item": "098",
+     "tmdb_id": 524434,
+     "tipo": "movie",
+     "titolo": "Eternals",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ebony-maw",
+   "nome": "Ebony Maw",
+   "prompt": "Ebony Maw, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-eddie-brock-venom",
+   "nome": "Eddie Brock/Venom",
+   "prompt": "Eddie Brock / Venom, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "003",
+     "item": "003",
+     "tmdb_id": 559,
+     "tipo": "movie",
+     "titolo": "Spider-Man 3",
+     "gruppo": "1A"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "006",
+     "gruppo": "1C"
+    },
+    {
+     "num": "007",
+     "gruppo": "1C"
+    },
+    {
+     "num": "011",
+     "gruppo": "1C"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-edwin-jarvis",
+   "nome": "Edwin Jarvis",
+   "prompt": "Edwin Jarvis, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "043",
+     "item": "043",
+     "tmdb_id": 61550,
+     "tipo": "tv",
+     "titolo": "Agent Carter S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "044",
+     "item": "044",
+     "tmdb_id": 61550,
+     "tipo": "tv",
+     "titolo": "Agent Carter S2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "119",
+     "item": "119",
+     "tmdb_id": 91363,
+     "tipo": "tv",
+     "titolo": "What If...? S3",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ego",
+   "nome": "Ego",
+   "prompt": "Ego, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "059",
+     "item": "059",
+     "tmdb_id": 283995,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-elektra-natchios",
+   "nome": "Elektra Natchios",
+   "prompt": "Elektra Natchios, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "035",
+     "item": "035",
+     "tmdb_id": 9480,
+     "tipo": "movie",
+     "titolo": "Daredevil",
+     "gruppo": "1H"
+    },
+    {
+     "num": "036",
+     "item": "036",
+     "tmdb_id": 9947,
+     "tipo": "movie",
+     "titolo": "Elektra",
+     "gruppo": "1H"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "065",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "117",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-elsa-bloodstone",
+   "nome": "Elsa Bloodstone",
+   "prompt": "Elsa Bloodstone, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "106",
+     "item": "106",
+     "tmdb_id": 894205,
+     "tipo": "movie",
+     "titolo": "Werewolf by Night",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-emil-blonsky-abominio",
+   "nome": "Emil Blonsky/Abominio",
+   "prompt": "Emil Blonsky / Abominio, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "049",
+     "item": "049",
+     "tmdb_id": 1724,
+     "tipo": "movie",
+     "titolo": "The Incredible Hulk",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-enoch",
+   "nome": "Enoch",
+   "prompt": "Enoch, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "091",
+     "item": "091",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S6",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-blade",
+   "nome": "Eric Brooks/Blade",
+   "prompt": "Eric Brooks / Blade, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "032",
+     "item": "032",
+     "tmdb_id": 36647,
+     "tipo": "movie",
+     "titolo": "Blade",
+     "gruppo": "1G"
+    },
+    {
+     "num": "033",
+     "item": "033",
+     "tmdb_id": 36586,
+     "tipo": "movie",
+     "titolo": "Blade II",
+     "gruppo": "1G"
+    },
+    {
+     "num": "034",
+     "item": "034",
+     "tmdb_id": 36648,
+     "tipo": "movie",
+     "titolo": "Blade: Trinity",
+     "gruppo": "1G"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "117",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-erik-gelden",
+   "nome": "Erik Gelden",
+   "prompt": "Erik Gelden, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "087",
+     "item": "087",
+     "tmdb_id": 38472,
+     "tipo": "tv",
+     "titolo": "Jessica Jones S3",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-erik-killmonger",
+   "nome": "Erik Killmonger",
+   "prompt": "Erik Killmonger, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "078",
+     "item": "078",
+     "tmdb_id": 284054,
+     "tipo": "movie",
+     "titolo": "Black Panther",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-magneto",
+   "nome": "Erik Lehnsherr/Magneto",
+   "prompt": "Magneto in a helmet controlling metal",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "012",
+     "item": "012",
+     "tmdb_id": 49538,
+     "tipo": "movie",
+     "titolo": "X-Men: First Class",
+     "gruppo": "1D"
+    },
+    {
+     "num": "014",
+     "item": "015",
+     "tmdb_id": 36657,
+     "tipo": "movie",
+     "titolo": "X-Men",
+     "gruppo": "1D"
+    },
+    {
+     "num": "015",
+     "item": "016",
+     "tmdb_id": 36658,
+     "tipo": "movie",
+     "titolo": "X2",
+     "gruppo": "1D"
+    },
+    {
+     "num": "016",
+     "item": "017",
+     "tmdb_id": 36668,
+     "tipo": "movie",
+     "titolo": "X-Men: The Last Stand",
+     "gruppo": "1D"
+    },
+    {
+     "num": "018",
+     "item": "013",
+     "tmdb_id": 127585,
+     "tipo": "movie",
+     "titolo": "X-Men: Days of Future Past",
+     "gruppo": "1D"
+    },
+    {
+     "num": "019",
+     "item": "014",
+     "tmdb_id": 246655,
+     "tipo": "movie",
+     "titolo": "X-Men: Apocalypse",
+     "gruppo": "1D"
+    },
+    {
+     "num": "020",
+     "item": "020",
+     "tmdb_id": 320288,
+     "tipo": "movie",
+     "titolo": "Dark Phoenix",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "131",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-everett-ross",
+   "nome": "Everett Ross",
+   "prompt": "Everett Ross, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "111",
+     "item": "111",
+     "tmdb_id": 114472,
+     "tipo": "tv",
+     "titolo": "Secret Invasion",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ezekiel-sims",
+   "nome": "Ezekiel Sims",
+   "prompt": "Ezekiel Sims, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "009",
+     "item": "009",
+     "tmdb_id": 634492,
+     "tipo": "movie",
+     "titolo": "Madame Web",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-firestar-angelica-jones",
+   "nome": "Firestar/Angelica Jones",
+   "prompt": "Firestar / Angelica Jones, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-fitz",
+   "nome": "Fitz",
+   "prompt": "Fitz, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "083",
+     "item": "083",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S5",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-flint-marko-sandman",
+   "nome": "Flint Marko/Sandman",
+   "prompt": "Flint Marko / Sandman, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "003",
+     "item": "003",
+     "tmdb_id": 559,
+     "tipo": "movie",
+     "titolo": "Spider-Man 3",
+     "gruppo": "1A"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-foggy-nelson",
+   "nome": "Foggy Nelson",
+   "prompt": "Foggy Nelson, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "060",
+     "item": "060",
+     "tmdb_id": 61889,
+     "tipo": "tv",
+     "titolo": "Daredevil S1",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-frances-barrison-shriek",
+   "nome": "Frances Barrison/Shriek",
+   "prompt": "Frances Barrison / Shriek, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "007",
+     "item": "007",
+     "tmdb_id": 580489,
+     "tipo": "movie",
+     "titolo": "Venom: Let There Be Carnage",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-frank-castle-punisher",
+   "nome": "Frank Castle/Punisher",
+   "prompt": "Frank Castle / Punisher, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "065",
+     "item": "065",
+     "tmdb_id": 61889,
+     "tipo": "tv",
+     "titolo": "Daredevil S2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "122",
+     "item": "122",
+     "tmdb_id": 202555,
+     "tipo": "tv",
+     "titolo": "Daredevil: Born Again S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "128",
+     "item": "128",
+     "tmdb_id": 202555,
+     "tipo": "tv",
+     "titolo": "Daredevil: Born Again S2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "129",
+     "item": "129",
+     "tmdb_id": 1439930,
+     "tipo": "movie",
+     "titolo": "The Punisher: One Last Kill",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "132",
+     "item": "132",
+     "tmdb_id": 969681,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Brand New Day",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-franklin-richards",
+   "nome": "Franklin Richards",
+   "prompt": "Franklin Richards, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-frigga",
+   "nome": "Frigga",
+   "prompt": "Frigga, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "050",
+     "item": "050",
+     "tmdb_id": 10195,
+     "tipo": "movie",
+     "titolo": "Thor",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "055",
+     "item": "055",
+     "tmdb_id": 76338,
+     "tipo": "movie",
+     "titolo": "Thor: The Dark World",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-galactus",
+   "nome": "Galactus",
+   "prompt": "Galactus, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-gambit",
+   "nome": "Gambit",
+   "prompt": "Gambit, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "013",
+     "item": "018",
+     "tmdb_id": 2080,
+     "tipo": "movie",
+     "titolo": "X-Men Origins: Wolverine",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "117",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "131",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-gamora",
+   "nome": "Gamora",
+   "prompt": "Gamora, a green-skinned woman warrior",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "058",
+     "item": "058",
+     "tmdb_id": 118340,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "059",
+     "item": "059",
+     "tmdb_id": 283995,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ghost",
+   "nome": "Ghost",
+   "prompt": "Ghost, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "085",
+     "item": "085",
+     "tmdb_id": 363088,
+     "tipo": "movie",
+     "titolo": "Ant-Man and the Wasp",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-gilgamesh",
+   "nome": "Gilgamesh",
+   "prompt": "Gilgamesh, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "098",
+     "item": "098",
+     "tmdb_id": 524434,
+     "tipo": "movie",
+     "titolo": "Eternals",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-gorr",
+   "nome": "Gorr",
+   "prompt": "Gorr, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "104",
+     "item": "104",
+     "tmdb_id": 616037,
+     "tipo": "movie",
+     "titolo": "Thor: Love and Thunder",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-grant-ward-hive",
+   "nome": "Grant Ward/Hive",
+   "prompt": "Grant Ward / Hive, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "057",
+     "item": "057",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "066",
+     "item": "066",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S3",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-gravik",
+   "nome": "Gravik",
+   "prompt": "Gravik, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "111",
+     "item": "111",
+     "tmdb_id": 114472,
+     "tipo": "tv",
+     "titolo": "Secret Invasion",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-groot-originale",
+   "nome": "Groot (originale)",
+   "prompt": "Groot, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "058",
+     "item": "058",
+     "tmdb_id": 118340,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-groot-successore",
+   "nome": "Groot (successore)",
+   "prompt": "Groot, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "059",
+     "item": "059",
+     "tmdb_id": 283995,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-guardiani-della-galassia",
+   "nome": "Guardiani della Galassia",
+   "prompt": "Guardiani della Galassia, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-gwen-stacy-spider-woman",
+   "nome": "Gwen Stacy/Spider-Woman",
+   "prompt": "Gwen Stacy / Spider-Woman, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "004",
+     "item": "004",
+     "tmdb_id": 1930,
+     "tipo": "movie",
+     "titolo": "The Amazing Spider-Man",
+     "gruppo": "1B"
+    },
+    {
+     "num": "005",
+     "item": "005",
+     "tmdb_id": 102382,
+     "tipo": "movie",
+     "titolo": "The Amazing Spider-Man 2",
+     "gruppo": "1B"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "025",
+     "gruppo": "1E"
+    },
+    {
+     "num": "026",
+     "gruppo": "1E"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-hank-pym",
+   "nome": "Hank Pym",
+   "prompt": "Hank Pym, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "063",
+     "item": "063",
+     "tmdb_id": 102899,
+     "tipo": "movie",
+     "titolo": "Ant-Man",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "085",
+     "item": "085",
+     "tmdb_id": 363088,
+     "tipo": "movie",
+     "titolo": "Ant-Man and the Wasp",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-hannibal-king",
+   "nome": "Hannibal King",
+   "prompt": "Hannibal King, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "034",
+     "item": "034",
+     "tmdb_id": 36648,
+     "tipo": "movie",
+     "titolo": "Blade: Trinity",
+     "gruppo": "1G"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-harry-osborn-green-goblin",
+   "nome": "Harry Osborn/Green Goblin",
+   "prompt": "the Green Goblin in green armor with a mask on a glider|Harry Osborn, a young man with dark hair in a suit|the New Goblin in black and gray armor with a mask",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "001",
+     "item": "001",
+     "tmdb_id": 557,
+     "tipo": "movie",
+     "titolo": "Spider-Man",
+     "gruppo": "1A"
+    },
+    {
+     "num": "002",
+     "item": "002",
+     "tmdb_id": 558,
+     "tipo": "movie",
+     "titolo": "Spider-Man 2",
+     "gruppo": "1A"
+    },
+    {
+     "num": "003",
+     "item": "003",
+     "tmdb_id": 559,
+     "tipo": "movie",
+     "titolo": "Spider-Man 3",
+     "gruppo": "1A"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "005",
+     "gruppo": "1B"
+    },
+    {
+     "num": "120",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-he-who-remains",
+   "nome": "He Who Remains",
+   "prompt": "He Who Remains, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "095",
+     "item": "095",
+     "tmdb_id": 84958,
+     "tipo": "tv",
+     "titolo": "Loki S1",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-hela",
+   "nome": "Hela",
+   "prompt": "Hela, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "076",
+     "item": "076",
+     "tmdb_id": 284053,
+     "tipo": "movie",
+     "titolo": "Thor: Ragnarok",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-hope-van-dyne",
+   "nome": "Hope van Dyne",
+   "prompt": "Hope van Dyne, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "063",
+     "item": "063",
+     "tmdb_id": 102899,
+     "tipo": "movie",
+     "titolo": "Ant-Man",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "085",
+     "item": "085",
+     "tmdb_id": 363088,
+     "tipo": "movie",
+     "titolo": "Ant-Man and the Wasp",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "109",
+     "item": "109",
+     "tmdb_id": 640146,
+     "tipo": "movie",
+     "titolo": "Ant-Man and the Wasp: Quantumania",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-howard-stark",
+   "nome": "Howard Stark",
+   "prompt": "Howard Stark, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "043",
+     "item": "043",
+     "tmdb_id": 61550,
+     "tipo": "tv",
+     "titolo": "Agent Carter S1",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-hunter-b-15",
+   "nome": "Hunter B-15",
+   "prompt": "Hunter B-15, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "117",
+     "item": "117",
+     "tmdb_id": 533535,
+     "tipo": "movie",
+     "titolo": "Deadpool & Wolverine",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-i-quattro-protagonisti",
+   "nome": "I quattro protagonisti",
+   "prompt": "I quattro protagonisti, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ikaris",
+   "nome": "Ikaris",
+   "prompt": "Ikaris, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "098",
+     "item": "098",
+     "tmdb_id": 524434,
+     "tipo": "movie",
+     "titolo": "Eternals",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-illyana-rasputin-magik",
+   "nome": "Illyana Rasputin/Magik",
+   "prompt": "Illyana Rasputin / Magik, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "021",
+     "item": "021",
+     "tmdb_id": 340102,
+     "tipo": "movie",
+     "titolo": "The New Mutants",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ivan-vanko-whiplash",
+   "nome": "Ivan Vanko/Whiplash",
+   "prompt": "Ivan Vanko / Whiplash, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "047",
+     "item": "047",
+     "tmdb_id": 10138,
+     "tipo": "movie",
+     "titolo": "Iron Man 2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-jack-russell-werewolf-by-night",
+   "nome": "Jack Russell/Werewolf by Night",
+   "prompt": "Jack Russell / Werewolf by Night, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "106",
+     "item": "106",
+     "tmdb_id": 894205,
+     "tipo": "movie",
+     "titolo": "Werewolf by Night",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-jackson-norriss",
+   "nome": "Jackson Norriss",
+   "prompt": "Jackson Norriss, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "054",
+     "item": "054",
+     "tmdb_id": 253980,
+     "tipo": "movie",
+     "titolo": "Marvel One-Shot: All Hail the King",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-james-rhodes-war-machine",
+   "nome": "James Rhodes/War Machine",
+   "prompt": "War Machine in gray armor",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "045",
+     "item": "045",
+     "tmdb_id": 1726,
+     "tipo": "movie",
+     "titolo": "Iron Man",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-james-rogers",
+   "nome": "James Rogers",
+   "prompt": "James Rogers, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-jane-foster-mighty-thor",
+   "nome": "Jane Foster/Mighty Thor",
+   "prompt": "Jane Foster / Mighty Thor, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "050",
+     "item": "050",
+     "tmdb_id": 10195,
+     "tipo": "movie",
+     "titolo": "Thor",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "055",
+     "item": "055",
+     "tmdb_id": 76338,
+     "tipo": "movie",
+     "titolo": "Thor: The Dark World",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "104",
+     "item": "104",
+     "tmdb_id": 616037,
+     "tipo": "movie",
+     "titolo": "Thor: Love and Thunder",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-janet",
+   "nome": "Janet",
+   "prompt": "Janet, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "039",
+     "item": "039",
+     "tmdb_id": 220102,
+     "tipo": "tv",
+     "titolo": "Spider-Noir",
+     "gruppo": "1J"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-janet-van-dyne",
+   "nome": "Janet van Dyne",
+   "prompt": "Janet van Dyne, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "109",
+     "item": "109",
+     "tmdb_id": 640146,
+     "tipo": "movie",
+     "titolo": "Ant-Man and the Wasp: Quantumania",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-jasper-sitwell",
+   "nome": "Jasper Sitwell",
+   "prompt": "Jasper Sitwell, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "046",
+     "item": "046",
+     "tmdb_id": 76122,
+     "tipo": "movie",
+     "titolo": "Marvel One-Shot: The Consultant",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-jean-grey-fenice",
+   "nome": "Jean Grey/Fenice",
+   "prompt": "Jean Grey with red hair and glowing fire",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "016",
+     "item": "017",
+     "tmdb_id": 36668,
+     "tipo": "movie",
+     "titolo": "X-Men: The Last Stand",
+     "gruppo": "1D"
+    },
+    {
+     "num": "019",
+     "item": "014",
+     "tmdb_id": 246655,
+     "tipo": "movie",
+     "titolo": "X-Men: Apocalypse",
+     "gruppo": "1D"
+    },
+    {
+     "num": "020",
+     "item": "020",
+     "tmdb_id": 320288,
+     "tipo": "movie",
+     "titolo": "Dark Phoenix",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-jennifer-walters-she-hulk",
+   "nome": "Jennifer Walters/She-Hulk",
+   "prompt": "Jennifer Walters / She-Hulk, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "105",
+     "item": "105",
+     "tmdb_id": 92783,
+     "tipo": "tv",
+     "titolo": "She-Hulk: Attorney at Law",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-jessica-jones",
+   "nome": "Jessica Jones",
+   "prompt": "Jessica Jones, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "061",
+     "item": "061",
+     "tmdb_id": 38472,
+     "tipo": "tv",
+     "titolo": "Jessica Jones S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "079",
+     "item": "079",
+     "tmdb_id": 38472,
+     "tipo": "tv",
+     "titolo": "Jessica Jones S2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "087",
+     "item": "087",
+     "tmdb_id": 38472,
+     "tipo": "tv",
+     "titolo": "Jessica Jones S3",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-joaquin-torres-falcon",
+   "nome": "Joaquin Torres/Falcon",
+   "prompt": "Joaquin Torres / Falcon, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "121",
+     "item": "121",
+     "tmdb_id": 822119,
+     "tipo": "movie",
+     "titolo": "Captain America: Brave New World",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-john-walker",
+   "nome": "John Walker",
+   "prompt": "John Walker, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "094",
+     "item": "094",
+     "tmdb_id": 88396,
+     "tipo": "tv",
+     "titolo": "The Falcon and the Winter Soldier",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-johnny-blaze-ghost-rider",
+   "nome": "Johnny Blaze/Ghost Rider",
+   "prompt": "Johnny Blaze / Ghost Rider, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "037",
+     "item": "037",
+     "tmdb_id": 1250,
+     "tipo": "movie",
+     "titolo": "Ghost Rider",
+     "gruppo": "1I"
+    },
+    {
+     "num": "038",
+     "item": "038",
+     "tmdb_id": 71676,
+     "tipo": "movie",
+     "titolo": "Ghost Rider: Spirit of Vengeance",
+     "gruppo": "1I"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-johnny-storm-human-torch",
+   "nome": "Johnny Storm/Human Torch",
+   "prompt": "Human Torch engulfed in flames",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "028",
+     "item": "028",
+     "tmdb_id": 22059,
+     "tipo": "movie",
+     "titolo": "The Fantastic Four",
+     "gruppo": "1F"
+    },
+    {
+     "num": "029",
+     "item": "029",
+     "tmdb_id": 9738,
+     "tipo": "movie",
+     "titolo": "Fantastic Four",
+     "gruppo": "1F"
+    },
+    {
+     "num": "030",
+     "item": "030",
+     "tmdb_id": 1979,
+     "tipo": "movie",
+     "titolo": "Fantastic Four: Rise of the Silver Surfer",
+     "gruppo": "1F"
+    },
+    {
+     "num": "031",
+     "item": "031",
+     "tmdb_id": 166424,
+     "tipo": "movie",
+     "titolo": "Fantastic Four",
+     "gruppo": "1F"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "117",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-julia-cornwall",
+   "nome": "Julia Cornwall",
+   "prompt": "Julia Cornwall, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "009",
+     "item": "009",
+     "tmdb_id": 634492,
+     "tipo": "movie",
+     "titolo": "Madame Web",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-kamala-khan-ms-marvel",
+   "nome": "Kamala Khan/Ms. Marvel",
+   "prompt": "Kamala Khan / Ms. Marvel, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "103",
+     "item": "103",
+     "tmdb_id": 92782,
+     "tipo": "tv",
+     "titolo": "Ms. Marvel",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "113",
+     "item": "113",
+     "tmdb_id": 609681,
+     "tipo": "movie",
+     "titolo": "The Marvels",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-kang-il-conquistatore",
+   "nome": "Kang il Conquistatore",
+   "prompt": "Kang il Conquistatore, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "109",
+     "item": "109",
+     "tmdb_id": 640146,
+     "tipo": "movie",
+     "titolo": "Ant-Man and the Wasp: Quantumania",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-karen-page",
+   "nome": "Karen Page",
+   "prompt": "Karen Page, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "060",
+     "item": "060",
+     "tmdb_id": 61889,
+     "tipo": "tv",
+     "titolo": "Daredevil S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "082",
+     "item": "082",
+     "tmdb_id": 61889,
+     "tipo": "tv",
+     "titolo": "Daredevil S3",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "122",
+     "item": "122",
+     "tmdb_id": 202555,
+     "tipo": "tv",
+     "titolo": "Daredevil: Born Again S1",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-karl-mordo",
+   "nome": "Karl Mordo",
+   "prompt": "Karl Mordo, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "070",
+     "item": "070",
+     "tmdb_id": 284052,
+     "tipo": "movie",
+     "titolo": "Doctor Strange",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-kate-bishop",
+   "nome": "Kate Bishop",
+   "prompt": "Kate Bishop, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "100",
+     "item": "100",
+     "tmdb_id": 88329,
+     "tipo": "tv",
+     "titolo": "Hawkeye",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-katy",
+   "nome": "Katy",
+   "prompt": "Katy, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "097",
+     "item": "097",
+     "tmdb_id": 566525,
+     "tipo": "movie",
+     "titolo": "Shang-Chi and the Legend of the Ten Rings",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-kevin-bacon-se-stesso",
+   "nome": "Kevin Bacon (se stesso)",
+   "prompt": "Kevin Bacon, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-khonshu",
+   "nome": "Khonshu",
+   "prompt": "Khonshu, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "101",
+     "item": "101",
+     "tmdb_id": 92749,
+     "tipo": "tv",
+     "titolo": "Moon Knight",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-kilgrave",
+   "nome": "Kilgrave",
+   "prompt": "Kilgrave, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "061",
+     "item": "061",
+     "tmdb_id": 38472,
+     "tipo": "tv",
+     "titolo": "Jessica Jones S1",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-kingo",
+   "nome": "Kingo",
+   "prompt": "Kingo, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "098",
+     "item": "098",
+     "tmdb_id": 524434,
+     "tipo": "movie",
+     "titolo": "Eternals",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-kingpin-spider-verse",
+   "nome": "Kingpin (Spider-Verse)",
+   "prompt": "Kingpin, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [
+    "id-fisk-fox-2003",
+    "id-fisk-mcu",
+    "seg-wilson-fisk-616"
+   ],
+   "titoli": [
+    {
+     "num": "025",
+     "item": "025",
+     "tmdb_id": 324857,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Into the Spider-Verse",
+     "gruppo": "1E"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-knull",
+   "nome": "Knull",
+   "prompt": "Knull, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "011",
+     "item": "011",
+     "tmdb_id": 912649,
+     "tipo": "movie",
+     "titolo": "Venom: The Last Dance",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-l-antico",
+   "nome": "l'Antico",
+   "prompt": "l'Antico, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "070",
+     "item": "070",
+     "tmdb_id": 284052,
+     "tipo": "movie",
+     "titolo": "Doctor Strange",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-laura-x-23",
+   "nome": "Laura/X-23",
+   "prompt": "Laura / X-23, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "023",
+     "item": "024",
+     "tmdb_id": 263115,
+     "tipo": "movie",
+     "titolo": "Logan",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "117",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-wolverine",
+   "nome": "Logan/Wolverine",
+   "prompt": "Wolverine with metal claws",
+   "pilota": true,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "013",
+     "item": "018",
+     "tmdb_id": 2080,
+     "tipo": "movie",
+     "titolo": "X-Men Origins: Wolverine",
+     "gruppo": "1D"
+    },
+    {
+     "num": "014",
+     "item": "015",
+     "tmdb_id": 36657,
+     "tipo": "movie",
+     "titolo": "X-Men",
+     "gruppo": "1D"
+    },
+    {
+     "num": "015",
+     "item": "016",
+     "tmdb_id": 36658,
+     "tipo": "movie",
+     "titolo": "X2",
+     "gruppo": "1D"
+    },
+    {
+     "num": "016",
+     "item": "017",
+     "tmdb_id": 36668,
+     "tipo": "movie",
+     "titolo": "X-Men: The Last Stand",
+     "gruppo": "1D"
+    },
+    {
+     "num": "017",
+     "item": "019",
+     "tmdb_id": 76170,
+     "tipo": "movie",
+     "titolo": "The Wolverine",
+     "gruppo": "1D"
+    },
+    {
+     "num": "018",
+     "item": "013",
+     "tmdb_id": 127585,
+     "tipo": "movie",
+     "titolo": "X-Men: Days of Future Past",
+     "gruppo": "1D"
+    },
+    {
+     "num": "023",
+     "item": "024",
+     "tmdb_id": 263115,
+     "tipo": "movie",
+     "titolo": "Logan",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "117",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-wolverine-x-men-97",
+   "nome": "Logan/Wolverine (X-Men '97)",
+   "prompt": "Logan / Wolverine, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "131",
+     "item": "131",
+     "tmdb_id": 138502,
+     "tipo": "tv",
+     "titolo": "X-Men '97 S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-loki",
+   "nome": "Loki",
+   "prompt": "Loki in a green and gold horned helmet",
+   "pilota": true,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "050",
+     "item": "050",
+     "tmdb_id": 10195,
+     "tipo": "movie",
+     "titolo": "Thor",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "051",
+     "item": "051",
+     "tmdb_id": 24428,
+     "tipo": "movie",
+     "titolo": "The Avengers",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "055",
+     "item": "055",
+     "tmdb_id": 76338,
+     "tipo": "movie",
+     "titolo": "Thor: The Dark World",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "076",
+     "item": "076",
+     "tmdb_id": 284053,
+     "tipo": "movie",
+     "titolo": "Thor: Ragnarok",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "095",
+     "item": "095",
+     "tmdb_id": 84958,
+     "tipo": "tv",
+     "titolo": "Loki S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "112",
+     "item": "112",
+     "tmdb_id": 84958,
+     "tipo": "tv",
+     "titolo": "Loki S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-luke-cage",
+   "nome": "Luke Cage",
+   "prompt": "Luke Cage, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "061",
+     "item": "061",
+     "tmdb_id": 38472,
+     "tipo": "tv",
+     "titolo": "Jessica Jones S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "068",
+     "item": "068",
+     "tmdb_id": 62126,
+     "tipo": "tv",
+     "titolo": "Luke Cage S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "080",
+     "item": "080",
+     "tmdb_id": 62126,
+     "tipo": "tv",
+     "titolo": "Luke Cage S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-m-baku",
+   "nome": "M'Baku",
+   "prompt": "M'Baku, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "078",
+     "item": "078",
+     "tmdb_id": 284054,
+     "tipo": "movie",
+     "titolo": "Black Panther",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-major-glenn-talbot",
+   "nome": "Major Glenn Talbot",
+   "prompt": "Major Glenn Talbot, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "040",
+     "item": "040",
+     "tmdb_id": 1927,
+     "tipo": "movie",
+     "titolo": "Hulk",
+     "gruppo": "1K"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-makkari",
+   "nome": "Makkari",
+   "prompt": "Makkari, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "098",
+     "item": "098",
+     "tmdb_id": 524434,
+     "tipo": "movie",
+     "titolo": "Eternals",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-malekith",
+   "nome": "Malekith",
+   "prompt": "Malekith, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "055",
+     "item": "055",
+     "tmdb_id": 76338,
+     "tipo": "movie",
+     "titolo": "Thor: The Dark World",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-man-thing",
+   "nome": "Man-Thing",
+   "prompt": "Man-Thing, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "106",
+     "item": "106",
+     "tmdb_id": 894205,
+     "tipo": "movie",
+     "titolo": "Werewolf by Night",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-mandarino",
+   "nome": "Mandarino",
+   "prompt": "Mandarino, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "053",
+     "item": "053",
+     "tmdb_id": 68721,
+     "tipo": "movie",
+     "titolo": "Iron Man 3",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "054",
+     "item": "054",
+     "tmdb_id": 253980,
+     "tipo": "movie",
+     "titolo": "Marvel One-Shot: All Hail the King",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-mantis",
+   "nome": "Mantis",
+   "prompt": "Mantis, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-maria-stark",
+   "nome": "Maria Stark",
+   "prompt": "Maria Stark, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-mariah-dillard",
+   "nome": "Mariah Dillard",
+   "prompt": "Mariah Dillard, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "080",
+     "item": "080",
+     "tmdb_id": 62126,
+     "tipo": "tv",
+     "titolo": "Luke Cage S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-mariko-yashida",
+   "nome": "Mariko Yashida",
+   "prompt": "Mariko Yashida, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "017",
+     "item": "019",
+     "tmdb_id": 76170,
+     "tipo": "movie",
+     "titolo": "The Wolverine",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-mark-miller",
+   "nome": "Mark Miller",
+   "prompt": "Mark Miller, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "036",
+     "item": "036",
+     "tmdb_id": 9947,
+     "tipo": "movie",
+     "titolo": "Elektra",
+     "gruppo": "1H"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-martine-bancroft",
+   "nome": "Martine Bancroft",
+   "prompt": "Martine Bancroft, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "008",
+     "item": "008",
+     "tmdb_id": 526896,
+     "tipo": "movie",
+     "titolo": "Morbius",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-mary-jane-watson-raimi",
+   "nome": "Mary Jane Watson (Raimi-Verse)",
+   "prompt": "Mary Jane Watson, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "001",
+     "item": "001",
+     "tmdb_id": 557,
+     "tipo": "movie",
+     "titolo": "Spider-Man",
+     "gruppo": "1A"
+    },
+    {
+     "num": "002",
+     "item": "002",
+     "tmdb_id": 558,
+     "tipo": "movie",
+     "titolo": "Spider-Man 2",
+     "gruppo": "1A"
+    },
+    {
+     "num": "003",
+     "item": "003",
+     "tmdb_id": 559,
+     "tipo": "movie",
+     "titolo": "Spider-Man 3",
+     "gruppo": "1A"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-matt-murdock-daredevil",
+   "nome": "Matt Murdock/Daredevil",
+   "prompt": "Daredevil in a masked suit with horns",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "035",
+     "item": "035",
+     "tmdb_id": 9480,
+     "tipo": "movie",
+     "titolo": "Daredevil",
+     "gruppo": "1H"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "060",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "065",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "082",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "105",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "122",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "128",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-mattie-franklin",
+   "nome": "Mattie Franklin",
+   "prompt": "Mattie Franklin, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "009",
+     "item": "009",
+     "tmdb_id": 634492,
+     "tipo": "movie",
+     "titolo": "Madame Web",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-max-dillon-electro",
+   "nome": "Max Dillon/Electro",
+   "prompt": "Max Dillon / Electro, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "005",
+     "item": "005",
+     "tmdb_id": 102382,
+     "tipo": "movie",
+     "titolo": "The Amazing Spider-Man 2",
+     "gruppo": "1B"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-maya-lopez-echo",
+   "nome": "Maya Lopez/Echo",
+   "prompt": "Maya Lopez / Echo, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "116",
+     "item": "116",
+     "tmdb_id": 122226,
+     "tipo": "tv",
+     "titolo": "Echo",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-mefisto-roarke",
+   "nome": "Mefisto/Roarke",
+   "prompt": "Mefisto / Roarke, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "037",
+     "item": "037",
+     "tmdb_id": 1250,
+     "tipo": "movie",
+     "titolo": "Ghost Rider",
+     "gruppo": "1I"
+    },
+    {
+     "num": "038",
+     "item": "038",
+     "tmdb_id": 71676,
+     "tipo": "movie",
+     "titolo": "Ghost Rider: Spirit of Vengeance",
+     "gruppo": "1I"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-melina",
+   "nome": "Melina",
+   "prompt": "Melina, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "069",
+     "item": "069",
+     "tmdb_id": 497698,
+     "tipo": "movie",
+     "titolo": "Black Widow",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-melinda-may",
+   "nome": "Melinda May",
+   "prompt": "Melinda May, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "057",
+     "item": "057",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "064",
+     "item": "064",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "092",
+     "item": "092",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S7",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-michael-morbius",
+   "nome": "Michael Morbius",
+   "prompt": "Michael Morbius, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "008",
+     "item": "008",
+     "tmdb_id": 526896,
+     "tipo": "movie",
+     "titolo": "Morbius",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-miguel-o-hara-spider-man-2099",
+   "nome": "Miguel O'Hara/Spider-Man 2099",
+   "prompt": "Miguel O'Hara / Spider-Man 2099, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "026",
+     "item": "026",
+     "tmdb_id": 569094,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Across the Spider-Verse",
+     "gruppo": "1E"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-miles-morales",
+   "nome": "Miles Morales",
+   "prompt": "Miles Morales, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "025",
+     "item": "025",
+     "tmdb_id": 324857,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Into the Spider-Verse",
+     "gruppo": "1E"
+    },
+    {
+     "num": "026",
+     "item": "026",
+     "tmdb_id": 569094,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Across the Spider-Verse",
+     "gruppo": "1E"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-milo-loxias-crown",
+   "nome": "Milo/Loxias Crown",
+   "prompt": "Milo / Loxias Crown, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "008",
+     "item": "008",
+     "tmdb_id": 526896,
+     "tipo": "movie",
+     "titolo": "Morbius",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-misty-knight",
+   "nome": "Misty Knight",
+   "prompt": "Misty Knight, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "068",
+     "item": "068",
+     "tmdb_id": 62126,
+     "tipo": "tv",
+     "titolo": "Luke Cage S1",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-michelle-jones-watson-mcu",
+   "nome": "MJ (Michelle Jones-Watson, MCU)",
+   "prompt": "MJ, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "090",
+     "item": "090",
+     "tmdb_id": 429617,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Far From Home",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "132",
+     "item": "132",
+     "tmdb_id": 969681,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Brand New Day",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-mobius",
+   "nome": "Mobius",
+   "prompt": "Mobius, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "095",
+     "item": "095",
+     "tmdb_id": 84958,
+     "tipo": "tv",
+     "titolo": "Loki S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "112",
+     "item": "112",
+     "tmdb_id": 84958,
+     "tipo": "tv",
+     "titolo": "Loki S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-monica-rambeau",
+   "nome": "Monica Rambeau",
+   "prompt": "Monica Rambeau, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "093",
+     "item": "093",
+     "tmdb_id": 85271,
+     "tipo": "tv",
+     "titolo": "WandaVision",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "113",
+     "item": "113",
+     "tmdb_id": 609681,
+     "tipo": "movie",
+     "titolo": "The Marvels",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-morgan-stark",
+   "nome": "Morgan Stark",
+   "prompt": "Morgan Stark, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-mr-paradox",
+   "nome": "Mr. Paradox",
+   "prompt": "Mr. Paradox, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "117",
+     "item": "117",
+     "tmdb_id": 533535,
+     "tipo": "movie",
+     "titolo": "Deadpool & Wolverine",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-mrs-chen",
+   "nome": "Mrs. Chen",
+   "prompt": "Mrs. Chen, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "011",
+     "item": "011",
+     "tmdb_id": 912649,
+     "tipo": "movie",
+     "titolo": "Venom: The Last Dance",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-nadya",
+   "nome": "Nadya",
+   "prompt": "Nadya, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "038",
+     "item": "038",
+     "tmdb_id": 71676,
+     "tipo": "movie",
+     "titolo": "Ghost Rider: Spirit of Vengeance",
+     "gruppo": "1I"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-najma",
+   "nome": "Najma",
+   "prompt": "Najma, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "103",
+     "item": "103",
+     "tmdb_id": 92782,
+     "tipo": "tv",
+     "titolo": "Ms. Marvel",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-nakia",
+   "nome": "Nakia",
+   "prompt": "Nakia, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "078",
+     "item": "078",
+     "tmdb_id": 284054,
+     "tipo": "movie",
+     "titolo": "Black Panther",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "108",
+     "item": "108",
+     "tmdb_id": 505642,
+     "tipo": "movie",
+     "titolo": "Black Panther: Wakanda Forever",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-namor",
+   "nome": "Namor",
+   "prompt": "Namor, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "108",
+     "item": "108",
+     "tmdb_id": 505642,
+     "tipo": "movie",
+     "titolo": "Black Panther: Wakanda Forever",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-natasha-romanoff",
+   "nome": "Natasha Romanoff/Vedova Nera",
+   "prompt": "Black Widow in a black tactical suit",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "047",
+     "item": "047",
+     "tmdb_id": 10138,
+     "tipo": "movie",
+     "titolo": "Iron Man 2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "051",
+     "item": "051",
+     "tmdb_id": 24428,
+     "tipo": "movie",
+     "titolo": "The Avengers",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "056",
+     "item": "056",
+     "tmdb_id": 100402,
+     "tipo": "movie",
+     "titolo": "Captain America: The Winter Soldier",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "062",
+     "item": "062",
+     "tmdb_id": 99861,
+     "tipo": "movie",
+     "titolo": "Avengers: Age of Ultron",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "069",
+     "item": "069",
+     "tmdb_id": 497698,
+     "tipo": "movie",
+     "titolo": "Black Widow",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-nebula",
+   "nome": "Nebula",
+   "prompt": "Nebula, a blue-skinned cyborg woman",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "058",
+     "item": "058",
+     "tmdb_id": 118340,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "059",
+     "item": "059",
+     "tmdb_id": 283995,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ned-leeds",
+   "nome": "Ned Leeds",
+   "prompt": "Ned Leeds, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "075",
+     "item": "075",
+     "tmdb_id": 315635,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Homecoming",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "132",
+     "item": "132",
+     "tmdb_id": 969681,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Brand New Day",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-negasonic-teenage-warhead",
+   "nome": "Negasonic Teenage Warhead",
+   "prompt": "Negasonic Teenage Warhead, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "022",
+     "item": "022",
+     "tmdb_id": 293660,
+     "tipo": "movie",
+     "titolo": "Deadpool",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "117",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-nick-fury",
+   "nome": "Nick Fury",
+   "prompt": "Nick Fury with an eyepatch and a long black coat",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "056",
+     "item": "056",
+     "tmdb_id": 100402,
+     "tipo": "movie",
+     "titolo": "Captain America: The Winter Soldier",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "088",
+     "item": "088",
+     "tmdb_id": 299537,
+     "tipo": "movie",
+     "titolo": "Captain Marvel",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "090",
+     "item": "090",
+     "tmdb_id": 429617,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Far From Home",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "111",
+     "item": "111",
+     "tmdb_id": 114472,
+     "tipo": "tv",
+     "titolo": "Secret Invasion",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-nightcrawler",
+   "nome": "Nightcrawler",
+   "prompt": "Nightcrawler, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "015",
+     "item": "016",
+     "tmdb_id": 36658,
+     "tipo": "movie",
+     "titolo": "X2",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-nomak",
+   "nome": "Nomak",
+   "prompt": "Nomak, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "033",
+     "item": "033",
+     "tmdb_id": 36586,
+     "tipo": "movie",
+     "titolo": "Blade II",
+     "gruppo": "1G"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-noni",
+   "nome": "Noni",
+   "prompt": "Noni, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "126",
+     "item": "126",
+     "tmdb_id": 241388,
+     "tipo": "tv",
+     "titolo": "Eyes of Wakanda",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-norman-osborn-green-goblin",
+   "nome": "Norman Osborn/Green Goblin",
+   "prompt": "Norman Osborn / Green Goblin, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "001",
+     "item": "001",
+     "tmdb_id": 557,
+     "tipo": "movie",
+     "titolo": "Spider-Man",
+     "gruppo": "1A"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "099",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "120",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-nyssa",
+   "nome": "Nyssa",
+   "prompt": "Nyssa, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "033",
+     "item": "033",
+     "tmdb_id": 36586,
+     "tipo": "movie",
+     "titolo": "Blade II",
+     "gruppo": "1G"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-obadiah-stane",
+   "nome": "Obadiah Stane",
+   "prompt": "Obadiah Stane, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "045",
+     "item": "045",
+     "tmdb_id": 1726,
+     "tipo": "movie",
+     "titolo": "Iron Man",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-odino",
+   "nome": "Odino",
+   "prompt": "Odino, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "050",
+     "item": "050",
+     "tmdb_id": 10195,
+     "tipo": "movie",
+     "titolo": "Thor",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-okoye",
+   "nome": "Okoye",
+   "prompt": "Okoye, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "078",
+     "item": "078",
+     "tmdb_id": 284054,
+     "tipo": "movie",
+     "titolo": "Black Panther",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "108",
+     "item": "108",
+     "tmdb_id": 505642,
+     "tipo": "movie",
+     "titolo": "Black Panther: Wakanda Forever",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-otto-octavius-doc-ock",
+   "nome": "Otto Octavius/Doc Ock",
+   "prompt": "Otto Octavius / Doc Ock, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "002",
+     "item": "002",
+     "tmdb_id": 558,
+     "tipo": "movie",
+     "titolo": "Spider-Man 2",
+     "gruppo": "1A"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-parker-robbins-the-hood",
+   "nome": "Parker Robbins/The Hood",
+   "prompt": "Parker Robbins / The Hood, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "124",
+     "item": "124",
+     "tmdb_id": 114471,
+     "tipo": "tv",
+     "titolo": "Ironheart",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-peggy-carter-captain-carter",
+   "nome": "Peggy Carter/Captain Carter",
+   "prompt": "Peggy Carter / Captain Carter, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "041",
+     "item": "041",
+     "tmdb_id": 1771,
+     "tipo": "movie",
+     "titolo": "Captain America: The First Avenger",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "042",
+     "item": "042",
+     "tmdb_id": 211387,
+     "tipo": "movie",
+     "titolo": "Marvel One-Shot: Agent Carter",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "043",
+     "item": "043",
+     "tmdb_id": 61550,
+     "tipo": "tv",
+     "titolo": "Agent Carter S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "044",
+     "item": "044",
+     "tmdb_id": 61550,
+     "tipo": "tv",
+     "titolo": "Agent Carter S2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "102",
+     "item": "102",
+     "tmdb_id": 453395,
+     "tipo": "movie",
+     "titolo": "Doctor Strange in the Multiverse of Madness",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "119",
+     "item": "119",
+     "tmdb_id": 91363,
+     "tipo": "tv",
+     "titolo": "What If...? S3",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-peni-parker",
+   "nome": "Peni Parker",
+   "prompt": "Peni Parker, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "025",
+     "item": "025",
+     "tmdb_id": 324857,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Into the Spider-Verse",
+     "gruppo": "1E"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-pepper-potts",
+   "nome": "Pepper Potts",
+   "prompt": "Pepper Potts, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "045",
+     "item": "045",
+     "tmdb_id": 1726,
+     "tipo": "movie",
+     "titolo": "Iron Man",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "047",
+     "item": "047",
+     "tmdb_id": 10138,
+     "tipo": "movie",
+     "titolo": "Iron Man 2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "053",
+     "item": "053",
+     "tmdb_id": 68721,
+     "tipo": "movie",
+     "titolo": "Iron Man 3",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-peter",
+   "nome": "Peter (franchise Deadpool)",
+   "prompt": "Peter, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "117",
+     "item": "117",
+     "tmdb_id": 533535,
+     "tipo": "movie",
+     "titolo": "Deadpool & Wolverine",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-peter-b-parker",
+   "nome": "Peter B. Parker",
+   "prompt": "Peter B. Parker, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [
+    "id-peter-parker-garfield",
+    "id-peter-parker-mcu",
+    "id-peter-parker-raimi",
+    "id-peter-parker-ynfsm",
+    "seg-peter-parker-616"
+   ],
+   "titoli": [
+    {
+     "num": "025",
+     "item": "025",
+     "tmdb_id": 324857,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Into the Spider-Verse",
+     "gruppo": "1E"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-peter-parker-garfield",
+   "nome": "Peter Parker (Garfield-Verse)",
+   "prompt": "Spider-Man in a red and blue suit",
+   "pilota": true,
+   "wave1": true,
+   "famiglia": [
+    "id-peter-b-parker",
+    "id-peter-parker-mcu",
+    "id-peter-parker-raimi",
+    "id-peter-parker-ynfsm",
+    "seg-peter-parker-616"
+   ],
+   "titoli": [
+    {
+     "num": "004",
+     "item": "004",
+     "tmdb_id": 1930,
+     "tipo": "movie",
+     "titolo": "The Amazing Spider-Man",
+     "gruppo": "1B"
+    },
+    {
+     "num": "005",
+     "item": "005",
+     "tmdb_id": 102382,
+     "tipo": "movie",
+     "titolo": "The Amazing Spider-Man 2",
+     "gruppo": "1B"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "099",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-peter-parker-mcu",
+   "nome": "Peter Parker (MCU)",
+   "prompt": "Spider-Man in a red and blue suit",
+   "pilota": true,
+   "wave1": true,
+   "famiglia": [
+    "id-peter-b-parker",
+    "id-peter-parker-garfield",
+    "id-peter-parker-raimi",
+    "id-peter-parker-ynfsm",
+    "seg-peter-parker-616"
+   ],
+   "titoli": [
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "075",
+     "item": "075",
+     "tmdb_id": 315635,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Homecoming",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "090",
+     "item": "090",
+     "tmdb_id": 429617,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Far From Home",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "099",
+     "item": "099",
+     "tmdb_id": 634649,
+     "tipo": "movie",
+     "titolo": "Spider-Man: No Way Home",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "132",
+     "item": "132",
+     "tmdb_id": 969681,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Brand New Day",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": [
+    "099"
+   ]
+  },
+  {
+   "id": "id-peter-parker-raimi",
+   "nome": "Peter Parker (Raimi-Verse)",
+   "prompt": "Spider-Man in a red and blue suit",
+   "pilota": true,
+   "wave1": true,
+   "famiglia": [
+    "id-peter-b-parker",
+    "id-peter-parker-garfield",
+    "id-peter-parker-mcu",
+    "id-peter-parker-ynfsm",
+    "seg-peter-parker-616"
+   ],
+   "titoli": [
+    {
+     "num": "001",
+     "item": "001",
+     "tmdb_id": 557,
+     "tipo": "movie",
+     "titolo": "Spider-Man",
+     "gruppo": "1A"
+    },
+    {
+     "num": "002",
+     "item": "002",
+     "tmdb_id": 558,
+     "tipo": "movie",
+     "titolo": "Spider-Man 2",
+     "gruppo": "1A"
+    },
+    {
+     "num": "003",
+     "item": "003",
+     "tmdb_id": 559,
+     "tipo": "movie",
+     "titolo": "Spider-Man 3",
+     "gruppo": "1A"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "099",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-peter-parker-ynfsm",
+   "nome": "Peter Parker (Your Friendly Neighborhood Spider-Man)",
+   "prompt": "Peter Parker, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [
+    "id-peter-b-parker",
+    "id-peter-parker-garfield",
+    "id-peter-parker-mcu",
+    "id-peter-parker-raimi",
+    "seg-peter-parker-616"
+   ],
+   "titoli": [
+    {
+     "num": "120",
+     "item": "120",
+     "tmdb_id": 138503,
+     "tipo": "tv",
+     "titolo": "Your Friendly Neighborhood Spider-Man S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "134",
+     "item": "134",
+     "tmdb_id": 138503,
+     "tipo": "tv",
+     "titolo": "Your Friendly Neighborhood Spider-Man S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-peter-quill-star-lord",
+   "nome": "Peter Quill/Star-Lord",
+   "prompt": "Star-Lord with a red jacket and a helmet mask",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "058",
+     "item": "058",
+     "tmdb_id": 118340,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "059",
+     "item": "059",
+     "tmdb_id": 283995,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "110",
+     "item": "110",
+     "tmdb_id": 447365,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 3",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-phastos",
+   "nome": "Phastos",
+   "prompt": "Phastos, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "098",
+     "item": "098",
+     "tmdb_id": 524434,
+     "tipo": "movie",
+     "titolo": "Eternals",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-phil-coulson",
+   "nome": "Phil Coulson",
+   "prompt": "Phil Coulson, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "046",
+     "item": "046",
+     "tmdb_id": 76122,
+     "tipo": "movie",
+     "titolo": "Marvel One-Shot: The Consultant",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "048",
+     "item": "048",
+     "tmdb_id": 76535,
+     "tipo": "movie",
+     "titolo": "Marvel One-Shot: A Funny Thing Happened on the Way to Thor's Hammer",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "057",
+     "item": "057",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "064",
+     "item": "064",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "066",
+     "item": "066",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S3",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "071",
+     "item": "071",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S4",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "083",
+     "item": "083",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S5",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "091",
+     "item": "091",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S6",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-professor-x-terra-838",
+   "nome": "Professor X (Terra-838)",
+   "prompt": "Professor X, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "102",
+     "item": "102",
+     "tmdb_id": 453395,
+     "tipo": "movie",
+     "titolo": "Doctor Strange in the Multiverse of Madness",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-proxima-midnight",
+   "nome": "Proxima Midnight",
+   "prompt": "Proxima Midnight, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-pyro",
+   "nome": "Pyro",
+   "prompt": "Pyro, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "117",
+     "item": "117",
+     "tmdb_id": 533535,
+     "tipo": "movie",
+     "titolo": "Deadpool & Wolverine",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-quentin-beck-mysterio",
+   "nome": "Quentin Beck/Mysterio",
+   "prompt": "Quentin Beck / Mysterio, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "090",
+     "item": "090",
+     "tmdb_id": 429617,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Far From Home",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ramonda",
+   "nome": "Ramonda",
+   "prompt": "Ramonda, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "108",
+     "item": "108",
+     "tmdb_id": 505642,
+     "tipo": "movie",
+     "titolo": "Black Panther: Wakanda Forever",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-mystica",
+   "nome": "Raven/Mystica",
+   "prompt": "Mystique, a blue-skinned shapeshifter",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "012",
+     "item": "012",
+     "tmdb_id": 49538,
+     "tipo": "movie",
+     "titolo": "X-Men: First Class",
+     "gruppo": "1D"
+    },
+    {
+     "num": "018",
+     "item": "013",
+     "tmdb_id": 127585,
+     "tipo": "movie",
+     "titolo": "X-Men: Days of Future Past",
+     "gruppo": "1D"
+    },
+    {
+     "num": "019",
+     "item": "014",
+     "tmdb_id": 246655,
+     "tipo": "movie",
+     "titolo": "X-Men: Apocalypse",
+     "gruppo": "1D"
+    },
+    {
+     "num": "020",
+     "item": "020",
+     "tmdb_id": 320288,
+     "tipo": "movie",
+     "titolo": "Dark Phoenix",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ravonna-renslayer",
+   "nome": "Ravonna Renslayer",
+   "prompt": "Ravonna Renslayer, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "095",
+     "item": "095",
+     "tmdb_id": 84958,
+     "tipo": "tv",
+     "titolo": "Loki S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "112",
+     "item": "112",
+     "tmdb_id": 84958,
+     "tipo": "tv",
+     "titolo": "Loki S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-red-guardian",
+   "nome": "Red Guardian",
+   "prompt": "Red Guardian, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "123",
+     "item": "123",
+     "tmdb_id": 986056,
+     "tipo": "movie",
+     "titolo": "Thunderbolts*",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-reed-richards",
+   "nome": "Reed Richards",
+   "prompt": "Mr. Fantastic in a blue Fantastic Four suit",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "028",
+     "item": "028",
+     "tmdb_id": 22059,
+     "tipo": "movie",
+     "titolo": "The Fantastic Four",
+     "gruppo": "1F"
+    },
+    {
+     "num": "029",
+     "item": "029",
+     "tmdb_id": 9738,
+     "tipo": "movie",
+     "titolo": "Fantastic Four",
+     "gruppo": "1F"
+    },
+    {
+     "num": "030",
+     "item": "030",
+     "tmdb_id": 1979,
+     "tipo": "movie",
+     "titolo": "Fantastic Four: Rise of the Silver Surfer",
+     "gruppo": "1F"
+    },
+    {
+     "num": "031",
+     "item": "031",
+     "tmdb_id": 166424,
+     "tipo": "movie",
+     "titolo": "Fantastic Four",
+     "gruppo": "1F"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "102",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-rio-vidal",
+   "nome": "Rio Vidal",
+   "prompt": "Rio Vidal, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "118",
+     "item": "118",
+     "tmdb_id": 138501,
+     "tipo": "tv",
+     "titolo": "Agatha All Along",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-riri-williams-ironheart",
+   "nome": "Riri Williams/Ironheart",
+   "prompt": "Riri Williams / Ironheart, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "124",
+     "item": "124",
+     "tmdb_id": 114471,
+     "tipo": "tv",
+     "titolo": "Ironheart",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-robbie-reyes-ghost-rider",
+   "nome": "Robbie Reyes/Ghost Rider",
+   "prompt": "Robbie Reyes / Ghost Rider, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "071",
+     "item": "071",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S4",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-robbie-robertson",
+   "nome": "Robbie Robertson",
+   "prompt": "Robbie Robertson, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "039",
+     "item": "039",
+     "tmdb_id": 220102,
+     "tipo": "tv",
+     "titolo": "Spider-Noir",
+     "gruppo": "1J"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-robert-downey-jr-dottor-destino",
+   "nome": "Robert Downey Jr./Dottor Destino",
+   "prompt": "Robert Downey Jr. / Dottor Destino, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "136",
+     "item": "136",
+     "tmdb_id": 1003596,
+     "tipo": "movie",
+     "titolo": "Avengers: Doomsday",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "139",
+     "item": "139",
+     "tmdb_id": 1003598,
+     "tipo": "movie",
+     "titolo": "Avengers: Secret Wars",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-rocket",
+   "nome": "Rocket",
+   "prompt": "Rocket, a talking raccoon with a gun",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "058",
+     "item": "058",
+     "tmdb_id": 118340,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "059",
+     "item": "059",
+     "tmdb_id": 283995,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "110",
+     "item": "110",
+     "tmdb_id": 447365,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 3",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-rogue",
+   "nome": "Rogue",
+   "prompt": "Rogue, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "014",
+     "item": "015",
+     "tmdb_id": 36657,
+     "tipo": "movie",
+     "titolo": "X-Men",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "131",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-ronan-l-accusatore",
+   "nome": "Ronan l'Accusatore",
+   "prompt": "Ronan l'Accusatore, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "058",
+     "item": "058",
+     "tmdb_id": 118340,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-roxanne-simpson",
+   "nome": "Roxanne Simpson",
+   "prompt": "Roxanne Simpson, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "037",
+     "item": "037",
+     "tmdb_id": 1250,
+     "tipo": "movie",
+     "titolo": "Ghost Rider",
+     "gruppo": "1I"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-sam-wilson-capitan-america",
+   "nome": "Sam Wilson/Capitan America",
+   "prompt": "Falcon with mechanical wings",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "056",
+     "item": "056",
+     "tmdb_id": 100402,
+     "tipo": "movie",
+     "titolo": "Captain America: The Winter Soldier",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "094",
+     "item": "094",
+     "tmdb_id": 88396,
+     "tipo": "tv",
+     "titolo": "The Falcon and the Winter Soldier",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "121",
+     "item": "121",
+     "tmdb_id": 822119,
+     "tipo": "movie",
+     "titolo": "Captain America: Brave New World",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-scott-lang-ant-man",
+   "nome": "Scott Lang/Ant-Man",
+   "prompt": "Ant-Man in a red and black suit with a helmet",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "063",
+     "item": "063",
+     "tmdb_id": 102899,
+     "tipo": "movie",
+     "titolo": "Ant-Man",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "085",
+     "item": "085",
+     "tmdb_id": 363088,
+     "tipo": "movie",
+     "titolo": "Ant-Man and the Wasp",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "109",
+     "item": "109",
+     "tmdb_id": 640146,
+     "tipo": "movie",
+     "titolo": "Ant-Man and the Wasp: Quantumania",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "136",
+     "item": "136",
+     "tmdb_id": 1003596,
+     "tipo": "movie",
+     "titolo": "Avengers: Doomsday",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-sebastian-shaw",
+   "nome": "Sebastian Shaw",
+   "prompt": "Sebastian Shaw, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "012",
+     "item": "012",
+     "tmdb_id": 49538,
+     "tipo": "movie",
+     "titolo": "X-Men: First Class",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-sergei-kravinoff-kraven",
+   "nome": "Sergei Kravinoff/Kraven",
+   "prompt": "Sergei Kravinoff / Kraven, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "010",
+     "item": "010",
+     "tmdb_id": 539972,
+     "tipo": "movie",
+     "titolo": "Kraven the Hunter",
+     "gruppo": "1C"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-sersi",
+   "nome": "Sersi",
+   "prompt": "Sersi, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "098",
+     "item": "098",
+     "tmdb_id": 524434,
+     "tipo": "movie",
+     "titolo": "Eternals",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-shang-chi",
+   "nome": "Shang-Chi",
+   "prompt": "Shang-Chi, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "097",
+     "item": "097",
+     "tmdb_id": 566525,
+     "tipo": "movie",
+     "titolo": "Shang-Chi and the Legend of the Ten Rings",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-sharon-carter",
+   "nome": "Sharon Carter",
+   "prompt": "Sharon Carter, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "056",
+     "item": "056",
+     "tmdb_id": 100402,
+     "tipo": "movie",
+     "titolo": "Captain America: The Winter Soldier",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "094",
+     "item": "094",
+     "tmdb_id": 88396,
+     "tipo": "tv",
+     "titolo": "The Falcon and the Winter Soldier",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-shuri",
+   "nome": "Shuri",
+   "prompt": "Shuri, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "078",
+     "item": "078",
+     "tmdb_id": 284054,
+     "tipo": "movie",
+     "titolo": "Black Panther",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "108",
+     "item": "108",
+     "tmdb_id": 505642,
+     "tipo": "movie",
+     "titolo": "Black Panther: Wakanda Forever",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-silver-surfer",
+   "nome": "Silver Surfer",
+   "prompt": "Silver Surfer, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "030",
+     "item": "030",
+     "tmdb_id": 1979,
+     "tipo": "movie",
+     "titolo": "Fantastic Four: Rise of the Silver Surfer",
+     "gruppo": "1F"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-simmons",
+   "nome": "Simmons",
+   "prompt": "Simmons, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "083",
+     "item": "083",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S5",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-simon-williams-wonder-man",
+   "nome": "Simon Williams/Wonder Man",
+   "prompt": "Simon Williams / Wonder Man, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "127",
+     "item": "127",
+     "tmdb_id": 198178,
+     "tipo": "tv",
+     "titolo": "Wonder Man",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-skaar",
+   "nome": "Skaar",
+   "prompt": "Skaar, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-daisy-johnson",
+   "nome": "Skye/Daisy Johnson",
+   "prompt": "Skye / Daisy Johnson, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "057",
+     "item": "057",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "064",
+     "item": "064",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "066",
+     "item": "066",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S3",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "071",
+     "item": "071",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S4",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "083",
+     "item": "083",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S5",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "091",
+     "item": "091",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S6",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "092",
+     "item": "092",
+     "tmdb_id": 1403,
+     "tipo": "tv",
+     "titolo": "Agents of S.H.I.E.L.D. S7",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-spider-ham",
+   "nome": "Spider-Ham",
+   "prompt": "Spider-Ham, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "025",
+     "item": "025",
+     "tmdb_id": 324857,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Into the Spider-Verse",
+     "gruppo": "1E"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-spider-man-noir",
+   "nome": "Spider-Man Noir",
+   "prompt": "Spider-Man Noir, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "025",
+     "item": "025",
+     "tmdb_id": 324857,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Into the Spider-Verse",
+     "gruppo": "1E"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-sprite",
+   "nome": "Sprite",
+   "prompt": "Sprite, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "098",
+     "item": "098",
+     "tmdb_id": 524434,
+     "tipo": "movie",
+     "titolo": "Eternals",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-stephen-strange",
+   "nome": "Stephen Strange/Doctor Strange",
+   "prompt": "Doctor Strange with a red cloak casting magic",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "070",
+     "item": "070",
+     "tmdb_id": 284052,
+     "tipo": "movie",
+     "titolo": "Doctor Strange",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "099",
+     "item": "099",
+     "tmdb_id": 634649,
+     "tipo": "movie",
+     "titolo": "Spider-Man: No Way Home",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "102",
+     "item": "102",
+     "tmdb_id": 453395,
+     "tipo": "movie",
+     "titolo": "Doctor Strange in the Multiverse of Madness",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-steve-rogers-capitan-america",
+   "nome": "Steve Rogers/Capitan America",
+   "prompt": "Captain America in a blue suit with a round star shield",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "041",
+     "item": "041",
+     "tmdb_id": 1771,
+     "tipo": "movie",
+     "titolo": "Captain America: The First Avenger",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "051",
+     "item": "051",
+     "tmdb_id": 24428,
+     "tipo": "movie",
+     "titolo": "The Avengers",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "056",
+     "item": "056",
+     "tmdb_id": 100402,
+     "tipo": "movie",
+     "titolo": "Captain America: The Winter Soldier",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "062",
+     "item": "062",
+     "tmdb_id": 99861,
+     "tipo": "movie",
+     "titolo": "Avengers: Age of Ultron",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "139",
+     "item": "139",
+     "tmdb_id": 1003598,
+     "tipo": "movie",
+     "titolo": "Avengers: Secret Wars",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-steven-grant-marc-spector-moon-knight",
+   "nome": "Steven Grant/Marc Spector/Moon Knight",
+   "prompt": "Steven Grant / Marc Spector / Moon Knight, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "101",
+     "item": "101",
+     "tmdb_id": 92749,
+     "tipo": "tv",
+     "titolo": "Moon Knight",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-stick",
+   "nome": "Stick",
+   "prompt": "Stick, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "036",
+     "item": "036",
+     "tmdb_id": 9947,
+     "tipo": "movie",
+     "titolo": "Elektra",
+     "gruppo": "1H"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-sue-storm",
+   "nome": "Sue Storm",
+   "prompt": "Invisible Woman in a blue Fantastic Four suit",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "028",
+     "item": "028",
+     "tmdb_id": 22059,
+     "tipo": "movie",
+     "titolo": "The Fantastic Four",
+     "gruppo": "1F"
+    },
+    {
+     "num": "029",
+     "item": "029",
+     "tmdb_id": 9738,
+     "tipo": "movie",
+     "titolo": "Fantastic Four",
+     "gruppo": "1F"
+    },
+    {
+     "num": "030",
+     "item": "030",
+     "tmdb_id": 1979,
+     "tipo": "movie",
+     "titolo": "Fantastic Four: Rise of the Silver Surfer",
+     "gruppo": "1F"
+    },
+    {
+     "num": "031",
+     "item": "031",
+     "tmdb_id": 166424,
+     "tipo": "movie",
+     "titolo": "Fantastic Four",
+     "gruppo": "1F"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-sylvie",
+   "nome": "Sylvie",
+   "prompt": "Sylvie, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "095",
+     "item": "095",
+     "tmdb_id": 84958,
+     "tipo": "tv",
+     "titolo": "Loki S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "112",
+     "item": "112",
+     "tmdb_id": 84958,
+     "tipo": "tv",
+     "titolo": "Loki S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-t-chaka",
+   "nome": "T'Chaka",
+   "prompt": "T'Chaka, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "078",
+     "item": "078",
+     "tmdb_id": 284054,
+     "tipo": "movie",
+     "titolo": "Black Panther",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-t-challa-black-panther",
+   "nome": "T'Challa/Black Panther",
+   "prompt": "Black Panther in a black suit with a panther mask",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "078",
+     "item": "078",
+     "tmdb_id": 284054,
+     "tipo": "movie",
+     "titolo": "Black Panther",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-talos",
+   "nome": "Talos",
+   "prompt": "Talos, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "088",
+     "item": "088",
+     "tmdb_id": 299537,
+     "tipo": "movie",
+     "titolo": "Captain Marvel",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "111",
+     "item": "111",
+     "tmdb_id": 114472,
+     "tipo": "tv",
+     "titolo": "Secret Invasion",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-teen-billy-maximoff",
+   "nome": "Teen (Billy Maximoff)",
+   "prompt": "Teen, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "118",
+     "item": "118",
+     "tmdb_id": 138501,
+     "tipo": "tv",
+     "titolo": "Agatha All Along",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-teschio-rosso",
+   "nome": "Teschio Rosso",
+   "prompt": "Teschio Rosso, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "041",
+     "item": "041",
+     "tmdb_id": 1771,
+     "tipo": "movie",
+     "titolo": "Captain America: The First Avenger",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ross-hulk-2003",
+   "nome": "Thaddeus Ross (Hulk 2003)",
+   "prompt": "Thaddeus Ross, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "040",
+     "item": "040",
+     "tmdb_id": 1927,
+     "tipo": "movie",
+     "titolo": "Hulk",
+     "gruppo": "1K"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-thaddeus-ross-mcu",
+   "nome": "Thaddeus Ross (MCU)",
+   "prompt": "Thaddeus Ross, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "049",
+     "item": "049",
+     "tmdb_id": 1724,
+     "tipo": "movie",
+     "titolo": "The Incredible Hulk",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "121",
+     "item": "121",
+     "tmdb_id": 822119,
+     "tipo": "movie",
+     "titolo": "Captain America: Brave New World",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-thanos",
+   "nome": "Thanos",
+   "prompt": "Thanos, a giant purple alien with a golden gauntlet",
+   "pilota": true,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-the-lion-n-kati",
+   "nome": "The Lion/N'Kati",
+   "prompt": "The Lion / N'Kati, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "126",
+     "item": "126",
+     "tmdb_id": 241388,
+     "tipo": "tv",
+     "titolo": "Eyes of Wakanda",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-the-watcher",
+   "nome": "The Watcher",
+   "prompt": "The Watcher, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "096",
+     "item": "096",
+     "tmdb_id": 91363,
+     "tipo": "tv",
+     "titolo": "What If...? S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "114",
+     "item": "114",
+     "tmdb_id": 91363,
+     "tipo": "tv",
+     "titolo": "What If...? S2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "119",
+     "item": "119",
+     "tmdb_id": 91363,
+     "tipo": "tv",
+     "titolo": "What If...? S3",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-thena",
+   "nome": "Thena",
+   "prompt": "Thena, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "098",
+     "item": "098",
+     "tmdb_id": 524434,
+     "tipo": "movie",
+     "titolo": "Eternals",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-thor",
+   "nome": "Thor",
+   "prompt": "Thor with long blond hair holding a hammer",
+   "pilota": true,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "050",
+     "item": "050",
+     "tmdb_id": 10195,
+     "tipo": "movie",
+     "titolo": "Thor",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "051",
+     "item": "051",
+     "tmdb_id": 24428,
+     "tipo": "movie",
+     "titolo": "The Avengers",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "055",
+     "item": "055",
+     "tmdb_id": 76338,
+     "tipo": "movie",
+     "titolo": "Thor: The Dark World",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "062",
+     "item": "062",
+     "tmdb_id": 99861,
+     "tipo": "movie",
+     "titolo": "Avengers: Age of Ultron",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "076",
+     "item": "076",
+     "tmdb_id": 284053,
+     "tipo": "movie",
+     "titolo": "Thor: Ragnarok",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "104",
+     "item": "104",
+     "tmdb_id": 616037,
+     "tipo": "movie",
+     "titolo": "Thor: Love and Thunder",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-iron-man",
+   "nome": "Tony Stark/Iron Man",
+   "prompt": "Iron Man in red and gold armor",
+   "pilota": true,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "045",
+     "item": "045",
+     "tmdb_id": 1726,
+     "tipo": "movie",
+     "titolo": "Iron Man",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "047",
+     "item": "047",
+     "tmdb_id": 10138,
+     "tipo": "movie",
+     "titolo": "Iron Man 2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "051",
+     "item": "051",
+     "tmdb_id": 24428,
+     "tipo": "movie",
+     "titolo": "The Avengers",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "053",
+     "item": "053",
+     "tmdb_id": 68721,
+     "tipo": "movie",
+     "titolo": "Iron Man 3",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "062",
+     "item": "062",
+     "tmdb_id": 99861,
+     "tipo": "movie",
+     "titolo": "Avengers: Age of Ultron",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "075",
+     "item": "075",
+     "tmdb_id": 315635,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Homecoming",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-torunn",
+   "nome": "Torunn",
+   "prompt": "Torunn, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-toussaint",
+   "nome": "Toussaint",
+   "prompt": "Toussaint, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "108",
+     "item": "108",
+     "tmdb_id": 505642,
+     "tipo": "movie",
+     "titolo": "Black Panther: Wakanda Forever",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-trevor-slattery",
+   "nome": "Trevor Slattery",
+   "prompt": "Trevor Slattery, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "053",
+     "item": "053",
+     "tmdb_id": 68721,
+     "tipo": "movie",
+     "titolo": "Iron Man 3",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "054",
+     "item": "054",
+     "tmdb_id": 253980,
+     "tipo": "movie",
+     "titolo": "Marvel One-Shot: All Hail the King",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-trish-walker",
+   "nome": "Trish Walker",
+   "prompt": "Trish Walker, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "061",
+     "item": "061",
+     "tmdb_id": 38472,
+     "tipo": "tv",
+     "titolo": "Jessica Jones S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "079",
+     "item": "079",
+     "tmdb_id": 38472,
+     "tipo": "tv",
+     "titolo": "Jessica Jones S2",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "087",
+     "item": "087",
+     "tmdb_id": 38472,
+     "tipo": "tv",
+     "titolo": "Jessica Jones S3",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ultron",
+   "nome": "Ultron",
+   "prompt": "Ultron, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "062",
+     "item": "062",
+     "tmdb_id": 99861,
+     "tipo": "movie",
+     "titolo": "Avengers: Age of Ultron",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-ulysses-klaue",
+   "nome": "Ulysses Klaue",
+   "prompt": "Ulysses Klaue, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "062",
+     "item": "062",
+     "tmdb_id": 99861,
+     "tipo": "movie",
+     "titolo": "Avengers: Age of Ultron",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "078",
+     "item": "078",
+     "tmdb_id": 284054,
+     "tipo": "movie",
+     "titolo": "Black Panther",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-valchiria",
+   "nome": "Valchiria",
+   "prompt": "Valchiria, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "076",
+     "item": "076",
+     "tmdb_id": 284053,
+     "tipo": "movie",
+     "titolo": "Thor: Ragnarok",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "104",
+     "item": "104",
+     "tmdb_id": 616037,
+     "tipo": "movie",
+     "titolo": "Thor: Love and Thunder",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-valentina-de-fontaine",
+   "nome": "Valentina de Fontaine",
+   "prompt": "Valentina de Fontaine, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "123",
+     "item": "123",
+     "tmdb_id": 986056,
+     "tipo": "movie",
+     "titolo": "Thunderbolts*",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-vanessa",
+   "nome": "Vanessa",
+   "prompt": "Vanessa, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "022",
+     "item": "022",
+     "tmdb_id": 293660,
+     "tipo": "movie",
+     "titolo": "Deadpool",
+     "gruppo": "1D"
+    },
+    {
+     "num": "024",
+     "item": "023",
+     "tmdb_id": 383498,
+     "tipo": "movie",
+     "titolo": "Deadpool 2",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "117",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-sabretooth",
+   "nome": "Victor Creed/Sabretooth",
+   "prompt": "Victor Creed / Sabretooth, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "013",
+     "item": "018",
+     "tmdb_id": 2080,
+     "tipo": "movie",
+     "titolo": "X-Men Origins: Wolverine",
+     "gruppo": "1D"
+    },
+    {
+     "num": "014",
+     "item": "015",
+     "tmdb_id": 36657,
+     "tipo": "movie",
+     "titolo": "X-Men",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "117",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-victor-timely-variante-kang",
+   "nome": "Victor Timely (variante Kang)",
+   "prompt": "Victor Timely, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "112",
+     "item": "112",
+     "tmdb_id": 84958,
+     "tipo": "tv",
+     "titolo": "Loki S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-victor-von-doom",
+   "nome": "Victor von Doom",
+   "prompt": "Doctor Doom in a metal mask and green cloak",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "028",
+     "item": "028",
+     "tmdb_id": 22059,
+     "tipo": "movie",
+     "titolo": "The Fantastic Four",
+     "gruppo": "1F"
+    },
+    {
+     "num": "029",
+     "item": "029",
+     "tmdb_id": 9738,
+     "tipo": "movie",
+     "titolo": "Fantastic Four",
+     "gruppo": "1F"
+    },
+    {
+     "num": "030",
+     "item": "030",
+     "tmdb_id": 1979,
+     "tipo": "movie",
+     "titolo": "Fantastic Four: Rise of the Silver Surfer",
+     "gruppo": "1F"
+    },
+    {
+     "num": "031",
+     "item": "031",
+     "tmdb_id": 166424,
+     "tipo": "movie",
+     "titolo": "Fantastic Four",
+     "gruppo": "1F"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-viper",
+   "nome": "Viper",
+   "prompt": "Viper, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "017",
+     "item": "019",
+     "tmdb_id": 76170,
+     "tipo": "movie",
+     "titolo": "The Wolverine",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-visione",
+   "nome": "Visione",
+   "prompt": "Vision, a red-faced android with a yellow gem on the forehead",
+   "pilota": false,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "062",
+     "item": "062",
+     "tmdb_id": 99861,
+     "tipo": "movie",
+     "titolo": "Avengers: Age of Ultron",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "093",
+     "item": "093",
+     "tmdb_id": 85271,
+     "tipo": "tv",
+     "titolo": "WandaVision",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "135",
+     "item": "135",
+     "tmdb_id": 213375,
+     "tipo": "tv",
+     "titolo": "VisionQuest",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-wade-wilson-deadpool",
+   "nome": "Wade Wilson/Deadpool",
+   "prompt": "Deadpool in a red mask and suit with katanas",
+   "pilota": true,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "022",
+     "item": "022",
+     "tmdb_id": 293660,
+     "tipo": "movie",
+     "titolo": "Deadpool",
+     "gruppo": "1D"
+    },
+    {
+     "num": "024",
+     "item": "023",
+     "tmdb_id": 383498,
+     "tipo": "movie",
+     "titolo": "Deadpool 2",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "117",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-wanda-maximoff",
+   "nome": "Wanda Maximoff",
+   "prompt": "Scarlet Witch with red magic energy",
+   "pilota": true,
+   "wave1": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "062",
+     "item": "062",
+     "tmdb_id": 99861,
+     "tipo": "movie",
+     "titolo": "Avengers: Age of Ultron",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "093",
+     "item": "093",
+     "tmdb_id": 85271,
+     "tipo": "tv",
+     "titolo": "WandaVision",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "102",
+     "item": "102",
+     "tmdb_id": 453395,
+     "tipo": "movie",
+     "titolo": "Doctor Strange in the Multiverse of Madness",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-wenwu",
+   "nome": "Wenwu",
+   "prompt": "Wenwu, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "097",
+     "item": "097",
+     "tmdb_id": 566525,
+     "tipo": "movie",
+     "titolo": "Shang-Chi and the Legend of the Ten Rings",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-whistler",
+   "nome": "Whistler",
+   "prompt": "Whistler, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "032",
+     "item": "032",
+     "tmdb_id": 36647,
+     "tipo": "movie",
+     "titolo": "Blade",
+     "gruppo": "1G"
+    },
+    {
+     "num": "033",
+     "item": "033",
+     "tmdb_id": 36586,
+     "tipo": "movie",
+     "titolo": "Blade II",
+     "gruppo": "1G"
+    },
+    {
+     "num": "034",
+     "item": "034",
+     "tmdb_id": 36648,
+     "tipo": "movie",
+     "titolo": "Blade: Trinity",
+     "gruppo": "1G"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-whitney-frost",
+   "nome": "Whitney Frost",
+   "prompt": "Whitney Frost, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "044",
+     "item": "044",
+     "tmdb_id": 61550,
+     "tipo": "tv",
+     "titolo": "Agent Carter S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-william-stryker",
+   "nome": "William Stryker",
+   "prompt": "William Stryker, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "013",
+     "item": "018",
+     "tmdb_id": 2080,
+     "tipo": "movie",
+     "titolo": "X-Men Origins: Wolverine",
+     "gruppo": "1D"
+    },
+    {
+     "num": "015",
+     "item": "016",
+     "tmdb_id": 36658,
+     "tipo": "movie",
+     "titolo": "X2",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-fisk-fox-2003",
+   "nome": "Wilson Fisk (Daredevil 2003)",
+   "prompt": "Wilson Fisk, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [
+    "id-fisk-mcu",
+    "id-kingpin-spider-verse",
+    "seg-wilson-fisk-616"
+   ],
+   "titoli": [
+    {
+     "num": "035",
+     "item": "035",
+     "tmdb_id": 9480,
+     "tipo": "movie",
+     "titolo": "Daredevil",
+     "gruppo": "1H"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-fisk-mcu",
+   "nome": "Wilson Fisk (MCU, ex Netflix)",
+   "prompt": "Wilson Fisk, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [
+    "id-fisk-fox-2003",
+    "id-kingpin-spider-verse",
+    "seg-wilson-fisk-616"
+   ],
+   "titoli": [
+    {
+     "num": "060",
+     "item": "060",
+     "tmdb_id": 61889,
+     "tipo": "tv",
+     "titolo": "Daredevil S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "082",
+     "item": "082",
+     "tmdb_id": 61889,
+     "tipo": "tv",
+     "titolo": "Daredevil S3",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "100",
+     "item": "100",
+     "tmdb_id": 88329,
+     "tipo": "tv",
+     "titolo": "Hawkeye",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "116",
+     "item": "116",
+     "tmdb_id": 122226,
+     "tipo": "tv",
+     "titolo": "Echo",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "122",
+     "item": "122",
+     "tmdb_id": 202555,
+     "tipo": "tv",
+     "titolo": "Daredevil: Born Again S1",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "128",
+     "item": "128",
+     "tmdb_id": 202555,
+     "tipo": "tv",
+     "titolo": "Daredevil: Born Again S2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-wong",
+   "nome": "Wong",
+   "prompt": "Wong, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "070",
+     "item": "070",
+     "tmdb_id": 284052,
+     "tipo": "movie",
+     "titolo": "Doctor Strange",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "097",
+     "item": "097",
+     "tmdb_id": 566525,
+     "tipo": "movie",
+     "titolo": "Shang-Chi and the Legend of the Ten Rings",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-xialing",
+   "nome": "Xialing",
+   "prompt": "Xialing, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "097",
+     "item": "097",
+     "tmdb_id": 566525,
+     "tipo": "movie",
+     "titolo": "Shang-Chi and the Legend of the Ten Rings",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-yelena-belova",
+   "nome": "Yelena Belova",
+   "prompt": "Yelena Belova, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "069",
+     "item": "069",
+     "tmdb_id": 497698,
+     "tipo": "movie",
+     "titolo": "Black Widow",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "100",
+     "item": "100",
+     "tmdb_id": 88329,
+     "tipo": "tv",
+     "titolo": "Hawkeye",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "123",
+     "item": "123",
+     "tmdb_id": 986056,
+     "tipo": "movie",
+     "titolo": "Thunderbolts*",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "132",
+     "item": "132",
+     "tmdb_id": 969681,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Brand New Day",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-yondu",
+   "nome": "Yondu",
+   "prompt": "Yondu, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "059",
+     "item": "059",
+     "tmdb_id": 283995,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 2",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-yukio",
+   "nome": "Yukio",
+   "prompt": "Yukio, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "017",
+     "item": "019",
+     "tmdb_id": 76170,
+     "tipo": "movie",
+     "titolo": "The Wolverine",
+     "gruppo": "1D"
+    }
+   ],
+   "esclusi_continuita": [
+    {
+     "num": "117",
+     "gruppo": "Canone"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-zemo",
+   "nome": "Zemo",
+   "prompt": "Zemo, a Marvel character",
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War",
+     "gruppo": "Canone"
+    },
+    {
+     "num": "094",
+     "item": "094",
+     "tmdb_id": 88396,
+     "tipo": "tv",
+     "titolo": "The Falcon and the Winter Soldier",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  }
+ ]
+}

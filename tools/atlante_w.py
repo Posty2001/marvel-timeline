@@ -93,8 +93,92 @@ def candidati(out):
             for b in bd: imm.append({'p': b['file_path'], 'w': b['width'], 'h': b['height'], 'v': round(b.get('vote_average') or 0, 2), 'n': b.get('vote_count') or 0, 'tag': False, 'src': 'backdrop', 'num': t['num']})
         json.dump({'id': o['id'], 'nome': o['nome'], 'nota': '', 'attore': {'nome': ''}, 'titoli': tl, 'immagini': imm, 'ambigui': o['ambigui'], 'wave': 1}, open(os.path.join(out, o['id'] + '.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     json.dump({'richieste_api': n, 'identita': [o['id'] for o in W['identita'] if not o['pilota']]}, open(os.path.join(out, '_indice.json'), 'w'), ensure_ascii=False); print('candidati scritti; richieste TMDB:', n)
+
+# ---------------------------------------------------------------- ONDATA COMPLETA (296 identità) ----------------------------------------------------
+import re
+WALL = os.path.join(ROOT, 'data/atlante/engine/waveall.json'); BLOCCO = 30
+ESPANDI = {'id-harry-osborn-green-goblin': 120}   # identità per cui la ricerca è ampliata (più scene per titolo + immagini taggate dell'interprete)
+PR_EXTRA = {'id-harry-osborn-green-goblin': 'the Green Goblin in green armor with a mask on a glider|Harry Osborn, a young man with dark hair in a suit|the New Goblin in black and gray armor with a mask'}
+ATTORE_HINT = {'id-harry-osborn-green-goblin': ('Harry Osborn', '001')}   # (personaggio, titolo da cui leggere il cast) per le immagini taggate
+def gruppo(tl, vis2id, num):
+    it = vis2id.get(num, num); e = tl.get(it) or {}; m = re.match(r'(\S+)', e.get('saga') or ''); return m.group(1) if m else None
+def gruppi_universo():
+    """universo -> insieme di gruppi-saga (1A, 1B…, Canone) dedotti dal campo «COMPARE IN» del registro; None = non deducibile (nessun filtro)."""
+    U = json.load(open(os.path.join(ROOT, 'data/atlante/universi.json'), encoding='utf-8'))['voci']; out = {}
+    for e in U:
+        ci = ' '.join(c['testo'] for c in e['campi'] if c['k'] == 'COMPARE IN'); g = set(re.findall(r'\b(1[A-Z])\b', ci))
+        if re.search(r'Parte 2|Parte 3\b', ci) and not g and 'voc' not in ci: g.add('Canone')
+        out[e['id']] = g or None
+    return out
+def prompt_di(v):
+    if v['i'] in PR_EXTRA: return PR_EXTRA[v['i']]
+    if v['i'] in PR: return PR[v['i']]
+    n = re.sub(r'\s*\((?:[^)]*)\)', '', v['n']).replace('/', ' / ').strip(); return n + ', a Marvel character'
+def meta_all():
+    c = N.carica(); mp, v2, tl = c['tmdbMap'], c['vis2id'], c['timeline']; D = dossier(); idx = json.load(open(os.path.join(ROOT, 'atlante2/data/index.json'), encoding='utf-8'))
+    ide = {i['id']: i for i in json.load(open(os.path.join(ROOT, 'data/atlante/identita.json'), encoding='utf-8'))['identita']}; GU = gruppi_universo(); F = famiglie()
+    P = [v for v in idx['voci'] if v['t'] == 'p']; tit = {}; esc = {}
+    for v in P:
+        ts = []; ex = []; gset = GU.get((ide.get(v['i']) or {}).get('universo'))
+        for a in D.get(v['i'], {}).get('app') or []:
+            it = v2.get(a[0], a[0]); e = mp.get(it)
+            if not (e and e.get('id')): continue
+            g = gruppo(tl, v2, a[0]); t = {'num': a[0], 'item': it, 'tmdb_id': e['id'], 'tipo': e['t'], 'titolo': a[1], 'gruppo': g}
+            (ex if (gset and g and g not in gset) else ts).append(t)
+        if not ts and ex: ts, ex = ex, []   # nessun titolo nella continuità principale: nessun filtro (segnalato)
+        tit[v['i']] = ts; esc[v['i']] = ex
+    out = []
+    for v in P:
+        i = v['i']; mine = {t['num'] for t in tit[i]}; amb = set()
+        for o in F.get(i, set()) - {i}:
+            for a in D.get(o, {}).get('app') or []:
+                if a[0] in mine: amb.add(a[0])
+        out.append({'id': i, 'nome': v['n'], 'prompt': prompt_di(v), 'pilota': i in PILOTA, 'wave1': i in PR, 'famiglia': sorted(F.get(i, set()) - {i}), 'titoli': tit[i], 'esclusi_continuita': [{'num': t['num'], 'gruppo': t['gruppo']} for t in esc[i]], 'ambigui': sorted(amb)})
+    # blocchi: identità con titoli TMDB, non già nell'ondata 1 (tranne quelle il cui pool cambia con il filtro di continuità e Harry)
+    w1 = {o['id']: o for o in json.load(open(WAVE, encoding='utf-8'))['identita']}; rifare = []
+    for o in out:
+        if o['wave1'] and not o['pilota'] and ({t['num'] for t in o['titoli']} != {t['num'] for t in w1[o['id']]['titoli']} or o['id'] in ESPANDI): rifare.append(o['id'])
+    da = [o['id'] for o in out if o['titoli'] and (not o['wave1'] or o['id'] in rifare)]
+    blocchi = [da[k:k + BLOCCO] for k in range(0, len(da), BLOCCO)]
+    json.dump({'schema': 1, 'ondata': 'tutte', 'blocco_dim': BLOCCO, 'rifare_ondata1': rifare, 'senza_titoli': [o['id'] for o in out if not o['titoli']], 'blocchi': blocchi, 'identita': out}, open(WALL, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    print('waveall:', len(out), 'identità;', len(da), 'da elaborare in', len(blocchi), 'blocchi; senza titoli TMDB:', sum(1 for o in out if not o['titoli']), '; rifare ondata 1:', rifare)
+def candidati_all(out, forza=()):
+    """Candidati (SOLO METADATI) per tutte le identità elaborabili; riprendibile: salta i file già presenti (tranne `forza`)."""
+    W = json.load(open(WALL, encoding='utf-8')); cache = {}; os.makedirs(out, exist_ok=True); n = 0; fatti = 0; da = {i for b in W['blocchi'] for i in b}
+    def imgs(t, cap):
+        k = (t['tipo'], t['tmdb_id'])
+        if k not in cache:
+            nonlocal n; d = get('/%s/%s/images' % (t['tipo'], t['tmdb_id']), include_image_language='null,en'); cache[k] = (d or {}).get('backdrops') or []; n += 1
+        return sorted(cache[k], key=lambda b: -(b.get('vote_average') or 0))[:cap]
+    for o in W['identita']:
+        i = o['id']
+        if i not in da: continue
+        dst = os.path.join(OUT, i + '.json')
+        if os.path.exists(dst) and i not in forza and i not in W['rifare_ondata1']: continue   # ripresa: già scritto
+        cap = ESPANDI.get(i) or (60 if len(o['titoli']) <= 2 else 30); imm = []; tl = []; ok = {t['tmdb_id'] for t in o['titoli']}
+        for t in o['titoli']:
+            tl.append({'num': t['num'], 'titolo_atteso': t['titolo'], 'tipo': t['tipo'], 'tmdb_id': t['tmdb_id'], 'titolo_tmdb': t['titolo'], 'verificato': True, 'corretto_da_mappa': False})
+            for b in imgs(t, cap): imm.append({'p': b['file_path'], 'w': b['width'], 'h': b['height'], 'v': round(b.get('vote_average') or 0, 2), 'n': b.get('vote_count') or 0, 'tag': False, 'src': 'backdrop', 'num': t['num']})
+        att = {'nome': ''}
+        if i in ATTORE_HINT:   # immagini taggate con l'interprete (fotogrammi dei titoli ammessi) – solo percorsi, per ampliare la ricerca
+            pers, num = ATTORE_HINT[i]; t0 = [t for t in o['titoli'] if t['num'] == num][0]; cr = get('/%s/%s/credits' % (t0['tipo'], t0['tmdb_id'])) or {}
+            hit = [x for x in cr.get('cast', []) if pers.lower() in (x.get('character') or '').lower()]; n += 1
+            if hit:
+                pid = hit[0]['id']; att = {'tmdb_person_id': pid, 'nome': hit[0]['name'], 'personaggio': [hit[0]['character']], 'trovato': True}; seen = {x['p'] for x in imm}; byid = {t['tmdb_id']: t['num'] for t in o['titoli']}
+                for pg in (1, 2, 3):
+                    d = get('/person/%s/tagged_images' % pid, page=pg); n += 1
+                    for r in (d or {}).get('results', []):
+                        m = r.get('media') or {}; nm = byid.get(m.get('id'))
+                        if nm and r.get('image_type') == 'backdrop' and r['file_path'] not in seen: seen.add(r['file_path']); imm.append({'p': r['file_path'], 'w': r['width'], 'h': r['height'], 'v': round(r.get('vote_average') or 0, 2), 'n': r.get('vote_count') or 0, 'tag': True, 'src': 'tagged', 'num': nm})
+                    if not d or pg >= (d.get('total_pages') or 1): break
+        json.dump({'id': i, 'nome': o['nome'], 'nota': '', 'attore': att, 'titoli': tl, 'immagini': imm, 'ambigui': o['ambigui'], 'wave': 2}, open(os.path.join(out, i + '.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':')); fatti += 1
+    tutti = [o['id'] for o in W['identita']]
+    json.dump({'richieste_api': n, 'identita': tutti}, open(os.path.join(out, '_indice.json'), 'w'), ensure_ascii=False); print('candidati scritti:', fatti, '; richieste TMDB:', n)
+
 if __name__ == '__main__':
-    ap = argparse.ArgumentParser(); ap.add_argument('--meta', action='store_true'); ap.add_argument('--pilota', action='store_true'); ap.add_argument('--candidati', action='store_true'); ap.add_argument('--out', default='w1-out'); a = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument('--meta', action='store_true'); ap.add_argument('--pilota', action='store_true'); ap.add_argument('--candidati', action='store_true'); ap.add_argument('--meta-all', action='store_true'); ap.add_argument('--candidati-all', action='store_true'); ap.add_argument('--out', default='w1-out'); a = ap.parse_args()
+    if a.meta_all: meta_all()
+    if a.candidati_all: candidati_all(a.out)
     if a.meta: meta()
     if a.pilota: pilota()
     if a.candidati: candidati(a.out)

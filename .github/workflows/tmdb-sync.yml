@@ -281,6 +281,12 @@ jobs:
           TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: python3 tools/atlante_w.py --candidati --out w1-out
+      - name: Candidati di tutte le identità (solo metadati, riprendibile)
+        if: ${{ inputs.atlante_job == 'tutti_candidati' }}
+        env:
+          TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: python3 tools/atlante_w.py --candidati-all --out w1-out
       - name: Verifica mappa locandine contro TMDB (sola lettura)
         if: ${{ inputs.atlante_job == 'verifica_mappa' }}
         env:
