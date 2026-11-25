@@ -69,10 +69,12 @@ def main():
         with torch.no_grad():
             f = model.encode_image(torch.stack([prep(i) for i in ims])); return f / f.norm(dim=-1, keepdim=True)
     def prob(f, ident):
+        """Margine logaritmico (log-odds) dell'etichetta dell'identità contro TUTTE le altre (identità del pilota + negativi): non satura e ordina le scene
+        anche quando tutte appartengono al film giusto (la probabilità softmax saturava a 1.0 e non discriminava)."""
         s = (f @ tf.T) * scale
         if bias is not None: s = s + bias
-        # contrasto: identità vs tutte le altre etichette (softmax) -> prob. che la scena mostri QUESTA etichetta e non le altre
-        pr = torch.softmax(s, dim=-1); return pr[:, ix[PROMPT[ident]]].numpy()
+        k = ix[PROMPT[ident]]; others = torch.cat([s[:, :k], s[:, k + 1:]], dim=1)
+        return (s[:, k] - torch.logsumexp(others, dim=1)).numpy()
     # famiglie: titoli condivisi
     fam_of = {i: f for f in FAMIGLIE for i in f}; by = {i['id']: i for i in J['identita']}
     out, cnt = [], {}
@@ -120,7 +122,7 @@ def main():
                 fw = embed(crops); pw = prob(fw, iid)
                 for w, p_ in zip(wins, pw):
                     # leggero favore ai ritagli ampi: stesso punteggio, preferisci la finestra più grande se la differenza è piccola
-                    s = float(p_) * (0.92 + 0.08 * w[3])
+                    s = float(p_) + 0.3 * w[3]
                     if best is None or s > best[0]: best = (s, w, float(p_))
             r['crop'] = best
         met['stadi_s']['ritaglio'] = round(met['stadi_s'].get('ritaglio', 0) + time.time() - t3, 1)
@@ -139,7 +141,7 @@ def main():
         props = []
         for k, r in enumerate(scelte):
             s, (x0, y0, w0, h0), pc = r['crop']
-            props.append({'rk': k + 1, 'p': r['x']['p'], 'w': r['x']['w'], 'h': r['x']['h'], 'num': r['x']['num'], 'sc': round(r['tot'], 3), 'pid': round(r['p'], 3), 'pcrop': round(pc, 3),
+            props.append({'rk': k + 1, 'p': r['x']['p'], 'w': r['x']['w'], 'h': r['x']['h'], 'num': r['x']['num'], 'sc': round(r['tot'], 3), 'pid': round(r['p'], 2), 'pcrop': round(pc, 2),
                           'nitidezza': round(r['sharp'], 1), 'crop': {'z': round(1 / h0, 4), 'cx': round(x0 + w0 / 2, 4), 'cy': round(y0 + h0 / 2, 4)}})
         st['proposte'] = len(props); st['secondi'] = round(time.time() - tm, 1); cnt[iid] = st
         out.append({'id': iid, 'nome': ident['nome'], 'proposte': props})
