@@ -1,0 +1,82 @@
+name: Atlante A3.1 pilota immagini (manuale)
+
+# Solo avvio manuale. Riusa i Secret TMDB gia esistenti (TMDB_READ_TOKEN / TMDB_API_KEY) SOLO lato server:
+# la chiave non e mai scritta nell output, nel repository o nel frontend.
+# Produce SOLO metadati (percorsi CDN TMDB, dimensioni, voti) per 10 identita: nessuna immagine viene scaricata o copiata.
+# Con commit=true scrive il solo file atlante2/data/pilot/candidati.json sul branch test/tva-archives. Mai main, nessun deploy.
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: Scrivi atlante2/data/pilot/candidati.json su test/tva-archives (solo metadati)
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  pilota:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: atlante-pilot
+      cancel-in-progress: false
+    steps:
+      - name: Solo branch TEST
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/test/tva-archives" ]; then
+            echo "::error::Consentito solo con ref test/tva-archives (ref attuale: $GITHUB_REF)."
+            exit 1
+          fi
+      - uses: actions/checkout@v4
+        with:
+          ref: test/tva-archives
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verifica presenza del secret (senza stamparlo)
+        env:
+          TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: |
+          if [ -z "$TMDB_READ_TOKEN" ] && [ -z "$TMDB_API_KEY" ]; then
+            echo "::error::Nessun secret TMDB trovato."
+            exit 1
+          fi
+          echo "Secret presente."
+      - name: Genera candidati (solo metadati)
+        env:
+          TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: python3 tools/atlante_pilot_tmdb.py --out pilot-out
+      - name: Riepilogo nel job
+        if: ${{ always() }}
+        run: |
+          if [ -f pilot-out/REPORT.md ]; then cat pilot-out/REPORT.md >> "$GITHUB_STEP_SUMMARY"; fi
+      - name: Salva artifact
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlante-pilot
+          path: pilot-out/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit del solo candidati.json su test/tva-archives
+        if: ${{ inputs.commit }}
+        run: |
+          mkdir -p atlante2/data/pilot
+          cp pilot-out/candidati.json atlante2/data/pilot/candidati.json
+          cp pilot-out/REPORT.md docs/ATLANTE_2_0_A31_PILOTA_CANDIDATI_REPORT.md
+          git add -- atlante2/data/pilot/candidati.json docs/ATLANTE_2_0_A31_PILOTA_CANDIDATI_REPORT.md
+          if git diff --cached --quiet; then echo "Nessuna modifica."; exit 0; fi
+          extra="$(git diff --cached --name-only | grep -vx -e atlante2/data/pilot/candidati.json -e docs/ATLANTE_2_0_A31_PILOTA_CANDIDATI_REPORT.md || true)"
+          [ -z "$extra" ] || { echo "File non consentiti: $extra"; exit 4; }
+          git -c user.name="tva-pilot-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "data(A3.1): candidati scena TMDB del pilota (solo metadati)"
+          for i in 1 2 3; do
+            git pull -q --rebase origin test/tva-archives || true
+            if git push -q origin HEAD:refs/heads/test/tva-archives; then echo "Pubblicato (solo metadati)."; exit 0; fi
+            sleep 3
+          done
+          exit 5
