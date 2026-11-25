@@ -50,7 +50,7 @@ Conseguenza: ogni informazione esiste in più copie (scheda HTML, grafo, Tessera
 | **Relazioni** | **2.454 archi orientati** (≈1,2k coppie): co-apparizione 1.522 · universo 692 · attore 106 · organizzazione 98 · **famiglia 28** · variante 4 · relazione 4 | solo 14 schede hanno il campo RELAZIONI |
 | **Link interni** `mvNavigate` | **1.065, 0 rotti** | integrità buona |
 
-**Distanza dagli obiettivi dell'area 03** (stato oggi → obiettivo): personaggi 304 → 1.000+ (30 %) · varianti 14 → 300+ (5 %) · artefatti 16 → 200+ (8 %) · universi 27 → 100+ (27 %) · organizzazioni 17 → 150+ (11 %) · luoghi/pianeti 16 → 200+ (8 %) · eventi 3 (+11 saghe) → 150+ (≈9 %) · specie/entità: **nessuna tipologia dedicata** (0). L'espansione richiede **fonti e contenuti**: non può essere generata senza rischio di invenzione (v. §9).
+**Distanza dagli obiettivi dell'area 03** (stato oggi → obiettivo): personaggi 304 → 1.000+ (30 %) · varianti 14 → 300+ (5 %) · artefatti 16 → 200+ (8 %) · universi 27 → 100+ (27 %) · organizzazioni 17 → 150+ (11 %) · luoghi/pianeti 16 → 200+ (8 %) · eventi 3 (+11 saghe) → 150+ (≈9 %) · specie/entità: **pagine aggregate già presenti** (Entità Cosmiche 26 — 6 sullo schermo, 20 mai apparse; Specie e Civiltà 8; Arti Mistiche 3) ma **senza schede individuali** collegate al registro. L'espansione richiede **fonti e contenuti**: non può essere generata senza rischio di invenzione (v. §9).
 
 ---
 
@@ -180,7 +180,7 @@ L'**espansione numerica (area 03)** parte **dopo A2–A3**, per lotti (es. 50 vo
 - **D5 – Immagini:** dove reperire ritratti/locandine con diritti verificati (oggi 0 ritratti nelle schede e 7 locandine mancanti)?
 - **D6 – Progressione:** l'esplorazione deve dare XP/badge (tocca il sistema Missioni, protetto) oppure essere solo un indicatore locale?
 - **D7 – Miss Minutes:** autorizzi, se serve, **una sola modifica minima** alla whitelist dell'host per esporre i nuovi tipi (luoghi, specie, varianti)? Senza, resta com'è.
-- **D8 – Specie ed entità cosmiche:** tipologia nuova (oggi inesistente): la creo come tipo a sé o dentro «personaggi»?
+- **D8 – Specie ed entità cosmiche:** tipologia da strutturare (oggi esistono solo pagine aggregate: Entità Cosmiche 26, Specie e Civiltà 8, Arti Mistiche 3): la creo come tipo a sé o dentro «personaggi»?
 
 **Cosa NON farò senza tuo ordine:** scrivere codice Atlante, modificare `main`, pubblicare, attivare servizi esterni, toccare Miss Minutes mm6, rimuovere funzionalità, dichiarare «completata» l'area 02.
 
