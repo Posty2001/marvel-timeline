@@ -1,6 +1,7 @@
 # Atlante 2.0 — Le 13 decisioni sulle identità dei personaggi
 
 > Branch `test/tva-archives` · 25/11/2026 · **Solo proposta. Nessuna unificazione eseguita, nessun id modificato, nessuna relazione canonica creata.**
+> **Risposta dell'utente del 25/11/2026 registrata nella sezione «Esito delle decisioni» in fondo.** Nessuna unificazione ancora eseguita.
 > Base: `docs/CANDIDATI_IDENTITA_D3.md`, dati reali delle schede (`index.html`, build `20261125-0100-mm6`), identità già dichiarate in `atlasData.identita` e verifiche esterne dove indicate.
 
 ## Come leggere le schede
@@ -150,3 +151,28 @@ Nessuna unione, nessun redirect, nessun id cambiato, nessun dato dell'utente toc
 - [R3] GamesRadar, «Ravonna Lexus Renslayer: …» — https://www.gamesradar.com/ravonna-lexus-renslayer-loki-tva-time-variance-authority-marvel
 
 *Le fonti sono testate e articoli di cronaca, non Marvel.com/Marvel Database: per i dati di scheda si useranno queste ultime (e TMDB) in A2, con testi originali.*
+
+
+---
+
+## Esito delle decisioni (risposta dell'utente, 25/11/2026 01:01)
+
+*Tutte le decisioni sono **subordinate alla verifica delle fonti e alla conservazione dei collegamenti esistenti**. Stato attuale: **approvate/modificate/rimandate, nessuna applicata al database.***
+
+| # | Gruppo | Esito | Precisazione dell'utente |
+|---|---|---|---|
+| 1 | Peter Parker | **MODIFICATA** | **Hub multiversale** che raggruppa identità autonome (biografia, poteri, apparizioni, relazioni e continuità indipendenti per ciascuna); prevedere anche **Terra-616 dei fumetti**; **l'hub non è conteggiato come personaggio**. |
+| 2 | Charles Xavier | **MODIFICATA** | Giovane e anziano nella stessa identità **solo se la continuità narrativa lo giustifica**; versioni di universi o linee temporali diversi restano distinguibili. |
+| 3 | Coulson | APPROVATA | LMD collegato ma distinguibile dall'originale. |
+| 4 | Groot | APPROVATA | Originale e Baby Groot personaggi distinti, con relazione familiare. |
+| 5 | Capitan America | APPROVATA | Concetto generale di **mantello**, riutilizzabile (Spider-Man, Thor, Black Panther, Ghost Rider, altri). |
+| 6 | Ross | APPROVATA | Il cambio di attore **non è automaticamente una variante**. |
+| 7 | Ghost / Ghost Rider | APPROVATA | — |
+| 8 | Mary Jane | APPROVATA | — |
+| 9 | Bishop | **RIMANDATA** | Fino alla verifica delle identità coinvolte. |
+| 10 | Janet | **RIMANDATA** | Fino alla verifica delle identità coinvolte. |
+| 11 | Kingpin | **MODIFICATA** | **Hub Wilson Fisk** con identità autonome per continuità; **non mescolare** fumetti, MCU, animazione e altre versioni. |
+| 12 | Miles Morales | APPROVATA | I **segnaposto non si contano** come personaggi effettivi. |
+| 13 | Ravonna | APPROVATA | — |
+
+**Da fare in A2 (dopo verifica fonti):** gruppi 1, 11 (hub), 2 (verifica continuità), 3–8, 12, 13; **9 e 10 restano sospesi** (verifica di `char-bishop`, `char-kate-bishop`, `char-janet`, `char-janet-van-dyne` con Marvel.com/Marvel Database/TMDB prima di riproporli).

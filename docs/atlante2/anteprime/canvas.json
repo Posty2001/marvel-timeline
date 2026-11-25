@@ -1,0 +1,159 @@
+{
+ "v": 3,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-25T01:30:00Z"
+ },
+ "title": "Atlante 2.0 — Anteprime grafiche",
+ "launch": {
+  "view": "canvas"
+ },
+ "pages": [],
+ "boards": {
+  "01_Home_Atlante.dc.html": {
+   "x": 0,
+   "y": 240,
+   "w": 390,
+   "h": 844,
+   "title": "01 · Home Atlante",
+   "is_interactive": false
+  },
+  "02_Catalogo_personaggi.dc.html": {
+   "x": 470,
+   "y": 240,
+   "w": 390,
+   "h": 844,
+   "title": "02 · Catalogo personaggi",
+   "is_interactive": false
+  },
+  "03_Dossier_personaggio.dc.html": {
+   "x": 940,
+   "y": 240,
+   "w": 390,
+   "h": 844,
+   "title": "03 · Dossier personaggio",
+   "is_interactive": false
+  },
+  "04_Hub_multiversale_varianti.dc.html": {
+   "x": 1410,
+   "y": 240,
+   "w": 390,
+   "h": 844,
+   "title": "04 · Hub multiversale",
+   "is_interactive": false
+  },
+  "05_Confronto_personaggi.dc.html": {
+   "x": 1880,
+   "y": 240,
+   "w": 390,
+   "h": 844,
+   "title": "05 · Confronto tra personaggi",
+   "is_interactive": false
+  },
+  "06_Esplorazione_universi.dc.html": {
+   "x": 0,
+   "y": 1200,
+   "w": 390,
+   "h": 844,
+   "title": "06 · Esplorazione degli universi",
+   "is_interactive": false
+  },
+  "07_Nexus_relazioni.dc.html": {
+   "x": 470,
+   "y": 1200,
+   "w": 390,
+   "h": 844,
+   "title": "07 · Nexus delle relazioni",
+   "is_interactive": false
+  },
+  "08_Eventi_saghe_battaglie.dc.html": {
+   "x": 940,
+   "y": 1200,
+   "w": 390,
+   "h": 844,
+   "title": "08 · Eventi, saghe e battaglie",
+   "is_interactive": false
+  },
+  "09_Artefatti_armi.dc.html": {
+   "x": 1410,
+   "y": 1200,
+   "w": 390,
+   "h": 844,
+   "title": "09 · Artefatti e armi",
+   "is_interactive": false
+  },
+  "10_Organizzazioni_luoghi_pianeti.dc.html": {
+   "x": 1880,
+   "y": 1200,
+   "w": 390,
+   "h": 844,
+   "title": "10 · Organizzazioni, luoghi e pianeti",
+   "is_interactive": false
+  },
+  "11_Specie_entita_cosmiche.dc.html": {
+   "x": 0,
+   "y": 2160,
+   "w": 390,
+   "h": 844,
+   "title": "11 · Specie ed entità cosmiche",
+   "is_interactive": false
+  },
+  "12_Ricerca_filtri.dc.html": {
+   "x": 470,
+   "y": 2160,
+   "w": 390,
+   "h": 844,
+   "title": "12 · Ricerca globale e filtri",
+   "is_interactive": false
+  },
+  "13_Preferiti_collezioni.dc.html": {
+   "x": 940,
+   "y": 2160,
+   "w": 390,
+   "h": 844,
+   "title": "13 · Preferiti e collezioni",
+   "is_interactive": false
+  },
+  "14_Progressione_esplorazione.dc.html": {
+   "x": 1410,
+   "y": 2160,
+   "w": 390,
+   "h": 844,
+   "title": "14 · Progressione dell’esplorazione",
+   "is_interactive": false
+  }
+ },
+ "order": [
+  "01_Home_Atlante.dc.html",
+  "02_Catalogo_personaggi.dc.html",
+  "03_Dossier_personaggio.dc.html",
+  "04_Hub_multiversale_varianti.dc.html",
+  "05_Confronto_personaggi.dc.html",
+  "06_Esplorazione_universi.dc.html",
+  "07_Nexus_relazioni.dc.html",
+  "08_Eventi_saghe_battaglie.dc.html",
+  "09_Artefatti_armi.dc.html",
+  "10_Organizzazioni_luoghi_pianeti.dc.html",
+  "11_Specie_entita_cosmiche.dc.html",
+  "12_Ricerca_filtri.dc.html",
+  "13_Preferiti_collezioni.dc.html",
+  "14_Progressione_esplorazione.dc.html"
+ ],
+ "notes": {
+  "t1": {
+   "x": 0,
+   "y": 0,
+   "text": "Atlante 2.0 — anteprime grafiche (14 schermate, iPhone 390×844)",
+   "kind": "title1",
+   "maxW": 2300
+  },
+  "s1": {
+   "x": 0,
+   "y": 150,
+   "w": 420,
+   "text": "Anteprime di progetto: nessun codice dell’app è stato scritto. I conteggi mostrati sono quelli reali del database attuale; collezioni, progressi e alcune voci sono esempi. Immagini = segnaposto finché i diritti non sono verificati.",
+   "fill": "orange"
+  }
+ },
+ "designSystems": []
+}

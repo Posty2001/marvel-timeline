@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Ricerca globale e filtri</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Special+Elite&amp;display=swap">
+<style>
+body{margin:0;background:#0d0a07}
+*{box-sizing:border-box}
+.s{position:relative;width:390px;height:844px;overflow:hidden;background:radial-gradient(120% 60% at 50% -10%,#3a2810 0%,#1c1812 45%,#0f0c08 100%);color:#ede0c0;font-family:'Spectral',Georgia,serif;font-size:14px;line-height:1.35}
+.s:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 12%,rgba(245,154,35,.14),transparent 40%),radial-gradient(circle at 10% 60%,rgba(79,168,158,.07),transparent 45%);pointer-events:none}
+.hd{position:absolute;left:0;right:0;top:0;padding:18px 16px 8px;display:flex;align-items:center;gap:10px;z-index:3}
+.hd .bk{width:44px;height:44px;border-radius:50%;border:1px solid #4a3f2f;background:rgba(28,24,18,.8);display:flex;align-items:center;justify-content:center;color:#E3C79B;flex:none}
+.hd h1{margin:0;font-family:'Special Elite',monospace;font-weight:400;font-size:19px;letter-spacing:.04em;color:#E3C79B;flex:1;min-width:0}
+.hd .ac{width:44px;height:44px;border-radius:50%;border:1px solid #4a3f2f;background:rgba(28,24,18,.8);display:flex;align-items:center;justify-content:center;color:#E3C79B;flex:none}
+.bd{position:absolute;left:0;right:0;top:70px;bottom:78px;padding:6px 16px 20px;overflow:hidden;display:flex;flex-direction:column;gap:12px}
+.tb{position:absolute;left:0;right:0;bottom:0;height:70px;background:rgba(15,12,8,.94);border-top:1px solid #4a3f2f;display:flex;z-index:4}
+.tb div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.04em;color:#b8a888}
+.tb .on{color:#F59A23}
+.fab{position:absolute;right:14px;bottom:84px;width:52px;height:52px;border-radius:50%;background:#14100a;border:2px solid #F59A23;box-shadow:0 0 18px rgba(245,154,35,.55);display:flex;align-items:center;justify-content:center;z-index:5;color:#F59A23}
+.lb{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#b8a888}
+.sub{font-size:12px;color:#b8a888}
+.card{border:1px solid #4a3f2f;border-radius:16px;background:linear-gradient(160deg,rgba(48,41,33,.85),rgba(28,24,18,.9));padding:12px}
+.chips{display:flex;gap:8px;flex-wrap:nowrap;overflow:hidden}
+.chip{flex:none;height:34px;padding:0 13px;border-radius:17px;border:1px solid #4a3f2f;background:rgba(38,32,25,.9);display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#ede0c0}
+.chip.on{background:#F59A23;border-color:#F59A23;color:#1a1208;font-weight:600}
+.srch{height:46px;border-radius:23px;border:1px solid #6b5a40;background:rgba(15,12,8,.8);display:flex;align-items:center;gap:10px;padding:0 16px;color:#b8a888;font-size:14px}
+.pill{display:inline-flex;align-items:center;gap:5px;height:20px;padding:0 8px;border-radius:10px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.04em;border:1px solid currentColor}
+.av{width:46px;height:46px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-family:'Special Elite',monospace;font-size:18px;color:#1a1208;background:linear-gradient(145deg,#E3C79B,#b8905a);border:2px solid #4a3f2f}
+.row{display:flex;align-items:center;gap:12px}
+.col{display:flex;flex-direction:column;gap:6px;min-width:0}
+.h2{margin:0;font-family:'Special Elite',monospace;font-weight:400;font-size:16px;letter-spacing:.03em;color:#E3C79B}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.bar{height:5px;border-radius:3px;background:#302921;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#c9741a,#F59A23)}
+.dot{width:8px;height:8px;border-radius:50%;flex:none}
+.mcu{color:#ff5c5f}.sony{color:#6fb3d9}.fox{color:#f0954a}.ani{color:#b48ae0}.leg{color:#c99566}.com{color:#8cc3a0}.teal{color:#4fa89e}.amb{color:#F59A23}
+.note{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8f8267;letter-spacing:.03em}
+</style>
+</helmet>
+<div class="s"><div class="hd"><div class="bk"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></div><h1>RICERCA</h1><div class="ac"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg></div></div><div class="bd"><div class="srch" style="border-color:#F59A23;color:#ede0c0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4a7 7 0 1 1 0 14 7 7 0 0 1 0-14zM21 21l-4.5-4.5"/></svg><span>peter</span><span style="margin-left:auto;color:#b8a888"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span></div><div class="chips"><span class="chip on">Tutto 6</span><span class="chip">Personaggi</span><span class="chip">Varianti</span><span class="chip">Universi</span></div><div class="card" style="border-color:#6b5a40"><div class="row" style="justify-content:space-between"><b style="font-size:13px">Filtri attivi</b><span class="note">azzera</span></div><div class="row" style="gap:6px;margin-top:8px;flex-wrap:nowrap"><span class="chip" style="height:28px">Verifica: verificata ✕</span><span class="chip" style="height:28px">Continuità: tutte</span></div><div class="note" style="margin-top:8px">Facce: tipo · continuità · universo · interprete · fonte · verifica</div></div><div class="card row" style="padding:9px 11px"><div class="av" style="width:40px;height:40px;font-size:15px">P</div><div class="col" style="flex:1"><b style="font-weight:600;font-size:13.5px">Peter Parker</b><span class="sub" style="font-size:11.5px">Hub multiversale · 7 identità</span></div><span class="pill ani">hub</span></div><div class="card row" style="padding:9px 11px"><div class="av" style="width:40px;height:40px;font-size:15px">H</div><div class="col" style="flex:1"><b style="font-weight:600;font-size:13.5px">Peter Parker (MCU)</b><span class="sub" style="font-size:11.5px">Interprete Tom Holland</span></div><span class="pill sony">variante</span></div><div class="card row" style="padding:9px 11px"><div class="av" style="width:40px;height:40px;font-size:15px">B</div><div class="col" style="flex:1"><b style="font-weight:600;font-size:13.5px">Peter B. Parker</b><span class="sub" style="font-size:11.5px">Spider-Verse</span></div><span class="pill ani">variante</span></div><div class="card row" style="padding:9px 11px"><div class="av" style="width:40px;height:40px;font-size:15px">P</div><div class="col" style="flex:1"><b style="font-weight:600;font-size:13.5px">Peter (Deadpool &amp; Wolverine)</b><span class="sub" style="font-size:11.5px">Non è Parker · disambiguato</span></div><span class="pill amb">alias</span></div><div class="card row" style="padding:9px 11px"><div class="av" style="width:40px;height:40px;font-size:15px">Q</div><div class="col" style="flex:1"><b style="font-weight:600;font-size:13.5px">Peter Quill / Star-Lord</b><span class="sub" style="font-size:11.5px">MCU</span></div><span class="pill mcu">personaggio</span></div></div><div class="tb"><div class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg><span>Home</span></div><div class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7v5l3 2"/></svg><span>Timeline</span></div><div class="on"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3zM5 17a3 3 0 0 1 3-3h10"/></svg><span>Atlante</span></div><div class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg><span>Missioni</span></div><div class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18v12H3zM3 10h18"/></svg><span>Tessera</span></div><div class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M17 11a2.5 2.5 0 1 0 0-5M21 19c0-2.4-1.6-4.4-4-5"/></svg><span>Friends</span></div></div><div class="fab" aria-label="Miss Minutes"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7v5l3 2M8 3l-2 2M16 3l2 2"/></svg></div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>
