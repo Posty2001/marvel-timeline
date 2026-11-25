@@ -275,6 +275,12 @@ jobs:
           TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: python3 tools/atlante_pilot_tmdb.py --out pilot-out
+      - name: Candidati ondata 1 (solo metadati, 30 identità nuove)
+        if: ${{ inputs.atlante_job == 'w1_candidati' }}
+        env:
+          TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: python3 tools/atlante_w.py --candidati --out w1-out
       - name: Verifica mappa locandine contro TMDB (sola lettura)
         if: ${{ inputs.atlante_job == 'verifica_mappa' }}
         env:
@@ -306,9 +312,10 @@ jobs:
             cp pilot-out/verifica_mappa.json data/atlante/tmdb_verifica_mappa.json
             cp pilot-out/VERIFICA_MAPPA.md docs/ATLANTE_2_0_TMDB_VERIFICA_MAPPA.md
           fi
+          if [ -d w1-out ]; then mkdir -p atlante2/data/pilot/c; for f in w1-out/*.json; do cp "$f" atlante2/data/pilot/c/; done; git add -- atlante2/data/pilot/c; fi
           git add -- $(for f in $ALLOWED; do [ -f "$f" ] && echo "$f"; done)
           if git diff --cached --quiet; then echo "Nessuna modifica."; exit 0; fi
-          extra="$(git diff --cached --name-only | grep -vxF -f <(printf '%s\n' $ALLOWED) || true)"
+          extra="$(git diff --cached --name-only | grep -v '^atlante2/data/pilot/c/' | grep -vxF -f <(printf '%s\n' $ALLOWED) || true)"
           [ -z "$extra" ] || { echo "File non consentiti: $extra"; exit 4; }
           git -c user.name="tva-pilot-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "data(A3.1): metadati di verifica/pilota TMDB (solo metadati)"
           for i in 1 2 3; do

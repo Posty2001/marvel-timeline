@@ -1,0 +1,1858 @@
+{
+ "schema": 1,
+ "ondata": 1,
+ "identita": [
+  {
+   "id": "id-iron-man",
+   "nome": "Tony Stark/Iron Man",
+   "prompt": "Iron Man in red and gold armor",
+   "pilota": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "045",
+     "item": "045",
+     "tmdb_id": 1726,
+     "tipo": "movie",
+     "titolo": "Iron Man"
+    },
+    {
+     "num": "047",
+     "item": "047",
+     "tmdb_id": 10138,
+     "tipo": "movie",
+     "titolo": "Iron Man 2"
+    },
+    {
+     "num": "051",
+     "item": "051",
+     "tmdb_id": 24428,
+     "tipo": "movie",
+     "titolo": "The Avengers"
+    },
+    {
+     "num": "053",
+     "item": "053",
+     "tmdb_id": 68721,
+     "tipo": "movie",
+     "titolo": "Iron Man 3"
+    },
+    {
+     "num": "062",
+     "item": "062",
+     "tmdb_id": 99861,
+     "tipo": "movie",
+     "titolo": "Avengers: Age of Ultron"
+    },
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War"
+    },
+    {
+     "num": "075",
+     "item": "075",
+     "tmdb_id": 315635,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Homecoming"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-thor",
+   "nome": "Thor",
+   "prompt": "Thor with long blond hair holding a hammer",
+   "pilota": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "050",
+     "item": "050",
+     "tmdb_id": 10195,
+     "tipo": "movie",
+     "titolo": "Thor"
+    },
+    {
+     "num": "051",
+     "item": "051",
+     "tmdb_id": 24428,
+     "tipo": "movie",
+     "titolo": "The Avengers"
+    },
+    {
+     "num": "055",
+     "item": "055",
+     "tmdb_id": 76338,
+     "tipo": "movie",
+     "titolo": "Thor: The Dark World"
+    },
+    {
+     "num": "062",
+     "item": "062",
+     "tmdb_id": 99861,
+     "tipo": "movie",
+     "titolo": "Avengers: Age of Ultron"
+    },
+    {
+     "num": "076",
+     "item": "076",
+     "tmdb_id": 284053,
+     "tipo": "movie",
+     "titolo": "Thor: Ragnarok"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    },
+    {
+     "num": "104",
+     "item": "104",
+     "tmdb_id": 616037,
+     "tipo": "movie",
+     "titolo": "Thor: Love and Thunder"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-loki",
+   "nome": "Loki",
+   "prompt": "Loki in a green and gold horned helmet",
+   "pilota": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "050",
+     "item": "050",
+     "tmdb_id": 10195,
+     "tipo": "movie",
+     "titolo": "Thor"
+    },
+    {
+     "num": "051",
+     "item": "051",
+     "tmdb_id": 24428,
+     "tipo": "movie",
+     "titolo": "The Avengers"
+    },
+    {
+     "num": "055",
+     "item": "055",
+     "tmdb_id": 76338,
+     "tipo": "movie",
+     "titolo": "Thor: The Dark World"
+    },
+    {
+     "num": "076",
+     "item": "076",
+     "tmdb_id": 284053,
+     "tipo": "movie",
+     "titolo": "Thor: Ragnarok"
+    },
+    {
+     "num": "095",
+     "item": "095",
+     "tmdb_id": 84958,
+     "tipo": "tv",
+     "titolo": "Loki S1"
+    },
+    {
+     "num": "112",
+     "item": "112",
+     "tmdb_id": 84958,
+     "tipo": "tv",
+     "titolo": "Loki S2"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-peter-parker-mcu",
+   "nome": "Peter Parker (MCU)",
+   "prompt": "Spider-Man in a red and blue suit",
+   "pilota": true,
+   "famiglia": [
+    "id-peter-b-parker",
+    "id-peter-parker-garfield",
+    "id-peter-parker-raimi",
+    "id-peter-parker-ynfsm",
+    "seg-peter-parker-616"
+   ],
+   "titoli": [
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War"
+    },
+    {
+     "num": "075",
+     "item": "075",
+     "tmdb_id": 315635,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Homecoming"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    },
+    {
+     "num": "090",
+     "item": "090",
+     "tmdb_id": 429617,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Far From Home"
+    },
+    {
+     "num": "099",
+     "item": "099",
+     "tmdb_id": 634649,
+     "tipo": "movie",
+     "titolo": "Spider-Man: No Way Home"
+    },
+    {
+     "num": "132",
+     "item": "132",
+     "tmdb_id": 969681,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Brand New Day"
+    }
+   ],
+   "ambigui": [
+    "099"
+   ]
+  },
+  {
+   "id": "id-peter-parker-raimi",
+   "nome": "Peter Parker (Raimi-Verse)",
+   "prompt": "Spider-Man in a red and blue suit",
+   "pilota": true,
+   "famiglia": [
+    "id-peter-b-parker",
+    "id-peter-parker-garfield",
+    "id-peter-parker-mcu",
+    "id-peter-parker-ynfsm",
+    "seg-peter-parker-616"
+   ],
+   "titoli": [
+    {
+     "num": "001",
+     "item": "001",
+     "tmdb_id": 557,
+     "tipo": "movie",
+     "titolo": "Spider-Man"
+    },
+    {
+     "num": "002",
+     "item": "002",
+     "tmdb_id": 558,
+     "tipo": "movie",
+     "titolo": "Spider-Man 2"
+    },
+    {
+     "num": "003",
+     "item": "003",
+     "tmdb_id": 559,
+     "tipo": "movie",
+     "titolo": "Spider-Man 3"
+    },
+    {
+     "num": "099",
+     "item": "099",
+     "tmdb_id": 634649,
+     "tipo": "movie",
+     "titolo": "Spider-Man: No Way Home"
+    }
+   ],
+   "ambigui": [
+    "099"
+   ]
+  },
+  {
+   "id": "id-peter-parker-garfield",
+   "nome": "Peter Parker (Garfield-Verse)",
+   "prompt": "Spider-Man in a red and blue suit",
+   "pilota": true,
+   "famiglia": [
+    "id-peter-b-parker",
+    "id-peter-parker-mcu",
+    "id-peter-parker-raimi",
+    "id-peter-parker-ynfsm",
+    "seg-peter-parker-616"
+   ],
+   "titoli": [
+    {
+     "num": "004",
+     "item": "004",
+     "tmdb_id": 1930,
+     "tipo": "movie",
+     "titolo": "The Amazing Spider-Man"
+    },
+    {
+     "num": "005",
+     "item": "005",
+     "tmdb_id": 102382,
+     "tipo": "movie",
+     "titolo": "The Amazing Spider-Man 2"
+    },
+    {
+     "num": "099",
+     "item": "099",
+     "tmdb_id": 634649,
+     "tipo": "movie",
+     "titolo": "Spider-Man: No Way Home"
+    }
+   ],
+   "ambigui": [
+    "099"
+   ]
+  },
+  {
+   "id": "id-wolverine",
+   "nome": "Logan/Wolverine",
+   "prompt": "Wolverine with metal claws",
+   "pilota": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "013",
+     "item": "018",
+     "tmdb_id": 2080,
+     "tipo": "movie",
+     "titolo": "X-Men Origins: Wolverine"
+    },
+    {
+     "num": "014",
+     "item": "015",
+     "tmdb_id": 36657,
+     "tipo": "movie",
+     "titolo": "X-Men"
+    },
+    {
+     "num": "015",
+     "item": "016",
+     "tmdb_id": 36658,
+     "tipo": "movie",
+     "titolo": "X2"
+    },
+    {
+     "num": "016",
+     "item": "017",
+     "tmdb_id": 36668,
+     "tipo": "movie",
+     "titolo": "X-Men: The Last Stand"
+    },
+    {
+     "num": "017",
+     "item": "019",
+     "tmdb_id": 76170,
+     "tipo": "movie",
+     "titolo": "The Wolverine"
+    },
+    {
+     "num": "018",
+     "item": "013",
+     "tmdb_id": 127585,
+     "tipo": "movie",
+     "titolo": "X-Men: Days of Future Past"
+    },
+    {
+     "num": "023",
+     "item": "024",
+     "tmdb_id": 263115,
+     "tipo": "movie",
+     "titolo": "Logan"
+    },
+    {
+     "num": "117",
+     "item": "117",
+     "tmdb_id": 533535,
+     "tipo": "movie",
+     "titolo": "Deadpool & Wolverine"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-wade-wilson-deadpool",
+   "nome": "Wade Wilson/Deadpool",
+   "prompt": "Deadpool in a red mask and suit with katanas",
+   "pilota": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "022",
+     "item": "022",
+     "tmdb_id": 293660,
+     "tipo": "movie",
+     "titolo": "Deadpool"
+    },
+    {
+     "num": "024",
+     "item": "023",
+     "tmdb_id": 383498,
+     "tipo": "movie",
+     "titolo": "Deadpool 2"
+    },
+    {
+     "num": "117",
+     "item": "117",
+     "tmdb_id": 533535,
+     "tipo": "movie",
+     "titolo": "Deadpool & Wolverine"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-wanda-maximoff",
+   "nome": "Wanda Maximoff",
+   "prompt": "Scarlet Witch with red magic energy",
+   "pilota": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "062",
+     "item": "062",
+     "tmdb_id": 99861,
+     "tipo": "movie",
+     "titolo": "Avengers: Age of Ultron"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    },
+    {
+     "num": "093",
+     "item": "093",
+     "tmdb_id": 85271,
+     "tipo": "tv",
+     "titolo": "WandaVision"
+    },
+    {
+     "num": "102",
+     "item": "102",
+     "tmdb_id": 453395,
+     "tipo": "movie",
+     "titolo": "Doctor Strange in the Multiverse of Madness"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-thanos",
+   "nome": "Thanos",
+   "prompt": "Thanos, a giant purple alien with a golden gauntlet",
+   "pilota": true,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-hulk",
+   "nome": "Bruce Banner/Hulk",
+   "prompt": "the Hulk, a giant green muscular monster",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "040",
+     "item": "040",
+     "tmdb_id": 1927,
+     "tipo": "movie",
+     "titolo": "Hulk"
+    },
+    {
+     "num": "049",
+     "item": "049",
+     "tmdb_id": 1724,
+     "tipo": "movie",
+     "titolo": "The Incredible Hulk"
+    },
+    {
+     "num": "051",
+     "item": "051",
+     "tmdb_id": 24428,
+     "tipo": "movie",
+     "titolo": "The Avengers"
+    },
+    {
+     "num": "062",
+     "item": "062",
+     "tmdb_id": 99861,
+     "tipo": "movie",
+     "titolo": "Avengers: Age of Ultron"
+    },
+    {
+     "num": "076",
+     "item": "076",
+     "tmdb_id": 284053,
+     "tipo": "movie",
+     "titolo": "Thor: Ragnarok"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    },
+    {
+     "num": "097",
+     "item": "097",
+     "tmdb_id": 566525,
+     "tipo": "movie",
+     "titolo": "Shang-Chi and the Legend of the Ten Rings"
+    },
+    {
+     "num": "105",
+     "item": "105",
+     "tmdb_id": 92783,
+     "tipo": "tv",
+     "titolo": "She-Hulk: Attorney at Law"
+    },
+    {
+     "num": "132",
+     "item": "132",
+     "tmdb_id": 969681,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Brand New Day"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-steve-rogers-capitan-america",
+   "nome": "Steve Rogers/Capitan America",
+   "prompt": "Captain America in a blue suit with a round star shield",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "041",
+     "item": "041",
+     "tmdb_id": 1771,
+     "tipo": "movie",
+     "titolo": "Captain America: The First Avenger"
+    },
+    {
+     "num": "051",
+     "item": "051",
+     "tmdb_id": 24428,
+     "tipo": "movie",
+     "titolo": "The Avengers"
+    },
+    {
+     "num": "056",
+     "item": "056",
+     "tmdb_id": 100402,
+     "tipo": "movie",
+     "titolo": "Captain America: The Winter Soldier"
+    },
+    {
+     "num": "062",
+     "item": "062",
+     "tmdb_id": 99861,
+     "tipo": "movie",
+     "titolo": "Avengers: Age of Ultron"
+    },
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    },
+    {
+     "num": "139",
+     "item": "139",
+     "tmdb_id": 1003598,
+     "tipo": "movie",
+     "titolo": "Avengers: Secret Wars"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-natasha-romanoff",
+   "nome": "Natasha Romanoff/Vedova Nera",
+   "prompt": "Black Widow in a black tactical suit",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "047",
+     "item": "047",
+     "tmdb_id": 10138,
+     "tipo": "movie",
+     "titolo": "Iron Man 2"
+    },
+    {
+     "num": "051",
+     "item": "051",
+     "tmdb_id": 24428,
+     "tipo": "movie",
+     "titolo": "The Avengers"
+    },
+    {
+     "num": "056",
+     "item": "056",
+     "tmdb_id": 100402,
+     "tipo": "movie",
+     "titolo": "Captain America: The Winter Soldier"
+    },
+    {
+     "num": "062",
+     "item": "062",
+     "tmdb_id": 99861,
+     "tipo": "movie",
+     "titolo": "Avengers: Age of Ultron"
+    },
+    {
+     "num": "069",
+     "item": "069",
+     "tmdb_id": 497698,
+     "tipo": "movie",
+     "titolo": "Black Widow"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-matt-murdock-daredevil",
+   "nome": "Matt Murdock/Daredevil",
+   "prompt": "Daredevil in a masked suit with horns",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "035",
+     "item": "035",
+     "tmdb_id": 9480,
+     "tipo": "movie",
+     "titolo": "Daredevil"
+    },
+    {
+     "num": "060",
+     "item": "060",
+     "tmdb_id": 61889,
+     "tipo": "tv",
+     "titolo": "Daredevil S1"
+    },
+    {
+     "num": "065",
+     "item": "065",
+     "tmdb_id": 61889,
+     "tipo": "tv",
+     "titolo": "Daredevil S2"
+    },
+    {
+     "num": "082",
+     "item": "082",
+     "tmdb_id": 61889,
+     "tipo": "tv",
+     "titolo": "Daredevil S3"
+    },
+    {
+     "num": "105",
+     "item": "105",
+     "tmdb_id": 92783,
+     "tipo": "tv",
+     "titolo": "She-Hulk: Attorney at Law"
+    },
+    {
+     "num": "122",
+     "item": "122",
+     "tmdb_id": 202555,
+     "tipo": "tv",
+     "titolo": "Daredevil: Born Again S1"
+    },
+    {
+     "num": "128",
+     "item": "128",
+     "tmdb_id": 202555,
+     "tipo": "tv",
+     "titolo": "Daredevil: Born Again S2"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-bucky-barnes-soldato-d-inverno",
+   "nome": "Bucky Barnes/Soldato d'Inverno",
+   "prompt": "the Winter Soldier with a metal arm and tactical gear",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "041",
+     "item": "041",
+     "tmdb_id": 1771,
+     "tipo": "movie",
+     "titolo": "Captain America: The First Avenger"
+    },
+    {
+     "num": "056",
+     "item": "056",
+     "tmdb_id": 100402,
+     "tipo": "movie",
+     "titolo": "Captain America: The Winter Soldier"
+    },
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    },
+    {
+     "num": "094",
+     "item": "094",
+     "tmdb_id": 88396,
+     "tipo": "tv",
+     "titolo": "The Falcon and the Winter Soldier"
+    },
+    {
+     "num": "123",
+     "item": "123",
+     "tmdb_id": 986056,
+     "tipo": "movie",
+     "titolo": "Thunderbolts*"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-sam-wilson-capitan-america",
+   "nome": "Sam Wilson/Capitan America",
+   "prompt": "Falcon with mechanical wings",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "056",
+     "item": "056",
+     "tmdb_id": 100402,
+     "tipo": "movie",
+     "titolo": "Captain America: The Winter Soldier"
+    },
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    },
+    {
+     "num": "094",
+     "item": "094",
+     "tmdb_id": 88396,
+     "tipo": "tv",
+     "titolo": "The Falcon and the Winter Soldier"
+    },
+    {
+     "num": "121",
+     "item": "121",
+     "tmdb_id": 822119,
+     "tipo": "movie",
+     "titolo": "Captain America: Brave New World"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-scott-lang-ant-man",
+   "nome": "Scott Lang/Ant-Man",
+   "prompt": "Ant-Man in a red and black suit with a helmet",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "063",
+     "item": "063",
+     "tmdb_id": 102899,
+     "tipo": "movie",
+     "titolo": "Ant-Man"
+    },
+    {
+     "num": "085",
+     "item": "085",
+     "tmdb_id": 363088,
+     "tipo": "movie",
+     "titolo": "Ant-Man and the Wasp"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    },
+    {
+     "num": "109",
+     "item": "109",
+     "tmdb_id": 640146,
+     "tipo": "movie",
+     "titolo": "Ant-Man and the Wasp: Quantumania"
+    },
+    {
+     "num": "136",
+     "item": "136",
+     "tmdb_id": 1003596,
+     "tipo": "movie",
+     "titolo": "Avengers: Doomsday"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-rocket",
+   "nome": "Rocket",
+   "prompt": "Rocket, a talking raccoon with a gun",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "058",
+     "item": "058",
+     "tmdb_id": 118340,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy"
+    },
+    {
+     "num": "059",
+     "item": "059",
+     "tmdb_id": 283995,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 2"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    },
+    {
+     "num": "110",
+     "item": "110",
+     "tmdb_id": 447365,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 3"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-peter-quill-star-lord",
+   "nome": "Peter Quill/Star-Lord",
+   "prompt": "Star-Lord with a red jacket and a helmet mask",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "058",
+     "item": "058",
+     "tmdb_id": 118340,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy"
+    },
+    {
+     "num": "059",
+     "item": "059",
+     "tmdb_id": 283995,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 2"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    },
+    {
+     "num": "110",
+     "item": "110",
+     "tmdb_id": 447365,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 3"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-gamora",
+   "nome": "Gamora",
+   "prompt": "Gamora, a green-skinned woman warrior",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "058",
+     "item": "058",
+     "tmdb_id": 118340,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy"
+    },
+    {
+     "num": "059",
+     "item": "059",
+     "tmdb_id": 283995,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 2"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-nebula",
+   "nome": "Nebula",
+   "prompt": "Nebula, a blue-skinned cyborg woman",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "058",
+     "item": "058",
+     "tmdb_id": 118340,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy"
+    },
+    {
+     "num": "059",
+     "item": "059",
+     "tmdb_id": 283995,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy Vol. 2"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-drax",
+   "nome": "Drax",
+   "prompt": "Drax, a muscular gray-skinned warrior with red scars",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "058",
+     "item": "058",
+     "tmdb_id": 118340,
+     "tipo": "movie",
+     "titolo": "Guardians of the Galaxy"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-t-challa-black-panther",
+   "nome": "T'Challa/Black Panther",
+   "prompt": "Black Panther in a black suit with a panther mask",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War"
+    },
+    {
+     "num": "078",
+     "item": "078",
+     "tmdb_id": 284054,
+     "tipo": "movie",
+     "titolo": "Black Panther"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-stephen-strange",
+   "nome": "Stephen Strange/Doctor Strange",
+   "prompt": "Doctor Strange with a red cloak casting magic",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "070",
+     "item": "070",
+     "tmdb_id": 284052,
+     "tipo": "movie",
+     "titolo": "Doctor Strange"
+    },
+    {
+     "num": "099",
+     "item": "099",
+     "tmdb_id": 634649,
+     "tipo": "movie",
+     "titolo": "Spider-Man: No Way Home"
+    },
+    {
+     "num": "102",
+     "item": "102",
+     "tmdb_id": 453395,
+     "tipo": "movie",
+     "titolo": "Doctor Strange in the Multiverse of Madness"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-clint-barton",
+   "nome": "Clint Barton/Occhio di Falco",
+   "prompt": "Hawkeye with a bow and arrow",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "051",
+     "item": "051",
+     "tmdb_id": 24428,
+     "tipo": "movie",
+     "titolo": "The Avengers"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    },
+    {
+     "num": "100",
+     "item": "100",
+     "tmdb_id": 88329,
+     "tipo": "tv",
+     "titolo": "Hawkeye"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-carol-danvers-captain-marvel",
+   "nome": "Carol Danvers/Captain Marvel",
+   "prompt": "Captain Marvel in a blue and red suit glowing with energy",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "088",
+     "item": "088",
+     "tmdb_id": 299537,
+     "tipo": "movie",
+     "titolo": "Captain Marvel"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    },
+    {
+     "num": "097",
+     "item": "097",
+     "tmdb_id": 566525,
+     "tipo": "movie",
+     "titolo": "Shang-Chi and the Legend of the Ten Rings"
+    },
+    {
+     "num": "113",
+     "item": "113",
+     "tmdb_id": 609681,
+     "tipo": "movie",
+     "titolo": "The Marvels"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-james-rhodes-war-machine",
+   "nome": "James Rhodes/War Machine",
+   "prompt": "War Machine in gray armor",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "045",
+     "item": "045",
+     "tmdb_id": 1726,
+     "tipo": "movie",
+     "titolo": "Iron Man"
+    },
+    {
+     "num": "067",
+     "item": "067",
+     "tmdb_id": 271110,
+     "tipo": "movie",
+     "titolo": "Captain America: Civil War"
+    },
+    {
+     "num": "089",
+     "item": "089",
+     "tmdb_id": 299534,
+     "tipo": "movie",
+     "titolo": "Avengers: Endgame"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-nick-fury",
+   "nome": "Nick Fury",
+   "prompt": "Nick Fury with an eyepatch and a long black coat",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "056",
+     "item": "056",
+     "tmdb_id": 100402,
+     "tipo": "movie",
+     "titolo": "Captain America: The Winter Soldier"
+    },
+    {
+     "num": "088",
+     "item": "088",
+     "tmdb_id": 299537,
+     "tipo": "movie",
+     "titolo": "Captain Marvel"
+    },
+    {
+     "num": "090",
+     "item": "090",
+     "tmdb_id": 429617,
+     "tipo": "movie",
+     "titolo": "Spider-Man: Far From Home"
+    },
+    {
+     "num": "111",
+     "item": "111",
+     "tmdb_id": 114472,
+     "tipo": "tv",
+     "titolo": "Secret Invasion"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-visione",
+   "nome": "Visione",
+   "prompt": "Vision, a red-faced android with a yellow gem on the forehead",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "062",
+     "item": "062",
+     "tmdb_id": 99861,
+     "tipo": "movie",
+     "titolo": "Avengers: Age of Ultron"
+    },
+    {
+     "num": "084",
+     "item": "084",
+     "tmdb_id": 299536,
+     "tipo": "movie",
+     "titolo": "Avengers: Infinity War"
+    },
+    {
+     "num": "093",
+     "item": "093",
+     "tmdb_id": 85271,
+     "tipo": "tv",
+     "titolo": "WandaVision"
+    },
+    {
+     "num": "135",
+     "item": "135",
+     "tmdb_id": 213375,
+     "tipo": "tv",
+     "titolo": "VisionQuest"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-magneto",
+   "nome": "Erik Lehnsherr/Magneto",
+   "prompt": "Magneto in a helmet controlling metal",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "012",
+     "item": "012",
+     "tmdb_id": 49538,
+     "tipo": "movie",
+     "titolo": "X-Men: First Class"
+    },
+    {
+     "num": "014",
+     "item": "015",
+     "tmdb_id": 36657,
+     "tipo": "movie",
+     "titolo": "X-Men"
+    },
+    {
+     "num": "015",
+     "item": "016",
+     "tmdb_id": 36658,
+     "tipo": "movie",
+     "titolo": "X2"
+    },
+    {
+     "num": "016",
+     "item": "017",
+     "tmdb_id": 36668,
+     "tipo": "movie",
+     "titolo": "X-Men: The Last Stand"
+    },
+    {
+     "num": "018",
+     "item": "013",
+     "tmdb_id": 127585,
+     "tipo": "movie",
+     "titolo": "X-Men: Days of Future Past"
+    },
+    {
+     "num": "019",
+     "item": "014",
+     "tmdb_id": 246655,
+     "tipo": "movie",
+     "titolo": "X-Men: Apocalypse"
+    },
+    {
+     "num": "020",
+     "item": "020",
+     "tmdb_id": 320288,
+     "tipo": "movie",
+     "titolo": "Dark Phoenix"
+    },
+    {
+     "num": "131",
+     "item": "131",
+     "tmdb_id": 138502,
+     "tipo": "tv",
+     "titolo": "X-Men '97 S2"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-charles-xavier-fox",
+   "nome": "Charles Xavier (Fox-Verse)",
+   "prompt": "Professor X, a bald man in a wheelchair",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "012",
+     "item": "012",
+     "tmdb_id": 49538,
+     "tipo": "movie",
+     "titolo": "X-Men: First Class"
+    },
+    {
+     "num": "014",
+     "item": "015",
+     "tmdb_id": 36657,
+     "tipo": "movie",
+     "titolo": "X-Men"
+    },
+    {
+     "num": "015",
+     "item": "016",
+     "tmdb_id": 36658,
+     "tipo": "movie",
+     "titolo": "X2"
+    },
+    {
+     "num": "016",
+     "item": "017",
+     "tmdb_id": 36668,
+     "tipo": "movie",
+     "titolo": "X-Men: The Last Stand"
+    },
+    {
+     "num": "018",
+     "item": "013",
+     "tmdb_id": 127585,
+     "tipo": "movie",
+     "titolo": "X-Men: Days of Future Past"
+    },
+    {
+     "num": "019",
+     "item": "014",
+     "tmdb_id": 246655,
+     "tipo": "movie",
+     "titolo": "X-Men: Apocalypse"
+    },
+    {
+     "num": "020",
+     "item": "020",
+     "tmdb_id": 320288,
+     "tipo": "movie",
+     "titolo": "Dark Phoenix"
+    },
+    {
+     "num": "023",
+     "item": "024",
+     "tmdb_id": 263115,
+     "tipo": "movie",
+     "titolo": "Logan"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-mystica",
+   "nome": "Raven/Mystica",
+   "prompt": "Mystique, a blue-skinned shapeshifter",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "012",
+     "item": "012",
+     "tmdb_id": 49538,
+     "tipo": "movie",
+     "titolo": "X-Men: First Class"
+    },
+    {
+     "num": "018",
+     "item": "013",
+     "tmdb_id": 127585,
+     "tipo": "movie",
+     "titolo": "X-Men: Days of Future Past"
+    },
+    {
+     "num": "019",
+     "item": "014",
+     "tmdb_id": 246655,
+     "tipo": "movie",
+     "titolo": "X-Men: Apocalypse"
+    },
+    {
+     "num": "020",
+     "item": "020",
+     "tmdb_id": 320288,
+     "tipo": "movie",
+     "titolo": "Dark Phoenix"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-ciclope",
+   "nome": "Ciclope",
+   "prompt": "Cyclops with a red visor",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "014",
+     "item": "015",
+     "tmdb_id": 36657,
+     "tipo": "movie",
+     "titolo": "X-Men"
+    },
+    {
+     "num": "019",
+     "item": "014",
+     "tmdb_id": 246655,
+     "tipo": "movie",
+     "titolo": "X-Men: Apocalypse"
+    },
+    {
+     "num": "131",
+     "item": "131",
+     "tmdb_id": 138502,
+     "tipo": "tv",
+     "titolo": "X-Men '97 S2"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-jean-grey-fenice",
+   "nome": "Jean Grey/Fenice",
+   "prompt": "Jean Grey with red hair and glowing fire",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "016",
+     "item": "017",
+     "tmdb_id": 36668,
+     "tipo": "movie",
+     "titolo": "X-Men: The Last Stand"
+    },
+    {
+     "num": "019",
+     "item": "014",
+     "tmdb_id": 246655,
+     "tipo": "movie",
+     "titolo": "X-Men: Apocalypse"
+    },
+    {
+     "num": "020",
+     "item": "020",
+     "tmdb_id": 320288,
+     "tipo": "movie",
+     "titolo": "Dark Phoenix"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-reed-richards",
+   "nome": "Reed Richards",
+   "prompt": "Mr. Fantastic in a blue Fantastic Four suit",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "028",
+     "item": "028",
+     "tmdb_id": 22059,
+     "tipo": "movie",
+     "titolo": "The Fantastic Four"
+    },
+    {
+     "num": "029",
+     "item": "029",
+     "tmdb_id": 9738,
+     "tipo": "movie",
+     "titolo": "Fantastic Four"
+    },
+    {
+     "num": "030",
+     "item": "030",
+     "tmdb_id": 1979,
+     "tipo": "movie",
+     "titolo": "Fantastic Four: Rise of the Silver Surfer"
+    },
+    {
+     "num": "031",
+     "item": "031",
+     "tmdb_id": 166424,
+     "tipo": "movie",
+     "titolo": "Fantastic Four"
+    },
+    {
+     "num": "102",
+     "item": "102",
+     "tmdb_id": 453395,
+     "tipo": "movie",
+     "titolo": "Doctor Strange in the Multiverse of Madness"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-sue-storm",
+   "nome": "Sue Storm",
+   "prompt": "Invisible Woman in a blue Fantastic Four suit",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "028",
+     "item": "028",
+     "tmdb_id": 22059,
+     "tipo": "movie",
+     "titolo": "The Fantastic Four"
+    },
+    {
+     "num": "029",
+     "item": "029",
+     "tmdb_id": 9738,
+     "tipo": "movie",
+     "titolo": "Fantastic Four"
+    },
+    {
+     "num": "030",
+     "item": "030",
+     "tmdb_id": 1979,
+     "tipo": "movie",
+     "titolo": "Fantastic Four: Rise of the Silver Surfer"
+    },
+    {
+     "num": "031",
+     "item": "031",
+     "tmdb_id": 166424,
+     "tipo": "movie",
+     "titolo": "Fantastic Four"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-johnny-storm-human-torch",
+   "nome": "Johnny Storm/Human Torch",
+   "prompt": "Human Torch engulfed in flames",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "028",
+     "item": "028",
+     "tmdb_id": 22059,
+     "tipo": "movie",
+     "titolo": "The Fantastic Four"
+    },
+    {
+     "num": "029",
+     "item": "029",
+     "tmdb_id": 9738,
+     "tipo": "movie",
+     "titolo": "Fantastic Four"
+    },
+    {
+     "num": "030",
+     "item": "030",
+     "tmdb_id": 1979,
+     "tipo": "movie",
+     "titolo": "Fantastic Four: Rise of the Silver Surfer"
+    },
+    {
+     "num": "031",
+     "item": "031",
+     "tmdb_id": 166424,
+     "tipo": "movie",
+     "titolo": "Fantastic Four"
+    },
+    {
+     "num": "117",
+     "item": "117",
+     "tmdb_id": 533535,
+     "tipo": "movie",
+     "titolo": "Deadpool & Wolverine"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-ben-grimm",
+   "nome": "Ben Grimm",
+   "prompt": "The Thing, a rocky orange creature",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "028",
+     "item": "028",
+     "tmdb_id": 22059,
+     "tipo": "movie",
+     "titolo": "The Fantastic Four"
+    },
+    {
+     "num": "029",
+     "item": "029",
+     "tmdb_id": 9738,
+     "tipo": "movie",
+     "titolo": "Fantastic Four"
+    },
+    {
+     "num": "030",
+     "item": "030",
+     "tmdb_id": 1979,
+     "tipo": "movie",
+     "titolo": "Fantastic Four: Rise of the Silver Surfer"
+    },
+    {
+     "num": "031",
+     "item": "031",
+     "tmdb_id": 166424,
+     "tipo": "movie",
+     "titolo": "Fantastic Four"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-victor-von-doom",
+   "nome": "Victor von Doom",
+   "prompt": "Doctor Doom in a metal mask and green cloak",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "028",
+     "item": "028",
+     "tmdb_id": 22059,
+     "tipo": "movie",
+     "titolo": "The Fantastic Four"
+    },
+    {
+     "num": "029",
+     "item": "029",
+     "tmdb_id": 9738,
+     "tipo": "movie",
+     "titolo": "Fantastic Four"
+    },
+    {
+     "num": "030",
+     "item": "030",
+     "tmdb_id": 1979,
+     "tipo": "movie",
+     "titolo": "Fantastic Four: Rise of the Silver Surfer"
+    },
+    {
+     "num": "031",
+     "item": "031",
+     "tmdb_id": 166424,
+     "tipo": "movie",
+     "titolo": "Fantastic Four"
+    }
+   ],
+   "ambigui": []
+  },
+  {
+   "id": "id-harry-osborn-green-goblin",
+   "nome": "Harry Osborn/Green Goblin",
+   "prompt": "the Goblin in green armor with a mask",
+   "pilota": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "001",
+     "item": "001",
+     "tmdb_id": 557,
+     "tipo": "movie",
+     "titolo": "Spider-Man"
+    },
+    {
+     "num": "002",
+     "item": "002",
+     "tmdb_id": 558,
+     "tipo": "movie",
+     "titolo": "Spider-Man 2"
+    },
+    {
+     "num": "003",
+     "item": "003",
+     "tmdb_id": 559,
+     "tipo": "movie",
+     "titolo": "Spider-Man 3"
+    },
+    {
+     "num": "005",
+     "item": "005",
+     "tmdb_id": 102382,
+     "tipo": "movie",
+     "titolo": "The Amazing Spider-Man 2"
+    },
+    {
+     "num": "120",
+     "item": "120",
+     "tmdb_id": 138503,
+     "tipo": "tv",
+     "titolo": "Your Friendly Neighborhood Spider-Man S1"
+    }
+   ],
+   "ambigui": []
+  }
+ ]
+}
