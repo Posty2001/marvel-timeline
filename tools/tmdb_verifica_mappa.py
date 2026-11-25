@@ -14,7 +14,7 @@ def verifica(api, c):
     for k in sorted(c['tmdbMap']):
         m = c['tmdbMap'][k]; e = c['timeline'].get(k); r = {'item': k, 'numero_mostrato': c['id2vis'].get(k), 'tmdb_id': m['id'], 'tipo': m['t'], 'stagione': m.get('s')}
         if not e: r.update(esito='item-assente-in-timeline'); out.append(r); continue
-        tit, yr = base_title(e['title']), int(e['release'][:4]); r.update(titolo_app=e['title'], anno_app=yr, saga=e.get('saga'), studio=e.get('studio'))
+        rel = e.get('release') or ''; tit, yr = base_title(e['title']), (int(rel[:4]) if rel[:4].isdigit() else None); r.update(titolo_app=e['title'], anno_app=yr, saga=e.get('saga'), studio=e.get('studio'))
         d = api.get('/%s/%s' % (m['t'], m['id']), language='en-US')
         if not d: r.update(esito='id-inesistente'); out.append(r); continue
         t = d.get('title') or d.get('name'); dt = d.get('release_date') or d.get('first_air_date') or ''
@@ -23,10 +23,11 @@ def verifica(api, c):
             dt = (ss[0].get('air_date') if ss else '') or dt; r['stagione_trovata'] = bool(ss)
         ty = int(dt[:4]) if dt[:4].isdigit() else None
         r.update(titolo_tmdb=t, anno_tmdb=ty, produttori=[x['name'] for x in d.get('production_companies', [])][:4], poster_attuale_uguale=(d.get('poster_path') == m.get('p')))
-        tok = norm(t) == norm(tit); yok = ty is not None and abs(ty - yr) <= 1
+        tok = norm(t) == norm(tit); yok = (yr is None) or (ty is not None and abs(ty - yr) <= 1)
         r['esito'] = 'ok' if tok and yok else ('titolo-diverso' if not tok else 'anno-diverso')
         if r['esito'] != 'ok':
-            q = {'query': tit, 'language': 'en-US'}; q['year' if m['t'] == 'movie' else 'first_air_date_year'] = yr
+            q = {'query': tit, 'language': 'en-US'}
+            if yr: q['year' if m['t'] == 'movie' else 'first_air_date_year'] = yr
             cand = [x for x in (api.get('/search/' + m['t'], **q) or {}).get('results', []) if norm(x.get('title') or x.get('name')) == norm(tit)]
             r['proposta'] = [{'id': x['id'], 'titolo': x.get('title') or x.get('name'), 'data': x.get('release_date') or x.get('first_air_date'), 'poster': x.get('poster_path')} for x in cand[:3]]
         out.append(r)
