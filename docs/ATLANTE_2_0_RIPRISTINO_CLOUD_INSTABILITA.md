@@ -12,3 +12,6 @@ Stato: **causa radice trovata, nel TEST (25/11/2026)**; nessuna modifica al codi
 ## Cosa NON dimostra
 - Che il ripristino cloud sia privo di difetti in condizioni reali (rete, dispositivi multipli): i test coprono il comportamento con mock. Resta valida la prassi prudente: esportare un backup locale prima di un ripristino cloud; l'auto-backup di sicurezza esiste.
 - Non è stato eseguito alcun ripristino sui dati reali di Franco.
+
+## Nota su altre suite
+`friends_release_test` è fallita (2 controlli «dati locali non alterano nessun'altra chiave») in una esecuzione parallela sotto carico e passa da sola (48/48): è molto probabilmente la stessa race dell'inizializzazione TVA Live. Da correggere allo stesso modo (attesa dell'init prima dello snapshot) in un intervento separato; non è un difetto di Friends.

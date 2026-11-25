@@ -171,11 +171,11 @@
         proposte().then(function (pj) {
           var pi = (pj.identita || []).filter(function (z) { return z.id === id; })[0]; if (!pi || !pi.proposte || !pi.proposte.length) return;
           var box = h('section', 'a3r-prop'); box.appendChild(h('h3', '', 'Proposte automatiche (' + pi.proposte.length + ')'));
-          box.appendChild(h('p', 'a3r-info', 'Selezionate dal motore tra le scene della continuità, con ritaglio suggerito. Tocca ✓ per approvare subito, o la scena per rivedere il ritaglio. La scelta resta tua.'));
+          box.appendChild(h('p', 'a3r-info', 'Selezionate dal motore tra le scene della continuità, con ritaglio suggerito. ★ = scena confermata da entrambi i modelli. Tocca ✓ per approvare subito, o la scena per rivedere il ritaglio. La scelta resta tua.'));
           var g = h('div', 'a3r-pg'); pi.proposte.forEach(function (x) {
             var t = inf.titoli.filter(function (y) { return y.num === x.num; })[0]; var st = refStyle({ scena: { w: x.w, h: x.h }, crop: x.crop });
             var c = h('div', 'a3r-pc'); var pv = btn('a3r-pv', null, function () { scegli(x, x.crop, false); }); pv.setAttribute('aria-label', 'Proposta ' + x.rk + ', rivedi il ritaglio');
-            pv.style.backgroundImage = 'url("' + TM + 'w780' + x.p + '")'; pv.style.backgroundSize = st.size; pv.style.backgroundPosition = st.pos; pv.appendChild(h('i', 'rk', '#' + x.rk));
+            pv.style.backgroundImage = 'url("' + TM + 'w780' + x.p + '")'; pv.style.backgroundSize = st.size; pv.style.backgroundPosition = st.pos; pv.appendChild(h('i', 'rk', '#' + x.rk + (x.ck ? ' ★' : '')));
             var ok = btn('a3r-ok', '✓ Approva', function () { scegli(x, x.crop, true); }); ok.setAttribute('aria-label', 'Approva la proposta ' + x.rk + ' con il ritaglio suggerito'); c.appendChild(pv); c.appendChild(ok); g.appendChild(c);
           }); box.appendChild(g); main.insertBefore(box, tabs);
         });

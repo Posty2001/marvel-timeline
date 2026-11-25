@@ -1,0 +1,690 @@
+{
+ "schema": 1,
+ "motore": "A3.2 prototipo (CLIP + consenso SigLIP)",
+ "generato": "2026-11-25T12:24:32Z",
+ "diritti": {
+  "fonte": "TMDB (percorsi CDN, nessuna immagine copiata)",
+  "uso": "solo privato/locale su dispositivo dell'utente",
+  "pubblicazione": false,
+  "immagini_nel_repository": false,
+  "nota": "TMDB non concede diritti sui contenuti Marvel/Disney; il motore propone, l'utente decide; le miniature scaricate nel runner sono scartate a fine job"
+ },
+ "identita": [
+  {
+   "id": "id-iron-man",
+   "nome": "Iron Man MCU",
+   "proposte": [
+    {
+     "rk": 1,
+     "p": "/cdsjxSR55VS80IiJfrQ9i9pWqrp.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "045",
+     "sc": 0.875,
+     "crop": {
+      "z": 1.25,
+      "cx": 0.3896,
+      "cy": 0.5
+     },
+     "ck": 0
+    },
+    {
+     "rk": 2,
+     "p": "/aZssWFpVpCajlmkJ1A3p5a8o6sC.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "053",
+     "sc": 0.775,
+     "crop": {
+      "z": 1.0,
+      "cx": 0.7889,
+      "cy": 0.5
+     },
+     "ck": 0
+    },
+    {
+     "rk": 3,
+     "p": "/yjSVhK0HuCcbK7jfoH2HLKyeANc.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "045",
+     "sc": 0.68,
+     "crop": {
+      "z": 1.0,
+      "cx": 0.5963,
+      "cy": 0.5
+     },
+     "ck": 0
+    },
+    {
+     "rk": 4,
+     "p": "/xZFRxfZKwEnvPpwq0RHdU8hmvqF.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "053",
+     "sc": 0.649,
+     "crop": {
+      "z": 1.0,
+      "cx": 0.5,
+      "cy": 0.5
+     },
+     "ck": 0
+    },
+    {
+     "rk": 5,
+     "p": "/jesRqfL9v6HNnowe795xjmuKUXl.jpg",
+     "w": 2700,
+     "h": 1518,
+     "num": "047",
+     "sc": 0.449,
+     "crop": {
+      "z": 1.25,
+      "cx": 0.6104,
+      "cy": 0.5
+     },
+     "ck": 1
+    }
+   ]
+  },
+  {
+   "id": "id-thor",
+   "nome": "Thor MCU",
+   "proposte": [
+    {
+     "rk": 1,
+     "p": "/4zTsF0RtO0av3YX1NaKDqGKPxYF.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "055",
+     "sc": 0.806,
+     "crop": {
+      "z": 1.5625,
+      "cx": 0.5,
+      "cy": 0.32
+     },
+     "ck": 0
+    },
+    {
+     "rk": 2,
+     "p": "/d8BupC1WHZ1NKJhHM4aoF5gxZ9P.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "055",
+     "sc": 0.753,
+     "crop": {
+      "z": 1.5625,
+      "cx": 0.3784,
+      "cy": 0.32
+     },
+     "ck": 1
+    },
+    {
+     "rk": 3,
+     "p": "/3XyaYiOHldsNhwnXKDRYOpFc1nB.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "050",
+     "sc": 0.738,
+     "crop": {
+      "z": 1.5625,
+      "cx": 0.7433,
+      "cy": 0.32
+     },
+     "ck": 1
+    },
+    {
+     "rk": 4,
+     "p": "/9CiNfM9mHvLID7wqAixB30tAVZd.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "050",
+     "sc": 0.409,
+     "crop": {
+      "z": 1.5625,
+      "cx": 0.6216,
+      "cy": 0.32
+     },
+     "ck": 0
+    }
+   ]
+  },
+  {
+   "id": "id-loki",
+   "nome": "Loki MCU",
+   "proposte": [
+    {
+     "rk": 1,
+     "p": "/vG7sapjTtal1X6fWlD2l3bcvYOU.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "076",
+     "sc": 0.906,
+     "crop": {
+      "z": 1.0,
+      "cx": 0.5,
+      "cy": 0.5
+     },
+     "ck": 1
+    },
+    {
+     "rk": 2,
+     "p": "/anp5ubvD7frvXMZMaMuxeFRhfWm.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "095",
+     "sc": 0.8,
+     "crop": {
+      "z": 1.25,
+      "cx": 0.6104,
+      "cy": 0.4
+     },
+     "ck": 1
+    },
+    {
+     "rk": 3,
+     "p": "/71kjcn5PYnNz3bMOZnGyuR4RH1V.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "095",
+     "sc": 0.743,
+     "crop": {
+      "z": 1.0,
+      "cx": 0.3074,
+      "cy": 0.5
+     },
+     "ck": 1
+    },
+    {
+     "rk": 4,
+     "p": "/9GjSPZbJIwV47TfDfNF8IaPC07V.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "076",
+     "sc": 0.678,
+     "crop": {
+      "z": 1.0,
+      "cx": 0.7889,
+      "cy": 0.5
+     },
+     "ck": 0
+    },
+    {
+     "rk": 5,
+     "p": "/41AKIFRgHFZGT3qXZ2a9Sx1pt0g.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "055",
+     "sc": 0.54,
+     "crop": {
+      "z": 1.5625,
+      "cx": 0.5,
+      "cy": 0.32
+     },
+     "ck": 1
+    }
+   ]
+  },
+  {
+   "id": "id-peter-parker-mcu",
+   "nome": "Spider-Man MCU",
+   "proposte": [
+    {
+     "rk": 1,
+     "p": "/tPpYGm2mVecue7Bk3gNVoSPA5qn.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "075",
+     "sc": 0.76,
+     "crop": {
+      "z": 1.25,
+      "cx": 0.1688,
+      "cy": 0.4
+     },
+     "ck": 0
+    },
+    {
+     "rk": 2,
+     "p": "/lAsr1ytUq0ATWdCbcjf59pupPFy.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "075",
+     "sc": 0.747,
+     "crop": {
+      "z": 1.0,
+      "cx": 0.5963,
+      "cy": 0.5
+     },
+     "ck": 1
+    },
+    {
+     "rk": 3,
+     "p": "/uHuM6lErhDQS5oLqN3cMT5QGIDx.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "090",
+     "sc": 0.442,
+     "crop": {
+      "z": 1.25,
+      "cx": 0.6104,
+      "cy": 0.4
+     },
+     "ck": 0
+    },
+    {
+     "rk": 4,
+     "p": "/ng6SSB3JhbcpKTwbPDsRwUYK8Cq.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "090",
+     "sc": 0.438,
+     "crop": {
+      "z": 1.25,
+      "cx": 0.5,
+      "cy": 0.4
+     },
+     "ck": 0
+    }
+   ]
+  },
+  {
+   "id": "id-peter-parker-raimi",
+   "nome": "Spider-Man Raimi",
+   "proposte": [
+    {
+     "rk": 1,
+     "p": "/6dhT71HIIzJ1Z5zXOh1fOSSoSnU.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "002",
+     "sc": 0.897,
+     "crop": {
+      "z": 1.5625,
+      "cx": 0.6216,
+      "cy": 0.5
+     },
+     "ck": 0
+    },
+    {
+     "rk": 2,
+     "p": "/FfAU0PUs8AJkMU2VbkVNFtRXR4.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "003",
+     "sc": 0.781,
+     "crop": {
+      "z": 1.25,
+      "cx": 0.7208,
+      "cy": 0.5
+     },
+     "ck": 0
+    },
+    {
+     "rk": 3,
+     "p": "/jHxCeXnSchAuwHnmVatTgqMYdX8.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "001",
+     "sc": 0.741,
+     "crop": {
+      "z": 1.5625,
+      "cx": 0.2567,
+      "cy": 0.5
+     },
+     "ck": 0
+    },
+    {
+     "rk": 4,
+     "p": "/jCttN0bVcyHQEpdcU1aCBUbBvI6.jpg",
+     "w": 2048,
+     "h": 1152,
+     "num": "003",
+     "sc": 0.717,
+     "crop": {
+      "z": 1.0,
+      "cx": 0.7889,
+      "cy": 0.5
+     },
+     "ck": 0
+    },
+    {
+     "rk": 5,
+     "p": "/xm32oa80boMP87REhDua3X5DNpI.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "001",
+     "sc": 0.42,
+     "crop": {
+      "z": 1.25,
+      "cx": 0.2792,
+      "cy": 0.4
+     },
+     "ck": 0
+    }
+   ]
+  },
+  {
+   "id": "id-peter-parker-garfield",
+   "nome": "Spider-Man Garfield",
+   "proposte": [
+    {
+     "rk": 1,
+     "p": "/k0hlAzTryCYX1O1LyC6P8tAa8s0.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "005",
+     "sc": 0.902,
+     "crop": {
+      "z": 1.5625,
+      "cx": 0.5,
+      "cy": 0.32
+     },
+     "ck": 1
+    },
+    {
+     "rk": 2,
+     "p": "/pYVpGk7U7brMCny0SxJUvTyPHmi.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "004",
+     "sc": 0.819,
+     "crop": {
+      "z": 1.5625,
+      "cx": 0.6216,
+      "cy": 0.32
+     },
+     "ck": 0
+    },
+    {
+     "rk": 3,
+     "p": "/9imW701EpAKpVhLZZRAuUtdptmS.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "005",
+     "sc": 0.746,
+     "crop": {
+      "z": 1.0,
+      "cx": 0.5963,
+      "cy": 0.5
+     },
+     "ck": 0
+    },
+    {
+     "rk": 4,
+     "p": "/tl5PoDXHwwgTjYv5T5k4aut9YXH.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "004",
+     "sc": 0.604,
+     "crop": {
+      "z": 1.25,
+      "cx": 0.2792,
+      "cy": 0.6
+     },
+     "ck": 0
+    }
+   ]
+  },
+  {
+   "id": "id-wolverine",
+   "nome": "Wolverine Fox",
+   "proposte": [
+    {
+     "rk": 1,
+     "p": "/iDkgF2mtDYJb4PQzhT9pWgsdoTD.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "016",
+     "sc": 0.783,
+     "crop": {
+      "z": 1.25,
+      "cx": 0.3896,
+      "cy": 0.6
+     },
+     "ck": 1
+    },
+    {
+     "rk": 2,
+     "p": "/sfScoF2xM5ofcNZWdEDLZRi3UdI.jpg",
+     "w": 3839,
+     "h": 2159,
+     "num": "017",
+     "sc": 0.655,
+     "crop": {
+      "z": 1.25,
+      "cx": 0.5,
+      "cy": 0.4
+     },
+     "ck": 0
+    },
+    {
+     "rk": 3,
+     "p": "/fUoXenTsrdUcgG0sLYbOBouvtTs.jpg",
+     "w": 2480,
+     "h": 1395,
+     "num": "013",
+     "sc": 0.645,
+     "crop": {
+      "z": 1.0,
+      "cx": 0.3074,
+      "cy": 0.5
+     },
+     "ck": 1
+    },
+    {
+     "rk": 4,
+     "p": "/16vMmjjfZeG4fGV9lINEkyUbvIJ.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "017",
+     "sc": 0.625,
+     "crop": {
+      "z": 1.5625,
+      "cx": 0.3784,
+      "cy": 0.68
+     },
+     "ck": 0
+    },
+    {
+     "rk": 5,
+     "p": "/demNllBiC7Q24U2om4mZiKLFi4p.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "013",
+     "sc": 0.578,
+     "crop": {
+      "z": 1.5625,
+      "cx": 0.5,
+      "cy": 0.32
+     },
+     "ck": 0
+    }
+   ]
+  },
+  {
+   "id": "id-wade-wilson-deadpool",
+   "nome": "Deadpool",
+   "proposte": [
+    {
+     "rk": 1,
+     "p": "/jNUYL4RroNF1KRGilpVqCSujWSf.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "022",
+     "sc": 0.866,
+     "crop": {
+      "z": 1.0,
+      "cx": 0.5,
+      "cy": 0.5
+     },
+     "ck": 1
+    },
+    {
+     "rk": 2,
+     "p": "/1aWpHzY3Y4bODkhQkSARTYLbXW.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "022",
+     "sc": 0.759,
+     "crop": {
+      "z": 1.25,
+      "cx": 0.5,
+      "cy": 0.5
+     },
+     "ck": 1
+    },
+    {
+     "rk": 3,
+     "p": "/l6jEz6DvnjaPnuWnVseSFJlxDoZ.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "024",
+     "sc": 0.734,
+     "crop": {
+      "z": 1.0,
+      "cx": 0.3074,
+      "cy": 0.5
+     },
+     "ck": 0
+    },
+    {
+     "rk": 4,
+     "p": "/emz3txG0WRJkskXgfLGR3a2eWKE.jpg",
+     "w": 2853,
+     "h": 1603,
+     "num": "117",
+     "sc": 0.329,
+     "crop": {
+      "z": 1.5625,
+      "cx": 0.5,
+      "cy": 0.32
+     },
+     "ck": 1
+    }
+   ]
+  },
+  {
+   "id": "id-wanda-maximoff",
+   "nome": "Wanda Maximoff MCU",
+   "proposte": [
+    {
+     "rk": 1,
+     "p": "/iWiymr6z8P8KTJa7CXEsmFlChUZ.jpg",
+     "w": 2859,
+     "h": 1608,
+     "num": "102",
+     "sc": 0.668,
+     "crop": {
+      "z": 1.5625,
+      "cx": 0.5,
+      "cy": 0.5
+     },
+     "ck": 1
+    },
+    {
+     "rk": 2,
+     "p": "/fBStjn6y58rZ4QMyMGkodFdEIJa.jpg",
+     "w": 1563,
+     "h": 878,
+     "num": "102",
+     "sc": 0.635,
+     "crop": {
+      "z": 1.5625,
+      "cx": 0.5,
+      "cy": 0.68
+     },
+     "ck": 0
+    },
+    {
+     "rk": 3,
+     "p": "/z8axGj6DbR1cZZw3fCLNnJE9LIJ.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "093",
+     "sc": 0.49,
+     "crop": {
+      "z": 1.5625,
+      "cx": 0.7433,
+      "cy": 0.68
+     },
+     "ck": 0
+    },
+    {
+     "rk": 4,
+     "p": "/1i1N0AVRb54H6ZFPDTwbo9MLxSF.jpg",
+     "w": 1746,
+     "h": 982,
+     "num": "093",
+     "sc": 0.371,
+     "crop": {
+      "z": 1.0,
+      "cx": 0.5963,
+      "cy": 0.5
+     },
+     "ck": 0
+    }
+   ]
+  },
+  {
+   "id": "id-thanos",
+   "nome": "Thanos MCU",
+   "proposte": [
+    {
+     "rk": 1,
+     "p": "/fjzjVPGJoHDIiK6cFvebcmhxDA7.jpg",
+     "w": 1397,
+     "h": 785,
+     "num": "084",
+     "sc": 0.829,
+     "crop": {
+      "z": 1.25,
+      "cx": 0.1685,
+      "cy": 0.5
+     },
+     "ck": 1
+    },
+    {
+     "rk": 2,
+     "p": "/z75yuSzbDUPyx380GPa0g6IdaOn.jpg",
+     "w": 1280,
+     "h": 720,
+     "num": "084",
+     "sc": 0.794,
+     "crop": {
+      "z": 1.25,
+      "cx": 0.3896,
+      "cy": 0.4
+     },
+     "ck": 0
+    },
+    {
+     "rk": 3,
+     "p": "/vfCYyWwujI5EE160GhKJx80cZ4f.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "089",
+     "sc": 0.622,
+     "crop": {
+      "z": 1.5625,
+      "cx": 0.3784,
+      "cy": 0.68
+     },
+     "ck": 0
+    },
+    {
+     "rk": 4,
+     "p": "/1qjS1enn14Bey78GnF0q4xWGXCm.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "089",
+     "sc": 0.442,
+     "crop": {
+      "z": 1.25,
+      "cx": 0.5,
+      "cy": 0.6
+     },
+     "ck": 1
+    }
+   ]
+  }
+ ]
+}
