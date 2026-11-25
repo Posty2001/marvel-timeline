@@ -237,7 +237,7 @@ jobs:
 
   atlante-pilot:
     # Atlante A3.1 pilota: SOLO metadati (percorsi CDN, dimensioni, voti). La chiave resta nei Secret, mai nell output ne nel frontend.
-    if: ${{ inputs.solo_atlante_pilot || inputs.atlante_job != '' }}
+    if: ${{ inputs.solo_atlante_pilot || (inputs.atlante_job != '' && !startsWith(inputs.atlante_job, 'engine')) }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -311,6 +311,67 @@ jobs:
           extra="$(git diff --cached --name-only | grep -vxF -f <(printf '%s\n' $ALLOWED) || true)"
           [ -z "$extra" ] || { echo "File non consentiti: $extra"; exit 4; }
           git -c user.name="tva-pilot-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "data(A3.1): metadati di verifica/pilota TMDB (solo metadati)"
+          for i in 1 2 3; do
+            git pull -q --rebase origin test/tva-archives || true
+            if git push -q origin HEAD:refs/heads/test/tva-archives; then echo "Pubblicato (solo metadati)."; exit 0; fi
+            sleep 3
+          done
+          exit 5
+
+  atlante-engine:
+    # A3.2 Visual Asset Engine (prototipo, 10 identità): CLIP/SigLIP su CPU del runner (gratuito). Solo metadati in uscita; le immagini restano nel runner.
+    # atlante_job = engine-clip | engine-siglip | engine-smoke
+    if: ${{ startsWith(inputs.atlante_job, 'engine') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    concurrency:
+      group: atlante-engine
+      cancel-in-progress: false
+    steps:
+      - name: Solo branch TEST
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/test/tva-archives" ]; then echo "::error::Consentito solo con ref test/tva-archives."; exit 1; fi
+      - uses: actions/checkout@v4
+        with:
+          ref: test/tva-archives
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Dipendenze (CPU, gratuite)
+        run: |
+          pip install --quiet torch --index-url https://download.pytorch.org/whl/cpu
+          pip install --quiet open_clip_torch pillow numpy requests
+      - name: Motore
+        run: |
+          set -o pipefail
+          MODE="${{ inputs.atlante_job }}"
+          if [ "$MODE" = "engine-smoke" ]; then ARGS="--modello clip --max-per-identita 8 --sheet"; \
+          elif [ "$MODE" = "engine-siglip" ]; then ARGS="--modello siglip --sheet"; \
+          elif [ "$MODE" = "engine-clip" ]; then ARGS="--modello clip --sheet"; \
+          else ARGS="--modello clip --sheet"; fi
+          /usr/bin/time -v python3 tools/atlante_engine.py $ARGS --out engine-out 2> engine-out-time.txt || { tail -30 engine-out-time.txt; exit 1; }
+          mkdir -p engine-out; cp engine-out-time.txt engine-out/time.txt
+      - name: Salva artifact (miniature solo per valutazione, retention 1 giorno)
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlante-engine
+          path: engine-out/
+          if-no-files-found: warn
+          retention-days: 1
+      - name: Commit dei soli metadati
+        if: ${{ inputs.atlante_pilot_commit }}
+        run: |
+          mkdir -p data/atlante/engine
+          for f in engine-out/proposte_*.json engine-out/metriche_*.json; do [ -f "$f" ] && cp "$f" data/atlante/engine/; done
+          git add -- data/atlante/engine
+          if git diff --cached --quiet; then echo "Nessuna modifica."; exit 0; fi
+          extra="$(git diff --cached --name-only | grep -v '^data/atlante/engine/' || true)"
+          [ -z "$extra" ] || { echo "File non consentiti: $extra"; exit 4; }
+          git -c user.name="tva-pilot-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "data(A3.2): proposte e metriche del motore (solo metadati)"
           for i in 1 2 3; do
             git pull -q --rebase origin test/tva-archives || true
             if git push -q origin HEAD:refs/heads/test/tva-archives; then echo "Pubblicato (solo metadati)."; exit 0; fi
