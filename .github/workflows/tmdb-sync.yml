@@ -387,7 +387,7 @@ jobs:
         if: ${{ always() && inputs.atlante_pilot_commit }}
         run: |
           mkdir -p data/atlante/engine
-          if [ -d engine-out/blocchi ]; then mkdir -p data/atlante/engine/blocchi; cp engine-out/blocchi/*.json data/atlante/engine/blocchi/ 2>/dev/null || true; fi
+          if [ -d engine-out/blocchi ] && [ "${{ inputs.atlante_job }}" != "engine2-tutte-smoke" ]; then mkdir -p data/atlante/engine/blocchi; cp engine-out/blocchi/*.json data/atlante/engine/blocchi/ 2>/dev/null || true; fi
           for f in engine-out/proposte*.json engine-out/metriche*.json; do [ -f "$f" ] && cp "$f" data/atlante/engine/; done
           git add -- data/atlante/engine
           if git diff --cached --quiet; then echo "Nessuna modifica."; exit 0; fi
