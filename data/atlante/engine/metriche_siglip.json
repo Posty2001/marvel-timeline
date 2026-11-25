@@ -1,0 +1,110 @@
+{
+ "modello": "siglip",
+ "stadi_s": {
+  "carica_modello": 9.8,
+  "download": 21.9,
+  "punteggio_immagine": 154.4,
+  "ritaglio": 829.1
+ },
+ "totale_s": 1026.7,
+ "ram_picco_mb": 2219,
+ "cpu": 4,
+ "identita": {
+  "id-iron-man": {
+   "candidati": 216,
+   "dopo_filtri_metadati": 216,
+   "titoli_condivisi_esclusi": [],
+   "scaricate_ok_nitide": 213,
+   "dopo_dedup_hash": 195,
+   "proposte": 5,
+   "secondi": 116.1
+  },
+  "id-thor": {
+   "candidati": 192,
+   "dopo_filtri_metadati": 192,
+   "titoli_condivisi_esclusi": [],
+   "scaricate_ok_nitide": 190,
+   "dopo_dedup_hash": 172,
+   "proposte": 4,
+   "secondi": 111.8
+  },
+  "id-loki": {
+   "candidati": 120,
+   "dopo_filtri_metadati": 120,
+   "titoli_condivisi_esclusi": [],
+   "scaricate_ok_nitide": 120,
+   "dopo_dedup_hash": 111,
+   "proposte": 5,
+   "secondi": 101.4
+  },
+  "id-peter-parker-mcu": {
+   "candidati": 144,
+   "dopo_filtri_metadati": 120,
+   "titoli_condivisi_esclusi": [
+    "099"
+   ],
+   "scaricate_ok_nitide": 118,
+   "dopo_dedup_hash": 112,
+   "proposte": 4,
+   "secondi": 101.3
+  },
+  "id-peter-parker-raimi": {
+   "candidati": 96,
+   "dopo_filtri_metadati": 72,
+   "titoli_condivisi_esclusi": [
+    "099"
+   ],
+   "scaricate_ok_nitide": 72,
+   "dopo_dedup_hash": 63,
+   "proposte": 3,
+   "secondi": 93.6
+  },
+  "id-peter-parker-garfield": {
+   "candidati": 72,
+   "dopo_filtri_metadati": 48,
+   "titoli_condivisi_esclusi": [
+    "099"
+   ],
+   "scaricate_ok_nitide": 48,
+   "dopo_dedup_hash": 46,
+   "proposte": 4,
+   "secondi": 90.5
+  },
+  "id-wolverine": {
+   "candidati": 192,
+   "dopo_filtri_metadati": 192,
+   "titoli_condivisi_esclusi": [],
+   "scaricate_ok_nitide": 190,
+   "dopo_dedup_hash": 172,
+   "proposte": 5,
+   "secondi": 111.3
+  },
+  "id-wade-wilson-deadpool": {
+   "candidati": 72,
+   "dopo_filtri_metadati": 72,
+   "titoli_condivisi_esclusi": [],
+   "scaricate_ok_nitide": 72,
+   "dopo_dedup_hash": 69,
+   "proposte": 4,
+   "secondi": 93.9
+  },
+  "id-wanda-maximoff": {
+   "candidati": 120,
+   "dopo_filtri_metadati": 120,
+   "titoli_condivisi_esclusi": [],
+   "scaricate_ok_nitide": 117,
+   "dopo_dedup_hash": 108,
+   "proposte": 2,
+   "secondi": 100.4
+  },
+  "id-thanos": {
+   "candidati": 48,
+   "dopo_filtri_metadati": 48,
+   "titoli_condivisi_esclusi": [],
+   "scaricate_ok_nitide": 47,
+   "dopo_dedup_hash": 44,
+   "proposte": 4,
+   "secondi": 90.1
+  }
+ }
+}
