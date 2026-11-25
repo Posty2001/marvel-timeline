@@ -43,6 +43,8 @@ P = [
  ('id-thanos', 'Thanos MCU', 'Josh Brolin', r'thanos', ['084','089'], ''),
 ]
 
+TAG_DIAG = {}
+
 class Api:
     def __init__(self):
         self.tok = os.environ.get('TMDB_READ_TOKEN'); self.key = os.environ.get('TMDB_API_KEY'); self.n = 0
@@ -102,15 +104,17 @@ def immagini_titolo(api, t):
     return r
 
 def tagged(api, pid, ids):
-    out = {}
+    out = {}; raw = [0, set()]
     for pg in range(1, 7):
-        d = api.get('/person/%d/tagged_images' % pid, page=pg, language='en-US')
+        d = api.get('/person/%d/tagged_images' % pid, page=pg)
         if not d: break
         for b in d.get('results', []):
+            raw[0] += 1; raw[1].add((b.get('media_type'), b.get('image_type')))
             m = b.get('media') or {}
-            if m.get('id') in ids and b.get('image_type', 'backdrop') in ('backdrop', 'still', None) and b.get('width', 0) >= 1000 and b.get('file_path'):
+            if m.get('id') in ids and b.get('width', 0) >= 1000 and (b.get('aspect_ratio') or 1.78) > 1.3 and b.get('file_path'):
                 out[(m.get('id'), b['file_path'])] = {'w': b['width'], 'h': b['height'], 'v': round(b.get('vote_average') or 0, 2), 'n': b.get('vote_count') or 0}
         if pg >= (d.get('total_pages') or 1): break
+    TAG_DIAG[pid] = {'grezzi': raw[0], 'tipi': sorted(str(x) for x in raw[1])}
     return out
 
 def genera(api, per_titolo=24):
@@ -137,7 +141,7 @@ def genera(api, per_titolo=24):
                     else: pool[fp] = {'p': fp, 'w': v['w'], 'h': v['h'], 'v': v['v'], 'n': v['n'], 'tag': True, 'src': 'tagged'}
             lst = sorted(pool.values(), key=lambda x: (not x['tag'], -x['v'], -x['n']))[:per_titolo]
             for x in lst: x['num'] = t['num']; imgs.append(x)
-        res.append({'id': iid, 'nome': nome, 'nota': nota, 'attore': {'tmdb_person_id': pid, 'nome': pnome or attore, 'personaggio': chs, 'trovato': pid is not None},
+        res.append({'id': iid, 'nome': nome, 'nota': nota, 'attore': {'tmdb_person_id': pid, 'nome': pnome or attore, 'personaggio': chs, 'trovato': pid is not None, 'tagged_diag': TAG_DIAG.get(pid)},
                     'titoli': [{k: v for k, v in t.items() if not k.startswith('_')} for t in titoli], 'immagini': imgs})
     return {'schema': SCHEMA, 'generato': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'fonte': 'TMDB (solo percorsi CDN, nessuna immagine copiata)', 'avvisi': avvisi, 'identita': res, 'richieste_api': api.n}
 
