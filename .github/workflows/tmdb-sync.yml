@@ -355,6 +355,10 @@ jobs:
         run: |
           set -o pipefail
           MODE="${{ inputs.atlante_job }}"
+          if [ "$MODE" = "engine2" ] || [ "$MODE" = "engine2-smoke" ]; then \
+            A2=""; [ "$MODE" = "engine2-smoke" ] && A2="--smoke"; \
+            /usr/bin/time -v python3 tools/atlante_engine2.py $A2 --out engine-out 2> engine-out-time.txt || { tail -30 engine-out-time.txt; exit 1; }; \
+            mkdir -p engine-out; cp engine-out-time.txt engine-out/time.txt; exit 0; fi
           if [ "$MODE" = "engine-smoke" ]; then ARGS="--modello clip --max-per-identita 8 --sheet"; \
           elif [ "$MODE" = "engine-siglip" ]; then ARGS="--modello siglip --sheet"; \
           elif [ "$MODE" = "engine-clip" ]; then ARGS="--modello clip --sheet"; \
@@ -373,7 +377,7 @@ jobs:
         if: ${{ inputs.atlante_pilot_commit }}
         run: |
           mkdir -p data/atlante/engine
-          for f in engine-out/proposte_*.json engine-out/metriche_*.json; do [ -f "$f" ] && cp "$f" data/atlante/engine/; done
+          for f in engine-out/proposte*.json engine-out/metriche*.json; do [ -f "$f" ] && cp "$f" data/atlante/engine/; done
           git add -- data/atlante/engine
           if git diff --cached --quiet; then echo "Nessuna modifica."; exit 0; fi
           extra="$(git diff --cached --name-only | grep -v '^data/atlante/engine/' || true)"
