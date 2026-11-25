@@ -1,0 +1,77 @@
+{
+ "stadi_s": {
+  "download": 45.7,
+  "qualita": 1.8,
+  "scena_clip": 24.7,
+  "scena_siglip": 92.6
+ },
+ "candidati_totali": 924,
+ "immagini_uniche": 492,
+ "immagini_nitide": 470,
+ "totale_s": 299.5,
+ "ram_picco_mb": 2956,
+ "identita": {
+  "id-whitney-frost": {
+   "conf": "alta",
+   "buoni": 7,
+   "proposte": 3,
+   "secondi": 12.3
+  },
+  "id-william-stryker": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 13.1
+  },
+  "id-fisk-fox-2003": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 10,
+   "secondi": 10.5
+  },
+  "id-fisk-mcu": {
+   "conf": "bassa",
+   "buoni": 2,
+   "proposte": 10,
+   "secondi": 14.7
+  },
+  "id-wong": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 10,
+   "secondi": 13.0
+  },
+  "id-xialing": {
+   "conf": "alta",
+   "buoni": 16,
+   "proposte": 3,
+   "secondi": 13.0
+  },
+  "id-yelena-belova": {
+   "conf": "alta",
+   "buoni": 3,
+   "proposte": 5,
+   "secondi": 14.2
+  },
+  "id-yondu": {
+   "conf": "alta",
+   "buoni": 8,
+   "proposte": 3,
+   "secondi": 14.8
+  },
+  "id-yukio": {
+   "conf": "alta",
+   "buoni": 7,
+   "proposte": 3,
+   "secondi": 13.1
+  },
+  "id-zemo": {
+   "conf": "bassa",
+   "buoni": 2,
+   "proposte": 10,
+   "secondi": 14.2
+  }
+ },
+ "blocco": 8,
+ "cpu": 4
+}
