@@ -1,0 +1,197 @@
+{
+ "stadi_s": {
+  "download": 21.2,
+  "qualita": 5.2,
+  "scena_clip": 73.3,
+  "scena_siglip": 263.7
+ },
+ "candidati_totali": 2060,
+ "immagini_uniche": 1327,
+ "immagini_nitide": 1309,
+ "totale_s": 776.5,
+ "ram_picco_mb": 3072,
+ "identita": {
+  "id-melinda-may": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 13.3
+  },
+  "id-michael-morbius": {
+   "conf": "alta",
+   "buoni": 7,
+   "proposte": 3,
+   "secondi": 13.7
+  },
+  "id-miguel-o-hara-spider-man-2099": {
+   "conf": "alta",
+   "buoni": 3,
+   "proposte": 3,
+   "secondi": 14.8
+  },
+  "id-miles-morales": {
+   "conf": "alta",
+   "buoni": 8,
+   "proposte": 4,
+   "secondi": 12.2
+  },
+  "id-milo-loxias-crown": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 12.9
+  },
+  "id-misty-knight": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 8.8
+  },
+  "id-michelle-jones-watson-mcu": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 6,
+   "secondi": 15.0
+  },
+  "id-mobius": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 14.5
+  },
+  "id-monica-rambeau": {
+   "conf": "alta",
+   "buoni": 7,
+   "proposte": 4,
+   "secondi": 14.4
+  },
+  "id-morgan-stark": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 13.7
+  },
+  "id-mr-paradox": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 14.9
+  },
+  "id-mrs-chen": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 14.8
+  },
+  "id-nadya": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 11.6
+  },
+  "id-najma": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 14.8
+  },
+  "id-nakia": {
+   "conf": "alta",
+   "buoni": 5,
+   "proposte": 4,
+   "secondi": 15.1
+  },
+  "id-namor": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 3,
+   "secondi": 15.2
+  },
+  "id-ned-leeds": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 6,
+   "secondi": 14.9
+  },
+  "id-negasonic-teenage-warhead": {
+   "conf": "alta",
+   "buoni": 3,
+   "proposte": 3,
+   "secondi": 12.9
+  },
+  "id-nightcrawler": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 13.2
+  },
+  "id-nomak": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 15.3
+  },
+  "id-noni": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 8.4
+  },
+  "id-norman-osborn-green-goblin": {
+   "conf": "bassa",
+   "buoni": 2,
+   "proposte": 4,
+   "secondi": 12.4
+  },
+  "id-nyssa": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 14.2
+  },
+  "id-obadiah-stane": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 13.6
+  },
+  "id-odino": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 12.9
+  },
+  "id-okoye": {
+   "conf": "alta",
+   "buoni": 5,
+   "proposte": 4,
+   "secondi": 14.8
+  },
+  "id-otto-octavius-doc-ock": {
+   "conf": "alta",
+   "buoni": 6,
+   "proposte": 3,
+   "secondi": 14.2
+  },
+  "id-parker-robbins-the-hood": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 15.0
+  },
+  "id-peggy-carter-captain-carter": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 8,
+   "secondi": 13.1
+  },
+  "id-peni-parker": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 14.4
+  }
+ },
+ "blocco": 5,
+ "cpu": 4
+}

@@ -1,0 +1,197 @@
+{
+ "stadi_s": {
+  "download": 18.4,
+  "qualita": 4.1,
+  "scena_clip": 57.9,
+  "scena_siglip": 218.5
+ },
+ "candidati_totali": 1728,
+ "immagini_uniche": 1118,
+ "immagini_nitide": 1094,
+ "totale_s": 709.5,
+ "ram_picco_mb": 3072,
+ "identita": {
+  "id-cable": {
+   "conf": "bassa",
+   "buoni": 2,
+   "proposte": 4,
+   "secondi": 14.3
+  },
+  "id-capitano-stacy": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 11.6
+  },
+  "id-carlton-drake-riot": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 12.3
+  },
+  "id-cassandra-nova": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 15.2
+  },
+  "id-cassandra-webb": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 13.9
+  },
+  "id-cassie-lang": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 7,
+   "secondi": 14.2
+  },
+  "id-cat-hardy": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 14.3
+  },
+  "id-cecilia-reyes": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 13.3
+  },
+  "id-ciclope": {
+   "conf": "bassa",
+   "buoni": 2,
+   "proposte": 6,
+   "secondi": 15.0
+  },
+  "id-claire-wise": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 3.8
+  },
+  "id-cletus-kasady-carnage": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 3,
+   "secondi": 13.6
+  },
+  "id-colleen-wing": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 14.3
+  },
+  "id-colossus": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 14.5
+  },
+  "id-corvus-glaive": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 14.6
+  },
+  "id-cottonmouth": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 12.0
+  },
+  "id-coulson-lmd": {
+   "conf": "alta",
+   "buoni": 11,
+   "proposte": 3,
+   "secondi": 14.4
+  },
+  "id-cull-obsidian": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 14.4
+  },
+  "id-curt-connors-lizard": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 10.4
+  },
+  "id-daniel-sousa": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 15.3
+  },
+  "id-danielle-moonstar": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 12.6
+  },
+  "id-danny-rand-iron-fist": {
+   "conf": "alta",
+   "buoni": 12,
+   "proposte": 3,
+   "secondi": 13.1
+  },
+  "id-dar-benn": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 13.9
+  },
+  "id-darren-cross": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 15.1
+  },
+  "id-david-banner": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 14.2
+  },
+  "id-davos": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 13.7
+  },
+  "id-deacon-frost": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 14.3
+  },
+  "id-deke-shaw": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 14.4
+  },
+  "id-dmitri-smerdyakov-chameleon": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 15.1
+  },
+  "id-domino": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 14.4
+  },
+  "id-dopinder": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 14.4
+  }
+ },
+ "blocco": 1,
+ "cpu": 4
+}
