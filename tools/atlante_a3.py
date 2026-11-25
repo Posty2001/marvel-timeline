@@ -117,7 +117,7 @@ def build():
         uname, nat = uni_info(x.get('universo'))
         sec = collections.OrderedDict()
         # campi solo da pagine NON hub/storiche (una pagina multi-continuita' non si attribuisce a una sola identita')
-        usable = [p for p in pages if p in REC and RED.get(p, {}).get('ruolo') in ('canonica', 'alias', 'sospesa')]
+        usable = [p for p in pages if p in REC and RED.get(p, {}).get('ruolo') in ('canonica', 'alias', 'sospesa') and iid in (RED[p].get('verso') or [iid])]  # pagina condivisa: i campi restano attribuiti alla sola identita' di destinazione
         multi = len(usable) > 1
         for p in usable:
             for s, items in campi_voce(REC[p], (REC[p]['nome'] if multi else None)).items(): sec.setdefault(s, []).extend(items)

@@ -45,6 +45,10 @@ on:
         description: Atlante A3.1 pilota - genera i CANDIDATI di scena TMDB (solo metadati, nessuna immagine) per 10 identita e salta il resto; con atlante_pilot_commit scrive solo atlante2/data/pilot/candidati.json su test/tva-archives
         type: boolean
         default: false
+      atlante_job:
+        description: Atlante A3.1 - lavori di sola lettura/metadati sul branch TEST - verifica_mappa (tmdbMap contro TMDB) oppure presel (preselezione scene sperimentale); lascia vuoto per il resto
+        type: string
+        default: ''
       atlante_pilot_commit:
         description: Atlante A3.1 pilota - con solo_atlante_pilot, committa il solo candidati.json (e il report) su test/tva-archives
         type: boolean
@@ -59,7 +63,7 @@ permissions:
 
 jobs:
   sync:
-    if: ${{ !inputs.solo_atlante_pilot && !((inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit) }}
+    if: ${{ !inputs.solo_atlante_pilot && inputs.atlante_job == '' && !((inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit) }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -153,7 +157,7 @@ jobs:
 
   live-update:
     # Aggiornamento automatico del CATALOGO (solo dati). Pubblicazione dell app = operazione separata.
-    if: ${{ !inputs.solo_atlante_pilot && (inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit }}
+    if: ${{ !inputs.solo_atlante_pilot && inputs.atlante_job == '' && (inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -233,7 +237,7 @@ jobs:
 
   atlante-pilot:
     # Atlante A3.1 pilota: SOLO metadati (percorsi CDN, dimensioni, voti). La chiave resta nei Secret, mai nell output ne nel frontend.
-    if: ${{ inputs.solo_atlante_pilot }}
+    if: ${{ inputs.solo_atlante_pilot || inputs.atlante_job != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -266,10 +270,17 @@ jobs:
           fi
           echo "Secret presente."
       - name: Genera candidati (solo metadati)
+        if: ${{ inputs.solo_atlante_pilot }}
         env:
           TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: python3 tools/atlante_pilot_tmdb.py --out pilot-out
+      - name: Verifica mappa locandine contro TMDB (sola lettura)
+        if: ${{ inputs.atlante_job == 'verifica_mappa' }}
+        env:
+          TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: python3 tools/tmdb_verifica_mappa.py --out pilot-out
       - name: Riepilogo nel job
         if: ${{ always() }}
         run: |
@@ -282,17 +293,24 @@ jobs:
           path: pilot-out/
           if-no-files-found: warn
           retention-days: 30
-      - name: Commit del solo candidati.json su test/tva-archives
+      - name: Commit dei soli file di metadati su test/tva-archives
         if: ${{ inputs.atlante_pilot_commit }}
         run: |
-          mkdir -p atlante2/data/pilot
-          cp pilot-out/candidati.json atlante2/data/pilot/candidati.json
-          cp pilot-out/REPORT.md docs/ATLANTE_2_0_A31_PILOTA_CANDIDATI_REPORT.md
-          git add -- atlante2/data/pilot/candidati.json docs/ATLANTE_2_0_A31_PILOTA_CANDIDATI_REPORT.md
+          ALLOWED="atlante2/data/pilot/candidati.json docs/ATLANTE_2_0_A31_PILOTA_CANDIDATI_REPORT.md data/atlante/tmdb_verifica_mappa.json docs/ATLANTE_2_0_TMDB_VERIFICA_MAPPA.md"
+          if [ -f pilot-out/candidati.json ]; then
+            mkdir -p atlante2/data/pilot
+            cp pilot-out/candidati.json atlante2/data/pilot/candidati.json
+            cp pilot-out/REPORT.md docs/ATLANTE_2_0_A31_PILOTA_CANDIDATI_REPORT.md
+          fi
+          if [ -f pilot-out/verifica_mappa.json ]; then
+            cp pilot-out/verifica_mappa.json data/atlante/tmdb_verifica_mappa.json
+            cp pilot-out/VERIFICA_MAPPA.md docs/ATLANTE_2_0_TMDB_VERIFICA_MAPPA.md
+          fi
+          git add -- $(for f in $ALLOWED; do [ -f "$f" ] && echo "$f"; done)
           if git diff --cached --quiet; then echo "Nessuna modifica."; exit 0; fi
-          extra="$(git diff --cached --name-only | grep -vx -e atlante2/data/pilot/candidati.json -e docs/ATLANTE_2_0_A31_PILOTA_CANDIDATI_REPORT.md || true)"
+          extra="$(git diff --cached --name-only | grep -vxF -f <(printf '%s\n' $ALLOWED) || true)"
           [ -z "$extra" ] || { echo "File non consentiti: $extra"; exit 4; }
-          git -c user.name="tva-pilot-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "data(A3.1): candidati scena TMDB del pilota (solo metadati)"
+          git -c user.name="tva-pilot-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "data(A3.1): metadati di verifica/pilota TMDB (solo metadati)"
           for i in 1 2 3; do
             git pull -q --rebase origin test/tva-archives || true
             if git push -q origin HEAD:refs/heads/test/tva-archives; then echo "Pubblicato (solo metadati)."; exit 0; fi

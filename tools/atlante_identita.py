@@ -163,6 +163,17 @@ def costruisci():
             red(pid, 'segnaposto', 'seg-' + pid[5:]); continue
         I.append({'id': 'id-' + pid[5:], 'nome': e['nome'], 'tipo': 'identita', 'categorie': ['personaggio'], 'conta_come_personaggio': True, 'universo': (APPART[pid] or [None])[0], 'pagine': [pid], 'pagina_principale': pid, 'interpreti': [], 'apparizioni': apps(pid), 'incarnazioni': [], 'alias': [], 'fonte': [F['int-identita']], 'verifica': 'invariata (nessuna decisione di identita\' applicata)', 'nota': ''})
         red(pid, 'canonica', 'id-' + pid[5:])
+    # 14 Wolverine: Fox-Verse e X-Men '97 (decisione dell'utente, 25/11/2026) --------------------------------------------
+    # La scheda char-wolverine dichiara «Fox-Verse · Animato, continuita' propria»; N°131 (X-Men '97 S2) e' in uni-x-men-97-verse (mvMapData).
+    # Nessun ID, apparizione o collegamento va perso: id-wolverine resta (stesso ID, stessa pagina canonica); N°131 passa all'identita' animata
+    # e resta tracciato in id-wolverine.apparizioni_spostate. La pagina char-wolverine resta canonica verso id-wolverine (i link entranti non cambiano).
+    wv = next(i for i in I if i['id'] == 'id-wolverine'); assert '131' in wv['apparizioni'] and '131' in titoli('uni-x-men-97-verse')
+    wv['apparizioni'] = [n for n in wv['apparizioni'] if n != '131']; wv['apparizioni_spostate'] = {'131': 'id-wolverine-x-men-97'}
+    wv['nota'] = "N°131 (X-Men '97 S2) appartiene alla continuita' animata: spostato in id-wolverine-x-men-97 (decisione dell'utente 25/11/2026)."
+    I.append(ident('id-wolverine-x-men-97', "Logan/Wolverine (X-Men '97)", 'identita', 'uni-x-men-97-verse', ['char-wolverine'], 'char-wolverine', [], ['int-identita', 'int-mv'], apparizioni=['131'],
+                   verifica="parziale: continuita' dichiarata dalla scheda Atlante (Fox-Verse · Animato, continuita' propria) e da mvMapData (N°131 in uni-x-men-97-verse); nessun dato biografico specifico attribuito",
+                   note="Separato da id-wolverine (Fox-Verse) per decisione dell'utente (25/11/2026). La scheda char-wolverine descrive insieme le due continuita': i suoi campi restano attribuiti a id-wolverine e non a questa identita'."))
+    rel('id-wolverine', 'id-wolverine-x-men-97', 'stessa_scheda_atlante', 'stessa_scheda_atlante', False, ['int-identita', 'int-mv'], "dati interni: la scheda char-wolverine copre entrambe le continuita'; nessuna parentela narrativa dichiarata", "Continuita' distinte (Fox-Verse / X-Men '97-verse): identita' distinte, non unificate.")
     # collegamenti da classificare (solo pagine divise in piu' identita')
     DIVISE = {k: v['verso'] for k, v in RED.items() if v['ruolo'] in ('pagina-hub', 'pagina-storica')}
     IDX = {i['id']: i for i in I}
@@ -228,6 +239,9 @@ def verifica():
     for k in ('conteggi', 'ids_sha256', 'html_sha256', 'blob', 'link_mvNavigate', 'link_rotti'): chk('baseline A0 invariata: %s' % k, m[k] == mm[k])
     chk('Tessera: blob id/poteri/livelli invariati', all(m['blob'][b] == mm['blob'][b] for b in ('tesseraCharIdsData', 'tesseraCharPowersData', 'tesseraCharLevelsData')))
     chk('Miss Minutes: blob letti dall\'host invariati', all(m['blob'][b] == mm['blob'][b] for b in m['blob']))
+    wv = {i['id']: i for i in r['identita']}
+    chk("Wolverine: N°131 solo nell'identita' X-Men '97; nessuna apparizione persa (unione = originale)", '131' not in wv['id-wolverine']['apparizioni'] and wv['id-wolverine-x-men-97']['apparizioni'] == ['131'] and set(wv['id-wolverine']['apparizioni']) | {'131'} == {'013', '014', '015', '016', '017', '018', '023', '117', '131'})
+    chk("Wolverine: char-wolverine resta canonica verso id-wolverine (link entranti invariati); universi distinti", r['redirect']['char-wolverine'] == {'ruolo': 'canonica', 'verso': ['id-wolverine'], 'nota': ''} and wv['id-wolverine']['universo'] == 'uni-earth-10005-fox-verse' and wv['id-wolverine-x-men-97']['universo'] == 'uni-x-men-97-verse')
     c = r['conteggi']
     chk('conteggio identita\' coerente (che contano = totali - non contanti)', c['identita_che_contano'] == sum(1 for i in r['identita'] if i['conta_come_personaggio']))
     print('ESITO:', 'OK' if ok else 'FALLITO'); return 0 if ok else 1

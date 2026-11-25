@@ -67,11 +67,12 @@ class Api:
                 raise
 
 def mappa():
-    try: return json.load(open(os.path.join(ROOT, 'data/atlante/blob/tmdbMap.json')))['voci']
-    except Exception: return {}
+    """tmdbMap e' indicizzata per ID INTERNO dell'item (data-item); le schede Atlante usano il «N° mostrato» (span.rec): coincidono tranne 9 voci (tools/atlante_numeri.py)."""
+    sys.path.insert(0, os.path.join(ROOT, 'tools')); import atlante_numeri as N
+    c = N.carica(); return c['tmdbMap'], c['vis2id']
 
-def risolvi(api, num, mp):
-    tit, yr, tp = T[num]; g = (mp.get(num) or {}).get('id'); out = {'num': num, 'titolo_atteso': tit, 'tipo': tp, 'anno': yr, 'id_mappa': g, 'tmdb_id': None, 'titolo_tmdb': None, 'verificato': False, 'corretto_da_mappa': False}
+def risolvi(api, num, mp, vis2id):
+    tit, yr, tp = T[num]; item = vis2id.get(num, num); g = (mp.get(item) or {}).get('id'); out = {'num': num, 'item': item, 'titolo_atteso': tit, 'tipo': tp, 'anno': yr, 'id_mappa': g, 'tmdb_id': None, 'titolo_tmdb': None, 'verificato': False, 'corretto_da_mappa': False}
     def anno_ok(d): return bool(d) and abs(int((d or '0000')[:4] or 0) - yr) <= 1
     if g:
         d = api.get('/%s/%s' % (tp, g), language='en-US')
@@ -118,11 +119,11 @@ def tagged(api, pid, ids):
     return out
 
 def genera(api, per_titolo=24):
-    mp = mappa(); cache = {}; res = []; avvisi = []
+    mp, vis2id = mappa(); cache = {}; res = []; avvisi = []
     for iid, nome, attore, rx, nums, nota in P:
         titoli = []; pid = None; pnome = None; chs = []
         for n in nums:
-            if n not in cache: cache[n] = risolvi(api, n, mp); cache[n]['_img'] = immagini_titolo(api, cache[n]) if cache[n]['verificato'] else {}
+            if n not in cache: cache[n] = risolvi(api, n, mp, vis2id); cache[n]['_img'] = immagini_titolo(api, cache[n]) if cache[n]['verificato'] else {}
             t = cache[n]; titoli.append(t)
             if not t['verificato']: avvisi.append('%s: titolo %s (%s) NON verificato' % (iid, n, t['titolo_atteso'])); continue
             if t['corretto_da_mappa']: avvisi.append('%s: id TMDB della mappa locandine errato per voce %s (%s -> %s)' % (iid, n, t['id_mappa'], t['tmdb_id']))
