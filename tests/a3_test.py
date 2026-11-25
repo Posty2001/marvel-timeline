@@ -58,7 +58,7 @@ with sync_playwright() as p:
     # filtri
     pg.evaluate("()=>{const s=document.querySelector('#atlas2 select[aria-label=\"Filtra per continuità\"]'); s.value=s.options[1].value; s.dispatchEvent(new Event('change',{bubbles:true}))}"); pg.wait_for_timeout(400)
     nf = pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-tile').length"); ok('filtro per continuità riduce l\'elenco', 0 < nf < 296, nf)
-    pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-seg button')[1].click()"); pg.wait_for_timeout(300)
+    pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-seg button')[2].click()"); pg.wait_for_timeout(300)
     ok('modalità elenco', pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-li').length")>0 and pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-tile').length")==0)
     # ricerca
     pg.evaluate("()=>tvaAtlas2.ext.api.nav('a3',{a3:{v:'search',q:''}})"); pg.wait_for_timeout(500)
