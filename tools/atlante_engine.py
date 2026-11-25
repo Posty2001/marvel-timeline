@@ -138,6 +138,11 @@ def main():
             if per_titolo.get(r['x']['num'], 0) >= 2: continue
             if any(float(r['f'] @ s['f']) > 0.93 for s in scelte): continue
             scelte.append(r); per_titolo[r['x']['num']] = per_titolo.get(r['x']['num'], 0) + 1
+        # garanzia di almeno 3 proposte: se la diversità ha scartato troppo, si riempie con le migliori rimaste (limite 3 per titolo, nessuna duplicazione di scena)
+        for r in top:
+            if len(scelte) >= 3: break
+            if r in scelte or per_titolo.get(r['x']['num'], 0) >= 3: continue
+            scelte.append(r); per_titolo[r['x']['num']] = per_titolo.get(r['x']['num'], 0) + 1
         props = []
         for k, r in enumerate(scelte):
             s, (x0, y0, w0, h0), pc = r['crop']
