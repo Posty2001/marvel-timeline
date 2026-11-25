@@ -101,9 +101,33 @@
 
   /* ---------- editor (overlay a schermo intero) ---------- */
   var CANDS = null;
-  function candidati() { if (CANDS) return Promise.resolve(CANDS); return fetch('atlante2/data/pilot/candidati.json', { credentials: 'same-origin' }).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (j) { CANDS = j; return j; }).catch(function () { CANDS = { identita: [] }; return CANDS; }); }
+  var CIDX = null, CID = {};
+  function getJson(u) { return fetch(u, { credentials: 'same-origin' }).then(function (r) { if (!r.ok) throw 0; return r.json(); }); }
+  /* indice delle identità con candidati (ondata corrente); ripiega sul file del pilota */
+  function indice() {
+    if (CIDX) return Promise.resolve(CIDX);
+    return Promise.all([candidati(), getJson('atlante2/data/pilot/c/_indice.json').catch(function () { return { identita: [] }; })]).then(function (z) {
+      var out = (z[0].identita || []).map(function (q) { return q.id; }); (z[1].identita || []).forEach(function (i) { if (typeof i === 'string' && /^[a-z0-9-]{3,80}$/.test(i) && out.indexOf(i) < 0) out.push(i); });   // prima le 10 del pilota, poi le nuove
+      CIDX = out; return out;
+    });
+  }
+  /* candidati di UNA identità (file lazy c/<id>.json, con ripiego sul vecchio file unico) */
+  function candId(id) {
+    if (CID[id]) return CID[id];
+    var safe = /^[a-z0-9-]{3,80}$/.test(id) ? id : null;
+    CID[id] = (safe ? getJson('atlante2/data/pilot/c/' + safe + '.json') : Promise.reject(0)).catch(function () { return candidati().then(function (j) { return infoId(j, id); }); }).then(function (r) { if (r && !r.attore) r.attore = { nome: 'interprete non indicato' }; return r || null; });
+    return CID[id];
+  }
+  function candidati() { if (CANDS) return Promise.resolve(CANDS); return getJson('atlante2/data/pilot/candidati.json').then(function (j) { CANDS = j; return j; }).catch(function () { CANDS = { identita: [] }; return CANDS; }); }
   var PROP = null;   // proposte del motore A3.2 (metadati: percorsi CDN, punteggi, ritaglio suggerito); l'utente decide sempre
-  function proposte() { if (PROP) return Promise.resolve(PROP); return fetch('atlante2/data/pilot/proposte.json', { credentials: 'same-origin' }).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (j) { PROP = j; return j; }).catch(function () { PROP = { identita: [] }; return PROP; }); }
+  function proposte() {
+    if (PROP) return Promise.resolve(PROP);
+    return Promise.all([getJson('atlante2/data/pilot/proposte.json').catch(function () { return { identita: [] }; }), getJson('atlante2/data/pilot/proposte2.json').catch(function () { return { identita: [] }; })]).then(function (a) {
+      var m = {}; (a[0].identita || []).forEach(function (z) { m[z.id] = z; }); (a[1].identita || []).forEach(function (z) { if (z && z.proposte && z.proposte.length) m[z.id] = z; });   // il motore 2.0 prevale sul prototipo
+      PROP = { identita: Object.keys(m).map(function (k) { return m[k]; }) }; return PROP;
+    });
+  }
+  function propId(id) { return proposte().then(function (pj) { return (pj.identita || []).filter(function (z) { return z.id === id; })[0] || null; }); }
   function infoId(j, id) { for (var i = 0; i < j.identita.length; i++) if (j.identita[i].id === id) return j.identita[i]; return null; }
 
   function openEditor(id, nome, known) {
@@ -153,9 +177,9 @@
       if (meta.auto) { meta.auto = 0; salva(); }
     }
     function scene() {
-      clear(); main.appendChild(h('p', 'a3r-info', 'Caricamento delle scene candidate…')); candidati().then(function (j) {
-        var inf = infoId(j, id); clear();
-        if (!inf || !inf.immagini.length) { main.appendChild(h('p', 'a3r-info', 'Per questa identità non ci sono ancora scene candidate (il pilota riguarda 10 identità). Puoi importare una tua immagine.')); main.appendChild(btn('a3r-b', 'Indietro', home)); return; }
+      clear(); main.appendChild(h('p', 'a3r-info', 'Caricamento delle scene candidate…')); candId(id).then(function (inf) {
+        clear();
+        if (!inf || !inf.immagini.length) { main.appendChild(h('p', 'a3r-info', 'Per questa identità non ci sono ancora scene candidate (l’ondata attuale riguarda 40 identità). Puoi importare una tua immagine.')); main.appendChild(btn('a3r-b', 'Indietro', home)); return; }
         main.appendChild(btn('a3r-b', 'Indietro', home));
         main.appendChild(h('p', 'a3r-info', 'Interprete: ' + inf.attore.nome + '. ' + (inf.nota || 'Scegli una scena in cui il personaggio è chiaramente riconoscibile in questa continuità.')));
         var tabs = h('div', 'a3r-tabs'), grid = h('div', 'a3r-grid'), nums = []; inf.titoli.forEach(function (t) { if (t.verificato) nums.push(t); });
@@ -168,10 +192,10 @@
           });
         }
         nums.forEach(function (t) { var b = btn('a3r-tab', t.titolo_tmdb, function () { shown = t.num; fill(); }); b.setAttribute('data-n', t.num); tabs.appendChild(b); });
-        proposte().then(function (pj) {
-          var pi = (pj.identita || []).filter(function (z) { return z.id === id; })[0]; if (!pi || !pi.proposte || !pi.proposte.length) return;
+        propId(id).then(function (pi) {
+          if (!pi || !pi.proposte || !pi.proposte.length) return;
           var box = h('section', 'a3r-prop'); box.appendChild(h('h3', '', 'Proposte automatiche (' + pi.proposte.length + ')'));
-          box.appendChild(h('p', 'a3r-info', 'Selezionate dal motore tra le scene della continuità, con ritaglio suggerito. ★ = scena confermata da entrambi i modelli. Tocca ✓ per approvare subito, o la scena per rivedere il ritaglio. La scelta resta tua.'));
+          box.appendChild(h('p', 'a3r-info', (pi.conf === 'bassa' ? 'Confidenza BASSA: il motore non ha trovato scene sicure, quindi ne propone di più (fino a 10). ' : '') + 'Selezionate dal motore tra le scene della continuità, con ritaglio suggerito. ★ = scena confermata da entrambi i modelli. Tocca ✓ per approvare subito, o la scena per rivedere il ritaglio. La scelta resta tua.'));
           var g = h('div', 'a3r-pg'); pi.proposte.forEach(function (x) {
             var t = inf.titoli.filter(function (y) { return y.num === x.num; })[0]; var st = refStyle({ scena: { w: x.w, h: x.h }, crop: x.crop });
             var c = h('div', 'a3r-pc'); var pv = btn('a3r-pv', null, function () { scegli(x, x.crop, false); }); pv.setAttribute('aria-label', 'Proposta ' + x.rk + ', rivedi il ritaglio');
@@ -233,6 +257,67 @@
     }).then(function () { return rep; });
   }
 
+  /* ---------- revisione rapida consecutiva (A3.2 v2) ---------- */
+  function downloadJson(name, obj) {
+    var blob = new Blob([JSON.stringify(obj, null, 1)], { type: 'application/json' }), a = h('a', '', null, { href: URL.createObjectURL(blob), download: name });
+    D.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 2000);
+  }
+  /** Solo METADATI delle scelte (nessuna immagine): serve a misurare la precisione del motore (posizione della proposta scelta). */
+  function valutazioni() {
+    return all().then(function (l) {
+      var voci = l.filter(function (r) { return r.scena; }).map(function (r) { return { id: r.id, num: r.scena.num || null, rk: r.scena.rk || null, sc: r.scena.sc == null ? null : r.scena.sc, fonte: r.fonte }; });
+      var con = voci.filter(function (v) { return v.rk; }), at = function (k) { return con.filter(function (v) { return v.rk <= k; }).length; };
+      return { formato: 'tva-valutazioni', versione: 1, creato: new Date().toISOString(), totale: voci.length, da_proposta: con.length, manuali: voci.length - con.length, rk1: at(1), rk3: at(3), rk5: at(5), rk10: at(10), voci: voci };
+    });
+  }
+  function revisione(known) {
+    var ov = h('div', 'a3r'); ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-modal', 'true'); ov.setAttribute('aria-label', 'Revisione rapida dei ritratti');
+    var top = h('header', 'a3r-top'); top.appendChild(btn('a3r-x', 'Chiudi', close)); top.appendChild(h('b', '', 'Revisione rapida')); ov.appendChild(top);
+    var main = h('div', 'a3r-main'); ov.appendChild(main); (D.getElementById('atlas2') || D.body).appendChild(ov);
+    function close() { ov.remove(); D.removeEventListener('keydown', esc); } function esc(e) { if (e.key === 'Escape') close(); } D.addEventListener('keydown', esc);
+    var Q = [], qi = 0, pi = 0, saved = 0, skipped = 0, busy = false, note = '';
+    main.appendChild(h('p', 'a3r-info', 'Preparazione della coda…'));
+    Promise.all([indice(), ids(), proposte()]).then(function (a) {
+      var props = {}; (a[2].identita || []).forEach(function (z) { if (z.proposte && z.proposte.length) props[z.id] = 1; });
+      Q = a[0].filter(function (id) { return !a[1][id] && props[id]; }); show();
+    });
+    function done() { main.textContent = ''; main.appendChild(h('p', 'a3r-info', 'Revisione terminata: ' + saved + ' ritratti salvati, ' + skipped + ' identità saltate (restano senza ritratto, nulla è stato sovrascritto).')); main.appendChild(btn('a3r-b pri', 'Chiudi', close)); }
+    function show() {
+      main.textContent = ''; busy = false; pi = 0;
+      if (qi >= Q.length) { done(); return; }
+      var id = Q[qi];
+      Promise.all([candId(id), propId(id), getRec(id)]).then(function (a) {
+        var inf = a[0], pr = a[1], rec = a[2];
+        if (rec || !inf || !pr || !pr.proposte.length) { qi++; show(); return; }   // già presente (mai sovrascritto) o senza proposte
+        draw(id, inf, pr);
+      }).catch(function () { qi++; show(); });
+    }
+    function draw(id, inf, pr) {
+      main.textContent = ''; var P = pr.proposte, x = P[pi], t = inf.titoli.filter(function (y) { return y.num === x.num; })[0];
+      main.appendChild(h('p', 'a3r-info', (qi + 1) + ' / ' + Q.length + ' · salvati ' + saved));
+      main.appendChild(h('h3', '', inf.nome || id));
+      main.appendChild(h('p', 'a3r-info', 'Interprete: ' + (inf.attore ? inf.attore.nome : '—') + ' · ' + (t ? t.titolo_tmdb : '') + ' · proposta ' + (pi + 1) + ' di ' + P.length + (pr.conf === 'bassa' ? ' · confidenza BASSA' : '') + (x.ck ? ' · ★' : '')));
+      if (note) { main.appendChild(h('p', 'a3r-msg', note)); note = ''; }
+      var st = refStyle({ scena: { w: x.w, h: x.h }, crop: x.crop }), pv = h('div', 'a3r-big'); pv.style.backgroundImage = 'url("' + TM + 'w780' + x.p + '")'; pv.style.backgroundSize = st.size; pv.style.backgroundPosition = st.pos; pv.setAttribute('role', 'img'); pv.setAttribute('aria-label', 'Anteprima della proposta ' + (pi + 1)); main.appendChild(pv);
+      var r1 = h('div', 'a3r-row'); r1.appendChild(btn('a3r-b pri', '✓ Approva', function () { approva(id, inf, x); })); main.appendChild(r1);
+      var r2 = h('div', 'a3r-row'), nx = btn('a3r-b', 'Altra proposta', function () { if (pi + 1 < P.length) { pi++; draw(id, inf, pr); } }); if (pi + 1 >= P.length) { nx.disabled = true; nx.textContent = 'Nessuna altra proposta'; } r2.appendChild(nx);
+      r2.appendChild(btn('a3r-b', 'Salta', function () { skipped++; qi++; show(); })); r2.appendChild(btn('a3r-b', 'Editor', function () { openEditor(id, inf.nome || id, known); })); main.appendChild(r2);
+      main.appendChild(h('p', 'a3r-fine', ATTR));
+    }
+    function approva(id, inf, x) {
+      if (busy) return; busy = true;
+      var t = inf.titoli.filter(function (y) { return y.num === x.num; })[0], scena = { p: x.p, w: x.w, h: x.h, tid: t ? t.tmdb_id : null, num: x.num }; if (x.rk) { scena.rk = x.rk; scena.sc = x.sc; }
+      var base = { id: id, fonte: 'tmdb-scena', titolo: t ? t.titolo_tmdb : '', scena: scena, crop: { z: x.crop.z, cx: x.crop.cx, cy: x.crop.cy }, ts: Date.now(), v: 1 };
+      Promise.all([getRec(id), all()]).then(function (a) {
+        if (a[0]) { note = 'Ritratto già presente: non sovrascritto.'; qi++; show(); return null; }
+        var dup = a[1].filter(function (r) { return r.id !== id && r.scena && r.scena.p === x.p; })[0];
+        if (dup) { busy = false; var prm = propId(id); note = 'Questa scena è già usata per un’altra identità: scegli un’altra proposta.'; return prm.then(function (pr) { if (pi + 1 < pr.proposte.length) pi++; draw(id, inf, pr); }); }
+        function fin(rec) { return getRec(id).then(function (again) { if (again) { note = 'Ritratto comparso nel frattempo: non sovrascritto.'; qi++; show(); return; } return putRec(rec).then(function () { saved++; qi++; show(); }); }); }
+        return loadImg(TM + 'w1280' + x.p, true).then(function (im) { return cropBlob(im, base.crop); }).then(function (b) { base.kind = 'copy'; base.blob = b; base.mime = b.type; base.w = OUT_W; base.h = OUT_H; return fin(base); }).catch(function () { base.kind = 'ref'; return fin(base); });
+      }).catch(function () { busy = false; note = 'Salvataggio non riuscito: riprova o salta.'; propId(id).then(function (pr) { draw(id, inf, pr); }); });
+    }
+  }
+
   /* ---------- gestione (elenco del pilota + esporta/importa) ---------- */
   function renderManager(host, known) {
     host.textContent = ''; var root = h('div', 'a3r-mgr'); host.appendChild(root);
@@ -246,19 +331,22 @@
     row.appendChild(btn('a3r-b pri', 'Esporta ritratti', function () { downloadExport().then(function (n) { res.hidden = false; res.className = 'a3r-msg'; res.textContent = 'Esportati ' + n + ' ritratti.'; }, function () { res.hidden = false; res.className = 'a3r-msg bad'; res.textContent = 'Esportazione non riuscita.'; }); }));
     var ow = h('label', 'a3r-ck'); var cb = h('input', '', null, { type: 'checkbox' }); ow.appendChild(cb); ow.appendChild(D.createTextNode(' sovrascrivi quelli già presenti'));
     row.appendChild(btn('a3r-b', 'Importa da file', function () { var f = h('input', '', null, { type: 'file', accept: 'application/json,.json' }); f.addEventListener('change', function () { var file = f.files && f.files[0]; if (!file) return; file.text().then(function (t) { return importJson(t, { known: function (id) { return !!(known && known(id)); }, sovrascrivi: cb.checked }); }).then(function (r) { res.hidden = false; res.className = 'a3r-msg' + (r.errori.length && !r.importati ? ' bad' : ''); res.textContent = 'Importati ' + r.importati + ', saltati ' + r.saltati + (r.errori.length ? ' — ' + r.errori.slice(0, 3).join('; ') : '') + '.'; list(); }); }); f.click(); }));
+    row.appendChild(btn('a3r-b', 'Esporta valutazioni (solo metadati)', function () { valutazioni().then(function (o) { downloadJson('tva-valutazioni-' + new Date().toISOString().slice(0, 10) + '.json', o); res.hidden = false; res.className = 'a3r-msg'; res.textContent = 'Valutazioni esportate: ' + o.da_proposta + ' da proposta (prima: ' + o.rk1 + ', entro la 3ª: ' + o.rk3 + '), ' + o.manuali + ' manuali.'; }); }));
+    var rv = btn('a3r-b pri', 'Revisione rapida…', function () { revisione(known); }); row.appendChild(rv);
     root.appendChild(row); root.appendChild(ow); root.appendChild(res);
     var lh = h('div', 'a3r-list'); root.appendChild(lh); root.appendChild(h('p', 'a3r-fine', ATTR));
     function list() {
-      lh.textContent = ''; candidati().then(function (j) {
-        var arr = j.identita.length ? j.identita : []; if (!arr.length) lh.appendChild(h('p', 'a3r-info', 'Candidati del pilota non ancora disponibili.'));
-        arr.forEach(function (i) {
-          var r = btn('a3r-item', null, function () { openEditor(i.id, i.nome, known); }), th = h('span', 'a3r-mini'); r.appendChild(th); var t = h('span'); t.appendChild(h('b', '', i.nome)); var s = h('span', 's', 'Verifica in corso…'); t.appendChild(s); r.appendChild(t);
-          getRec(i.id).then(function (rec) { s.textContent = rec ? (rec.kind === 'copy' ? 'Copia privata' : 'Riferimento a scena') + (rec.titolo ? ' · ' + rec.titolo : '') : (i.immagini.length + ' scene candidate · nessun ritratto'); var n = rec && node(rec, false); if (n) th.appendChild(n); }); lh.appendChild(r);
+      lh.textContent = ''; indice().then(function (arr) {
+        if (!arr.length) { lh.appendChild(h('p', 'a3r-info', 'Candidati non ancora disponibili.')); return; }
+        arr.forEach(function (id) {
+          var r = btn('a3r-item', null, null), th = h('span', 'a3r-mini'); r.appendChild(th); var t = h('span'), nm = h('b', '', id.replace(/^id-/, '').replace(/-/g, ' ')); t.appendChild(nm); var s = h('span', 's', 'Verifica in corso…'); t.appendChild(s); r.appendChild(t);
+          var nome = nm.textContent; r.addEventListener('click', function () { openEditor(id, nome, known); }); lh.appendChild(r);
+          Promise.all([getRec(id), candId(id)]).then(function (a) { var rec = a[0], inf = a[1]; if (inf && inf.nome) { nome = inf.nome; nm.textContent = nome; } s.textContent = rec ? (rec.kind === 'copy' ? 'Copia privata' : 'Riferimento a scena') + (rec.titolo ? ' · ' + rec.titolo : '') : ((inf ? inf.immagini.length : 0) + ' scene candidate · nessun ritratto'); var n = rec && node(rec, false); if (n) th.appendChild(n); });
         });
       });
     }
     list(); WAIT.push(function () { /* aggiornamento dell'elenco alla modifica */ if (root.isConnected) list(); });
   }
 
-  W.tvaRit = { paint: paint, ids: ids, get: getRec, put: putRec, del: delRec, all: all, openEditor: openEditor, renderManager: renderManager, exportAll: exportAll, importJson: importJson, refStyle: refStyle, clamp: clamp, cropBlob: cropBlob, persisted: persisted, usingMemory: function () { return USING_MEM; }, _v: 1 };
+  W.tvaRit = { revisione: revisione, valutazioni: valutazioni, paint: paint, ids: ids, get: getRec, put: putRec, del: delRec, all: all, openEditor: openEditor, renderManager: renderManager, exportAll: exportAll, importJson: importJson, refStyle: refStyle, clamp: clamp, cropBlob: cropBlob, persisted: persisted, usingMemory: function () { return USING_MEM; }, _v: 1 };
 })();

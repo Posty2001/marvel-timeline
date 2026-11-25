@@ -41,8 +41,8 @@ with sync_playwright() as p:
     # ---- manager
     ok('Home A3: voce «Ritratti privati»', pg.evaluate("()=>!!document.querySelector('#atlas2 .a3-ritlink')"))
     pg.evaluate("()=>document.querySelector('#atlas2 .a3-ritlink').click()"); pg.wait_for_timeout(1200)
-    wait(pg, "()=>document.querySelectorAll('#atlas2 .a3r-item').length===10")
-    ok('manager: 10 identita del pilota', pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3r-item b')].map(x=>x.textContent).join('|')") == 'Iron Man MCU|Thor MCU|Loki MCU|Spider-Man MCU|Spider-Man Raimi|Spider-Man Garfield|Wolverine Fox|Deadpool|Wanda Maximoff MCU|Thanos MCU')
+    wait(pg, "()=>document.querySelectorAll('#atlas2 .a3r-item').length>=10")
+    ok('manager: 10 identita del pilota in testa', pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3r-item b')].slice(0,10).map(x=>x.textContent).join('|')") == 'Iron Man MCU|Thor MCU|Loki MCU|Spider-Man MCU|Spider-Man Raimi|Spider-Man Garfield|Wolverine Fox|Deadpool|Wanda Maximoff MCU|Thanos MCU')
     ok('manager: scene candidate e nessun ritratto', pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3r-item .s')].every(s=>/scene candidate · nessun ritratto/.test(s.textContent))"))
     ok('esporta/importa presenti', pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3r-mgr .a3r-b')].map(b=>b.textContent).join('|')").startswith('Esporta ritratti|Importa da file'))
     # ---- scena TMDB per Iron Man
@@ -50,7 +50,7 @@ with sync_playwright() as p:
     ok('editor: nessun ritratto, messaggio di privacy', pg.evaluate("()=>/non è nel repository/.test(document.querySelector('.a3r').textContent)"))
     pg.evaluate("()=>[...document.querySelectorAll('.a3r .a3r-b')].find(b=>/scena TMDB/.test(b.textContent)).click()"); wait(pg, "()=>document.querySelectorAll('.a3r .a3r-th img').length>0")
     th = pg.evaluate("()=>[...document.querySelectorAll('.a3r .a3r-th img')].map(i=>i.src)")
-    ok('miniature dal CDN TMDB (w300), una scheda per titolo', all(re.match(r'^https://image\.tmdb\.org/t/p/w300/[A-Za-z0-9_-]+\.jpg$', s) for s in th) and pg.evaluate("()=>document.querySelectorAll('.a3r .a3r-tab').length")==9, th[:2])
+    ok('miniature dal CDN TMDB (w300), una scheda per titolo', all(re.match(r'^https://image\.tmdb\.org/t/p/w300/[A-Za-z0-9_-]+\.jpg$', s) for s in th) and pg.evaluate("()=>document.querySelectorAll('.a3r .a3r-tab').length")==9, (th[:2], pg.evaluate("()=>document.querySelectorAll('.a3r .a3r-tab').length")))
     pg.evaluate("()=>document.querySelector('.a3r .a3r-th').click()"); wait(pg, "()=>!!document.querySelector('.a3r .a3r-frame')")
     ok('editor visibile a schermo intero (non nascosto dalla shell)', pg.evaluate("()=>{const r=document.querySelector('.a3r').getBoundingClientRect();return r.width>=380&&r.height>=800}"))
     fr = pg.evaluate("()=>{const r=document.querySelector('.a3r .a3r-frame').getBoundingClientRect();return [r.x,r.y,r.width,r.height]}")
