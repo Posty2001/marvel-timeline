@@ -294,6 +294,9 @@
    "id-yondu",
    "id-yukio",
    "id-zemo"
+  ],
+  [
+   "id-harry-osborn-webb"
   ]
  ],
  "identita": [
@@ -3111,7 +3114,7 @@
   },
   {
    "id": "id-harry-osborn-green-goblin",
-   "nome": "Harry Osborn/Green Goblin",
+   "nome": "Harry Osborn/Green Goblin (Raimi)",
    "prompt": "the Green Goblin in green armor with a mask on a glider|Harry Osborn, a young man with dark hair in a suit|the New Goblin in black and gray armor with a mask",
    "generico": false,
    "pilota": false,
@@ -3145,14 +3148,31 @@
    ],
    "esclusi_continuita": [
     {
-     "num": "005",
-     "gruppo": "1B"
-    },
-    {
      "num": "120",
      "gruppo": "Canone"
     }
    ],
+   "ambigui": []
+  },
+  {
+   "id": "id-harry-osborn-webb",
+   "nome": "Harry Osborn/Green Goblin (Webb)",
+   "prompt": "the Green Goblin in dark green armor on a glider|Harry Osborn, a pale young man with slicked hair in a suit",
+   "generico": false,
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "005",
+     "item": "005",
+     "tmdb_id": 102382,
+     "tipo": "movie",
+     "titolo": "The Amazing Spider-Man 2",
+     "gruppo": "1B"
+    }
+   ],
+   "esclusi_continuita": [],
    "ambigui": []
   },
   {

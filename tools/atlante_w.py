@@ -99,7 +99,8 @@ def candidati(out):
 import re
 WALL = os.path.join(ROOT, 'data/atlante/engine/waveall.json'); BLOCCO = 30
 ESPANDI = {'id-harry-osborn-green-goblin': 120}   # identità per cui la ricerca è ampliata (più scene per titolo + immagini taggate dell'interprete)
-PR_EXTRA = {'id-harry-osborn-green-goblin': 'the Green Goblin in green armor with a mask on a glider|Harry Osborn, a young man with dark hair in a suit|the New Goblin in black and gray armor with a mask'}
+PR_EXTRA = {'id-harry-osborn-webb': 'the Green Goblin in dark green armor on a glider|Harry Osborn, a pale young man with slicked hair in a suit',
+            'id-harry-osborn-green-goblin': 'the Green Goblin in green armor with a mask on a glider|Harry Osborn, a young man with dark hair in a suit|the New Goblin in black and gray armor with a mask'}
 ATTORE_HINT = {'id-harry-osborn-green-goblin': ('Harry Osborn', '001')}   # (personaggio, titolo da cui leggere il cast) per le immagini taggate
 def gruppo(tl, vis2id, num):
     it = vis2id.get(num, num); e = tl.get(it) or {}; m = re.match(r'(\S+)', e.get('saga') or ''); return m.group(1) if m else None
@@ -141,7 +142,11 @@ def meta_all():
     for o in out:
         if o['wave1'] and not o['pilota'] and ({t['num'] for t in o['titoli']} != {t['num'] for t in w1[o['id']]['titoli']} or o['id'] in ESPANDI): rifare.append(o['id'])
     da = [o['id'] for o in out if o['titoli'] and (not o['wave1'] or o['id'] in rifare)]
-    blocchi = [da[k:k + BLOCCO] for k in range(0, len(da), BLOCCO)]
+    # blocchi STABILI: i blocchi già elaborati non cambiano mai composizione; le identità nuove vanno in blocchi aggiunti in coda
+    try: vecchi = json.load(open(WALL, encoding='utf-8'))['blocchi']
+    except Exception: vecchi = []
+    gia = {i for b in vecchi for i in b}; nuovi = [i for i in da if i not in gia]
+    blocchi = [list(b) for b in vecchi] + [nuovi[k:k + BLOCCO] for k in range(0, len(nuovi), BLOCCO)]
     json.dump({'schema': 1, 'ondata': 'tutte', 'blocco_dim': BLOCCO, 'rifare_ondata1': rifare, 'senza_titoli': [o['id'] for o in out if not o['titoli']], 'blocchi': blocchi, 'identita': out}, open(WALL, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print('waveall:', len(out), 'identità;', len(da), 'da elaborare in', len(blocchi), 'blocchi; senza titoli TMDB:', sum(1 for o in out if not o['titoli']), '; rifare ondata 1:', rifare)
 def candidati_all(out, forza=()):

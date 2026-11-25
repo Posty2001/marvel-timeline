@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Atlante A4 – Anteprima Multiverso e Nexus</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--ink:#0e0b08;--paper:#1c1812;--line:#4a3f2f;--text:#ede0c0;--soft:#b8a888;--gold:#E3C79B;--amber:#F59A23;--red:#ff8588;--teal:#4fa89e}
+*{box-sizing:border-box}
+body{margin:0;background:#07050a;color:var(--text);font:14px/1.4 Inter,system-ui,sans-serif}
+.app{max-width:430px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;background:radial-gradient(120% 50% at 50% -8%,#33250f 0%,var(--ink) 60%)}
+header{padding:14px 16px 6px;display:flex;flex-direction:column;gap:2px}
+.kick{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+h1{font:700 24px/1.1 Spectral,Georgia,serif;margin:2px 0;color:#f6ecd2}
+.sub{font-size:12.5px;color:var(--soft)}
+.seg{display:flex;margin:8px 16px;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:rgba(20,16,10,.8)}
+.seg button{flex:1;min-height:44px;border:0;background:none;color:var(--soft);font:600 12.5px Inter,sans-serif}
+.seg button[aria-selected=true]{background:var(--amber);color:#1a1208}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 16px 8px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:44px;padding:0 14px;border-radius:22px;border:1px solid var(--line);background:rgba(30,25,18,.85);color:var(--text);font:500 12px Inter,sans-serif;display:inline-flex;align-items:center;gap:7px}
+.chip[aria-pressed=true]{background:var(--gold);border-color:var(--gold);color:#1a1208;font-weight:600}
+.stage{position:relative;margin:0 8px;border:1px solid var(--line);border-radius:20px;background:rgba(14,11,8,.55);overflow:hidden;touch-action:manipulation}
+svg{display:block;width:100%;height:auto}
+.node{cursor:pointer}.node:focus-visible circle{stroke:#fff;stroke-width:2.5}
+.lbl{font:500 9.5px Inter,sans-serif;fill:var(--text);pointer-events:none;paint-order:stroke;stroke:#0e0b08;stroke-width:3px}
+.sheet{margin:10px 8px 0;border:1px solid var(--line);border-radius:18px;background:linear-gradient(160deg,rgba(44,36,26,.9),rgba(24,20,14,.94));padding:14px;display:flex;flex-direction:column;gap:8px}
+.sheet h2{margin:0;font:700 19px Spectral,serif;color:var(--gold)}
+.pill{display:inline-block;padding:2px 9px;border-radius:12px;border:1px solid currentColor;font-size:10.5px;letter-spacing:.04em}
+.btn{min-height:46px;border-radius:23px;border:1px solid var(--amber);background:var(--amber);color:#1a1208;font:600 13px Inter,sans-serif;padding:0 18px}
+.btn.o{background:transparent;color:var(--amber)}
+.note{font-size:11.5px;color:var(--soft)}
+.leg{display:flex;flex-wrap:wrap;gap:10px;padding:8px 16px;font-size:11px;color:var(--soft)}
+.leg i{display:inline-block;width:18px;height:0;border-top:2px solid;vertical-align:middle;margin-right:5px}
+.trail{display:flex;gap:6px;flex-wrap:wrap;padding:2px 16px 6px;font-size:11.5px;color:var(--soft)}
+.trail button{background:none;border:0;color:var(--gold);font:inherit;text-decoration:underline;min-height:32px;padding:0 2px}
+select{min-height:46px;width:100%;border-radius:23px;border:1px solid var(--line);background:#14100a;color:var(--text);padding:0 14px;font:500 13px Inter,sans-serif}
+ol.path{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0}
+ol.path li{display:flex;gap:10px;align-items:flex-start;padding:6px 0}
+ol.path .dot{width:12px;height:12px;border-radius:50%;background:var(--amber);margin-top:4px;flex:none;box-shadow:0 0 0 3px rgba(245,154,35,.2)}
+ol.path .lk{margin-left:5px;border-left:2px dotted var(--line);padding-left:15px;font-size:11.5px;color:var(--soft)}
+footer{padding:14px 16px 28px;font-size:11.5px;color:var(--soft)}
+@media (prefers-reduced-motion:no-preference){.node circle{transition:r .2s}}
+</style></head><body>
+<div class="app">
+<header><div class="kick">Atlante 2.0 · A4 · anteprima</div><h1>Multiverso e Nexus</h1>
+<div class="sub">Dati reali del registro (27 universi, 297 identità, 9 relazioni). Nessun dato inventato.</div></header>
+<div class="seg" role="tablist" aria-label="Modalità">
+<button role="tab" id="t0" aria-selected="true">Multiverso</button>
+<button role="tab" id="t1" aria-selected="false">Nexus</button>
+<button role="tab" id="t2" aria-selected="false">Percorso</button></div>
+<main id="v"></main>
+<footer id="foot"></footer>
+</div>
+<script>
+var D={"uni": [{"id": "uni-earth-199999-mcu", "n": "Earth-199999 — MCU", "c": "P", "k": 183}, {"id": "uni-earth-96283-raimi-verse", "n": "Earth-96283 — Raimi-Verse", "c": "A", "k": 7}, {"id": "uni-earth-120703-garfield-verse", "n": "Earth-120703 — Garfield-Verse", "c": "A", "k": 6}, {"id": "uni-sony-s-spider-man-universe-ssu", "n": "Sony's Spider-Man Universe (SSU)", "c": "A", "k": 17}, {"id": "uni-earth-10005-fox-verse", "n": "Earth-10005 — Fox-Verse", "c": "A", "k": 28}, {"id": "uni-fantastic-four-1994", "n": "Fantastic Four (1994)", "c": "A", "k": 0}, {"id": "uni-earth-121698", "n": "Earth-121698", "c": "A", "k": 6}, {"id": "uni-earth-trn123", "n": "Earth-TRN123", "c": "A", "k": 0}, {"id": "uni-blade-verse", "n": "Blade-verse", "c": "A", "k": 8}, {"id": "uni-daredevil-elektra-verse", "n": "Daredevil/Elektra-verse", "c": "A", "k": 7}, {"id": "uni-ghost-rider-verse", "n": "Ghost Rider-verse", "c": "A", "k": 4}, {"id": "uni-spider-noir-verse", "n": "Spider-Noir-verse", "c": "A", "k": 4}, {"id": "uni-hulk-2003-verse", "n": "Hulk (2003)-verse", "c": "A", "k": 4}, {"id": "uni-earth-828", "n": "Earth-828", "c": "D", "k": 2}, {"id": "uni-earth-838", "n": "Earth-838", "c": "D", "k": 1}, {"id": "uni-tva-fuori-dal-tempo", "n": "TVA — fuori dal tempo", "c": "L", "k": 5}, {"id": "uni-rami-di-what-if", "n": "Rami di What If...?", "c": "D", "k": 0}, {"id": "uni-x-men-97-verse", "n": "X-Men '97-verse", "c": "A", "k": 1}, {"id": "uni-your-friendly-neighborhood-spider-man-verse", "n": "Your Friendly Neighborhood Spider-Man-verse", "c": "D", "k": 1}, {"id": "uni-marvel-productions-universe-anni-80", "n": "Marvel Productions Universe (anni '80)", "c": "E", "k": 1}, {"id": "uni-marvel-productions-universe-anni-90", "n": "Marvel Productions Universe (anni '90)", "c": "A", "k": 0}, {"id": "uni-marvel-animation-universe-2006-2017", "n": "Marvel Animation Universe (2006-2017)", "c": "E", "k": 4}, {"id": "uni-continuity-animate-isolate-minori", "n": "Continuity animate isolate minori", "c": "E", "k": 0}, {"id": "uni-spider-verse-sony-animato", "n": "Spider-Verse Sony (animato)", "c": "A", "k": 7}, {"id": "uni-legion-verse", "n": "Legion-verse", "c": "A", "k": 0}, {"id": "uni-the-gifted-verse", "n": "The Gifted-verse", "c": "A", "k": 0}, {"id": "uni-marvel-zombies-verse", "n": "Marvel Zombies-verse", "c": "D", "k": 0}], "nodes": [{"id": "id-hulk", "n": "Bruce Banner/Hulk", "u": "uni-earth-199999-mcu", "a": 10}, {"id": "id-iron-man", "n": "Tony Stark/Iron Man", "u": "uni-earth-199999-mcu", "a": 9}, {"id": "id-thor", "n": "Thor", "u": "uni-earth-199999-mcu", "a": 9}, {"id": "id-charles-xavier-fox", "n": "Charles Xavier (Fox-Verse)", "u": "uni-earth-10005-fox-verse", "a": 8}, {"id": "id-phil-coulson", "n": "Phil Coulson", "u": "uni-earth-199999-mcu", "a": 8}, {"id": "id-steve-rogers-capitan-america", "n": "Steve Rogers/Capitan America", "u": "uni-earth-199999-mcu", "a": 8}, {"id": "id-magneto", "n": "Erik Lehnsherr/Magneto", "u": "uni-earth-10005-fox-verse", "a": 8}, {"id": "id-wolverine", "n": "Logan/Wolverine", "u": "uni-earth-10005-fox-verse", "a": 8}, {"id": "id-peter-parker-mcu", "n": "Peter Parker (MCU)", "u": "uni-earth-199999-mcu", "a": 7}, {"id": "id-bucky-barnes-soldato-d-inverno", "n": "Bucky Barnes/Soldato d'Inverno", "u": "uni-earth-199999-mcu", "a": 7}, {"id": "id-daisy-johnson", "n": "Skye/Daisy Johnson", "u": "uni-earth-199999-mcu", "a": 7}, {"id": "id-frank-castle-punisher", "n": "Frank Castle/Punisher", "u": "uni-earth-199999-mcu", "a": 7}, {"id": "id-matt-murdock-daredevil", "n": "Matt Murdock/Daredevil", "u": "uni-daredevil-elektra-verse", "a": 7}, {"id": "id-natasha-romanoff", "n": "Natasha Romanoff/Vedova Nera", "u": "uni-earth-199999-mcu", "a": 7}, {"id": "id-peter-quill-star-lord", "n": "Peter Quill/Star-Lord", "u": "uni-earth-199999-mcu", "a": 6}, {"id": "id-sam-wilson-capitan-america", "n": "Sam Wilson/Capitan America", "u": "uni-earth-199999-mcu", "a": 6}, {"id": "id-fisk-mcu", "n": "Wilson Fisk (MCU, ex Netflix)", "u": "uni-earth-199999-mcu", "a": 6}, {"id": "id-johnny-storm-human-torch", "n": "Johnny Storm/Human Torch", "u": "uni-earth-121698", "a": 6}, {"id": "id-loki", "n": "Loki", "u": "uni-earth-199999-mcu", "a": 6}, {"id": "id-peggy-carter-captain-carter", "n": "Peggy Carter/Captain Carter", "u": "uni-earth-199999-mcu", "a": 6}, {"id": "id-reed-richards", "n": "Reed Richards", "u": "uni-earth-121698", "a": 6}, {"id": "id-rocket", "n": "Rocket", "u": "uni-earth-199999-mcu", "a": 6}, {"id": "id-ben-grimm", "n": "Ben Grimm", "u": "uni-earth-121698", "a": 5}, {"id": "id-scott-lang-ant-man", "n": "Scott Lang/Ant-Man", "u": "uni-earth-199999-mcu", "a": 5}, {"id": "id-sue-storm", "n": "Sue Storm", "u": "uni-earth-121698", "a": 5}, {"id": "id-wanda-maximoff", "n": "Wanda Maximoff", "u": "uni-earth-199999-mcu", "a": 5}, {"id": "id-peter-parker-raimi", "n": "Peter Parker (Raimi-Verse)", "u": "uni-earth-96283-raimi-verse", "a": 4}, {"id": "id-groot-successore", "n": "Groot (successore)", "u": "uni-earth-199999-mcu", "a": 4}, {"id": "id-blade", "n": "Eric Brooks/Blade", "u": "uni-blade-verse", "a": 4}, {"id": "id-carol-danvers-captain-marvel", "n": "Carol Danvers/Captain Marvel", "u": "uni-earth-199999-mcu", "a": 4}, {"id": "id-cassie-lang", "n": "Cassie Lang", "u": "uni-earth-199999-mcu", "a": 4}, {"id": "id-drax", "n": "Drax", "u": "uni-earth-199999-mcu", "a": 4}, {"id": "id-eddie-brock-venom", "n": "Eddie Brock/Venom", "u": "uni-earth-96283-raimi-verse", "a": 4}, {"id": "id-edwin-jarvis", "n": "Edwin Jarvis", "u": "uni-earth-199999-mcu", "a": 4}, {"id": "id-elektra-natchios", "n": "Elektra Natchios", "u": "uni-daredevil-elektra-verse", "a": 4}, {"id": "id-gamora", "n": "Gamora", "u": "uni-earth-199999-mcu", "a": 4}, {"id": "id-gwen-stacy-spider-woman", "n": "Gwen Stacy/Spider-Woman", "u": "uni-earth-120703-garfield-verse", "a": 4}, {"id": "id-harry-osborn-green-goblin", "n": "Harry Osborn/Green Goblin (Raimi)", "u": "uni-earth-96283-raimi-verse", "a": 4}, {"id": "id-karen-page", "n": "Karen Page", "u": "uni-earth-199999-mcu", "a": 4}, {"id": "id-mystica", "n": "Raven/Mystica", "u": "uni-earth-10005-fox-verse", "a": 4}, {"id": "id-nebula", "n": "Nebula", "u": "uni-earth-199999-mcu", "a": 4}, {"id": "id-nick-fury", "n": "Nick Fury", "u": "uni-earth-199999-mcu", "a": 4}, {"id": "id-t-challa-black-panther", "n": "T'Challa/Black Panther", "u": "uni-earth-199999-mcu", "a": 4}, {"id": "id-victor-von-doom", "n": "Victor von Doom", "u": "uni-earth-121698", "a": 4}, {"id": "id-visione", "n": "Visione", "u": "uni-earth-199999-mcu", "a": 4}, {"id": "id-yelena-belova", "n": "Yelena Belova", "u": "uni-earth-199999-mcu", "a": 4}, {"id": "id-peter-parker-garfield", "n": "Peter Parker (Garfield-Verse)", "u": "uni-earth-120703-garfield-verse", "a": 3}, {"id": "id-mary-jane-watson-raimi", "n": "Mary Jane Watson (Raimi-Verse)", "u": "uni-earth-96283-raimi-verse", "a": 3}], "edges": [["id-hulk", "id-iron-man", 4], ["id-hulk", "id-thor", 5], ["id-hulk", "id-steve-rogers-capitan-america", 4], ["id-hulk", "id-peter-parker-mcu", 3], ["id-hulk", "id-natasha-romanoff", 4], ["id-hulk", "id-wanda-maximoff", 3], ["id-iron-man", "id-thor", 4], ["id-iron-man", "id-steve-rogers-capitan-america", 5], ["id-iron-man", "id-peter-parker-mcu", 4], ["id-iron-man", "id-bucky-barnes-soldato-d-inverno", 3], ["id-iron-man", "id-natasha-romanoff", 5], ["id-iron-man", "id-sam-wilson-capitan-america", 3], ["id-iron-man", "id-wanda-maximoff", 3], ["id-iron-man", "id-t-challa-black-panther", 3], ["id-thor", "id-steve-rogers-capitan-america", 4], ["id-thor", "id-natasha-romanoff", 4], ["id-thor", "id-loki", 4], ["id-thor", "id-wanda-maximoff", 3], ["id-charles-xavier-fox", "id-magneto", 7], ["id-charles-xavier-fox", "id-wolverine", 5], ["id-charles-xavier-fox", "id-mystica", 4], ["id-phil-coulson", "id-daisy-johnson", 6], ["id-steve-rogers-capitan-america", "id-peter-parker-mcu", 3], ["id-steve-rogers-capitan-america", "id-bucky-barnes-soldato-d-inverno", 5], ["id-steve-rogers-capitan-america", "id-natasha-romanoff", 5], ["id-steve-rogers-capitan-america", "id-sam-wilson-capitan-america", 4], ["id-steve-rogers-capitan-america", "id-wanda-maximoff", 3], ["id-steve-rogers-capitan-america", "id-t-challa-black-panther", 3], ["id-magneto", "id-wolverine", 4], ["id-magneto", "id-mystica", 4], ["id-peter-parker-mcu", "id-bucky-barnes-soldato-d-inverno", 3], ["id-peter-parker-mcu", "id-sam-wilson-capitan-america", 3], ["id-peter-parker-mcu", "id-t-challa-black-panther", 3], ["id-bucky-barnes-soldato-d-inverno", "id-natasha-romanoff", 3], ["id-bucky-barnes-soldato-d-inverno", "id-sam-wilson-capitan-america", 5], ["id-bucky-barnes-soldato-d-inverno", "id-t-challa-black-panther", 3], ["id-frank-castle-punisher", "id-matt-murdock-daredevil", 3], ["id-matt-murdock-daredevil", "id-fisk-mcu", 4], ["id-matt-murdock-daredevil", "id-karen-page", 3], ["id-natasha-romanoff", "id-sam-wilson-capitan-america", 3], ["id-natasha-romanoff", "id-wanda-maximoff", 3], ["id-peter-quill-star-lord", "id-rocket", 5], ["id-peter-quill-star-lord", "id-groot-successore", 3], ["id-peter-quill-star-lord", "id-drax", 4], ["id-peter-quill-star-lord", "id-gamora", 4], ["id-peter-quill-star-lord", "id-nebula", 4], ["id-sam-wilson-capitan-america", "id-t-challa-black-panther", 3], ["id-fisk-mcu", "id-karen-page", 3], ["id-johnny-storm-human-torch", "id-reed-richards", 5], ["id-johnny-storm-human-torch", "id-ben-grimm", 5], ["id-johnny-storm-human-torch", "id-sue-storm", 5], ["id-johnny-storm-human-torch", "id-victor-von-doom", 4], ["id-peggy-carter-captain-carter", "id-edwin-jarvis", 3], ["id-reed-richards", "id-ben-grimm", 5], ["id-reed-richards", "id-sue-storm", 5], ["id-reed-richards", "id-victor-von-doom", 4], ["id-rocket", "id-groot-successore", 4], ["id-rocket", "id-drax", 3], ["id-rocket", "id-gamora", 4], ["id-rocket", "id-nebula", 4], ["id-ben-grimm", "id-sue-storm", 5], ["id-ben-grimm", "id-victor-von-doom", 4], ["id-scott-lang-ant-man", "id-cassie-lang", 4], ["id-sue-storm", "id-victor-von-doom", 4], ["id-wanda-maximoff", "id-visione", 3], ["id-peter-parker-raimi", "id-harry-osborn-green-goblin", 3], ["id-peter-parker-raimi", "id-mary-jane-watson-raimi", 3], ["id-groot-successore", "id-gamora", 3], ["id-groot-successore", "id-nebula", 3], ["id-drax", "id-gamora", 3], ["id-drax", "id-nebula", 3], ["id-gamora", "id-nebula", 4], ["id-harry-osborn-green-goblin", "id-mary-jane-watson-raimi", 3]], "rel": [{"da": "Professor X (Terra-838)", "a": "Charles Xavier (Fox-Verse)", "t": "controparte_altra_continuita", "nar": true, "v": "da verificare"}, {"da": "Coulson (LMD)", "a": "Phil Coulson", "t": "copia_di", "nar": true, "v": "verificata (fonti secondarie affidabili + dati interni; pagine Marvel.com/Marvel Database non consultate una per una)"}, {"da": "Groot (successore)", "a": "Groot (originale)", "t": "discendente_di", "nar": true, "v": "dichiarazione d'autore"}, {"da": "Sam Wilson/Capitan America", "a": "Steve Rogers/Capitan America", "t": "erede_del_mantello", "nar": true, "v": "verificata (interna)"}, {"da": "Thaddeus Ross (Hulk 2003)", "a": "Thaddeus Ross (MCU)", "t": "controparte_altra_continuita", "nar": true, "v": "verificata (fonti secondarie affidabili + dati interni; pagine Marvel.com/Marvel Database non consultate una per una)"}, {"da": "MJ (Michelle Jones-Watson, MCU)", "a": "Mary Jane Watson (Raimi-Verse)", "t": "ispirato_a", "nar": false, "v": "verificata (fonti secondarie affidabili + dati interni; pagine Marvel.com/Marvel Database non consultate una per una)"}, {"da": "Miles Morales e altri (Beyond the Spider-Verse)", "a": "Miles Morales", "t": "segnaposto_collegato_a", "nar": false, "v": "da verificare"}, {"da": "Logan/Wolverine", "a": "Logan/Wolverine (X-Men '97)", "t": "stessa_scheda_atlante", "nar": false, "v": "dati interni: la scheda char-wolverine copre entrambe le continuita'; nessuna parentela narrativa dichiarata"}, {"da": "Harry Osborn/Green Goblin (Raimi)", "a": "Harry Osborn/Green Goblin (Webb)", "t": "stessa_scheda_atlante", "nar": false, "v": "dati interni: la scheda char-harry-osborn-green-goblin copre piu' continuita'; nessuna parentela narrativa dichiarata"}]};
+var CL={P:['Continuità principale','#F59A23'],A:['Universo autonomo','#E3C79B'],D:['Diramazione','#b48ae0'],E:['Raggruppamento editoriale','#6fb3d9'],L:['Luogo fuori dal multiverso','#4fa89e']};
+var UN={};D.uni.forEach(function(u){UN[u.id]=u});
+var ND={};D.nodes.forEach(function(n){ND[n.id]=n});
+var S={tab:0,sel:'uni-earth-199999-mcu',lay:{P:1,A:1,D:1,E:1,L:1},ego:'id-peter-parker-mcu',trail:[],mode:'tutte',a:'',b:''};
+var $=function(s){return document.querySelector(s)};
+function el(t,a,h){var e=document.createElementNS(t==='svg'||/^(g|circle|line|text|path|ellipse)$/.test(t)?'http://www.w3.org/2000/svg':'http://www.w3.org/1999/xhtml',t);for(var k in a||{})e.setAttribute(k,a[k]);if(h!=null)e.textContent=h;return e}
+function short(n){return n.replace(/^Earth-/,'T-').replace(/ — /,' · ')}
+function tabs(i){S.tab=i;[0,1,2].forEach(function(k){$('#t'+k).setAttribute('aria-selected',k===i)});draw()}
+[0,1,2].forEach(function(k){$('#t'+k).onclick=function(){tabs(k)}});
+function draw(){var v=$('#v');v.innerHTML='';[mv,nx,pc][S.tab](v)}
+/* ---------- MULTIVERSO ---------- */
+function mv(v){
+ var chips=el('div',{class:'chips',role:'group','aria-label':'Livelli'});
+ Object.keys(CL).forEach(function(k){var b=el('button',{class:'chip','aria-pressed':!!S.lay[k],type:'button'});b.innerHTML='<span style="color:'+CL[k][1]+'">●</span> '+CL[k][0];b.onclick=function(){S.lay[k]=!S.lay[k];draw()};chips.appendChild(b)});
+ v.appendChild(chips);
+ var st=el('div',{class:'stage'}),W=390,H=430,cx=W/2,cy=H/2;
+ var s=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Mappa del multiverso a orbite'});
+ var rings={P:0,D:78,A:138,E:180,L:0};
+ [78,138,180].forEach(function(r){s.appendChild(el('circle',{cx:cx,cy:cy,r:r,fill:'none',stroke:'#4a3f2f','stroke-dasharray':'2 5','stroke-opacity':.7}))});
+ var groups={};D.uni.forEach(function(u){(groups[u.c]=groups[u.c]||[]).push(u)});
+ var pos={};
+ ['D','A','E'].forEach(function(c){var g=groups[c],off=c==='A'?.15:c==='E'?.5:0;g.forEach(function(u,i){var a=off+i/g.length*Math.PI*2-Math.PI/2;pos[u.id]=[cx+Math.cos(a)*rings[c],cy+Math.sin(a)*rings[c]]})});
+ pos['uni-earth-199999-mcu']=[cx,cy];pos['uni-tva-fuori-dal-tempo']=[cx+140,cy-175];
+ D.uni.forEach(function(u){
+  if(!S.lay[u.c])return;var p=pos[u.id];if(!p)return;
+  var r=Math.max(7,Math.min(30,5+Math.sqrt(u.k)*2.2)),sel=u.id===S.sel;
+  var g=el('g',{class:'node',tabindex:0,role:'button','aria-label':u.n+', '+u.k+' identità'});
+  g.appendChild(el('circle',{cx:p[0],cy:p[1],r:r+(sel?4:0),fill:CL[u.c][1],'fill-opacity':sel?.9:.55,stroke:sel?'#fff':CL[u.c][1],'stroke-width':sel?2:1,'stroke-dasharray':u.c==='L'?'3 3':'none'}));
+  if(r>13||sel)g.appendChild(el('text',{x:p[0],y:p[1]+r+11,'text-anchor':'middle',class:'lbl'},short(u.n).slice(0,20)));
+  var pick=function(){S.sel=u.id;draw()};g.onclick=pick;g.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick()}};s.appendChild(g)});
+ st.appendChild(s);v.appendChild(st);
+ var u=UN[S.sel],sh=el('div',{class:'sheet'});
+ sh.innerHTML='<span class="pill" style="color:'+CL[u.c][1]+'">'+CL[u.c][0]+'</span><h2></h2><div class="note">'+u.k+' identità in questo universo · raggio del nodo = numero di identità</div>';
+ sh.querySelector('h2').textContent=u.n;
+ var mem=D.nodes.filter(function(n){return n.u===u.id}).slice(0,6);
+ if(mem.length){var d=el('div',{class:'note'},'Più presenti: '+mem.map(function(m){return m.n}).join(' · '));sh.appendChild(d)}
+ var b=el('button',{class:'btn',type:'button'},'Entra nell’universo');b.onclick=function(){alert_(' «Entra» aprirebbe l’elenco dei personaggi filtrato su questo universo (Dossier A3).')};sh.appendChild(b);
+ if(mem.length){var b2=el('button',{class:'btn o',type:'button'},'Apri il Nexus di '+mem[0].n);b2.onclick=function(){S.ego=mem[0].id;S.trail=[];tabs(1)};sh.appendChild(b2)}
+ v.appendChild(sh);
+ $('#foot').textContent='Gerarchia reale dal campo NATURA del registro universi. La TVA è un luogo fuori dal multiverso, non un universo: resta separata (tratteggio).';
+}
+function alert_(t){var n=$('#toast');if(!n){n=el('div',{id:'toast',class:'sheet',role:'status'});$('#v').appendChild(n)}n.textContent='Anteprima:'+t}
+/* ---------- NEXUS ---------- */
+function nbrs(id){var o=[];D.edges.forEach(function(e){if(e[0]===id)o.push([e[1],e[2]]);else if(e[1]===id)o.push([e[0],e[2]])});return o.sort(function(a,b){return b[1]-a[1]})}
+function nx(v){
+ var chips=el('div',{class:'chips'});
+ [['tutte','Tutte'],['co','Co-apparizioni'],['nar','Relazioni narrative']].forEach(function(m){var b=el('button',{class:'chip','aria-pressed':S.mode===m[0],type:'button'},m[1]);b.onclick=function(){S.mode=m[0];draw()};chips.appendChild(b)});
+ v.appendChild(chips);
+ var W=390,H=400,cx=W/2,cy=H/2,me=ND[S.ego];
+ var st=el('div',{class:'stage'}),s=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Rete di '+me.n});
+ var nb=S.mode==='nar'?[]:nbrs(S.ego).slice(0,10);
+ var maxc=Math.max.apply(null,nb.map(function(x){return x[1]}).concat([1]));
+ nb.forEach(function(x,i){var a=i/nb.length*Math.PI*2-Math.PI/2,R=100+(1-x[1]/maxc)*55,px=cx+Math.cos(a)*R,py=cy+Math.sin(a)*R,n=ND[x[0]];
+  s.appendChild(el('line',{x1:cx,y1:cy,x2:px,y2:py,stroke:'#b8a888','stroke-opacity':.55,'stroke-width':1+x[1]/maxc*3,'stroke-dasharray':'1 5','stroke-linecap':'round'}));
+  var g=el('g',{class:'node',tabindex:0,role:'button','aria-label':n.n+', '+x[1]+' titoli in comune'});
+  g.appendChild(el('circle',{cx:px,cy:py,r:9+Math.sqrt(n.a)*1.4,fill:(CL[UN[n.u].c]||CL.A)[1],'fill-opacity':.6,stroke:'#E3C79B'}));
+  g.appendChild(el('text',{x:px,y:py+22+Math.sqrt(n.a),'text-anchor':'middle',class:'lbl'},n.n.length>18?n.n.slice(0,17)+'…':n.n));
+  g.appendChild(el('text',{x:px,y:py+3,'text-anchor':'middle',style:'font:600 9px Inter;fill:#1a1208;pointer-events:none'},x[1]));
+  var go=function(){S.trail.push(S.ego);S.ego=n.id;draw()};g.onclick=go;g.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}};s.appendChild(g)});
+ var c=el('g');c.appendChild(el('circle',{cx:cx,cy:cy,r:34,fill:'#F59A23',stroke:'#fff','stroke-width':2}));c.appendChild(el('text',{x:cx,y:cy+4,'text-anchor':'middle',style:'font:700 10px Inter;fill:#1a1208'},me.n.replace(/ \(.*\)$/,'').split('/')[0].slice(0,12)));s.appendChild(c);
+ st.appendChild(s);v.appendChild(st);
+ var leg=el('div',{class:'leg'});leg.innerHTML='<span><i style="border-color:#b8a888;border-top-style:dotted"></i>co-apparizione (stessi titoli)</span><span><i style="border-color:#F59A23"></i>relazione narrativa dichiarata</span>';v.appendChild(leg);
+ if(S.trail.length){var t=el('div',{class:'trail'});t.appendChild(el('span',{},'Percorso: '));S.trail.slice(-3).forEach(function(id,i){var b=el('button',{type:'button'},ND[id].n);b.onclick=function(){S.ego=id;S.trail=S.trail.slice(0,S.trail.lastIndexOf(id));draw()};t.appendChild(b);t.appendChild(el('span',{},'›'))});t.appendChild(el('b',{},me.n));v.appendChild(t)}
+ var sh=el('div',{class:'sheet'});sh.innerHTML='<h2></h2>';sh.querySelector('h2').textContent=me.n;
+ sh.appendChild(el('div',{class:'note'},me.a+' apparizioni nella guida · universo: '+short(UN[me.u].n)));
+ var rl=D.rel.filter(function(r){return r.da.indexOf(me.n.split(' (')[0])===0||r.a.indexOf(me.n.split(' (')[0])===0});
+ if(S.mode!=='co'){if(rl.length)rl.forEach(function(r){var d=el('div',{class:'note'});d.textContent='● '+r.da+' —'+r.t.replace(/_/g,' ')+'→ '+r.a+' ('+r.v.split(' (')[0]+')';sh.appendChild(d)});else sh.appendChild(el('div',{class:'note'},'Nessuna relazione narrativa dichiarata per questa identità nel registro (sono 9 in tutto): il Nexus non ne inventa.'))}
+ sh.appendChild(el('div',{class:'note'},'Le co-apparizioni mostrano solo i titoli condivisi: non sono relazioni narrative.'));
+ v.appendChild(sh);
+ $('#foot').textContent='Rete calcolata dai numeri di apparizione reali (48 identità più presenti, ≥3 titoli in comune). Tocca un nodo per ricentrare.';
+}
+/* ---------- PERCORSO ---------- */
+function bfs(a,b){var adj={};D.edges.forEach(function(e){(adj[e[0]]=adj[e[0]]||[]).push([e[1],e[2]]);(adj[e[1]]=adj[e[1]]||[]).push([e[0],e[2]])});var q=[a],pr={};pr[a]=null;while(q.length){var x=q.shift();if(x===b)break;(adj[x]||[]).forEach(function(y){if(!(y[0] in pr)){pr[y[0]]=[x,y[1]];q.push(y[0])}})}if(!(b in pr))return null;var p=[],c=b;while(c){p.unshift([c,pr[c]?pr[c][1]:0]);c=pr[c]?pr[c][0]:null}return p}
+function pc(v){
+ var names=D.nodes.slice().sort(function(x,y){return x.n.localeCompare(y.n)});
+ if(!S.a){S.a='id-hulk';S.b='id-bucky-barnes-soldato-d-inverno'}
+ var sh=el('div',{class:'sheet'});
+ [['a','Da'],['b','A']].forEach(function(f){var l=el('label',{class:'note'},f[1]);var sel=el('select',{'aria-label':f[1]});names.forEach(function(n){var o=el('option',{value:n.id},n.n);if(n.id===S[f[0]])o.selected=true;sel.appendChild(o)});sel.onchange=function(){S[f[0]]=sel.value;draw()};l.appendChild(sel);sh.appendChild(l)});
+ v.appendChild(sh);
+ var p=bfs(S.a,S.b),r=el('div',{class:'sheet'});
+ if(!p)r.appendChild(el('div',{class:'note'},'Nessun collegamento tra queste due identità nei dati attuali.'));
+ else{r.appendChild(el('div',{class:'note'},p.length-1+' passaggi tra co-apparizioni (nessuna relazione narrativa implicita)'));var ol=el('ol',{class:'path'});p.forEach(function(x,i){var li=el('li');li.innerHTML='<span class="dot"></span><div><b></b></div>';li.querySelector('b').textContent=ND[x[0]].n;if(i>0){var lk=el('div',{class:'lk'},x[1]+' titoli in comune con il passo precedente');li.firstChild.nextSibling.appendChild(lk)}ol.appendChild(li)});r.appendChild(ol)}
+ v.appendChild(r);
+ $('#foot').textContent='Percorso più breve (BFS) sul grafo delle co-apparizioni. Nell’app definitiva anche con relazioni tipizzate e titoli nominati.';
+}
+draw();
+</script></body></html>

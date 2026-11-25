@@ -1,5 +1,5 @@
 {
- "build": "20261125-0100-mm6",
+ "build": "20261125-2000-a34",
  "conteggi": {
   "personaggi": 304,
   "universi": 27,
@@ -15,7 +15,7 @@
  "link_mvNavigate": 1065,
  "link_rotti": 0,
  "ids_sha256": "cc8727d33aa901c76f3e8adf4038cc629cbf9b0798c367a3c17898914160c2ae",
- "html_sha256": "d20f622046c1ad363700dfc5bc3ba07cf9a33f961c5628235c6e8b5e5ae769aa",
+ "html_sha256": "76bb4330b6fe58570cd7a9d72276bd0643929c032c6a913bbe5130f2f8f5a735",
  "blob": {
   "atlasData": "01184c69636b628a72be29726f1dfc522af60c7a65c899fb05bb0ef7f836ef0e",
   "relationshipGraphData": "cd900bc657080f6924ea52fbfa0ed7e2754bb51b714f5e0025e2c9f8666a7cb3",

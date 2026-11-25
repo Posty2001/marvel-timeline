@@ -39,7 +39,7 @@ with sync_playwright() as p:
     # catalogo
     pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-hero .btn')].find(b=>/catalogo/i.test(b.textContent)).click()"); pg.wait_for_timeout(700)
     s = a3(pg); n0 = pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-tile').length")
-    ok('Catalogo personaggi: rendering progressivo (36 su 296)', s['a3']['v'] == 'cat' and n0 == 36, n0)
+    ok('Catalogo personaggi: rendering progressivo (36 su 297)', s['a3']['v'] == 'cat' and n0 == 36, n0)
     imgs0 = [r for r in reqs if r.endswith('.webp')]
     pg.evaluate("()=>{const b=document.querySelector('#atlas2 .a2-scroll'); b.scrollTop=b.scrollHeight}"); pg.wait_for_timeout(700)
     n1 = pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-tile').length")
@@ -57,7 +57,7 @@ with sync_playwright() as p:
     ok('Indietro -> catalogo con stato e scorrimento ripristinati', s['a3']['v'] == 'cat' and abs(s['y'] - y_before) <= 40 and pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-tile').length") >= n1, (s, y_before))
     # filtri
     pg.evaluate("()=>{const s=document.querySelector('#atlas2 select[aria-label=\"Filtra per continuità\"]'); s.value=s.options[1].value; s.dispatchEvent(new Event('change',{bubbles:true}))}"); pg.wait_for_timeout(400)
-    nf = pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-tile').length"); ok('filtro per continuità riduce l\'elenco', 0 < nf < 296, nf)
+    nf = pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-tile').length"); ok('filtro per continuità riduce l\'elenco', 0 < nf < 297, nf)
     pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-seg button')[2].click()"); pg.wait_for_timeout(300)
     ok('modalità elenco', pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-li').length")>0 and pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-tile').length")==0)
     # ricerca

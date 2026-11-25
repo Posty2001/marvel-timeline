@@ -180,6 +180,7 @@
    "pagina_principale": "char-peter",
    "interpreti": [],
    "apparizioni": [
+    "024",
     "117"
    ],
    "incarnazioni": [],
@@ -190,7 +191,7 @@
     "mvMapData (titoliIds per universo)"
    ],
    "verifica": "verificata (fonti secondarie affidabili + dati interni; pagine Marvel.com/Marvel Database non consultate una per una)",
-   "nota": "Personaggio creato per il film Deadpool (2016), senza controparte nei fumetti (campo NEI FUMETTI della scheda). Alias di visualizzazione: «Peter (Deadpool)»."
+   "nota": "Personaggio creato per il film Deadpool 2 (2018), senza controparte nei fumetti (campo NEI FUMETTI della scheda). Alias di visualizzazione: «Peter (Deadpool)»."
   },
   {
    "id": "id-peter-quill-star-lord",
@@ -3615,7 +3616,7 @@
   },
   {
    "id": "id-harry-osborn-green-goblin",
-   "nome": "Harry Osborn/Green Goblin",
+   "nome": "Harry Osborn/Green Goblin (Raimi)",
    "tipo": "identita",
    "categorie": [
     "personaggio"
@@ -3631,16 +3632,20 @@
     "001",
     "002",
     "003",
-    "005",
     "120"
    ],
    "incarnazioni": [],
-   "alias": [],
+   "alias": [
+    "Harry Osborn/Green Goblin"
+   ],
    "fonte": [
     "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro"
    ],
    "verifica": "invariata (nessuna decisione di identita' applicata)",
-   "nota": ""
+   "nota": "N°005 (The Amazing Spider-Man 2) appartiene alla continuita' Webb: spostato in id-harry-osborn-webb (decisione dell'utente 25/11/2026). N°120 (serie animata) resta qui in attesa di una decisione separata.",
+   "apparizioni_spostate": {
+    "005": "id-harry-osborn-webb"
+   }
   },
   {
    "id": "id-he-who-remains",
@@ -7862,6 +7867,34 @@
    ],
    "verifica": "parziale: continuita' dichiarata dalla scheda Atlante (Fox-Verse · Animato, continuita' propria) e da mvMapData (N°131 in uni-x-men-97-verse); nessun dato biografico specifico attribuito",
    "nota": "Separato da id-wolverine (Fox-Verse) per decisione dell'utente (25/11/2026). La scheda char-wolverine descrive insieme le due continuita': i suoi campi restano attribuiti a id-wolverine e non a questa identita'."
+  },
+  {
+   "id": "id-harry-osborn-webb",
+   "nome": "Harry Osborn/Green Goblin (Webb)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-earth-120703-garfield-verse",
+   "pagine": [
+    "char-harry-osborn-green-goblin"
+   ],
+   "pagina_principale": "char-harry-osborn-green-goblin",
+   "interpreti": [],
+   "apparizioni": [
+    "005"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Harry Osborn/Green Goblin"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "parziale: continuita' dichiarata da mvMapData (N°005 in uni-earth-120703-garfield-verse) e dalla scheda Atlante (UNIVERSI: Earth-96283 · Earth-120703 · YFNSM); nessun dato biografico specifico attribuito",
+   "nota": "Separato da id-harry-osborn-green-goblin (Raimi) per decisione dell'utente (25/11/2026). La scheda char-harry-osborn-green-goblin descrive insieme piu' continuita': i suoi campi restano attribuiti all'identita' Raimi e non a questa."
   }
  ],
  "hub": [
@@ -7879,7 +7912,7 @@
     "id-peter-b-parker"
    ],
    "esclusi": {
-    "char-peter": "Peter (franchise Deadpool): altro personaggio, creato per il film Deadpool (2016)",
+    "char-peter": "Peter (franchise Deadpool): altro personaggio, creato per il film Deadpool 2 (2018)",
     "char-peter-quill-star-lord": "Peter Quill: altro personaggio (omonimia del nome di battesimo)"
    },
    "pagine_hub": [
@@ -8155,6 +8188,19 @@
    ],
    "verifica": "dati interni: la scheda char-wolverine copre entrambe le continuita'; nessuna parentela narrativa dichiarata",
    "nota": "Continuita' distinte (Fox-Verse / X-Men '97-verse): identita' distinte, non unificate."
+  },
+  {
+   "da": "id-harry-osborn-green-goblin",
+   "a": "id-harry-osborn-webb",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda char-harry-osborn-green-goblin copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte (Raimi-Verse / Garfield-Verse): identita' distinte, non unificate."
   }
  ],
  "redirect": {
@@ -10850,13 +10896,13 @@
  "conteggi": {
   "pagine_char": 304,
   "pagine_che_contavano": 300,
-  "identita_totali": 296,
-  "identita_che_contano": 296,
+  "identita_totali": 297,
+  "identita_che_contano": 297,
   "hub": 2,
   "mantelli": 2,
   "segnaposto": 7,
   "relazioni_narrative": 5,
-  "relazioni_non_narrative": 3,
+  "relazioni_non_narrative": 4,
   "collegamenti_da_classificare": 76,
   "di_cui_proposta_automatica": 44
  }

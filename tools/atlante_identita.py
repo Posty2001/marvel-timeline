@@ -74,14 +74,14 @@ def costruisci():
     SEG.append({'id': 'seg-peter-parker-616', 'nome': 'Peter Parker (Terra-616, fumetti)', 'categorie': ['personaggio'], 'conta_come_personaggio': False, 'universo': None, 'pagine': [], 'verifica': 'segnaposto: nessuna scheda e nessun dato verificato; da compilare solo da fonti autorizzate', 'nota': "Previsto dall'utente (decisione 1). Non conta come personaggio finche' non ha dati."})
     HUB.append({'id': 'hub-peter-parker', 'nome': 'Peter Parker / Spider-Man', 'tipo': 'hub_multiversale', 'conta_come_personaggio': False,
                 'membri': ['seg-peter-parker-616', 'id-peter-parker-mcu', 'id-peter-parker-raimi', 'id-peter-parker-garfield', 'id-peter-parker-ynfsm', 'id-peter-b-parker'],
-                'esclusi': {'char-peter': "Peter (franchise Deadpool): altro personaggio, creato per il film Deadpool (2016)", 'char-peter-quill-star-lord': 'Peter Quill: altro personaggio (omonimia del nome di battesimo)'},
+                'esclusi': {'char-peter': "Peter (franchise Deadpool): altro personaggio, creato per il film Deadpool 2 (2018)", 'char-peter-quill-star-lord': 'Peter Quill: altro personaggio (omonimia del nome di battesimo)'},
                 'pagine_hub': [pp, 'char-peter-parker-holland-maguire-garfield'], 'nota': 'L\'hub elenca identita\' autonome (biografia, poteri, apparizioni, relazioni e continuita\' propri); non ha biografia propria.', 'fonte': [F['int-identita']], 'verifica': VER})
     red(pp, 'pagina-hub', ['hub-peter-parker', 'id-peter-parker-mcu', 'id-peter-parker-raimi', 'id-peter-parker-garfield', 'id-peter-parker-ynfsm'], 'pagina multi-continuita\': i link entranti vanno classificati per continuita\' (vedi collegamenti_da_classificare)')
     red('char-peter-parker-holland-maguire-garfield', 'pagina-hub', ['hub-peter-parker', 'id-peter-parker-mcu', 'id-peter-parker-raimi', 'id-peter-parker-garfield'], 'pagina aggregata (No Way Home)')
     red('char-spider-man', 'alias', 'id-peter-parker-mcu', 'redirect gia\' dichiarato in atlasData.identita')
     red('char-peter-b-parker', 'canonica', 'id-peter-b-parker')
     for pid, why in (('char-peter', 'Peter (franchise Deadpool)'), ('char-peter-quill-star-lord', 'Peter Quill')): red(pid, 'canonica', 'id-' + pid[5:], why + ': identita\' distinta, fuori dall\'hub')
-    I.append(ident('id-peter', 'Peter (franchise Deadpool)', 'identita', None, ['char-peter'], 'char-peter', [], ['int-mv'], note="Personaggio creato per il film Deadpool (2016), senza controparte nei fumetti (campo NEI FUMETTI della scheda). Alias di visualizzazione: «Peter (Deadpool)»."))
+    I.append(ident('id-peter', 'Peter (franchise Deadpool)', 'identita', None, ['char-peter'], 'char-peter', [], ['int-mv'], note="Personaggio creato per il film Deadpool 2 (2018), senza controparte nei fumetti (campo NEI FUMETTI della scheda). Alias di visualizzazione: «Peter (Deadpool)»."))
     I.append(ident('id-peter-quill-star-lord', 'Peter Quill/Star-Lord', 'identita', 'uni-earth-199999-mcu', ['char-peter-quill-star-lord'], 'char-peter-quill-star-lord', [], ['int-mv']))
     # 2 Charles Xavier --------------------------------------------------------------------
     cx = ['char-charles-xavier', 'char-xavier', 'char-xavier-giovane-e-anziano']
@@ -174,6 +174,17 @@ def costruisci():
                    verifica="parziale: continuita' dichiarata dalla scheda Atlante (Fox-Verse · Animato, continuita' propria) e da mvMapData (N°131 in uni-x-men-97-verse); nessun dato biografico specifico attribuito",
                    note="Separato da id-wolverine (Fox-Verse) per decisione dell'utente (25/11/2026). La scheda char-wolverine descrive insieme le due continuita': i suoi campi restano attribuiti a id-wolverine e non a questa identita'."))
     rel('id-wolverine', 'id-wolverine-x-men-97', 'stessa_scheda_atlante', 'stessa_scheda_atlante', False, ['int-identita', 'int-mv'], "dati interni: la scheda char-wolverine copre entrambe le continuita'; nessuna parentela narrativa dichiarata", "Continuita' distinte (Fox-Verse / X-Men '97-verse): identita' distinte, non unificate.")
+    # 15 Harry Osborn: Raimi-Verse e Webb (Garfield-Verse) in due identita' autonome (decisione dell'utente, 25/11/2026) ------------------
+    # Stesso schema di Wolverine: nessun ID, apparizione o collegamento va perso. id-harry-osborn-green-goblin resta (stesso ID, stessa pagina canonica,
+    # ritratti e preferiti invariati) e diventa «Raimi»; N°005 (The Amazing Spider-Man 2, Earth-120703) passa a id-harry-osborn-webb e resta tracciato in
+    # apparizioni_spostate. N°120 (serie animata Your Friendly Neighborhood Spider-Man) NON e' oggetto della decisione: resta dov'era, segnalato.
+    hr = next(i for i in I if i['id'] == 'id-harry-osborn-green-goblin'); assert '005' in hr['apparizioni'] and '005' in titoli('uni-earth-120703-garfield-verse')
+    hr['apparizioni'] = [n for n in hr['apparizioni'] if n != '005']; hr['apparizioni_spostate'] = {'005': 'id-harry-osborn-webb'}; hr['alias'] = sorted(set(hr['alias']) | {hr['nome']}); hr['nome'] = 'Harry Osborn/Green Goblin (Raimi)'
+    hr['nota'] = "N°005 (The Amazing Spider-Man 2) appartiene alla continuita' Webb: spostato in id-harry-osborn-webb (decisione dell'utente 25/11/2026). N°120 (serie animata) resta qui in attesa di una decisione separata."
+    I.append(ident('id-harry-osborn-webb', 'Harry Osborn/Green Goblin (Webb)', 'identita', 'uni-earth-120703-garfield-verse', ['char-harry-osborn-green-goblin'], 'char-harry-osborn-green-goblin', [], ['int-identita', 'int-mv'], apparizioni=['005'],
+                   verifica="parziale: continuita' dichiarata da mvMapData (N°005 in uni-earth-120703-garfield-verse) e dalla scheda Atlante (UNIVERSI: Earth-96283 · Earth-120703 · YFNSM); nessun dato biografico specifico attribuito",
+                   note="Separato da id-harry-osborn-green-goblin (Raimi) per decisione dell'utente (25/11/2026). La scheda char-harry-osborn-green-goblin descrive insieme piu' continuita': i suoi campi restano attribuiti all'identita' Raimi e non a questa."))
+    rel('id-harry-osborn-green-goblin', 'id-harry-osborn-webb', 'stessa_scheda_atlante', 'stessa_scheda_atlante', False, ['int-identita', 'int-mv'], "dati interni: la scheda char-harry-osborn-green-goblin copre piu' continuita'; nessuna parentela narrativa dichiarata", "Continuita' distinte (Raimi-Verse / Garfield-Verse): identita' distinte, non unificate.")
     # collegamenti da classificare (solo pagine divise in piu' identita')
     DIVISE = {k: v['verso'] for k, v in RED.items() if v['ruolo'] in ('pagina-hub', 'pagina-storica')}
     IDX = {i['id']: i for i in I}
@@ -242,6 +253,8 @@ def verifica():
     wv = {i['id']: i for i in r['identita']}
     chk("Wolverine: N°131 solo nell'identita' X-Men '97; nessuna apparizione persa (unione = originale)", '131' not in wv['id-wolverine']['apparizioni'] and wv['id-wolverine-x-men-97']['apparizioni'] == ['131'] and set(wv['id-wolverine']['apparizioni']) | {'131'} == {'013', '014', '015', '016', '017', '018', '023', '117', '131'})
     chk("Wolverine: char-wolverine resta canonica verso id-wolverine (link entranti invariati); universi distinti", r['redirect']['char-wolverine'] == {'ruolo': 'canonica', 'verso': ['id-wolverine'], 'nota': ''} and wv['id-wolverine']['universo'] == 'uni-earth-10005-fox-verse' and wv['id-wolverine-x-men-97']['universo'] == 'uni-x-men-97-verse')
+    hh = {i['id']: i for i in r['identita']}
+    chk("Harry Osborn: N°005 solo in Webb, nessuna apparizione persa, ID e pagina canonica invariati", '005' not in hh['id-harry-osborn-green-goblin']['apparizioni'] and hh['id-harry-osborn-webb']['apparizioni'] == ['005'] and set(hh['id-harry-osborn-green-goblin']['apparizioni']) | {'005'} == {'001', '002', '003', '005', '120'} and r['redirect']['char-harry-osborn-green-goblin']['verso'] == ['id-harry-osborn-green-goblin'] and hh['id-harry-osborn-webb']['universo'] == 'uni-earth-120703-garfield-verse')
     c = r['conteggi']
     chk('conteggio identita\' coerente (che contano = totali - non contanti)', c['identita_che_contano'] == sum(1 for i in r['identita'] if i['conta_come_personaggio']))
     print('ESITO:', 'OK' if ok else 'FALLITO'); return 0 if ok else 1

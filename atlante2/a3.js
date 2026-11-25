@@ -50,7 +50,7 @@
       withRit(function (r) { r.ids().then(function (k) {
         var have = mem.filter(function (m) { return k[m]; }).slice(0, 4); if (!have.length || !el.isConnected) return;
         var c = h('div', 'a3-comp n' + have.length); have.forEach(function (m) { var cell = h('span', 'a3-cell'); c.appendChild(cell); r.paint(cell, m, big); });
-        var old = el.querySelector('.a3-comp'); if (old) old.remove(); el.appendChild(c); el.classList.add('has-pt');
+        var old = el.querySelector('.a3-comp'); if (old) old.remove(); el.appendChild(c); el.classList.add('has-pt'); if (big && el.parentNode && el.parentNode.classList) el.parentNode.classList.add('comp');
       }); });
     });
   }
@@ -360,16 +360,17 @@
       w.appendChild(b);
     }); return w;
   }
+  function srcVisible(d) { return !!(d.nota || (d.fonti || []).some(function (f) { return /^https:\/\//.test(f); }) || (d.p && d.p.length) || (d.storiche && d.storiche.length)); }
   function srcBlock(d) {
     var w = h('div', 'a3-src');
-    if (d.nota) w.appendChild(h('span', '', 'Nota di catalogo: ' + d.nota));
-    if (d.ver) w.appendChild(h('span', '', 'Stato di verifica: ' + d.ver));
-    (d.fonti || []).forEach(function (f) { var r = h('span'); if (/^https:\/\//.test(f)) { var a = h('a', '', f, { href: f, target: '_blank', rel: 'noopener noreferrer' }); r.appendChild(a); } else r.textContent = f; w.appendChild(r); });
-    var pages = (d.p || []).concat((d.storiche || []).map(function (x) { return x.id; })); var seen = {};
+    /* sezione per l'utente: nessuna dicitura tecnica né ID interno (stato di verifica, nomi dei blob, slug restano nei dati) */
+    if (d.nota) w.appendChild(h('span', '', 'Nota: ' + d.nota));
+    (d.fonti || []).forEach(function (f) { if (!/^https:\/\//.test(f)) return; var r = h('span'), host = f.replace(/^https:\/\/(www\.)?/, '').split('/')[0]; r.appendChild(h('a', '', host, { href: f, target: '_blank', rel: 'noopener noreferrer', title: f })); w.appendChild(r); });
+    var pages = (d.p || []).concat((d.storiche || []).map(function (x) { return x.id; })); var seen = {}, nPg = 0;
     var ARC = { org: 'org', art: 'art', pia: 'luo', luo: 'luo', evt: 'evt', bat: 'evt' };
     pages.forEach(function (p) {
       if (seen[p]) return; seen[p] = 1; var pre = p.split('-')[0];
-      w.appendChild(btn('btn ghost', 'Scheda originale (Atlante classico): ' + p.replace(/^[a-z]+-/, ''), function () {
+      w.appendChild(btn('btn ghost', nPg++ ? 'Altra scheda nell’Atlante classico' : 'Apri la scheda nell’Atlante classico', function () {
         if (!W.tvaGo) return; if (pre === 'char' || pre === 'uni' || pre === 'att') W.tvaGo(pre, p); else if (ARC[pre]) W.tvaGo('arc', ARC[pre] + ':' + p);
       }));
     });
@@ -381,7 +382,7 @@
       var k = sd[0], title = sd[1], node = null, host = h('div');
       if (k === 'apparizioni') { if (d.app && d.app.length) host.appendChild(appsBlock(d)); if (d.sec.apparizioni) kv(d.sec.apparizioni, host, d.p); }
       else if (k === 'varianti') { if (d.var) host.appendChild(varBlock(d)); if (d.storiche && d.storiche.length) { var hb = h('div', 'a3-vb'); hb.appendChild(h('h3', '', 'Pagina storica multi-continuità')); hb.appendChild(h('p', '', 'Nell’Atlante classico questa identità compare in una scheda aggregata: i suoi dati non vengono attribuiti a una sola continuità.')); host.appendChild(hb); } }
-      else if (k === 'fonti') { if (d.fonti || d.ver || d.nota || (d.p && d.p.length) || (d.storiche && d.storiche.length)) host.appendChild(srcBlock(d)); }
+      else if (k === 'fonti') { if (srcVisible(d)) host.appendChild(srcBlock(d)); }
       else if (d.sec[k]) kv(d.sec[k], host, d.p);
       if (host.childNodes.length) out.push({ k: k, t: title, n: host });
     }); return out;
@@ -427,14 +428,14 @@
       var wrap = h('div', 'a3-hubs'); root.appendChild(wrap);
       ids.forEach(function (id, i) {
         var m = BY[id], c = m ? btn('a3-hc rev t-' + m.t, null, function () { openId(id); }) : h('div', 'a3-hc off');
+        if (m) { var hm = h('span', 'a3-hm'); hm.appendChild(emblem(m, false)); c.appendChild(hm); paintRit(hm, id, false); }
         if (v.t === 'm') c.appendChild(h('span', 'kick', (i + 1) + '° titolare')); c.appendChild(h('b', '', m ? m.n : 'Scheda non ancora disponibile'));
         if (m) { c.appendChild(h('span', 'soft', (m.u ? uniNome(m.u) + ' · ' : '') + m.a + ' apparizioni')); var line = h('span', 'soft'); c.appendChild(line); dossier(id, function (dd) { if (!dd) return; var idf = (dd.sec.identita || []).filter(function (f) { return f.l === 'Interpreti'; })[0]; if (idf) line.textContent = 'Interprete: ' + idf.t.join(''); }); }
         else c.appendChild(h('span', 'soft', 'Segnaposto previsto, nessun dato verificato.'));
         wrap.appendChild(c);
       });
-      if (d.esclusi && Object.keys(d.esclusi).length) { var ex = h('section', 'a3-ds'); ex.appendChild(h('h2', '', 'Da non confondere')); Object.keys(d.esclusi).forEach(function (k) { var kvd = h('div', 'a3-kv'); kvd.appendChild(h('span', 'k', k.replace(/^char-/, '').replace(/-/g, ' '))); kvd.appendChild(h('div', 'v', d.esclusi[k])); ex.appendChild(kvd); }); root.appendChild(ex); }
-      if (d.ver) { var vs = h('section', 'a3-ds'); vs.appendChild(h('h2', '', 'Fonti e riferimenti')); vs.appendChild(srcBlock(d)); root.appendChild(vs); }
-      else if (d.fonti && d.fonti.length) { var fs = h('section', 'a3-ds'); fs.appendChild(h('h2', '', 'Fonti e riferimenti')); fs.appendChild(srcBlock(d)); root.appendChild(fs); }
+      /* «Da non confondere» (omonimie irrilevanti) non viene più mostrato negli hub: resta nei dati (d.esclusi) */
+      if (srcVisible(d)) { var vs = h('section', 'a3-ds'); vs.appendChild(h('h2', '', 'Fonti e riferimenti')); vs.appendChild(srcBlock(d)); root.appendChild(vs); }
       reveal(root);
     });
   }

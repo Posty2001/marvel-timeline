@@ -12858,13 +12858,13 @@
 "campi": [
 {
 "k": "PRIMA APP.",
-"html": "N°117 — Deadpool &amp; Wolverine",
-"testo": "N°117 — Deadpool & Wolverine"
+"html": "N°024 — Deadpool 2",
+"testo": "N°024 — Deadpool 2"
 },
 {
 "k": "ALTRE APP.",
-"html": "—",
-"testo": "—"
+"html": "N°117 — Deadpool &amp; Wolverine",
+"testo": "N°117 — Deadpool & Wolverine"
 },
 {
 "k": "UNIVERSI",
@@ -12878,8 +12878,8 @@
 },
 {
 "k": "📚 NEI FUMETTI",
-"html": "Personaggio creato direttamente per il film Deadpool (2016): un vicino di casa di Wade senza alcun superpotere che si offre volontario per la missione finale. Non ha alcuna controparte nei fumetti.",
-"testo": "Personaggio creato direttamente per il film Deadpool (2016): un vicino di casa di Wade senza alcun superpotere che si offre volontario per la missione finale. Non ha alcuna controparte nei fumetti."
+"html": "Personaggio creato direttamente per il film Deadpool 2 (2018): un vicino di casa di Wade senza alcun superpotere che si offre volontario per la missione finale. Non ha alcuna controparte nei fumetti.",
+"testo": "Personaggio creato direttamente per il film Deadpool 2 (2018): un vicino di casa di Wade senza alcun superpotere che si offre volontario per la missione finale. Non ha alcuna controparte nei fumetti."
 }
 ],
 "collegamenti": [
@@ -12907,7 +12907,7 @@
 "ha_fumetto": true,
 "verifica": "da_verificare",
 "fonte": "schede attuali di index.html",
-"html": "<li class=\"card-wrap\" data-search=\"peter\" id=\"char-peter\"><details class=\"card\">\n<summary>\n<span class=\"ic\">👤</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Peter</span> <span class=\"has-comic\">📚</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">PRIMA APP.</span><span class=\"detail-v\">N°117 — Deadpool &amp; Wolverine</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">ALTRE APP.</span><span class=\"detail-v\">—</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">UNIVERSI</span><span class=\"detail-v\">MCU + Fox-Verse</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">CORRELATI</span><span class=\"detail-v\"><a class=\"mv-inline-link\" href=\"javascript:void(0)\" onclick=\"mvNavigate('char-sabretooth','char','S')\">Sabretooth</a>, <a class=\"mv-inline-link\" href=\"javascript:void(0)\" onclick=\"mvNavigate('char-wolverine','char','L')\">Logan/Wolverine</a>, <a class=\"mv-inline-link\" href=\"javascript:void(0)\" onclick=\"mvNavigate('char-gambit','char','G')\">Gambit</a>, <a class=\"mv-inline-link\" href=\"javascript:void(0)\" onclick=\"mvNavigate('char-yukio','char','Y')\">Yukio</a></span></div>\n<div class=\"detail-row comic-row\"><span class=\"detail-k\">📚 NEI FUMETTI</span><span class=\"detail-v\">Personaggio creato direttamente per il film Deadpool (2016): un vicino di casa di Wade senza alcun superpotere che si offre volontario per la missione finale. Non ha alcuna controparte nei fumetti.</span></div>\n</div>\n</details></li>"
+"html": "<li class=\"card-wrap\" data-search=\"peter\" id=\"char-peter\"><details class=\"card\">\n<summary>\n<span class=\"ic\">👤</span>\n<div class=\"item-body\"><div class=\"item-top\"><span class=\"title\">Peter</span> <span class=\"has-comic\">📚</span></div></div>\n<span class=\"chev\">▸</span>\n</summary>\n<div class=\"detail-panel\">\n<div class=\"detail-row\"><span class=\"detail-k\">PRIMA APP.</span><span class=\"detail-v\">N°024 — Deadpool 2</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">ALTRE APP.</span><span class=\"detail-v\">N°117 — Deadpool &amp; Wolverine</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">UNIVERSI</span><span class=\"detail-v\">MCU + Fox-Verse</span></div>\n<div class=\"detail-row\"><span class=\"detail-k\">CORRELATI</span><span class=\"detail-v\"><a class=\"mv-inline-link\" href=\"javascript:void(0)\" onclick=\"mvNavigate('char-sabretooth','char','S')\">Sabretooth</a>, <a class=\"mv-inline-link\" href=\"javascript:void(0)\" onclick=\"mvNavigate('char-wolverine','char','L')\">Logan/Wolverine</a>, <a class=\"mv-inline-link\" href=\"javascript:void(0)\" onclick=\"mvNavigate('char-gambit','char','G')\">Gambit</a>, <a class=\"mv-inline-link\" href=\"javascript:void(0)\" onclick=\"mvNavigate('char-yukio','char','Y')\">Yukio</a></span></div>\n<div class=\"detail-row comic-row\"><span class=\"detail-k\">📚 NEI FUMETTI</span><span class=\"detail-v\">Personaggio creato direttamente per il film Deadpool 2 (2018): un vicino di casa di Wade senza alcun superpotere che si offre volontario per la missione finale. Non ha alcuna controparte nei fumetti.</span></div>\n</div>\n</details></li>"
 },
 {
 "id": "char-peter-b-parker",

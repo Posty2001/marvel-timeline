@@ -1022,7 +1022,6 @@
     "001",
     "002",
     "003",
-    "005",
     "120"
    ],
    "continuita": "Earth-96283 — Raimi-Verse · Universo autonomo",
@@ -1047,9 +1046,7 @@
      "id": "id-peter-parker-garfield",
      "nome": "Peter Parker (Garfield-Verse)",
      "universo": "uni-earth-120703-garfield-verse",
-     "comuni": [
-      "005"
-     ]
+     "comuni": []
     },
     {
      "id": "id-peter-parker-ynfsm",
@@ -1369,7 +1366,6 @@
     "001",
     "002",
     "003",
-    "005",
     "120"
    ],
    "continuita": "Earth-96283 — Raimi-Verse · Universo autonomo",
@@ -1394,9 +1390,7 @@
      "id": "id-peter-parker-garfield",
      "nome": "Peter Parker (Garfield-Verse)",
      "universo": "uni-earth-120703-garfield-verse",
-     "comuni": [
-      "005"
-     ]
+     "comuni": []
     },
     {
      "id": "id-peter-parker-ynfsm",
