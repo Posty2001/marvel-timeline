@@ -1,0 +1,23 @@
+{
+ "stadi_s": {
+  "download": 0.6,
+  "qualita": 0.1,
+  "scena_clip": 1.4,
+  "scena_siglip": 5.0
+ },
+ "candidati_totali": 28,
+ "immagini_uniche": 25,
+ "immagini_nitide": 25,
+ "totale_s": 22.9,
+ "ram_picco_mb": 3089,
+ "identita": {
+  "id-harry-osborn-ynfsm": {
+   "conf": "alta",
+   "buoni": 11,
+   "proposte": 3,
+   "secondi": 14.7
+  }
+ },
+ "blocco": 10,
+ "cpu": 4
+}

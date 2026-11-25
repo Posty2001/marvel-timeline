@@ -1,0 +1,75 @@
+{
+ "schema": 2,
+ "generato": "2026-11-25T22:38:27Z",
+ "motore": "A3.2 v3 blocco 10",
+ "soglie": {
+  "clip": 5.0,
+  "siglip": 4.0
+ },
+ "diritti": {
+  "fonte": "TMDB (percorsi CDN, nessuna immagine copiata)",
+  "uso": "solo privato/locale sul dispositivo dell'utente",
+  "pubblicazione": false,
+  "immagini_nel_repository": false
+ },
+ "identita": [
+  {
+   "id": "id-harry-osborn-ynfsm",
+   "nome": "Harry Osborn/Green Goblin (Your Friendly Neighborhood Spider-Man)",
+   "conf": "alta",
+   "gen": 0,
+   "buoni": 11,
+   "proposte": [
+    {
+     "rk": 1,
+     "p": "/lb3Qc0Qbw9MmdA9gj3znMLgy3Of.jpg",
+     "w": 1600,
+     "h": 900,
+     "num": "120",
+     "sc": 0.84,
+     "m": 11.84,
+     "ms": 7.64,
+     "ck": 1,
+     "crop": {
+      "z": 1.0,
+      "cx": 0.4422,
+      "cy": 0.5
+     }
+    },
+    {
+     "rk": 2,
+     "p": "/kkT2B2gmynoh9kZMo1gromLNeqy.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "120",
+     "sc": 0.709,
+     "m": 8.39,
+     "ms": 3.17,
+     "ck": 0,
+     "crop": {
+      "z": 1.0,
+      "cx": 0.3266,
+      "cy": 0.5
+     }
+    },
+    {
+     "rk": 3,
+     "p": "/7CaXcLBWf41nHyX33DmpIpcOSg4.jpg",
+     "w": 3000,
+     "h": 1688,
+     "num": "120",
+     "sc": 0.699,
+     "m": 9.51,
+     "ms": -1.03,
+     "ck": 0,
+     "crop": {
+      "z": 1.2821,
+      "cx": 0.8354,
+      "cy": 0.39
+     }
+    }
+   ],
+   "secondi": 14.7
+  }
+ ]
+}

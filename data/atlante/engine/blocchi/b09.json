@@ -1,0 +1,75 @@
+{
+ "schema": 2,
+ "generato": "2026-11-25T22:38:04Z",
+ "motore": "A3.2 v3 blocco 9",
+ "soglie": {
+  "clip": 5.0,
+  "siglip": 4.0
+ },
+ "diritti": {
+  "fonte": "TMDB (percorsi CDN, nessuna immagine copiata)",
+  "uso": "solo privato/locale sul dispositivo dell'utente",
+  "pubblicazione": false,
+  "immagini_nel_repository": false
+ },
+ "identita": [
+  {
+   "id": "id-harry-osborn-webb",
+   "nome": "Harry Osborn/Green Goblin (Webb)",
+   "conf": "alta",
+   "gen": 0,
+   "buoni": 6,
+   "proposte": [
+    {
+     "rk": 1,
+     "p": "/k3bSkdbbNguVE7MTJB8ZZAMTXwS.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "005",
+     "sc": 0.98,
+     "m": 11.3,
+     "ms": 5.61,
+     "ck": 1,
+     "crop": {
+      "z": 1.2821,
+      "cx": 0.1646,
+      "cy": 0.61
+     }
+    },
+    {
+     "rk": 2,
+     "p": "/5Yj3KIkyNf8KMl7VjrCs7sVdmxQ.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "005",
+     "sc": 0.744,
+     "m": 4.61,
+     "ms": 3.51,
+     "ck": 0,
+     "crop": {
+      "z": 1.2821,
+      "cx": 0.2988,
+      "cy": 0.61
+     }
+    },
+    {
+     "rk": 3,
+     "p": "/lsaH2RzwqMRSJEXWPcOcwl5B1Ja.jpg",
+     "w": 3840,
+     "h": 2160,
+     "num": "005",
+     "sc": 0.687,
+     "m": 5.02,
+     "ms": 3.13,
+     "ck": 0,
+     "crop": {
+      "z": 1.0,
+      "cx": 0.3266,
+      "cy": 0.5
+     }
+    }
+   ],
+   "secondi": 11.0
+  }
+ ]
+}

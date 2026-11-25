@@ -1,0 +1,23 @@
+{
+ "stadi_s": {
+  "download": 0.6,
+  "qualita": 0.2,
+  "scena_clip": 2.5,
+  "scena_siglip": 9.6
+ },
+ "candidati_totali": 60,
+ "immagini_uniche": 48,
+ "immagini_nitide": 48,
+ "totale_s": 25.0,
+ "ram_picco_mb": 3089,
+ "identita": {
+  "id-harry-osborn-webb": {
+   "conf": "alta",
+   "buoni": 6,
+   "proposte": 3,
+   "secondi": 11.0
+  }
+ },
+ "blocco": 9,
+ "cpu": 4
+}
