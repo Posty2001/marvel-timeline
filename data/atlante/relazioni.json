@@ -117,7 +117,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Spider-Man:_No_Way_Home"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -126,8 +126,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-dcfac0c917",
@@ -140,7 +140,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Spider-Man:_No_Way_Home"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "Controparti documentate in No Way Home",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -149,8 +149,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-1dd3b7aa73",
@@ -163,7 +163,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Spider-Man:_No_Way_Home"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -172,8 +172,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-e3875fdd06",
@@ -2351,7 +2351,7 @@
     "scheda char-bullseye (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-daredevil-elektra-verse)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -4545,6 +4545,46 @@
    "controversa": false
   },
   {
+   "id": "rel-77096aeb18",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-drax",
+   "a": "id-groot-originale",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-drax (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 058)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-5c1fac124f",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-drax",
+   "a": "id-groot-successore",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-drax (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 084, 089)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
    "id": "rel-bbbac69462",
    "tipo": "correlato",
    "classe": "editoriale",
@@ -5036,7 +5076,7 @@
     "scheda char-elektra-natchios (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-daredevil-elektra-verse)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -5516,7 +5556,7 @@
     "scheda char-wilson-fisk-kingpin (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-daredevil-elektra-verse)",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-daredevil-elektra-verse; N° 035)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -5537,6 +5577,26 @@
    ],
    "verifica": "guida",
    "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-199999-mcu)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-0bce787d6c",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-fisk-mcu",
+   "a": "id-matt-murdock-mcu",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-wilson-fisk-kingpin (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 060, 082, 122, 128)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -5725,18 +5785,18 @@
    "controversa": false
   },
   {
-   "id": "rel-10d2afbdcf",
+   "id": "rel-fd5703a891",
    "tipo": "correlato",
    "classe": "editoriale",
    "da": "id-foggy-nelson",
-   "a": "id-matt-murdock-daredevil",
+   "a": "id-matt-murdock-mcu",
    "simmetrica": false,
    "qualifica": null,
    "fonte": [
     "scheda char-foggy-nelson (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-199999-mcu)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -5845,18 +5905,18 @@
    "controversa": false
   },
   {
-   "id": "rel-bdf26032cf",
+   "id": "rel-5069d39996",
    "tipo": "correlato",
    "classe": "editoriale",
    "da": "id-frank-castle-punisher",
-   "a": "id-matt-murdock-daredevil",
+   "a": "id-matt-murdock-mcu",
    "simmetrica": false,
    "qualifica": null,
    "fonte": [
     "scheda char-frank-castle-punisher (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-199999-mcu)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -6177,6 +6237,46 @@
    ],
    "verifica": "guida",
    "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-7400a7af85",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-gamora",
+   "a": "id-groot-originale",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-gamora (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 058)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-19c52f3042",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-gamora",
+   "a": "id-groot-successore",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-gamora (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 059, 084, 089)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -6545,6 +6645,146 @@
    "controversa": false
   },
   {
+   "id": "rel-11ef1b10e5",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-groot-originale",
+   "a": "id-drax",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-groot (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 058)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-5da91b3e15",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-groot-originale",
+   "a": "id-gamora",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-groot (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 058)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-338dc31dc9",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-groot-originale",
+   "a": "id-peter-quill-star-lord",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-groot (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 058)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-d0b8964a1d",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-groot-originale",
+   "a": "id-rocket",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-groot (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 058)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-e3cf2194da",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-groot-successore",
+   "a": "id-drax",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-groot (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 084, 089)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-060911d8aa",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-groot-successore",
+   "a": "id-gamora",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-groot (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 059, 084, 089)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-69221e5382",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-groot-successore",
+   "a": "id-peter-quill-star-lord",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-groot (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 059, 084, 089)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
    "id": "rel-809506540c",
    "tipo": "correlato",
    "classe": "editoriale",
@@ -6553,10 +6793,11 @@
    "simmetrica": false,
    "qualifica": null,
    "fonte": [
+    "scheda char-groot (campo CORRELATI)",
     "scheda char-groot-piccolo (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 059, 084, 089, 115)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -6917,6 +7158,66 @@
    ],
    "verifica": "guida",
    "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-96283-raimi-verse)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-5082536258",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-harry-osborn-green-goblin",
+   "a": "id-peter-parker-raimi",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-harry-osborn-green-goblin (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-96283-raimi-verse; N° 001, 002, 003)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-783b9444b1",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-harry-osborn-webb",
+   "a": "id-peter-parker-garfield",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-harry-osborn-green-goblin (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-120703-garfield-verse; N° 005)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-588abb99c1",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-harry-osborn-ynfsm",
+   "a": "id-peter-parker-ynfsm",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-harry-osborn-green-goblin (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-your-friendly-neighborhood-spider-man-verse; N° 120)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -8145,18 +8446,18 @@
    "controversa": false
   },
   {
-   "id": "rel-6bcd4e8e87",
+   "id": "rel-778868cecf",
    "tipo": "correlato",
    "classe": "editoriale",
    "da": "id-jennifer-walters-she-hulk",
-   "a": "id-matt-murdock-daredevil",
+   "a": "id-matt-murdock-mcu",
    "simmetrica": false,
    "qualifica": null,
    "fonte": [
     "scheda char-jennifer-walters-she-hulk (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-199999-mcu)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -8785,18 +9086,18 @@
    "controversa": false
   },
   {
-   "id": "rel-f50145778b",
+   "id": "rel-6aea7caa37",
    "tipo": "correlato",
    "classe": "editoriale",
    "da": "id-karen-page",
-   "a": "id-matt-murdock-daredevil",
+   "a": "id-matt-murdock-mcu",
    "simmetrica": false,
    "qualifica": null,
    "fonte": [
     "scheda char-karen-page (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-199999-mcu)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -10638,7 +10939,7 @@
     "scheda char-matt-murdock-daredevil (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-daredevil-elektra-verse)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -10658,7 +10959,7 @@
     "scheda char-matt-murdock-daredevil (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-daredevil-elektra-verse)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -10678,7 +10979,7 @@
     "scheda char-matt-murdock-daredevil (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-daredevil-elektra-verse)",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-daredevil-elektra-verse; N° 035)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -10687,10 +10988,30 @@
    "controversa": false
   },
   {
-   "id": "rel-95857bef79",
+   "id": "rel-da4766b7f4",
    "tipo": "correlato",
    "classe": "editoriale",
-   "da": "id-matt-murdock-daredevil",
+   "da": "id-matt-murdock-mcu",
+   "a": "id-fisk-mcu",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-matt-murdock-daredevil (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 060, 082, 122, 128)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-74b846eca1",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-matt-murdock-mcu",
    "a": "id-foggy-nelson",
    "simmetrica": false,
    "qualifica": null,
@@ -10698,7 +11019,7 @@
     "scheda char-matt-murdock-daredevil (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-199999-mcu)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -13327,6 +13648,26 @@
    "controversa": false
   },
   {
+   "id": "rel-62ddbed936",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-peter-parker-garfield",
+   "a": "id-harry-osborn-webb",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-peter-parker (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-120703-garfield-verse; N° 005)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
    "id": "rel-e3ca68ed26",
    "tipo": "correlato",
    "classe": "editoriale",
@@ -13427,6 +13768,26 @@
    "controversa": false
   },
   {
+   "id": "rel-6936a88039",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-peter-parker-raimi",
+   "a": "id-harry-osborn-green-goblin",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-peter-parker (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-96283-raimi-verse; N° 001, 002, 003)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
    "id": "rel-ec451b2d6c",
    "tipo": "correlato",
    "classe": "editoriale",
@@ -13468,6 +13829,26 @@
    "controversa": false
   },
   {
+   "id": "rel-5164ca0c16",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-peter-parker-ynfsm",
+   "a": "id-harry-osborn-ynfsm",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-peter-parker (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-your-friendly-neighborhood-spider-man-verse; N° 120)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
    "id": "rel-402d235a22",
    "tipo": "correlato",
    "classe": "editoriale",
@@ -13500,6 +13881,46 @@
    ],
    "verifica": "guida",
    "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-bb5cfb6a46",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-peter-quill-star-lord",
+   "a": "id-groot-originale",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-peter-quill-star-lord (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 058)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-7a5302affb",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-peter-quill-star-lord",
+   "a": "id-groot-successore",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-peter-quill-star-lord (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 059, 084, 089)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -14526,6 +14947,46 @@
    ],
    "verifica": "guida",
    "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-a281c826d5",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-rocket",
+   "a": "id-groot-originale",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-rocket (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 058)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-dacdbfe9f2",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-rocket",
+   "a": "id-groot-successore",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-rocket (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-199999-mcu; N° 059, 084, 089, 115)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -18942,6 +19403,28 @@
    "controversa": false
   },
   {
+   "id": "rel-975dc87775",
+   "tipo": "stessa_scheda",
+   "classe": "editoriale",
+   "da": "id-matt-murdock-daredevil",
+   "a": "id-matt-murdock-mcu",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://en.wikipedia.org/wiki/Matt_Murdock_(Marvel_Cinematic_Universe)",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "da verificare",
+   "nota": "Continuita' distinte (Daredevil 2003 / MCU): identita' distinte, non unificate.",
+   "origine": "A2:identita",
+   "conferme": [
+    "A2:identita"
+   ],
+   "verifica_originale": "dati interni: la scheda char-matt-murdock-daredevil copre due continuita'; nessuna parentela narrativa dichiarata",
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
    "id": "rel-80119c74c8",
    "tipo": "stessa_scheda",
    "classe": "editoriale",
@@ -19044,7 +19527,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Ant-Man_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19053,8 +19536,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-4dd54fea2b",
@@ -19113,7 +19596,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Doctor_Strange_(2016_film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19122,8 +19605,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-c041df0c3e",
@@ -19136,7 +19619,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/X-Men:_First_Class"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19145,8 +19628,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-a55bf6f614",
@@ -19159,7 +19642,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_Vol._2"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19168,8 +19651,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-9f127d86b5",
@@ -19228,7 +19711,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Captain_America:_The_Winter_Soldier"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19237,8 +19720,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-80a4a28ed3",
@@ -19274,7 +19757,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Spider-Man:_Far_From_Home"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19283,8 +19766,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-666d66b59e",
@@ -19297,7 +19780,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Black_Panther_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19306,8 +19789,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-346a6d4ef4",
@@ -19320,7 +19803,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19329,8 +19812,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-66ef3d43cd",
@@ -19343,7 +19826,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19352,8 +19835,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-bfd7e85894",
@@ -19366,7 +19849,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19375,8 +19858,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-7dea8fa629",
@@ -19389,7 +19872,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19398,8 +19881,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-1bc5ef3d63",
@@ -19412,7 +19895,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Captain_America:_The_Winter_Soldier"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19421,8 +19904,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-c084fe2090",
@@ -19481,7 +19964,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Doctor_Strange_(2016_film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19490,8 +19973,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-5c3dc20814",
@@ -19550,7 +20033,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Black_Panther_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19559,8 +20042,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-0b11a98c1e",
@@ -19665,7 +20148,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19674,8 +20157,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-0f758bca80",
@@ -19697,8 +20180,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-28f8789a9d",
@@ -19712,7 +20195,7 @@
     "https://en.wikipedia.org/wiki/X-Men:_First_Class",
     "https://en.wikipedia.org/wiki/X-Men_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19721,8 +20204,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-bd35e4a09f",
@@ -19744,8 +20227,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-afb8e05185",
@@ -19767,8 +20250,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-8f49be77f1",
@@ -19851,7 +20334,7 @@
     "https://en.wikipedia.org/wiki/Iron_Man_(2008_film)",
     "https://en.wikipedia.org/wiki/Iron_Man_2"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19860,8 +20343,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-f3fc281646",
@@ -19904,6 +20387,29 @@
     "lotto:lotto_01"
    ],
    "lotto": "lotto_01",
+   "approvazione": "non_richiesta",
+   "controversa": false,
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
+  },
+  {
+   "id": "rel-ecb8502ae0",
+   "tipo": "amicizia",
+   "classe": "narrativa",
+   "da": "id-matt-murdock-mcu",
+   "a": "id-foggy-nelson",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://en.wikipedia.org/wiki/Daredevil_(TV_series)"
+   ],
+   "verifica": "da verificare",
+   "nota": "",
+   "origine": "lotto:lotto_02",
+   "conferme": [
+    "lotto:lotto_02"
+   ],
+   "lotto": "lotto_02",
    "approvazione": "non_richiesta",
    "controversa": false,
    "esito_verifica": "non_verificata",
@@ -19975,8 +20481,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-d362f8d77c",
@@ -19989,7 +20495,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Spider-Man_(2002_film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -19998,8 +20504,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-0fafc8e276",
@@ -20012,7 +20518,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -20021,8 +20527,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-3bc420cfeb",
@@ -20035,7 +20541,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Captain_America:_The_Winter_Soldier"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -20044,8 +20550,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-1449aa0b08",
@@ -20067,8 +20573,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-230d3cfd7c",
@@ -20082,7 +20588,7 @@
     "https://en.wikipedia.org/wiki/Captain_America:_The_First_Avenger",
     "https://en.wikipedia.org/wiki/Captain_America:_The_Winter_Soldier"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -20091,8 +20597,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-4f19a4557f",
@@ -20199,7 +20705,7 @@
     "https://en.wikipedia.org/wiki/X-Men_(film)",
     "https://en.wikipedia.org/wiki/Logan_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -20208,8 +20714,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-32b0753f8b",
@@ -20231,8 +20737,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-42e0fd7125",
@@ -20309,13 +20815,15 @@
     "grafo classico: char-ben-grimm -> org-fantastic-four",
     "https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
     "guida:grafo-org",
     "lotto:lotto_01"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -20431,13 +20939,15 @@
     "grafo classico: char-ciclope -> org-x-men",
     "https://en.wikipedia.org/wiki/X-Men_(film)"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
     "guida:grafo-org",
     "lotto:lotto_01"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -20493,13 +21003,15 @@
     "grafo classico: char-danny-rand-iron-fist -> org-defenders",
     "https://en.wikipedia.org/wiki/The_Defenders_(miniseries)"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
     "guida:grafo-org",
     "lotto:lotto_01"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -20677,13 +21189,15 @@
     "grafo classico: char-jessica-jones -> org-defenders",
     "https://en.wikipedia.org/wiki/The_Defenders_(miniseries)"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
     "guida:grafo-org",
     "lotto:lotto_01"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -20739,13 +21253,15 @@
     "grafo classico: char-johnny-storm-human-torch -> org-fantastic-four",
     "https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
     "guida:grafo-org",
     "lotto:lotto_01"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -20781,13 +21297,15 @@
     "grafo classico: char-luke-cage -> org-defenders",
     "https://en.wikipedia.org/wiki/The_Defenders_(miniseries)"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
     "guida:grafo-org",
     "lotto:lotto_01"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -20803,35 +21321,40 @@
     "grafo classico: char-magneto -> org-fratellanza-dei-mutanti",
     "https://en.wikipedia.org/wiki/X-Men_(film)"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Leader di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
     "guida:grafo-org",
     "lotto:lotto_01"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
   {
-   "id": "rel-9214285471",
+   "id": "rel-771b4fd267",
    "tipo": "appartenenza",
    "classe": "narrativa",
-   "da": "id-matt-murdock-daredevil",
+   "da": "id-matt-murdock-mcu",
    "a": "org-defenders",
    "simmetrica": false,
-   "qualifica": "membro",
+   "qualifica": null,
    "fonte": [
-    "grafo classico: char-matt-murdock-daredevil -> org-defenders"
+    "https://en.wikipedia.org/wiki/The_Defenders_(miniseries)"
    ],
-   "verifica": "guida",
-   "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
-   "origine": "guida:grafo-org",
+   "verifica": "da verificare",
+   "nota": "",
+   "origine": "lotto:lotto_02",
    "conferme": [
-    "guida:grafo-org"
+    "lotto:lotto_02"
    ],
+   "lotto": "lotto_02",
    "approvazione": "non_richiesta",
-   "controversa": false
+   "controversa": false,
+   "esito_verifica": "non_verificata",
+   "data_verifica": null
   },
   {
    "id": "rel-b1b3737473",
@@ -20885,13 +21408,15 @@
     "grafo classico: char-mystica -> org-fratellanza-dei-mutanti",
     "https://en.wikipedia.org/wiki/X-Men_(film)"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
     "guida:grafo-org",
     "lotto:lotto_01"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21050,13 +21575,15 @@
     "grafo classico: char-reed-richards -> org-fantastic-four",
     "https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
     "guida:grafo-org",
     "lotto:lotto_01"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21100,8 +21627,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-296364453c",
@@ -21155,13 +21682,15 @@
     "grafo classico: char-sue-storm -> org-fantastic-four",
     "https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
     "guida:grafo-org",
     "lotto:lotto_01"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21267,6 +21796,29 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
+  },
+  {
+   "id": "rel-0639aa0276",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-wolverine-x-men-97",
+   "a": "org-x-men",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://en.wikipedia.org/wiki/X-Men_%2797"
+   ],
+   "verifica": "da verificare",
+   "nota": "",
+   "origine": "lotto:lotto_02",
+   "conferme": [
+    "lotto:lotto_02"
+   ],
+   "lotto": "lotto_02",
+   "approvazione": "non_richiesta",
+   "controversa": false,
    "esito_verifica": "non_verificata",
    "data_verifica": null
   },
@@ -21343,7 +21895,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Ant-Man_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -21352,8 +21904,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-dbbc612211",
@@ -21410,7 +21962,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/X-Men:_First_Class"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -21419,8 +21971,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-22bfb1f1b1",
@@ -21433,7 +21985,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -21442,8 +21994,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-d73a67e966",
@@ -21814,7 +22366,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Spider-Man_(2002_film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -21823,8 +22375,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-0b7a120135",
@@ -21908,7 +22460,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Black_Panther_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -21917,8 +22469,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-06deff421e",
@@ -21931,7 +22483,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Black_Panther_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -21940,8 +22492,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-10ff087a14",
@@ -21983,8 +22535,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-44636a2516",
@@ -22021,7 +22573,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -22030,8 +22582,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-0b84b79f44",
@@ -22044,7 +22596,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -22053,8 +22605,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-a9af49a28b",
@@ -22189,8 +22741,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-d2b610edb2",
@@ -22212,8 +22764,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-fbbe47662f",
@@ -22235,8 +22787,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-c5ddaeadeb",
@@ -22258,8 +22810,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-1703a21080",
@@ -22281,8 +22833,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-2a9306a1d3",
@@ -22318,7 +22870,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Ant-Man_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -22327,8 +22879,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-4e7102e64e",
@@ -22364,7 +22916,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Doctor_Strange_(2016_film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -22373,8 +22925,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-5f8a14c9ac",
@@ -22420,8 +22972,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-5b2e153405",
@@ -22584,6 +23136,29 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
+  },
+  {
+   "id": "rel-ea0e87e358",
+   "tipo": "partner",
+   "classe": "narrativa",
+   "da": "id-matt-murdock-daredevil",
+   "a": "id-elektra-natchios",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://en.wikipedia.org/wiki/Daredevil_(film)"
+   ],
+   "verifica": "da verificare",
+   "nota": "",
+   "origine": "lotto:lotto_02",
+   "conferme": [
+    "lotto:lotto_02"
+   ],
+   "lotto": "lotto_02",
+   "approvazione": "non_richiesta",
+   "controversa": false,
    "esito_verifica": "non_verificata",
    "data_verifica": null
   },
@@ -22598,7 +23173,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Spider-Man:_Far_From_Home"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -22607,8 +23182,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-205ee37968",
@@ -22628,10 +23203,10 @@
     "lotto:lotto_01"
    ],
    "lotto": "lotto_01",
-   "approvazione": "non_richiesta",
-   "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "approvazione": "in_attesa",
+   "controversa": true,
+   "esito_verifica": "dubbia",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-813bc7981a",
@@ -22668,7 +23243,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Captain_America:_The_First_Avenger"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -22677,8 +23252,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-bbfd87a41b",
@@ -22875,7 +23450,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/The_Defenders_(miniseries)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -22884,8 +23459,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-ac84cf4c91",
@@ -22991,7 +23566,7 @@
     "https://en.wikipedia.org/wiki/X-Men:_First_Class",
     "https://en.wikipedia.org/wiki/X-Men:_Days_of_Future_Past"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23000,8 +23575,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-e5d8a418f7",
@@ -23083,7 +23658,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Ant-Man_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23092,8 +23667,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-e1bd882ec8",
@@ -23129,7 +23704,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_Vol._2"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23138,8 +23713,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-d007dea997",
@@ -23152,7 +23727,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Black_Panther_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23161,8 +23736,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-da6662cca0",
@@ -23337,7 +23912,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Doctor_Strange_(2016_film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23346,8 +23921,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-c2221dccec",
@@ -23419,6 +23994,76 @@
    "data_verifica": null
   },
   {
+   "id": "rel-be90477ff6",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-matt-murdock-daredevil",
+   "a": "id-bullseye",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://en.wikipedia.org/wiki/Daredevil_(film)"
+   ],
+   "verifica": "da verificare",
+   "nota": "",
+   "origine": "lotto:lotto_02",
+   "conferme": [
+    "lotto:lotto_02"
+   ],
+   "lotto": "lotto_02",
+   "approvazione": "non_richiesta",
+   "controversa": false,
+   "esito_verifica": "non_verificata",
+   "data_verifica": null
+  },
+  {
+   "id": "rel-955e4fa8e2",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-matt-murdock-daredevil",
+   "a": "id-fisk-fox-2003",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://en.wikipedia.org/wiki/Daredevil_(film)"
+   ],
+   "verifica": "da verificare",
+   "nota": "",
+   "origine": "lotto:lotto_02",
+   "conferme": [
+    "lotto:lotto_02"
+   ],
+   "lotto": "lotto_02",
+   "approvazione": "non_richiesta",
+   "controversa": false,
+   "esito_verifica": "non_verificata",
+   "data_verifica": null
+  },
+  {
+   "id": "rel-2916587592",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-matt-murdock-mcu",
+   "a": "id-fisk-mcu",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://en.wikipedia.org/wiki/Daredevil_(TV_series)",
+    "https://en.wikipedia.org/wiki/Daredevil:_Born_Again"
+   ],
+   "verifica": "da verificare",
+   "nota": "",
+   "origine": "lotto:lotto_02",
+   "conferme": [
+    "lotto:lotto_02"
+   ],
+   "lotto": "lotto_02",
+   "approvazione": "non_richiesta",
+   "controversa": false,
+   "esito_verifica": "non_verificata",
+   "data_verifica": null
+  },
+  {
    "id": "rel-8f5ed5a6e8",
    "tipo": "rivalita",
    "classe": "narrativa",
@@ -23453,7 +24098,7 @@
     "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_(film)",
     "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_Vol._2"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23462,8 +24107,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-793088bce2",
@@ -23476,7 +24121,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Spider-Man_(2002_film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23485,8 +24130,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-3d91d4b5e4",
@@ -23499,7 +24144,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Iron_Man_(2008_film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23508,8 +24153,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-ef419375b2",
@@ -23545,7 +24190,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Spider-Man:_Far_From_Home"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23554,8 +24199,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-b21f218340",
@@ -23568,7 +24213,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23577,8 +24222,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-f81d324b22",
@@ -23591,7 +24236,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/X-Men:_First_Class"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23600,8 +24245,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-27fb5f843d",
@@ -23614,7 +24259,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/X-Men:_First_Class"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23623,8 +24268,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-20e1c4671b",
@@ -23660,7 +24305,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Captain_America:_The_First_Avenger"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23669,8 +24314,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-887dc7cad2",
@@ -23683,7 +24328,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23692,8 +24337,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-062a23adb4",
@@ -23753,7 +24398,7 @@
     "https://en.wikipedia.org/wiki/X-Men_(film)",
     "https://en.wikipedia.org/wiki/X-Men_Origins:_Wolverine"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23762,8 +24407,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-d9f41cc076",
@@ -23867,7 +24512,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Black_Panther:_Wakanda_Forever"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "Shuri assume il mantello di Black Panther",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23876,8 +24521,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-804d37f8a7",
@@ -23890,7 +24535,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Black_Panther_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "T'Challa succede al padre come re",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23899,8 +24544,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-81a0ed0dfa",
@@ -23936,7 +24581,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Ant-Man_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "Cross tradisce Pym",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23945,8 +24590,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-681ace262f",
@@ -23982,7 +24627,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Captain_America:_The_Winter_Soldier"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "Sitwell e' un agente HYDRA infiltrato",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23991,8 +24636,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-3c9d32cbcb",
@@ -24014,8 +24659,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-95b1e74160",
@@ -24028,7 +24673,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Iron_Man_(2008_film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "Stane tradisce Tony",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -24037,8 +24682,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-f92ca8ef9f",
@@ -24060,126 +24705,11 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26"
   }
  ],
- "coda": [
-  {
-   "motivo": "identita' non univoca: pagina multi-identita' (id-wolverine, id-wolverine-x-men-97)",
-   "pagina": "char-wolverine",
-   "org": "org-x-men",
-   "etichetta": "Membro di"
-  },
-  {
-   "motivo": "identita' non univoca: pagina senza identita'",
-   "pagina": "char-cast-fox-verse",
-   "bersaglio": "char-robert-downey-jr-dottor-destino",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina multi-identita' non risolvibile per continuita'/opere (id-drax | id-groot-originale, id-groot-successore)",
-   "pagina": "char-drax",
-   "bersaglio": "char-groot",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina multi-identita' non risolvibile per continuita'/opere (id-gamora | id-groot-originale, id-groot-successore)",
-   "pagina": "char-gamora",
-   "bersaglio": "char-groot",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina multi-identita' non risolvibile per continuita'/opere (id-groot-originale, id-groot-successore | id-peter-quill-star-lord)",
-   "pagina": "char-groot",
-   "bersaglio": "char-peter-quill-star-lord",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina multi-identita' non risolvibile per continuita'/opere (id-groot-originale, id-groot-successore | id-gamora)",
-   "pagina": "char-groot",
-   "bersaglio": "char-gamora",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina multi-identita' non risolvibile per continuita'/opere (id-groot-originale, id-groot-successore | id-drax)",
-   "pagina": "char-groot",
-   "bersaglio": "char-drax",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina multi-identita' non risolvibile per continuita'/opere (id-groot-originale, id-groot-successore | id-rocket)",
-   "pagina": "char-groot",
-   "bersaglio": "char-rocket",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina multi-identita' non risolvibile per continuita'/opere (id-harry-osborn-green-goblin, id-harry-osborn-webb, id-harry-osborn-ynfsm | id-peter-parker-mcu, id-peter-parker-raimi, id-peter-parker-garfield, id-peter-parker-ynfsm)",
-   "pagina": "char-harry-osborn-green-goblin",
-   "bersaglio": "char-peter-parker",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina multi-identita' non risolvibile per continuita'/opere (id-peter-parker-mcu, id-peter-parker-raimi, id-peter-parker-garfield, id-peter-parker-ynfsm | id-harry-osborn-green-goblin, id-harry-osborn-webb, id-harry-osborn-ynfsm)",
-   "pagina": "char-peter-parker",
-   "bersaglio": "char-harry-osborn-green-goblin",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina multi-identita' non risolvibile per continuita'/opere (id-peter-quill-star-lord | id-groot-originale, id-groot-successore)",
-   "pagina": "char-peter-quill-star-lord",
-   "bersaglio": "char-groot",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina senza identita'",
-   "pagina": "char-potenzialmente-ogni-personaggio-della-lista",
-   "bersaglio": "char-steve-rogers-capitan-america",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina senza identita'",
-   "pagina": "char-potenzialmente-ogni-personaggio-della-lista",
-   "bersaglio": "char-robert-downey-jr-dottor-destino",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina senza identita'",
-   "pagina": "char-robert-downey-jr-dottor-destino",
-   "bersaglio": "char-cast-fox-verse",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina senza identita'",
-   "pagina": "char-robert-downey-jr-dottor-destino",
-   "bersaglio": "char-potenzialmente-ogni-personaggio-della-lista",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina multi-identita' non risolvibile per continuita'/opere (id-rocket | id-groot-originale, id-groot-successore)",
-   "pagina": "char-rocket",
-   "bersaglio": "char-groot",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina senza identita'",
-   "pagina": "char-the-watcher",
-   "bersaglio": "char-varianti-di-eroi-mcu",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina senza identita'",
-   "pagina": "char-varianti-di-eroi-mcu",
-   "bersaglio": "char-the-watcher",
-   "etichetta": "correlato"
-  },
-  {
-   "motivo": "identita' non univoca: pagina senza identita'",
-   "pagina": "char-varianti-di-eroi-mcu",
-   "bersaglio": "char-peggy-carter-captain-carter",
-   "etichetta": "correlato"
-  }
- ],
+ "coda": [],
  "risolte": [
   {
    "motivo": "bersaglio senza scheda/ID nell'Atlante classico (nome solo testuale: non si risolve per nome)",
@@ -24200,9 +24730,95 @@
     "id-iron-man"
    ],
    "risolta_da": "lotto"
+  },
+  {
+   "motivo": "identita' non univoca: pagina multi-identita' (id-wolverine, id-wolverine-x-men-97)",
+   "pagina": "char-wolverine",
+   "org": "org-x-men",
+   "etichetta": "Membro di",
+   "risolta_da": "appartenenza documentata nel lotto per la/e identita' corretta/e"
+  },
+  {
+   "motivo": "identita' non univoca: pagina multi-identita' (id-matt-murdock-daredevil, id-matt-murdock-mcu)",
+   "pagina": "char-matt-murdock-daredevil",
+   "org": "org-defenders",
+   "etichetta": "Membro di",
+   "risolta_da": "appartenenza documentata nel lotto per la/e identita' corretta/e"
   }
  ],
  "respinte": [
+  {
+   "id": null,
+   "tipo": "correlato",
+   "da": "char-cast-fox-verse",
+   "a": "char-robert-downey-jr-dottor-destino",
+   "motivo": "pagina aggregata senza identita' (non e' un personaggio): nessun nodo, associazione non importata",
+   "fonte": [],
+   "lotto": "classico"
+  },
+  {
+   "id": null,
+   "tipo": "correlato",
+   "da": "char-potenzialmente-ogni-personaggio-della-lista",
+   "a": "char-steve-rogers-capitan-america",
+   "motivo": "pagina aggregata senza identita' (non e' un personaggio): nessun nodo, associazione non importata",
+   "fonte": [],
+   "lotto": "classico"
+  },
+  {
+   "id": null,
+   "tipo": "correlato",
+   "da": "char-potenzialmente-ogni-personaggio-della-lista",
+   "a": "char-robert-downey-jr-dottor-destino",
+   "motivo": "pagina aggregata senza identita' (non e' un personaggio): nessun nodo, associazione non importata",
+   "fonte": [],
+   "lotto": "classico"
+  },
+  {
+   "id": null,
+   "tipo": "correlato",
+   "da": "char-robert-downey-jr-dottor-destino",
+   "a": "char-cast-fox-verse",
+   "motivo": "pagina aggregata senza identita' (non e' un personaggio): nessun nodo, associazione non importata",
+   "fonte": [],
+   "lotto": "classico"
+  },
+  {
+   "id": null,
+   "tipo": "correlato",
+   "da": "char-robert-downey-jr-dottor-destino",
+   "a": "char-potenzialmente-ogni-personaggio-della-lista",
+   "motivo": "pagina aggregata senza identita' (non e' un personaggio): nessun nodo, associazione non importata",
+   "fonte": [],
+   "lotto": "classico"
+  },
+  {
+   "id": null,
+   "tipo": "correlato",
+   "da": "char-the-watcher",
+   "a": "char-varianti-di-eroi-mcu",
+   "motivo": "pagina aggregata senza identita' (non e' un personaggio): nessun nodo, associazione non importata",
+   "fonte": [],
+   "lotto": "classico"
+  },
+  {
+   "id": null,
+   "tipo": "correlato",
+   "da": "char-varianti-di-eroi-mcu",
+   "a": "char-the-watcher",
+   "motivo": "pagina aggregata senza identita' (non e' un personaggio): nessun nodo, associazione non importata",
+   "fonte": [],
+   "lotto": "classico"
+  },
+  {
+   "id": null,
+   "tipo": "correlato",
+   "da": "char-varianti-di-eroi-mcu",
+   "a": "char-peggy-carter-captain-carter",
+   "motivo": "pagina aggregata senza identita' (non e' un personaggio): nessun nodo, associazione non importata",
+   "fonte": [],
+   "lotto": "classico"
+  },
   {
    "id": null,
    "tipo": "variante",
@@ -24224,51 +24840,49 @@
  ],
  "proposte": [],
  "conteggi": {
-  "relazioni_totali": 1168,
+  "relazioni_totali": 1198,
   "per_classe": {
    "controparte": 5,
-   "editoriale": 936,
-   "narrativa": 227
+   "editoriale": 960,
+   "narrativa": 233
   },
   "per_tipo": {
    "alleanza": 30,
-   "amicizia": 25,
-   "appartenenza": 52,
+   "amicizia": 26,
+   "appartenenza": 53,
    "controparte": 5,
    "copia": 1,
-   "correlato": 930,
+   "correlato": 953,
    "famiglia_coniugi": 2,
    "famiglia_discendente": 1,
    "famiglia_fratelli": 9,
    "famiglia_genitore": 25,
    "ispirato_a": 1,
    "mentorato": 10,
-   "partner": 17,
-   "rivalita": 45,
+   "partner": 18,
+   "rivalita": 48,
    "segnaposto": 1,
-   "stessa_scheda": 4,
+   "stessa_scheda": 5,
    "successione": 3,
    "tradimento": 7
   },
   "per_verifica": {
-   "da verificare": 147,
-   "guida": 991,
-   "verificata": 30
+   "da verificare": 97,
+   "guida": 1003,
+   "verificata": 98
   },
-  "narrative": 227,
-  "narrative_verificate_o_in_guida": 89,
-  "coda_ambigue_o_errate": 19,
-  "coda_per_motivo": {
-   "identita' non univoca": 19
-  },
+  "narrative": 233,
+  "narrative_verificate_o_in_guida": 143,
+  "coda_ambigue_o_errate": 0,
+  "coda_per_motivo": {},
   "proposte_intake": 0,
   "errori_intake": [],
-  "respinte": 2,
-  "risolte_dalla_coda": 2,
+  "respinte": 10,
+  "risolte_dalla_coda": 4,
   "errori_lotti": [],
-  "narrative_verificate_documentalmente": 28,
-  "narrative_da_verificare": 138,
-  "controverse_in_attesa_utente": 0,
+  "narrative_verificate_documentalmente": 93,
+  "narrative_da_verificare": 90,
+  "controverse_in_attesa_utente": 1,
   "co_apparizioni_nel_registro": 0,
   "nota": "Le co-apparizioni sono calcolate a runtime dalle apparizioni e NON entrano nel registro ne' nei conteggi."
  }

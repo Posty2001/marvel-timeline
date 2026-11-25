@@ -1093,13 +1093,7 @@
    "sorgente_identita": "id-matt-murdock-daredevil",
    "sorgente_universo": "uni-daredevil-elektra-verse",
    "sorgente_apparizioni": [
-    "035",
-    "060",
-    "065",
-    "082",
-    "105",
-    "122",
-    "128"
+    "035"
    ],
    "continuita": "Daredevil/Elektra-verse · Universo autonomo",
    "possibili": [
@@ -1115,12 +1109,7 @@
      "id": "id-fisk-mcu",
      "nome": "Wilson Fisk (MCU, ex Netflix)",
      "universo": "uni-earth-199999-mcu",
-     "comuni": [
-      "060",
-      "082",
-      "122",
-      "128"
-     ]
+     "comuni": []
     }
    ],
    "raccomandato": "hub-wilson-fisk",
@@ -1407,13 +1396,7 @@
    "sorgente_identita": "id-matt-murdock-daredevil",
    "sorgente_universo": "uni-daredevil-elektra-verse",
    "sorgente_apparizioni": [
-    "035",
-    "060",
-    "065",
-    "082",
-    "105",
-    "122",
-    "128"
+    "035"
    ],
    "continuita": "Daredevil/Elektra-verse · Universo autonomo",
    "possibili": [
@@ -1429,12 +1412,7 @@
      "id": "id-fisk-mcu",
      "nome": "Wilson Fisk (MCU, ex Netflix)",
      "universo": "uni-earth-199999-mcu",
-     "comuni": [
-      "060",
-      "082",
-      "122",
-      "128"
-     ]
+     "comuni": []
     }
    ],
    "raccomandato": "hub-wilson-fisk",

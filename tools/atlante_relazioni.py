@@ -72,6 +72,12 @@ def build():
         com = [(a, b) for a, b in pairs if set(IDX_I[a]['apparizioni']) & set(IDX_I[b]['apparizioni'])]
         if len(com) == 1: return com[0][0], com[0][1], 'risolto per opere in comune (N° %s)' % ', '.join(sorted(set(IDX_I[com[0][0]]['apparizioni']) & set(IDX_I[com[0][1]]['apparizioni']))[:4])
         return None, None, 'pagina multi-identita\' non risolvibile per continuita\'/opere (%s | %s)' % (', '.join(A), ', '.join(B))
+    AGG = {'char-cast-fox-verse', 'char-potenzialmente-ogni-personaggio-della-lista', 'char-varianti-di-eroi-mcu'}   # pagine aggregate: non sono identita' ne' nodi
+    def multi_coppie(pa, pb):
+        A, B = pg.get(pa, []), pg.get(pb, [])
+        out = [(a, b, 'continuita\' e opere in comune (%s; N° %s)' % (IDX_I[a]['universo'], ', '.join(sorted(set(IDX_I[a]['apparizioni']) & set(IDX_I[b]['apparizioni']))[:4])))
+               for a in A for b in B if a != b and IDX_I[a]['universo'] and IDX_I[a]['universo'] == IDX_I[b]['universo'] and set(IDX_I[a]['apparizioni']) & set(IDX_I[b]['apparizioni'])]
+        return out
     REL, CODA = {}, []
     def add(tipo, da, a, qual, fonte, ver, nota, origine, **ex):
         k = rid(tipo, da, a)
@@ -124,7 +130,12 @@ def build():
             for t in dict.fromkeys(re.findall(r"mvNavigate\('([^']+)'", f['html'])):
                 if not t.startswith('char-'): coda('correlato non-personaggio (fuori da questa fase)', pagina=x['id'], bersaglio=t); continue
                 src, dst, prova = coppia(x['id'], t)
-                if not src or not dst: coda('identita\' non univoca: ' + prova, pagina=x['id'], bersaglio=t, etichetta='correlato'); continue
+                if not src or not dst:
+                    mp = multi_coppie(x['id'], t)   # continuita' + opere in comune: ogni coppia dello stesso universo con apparizioni condivise (associazione editoriale, non narrativa)
+                    if mp:
+                        for a_, b_, pv_ in mp: add('correlato', a_, b_, None, [f"scheda {x['id']} (campo CORRELATI)"], 'guida', 'Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - ' + pv_, 'guida:CORRELATI')
+                        continue
+                    coda('identita\' non univoca: ' + prova, pagina=x['id'], bersaglio=t, etichetta='correlato'); continue
                 if src == dst: continue
                 add('correlato', src, dst, None, [f"scheda {x['id']} (campo CORRELATI)"], 'guida', 'Associazione editoriale «Correlati»: non implica alcuna relazione narrativa' + (f' - {prova}' if prova else ''), 'guida:CORRELATI')
     # 5) relazioni gia' presenti in A2 (identita.json)
@@ -170,6 +181,11 @@ def build():
         if len(pp) == 2 and any(r['tipo'] == 'famiglia_genitore' and {r['da'], r['a']} == set(pp) for r in REL.values()): RIS.append(dict(c, risolta_da='lotto')); continue
         if c.get('etichetta') == 'varianti': RESP.append({'id': None, 'tipo': 'variante', 'da': c['pagina'], 'a': c['bersaglio'], 'motivo': "associazione errata come variante di Loki/Thor: eliminata dall'Atlante (decisione dell'utente 26/11/2026)", 'fonte': [], 'lotto': 'classico'}); continue
         if c.get('bersaglio_testo') == 'Laufey' and any(r['da'] == 'id-laufey' for r in REL.values()): RIS.append(dict(c, risolta_da='dossier autonomo id-laufey')); continue
+        if (c.get('pagina') in AGG or c.get('bersaglio') in AGG) and c.get('etichetta') == 'correlato':
+            RESP.append({'id': None, 'tipo': 'correlato', 'da': c['pagina'], 'a': c['bersaglio'], 'motivo': "pagina aggregata senza identita' (non e' un personaggio): nessun nodo, associazione non importata", 'fonte': [], 'lotto': 'classico'}); continue
+        if c.get('org') and 'multi-identita' in c['motivo']:
+            cand = re.search(r"\(([^)]*)\)", c['motivo']); ids_ = [x.strip() for x in cand.group(1).split(',')] if cand else []
+            if any(r['tipo'] == 'appartenenza' and r['a'] == c['org'] and r['da'] in ids_ for r in REL.values()): RIS.append(dict(c, risolta_da='appartenenza documentata nel lotto per la/e identita\' corretta/e')); continue
         nc.append(c)
     CODA[:] = nc
     for tgt in ('id-loki', 'id-thor'):   # etichetta «Varianti: Jane Foster/Mighty Thor» eliminata dalle schede e dal grafo dell'Atlante classico

@@ -40,6 +40,8 @@ F = {
  'w-xavier': 'https://en.wikipedia.org/wiki/Charles_Xavier_(film_character)',
  'w-xavier-altri': 'https://www.wikipedia.com/wiki/Professor_X_in_other_media',
  'w-fisk': 'https://en.wikipedia.org/wiki/Kingpin_(character)',
+ 'w-murdock-mcu': 'https://en.wikipedia.org/wiki/Matt_Murdock_(Marvel_Cinematic_Universe)',
+ 'w-daredevil-film': 'https://en.wikipedia.org/wiki/Daredevil_(film)',
  'sy-fisk': 'https://www.syfy.com/syfy-wire/hawkeye-and-daredevil-same-kingpin',
  'g-groot': 'https://www.gamesradar.com/uk/guardians-of-the-galaxy-2s-baby-groot-isnt-the-original-groot-but-a-new-groot-confused-so-are-groot ; https://gameinformer.com/b/news/archive/2018/02/27/guardians-of-the-galaxy-director-confirms-baby-groot-is-groots-son-again.aspx',
  'w-ravonna': 'https://www.denofgeek.com/tv/loki-season-2-who-is-ravonna-renslayer-and-whats-her-relationship-with-kang/',
@@ -177,10 +179,10 @@ def costruisci():
     # 15 Harry Osborn: Raimi-Verse e Webb (Garfield-Verse) in due identita' autonome (decisione dell'utente, 25/11/2026) ------------------
     # Stesso schema di Wolverine: nessun ID, apparizione o collegamento va perso. id-harry-osborn-green-goblin resta (stesso ID, stessa pagina canonica,
     # ritratti e preferiti invariati) e diventa «Raimi»; N°005 (The Amazing Spider-Man 2, Earth-120703) passa a id-harry-osborn-webb e resta tracciato in
-    # apparizioni_spostate. N°120 (serie animata Your Friendly Neighborhood Spider-Man) NON e' oggetto della decisione: resta dov'era, segnalato.
+    # apparizioni_spostate. N°120 (YFNSM) e' poi passato a id-harry-osborn-ynfsm (v. sotto).
     hr = next(i for i in I if i['id'] == 'id-harry-osborn-green-goblin'); assert '005' in hr['apparizioni'] and '005' in titoli('uni-earth-120703-garfield-verse')
     hr['apparizioni'] = [n for n in hr['apparizioni'] if n != '005']; hr['apparizioni_spostate'] = {'005': 'id-harry-osborn-webb'}; hr['alias'] = sorted(set(hr['alias']) | {hr['nome']}); hr['nome'] = 'Harry Osborn/Green Goblin (Raimi)'
-    hr['nota'] = "N°005 (The Amazing Spider-Man 2) appartiene alla continuita' Webb: spostato in id-harry-osborn-webb (decisione dell'utente 25/11/2026). N°120 (serie animata) resta qui in attesa di una decisione separata."
+    hr['nota'] = "N°005 (The Amazing Spider-Man 2) appartiene alla continuita' Webb: spostato in id-harry-osborn-webb (decisione dell'utente 25/11/2026). N°120 (serie animata) e' poi passato a id-harry-osborn-ynfsm."
     I.append(ident('id-harry-osborn-webb', 'Harry Osborn/Green Goblin (Webb)', 'identita', 'uni-earth-120703-garfield-verse', ['char-harry-osborn-green-goblin'], 'char-harry-osborn-green-goblin', [], ['int-identita', 'int-mv'], apparizioni=['005'],
                    verifica="parziale: continuita' dichiarata da mvMapData (N°005 in uni-earth-120703-garfield-verse) e dalla scheda Atlante (UNIVERSI: Earth-96283 · Earth-120703 · YFNSM); nessun dato biografico specifico attribuito",
                    note="Separato da id-harry-osborn-green-goblin (Raimi) per decisione dell'utente (25/11/2026). La scheda char-harry-osborn-green-goblin descrive insieme piu' continuita': i suoi campi restano attribuiti all'identita' Raimi e non a questa."))
@@ -194,6 +196,20 @@ def costruisci():
                    note="Separato dalle identita' Raimi e Webb per decisione dell'utente (25/11/2026). I campi della scheda condivisa restano attribuiti all'identita' Raimi."))
     rel('id-harry-osborn-green-goblin', 'id-harry-osborn-ynfsm', 'stessa_scheda_atlante', 'stessa_scheda_atlante', False, ['int-identita', 'int-mv'], "dati interni: la scheda char-harry-osborn-green-goblin copre piu' continuita'; nessuna parentela narrativa dichiarata", "Continuita' distinte: identita' distinte, non unificate.")
     rel('id-harry-osborn-webb', 'id-harry-osborn-ynfsm', 'stessa_scheda_atlante', 'stessa_scheda_atlante', False, ['int-identita', 'int-mv'], "dati interni: la scheda char-harry-osborn-green-goblin copre piu' continuita'; nessuna parentela narrativa dichiarata", "Continuita' distinte: identita' distinte, non unificate.")
+    # Matt Murdock: Ben Affleck (Daredevil 2003) e Charlie Cox (MCU: Netflix + Marvel Studios) in due identita' (richiesta dell'utente, 26/11/2026).
+    # Stesso schema di Wolverine/Harry: id-matt-murdock-daredevil resta (stesso ID, stessa pagina canonica; le immagini candidate e gli eventuali ritratti salvati
+    # sono legati a questo ID e alla sola N°035) e rappresenta la continuita' del film 2003; le apparizioni MCU passano a id-matt-murdock-mcu, tracciate in apparizioni_spostate.
+    # Fonte: Wikipedia (Matt Murdock (MCU): «implied» incarnazione di Affleck nel MCU ma mai dichiarata) -> nessuna unificazione.
+    md = next(i for i in I if i['id'] == 'id-matt-murdock-daredevil'); mcu_t = titoli('uni-earth-199999-mcu'); mv_ap = [n for n in md['apparizioni'] if n in mcu_t]
+    assert mv_ap == ['060', '065', '082', '105', '122', '128'] and '035' in titoli('uni-daredevil-elektra-verse')
+    md['apparizioni'] = [n for n in md['apparizioni'] if n not in mcu_t]; md['apparizioni_spostate'] = {n: 'id-matt-murdock-mcu' for n in mv_ap}
+    md['nome'] = 'Matt Murdock/Daredevil (2003)'; md['alias'] = sorted(set(md['alias']) | {'Matt Murdock/Daredevil'}); md['interpreti'] = ['Ben Affleck']
+    md['fonte'] = (md.get('fonte') or []) + [F['w-daredevil-film']]
+    md['nota'] = "Continuita' del film Daredevil (2003): interprete Ben Affleck (N°035). Le apparizioni MCU (Netflix, She-Hulk, Born Again) sono in id-matt-murdock-mcu (interprete Charlie Cox). Per Wikipedia la versione MCU e' solo «implicitamente» l'incarnazione di Affleck, mai dichiarata: identita' distinte, non unificate."
+    I.append(ident('id-matt-murdock-mcu', 'Matt Murdock/Daredevil (MCU)', 'identita', 'uni-earth-199999-mcu', ['char-matt-murdock-daredevil'], 'char-matt-murdock-daredevil', ['Charlie Cox'], ['w-murdock-mcu', 'int-mv'], apparizioni=mv_ap,
+                   verifica="verificata sulle fonti consultate il 26/11/2026 (Wikipedia: Matt Murdock (MCU), Daredevil in other media): Charlie Cox interpreta Matt Murdock nel MCU (Daredevil, The Defenders, She-Hulk, Echo, Born Again); apparizioni dalla scheda Atlante e da mvMapData",
+                   note="Separato da id-matt-murdock-daredevil (film 2003, Ben Affleck) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente per non perdere riferimenti."))
+    rel('id-matt-murdock-daredevil', 'id-matt-murdock-mcu', 'stessa_scheda_atlante', 'stessa_scheda_atlante', False, ['w-murdock-mcu', 'int-mv'], "dati interni: la scheda char-matt-murdock-daredevil copre due continuita'; nessuna parentela narrativa dichiarata", "Continuita' distinte (Daredevil 2003 / MCU): identita' distinte, non unificate.")
     # Laufey: dossier autonomo (richiesta dell'utente, 26/11/2026). Nessuna scheda nell'Atlante classico (la scheda di Loki lo cita solo come testo: «Padre biologico: Laufey»):
     # identita' nuova nell'MCU, con i soli dati verificati su fonti pubbliche (interprete e film). Nessun campo biografico inventato.
     lf = ident('id-laufey', 'Laufey', 'identita', 'uni-earth-199999-mcu', [], None, ['Colm Feore'], ['int-identita'], apparizioni=['050'],
@@ -278,6 +294,8 @@ def verifica():
     hh = {i['id']: i for i in r['identita']}
     chk("Harry Osborn: N°005 solo in Webb, N°120 solo in YFNSM, nessuna apparizione persa, ID e pagina canonica invariati", '005' not in hh['id-harry-osborn-green-goblin']['apparizioni'] and '120' not in hh['id-harry-osborn-green-goblin']['apparizioni'] and hh['id-harry-osborn-webb']['apparizioni'] == ['005'] and hh['id-harry-osborn-ynfsm']['apparizioni'] == ['120'] and set(hh['id-harry-osborn-green-goblin']['apparizioni']) | {'005', '120'} == {'001', '002', '003', '005', '120'} and r['redirect']['char-harry-osborn-green-goblin']['verso'] == ['id-harry-osborn-green-goblin'] and hh['id-harry-osborn-ynfsm']['universo'] == 'uni-your-friendly-neighborhood-spider-man-verse')
     chk("Peter (Deadpool): assegnato a Fox-Verse con fonti, come Wade Wilson", hh['id-peter']['universo'] == 'uni-earth-10005-fox-verse' and set(hh['id-peter']['apparizioni']) <= set(hh['id-wade-wilson-deadpool']['apparizioni']))
+    mm_ = {i['id']: i for i in r['identita']}
+    chk("Matt Murdock: 035 solo nel 2003 (Affleck), 060-128 solo nell'MCU (Cox); nessuna apparizione persa; ID e pagina canonica invariati", mm_['id-matt-murdock-daredevil']['apparizioni'] == ['035'] and mm_['id-matt-murdock-mcu']['apparizioni'] == ['060', '065', '082', '105', '122', '128'] and mm_['id-matt-murdock-daredevil']['pagina_principale'] == 'char-matt-murdock-daredevil' and r['redirect']['char-matt-murdock-daredevil']['verso'] == ['id-matt-murdock-daredevil'])
     c = r['conteggi']
     chk('conteggio identita\' coerente (che contano = totali - non contanti)', c['identita_che_contano'] == sum(1 for i in r['identita'] if i['conta_come_personaggio']))
     print('ESITO:', 'OK' if ok else 'FALLITO'); return 0 if ok else 1

@@ -4979,7 +4979,7 @@
   },
   {
    "id": "id-matt-murdock-daredevil",
-   "nome": "Matt Murdock/Daredevil",
+   "nome": "Matt Murdock/Daredevil (2003)",
    "tipo": "identita",
    "categorie": [
     "personaggio"
@@ -4990,23 +4990,30 @@
     "char-matt-murdock-daredevil"
    ],
    "pagina_principale": "char-matt-murdock-daredevil",
-   "interpreti": [],
+   "interpreti": [
+    "Ben Affleck"
+   ],
    "apparizioni": [
-    "035",
-    "060",
-    "065",
-    "082",
-    "105",
-    "122",
-    "128"
+    "035"
    ],
    "incarnazioni": [],
-   "alias": [],
+   "alias": [
+    "Matt Murdock/Daredevil"
+   ],
    "fonte": [
-    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro"
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "https://en.wikipedia.org/wiki/Daredevil_(film)"
    ],
    "verifica": "invariata (nessuna decisione di identita' applicata)",
-   "nota": ""
+   "nota": "Continuita' del film Daredevil (2003): interprete Ben Affleck (N°035). Le apparizioni MCU (Netflix, She-Hulk, Born Again) sono in id-matt-murdock-mcu (interprete Charlie Cox). Per Wikipedia la versione MCU e' solo «implicitamente» l'incarnazione di Affleck, mai dichiarata: identita' distinte, non unificate.",
+   "apparizioni_spostate": {
+    "060": "id-matt-murdock-mcu",
+    "065": "id-matt-murdock-mcu",
+    "082": "id-matt-murdock-mcu",
+    "105": "id-matt-murdock-mcu",
+    "122": "id-matt-murdock-mcu",
+    "128": "id-matt-murdock-mcu"
+   }
   },
   {
    "id": "id-mattie-franklin",
@@ -7928,6 +7935,41 @@
    "nota": "Separato dalle identita' Raimi e Webb per decisione dell'utente (25/11/2026). I campi della scheda condivisa restano attribuiti all'identita' Raimi."
   },
   {
+   "id": "id-matt-murdock-mcu",
+   "nome": "Matt Murdock/Daredevil (MCU)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-earth-199999-mcu",
+   "pagine": [
+    "char-matt-murdock-daredevil"
+   ],
+   "pagina_principale": "char-matt-murdock-daredevil",
+   "interpreti": [
+    "Charlie Cox"
+   ],
+   "apparizioni": [
+    "060",
+    "065",
+    "082",
+    "105",
+    "122",
+    "128"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Matt Murdock/Daredevil"
+   ],
+   "fonte": [
+    "https://en.wikipedia.org/wiki/Matt_Murdock_(Marvel_Cinematic_Universe)",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Wikipedia: Matt Murdock (MCU), Daredevil in other media): Charlie Cox interpreta Matt Murdock nel MCU (Daredevil, The Defenders, She-Hulk, Echo, Born Again); apparizioni dalla scheda Atlante e da mvMapData",
+   "nota": "Separato da id-matt-murdock-daredevil (film 2003, Ben Affleck) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente per non perdere riferimenti."
+  },
+  {
    "id": "id-laufey",
    "nome": "Laufey",
    "tipo": "identita",
@@ -8285,6 +8327,19 @@
    ],
    "verifica": "dati interni: la scheda char-harry-osborn-green-goblin copre piu' continuita'; nessuna parentela narrativa dichiarata",
    "nota": "Continuita' distinte: identita' distinte, non unificate."
+  },
+  {
+   "da": "id-matt-murdock-daredevil",
+   "a": "id-matt-murdock-mcu",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "https://en.wikipedia.org/wiki/Matt_Murdock_(Marvel_Cinematic_Universe)",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda char-matt-murdock-daredevil copre due continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte (Daredevil 2003 / MCU): identita' distinte, non unificate."
   }
  ],
  "redirect": {
@@ -10980,13 +11035,13 @@
  "conteggi": {
   "pagine_char": 304,
   "pagine_che_contavano": 300,
-  "identita_totali": 299,
-  "identita_che_contano": 299,
+  "identita_totali": 300,
+  "identita_che_contano": 300,
   "hub": 2,
   "mantelli": 2,
   "segnaposto": 7,
   "relazioni_narrative": 5,
-  "relazioni_non_narrative": 6,
+  "relazioni_non_narrative": 7,
   "collegamenti_da_classificare": 76,
   "di_cui_proposta_automatica": 44
  }

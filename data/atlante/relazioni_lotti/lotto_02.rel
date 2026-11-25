@@ -1,0 +1,13 @@
+# Lotto 02 - Daredevil (MCU/Netflix e film 2003), Defenders, Wolverine X-Men '97. Stesso formato del lotto 01.
+@src dd1 https://en.wikipedia.org/wiki/Daredevil_(TV_series)
+@src dd3 https://en.wikipedia.org/wiki/Daredevil:_Born_Again
+@src dd0 https://en.wikipedia.org/wiki/Daredevil_(film)
+@src df1 https://en.wikipedia.org/wiki/The_Defenders_(miniseries)
+@src xm97 https://en.wikipedia.org/wiki/X-Men_%2797
+app|matt-murdock-mcu|org-defenders||df1|
+app|wolverine-x-men-97|org-x-men||xm97|
+riv|matt-murdock-mcu|fisk-mcu||dd1+dd3|
+ami|matt-murdock-mcu|foggy-nelson||dd1|
+par|matt-murdock-daredevil|elektra-natchios||dd0|
+riv|matt-murdock-daredevil|bullseye||dd0|
+riv|matt-murdock-daredevil|fisk-fox-2003||dd0|
