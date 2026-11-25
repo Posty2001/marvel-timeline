@@ -9,6 +9,7 @@ I prompt visivi sono ipotesi di lavoro del motore (non dati dell'Atlante)."""
 import os, sys, json, time, argparse, glob, urllib.request, urllib.parse, urllib.error
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); sys.path.insert(0, os.path.join(ROOT, 'tools'))
 import atlante_numeri as N
+from atlante_prompt import PR2
 OUT = os.path.join(ROOT, 'atlante2/data/pilot/c'); WAVE = os.path.join(ROOT, 'data/atlante/engine/wave1.json')
 PILOTA = ['id-iron-man', 'id-thor', 'id-loki', 'id-peter-parker-mcu', 'id-peter-parker-raimi', 'id-peter-parker-garfield', 'id-wolverine', 'id-wade-wilson-deadpool', 'id-wanda-maximoff', 'id-thanos']
 PR = {  # prompt visivo per identità (costume/tratto iconico); nome generico se non elencato
@@ -113,6 +114,7 @@ def gruppi_universo():
 def prompt_di(v):
     if v['i'] in PR_EXTRA: return PR_EXTRA[v['i']]
     if v['i'] in PR: return PR[v['i']]
+    if v['i'] in PR2: return PR2[v['i']]
     n = re.sub(r'\s*\((?:[^)]*)\)', '', v['n']).replace('/', ' / ').strip(); return n + ', a Marvel character'
 def meta_all():
     c = N.carica(); mp, v2, tl = c['tmdbMap'], c['vis2id'], c['timeline']; D = dossier(); idx = json.load(open(os.path.join(ROOT, 'atlante2/data/index.json'), encoding='utf-8'))
@@ -133,7 +135,7 @@ def meta_all():
         for o in F.get(i, set()) - {i}:
             for a in D.get(o, {}).get('app') or []:
                 if a[0] in mine: amb.add(a[0])
-        out.append({'id': i, 'nome': v['n'], 'prompt': prompt_di(v), 'pilota': i in PILOTA, 'wave1': i in PR, 'famiglia': sorted(F.get(i, set()) - {i}), 'titoli': tit[i], 'esclusi_continuita': [{'num': t['num'], 'gruppo': t['gruppo']} for t in esc[i]], 'ambigui': sorted(amb)})
+        out.append({'id': i, 'nome': v['n'], 'prompt': prompt_di(v), 'generico': v['i'] not in PR and v['i'] not in PR2 and v['i'] not in PR_EXTRA, 'pilota': i in PILOTA, 'wave1': i in PR, 'famiglia': sorted(F.get(i, set()) - {i}), 'titoli': tit[i], 'esclusi_continuita': [{'num': t['num'], 'gruppo': t['gruppo']} for t in esc[i]], 'ambigui': sorted(amb)})
     # blocchi: identità con titoli TMDB, non già nell'ondata 1 (tranne quelle il cui pool cambia con il filtro di continuità e Harry)
     w1 = {o['id']: o for o in json.load(open(WAVE, encoding='utf-8'))['identita']}; rifare = []
     for o in out:

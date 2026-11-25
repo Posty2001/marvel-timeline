@@ -18,6 +18,7 @@ MODELLI = {'clip': ('ViT-B-32', 'laion2b_s34b_b79k'), 'siglip': ('ViT-B-16-SigLI
 NEG = ['a landscape without people', 'a crowd of many people', 'a group of many superheroes together', 'two characters facing each other', 'a movie logo or title text',
        'a close-up of a person face without costume', 'a spaceship or a vehicle', 'an explosion or fire', 'a dark blurry scene', 'a city street at night']
 MIN_W, MIN_SHARP, MIN_CROP_H, T_CLIP, T_SIG, TOPW = 1280, 40.0, 700, 5.0, 4.0, 16
+T_GEN = 2.5   # soglia per i prompt generici (solo nome): segnali più deboli; NON ancora calibrata, verrà misurata con le tue approvazioni per classe di confidenza
 SC = ((1.0, 6, 1), (0.78, 6, 2))   # (altezza finestra, posizioni orizzontali, posizioni verticali)
 
 def sharp(im):
@@ -118,7 +119,7 @@ def blocco(W, E, SCALE, usate, tag, smoke=False):
         if rows:
             r_m = rank01([r['mw'] for r in rows]); r_s = rank01([r['ms'] for r in rows]); r_q = rank01([r['sharp'] for r in rows])
             for r, a1, a2, a3 in zip(rows, r_m, r_s, r_q): r['tot'] = 0.5 * a1 + 0.2 * a2 + 0.3 * (0.5 * a3 + 0.2 * r['expo'] + 0.3 * min(1.0, r['ch'] / 1000.0))
-        rows.sort(key=lambda r: -r.get('tot', 0)); res[iid] = {'o': o, 'rows': rows, 'buoni': sum(1 for r in rows if r['mw'] >= T_CLIP), 'sec': round(time.time() - t, 1)}
+        rows.sort(key=lambda r: -r.get('tot', 0)); res[iid] = {'o': o, 'rows': rows, 'buoni': sum(1 for r in rows if r['mw'] >= (T_GEN if o.get('generico') else T_CLIP)), 'sec': round(time.time() - t, 1)}
         print(tag, iid, 'candidati', len(L), 'dopo dedup', len(keep), 'ritagli buoni', res[iid]['buoni'], res[iid]['sec'], 's', flush=True)
     owner = {}
     for iid, R in res.items():
@@ -140,9 +141,9 @@ def blocco(W, E, SCALE, usate, tag, smoke=False):
         props = []
         for k, r in enumerate(sel):
             x0, y0, w0, h0 = r['win']
-            props.append({'rk': k + 1, 'p': r['x']['p'], 'w': r['x']['w'], 'h': r['x']['h'], 'num': r['x']['num'], 'sc': round(r['tot'], 3), 'm': round(r['mw'], 2), 'ms': round(r['ms'], 2), 'ck': 1 if (r['mw'] >= T_CLIP and r['ms'] >= T_SIG) else 0,
+            props.append({'rk': k + 1, 'p': r['x']['p'], 'w': r['x']['w'], 'h': r['x']['h'], 'num': r['x']['num'], 'sc': round(r['tot'], 3), 'm': round(r['mw'], 2), 'ms': round(r['ms'], 2), 'ck': 1 if (r['mw'] >= (T_GEN if o.get('generico') else T_CLIP) and r['ms'] >= (T_SIG - 1.5 if o.get('generico') else T_SIG)) else 0,
                           'crop': {'z': round(1 / h0, 4), 'cx': round(x0 + w0 / 2, 4), 'cy': round(y0 + h0 / 2, 4)}})
-        out[iid] = {'id': iid, 'nome': o['nome'], 'conf': 'alta' if alta else 'bassa', 'buoni': R['buoni'], 'proposte': props, 'secondi': R['sec']}
+        out[iid] = {'id': iid, 'nome': o['nome'], 'conf': 'alta' if alta else 'bassa', 'gen': 1 if o.get('generico') else 0, 'buoni': R['buoni'], 'proposte': props, 'secondi': R['sec']}
     met['totale_s'] = round(time.time() - T0, 1); met['ram_picco_mb'] = round(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0)
     met['identita'] = {i: {'conf': v['conf'], 'buoni': v['buoni'], 'proposte': len(v['proposte']), 'secondi': v.get('secondi')} for i, v in out.items()}
     for p in list(Q): 
@@ -185,7 +186,7 @@ def main():
     for k, ids in enumerate(WA['blocchi']):
         if k in fatti: continue
         medio = (sum(tempi) / len(tempi)) if tempi else 0.0
-        if tempi and (time.time() - T0) / 60 + 1.25 * medio > a.budget_min: print('budget di tempo raggiunto: riprendere con un nuovo lancio', flush=True); break
+        if tempi and (time.time() - T0) / 60 + 1.25 * medio / 60 > a.budget_min: print('budget di tempo raggiunto: riprendere con un nuovo lancio', flush=True); break
         t = time.time(); W = [BY[i] for i in ids if os.path.exists(os.path.join(ROOT, 'atlante2/data/pilot/c/%s.json' % i))]
         out, met = blocco(W, E, SCALE, usate, 'b%02d' % k, a.smoke); met['blocco'] = k; met['cpu'] = os.cpu_count()
         for i in out.values():
