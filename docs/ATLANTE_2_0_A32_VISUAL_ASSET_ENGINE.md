@@ -73,7 +73,7 @@ Eseguito su GitHub Actions (CPU, 4 core, 0 €) sulle sole 10 identità del pilo
 | Stadio dominante | ritaglio a finestre (77 %) | ritaglio a finestre (80 %) |
 | Immagini proposte a due identità diverse | 0 | 0 |
 
-- **Accordo CLIP/SigLIP**: sui titoli alto (per ogni identità i due modelli pescano dagli stessi 2–3 titoli, salvo Wanda e Deadpool con un titolo diverso); sulle singole immagini 41 % (molte scene sono quasi equivalenti). Le 44 proposte pubblicate al selettore sono quelle CLIP; **17 sono segnate ★ perché confermate anche da SigLIP**.
+- **Accordo CLIP/SigLIP**: sui titoli alto (per ogni identità i due modelli pescano in gran parte dagli stessi 2–3 titoli; titolo diverso in parte per Wanda, Deadpool e Raimi); sulle singole immagini 41 % (molte scene sono quasi equivalenti). Le 44 proposte pubblicate al selettore sono quelle CLIP; **17 sono segnate ★ perché confermate anche da SigLIP**.
 - **Esclusioni di continuità funzionanti**: per i tre Peter Parker il titolo condiviso N°099 è stato escluso dall'automatico.
 - **Punto debole osservato**: Thanos, titolo N°089, margine di riconoscibilità basso (0,9–1,8 contro 6–15 delle altre identità): probabile scena senza Thanos in primo piano; da rivedere con attenzione.
 - **Difetti trovati e corretti nel prototipo**: probabilità softmax saturata a 1,0 (sostituita dal margine log-odds); meno di 3 proposte con SigLIP (aggiunto il riempimento fino a 3).
