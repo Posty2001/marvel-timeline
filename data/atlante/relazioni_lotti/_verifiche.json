@@ -45,9 +45,9 @@
   },
   "rel-0d53435f03": {
    "esito": "confermata",
-   "fonte": "https://en.wikipedia.org/wiki/Iron_Man_2",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Iron_Man/Avengers_Initiative_Acceptee_Tony_Stark",
    "data": "2026-11-26",
-   "nota": ""
+   "nota": "MCU Wiki"
   },
   "rel-72995caef0": {
    "esito": "confermata",
@@ -62,10 +62,10 @@
    "nota": ""
   },
   "rel-813bc7981a": {
-   "esito": "non_confermata",
-   "fonte": "https://en.wikipedia.org/wiki/Iron_Man_2",
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Pepper_Potts",
    "data": "2026-11-26",
-   "nota": ""
+   "nota": "MCU Wiki: relazione romantica"
   },
   "rel-5013126662": {
    "esito": "confermata",
@@ -104,16 +104,16 @@
    "nota": "non confermata nel testo della pagina"
   },
   "rel-db3771f093": {
-   "esito": "non_confermata",
-   "fonte": "https://en.wikipedia.org/wiki/The_Avengers_(2012_film)",
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Avengers",
    "data": "2026-11-26",
-   "nota": "non confermata nel testo della pagina"
+   "nota": "MCU Wiki: Banner buon amico di Stark"
   },
   "rel-80a4a28ed3": {
-   "esito": "non_confermata",
-   "fonte": "https://en.wikipedia.org/wiki/The_Avengers_(2012_film)",
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Avengers_Initiative",
    "data": "2026-11-26",
-   "nota": "non confermata nel testo della pagina"
+   "nota": "MCU Wiki"
   },
   "rel-25e958eed8": {
    "esito": "confermata",
@@ -182,10 +182,10 @@
    "nota": ""
   },
   "rel-3c9d32cbcb": {
-   "esito": "non_confermata",
-   "fonte": "https://en.wikipedia.org/wiki/Thor:_The_Dark_World",
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Thor:_The_Dark_World",
    "data": "2026-11-26",
-   "nota": "non confermata nel testo della pagina"
+   "nota": "MCU Wiki: finto tradimento (Dark World) e nuovo tentativo in Ragnarok"
   },
   "rel-230d3cfd7c": {
    "esito": "confermata",
@@ -285,9 +285,9 @@
   },
   "rel-ec0d7854f6": {
    "esito": "confermata",
-   "fonte": "https://en.wikipedia.org/wiki/Iron_Man_(2008_film)",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Iron_Man/Avengers_Initiative_Acceptee_Tony_Stark",
    "data": "2026-11-26",
-   "nota": ""
+   "nota": "MCU Wiki"
   },
   "rel-06deff421e": {
    "esito": "confermata",
@@ -302,10 +302,10 @@
    "nota": ""
   },
   "rel-6f56b7aa68": {
-   "esito": "non_confermata",
-   "fonte": "https://en.wikipedia.org/wiki/Black_Panther_(film)",
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/T'Chaka",
    "data": "2026-11-26",
-   "nota": "non confermata nel testo della pagina"
+   "nota": "MCU Wiki: padre di T'Challa e Shuri"
   },
   "rel-804d37f8a7": {
    "esito": "confermata",
@@ -326,10 +326,11 @@
    "nota": ""
   },
   "rel-205ee37968": {
-   "esito": "dubbia",
-   "fonte": "https://en.wikipedia.org/wiki/Black_Panther_(film)",
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Black_Panther:_Wakanda_Forever",
    "data": "2026-11-26",
-   "nota": "esito da ricontrollare"
+   "nota": "Black Panther: ex-amanti; Wakanda Forever: figlio Toussaint. Qualifica approvata dall'utente 26/11 (partner sentimentali e genitori, non coniugi)",
+   "approvazione": "approvata_utente"
   },
   "rel-666d66b59e": {
    "esito": "confermata",
@@ -338,10 +339,10 @@
    "nota": ""
   },
   "rel-6585a198e0": {
-   "esito": "non_confermata",
-   "fonte": "https://en.wikipedia.org/wiki/Black_Panther_(film)",
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Okoye",
    "data": "2026-11-26",
-   "nota": "non confermata nel testo della pagina"
+   "nota": "MCU Wiki: Nakia close friend"
   },
   "rel-c6a5ab69e9": {
    "esito": "confermata",
@@ -524,10 +525,10 @@
    "nota": "non confermata nel testo della pagina"
   },
   "rel-32b0753f8b": {
-   "esito": "non_confermata",
-   "fonte": "https://en.wikipedia.org/wiki/X-Men_(film)",
+   "esito": "confermata",
+   "fonte": "https://marvel.fandom.com/wiki/X2_(film)",
    "data": "2026-11-26",
-   "nota": "non confermata nel testo della pagina"
+   "nota": "Marvel Database: Rogue come figlia/sorella minore per Wolverine"
   },
   "rel-3f87f60c51": {
    "esito": "non_confermata",
@@ -656,10 +657,10 @@
    "nota": ""
   },
   "rel-afb8e05185": {
-   "esito": "non_confermata",
-   "fonte": "https://en.wikipedia.org/wiki/The_Defenders_(miniseries)",
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Foggy_Nelson",
    "data": "2026-11-26",
-   "nota": "non confermata nel testo della pagina"
+   "nota": "MCU Wiki"
   },
   "rel-d362f8d77c": {
    "esito": "confermata",
@@ -680,10 +681,10 @@
    "nota": ""
   },
   "rel-d03b21692d": {
-   "esito": "non_confermata",
-   "fonte": "https://en.wikipedia.org/wiki/Spider-Man_(2002_film)",
+   "esito": "confermata",
+   "fonte": "https://marvel.fandom.com/wiki/Earth-96283",
    "data": "2026-11-26",
-   "nota": "non confermata nel testo della pagina"
+   "nota": "Marvel Database (Earth-96283)"
   },
   "rel-37ac7861aa": {
    "esito": "confermata",
@@ -714,6 +715,282 @@
    "fonte": "https://en.wikipedia.org/wiki/Doctor_Strange_(2016_film)",
    "data": "2026-11-26",
    "nota": "non confermata nel testo della pagina"
+  },
+  "rel-a6cbad9ca5": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Black_Panther:_Wakanda_Forever",
+   "data": "2026-11-26",
+   "nota": "Wakanda Forever: Nakia cresce Toussaint (T'Challa II), figlio di T'Challa"
+  },
+  "rel-68a43c616c": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Black_Panther:_Wakanda_Forever",
+   "data": "2026-11-26",
+   "nota": "Wakanda Forever: Nakia cresce Toussaint (T'Challa II), figlio di T'Challa"
+  },
+  "rel-ecb8502ae0": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Foggy_Nelson",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki: best friend di Matt Murdock"
+  },
+  "rel-2916587592": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Foggy_Nelson",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
+  },
+  "rel-f3fc281646": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Jessica_Jones",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki: Trish Walker aiuta Jessica contro Kilgrave"
+  },
+  "rel-1c91cf8240": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Luke_Cage",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki: relazione tra Cage e Jessica"
+  },
+  "rel-c2221dccec": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Kilgrave",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
+  },
+  "rel-e0aaffbca2": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Rand_Enterprises",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki: agiscono insieme"
+  },
+  "rel-957886e975": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Bushmaster",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
+  },
+  "rel-045e8b6c3a": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Iron_Fist",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
+  },
+  "rel-4bfbe81efd": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Punisher",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki: Castle fa amicizia con Karen Page"
+  },
+  "rel-d65eb0c4a2": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/The_Punisher/Season_Two",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
+  },
+  "rel-81a0ed0dfa": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Massacre_at_Central_Park",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki: Russo non ferma i mandanti del massacro"
+  },
+  "rel-03a9c0afba": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Quake",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki: Coulson la recluta nel suo team"
+  },
+  "rel-9f127d86b5": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Melinda_May",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki: May nel team di Coulson"
+  },
+  "rel-52b262fb5d": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Grant_Ward",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki: Ward imprigionato da Coulson"
+  },
+  "rel-681ace262f": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Phil_Coulson",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki: tradimento di Grant Ward"
+  },
+  "rel-dfada63604": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Kate_Bishop",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki: partner di Barton"
+  },
+  "rel-a9af49a28b": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Wiccan",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
+  },
+  "rel-638221647c": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Kidnapping_of_Billy_and_Tommy_Maximoff",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
+  },
+  "rel-a469daad50": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Black_Widow",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki: sorella adottiva"
+  },
+  "rel-44e843c309": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Aldrich_Killian",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
+  },
+  "rel-20e1c4671b": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Xu_Wenwu",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki: Shang-Chi si schiera contro Wenwu"
+  },
+  "rel-ef419375b2": {
+   "esito": "confermata",
+   "fonte": "https://marvel.fandom.com/wiki/Otto_Octavius_(Earth-96283)",
+   "data": "2026-11-26",
+   "nota": "Marvel Database"
+  },
+  "rel-134711012e": {
+   "esito": "confermata",
+   "fonte": "https://marvel.fandom.com/wiki/Harold_Osborn_(Earth-96283)",
+   "data": "2026-11-26",
+   "nota": "Marvel Database: Harry esce con MJ"
+  },
+  "rel-e383f22bf6": {
+   "esito": "confermata",
+   "fonte": "https://marvel.fandom.com/wiki/Harold_Osborn_(Earth-96283)",
+   "data": "2026-11-26",
+   "nota": "Marvel Database: Harry vuole vendetta su Spider-Man"
+  },
+  "rel-5d9ba24518": {
+   "esito": "non_confermata",
+   "fonte": "https://marvel.fandom.com/wiki/X-Men:_The_Last_Stand",
+   "data": "2026-11-26",
+   "nota": "Marvel Database: dichiarazione d'amore ma nessuna relazione descritta"
+  },
+  "rel-c845cd67d0": {
+   "esito": "confermata",
+   "fonte": "https://marvel.fandom.com/wiki/X2_(film)",
+   "data": "2026-11-26",
+   "nota": "Marvel Database: si unisce agli X-Men"
+  },
+  "rel-061c14e946": {
+   "esito": "confermata",
+   "fonte": "https://marvel.fandom.com/wiki/X2_(film)",
+   "data": "2026-11-26",
+   "nota": "Marvel Database"
+  },
+  "rel-8edcde4689": {
+   "esito": "confermata",
+   "fonte": "https://marvel.fandom.com/wiki/Vanessa_Carlysle_(Earth-10005)",
+   "data": "2026-11-26",
+   "nota": "Marvel Database: fidanzata/fidanzata di Wade"
+  },
+  "rel-0b11a98c1e": {
+   "esito": "confermata",
+   "fonte": "https://marvel.fandom.com/wiki/Earth-41633",
+   "data": "2026-11-26",
+   "nota": "Marvel Database: Deadpool si allea con Cable"
+  },
+  "rel-062a23adb4": {
+   "esito": "confermata",
+   "fonte": "https://marvel.fandom.com/wiki/Earth-41633",
+   "data": "2026-11-26",
+   "nota": "Marvel Database: scontro iniziale per salvare Firefist da Cable"
+  },
+  "rel-fcf81050c9": {
+   "esito": "confermata",
+   "fonte": "https://marvel.fandom.com/wiki/X-Men_Origins:_Wolverine_(film)",
+   "data": "2026-11-26",
+   "nota": "Marvel Database: i fratelli attraversano guerre"
+  },
+  "rel-2805830528": {
+   "esito": "confermata",
+   "fonte": "https://marvel.fandom.com/wiki/Gwendolyne_Stacy_(Earth-120703)",
+   "data": "2026-11-26",
+   "nota": "Marvel Database: relazione seria"
+  },
+  "rel-9330e753cd": {
+   "esito": "confermata",
+   "fonte": "https://marvel.fandom.com/wiki/Gwendolyne_Stacy_(Earth-120703)",
+   "data": "2026-11-26",
+   "nota": "Marvel Database: figlia di George Stacy"
+  },
+  "rel-e6f6b8afc7": {
+   "esito": "confermata",
+   "fonte": "https://marvel.fandom.com/wiki/Peter_Parker_(Earth-120703)",
+   "data": "2026-11-26",
+   "nota": "Marvel Database"
+  },
+  "rel-8f49be77f1": {
+   "esito": "confermata",
+   "fonte": "https://marvel.fandom.com/wiki/Peter_Parker_(Earth-120703)",
+   "data": "2026-11-26",
+   "nota": "Marvel Database: migliori amici d'infanzia"
+  },
+  "rel-f4aadcff88": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Iron_Man",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
+  },
+  "rel-83af43b2eb": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Morgan_Stark",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
+  },
+  "rel-9adce31508": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Morgan_Stark",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
+  },
+  "rel-0ecad38af6": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Wiccan",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
+  },
+  "rel-d152f04157": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Everett_Ross",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
+  },
+  "rel-2318016ab1": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/T'Challa",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
+  },
+  "rel-fbc1ea15b9": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Ten_Rings_(Organization)",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
+  },
+  "rel-7a38073721": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Punisher",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
+  },
+  "rel-ad0c83c4cc": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Phil_Coulson",
+   "data": "2026-11-26",
+   "nota": "MCU Wiki"
   }
  }
 }

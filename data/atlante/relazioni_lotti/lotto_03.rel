@@ -1,0 +1,21 @@
+# Lotto 03 - fonti non-Wikipedia (MCU Wiki / Marvel Database), verificate il 26/11/2026. Stesso formato del lotto 01.
+@src ir https://marvelcinematicuniverse.fandom.com/wiki/Iron_Man
+@src ir2 https://marvelcinematicuniverse.fandom.com/wiki/Iron_Man/Avengers_Initiative_Acceptee_Tony_Stark
+@src mg https://marvelcinematicuniverse.fandom.com/wiki/Morgan_Stark
+@src wic https://marvelcinematicuniverse.fandom.com/wiki/Wiccan
+@src ev https://marvelcinematicuniverse.fandom.com/wiki/Everett_Ross
+@src tc https://marvelcinematicuniverse.fandom.com/wiki/T'Challa
+@src tr https://marvelcinematicuniverse.fandom.com/wiki/Ten_Rings_(Organization)
+@src pu https://marvelcinematicuniverse.fandom.com/wiki/Punisher
+@src co https://marvelcinematicuniverse.fandom.com/wiki/Phil_Coulson
+con|pepper-potts|iron-man||ir|Sposati dopo lo Snap
+gen|iron-man|morgan-stark|padre|mg|
+gen|pepper-potts|morgan-stark|madre|mg|
+gen|howard-stark|iron-man|padre|ir2|
+ami|james-rhodes-war-machine|iron-man|migliore amico|ir2|
+gen|visione|teen-billy-maximoff|padre|wic|Billy e Tommy creati da Wanda; Visione e' il padre
+ami|everett-ross|nakia||ev|
+ami|okoye|t-challa-black-panther||tc|
+gen|wenwu|shang-chi|padre|tr|
+ami|billy-russo-jigsaw|frank-castle-punisher|ex commilitoni|pu|Amici in Afghanistan, poi rivali
+all|nick-fury|phil-coulson|braccio destro|co|

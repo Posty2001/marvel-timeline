@@ -102,7 +102,7 @@ suc|t-challa-black-panther|t-chaka||bp1|T'Challa succede al padre come re
 suc|shuri|t-challa-black-panther||bp2|Shuri assume il mantello di Black Panther
 riv|erik-killmonger|t-challa-black-panther||bp1|
 all|ulysses-klaue|erik-killmonger||bp1|
-par|nakia|t-challa-black-panther|relazione sentimentale|bp1|
+par|nakia|t-challa-black-panther|partner sentimentali e genitori di un figlio|bp1+bp2|Fasi: ex-amanti in Black Panther; figlio Toussaint rivelato in Wakanda Forever (scena a meta' titoli di coda). Non coniugi: nessuna fonte. Qualifica decisa dall'utente 26/11
 all|okoye|t-challa-black-panther||bp1|
 ami|okoye|nakia||bp1|
 # --- Guardiani della Galassia ---
@@ -258,3 +258,5 @@ tra|billy-russo-jigsaw|frank-castle-punisher||pn1|Russo tradisce Frank e la sua 
 all|karen-page|frank-castle-punisher||pn1|
 ami|foggy-nelson|karen-page||df1|
 gen|laufey|loki|padre biologico|th1|Re dei Giganti di Ghiaccio
+gen|t-challa-black-panther|toussaint|padre|bp2|Toussaint/T'Challa II
+gen|nakia|toussaint|madre|bp2|Toussaint/T'Challa II, cresciuto in segreto

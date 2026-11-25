@@ -303,6 +303,9 @@
   ],
   [
    "id-laufey"
+  ],
+  [
+   "id-matt-murdock-mcu"
   ]
  ],
  "identita": [
@@ -4660,7 +4663,7 @@
   },
   {
    "id": "id-matt-murdock-daredevil",
-   "nome": "Matt Murdock/Daredevil",
+   "nome": "Matt Murdock/Daredevil (2003)",
    "prompt": "Daredevil in a masked suit with horns",
    "generico": false,
    "pilota": false,
@@ -4676,32 +4679,68 @@
      "gruppo": "1H"
     }
    ],
-   "esclusi_continuita": [
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-matt-murdock-mcu",
+   "nome": "Matt Murdock/Daredevil (MCU)",
+   "prompt": "Matt Murdock / Daredevil, a Marvel character",
+   "generico": true,
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
     {
      "num": "060",
+     "item": "060",
+     "tmdb_id": 61889,
+     "tipo": "tv",
+     "titolo": "Daredevil S1",
      "gruppo": "Canone"
     },
     {
      "num": "065",
+     "item": "065",
+     "tmdb_id": 61889,
+     "tipo": "tv",
+     "titolo": "Daredevil S2",
      "gruppo": "Canone"
     },
     {
      "num": "082",
+     "item": "082",
+     "tmdb_id": 61889,
+     "tipo": "tv",
+     "titolo": "Daredevil S3",
      "gruppo": "Canone"
     },
     {
      "num": "105",
+     "item": "105",
+     "tmdb_id": 92783,
+     "tipo": "tv",
+     "titolo": "She-Hulk: Attorney at Law",
      "gruppo": "Canone"
     },
     {
      "num": "122",
+     "item": "122",
+     "tmdb_id": 202555,
+     "tipo": "tv",
+     "titolo": "Daredevil: Born Again S1",
      "gruppo": "Canone"
     },
     {
      "num": "128",
+     "item": "128",
+     "tmdb_id": 202555,
+     "tipo": "tv",
+     "titolo": "Daredevil: Born Again S2",
      "gruppo": "Canone"
     }
    ],
+   "esclusi_continuita": [],
    "ambigui": []
   },
   {

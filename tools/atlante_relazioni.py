@@ -165,8 +165,8 @@ def build():
             k = rid(tipo, da, a); led = LED.get(k, {}); es = led.get('esito', 'non_verificata')
             if es == 'respinta': RESP.append({'id': k, 'tipo': tipo, 'da': da, 'a': a, 'motivo': led.get('nota', ''), 'fonte': urls, 'lotto': lotto}); continue
             ver = 'verificata' if es == 'confermata' else 'da verificare'
-            contro = es == 'dubbia'
-            ex = {'lotto': lotto, 'approvazione': 'in_attesa' if contro else 'non_richiesta', 'controversa': contro, 'esito_verifica': es, 'data_verifica': led.get('data')}
+            contro = es == 'dubbia' and led.get('approvazione') != 'approvata_utente'
+            ex = {'lotto': lotto, 'approvazione': 'approvata_utente' if led.get('approvazione') == 'approvata_utente' else ('in_attesa' if contro else 'non_richiesta'), 'controversa': contro, 'esito_verifica': es, 'data_verifica': led.get('data')}
             if k in REL:   # gia' presente (scheda classica/A2): arricchisce senza duplicare
                 r0 = REL[k]; r0['conferme'] = sorted(set(r0['conferme']) | {'lotto:' + lotto}); r0['fonte'] = r0['fonte'] + [u for u in urls if u not in r0['fonte']]
                 if ver == 'verificata' and r0['verifica'] != 'verificata': r0['verifica'] = 'verificata'; r0['esito_verifica'] = es; r0['data_verifica'] = led.get('data')
