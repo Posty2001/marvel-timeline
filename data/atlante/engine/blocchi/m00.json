@@ -1,0 +1,197 @@
+{
+ "stadi_s": {
+  "download": 39.4,
+  "qualita": 5.6,
+  "scena_clip": 78.6,
+  "scena_siglip": 292.2
+ },
+ "candidati_totali": 1776,
+ "immagini_uniche": 1601,
+ "immagini_nitide": 1570,
+ "totale_s": 786.2,
+ "ram_picco_mb": 2898,
+ "identita": {
+  "id-abby-miller": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 13.2
+  },
+  "id-abigail-whistler": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 10.4
+  },
+  "id-adam-warlock": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 13.7
+  },
+  "id-adrian-toomes-avvoltoio": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 13.2
+  },
+  "id-agatha-harkness": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 5,
+   "secondi": 13.0
+  },
+  "id-ajak": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 10.8
+  },
+  "id-aldrich-killian": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 13.2
+  },
+  "id-aleksei-sytsevich-rhino": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 12.3
+  },
+  "id-alexei-guardiano-rosso": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 12.9
+  },
+  "id-alisa-jones": {
+   "conf": "bassa",
+   "buoni": 2,
+   "proposte": 4,
+   "secondi": 13.3
+  },
+  "id-alto-evoluzionario": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 13.5
+  },
+  "id-america-chavez": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 10.6
+  },
+  "id-anne-weying": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 11.8
+  },
+  "id-anya-corazon": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 13.3
+  },
+  "id-apocalypse": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 12.3
+  },
+  "id-arishem": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 11.1
+  },
+  "id-arthur-harrow": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 10.6
+  },
+  "id-ayesha": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 12.2
+  },
+  "id-beast": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 6,
+   "secondi": 12.2
+  },
+  "id-ben-reilly-the-spider": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 12.3
+  },
+  "id-benny-pollack": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 6.7
+  },
+  "id-betty-ross": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 11.8
+  },
+  "id-bishop": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 11.9
+  },
+  "id-blind-al": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 13.5
+  },
+  "id-bob-sentry": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 13.9
+  },
+  "id-bonnie-lopez": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 13.4
+  },
+  "id-hulk": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 3,
+   "secondi": 13.2
+  },
+  "id-bruno": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 13.3
+  },
+  "id-bullseye": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 13.3
+  },
+  "id-bushmaster": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 9.9
+  }
+ },
+ "blocco": 0,
+ "cpu": 4
+}
