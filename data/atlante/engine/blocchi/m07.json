@@ -1,0 +1,197 @@
+{
+ "stadi_s": {
+  "download": 40.6,
+  "qualita": 7.2,
+  "scena_clip": 93.7,
+  "scena_siglip": 323.9
+ },
+ "candidati_totali": 2291,
+ "immagini_uniche": 1320,
+ "immagini_nitide": 1287,
+ "totale_s": 1009.1,
+ "ram_picco_mb": 2888,
+ "identita": {
+  "id-simon-williams-wonder-man": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 3,
+   "secondi": 21.2
+  },
+  "id-daisy-johnson": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 12.8
+  },
+  "id-spider-ham": {
+   "conf": "alta",
+   "buoni": 8,
+   "proposte": 3,
+   "secondi": 17.1
+  },
+  "id-spider-man-noir": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 17.9
+  },
+  "id-sprite": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 14.6
+  },
+  "id-steven-grant-marc-spector-moon-knight": {
+   "conf": "alta",
+   "buoni": 10,
+   "proposte": 3,
+   "secondi": 16.3
+  },
+  "id-stick": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 14.4
+  },
+  "id-sylvie": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 21.1
+  },
+  "id-t-chaka": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 5,
+   "secondi": 19.6
+  },
+  "id-talos": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 4,
+   "secondi": 19.5
+  },
+  "id-teen-billy-maximoff": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 20.3
+  },
+  "id-teschio-rosso": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 15.4
+  },
+  "id-ross-hulk-2003": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 19.4
+  },
+  "id-thaddeus-ross-mcu": {
+   "conf": "bassa",
+   "buoni": 2,
+   "proposte": 6,
+   "secondi": 17.4
+  },
+  "id-the-lion-n-kati": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 8.2
+  },
+  "id-the-watcher": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 19.5
+  },
+  "id-thena": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 15.4
+  },
+  "id-toussaint": {
+   "conf": "bassa",
+   "buoni": 2,
+   "proposte": 4,
+   "secondi": 21.3
+  },
+  "id-trevor-slattery": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 18.6
+  },
+  "id-trish-walker": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 17.0
+  },
+  "id-ultron": {
+   "conf": "alta",
+   "buoni": 9,
+   "proposte": 3,
+   "secondi": 19.9
+  },
+  "id-ulysses-klaue": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 6,
+   "secondi": 20.1
+  },
+  "id-valchiria": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 6,
+   "secondi": 18.7
+  },
+  "id-valentina-de-fontaine": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 20.3
+  },
+  "id-vanessa": {
+   "conf": "alta",
+   "buoni": 3,
+   "proposte": 4,
+   "secondi": 18.6
+  },
+  "id-sabretooth": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 6,
+   "secondi": 19.4
+  },
+  "id-victor-timely-variante-kang": {
+   "conf": "alta",
+   "buoni": 10,
+   "proposte": 3,
+   "secondi": 19.5
+  },
+  "id-viper": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 18.6
+  },
+  "id-wenwu": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 17.1
+  },
+  "id-whistler": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 6,
+   "secondi": 19.6
+  }
+ },
+ "blocco": 7,
+ "cpu": 4
+}

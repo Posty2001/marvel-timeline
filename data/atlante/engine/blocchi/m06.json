@@ -1,0 +1,197 @@
+{
+ "stadi_s": {
+  "download": 47.2,
+  "qualita": 7.2,
+  "scena_clip": 89.8,
+  "scena_siglip": 311.0
+ },
+ "candidati_totali": 2070,
+ "immagini_uniche": 1266,
+ "immagini_nitide": 1236,
+ "totale_s": 1033.0,
+ "ram_picco_mb": 2888,
+ "identita": {
+  "id-pepper-potts": {
+   "conf": "alta",
+   "buoni": 6,
+   "proposte": 5,
+   "secondi": 20.3
+  },
+  "id-peter": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 3,
+   "secondi": 21.2
+  },
+  "id-peter-b-parker": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 18.7
+  },
+  "id-peter-parker-ynfsm": {
+   "conf": "alta",
+   "buoni": 10,
+   "proposte": 3,
+   "secondi": 20.4
+  },
+  "id-phastos": {
+   "conf": "alta",
+   "buoni": 3,
+   "proposte": 3,
+   "secondi": 17.8
+  },
+  "id-phil-coulson": {
+   "conf": "alta",
+   "buoni": 9,
+   "proposte": 5,
+   "secondi": 16.9
+  },
+  "id-professor-x-terra-838": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 18.6
+  },
+  "id-proxima-midnight": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 20.2
+  },
+  "id-pyro": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 20.2
+  },
+  "id-quentin-beck-mysterio": {
+   "conf": "alta",
+   "buoni": 5,
+   "proposte": 3,
+   "secondi": 18.7
+  },
+  "id-ramonda": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 21.0
+  },
+  "id-ravonna-renslayer": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 19.4
+  },
+  "id-red-guardian": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 20.3
+  },
+  "id-reed-richards": {
+   "conf": "alta",
+   "buoni": 7,
+   "proposte": 5,
+   "secondi": 18.6
+  },
+  "id-rio-vidal": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 19.5
+  },
+  "id-riri-williams-ironheart": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 3,
+   "secondi": 20.3
+  },
+  "id-robbie-reyes-ghost-rider": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 3,
+   "secondi": 21.2
+  },
+  "id-robbie-robertson": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 18.6
+  },
+  "id-robert-downey-jr-dottor-destino": {
+   "conf": "alta",
+   "buoni": 5,
+   "proposte": 3,
+   "secondi": 19.5
+  },
+  "id-rogue": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 19.3
+  },
+  "id-ronan-l-accusatore": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 20.4
+  },
+  "id-roxanne-simpson": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 17.8
+  },
+  "id-sebastian-shaw": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 12.9
+  },
+  "id-sergei-kravinoff-kraven": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 3,
+   "secondi": 20.3
+  },
+  "id-sersi": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 4,
+   "secondi": 16.1
+  },
+  "id-shang-chi": {
+   "conf": "alta",
+   "buoni": 9,
+   "proposte": 3,
+   "secondi": 18.7
+  },
+  "id-sharon-carter": {
+   "conf": "alta",
+   "buoni": 4,
+   "proposte": 3,
+   "secondi": 20.5
+  },
+  "id-shuri": {
+   "conf": "bassa",
+   "buoni": 1,
+   "proposte": 6,
+   "secondi": 20.3
+  },
+  "id-silver-surfer": {
+   "conf": "alta",
+   "buoni": 8,
+   "proposte": 3,
+   "secondi": 14.5
+  },
+  "id-simmons": {
+   "conf": "bassa",
+   "buoni": 0,
+   "proposte": 4,
+   "secondi": 20.4
+  }
+ },
+ "blocco": 6,
+ "cpu": 4
+}
