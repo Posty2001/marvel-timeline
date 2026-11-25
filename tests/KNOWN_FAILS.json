@@ -101,11 +101,5 @@
    "migrazione: dati locali"
   ],
   "why": "FAIL osservati il 25/11/2026 anche sul commit precedente ad A3 (8b6e667, worktree pulito): stessi due controlli in due esecuzioni isolate, quindi non causati da A3. Probabile dipendenza temporale/ambiente dei mock Firebase; da analizzare in un intervento separato. Il controllo «conflitto: dati locali del dispositivo 2» e' instabile (presente solo in alcune esecuzioni)."
- },
- "b40c_test": {
-  "checks": [
-   "controlli di ripristino cloud 'dati locali invariati' (snapL==before) – insieme variabile, 33–38 PASS"
-  ],
-  "why": "INSTABILE, anche eseguita da sola e con insiemi di fallimenti diversi tra esecuzioni; causa radice NON determinata (25/11/2026). Rischio per i dati personali non escluso: vedi docs/ATLANTE_2_0_RIPRISTINO_CLOUD_INSTABILITA.md"
  }
 }

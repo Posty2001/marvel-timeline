@@ -1,20 +1,14 @@
-# Instabilità dei test di ripristino cloud (b40c_test) – nota di rischio
+# Instabilità dei test di ripristino cloud (b40c_test) – causa individuata
 
-Stato: **aperto, causa radice non determinata** (25/11/2026). Non modificato il codice di sincronizzazione.
+Stato: **causa radice trovata, nel TEST (25/11/2026)**; nessuna modifica al codice di sincronizzazione. Indagine fatta esclusivamente con dati sintetici e browser isolati (mock di Firebase, nessun ripristino su dati reali).
 
-## Fatti verificati
-- `tests/b40c_test` fallisce anche eseguito da solo; l'insieme dei controlli falliti cambia tra le esecuzioni (33–38 PASS).
-- Sei fallimenti su sette includono il controllo «dati locali invariati» (`snapL(pg)==before`): in quelle esecuzioni lo stato locale dopo un ripristino/conflitto risultava diverso da prima.
-- Non è stato possibile individuare la chiave divergente: lo script diagnostico `/tmp/b40c_dbg2.py` non è riuscito (dipendenza da un percorso inesistente, `snapL` non definito) e non è nel repository.
-- Non provocato dal lavoro A3/A3.1 (atlante2/ è lazy e non tocca il sync); non dimostrato che sia anteriore: serve un bisect.
+## Causa
+1. **Race di inizializzazione (6 su 7 fallimenti storici, controllo `snapL(pg)==before`)**: il modulo TVA Live crea in modo asincrono la chiave `marvel-ultimate-timeline-live-state-v1` dopo il caricamento. L'unica chiave che differiva tra «prima» e «dopo» era questa (verificato con un confronto chiave per chiave su 4 esecuzioni: 36–37 PASS, solo quella chiave in differenza). Nessuna chiave del profilo (titoli visti, preferenze, ecc.) è mai cambiata per effetto di conflitto/ripristino/annullamento.
+2. **Controllo T7 («nessuna copia»)**: l'app salva una copia di sicurezza automatica generale 5 s dopo il caricamento, indipendentemente dal ripristino; a seconda dei tempi poteva già esistere al momento del controllo. Ora il test verifica la proprietà che conta: dopo l'annullamento, la copia (se presente) contiene il profilo locale (12 titoli) e mai quello del cloud (1).
 
-## Rischio
-Se la divergenza è reale e non un artefatto del test (timing/ordine di scritture, chiavi con timestamp), un ripristino da cloud potrebbe alterare dati locali. **Non declassare a «rumore» finché non è chiarito.**
+## Correzione (solo test)
+`tests/b40c_test.py`: attesa dell'inizializzazione Live prima dello snapshot; T7 verifica il contenuto della copia. Esito: **4 esecuzioni consecutive 42/42 PASS** (prima 33–38). `b40c_test` rimosso da `tests/KNOWN_FAILS.json`.
 
-## Protezione raccomandata finora
-1. Prima di ogni ripristino cloud: esportare un backup locale.
-2. La copia di auto-backup al ripristino esiste (T8a): verificarla prima di fidarsi.
-3. I ritratti privati (IndexedDB `tva-atlante-ritratti`) sono fuori da backup/sync: non sono toccati dal ripristino, ma neppure protetti; usare Esporta ritratti.
-
-## Attività proposta (separata, da autorizzare)
-Task di causa radice: (a) loggare le chiavi differenti nel confronto `snapL`; (b) bisect sui commit; (c) ripetere N=20 esecuzioni per stimare la frequenza; (d) correggere o riclassificare con prova.
+## Cosa NON dimostra
+- Che il ripristino cloud sia privo di difetti in condizioni reali (rete, dispositivi multipli): i test coprono il comportamento con mock. Resta valida la prassi prudente: esportare un backup locale prima di un ripristino cloud; l'auto-backup di sicurezza esiste.
+- Non è stato eseguito alcun ripristino sui dati reali di Franco.

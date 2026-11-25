@@ -124,9 +124,14 @@ def run():
     pg.evaluate("()=>document.getElementById('syncShowDiffBtn').click()"); d=pg.evaluate("()=>document.getElementById('syncConflictDiff').textContent")
     ok('T6b «Visualizza differenze»: titoli visti locale 12 vs cloud 1','Titoli visti: locale 12 · cloud 1' in d,d)
     pg.on('dialog',lambda dl:(pg.dialogs.append(dl.message),dl.dismiss()))
-    ab0=LS(pg,'marvel-ultimate-timeline-auto-backup')  # il salvataggio automatico generale parte 5 s dopo il caricamento: si confronta prima/dopo l'annullamento
+    # Il salvataggio automatico generale dell'app parte 5 s dopo il caricamento (indipendente dal ripristino): dopo l'annullamento la copia, se esiste,
+    # deve contenere il profilo LOCALE (12 titoli) e mai quello del cloud (1 titolo).
+    def abok(v):
+        if v is None: return True
+        try: return len(json.loads(v).get('watched',{}))==12
+        except Exception: return False
     pg.evaluate("()=>document.getElementById('syncRestoreBtn').click()"); pg.wait_for_timeout(400)
-    ok('T7 ripristino annullato: nulla modificato, nessuna copia, nessun reload, ancora Conflitto',snapL(pg)==before and LS(pg,'marvel-ultimate-timeline-auto-backup')==ab0 and pg.evaluate("()=>window.__m")==1 and stt(pg)=='conflict' and len(pg.dialogs)==1,pg.dialogs)
+    ok('T7 ripristino annullato: nulla modificato, nessuna copia, nessun reload, ancora Conflitto',snapL(pg)==before and abok(LS(pg,'marvel-ultimate-timeline-auto-backup')) and pg.evaluate("()=>window.__m")==1 and stt(pg)=='conflict' and len(pg.dialogs)==1,pg.dialogs)
     ctx.close()
     # T8
     ctx,pg=newpage({'mode':'ok','store':{'sync/ABCD2345':json.dumps(old)}}); connect(pg,'ABCD2345'); pg.wait_for_timeout(1000)
