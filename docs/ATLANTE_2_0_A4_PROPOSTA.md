@@ -45,3 +45,12 @@ Test: Playwright 390/430 px, nessun errore JS, a2/a3/a31–a34/ui_audit invariat
 
 ## 8. Cosa mi serve da te
 Approvazione (o modifiche) a: orbite per natura + TVA separata; due tipi di arco; soglia ≥ 3; fasi A4.0–A4.4; decisioni su Peter-Deadpool, N°120 e link ambigui.
+
+---
+## REVISIONE 2 (25/11/2026, sera) – recepisce le indicazioni dell'utente
+Anteprima: `docs/atlante2/a4/anteprima_v2.html` (rigenerabile con `tools/atlante_a4_preview_data.py`; test `tests/a4_anteprima_test.py`). Dati reali: 27 universi, 298 identità, 940 relazioni del registro A4.0, 137 titoli nominati.
+- **Multiverso**: osservatorio TVA (reticolo polare, tacche, sweep radar, atmosfere cromatiche per universo), emblemi originali deterministici, zoom/pizzico/trascinamento/ricentra/schermo intero, scheda contestuale, esplorazione interna (costellazione delle identità con ritratti privati, fallback iniziali + glifo), confronto tra universi (titoli condivisi + controparti dichiarate), nessuna distanza/gerarchia canonica.
+- **Nexus**: tutte le 298 identità (+ organizzazioni), ricerca, relazioni disegnate come archi tipizzati con legenda (alleanze, amicizie, rivalità, mentorato previsti ma a 0 finché non documentati), soglia co-apparizioni 1/2/3/4+, limite nodi 12/20/30 con quote (narrative e controparti sempre prime, editoriali e co-apparizioni si dividono il resto), cronologia e ricentramento, collegamenti solo via ID, «da verificare» sempre tratteggiato con etichetta.
+- **Percorso**: narrativo / co-apparizioni / misto, spiegazione di ogni passaggio con titoli nominati e stato di verifica, percorsi alternativi (fino a 3), nessun percorso inventato.
+- **A4.0 (autorizzata, solo dati)**: `docs/ATLANTE_2_0_A4_RELAZIONI.md`, `tools/atlante_relazioni.py`, `data/atlante/relazioni.json`; identità: Harry YFNSM separato, Peter → Fox-Verse (fonti), candidati ritratto generati (298 identità), documento dei 34 link ambigui consegnato (non risolti).
+- **A4.1 NON avviata**: attende l'approvazione di questa anteprima.
