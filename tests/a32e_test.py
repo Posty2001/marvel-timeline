@@ -20,6 +20,7 @@ with sync_playwright() as p:
     br = p.chromium.launch(); ctx = br.new_context(viewport={'width': 390, 'height': 844}, is_mobile=True, has_touch=True, service_workers='block')
     ctx.route('https://image.tmdb.org/**', lambda r: r.fulfill(status=200, body=PNG, content_type='image/png', headers={'access-control-allow-origin': '*'}))
     ctx.route('**/atlante2/data/pilot/proposte.json', lambda r: r.fulfill(status=200, body=json.dumps(PROP), content_type='application/json'))
+    ctx.route('**/atlante2/data/pilot/proposte2.json', lambda r: r.fulfill(status=200, body='{"identita":[]}', content_type='application/json'))
     pg = ctx.new_page(); errs = []; pg.on('pageerror', lambda e: errs.append(str(e)))
     pg.goto('http://127.0.0.1:%d/index.html' % port); pg.wait_for_timeout(1200)
     pg.evaluate("()=>{journeyStarted.checked=true; journeyStarted.dispatchEvent(new Event('change',{bubbles:true}))}"); pg.wait_for_timeout(300)
