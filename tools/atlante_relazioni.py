@@ -25,6 +25,7 @@ TIPI = {  # tipo -> (classe, descrizione, simmetrica)
  'mentorato':           ('narrativa', 'Mentorato (da = mentore, a = allievo)', False),
  'appartenenza':        ('narrativa', 'Appartenenza a un\'organizzazione (da = identita, a = org-*); qualifica: membro, leader', False),
  'successione':         ('narrativa', 'Successione/eredita di un mantello (da = erede, a = predecessore)', False),
+ 'tradimento':          ('narrativa', 'Tradimento (da = chi tradisce, a = chi e\' tradito)', False),
  'copia':               ('narrativa', 'Copia/duplicato narrativo (da = copia, a = originale)', False),
  'controparte':         ('controparte', 'Controparte multiversale in altra continuita\' (NON identita\' unificata)', True),
  'ispirato_a':          ('editoriale', 'Ispirazione editoriale (da = ispirato, a = fonte)', False),
@@ -44,6 +45,7 @@ def rid(tipo, da, a):
     k = (tipo, *sorted([da, a])) if TIPI[tipo][2] else (tipo, da, a)
     return 'rel-' + hashlib.sha1('|'.join(k).encode()).hexdigest()[:10]
 
+LOTTO_T = {'gen': 'famiglia_genitore', 'fra': 'famiglia_fratelli', 'con': 'famiglia_coniugi', 'par': 'partner', 'all': 'alleanza', 'ami': 'amicizia', 'riv': 'rivalita', 'men': 'mentorato', 'app': 'appartenenza', 'suc': 'successione', 'cpt': 'controparte', 'tra': 'tradimento'}
 def build():
     I = J('data/atlante/identita.json'); G = J('data/atlante/blob/relationshipGraphData.json'); P = J('data/atlante/personaggi.json')['voci']
     ORG = {o['id'] for o in J('data/atlante/organizzazioni.json')['voci']}
@@ -54,9 +56,22 @@ def build():
     for p, r in I['redirect'].items():
         for t in r['verso']:
             if t in IDS and t not in pg[p]: pg[p].append(t)
+    IDX_I = {i['id']: i for i in I['identita']}
     def risolvi(page):                                        # pagina -> identita' SOLO se univoca
         c = pg.get(page, [])
         return (c[0], None) if len(c) == 1 else (None, 'pagina senza identita\'' if not c else f'pagina multi-identita\' ({", ".join(c)})')
+    def coppia(pa, pb):
+        """Risolve (pagina sorgente, pagina bersaglio) anche se una o entrambe coprono piu' identita': solo per CONTINUITA' (stesso universo) o OPERE in comune, e solo se la coppia e' unica.
+        Ritorna (src, dst, prova) oppure (None, None, motivo)."""
+        A, B = pg.get(pa, []), pg.get(pb, [])
+        if not A or not B: return None, None, 'pagina senza identita\''
+        if len(A) == 1 and len(B) == 1: return A[0], B[0], None
+        pairs = [(a, b) for a in A for b in B]
+        same = [(a, b) for a, b in pairs if IDX_I[a]['universo'] and IDX_I[a]['universo'] == IDX_I[b]['universo']]
+        if len(same) == 1: return same[0][0], same[0][1], 'risolto per continuita\' (stesso universo: %s)' % IDX_I[same[0][0]]['universo']
+        com = [(a, b) for a, b in pairs if set(IDX_I[a]['apparizioni']) & set(IDX_I[b]['apparizioni'])]
+        if len(com) == 1: return com[0][0], com[0][1], 'risolto per opere in comune (N° %s)' % ', '.join(sorted(set(IDX_I[com[0][0]]['apparizioni']) & set(IDX_I[com[0][1]]['apparizioni']))[:4])
+        return None, None, 'pagina multi-identita\' non risolvibile per continuita\'/opere (%s | %s)' % (', '.join(A), ', '.join(B))
     REL, CODA = {}, []
     def add(tipo, da, a, qual, fonte, ver, nota, origine, **ex):
         k = rid(tipo, da, a)
@@ -82,11 +97,11 @@ def build():
                     coda("etichetta «Varianti»: probabile errore (non e' una variante narrativa ne' una controparte documentata); non importata", pagina=x['id'], bersaglio=tid.group(1) if tid else tname, etichetta=lab, ipotesi_da_verificare='eventuale successione del mantello di Thor, solo con fonte'); continue
                 if lab not in LAB: coda('etichetta non riconosciuta', pagina=x['id'], etichetta=lab, bersaglio=tname); continue
                 if not tid: coda('bersaglio senza scheda/ID nell\'Atlante classico (nome solo testuale: non si risolve per nome)', pagina=x['id'], etichetta=lab, bersaglio_testo=tname); continue
-                dst, e2 = risolvi(tid.group(1))
-                if not src or not dst: coda('identita\' non univoca: ' + (e1 or e2), pagina=x['id'], bersaglio=tid.group(1), etichetta=lab); continue
+                src, dst, prova = coppia(x['id'], tid.group(1))
+                if not src or not dst: coda('identita\' non univoca: ' + prova, pagina=x['id'], bersaglio=tid.group(1), etichetta=lab); continue
                 tipo, dirz, qual = LAB[lab]; card_pairs.add(frozenset([x['id'], tid.group(1)]))
                 da, a = (dst, src) if dirz == 'in' else (src, dst)
-                add(tipo, da, a, qual, [f"scheda {x['id']} (campo RELAZIONI)"], 'guida', f"«{lab.capitalize()}» dichiarato nella scheda {x['id']}", 'guida:RELAZIONI')
+                add(tipo, da, a, qual, [f"scheda {x['id']} (campo RELAZIONI)"], 'guida', f"«{lab.capitalize()}» dichiarato nella scheda {x['id']}" + (f' - {prova}' if prova else ''), 'guida:RELAZIONI')
     # 2) grafo classico: SOLO le coppie famiglia/relazione NON coperte dalle schede (direzione non desumibile: etichetta duplicata nei due versi)
     for k, n in G.items():
         for c in n['conns']:
@@ -106,18 +121,60 @@ def build():
     for x in P:
         for f in x['campi']:
             if f['k'] != 'CORRELATI': continue
-            src, e1 = risolvi(x['id'])
             for t in dict.fromkeys(re.findall(r"mvNavigate\('([^']+)'", f['html'])):
                 if not t.startswith('char-'): coda('correlato non-personaggio (fuori da questa fase)', pagina=x['id'], bersaglio=t); continue
-                dst, e2 = risolvi(t)
-                if not src or not dst: coda('identita\' non univoca: ' + (e1 or e2), pagina=x['id'], bersaglio=t, etichetta='correlato'); continue
+                src, dst, prova = coppia(x['id'], t)
+                if not src or not dst: coda('identita\' non univoca: ' + prova, pagina=x['id'], bersaglio=t, etichetta='correlato'); continue
                 if src == dst: continue
-                add('correlato', src, dst, None, [f"scheda {x['id']} (campo CORRELATI)"], 'guida', 'Associazione editoriale «Correlati»: non implica alcuna relazione narrativa', 'guida:CORRELATI')
+                add('correlato', src, dst, None, [f"scheda {x['id']} (campo CORRELATI)"], 'guida', 'Associazione editoriale «Correlati»: non implica alcuna relazione narrativa' + (f' - {prova}' if prova else ''), 'guida:CORRELATI')
     # 5) relazioni gia' presenti in A2 (identita.json)
     for r in I['relazioni']:
         tipo = MAPTIPO_A2[r['tipo']]; ver = 'verificata' if str(r['verifica']).startswith('verificata') else ('guida' if "dichiarazione d'autore" in str(r['verifica']) else 'da verificare')
         add(tipo, r['da'], r['a'], None, r['fonte'], ver, r.get('nota', ''), 'A2:identita', verifica_originale=r['verifica'])
-    return REL, CODA, IDS, ORG
+    # 6) lotti editoriali (data/atlante/relazioni_lotti/*.rel) + registro delle verifiche documentali
+    LED = {}
+    lp = os.path.join(R, 'data/atlante/relazioni_lotti/_verifiche.json')
+    if os.path.exists(lp): LED = json.load(open(lp, encoding='utf-8')).get('esiti', {})
+    RESP, ERR = [], []
+    SEGS = IDS | {s['id'] for s in I['segnaposto']}
+    for fn in sorted(glob.glob(os.path.join(R, 'data/atlante/relazioni_lotti/*.rel'))):
+        src, lotto = {}, os.path.basename(fn)[:-4]
+        for n, line in enumerate(open(fn, encoding='utf-8'), 1):
+            line = line.rstrip('\n')
+            if not line.strip() or line.startswith('#'): continue
+            if line.startswith('@src '): _, k, u = line.split(None, 2); src[k] = u; continue
+            f = line.split('|')
+            if len(f) < 5 or f[0] not in LOTTO_T: ERR.append(f'{lotto}:{n} riga non valida'); continue
+            tipo = LOTTO_T[f[0]]; da = f[1] if f[1].startswith('org-') else 'id-' + f[1]; a = f[2] if f[2].startswith('org-') else 'id-' + f[2]
+            if da not in SEGS or not (a in SEGS or a in ORG) or da == a or (a in ORG and tipo != 'appartenenza'): ERR.append(f'{lotto}:{n} ID inesistente o non valido: {da} -> {a}'); continue
+            urls = []
+            for kk in f[4].split('+'):
+                if kk not in src: ERR.append(f'{lotto}:{n} fonte sconosciuta {kk}')
+                else: urls.append(src[kk])
+            k = rid(tipo, da, a); led = LED.get(k, {}); es = led.get('esito', 'non_verificata')
+            if es == 'respinta': RESP.append({'id': k, 'tipo': tipo, 'da': da, 'a': a, 'motivo': led.get('nota', ''), 'fonte': urls, 'lotto': lotto}); continue
+            ver = 'verificata' if es == 'confermata' else 'da verificare'
+            contro = es == 'dubbia'
+            ex = {'lotto': lotto, 'approvazione': 'in_attesa' if contro else 'non_richiesta', 'controversa': contro, 'esito_verifica': es, 'data_verifica': led.get('data')}
+            if k in REL:   # gia' presente (scheda classica/A2): arricchisce senza duplicare
+                r0 = REL[k]; r0['conferme'] = sorted(set(r0['conferme']) | {'lotto:' + lotto}); r0['fonte'] = r0['fonte'] + [u for u in urls if u not in r0['fonte']]
+                if ver == 'verificata' and r0['verifica'] != 'verificata': r0['verifica'] = 'verificata'; r0['esito_verifica'] = es; r0['data_verifica'] = led.get('data')
+                if not r0.get('qualifica') and f[3]: r0['qualifica'] = f[3]
+                continue
+            add(tipo, da, a, f[3] or None, urls, ver, f[5] if len(f) > 5 else '', 'lotto:' + lotto, **ex)
+    for r in REL.values(): r.setdefault('approvazione', 'non_richiesta'); r.setdefault('controversa', False)
+    # coda: voci risolte da una relazione documentata; Jane/Varianti respinte (decisione dell'utente 26/11/2026)
+    RIS, nc = [], []
+    for c in CODA:
+        pp = c.get('identita') or []
+        if len(pp) == 2 and any(r['tipo'] == 'famiglia_genitore' and {r['da'], r['a']} == set(pp) for r in REL.values()): RIS.append(dict(c, risolta_da='lotto')); continue
+        if c.get('etichetta') == 'varianti': RESP.append({'id': None, 'tipo': 'variante', 'da': c['pagina'], 'a': c['bersaglio'], 'motivo': "associazione errata come variante di Loki/Thor: eliminata dall'Atlante (decisione dell'utente 26/11/2026)", 'fonte': [], 'lotto': 'classico'}); continue
+        if c.get('bersaglio_testo') == 'Laufey' and any(r['da'] == 'id-laufey' for r in REL.values()): RIS.append(dict(c, risolta_da='dossier autonomo id-laufey')); continue
+        nc.append(c)
+    CODA[:] = nc
+    for tgt in ('id-loki', 'id-thor'):   # etichetta «Varianti: Jane Foster/Mighty Thor» eliminata dalle schede e dal grafo dell'Atlante classico
+        RESP.append({'id': None, 'tipo': 'variante', 'da': 'id-jane-foster-mighty-thor', 'a': tgt, 'motivo': "associazione errata come variante: eliminata dall'Atlante classico (decisione dell'utente 26/11/2026); Jane Foster e' un'altra identita'", 'fonte': [], 'lotto': 'classico'})
+    return REL, CODA, IDS, ORG, RESP, RIS, ERR
 
 def proposte(IDS, ORG):
     out, err = [], []
@@ -134,7 +191,7 @@ def proposte(IDS, ORG):
     return out, err
 
 def costruisci():
-    REL, CODA, IDS, ORG = build()
+    REL, CODA, IDS, ORG, RESP, RIS, ERR = build()
     prop, err = proposte(IDS, ORG)
     have = set(REL)
     prop = [p for p in prop if p['id'] not in have]
@@ -143,10 +200,10 @@ def costruisci():
     conteggi = {'relazioni_totali': len(rel), 'per_classe': cnt(rel, lambda r: r['classe']), 'per_tipo': cnt(rel, lambda r: r['tipo']), 'per_verifica': cnt(rel, lambda r: r['verifica']),
                 'narrative': sum(1 for r in rel if r['classe'] == 'narrativa'), 'narrative_verificate_o_in_guida': sum(1 for r in rel if r['classe'] == 'narrativa' and r['verifica'] in ('verificata', 'guida')),
                 'coda_ambigue_o_errate': len(CODA), 'coda_per_motivo': cnt(CODA, lambda c: c['motivo'].split(':')[0][:70]), 'proposte_intake': len(prop), 'errori_intake': err,
-                'co_apparizioni_nel_registro': 0, 'nota': 'Le co-apparizioni sono calcolate a runtime dalle apparizioni e NON entrano nel registro ne\' nei conteggi.'}
+                'respinte': len(RESP), 'risolte_dalla_coda': len(RIS), 'errori_lotti': ERR, 'narrative_verificate_documentalmente': sum(1 for r in rel if r['classe'] == 'narrativa' and r['verifica'] == 'verificata'), 'narrative_da_verificare': sum(1 for r in rel if r['classe'] == 'narrativa' and r['verifica'] == 'da verificare'), 'controverse_in_attesa_utente': sum(1 for r in rel if r.get('controversa')), 'co_apparizioni_nel_registro': 0, 'nota': 'Le co-apparizioni sono calcolate a runtime dalle apparizioni e NON entrano nel registro ne\' nei conteggi.'}
     return {'versione': 1, 'schema': {'tipi': {k: {'classe': v[0], 'descrizione': v[1], 'simmetrica': v[2]} for k, v in TIPI.items()}, 'verifica': VERIFICA,
             'regole': ["i nodi sono SEMPRE ID univoci (id-*, org-*), mai nomi", "co-apparizione != relazione", "una relazione senza fonte resta 'da verificare'", "l'importazione dall'Atlante classico non include le voci ambigue o errate (vanno in coda)"]},
-            'relazioni': rel, 'coda': CODA, 'proposte': prop, 'conteggi': conteggi}
+            'relazioni': rel, 'coda': CODA, 'risolte': RIS, 'respinte': RESP, 'proposte': prop, 'conteggi': conteggi}
 
 def main():
     a = sys.argv[1:]
@@ -166,7 +223,7 @@ def main():
         chk("'verificata' solo con fonte", all(x['fonte'] for x in old['relazioni'] if x['verifica'] == 'verificata'))
         chk('direzione: Hank Pym genitore di Hope; Wenwu genitore di Shang-Chi; Odino padre adottivo di Loki', all(any(x['tipo'] == 'famiglia_genitore' and x['da'] == d and x['a'] == c and x['qualifica'] == q for x in old['relazioni']) for d, c, q in
             [('id-hank-pym', 'id-hope-van-dyne', 'padre'), ('id-wenwu', 'id-shang-chi', 'padre'), ('id-odino', 'id-loki', 'padre adottivo')]))
-        chk('Howard/Tony e Varianti in coda, non importati', any('Howard' in json.dumps(c) or 'howard' in json.dumps(c) for c in old['coda']) and not any(x['tipo'].startswith('famiglia') and {x['da'], x['a']} == {'id-howard-stark', 'id-iron-man'} for x in old['relazioni']))
+        chk('Howard/Tony documentato (padre) e Varianti Jane respinte, non importate', any(x['tipo'].startswith('famiglia') and x['da']=='id-howard-stark' and x['a']=='id-iron-man' for x in old['relazioni']) and any('Jane' in json.dumps(r) for r in old.get('respinte',[])) and not any(x['tipo']=='variante' and 'id-jane-foster' in (x['da'],x['a']) for x in old['relazioni']))
         print('ESITO:', 'OK' if not bad else 'FALLITO ' + str(bad)); sys.exit(1 if bad else 0)
     print(json.dumps(r['conteggi'], ensure_ascii=False, indent=1))
 main()

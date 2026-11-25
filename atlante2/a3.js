@@ -221,6 +221,8 @@
       var f = top[Math.floor(Date.now() / 86400000) % top.length], sec = h('section', 'a3-sec'); var hd = h('header'); hd.appendChild(h('h2', '', 'Dossier in evidenza')); hd.appendChild(h('p', '', 'A rotazione tra le identità con più apparizioni.')); sec.appendChild(hd);
       var fb = btn('a3-feat rev t-' + f.t, null, function () { openId(f.i); }); var fe = h('span', 'em'); fe.appendChild(emblem(f)); fb.appendChild(fe); fb.appendChild(h('span', 'kick', badge(f) || 'Identità')); fb.appendChild(h('h3', '', f.n)); fb.appendChild(h('p', '', (f.u ? uniNome(f.u) + ' · ' : '') + f.a + ' apparizioni')); sec.appendChild(fb); body.appendChild(sec);
     }
+    var sm = h('section', 'a3-sec'); var hm = h('header'); hm.appendChild(h('h2', '', 'Multiverso e Nexus')); hm.appendChild(h('p', '', 'Esplora gli universi, le relazioni documentate e i percorsi tra le identità.')); sm.appendChild(hm);
+    var mrow = h('div', 'a3-row'); mrow.appendChild(btn('btn fill', 'Multiverso', function () { api.nav('a3', { a3: { v: 'mv' } }); })); mrow.appendChild(btn('btn ghost', 'Nexus', function () { api.nav('a3', { a3: { v: 'nx', c: 'id-iron-man' } }); })); mrow.appendChild(btn('btn ghost', 'Percorso', function () { api.nav('a3', { a3: { v: 'pc', a: '', b: '', m: 'n' } }); })); sm.appendChild(mrow); body.appendChild(sm);
     var sc = h('section', 'a3-sec'); var hc = h('header'); hc.appendChild(h('h2', '', 'Categorie')); hc.appendChild(h('p', '', 'Un archivio, dieci modi di entrarci.')); sc.appendChild(hc);
     var rail = h('div', 'a3-rail'); TYPES.forEach(function (x) {
       var cnt = (ORD[x.t] || []).length; if (!cnt) return; var c = btn('a3-cat rev t-' + x.t, null, function () { api.nav('a3', { a3: { v: 'cat', t: x.t, m: vistaPref(), n: 36 } }); }, { 'aria-label': x.n + ', ' + cnt });
@@ -393,7 +395,7 @@
     var root = h('div', 't-' + v.t); body.appendChild(root); var hd = h('header', 'a3-dh'); var em = h('div', 'em'); em.appendChild(emblem(v, true)); hd.appendChild(em); paintAny(em, v, true);
     var t = h('div', 't'); t.appendChild(h('span', 'kick', SING[v.t] || '')); t.appendChild(h('h1', '', v.n));
     var bds = h('div', 'a3-bds'); if (v.s) bds.appendChild(h('span', 'a3-bd warn', badge(v))); if (v.u) { bds.appendChild(h('span', 'a3-bd', uniNome(v.u))); var c = uniCont(v.u); if (c) bds.appendChild(h('span', 'a3-bd', c)); } t.appendChild(bds);
-    var rb = btn('a3-ritbtn', null, function () { withRit(function (r) { r.openEditor(v.i, v.n, function (i) { return BY[i] && BY[i].n; }); }); }, { 'aria-label': 'Ritratto privato di ' + v.n, title: 'Ritratto privato' }); rb.appendChild(svg(IC.edit)); hd.appendChild(rb); hd.appendChild(t); root.appendChild(hd); parallax(em);
+    var rb = btn('a3-ritbtn', null, function () { withRit(function (r) { r.openEditor(v.i, v.n, function (i) { return BY[i] && BY[i].n; }); }); }, { 'aria-label': 'Ritratto privato di ' + v.n, title: 'Ritratto privato' }); rb.appendChild(svg(IC.edit)); hd.appendChild(rb); if (v.t === 'p' || v.t === 'o') { var nxb = btn('a3-ritbtn a4-nxb', 'Nexus', function () { api.nav('a3', { a3: { v: 'nx', c: v.i } }); }, { 'aria-label': 'Apri ' + v.n + ' nel Nexus' }); hd.appendChild(nxb); } hd.appendChild(t); root.appendChild(hd); parallax(em);
     var holder = h('div', 'a3-load', 'Caricamento del dossier…'); root.appendChild(holder);
     dossier(s.id, function (d) {
       if (ST.a3 !== s || !root.isConnected) return; holder.remove();
@@ -445,11 +447,19 @@
     frame(); api.setTitle('Ritratti privati', 'Pilota A3.1'); var host = h('div', 'a3-ritmgr'); body.appendChild(host);
     withRit(function (r) { r.renderManager(host, function (i) { return BY[i] && BY[i].n; }); });
   }
-  var VIEWS = { rit: renderRit, home: renderHome, cat: renderCat, search: renderSearch, dos: renderDossier, hub: renderHub };
+  /* A4.1: Multiverso / Nexus / Percorso — modulo lazy atlante2/a4.js */
+  var A4L = 0, A4Q = [];
+  function withA4(fn) {
+    if (W.tvaA4) return fn(W.tvaA4); A4Q.push(fn); if (A4L) return; A4L = 1; if (!D.getElementById('a4-css')) { var lk = D.createElement('link'); lk.id = 'a4-css'; lk.rel = 'stylesheet'; lk.href = BASE + 'a4.css'; D.head.appendChild(lk); }
+    var sc = D.createElement('script'); sc.src = BASE + 'a4.js'; sc.async = true; sc.onload = function () { var q = A4Q.splice(0); q.forEach(function (f) { f(W.tvaA4); }); }; sc.onerror = function () { A4L = 0; A4Q.length = 0; frame(); body.appendChild(h('div', 'empty', 'Modulo Multiverso non disponibile.')); }; D.head.appendChild(sc);
+  }
+  function a4view(k) { return function () { frame(); body.appendChild(h('div', 'a3-load', 'Caricamento…')); var st = A3(); withA4(function (m) { if (ST.a3 !== st) return; m[k](); }); }; }
+  W.tvaA3Ctx = function () { return { h: h, btn: btn, BY: BY, ORD: ORD, emblem: emblem, paintAny: paintAny, paintRit: paintRit, tile: tile, uniNome: uniNome, uniCont: uniCont, openId: openId, frame: frame, api: api, search: search, get: get, A3: A3, body: body, get IDX() { return IDX; } }; };
+  var VIEWS = { rit: renderRit, home: renderHome, cat: renderCat, search: renderSearch, dos: renderDossier, hub: renderHub, mv: a4view('mv'), nx: a4view('nx'), pc: a4view('pc') };
   W.tvaA3 = {
     render: function () { ensure(function () { (VIEWS[A3().v] || renderHome)(); reveal(body); }); },
-    label: function (s) { var a = s.a3 || {}; if (a.v === 'dos' || a.v === 'hub') return (BY[a.id] && BY[a.id].n) || 'Dossier'; if (a.v === 'cat') return 'Catalogo'; if (a.v === 'rit') return 'Ritratti privati'; if (a.v === 'search') return 'Ricerca'; return 'Atlante 2.0'; },
-    open: openId, search: function (q) { return IDX ? search(q) : null; }, state: function () { return { idx: !!IDX, shards: Object.keys(SH).length }; }, ensure: ensure
+    label: function (s) { var a = s.a3 || {}; if (a.v === 'dos' || a.v === 'hub') return (BY[a.id] && BY[a.id].n) || 'Dossier'; if (a.v === 'cat') return 'Catalogo'; if (a.v === 'rit') return 'Ritratti privati'; if (a.v === 'mv') return 'Multiverso'; if (a.v === 'nx') return 'Nexus'; if (a.v === 'pc') return 'Percorso'; if (a.v === 'search') return 'Ricerca'; return 'Atlante 2.0'; },
+    ctx: function () { return W.tvaA3Ctx(); }, open: openId, search: function (q) { return IDX ? search(q) : null; }, state: function () { return { idx: !!IDX, shards: Object.keys(SH).length }; }, ensure: ensure
   };
   if (W.tvaA3Boot) W.tvaA3Boot();
 })();

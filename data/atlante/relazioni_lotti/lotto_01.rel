@@ -1,0 +1,260 @@
+# Lotto 01 - prima espansione editoriale (MCU, Spider-Man, X-Men, Deadpool, Wolverine, Fantastici Quattro, Defenders).
+# Formato: tipo|da|a|qualifica|chiave-fonte[+chiave2]|nota     (ID senza prefisso "id-"; organizzazioni con prefisso "org-")
+# tipo: gen=genitore (da=genitore) fra=fratelli con=coniugi par=relazione sentimentale all=alleanza ami=amicizia riv=rivalita men=mentorato (da=mentore) suc=successione (da=erede) tra=tradimento (da=chi tradisce) cpt=controparte
+# Lo stato 'verificata' NON e' scritto qui: lo assegna il registro delle verifiche documentali (_verifiche.json); qui ci sono solo le AFFERMAZIONI da verificare sulla fonte.
+@src im1 https://en.wikipedia.org/wiki/Iron_Man_(2008_film)
+@src im2 https://en.wikipedia.org/wiki/Iron_Man_2
+@src im3 https://en.wikipedia.org/wiki/Iron_Man_3
+@src av1 https://en.wikipedia.org/wiki/The_Avengers_(2012_film)
+@src th1 https://en.wikipedia.org/wiki/Thor_(film)
+@src th2 https://en.wikipedia.org/wiki/Thor:_The_Dark_World
+@src th3 https://en.wikipedia.org/wiki/Thor:_Ragnarok
+@src ca1 https://en.wikipedia.org/wiki/Captain_America:_The_First_Avenger
+@src ca2 https://en.wikipedia.org/wiki/Captain_America:_The_Winter_Soldier
+@src ca3 https://en.wikipedia.org/wiki/Captain_America:_Civil_War
+@src bp1 https://en.wikipedia.org/wiki/Black_Panther_(film)
+@src bp2 https://en.wikipedia.org/wiki/Black_Panther:_Wakanda_Forever
+@src gg1 https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_(film)
+@src gg2 https://en.wikipedia.org/wiki/Guardians_of_the_Galaxy_Vol._2
+@src am1 https://en.wikipedia.org/wiki/Ant-Man_(film)
+@src sm1 https://en.wikipedia.org/wiki/Spider-Man:_Homecoming
+@src sm2 https://en.wikipedia.org/wiki/Spider-Man:_Far_From_Home
+@src nwh https://en.wikipedia.org/wiki/Spider-Man:_No_Way_Home
+@src ds1 https://en.wikipedia.org/wiki/Doctor_Strange_(2016_film)
+@src bw1 https://en.wikipedia.org/wiki/Black_Widow_(2021_film)
+@src hk1 https://en.wikipedia.org/wiki/Hawkeye_(miniseries)
+@src sc1 https://en.wikipedia.org/wiki/Shang-Chi_and_the_Legend_of_the_Ten_Rings
+@src wv1 https://en.wikipedia.org/wiki/WandaVision
+@src mom https://en.wikipedia.org/wiki/Doctor_Strange_in_the_Multiverse_of_Madness
+@src sr1 https://en.wikipedia.org/wiki/Spider-Man_(2002_film)
+@src sr2 https://en.wikipedia.org/wiki/Spider-Man_2
+@src sr3 https://en.wikipedia.org/wiki/Spider-Man_3
+@src sg1 https://en.wikipedia.org/wiki/The_Amazing_Spider-Man_(film)
+@src sg2 https://en.wikipedia.org/wiki/The_Amazing_Spider-Man_2
+@src vn1 https://en.wikipedia.org/wiki/Venom_(2018_film)
+@src vn2 https://en.wikipedia.org/wiki/Venom:_Let_There_Be_Carnage
+@src xm1 https://en.wikipedia.org/wiki/X-Men_(film)
+@src xm2 https://en.wikipedia.org/wiki/X2_(film)
+@src xm3 https://en.wikipedia.org/wiki/X-Men:_The_Last_Stand
+@src xfc https://en.wikipedia.org/wiki/X-Men:_First_Class
+@src xdp https://en.wikipedia.org/wiki/X-Men:_Days_of_Future_Past
+@src xap https://en.wikipedia.org/wiki/X-Men:_Apocalypse
+@src wo1 https://en.wikipedia.org/wiki/X-Men_Origins:_Wolverine
+@src wo2 https://en.wikipedia.org/wiki/The_Wolverine_(film)
+@src lg1 https://en.wikipedia.org/wiki/Logan_(film)
+@src dp1 https://en.wikipedia.org/wiki/Deadpool_(film)
+@src dp2 https://en.wikipedia.org/wiki/Deadpool_2
+@src dp3 https://en.wikipedia.org/wiki/Deadpool_%26_Wolverine
+@src ff1 https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)
+@src ff2 https://en.wikipedia.org/wiki/Fantastic_Four:_Rise_of_the_Silver_Surfer
+@src jj1 https://en.wikipedia.org/wiki/Jessica_Jones_(TV_series)
+@src lc1 https://en.wikipedia.org/wiki/Luke_Cage_(TV_series)
+@src if1 https://en.wikipedia.org/wiki/Iron_Fist_(TV_series)
+@src df1 https://en.wikipedia.org/wiki/The_Defenders_(miniseries)
+@src pn1 https://en.wikipedia.org/wiki/The_Punisher_(TV_series)
+@src as1 https://en.wikipedia.org/wiki/Agents_of_S.H.I.E.L.D.
+# --- Stark / Iron Man ---
+gen|howard-stark|iron-man|padre|im2+ca3|Howard e Maria Stark sono i genitori di Tony
+gen|maria-stark|iron-man|madre|ca3|
+tra|obadiah-stane|iron-man||im1|Stane tradisce Tony
+riv|obadiah-stane|iron-man||im1|
+riv|ivan-vanko-whiplash|iron-man||im2|
+riv|aldrich-killian|iron-man||im3|
+ami|james-rhodes-war-machine|iron-man||im1+im2|
+all|james-rhodes-war-machine|iron-man||im2|
+par|pepper-potts|iron-man|relazione sentimentale|im2+im3|
+men|iron-man|peter-parker-mcu||sm1|Tony mentore di Peter
+riv|iron-man|steve-rogers-capitan-america||ca3|
+ami|iron-man|steve-rogers-capitan-america||av1|
+ami|iron-man|hulk||av1|
+all|nick-fury|iron-man||av1|
+# --- Thor / Asgard ---
+gen|odino|thor|padre|th1|
+gen|odino|loki|padre adottivo|th1|
+gen|frigga|thor|madre|th1|
+gen|frigga|loki|madre adottiva|th1|
+fra|thor|loki||th1|
+par|thor|jane-foster-mighty-thor|relazione sentimentale|th1+th2|
+gen|odino|hela|padre|th3|
+fra|thor|hela||th3|
+riv|hela|thor||th3|
+riv|loki|thor||av1|
+tra|loki|thor||th2|Loki tradisce Thor
+all|thor|valchiria||th3|
+ami|thor|hulk||th3|
+all|thor|loki||th3|
+# --- Capitan America ---
+ami|steve-rogers-capitan-america|bucky-barnes-soldato-d-inverno||ca1+ca2|
+par|steve-rogers-capitan-america|peggy-carter-captain-carter|relazione sentimentale|ca1|
+riv|teschio-rosso|steve-rogers-capitan-america||ca1|
+ami|sam-wilson-capitan-america|steve-rogers-capitan-america||ca2|
+all|sam-wilson-capitan-america|steve-rogers-capitan-america||ca2|
+all|natasha-romanoff|steve-rogers-capitan-america||ca2|
+riv|zemo|steve-rogers-capitan-america||ca3|
+tra|jasper-sitwell|nick-fury||ca2|Sitwell e' un agente HYDRA infiltrato
+all|sharon-carter|steve-rogers-capitan-america||ca3|
+# --- Black Panther / Wakanda ---
+gen|t-chaka|t-challa-black-panther|padre|ca3+bp1|
+gen|ramonda|t-challa-black-panther|madre|bp1|
+gen|ramonda|shuri|madre|bp1|
+gen|t-chaka|shuri|padre|bp1|
+suc|t-challa-black-panther|t-chaka||bp1|T'Challa succede al padre come re
+suc|shuri|t-challa-black-panther||bp2|Shuri assume il mantello di Black Panther
+riv|erik-killmonger|t-challa-black-panther||bp1|
+all|ulysses-klaue|erik-killmonger||bp1|
+par|nakia|t-challa-black-panther|relazione sentimentale|bp1|
+all|okoye|t-challa-black-panther||bp1|
+ami|okoye|nakia||bp1|
+# --- Guardiani della Galassia ---
+gen|thanos|gamora|padre adottivo|gg1|
+gen|thanos|nebula|padre adottivo|gg1|
+fra|gamora|nebula||gg1|
+riv|nebula|gamora||gg1+gg2|
+all|peter-quill-star-lord|gamora||gg1|
+ami|rocket|groot-originale||gg1|
+all|peter-quill-star-lord|rocket||gg1|
+all|peter-quill-star-lord|drax||gg1|
+all|peter-quill-star-lord|groot-originale||gg1|
+riv|ronan-l-accusatore|peter-quill-star-lord||gg1|
+all|mantis|peter-quill-star-lord||gg2|
+riv|ego|peter-quill-star-lord||gg2|
+# --- Ant-Man / Pym ---
+men|hank-pym|scott-lang-ant-man||am1|
+riv|darren-cross|hank-pym||am1|
+tra|darren-cross|hank-pym||am1|Cross tradisce Pym
+con|hank-pym|janet-van-dyne||am1|
+all|hope-van-dyne|scott-lang-ant-man||am1|
+# --- Spider-Man MCU ---
+riv|adrian-toomes-avvoltoio|peter-parker-mcu||sm1|
+ami|ned-leeds|peter-parker-mcu||sm1|
+par|michelle-jones-watson-mcu|peter-parker-mcu|relazione sentimentale|sm2|
+riv|quentin-beck-mysterio|peter-parker-mcu||sm2|
+tra|quentin-beck-mysterio|iron-man||sm2|Beck era un ex dipendente di Stark
+all|nick-fury|peter-parker-mcu||sm2|
+cpt|peter-parker-mcu|peter-parker-raimi||nwh|Controparti documentate in No Way Home
+cpt|peter-parker-mcu|peter-parker-garfield||nwh|
+cpt|peter-parker-raimi|peter-parker-garfield||nwh|
+# --- Strange / magia ---
+men|l-antico|stephen-strange||ds1|
+all|stephen-strange|wong||ds1|
+riv|karl-mordo|stephen-strange||ds1|
+all|karl-mordo|stephen-strange||ds1|
+ami|stephen-strange|wong||ds1|
+# --- Vedova Nera / Hawkeye ---
+fra|natasha-romanoff|yelena-belova||bw1|
+men|clint-barton|kate-bishop||hk1|
+all|clint-barton|kate-bishop||hk1|
+ami|natasha-romanoff|clint-barton||av1|
+# --- Wanda ---
+par|wanda-maximoff|visione|relazione sentimentale|wv1|
+gen|wanda-maximoff|teen-billy-maximoff|madre|wv1+mom|
+riv|agatha-harkness|wanda-maximoff||wv1|
+# --- Shang-Chi ---
+fra|shang-chi|xialing||sc1|
+gen|wenwu|shang-chi|padre|sc1|
+gen|wenwu|xialing|padre|sc1|
+riv|shang-chi|wenwu||sc1|
+# --- Agents of S.H.I.E.L.D. ---
+tra|grant-ward-hive|phil-coulson||as1|Ward tradisce S.H.I.E.L.D. passando a HYDRA
+riv|grant-ward-hive|phil-coulson||as1|
+all|melinda-may|phil-coulson||as1|
+all|daisy-johnson|phil-coulson||as1|
+men|phil-coulson|daisy-johnson||as1|
+# --- Spider-Man Raimi ---
+ami|peter-parker-raimi|harry-osborn-green-goblin||sr1|
+gen|norman-osborn-green-goblin|harry-osborn-green-goblin|padre|sr1|
+riv|norman-osborn-green-goblin|peter-parker-raimi||sr1|
+par|mary-jane-watson-raimi|peter-parker-raimi|relazione sentimentale|sr1+sr2|
+par|mary-jane-watson-raimi|harry-osborn-green-goblin|relazione sentimentale|sr3|
+riv|harry-osborn-green-goblin|peter-parker-raimi||sr2+sr3|
+riv|otto-octavius-doc-ock|peter-parker-raimi||sr2|
+riv|flint-marko-sandman|peter-parker-raimi||sr3|
+riv|eddie-brock-venom|peter-parker-raimi||sr3|
+# --- Spider-Man Garfield ---
+par|gwen-stacy-spider-woman|peter-parker-garfield|relazione sentimentale|sg1+sg2|
+gen|capitano-stacy|gwen-stacy-spider-woman|padre|sg1|
+riv|max-dillon-electro|peter-parker-garfield||sg2|
+ami|harry-osborn-webb|peter-parker-garfield||sg2|
+riv|harry-osborn-webb|peter-parker-garfield||sg2|
+riv|curt-connors-lizard|peter-parker-garfield||sg1|
+# --- Sony / Venom ---
+par|eddie-brock-venom|anne-weying|relazione sentimentale|vn1|
+riv|carlton-drake-riot|eddie-brock-venom||vn1|
+riv|cletus-kasady-carnage|eddie-brock-venom||vn2|
+par|cletus-kasady-carnage|frances-barrison-shriek|relazione sentimentale|vn2|
+# --- X-Men (Fox) ---
+ami|charles-xavier-fox|magneto||xfc+xm1|
+riv|charles-xavier-fox|magneto||xfc+xdp|
+men|charles-xavier-fox|ciclope||xm1|
+men|charles-xavier-fox|jean-grey-fenice||xm1|
+men|charles-xavier-fox|rogue||xm1|
+fra|charles-xavier-fox|mystica|fratellastri|xfc|
+all|magneto|mystica||xfc|
+par|ciclope|jean-grey-fenice|relazione sentimentale|xm1+xm2|
+riv|apocalypse|charles-xavier-fox||xap|
+riv|sebastian-shaw|charles-xavier-fox||xfc|
+riv|sebastian-shaw|magneto||xfc|
+riv|william-stryker|charles-xavier-fox||xm2|
+men|charles-xavier-fox|beast||xfc|
+ami|charles-xavier-fox|beast||xfc|
+app|ciclope|org-x-men||xm1|
+app|jean-grey-fenice|org-x-men||xm1|
+app|rogue|org-x-men||xm1|
+app|beast|org-x-men||xm3|
+app|nightcrawler|org-x-men||xm2|
+app|magneto|org-fratellanza-dei-mutanti||xm1|
+app|mystica|org-fratellanza-dei-mutanti||xm1|
+cpt|charles-xavier-fox|professor-x-terra-838||mom|
+# --- Wolverine ---
+fra|wolverine|sabretooth||wo1|
+riv|wolverine|sabretooth||xm1+wo1|
+riv|wolverine|william-stryker||wo1+xm2|
+gen|wolverine|laura-x-23|padre biologico|lg1|
+ami|wolverine|charles-xavier-fox||xm1+lg1|
+men|charles-xavier-fox|wolverine||xm1|
+par|wolverine|jean-grey-fenice|relazione sentimentale|xm3|
+par|wolverine|mariko-yashida|relazione sentimentale|wo2|
+all|wolverine|yukio||wo2|
+riv|wolverine|viper||wo2|
+ami|wolverine|rogue||xm1|
+app|wolverine|org-x-men||xm1|
+app|william-stryker|org-weapon-x||wo1|
+# --- Deadpool ---
+par|wade-wilson-deadpool|vanessa|relazione sentimentale|dp1|
+ami|wade-wilson-deadpool|colossus||dp1|
+ami|wade-wilson-deadpool|negasonic-teenage-warhead||dp1|
+riv|wade-wilson-deadpool|cable||dp2|
+all|wade-wilson-deadpool|cable||dp2|
+ami|wade-wilson-deadpool|peter||dp2+dp3|
+all|wade-wilson-deadpool|domino||dp2|
+all|wolverine|wade-wilson-deadpool||dp3|
+# --- Fantastici Quattro ---
+ami|ben-grimm|reed-richards||ff1|
+riv|victor-von-doom|reed-richards||ff1|
+con|reed-richards|sue-storm||ff2|
+ami|johnny-storm-human-torch|ben-grimm||ff1|
+all|silver-surfer|johnny-storm-human-torch||ff2|
+app|reed-richards|org-fantastic-four||ff1|
+app|sue-storm|org-fantastic-four||ff1|
+app|johnny-storm-human-torch|org-fantastic-four||ff1|
+app|ben-grimm|org-fantastic-four||ff1|
+# --- Defenders (MCU Netflix) ---
+ami|jessica-jones|trish-walker||jj1|
+riv|kilgrave|jessica-jones||jj1|
+par|jessica-jones|luke-cage|relazione sentimentale|jj1+lc1|
+riv|cottonmouth|luke-cage||lc1|
+riv|mariah-dillard|luke-cage||lc1|
+all|misty-knight|luke-cage||lc1|
+riv|bushmaster|luke-cage||lc1|
+par|danny-rand-iron-fist|colleen-wing|relazione sentimentale|if1|
+all|colleen-wing|danny-rand-iron-fist||if1+df1|
+ami|danny-rand-iron-fist|luke-cage||df1|
+riv|alexandra-the-hand|danny-rand-iron-fist||df1|
+app|jessica-jones|org-defenders||df1|
+app|luke-cage|org-defenders||df1|
+app|danny-rand-iron-fist|org-defenders||df1|
+riv|billy-russo-jigsaw|frank-castle-punisher||pn1|
+tra|billy-russo-jigsaw|frank-castle-punisher||pn1|Russo tradisce Frank e la sua unita'
+all|karen-page|frank-castle-punisher||pn1|
+ami|foggy-nelson|karen-page||df1|
+gen|laufey|loki|padre biologico|th1|Re dei Giganti di Ghiaccio

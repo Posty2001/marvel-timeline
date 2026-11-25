@@ -300,6 +300,9 @@
   ],
   [
    "id-harry-osborn-ynfsm"
+  ],
+  [
+   "id-laufey"
   ]
  ],
  "identita": [
@@ -4104,6 +4107,27 @@
      "tmdb_id": 284052,
      "tipo": "movie",
      "titolo": "Doctor Strange",
+     "gruppo": "Canone"
+    }
+   ],
+   "esclusi_continuita": [],
+   "ambigui": []
+  },
+  {
+   "id": "id-laufey",
+   "nome": "Laufey",
+   "prompt": "Laufey, a Marvel character",
+   "generico": true,
+   "pilota": false,
+   "wave1": false,
+   "famiglia": [],
+   "titoli": [
+    {
+     "num": "050",
+     "item": "050",
+     "tmdb_id": 10195,
+     "tipo": "movie",
+     "titolo": "Thor",
      "gruppo": "Canone"
     }
    ],

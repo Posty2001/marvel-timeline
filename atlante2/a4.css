@@ -1,0 +1,43 @@
+/* A4.1 — Multiverso / Nexus / Percorso (solo dentro #atlas2 .a3) */
+.a4-root { padding: 10px 12px 28px; display: flex; flex-direction: column; gap: 10px; }
+.a4-vp { position: relative; height: min(62vh, 520px); min-height: 340px; overflow: hidden; border-radius: 16px; border: 1px solid rgba(227,199,155,.28); background-color: #0a0807; touch-action: none; cursor: grab; contain: layout paint; }
+.a4-vp.a4-full { position: fixed; inset: 0; height: auto; z-index: 60; border-radius: 0; }
+.a4-world { position: absolute; left: 0; top: 0; width: 1400px; height: 1400px; transform-origin: 0 0; will-change: transform; }
+.a4-orb, .a4-edges { position: absolute; left: 0; top: 0; pointer-events: none; }
+.a4-n { position: absolute; transform: translate(-50%,-50%); width: 56px; display: flex; flex-direction: column; align-items: center; gap: 3px; background: none; border: 0; padding: 0; color: #E8DCC4; cursor: pointer; }
+.a4-n .em { position: relative; width: 48px; height: 48px; border-radius: 50%; overflow: hidden; border: 1.5px solid rgba(227,199,155,.7); background: #1a1410; display: block; }
+.a4-n .em svg { width: 100%; height: 100%; display: block; }
+.a4-n.sun .em { width: 66px; height: 66px; border-color: #F59A23; box-shadow: 0 0 18px rgba(245,154,35,.45); }
+.a4-n.tva .em { border-style: dashed; border-color: #9fe0d4; }
+.a4-n.ed .em { border-style: dotted; opacity: .85; }
+.a4-n.ca .em { border-color: rgba(255,240,210,.45); border-style: dashed; opacity: .9; }
+.a4-n .lb { font-weight: 600; font-size: 10px; line-height: 1.15; max-width: 76px; text-align: center; text-shadow: 0 1px 3px #000; overflow-wrap: anywhere; hyphens: auto; }
+.a4-n:focus-visible .em { outline: 2px solid #F59A23; outline-offset: 2px; }
+.a4-ctl { position: absolute; right: 8px; bottom: 8px; display: flex; flex-direction: column; gap: 6px; z-index: 5; }
+.a4-ctl button { width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(227,199,155,.5); background: rgba(14,11,8,.78); color: #E3C79B; font-weight: 700; font-size: 18px; line-height: 1; }
+.a4-sheet { padding: 14px; border-radius: 14px; border: 1px solid rgba(227,199,155,.3); background: rgba(24,18,12,.92); display: flex; flex-direction: column; gap: 8px; }
+.a4-sheet h2 { margin: 0; font-size: 20px; }
+.a4-pair, .a4-r, .a4-step { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.a4-r { padding: 6px 0; border-bottom: 1px solid rgba(227,199,155,.12); }
+.a4-r .s { flex: 1; min-width: 140px; font-size: 13px; }
+.a4-v { font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid rgba(227,199,155,.35); }
+.a4-v.v0 { border-style: dashed; opacity: .8; } .a4-v.v2 { border-color: #6fd08c; color: #6fd08c; }
+.a4-bar, .a4-tools { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.a4-leg { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 12px; }
+.a4-lg { display: inline-flex; align-items: center; gap: 6px; } .a4-lg i { width: 18px; height: 3px; border-radius: 2px; display: inline-block; }
+.a4-pick { position: relative; } .a4-sug { display: flex; flex-direction: column; border: 1px solid rgba(227,199,155,.3); border-radius: 10px; background: #1a1410; margin-top: 4px; overflow: hidden; }
+.a4-s { text-align: left; padding: 10px 12px; min-height: 44px; background: none; border: 0; border-bottom: 1px solid rgba(227,199,155,.1); color: inherit; font: inherit; }
+.a4-sel { margin: 4px 0 0; font-weight: 700; }
+.a4-path { padding: 12px; border-radius: 14px; border: 1px solid rgba(227,199,155,.3); background: rgba(24,18,12,.7); display: flex; flex-direction: column; gap: 6px; }
+.a4-path h3 { margin: 0 0 4px; font-size: 15px; }
+.a4-step { flex-direction: column; align-items: flex-start; gap: 4px; }
+.a4-e { font-size: 12px; opacity: .9; } .a4-e.ca { color: #E8DCC4; font-style: italic; }
+.a4-out { display: flex; flex-direction: column; gap: 10px; }
+.a4-nxb { width: auto !important; border-radius: 999px !important; padding: 0 12px !important; font-size: 12px !important; right: 54px !important; }
+@media (prefers-reduced-motion: no-preference) { .a4-n .em { transition: transform .15s; } .a4-n:active .em { transform: scale(.94); } }
+
+.a4-tools .chip, .a4-bar .btn { min-height: 34px; padding: 4px 11px; font-size: 13px; }
+.a4-bar .btn { border-radius: 999px; }
+.a4-tools .soft { font-size: 12px; }
+.a4-vp { height: min(66vh, 560px); }
+.a4-sheet[hidden], .a4-sug[hidden] { display: none; }

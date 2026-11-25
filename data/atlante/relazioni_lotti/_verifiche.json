@@ -1,0 +1,185 @@
+{
+ "versione": 1,
+ "esiti": {
+  "rel-6e0b9a0cc7": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Thor_(film)",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-bd36dae512": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Thor_(film)",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-834a0d86c4": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Thor_(film)",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-9a4773481f": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Thor_(film)",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-9ca4f2abaf": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Thor_(film)",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-bbfd87a41b": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Thor_(film)",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-17b8ed3228": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Thor_(film)",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-0d53435f03": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Iron_Man_2",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-72995caef0": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Iron_Man_2",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-4dd54fea2b": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Iron_Man_2",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-813bc7981a": {
+   "esito": "non_confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Iron_Man_2",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-5013126662": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Captain_America:_Civil_War",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-584823748c": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Captain_America:_Civil_War",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-154221ba36": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Captain_America:_Civil_War",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-c084fe2090": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Captain_America:_Civil_War",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-44636a2516": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Captain_America:_Civil_War",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-cb30da49be": {
+   "esito": "non_confermata",
+   "fonte": "https://en.wikipedia.org/wiki/The_Avengers_(2012_film)",
+   "data": "2026-11-26",
+   "nota": "non confermata nel testo della pagina"
+  },
+  "rel-db3771f093": {
+   "esito": "non_confermata",
+   "fonte": "https://en.wikipedia.org/wiki/The_Avengers_(2012_film)",
+   "data": "2026-11-26",
+   "nota": "non confermata nel testo della pagina"
+  },
+  "rel-80a4a28ed3": {
+   "esito": "non_confermata",
+   "fonte": "https://en.wikipedia.org/wiki/The_Avengers_(2012_film)",
+   "data": "2026-11-26",
+   "nota": "non confermata nel testo della pagina"
+  },
+  "rel-25e958eed8": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/The_Avengers_(2012_film)",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-3d0eed4042": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/The_Avengers_(2012_film)",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-4e7102e64e": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Spider-Man:_Homecoming",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-08bcae7c74": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Spider-Man:_Homecoming",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-7c72d578a5": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Spider-Man:_Homecoming",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-0b7a120135": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Thor:_Ragnarok",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-6bde6d8af2": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Thor:_Ragnarok",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-0d25493a6e": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Thor:_Ragnarok",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-ed3c0ceb17": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Thor:_Ragnarok",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-4f19a4557f": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Thor:_Ragnarok",
+   "data": "2026-11-26",
+   "nota": ""
+  },
+  "rel-5c3dc20814": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Thor:_Ragnarok",
+   "data": "2026-11-26",
+   "nota": ""
+  }
+ }
+}

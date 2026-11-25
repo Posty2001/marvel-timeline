@@ -194,6 +194,14 @@ def costruisci():
                    note="Separato dalle identita' Raimi e Webb per decisione dell'utente (25/11/2026). I campi della scheda condivisa restano attribuiti all'identita' Raimi."))
     rel('id-harry-osborn-green-goblin', 'id-harry-osborn-ynfsm', 'stessa_scheda_atlante', 'stessa_scheda_atlante', False, ['int-identita', 'int-mv'], "dati interni: la scheda char-harry-osborn-green-goblin copre piu' continuita'; nessuna parentela narrativa dichiarata", "Continuita' distinte: identita' distinte, non unificate.")
     rel('id-harry-osborn-webb', 'id-harry-osborn-ynfsm', 'stessa_scheda_atlante', 'stessa_scheda_atlante', False, ['int-identita', 'int-mv'], "dati interni: la scheda char-harry-osborn-green-goblin copre piu' continuita'; nessuna parentela narrativa dichiarata", "Continuita' distinte: identita' distinte, non unificate.")
+    # Laufey: dossier autonomo (richiesta dell'utente, 26/11/2026). Nessuna scheda nell'Atlante classico (la scheda di Loki lo cita solo come testo: «Padre biologico: Laufey»):
+    # identita' nuova nell'MCU, con i soli dati verificati su fonti pubbliche (interprete e film). Nessun campo biografico inventato.
+    lf = ident('id-laufey', 'Laufey', 'identita', 'uni-earth-199999-mcu', [], None, ['Colm Feore'], ['int-identita'], apparizioni=['050'],
+               verifica="verificata sulle fonti consultate il 26/11/2026 (Wikipedia: Thor (film)): re dei Giganti di Ghiaccio di Jotunheim, padre biologico di Loki, interpretato da Colm Feore, appare in Thor (N°050); nessun altro dato attribuito",
+               note="Dossier autonomo: nessuna scheda nell'Atlante classico (citato solo come testo nel campo RELAZIONI della scheda di Loki). Apparizione limitata a Thor (2011) secondo la fonte consultata.")
+    lf['fonte'] = ['https://en.wikipedia.org/wiki/Thor_(film)', 'https://en.wikipedia.org/wiki/Laufey_(Marvel_Comics)']
+    lf['senza_scheda_classica'] = True
+    I.append(lf)
     # Peter (franchise Deadpool): continuita' Fox-Verse (Earth-10005), come Wade Wilson (stesse apparizioni 024/117 nella guida).
     # Fonti consultate il 25/11/2026: Marvel Movies Wiki (Peter Wisdom: «Earth-10005», Deadpool 2 prima apparizione, Deadpool & Wolverine), Marvel Cinematic Universe Wiki (D&W: Earth-10005), GamesRadar (riappare in D&W nello stesso concessionario di Wade).
     pt = next(i for i in I if i['id'] == 'id-peter'); pt['universo'] = 'uni-earth-10005-fox-verse'
@@ -241,7 +249,7 @@ def verifica():
     IDS = {i['id'] for i in r['identita']} | {h['id'] for h in r['hub']} | {m['id'] for m in r['mantelli']} | {s['id'] for s in r['segnaposto']}
     chk('ogni redirect punta a entita\' esistenti', all(t in IDS for v in r['redirect'].values() for t in v['verso']))
     chk('id entita\' univoci', len(IDS) == len(r['identita']) + len(r['hub']) + len(r['mantelli']) + len(r['segnaposto']))
-    chk('pagine_principali esistono come schede', all(i['pagina_principale'] in PERS for i in r['identita']))
+    chk('pagine_principali esistono come schede', all(i['pagina_principale'] in PERS for i in r['identita'] if not i.get('senza_scheda_classica')))
     chk('hub, mantelli e segnaposto NON contano come personaggi', all(not x['conta_come_personaggio'] for x in r['hub'] + r['mantelli'] + r['segnaposto']))
     chk('membri degli hub esistono', all(m in IDS for h in r['hub'] for m in h['membri']))
     chk('hub Peter: 6 membri dichiarati = 6 identita\' elencate', len(next(h for h in r['hub'] if h['id'] == 'hub-peter-parker')['membri']) == 6)

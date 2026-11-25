@@ -7926,6 +7926,33 @@
    ],
    "verifica": "parziale: continuita' dichiarata da mvMapData (N°120 in uni-your-friendly-neighborhood-spider-man-verse) e dalla scheda Atlante (UNIVERSI); nessun dato biografico specifico attribuito",
    "nota": "Separato dalle identita' Raimi e Webb per decisione dell'utente (25/11/2026). I campi della scheda condivisa restano attribuiti all'identita' Raimi."
+  },
+  {
+   "id": "id-laufey",
+   "nome": "Laufey",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-earth-199999-mcu",
+   "pagine": [],
+   "pagina_principale": null,
+   "interpreti": [
+    "Colm Feore"
+   ],
+   "apparizioni": [
+    "050"
+   ],
+   "incarnazioni": [],
+   "alias": [],
+   "fonte": [
+    "https://en.wikipedia.org/wiki/Thor_(film)",
+    "https://en.wikipedia.org/wiki/Laufey_(Marvel_Comics)"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Wikipedia: Thor (film)): re dei Giganti di Ghiaccio di Jotunheim, padre biologico di Loki, interpretato da Colm Feore, appare in Thor (N°050); nessun altro dato attribuito",
+   "nota": "Dossier autonomo: nessuna scheda nell'Atlante classico (citato solo come testo nel campo RELAZIONI della scheda di Loki). Apparizione limitata a Thor (2011) secondo la fonte consultata.",
+   "senza_scheda_classica": true
   }
  ],
  "hub": [
@@ -10953,8 +10980,8 @@
  "conteggi": {
   "pagine_char": 304,
   "pagine_che_contavano": 300,
-  "identita_totali": 298,
-  "identita_che_contano": 298,
+  "identita_totali": 299,
+  "identita_che_contano": 299,
   "hub": 2,
   "mantelli": 2,
   "segnaposto": 7,
