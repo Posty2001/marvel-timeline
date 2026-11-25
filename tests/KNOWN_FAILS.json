@@ -94,5 +94,12 @@
    "localStorage: nessuna chiave nuova oltre alla cache asset ['marve"
   ],
   "why": "FAIL di baseline A0 (25/11/2026), non causato da Atlante: TVA Live scrive/migra la chiave 'marvel-ultimate-timeline-live-state-v1' al caricamento; il test pre-esistente la considera una scrittura inattesa. Indipendente dalle fasi A0/A1 (index.html invariato); da riallineare in un intervento separato"
+ },
+ "fa2_test": {
+  "checks": [
+   "migrazione rifiutata: dati locali identici",
+   "migrazione: dati locali"
+  ],
+  "why": "FAIL osservati il 25/11/2026 anche sul commit precedente ad A3 (8b6e667, worktree pulito): stessi due controlli in due esecuzioni isolate, quindi non causati da A3. Probabile dipendenza temporale/ambiente dei mock Firebase; da analizzare in un intervento separato. Il controllo «conflitto: dati locali del dispositivo 2» e' instabile (presente solo in alcune esecuzioni)."
  }
 }

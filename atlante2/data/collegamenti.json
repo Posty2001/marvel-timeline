@@ -1,0 +1,2133 @@
+{
+ "verificate": [
+  {
+   "da": "char-adrian-toomes-avvoltoio",
+   "da_nome": "Adrian Toomes/Avvoltoio",
+   "a_pagina": "char-peter-parker",
+   "origine": "link scheda",
+   "sorgente_identita": "id-adrian-toomes-avvoltoio",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "075"
+   ],
+   "identita": "id-peter-parker-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "075"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°075"
+  },
+  {
+   "da": "char-bonnie-lopez",
+   "da_nome": "Bonnie Lopez",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "link scheda",
+   "sorgente_identita": "id-bonnie-lopez",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "116"
+   ],
+   "identita": "id-fisk-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "116"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°116"
+  },
+  {
+   "da": "char-clint-barton",
+   "da_nome": "Clint Barton/Occhio di Falco",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "link scheda",
+   "sorgente_identita": "id-clint-barton",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "051",
+    "089",
+    "100"
+   ],
+   "identita": "id-fisk-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "100"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°100"
+  },
+  {
+   "da": "char-curt-connors-lizard",
+   "da_nome": "Curt Connors/Lizard",
+   "a_pagina": "char-peter-parker",
+   "origine": "link scheda",
+   "sorgente_identita": "id-curt-connors-lizard",
+   "sorgente_universo": "uni-earth-120703-garfield-verse",
+   "sorgente_apparizioni": [
+    "004"
+   ],
+   "identita": "id-peter-parker-garfield",
+   "proposta_universo": "uni-earth-120703-garfield-verse",
+   "apparizioni_comuni": [
+    "004"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-120703-garfield-verse); apparizioni comuni: N°004"
+  },
+  {
+   "da": "char-capitano-stacy",
+   "da_nome": "capitano Stacy",
+   "a_pagina": "char-peter-parker",
+   "origine": "link scheda",
+   "sorgente_identita": "id-capitano-stacy",
+   "sorgente_universo": "uni-earth-120703-garfield-verse",
+   "sorgente_apparizioni": [
+    "004"
+   ],
+   "identita": "id-peter-parker-garfield",
+   "proposta_universo": "uni-earth-120703-garfield-verse",
+   "apparizioni_comuni": [
+    "004"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-120703-garfield-verse); apparizioni comuni: N°004"
+  },
+  {
+   "da": "char-eddie-brock-venom",
+   "da_nome": "Eddie Brock/Venom",
+   "a_pagina": "char-peter-parker",
+   "origine": "link scheda",
+   "sorgente_identita": "id-eddie-brock-venom",
+   "sorgente_universo": "uni-earth-96283-raimi-verse",
+   "sorgente_apparizioni": [
+    "003",
+    "006",
+    "007",
+    "011"
+   ],
+   "identita": "id-peter-parker-raimi",
+   "proposta_universo": "uni-earth-96283-raimi-verse",
+   "apparizioni_comuni": [
+    "003"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-96283-raimi-verse); apparizioni comuni: N°003"
+  },
+  {
+   "da": "char-flint-marko-sandman",
+   "da_nome": "Flint Marko/Sandman",
+   "a_pagina": "char-peter-parker",
+   "origine": "link scheda",
+   "sorgente_identita": "id-flint-marko-sandman",
+   "sorgente_universo": "uni-earth-96283-raimi-verse",
+   "sorgente_apparizioni": [
+    "003"
+   ],
+   "identita": "id-peter-parker-raimi",
+   "proposta_universo": "uni-earth-96283-raimi-verse",
+   "apparizioni_comuni": [
+    "003"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-96283-raimi-verse); apparizioni comuni: N°003"
+  },
+  {
+   "da": "char-foggy-nelson",
+   "da_nome": "Foggy Nelson",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "link scheda",
+   "sorgente_identita": "id-foggy-nelson",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "060"
+   ],
+   "identita": "id-fisk-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "060"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°060"
+  },
+  {
+   "da": "char-gwen-stacy-spider-woman",
+   "da_nome": "Gwen Stacy/Spider-Woman",
+   "a_pagina": "char-peter-parker",
+   "origine": "link scheda",
+   "sorgente_identita": "id-gwen-stacy-spider-woman",
+   "sorgente_universo": "uni-earth-120703-garfield-verse",
+   "sorgente_apparizioni": [
+    "004",
+    "005",
+    "025",
+    "026"
+   ],
+   "identita": "id-peter-parker-garfield",
+   "proposta_universo": "uni-earth-120703-garfield-verse",
+   "apparizioni_comuni": [
+    "004",
+    "005"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-120703-garfield-verse); apparizioni comuni: N°004, N°005"
+  },
+  {
+   "da": "char-karen-page",
+   "da_nome": "Karen Page",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "link scheda",
+   "sorgente_identita": "id-karen-page",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "060",
+    "074",
+    "082",
+    "122"
+   ],
+   "identita": "id-fisk-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "060",
+    "082",
+    "122"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°060, N°082, N°122"
+  },
+  {
+   "da": "char-kate-bishop",
+   "da_nome": "Kate Bishop",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "link scheda",
+   "sorgente_identita": null,
+   "sorgente_universo": null,
+   "sorgente_apparizioni": [],
+   "identita": "id-fisk-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [],
+   "esito": "non confermata",
+   "prova": ""
+  },
+  {
+   "da": "char-mj",
+   "da_nome": "MJ",
+   "a_pagina": "char-peter-parker",
+   "origine": "link scheda",
+   "sorgente_identita": "id-michelle-jones-watson-mcu",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "090",
+    "132"
+   ],
+   "identita": "id-peter-parker-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "090",
+    "132"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°090, N°132"
+  },
+  {
+   "da": "char-mary-jane",
+   "da_nome": "Mary Jane",
+   "a_pagina": "char-peter-parker",
+   "origine": "link scheda",
+   "sorgente_identita": "id-mary-jane-watson-raimi",
+   "sorgente_universo": "uni-earth-96283-raimi-verse",
+   "sorgente_apparizioni": [
+    "001",
+    "002",
+    "003"
+   ],
+   "identita": "id-peter-parker-raimi",
+   "proposta_universo": "uni-earth-96283-raimi-verse",
+   "apparizioni_comuni": [
+    "001",
+    "002",
+    "003"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-96283-raimi-verse); apparizioni comuni: N°001, N°002, N°003"
+  },
+  {
+   "da": "char-mary-jane-watson",
+   "da_nome": "Mary Jane Watson",
+   "a_pagina": "char-peter-parker",
+   "origine": "link scheda",
+   "sorgente_identita": "id-mary-jane-watson-raimi",
+   "sorgente_universo": "uni-earth-96283-raimi-verse",
+   "sorgente_apparizioni": [
+    "001",
+    "002",
+    "003"
+   ],
+   "identita": "id-peter-parker-raimi",
+   "proposta_universo": "uni-earth-96283-raimi-verse",
+   "apparizioni_comuni": [
+    "001",
+    "002",
+    "003"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-96283-raimi-verse); apparizioni comuni: N°001, N°002, N°003"
+  },
+  {
+   "da": "char-max-dillon-electro",
+   "da_nome": "Max Dillon/Electro",
+   "a_pagina": "char-peter-parker",
+   "origine": "link scheda",
+   "sorgente_identita": "id-max-dillon-electro",
+   "sorgente_universo": "uni-earth-120703-garfield-verse",
+   "sorgente_apparizioni": [
+    "005"
+   ],
+   "identita": "id-peter-parker-garfield",
+   "proposta_universo": "uni-earth-120703-garfield-verse",
+   "apparizioni_comuni": [
+    "005"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-120703-garfield-verse); apparizioni comuni: N°005"
+  },
+  {
+   "da": "char-maya-lopez-echo",
+   "da_nome": "Maya Lopez/Echo",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "link scheda",
+   "sorgente_identita": "id-maya-lopez-echo",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "116"
+   ],
+   "identita": "id-fisk-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "116"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°116"
+  },
+  {
+   "da": "char-ned-leeds",
+   "da_nome": "Ned Leeds",
+   "a_pagina": "char-peter-parker",
+   "origine": "link scheda",
+   "sorgente_identita": "id-ned-leeds",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "075",
+    "132"
+   ],
+   "identita": "id-peter-parker-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "075",
+    "132"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°075, N°132"
+  },
+  {
+   "da": "char-otto-octavius-doc-ock",
+   "da_nome": "Otto Octavius/Doc Ock",
+   "a_pagina": "char-peter-parker",
+   "origine": "link scheda",
+   "sorgente_identita": "id-otto-octavius-doc-ock",
+   "sorgente_universo": "uni-earth-96283-raimi-verse",
+   "sorgente_apparizioni": [
+    "002"
+   ],
+   "identita": "id-peter-parker-raimi",
+   "proposta_universo": "uni-earth-96283-raimi-verse",
+   "apparizioni_comuni": [
+    "002"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-96283-raimi-verse); apparizioni comuni: N°002"
+  },
+  {
+   "da": "char-quentin-beck-mysterio",
+   "da_nome": "Quentin Beck/Mysterio",
+   "a_pagina": "char-peter-parker",
+   "origine": "link scheda",
+   "sorgente_identita": "id-quentin-beck-mysterio",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "090"
+   ],
+   "identita": "id-peter-parker-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "090"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°090"
+  },
+  {
+   "da": "char-spider-man",
+   "da_nome": "Spider-Man",
+   "a_pagina": "char-peter-parker",
+   "origine": "link scheda",
+   "sorgente_identita": "id-peter-parker-mcu",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "067",
+    "075",
+    "084",
+    "089",
+    "090",
+    "099",
+    "132"
+   ],
+   "identita": "id-peter-parker-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "067",
+    "075",
+    "084",
+    "089",
+    "090",
+    "099",
+    "132"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°067, N°075, N°084, N°089, N°090, N°099, N°132"
+  },
+  {
+   "da": "char-yelena-belova",
+   "da_nome": "Yelena Belova",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "link scheda",
+   "sorgente_identita": "id-yelena-belova",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "069",
+    "100",
+    "123",
+    "132"
+   ],
+   "identita": "id-fisk-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "100"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°100"
+  },
+  {
+   "da": "char-mary-jane-watson",
+   "da_nome": "Mary Jane Watson",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-mary-jane-watson-raimi",
+   "sorgente_universo": "uni-earth-96283-raimi-verse",
+   "sorgente_apparizioni": [
+    "001",
+    "002",
+    "003"
+   ],
+   "identita": "id-peter-parker-raimi",
+   "proposta_universo": "uni-earth-96283-raimi-verse",
+   "apparizioni_comuni": [
+    "001",
+    "002",
+    "003"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-96283-raimi-verse); apparizioni comuni: N°001, N°002, N°003"
+  },
+  {
+   "da": "char-norman-osborn-green-goblin",
+   "da_nome": "Norman Osborn/Green Goblin",
+   "a_pagina": "char-peter-parker-holland-maguire-garfield",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-norman-osborn-green-goblin",
+   "sorgente_universo": "uni-earth-96283-raimi-verse",
+   "sorgente_apparizioni": [
+    "001",
+    "099",
+    "120"
+   ],
+   "identita": "id-peter-parker-raimi",
+   "proposta_universo": "uni-earth-96283-raimi-verse",
+   "apparizioni_comuni": [
+    "001",
+    "099"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-96283-raimi-verse); apparizioni comuni: N°001, N°099"
+  },
+  {
+   "da": "char-mary-jane",
+   "da_nome": "Mary Jane",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-mary-jane-watson-raimi",
+   "sorgente_universo": "uni-earth-96283-raimi-verse",
+   "sorgente_apparizioni": [
+    "001",
+    "002",
+    "003"
+   ],
+   "identita": "id-peter-parker-raimi",
+   "proposta_universo": "uni-earth-96283-raimi-verse",
+   "apparizioni_comuni": [
+    "001",
+    "002",
+    "003"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-96283-raimi-verse); apparizioni comuni: N°001, N°002, N°003"
+  },
+  {
+   "da": "char-otto-octavius-doc-ock",
+   "da_nome": "Otto Octavius/Doc Ock",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-otto-octavius-doc-ock",
+   "sorgente_universo": "uni-earth-96283-raimi-verse",
+   "sorgente_apparizioni": [
+    "002"
+   ],
+   "identita": "id-peter-parker-raimi",
+   "proposta_universo": "uni-earth-96283-raimi-verse",
+   "apparizioni_comuni": [
+    "002"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-96283-raimi-verse); apparizioni comuni: N°002"
+  },
+  {
+   "da": "char-flint-marko-sandman",
+   "da_nome": "Flint Marko/Sandman",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-flint-marko-sandman",
+   "sorgente_universo": "uni-earth-96283-raimi-verse",
+   "sorgente_apparizioni": [
+    "003"
+   ],
+   "identita": "id-peter-parker-raimi",
+   "proposta_universo": "uni-earth-96283-raimi-verse",
+   "apparizioni_comuni": [
+    "003"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-96283-raimi-verse); apparizioni comuni: N°003"
+  },
+  {
+   "da": "char-eddie-brock-venom",
+   "da_nome": "Eddie Brock/Venom",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-eddie-brock-venom",
+   "sorgente_universo": "uni-earth-96283-raimi-verse",
+   "sorgente_apparizioni": [
+    "003",
+    "006",
+    "007",
+    "011"
+   ],
+   "identita": "id-peter-parker-raimi",
+   "proposta_universo": "uni-earth-96283-raimi-verse",
+   "apparizioni_comuni": [
+    "003"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-96283-raimi-verse); apparizioni comuni: N°003"
+  },
+  {
+   "da": "char-gwen-stacy-spider-woman",
+   "da_nome": "Gwen Stacy/Spider-Woman",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-gwen-stacy-spider-woman",
+   "sorgente_universo": "uni-earth-120703-garfield-verse",
+   "sorgente_apparizioni": [
+    "004",
+    "005",
+    "025",
+    "026"
+   ],
+   "identita": "id-peter-parker-garfield",
+   "proposta_universo": "uni-earth-120703-garfield-verse",
+   "apparizioni_comuni": [
+    "004",
+    "005"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-120703-garfield-verse); apparizioni comuni: N°004, N°005"
+  },
+  {
+   "da": "char-curt-connors-lizard",
+   "da_nome": "Curt Connors/Lizard",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-curt-connors-lizard",
+   "sorgente_universo": "uni-earth-120703-garfield-verse",
+   "sorgente_apparizioni": [
+    "004"
+   ],
+   "identita": "id-peter-parker-garfield",
+   "proposta_universo": "uni-earth-120703-garfield-verse",
+   "apparizioni_comuni": [
+    "004"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-120703-garfield-verse); apparizioni comuni: N°004"
+  },
+  {
+   "da": "char-capitano-stacy",
+   "da_nome": "capitano Stacy",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-capitano-stacy",
+   "sorgente_universo": "uni-earth-120703-garfield-verse",
+   "sorgente_apparizioni": [
+    "004"
+   ],
+   "identita": "id-peter-parker-garfield",
+   "proposta_universo": "uni-earth-120703-garfield-verse",
+   "apparizioni_comuni": [
+    "004"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-120703-garfield-verse); apparizioni comuni: N°004"
+  },
+  {
+   "da": "char-max-dillon-electro",
+   "da_nome": "Max Dillon/Electro",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-max-dillon-electro",
+   "sorgente_universo": "uni-earth-120703-garfield-verse",
+   "sorgente_apparizioni": [
+    "005"
+   ],
+   "identita": "id-peter-parker-garfield",
+   "proposta_universo": "uni-earth-120703-garfield-verse",
+   "apparizioni_comuni": [
+    "005"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-120703-garfield-verse); apparizioni comuni: N°005"
+  },
+  {
+   "da": "char-foggy-nelson",
+   "da_nome": "Foggy Nelson",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-foggy-nelson",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "060"
+   ],
+   "identita": "id-fisk-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "060"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°060"
+  },
+  {
+   "da": "char-karen-page",
+   "da_nome": "Karen Page",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-karen-page",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "060",
+    "074",
+    "082",
+    "122"
+   ],
+   "identita": "id-fisk-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "060",
+    "082",
+    "122"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°060, N°082, N°122"
+  },
+  {
+   "da": "char-frank-castle-punisher",
+   "da_nome": "Frank Castle/Punisher",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-frank-castle-punisher",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "065",
+    "074",
+    "086",
+    "122",
+    "128",
+    "129",
+    "132"
+   ],
+   "identita": "id-fisk-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "122",
+    "128"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°122, N°128"
+  },
+  {
+   "da": "char-maya-lopez-echo",
+   "da_nome": "Maya Lopez/Echo",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-maya-lopez-echo",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "116"
+   ],
+   "identita": "id-fisk-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "116"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°116"
+  },
+  {
+   "da": "char-yelena-belova",
+   "da_nome": "Yelena Belova",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-yelena-belova",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "069",
+    "100",
+    "123",
+    "132"
+   ],
+   "identita": "id-fisk-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "100"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°100"
+  },
+  {
+   "da": "char-clint-barton",
+   "da_nome": "Clint Barton/Occhio di Falco",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-clint-barton",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "051",
+    "089",
+    "100"
+   ],
+   "identita": "id-fisk-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "100"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°100"
+  },
+  {
+   "da": "char-kate-bishop",
+   "da_nome": "Kate Bishop",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": null,
+   "sorgente_universo": null,
+   "sorgente_apparizioni": [],
+   "identita": "id-fisk-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [],
+   "esito": "non confermata",
+   "prova": ""
+  },
+  {
+   "da": "char-stephen-strange",
+   "da_nome": "Stephen Strange/Doctor Strange",
+   "a_pagina": "char-peter-parker-holland-maguire-garfield",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-stephen-strange",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "070",
+    "099",
+    "102"
+   ],
+   "identita": "id-peter-parker-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "099"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°099"
+  },
+  {
+   "da": "char-ned-leeds",
+   "da_nome": "Ned Leeds",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-ned-leeds",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "075",
+    "132"
+   ],
+   "identita": "id-peter-parker-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "075",
+    "132"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°075, N°132"
+  },
+  {
+   "da": "char-adrian-toomes-avvoltoio",
+   "da_nome": "Adrian Toomes/Avvoltoio",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-adrian-toomes-avvoltoio",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "075"
+   ],
+   "identita": "id-peter-parker-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "075"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°075"
+  },
+  {
+   "da": "char-mj",
+   "da_nome": "MJ",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-michelle-jones-watson-mcu",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "090",
+    "132"
+   ],
+   "identita": "id-peter-parker-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "090",
+    "132"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°090, N°132"
+  },
+  {
+   "da": "char-quentin-beck-mysterio",
+   "da_nome": "Quentin Beck/Mysterio",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-quentin-beck-mysterio",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "090"
+   ],
+   "identita": "id-peter-parker-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "090"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°090"
+  },
+  {
+   "da": "char-bonnie-lopez",
+   "da_nome": "Bonnie Lopez",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-bonnie-lopez",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "116"
+   ],
+   "identita": "id-fisk-mcu",
+   "proposta_universo": "uni-earth-199999-mcu",
+   "apparizioni_comuni": [
+    "116"
+   ],
+   "esito": "verificata",
+   "prova": "stesso universo (uni-earth-199999-mcu); apparizioni comuni: N°116"
+  }
+ ],
+ "ambigui": [
+  {
+   "da": "char-bullseye",
+   "da_nome": "Bullseye",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "link scheda",
+   "sorgente_identita": "id-bullseye",
+   "sorgente_universo": "uni-daredevil-elektra-verse",
+   "sorgente_apparizioni": [
+    "035",
+    "082"
+   ],
+   "continuita": "Daredevil/Elektra-verse · Universo autonomo",
+   "possibili": [
+    {
+     "id": "id-fisk-fox-2003",
+     "nome": "Wilson Fisk (Daredevil 2003)",
+     "universo": "uni-daredevil-elektra-verse",
+     "comuni": [
+      "035"
+     ]
+    },
+    {
+     "id": "id-fisk-mcu",
+     "nome": "Wilson Fisk (MCU, ex Netflix)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "082"
+     ]
+    }
+   ],
+   "raccomandato": "hub-wilson-fisk",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-drax",
+   "da_nome": "Drax",
+   "a_pagina": "char-groot",
+   "origine": "link scheda",
+   "sorgente_identita": "id-drax",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "058",
+    "084",
+    "089",
+    "107"
+   ],
+   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "possibili": [
+    {
+     "id": "id-groot-originale",
+     "nome": "Groot (originale)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "058"
+     ]
+    },
+    {
+     "id": "id-groot-successore",
+     "nome": "Groot (successore)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "084",
+      "089"
+     ]
+    }
+   ],
+   "raccomandato": "char-groot",
+   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-elektra-natchios",
+   "da_nome": "Elektra Natchios",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "link scheda",
+   "sorgente_identita": "id-elektra-natchios",
+   "sorgente_universo": "uni-daredevil-elektra-verse",
+   "sorgente_apparizioni": [
+    "035",
+    "036",
+    "065",
+    "117"
+   ],
+   "continuita": "Daredevil/Elektra-verse · Universo autonomo",
+   "possibili": [
+    {
+     "id": "id-fisk-fox-2003",
+     "nome": "Wilson Fisk (Daredevil 2003)",
+     "universo": "uni-daredevil-elektra-verse",
+     "comuni": [
+      "035"
+     ]
+    },
+    {
+     "id": "id-fisk-mcu",
+     "nome": "Wilson Fisk (MCU, ex Netflix)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "hub-wilson-fisk",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-gamora",
+   "da_nome": "Gamora",
+   "a_pagina": "char-groot",
+   "origine": "link scheda",
+   "sorgente_identita": "id-gamora",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "058",
+    "059",
+    "084",
+    "089"
+   ],
+   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "possibili": [
+    {
+     "id": "id-groot-originale",
+     "nome": "Groot (originale)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "058"
+     ]
+    },
+    {
+     "id": "id-groot-successore",
+     "nome": "Groot (successore)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "059",
+      "084",
+      "089"
+     ]
+    }
+   ],
+   "raccomandato": "char-groot",
+   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-harry-osborn-green-goblin",
+   "da_nome": "Harry Osborn/Green Goblin",
+   "a_pagina": "char-peter-parker",
+   "origine": "link scheda",
+   "sorgente_identita": "id-harry-osborn-green-goblin",
+   "sorgente_universo": "uni-earth-96283-raimi-verse",
+   "sorgente_apparizioni": [
+    "001",
+    "002",
+    "003",
+    "005",
+    "120"
+   ],
+   "continuita": "Earth-96283 — Raimi-Verse · Universo autonomo",
+   "possibili": [
+    {
+     "id": "id-peter-parker-mcu",
+     "nome": "Peter Parker (MCU)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-raimi",
+     "nome": "Peter Parker (Raimi-Verse)",
+     "universo": "uni-earth-96283-raimi-verse",
+     "comuni": [
+      "001",
+      "002",
+      "003"
+     ]
+    },
+    {
+     "id": "id-peter-parker-garfield",
+     "nome": "Peter Parker (Garfield-Verse)",
+     "universo": "uni-earth-120703-garfield-verse",
+     "comuni": [
+      "005"
+     ]
+    },
+    {
+     "id": "id-peter-parker-ynfsm",
+     "nome": "Peter Parker (Your Friendly Neighborhood Spider-Man)",
+     "universo": "uni-your-friendly-neighborhood-spider-man-verse",
+     "comuni": [
+      "120"
+     ]
+    }
+   ],
+   "raccomandato": "hub-peter-parker",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-kate-bishop",
+   "da_nome": "Kate Bishop",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "link scheda",
+   "sorgente_identita": null,
+   "sorgente_universo": null,
+   "sorgente_apparizioni": [],
+   "continuita": "non indicata",
+   "possibili": [
+    {
+     "id": "id-fisk-fox-2003",
+     "nome": "Wilson Fisk (Daredevil 2003)",
+     "universo": "uni-daredevil-elektra-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-fisk-mcu",
+     "nome": "Wilson Fisk (MCU, ex Netflix)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "hub-wilson-fisk",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-matt-murdock-daredevil",
+   "da_nome": "Matt Murdock/Daredevil",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "link scheda",
+   "sorgente_identita": "id-matt-murdock-daredevil",
+   "sorgente_universo": "uni-daredevil-elektra-verse",
+   "sorgente_apparizioni": [
+    "035",
+    "060",
+    "065",
+    "082",
+    "105",
+    "122",
+    "128"
+   ],
+   "continuita": "Daredevil/Elektra-verse · Universo autonomo",
+   "possibili": [
+    {
+     "id": "id-fisk-fox-2003",
+     "nome": "Wilson Fisk (Daredevil 2003)",
+     "universo": "uni-daredevil-elektra-verse",
+     "comuni": [
+      "035"
+     ]
+    },
+    {
+     "id": "id-fisk-mcu",
+     "nome": "Wilson Fisk (MCU, ex Netflix)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "060",
+      "082",
+      "122",
+      "128"
+     ]
+    }
+   ],
+   "raccomandato": "hub-wilson-fisk",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-norman-osborn-green-goblin",
+   "da_nome": "Norman Osborn/Green Goblin",
+   "a_pagina": "char-peter-parker",
+   "origine": "link scheda",
+   "sorgente_identita": "id-norman-osborn-green-goblin",
+   "sorgente_universo": "uni-earth-96283-raimi-verse",
+   "sorgente_apparizioni": [
+    "001",
+    "099",
+    "120"
+   ],
+   "continuita": "Earth-96283 — Raimi-Verse · Universo autonomo",
+   "possibili": [
+    {
+     "id": "id-peter-parker-mcu",
+     "nome": "Peter Parker (MCU)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "099"
+     ]
+    },
+    {
+     "id": "id-peter-parker-raimi",
+     "nome": "Peter Parker (Raimi-Verse)",
+     "universo": "uni-earth-96283-raimi-verse",
+     "comuni": [
+      "001",
+      "099"
+     ]
+    },
+    {
+     "id": "id-peter-parker-garfield",
+     "nome": "Peter Parker (Garfield-Verse)",
+     "universo": "uni-earth-120703-garfield-verse",
+     "comuni": [
+      "099"
+     ]
+    },
+    {
+     "id": "id-peter-parker-ynfsm",
+     "nome": "Peter Parker (Your Friendly Neighborhood Spider-Man)",
+     "universo": "uni-your-friendly-neighborhood-spider-man-verse",
+     "comuni": [
+      "120"
+     ]
+    }
+   ],
+   "raccomandato": "hub-peter-parker",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-peter-quill-star-lord",
+   "da_nome": "Peter Quill/Star-Lord",
+   "a_pagina": "char-groot",
+   "origine": "link scheda",
+   "sorgente_identita": "id-peter-quill-star-lord",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "058",
+    "059",
+    "084",
+    "089",
+    "107",
+    "110"
+   ],
+   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "possibili": [
+    {
+     "id": "id-groot-originale",
+     "nome": "Groot (originale)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "058"
+     ]
+    },
+    {
+     "id": "id-groot-successore",
+     "nome": "Groot (successore)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "059",
+      "084",
+      "089"
+     ]
+    }
+   ],
+   "raccomandato": "char-groot",
+   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-rocket",
+   "da_nome": "Rocket",
+   "a_pagina": "char-groot",
+   "origine": "link scheda",
+   "sorgente_identita": "id-rocket",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "058",
+    "059",
+    "084",
+    "089",
+    "110",
+    "115"
+   ],
+   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "possibili": [
+    {
+     "id": "id-groot-originale",
+     "nome": "Groot (originale)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "058"
+     ]
+    },
+    {
+     "id": "id-groot-successore",
+     "nome": "Groot (successore)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "059",
+      "084",
+      "089",
+      "115"
+     ]
+    }
+   ],
+   "raccomandato": "char-groot",
+   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-peter-quill-star-lord",
+   "da_nome": "Peter Quill/Star-Lord",
+   "a_pagina": "char-groot",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-peter-quill-star-lord",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "058",
+    "059",
+    "084",
+    "089",
+    "107",
+    "110"
+   ],
+   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "possibili": [
+    {
+     "id": "id-groot-originale",
+     "nome": "Groot (originale)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "058"
+     ]
+    },
+    {
+     "id": "id-groot-successore",
+     "nome": "Groot (successore)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "059",
+      "084",
+      "089"
+     ]
+    }
+   ],
+   "raccomandato": "char-groot",
+   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-norman-osborn-green-goblin",
+   "da_nome": "Norman Osborn/Green Goblin",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-norman-osborn-green-goblin",
+   "sorgente_universo": "uni-earth-96283-raimi-verse",
+   "sorgente_apparizioni": [
+    "001",
+    "099",
+    "120"
+   ],
+   "continuita": "Earth-96283 — Raimi-Verse · Universo autonomo",
+   "possibili": [
+    {
+     "id": "id-peter-parker-mcu",
+     "nome": "Peter Parker (MCU)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "099"
+     ]
+    },
+    {
+     "id": "id-peter-parker-raimi",
+     "nome": "Peter Parker (Raimi-Verse)",
+     "universo": "uni-earth-96283-raimi-verse",
+     "comuni": [
+      "001",
+      "099"
+     ]
+    },
+    {
+     "id": "id-peter-parker-garfield",
+     "nome": "Peter Parker (Garfield-Verse)",
+     "universo": "uni-earth-120703-garfield-verse",
+     "comuni": [
+      "099"
+     ]
+    },
+    {
+     "id": "id-peter-parker-ynfsm",
+     "nome": "Peter Parker (Your Friendly Neighborhood Spider-Man)",
+     "universo": "uni-your-friendly-neighborhood-spider-man-verse",
+     "comuni": [
+      "120"
+     ]
+    }
+   ],
+   "raccomandato": "hub-peter-parker",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-harry-osborn-green-goblin",
+   "da_nome": "Harry Osborn/Green Goblin",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-harry-osborn-green-goblin",
+   "sorgente_universo": "uni-earth-96283-raimi-verse",
+   "sorgente_apparizioni": [
+    "001",
+    "002",
+    "003",
+    "005",
+    "120"
+   ],
+   "continuita": "Earth-96283 — Raimi-Verse · Universo autonomo",
+   "possibili": [
+    {
+     "id": "id-peter-parker-mcu",
+     "nome": "Peter Parker (MCU)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-raimi",
+     "nome": "Peter Parker (Raimi-Verse)",
+     "universo": "uni-earth-96283-raimi-verse",
+     "comuni": [
+      "001",
+      "002",
+      "003"
+     ]
+    },
+    {
+     "id": "id-peter-parker-garfield",
+     "nome": "Peter Parker (Garfield-Verse)",
+     "universo": "uni-earth-120703-garfield-verse",
+     "comuni": [
+      "005"
+     ]
+    },
+    {
+     "id": "id-peter-parker-ynfsm",
+     "nome": "Peter Parker (Your Friendly Neighborhood Spider-Man)",
+     "universo": "uni-your-friendly-neighborhood-spider-man-verse",
+     "comuni": [
+      "120"
+     ]
+    }
+   ],
+   "raccomandato": "hub-peter-parker",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-matt-murdock-daredevil",
+   "da_nome": "Matt Murdock/Daredevil",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-matt-murdock-daredevil",
+   "sorgente_universo": "uni-daredevil-elektra-verse",
+   "sorgente_apparizioni": [
+    "035",
+    "060",
+    "065",
+    "082",
+    "105",
+    "122",
+    "128"
+   ],
+   "continuita": "Daredevil/Elektra-verse · Universo autonomo",
+   "possibili": [
+    {
+     "id": "id-fisk-fox-2003",
+     "nome": "Wilson Fisk (Daredevil 2003)",
+     "universo": "uni-daredevil-elektra-verse",
+     "comuni": [
+      "035"
+     ]
+    },
+    {
+     "id": "id-fisk-mcu",
+     "nome": "Wilson Fisk (MCU, ex Netflix)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "060",
+      "082",
+      "122",
+      "128"
+     ]
+    }
+   ],
+   "raccomandato": "hub-wilson-fisk",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-elektra-natchios",
+   "da_nome": "Elektra Natchios",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-elektra-natchios",
+   "sorgente_universo": "uni-daredevil-elektra-verse",
+   "sorgente_apparizioni": [
+    "035",
+    "036",
+    "065",
+    "117"
+   ],
+   "continuita": "Daredevil/Elektra-verse · Universo autonomo",
+   "possibili": [
+    {
+     "id": "id-fisk-fox-2003",
+     "nome": "Wilson Fisk (Daredevil 2003)",
+     "universo": "uni-daredevil-elektra-verse",
+     "comuni": [
+      "035"
+     ]
+    },
+    {
+     "id": "id-fisk-mcu",
+     "nome": "Wilson Fisk (MCU, ex Netflix)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "hub-wilson-fisk",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-bullseye",
+   "da_nome": "Bullseye",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-bullseye",
+   "sorgente_universo": "uni-daredevil-elektra-verse",
+   "sorgente_apparizioni": [
+    "035",
+    "082"
+   ],
+   "continuita": "Daredevil/Elektra-verse · Universo autonomo",
+   "possibili": [
+    {
+     "id": "id-fisk-fox-2003",
+     "nome": "Wilson Fisk (Daredevil 2003)",
+     "universo": "uni-daredevil-elektra-verse",
+     "comuni": [
+      "035"
+     ]
+    },
+    {
+     "id": "id-fisk-mcu",
+     "nome": "Wilson Fisk (MCU, ex Netflix)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "082"
+     ]
+    }
+   ],
+   "raccomandato": "hub-wilson-fisk",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-gamora",
+   "da_nome": "Gamora",
+   "a_pagina": "char-groot",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-gamora",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "058",
+    "059",
+    "084",
+    "089"
+   ],
+   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "possibili": [
+    {
+     "id": "id-groot-originale",
+     "nome": "Groot (originale)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "058"
+     ]
+    },
+    {
+     "id": "id-groot-successore",
+     "nome": "Groot (successore)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "059",
+      "084",
+      "089"
+     ]
+    }
+   ],
+   "raccomandato": "char-groot",
+   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-drax",
+   "da_nome": "Drax",
+   "a_pagina": "char-groot",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-drax",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "058",
+    "084",
+    "089",
+    "107"
+   ],
+   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "possibili": [
+    {
+     "id": "id-groot-originale",
+     "nome": "Groot (originale)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "058"
+     ]
+    },
+    {
+     "id": "id-groot-successore",
+     "nome": "Groot (successore)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "084",
+      "089"
+     ]
+    }
+   ],
+   "raccomandato": "char-groot",
+   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-rocket",
+   "da_nome": "Rocket",
+   "a_pagina": "char-groot",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-rocket",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "058",
+    "059",
+    "084",
+    "089",
+    "110",
+    "115"
+   ],
+   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "possibili": [
+    {
+     "id": "id-groot-originale",
+     "nome": "Groot (originale)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "058"
+     ]
+    },
+    {
+     "id": "id-groot-successore",
+     "nome": "Groot (successore)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "059",
+      "084",
+      "089",
+      "115"
+     ]
+    }
+   ],
+   "raccomandato": "char-groot",
+   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-nebula",
+   "da_nome": "Nebula",
+   "a_pagina": "char-groot",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-nebula",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "058",
+    "059",
+    "084",
+    "089"
+   ],
+   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "possibili": [
+    {
+     "id": "id-groot-originale",
+     "nome": "Groot (originale)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "058"
+     ]
+    },
+    {
+     "id": "id-groot-successore",
+     "nome": "Groot (successore)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "059",
+      "084",
+      "089"
+     ]
+    }
+   ],
+   "raccomandato": "char-groot",
+   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-ronan-l-accusatore",
+   "da_nome": "Ronan l'Accusatore",
+   "a_pagina": "char-groot",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": "id-ronan-l-accusatore",
+   "sorgente_universo": "uni-earth-199999-mcu",
+   "sorgente_apparizioni": [
+    "058"
+   ],
+   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "possibili": [
+    {
+     "id": "id-groot-originale",
+     "nome": "Groot (originale)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": [
+      "058"
+     ]
+    },
+    {
+     "id": "id-groot-successore",
+     "nome": "Groot (successore)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "char-groot",
+   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
+   "stato": "da decidere"
+  },
+  {
+   "da": "char-kate-bishop",
+   "da_nome": "Kate Bishop",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "grafo (titolo)",
+   "sorgente_identita": null,
+   "sorgente_universo": null,
+   "sorgente_apparizioni": [],
+   "continuita": "non indicata",
+   "possibili": [
+    {
+     "id": "id-fisk-fox-2003",
+     "nome": "Wilson Fisk (Daredevil 2003)",
+     "universo": "uni-daredevil-elektra-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-fisk-mcu",
+     "nome": "Wilson Fisk (MCU, ex Netflix)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "hub-wilson-fisk",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "att-tobey-maguire",
+   "da_nome": "Tobey Maguire",
+   "a_pagina": "char-peter-parker-holland-maguire-garfield",
+   "origine": "grafo (attore)",
+   "sorgente_identita": null,
+   "sorgente_universo": null,
+   "sorgente_apparizioni": [],
+   "continuita": "non indicata",
+   "possibili": [
+    {
+     "id": "id-peter-parker-mcu",
+     "nome": "Peter Parker (MCU)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-raimi",
+     "nome": "Peter Parker (Raimi-Verse)",
+     "universo": "uni-earth-96283-raimi-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-garfield",
+     "nome": "Peter Parker (Garfield-Verse)",
+     "universo": "uni-earth-120703-garfield-verse",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "hub-peter-parker",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "att-andrew-garfield",
+   "da_nome": "Andrew Garfield",
+   "a_pagina": "char-peter-parker-holland-maguire-garfield",
+   "origine": "grafo (attore)",
+   "sorgente_identita": null,
+   "sorgente_universo": null,
+   "sorgente_apparizioni": [],
+   "continuita": "non indicata",
+   "possibili": [
+    {
+     "id": "id-peter-parker-mcu",
+     "nome": "Peter Parker (MCU)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-raimi",
+     "nome": "Peter Parker (Raimi-Verse)",
+     "universo": "uni-earth-96283-raimi-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-garfield",
+     "nome": "Peter Parker (Garfield-Verse)",
+     "universo": "uni-earth-120703-garfield-verse",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "hub-peter-parker",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "att-tom-holland",
+   "da_nome": "Tom Holland",
+   "a_pagina": "char-peter-parker-holland-maguire-garfield",
+   "origine": "grafo (attore)",
+   "sorgente_identita": null,
+   "sorgente_universo": null,
+   "sorgente_apparizioni": [],
+   "continuita": "non indicata",
+   "possibili": [
+    {
+     "id": "id-peter-parker-mcu",
+     "nome": "Peter Parker (MCU)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-raimi",
+     "nome": "Peter Parker (Raimi-Verse)",
+     "universo": "uni-earth-96283-raimi-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-garfield",
+     "nome": "Peter Parker (Garfield-Verse)",
+     "universo": "uni-earth-120703-garfield-verse",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "hub-peter-parker",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "universo-earth-96283",
+   "da_nome": "universo-earth-96283",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (universo)",
+   "sorgente_identita": null,
+   "sorgente_universo": null,
+   "sorgente_apparizioni": [],
+   "continuita": "non indicata",
+   "possibili": [
+    {
+     "id": "id-peter-parker-mcu",
+     "nome": "Peter Parker (MCU)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-raimi",
+     "nome": "Peter Parker (Raimi-Verse)",
+     "universo": "uni-earth-96283-raimi-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-garfield",
+     "nome": "Peter Parker (Garfield-Verse)",
+     "universo": "uni-earth-120703-garfield-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-ynfsm",
+     "nome": "Peter Parker (Your Friendly Neighborhood Spider-Man)",
+     "universo": "uni-your-friendly-neighborhood-spider-man-verse",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "hub-peter-parker",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "universo-earth-120703",
+   "da_nome": "universo-earth-120703",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (universo)",
+   "sorgente_identita": null,
+   "sorgente_universo": null,
+   "sorgente_apparizioni": [],
+   "continuita": "non indicata",
+   "possibili": [
+    {
+     "id": "id-peter-parker-mcu",
+     "nome": "Peter Parker (MCU)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-raimi",
+     "nome": "Peter Parker (Raimi-Verse)",
+     "universo": "uni-earth-96283-raimi-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-garfield",
+     "nome": "Peter Parker (Garfield-Verse)",
+     "universo": "uni-earth-120703-garfield-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-ynfsm",
+     "nome": "Peter Parker (Your Friendly Neighborhood Spider-Man)",
+     "universo": "uni-your-friendly-neighborhood-spider-man-verse",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "hub-peter-parker",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "universo-mcu",
+   "da_nome": "universo-mcu",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (universo)",
+   "sorgente_identita": null,
+   "sorgente_universo": null,
+   "sorgente_apparizioni": [],
+   "continuita": "non indicata",
+   "possibili": [
+    {
+     "id": "id-peter-parker-mcu",
+     "nome": "Peter Parker (MCU)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-raimi",
+     "nome": "Peter Parker (Raimi-Verse)",
+     "universo": "uni-earth-96283-raimi-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-garfield",
+     "nome": "Peter Parker (Garfield-Verse)",
+     "universo": "uni-earth-120703-garfield-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-ynfsm",
+     "nome": "Peter Parker (Your Friendly Neighborhood Spider-Man)",
+     "universo": "uni-your-friendly-neighborhood-spider-man-verse",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "hub-peter-parker",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "universo-mcu",
+   "da_nome": "universo-mcu",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "grafo (universo)",
+   "sorgente_identita": null,
+   "sorgente_universo": null,
+   "sorgente_apparizioni": [],
+   "continuita": "non indicata",
+   "possibili": [
+    {
+     "id": "id-fisk-fox-2003",
+     "nome": "Wilson Fisk (Daredevil 2003)",
+     "universo": "uni-daredevil-elektra-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-fisk-mcu",
+     "nome": "Wilson Fisk (MCU, ex Netflix)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "hub-wilson-fisk",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "universo-mcu",
+   "da_nome": "universo-mcu",
+   "a_pagina": "char-groot",
+   "origine": "grafo (universo)",
+   "sorgente_identita": null,
+   "sorgente_universo": null,
+   "sorgente_apparizioni": [],
+   "continuita": "non indicata",
+   "possibili": [
+    {
+     "id": "id-groot-originale",
+     "nome": "Groot (originale)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    },
+    {
+     "id": "id-groot-successore",
+     "nome": "Groot (successore)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "char-groot",
+   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
+   "stato": "da decidere"
+  },
+  {
+   "da": "universo-your-friendly-neighborhood-spider-man-verse",
+   "da_nome": "universo-your-friendly-neighborhood-spider-man-verse",
+   "a_pagina": "char-peter-parker",
+   "origine": "grafo (universo)",
+   "sorgente_identita": null,
+   "sorgente_universo": null,
+   "sorgente_apparizioni": [],
+   "continuita": "non indicata",
+   "possibili": [
+    {
+     "id": "id-peter-parker-mcu",
+     "nome": "Peter Parker (MCU)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-raimi",
+     "nome": "Peter Parker (Raimi-Verse)",
+     "universo": "uni-earth-96283-raimi-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-garfield",
+     "nome": "Peter Parker (Garfield-Verse)",
+     "universo": "uni-earth-120703-garfield-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-ynfsm",
+     "nome": "Peter Parker (Your Friendly Neighborhood Spider-Man)",
+     "universo": "uni-your-friendly-neighborhood-spider-man-verse",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "hub-peter-parker",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "universo-legacy",
+   "da_nome": "universo-legacy",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "grafo (universo)",
+   "sorgente_identita": null,
+   "sorgente_universo": null,
+   "sorgente_apparizioni": [],
+   "continuita": "non indicata",
+   "possibili": [
+    {
+     "id": "id-fisk-fox-2003",
+     "nome": "Wilson Fisk (Daredevil 2003)",
+     "universo": "uni-daredevil-elektra-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-fisk-mcu",
+     "nome": "Wilson Fisk (MCU, ex Netflix)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "hub-wilson-fisk",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "universo-mcu-netflix",
+   "da_nome": "universo-mcu-netflix",
+   "a_pagina": "char-wilson-fisk-kingpin",
+   "origine": "grafo (universo)",
+   "sorgente_identita": null,
+   "sorgente_universo": null,
+   "sorgente_apparizioni": [],
+   "continuita": "non indicata",
+   "possibili": [
+    {
+     "id": "id-fisk-fox-2003",
+     "nome": "Wilson Fisk (Daredevil 2003)",
+     "universo": "uni-daredevil-elektra-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-fisk-mcu",
+     "nome": "Wilson Fisk (MCU, ex Netflix)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "hub-wilson-fisk",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  },
+  {
+   "da": "universo-mcu-raimi-verse-garfield-verse",
+   "da_nome": "universo-mcu-raimi-verse-garfield-verse",
+   "a_pagina": "char-peter-parker-holland-maguire-garfield",
+   "origine": "grafo (universo)",
+   "sorgente_identita": null,
+   "sorgente_universo": null,
+   "sorgente_apparizioni": [],
+   "continuita": "non indicata",
+   "possibili": [
+    {
+     "id": "id-peter-parker-mcu",
+     "nome": "Peter Parker (MCU)",
+     "universo": "uni-earth-199999-mcu",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-raimi",
+     "nome": "Peter Parker (Raimi-Verse)",
+     "universo": "uni-earth-96283-raimi-verse",
+     "comuni": []
+    },
+    {
+     "id": "id-peter-parker-garfield",
+     "nome": "Peter Parker (Garfield-Verse)",
+     "universo": "uni-earth-120703-garfield-verse",
+     "comuni": []
+    }
+   ],
+   "raccomandato": "hub-peter-parker",
+   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
+   "stato": "da decidere"
+  }
+ ]
+}
