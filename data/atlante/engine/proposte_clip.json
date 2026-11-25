@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generato": "2026-11-25T12:24:32Z",
+ "generato": "2026-11-25T13:36:47Z",
  "motore": "A3.2 prototipo",
  "modello": "clip",
  "pesi": [
@@ -111,10 +111,10 @@
      "w": 3840,
      "h": 2160,
      "num": "055",
-     "sc": 0.806,
-     "pid": 12.31,
-     "pcrop": 13.62,
-     "nitidezza": 1147.0,
+     "sc": 0.915,
+     "pid": 12.56,
+     "pcrop": 14.37,
+     "nitidezza": 1186.7,
      "crop": {
       "z": 1.5625,
       "cx": 0.5,
@@ -127,10 +127,10 @@
      "w": 1920,
      "h": 1080,
      "num": "055",
-     "sc": 0.753,
-     "pid": 12.54,
-     "pcrop": 16.48,
-     "nitidezza": 483.1,
+     "sc": 0.776,
+     "pid": 12.24,
+     "pcrop": 17.85,
+     "nitidezza": 538.5,
      "crop": {
       "z": 1.5625,
       "cx": 0.3784,
@@ -139,34 +139,34 @@
     },
     {
      "rk": 3,
-     "p": "/3XyaYiOHldsNhwnXKDRYOpFc1nB.jpg",
+     "p": "/9CiNfM9mHvLID7wqAixB30tAVZd.jpg",
      "w": 1920,
      "h": 1080,
      "num": "050",
-     "sc": 0.738,
-     "pid": 9.76,
-     "pcrop": 15.34,
-     "nitidezza": 762.6,
+     "sc": 0.41,
+     "pid": 10.23,
+     "pcrop": 10.59,
+     "nitidezza": 1397.9,
      "crop": {
       "z": 1.5625,
-      "cx": 0.7433,
+      "cx": 0.6216,
       "cy": 0.32
      }
     },
     {
      "rk": 4,
-     "p": "/9CiNfM9mHvLID7wqAixB30tAVZd.jpg",
-     "w": 1920,
-     "h": 1080,
+     "p": "/rxGVEJaHvbjZUptzC3OXiolF4pw.jpg",
+     "w": 1280,
+     "h": 720,
      "num": "050",
-     "sc": 0.409,
-     "pid": 10.89,
-     "pcrop": 10.88,
-     "nitidezza": 1244.2,
+     "sc": 0.224,
+     "pid": 11.37,
+     "pcrop": 12.12,
+     "nitidezza": 224.5,
      "crop": {
-      "z": 1.5625,
-      "cx": 0.6216,
-      "cy": 0.32
+      "z": 1.25,
+      "cx": 0.3896,
+      "cy": 0.6
      }
     }
    ]
@@ -181,13 +181,13 @@
      "w": 3840,
      "h": 2160,
      "num": "076",
-     "sc": 0.906,
-     "pid": 13.2,
+     "sc": 0.907,
+     "pid": 13.6,
      "pcrop": 16.18,
-     "nitidezza": 2272.2,
+     "nitidezza": 2528.9,
      "crop": {
       "z": 1.0,
-      "cx": 0.5,
+      "cx": 0.4037,
       "cy": 0.5
      }
     },
@@ -198,9 +198,9 @@
      "h": 1080,
      "num": "095",
      "sc": 0.8,
-     "pid": 13.86,
-     "pcrop": 14.32,
-     "nitidezza": 1968.8,
+     "pid": 14.32,
+     "pcrop": 14.36,
+     "nitidezza": 2142.3,
      "crop": {
       "z": 1.25,
       "cx": 0.6104,
@@ -214,9 +214,9 @@
      "h": 2160,
      "num": "095",
      "sc": 0.743,
-     "pid": 15.56,
-     "pcrop": 17.26,
-     "nitidezza": 566.4,
+     "pid": 16.69,
+     "pcrop": 16.77,
+     "nitidezza": 604.1,
      "crop": {
       "z": 1.0,
       "cx": 0.3074,
@@ -229,10 +229,10 @@
      "w": 3840,
      "h": 2160,
      "num": "076",
-     "sc": 0.678,
-     "pid": 8.21,
-     "pcrop": 13.82,
-     "nitidezza": 959.3,
+     "sc": 0.7,
+     "pid": 8.08,
+     "pcrop": 13.6,
+     "nitidezza": 1084.1,
      "crop": {
       "z": 1.0,
       "cx": 0.7889,
@@ -245,10 +245,10 @@
      "w": 3840,
      "h": 2160,
      "num": "055",
-     "sc": 0.54,
-     "pid": 11.49,
-     "pcrop": 13.33,
-     "nitidezza": 854.3,
+     "sc": 0.563,
+     "pid": 12.44,
+     "pcrop": 13.48,
+     "nitidezza": 991.3,
      "crop": {
       "z": 1.5625,
       "cx": 0.5,
@@ -451,11 +451,27 @@
     },
     {
      "rk": 3,
+     "p": "/sLWUtbrpiLp23a0XDSiUiltdFPJ.jpg",
+     "w": 1920,
+     "h": 1080,
+     "num": "004",
+     "sc": 0.75,
+     "pid": 12.78,
+     "pcrop": 13.9,
+     "nitidezza": 2426.1,
+     "crop": {
+      "z": 1.25,
+      "cx": 0.8312,
+      "cy": 0.4
+     }
+    },
+    {
+     "rk": 4,
      "p": "/9imW701EpAKpVhLZZRAuUtdptmS.jpg",
      "w": 1920,
      "h": 1080,
      "num": "005",
-     "sc": 0.746,
+     "sc": 0.692,
      "pid": 13.64,
      "pcrop": 13.84,
      "nitidezza": 2138.9,
@@ -463,22 +479,6 @@
       "z": 1.0,
       "cx": 0.5963,
       "cy": 0.5
-     }
-    },
-    {
-     "rk": 4,
-     "p": "/tl5PoDXHwwgTjYv5T5k4aut9YXH.jpg",
-     "w": 1920,
-     "h": 1080,
-     "num": "004",
-     "sc": 0.604,
-     "pid": 12.78,
-     "pcrop": 13.42,
-     "nitidezza": 4015.1,
-     "crop": {
-      "z": 1.25,
-      "cx": 0.2792,
-      "cy": 0.6
      }
     }
    ]
@@ -591,16 +591,16 @@
     },
     {
      "rk": 2,
-     "p": "/1aWpHzY3Y4bODkhQkSARTYLbXW.jpg",
-     "w": 1920,
-     "h": 1080,
+     "p": "/en971MEXui9diirXlogOrPKmsEn.jpg",
+     "w": 3840,
+     "h": 2160,
      "num": "022",
-     "sc": 0.759,
-     "pid": 8.28,
-     "pcrop": 10.39,
-     "nitidezza": 585.1,
+     "sc": 0.813,
+     "pid": 9.58,
+     "pcrop": 9.81,
+     "nitidezza": 1876.3,
      "crop": {
-      "z": 1.25,
+      "z": 1.0,
       "cx": 0.5,
       "cy": 0.5
      }
@@ -611,10 +611,10 @@
      "w": 3840,
      "h": 2160,
      "num": "024",
-     "sc": 0.734,
-     "pid": 7.85,
-     "pcrop": 9.82,
-     "nitidezza": 1342.4,
+     "sc": 0.68,
+     "pid": 8.2,
+     "pcrop": 9.7,
+     "nitidezza": 1343.7,
      "crop": {
       "z": 1.0,
       "cx": 0.3074,
@@ -666,7 +666,7 @@
      "h": 878,
      "num": "102",
      "sc": 0.635,
-     "pid": 11.42,
+     "pid": 11.43,
      "pcrop": 15.41,
      "nitidezza": 1062.7,
      "crop": {
