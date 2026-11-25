@@ -130,14 +130,14 @@ def blocco(W, E, SCALE, usate, tag, smoke=False):
         iid = o['id']
         if iid not in res: continue
         R = res[iid]; alta = R['buoni'] >= 3; nmax = 5 if alta else 10; sel = []; per = {}
-        for lim in (2, 3, 4):
+        for lim in ((2, 3, 4, 5) if alta else (2, 3, 5, 10)):   # tetto per titolo: più largo per la confidenza bassa (fino a 10 proposte anche con un solo titolo)
             for r in R['rows']:
                 if len(sel) >= nmax: break
                 p = r['x']['p']
                 if r in sel or owner.get(p, (iid,))[0] != iid or per.get(r['x']['num'], 0) >= lim: continue
                 if lim == 2 and any(float(r['f'] @ s2['f']) > 0.94 for s2 in sel): continue
                 sel.append(r); per[r['x']['num']] = per.get(r['x']['num'], 0) + 1
-            if len(sel) >= min(nmax, 3 if alta else 6): break
+            if len(sel) >= min(nmax, 3 if alta else 10): break
         props = []
         for k, r in enumerate(sel):
             x0, y0, w0, h0 = r['win']
