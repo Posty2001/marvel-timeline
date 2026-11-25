@@ -213,3 +213,11 @@ html:has(#atlas2Toggle:checked + #atlas2 .a3) #mmFab { translate: 6px 0; opacity
 html:has(#atlas2Toggle:checked + #atlas2 .a3) #mmFab:focus-visible, html:has(#atlas2Toggle:checked + #atlas2 .a3) #mmFab:active { translate: 0 0; opacity: 1; }
 @media (prefers-reduced-motion: reduce) { html:has(#atlas2Toggle:checked + #atlas2 .a3) #mmFab { transition: none; } }
 .a3-grid.c3 .a3-tile .t b, .a3-grid.c2 .a3-tile .t b { overflow-wrap: break-word; hyphens: auto; } .a3-grid.c3 .a3-tile .t b { font-size: 12px; }
+
+/* ---------- A3.2: proposte automatiche (approvazione rapida) ---------- */
+.a3r-prop h3 { margin: 6px 0 2px; font-size: 15px; color: #E3C79B; }
+.a3r-pg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-bottom: 10px; }
+.a3r-pc { display: grid; gap: 4px; }
+.a3r-pv { position: relative; aspect-ratio: 3 / 4; border: 1px solid rgba(227,199,155,.4); border-radius: 10px; background-color: #1a140c; background-repeat: no-repeat; padding: 0; }
+.a3r-pv .rk { position: absolute; left: 5px; top: 4px; font: 700 12px/1 Inter, sans-serif; font-style: normal; color: #1a1208; background: #E3C79B; border-radius: 8px; padding: 2px 6px; }
+.a3r-ok { min-height: 44px; border-radius: 10px; border: 1px solid #E3C79B; background: rgba(227,199,155,.18); color: #E3C79B; font: 700 13px/1 inherit; }

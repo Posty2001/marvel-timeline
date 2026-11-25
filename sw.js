@@ -57,7 +57,7 @@ const ARCADE_FILES = ['./arcade/shared/arcade-nav.css', './arcade/shared/arcade-
 /* Miss Minutes (./miss-minutes/): pagina, script e Knowledge Core same-origin in cache per l'uso offline. Un file mancante non blocca l'installazione. */
 const MM_FILES = ['./miss-minutes/index.html', './miss-minutes/mm.css', './miss-minutes/config.js', './miss-minutes/engine.js', './miss-minutes/store.js', './miss-minutes/gateway-client.js', './miss-minutes/app.js', './miss-minutes/knowledge/core.json'];
 /* Atlante 2.0 (A3): modulo UI e indice leggero per l'uso offline; gli shard dei dossier e le immagini si memorizzano all'uso (cattura dinamica). Un file mancante non blocca l'installazione. */
-const A3_FILES = ['./atlante2/a3.js', './atlante2/a3.css', './atlante2/ritratti.js', './atlante2/data/index.json', './atlante2/data/pilot/candidati.json'];
+const A3_FILES = ['./atlante2/a3.js', './atlante2/a3.css', './atlante2/ritratti.js', './atlante2/data/index.json', './atlante2/data/pilot/candidati.json', './atlante2/data/pilot/proposte.json'];
 function precacheA3(cache) {
   return Promise.all(A3_FILES.map(function (u) { return cache.add(new Request(u, { cache: 'no-cache' })).catch(function () { /* assente/offline */ }); }));
 }

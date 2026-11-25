@@ -343,7 +343,7 @@ jobs:
       - name: Dipendenze (CPU, gratuite)
         run: |
           pip install --quiet torch torchvision --index-url https://download.pytorch.org/whl/cpu
-          pip install --quiet open_clip_torch pillow numpy requests
+          pip install --quiet open_clip_torch timm transformers sentencepiece protobuf pillow numpy requests
       - name: Motore
         run: |
           set -o pipefail

@@ -102,6 +102,8 @@
   /* ---------- editor (overlay a schermo intero) ---------- */
   var CANDS = null;
   function candidati() { if (CANDS) return Promise.resolve(CANDS); return fetch('atlante2/data/pilot/candidati.json', { credentials: 'same-origin' }).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (j) { CANDS = j; return j; }).catch(function () { CANDS = { identita: [] }; return CANDS; }); }
+  var PROP = null;   // proposte del motore A3.2 (metadati: percorsi CDN, punteggi, ritaglio suggerito); l'utente decide sempre
+  function proposte() { if (PROP) return Promise.resolve(PROP); return fetch('atlante2/data/pilot/proposte.json', { credentials: 'same-origin' }).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (j) { PROP = j; return j; }).catch(function () { PROP = { identita: [] }; return PROP; }); }
   function infoId(j, id) { for (var i = 0; i < j.identita.length; i++) if (j.identita[i].id === id) return j.identita[i]; return null; }
 
   function openEditor(id, nome, known) {
@@ -148,6 +150,7 @@
           }).then(function () { if (objUrl) URL.revokeObjectURL(objUrl); if (main.querySelector('.a3r-crop')) home(); });
         });
       }
+      if (meta.auto) { meta.auto = 0; salva(); }
     }
     function scene() {
       clear(); main.appendChild(h('p', 'a3r-info', 'Caricamento delle scene candidate…')); candidati().then(function (j) {
@@ -165,12 +168,23 @@
           });
         }
         nums.forEach(function (t) { var b = btn('a3r-tab', t.titolo_tmdb, function () { shown = t.num; fill(); }); b.setAttribute('data-n', t.num); tabs.appendChild(b); });
+        proposte().then(function (pj) {
+          var pi = (pj.identita || []).filter(function (z) { return z.id === id; })[0]; if (!pi || !pi.proposte || !pi.proposte.length) return;
+          var box = h('section', 'a3r-prop'); box.appendChild(h('h3', '', 'Proposte automatiche (' + pi.proposte.length + ')'));
+          box.appendChild(h('p', 'a3r-info', 'Selezionate dal motore tra le scene della continuità, con ritaglio suggerito. Tocca ✓ per approvare subito, o la scena per rivedere il ritaglio. La scelta resta tua.'));
+          var g = h('div', 'a3r-pg'); pi.proposte.forEach(function (x) {
+            var t = inf.titoli.filter(function (y) { return y.num === x.num; })[0]; var st = refStyle({ scena: { w: x.w, h: x.h }, crop: x.crop });
+            var c = h('div', 'a3r-pc'); var pv = btn('a3r-pv', null, function () { scegli(x, x.crop, false); }); pv.setAttribute('aria-label', 'Proposta ' + x.rk + ', rivedi il ritaglio');
+            pv.style.backgroundImage = 'url("' + TM + 'w780' + x.p + '")'; pv.style.backgroundSize = st.size; pv.style.backgroundPosition = st.pos; pv.appendChild(h('i', 'rk', '#' + x.rk));
+            var ok = btn('a3r-ok', '✓ Approva', function () { scegli(x, x.crop, true); }); ok.setAttribute('aria-label', 'Approva la proposta ' + x.rk + ' con il ritaglio suggerito'); c.appendChild(pv); c.appendChild(ok); g.appendChild(c);
+          }); box.appendChild(g); main.insertBefore(box, tabs);
+        });
         main.appendChild(tabs); main.appendChild(grid); main.appendChild(h('p', 'a3r-fine', ATTR)); fill();
-        function scegli(x) {
+        function scegli(x, ini, auto) {
           var t = inf.titoli.filter(function (y) { return y.num === x.num; })[0]; clear(); main.appendChild(h('p', 'a3r-info', 'Caricamento della scena…'));
-          var meta = { fonte: 'tmdb-scena', titolo: t ? t.titolo_tmdb : '', scena: { p: x.p, w: x.w, h: x.h, tid: t ? t.tmdb_id : null, num: x.num } };
-          loadImg(TM + 'w1280' + x.p, true).then(function (im) { crop(im, null, meta, null); }).catch(function () {
-            loadImg(TM + 'w1280' + x.p, false).then(function (im) { meta.soloRef = true; crop(im, null, meta, null); main.insertBefore(h('p', 'a3r-msg', 'Il sito non consente la copia locale: il ritratto verrà salvato come riferimento alla scena (serve la rete per vederlo).'), main.firstChild); }).catch(function () { clear(); main.appendChild(h('p', 'a3r-msg bad', 'Scena non raggiungibile (rete assente o immagine rimossa).')); main.appendChild(btn('a3r-b', 'Indietro', scene)); });
+          var meta = { fonte: 'tmdb-scena', titolo: t ? t.titolo_tmdb : '', auto: auto ? 1 : 0, scena: { p: x.p, w: x.w, h: x.h, tid: t ? t.tmdb_id : null, num: x.num } }; if (x.rk) { meta.scena.rk = x.rk; meta.scena.sc = x.sc; }
+          loadImg(TM + 'w1280' + x.p, true).then(function (im) { crop(im, ini || null, meta, null); }).catch(function () {
+            loadImg(TM + 'w1280' + x.p, false).then(function (im) { meta.soloRef = true; crop(im, ini || null, meta, null); main.insertBefore(h('p', 'a3r-msg', 'Il sito non consente la copia locale: il ritratto verrà salvato come riferimento alla scena (serve la rete per vederlo).'), main.firstChild); }).catch(function () { clear(); main.appendChild(h('p', 'a3r-msg bad', 'Scena non raggiungibile (rete assente o immagine rimossa).')); main.appendChild(btn('a3r-b', 'Indietro', scene)); });
           });
         }
       });
