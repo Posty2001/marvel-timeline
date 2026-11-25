@@ -1,0 +1,2618 @@
+{
+ "schema": 1,
+ "generato": "2026-11-25T10:37:45Z",
+ "voci": [
+  {
+   "item": "001",
+   "numero_mostrato": "001",
+   "tmdb_id": 557,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Spider-Man",
+   "anno_app": 2002,
+   "saga": "1A · Sam Raimi Spider-Man Trilogy",
+   "studio": "legacy",
+   "titolo_tmdb": "Spider-Man",
+   "anno_tmdb": 2002,
+   "produttori": [
+    "Marvel Enterprises",
+    "Laura Ziskin Productions",
+    "Columbia Pictures"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "002",
+   "numero_mostrato": "002",
+   "tmdb_id": 558,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Spider-Man 2",
+   "anno_app": 2004,
+   "saga": "1A · Sam Raimi Spider-Man Trilogy",
+   "studio": "legacy",
+   "titolo_tmdb": "Spider-Man 2",
+   "anno_tmdb": 2004,
+   "produttori": [
+    "Marvel Enterprises",
+    "Laura Ziskin Productions",
+    "Columbia Pictures"
+   ],
+   "poster_attuale_uguale": true,
+   "esito": "ok"
+  },
+  {
+   "item": "003",
+   "numero_mostrato": "003",
+   "tmdb_id": 559,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Spider-Man 3",
+   "anno_app": 2007,
+   "saga": "1A · Sam Raimi Spider-Man Trilogy",
+   "studio": "legacy",
+   "titolo_tmdb": "Spider-Man 3",
+   "anno_tmdb": 2007,
+   "produttori": [
+    "Laura Ziskin Productions",
+    "Marvel Studios",
+    "Columbia Pictures"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "004",
+   "numero_mostrato": "004",
+   "tmdb_id": 1930,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "The Amazing Spider-Man",
+   "anno_app": 2012,
+   "saga": "1B · The Amazing Spider-Man Duology",
+   "studio": "legacy",
+   "titolo_tmdb": "The Amazing Spider-Man",
+   "anno_tmdb": 2012,
+   "produttori": [
+    "Marvel Entertainment",
+    "Laura Ziskin Productions",
+    "Columbia Pictures",
+    "Matt Tolmach Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "005",
+   "numero_mostrato": "005",
+   "tmdb_id": 102382,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "The Amazing Spider-Man 2",
+   "anno_app": 2014,
+   "saga": "1B · The Amazing Spider-Man Duology",
+   "studio": "legacy",
+   "titolo_tmdb": "The Amazing Spider-Man 2",
+   "anno_tmdb": 2014,
+   "produttori": [
+    "Columbia Pictures",
+    "Matt Tolmach Productions",
+    "Arad Productions",
+    "Marvel Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "006",
+   "numero_mostrato": "006",
+   "tmdb_id": 335983,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Venom",
+   "anno_app": 2018,
+   "saga": "1C · Sony's Spider-Man Universe",
+   "studio": "sony",
+   "titolo_tmdb": "Venom",
+   "anno_tmdb": 2018,
+   "produttori": [
+    "Matt Tolmach Productions",
+    "Pascal Pictures",
+    "Marvel Entertainment",
+    "Tencent Pictures"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "007",
+   "numero_mostrato": "007",
+   "tmdb_id": 580489,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Venom: Let There Be Carnage",
+   "anno_app": 2021,
+   "saga": "1C · Sony's Spider-Man Universe",
+   "studio": "sony",
+   "titolo_tmdb": "Venom: Let There Be Carnage",
+   "anno_tmdb": 2021,
+   "produttori": [
+    "Columbia Pictures",
+    "Pascal Pictures",
+    "Matt Tolmach Productions",
+    "Arad Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "008",
+   "numero_mostrato": "008",
+   "tmdb_id": 526896,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Morbius",
+   "anno_app": 2022,
+   "saga": "1C · Sony's Spider-Man Universe",
+   "studio": "sony",
+   "titolo_tmdb": "Morbius",
+   "anno_tmdb": 2022,
+   "produttori": [
+    "Columbia Pictures",
+    "Matt Tolmach Productions",
+    "Arad Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "009",
+   "numero_mostrato": "009",
+   "tmdb_id": 634492,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Madame Web",
+   "anno_app": 2024,
+   "saga": "1C · Sony's Spider-Man Universe",
+   "studio": "sony",
+   "titolo_tmdb": "Madame Web",
+   "anno_tmdb": 2024,
+   "produttori": [
+    "Columbia Pictures",
+    "di Bonaventura Pictures"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "010",
+   "numero_mostrato": "010",
+   "tmdb_id": 539972,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Kraven the Hunter",
+   "anno_app": 2024,
+   "saga": "1C · Sony's Spider-Man Universe",
+   "studio": "sony",
+   "titolo_tmdb": "Kraven the Hunter",
+   "anno_tmdb": 2024,
+   "produttori": [
+    "Columbia Pictures",
+    "Matt Tolmach Productions",
+    "Arad Productions",
+    "TSG Entertainment II"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "011",
+   "numero_mostrato": "011",
+   "tmdb_id": 912649,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Venom: The Last Dance",
+   "anno_app": 2024,
+   "saga": "1C · Sony's Spider-Man Universe",
+   "studio": "sony",
+   "titolo_tmdb": "Venom: The Last Dance",
+   "anno_tmdb": 2024,
+   "produttori": [
+    "Columbia Pictures",
+    "Pascal Pictures",
+    "Matt Tolmach Productions",
+    "Hutch Parker Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "012",
+   "numero_mostrato": "012",
+   "tmdb_id": 49538,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "X-Men: First Class",
+   "anno_app": 2011,
+   "saga": "1D · Il Fox-Verse — universo X-Men",
+   "studio": "fox",
+   "titolo_tmdb": "X-Men: First Class",
+   "anno_tmdb": 2011,
+   "produttori": [
+    "The Donners' Company",
+    "Bad Hat Harry Productions",
+    "20th Century Fox",
+    "Marvel Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "013",
+   "numero_mostrato": "018",
+   "tmdb_id": 127585,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "X-Men: Days of Future Past",
+   "anno_app": 2014,
+   "saga": "1D · Il Fox-Verse — universo X-Men",
+   "studio": "fox",
+   "titolo_tmdb": "X-Men: Days of Future Past",
+   "anno_tmdb": 2014,
+   "produttori": [
+    "Bad Hat Harry Productions",
+    "The Donners' Company",
+    "20th Century Fox",
+    "Marvel Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "014",
+   "numero_mostrato": "019",
+   "tmdb_id": 246655,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "X-Men: Apocalypse",
+   "anno_app": 2016,
+   "saga": "1D · Il Fox-Verse — universo X-Men",
+   "studio": "fox",
+   "titolo_tmdb": "X-Men: Apocalypse",
+   "anno_tmdb": 2016,
+   "produttori": [
+    "The Donners' Company",
+    "Bad Hat Harry Productions",
+    "Genre Films",
+    "Hutch Parker Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "015",
+   "numero_mostrato": "014",
+   "tmdb_id": 36657,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "X-Men",
+   "anno_app": 2000,
+   "saga": "1D · Il Fox-Verse — universo X-Men",
+   "studio": "fox",
+   "titolo_tmdb": "X-Men",
+   "anno_tmdb": 2000,
+   "produttori": [
+    "The Donners' Company",
+    "Bad Hat Harry Productions",
+    "20th Century Fox",
+    "Marvel Entertainment Group"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "016",
+   "numero_mostrato": "015",
+   "tmdb_id": 36658,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "X2",
+   "anno_app": 2003,
+   "saga": "1D · Il Fox-Verse — universo X-Men",
+   "studio": "fox",
+   "titolo_tmdb": "X2",
+   "anno_tmdb": 2003,
+   "produttori": [
+    "The Donners' Company",
+    "Bad Hat Harry Productions",
+    "20th Century Fox",
+    "Marvel Enterprises"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "017",
+   "numero_mostrato": "016",
+   "tmdb_id": 36668,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "X-Men: The Last Stand",
+   "anno_app": 2006,
+   "saga": "1D · Il Fox-Verse — universo X-Men",
+   "studio": "fox",
+   "titolo_tmdb": "X-Men: The Last Stand",
+   "anno_tmdb": 2006,
+   "produttori": [
+    "The Donners' Company",
+    "20th Century Fox",
+    "Marvel Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "018",
+   "numero_mostrato": "013",
+   "tmdb_id": 2080,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "X-Men Origins: Wolverine",
+   "anno_app": 2009,
+   "saga": "1D · Il Fox-Verse — universo X-Men",
+   "studio": "fox",
+   "titolo_tmdb": "X-Men Origins: Wolverine",
+   "anno_tmdb": 2009,
+   "produttori": [
+    "The Donners' Company",
+    "Seed Productions",
+    "20th Century Fox",
+    "Marvel Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "019",
+   "numero_mostrato": "017",
+   "tmdb_id": 76170,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "The Wolverine",
+   "anno_app": 2013,
+   "saga": "1D · Il Fox-Verse — universo X-Men",
+   "studio": "fox",
+   "titolo_tmdb": "The Wolverine",
+   "anno_tmdb": 2013,
+   "produttori": [
+    "The Donners' Company",
+    "20th Century Fox",
+    "Marvel Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "020",
+   "numero_mostrato": "020",
+   "tmdb_id": 320288,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Dark Phoenix",
+   "anno_app": 2019,
+   "saga": "1D · Il Fox-Verse — universo X-Men",
+   "studio": "fox",
+   "titolo_tmdb": "Dark Phoenix",
+   "anno_tmdb": 2019,
+   "produttori": [
+    "Genre Films",
+    "Hutch Parker Entertainment",
+    "20th Century Fox",
+    "TSG Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "021",
+   "numero_mostrato": "021",
+   "tmdb_id": 340102,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "The New Mutants",
+   "anno_app": 2020,
+   "saga": "1D · Il Fox-Verse — universo X-Men",
+   "studio": "fox",
+   "titolo_tmdb": "The New Mutants",
+   "anno_tmdb": 2020,
+   "produttori": [
+    "20th Century Studios",
+    "Genre Films",
+    "Sunswept Entertainment",
+    "Marvel Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "022",
+   "numero_mostrato": "022",
+   "tmdb_id": 293660,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Deadpool",
+   "anno_app": 2016,
+   "saga": "1D · Il Fox-Verse — universo X-Men",
+   "studio": "fox",
+   "titolo_tmdb": "Deadpool",
+   "anno_tmdb": 2016,
+   "produttori": [
+    "20th Century Fox",
+    "The Donners' Company",
+    "Genre Films",
+    "Marvel Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "023",
+   "numero_mostrato": "024",
+   "tmdb_id": 383498,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Deadpool 2",
+   "anno_app": 2018,
+   "saga": "1D · Il Fox-Verse — universo X-Men",
+   "studio": "fox",
+   "titolo_tmdb": "Deadpool 2",
+   "anno_tmdb": 2018,
+   "produttori": [
+    "Maximum Effort",
+    "Genre Films",
+    "20th Century Fox",
+    "Marvel Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "024",
+   "numero_mostrato": "023",
+   "tmdb_id": 263115,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Logan",
+   "anno_app": 2017,
+   "saga": "1D · Il Fox-Verse — universo X-Men",
+   "studio": "fox",
+   "titolo_tmdb": "Logan",
+   "anno_tmdb": 2017,
+   "produttori": [
+    "Hutch Parker Entertainment",
+    "The Donners' Company",
+    "Genre Films",
+    "20th Century Fox"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "025",
+   "numero_mostrato": "025",
+   "tmdb_id": 324857,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Spider-Man: Into the Spider-Verse",
+   "anno_app": 2018,
+   "saga": "1E · Sony's Spider-Verse animato",
+   "studio": "animazione",
+   "titolo_tmdb": "Spider-Man: Into the Spider-Verse",
+   "anno_tmdb": 2018,
+   "produttori": [
+    "Columbia Pictures",
+    "Lord Miller",
+    "Pascal Pictures",
+    "Sony Pictures Animation"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "026",
+   "numero_mostrato": "026",
+   "tmdb_id": 569094,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Spider-Man: Across the Spider-Verse",
+   "anno_app": 2023,
+   "saga": "1E · Sony's Spider-Verse animato",
+   "studio": "animazione",
+   "titolo_tmdb": "Spider-Man: Across the Spider-Verse",
+   "anno_tmdb": 2023,
+   "produttori": [
+    "Columbia Pictures",
+    "Sony Pictures Animation",
+    "Lord Miller",
+    "Pascal Pictures"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "027",
+   "numero_mostrato": "027",
+   "tmdb_id": 911916,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Spider-Man: Beyond the Spider-Verse",
+   "anno_app": 2027,
+   "saga": "1E · Sony's Spider-Verse animato",
+   "studio": "animazione",
+   "titolo_tmdb": "Spider-Man: Beyond the Spider-Verse",
+   "anno_tmdb": 2027,
+   "produttori": [
+    "Columbia Pictures",
+    "Sony Pictures Animation",
+    "Lord Miller",
+    "Pascal Pictures"
+   ],
+   "poster_attuale_uguale": true,
+   "esito": "ok"
+  },
+  {
+   "item": "028",
+   "numero_mostrato": "028",
+   "tmdb_id": 22059,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "The Fantastic Four",
+   "anno_app": null,
+   "saga": "1F · I Fantastic Four pre-MCU",
+   "studio": "legacy",
+   "titolo_tmdb": "The Fantastic Four",
+   "anno_tmdb": 1994,
+   "produttori": [
+    "Constantin Film",
+    "New Concorde"
+   ],
+   "poster_attuale_uguale": true,
+   "esito": "ok"
+  },
+  {
+   "item": "029",
+   "numero_mostrato": "029",
+   "tmdb_id": 9738,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Fantastic Four",
+   "anno_app": 2005,
+   "saga": "1F · I Fantastic Four pre-MCU",
+   "studio": "legacy",
+   "titolo_tmdb": "Fantastic Four",
+   "anno_tmdb": 2005,
+   "produttori": [
+    "Kumar Mobiliengesellschaft & Company Projekt Nr. 3",
+    "1492 Pictures",
+    "Marvel Enterprises",
+    "20th Century Fox"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "030",
+   "numero_mostrato": "030",
+   "tmdb_id": 1979,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Fantastic Four: Rise of the Silver Surfer",
+   "anno_app": 2007,
+   "saga": "1F · I Fantastic Four pre-MCU",
+   "studio": "legacy",
+   "titolo_tmdb": "Fantastic Four: Rise of the Silver Surfer",
+   "anno_tmdb": 2007,
+   "produttori": [
+    "1492 Pictures",
+    "Bernd Eichinger Productions",
+    "20th Century Fox",
+    "Constantin Film"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "031",
+   "numero_mostrato": "031",
+   "tmdb_id": 166424,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Fantastic Four",
+   "anno_app": 2015,
+   "saga": "1F · I Fantastic Four pre-MCU",
+   "studio": "legacy",
+   "titolo_tmdb": "Fantastic Four",
+   "anno_tmdb": 2015,
+   "produttori": [
+    "20th Century Fox",
+    "Constantin Film",
+    "Marvel Entertainment",
+    "Marv"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "032",
+   "numero_mostrato": "032",
+   "tmdb_id": 36647,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Blade",
+   "anno_app": 1998,
+   "saga": "1G · La trilogia Blade originale",
+   "studio": "legacy",
+   "titolo_tmdb": "Blade",
+   "anno_tmdb": 1998,
+   "produttori": [
+    "New Line Cinema",
+    "Amen Ra Films",
+    "Imaginary Forces"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "033",
+   "numero_mostrato": "033",
+   "tmdb_id": 36586,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Blade II",
+   "anno_app": 2002,
+   "saga": "1G · La trilogia Blade originale",
+   "studio": "legacy",
+   "titolo_tmdb": "Blade II",
+   "anno_tmdb": 2002,
+   "produttori": [
+    "New Line Cinema",
+    "Amen Ra Films",
+    "Imaginary Forces"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "034",
+   "numero_mostrato": "034",
+   "tmdb_id": 36648,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Blade: Trinity",
+   "anno_app": 2004,
+   "saga": "1G · La trilogia Blade originale",
+   "studio": "legacy",
+   "titolo_tmdb": "Blade: Trinity",
+   "anno_tmdb": 2004,
+   "produttori": [
+    "Marvel Enterprises",
+    "New Line Cinema",
+    "Amen Ra Films",
+    "Imaginary Forces"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "035",
+   "numero_mostrato": "035",
+   "tmdb_id": 9480,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Daredevil",
+   "anno_app": 2003,
+   "saga": "1H · Daredevil/Elektra",
+   "studio": "legacy",
+   "titolo_tmdb": "Daredevil",
+   "anno_tmdb": 2003,
+   "produttori": [
+    "Marvel Enterprises",
+    "New Regency Pictures",
+    "Epsilon Motion Pictures",
+    "Regency Enterprises"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "036",
+   "numero_mostrato": "036",
+   "tmdb_id": 9947,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Elektra",
+   "anno_app": 2005,
+   "saga": "1H · Daredevil/Elektra",
+   "studio": "legacy",
+   "titolo_tmdb": "Elektra",
+   "anno_tmdb": 2005,
+   "produttori": [
+    "Regency Enterprises",
+    "New Regency Pictures",
+    "Marvel Enterprises",
+    "Horseshoe Bay Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "037",
+   "numero_mostrato": "037",
+   "tmdb_id": 1250,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Ghost Rider",
+   "anno_app": 2007,
+   "saga": "1I · Ghost Rider",
+   "studio": "legacy",
+   "titolo_tmdb": "Ghost Rider",
+   "anno_tmdb": 2007,
+   "produttori": [
+    "Crystal Sky Pictures",
+    "Relativity Media",
+    "Columbia Pictures",
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "038",
+   "numero_mostrato": "038",
+   "tmdb_id": 71676,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Ghost Rider: Spirit of Vengeance",
+   "anno_app": 2012,
+   "saga": "1I · Ghost Rider",
+   "studio": "legacy",
+   "titolo_tmdb": "Ghost Rider: Spirit of Vengeance",
+   "anno_tmdb": 2011,
+   "produttori": [
+    "Columbia Pictures",
+    "Crystal Sky Pictures",
+    "Michael De Luca Productions",
+    "Hyde Park Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "039",
+   "numero_mostrato": "039",
+   "tmdb_id": 220102,
+   "tipo": "tv",
+   "stagione": null,
+   "titolo_app": "Spider-Noir",
+   "anno_app": 2026,
+   "saga": "1J · Spider-Noir",
+   "studio": "legacy",
+   "titolo_tmdb": "Spider-Noir",
+   "anno_tmdb": 2026,
+   "produttori": [
+    "Pascal Pictures",
+    "Lord Miller",
+    "Sony Pictures Television",
+    "Amazon MGM Studios"
+   ],
+   "poster_attuale_uguale": true,
+   "esito": "ok"
+  },
+  {
+   "item": "040",
+   "numero_mostrato": "040",
+   "tmdb_id": 1927,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Hulk",
+   "anno_app": 2003,
+   "saga": "1K · Hulk (Ang Lee)",
+   "studio": "legacy",
+   "titolo_tmdb": "Hulk",
+   "anno_tmdb": 2003,
+   "produttori": [
+    "Marvel Enterprises",
+    "Universal Pictures",
+    "Good Machine",
+    "Valhalla Motion Pictures"
+   ],
+   "poster_attuale_uguale": true,
+   "esito": "ok"
+  },
+  {
+   "item": "041",
+   "numero_mostrato": "041",
+   "tmdb_id": 1771,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Captain America: The First Avenger",
+   "anno_app": 2011,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Captain America: The First Avenger",
+   "anno_tmdb": 2011,
+   "produttori": [
+    "Marvel Studios",
+    "Marvel Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "042",
+   "numero_mostrato": "042",
+   "tmdb_id": 211387,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Marvel One-Shot: Agent Carter",
+   "anno_app": 2013,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Marvel One-Shot: Agent Carter",
+   "anno_tmdb": 2013,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "043",
+   "numero_mostrato": "043",
+   "tmdb_id": 61550,
+   "tipo": "tv",
+   "stagione": 1,
+   "titolo_app": "Agent Carter S1",
+   "anno_app": 2015,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Agent Carter",
+   "anno_tmdb": 2015,
+   "produttori": [
+    "ABC Studios",
+    "Marvel Television",
+    "Fazekas & Butters"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "044",
+   "numero_mostrato": "044",
+   "tmdb_id": 61550,
+   "tipo": "tv",
+   "stagione": 2,
+   "titolo_app": "Agent Carter S2",
+   "anno_app": 2016,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Agent Carter",
+   "anno_tmdb": 2016,
+   "produttori": [
+    "ABC Studios",
+    "Marvel Television",
+    "Fazekas & Butters"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "045",
+   "numero_mostrato": "045",
+   "tmdb_id": 1726,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Iron Man",
+   "anno_app": 2008,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Iron Man",
+   "anno_tmdb": 2008,
+   "produttori": [
+    "Marvel Studios",
+    "Marvel Entertainment",
+    "Fairview Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "046",
+   "numero_mostrato": "046",
+   "tmdb_id": 76122,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Marvel One-Shot: The Consultant",
+   "anno_app": 2011,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Marvel One-Shot: The Consultant",
+   "anno_tmdb": 2011,
+   "produttori": [
+    "Marvel Studios",
+    "Ebeling Group"
+   ],
+   "poster_attuale_uguale": true,
+   "esito": "ok"
+  },
+  {
+   "item": "047",
+   "numero_mostrato": "047",
+   "tmdb_id": 10138,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Iron Man 2",
+   "anno_app": 2010,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Iron Man 2",
+   "anno_tmdb": 2010,
+   "produttori": [
+    "Marvel Studios",
+    "Fairview Entertainment",
+    "Marvel Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "048",
+   "numero_mostrato": "048",
+   "tmdb_id": 76535,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Marvel One-Shot: A Funny Thing Happened on the Way to Thor's Hammer",
+   "anno_app": 2011,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Marvel One-Shot: A Funny Thing Happened on the Way to Thor's Hammer",
+   "anno_tmdb": 2011,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "049",
+   "numero_mostrato": "049",
+   "tmdb_id": 1724,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "The Incredible Hulk",
+   "anno_app": 2008,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "The Incredible Hulk",
+   "anno_tmdb": 2008,
+   "produttori": [
+    "Marvel Studios",
+    "Valhalla Motion Pictures",
+    "Marvel Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "050",
+   "numero_mostrato": "050",
+   "tmdb_id": 10195,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Thor",
+   "anno_app": 2011,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Thor",
+   "anno_tmdb": 2011,
+   "produttori": [
+    "Marvel Studios",
+    "Marvel Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "051",
+   "numero_mostrato": "051",
+   "tmdb_id": 24428,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "The Avengers",
+   "anno_app": 2012,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "The Avengers",
+   "anno_tmdb": 2012,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "052",
+   "numero_mostrato": "052",
+   "tmdb_id": 119569,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Marvel One-Shot: Item 47",
+   "anno_app": 2012,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Marvel One-Shot: Item 47",
+   "anno_tmdb": 2012,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": true,
+   "esito": "ok"
+  },
+  {
+   "item": "053",
+   "numero_mostrato": "053",
+   "tmdb_id": 68721,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Iron Man 3",
+   "anno_app": 2013,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Iron Man 3",
+   "anno_tmdb": 2013,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "054",
+   "numero_mostrato": "054",
+   "tmdb_id": 253980,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Marvel One-Shot: All Hail the King",
+   "anno_app": 2014,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Marvel One-Shot: All Hail the King",
+   "anno_tmdb": 2014,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "055",
+   "numero_mostrato": "055",
+   "tmdb_id": 76338,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Thor: The Dark World",
+   "anno_app": 2013,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Thor: The Dark World",
+   "anno_tmdb": 2013,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "056",
+   "numero_mostrato": "056",
+   "tmdb_id": 100402,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Captain America: The Winter Soldier",
+   "anno_app": 2014,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Captain America: The Winter Soldier",
+   "anno_tmdb": 2014,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "057",
+   "numero_mostrato": "057",
+   "tmdb_id": 1403,
+   "tipo": "tv",
+   "stagione": 1,
+   "titolo_app": "Agents of S.H.I.E.L.D. S1",
+   "anno_app": 2013,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Agents of S.H.I.E.L.D.",
+   "anno_tmdb": 2013,
+   "produttori": [
+    "ABC Studios",
+    "Mutant Enemy Productions",
+    "Marvel Television"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "058",
+   "numero_mostrato": "058",
+   "tmdb_id": 118340,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Guardians of the Galaxy",
+   "anno_app": 2014,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Guardians of the Galaxy",
+   "anno_tmdb": 2014,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "059",
+   "numero_mostrato": "059",
+   "tmdb_id": 283995,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Guardians of the Galaxy Vol. 2",
+   "anno_app": 2017,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Guardians of the Galaxy Vol. 2",
+   "anno_tmdb": 2017,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "060",
+   "numero_mostrato": "060",
+   "tmdb_id": 61889,
+   "tipo": "tv",
+   "stagione": 1,
+   "titolo_app": "Daredevil S1",
+   "anno_app": 2015,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Daredevil",
+   "anno_tmdb": 2015,
+   "produttori": [
+    "ABC Studios",
+    "DeKnight Industries",
+    "Goddard Textiles",
+    "Marvel Television"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "061",
+   "numero_mostrato": "061",
+   "tmdb_id": 38472,
+   "tipo": "tv",
+   "stagione": 1,
+   "titolo_app": "Jessica Jones S1",
+   "anno_app": 2015,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Jessica Jones",
+   "anno_tmdb": 2015,
+   "produttori": [
+    "Tall Girls Productions",
+    "ABC Studios",
+    "Marvel Television"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "062",
+   "numero_mostrato": "062",
+   "tmdb_id": 99861,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Avengers: Age of Ultron",
+   "anno_app": 2015,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Avengers: Age of Ultron",
+   "anno_tmdb": 2015,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "063",
+   "numero_mostrato": "063",
+   "tmdb_id": 102899,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Ant-Man",
+   "anno_app": 2015,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Ant-Man",
+   "anno_tmdb": 2015,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "064",
+   "numero_mostrato": "064",
+   "tmdb_id": 1403,
+   "tipo": "tv",
+   "stagione": 2,
+   "titolo_app": "Agents of S.H.I.E.L.D. S2",
+   "anno_app": 2014,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Agents of S.H.I.E.L.D.",
+   "anno_tmdb": 2014,
+   "produttori": [
+    "ABC Studios",
+    "Mutant Enemy Productions",
+    "Marvel Television"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "065",
+   "numero_mostrato": "065",
+   "tmdb_id": 61889,
+   "tipo": "tv",
+   "stagione": 2,
+   "titolo_app": "Daredevil S2",
+   "anno_app": 2016,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Daredevil",
+   "anno_tmdb": 2016,
+   "produttori": [
+    "ABC Studios",
+    "DeKnight Industries",
+    "Goddard Textiles",
+    "Marvel Television"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "066",
+   "numero_mostrato": "066",
+   "tmdb_id": 1403,
+   "tipo": "tv",
+   "stagione": 3,
+   "titolo_app": "Agents of S.H.I.E.L.D. S3",
+   "anno_app": 2015,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Agents of S.H.I.E.L.D.",
+   "anno_tmdb": 2015,
+   "produttori": [
+    "ABC Studios",
+    "Mutant Enemy Productions",
+    "Marvel Television"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "067",
+   "numero_mostrato": "067",
+   "tmdb_id": 271110,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Captain America: Civil War",
+   "anno_app": 2016,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Captain America: Civil War",
+   "anno_tmdb": 2016,
+   "produttori": [
+    "Marvel Studios",
+    "Vita-Ray Dutch Productions III",
+    "Studio Babelsberg"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "068",
+   "numero_mostrato": "068",
+   "tmdb_id": 62126,
+   "tipo": "tv",
+   "stagione": 1,
+   "titolo_app": "Luke Cage S1",
+   "anno_app": 2016,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Luke Cage",
+   "anno_tmdb": 2016,
+   "produttori": [
+    "Marvel Television",
+    "ABC Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "069",
+   "numero_mostrato": "069",
+   "tmdb_id": 497698,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Black Widow",
+   "anno_app": 2021,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Black Widow",
+   "anno_tmdb": 2021,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "070",
+   "numero_mostrato": "070",
+   "tmdb_id": 284052,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Doctor Strange",
+   "anno_app": 2016,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Doctor Strange",
+   "anno_tmdb": 2016,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "071",
+   "numero_mostrato": "071",
+   "tmdb_id": 1403,
+   "tipo": "tv",
+   "stagione": 4,
+   "titolo_app": "Agents of S.H.I.E.L.D. S4",
+   "anno_app": 2016,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Agents of S.H.I.E.L.D.",
+   "anno_tmdb": 2016,
+   "produttori": [
+    "ABC Studios",
+    "Mutant Enemy Productions",
+    "Marvel Television"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "072",
+   "numero_mostrato": "072",
+   "tmdb_id": 62127,
+   "tipo": "tv",
+   "stagione": 1,
+   "titolo_app": "Iron Fist S1",
+   "anno_app": 2017,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Iron Fist",
+   "anno_tmdb": 2017,
+   "produttori": [
+    "Marvel Television",
+    "Devilina Productions",
+    "ABC Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "075",
+   "numero_mostrato": "075",
+   "tmdb_id": 315635,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Spider-Man: Homecoming",
+   "anno_app": 2017,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Spider-Man: Homecoming",
+   "anno_tmdb": 2017,
+   "produttori": [
+    "Marvel Studios",
+    "Pascal Pictures",
+    "LStar Capital",
+    "Columbia Pictures"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "076",
+   "numero_mostrato": "076",
+   "tmdb_id": 284053,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Thor: Ragnarok",
+   "anno_app": 2017,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Thor: Ragnarok",
+   "anno_tmdb": 2017,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "078",
+   "numero_mostrato": "078",
+   "tmdb_id": 284054,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Black Panther",
+   "anno_app": 2018,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Black Panther",
+   "anno_tmdb": 2018,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "079",
+   "numero_mostrato": "079",
+   "tmdb_id": 38472,
+   "tipo": "tv",
+   "stagione": 2,
+   "titolo_app": "Jessica Jones S2",
+   "anno_app": 2018,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Jessica Jones",
+   "anno_tmdb": 2018,
+   "produttori": [
+    "Tall Girls Productions",
+    "ABC Studios",
+    "Marvel Television"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "080",
+   "numero_mostrato": "080",
+   "tmdb_id": 62126,
+   "tipo": "tv",
+   "stagione": 2,
+   "titolo_app": "Luke Cage S2",
+   "anno_app": 2018,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Luke Cage",
+   "anno_tmdb": 2018,
+   "produttori": [
+    "Marvel Television",
+    "ABC Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "081",
+   "numero_mostrato": "081",
+   "tmdb_id": 62127,
+   "tipo": "tv",
+   "stagione": 2,
+   "titolo_app": "Iron Fist S2",
+   "anno_app": 2018,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Iron Fist",
+   "anno_tmdb": 2018,
+   "produttori": [
+    "Marvel Television",
+    "Devilina Productions",
+    "ABC Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "082",
+   "numero_mostrato": "082",
+   "tmdb_id": 61889,
+   "tipo": "tv",
+   "stagione": 3,
+   "titolo_app": "Daredevil S3",
+   "anno_app": 2018,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Daredevil",
+   "anno_tmdb": 2018,
+   "produttori": [
+    "ABC Studios",
+    "DeKnight Industries",
+    "Goddard Textiles",
+    "Marvel Television"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "083",
+   "numero_mostrato": "083",
+   "tmdb_id": 1403,
+   "tipo": "tv",
+   "stagione": 5,
+   "titolo_app": "Agents of S.H.I.E.L.D. S5",
+   "anno_app": 2017,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Agents of S.H.I.E.L.D.",
+   "anno_tmdb": 2017,
+   "produttori": [
+    "ABC Studios",
+    "Mutant Enemy Productions",
+    "Marvel Television"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "084",
+   "numero_mostrato": "084",
+   "tmdb_id": 299536,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Avengers: Infinity War",
+   "anno_app": 2018,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Avengers: Infinity War",
+   "anno_tmdb": 2018,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "085",
+   "numero_mostrato": "085",
+   "tmdb_id": 363088,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Ant-Man and the Wasp",
+   "anno_app": 2018,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Ant-Man and the Wasp",
+   "anno_tmdb": 2018,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "087",
+   "numero_mostrato": "087",
+   "tmdb_id": 38472,
+   "tipo": "tv",
+   "stagione": 3,
+   "titolo_app": "Jessica Jones S3",
+   "anno_app": 2019,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Jessica Jones",
+   "anno_tmdb": 2019,
+   "produttori": [
+    "Tall Girls Productions",
+    "ABC Studios",
+    "Marvel Television"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "088",
+   "numero_mostrato": "088",
+   "tmdb_id": 299537,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Captain Marvel",
+   "anno_app": 2019,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Captain Marvel",
+   "anno_tmdb": 2019,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "089",
+   "numero_mostrato": "089",
+   "tmdb_id": 299534,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Avengers: Endgame",
+   "anno_app": 2019,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Avengers: Endgame",
+   "anno_tmdb": 2019,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "090",
+   "numero_mostrato": "090",
+   "tmdb_id": 429617,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Spider-Man: Far From Home",
+   "anno_app": 2019,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Spider-Man: Far From Home",
+   "anno_tmdb": 2019,
+   "produttori": [
+    "Marvel Studios",
+    "Pascal Pictures",
+    "Columbia Pictures"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "091",
+   "numero_mostrato": "091",
+   "tmdb_id": 1403,
+   "tipo": "tv",
+   "stagione": 6,
+   "titolo_app": "Agents of S.H.I.E.L.D. S6",
+   "anno_app": 2019,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Agents of S.H.I.E.L.D.",
+   "anno_tmdb": 2019,
+   "produttori": [
+    "ABC Studios",
+    "Mutant Enemy Productions",
+    "Marvel Television"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "092",
+   "numero_mostrato": "092",
+   "tmdb_id": 1403,
+   "tipo": "tv",
+   "stagione": 7,
+   "titolo_app": "Agents of S.H.I.E.L.D. S7",
+   "anno_app": 2020,
+   "saga": "Canone MCU — Infinity Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Marvel's Agents of S.H.I.E.L.D.",
+   "anno_tmdb": 2020,
+   "produttori": [
+    "ABC Studios",
+    "Mutant Enemy Productions",
+    "Marvel Television"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "titolo-diverso",
+   "proposta": []
+  },
+  {
+   "item": "093",
+   "numero_mostrato": "093",
+   "tmdb_id": 85271,
+   "tipo": "tv",
+   "stagione": null,
+   "titolo_app": "WandaVision",
+   "anno_app": 2021,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "WandaVision",
+   "anno_tmdb": 2021,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "094",
+   "numero_mostrato": "094",
+   "tmdb_id": 88396,
+   "tipo": "tv",
+   "stagione": null,
+   "titolo_app": "The Falcon and the Winter Soldier",
+   "anno_app": 2021,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "The Falcon and the Winter Soldier",
+   "anno_tmdb": 2021,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": true,
+   "esito": "ok"
+  },
+  {
+   "item": "095",
+   "numero_mostrato": "095",
+   "tmdb_id": 84958,
+   "tipo": "tv",
+   "stagione": 1,
+   "titolo_app": "Loki S1",
+   "anno_app": 2021,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Loki",
+   "anno_tmdb": 2021,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "096",
+   "numero_mostrato": "096",
+   "tmdb_id": 91363,
+   "tipo": "tv",
+   "stagione": 1,
+   "titolo_app": "What If...? S1",
+   "anno_app": 2021,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "What If...?",
+   "anno_tmdb": 2021,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "097",
+   "numero_mostrato": "097",
+   "tmdb_id": 566525,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Shang-Chi and the Legend of the Ten Rings",
+   "anno_app": 2021,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Shang-Chi and the Legend of the Ten Rings",
+   "anno_tmdb": 2021,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "098",
+   "numero_mostrato": "098",
+   "tmdb_id": 524434,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Eternals",
+   "anno_app": 2021,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Eternals",
+   "anno_tmdb": 2021,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "099",
+   "numero_mostrato": "099",
+   "tmdb_id": 634649,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Spider-Man: No Way Home",
+   "anno_app": 2021,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Spider-Man: No Way Home",
+   "anno_tmdb": 2021,
+   "produttori": [
+    "Marvel Studios",
+    "Pascal Pictures",
+    "Columbia Pictures"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "100",
+   "numero_mostrato": "100",
+   "tmdb_id": 88329,
+   "tipo": "tv",
+   "stagione": null,
+   "titolo_app": "Hawkeye",
+   "anno_app": 2021,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Hawkeye",
+   "anno_tmdb": 2021,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "101",
+   "numero_mostrato": "101",
+   "tmdb_id": 92749,
+   "tipo": "tv",
+   "stagione": null,
+   "titolo_app": "Moon Knight",
+   "anno_app": 2022,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Moon Knight",
+   "anno_tmdb": 2022,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "102",
+   "numero_mostrato": "102",
+   "tmdb_id": 453395,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Doctor Strange in the Multiverse of Madness",
+   "anno_app": 2022,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Doctor Strange in the Multiverse of Madness",
+   "anno_tmdb": 2022,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "103",
+   "numero_mostrato": "103",
+   "tmdb_id": 92782,
+   "tipo": "tv",
+   "stagione": null,
+   "titolo_app": "Ms. Marvel",
+   "anno_app": 2022,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Ms. Marvel",
+   "anno_tmdb": 2022,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": true,
+   "esito": "ok"
+  },
+  {
+   "item": "104",
+   "numero_mostrato": "104",
+   "tmdb_id": 616037,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Thor: Love and Thunder",
+   "anno_app": 2022,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Thor: Love and Thunder",
+   "anno_tmdb": 2022,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "105",
+   "numero_mostrato": "105",
+   "tmdb_id": 92783,
+   "tipo": "tv",
+   "stagione": null,
+   "titolo_app": "She-Hulk: Attorney at Law",
+   "anno_app": 2022,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "She-Hulk: Attorney at Law",
+   "anno_tmdb": 2022,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "106",
+   "numero_mostrato": "106",
+   "tmdb_id": 894205,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Werewolf by Night",
+   "anno_app": 2022,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Werewolf by Night",
+   "anno_tmdb": 2022,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "108",
+   "numero_mostrato": "108",
+   "tmdb_id": 505642,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Black Panther: Wakanda Forever",
+   "anno_app": 2022,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Black Panther: Wakanda Forever",
+   "anno_tmdb": 2022,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "109",
+   "numero_mostrato": "109",
+   "tmdb_id": 640146,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Ant-Man and the Wasp: Quantumania",
+   "anno_app": 2023,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Ant-Man and the Wasp: Quantumania",
+   "anno_tmdb": 2023,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "110",
+   "numero_mostrato": "110",
+   "tmdb_id": 447365,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Guardians of the Galaxy Vol. 3",
+   "anno_app": 2023,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Guardians of the Galaxy Vol. 3",
+   "anno_tmdb": 2023,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "111",
+   "numero_mostrato": "111",
+   "tmdb_id": 114472,
+   "tipo": "tv",
+   "stagione": null,
+   "titolo_app": "Secret Invasion",
+   "anno_app": 2023,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Secret Invasion",
+   "anno_tmdb": 2023,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": true,
+   "esito": "ok"
+  },
+  {
+   "item": "112",
+   "numero_mostrato": "112",
+   "tmdb_id": 84958,
+   "tipo": "tv",
+   "stagione": 2,
+   "titolo_app": "Loki S2",
+   "anno_app": 2023,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Loki",
+   "anno_tmdb": 2023,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "113",
+   "numero_mostrato": "113",
+   "tmdb_id": 609681,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "The Marvels",
+   "anno_app": 2023,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "The Marvels",
+   "anno_tmdb": 2023,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "114",
+   "numero_mostrato": "114",
+   "tmdb_id": 91363,
+   "tipo": "tv",
+   "stagione": 2,
+   "titolo_app": "What If...? S2",
+   "anno_app": 2023,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "What If...?",
+   "anno_tmdb": 2023,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "116",
+   "numero_mostrato": "116",
+   "tmdb_id": 122226,
+   "tipo": "tv",
+   "stagione": null,
+   "titolo_app": "Echo",
+   "anno_app": 2024,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Echo",
+   "anno_tmdb": 2024,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": true,
+   "esito": "ok"
+  },
+  {
+   "item": "117",
+   "numero_mostrato": "117",
+   "tmdb_id": 533535,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Deadpool & Wolverine",
+   "anno_app": 2024,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Deadpool & Wolverine",
+   "anno_tmdb": 2024,
+   "produttori": [
+    "Marvel Studios",
+    "Maximum Effort",
+    "21 Laps Entertainment",
+    "20th Century Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "118",
+   "numero_mostrato": "118",
+   "tmdb_id": 138501,
+   "tipo": "tv",
+   "stagione": null,
+   "titolo_app": "Agatha All Along",
+   "anno_app": 2024,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Agatha All Along",
+   "anno_tmdb": 2024,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions",
+    "Capewatch Pictures"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "119",
+   "numero_mostrato": "119",
+   "tmdb_id": 91363,
+   "tipo": "tv",
+   "stagione": 3,
+   "titolo_app": "What If...? S3",
+   "anno_app": 2024,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "What If...?",
+   "anno_tmdb": 2024,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "120",
+   "numero_mostrato": "120",
+   "tmdb_id": 138503,
+   "tipo": "tv",
+   "stagione": 1,
+   "titolo_app": "Your Friendly Neighborhood Spider-Man S1",
+   "anno_app": 2025,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Your Friendly Neighborhood Spider-Man",
+   "anno_tmdb": 2025,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "121",
+   "numero_mostrato": "121",
+   "tmdb_id": 822119,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Captain America: Brave New World",
+   "anno_app": 2025,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Captain America: Brave New World",
+   "anno_tmdb": 2025,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "122",
+   "numero_mostrato": "122",
+   "tmdb_id": 202555,
+   "tipo": "tv",
+   "stagione": 1,
+   "titolo_app": "Daredevil: Born Again S1",
+   "anno_app": 2025,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Daredevil: Born Again",
+   "anno_tmdb": 2025,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "123",
+   "numero_mostrato": "123",
+   "tmdb_id": 986056,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Thunderbolts*",
+   "anno_app": 2025,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Thunderbolts*",
+   "anno_tmdb": 2025,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "124",
+   "numero_mostrato": "124",
+   "tmdb_id": 114471,
+   "tipo": "tv",
+   "stagione": null,
+   "titolo_app": "Ironheart",
+   "anno_app": 2025,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Ironheart",
+   "anno_tmdb": 2025,
+   "produttori": [
+    "Marvel Studios",
+    "Proximity Media",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "126",
+   "numero_mostrato": "126",
+   "tmdb_id": 241388,
+   "tipo": "tv",
+   "stagione": null,
+   "titolo_app": "Eyes of Wakanda",
+   "anno_app": 2025,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Eyes of Wakanda",
+   "anno_tmdb": 2025,
+   "produttori": [
+    "Proximity Media",
+    "Marvel Studios",
+    "Axis Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "127",
+   "numero_mostrato": "127",
+   "tmdb_id": 198178,
+   "tipo": "tv",
+   "stagione": null,
+   "titolo_app": "Wonder Man",
+   "anno_app": 2026,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Wonder Man",
+   "anno_tmdb": 2026,
+   "produttori": [
+    "Kevin Feige Productions",
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": true,
+   "esito": "ok"
+  },
+  {
+   "item": "128",
+   "numero_mostrato": "128",
+   "tmdb_id": 202555,
+   "tipo": "tv",
+   "stagione": 2,
+   "titolo_app": "Daredevil: Born Again S2",
+   "anno_app": 2026,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Daredevil: Born Again",
+   "anno_tmdb": 2026,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "129",
+   "numero_mostrato": "129",
+   "tmdb_id": 1439930,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "The Punisher: One Last Kill",
+   "anno_app": 2026,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "The Punisher: One Last Kill",
+   "anno_tmdb": 2026,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "130",
+   "numero_mostrato": "130",
+   "tmdb_id": 138502,
+   "tipo": "tv",
+   "stagione": 1,
+   "titolo_app": "X-Men '97 S1",
+   "anno_app": 2024,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "X-Men '97",
+   "anno_tmdb": 2024,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "131",
+   "numero_mostrato": "131",
+   "tmdb_id": 138502,
+   "tipo": "tv",
+   "stagione": 2,
+   "titolo_app": "X-Men '97 S2",
+   "anno_app": 2026,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "X-Men '97",
+   "anno_tmdb": 2026,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "132",
+   "numero_mostrato": "132",
+   "tmdb_id": 969681,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Spider-Man: Brand New Day",
+   "anno_app": 2026,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Spider-Man: Brand New Day",
+   "anno_tmdb": 2026,
+   "produttori": [
+    "Marvel Studios",
+    "Columbia Pictures",
+    "Pascal Pictures",
+    "TSG Entertainment"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "134",
+   "numero_mostrato": "134",
+   "tmdb_id": 138503,
+   "tipo": "tv",
+   "stagione": 2,
+   "titolo_app": "Your Friendly Neighborhood Spider-Man S2",
+   "anno_app": 2027,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "stagione_trovata": true,
+   "titolo_tmdb": "Your Friendly Neighborhood Spider-Man",
+   "anno_tmdb": 2027,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "135",
+   "numero_mostrato": "135",
+   "tmdb_id": 213375,
+   "tipo": "tv",
+   "stagione": null,
+   "titolo_app": "VisionQuest",
+   "anno_app": 2026,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "VisionQuest",
+   "anno_tmdb": 2026,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "136",
+   "numero_mostrato": "136",
+   "tmdb_id": 1003596,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Avengers: Doomsday",
+   "anno_app": 2026,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Avengers: Doomsday",
+   "anno_tmdb": 2026,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions",
+    "AGBO"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "137",
+   "numero_mostrato": "137",
+   "tmdb_id": 202555,
+   "tipo": "tv",
+   "stagione": 3,
+   "titolo_app": "Daredevil: Born Again S3",
+   "anno_app": null,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "stagione_trovata": false,
+   "titolo_tmdb": "Daredevil: Born Again",
+   "anno_tmdb": 2025,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "138",
+   "numero_mostrato": "138",
+   "tmdb_id": 138502,
+   "tipo": "tv",
+   "stagione": 3,
+   "titolo_app": "X-Men '97 S3",
+   "anno_app": null,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "stagione_trovata": false,
+   "titolo_tmdb": "X-Men '97",
+   "anno_tmdb": 2024,
+   "produttori": [
+    "Marvel Studios"
+   ],
+   "poster_attuale_uguale": false,
+   "esito": "ok"
+  },
+  {
+   "item": "139",
+   "numero_mostrato": "139",
+   "tmdb_id": 1003598,
+   "tipo": "movie",
+   "stagione": null,
+   "titolo_app": "Avengers: Secret Wars",
+   "anno_app": 2027,
+   "saga": "Canone MCU — Multiverse Saga",
+   "studio": "mcu",
+   "titolo_tmdb": "Avengers: Secret Wars",
+   "anno_tmdb": 2027,
+   "produttori": [
+    "Marvel Studios",
+    "Kevin Feige Productions",
+    "AGBO"
+   ],
+   "poster_attuale_uguale": true,
+   "esito": "ok"
+  }
+ ]
+}
