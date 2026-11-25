@@ -1,13 +1,13 @@
 {
  "modello": "siglip",
  "stadi_s": {
-  "carica_modello": 9.8,
-  "download": 21.9,
-  "punteggio_immagine": 154.4,
-  "ritaglio": 829.1
+  "carica_modello": 9.9,
+  "download": 26.2,
+  "punteggio_immagine": 118.5,
+  "ritaglio": 637.7
  },
- "totale_s": 1026.7,
- "ram_picco_mb": 2219,
+ "totale_s": 801.3,
+ "ram_picco_mb": 2234,
  "cpu": 4,
  "identita": {
   "id-iron-man": {
@@ -17,7 +17,7 @@
    "scaricate_ok_nitide": 213,
    "dopo_dedup_hash": 195,
    "proposte": 5,
-   "secondi": 116.1
+   "secondi": 90.4
   },
   "id-thor": {
    "candidati": 192,
@@ -26,7 +26,7 @@
    "scaricate_ok_nitide": 190,
    "dopo_dedup_hash": 172,
    "proposte": 4,
-   "secondi": 111.8
+   "secondi": 88.4
   },
   "id-loki": {
    "candidati": 120,
@@ -35,7 +35,7 @@
    "scaricate_ok_nitide": 120,
    "dopo_dedup_hash": 111,
    "proposte": 5,
-   "secondi": 101.4
+   "secondi": 79.5
   },
   "id-peter-parker-mcu": {
    "candidati": 144,
@@ -46,7 +46,7 @@
    "scaricate_ok_nitide": 118,
    "dopo_dedup_hash": 112,
    "proposte": 4,
-   "secondi": 101.3
+   "secondi": 79.1
   },
   "id-peter-parker-raimi": {
    "candidati": 96,
@@ -57,7 +57,7 @@
    "scaricate_ok_nitide": 72,
    "dopo_dedup_hash": 63,
    "proposte": 3,
-   "secondi": 93.6
+   "secondi": 72.7
   },
   "id-peter-parker-garfield": {
    "candidati": 72,
@@ -68,7 +68,7 @@
    "scaricate_ok_nitide": 48,
    "dopo_dedup_hash": 46,
    "proposte": 4,
-   "secondi": 90.5
+   "secondi": 69.8
   },
   "id-wolverine": {
    "candidati": 192,
@@ -77,7 +77,7 @@
    "scaricate_ok_nitide": 190,
    "dopo_dedup_hash": 172,
    "proposte": 5,
-   "secondi": 111.3
+   "secondi": 86.7
   },
   "id-wade-wilson-deadpool": {
    "candidati": 72,
@@ -86,7 +86,7 @@
    "scaricate_ok_nitide": 72,
    "dopo_dedup_hash": 69,
    "proposte": 4,
-   "secondi": 93.9
+   "secondi": 72.2
   },
   "id-wanda-maximoff": {
    "candidati": 120,
@@ -94,8 +94,8 @@
    "titoli_condivisi_esclusi": [],
    "scaricate_ok_nitide": 117,
    "dopo_dedup_hash": 108,
-   "proposte": 2,
-   "secondi": 100.4
+   "proposte": 3,
+   "secondi": 78.2
   },
   "id-thanos": {
    "candidati": 48,
@@ -104,7 +104,7 @@
    "scaricate_ok_nitide": 47,
    "dopo_dedup_hash": 44,
    "proposte": 4,
-   "secondi": 90.1
+   "secondi": 69.7
   }
  }
 }
