@@ -916,7 +916,7 @@
     "089",
     "107"
    ],
-   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "continuita": "Earth-199999 — MCU",
    "possibili": [
     {
      "id": "id-groot-originale",
@@ -936,9 +936,10 @@
      ]
     }
    ],
-   "raccomandato": "char-groot",
-   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
-   "stato": "da decidere"
+   "raccomandato": "hub-groot",
+   "motivo": "decisione utente (26/11): riferimento generico -> hub Groot (continuita' MCU); relazioni narrative attribuite alle singole identita'",
+   "stato": "risolto",
+   "regola": "R5"
   },
   {
    "da": "char-elektra-natchios",
@@ -988,7 +989,7 @@
     "084",
     "089"
    ],
-   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "continuita": "Earth-199999 — MCU",
    "possibili": [
     {
      "id": "id-groot-originale",
@@ -1009,9 +1010,10 @@
      ]
     }
    ],
-   "raccomandato": "char-groot",
-   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
-   "stato": "da decidere"
+   "raccomandato": "hub-groot",
+   "motivo": "decisione utente (26/11): riferimento generico -> hub Groot (continuita' MCU); relazioni narrative attribuite alle singole identita'",
+   "stato": "risolto",
+   "regola": "R5"
   },
   {
    "da": "char-harry-osborn-green-goblin",
@@ -1189,7 +1191,7 @@
     "107",
     "110"
    ],
-   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "continuita": "Earth-199999 — MCU",
    "possibili": [
     {
      "id": "id-groot-originale",
@@ -1210,9 +1212,10 @@
      ]
     }
    ],
-   "raccomandato": "char-groot",
-   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
-   "stato": "da decidere"
+   "raccomandato": "hub-groot",
+   "motivo": "decisione utente (26/11): riferimento generico -> hub Groot (continuita' MCU); relazioni narrative attribuite alle singole identita'",
+   "stato": "risolto",
+   "regola": "R5"
   },
   {
    "da": "char-rocket",
@@ -1229,7 +1232,7 @@
     "110",
     "115"
    ],
-   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "continuita": "Earth-199999 — MCU",
    "possibili": [
     {
      "id": "id-groot-originale",
@@ -1251,9 +1254,10 @@
      ]
     }
    ],
-   "raccomandato": "char-groot",
-   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
-   "stato": "da decidere"
+   "raccomandato": "hub-groot",
+   "motivo": "decisione utente (26/11): riferimento generico -> hub Groot (continuita' MCU); relazioni narrative attribuite alle singole identita'",
+   "stato": "risolto",
+   "regola": "R5"
   },
   {
    "da": "char-peter-quill-star-lord",
@@ -1270,7 +1274,7 @@
     "107",
     "110"
    ],
-   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "continuita": "Earth-199999 — MCU",
    "possibili": [
     {
      "id": "id-groot-originale",
@@ -1291,9 +1295,10 @@
      ]
     }
    ],
-   "raccomandato": "char-groot",
-   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
-   "stato": "da decidere"
+   "raccomandato": "hub-groot",
+   "motivo": "decisione utente (26/11): riferimento generico -> hub Groot (continuita' MCU); relazioni narrative attribuite alle singole identita'",
+   "stato": "risolto",
+   "regola": "R5"
   },
   {
    "da": "char-norman-osborn-green-goblin",
@@ -1511,7 +1516,7 @@
     "084",
     "089"
    ],
-   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "continuita": "Earth-199999 — MCU",
    "possibili": [
     {
      "id": "id-groot-originale",
@@ -1532,9 +1537,10 @@
      ]
     }
    ],
-   "raccomandato": "char-groot",
-   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
-   "stato": "da decidere"
+   "raccomandato": "hub-groot",
+   "motivo": "decisione utente (26/11): riferimento generico -> hub Groot (continuita' MCU); relazioni narrative attribuite alle singole identita'",
+   "stato": "risolto",
+   "regola": "R5"
   },
   {
    "da": "char-drax",
@@ -1549,7 +1555,7 @@
     "089",
     "107"
    ],
-   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "continuita": "Earth-199999 — MCU",
    "possibili": [
     {
      "id": "id-groot-originale",
@@ -1569,9 +1575,10 @@
      ]
     }
    ],
-   "raccomandato": "char-groot",
-   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
-   "stato": "da decidere"
+   "raccomandato": "hub-groot",
+   "motivo": "decisione utente (26/11): riferimento generico -> hub Groot (continuita' MCU); relazioni narrative attribuite alle singole identita'",
+   "stato": "risolto",
+   "regola": "R5"
   },
   {
    "da": "char-rocket",
@@ -1588,7 +1595,7 @@
     "110",
     "115"
    ],
-   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "continuita": "Earth-199999 — MCU",
    "possibili": [
     {
      "id": "id-groot-originale",
@@ -1610,9 +1617,10 @@
      ]
     }
    ],
-   "raccomandato": "char-groot",
-   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
-   "stato": "da decidere"
+   "raccomandato": "hub-groot",
+   "motivo": "decisione utente (26/11): riferimento generico -> hub Groot (continuita' MCU); relazioni narrative attribuite alle singole identita'",
+   "stato": "risolto",
+   "regola": "R5"
   },
   {
    "da": "char-nebula",
@@ -1627,7 +1635,7 @@
     "084",
     "089"
    ],
-   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "continuita": "Earth-199999 — MCU",
    "possibili": [
     {
      "id": "id-groot-originale",
@@ -1648,9 +1656,10 @@
      ]
     }
    ],
-   "raccomandato": "char-groot",
-   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
-   "stato": "da decidere"
+   "raccomandato": "hub-groot",
+   "motivo": "decisione utente (26/11): riferimento generico -> hub Groot (continuita' MCU); relazioni narrative attribuite alle singole identita'",
+   "stato": "risolto",
+   "regola": "R5"
   },
   {
    "da": "char-ronan-l-accusatore",
@@ -1985,9 +1994,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "char-groot",
-   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
-   "stato": "da decidere"
+   "raccomandato": "hub-groot",
+   "motivo": "decisione utente (26/11): riferimento generico -> hub Groot (continuita' MCU); relazioni narrative attribuite alle singole identita'",
+   "stato": "risolto",
+   "regola": "R5"
   },
   {
    "da": "universo-your-friendly-neighborhood-spider-man-verse",

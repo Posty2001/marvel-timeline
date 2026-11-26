@@ -22213,15 +22213,19 @@
    "simmetrica": false,
    "qualifica": null,
    "fonte": [
-    "https://www.gamesradar.com/uk/guardians-of-the-galaxy-2s-baby-groot-isnt-the-original-groot-but-a-new-groot-confused-so-are-groot ; https://gameinformer.com/b/news/archive/2018/02/27/guardians-of-the-galaxy-director-confirms-baby-groot-is-groots-son-again.aspx"
+    "https://www.gamesradar.com/uk/guardians-of-the-galaxy-2s-baby-groot-isnt-the-original-groot-but-a-new-groot-confused-so-are-groot ; https://gameinformer.com/b/news/archive/2018/02/27/guardians-of-the-galaxy-director-confirms-baby-groot-is-groots-son-again.aspx",
+    "https://en.wikipedia.org/wiki/Groot_(Marvel_Cinematic_Universe)"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "relazione familiare (figlio) dichiarata dal regista, non esplicita nei film",
    "origine": "A2:identita",
    "conferme": [
-    "A2:identita"
+    "A2:identita",
+    "verifica_esterna"
    ],
    "verifica_originale": "dichiarazione d'autore",
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -22853,6 +22857,30 @@
     "lotto:lotto_01"
    ],
    "lotto": "lotto_01",
+   "approvazione": "non_richiesta",
+   "controversa": false,
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
+  },
+  {
+   "id": "rel-49e852f718",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-rocket",
+   "a": "id-groot-successore",
+   "simmetrica": false,
+   "qualifica": "padre adottivo (lo alleva dopo la rinascita)",
+   "fonte": [
+    "https://en.wikipedia.org/wiki/Groot_(Marvel_Cinematic_Universe)",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Groot"
+   ],
+   "verifica": "verificata",
+   "nota": "Wikipedia: il nuovo Groot e' cresciuto da Rocket come figlio adottivo",
+   "origine": "lotto:lotto_05",
+   "conferme": [
+    "lotto:lotto_05"
+   ],
+   "lotto": "lotto_05",
    "approvazione": "non_richiesta",
    "controversa": false,
    "esito_verifica": "confermata",
@@ -25318,11 +25346,11 @@
  ],
  "proposte": [],
  "conteggi": {
-  "relazioni_totali": 1211,
+  "relazioni_totali": 1212,
   "per_classe": {
    "controparte": 5,
    "editoriale": 960,
-   "narrativa": 246
+   "narrativa": 247
   },
   "per_tipo": {
    "alleanza": 31,
@@ -25334,7 +25362,7 @@
    "famiglia_coniugi": 4,
    "famiglia_discendente": 1,
    "famiglia_fratelli": 9,
-   "famiglia_genitore": 30,
+   "famiglia_genitore": 31,
    "ispirato_a": 1,
    "mentorato": 11,
    "partner": 19,
@@ -25346,11 +25374,11 @@
   },
   "per_verifica": {
    "da verificare": 41,
-   "guida": 959,
-   "verificata": 211
+   "guida": 958,
+   "verificata": 213
   },
-  "narrative": 246,
-  "narrative_verificate_o_in_guida": 212,
+  "narrative": 247,
+  "narrative_verificate_o_in_guida": 213,
   "coda_ambigue_o_errate": 0,
   "coda_per_motivo": {},
   "proposte_intake": 0,
@@ -25358,7 +25386,7 @@
   "respinte": 10,
   "risolte_dalla_coda": 4,
   "errori_lotti": [],
-  "narrative_verificate_documentalmente": 206,
+  "narrative_verificate_documentalmente": 208,
   "narrative_da_verificare": 34,
   "controverse_in_attesa_utente": 0,
   "co_apparizioni_nel_registro": 0,

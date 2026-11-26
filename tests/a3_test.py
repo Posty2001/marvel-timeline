@@ -32,7 +32,7 @@ with sync_playwright() as p:
     pg.evaluate("()=>document.querySelector('#atlas2 .a3-ban').click()"); pg.wait_for_timeout(1500)
     s = a3(pg)
     ok('banner -> Home Atlante 2.0', s['screen'] == 'a3' and s['a3']['v'] == 'home', s)
-    ok('Home: hero + categorie + hub', pg.evaluate("()=>!!document.querySelector('#atlas2 .a3-hero') && document.querySelectorAll('#atlas2 .a3-cat').length>=8 && document.querySelectorAll('#atlas2 .a3-hc').length==2"))
+    ok('Home: hero + categorie + hub', pg.evaluate("()=>!!document.querySelector('#atlas2 .a3-hero') && document.querySelectorAll('#atlas2 .a3-cat').length>=8 && document.querySelectorAll('#atlas2 .a3-hc').length==3"))
     ok('dati caricati: solo indice, nessuno shard', any('data/index.json' in r for r in reqs) and not any('/data/d/' in r for r in reqs))
     MM = "()=>{const e=document.getElementById('mmFab'); if(!e||e.hidden) return false; const r=e.getBoundingClientRect(); const t=document.elementFromPoint(r.left+r.width/2, r.top+r.height/2); return t===e || e.contains(t)}"
     ok('Miss Minutes (mmFab) raggiungibile nella Home A3', pg.evaluate(MM))
@@ -92,6 +92,13 @@ with sync_playwright() as p:
     pg.evaluate("()=>document.querySelector('#atlas2 .a2-exit').click()"); pg.wait_for_timeout(900)
     ok('X -> esce dall\'Atlante (Home app)', not pg.evaluate("()=>document.getElementById('atlas2Toggle').checked"))
     # fallback: A3 non disponibile -> classico
+    # hub Groot (decisione utente 26/11): continuita' MCU, due identita', fasi del successore
+    pg.evaluate("()=>tvaA3.open('hub-groot')"); pg.wait_for_timeout(1500)
+    tx = pg.evaluate("()=>document.getElementById('atlas2').innerText")
+    ok('hub Groot: due identita\' (originale, successore) senza etichetta multiversale', 'Groot (originale)' in tx and 'Groot (successore)' in tx)
+    pg.evaluate("()=>tvaA3.open('id-groot-successore')"); pg.wait_for_timeout(1500)
+    tx = pg.evaluate("()=>document.getElementById('atlas2').innerText")
+    ok('Groot successore: fasi Baby/adolescente/adulto', 'Baby Groot' in tx and 'adolescente' in tx and 'adulto' in tx, tx[:300])
     ok('nessun errore JS', not errs, errs[:3])
     b.close()
 fails = [n for n, c in res if not c]

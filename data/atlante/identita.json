@@ -448,13 +448,32 @@
    "incarnazioni": [
     {
      "id": "inc-groot-piccolo",
-     "etichetta": "piccolo",
+     "etichetta": "Baby Groot (piccolo)",
      "pagina": "char-groot-piccolo",
      "apparizioni": [
+      "059",
       "115"
      ],
-     "tipo": "incarnazione",
-     "verifica": "da verificare: etichetta presa dalla scheda"
+     "tipo": "fase_di_crescita",
+     "verifica": "verificata: Baby Groot in Guardians Vol. 2 (Wikipedia, Groot (MCU)); cortometraggi I Am Groot"
+    },
+    {
+     "id": "inc-groot-adolescente",
+     "etichetta": "Groot adolescente",
+     "pagina": "char-groot",
+     "apparizioni": [
+      "084"
+     ],
+     "tipo": "fase_di_crescita",
+     "verifica": "verificata: cresce in adolescente alla fine di Vol. 2 ed e' adolescente in Infinity War (James Gunn, via Wikipedia)"
+    },
+    {
+     "id": "inc-groot-adulto",
+     "etichetta": "Groot adulto",
+     "pagina": "char-groot",
+     "apparizioni": [],
+     "tipo": "fase_di_crescita",
+     "verifica": "da verificare: fase documentata (ciclo di crescita, Marvel.com) ma nessuna apparizione registrata nel progetto; non attribuita"
     }
    ],
    "alias": [
@@ -8026,6 +8045,25 @@
    "verifica": "verificata (fonti secondarie affidabili + dati interni; pagine Marvel.com/Marvel Database non consultate una per una)"
   },
   {
+   "id": "hub-groot",
+   "nome": "Groot",
+   "tipo": "hub_continuita",
+   "conta_come_personaggio": false,
+   "membri": [
+    "id-groot-originale",
+    "id-groot-successore"
+   ],
+   "esclusi": {},
+   "pagine_hub": [
+    "char-groot"
+   ],
+   "nota": "Hub di continuita' MCU (non multiversale): due identita' distinte, successore discendente (figlio) dell'originale; le fasi Baby/adolescente/adulto sono incarnazioni del successore, non varianti ne' reincarnazioni. Le relazioni narrative specifiche stanno sulle singole identita'.",
+   "fonte": [
+    "https://www.gamesradar.com/uk/guardians-of-the-galaxy-2s-baby-groot-isnt-the-original-groot-but-a-new-groot-confused-so-are-groot ; https://gameinformer.com/b/news/archive/2018/02/27/guardians-of-the-galaxy-director-confirms-baby-groot-is-groots-son-again.aspx"
+   ],
+   "verifica": "dichiarazione d'autore (James Gunn) + Wikipedia Groot (MCU): originale muore, il sapling genera un nuovo Groot «figlio»"
+  },
+  {
    "id": "hub-wilson-fisk",
    "nome": "Wilson Fisk / Kingpin",
    "tipo": "hub_multiversale",
@@ -8442,12 +8480,13 @@
    "nota": ""
   },
   "char-groot": {
-   "ruolo": "pagina-storica",
+   "ruolo": "pagina-hub",
    "verso": [
+    "hub-groot",
     "id-groot-originale",
     "id-groot-successore"
    ],
-   "nota": "apparizioni separate: 058 originale; 059, 084, 089, 115 successore"
+   "nota": "hub di continuita': apparizioni separate: 058 originale; 059, 084, 089, 115 successore"
   },
   "char-groot-piccolo": {
    "ruolo": "canonica",
@@ -11037,7 +11076,7 @@
   "pagine_che_contavano": 300,
   "identita_totali": 300,
   "identita_che_contano": 300,
-  "hub": 2,
+  "hub": 3,
   "mantelli": 2,
   "segnaposto": 7,
   "relazioni_narrative": 5,

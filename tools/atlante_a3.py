@@ -243,6 +243,8 @@ def decidi(L, base, cand, su):
     UNA sola identita' candidata; (R2) scheda interprete -> variante interpretata; (R3) l'unica candidata con apparizioni in comune.
     Nessuna regola vale se due o piu' candidate restano compatibili (decisione controversa -> utente)."""
     da = L['da']
+    if L['a_pagina'] == 'char-groot' and 'hub-groot' in HUB and len([c for c in cand if set(base['sorgente_apparizioni']) & appset(c)]) != 1:
+        return 'hub-groot', "decisione utente (26/11): riferimento generico -> hub Groot (continuita' MCU); relazioni narrative attribuite alle singole identita'", 'R5'
     if da in INTERPRETI and INTERPRETI[da] in cand:
         return INTERPRETI[da], 'scheda interprete: variante interpretata dall\'attore', 'R2'
     uni = su
