@@ -107,7 +107,7 @@ with sync_playwright() as p:
     frame.fill('#set-endpoint', ''); frame.click('#mmDlgBody >> text=Salva'); GW['calls'].clear(); frame.click('#mmDlgClose')
     # duplicazioni: i marcatori non sostituiscono mai le parole
     rr = frame.evaluate("()=>{const c=[{id:'kc:loki',title:'Loki'}];const f=t=>window.__mm.resolveRefs(t,c).text;return [f('Il potere di [[kc:loki]] è enorme.'),f('Venom [[kc:loki]] è un simbionte.'),f('Nella continuità dei fumetti Gorr [[kc:loki]] colpisce.')]}")
-    ok('marcatori: titolo solo dopo parola funzione, mai duplicato', rr == ['Il potere di Loki è enorme.', 'Venom è un simbionte.', 'Nella continuità dei fumetti Gorr colpisce.'], rr)
+    ok('marcatori: rimossi senza mai inserire testo (mm2.0)', rr == ['Il potere di è enorme.', 'Venom è un simbionte.', 'Nella continuità dei fumetti Gorr colpisce.'], rr)
     # con endpoint configurato: riavvia il frame con config simulata
     ctx.route('**/miss-minutes/config.js', lambda r: r.fulfill(status=200, content_type='application/javascript', body="globalThis.MISS_MINUTES_CONFIG=Object.freeze({endpoint:'https://miss-minutes-api.test.workers.dev'});"))
     pg.reload(wait_until='load'); pg.wait_for_timeout(1200); pg.evaluate(START); pg.wait_for_timeout(500); (pg.click('#mmFab') if pg.locator('#mmOverlay.on').count() == 0 else None); pg.wait_for_timeout(2000)
@@ -120,10 +120,10 @@ with sync_playwright() as p:
     ok('domanda sconosciuta -> online etichettata', frame.evaluate("()=>[...document.querySelectorAll('.mm-tag')].some(t=>/online/.test(t.textContent))"), a[:80])
     a = ask('Chi è Loki?'); n0 = nuser('Chi è Loki?'); frame.locator('.mm-act', has_text='AI online').last.click(); wait_idle()
     a = last_ai()
-    ok('URL dalla risposta AI rimossi, id scheda risolto in titolo e chip', 'evil.example' not in a and 'Loki' in a and 'online' in a and frame.locator('.mm-msg.assistant').last.locator('.mm-chip').count() == 1, a)
+    ok('URL dalla risposta AI rimossi, id scheda rimosso dal testo e chip', 'evil.example' not in a and 'online' in a and frame.locator('.mm-msg.assistant').last.locator('.mm-chip').count() == 1, a)
     ok('nessuna domanda duplicata dopo "Chiedi all\'AI online"', nuser('Chi è Loki?') == n0, (n0, nuser('Chi è Loki?')))
     chat = [c for c in GW['calls'] if c[1].startswith('/v1/chat')][-1][2]; body = json.loads(chat)
-    ok('payload senza dati personali', all(k in ('question', 'history', 'context', 'spoiler', 'length', 'cite', 'stream') for k in body) and body.get('length') == 'normal' and body.get('cite') is True and 'seen' not in chat and 'rating' not in chat and 'titoli su 138' not in chat and 'quanti titoli' not in chat.lower() and 'cosa guardo' not in chat.lower(), list(body))
+    ok('payload senza dati personali', all(k in ('question', 'history', 'context', 'fatti', 'riprendi', 'spoiler', 'length', 'cite', 'stream') for k in body) and body.get('length') == 'normal' and body.get('cite') is True and 'seen' not in chat and 'rating' not in chat and 'titoli su 138' not in chat and 'quanti titoli' not in chat.lower() and 'cosa guardo' not in chat.lower(), list(body))
     n = len(GW['calls']); a = ask('Quanti titoli ho visto?'); ok('domanda personale mai inviata online', len(GW['calls']) == n)
     # anomalie: pannello, Riprova, archivio locale
     q = 'zxcv qwerty sconosciuto lorem'

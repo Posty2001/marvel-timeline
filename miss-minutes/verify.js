@@ -1,0 +1,155 @@
+/* Miss Minutes 2.0 – verificatore deterministico (nessuna AI, nessuna rete).
+   Principi: il testo del modello non viene MAI alterato; i controlli sono per frase e compatibili con lo streaming (una frase si mostra solo dopo il controllo);
+   un nome assente dall'archivio NON e' considerato falso (si segnala solo un conflitto con dati documentati); la presenza di una fonte non verifica l'intera risposta. */
+(function (root) {
+  'use strict';
+  function norm(t) { return String(t == null ? '' : t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/['’`]/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim(); }
+  function hasWord(n, w) { return w && (' ' + n + ' ').indexOf(' ' + w + ' ') >= 0; }
+
+  /* ---- marcatori [[id]]: si rimuovono dal testo, MAI si inserisce o sostituisce nulla; le citazioni diventano un elenco strutturato ---- */
+  function resolveRefs(text, ctx, linkOf) {
+    var cited = [], refs = [], markers = 0;
+    var out = String(text).replace(/\s*\[\[([^\]]{1,60})\]\]/g, function (m, id) {
+      markers++;
+      var c = (ctx || []).filter(function (x) { return x.id === id; })[0];
+      if (c) { if (cited.indexOf(id) < 0) cited.push(id); var l = linkOf ? linkOf(id) : null; if (l) refs.push({ label: c.title, link: l }); }
+      return '';
+    });
+    out = out.replace(/https?:\/\/\S+/g, '[link rimosso]');   // nessun URL dal modello (le fonti reali sono strutturate)
+    return { text: out.replace(/[ \t]+\n/g, '\n').trim(), markers: markers, cited: cited, refs: refs.filter(function (r, i, a) { return a.findIndex(function (z) { return z.link === r.link; }) === i; }).slice(0, 5) };
+  }
+
+  /* ---- frasi (senza spezzare Jr., Dr., N°, ecc.) ---- */
+  var ABBR = /(?:^|\s)(?:jr|sr|dr|mr|mrs|ms|st|vs|prof|sig|ecc|es|n|no|cap|vol|ep|s|stagg)$/i;
+  function sentences(text) {
+    var out = [], s = 0, i, c, nx;
+    for (i = 0; i < text.length; i++) {
+      c = text.charAt(i);
+      if (c === '\n') { if (i > s) out.push({ s: s, e: i + 1, done: true }); s = i + 1; continue; }
+      if (c === '.' || c === '!' || c === '?') {
+        nx = text.charAt(i + 1);
+        if (nx !== '' && !/[\s"»”)*]/.test(nx)) continue;            // "3.5", "S.H.I.E.L.D."
+        if (c === '.' && ABBR.test(text.slice(Math.max(0, i - 8), i))) continue;
+        if (nx === '') { out.push({ s: s, e: i + 1, done: true }); s = i + 1; continue; }
+        var rest = text.slice(i + 1).replace(/^[\s"»”)*]+/, '');
+        if (rest === '' || /^[A-ZÀ-Ý0-9"«“#*\-•]/.test(rest)) { out.push({ s: s, e: i + 1, done: true }); s = i + 1; }
+      }
+    }
+    if (s < text.length) out.push({ s: s, e: text.length, done: false });
+    return out.filter(function (x) { return text.slice(x.s, x.e).trim(); });
+  }
+
+  /* ---- conoscenza: titoli (Timeline + alias), calendario Live, cast documentato ---- */
+  var DEV = /\b(in sviluppo|in fase di sviluppo|in produzione|in post produzione|in lavorazione|in arrivo|non e ancora (?:uscit|stat|nelle)|deve ancora uscire|devono ancora uscire|uscira|usciranno|sara (?:rilasciat|nelle sale|distribuit)|prossim[oa] (?:film|uscita)|previst[oa] per|ancora in (?:sviluppo|produzione|lavorazione)|non ancora (?:uscit|rilasciat)|in uscita)\b/;
+  var PAST = /\b(e uscit[oa]|sono uscit[ie]|ha incassato|ha debuttato|e stat[oa] (?:rilasciat|distribuit)|nelle sale dal|ha (?:superato|totalizzato|raggiunto) [^.]{0,30}(?:incass|miliard|milion|box office)|incassi? (?:mondial|total)|e gia nelle sale|e uscit)\b/;
+  var HEDGE = /\b(inizialmente|all epoca|in origine|prima dell uscita|prima di uscire|era in (?:sviluppo|produzione)|era previst|fu annunciat|fino a|nel (?:20\d\d) era|ai tempi|quando era)\b/;
+  var TRIG = /interpretat|impersona|doppiat|uscit|usc[ie]r|svilupp|produzion|lavorazion|in arrivo|previst|incass|debutt|rilasciat|sale|sul grande schermo|nelle sale|veste i panni|ruolo di/;
+  var VERB_ACT = /\b(interpretat[oa]|impersonat[oa]|portat[oa] sullo schermo|reso vivo|doppiat[oa])\s+(?:dall attore |dalla attrice |dall attrice |da )/;
+  var NAME = '([A-ZÀ-Ý][\\p{L}\'’.\\-]+(?:\\s+(?:[A-ZÀ-Ý][\\p{L}\'’.\\-]+|Jr\\.|de|van|von|di|da)){0,3})';
+  var RX_PASSIVE = new RegExp('(?:interpretat[oa]|impersonat[oa]|doppiat[oa]|portat[oa] sullo schermo)\\s+(?:dall[\'’]attore |dall[\'’]attrice |dalla attrice |da )' + NAME, 'u');
+  var RX_ACTIVE = new RegExp(NAME + '\\s+(?:interpreta|ha interpretato|interpretava|interpretera|veste i panni di|presta (?:il volto|la voce) a|doppia|impersona)\\s+(?:il personaggio di |il ruolo di |la parte di )?' + NAME, 'u');
+
+  function build(raw, today) {
+    var K = { today: today || new Date().toISOString().slice(0, 10), titles: [], cast: [], actors: {} };
+    raw = raw || {};
+    (raw.titles || []).forEach(function (t) {
+      var n = norm(t.title); if (!n) return;
+      var al = [n].concat((raw.alias_titoli && raw.alias_titoli[String(t.num || t.id)] || []).map(norm));
+      al = al.filter(function (a, i) { return a && al.indexOf(a) === i && (a.split(' ').length >= 2 || (raw.alias_titoli && raw.alias_titoli[String(t.num || t.id)])); });
+      if (al.length) K.titles.push({ id: t.id, title: t.title, release: t.release || '', names: al });
+    });
+    (raw.cast || []).forEach(function (c) {
+      var e = { names: (c.pers || []).map(norm), actors: (c.attori || []).map(norm), cues: (c.cues || []).map(norm), univ: c.univ || '', prod: c.prod || '' };
+      K.cast.push(e); e.actors.forEach(function (a) { (K.actors[a] = K.actors[a] || []).push(e); });
+    });
+    K.live = (raw.live || []).map(function (x) { return { title: x.title, names: [norm(x.title)], date: x.date || '', dateIT: x.dateIT || '', status: x.confidence || x.status || '', official: x.officialDates || [] }; });
+    return K;
+  }
+
+  function castFor(K, chName) { return K.cast.filter(function (e) { return e.names.indexOf(chName) >= 0; }); }
+  function knownChar(K, before) {
+    var n = norm(before), best = null, at = -1;
+    K.cast.forEach(function (e) { e.names.forEach(function (nm) { if (nm.length < 4) return; var i = (' ' + n + ' ').lastIndexOf(' ' + nm + ' '); if (i >= 0 && i >= at) { at = i; best = nm; } }); });
+    return best;
+  }
+  function pair(K, actorRaw, chName, sentenceNorm, isSelfCheck) {
+    var a = norm(actorRaw);
+    if (isSelfCheck && a === chName) return { kind: 'attore', msg: 'attore e personaggio coincidono (“' + actorRaw + '”)' };
+    var ents = castFor(K, chName); if (!ents.length) return null;                       // personaggio non documentato: nessun giudizio
+    var ok = ents.filter(function (e) { return e.actors.indexOf(a) >= 0; });
+    if (!ok.length) {
+      var other = K.actors[a];                                                           // attore sconosciuto: NON e' falso, solo non verificabile
+      if (!other) return null;
+      return { kind: 'attore', msg: actorRaw + ' non risulta tra gli interpreti documentati di ' + chName + ' (è documentato per: ' + other.map(function (e) { return e.names[0]; }).filter(function (x, i, z) { return z.indexOf(x) === i; }).slice(0, 3).join(', ') + ')' };
+    }
+    var cuesOk = [], cuesOther = [];
+    ok.forEach(function (e) { cuesOk = cuesOk.concat(e.cues); });
+    ents.forEach(function (e) { if (ok.indexOf(e) < 0) cuesOther = cuesOther.concat(e.cues); });
+    var hitOther = cuesOther.filter(function (c) { return c && cuesOk.indexOf(c) < 0 && hasWord(sentenceNorm, c); });
+    var hitOk = cuesOk.filter(function (c) { return c && hasWord(sentenceNorm, c); });
+    if (hitOther.length && !hitOk.length) return { kind: 'continuita', msg: actorRaw + ' interpreta ' + chName + ' in un’altra continuità/produzione rispetto a “' + hitOther[0] + '”' };
+    return null;
+  }
+  /* titoli citati nella frase; se un titolo e' contenuto in un altro piu' specifico (es. «Spider-Man» in «Spider-Man: Brand New Day») resta solo il piu' specifico */
+  function titleHits(K, n) {
+    var hits = K.titles.map(function (t) { var best = ''; t.names.forEach(function (x) { if (hasWord(n, x) && x.length > best.length) best = x; }); return best ? { t: t, m: best } : null; }).filter(Boolean);
+    return hits.filter(function (h) { return !hits.some(function (o) { return o !== h && o.m.length > h.m.length && (' ' + o.m + ' ').indexOf(' ' + h.m + ' ') >= 0; }); }).map(function (h) { return h.t; });
+  }
+  function dateOf(s) { var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s || ''); return m ? m[0] : ''; }
+
+  function check(sent, K) {
+    var v = [], n = norm(sent), m;
+    /* attore / personaggio / continuita' */
+    if ((m = RX_PASSIVE.exec(sent))) {
+      var before = sent.slice(0, m.index), actor = m[1].replace(/[.,;]+$/, '');
+      var ch = knownChar(K, before);
+      if (!ch) { var run = /([A-ZÀ-Ý][\p{L}'’.\-]+(?:\s+[A-ZÀ-Ý][\p{L}'’.\-]+){0,3})[^A-ZÀ-Ý]*$/u.exec(before); ch = run ? norm(run[1]) : null; }
+      if (ch) { var r = pair(K, actor, ch, n, true); if (r) v.push(r); }
+    }
+    if ((m = RX_ACTIVE.exec(sent))) { var r2 = pair(K, m[1].replace(/[.,;]+$/, ''), norm(m[2].replace(/[.,;]+$/, '')), n, false); if (r2) v.push(r2); }
+    /* tempo: titolo gia' uscito descritto come futuro (e viceversa) */
+    var hits = titleHits(K, n);
+    var lh = K.live.filter(function (t) { return t.names.some(function (x) { return x && hasWord(n, x); }); });
+    if (hits.length === 1 && !HEDGE.test(n)) {
+      var rel = dateOf(hits[0].release);
+      if (rel) {
+        if (rel <= K.today && DEV.test(n)) v.push({ kind: 'tempo', msg: '«' + hits[0].title + '» risulta già uscito (' + rel + ') ma è descritto come non ancora uscito' });
+        else if (rel > K.today && PAST.test(n)) v.push({ kind: 'tempo', msg: '«' + hits[0].title + '» risulta in uscita il ' + rel + ' ma è descritto come già uscito' });
+      }
+    }
+    return v;
+  }
+
+  /* scan: restituisce fino a dove il testo puo' essere mostrato (safe) e la prima violazione grave.
+     Con stream in corso la frase incompleta viene trattenuta SOLO se contiene parole sensibili (attori, date, stato di uscita): altrimenti scorre libera. */
+  function scan(text, K, final) {
+    var ss = sentences(text), viol = null, safe = 0, i, s, vs;
+    for (i = 0; i < ss.length; i++) {
+      s = ss[i]; var str = text.slice(s.s, s.e);
+      if (!s.done && !final) { safe = TRIG.test(norm(str)) ? s.s : text.length; return { safe: safe, viol: viol, sentences: ss.length }; }
+      vs = check(str, K);
+      if (vs.length) { viol = { at: s.s, end: s.e, kind: vs[0].kind, msg: vs[0].msg, all: vs }; return { safe: s.s, viol: viol, sentences: ss.length }; }
+      safe = s.e;
+    }
+    return { safe: text.length, viol: null, sentences: ss.length };
+  }
+  /* note morbide (non bloccanti): date diverse da quelle documentate */
+  var MESI = { gennaio: 1, febbraio: 2, marzo: 3, aprile: 4, maggio: 5, giugno: 6, luglio: 7, agosto: 8, settembre: 9, ottobre: 10, novembre: 11, dicembre: 12 };
+  function softNotes(text, K) {
+    var notes = [];
+    sentences(text).forEach(function (s) {
+      var str = text.slice(s.s, s.e), n = norm(str), hits = titleHits(K, n);
+      if (hits.length !== 1) return;
+      var re = /(\d{1,2})\s+(gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)\s+(\d{4})/gi, m;
+      while ((m = re.exec(str))) {
+        var iso = m[3] + '-' + ('0' + MESI[m[2].toLowerCase()]).slice(-2) + '-' + ('0' + m[1]).slice(-2), known = [dateOf(hits[0].release)];
+        K.live.forEach(function (l) { if (l.names.some(function (x) { return hasWord(norm(hits[0].title), x); })) { known.push(l.date, l.dateIT); l.official.forEach(function (o) { known.push(o.date); }); } });
+        known = known.filter(Boolean);
+        if (known.length && known.indexOf(iso) < 0) notes.push('La data «' + m[0] + '» per «' + hits[0].title + '» non coincide con quelle in archivio (' + known.filter(function (x, i, a) { return a.indexOf(x) === i; }).join(', ') + '): le uscite variano per paese, verifica la fonte.');
+      }
+    });
+    return notes;
+  }
+  var api = { norm: norm, resolveRefs: resolveRefs, sentences: sentences, build: build, check: check, scan: scan, softNotes: softNotes };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.MMVerify = api;
+})(typeof window !== 'undefined' ? window : this);

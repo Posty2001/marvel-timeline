@@ -3,6 +3,7 @@
 (function () {
   'use strict';
   var D = document, $ = function (id) { return D.getElementById(id); };
+  var V = window.MMVerify, KN = null, FACTS = null, LIVE_ITEMS = [];
   var host = null; try { host = window.parent !== window && window.parent.tvaMissMinutesHost && window.parent.tvaMissMinutesHost.version === 1 ? window.parent.tvaMissMinutesHost : null; } catch (e) { host = null; }
   var store, eng, gw, busy = false, lastCtx = [], waitCtl = null, waitNode = null, errNode = null, heroSvg = null, speakingNode = null;
   var diag = { last: null }, extra = null, prevView = 'home', maxH = 0;
@@ -322,18 +323,8 @@
   function onlineOK() { var p = store.state.prefs; return !!(p.online && p.consent && gw.available()); }
   var FUNC = /(?:^|[\s(])(?:il|lo|la|le|gli|i|un|uno|una|di|del|dello|della|dei|degli|delle|da|dal|dallo|dalla|con|e|ed|a|al|allo|alla|ai|che|contro|tra|fra|per|su|come|sia|o|ma|se)\s*$/i;
   function dupCount(t) { var m = String(t).match(/(^|[^A-Za-zÀ-ÿ'])([A-Za-zÀ-ÿ']{3,})\s+\2(?![A-Za-zÀ-ÿ'])/gi); return m ? m.length : 0; }
-  // I marcatori [[id]] sono CITAZIONI: non sostituiscono mai il testo. Se il modello li usa al posto di un nome
-  // (dopo articolo/preposizione) si inserisce il titolo; altrimenti il marcatore sparisce e resta solo il collegamento.
-  function resolveRefs(text, ctx) {
-    var refs = [], cited = [], markers = 0;
-    var out = text.replace(/\s*\[\[([^\]]{1,60})\]\]/g, function (m, id, off, str) {
-      markers++;
-      var c = ctx.filter(function (x) { return x.id === id; })[0]; if (!c) return '';
-      var l = eng.linkOf(id); if (l) refs.push({ label: c.title, link: l }); if (cited.indexOf(id) < 0) cited.push(id);
-      return FUNC.test(str.slice(0, off)) ? ' ' + c.title : '';
-    }).replace(/https?:\/\/\S+/g, '[link rimosso]');
-    return { text: out.trim(), markers: markers, cited: cited, refs: refs.filter(function (r, i, a) { return a.findIndex(function (z) { return z.link === r.link; }) === i; }).slice(0, 5) };
-  }
+  // mm2.0: i marcatori [[id]] sono CITAZIONI strutturate: si rimuovono dal testo, MAI lo sostituiscono ne' lo alterano (verify.js)
+  function resolveRefs(text, ctx) { return V.resolveRefs(text, ctx, function (id) { return eng.linkOf(id); }); }
 
   // Decide se la domanda merita l'AI online (spiegazioni, confronti, ragionamenti, seguiti) o basta il motore locale
   var APP_INTENTS = /^(avanzamento|mancanti|progress|missing|live|classifiche|ratings|amici|friends|gioca|play|episodi|episodes|missioni|missions|saluto|personale|consigli|advice|scheda-?utente)/;
@@ -366,27 +357,36 @@
   function paceRate(backlog) { var b = paceBase(); return b * Math.min(PACE_CAP, 1 + backlog / (b * PACE_K)); }
   function paintLive(ts) {
     if (!live) return; live.raf = 0;
-    var len = live.text.length;
+    var len = live.text.length, cap = Math.min(len, live.safe == null ? len : live.safe);   // mm2.0: si mostra solo il testo gia' controllato (frase completa, o frase libera se senza parole sensibili)
     if (!live.ts) live.ts = ts;
     var dt = Math.min(0.12, Math.max(0, (ts - live.ts) / 1000)); live.ts = ts;
-    if (live.n < len) { var sp = paceRate(len - live.n); live.n = Math.min(len, live.n + sp * dt); }
+    if (live.n < cap) { var sp = paceRate(cap - live.n); live.n = Math.min(cap, live.n + sp * dt); }
     var k = Math.floor(live.n); if (k > 0 && k < len && /[\uD800-\uDBFF]/.test(live.text.charAt(k - 1))) k++;
     if (k !== live.k) {
       live.k = k;
       var t = live.text.slice(0, k).replace(/\s*\[\[[^\]]*$/, ''), rr = t; try { rr = resolveRefs(t, lastCtx).text; } catch (e) { /* testo grezzo */ }
       var rc = rich(rr, false); while (live.body.firstChild) live.body.removeChild(live.body.firstChild); live.body.appendChild(rc); var last = rc.lastElementChild || rc; last.appendChild(el('span', 'mm-caret')); updateDown();
     }
-    if (live.n < len) live.raf = requestAnimationFrame(paintLive);
-    else if (live.waiter) { var w = live.waiter; live.waiter = null; w(); }
+    if (live.n < cap) live.raf = requestAnimationFrame(paintLive);
+    else if (live.n >= len && live.waiter) { var w = live.waiter; live.waiter = null; w(); }
+  }
+  /* verifica in anticipo (nessuna AI): le frasi ricevute vengono controllate PRIMA di essere mostrate; il testo parte dal ritmo scelto, senza sostituzioni a posteriori */
+  function vscan(final) {
+    if (!live) return;
+    if (!KN) { live.safe = live.text.length; return; }
+    var masked = live.text.replace(/\[\[[^\]]*\]\]?/g, function (m) { return new Array(m.length + 1).join(' '); }), r;
+    try { r = V.scan(masked, KN, !!final); } catch (e) { live.safe = live.text.length; return; }
+    live.safe = Math.max(r.safe, Math.floor(live.n)); live.viol = r.viol || null;
   }
   function liveDelta(acc) {
     if (!live) {
       clearTransient(); var d = el('div', 'mm-msg assistant streaming'); d.setAttribute('aria-busy', 'true'); d.appendChild(avatar('talk'));
-      var body = el('div', 'mm-body'); d.appendChild(body); $('mmChat').appendChild(d); live = { node: d, body: body, text: '', n: 0, k: -1, ts: 0, raf: 0, waiter: null };
+      var body = el('div', 'mm-body'); d.appendChild(body); $('mmChat').appendChild(d); live = { node: d, body: body, text: '', n: 0, k: -1, ts: 0, raf: 0, waiter: null, safe: 0, viol: null, cut: false };
       mood('talk'); var c = $('mmChat'); c.scrollTop = Math.max(0, d.offsetTop - 8);
     }
-    live.text = acc; if (!live.raf) live.raf = requestAnimationFrame(paintLive);
+    live.text = acc; vscan(false); if (!live.raf) live.raf = requestAnimationFrame(paintLive);
   }
+  function liveFinal() { if (!live) return; vscan(true); if (!live.raf) live.raf = requestAnimationFrame(paintLive); }
   /* attende che la coda sia mostrata per intero (interrompibile); in scheda nascosta o oltre il tempo previsto (+15 s) si conclude subito */
   function drainLive(signal) {
     return new Promise(function (res) {
@@ -399,34 +399,86 @@
   function shownLive() { return live ? live.text.slice(0, Math.floor(live.n)).replace(/\s*\[\[[^\]]*$/, '') : ''; }
   function endLive() { if (!live) return; if (live.raf) cancelAnimationFrame(live.raf); if (live.node.parentNode) live.node.parentNode.removeChild(live.node); live = null; }
   async function simulateReveal(text, signal) { liveDelta(text); await drainLive(signal); }
+  /* ---- mm2.0: fatti pertinenti alla domanda (mai l'intero archivio, mai dati personali: visti/voti/XP/cronologia di visione esclusi) ---- */
+  function todayISO() { var d = new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  function fmtIso(iso) { return iso && iso.length >= 10 ? iso.slice(8, 10) + '/' + iso.slice(5, 7) + '/' + iso.slice(0, 4) : ''; }
+  function factsFor(q, s) {
+    if (!KN) return [];
+    var recent = s && s.messages ? s.messages.slice(-4).filter(function (m) { return !m.personal && (m.role === 'user' || m.role === 'assistant'); }).map(function (m) { return V.norm(m.text.slice(0, 600)); }) : [];
+    var nq = V.norm(q), pools = [nq].concat(recent), out = [], today = KN.today;
+    function mentioned(names) { return pools.some(function (n) { return names.some(function (x) { return x && (' ' + n + ' ').indexOf(' ' + x + ' ') >= 0; }); }); }
+    KN.titles.filter(function (t) { return mentioned(t.names); }).slice(0, 4).forEach(function (t) {
+      var rel = (t.release || '').slice(0, 10), st = !rel ? 'data non presente in archivio' : rel <= today ? 'già uscito alla data odierna' : 'non ancora uscito alla data odierna';
+      out.push({ id: 'f:ti:' + t.id, testo: t.title + ' — ' + (rel ? 'uscita ' + fmtIso(rel) + ' (Timeline dell’app, un solo mercato, non per paese)' : 'nessuna data in Timeline') + '. Stato: ' + st + '.', classe: 'archivio-app', fonte: 'Timeline TVA Archives' });
+    });
+    KN.live.filter(function (t) { return mentioned(t.names); }).slice(0, 3).forEach(function (l) {
+      var off = (l.official || []).slice(0, 3).map(function (o) { return o.market + ' ' + fmtIso(o.date) + ' (trailer ufficiale ' + (o.channel || 'canale ufficiale') + ')'; }).join('; ');
+      out.push({ id: 'f:live:' + V.norm(l.title).replace(/ /g, '-').slice(0, 40), testo: l.title + ' — TVA Live: data ' + (fmtIso(l.date) || 'n.d.') + (l.dateIT ? ' (Italia ' + fmtIso(l.dateIT) + ')' : '') + ', ' + (l.status === 'confirmed' ? 'confermata' : 'provvisoria') + '. ' + (off ? 'Date annunciate nei trailer ufficiali: ' + off + '. ' : '') + 'Le date di uscita cambiano per paese.', classe: l.status === 'confirmed' ? 'confermato' : 'provvisorio', fonte: 'TVA Live (TMDB + canali ufficiali)' });
+    });
+    var seen = {};
+    KN.cast.forEach(function (e) { e.names.forEach(function (nm) {
+      if (nm.length < 4 || seen[nm] || !mentioned([nm])) return; seen[nm] = 1;
+      var lines = KN.cast.filter(function (x) { return x.names.indexOf(nm) >= 0; }).map(function (x) { return (x.prod || x.univ) + ' = ' + (x.actors_raw || x.actors).join(', '); });
+      if (out.length < 8) out.push({ id: 'f:cast:' + nm.replace(/ /g, '-').slice(0, 30), testo: 'Interpreti documentati di ' + nm + ' (registro TVA Atlas, non esaustivo; un nome assente non è falso): ' + lines.join(' | '), classe: 'documentato', fonte: 'TVA Atlas' });
+    }); });
+    return out.slice(0, 8).map(function (f) { f.testo = f.testo.slice(0, 450); return f; });
+  }
+  /* diagnostica locale FACOLTATIVA (disattivata di default): testo grezzo del modello vs mostrato, solo su questo dispositivo, cancellabile */
+  var DKEY = 'marvel-ultimate-timeline-miss-minutes-diag-v1';
+  function diagLoad() { try { var x = JSON.parse(localStorage.getItem(DKEY) || '[]'); return Array.isArray(x) ? x : []; } catch (e) { return []; } }
+  function diagSave(q, raw, shown, d) { try { var a = diagLoad(); a.push({ at: new Date().toISOString(), domanda: String(q).slice(0, 300), grezzo: String(raw).slice(0, 4000), mostrato: String(shown).slice(0, 4000), verifica: d.verifica, rigenerata: d.rigenerata }); localStorage.setItem(DKEY, JSON.stringify(a.slice(-20))); } catch (e) { /* spazio pieno: la diagnostica non e' essenziale */ } }
   async function askOnline(q, s) {
     var p = store.state.prefs;
     var ctx = p.local ? eng.contextFor(q, Object.assign(convState(s), { spoilerOff: !p.spoiler })) : []; lastCtx = ctx;
     var hist = p.memory ? s.messages.slice(-9, -1).filter(function (m) { return (m.role === 'user' || m.role === 'assistant') && !m.personal; }).slice(-6).map(function (m) { return { role: m.role, text: m.text.slice(0, 1200) }; }) : [];
-    var payload = { question: q, history: hist, context: ctx, spoiler: p.spoiler ? 'avoid' : 'off', length: p.length || 'normal', cite: p.cite !== false };
+    var payload = { question: q, history: hist, context: ctx, fatti: factsFor(q, s), spoiler: p.spoiler ? 'avoid' : 'off', length: p.length || 'normal', cite: p.cite !== false };
     waitCtl = new AbortController();
-    var attempts = 0, r, tot0 = Date.now();
-    for (;;) {
-      attempts++;
-      r = await gw.askStream(payload, { signal: waitCtl.signal, onDelta: liveDelta });
-      // mai un nuovo tentativo se una parte della risposta e' gia' stata mostrata
-      if (r.ok || r.code === 'aborted' || attempts >= 2 || live || r.partial || !gw.retriable(r)) break;
-      // un solo nuovo tentativo, solo per errori temporanei, ogni tentativo passa dalle stesse quote del gateway
-      if (waitNode) { var wt = waitNode.querySelector('.wt'); if (wt) wt.textContent = 'Il servizio è occupato: riprovo una volta…'; }
-      await sleep(1500 + Math.floor(Math.random() * 600)); if (waitCtl.signal.aborted) { r = { ok: false, code: 'aborted', stage: 'chat', http: 0, detail: '', message: 'Attesa interrotta.' }; break; }
+    var attempts = 0, r, tot0 = Date.now(), base = '', retried = 0, finalViol = null, rawTexts = [];
+    function mkLink(sig) { var c = new AbortController(); if (sig.aborted) c.abort(); else sig.addEventListener('abort', function () { c.abort(); }, { once: true }); return c; }
+    for (;;) {            // un solo ciclo di rigenerazione al massimo (ripresa dal testo gia' verificato), mai oltre
+      var streamCtl = mkLink(waitCtl.signal), pl = payload;
+      if (retried) pl = Object.assign({}, payload, { riprendi: { testo: base.slice(-1500), motivo: (finalViol && finalViol.kind) || 'attore' } });
+      for (;;) {
+        attempts++;
+        r = await gw.askStream(pl, { signal: streamCtl.signal, onDelta: function (acc) { liveDelta(base + acc); if (live && live.viol && !live.cut) { live.cut = true; try { streamCtl.abort(); } catch (e) { /* gia' chiusa */ } } } });
+        // mai un nuovo tentativo se una parte della risposta e' gia' stata mostrata
+        if (r.ok || r.code === 'aborted' || attempts >= 2 || live || r.partial || !gw.retriable(r)) break;
+        if (waitNode) { var wt = waitNode.querySelector('.wt'); if (wt) wt.textContent = 'Il servizio è occupato: riprovo una volta…'; }
+        await sleep(1500 + Math.floor(Math.random() * 600)); if (waitCtl.signal.aborted) { r = { ok: false, code: 'aborted', stage: 'chat', http: 0, detail: '', message: 'Attesa interrotta.' }; break; }
+      }
+      // gateway non ancora aggiornato (o browser senza stream): risposta intera, rivelata progressivamente dopo il controllo
+      if (r.ok && r.streamed === false && r.answer) liveDelta(base + r.answer);
+      if (r.ok) rawTexts.push(r.answer || '');
+      var cutByVerifier = !!(live && live.cut), userAbort = waitCtl.signal.aborted;
+      if (r.ok || cutByVerifier) liveFinal();      // controllo finale: nessuna frase resta in attesa
+      var viol = live && live.viol;
+      if (!viol || userAbort) break;
+      if (retried >= 1) { finalViol = viol; break; }
+      // violazione grave: la frase NON viene mostrata; si riprende UNA volta dal testo gia' verificato, con il vincolo sui fatti
+      retried++; finalViol = viol; base = live.text.slice(0, viol.at).replace(/\s+$/, ''); live.text = base; live.viol = null; live.cut = false; vscan(false);
+      if (!base) { base = ''; }
+      if (waitNode) { var wt2 = waitNode.querySelector('.wt'); if (wt2) wt2.textContent = 'Controllo un dato…'; }
+      if (base) { live.text = base + ' '; vscan(false); } else { live.text = ''; }
+      base = base ? base + ' ' : '';
     }
-    // gateway non ancora aggiornato (o browser senza stream): la risposta intera viene rivelata progressivamente, in modo interrompibile
-    if (r.ok && r.streamed === false && r.answer) await simulateReveal(r.answer, waitCtl.signal);
-    else if (r.ok) await drainLive(waitCtl.signal);   // lo stream e' finito: la coda in arretrato viene mostrata fino in fondo, senza salti
+    if (r.ok && !(live && live.viol)) await drainLive(waitCtl.signal);   // lo stream e' finito: la coda in arretrato viene mostrata fino in fondo, senza salti
+    var failed = !!(r.ok || (live && live.cut)) && !!(live && live.viol);
+    // verifica non superata due volte: la frase errata non viene mai mostrata; si dichiara l'incertezza
+    if (failed) { var keep = live.text.slice(0, live.viol.at).replace(/\s+$/, ''); live.text = keep; live.viol = null; liveFinal(); await drainLive(waitCtl.signal); r = { ok: true, answer: keep, streamed: true }; }
     // Interrompi premuto mentre la coda veniva ancora mostrata: vale come interruzione (si conserva solo il testo visto)
     if (r.ok && live && waitCtl.signal.aborted && live.n < live.text.length) r = { ok: false, code: 'aborted', stage: 'chat', http: 0, detail: '', message: 'Generazione interrotta.' };
+    var shownAll = live ? live.text : '';
     var partial = live ? (r.code === 'aborted' || (waitCtl && waitCtl.signal.aborted) ? shownLive() : live.text.replace(/\s*\[\[[^\]]*$/, '')) : (r.partial || ''); endLive();
     waitCtl = null;
-    var d = { at: Date.now(), ok: !!r.ok, stream: r.ok ? (r.streamed === false ? 'simulato' : 'reale') : (partial ? 'parziale' : ''), ttfb: r.ttfb || 0, partialChars: partial.length, attempts: attempts, ms: Date.now() - tot0, code: r.ok ? 'ok' : r.code, stage: r.ok ? '' : r.stage, http: r.ok ? 200 : r.http, detail: r.ok ? '' : (r.detail || ''), length: p.length || 'normal' };
+    var d = { at: Date.now(), ok: !!r.ok, stream: r.ok ? (r.streamed === false ? 'simulato' : 'reale') : (partial ? 'parziale' : ''), ttfb: r.ttfb || 0, partialChars: partial.length, attempts: attempts, ms: Date.now() - tot0, code: r.ok ? 'ok' : r.code, stage: r.ok ? '' : r.stage, http: r.ok ? 200 : r.http, detail: r.ok ? '' : (r.detail || ''), length: p.length || 'normal', rigenerata: retried, verifica: failed ? 'non superata: ' + (finalViol && finalViol.kind) : 'superata' };
     if (!r.ok) { diag.last = d; return { ok: false, code: r.code, stage: r.stage, http: r.http, detail: r.detail, message: r.message, partial: partial }; }
-    var rr = resolveRefs(r.answer, ctx);
+    var rr = resolveRefs(shownAll || r.answer, ctx), text = rr.text, notes = [];
+    try { notes = KN ? V.softNotes(text, KN) : []; } catch (e) { notes = []; }
+    if (failed) text = (text ? text + '\n\n' : '') + '⚠ Non sono riuscita a verificare un passaggio di questa risposta (' + finalViol.msg + '). Per non darti un dato sbagliato non lo riporto: controlla Timeline, Atlante o le fonti ufficiali.';
+    if (notes.length) text += '\n\nNota: ' + notes.join(' ');
     d.markers = rr.markers; d.dupRaw = dupCount(r.answer); d.dupShown = dupCount(rr.text); diag.last = d;
-    return { ok: true, text: rr.text, refs: rr.refs, cited: rr.cited };
+    if (store.state.prefs.diag) diagSave(q, rawTexts.join('\n⟂\n'), text, d);
+    return { ok: true, text: text, refs: rr.refs, cited: rr.cited, vf: { ok: !failed, retried: retried, notes: notes.length } };
   }
 
   /* attesa e anomalie */
@@ -499,7 +551,7 @@
       mood('think'); showWait(true);
       var o = await askOnline(q, s);
       clearTransient();
-      if (o.ok) { cited = o.cited; msg = { role: 'assistant', text: o.text, refs: o.refs, tag: 'online · AI · non verificato' + (p.spoiler ? ' · spoiler non garantiti' : '') }; }
+      if (o.ok) { cited = o.cited; msg = { role: 'assistant', text: o.text, refs: o.refs, vf: o.vf, tag: 'online · AI · ' + (o.vf && o.vf.ok ? 'controlli automatici superati (non è una conferma ufficiale)' : 'verifica non superata') + (p.spoiler ? ' · spoiler non garantiti' : '') }; }
       else if (o.partial && o.partial.trim().length >= 1 && (o.code === 'aborted' || o.code === 'timeout' || /network|timeout|provider/.test(o.code || ''))) {
         // il testo gia' ricevuto non va perso: resta in cronologia, con Riprova
         var pr = resolveRefs(o.partial, lastCtx); cited = pr.cited;
@@ -595,6 +647,9 @@
     var sg = el('div', 'seg'); sg.setAttribute('role', 'group'); sg.setAttribute('aria-label', 'Lunghezza delle risposte');
     [['short', 'Brevi'], ['normal', 'Medie'], ['long', 'Lunghe']].forEach(function (o) { var x = btn('', null); x.textContent = o[1]; x.setAttribute('aria-pressed', String((p.length || 'normal') === o[0])); x.onclick = function () { p.length = o[0]; store.save(); [].forEach.call(sg.children, function (y) { y.setAttribute('aria-pressed', 'false'); }); x.setAttribute('aria-pressed', 'true'); }; sg.appendChild(x); });
     lr.appendChild(sg); g2.appendChild(lr);
+    toggleRow(g2, { key: 'diag', icon: 'lines', title: 'Risposte grezze locali (facoltativo)', sub: 'Conserva su questo dispositivo, per le ultime 20 risposte AI, il testo grezzo del modello accanto a quello mostrato, per segnalare errori. Disattivata di default; non viene mai inviata.', onChange: function (v) { store.state.prefs.diag = v; store.save(); } });
+    var dr = linkRow(g2, 'lines', 'Cancella le risposte grezze', 'Elimina subito i testi grezzi conservati.', function () { try { localStorage.removeItem(DKEY); } catch (e) { /* ok */ } banner('Diagnostica cancellata.'); }); dr.id = 'set-diag-clear';
+    var dc = linkRow(g2, 'lines', 'Copia le risposte grezze', 'Copia negli appunti le risposte grezze/mostrate, per segnalarle.', function () { var txt = JSON.stringify(diagLoad(), null, 1); try { navigator.clipboard.writeText(txt).then(function () { banner('Diagnostica copiata.'); }, function () { banner('Copia non consentita dal browser.'); }); } catch (e) { banner('Copia non consentita dal browser.'); } }); dc.id = 'set-diag-copy';
     var vr = el('div', 'mm-srow'); vr.appendChild(ic('lines')); var vt = el('div', 't'); vt.appendChild(el('b', '', 'Velocità di lettura')); vt.appendChild(el('small', '', 'Ritmo con cui compare il testo delle risposte AI (solo su questo dispositivo).')); vr.appendChild(vt);
     var vg = el('div', 'seg'); vg.setAttribute('role', 'group'); vg.setAttribute('aria-label', 'Velocità di lettura');
     [['slow', 'Lenta'], ['normal', 'Normale'], ['fast', 'Rapida']].forEach(function (o) { var x = btn('', null); x.textContent = o[1]; x.setAttribute('aria-pressed', String((p.speed || 'normal') === o[0])); x.onclick = function () { p.speed = o[0]; store.save(); [].forEach.call(vg.children, function (y) { y.setAttribute('aria-pressed', 'false'); }); x.setAttribute('aria-pressed', 'true'); }; vg.appendChild(x); });
@@ -738,6 +793,13 @@
       } catch (e) { data = {}; }
     }
     eng = window.MMEngine.create({ data: data, knowledge: kc }); eng.setSpoilerProtection(store.state.prefs.spoiler);
+    try {      // mm2.0: archivio di fatti documentati (cast/continuita', alias) + calendario Live: dati pubblici, sola lettura
+      var fr = await fetch('knowledge/fatti.json'); FACTS = fr.ok ? await fr.json() : null;
+      try { var lr = await fetch('../assets/live/calendar.json'); LIVE_ITEMS = lr.ok ? ((await lr.json()).items || []) : []; } catch (e2) { LIVE_ITEMS = []; }
+      var cast = (FACTS && FACTS.cast || []).map(function (c) { return { pers: c.pers, attori: c.attori, cues: c.cues, univ: c.univ, prod: c.prod }; });
+      KN = V.build({ titles: (data.titles || []).map(function (t) { return { id: t.id, num: t.num, title: t.title, release: t.release }; }), alias_titoli: FACTS && FACTS.alias_titoli, cast: cast, live: LIVE_ITEMS }, todayISO());
+      KN.cast.forEach(function (e, i) { e.actors_raw = cast[i].attori; });
+    } catch (e) { KN = null; }
     updateSub();
     $('mmForm').onsubmit = function (e) { e.preventDefault(); submit($('mmQ').value); };
     $('mmPlus').onclick = newChat;

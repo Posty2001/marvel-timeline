@@ -3,7 +3,7 @@
   'use strict';
   var KEY = 'marvel-ultimate-timeline-miss-minutes-v1', MAX_S = 40, MAX_M = 120, MAX_T = 4000;
   function create(storage) {
-    var st = { v: 1, sessions: [], active: null, prefs: { online: false, consent: false, spoiler: true, voice: false, local: true, memory: true, cite: true, length: 'normal', speed: 'normal' } };
+    var st = { v: 1, sessions: [], active: null, prefs: { online: false, consent: false, spoiler: true, voice: false, local: true, memory: true, cite: true, length: 'normal', speed: 'normal', diag: false } };
     try { var r = JSON.parse(storage.getItem(KEY) || 'null'); if (r && r.v === 1 && Array.isArray(r.sessions)) { st.sessions = r.sessions.filter(function (s) { return s && typeof s.id === 'string' && Array.isArray(s.messages); }).slice(0, MAX_S); st.active = typeof r.active === 'string' ? r.active : null; st.prefs = Object.assign(st.prefs, r.prefs || {}); } } catch (e) {}
     var ok = true;
     function save() {
@@ -16,7 +16,7 @@
       state: st, save: save, usable: function () { return ok; },
       current: function () { return find(st.active); },
       fresh: function (title) { var s = { id: String(Date.now()) + Math.random().toString(36).slice(2, 6), title: String(title || 'Nuova chat').slice(0, 60), at: Date.now(), messages: [], last: [] }; st.sessions.unshift(s); st.sessions = st.sessions.slice(0, MAX_S); st.active = s.id; return s; },
-      push: function (s, m) { s.messages.push({ role: m.role, text: String(m.text).slice(0, MAX_T), refs: (m.refs || []).slice(0, 8), tag: m.tag || '', personal: m.personal === true, at: Date.now() });
+      push: function (s, m) { s.messages.push({ role: m.role, text: String(m.text).slice(0, MAX_T), refs: (m.refs || []).slice(0, 8), tag: m.tag || '', personal: m.personal === true, vf: m.vf || null, at: Date.now() });
         s.at = Date.now(); if (s.messages.length > MAX_M) s.messages = s.messages.slice(-MAX_M); },
       pop: function (s) { return s.messages.pop(); },
       rename: function (id, title) { var s = find(id), t = String(title || '').replace(/\s+/g, ' ').trim().slice(0, 60); if (!s || !t) return false; s.title = t; return true; },
