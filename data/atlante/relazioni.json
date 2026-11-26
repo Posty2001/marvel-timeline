@@ -22182,6 +22182,29 @@
    "controversa": false
   },
   {
+   "id": "rel-7f3c6746b4",
+   "tipo": "famiglia_coniugi",
+   "classe": "narrativa",
+   "da": "id-vanessa",
+   "a": "id-fisk-mcu",
+   "simmetrica": true,
+   "qualifica": "coniugi",
+   "fonte": [
+    "https://marvelcinematicuniverse.fandom.com/wiki/Kingpin"
+   ],
+   "verifica": "verificata",
+   "nota": "MCU Wiki: Fisk gestisce il suo impero con la moglie Vanessa Marianna; Vanessa muore per mano di Poindexter/Bullseye",
+   "origine": "lotto:lotto_04",
+   "conferme": [
+    "lotto:lotto_04"
+   ],
+   "lotto": "lotto_04",
+   "approvazione": "non_richiesta",
+   "controversa": false,
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
+  },
+  {
    "id": "rel-edcc72ead7",
    "tipo": "famiglia_discendente",
    "classe": "narrativa",
@@ -23155,7 +23178,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/X-Men_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23164,7 +23187,7 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_confermata",
+   "esito_verifica": "confermata",
    "data_verifica": "2026-11-26"
   },
   {
@@ -23178,7 +23201,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/X-Men_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23187,7 +23210,7 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_confermata",
+   "esito_verifica": "confermata",
    "data_verifica": "2026-11-26"
   },
   {
@@ -23352,6 +23375,30 @@
    "data_verifica": null
   },
   {
+   "id": "rel-fb917d4ca2",
+   "tipo": "mentorato",
+   "classe": "narrativa",
+   "da": "id-stick",
+   "a": "id-matt-murdock-mcu",
+   "simmetrica": false,
+   "qualifica": "addestratore (Stick lo addestro' da bambino)",
+   "fonte": [
+    "https://marvelcinematicuniverse.fandom.com/wiki/Daredevil",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Stick"
+   ],
+   "verifica": "verificata",
+   "nota": "Stick addestra Matt e poi lo rifiuta",
+   "origine": "lotto:lotto_04",
+   "conferme": [
+    "lotto:lotto_04"
+   ],
+   "lotto": "lotto_04",
+   "approvazione": "non_richiesta",
+   "controversa": false,
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
+  },
+  {
    "id": "rel-75918cfa7c",
    "tipo": "partner",
    "classe": "narrativa",
@@ -23363,7 +23410,7 @@
     "https://en.wikipedia.org/wiki/X-Men_(film)",
     "https://en.wikipedia.org/wiki/X2_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23372,7 +23419,7 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_confermata",
+   "esito_verifica": "confermata",
    "data_verifica": "2026-11-26"
   },
   {
@@ -23561,6 +23608,29 @@
    "controversa": false,
    "esito_verifica": "non_verificata",
    "data_verifica": null
+  },
+  {
+   "id": "rel-b26ce990df",
+   "tipo": "partner",
+   "classe": "narrativa",
+   "da": "id-matt-murdock-mcu",
+   "a": "id-karen-page",
+   "simmetrica": true,
+   "qualifica": "tentativo di relazione sentimentale (romance appena abbozzata)",
+   "fonte": [
+    "https://www.marvel.com/characters/daredevil-matthew-murdock/on-screen"
+   ],
+   "verifica": "verificata",
+   "nota": "Marvel.com: «Matt e Karen esplorano una romance incerta». Nessuna fonte per fasi successive: non classificati come coppia stabile",
+   "origine": "lotto:lotto_04",
+   "conferme": [
+    "lotto:lotto_04"
+   ],
+   "lotto": "lotto_04",
+   "approvazione": "non_richiesta",
+   "controversa": false,
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-a4a915f0cb",
@@ -23875,7 +23945,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/X-Men:_Apocalypse"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23884,8 +23954,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-d65eb0c4a2",
@@ -24083,7 +24153,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Spider-Man_3"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -24092,8 +24162,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-b312b0ac43",
@@ -24150,19 +24220,23 @@
    "simmetrica": true,
    "qualifica": null,
    "fonte": [
-    "https://en.wikipedia.org/wiki/Spider-Man_3"
+    "https://en.wikipedia.org/wiki/Spider-Man_3",
+    "https://marvel.fandom.com/wiki/Peter_Parker_(Earth-96283)",
+    "https://marvel.fandom.com/wiki/Flint_Marko_(Earth-96283)",
+    "https://marvel.fandom.com/wiki/Spider-Man_3_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
-    "lotto:lotto_01"
+    "lotto:lotto_01",
+    "lotto:lotto_04"
    ],
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-52b262fb5d",
@@ -24567,13 +24641,15 @@
    "simmetrica": true,
    "qualifica": null,
    "fonte": [
-    "https://en.wikipedia.org/wiki/Spider-Man_2"
+    "https://en.wikipedia.org/wiki/Spider-Man_2",
+    "https://marvel.fandom.com/wiki/Peter_Parker_(Earth-96283)"
    ],
    "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
-    "lotto:lotto_01"
+    "lotto:lotto_01",
+    "lotto:lotto_04"
    ],
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
@@ -25242,11 +25318,11 @@
  ],
  "proposte": [],
  "conteggi": {
-  "relazioni_totali": 1208,
+  "relazioni_totali": 1211,
   "per_classe": {
    "controparte": 5,
    "editoriale": 960,
-   "narrativa": 243
+   "narrativa": 246
   },
   "per_tipo": {
    "alleanza": 31,
@@ -25255,13 +25331,13 @@
    "controparte": 5,
    "copia": 1,
    "correlato": 953,
-   "famiglia_coniugi": 3,
+   "famiglia_coniugi": 4,
    "famiglia_discendente": 1,
    "famiglia_fratelli": 9,
    "famiglia_genitore": 30,
    "ispirato_a": 1,
-   "mentorato": 10,
-   "partner": 18,
+   "mentorato": 11,
+   "partner": 19,
    "rivalita": 48,
    "segnaposto": 1,
    "stessa_scheda": 5,
@@ -25269,12 +25345,12 @@
    "tradimento": 7
   },
   "per_verifica": {
-   "da verificare": 47,
+   "da verificare": 41,
    "guida": 959,
-   "verificata": 202
+   "verificata": 211
   },
-  "narrative": 243,
-  "narrative_verificate_o_in_guida": 203,
+  "narrative": 246,
+  "narrative_verificate_o_in_guida": 212,
   "coda_ambigue_o_errate": 0,
   "coda_per_motivo": {},
   "proposte_intake": 0,
@@ -25282,8 +25358,8 @@
   "respinte": 10,
   "risolte_dalla_coda": 4,
   "errori_lotti": [],
-  "narrative_verificate_documentalmente": 197,
-  "narrative_da_verificare": 40,
+  "narrative_verificate_documentalmente": 206,
+  "narrative_da_verificare": 34,
   "controverse_in_attesa_utente": 0,
   "co_apparizioni_nel_registro": 0,
   "nota": "Le co-apparizioni sono calcolate a runtime dalle apparizioni e NON entrano nel registro ne' nei conteggi."

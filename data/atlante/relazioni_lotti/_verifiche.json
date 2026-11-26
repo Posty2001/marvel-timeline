@@ -453,16 +453,16 @@
    "nota": ""
   },
   "rel-d2b610edb2": {
-   "esito": "non_confermata",
-   "fonte": "https://en.wikipedia.org/wiki/X-Men_(film)",
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/X-Men:_Apocalypse",
    "data": "2026-11-26",
-   "nota": "non confermata nel testo della pagina"
+   "nota": "X-Men: Apocalypse: Alex porta Scott da Xavier e Hank perche' gli insegnino a controllare il potere"
   },
   "rel-fbbe47662f": {
-   "esito": "non_confermata",
-   "fonte": "https://en.wikipedia.org/wiki/X-Men_(film)",
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Charles_Xavier_(film_character)",
    "data": "2026-11-26",
-   "nota": "non confermata nel testo della pagina"
+   "nota": "Xavier adotta Jean Grey (variante Earth-10005 rivista); in X-Men: Apocalypse e' una delle sue studentesse predilette"
   },
   "rel-c5ddaeadeb": {
    "esito": "non_confermata",
@@ -471,10 +471,10 @@
    "nota": "non confermata nel testo della pagina"
   },
   "rel-75918cfa7c": {
-   "esito": "non_confermata",
-   "fonte": "https://en.wikipedia.org/wiki/X-Men_(film)",
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Jean_Grey_(X-Men_film_series)",
    "data": "2026-11-26",
-   "nota": "non confermata nel testo della pagina"
+   "nota": "Jean e' fidanzata di Scott Summers/Cyclops (serie film X-Men)"
   },
   "rel-edffd4a8b4": {
    "esito": "confermata",
@@ -1291,6 +1291,42 @@
    "fonte": "https://marvel.fandom.com/wiki/Edward_Brock_(Earth-688B)",
    "data": "2026-11-26",
    "nota": "Marvel Database: Riot/Drake attacca Eddie"
+  },
+  "rel-fb917d4ca2": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Stick",
+   "data": "2026-11-26",
+   "nota": "Stick addestra Matt Murdock da bambino, poi lo rifiuta"
+  },
+  "rel-7f3c6746b4": {
+   "esito": "confermata",
+   "fonte": "https://marvelcinematicuniverse.fandom.com/wiki/Kingpin",
+   "data": "2026-11-26",
+   "nota": "Fisk gestisce l'impero con la moglie Vanessa Marianna (Fisk)"
+  },
+  "rel-b26ce990df": {
+   "esito": "confermata",
+   "fonte": "https://www.marvel.com/characters/daredevil-matthew-murdock/on-screen",
+   "data": "2026-11-26",
+   "nota": "Marvel.com: Matt e Karen esplorano una romance incerta; fasi successive non documentate qui"
+  },
+  "rel-da6662cca0": {
+   "esito": "confermata",
+   "fonte": "https://marvel.fandom.com/wiki/Flint_Marko_(Earth-96283)",
+   "data": "2026-11-26",
+   "nota": "Spider-Man 3: Marko, assassino di Ben Parker, affronta Spider-Man; Peter lo perdona"
+  },
+  "rel-e1bd882ec8": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Peter_Parker_(2002_film_series_character)",
+   "data": "2026-11-26",
+   "nota": "Nella trilogia Peter combatte Green Goblin, Doctor Octopus, Sandman e Venom"
+  },
+  "rel-ac84cf4c91": {
+   "esito": "confermata",
+   "fonte": "https://en.wikipedia.org/wiki/Charles_Xavier_(film_character)",
+   "data": "2026-11-26",
+   "nota": "Xavier entra in contatto con un nuovo nemico, Apocalypse (X-Men: Apocalypse)"
   }
  }
 }

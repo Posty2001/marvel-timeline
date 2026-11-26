@@ -1,0 +1,14 @@
+# Lotto 04 - identita' separate (Matt Murdock MCU/2003, Raimi) - fonti MCU Wiki / Marvel Database / Marvel.com, verificate il 26/11/2026.
+@src ddw https://marvelcinematicuniverse.fandom.com/wiki/Daredevil
+@src stk https://marvelcinematicuniverse.fandom.com/wiki/Stick
+@src mvdd https://www.marvel.com/characters/daredevil-matthew-murdock/on-screen
+@src kp https://marvelcinematicuniverse.fandom.com/wiki/Kingpin
+@src fg https://marvelcinematicuniverse.fandom.com/wiki/Foggy_Nelson
+@src p96 https://marvel.fandom.com/wiki/Peter_Parker_(Earth-96283)
+@src fm96 https://marvel.fandom.com/wiki/Flint_Marko_(Earth-96283)
+@src sm3 https://marvel.fandom.com/wiki/Spider-Man_3_(film)
+men|stick|matt-murdock-mcu|addestratore (Stick lo addestro' da bambino)|ddw+stk|Stick addestra Matt e poi lo rifiuta
+par|matt-murdock-mcu|karen-page|tentativo di relazione sentimentale (romance appena abbozzata)|mvdd|Marvel.com: «Matt e Karen esplorano una romance incerta». Nessuna fonte per fasi successive: non classificati come coppia stabile
+con|vanessa|fisk-mcu|coniugi|kp|MCU Wiki: Fisk gestisce il suo impero con la moglie Vanessa Marianna; Vanessa muore per mano di Poindexter/Bullseye
+riv|peter-parker-raimi|otto-octavius-doc-ock||p96|Spider-Man 2
+riv|peter-parker-raimi|flint-marko-sandman||p96+fm96+sm3|Spider-Man 3: Marko e' il vero assassino di Ben Parker; Peter alla fine lo perdona
