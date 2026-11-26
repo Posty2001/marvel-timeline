@@ -117,13 +117,13 @@ with sync_playwright() as p:
     ok('F. fatti: classe wikipedia con tipo «film», omonimia con fumetti e titolo del catalogo con tipo', any(x['classe'] == 'wikipedia' and 'film' in x['testo'] for x in f) and any('OMONIMIA' in x['testo'] for x in f) and any(x['id'].startswith('f:ti:132') and 'film' in x['testo'] for x in f), [x['id'] for x in f])
     ok('F. con sinossi disponibile non c\'e\' la lacuna; gerarchia: archivio-app prima di wikipedia', not any(x['classe'] == 'lacuna' for x in f) and [x['classe'] for x in f].index('archivio-app') < [x['classe'] for x in f].index('wikipedia'), [x['classe'] for x in f])
     ok('F. nessun dato personale nel payload (seen/rating/cronologia di visione)', 'seen' not in json.dumps(bs[0]) and 'rating' not in json.dumps(bs[0]))
-    ok('F. «Fonti consultate»: link reali a Wikipedia/Wikidata nel messaggio, aperti in nuova scheda', fr.evaluate("()=>{const a=[...document.querySelectorAll('.mm-srcs a')];return a.length>=1&&a.every(x=>x.target==='_blank'&&x.rel.includes('noopener')&&/^https:\\/\\/(en\\.wikipedia\\.org|www\\.wikidata\\.org)\\//.test(x.href))}"), fr.evaluate("()=>[...document.querySelectorAll('.mm-srcs a')].map(x=>x.href)"))
+    ok('F. «Fonti consultate»: link reali a Wikipedia/Wikidata/TMDB nel messaggio, aperti in nuova scheda', fr.evaluate("()=>{const a=[...document.querySelectorAll('.mm-srcs a')];return a.length>=1&&a.every(x=>x.target==='_blank'&&x.rel.includes('noopener')&&/^https:\\/\\/(en\\.wikipedia\\.org|www\\.wikidata\\.org|www\\.themoviedb\\.org)\\//.test(x.href))}"), fr.evaluate("()=>[...document.querySelectorAll('.mm-srcs a')].map(x=>x.href)"))
     ok('F. le fonti sono salvate col messaggio (con data di consultazione)', bool(m.get('srcs')) and all(x.get('when') for x in m['srcs'] if x['classe'] == 'wikipedia'), m.get('srcs'))
     n0 = len(WPREQ); m, seen, n, bs = run('clean', QB); ok('F. seconda domanda identica: cache, nessuna nuova richiesta di rete', len(WPREQ) == n0, len(WPREQ) - n0)
     # G. fonti non raggiungibili: lacuna dichiarata e avviso, mai errore
     MODE['wp'] = 'down'; fr.evaluate("()=>{try{localStorage.removeItem('marvel-ultimate-timeline-miss-minutes-lookup-v1')}catch(e){}}")
-    m, seen, n, bs = run('clean', 'Spider-Man: Brand New Day: di cosa parla? (G)'); f = bs[0]['fatti']
-    ok('G. fonti giù: fatto «lacuna» (non inventare la trama) e risposta comunque consegnata', any(x['classe'] == 'lacuna' for x in f) and 'Brand New Day' in m['text'], [x['classe'] for x in f])
+    m, seen, n, bs = run('clean', 'Fantastic Four: First Steps: di cosa parla? (G)'); f = bs[0]['fatti']   # N°125: titolo senza voce nell'archivio TMDB
+    ok('G. fonti giù: fatto «lacuna» (non inventare la trama) e risposta comunque consegnata', any(x['classe'] == 'lacuna' for x in f) and len(m['text']) > 20, [x['classe'] for x in f])
     ok('G. avviso all\'utente: dati recenti non verificati', 'non raggiungibili' in (m.get('flair') or ''), m.get('flair'))
     MODE['wp'] = 'up'
     # H. preferenza: ricerca disattivata -> nessuna richiesta esterna

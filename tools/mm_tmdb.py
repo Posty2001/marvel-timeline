@@ -12,6 +12,12 @@ OUT = R + '/miss-minutes/knowledge/tmdb_titoli.json'
 MAP = R + '/assets/images/catalog/tmdb_map.json'
 PAESI = ('IT', 'US', 'GB', 'FR', 'DE', 'ES')
 
+def clip(s, n):
+    s = ' '.join(str(s).split())
+    if len(s) <= n: return s
+    c = s[:n]; k = max(c.rfind('. '), c.rfind('! '), c.rfind('? '))
+    return c[:k + 1] if k > n * 0.5 else c.rsplit(' ', 1)[0] + '…'
+
 def parse(t, d):
     """d = risposta TMDB (movie o tv con credits/release_dates appesi) -> voce compatta (funzione pura, testata offline)."""
     credits = d.get('credits') or {}
@@ -21,12 +27,15 @@ def parse(t, d):
     if t == 'movie':
         for blocco in (d.get('release_dates') or {}).get('results', []):
             if blocco.get('iso_3166_1') in PAESI:
-                ds = sorted(x['release_date'][:10] for x in blocco.get('release_dates', []) if x.get('release_date') and x.get('type') in (2, 3, 4, 5, 6))
-                if ds: date.append({'paese': blocco['iso_3166_1'], 'data': ds[0]})
+                rd = [x for x in blocco.get('release_dates', []) if x.get('release_date')]
+                # priorita': 3 = cinema (wide), poi 4 digitale/5 fisico/6 TV; 1-2 (anteprime/festival/limited) solo se non c'e' altro
+                for tipi in ((3,), (4, 5, 6), (2, 1)):
+                    ds = sorted(x['release_date'][:10] for x in rd if x.get('type') in tipi)
+                    if ds: date.append({'paese': blocco['iso_3166_1'], 'data': ds[0]}); break
         if d.get('release_date'): date.append({'paese': 'TMDB', 'data': d['release_date'][:10]})
     else:
         if d.get('first_air_date'): date.append({'paese': 'TMDB', 'data': d['first_air_date'][:10]})
-    voce = {'tmdb': {'t': t, 'id': d.get('id')}, 'titolo': d.get('title') or d.get('name') or '', 'sinossi_it': (d.get('overview') or '').strip()[:600],
+    voce = {'tmdb': {'t': t, 'id': d.get('id')}, 'titolo': d.get('title') or d.get('name') or '', 'sinossi_it': clip(d.get('overview') or '', 700),
             'regista': regia, 'cast': cast, 'stato': d.get('status') or '', 'date': date,
             'url': 'https://www.themoviedb.org/%s/%s' % ('movie' if t == 'movie' else 'tv', d.get('id'))}
     return voce
@@ -65,7 +74,7 @@ def prova():
          'credits': {'crew': [{'job': 'Director', 'name': 'A B'}, {'job': 'Editor', 'name': 'X'}], 'cast': [{'name': 'C D'}]},
          'release_dates': {'results': [{'iso_3166_1': 'IT', 'release_dates': [{'release_date': '2026-07-29T00:00:00.000Z', 'type': 3}, {'release_date': '2026-07-20T00:00:00.000Z', 'type': 1}]}, {'iso_3166_1': 'JP', 'release_dates': []}]}}
     v = parse('movie', d)
-    ok = v['regista'] == ['A B'] and v['date'][0] == {'paese': 'IT', 'data': '2026-07-29'} and v['sinossi_it'] == 'Sinossi.' and v['url'].endswith('/movie/1') and len(v['date']) == 2
+    ok = v['regista'] == ['A B'] and v['date'][0] == {'paese': 'IT', 'data': '2026-07-29'} and clip('Frase uno. ' * 100, 700).endswith('uno.') and len(clip('parola ' * 200, 700)) <= 701 and v['sinossi_it'] == 'Sinossi.' and v['url'].endswith('/movie/1') and len(v['date']) == 2
     print('prova parsing: ' + ('OK' if ok else 'FALLITA')); return 0 if ok else 1
 
 if __name__ == '__main__':
