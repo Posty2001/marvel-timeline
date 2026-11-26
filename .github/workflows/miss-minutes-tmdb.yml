@@ -1,0 +1,41 @@
+name: Miss Minutes - archivio TMDB (manuale)
+# Genera miss-minutes/knowledge/tmdb_titoli.json (sinossi, regia, cast, date per paese) dai titoli gia' mappati. Solo dati pubblici, 0 EUR.
+# Usa gli stessi Secret di "TMDB sync" (TMDB_READ_TOKEN o TMDB_API_KEY). Non pubblica nulla: l'archivio e' scaricabile come artifact
+# e va copiato nel repository (oppure con commit=true viene scritto SOLO sul branch test/tva-archives).
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: "true = scrive il file su test/tva-archives (mai su main)"
+        required: false
+        default: "false"
+permissions:
+  contents: write
+jobs:
+  tmdb:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: test/tva-archives
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Genera l'archivio TMDB
+        env:
+          TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: |
+          if [ -z "$TMDB_READ_TOKEN" ] && [ -z "$TMDB_API_KEY" ]; then echo "::error::Secret TMDB mancante"; exit 1; fi
+          python3 tools/mm_tmdb.py --scrivi && python3 tools/mm_tmdb.py --verifica
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tmdb-titoli
+          path: miss-minutes/knowledge/tmdb_titoli.json
+          retention-days: 30
+      - name: Commit su test/tva-archives (solo se richiesto)
+        if: ${{ inputs.commit == 'true' }}
+        run: |
+          git config user.name "github-actions"; git config user.email "actions@users.noreply.github.com"
+          git add miss-minutes/knowledge/tmdb_titoli.json && git commit -m "Miss Minutes: archivio TMDB generato" && git push origin HEAD:test/tva-archives

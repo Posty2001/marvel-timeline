@@ -40,10 +40,16 @@
   }
 
   /* ---- conoscenza: titoli (Timeline + alias), calendario Live, cast documentato ---- */
-  var DEV = /\b(in sviluppo|in fase di sviluppo|in produzione|in post produzione|in lavorazione|in arrivo|non e ancora (?:uscit|stat|nelle)|deve ancora uscire|devono ancora uscire|uscira|usciranno|sara (?:rilasciat|nelle sale|distribuit)|prossim[oa] (?:film|uscita)|previst[oa] per|ancora in (?:sviluppo|produzione|lavorazione)|non ancora (?:uscit|rilasciat)|in uscita)\b/;
+  var DEV = /\b(in sviluppo|in fase di sviluppo|in produzione|in post produzione|in lavorazione|in arrivo|non e ancora (?:uscit[oaie]|stat[oaie]|nelle)|deve ancora uscire|devono ancora uscire|uscira|usciranno|sara (?:rilasciat[oaie]|nelle sale|distribuit[oaie])|prossim[oa] (?:film|uscita)|previst[oa] per|ancora in (?:sviluppo|produzione|lavorazione)|non ancora (?:uscit[oaie]|rilasciat[oaie])|in uscita)\b/;
   var PAST = /\b(e uscit[oa]|sono uscit[ie]|ha incassato|ha debuttato|e stat[oa] (?:rilasciat|distribuit)|nelle sale dal|ha (?:superato|totalizzato|raggiunto) [^.]{0,30}(?:incass|miliard|milion|box office)|incassi? (?:mondial|total)|e gia nelle sale|e uscit)\b/;
   var HEDGE = /\b(inizialmente|all epoca|in origine|prima dell uscita|prima di uscire|era in (?:sviluppo|produzione)|era previst|fu annunciat|fino a|nel (?:20\d\d) era|ai tempi|quando era)\b/;
-  var TRIG = /interpretat|impersona|doppiat|uscit|usc[ie]r|svilupp|produzion|lavorazion|in arrivo|previst|incass|debutt|rilasciat|sale|sul grande schermo|nelle sale|veste i panni|ruolo di/;
+  var TRIG = /non e |non risulta|non si tratta|ciclo|fumett|interpretat|impersona|doppiat|uscit|usc[ie]r|svilupp|produzion|lavorazion|in arrivo|previst|incass|debutt|rilasciat|sale|sul grande schermo|nelle sale|veste i panni|ruolo di/;
+  /* mm2.0-b: contraddizioni di formato/esistenza su un titolo del catalogo (film/serie): generali, valide per qualunque titolo Marvel */
+  var FORMAT_DENY = /\bnon (?:e|risulta|sembra|si tratta di|rappresenta|costituisce)(?: essere)? (?:un |uno |il |un )?(?:film|lungometraggio|titolo cinematografico|opera cinematografica|produzione cinematografica|serie tv|serie televisiva|uscit[oa] (?:al cinema|nelle sale)|stat[oa] (?:prodott|realizzat))|\bnon (?:si riferisce|fa riferimento|corrisponde) a(?:d)? (?:un |uno |il )?(?:film|lungometraggio|titolo cinematografico|produzione)/;
+  var NOT_EXIST = /\bnon (?:e|risulta|e stat[oa]) (?:mai |ancora |ufficialmente )?(?:uscit|rilasciat|distribuit|prodott|annunciat)|\bnon esiste (?:alcun |nessun |ancora )?(?:film|produzione|titolo)|\bnon e (?:mai )?esistit/;
+  var IS_COMIC = /\b(?:e|si tratta di|riguarda|corrisponde a|indica|fa riferimento a|appartiene a|rimanda a) (?:un |uno |una |il |la |l )?(?:ciclo|arco narrativo|storyline|story arc|crossover|evento editoriale|miniserie a fumetti|numero|volume|albo|fumetto|graphic novel|serie a fumetti|trama fumettistica)\b|\bciclo fumettistic/;
+  var COMIC_OK = /\banche\b|\bomonim|\bispirat|\bbasat|\btratt[ao] da|\badattament|\bdistint|\bconfond|\bdiverso da|\boltre\b|\binoltre\b|\bnei fumetti\b|\bnon va confus/;
+  var Q_COMICS = /fumett|comics|\balbi\b|\balbo\b|graphic novel|storyline|story arc|ciclo|arco narrativo/;
   var VERB_ACT = /\b(interpretat[oa]|impersonat[oa]|portat[oa] sullo schermo|reso vivo|doppiat[oa])\s+(?:dall attore |dalla attrice |dall attrice |da )/;
   var NAME = '([A-ZÀ-Ý][\\p{L}\'’.\\-]+(?:\\s+(?:[A-ZÀ-Ý][\\p{L}\'’.\\-]+|Jr\\.|de|van|von|di|da)){0,3})';
   var RX_PASSIVE = new RegExp('(?:interpretat[oa]|impersonat[oa]|doppiat[oa]|portat[oa] sullo schermo)\\s+(?:dall[\'’]attore |dall[\'’]attrice |dalla attrice |da )' + NAME, 'u');
@@ -56,7 +62,7 @@
       var n = norm(t.title); if (!n) return;
       var al = [n].concat((raw.alias_titoli && raw.alias_titoli[String(t.num || t.id)] || []).map(norm));
       al = al.filter(function (a, i) { return a && al.indexOf(a) === i && (a.split(' ').length >= 2 || (raw.alias_titoli && raw.alias_titoli[String(t.num || t.id)])); });
-      if (al.length) K.titles.push({ id: t.id, title: t.title, release: t.release || '', names: al });
+      if (al.length) K.titles.push({ id: t.id, title: t.title, release: t.release || '', kind: t.kind || '', names: al });
     });
     (raw.cast || []).forEach(function (c) {
       var e = { names: (c.pers || []).map(norm), actors: (c.attori || []).map(norm), cues: (c.cues || []).map(norm), univ: c.univ || '', prod: c.prod || '' };
@@ -97,7 +103,7 @@
   }
   function dateOf(s) { var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s || ''); return m ? m[0] : ''; }
 
-  function check(sent, K) {
+  function check(sent, K, cur) {
     var v = [], n = norm(sent), m;
     /* attore / personaggio / continuita' */
     if ((m = RX_PASSIVE.exec(sent))) {
@@ -107,14 +113,19 @@
       if (ch) { var r = pair(K, actor, ch, n, true); if (r) v.push(r); }
     }
     if ((m = RX_ACTIVE.exec(sent))) { var r2 = pair(K, m[1].replace(/[.,;]+$/, ''), norm(m[2].replace(/[.,;]+$/, '')), n, false); if (r2) v.push(r2); }
-    /* tempo: titolo gia' uscito descritto come futuro (e viceversa) */
-    var hits = titleHits(K, n);
-    var lh = K.live.filter(function (t) { return t.names.some(function (x) { return x && hasWord(n, x); }); });
-    if (hits.length === 1 && !HEDGE.test(n)) {
-      var rel = dateOf(hits[0].release);
+    /* tempo / formato / esistenza: il soggetto e' il titolo citato nella frase oppure, se la frase non ne cita, quello in discussione (focus/frase precedente) */
+    var hits = titleHits(K, n), subj = null, inferred = false;
+    if (hits.length === 1) subj = hits[0]; else if (!hits.length && cur && cur.length === 1) { subj = cur[0]; inferred = true; }
+    if (subj && !HEDGE.test(n)) {
+      var rel = dateOf(subj.release), rtxt = '«' + subj.title + '»' + (inferred ? ' (titolo in discussione)' : '');
       if (rel) {
-        if (rel <= K.today && DEV.test(n)) v.push({ kind: 'tempo', msg: '«' + hits[0].title + '» risulta già uscito (' + rel + ') ma è descritto come non ancora uscito' });
-        else if (rel > K.today && PAST.test(n)) v.push({ kind: 'tempo', msg: '«' + hits[0].title + '» risulta in uscita il ' + rel + ' ma è descritto come già uscito' });
+        if (rel <= K.today && DEV.test(n)) v.push({ kind: 'tempo', msg: rtxt + ' risulta già uscito (' + rel + ') ma è descritto come non ancora uscito' });
+        else if (rel > K.today && PAST.test(n)) v.push({ kind: 'tempo', msg: rtxt + ' risulta in uscita il ' + rel + ' ma è descritto come già uscito' });
+        else if (rel <= K.today && NOT_EXIST.test(n)) v.push({ kind: 'esistenza', msg: rtxt + ' è in archivio come già uscito (' + rel + ') ma ne è negata l’esistenza/uscita' });
+      }
+      if (!COMIC_OK.test(n)) {
+        if (FORMAT_DENY.test(n)) v.push({ kind: 'formato', msg: rtxt + ' è un' + (subj.kind === 'serie' ? 'a serie' : ' film') + ' del catalogo, ma ne viene negato il formato' });
+        else if (IS_COMIC.test(n) && !K.qcomics) v.push({ kind: 'formato', msg: rtxt + ' è un titolo audiovisivo del catalogo, ma viene descritto come un’opera a fumetti' });
       }
     }
     return v;
@@ -123,11 +134,12 @@
   /* scan: restituisce fino a dove il testo puo' essere mostrato (safe) e la prima violazione grave.
      Con stream in corso la frase incompleta viene trattenuta SOLO se contiene parole sensibili (attori, date, stato di uscita): altrimenti scorre libera. */
   function scan(text, K, final) {
-    var ss = sentences(text), viol = null, safe = 0, i, s, vs;
+    var ss = sentences(text), viol = null, safe = 0, i, s, vs, cur = K.focus || [], hh;
     for (i = 0; i < ss.length; i++) {
       s = ss[i]; var str = text.slice(s.s, s.e);
       if (!s.done && !final) { safe = TRIG.test(norm(str)) ? s.s : text.length; return { safe: safe, viol: viol, sentences: ss.length }; }
-      vs = check(str, K);
+      hh = titleHits(K, norm(str)); if (hh.length === 1) cur = [hh[0]];
+      vs = check(str, K, cur);
       if (vs.length) { viol = { at: s.s, end: s.e, kind: vs[0].kind, msg: vs[0].msg, all: vs }; return { safe: s.s, viol: viol, sentences: ss.length }; }
       safe = s.e;
     }
@@ -150,6 +162,11 @@
     });
     return notes;
   }
-  var api = { norm: norm, resolveRefs: resolveRefs, sentences: sentences, build: build, check: check, scan: scan, softNotes: softNotes };
+  /* titolo in discussione: quello della domanda, o (domanda di seguito) quello della domanda precedente */
+  function setFocus(K, q, prevQ) {
+    var h = titleHits(K, norm(q)); if (!h.length && prevQ) h = titleHits(K, norm(prevQ));
+    K.focus = h.length === 1 ? [h[0]] : []; K.qcomics = Q_COMICS.test(norm(q)); return K.focus;
+  }
+  var api = { setFocus: setFocus, titleHits: titleHits, norm: norm, resolveRefs: resolveRefs, sentences: sentences, build: build, check: check, scan: scan, softNotes: softNotes };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.MMVerify = api;
 })(typeof window !== 'undefined' ? window : this);

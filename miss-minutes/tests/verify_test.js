@@ -47,6 +47,23 @@ ok(V.sentences('Il film N° 132 esce. Sì.').length === 2, 'sentences: N°');
 // soft notes
 ok(V.softNotes('Spider-Man: Brand New Day esce il 15 agosto 2026.', K).length === 1, 'softNotes: data diversa');
 ok(V.softNotes('Spider-Man: Brand New Day è uscito il 31 luglio 2026.', K).length === 0, 'softNotes: data coincidente');
+// mm2.0-b: contraddizioni di formato/esistenza, anche senza ripetere il titolo (titolo in discussione) - regole GENERALI
+const titles2 = titles.concat([{ id: 't100', num: 100, title: 'Captain America: Civil War', release: '2016-04-27', kind: 'film' }, { id: 't117', num: 117, title: 'Fantastic Four: First Steps', release: '2025-07-25', kind: 'film' }]);
+const K2 = V.build({ titles: titles2, alias_titoli: fatti.alias_titoli, cast: fatti.cast, live: [] }, '2026-11-26');
+const kk = (q, t, prev) => { V.setFocus(K2, q, prev); const r = V.scan(t, K2, true); return r.viol ? r.viol.kind : null; };
+ok(kk('Spider-Man: Brand New Day è già uscito? Di cosa parla?', 'Si tratta di un ciclo fumettistico del 2008.') === 'formato', 'focus: ciclo fumettistico senza titolo nella frase');
+ok(kk('Spider-Man: Brand New Day è già uscito?', 'Non risulta essere un film uscito al cinema.') === 'formato', 'focus: negazione del formato');
+ok(kk('Spider-Man: Brand New Day è già uscito?', 'Spider-Man: Brand New Day non è un film.') === 'formato', 'titolo nella frase: negazione del formato');
+ok(kk('Quando esce Avengers: Doomsday?', 'È un arco narrativo dei fumetti.') === 'formato', 'altro titolo Marvel: stessa regola (Doomsday)');
+ok(kk('Parlami di Captain America: Civil War', 'Non esiste alcun film con questo titolo.') === 'esistenza', 'altro titolo: negata esistenza di un titolo già uscito (Civil War)');
+ok(kk('Parlami di Fantastic Four: First Steps', 'Questo titolo non è ancora uscito.') === 'tempo', 'altro titolo: non ancora uscito ma uscito nel 2025');
+ok(kk('Spider-Man: Brand New Day è già uscito?', 'Esiste anche un ciclo a fumetti omonimo del 2008, da non confondere con il film.') === null, 'omonimia dichiarata: nessuna violazione');
+ok(kk('Spider-Man: Brand New Day nei fumetti: com’è il ciclo?', 'Si tratta di un ciclo fumettistico del 2008.') === null, 'domanda sui fumetti: nessuna violazione');
+ok(kk('Spider-Man: Brand New Day è già uscito?', 'Il film è uscito il 31 luglio 2026 e vede Tom Holland.') === null, 'risposta corretta: nessuna violazione');
+ok(kk('Cosa fa Knull?', 'Non è un film, è un personaggio.') === null, 'nessun titolo in discussione: nessun giudizio');
+ok(kk('E quando esce?', 'Non è ancora uscito.', 'Avengers: Doomsday uscita?') === null, 'follow-up su titolo futuro: corretto');
+ok(kk('E quando è uscito?', 'Non è ancora uscito.', 'Spider-Man: Brand New Day è già uscito?') === 'tempo', 'follow-up (domanda precedente): contraddizione intercettata');
+ok(kk('Parlami di Spider-Man e Doomsday', 'Non è un film uscito al cinema.') === null, 'focus ambiguo (due titoli): nessun giudizio arbitrario');
 // fatti.json
 ok(Array.isArray(fatti.cast) && fatti.cast.length >= 40 && fatti.cast.every(c => c.pers && c.attori && c.fonte), 'fatti.json: voci con fonte');
 console.log(`verify_test: ${pass} ok, ${failN} falliti`); process.exit(failN ? 1 : 0);

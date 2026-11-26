@@ -169,7 +169,7 @@ ok(p.context.length === 5 && p.context[0].id === 'ab' && p.context[0].text.lengt
     { id: 'z', testo: 'y'.repeat(900), classe: 'inventata', fonte: 'f'.repeat(300) },
     { id: '', testo: 'senza id' }, null, 'str', ...new Array(12).fill({ id: 'k', testo: 't', classe: 'teoria' })],
     riprendi: { testo: 'Peter Parker e interpretato da ', motivo: 'bogus' } });
-  ok(q.fatti.length === 5 && q.fatti[0].id === 'tmdb:1x' && q.fatti[0].classe === 'confermato', 'fatti: sanificati e primi 8 elementi, invalidi scartati');
+  ok(q.fatti.length === 7 && q.fatti[0].id === 'tmdb:1x' && q.fatti[0].classe === 'confermato', 'fatti: sanificati e primi 10 elementi, invalidi scartati');
   ok(q.fatti[1].testo.length === 450 && q.fatti[1].classe === 'documentato' && q.fatti[1].fonte.length === 80, 'fatti: testo 450, classe fuori elenco -> documentato');
   ok(q.riprendi && q.riprendi.motivo === 'attore' && q.riprendi.testo.startsWith('Peter'), 'riprendi: motivo di default');
   ok(parseChat({ question: 'a', riprendi: { testo: '', motivo: 'tempo' } }).riprendi.motivo === 'tempo' && parseChat({ question: 'a', riprendi: { testo: '' } }).riprendi === null, 'riprendi: testo vuoto ammesso solo con motivo valido');

@@ -3,7 +3,7 @@
 (function () {
   'use strict';
   var D = document, $ = function (id) { return D.getElementById(id); };
-  var V = window.MMVerify, KN = null, FACTS = null, LIVE_ITEMS = [];
+  var V = window.MMVerify, LK = window.MMLookup, TMDBK = null, KN = null, FACTS = null, LIVE_ITEMS = [];
   var host = null; try { host = window.parent !== window && window.parent.tvaMissMinutesHost && window.parent.tvaMissMinutesHost.version === 1 ? window.parent.tvaMissMinutesHost : null; } catch (e) { host = null; }
   var store, eng, gw, busy = false, lastCtx = [], waitCtl = null, waitNode = null, errNode = null, heroSvg = null, speakingNode = null;
   var diag = { last: null }, extra = null, prevView = 'home', maxH = 0;
@@ -32,7 +32,14 @@
   function el(tag, cls, txt) { var n = D.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; }
   function btn(cls, label) { var b = el('button', cls); b.type = 'button'; if (label) b.setAttribute('aria-label', label); return b; }
   function banner(t) { var b = $('mmBanner'); b.hidden = !t; b.textContent = t || ''; }
-  function scrollEnd() { var c = $('mmChat'); c.scrollTop = c.scrollHeight; }
+  function scrollEnd() { var c = $('mmChat'); c.scrollTop = c.scrollHeight; progTop = c.scrollTop; follow = true; }
+  /* mm2.0-b: autoscroll intelligente durante la generazione (come ChatGPT): segue il testo solo se l'utente e' in fondo; si sospende se scorre verso l'alto; riprende tornando in fondo o con la freccia */
+  var follow = true, progTop = -1, touching = false, lastStreamed = false;
+  function chatDist(c) { return c.scrollHeight - c.scrollTop - c.clientHeight; }
+  function followScroll() {
+    if (!follow || touching) return; var c = $('mmChat'); if (!c) return;
+    var t = c.scrollHeight - c.clientHeight; if (t > c.scrollTop + 0.5) { c.scrollTop = t; progTop = c.scrollTop; }
+  }
   var toastT = null;
   function toast(t) { var old = D.querySelector('.mm-toast'); if (old) old.remove(); var n = el('div', 'mm-toast', t); n.setAttribute('role', 'status'); $('mmRoot').appendChild(n); clearTimeout(toastT); toastT = setTimeout(function () { n.remove(); }, 1800); }
 
@@ -281,6 +288,16 @@
       m.refs.forEach(function (x) { var b = btn('mm-chip', null); b.appendChild(ic('book')); b.appendChild(el('span', '', x.label)); b.onclick = function () { openLink(x.link); }; r.appendChild(b); });
       body.appendChild(r);
     }
+    if (m.srcs && m.srcs.length) {
+      var sr = el('div', 'mm-srcs'); sr.appendChild(el('b', '', 'Fonti consultate'));
+      m.srcs.forEach(function (x) {
+        var li = el('div', 'mm-src');
+        if (x.url) { var an = el('a', '', x.label); an.href = x.url; an.target = '_blank'; an.rel = 'noopener noreferrer'; li.appendChild(an); } else li.appendChild(el('span', '', x.label));
+        if (x.when) li.appendChild(el('small', '', ' · consultata il ' + fmtIso(x.when)));
+        sr.appendChild(li);
+      });
+      body.appendChild(sr);
+    }
     if (m.flair) body.appendChild(el('div', 'mm-flair', m.flair));
     if (m.action) {
       var a = btn('mm-act', null); a.textContent = m.action.label; a.onclick = function () { a.disabled = true; m.action.run(); }; var w = el('div', 'mm-refs'); w.appendChild(a); body.appendChild(w);
@@ -305,11 +322,13 @@
     var far = view === 'chat' && c.scrollHeight - c.scrollTop - c.clientHeight > 120; b.hidden = !far;
   }
   function render(mode) {
-    var c = $('mmChat'); while (c.firstChild) c.removeChild(c.firstChild); waitNode = null; errNode = null;
+    var c = $('mmChat'), keepTop = c.scrollTop, wasStreamed = lastStreamed && mode === 'answer'; lastStreamed = false; while (c.firstChild) c.removeChild(c.firstChild); waitNode = null; errNode = null;
     var s = store.current(); var msgs = s ? s.messages : [];
     msgs.forEach(function (m, i) { if (extra && s && extra.sid === s.id && extra.i === i) m = Object.assign({}, m, { action: extra.action, flair: extra.flair }); c.appendChild(renderMsg(m, i === msgs.length - 1, i > 0 && msgs[i - 1].role === 'user' && !busy)); });
     if (msgs.length && msgs[msgs.length - 1].role === 'user' && !busy) showError({ code: 'pending' }, msgs[msgs.length - 1].text);
-    if ((mode === 'answer' || focusNext) && !(msgs.length && msgs[msgs.length - 1].role === 'user')) {
+    if (wasStreamed && !(msgs.length && msgs[msgs.length - 1].role === 'user')) {   // risposta appena generata in streaming: nessun salto finale; resta in fondo se la seguivi, altrimenti la posizione non cambia
+      if (follow) { c.scrollTop = c.scrollHeight; progTop = c.scrollTop; } else { c.scrollTop = Math.min(keepTop, Math.max(0, c.scrollHeight - c.clientHeight)); progTop = c.scrollTop; }
+    } else if ((mode === 'answer' || focusNext) && !(msgs.length && msgs[msgs.length - 1].role === 'user')) {
       if (view === 'chat' && c.clientHeight) { focusNext = false; scrollToAnswerTop(); } else focusNext = true;
     } else scrollEnd();
     updateDown();
@@ -364,8 +383,8 @@
     var k = Math.floor(live.n); if (k > 0 && k < len && /[\uD800-\uDBFF]/.test(live.text.charAt(k - 1))) k++;
     if (k !== live.k) {
       live.k = k;
-      var t = live.text.slice(0, k).replace(/\s*\[\[[^\]]*$/, ''), rr = t; try { rr = resolveRefs(t, lastCtx).text; } catch (e) { /* testo grezzo */ }
-      var rc = rich(rr, false); while (live.body.firstChild) live.body.removeChild(live.body.firstChild); live.body.appendChild(rc); var last = rc.lastElementChild || rc; last.appendChild(el('span', 'mm-caret')); updateDown();
+      var t = live.text.slice(0, k).replace(/\s*\[\[[^\]]*\]?$/, ''), rr = t; try { rr = resolveRefs(t, lastCtx).text; } catch (e) { /* testo grezzo */ }
+      var rc = rich(rr, false); while (live.body.firstChild) live.body.removeChild(live.body.firstChild); live.body.appendChild(rc); var last = rc.lastElementChild || rc; last.appendChild(el('span', 'mm-caret')); followScroll(); updateDown();
     }
     if (live.n < cap) live.raf = requestAnimationFrame(paintLive);
     else if (live.n >= len && live.waiter) { var w = live.waiter; live.waiter = null; w(); }
@@ -382,7 +401,7 @@
     if (!live) {
       clearTransient(); var d = el('div', 'mm-msg assistant streaming'); d.setAttribute('aria-busy', 'true'); d.appendChild(avatar('talk'));
       var body = el('div', 'mm-body'); d.appendChild(body); $('mmChat').appendChild(d); live = { node: d, body: body, text: '', n: 0, k: -1, ts: 0, raf: 0, waiter: null, safe: 0, viol: null, cut: false };
-      mood('talk'); var c = $('mmChat'); c.scrollTop = Math.max(0, d.offsetTop - 8);
+      mood('talk');
     }
     live.text = acc; vscan(false); if (!live.raf) live.raf = requestAnimationFrame(paintLive);
   }
@@ -396,20 +415,20 @@
     });
   }
   /* testo realmente mostrato all'utente (per le risposte parziali) */
-  function shownLive() { return live ? live.text.slice(0, Math.floor(live.n)).replace(/\s*\[\[[^\]]*$/, '') : ''; }
+  function shownLive() { return live ? live.text.slice(0, Math.floor(live.n)).replace(/\s*\[\[[^\]]*\]?$/, '') : ''; }
   function endLive() { if (!live) return; if (live.raf) cancelAnimationFrame(live.raf); if (live.node.parentNode) live.node.parentNode.removeChild(live.node); live = null; }
   async function simulateReveal(text, signal) { liveDelta(text); await drainLive(signal); }
   /* ---- mm2.0: fatti pertinenti alla domanda (mai l'intero archivio, mai dati personali: visti/voti/XP/cronologia di visione esclusi) ---- */
   function todayISO() { var d = new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
   function fmtIso(iso) { return iso && iso.length >= 10 ? iso.slice(8, 10) + '/' + iso.slice(5, 7) + '/' + iso.slice(0, 4) : ''; }
-  function factsFor(q, s) {
+  function factsLocal(q, s) {
     if (!KN) return [];
     var recent = s && s.messages ? s.messages.slice(-4).filter(function (m) { return !m.personal && (m.role === 'user' || m.role === 'assistant'); }).map(function (m) { return V.norm(m.text.slice(0, 600)); }) : [];
     var nq = V.norm(q), pools = [nq].concat(recent), out = [], today = KN.today;
     function mentioned(names) { return pools.some(function (n) { return names.some(function (x) { return x && (' ' + n + ' ').indexOf(' ' + x + ' ') >= 0; }); }); }
     KN.titles.filter(function (t) { return mentioned(t.names); }).slice(0, 4).forEach(function (t) {
       var rel = (t.release || '').slice(0, 10), st = !rel ? 'data non presente in archivio' : rel <= today ? 'già uscito alla data odierna' : 'non ancora uscito alla data odierna';
-      out.push({ id: 'f:ti:' + t.id, testo: t.title + ' — ' + (rel ? 'uscita ' + fmtIso(rel) + ' (Timeline dell’app, un solo mercato, non per paese)' : 'nessuna data in Timeline') + '. Stato: ' + st + '.', classe: 'archivio-app', fonte: 'Timeline TVA Archives' });
+      out.push({ id: 'f:ti:' + t.id, _kw: [t.title], testo: t.title + ' — opera audiovisiva del catalogo Timeline (' + (t.kind === 'serie' ? 'serie TV' : t.kind === 'film' ? 'film' : (t.kind || 'film/serie')) + (t.saga ? ', saga ' + t.saga : '') + (t.studio ? ', ' + t.studio : '') + ') — ' + (rel ? 'uscita ' + fmtIso(rel) + ' (Timeline dell’app, un solo mercato, non per paese)' : 'nessuna data in Timeline') + '. Stato: ' + st + '.', classe: 'archivio-app', fonte: 'Timeline TVA Archives' });
     });
     KN.live.filter(function (t) { return mentioned(t.names); }).slice(0, 3).forEach(function (l) {
       var off = (l.official || []).slice(0, 3).map(function (o) { return o.market + ' ' + fmtIso(o.date) + ' (trailer ufficiale ' + (o.channel || 'canale ufficiale') + ')'; }).join('; ');
@@ -423,16 +442,78 @@
     }); });
     return out.slice(0, 8).map(function (f) { f.testo = f.testo.slice(0, 450); return f; });
   }
+
+  /* mm2.0-b: raccolta dei fatti con gerarchia di fonti (ufficiale > archivio-app > TMDB > Wikipedia/Wikidata > modello); lacune dichiarate; solo NOMI verso le fonti esterne */
+  var QPLOT = /trama|di cosa parla|di che parla|di che cosa parla|sinossi|racconta|cosa succede|plot\b|storia del film/;
+  var RANK = { ufficiale: 0, 'archivio-app': 1, confermato: 1, provvisorio: 2, tmdb: 3, documentato: 4, wikipedia: 5, lacuna: 6 };
+  function dateIT(iso) { return fmtIso(iso) || iso; }
+  function tmdbFacts(names) {
+    var out = [];
+    if (!TMDBK || !TMDBK.voci) return out;
+    names.forEach(function (n) {
+      var t = KN.titles.filter(function (x) { return x.title === n.name; })[0], e = t && TMDBK.voci[String(t.id)]; if (!e) return;
+      var url = e.url && /^https:\/\/www\.themoviedb\.org\//.test(e.url) ? e.url : '';
+      if (e.sinossi_it) out.push({ id: 'f:tmdb:' + t.id + ':s', testo: '«' + t.title + '» — sinossi TMDB: ' + String(e.sinossi_it).slice(0, 330) + (e.regista && e.regista.length ? ' Regia: ' + e.regista.slice(0, 2).join(', ') + '.' : ''), classe: 'tmdb', fonte: 'TMDB ' + String(TMDBK.generato || '').slice(0, 10), _url: url, _kw: [t.title], _when: TMDBK.generato });
+      var parts = []; if (e.stato) parts.push('stato TMDB: ' + e.stato); if (e.date && e.date.length) parts.push('uscite per paese: ' + e.date.slice(0, 6).map(function (d) { return d.paese + ' ' + dateIT(d.data); }).join('; '));
+      if (e.cast && e.cast.length) parts.push('cast principale: ' + e.cast.slice(0, 6).join(', '));
+      if (parts.length) out.push({ id: 'f:tmdb:' + t.id + ':d', testo: '«' + t.title + '» — ' + parts.join('. ') + '. (TMDB non è una conferma ufficiale)', classe: 'tmdb', fonte: 'TMDB ' + String(TMDBK.generato || '').slice(0, 10), _url: url, _kw: [t.title], _when: TMDBK.generato });
+    });
+    return out;
+  }
+  async function gatherFacts(q, s, ctx, signal) {
+    var p = store.state.prefs, local = factsLocal(q, s), names = [], lk = { facts: [], net: 0, failed: 0, cached: 0 }, ex = [];
+    if (KN) {
+      V.titleHits(KN, V.norm(q)).slice(0, 2).forEach(function (t) { names.push({ name: t.title, rel: t.release }); });
+      if (!names.length && KN.focus && KN.focus.length) names.push({ name: KN.focus[0].title, rel: KN.focus[0].release });
+      if (!names.length) (ctx || []).slice(0, 2 - names.length).forEach(function (c) { if (c && c.title && !names.some(function (n) { return n.name === c.title; })) names.push({ name: String(c.title).slice(0, 60), rel: '' }); });
+    }
+    ex = tmdbFacts(names);
+    if (p.lookup !== false && LK && names.length) { try { lk = await LK.lookup(names, { fetch: window.fetch.bind(window), store: window.localStorage, today: KN ? KN.today : todayISO(), signal: signal }); } catch (e) { /* fail-open */ } }
+    var all = local.concat(ex, lk.facts);
+    // lacuna dichiarata: chi chiede la trama di un titolo senza sinossi verificata non deve ricevere una trama inventata
+    if (QPLOT.test(V.norm(q)) && names.length && !all.some(function (f) { return f.classe === 'tmdb' && /sinossi/.test(f.testo) || f.classe === 'wikipedia' && !/OMONIMIA/.test(f.testo); })) {
+      all.push({ id: 'f:lacuna:trama', testo: 'Nessuna sinossi verificata disponibile per «' + names[0].name + '» (né in archivio né nelle fonti consultate). NON inventare la trama: dichiara che non è verificabile e rispondi solo con i dati forniti (tipo, data, saga).', classe: 'lacuna', fonte: 'TVA Archives' });
+    }
+    all.sort(function (x, y) { return (RANK[x.classe] == null ? 4 : RANK[x.classe]) - (RANK[y.classe] == null ? 4 : RANK[y.classe]); });
+    return { all: all.slice(0, 10), lk: lk, names: names };
+  }
+  function wire(all) { return all.map(function (f) { return { id: f.id, testo: f.testo.slice(0, 450), classe: f.classe, fonte: f.fonte }; }); }
+  var SRC_HOSTS = /^https:\/\/(?:[a-z]{2}\.wikipedia\.org|www\.wikidata\.org|www\.themoviedb\.org|www\.marvel\.com|www\.sonypictures\.com)\//;
+  var CL_LABEL = { wikipedia: 'Wikipedia (non ufficiale)', tmdb: 'TMDB (non ufficiale)', ufficiale: 'fonte ufficiale', 'archivio-app': 'archivio dell’app', documentato: 'registro TVA Atlas' };
+  /* fonti realmente fornite al modello e pertinenti al testo mostrato (il nome compare nella risposta): niente collegamenti inventati dal modello */
+  function sourcesFor(all, text) {
+    var n = ' ' + V.norm(text) + ' ', out = [], seen = {};
+    all.forEach(function (f) {
+      if (!f._kw || !f._kw.some(function (k) { var kn = V.norm(k); return kn && n.indexOf(' ' + kn + ' ') >= 0; })) return;
+      var url = f._url && SRC_HOSTS.test(f._url) ? f._url : '', key = url || f.fonte; if (seen[key] || out.length >= 5) return; seen[key] = 1;
+      out.push({ label: (CL_LABEL[f.classe] || f.fonte) + (f._kw[1] ? ' · ' + f._kw[1] : ''), url: url, when: f._when ? String(f._when).slice(0, 10) : '', classe: f.classe });
+      if (f._wd && SRC_HOSTS.test(f._wd) && out.length < 5 && !seen[f._wd]) { seen[f._wd] = 1; out.push({ label: 'Wikidata · ' + f._kw[1], url: f._wd, when: f._when ? String(f._when).slice(0, 10) : '', classe: 'wikipedia' }); }
+    });
+    return out;
+  }
+
   /* diagnostica locale FACOLTATIVA (disattivata di default): testo grezzo del modello vs mostrato, solo su questo dispositivo, cancellabile */
   var DKEY = 'marvel-ultimate-timeline-miss-minutes-diag-v1';
   function diagLoad() { try { var x = JSON.parse(localStorage.getItem(DKEY) || '[]'); return Array.isArray(x) ? x : []; } catch (e) { return []; } }
   function diagSave(q, raw, shown, d) { try { var a = diagLoad(); a.push({ at: new Date().toISOString(), domanda: String(q).slice(0, 300), grezzo: String(raw).slice(0, 4000), mostrato: String(shown).slice(0, 4000), verifica: d.verifica, rigenerata: d.rigenerata }); localStorage.setItem(DKEY, JSON.stringify(a.slice(-20))); } catch (e) { /* spazio pieno: la diagnostica non e' essenziale */ } }
+  /* la cronologia non e' una fonte: le risposte precedenti che violano i controlli attuali o non hanno superato la verifica NON tornano al modello (niente propagazione di errori) */
+  function sanitizeHistory(s) {
+    return s.messages.slice(-9, -1).filter(function (m) { return (m.role === 'user' || m.role === 'assistant') && !m.personal; }).slice(-6).map(function (m) {
+      if (m.role === 'user') return { role: 'user', text: m.text.slice(0, 600) };
+      var bad = (m.vf && m.vf.ok === false) || /verifica non superata|interrotta|parziale/.test(m.tag || '');
+      if (!bad && KN) { try { bad = !!V.scan(String(m.text).replace(/\[\[[^\]]*\]\]/g, ' '), KN, true).viol; } catch (e) { /* ok */ } }
+      return { role: 'assistant', text: bad ? '[risposta precedente omessa: non ha superato i controlli di verifica]' : m.text.slice(0, 700) };
+    });
+  }
   async function askOnline(q, s) {
     var p = store.state.prefs;
     var ctx = p.local ? eng.contextFor(q, Object.assign(convState(s), { spoilerOff: !p.spoiler })) : []; lastCtx = ctx;
-    var hist = p.memory ? s.messages.slice(-9, -1).filter(function (m) { return (m.role === 'user' || m.role === 'assistant') && !m.personal; }).slice(-6).map(function (m) { return { role: m.role, text: m.text.slice(0, 1200) }; }) : [];
-    var payload = { question: q, history: hist, context: ctx, fatti: factsFor(q, s), spoiler: p.spoiler ? 'avoid' : 'off', length: p.length || 'normal', cite: p.cite !== false };
+    var prevU = ''; if (s && s.messages) for (var pi = s.messages.length - 2; pi >= 0; pi--) if (s.messages[pi].role === 'user') { prevU = s.messages[pi].text; break; }
+    if (KN) V.setFocus(KN, q, prevU);
+    var hist = p.memory ? sanitizeHistory(s) : [];
     waitCtl = new AbortController();
+    var G = await gatherFacts(q, s, ctx, waitCtl.signal);
+    var payload = { question: q, history: hist, context: ctx, fatti: wire(G.all), spoiler: p.spoiler ? 'avoid' : 'off', length: p.length || 'normal', cite: p.cite !== false };
     var attempts = 0, r, tot0 = Date.now(), base = '', retried = 0, finalViol = null, rawTexts = [];
     function mkLink(sig) { var c = new AbortController(); if (sig.aborted) c.abort(); else sig.addEventListener('abort', function () { c.abort(); }, { once: true }); return c; }
     for (;;) {            // un solo ciclo di rigenerazione al massimo (ripresa dal testo gia' verificato), mai oltre
@@ -467,8 +548,8 @@
     if (failed) { var keep = live.text.slice(0, live.viol.at).replace(/\s+$/, ''); live.text = keep; live.viol = null; liveFinal(); await drainLive(waitCtl.signal); r = { ok: true, answer: keep, streamed: true }; }
     // Interrompi premuto mentre la coda veniva ancora mostrata: vale come interruzione (si conserva solo il testo visto)
     if (r.ok && live && waitCtl.signal.aborted && live.n < live.text.length) r = { ok: false, code: 'aborted', stage: 'chat', http: 0, detail: '', message: 'Generazione interrotta.' };
-    var shownAll = live ? live.text : '';
-    var partial = live ? (r.code === 'aborted' || (waitCtl && waitCtl.signal.aborted) ? shownLive() : live.text.replace(/\s*\[\[[^\]]*$/, '')) : (r.partial || ''); endLive();
+    var shownAll = live ? live.text : ''; if (live) lastStreamed = true;
+    var partial = live ? (r.code === 'aborted' || (waitCtl && waitCtl.signal.aborted) ? shownLive() : live.text.replace(/\s*\[\[[^\]]*\]?$/, '')) : (r.partial || ''); endLive();
     waitCtl = null;
     var d = { at: Date.now(), ok: !!r.ok, stream: r.ok ? (r.streamed === false ? 'simulato' : 'reale') : (partial ? 'parziale' : ''), ttfb: r.ttfb || 0, partialChars: partial.length, attempts: attempts, ms: Date.now() - tot0, code: r.ok ? 'ok' : r.code, stage: r.ok ? '' : r.stage, http: r.ok ? 200 : r.http, detail: r.ok ? '' : (r.detail || ''), length: p.length || 'normal', rigenerata: retried, verifica: failed ? 'non superata: ' + (finalViol && finalViol.kind) : 'superata' };
     if (!r.ok) { diag.last = d; return { ok: false, code: r.code, stage: r.stage, http: r.http, detail: r.detail, message: r.message, partial: partial }; }
@@ -478,7 +559,10 @@
     if (notes.length) text += '\n\nNota: ' + notes.join(' ');
     d.markers = rr.markers; d.dupRaw = dupCount(r.answer); d.dupShown = dupCount(rr.text); diag.last = d;
     if (store.state.prefs.diag) diagSave(q, rawTexts.join('\n⟂\n'), text, d);
-    return { ok: true, text: text, refs: rr.refs, cited: rr.cited, vf: { ok: !failed, retried: retried, notes: notes.length } };
+    var srcs = failed ? [] : sourcesFor(G.all, text), nameSet = G.names.length, flair = '';
+    if (p.lookup !== false && nameSet && G.lk.failed && !G.lk.facts.length) flair = 'Fonti aggiornate non raggiungibili ora: i dati recenti non sono stati verificati.';
+    d.fatti = G.all.length; d.fonti = srcs.length; d.lk = { net: G.lk.net, cache: G.lk.cached, ko: G.lk.failed };
+    return { ok: true, text: text, refs: rr.refs, cited: rr.cited, srcs: srcs, flair: flair, vf: { ok: !failed, retried: retried, notes: notes.length } };
   }
 
   /* attesa e anomalie */
@@ -551,7 +635,7 @@
       mood('think'); showWait(true);
       var o = await askOnline(q, s);
       clearTransient();
-      if (o.ok) { cited = o.cited; msg = { role: 'assistant', text: o.text, refs: o.refs, vf: o.vf, tag: 'online · AI · ' + (o.vf && o.vf.ok ? 'controlli automatici superati (non è una conferma ufficiale)' : 'verifica non superata') + (p.spoiler ? ' · spoiler non garantiti' : '') }; }
+      if (o.ok) { cited = o.cited; msg = { role: 'assistant', text: o.text, refs: o.refs, srcs: o.srcs, flair: o.flair, vf: o.vf, tag: 'online · AI · ' + (o.vf && o.vf.ok ? 'controlli automatici superati (non è una conferma ufficiale)' : 'verifica non superata') + (p.spoiler ? ' · spoiler non garantiti' : '') }; }
       else if (o.partial && o.partial.trim().length >= 1 && (o.code === 'aborted' || o.code === 'timeout' || /network|timeout|provider/.test(o.code || ''))) {
         // il testo gia' ricevuto non va perso: resta in cronologia, con Riprova
         var pr = resolveRefs(o.partial, lastCtx); cited = pr.cited;
@@ -647,6 +731,8 @@
     var sg = el('div', 'seg'); sg.setAttribute('role', 'group'); sg.setAttribute('aria-label', 'Lunghezza delle risposte');
     [['short', 'Brevi'], ['normal', 'Medie'], ['long', 'Lunghe']].forEach(function (o) { var x = btn('', null); x.textContent = o[1]; x.setAttribute('aria-pressed', String((p.length || 'normal') === o[0])); x.onclick = function () { p.length = o[0]; store.save(); [].forEach.call(sg.children, function (y) { y.setAttribute('aria-pressed', 'false'); }); x.setAttribute('aria-pressed', 'true'); }; sg.appendChild(x); });
     lr.appendChild(sg); g2.appendChild(lr);
+    toggleRow(g2, { key: 'lookup', icon: 'book', title: 'Fonti aggiornate (Wikipedia/Wikidata)', sub: 'Prima di rispondere cerca informazioni recenti sul titolo o personaggio: alle fonti esterne vengono inviati solo i nomi (mai la tua domanda o dati personali). Risultati salvati in cache sul dispositivo.', onChange: function (v) { store.state.prefs.lookup = v; store.save(); } });
+    linkRow(g2, 'book', 'Svuota la cache delle fonti', 'Elimina le informazioni recuperate da Wikipedia/Wikidata.', function () { try { LK.clear(window.localStorage); } catch (e) { /* ok */ } banner('Cache delle fonti svuotata.'); });
     toggleRow(g2, { key: 'diag', icon: 'lines', title: 'Risposte grezze locali (facoltativo)', sub: 'Conserva su questo dispositivo, per le ultime 20 risposte AI, il testo grezzo del modello accanto a quello mostrato, per segnalare errori. Disattivata di default; non viene mai inviata.', onChange: function (v) { store.state.prefs.diag = v; store.save(); } });
     var dr = linkRow(g2, 'lines', 'Cancella le risposte grezze', 'Elimina subito i testi grezzi conservati.', function () { try { localStorage.removeItem(DKEY); } catch (e) { /* ok */ } banner('Diagnostica cancellata.'); }); dr.id = 'set-diag-clear';
     var dc = linkRow(g2, 'lines', 'Copia le risposte grezze', 'Copia negli appunti le risposte grezze/mostrate, per segnalarle.', function () { var txt = JSON.stringify(diagLoad(), null, 1); try { navigator.clipboard.writeText(txt).then(function () { banner('Diagnostica copiata.'); }, function () { banner('Copia non consentita dal browser.'); }); } catch (e) { banner('Copia non consentita dal browser.'); } }); dc.id = 'set-diag-copy';
@@ -693,6 +779,7 @@
       b.appendChild(el('p', '', 'Miss Minutes · Holographic Intelligence · ' + VERSION + ' (TEST). Assistente del Multiverso Marvel dentro TVA Archives.'));
       b.appendChild(el('p', 'mm-small', 'Archivio locale: ' + st.entries + ' voci (' + st.curated + ' schede curate, riferimenti da verificare su fonti primarie). Dati dell’app: ' + (host ? 'collegati in sola lettura' : 'non collegati') + '.'));
       b.appendChild(el('p', 'mm-small', 'Risposte generate con Google Gemini tramite un gateway gratuito: possono contenere errori, verifica le informazioni importanti. Progetto fan non ufficiale, non affiliato né approvato da Marvel o Disney.'));
+      b.appendChild(el('p', 'mm-small', 'Fonti consultate da Miss Minutes 2.0: testi di Wikipedia (CC BY-SA 4.0) e dati di Wikidata (CC0), tramite le API pubbliche gratuite; sinossi e date da TMDB (questo prodotto usa le API di TMDB ma non è approvato né certificato da TMDB). Nessuna di queste fonti è una conferma ufficiale di Marvel, Sony o Disney.'));
       b.appendChild(el('p', 'mm-small', 'Interfaccia e mascotte olografica: disegni originali per TVA Archives.'));
     });
   }
@@ -702,6 +789,7 @@
     else {
       L.push('Ultima richiesta AI: ' + (d.ok ? 'riuscita' : 'FALLITA'), 'Tentativi: ' + d.attempts + ' · durata: ' + d.ms + ' ms', 'Lunghezza richiesta: ' + d.length);
       if (d.stream) L.push('Streaming: ' + d.stream + (d.ttfb ? ' · primo testo dopo ' + d.ttfb + ' ms' : '') + (d.partialChars ? ' · testo parziale: ' + d.partialChars + ' caratteri' : ''));
+      if (d.lk) L.push('Fonti: ' + d.fatti + ' fatti inviati · ricerca esterna: ' + d.lk.net + ' in rete, ' + d.lk.cache + ' da cache, ' + d.lk.ko + ' non riuscite · fonti mostrate: ' + d.fonti);
       if (!d.ok) L.push('Codice: ' + d.code + ' · stadio: ' + (d.stage || '-') + ' · HTTP: ' + (d.http || '-') + (d.detail ? ' · ' + d.detail : ''));
       else L.push('Marcatori scheda nella risposta grezza: ' + d.markers, 'Parole ripetute adiacenti — risposta grezza: ' + d.dupRaw + ' · testo mostrato: ' + d.dupShown);
     }
@@ -775,7 +863,15 @@
     D.addEventListener('freeze', function () { flushUi('freeze'); }); D.addEventListener('resume', function () { life('resume'); });
     var tmr = null; function later(f) { clearTimeout(tmr); tmr = setTimeout(f, 250); }
     ['vHome', 'mmChat', 'vHist', 'vSet'].forEach(function (id) { $(id).addEventListener('scroll', function () { updateDown(); later(function () { flushUi(); }); }, { passive: true }); });
-    $('mmDown').onclick = function () { var c = $('mmChat'); try { c.scrollTo({ top: c.scrollHeight, behavior: 'smooth' }); } catch (e) { c.scrollTop = c.scrollHeight; } };
+    $('mmDown').onclick = function () { var c = $('mmChat'); follow = true; if (live) { c.scrollTop = c.scrollHeight; progTop = c.scrollTop; } else { try { c.scrollTo({ top: c.scrollHeight, behavior: 'smooth' }); } catch (e) { c.scrollTop = c.scrollHeight; } } updateDown(); };
+    (function () {
+      var c = $('mmChat');
+      c.addEventListener('scroll', function () { if (Math.abs(c.scrollTop - progTop) > 1.5) follow = chatDist(c) < 48; }, { passive: true });   // scorrimento dell'utente: segue solo se e' (tornato) in fondo
+      c.addEventListener('wheel', function (e) { if (e.deltaY < 0) follow = false; }, { passive: true });
+      c.addEventListener('touchstart', function () { touching = true; }, { passive: true });
+      var tend = function () { touching = false; follow = chatDist(c) < 48; };
+      c.addEventListener('touchend', tend, { passive: true }); c.addEventListener('touchcancel', tend, { passive: true });
+    })();
     $('mmQ').addEventListener('input', function () { later(function () { flushUi(); }); });
     // tastiera iOS: la barra inferiore cede spazio mentre si scrive
     maxH = window.innerHeight;
@@ -797,8 +893,9 @@
       var fr = await fetch('knowledge/fatti.json'); FACTS = fr.ok ? await fr.json() : null;
       try { var lr = await fetch('../assets/live/calendar.json'); LIVE_ITEMS = lr.ok ? ((await lr.json()).items || []) : []; } catch (e2) { LIVE_ITEMS = []; }
       var cast = (FACTS && FACTS.cast || []).map(function (c) { return { pers: c.pers, attori: c.attori, cues: c.cues, univ: c.univ, prod: c.prod }; });
-      KN = V.build({ titles: (data.titles || []).map(function (t) { return { id: t.id, num: t.num, title: t.title, release: t.release }; }), alias_titoli: FACTS && FACTS.alias_titoli, cast: cast, live: LIVE_ITEMS }, todayISO());
+      KN = V.build({ titles: (data.titles || []).map(function (t) { return { id: t.id, num: t.num, title: t.title, release: t.release, kind: t.kind, saga: t.saga, studio: t.studio }; }), alias_titoli: FACTS && FACTS.alias_titoli, cast: cast, live: LIVE_ITEMS }, todayISO());
       KN.cast.forEach(function (e, i) { e.actors_raw = cast[i].attori; });
+      try { var tr = await fetch('knowledge/tmdb_titoli.json'); TMDBK = tr.ok ? await tr.json() : null; } catch (e3) { TMDBK = null; }
     } catch (e) { KN = null; }
     updateSub();
     $('mmForm').onsubmit = function (e) { e.preventDefault(); submit($('mmQ').value); };
@@ -827,7 +924,7 @@
     if (ui.draft) $('mmQ').value = String(ui.draft).slice(0, 600);
     ui.restored = !!(hadState && (start !== 'home' || ui.draft));
     setView(start, { noPush: true }); if (ui.restored) restoreScroll(start);
-    try { window.__mm = { ask: submit, engine: eng, store: store, view: function () { return view; }, diag: function () { return diag.last; }, resolveRefs: resolveRefs, go: function (v) { setView(v); }, ui: function () { return ui; }, back: goBack }; } catch (e) {}
+    try { window.__mm = { follow: function () { return follow; }, ask: submit, engine: eng, store: store, view: function () { return view; }, diag: function () { return diag.last; }, resolveRefs: resolveRefs, go: function (v) { setView(v); }, ui: function () { return ui; }, back: goBack }; } catch (e) {}
   }
   init();
 })();

@@ -95,7 +95,7 @@ svg.ic .fill{fill:currentColor;stroke:none}
 .mm-chip:active,.mm-act:active{background:rgba(245,154,35,.22)}
 .mm-chip .ic{width:1.05em;height:1.05em}
 .mm-act{border-color:var(--line);color:var(--mut)}
-.mm-flair{margin-top:8px;font-size:.8rem;color:var(--mut);font-style:italic}
+.mm-srcs{margin-top:10px;padding-top:8px;border-top:1px solid var(--line,rgba(255,255,255,.12));font-size:.78rem;color:var(--mut)}.mm-srcs b{display:block;margin-bottom:3px;font-weight:600;letter-spacing:.02em}.mm-src{padding:1px 0;overflow-wrap:anywhere}.mm-src a{color:var(--acc,#e2b04a);text-decoration:underline;text-underline-offset:2px}.mm-flair{margin-top:8px;font-size:.8rem;color:var(--mut);font-style:italic}
 .mm-toast{position:absolute;left:50%;bottom:130px;transform:translateX(-50%);z-index:9;padding:7px 14px;border-radius:99px;background:#241706;border:1px solid var(--line2);color:var(--acc2);font-size:.82rem;box-shadow:var(--glow)}
 
 /* attesa / anomalie */

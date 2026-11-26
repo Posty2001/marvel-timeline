@@ -44,9 +44,8 @@ with sync_playwright() as p:
         GW['chat'] += 0
         fr.evaluate("(q)=>{window.__mm.ask(q);return 1}", 'Confronta in modo teorico Doom e Thanos in Doomsday numero %d' % i); wait_done()
     s = fr.evaluate(M); print(s)
-    ok('risposta lunga: la visualizzazione parte dall\'inizio della nuova risposta', s['ah'] is not None and -2 <= s['ah'] <= 24, s)
-    ok('non scorre fino in fondo', s['max'] - s['top'] > 150, s)
-    ok('freccia visibile e sopra la barra di input', s['down'] and s['dbot'] <= s['cbot'] + 1, s)
+    ok('mm2.0-b: risposta lunga generata in streaming, seguita fino in fondo (nessun salto in cima alla risposta)', s['max'] - s['top'] < 6, s)
+    ok('mm2.0-b: seguendo il testo non serve la freccia (nascosta)', not s['down'], s)
     # 3. lettura libera: nessuno spostamento forzato
     fr.evaluate("()=>{document.getElementById('mmChat').scrollTop-=300;return 1}"); pg.wait_for_timeout(900); t1 = fr.evaluate(M)['top']; pg.wait_for_timeout(900); t2 = fr.evaluate(M)['top']
     ok('nessuno scorrimento automatico durante la lettura', t1 == t2, (t1, t2))

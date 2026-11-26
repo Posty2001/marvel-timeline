@@ -80,7 +80,7 @@ with sync_playwright() as p:
     lens = sorted(set(len(x['txt']) for x in st)); ok('1. la bolla cresce progressivamente (>=3 stadi)', len(lens) >= 3, lens[:6])
     ok('1. attesa sostituita dalla bolla in streaming, cursore e Interrompi visibili', bool(st) and st[0]['think'] == 0 and st[0]['caret'] and st[0]['stop'], st[:1])
     ok('1. nessun marcatore [[ ]] grezzo visibile durante lo streaming', not any('[[' in x['txt'] for x in st), [x['txt'][-40:] for x in st if '[[' in x['txt']][:1])
-    ok('1. nessuno scorrimento forzato in fondo mentre il testo cresce', st[0]['top'] <= 3 and all(abs(x['top'] - st[0]['top']) < 3 for x in st), (st[0]['top'], max(x['max'] for x in st)))
+    tp = [x['top'] for x in st]; ok('1. mm2.0-b: durante lo streaming la vista non torna mai indietro (autoscroll in fondo, nessun salto)', all(b >= a_ - 1 for a_, b in zip(tp, tp[1:])), tp[:8])
     done(); m = fr.evaluate(LAST); d = fr.evaluate("()=>window.__mm.diag()")
     ok('1. risposta finale completa in cronologia, etichettata online', 'Paragrafo 9' in m['text'] and m['tag'].startswith('online'), (m['tag'], m['text'][-60:], len(m['text'])))
     ok('1. diagnostica: streaming reale con tempo al primo testo', d['stream'] == 'reale' and d['ttfb'] > 0, d)
@@ -116,7 +116,7 @@ with sync_playwright() as p:
     ok('5. raffica: la risposta compare in >=15 stadi e in oltre 2 s', len(stages) >= 15 and dur > 2, (len(stages), round(dur, 1)))
     ok('5. raffica: nessun salto > 25% del testo tra due campioni', jump < 0.25 * tot, (jump, tot))
     ok('5. raffica: risposta finale completa e senza residui', 'Paragrafo 6' in m['text'] and fr.evaluate("()=>!document.querySelector('.mm-caret')&&!document.querySelector('.mm-msg.streaming')"))
-    ok('5. raffica: la posizione dell\'utente non viene spostata', all(abs(x[2] - vis[min(5, len(vis) - 1)][2]) < 3 for x in vis[5:]), [round(x[2]) for x in vis][:8])   # dopo l'assestamento iniziale (scroll fluido) la bolla non si muove
+    pos = [x[2] for x in vis]; ok('5. raffica: con autoscroll la bolla sale con regolarita\' (mai verso il basso, nessun salto > 150 px tra due campioni)', all(b <= a_ + 3 and a_ - b < 150 for a_, b in zip(pos, pos[1:])), [round(x) for x in pos][:10])
     # 6. Interrompi durante lo smaltimento: resta solo il testo mostrato
     MODE['m'] = 'burst'; fr.evaluate("(q)=>{window.__mm.ask(q);return 1}", Q + ' (6)'); pg.wait_for_timeout(1700)
     got = fr.evaluate(S)['txt']; fr.click('#mmStop'); done(); m = fr.evaluate(LAST)
