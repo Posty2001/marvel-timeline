@@ -9,6 +9,8 @@ run-name: ${{ inputs.dispatch_id != '' && format('TVA Live update {0}', inputs.d
 # TVA Live 1.1: con solo_live_build=true e live_commit=true il job live-update aggiorna i dati in assets/live/ SOLO sul branch
 #   test/tva-archives (commit dei soli 4 file di dati, solo se cambiano o per la verifica settimanale). NON pubblica su Netlify, NON tocca main.
 #   Si avvia da un repository scheduler separato (docs/TVA_LIVE_AUTOMATION.md) oppure a mano. Va lanciato con ref test/tva-archives.
+# Miss Minutes 2.0 (solo TEST): con mm_tmdb=true genera l archivio TMDB dei titoli (tools/mm_tmdb.py, artifact mm-tmdb); con mm_tmdb_commit scrive SOLO
+#   miss-minutes/knowledge/tmdb_titoli.json su test/tva-archives. Va lanciato con ref test/tva-archives; non tocca main, TVA Live ed Episodes.
 # TVA Live Fase 0: con solo_live_probe=true esegue solo la sonda di lettura (tools/live_probe.py) e produce l artifact "live-probe".
 on:
   workflow_dispatch:
@@ -53,6 +55,14 @@ on:
         description: Atlante A3.1 pilota - con solo_atlante_pilot, committa il solo candidati.json (e il report) su test/tva-archives
         type: boolean
         default: true
+      mm_tmdb:
+        description: Miss Minutes 2.0 - genera SOLO l archivio TMDB dei titoli (sinossi, regia, cast, date per paese; artifact mm-tmdb) e salta il resto
+        type: boolean
+        default: false
+      mm_tmdb_commit:
+        description: Miss Minutes 2.0 - con mm_tmdb, scrive il solo tmdb_titoli.json su test/tva-archives (mai su main)
+        type: boolean
+        default: false
       live_recover_from:
         description: TVA Live RECUPERO di emergenza - SHA di un commit precedente di questo branch con un catalogo valido; con live_commit lo ripristina con generated_at nuovo (senza TMDB)
         type: string
@@ -63,7 +73,7 @@ permissions:
 
 jobs:
   sync:
-    if: ${{ !inputs.solo_atlante_pilot && inputs.atlante_job == '' && !((inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit) }}
+    if: ${{ !inputs.mm_tmdb && !inputs.solo_atlante_pilot && inputs.atlante_job == '' && !((inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit) }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -157,7 +167,7 @@ jobs:
 
   live-update:
     # Aggiornamento automatico del CATALOGO (solo dati). Pubblicazione dell app = operazione separata.
-    if: ${{ !inputs.solo_atlante_pilot && inputs.atlante_job == '' && (inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit }}
+    if: ${{ !inputs.mm_tmdb && !inputs.solo_atlante_pilot && inputs.atlante_job == '' && (inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -237,7 +247,7 @@ jobs:
 
   atlante-pilot:
     # Atlante A3.1 pilota: SOLO metadati (percorsi CDN, dimensioni, voti). La chiave resta nei Secret, mai nell output ne nel frontend.
-    if: ${{ inputs.solo_atlante_pilot || (inputs.atlante_job != '' && !startsWith(inputs.atlante_job, 'engine')) }}
+    if: ${{ !inputs.mm_tmdb && (inputs.solo_atlante_pilot || (inputs.atlante_job != '' && !startsWith(inputs.atlante_job, 'engine'))) }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -331,10 +341,66 @@ jobs:
           done
           exit 5
 
+  mm-tmdb:
+    # Miss Minutes 2.0: archivio TMDB dei titoli (dati pubblici, 0 EUR). La chiave resta nei Secret. Solo branch TEST; mai main.
+    if: ${{ inputs.mm_tmdb }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write        # solo per il commit del file tmdb_titoli.json su test/tva-archives (se mm_tmdb_commit)
+    concurrency:
+      group: mm-tmdb
+      cancel-in-progress: false
+    steps:
+      - name: Solo branch TEST
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/test/tva-archives" ]; then
+            echo "::error::Consentito solo con ref test/tva-archives (ref attuale: $GITHUB_REF)."
+            exit 1
+          fi
+      - uses: actions/checkout@v4
+        with:
+          ref: test/tva-archives
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Genera l archivio TMDB (senza stampare il secret)
+        env:
+          TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: |
+          if [ -z "$TMDB_READ_TOKEN" ] && [ -z "$TMDB_API_KEY" ]; then echo "::error::Nessun secret TMDB trovato."; exit 1; fi
+          python3 tools/mm_tmdb.py --prova
+          python3 tools/mm_tmdb.py --scrivi
+          python3 tools/mm_tmdb.py --verifica
+      - name: Salva artifact
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: mm-tmdb
+          path: miss-minutes/knowledge/tmdb_titoli.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit del solo tmdb_titoli.json su test/tva-archives
+        if: ${{ inputs.mm_tmdb_commit }}
+        run: |
+          git add -- miss-minutes/knowledge/tmdb_titoli.json
+          if git diff --cached --quiet; then echo "Nessuna modifica."; exit 0; fi
+          extra="$(git diff --cached --name-only | grep -vx 'miss-minutes/knowledge/tmdb_titoli.json' || true)"
+          [ -z "$extra" ] || { echo "File non consentiti: $extra"; exit 4; }
+          git -c user.name="tva-mm-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "data(Miss Minutes 2.0): archivio TMDB dei titoli (solo dati pubblici)"
+          for i in 1 2 3; do
+            git pull -q --rebase origin test/tva-archives || true
+            if git push -q origin HEAD:refs/heads/test/tva-archives; then echo "Pubblicato."; exit 0; fi
+            sleep 3
+          done
+          exit 5
+
   atlante-engine:
     # A3.2 Visual Asset Engine (prototipo, 10 identità): CLIP/SigLIP su CPU del runner (gratuito). Solo metadati in uscita; le immagini restano nel runner.
     # atlante_job = engine-clip | engine-siglip | engine-smoke
-    if: ${{ startsWith(inputs.atlante_job, 'engine') }}
+    if: ${{ !inputs.mm_tmdb && startsWith(inputs.atlante_job, 'engine') }}
     runs-on: ubuntu-latest
     timeout-minutes: 130
     permissions:
