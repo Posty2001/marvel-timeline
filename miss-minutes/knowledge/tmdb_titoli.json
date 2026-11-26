@@ -1,0 +1,5538 @@
+{
+ "versione": 1,
+ "generato": "2026-11-26T20:56:33Z",
+ "fonte": "TMDB (api.themoviedb.org)",
+ "attribuzione": "Questo prodotto usa le API di TMDB ma non è approvato né certificato da TMDB.",
+ "voci": {
+  "001": {
+   "tmdb": {
+    "t": "movie",
+    "id": 557
+   },
+   "titolo": "Spider-Man",
+   "sinossi_it": "Peter Parker è il tipico adolescente sfigato, segretamente innamorato fin da bambino della sua vicina di casa Mary Jane, rimasto orfano dei genitori e che vive con gli zii. Durante una gita scolastica a un laboratorio scientifico Peter viene morso da un ragno geneticamente modificato. Ben presto si renderà conto di non aver più bisogno degli occhiali da vista e di essere in possesso di poteri molto particolari.",
+   "regista": [
+    "Sam Raimi"
+   ],
+   "cast": [
+    "Tobey Maguire",
+    "Willem Dafoe",
+    "Kirsten Dunst",
+    "James Franco",
+    "Cliff Robertson",
+    "Rosemary Harris",
+    "J.K. Simmons",
+    "Joe Manganiello"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2002-06-06"
+    },
+    {
+     "paese": "ES",
+     "data": "2002-06-21"
+    },
+    {
+     "paese": "FR",
+     "data": "2002-06-12"
+    },
+    {
+     "paese": "GB",
+     "data": "2002-06-14"
+    },
+    {
+     "paese": "IT",
+     "data": "2002-06-07"
+    },
+    {
+     "paese": "US",
+     "data": "2002-05-03"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2002-05-01"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/557"
+  },
+  "002": {
+   "tmdb": {
+    "t": "movie",
+    "id": 558
+   },
+   "titolo": "Spider-Man 2",
+   "sinossi_it": "A New York, il mite Peter Parker fa sempre più fatica a conciliare la vita del tranquillo e timido studente con quella del supereroe al servizio della giustizia. Peter, tormentato dai suoi segreti, si rende conto che i rapporti con le persone che ama sono in pericolo, in particolar modo il suo amore per Mary Jane Watson. Presto inoltre dovrà impiegare tutte le sue energie per sconfiggere un nuovo temibile nemico, il brillante scienziato Otto Octavius, che si è trasformato nel tentacolare e malvagio “Doc Ock”.",
+   "regista": [
+    "Sam Raimi"
+   ],
+   "cast": [
+    "Tobey Maguire",
+    "Kirsten Dunst",
+    "James Franco",
+    "Alfred Molina",
+    "Rosemary Harris",
+    "J.K. Simmons",
+    "Donna Murphy",
+    "Daniel Gillies"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2004-07-08"
+    },
+    {
+     "paese": "ES",
+     "data": "2004-07-14"
+    },
+    {
+     "paese": "FR",
+     "data": "2004-07-14"
+    },
+    {
+     "paese": "GB",
+     "data": "2004-07-16"
+    },
+    {
+     "paese": "IT",
+     "data": "2004-09-16"
+    },
+    {
+     "paese": "US",
+     "data": "2004-06-30"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2004-06-25"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/558"
+  },
+  "003": {
+   "tmdb": {
+    "t": "movie",
+    "id": 559
+   },
+   "titolo": "Spider-Man 3",
+   "sinossi_it": "La vita è meravigliosa per Peter Parker: ama, ricambiato, Mary Jane Watson, è idolatrato dalla popolazione e dalla stampa, nessun cattivo sembra resistergli. Le cose cambiano quando da un meteorite caduto nei pressi di New York, emerge un parassita che si insinua nel suo costume: lo sgradito ospite ha la capacità di scavare nell'animo dell'eroe e di fargli mostrare il suo lato peggiore. Intanto, nuovi e vecchi nemici si dimostrano più pericolosi del previsto ed anche Mary Jane, delusa dal comportamento del \"nuovo\" Peter lo abbandona....Riuscirà Spiderman a sconfiggere gli avversari e riconquis",
+   "regista": [
+    "Sam Raimi"
+   ],
+   "cast": [
+    "Tobey Maguire",
+    "Kirsten Dunst",
+    "James Franco",
+    "Thomas Haden Church",
+    "Topher Grace",
+    "Bryce Dallas Howard",
+    "Rosemary Harris",
+    "J.K. Simmons"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2007-05-01"
+    },
+    {
+     "paese": "ES",
+     "data": "2007-08-23"
+    },
+    {
+     "paese": "FR",
+     "data": "2007-05-01"
+    },
+    {
+     "paese": "GB",
+     "data": "2007-05-04"
+    },
+    {
+     "paese": "IT",
+     "data": "2007-05-01"
+    },
+    {
+     "paese": "US",
+     "data": "2007-05-03"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2007-05-01"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/559"
+  },
+  "004": {
+   "tmdb": {
+    "t": "movie",
+    "id": 1930
+   },
+   "titolo": "The Amazing Spider-Man",
+   "sinossi_it": "E' la storia di Peter Parker (Garfield), un liceale emarginato che è stato abbandonato da piccolo dai genitori e affidato allo zio Ben (Sheen) e alla zia May (Field). Come la maggior parte degli adolescenti, Peter cerca di capire chi è e come è diventato la persona che è adesso. Peter cerca la sua strada insieme alla ragazza per cui si è preso una cotta, Gwen Stacy (Stone), e insieme i due affronteranno l’amore, l’impegno e tanti segreti. Quando Peter scopre una misteriosa valigetta che apparteneva a suo padre, inizia una ricerca per capire il perché della scomparsa dei genitori – e questo lo ",
+   "regista": [
+    "Marc Webb"
+   ],
+   "cast": [
+    "Andrew Garfield",
+    "Emma Stone",
+    "Rhys Ifans",
+    "Denis Leary",
+    "Martin Sheen",
+    "Sally Field",
+    "Irrfan Khan",
+    "Campbell Scott"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2012-06-27"
+    },
+    {
+     "paese": "ES",
+     "data": "2012-07-06"
+    },
+    {
+     "paese": "FR",
+     "data": "2012-07-04"
+    },
+    {
+     "paese": "GB",
+     "data": "2012-07-03"
+    },
+    {
+     "paese": "IT",
+     "data": "2012-07-04"
+    },
+    {
+     "paese": "US",
+     "data": "2012-07-03"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2012-06-23"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/1930"
+  },
+  "005": {
+   "tmdb": {
+    "t": "movie",
+    "id": 102382
+   },
+   "titolo": "The Amazing Spider-Man 2 - Il potere di Electro",
+   "sinossi_it": "Peter Parker ama sfrecciare tra i grattacieli di New York, in cerca di delinquenti da stanare. Ma, stavolta, è in difficoltà: è diviso tra il combattere il crimine indossando la tuta di Spider-Man e passare del tempo con Gwen, la ragazza che ama. Inoltre, il raggiungimento dell’agognato diploma di scuola superiore sembra non arrivare mai. Anche se non ha dimenticato la promessa fatta al padre di Gwen, che gli ha chiesto di stare lontano da sua figlia per non esporla a pericoli, Peter non è riuscito a mantenerla. Le cose cambieranno quando, con la comparsa del nuovo e potentissimo nemico Electr",
+   "regista": [
+    "Marc Webb"
+   ],
+   "cast": [
+    "Andrew Garfield",
+    "Emma Stone",
+    "Jamie Foxx",
+    "Dane DeHaan",
+    "Colm Feore",
+    "Felicity Jones",
+    "Paul Giamatti",
+    "Sally Field"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2014-04-17"
+    },
+    {
+     "paese": "ES",
+     "data": "2014-04-16"
+    },
+    {
+     "paese": "FR",
+     "data": "2014-04-30"
+    },
+    {
+     "paese": "GB",
+     "data": "2014-04-16"
+    },
+    {
+     "paese": "IT",
+     "data": "2014-04-23"
+    },
+    {
+     "paese": "US",
+     "data": "2014-05-02"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2014-04-16"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/102382"
+  },
+  "006": {
+   "tmdb": {
+    "t": "movie",
+    "id": 335983
+   },
+   "titolo": "Venom",
+   "sinossi_it": "Eddie Brock si sente un uomo finito dopo aver perso tutto, lavoro e fidanzata compresi. Proprio quando tocca il fondo, diventa l'ospite di un alieno simbionte che dimostra di avere dei super-poteri e si trasforma in Venom. Saranno sufficienti i poteri di questo protettore letale per sconfiggere grandi forze del male?",
+   "regista": [
+    "Ruben Fleischer"
+   ],
+   "cast": [
+    "Tom Hardy",
+    "Michelle Williams",
+    "Riz Ahmed",
+    "Scott Haze",
+    "Reid Scott",
+    "Jenny Slate",
+    "Melora Walters",
+    "Woody Harrelson"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2018-10-03"
+    },
+    {
+     "paese": "ES",
+     "data": "2018-10-05"
+    },
+    {
+     "paese": "FR",
+     "data": "2018-10-10"
+    },
+    {
+     "paese": "GB",
+     "data": "2018-10-03"
+    },
+    {
+     "paese": "IT",
+     "data": "2018-10-04"
+    },
+    {
+     "paese": "US",
+     "data": "2018-10-05"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2018-09-28"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/335983"
+  },
+  "007": {
+   "tmdb": {
+    "t": "movie",
+    "id": 580489
+   },
+   "titolo": "Venom - La furia di Carnage",
+   "sinossi_it": "Alla ricerca del suo prossimo scoop, il giornalista Eddie Brock ottiene un'intervista esclusiva con un assassino incarcerato nel braccio della morte, Cletus Kasady, che scopre il segreto di Eddie e diventa l'ospite di Carnage, un simbionte minaccioso e terrificante. Eddie e Venom devono andare oltre il loro rapporto controverso e collaborare per sconfiggere Carnage.",
+   "regista": [
+    "Andy Serkis"
+   ],
+   "cast": [
+    "Tom Hardy",
+    "Woody Harrelson",
+    "Michelle Williams",
+    "Naomie Harris",
+    "Reid Scott",
+    "Stephen Graham",
+    "Peggy Lu",
+    "Sian Webber"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2021-10-21"
+    },
+    {
+     "paese": "ES",
+     "data": "2021-10-15"
+    },
+    {
+     "paese": "FR",
+     "data": "2021-10-20"
+    },
+    {
+     "paese": "GB",
+     "data": "2021-10-15"
+    },
+    {
+     "paese": "IT",
+     "data": "2021-10-14"
+    },
+    {
+     "paese": "US",
+     "data": "2021-10-01"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2021-09-30"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/580489"
+  },
+  "008": {
+   "tmdb": {
+    "t": "movie",
+    "id": 526896
+   },
+   "titolo": "Morbius",
+   "sinossi_it": "Infetto da una rara e pericolosa malattia del sangue, determinato a salvare chiunque sia destinato a subire la sua stessa sorte, il Dr. Morbius tenta una scommessa disperata. Quello che inizialmente sembra essere un successo si rivela presto un rimedio potenzialmente più pericoloso della malattia stessa.",
+   "regista": [
+    "Daniel Espinosa"
+   ],
+   "cast": [
+    "Jared Leto",
+    "Matt Smith",
+    "Adria Arjona",
+    "Jared Harris",
+    "Tyrese Gibson",
+    "Al Madrigal",
+    "Michael Keaton",
+    "Zaris-Angel Hator"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2022-03-31"
+    },
+    {
+     "paese": "ES",
+     "data": "2022-04-01"
+    },
+    {
+     "paese": "FR",
+     "data": "2022-03-30"
+    },
+    {
+     "paese": "GB",
+     "data": "2022-03-31"
+    },
+    {
+     "paese": "IT",
+     "data": "2022-03-31"
+    },
+    {
+     "paese": "US",
+     "data": "2022-04-01"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2022-03-30"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/526896"
+  },
+  "009": {
+   "tmdb": {
+    "t": "movie",
+    "id": 634492
+   },
+   "titolo": "Madame Web",
+   "sinossi_it": "\"Nel frattempo, in un altro universo...\", Madame Web è la storia delle origini di una delle eroine più enigmatiche dei fumetti Marvel. Dakota Johnson interpreta la protagonista, Cassandra Webb, un paramedico di Manhattan con poteri di chiaroveggenza. Costretta a confrontarsi con alcune rivelazioni del suo passato, stringe un legame con tre giovani donne destinate a un futuro straordinario ma che dovranno sopravvivere a un presente pieno di minacce.",
+   "regista": [
+    "SJ Clarkson"
+   ],
+   "cast": [
+    "Dakota Johnson",
+    "Sydney Sweeney",
+    "Isabela Merced",
+    "Celeste O'Connor",
+    "Tahar Rahim",
+    "Mike Epps",
+    "Emma Roberts",
+    "Adam Scott"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2024-02-14"
+    },
+    {
+     "paese": "ES",
+     "data": "2024-02-14"
+    },
+    {
+     "paese": "FR",
+     "data": "2024-02-14"
+    },
+    {
+     "paese": "GB",
+     "data": "2024-02-14"
+    },
+    {
+     "paese": "IT",
+     "data": "2024-02-14"
+    },
+    {
+     "paese": "US",
+     "data": "2024-02-14"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2024-02-14"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/634492"
+  },
+  "010": {
+   "tmdb": {
+    "t": "movie",
+    "id": 539972
+   },
+   "titolo": "Kraven - Il cacciatore",
+   "sinossi_it": "Nikolaj Kravinoff, boss del crimine russo insensibile e violento, alleva i figli Sergej e Dimitri come se dovessero divenire dei predatori alpha. Il giorno della morte della moglie, suicida, decide di portarli con sé in Tanzania per una battuta di caccia contro Czar, un leone gigantesco. Sergej viene ferito gravemente dalla belva, ma in suo aiuto accorre Calypso, una ragazza del luogo, che gli fa bere una pozione che, secondo la leggenda, ha dei poteri magici. Sergej risulta clinicamente morto, ma improvvisamente si risveglia con dei superpoteri: il suo sangue si è mescolato a quello del leone",
+   "regista": [
+    "J.C. Chandor"
+   ],
+   "cast": [
+    "Aaron Taylor-Johnson",
+    "Ariana DeBose",
+    "Fred Hechinger",
+    "Alessandro Nivola",
+    "Christopher Abbott",
+    "Russell Crowe",
+    "Jurij Kolokol'nikov",
+    "Levi Miller"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2024-12-12"
+    },
+    {
+     "paese": "ES",
+     "data": "2024-12-13"
+    },
+    {
+     "paese": "FR",
+     "data": "2024-12-18"
+    },
+    {
+     "paese": "GB",
+     "data": "2024-12-13"
+    },
+    {
+     "paese": "IT",
+     "data": "2024-12-11"
+    },
+    {
+     "paese": "US",
+     "data": "2024-12-13"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2024-12-11"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/539972"
+  },
+  "011": {
+   "tmdb": {
+    "t": "movie",
+    "id": 912649
+   },
+   "titolo": "Venom: The Last Dance",
+   "sinossi_it": "In Venom: The Last Dance, Tom Hardy torna a interpretare Venom, uno dei più celebri e complessi personaggi della Marvel. Nel film conclusivo della trilogia, Eddie e Venom sono in fuga. Mentre il cerchio si stringe attorno a loro, i due protagonisti sono costretti a prendere una decisione sconvolgente che farà calare il sipario sul loro “ultimo ballo”.",
+   "regista": [
+    "Kelly Marcel"
+   ],
+   "cast": [
+    "Tom Hardy",
+    "Chiwetel Ejiofor",
+    "Juno Temple",
+    "Rhys Ifans",
+    "Stephen Graham",
+    "Peggy Lu",
+    "Clark Backo",
+    "Alanna Ubach"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2024-10-24"
+    },
+    {
+     "paese": "ES",
+     "data": "2024-10-25"
+    },
+    {
+     "paese": "FR",
+     "data": "2024-10-30"
+    },
+    {
+     "paese": "GB",
+     "data": "2024-10-25"
+    },
+    {
+     "paese": "IT",
+     "data": "2024-10-24"
+    },
+    {
+     "paese": "US",
+     "data": "2024-10-25"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2024-10-22"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/912649"
+  },
+  "012": {
+   "tmdb": {
+    "t": "movie",
+    "id": 49538
+   },
+   "titolo": "X-Men - L'inizio",
+   "sinossi_it": "Prima di essere il Professor X e Magneto, Xavier e Erik sono stati due ragazzi e due grandi amici. Fianco a fianco hanno militato per la CIA, andando alla ricerca dei mutanti in tutto il mondo, per invitarli a non vergognarsi di sé e a unirsi a loro. Ma mentre Xavier sogna da sempre l'integrazione pacifica nella società degli umani, Erik si sente minacciato dalla razza umana e pensa a un esercito di mutanti e a una guerra inevitabile. Da bambino, ha visto sua madre venire uccisa sotto i suoi occhi, in un campo di concentramento, dall'infernale Sebastian Shaw e sono state proprio la rabbia e il",
+   "regista": [
+    "Matthew Vaughn"
+   ],
+   "cast": [
+    "James McAvoy",
+    "Michael Fassbender",
+    "Jennifer Lawrence",
+    "Rose Byrne",
+    "Kevin Bacon",
+    "January Jones",
+    "Nicholas Hoult",
+    "Lucas Till"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2011-06-09"
+    },
+    {
+     "paese": "ES",
+     "data": "2011-06-03"
+    },
+    {
+     "paese": "FR",
+     "data": "2011-06-01"
+    },
+    {
+     "paese": "GB",
+     "data": "2011-06-01"
+    },
+    {
+     "paese": "IT",
+     "data": "2011-06-08"
+    },
+    {
+     "paese": "US",
+     "data": "2011-06-03"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2011-06-01"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/49538"
+  },
+  "013": {
+   "tmdb": {
+    "t": "movie",
+    "id": 127585
+   },
+   "titolo": "X-Men - Giorni di un futuro passato",
+   "sinossi_it": "Logan torna dagli X-Men, riuniti da Charles Xavier per combattere una guerra contro le feroci Sentinelle che minacciano di distruggere i mutanti e lo stesso Magneto. Per evitare che il conflitto abbia inizio, Logan viene spedito indietro nel tempo e suo compito sarà quello di modificare la storia e salvare il futuro.",
+   "regista": [
+    "Bryan Singer"
+   ],
+   "cast": [
+    "Hugh Jackman",
+    "James McAvoy",
+    "Michael Fassbender",
+    "Patrick Stewart",
+    "Ian McKellen",
+    "Jennifer Lawrence",
+    "Halle Berry",
+    "Nicholas Hoult"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2014-05-22"
+    },
+    {
+     "paese": "ES",
+     "data": "2014-06-06"
+    },
+    {
+     "paese": "FR",
+     "data": "2014-05-21"
+    },
+    {
+     "paese": "GB",
+     "data": "2014-05-22"
+    },
+    {
+     "paese": "IT",
+     "data": "2014-05-22"
+    },
+    {
+     "paese": "US",
+     "data": "2014-05-23"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2014-05-15"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/127585"
+  },
+  "014": {
+   "tmdb": {
+    "t": "movie",
+    "id": 246655
+   },
+   "titolo": "X-Men - Apocalisse",
+   "sinossi_it": "Antico Egitto. En Sabah Nur, detto Apocalisse e venerato come un dio, sta per compiere il rito di trasferimento della sua anima nel corpo di un mutante che ha il potere di rigenerare le proprie ferite, ottenendo così l'immortalità, ma un gruppo di ribelli lo imprigiona sotto una piramide. Nel 1983, mentre il mondo è ancora in debito con Raven e il Prof. X per aver salvato il Presidente degli Stati Uniti e Magneto ha provato a rifarsi una vita e una famiglia mantenendo l'anonimato, un gruppo di fanatici risveglia dal suo riposo eterno Apocalisse, più che mai intenzionato a riprendere il posto c",
+   "regista": [
+    "Bryan Singer"
+   ],
+   "cast": [
+    "James McAvoy",
+    "Michael Fassbender",
+    "Jennifer Lawrence",
+    "Nicholas Hoult",
+    "Oscar Isaac",
+    "Rose Byrne",
+    "Evan Peters",
+    "Josh Helman"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2016-05-19"
+    },
+    {
+     "paese": "ES",
+     "data": "2016-05-20"
+    },
+    {
+     "paese": "FR",
+     "data": "2016-05-18"
+    },
+    {
+     "paese": "GB",
+     "data": "2016-05-19"
+    },
+    {
+     "paese": "IT",
+     "data": "2016-05-18"
+    },
+    {
+     "paese": "US",
+     "data": "2016-05-27"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2016-05-18"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/246655"
+  },
+  "015": {
+   "tmdb": {
+    "t": "movie",
+    "id": 36657
+   },
+   "titolo": "X-Men",
+   "sinossi_it": "Gli X-Men, che rappresentano uno stadio successivo dell'evoluzione umana, sono supereroi mutanti, caratterizzati cioè da una particolare mutazione genetica che conferisce un potere sovrumano che essi hanno posto al servizio dell'umanità. Ma gli uomini temono ciò che non possono comprendere e gli X-Men dovranno presto fare i conti con l'intolleranza, il pregiudizio e il rifiuto della razza umana per la quale lottano.",
+   "regista": [
+    "Bryan Singer"
+   ],
+   "cast": [
+    "Hugh Jackman",
+    "Patrick Stewart",
+    "Ian McKellen",
+    "Famke Janssen",
+    "James Marsden",
+    "Halle Berry",
+    "Anna Paquin",
+    "Tyler Mane"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2000-08-31"
+    },
+    {
+     "paese": "ES",
+     "data": "2000-10-06"
+    },
+    {
+     "paese": "FR",
+     "data": "2000-08-16"
+    },
+    {
+     "paese": "GB",
+     "data": "2000-08-18"
+    },
+    {
+     "paese": "IT",
+     "data": "2000-10-27"
+    },
+    {
+     "paese": "US",
+     "data": "2000-07-14"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2000-07-13"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/36657"
+  },
+  "016": {
+   "tmdb": {
+    "t": "movie",
+    "id": 36658
+   },
+   "titolo": "X-Men 2",
+   "sinossi_it": "Magneto (Ian Mckellen) è relegato nella prigione di plastica, ma le minacce per la sicurezza degli X-Men non sono finite. Un mutante sembra macchiarsi di un crimine gravissimo; l'attentato alla vita del presidente degli Stati Uniti. Quell'uomo è Kurt Wagner (Alan Cumming), alias Nightcrawler. L'attentato scatena una campagna persecutoria nei confronti degli X-Men; il generale Striker viene incaricato di colpire il male alla radice e prepara in imboscata alla scuola speciale del dottor Xavier (Patrick Stewart).",
+   "regista": [
+    "Bryan Singer"
+   ],
+   "cast": [
+    "Hugh Jackman",
+    "Patrick Stewart",
+    "Ian McKellen",
+    "James Marsden",
+    "Brian Cox",
+    "Famke Janssen",
+    "Halle Berry",
+    "Alan Cumming"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2003-05-01"
+    },
+    {
+     "paese": "ES",
+     "data": "2003-04-30"
+    },
+    {
+     "paese": "FR",
+     "data": "2003-04-30"
+    },
+    {
+     "paese": "GB",
+     "data": "2003-05-01"
+    },
+    {
+     "paese": "IT",
+     "data": "2003-04-30"
+    },
+    {
+     "paese": "US",
+     "data": "2003-05-02"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2003-04-27"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/36658"
+  },
+  "017": {
+   "tmdb": {
+    "t": "movie",
+    "id": 36668
+   },
+   "titolo": "X-Men - Conflitto finale",
+   "sinossi_it": "Finalmente la sfida tra umani e mutanti sta per subire una svolta decisiva: questi ultimi verranno accettati e integrati nella comunità se decideranno di sottoporsi alla cura per la sottrazione dei loro poteri. Il dottor Xavier e i suoi seguaci, fedeli al concetto di tolleranza, si trovano ancora una volta a dover combattere contro l'ostile Magneto e il suo esercito di mutanti ribelli che si è arricchito di una nuova terribile alleata: la Fenice Nera, ovvero la rediviva Jane Grey passata dall'altra parte della barricata...",
+   "regista": [
+    "Brett Ratner"
+   ],
+   "cast": [
+    "Hugh Jackman",
+    "Halle Berry",
+    "Ian McKellen",
+    "Patrick Stewart",
+    "Famke Janssen",
+    "Anna Paquin",
+    "Kelsey Grammer",
+    "James Marsden"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2006-05-25"
+    },
+    {
+     "paese": "ES",
+     "data": "2006-05-26"
+    },
+    {
+     "paese": "FR",
+     "data": "2006-05-24"
+    },
+    {
+     "paese": "GB",
+     "data": "2006-05-26"
+    },
+    {
+     "paese": "IT",
+     "data": "2006-05-26"
+    },
+    {
+     "paese": "US",
+     "data": "2006-05-26"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2006-05-24"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/36668"
+  },
+  "018": {
+   "tmdb": {
+    "t": "movie",
+    "id": 2080
+   },
+   "titolo": "X-Men: Le origini - Wolverine",
+   "sinossi_it": "Sulle montagne rocciose canadesi, Logan cerca la pace dopo un secolo di guerre e violenza. Silverfox lo ama e lo incoraggia a dar retta alla propria natura umana e a tenere a bada la forza sovrumana e mutante che è in lui, ma il brutale assassinio della donna da parte del fratello Victor, riporta inevitabilmente Logan nelle mani di Stryker, che vuole fare di lui l'Arma X, una macchina da guerra indistruttibile. Nel corso di un'operazione d'indicibile sofferenza, lo scheletro di Wolverine viene rivestito di adamantio e ne esce un essere invulnerabile, il più micidiale degli esperimenti di labor",
+   "regista": [
+    "Gavin Hood"
+   ],
+   "cast": [
+    "Hugh Jackman",
+    "Liev Schreiber",
+    "Danny Huston",
+    "Lynn Collins",
+    "Kevin Durand",
+    "Dominic Monaghan",
+    "Taylor Kitsch",
+    "Daniel Henney"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2009-04-29"
+    },
+    {
+     "paese": "ES",
+     "data": "2009-04-30"
+    },
+    {
+     "paese": "FR",
+     "data": "2009-04-29"
+    },
+    {
+     "paese": "GB",
+     "data": "2009-04-29"
+    },
+    {
+     "paese": "IT",
+     "data": "2009-04-29"
+    },
+    {
+     "paese": "US",
+     "data": "2009-05-01"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2009-04-28"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/2080"
+  },
+  "019": {
+   "tmdb": {
+    "t": "movie",
+    "id": 76170
+   },
+   "titolo": "Wolverine - L'immortale",
+   "sinossi_it": "Dopo gli eventi di X-Men - Conflitto finale Logan si è ritirato sui monti, ossessionato nei sogni dallo spettro di Jean Grey. A stanarlo è una mutante giapponese, inviata per trovarlo e portarlo a Tokyo dove un morente magnate della tecnologia vuole vederlo prima di esalare l'ultimo respiro. Si tratta di un militare giapponese che quando Logan lo salvò dall'atomica di Nagasaki ne scoprì il potere rigenerante e che ora intende fargli una proposta: l'immortalità in cambio di una vita normale.",
+   "regista": [
+    "James Mangold"
+   ],
+   "cast": [
+    "Hugh Jackman",
+    "岡本多緒",
+    "福島リラ",
+    "Will Yun Lee",
+    "Svetlana Chodčenkova",
+    "Hal Yamanouchi",
+    "Hiroyuki Sanada",
+    "Famke Janssen"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2013-07-25"
+    },
+    {
+     "paese": "ES",
+     "data": "2013-07-24"
+    },
+    {
+     "paese": "FR",
+     "data": "2013-07-24"
+    },
+    {
+     "paese": "GB",
+     "data": "2013-07-24"
+    },
+    {
+     "paese": "IT",
+     "data": "2013-07-25"
+    },
+    {
+     "paese": "US",
+     "data": "2013-07-26"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2013-07-24"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/76170"
+  },
+  "020": {
+   "tmdb": {
+    "t": "movie",
+    "id": 320288
+   },
+   "titolo": "X-Men: Dark Phoenix",
+   "sinossi_it": "Siamo nel 1992 e gli X-Men vivono un periodo di pace grazie alla scelta del professor Xavier di inviare i suoi migliori studenti in missioni di soccorso internazionale. Quando lo chiama il presidente degli Stati Uniti per salvare un equipaggio intrappolato in una navicella nell'orbita terrestre, prossima a essere distrutta da una sorta di tempesta di energia, il team composto da Ciclope, Jean Grey, Nightcrawler, Storm e Quicksilver accetta di rischiare la vita nonostante Mystica, loro leader sul campo, consigli prudenza. Nella concitazione del soccorso, Jean rimane però indietro e finisce inve",
+   "regista": [
+    "Simon Kinberg"
+   ],
+   "cast": [
+    "Sophie Turner",
+    "James McAvoy",
+    "Nicholas Hoult",
+    "Tye Sheridan",
+    "Michael Fassbender",
+    "Alexandra Shipp",
+    "Evan Peters",
+    "Jessica Chastain"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2019-06-06"
+    },
+    {
+     "paese": "ES",
+     "data": "2019-06-07"
+    },
+    {
+     "paese": "FR",
+     "data": "2019-06-05"
+    },
+    {
+     "paese": "GB",
+     "data": "2019-06-05"
+    },
+    {
+     "paese": "IT",
+     "data": "2019-06-06"
+    },
+    {
+     "paese": "US",
+     "data": "2019-06-07"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2019-06-05"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/320288"
+  },
+  "021": {
+   "tmdb": {
+    "t": "movie",
+    "id": 340102
+   },
+   "titolo": "The New Mutants",
+   "sinossi_it": "Il 13° film della saga degli X-MEN racconta di un multietnico gruppo di giovani, che con l'arrivo della pubertà scopre di avere poteri mutanti, è rinchiuso in una struttura segreta, una sorta di istituto psichiatrico da cui cercheranno di fuggire. Anche perché qualcosa dentro la clinica è fuori controllo e causa eventi sempre più inquietanti, cui si aggiungono i problemi dei protagonisti nell'accettare i propri poteri, in particolare quelli di Rahne, scozzese e di educazione strettamente cristiana che teme di essere preda di una forza demoniaca. Al suo fianco ci sono la nativa americana Daniel",
+   "regista": [
+    "Josh Boone"
+   ],
+   "cast": [
+    "Blu Hunt",
+    "Charlie Heaton",
+    "Maisie Williams",
+    "Henrique Zaga",
+    "Anya Taylor-Joy",
+    "Alice Braga",
+    "Adam Beach",
+    "Happy Anderson"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2020-09-10"
+    },
+    {
+     "paese": "ES",
+     "data": "2020-08-26"
+    },
+    {
+     "paese": "FR",
+     "data": "2020-08-26"
+    },
+    {
+     "paese": "GB",
+     "data": "2020-09-04"
+    },
+    {
+     "paese": "IT",
+     "data": "2020-09-02"
+    },
+    {
+     "paese": "US",
+     "data": "2020-08-28"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2020-08-26"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/340102"
+  },
+  "022": {
+   "tmdb": {
+    "t": "movie",
+    "id": 293660
+   },
+   "titolo": "Deadpool",
+   "sinossi_it": "Tratto dal fumetto sul più irriverente anti-eroe dell’universo Marvel, il film racconta la storia del mercenario Wade Wilson, ex agente operativo delle Special Forces, che, dopo essere stato sottoposto a un terribile esperimento, acquisisce l’eccezionale potere del Fattore Rigenerante e abbraccia una nuova identità. Con la sua nuova abilità di guarire rapidamente e un pungente senso dell’umorismo, Deadpool andrà a caccia dell’uomo che gli ha quasi rovinato la vita.",
+   "regista": [
+    "Tim Miller"
+   ],
+   "cast": [
+    "Ryan Reynolds",
+    "Morena Baccarin",
+    "Ed Skrein",
+    "T.J. Miller",
+    "Gina Carano",
+    "Leslie Uggams",
+    "Brianna Hildebrand",
+    "Stefan Kapičić"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2016-02-11"
+    },
+    {
+     "paese": "ES",
+     "data": "2016-02-19"
+    },
+    {
+     "paese": "FR",
+     "data": "2016-02-10"
+    },
+    {
+     "paese": "GB",
+     "data": "2016-02-10"
+    },
+    {
+     "paese": "IT",
+     "data": "2016-02-18"
+    },
+    {
+     "paese": "US",
+     "data": "2016-02-12"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2016-02-09"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/293660"
+  },
+  "023": {
+   "tmdb": {
+    "t": "movie",
+    "id": 383498
+   },
+   "titolo": "Deadpool 2",
+   "sinossi_it": "Deadpool sta venendo di nuovo e stavolta non è da solo: in questo secondo capitolo, il supereroe più dissacrante della Marvel crea un nuovo team, l'X-Force, con l'obiettivo di proteggere un ragazzino da Cable, mutante venuto dal futuro per ucciderlo.",
+   "regista": [
+    "David Leitch"
+   ],
+   "cast": [
+    "Ryan Reynolds",
+    "Josh Brolin",
+    "Morena Baccarin",
+    "Julian Dennison",
+    "Zazie Beetz",
+    "T.J. Miller",
+    "Leslie Uggams",
+    "Karan Soni"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2018-05-17"
+    },
+    {
+     "paese": "ES",
+     "data": "2018-05-18"
+    },
+    {
+     "paese": "FR",
+     "data": "2018-05-16"
+    },
+    {
+     "paese": "GB",
+     "data": "2018-05-15"
+    },
+    {
+     "paese": "IT",
+     "data": "2018-05-15"
+    },
+    {
+     "paese": "US",
+     "data": "2018-05-18"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2018-05-15"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/383498"
+  },
+  "024": {
+   "tmdb": {
+    "t": "movie",
+    "id": 263115
+   },
+   "titolo": "Logan - The Wolverine",
+   "sinossi_it": "El Paso, 2029. Sono 25 anni che non nascono più mutanti e quelli che sono sopravvissuti sono degli emarginati, in via di estinzione. Logan/Wolverine vive facendo lo chaffeur e la sua capacità di rigenerazione non funziona più come un tempo, mentre il Professor X ha novant'anni e il controllo dei suoi poteri psichici è sempre meno sicuro. Quando una donna messicana cerca Logan per presentargli una bambina misteriosa di nome Laura, nuove attenzioni e nuovi guai cominciano a raggiungere i mutanti.",
+   "regista": [
+    "James Mangold"
+   ],
+   "cast": [
+    "Hugh Jackman",
+    "Dafne Keen",
+    "Patrick Stewart",
+    "Elizabeth Rodriguez",
+    "Boyd Holbrook",
+    "Stephen Merchant",
+    "Richard E. Grant",
+    "Stephen Dunlevy"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2017-03-02"
+    },
+    {
+     "paese": "ES",
+     "data": "2017-03-03"
+    },
+    {
+     "paese": "FR",
+     "data": "2017-03-01"
+    },
+    {
+     "paese": "GB",
+     "data": "2017-03-02"
+    },
+    {
+     "paese": "IT",
+     "data": "2017-03-01"
+    },
+    {
+     "paese": "US",
+     "data": "2017-03-03"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2017-02-28"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/263115"
+  },
+  "025": {
+   "tmdb": {
+    "t": "movie",
+    "id": 324857
+   },
+   "titolo": "Spider-Man: Un nuovo universo",
+   "sinossi_it": "Miles Morales è un ragazzo afro-ispanico di New York che è appena entrato in una scuola relativamente esclusiva, dove però si sente fuori luogo. Qui infatti non conosce nessuno e suo padre, un poliziotto che detesta Spider-Man, non lo aiuta mettendolo in imbarazzo. Miles si rifugia dallo zio, che asseconda invece la sua passione da street artist, ma durante una escursione nei sotterranei di New York Miles viene morso da un ragno radioattivo. Il giorno dopo, sconvolto da sorprendenti poteri che somigliano a quelli di Spider-Man, torna a cercare il ragno e finisce per assistere a uno scontro tra",
+   "regista": [
+    "Bob Persichetti",
+    "Peter Ramsey"
+   ],
+   "cast": [
+    "Shameik Moore",
+    "Jake Johnson",
+    "Hailee Steinfeld",
+    "Mahershala Ali",
+    "Brian Tyree Henry",
+    "Lily Tomlin",
+    "Luna Lauren Vélez",
+    "Zoë Kravitz"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2018-12-13"
+    },
+    {
+     "paese": "ES",
+     "data": "2018-12-20"
+    },
+    {
+     "paese": "FR",
+     "data": "2018-12-12"
+    },
+    {
+     "paese": "GB",
+     "data": "2018-12-14"
+    },
+    {
+     "paese": "IT",
+     "data": "2018-12-25"
+    },
+    {
+     "paese": "US",
+     "data": "2018-12-14"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2018-12-06"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/324857"
+  },
+  "026": {
+   "tmdb": {
+    "t": "movie",
+    "id": 569094
+   },
+   "titolo": "Spider-Man: Across the Spider-Verse",
+   "sinossi_it": "Dopo essersi riunito con Gwen Stacy, l'amichevole Spider-Man di Brooklyn Miles Morales viene catapultato nelle pieghe del multiverso, dove incontra la squadra di Spider-Eroi incaricata di proteggerne l'esistenza. Ma quando i protettori del multiverso si dimostrano intransigenti sul modo migliore per affrontare una nuova e temibile minaccia, Miles si ritrova solo contro gli altri Spider-Eroi a difendere il suo punto di vista. Tutto, pur di salvare la persona che ama di più al mondo.",
+   "regista": [
+    "Kemp Powers",
+    "Justin K. Thompson"
+   ],
+   "cast": [
+    "Shameik Moore",
+    "Hailee Steinfeld",
+    "Oscar Isaac",
+    "Brian Tyree Henry",
+    "Luna Lauren Vélez",
+    "Jake Johnson",
+    "Jason Schwartzman",
+    "Issa Rae"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2023-06-01"
+    },
+    {
+     "paese": "ES",
+     "data": "2023-06-02"
+    },
+    {
+     "paese": "FR",
+     "data": "2023-05-31"
+    },
+    {
+     "paese": "GB",
+     "data": "2023-06-02"
+    },
+    {
+     "paese": "IT",
+     "data": "2023-06-01"
+    },
+    {
+     "paese": "US",
+     "data": "2023-06-02"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2023-05-31"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/569094"
+  },
+  "027": {
+   "tmdb": {
+    "t": "movie",
+    "id": 911916
+   },
+   "titolo": "Spider-Man: Beyond the Spider-Verse",
+   "sinossi_it": "Hunted by Miguel O'Hara's Spider Society and betrayed by his friends, Miles finds himself in the darkest corners of the Spider-Verse in search of a way home. Knowing that his family has been not only fractured but endangered by his calling, it's a race against the clock for Miles to travel across the wildest reaches of time and space to fight for and reunite everything he holds most dear.",
+   "regista": [
+    "Bob Persichetti",
+    "Justin K. Thompson"
+   ],
+   "cast": [
+    "Shameik Moore",
+    "Hailee Steinfeld",
+    "Oscar Isaac",
+    "Jason Schwartzman",
+    "Jake Johnson",
+    "Issa Rae",
+    "Brian Tyree Henry",
+    "Luna Lauren Vélez"
+   ],
+   "stato": "In Production",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2027-06-17"
+    },
+    {
+     "paese": "FR",
+     "data": "2027-06-16"
+    },
+    {
+     "paese": "GB",
+     "data": "2027-06-18"
+    },
+    {
+     "paese": "US",
+     "data": "2027-06-18"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2027-06-16"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/911916",
+   "sinossi_lingua": "en"
+  },
+  "028": {
+   "tmdb": {
+    "t": "movie",
+    "id": 22059
+   },
+   "titolo": "The Fantastic Four",
+   "sinossi_it": "Reed Richards e Victor von Doom sono due giovani studenti universitari di fisica che lavorano assieme ad un acceleratore di particelle, sfruttano l'opportunità di una cometa di passaggio per provare un esperimento; tuttavia, l'esperimento va storto, lasciando Victor orribilmente segnato, che viene creduto morto.",
+   "regista": [
+    "Oley Sassone"
+   ],
+   "cast": [
+    "Alex Hyde-White",
+    "Jay Underwood",
+    "Rebecca Staab",
+    "Michael Bailey Smith",
+    "Ian Trigger",
+    "Joseph Culp",
+    "George Gaynes",
+    "Kat Green"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "1994-01-19"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/22059"
+  },
+  "029": {
+   "tmdb": {
+    "t": "movie",
+    "id": 9738
+   },
+   "titolo": "I Fantastici 4",
+   "sinossi_it": "Un gruppo di astronauti in seguito ad un viaggio nello spazio viene esposto a raggi cosmici grazie ai quali ognuno di loro acquista dei superpoteri. Reed Richards inventore e leader del gruppo acquista il potere di allungare a dismisura il suo corpo come fosse fatto di gomma e prende il nome di \"Mister Fantastic\"; la sua ragazza Sue Storm acquista il potere dell'invisibilità e sarà \"la donna invisibile\"; suo fratello Johnny Storm acquista il potere di controllare il fuoco e il suo stesso corpo è ricoperto di fiamme da qui prenderà il nome de \"La torcia umana\"; infine il pilota Ben Grimm acquis",
+   "regista": [
+    "Tim Story"
+   ],
+   "cast": [
+    "Ioan Gruffudd",
+    "Jessica Alba",
+    "Chris Evans",
+    "Michael Chiklis",
+    "Julian McMahon",
+    "Hamish Linklater",
+    "Kerry Washington",
+    "Laurie Holden"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2005-07-13"
+    },
+    {
+     "paese": "ES",
+     "data": "2005-07-15"
+    },
+    {
+     "paese": "FR",
+     "data": "2005-07-20"
+    },
+    {
+     "paese": "GB",
+     "data": "2005-07-22"
+    },
+    {
+     "paese": "IT",
+     "data": "2005-08-13"
+    },
+    {
+     "paese": "US",
+     "data": "2005-07-08"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2005-06-29"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/9738"
+  },
+  "030": {
+   "tmdb": {
+    "t": "movie",
+    "id": 1979
+   },
+   "titolo": "I Fantastici 4 e Silver Surfer",
+   "sinossi_it": "Gli eroi dei fumetti alle prese con nemici vecchi e nuovi.Sue e Reed hanno annunciato le loro nozze, ma una nuova minaccia incombe sul nostro pianeta: i Fantastici 4 devono vedersela con l'araldo intergalattico Silver Surfer. A bordo di una tavola che può assorbire ed elaborare l'energia, l’enigmatico personaggio ha intenzione di distruggere la Terra. Mentre semina il caos, Reed, Sue, Johnny e Ben devono far luce sul suo mistero e arginare la minaccia costituita dal ritorno di Victor Von Doom...",
+   "regista": [
+    "Tim Story"
+   ],
+   "cast": [
+    "Ioan Gruffudd",
+    "Jessica Alba",
+    "Chris Evans",
+    "Michael Chiklis",
+    "Julian McMahon",
+    "Laurence Fishburne",
+    "Doug Jones",
+    "Kerry Washington"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2007-08-13"
+    },
+    {
+     "paese": "ES",
+     "data": "2007-08-10"
+    },
+    {
+     "paese": "FR",
+     "data": "2007-08-08"
+    },
+    {
+     "paese": "GB",
+     "data": "2007-06-15"
+    },
+    {
+     "paese": "IT",
+     "data": "2007-06-15"
+    },
+    {
+     "paese": "US",
+     "data": "2007-06-15"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2007-06-13"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/1979"
+  },
+  "031": {
+   "tmdb": {
+    "t": "movie",
+    "id": 166424
+   },
+   "titolo": "Fantastic 4 - I fantastici quattro",
+   "sinossi_it": "Fantastic 4 - I Fantastici Quattro, é una moderna re-interpretazione del team di supereroi più longevo della Marvel, è la storia di quattro giovani che vengono teletrasportati in un pericoloso universo alternativo, che altera la loro forma fisica in un modo sconvolgente. Le loro vite vengono inequivocabilmente stravolte, il team dovrà imparare a controllare le loro nuove abilità e a lavorare insieme per salvare la Terra da un loro vecchio amico diventato nemico.",
+   "regista": [
+    "Josh Trank"
+   ],
+   "cast": [
+    "Miles Teller",
+    "Michael B. Jordan",
+    "Kate Mara",
+    "Jamie Bell",
+    "Toby Kebbell",
+    "Reg E. Cathey",
+    "Tim Blake Nelson",
+    "Tim Heidecker"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2015-08-13"
+    },
+    {
+     "paese": "ES",
+     "data": "2015-08-21"
+    },
+    {
+     "paese": "FR",
+     "data": "2015-08-05"
+    },
+    {
+     "paese": "GB",
+     "data": "2015-08-06"
+    },
+    {
+     "paese": "IT",
+     "data": "2015-09-10"
+    },
+    {
+     "paese": "US",
+     "data": "2015-08-07"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2015-08-05"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/166424"
+  },
+  "032": {
+   "tmdb": {
+    "t": "movie",
+    "id": 36647
+   },
+   "titolo": "Blade",
+   "sinossi_it": "Si narra la storia di Blade (Wesley Snipes), guerriero metropolitano metà uomo e metà vampiro che si propone di sterminare tutti i vampiri esistenti per difendere la razza umana e per vendicare sua madre, morsa da un vampiro poco prima della nascita del nostro eroe. L'acerrimo nemico di Blade è Deacon Frost (Stephen Dorff), che, con l'aiuto del computer riesce a tradurre il Libro di Erebo e a scoprire la formula per dare avvio al \"Bagno di sangue\": giorno in cui ogni uomo del mondo diventa un vampiro.",
+   "regista": [
+    "Stephen Norrington"
+   ],
+   "cast": [
+    "Wesley Snipes",
+    "N'Bushe Wright",
+    "Stephen Dorff",
+    "Kris Kristofferson",
+    "Donal Logue",
+    "Udo Kier",
+    "Arly Jover",
+    "Traci Lords"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "1998-12-03"
+    },
+    {
+     "paese": "ES",
+     "data": "1998-10-09"
+    },
+    {
+     "paese": "FR",
+     "data": "1998-11-18"
+    },
+    {
+     "paese": "GB",
+     "data": "1998-11-13"
+    },
+    {
+     "paese": "IT",
+     "data": "2000-01-07"
+    },
+    {
+     "paese": "US",
+     "data": "1998-08-21"
+    },
+    {
+     "paese": "TMDB",
+     "data": "1998-08-21"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/36647"
+  },
+  "033": {
+   "tmdb": {
+    "t": "movie",
+    "id": 36586
+   },
+   "titolo": "Blade II",
+   "sinossi_it": "Metà uomo e metà vampiro, il suo destino è, come noto, quello di combattere i vampiri. Ma ora sono proprio le creature delle tenebre a invocarne l'aiuto, proponendogli di allearsi con un commando composto dai vampiri più potenti, in origine creato proprio per sconfiggere Blade. Lo scopo è quello di eliminare una nuova razza di vampiri mutanti, che uccidono persino gli altri vampiri.",
+   "regista": [
+    "Guillermo del Toro"
+   ],
+   "cast": [
+    "Wesley Snipes",
+    "Kris Kristofferson",
+    "Norman Reedus",
+    "Ron Perlman",
+    "Leonor Varela",
+    "Thomas Kretschmann",
+    "Luke Goss",
+    "Matt Schulze"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2002-05-02"
+    },
+    {
+     "paese": "ES",
+     "data": "2002-04-19"
+    },
+    {
+     "paese": "FR",
+     "data": "2002-06-19"
+    },
+    {
+     "paese": "GB",
+     "data": "2002-03-29"
+    },
+    {
+     "paese": "IT",
+     "data": "2002-08-16"
+    },
+    {
+     "paese": "US",
+     "data": "2002-03-22"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2002-03-22"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/36586"
+  },
+  "034": {
+   "tmdb": {
+    "t": "movie",
+    "id": 36648
+   },
+   "titolo": "Blade: Trinity",
+   "sinossi_it": "Blade questa volta se la deve vedere con Dracula Il cacciatore di vampiri Blade e il suo mentore Whister si mettono sulle tracce del temibile vampiro Drake, dotato di poteri straordinari che gli consentono di affrontare anche la luce del giorno...",
+   "regista": [
+    "David S. Goyer"
+   ],
+   "cast": [
+    "Wesley Snipes",
+    "Jessica Biel",
+    "Ryan Reynolds",
+    "Kris Kristofferson",
+    "Dominic Purcell",
+    "Parker Posey",
+    "Natasha Lyonne",
+    "James Remar"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2005-01-20"
+    },
+    {
+     "paese": "ES",
+     "data": "2005-03-11"
+    },
+    {
+     "paese": "FR",
+     "data": "2004-12-08"
+    },
+    {
+     "paese": "GB",
+     "data": "2004-12-08"
+    },
+    {
+     "paese": "IT",
+     "data": "2005-03-04"
+    },
+    {
+     "paese": "US",
+     "data": "2004-12-08"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2004-12-08"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/36648"
+  },
+  "035": {
+   "tmdb": {
+    "t": "movie",
+    "id": 9480
+   },
+   "titolo": "Daredevil",
+   "sinossi_it": "Il piccolo Matt Murdock è cresciuto assieme ad un padre pugile, talmente forte da farsi chiamare \"Devil\", ma non abbastanza tenace da evitare loschi affari malavitosi. Quando Matt scopre che il papà è al servizio del boss cittadino, fugge via deluso. È l'ultima cosa che vede perché un incidente con un materiale radioattivo lo rende cieco, potenziandone tutti gli altri sensi. Il pentimento porta suo padre sulla via della redenzione, ma il regolamento di conti è dietro l'angolo e un genitore ucciso davanti ai propri occhi può traumatizzare anche un non vedente. Il desiderio di giustizia è forte ",
+   "regista": [
+    "Mark Steven Johnson"
+   ],
+   "cast": [
+    "Ben Affleck",
+    "Jennifer Garner",
+    "Colin Farrell",
+    "Michael Clarke Duncan",
+    "Joe Pantoliano",
+    "Jon Favreau",
+    "Scott Terra",
+    "Ellen Pompeo"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2003-03-20"
+    },
+    {
+     "paese": "ES",
+     "data": "2003-03-07"
+    },
+    {
+     "paese": "FR",
+     "data": "2003-03-19"
+    },
+    {
+     "paese": "GB",
+     "data": "2003-02-14"
+    },
+    {
+     "paese": "IT",
+     "data": "2003-04-04"
+    },
+    {
+     "paese": "US",
+     "data": "2003-02-14"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2003-02-14"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/9480"
+  },
+  "036": {
+   "tmdb": {
+    "t": "movie",
+    "id": 9947
+   },
+   "titolo": "Elektra",
+   "sinossi_it": "Ferita a morte, Elektra viene praticamente resuscitata da Stick, il suo maestro, non vedente, d'arti marziali che le ha insegnato anche il 'Kimagure', l'arte di prevedere il futuro. Grazie a questa dote e alle notevoli capacità atletiche, Elektra decide di accettare rischiose missioni in veste di killer spietata. Ma l'incontro con Mark e Abby Miller, padre e figlia in fuga dalla potente organizzazione criminale nota come La Mano, potrebbe cambiare per sempre la sua esistenza...",
+   "regista": [
+    "Rob Bowman"
+   ],
+   "cast": [
+    "Jennifer Garner",
+    "Kirsten Zien",
+    "Goran Višnjić",
+    "Will Yun Lee",
+    "Terence Stamp",
+    "Cary-Hiroyuki Tagawa",
+    "Chris Ackerman",
+    "Edson T. Ribeiro"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2005-03-10"
+    },
+    {
+     "paese": "ES",
+     "data": "2005-01-28"
+    },
+    {
+     "paese": "FR",
+     "data": "2005-03-09"
+    },
+    {
+     "paese": "GB",
+     "data": "2005-01-21"
+    },
+    {
+     "paese": "IT",
+     "data": "2005-02-04"
+    },
+    {
+     "paese": "US",
+     "data": "2005-01-14"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2005-01-13"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/9947"
+  },
+  "037": {
+   "tmdb": {
+    "t": "movie",
+    "id": 1250
+   },
+   "titolo": "Ghost Rider",
+   "sinossi_it": "Johnny Blaze ha fatto un patto con il diavolo. Letteralmente. Stuntman infallibile con la sua motocicletta, è costretto, per salvare il padre, a stringere un accordo faustiano con il maligno: in suo nome dovrà affrontare demoni e malvagi di ogni sorta, ma anche Lucifero può essere sconfitto e la maledizione messa a vantaggio dei deboli e degli innocenti...",
+   "regista": [
+    "Mark Steven Johnson"
+   ],
+   "cast": [
+    "Nicolas Cage",
+    "Eva Mendes",
+    "Sam Elliott",
+    "Wes Bentley",
+    "Peter Fonda",
+    "Matt Long",
+    "Brett Cullen",
+    "Raquel Alessi"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2007-02-21"
+    },
+    {
+     "paese": "ES",
+     "data": "2007-02-16"
+    },
+    {
+     "paese": "FR",
+     "data": "2007-02-21"
+    },
+    {
+     "paese": "GB",
+     "data": "2007-03-01"
+    },
+    {
+     "paese": "IT",
+     "data": "2007-03-16"
+    },
+    {
+     "paese": "US",
+     "data": "2007-02-16"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2007-01-15"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/1250"
+  },
+  "038": {
+   "tmdb": {
+    "t": "movie",
+    "id": 71676
+   },
+   "titolo": "Ghost Rider - Spirito di vendetta",
+   "sinossi_it": "Johnny Blaze,  funambolo motociclista trasformato in spirito, è ancora alle prese con la maledizione che lo ha reso cacciatore di taglie per il diavolo. Tuttavia, dopo l'incontro con il leader di un gruppo di monaci ribelli, Johnny sembra disposto a tutto pur di salvare un ragazzino dalle grinfie del demonio e liberarsi così una volta per tutte dalla maledizione che lo perseguita.",
+   "regista": [
+    "Mark Neveldine",
+    "Brian Taylor"
+   ],
+   "cast": [
+    "Nicolas Cage",
+    "Fergus Riordan",
+    "Violante Placido",
+    "Ciarán Hinds",
+    "Johnny Whitworth",
+    "Idris Elba",
+    "Spencer Wilding",
+    "Sorin Tofan"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2012-02-22"
+    },
+    {
+     "paese": "ES",
+     "data": "2012-02-24"
+    },
+    {
+     "paese": "FR",
+     "data": "2012-02-15"
+    },
+    {
+     "paese": "GB",
+     "data": "2012-02-17"
+    },
+    {
+     "paese": "IT",
+     "data": "2012-03-23"
+    },
+    {
+     "paese": "US",
+     "data": "2011-12-10"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2011-12-10"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/71676"
+  },
+  "039": {
+   "tmdb": {
+    "t": "tv",
+    "id": 220102
+   },
+   "titolo": "Spider-Noir",
+   "sinossi_it": "Un investigatore privato invecchiato e sfortunato nella New York degli anni '30 è costretto a fare i conti con la sua vita passata come l'unico e solo supereroe della città.",
+   "regista": [],
+   "cast": [
+    "Nicolas Cage",
+    "Lamorne Morris",
+    "Li Jun Li",
+    "Karen Rodriguez",
+    "Abraham Popoola",
+    "Jack Huston",
+    "Brendan Gleeson"
+   ],
+   "stato": "Canceled",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2026-05-25"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/220102"
+  },
+  "040": {
+   "tmdb": {
+    "t": "movie",
+    "id": 1927
+   },
+   "titolo": "Hulk",
+   "sinossi_it": "David Banner è uno scienziato che lavora per l'esercito ad un progetto per la rigenerazione dei tessuti. Ostacolato nelle sue ricerche, è costretto a farsi da cavia, iniettandosi un siero che lo modifica geneticamente. Gli effetti rimangono latenti in lui ma si trasferiscono nel corredo genetico di suo figlio Bruce. Allontanato dal padre in tenera età, Bruce diviene a sua volta un eminente biologo. In seguito ad un incidente in laboratorio, a causa di una sovraesposizione ai raggi gamma, la \"diversità\" di Bruce esplode in tutta la sua ferocia, trasformandolo in una creatura verde dotata di una",
+   "regista": [
+    "Ang Lee"
+   ],
+   "cast": [
+    "Eric Bana",
+    "Jennifer Connelly",
+    "Sam Elliott",
+    "Josh Lucas",
+    "Nick Nolte",
+    "Paul Kersey",
+    "Todd Tesen",
+    "Cara Buono"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2003-07-03"
+    },
+    {
+     "paese": "ES",
+     "data": "2003-07-04"
+    },
+    {
+     "paese": "FR",
+     "data": "2003-07-02"
+    },
+    {
+     "paese": "GB",
+     "data": "2003-07-18"
+    },
+    {
+     "paese": "IT",
+     "data": "2003-08-29"
+    },
+    {
+     "paese": "US",
+     "data": "2003-06-20"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2003-06-19"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/1927"
+  },
+  "041": {
+   "tmdb": {
+    "t": "movie",
+    "id": 1771
+   },
+   "titolo": "Captain America - Il primo vendicatore",
+   "sinossi_it": "Il giovane Steve Rogers farebbe di tutto per arruolarsi: scioccato da ciò che i nazisti stanno facendo in Europa, non sopporta di starsene con le mani in mano. La sua costituzione fragile, l'asma, l'altezza tutt'altro che idonea, però, fanno sì che venga rispedito al mittente ad ogni tentativo. Finché un giorno, un uomo di stato, il dottor Abraham Erskine, s'interessa a lui e gli propone di sottoporsi alla sperimentazione di un siero che ne farà il primo super soldato dell'esercito a stelle e strisce. Rogers, dunque, subisce una straordinaria trasformazione, ma sarà solo dopo un passaggio per ",
+   "regista": [
+    "Joe Johnston"
+   ],
+   "cast": [
+    "Chris Evans",
+    "Hayley Atwell",
+    "Sebastian Stan",
+    "Tommy Lee Jones",
+    "Hugo Weaving",
+    "Dominic Cooper",
+    "Richard Armitage",
+    "Stanley Tucci"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2011-08-17"
+    },
+    {
+     "paese": "ES",
+     "data": "2011-08-05"
+    },
+    {
+     "paese": "FR",
+     "data": "2011-08-17"
+    },
+    {
+     "paese": "GB",
+     "data": "2011-07-29"
+    },
+    {
+     "paese": "IT",
+     "data": "2011-07-22"
+    },
+    {
+     "paese": "US",
+     "data": "2011-07-22"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2011-07-22"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/1771"
+  },
+  "042": {
+   "tmdb": {
+    "t": "movie",
+    "id": 211387
+   },
+   "titolo": "Irripetibili Marvel: Agente Carter",
+   "sinossi_it": "Un anno dopo gli eventi di Captain America - II primo Vendicatore, l'agente britannica Peggy Carter si occupa di analisi dei dati e decrittazione per la Strategic Scientific Reserve. Mentre cerca il misterioso \"Zodiac\", combatte anche contro l'agente John Flynn, il suo capo misogino e burocrate, che reputa le donne inadatte al lavoro nei servizi segreti.",
+   "regista": [
+    "Louis D'Esposito"
+   ],
+   "cast": [
+    "Hayley Atwell",
+    "Bradley Whitford",
+    "Dominic Cooper",
+    "Neal McDonough",
+    "Chris Evans",
+    "Shane Black",
+    "Greg Haines",
+    "Jon Barinholtz"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2013-10-04"
+    },
+    {
+     "paese": "GB",
+     "data": "2013-09-08"
+    },
+    {
+     "paese": "US",
+     "data": "2013-09-03"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2013-10-04"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/211387"
+  },
+  "043": {
+   "tmdb": {
+    "t": "tv",
+    "id": 61550
+   },
+   "titolo": "Agent Carter",
+   "sinossi_it": "Siamo nel 1946 e la pace ha dato un duro colpo a Peggy Carter che si ritrova emarginata quando gli uomini tornano a casa dopo i combattimenti oltreoceano. Lavorando per la SSR (Strategic Scientific Reserve), Peggy deve trovare un nuovo equilibrio tra il lavoro amministrativo e andare in missioni segrete insieme a Howard Stark; tutto mentre dovrà avere a che fare con essere una donna single in America dopo aver recentemente perso l’amore della sua vita, Steve Rogers.\n\nNonostante il responso positivo da parte della critica, la serie ha subito un costante calo di telespettatori, e il 12 maggio 20",
+   "regista": [],
+   "cast": [
+    "Hayley Atwell",
+    "James D'Arcy",
+    "Enver Gjokaj",
+    "Wynn Everett"
+   ],
+   "stato": "Canceled",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2015-01-06"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/61550"
+  },
+  "044": {
+   "tmdb": {
+    "t": "tv",
+    "id": 61550
+   },
+   "titolo": "Agent Carter",
+   "sinossi_it": "Siamo nel 1946 e la pace ha dato un duro colpo a Peggy Carter che si ritrova emarginata quando gli uomini tornano a casa dopo i combattimenti oltreoceano. Lavorando per la SSR (Strategic Scientific Reserve), Peggy deve trovare un nuovo equilibrio tra il lavoro amministrativo e andare in missioni segrete insieme a Howard Stark; tutto mentre dovrà avere a che fare con essere una donna single in America dopo aver recentemente perso l’amore della sua vita, Steve Rogers.\n\nNonostante il responso positivo da parte della critica, la serie ha subito un costante calo di telespettatori, e il 12 maggio 20",
+   "regista": [],
+   "cast": [
+    "Hayley Atwell",
+    "James D'Arcy",
+    "Enver Gjokaj",
+    "Wynn Everett"
+   ],
+   "stato": "Canceled",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2015-01-06"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/61550"
+  },
+  "045": {
+   "tmdb": {
+    "t": "movie",
+    "id": 1726
+   },
+   "titolo": "Iron Man",
+   "sinossi_it": "Dopo aver subito un grave incidente, il ricco e tormentato scienziato Tony Stark inventa una speciale tuta di ferro che gli garantisce la sopravvivenza e gli conferisce straordinari poteri. L'uomo decide ben presto di utilizzare l'armatura per combattere il male e proteggere il prossimo.",
+   "regista": [
+    "Jon Favreau"
+   ],
+   "cast": [
+    "Robert Downey Jr.",
+    "Terrence Howard",
+    "Jeff Bridges",
+    "Gwyneth Paltrow",
+    "Leslie Bibb",
+    "Shaun Toub",
+    "Faran Tahir",
+    "Clark Gregg"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2008-04-30"
+    },
+    {
+     "paese": "ES",
+     "data": "2008-04-30"
+    },
+    {
+     "paese": "FR",
+     "data": "2008-04-30"
+    },
+    {
+     "paese": "GB",
+     "data": "2008-05-02"
+    },
+    {
+     "paese": "IT",
+     "data": "2008-05-01"
+    },
+    {
+     "paese": "US",
+     "data": "2008-05-02"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2008-04-30"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/1726"
+  },
+  "046": {
+   "tmdb": {
+    "t": "movie",
+    "id": 76122
+   },
+   "titolo": "Irripetibili Marvel: Il Consulente",
+   "sinossi_it": "Dopo gli eventi de \"L'incredibile Hulk\", l'agente dello S.H.I.E.LD. Phil Coulson ha una brutta notizia per l'agente Jasper Sitwell: il Consiglio di Sicurezza Mondiale vuole che Emil Blonsky si unisca agli Avengers, e Coulson riceve l'ordine di liberarlo dal generale Thaddeus Ross. Non potendo opporsi alla richiesta del Consiglio, Coulson e Sitwell ideano un piano per sabotare tutto grazie un'arma segreta davero speciale.",
+   "regista": [
+    "Leythum"
+   ],
+   "cast": [
+    "Maximiliano Hernández",
+    "Clark Gregg",
+    "Robert Downey Jr.",
+    "William Hurt",
+    "Deborah Knox"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2011-09-13"
+    },
+    {
+     "paese": "US",
+     "data": "2011-09-13"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2011-09-13"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/76122"
+  },
+  "047": {
+   "tmdb": {
+    "t": "movie",
+    "id": 10138
+   },
+   "titolo": "Iron Man 2",
+   "sinossi_it": "Tony Stark è Iron Man e ora, dopo 6 mesi, che la notizia è di pubblico dominio il governo e le compagnie concorrenti, non troppo liete che la pace nel mondo sia mantenuta da un deterrente che non gli appartiene, tentano di appropriarsi dell'armatura: \"Ho privatizzato con successo la pace\" risponde Stark a chi lo accusa di essere fuori dal controllo statale. Non è tuttavia questo il problema più grosso del miliardario con l'hobby del supereroismo. Il palladio, elemento utile a far funzionare l'armatura, lo sta lentamente uccidendo inquinandogli il sangue e il brillante inventore non riesce a tr",
+   "regista": [
+    "Jon Favreau"
+   ],
+   "cast": [
+    "Robert Downey Jr.",
+    "Gwyneth Paltrow",
+    "Don Cheadle",
+    "Scarlett Johansson",
+    "Sam Rockwell",
+    "Mickey Rourke",
+    "Samuel L. Jackson",
+    "Clark Gregg"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2010-05-05"
+    },
+    {
+     "paese": "ES",
+     "data": "2010-04-30"
+    },
+    {
+     "paese": "FR",
+     "data": "2010-04-28"
+    },
+    {
+     "paese": "GB",
+     "data": "2010-04-30"
+    },
+    {
+     "paese": "IT",
+     "data": "2010-04-30"
+    },
+    {
+     "paese": "US",
+     "data": "2010-05-07"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2010-04-28"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/10138"
+  },
+  "048": {
+   "tmdb": {
+    "t": "movie",
+    "id": 76535
+   },
+   "titolo": "Irripetibili Marvel: Scena comica nel raggiungere il martello di Thor",
+   "sinossi_it": "Prima degli eventi di Thor, l'agente dello S.H.I.E.LD. Phil Coulson si sta dirigendo in Nuovo Messico, quando fa una pausa in una stazione di servizio. Mentre sta scegliendo cosa mangiare nel minimarket, due rapinatori armati irrompono e pretendono dalla commessa notturna l'incasso e da Coulson le chiavi della sua auto. Ma i due malviventi scopriranno presto che l'abito non fa il monaco.",
+   "regista": [
+    "Leythum"
+   ],
+   "cast": [
+    "Clark Gregg",
+    "Jessica Manuel",
+    "Jeff Prewett",
+    "Zach Hudson"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2011-12-19"
+    },
+    {
+     "paese": "GB",
+     "data": "2011-12-05"
+    },
+    {
+     "paese": "US",
+     "data": "2011-10-25"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2011-10-25"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/76535"
+  },
+  "049": {
+   "tmdb": {
+    "t": "movie",
+    "id": 1724
+   },
+   "titolo": "L'incredibile Hulk",
+   "sinossi_it": "Bruce Banner si è nascosto in una labirintica favela del Brasile, dove lavora in una fabbrica che imbottiglia bibite al guaranà e conta i giorni \"senza crisi\", allenandosi a mantenere basse le pulsazioni cardiache agendo sulla respirazione e sul rifiuto delle provocazioni. Sono più di cento giorni che vive così, reprimendo gli impulsi del corpo e gli slanci del cuore, che è rimasto negli Stati Uniti, accanto alla dottoressa Ross. Ma basta una goccia di sangue, perduta involontariamente, a innescare la fine o, per essere più precisi, un nuovo inizio. La macchina da guerra americana, guidata dal",
+   "regista": [
+    "Louis Leterrier"
+   ],
+   "cast": [
+    "Edward Norton",
+    "Liv Tyler",
+    "Tim Roth",
+    "William Hurt",
+    "Tim Blake Nelson",
+    "Ty Burrell",
+    "Christina Cabot",
+    "Peter Mensah"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2008-07-08"
+    },
+    {
+     "paese": "ES",
+     "data": "2008-06-20"
+    },
+    {
+     "paese": "FR",
+     "data": "2008-07-23"
+    },
+    {
+     "paese": "GB",
+     "data": "2008-06-13"
+    },
+    {
+     "paese": "IT",
+     "data": "2008-06-18"
+    },
+    {
+     "paese": "US",
+     "data": "2008-06-12"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2008-06-12"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/1724"
+  },
+  "050": {
+   "tmdb": {
+    "t": "movie",
+    "id": 10195
+   },
+   "titolo": "Thor",
+   "sinossi_it": "Figlio primogenito del potente Odino, Thor è destinato a salire al trono di Asgard ma la sua foga e il desiderio di affermarsi in battaglia lo spingono ad un'azione avventata che, non fosse per l'intervento salvifico del padre, rischia di mettere a repentaglio la pace e la sicurezza del suo regno. Affranto per la delusione procuratagli dall'inadeguatezza del figlio Odino decide di scagliarlo sulla Terra, privato dei suoi poteri e impossibilitato ad usare Mjolnir, il suo micidiale maglio. Almeno fino a che non sarà in grado di usarlo con giudizio. Caduto nel nostro mondo il dio nordico si imbat",
+   "regista": [
+    "Kenneth Branagh"
+   ],
+   "cast": [
+    "Chris Hemsworth",
+    "Natalie Portman",
+    "Tom Hiddleston",
+    "Anthony Hopkins",
+    "Stellan Skarsgård",
+    "Kat Dennings",
+    "Clark Gregg",
+    "Colm Feore"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2011-04-27"
+    },
+    {
+     "paese": "ES",
+     "data": "2011-04-29"
+    },
+    {
+     "paese": "FR",
+     "data": "2011-04-27"
+    },
+    {
+     "paese": "GB",
+     "data": "2011-04-27"
+    },
+    {
+     "paese": "IT",
+     "data": "2011-04-27"
+    },
+    {
+     "paese": "US",
+     "data": "2011-05-06"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2011-04-27"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/10195"
+  },
+  "051": {
+   "tmdb": {
+    "t": "movie",
+    "id": 24428
+   },
+   "titolo": "The Avengers",
+   "sinossi_it": "I supereroi più famosi si riuniscono in una squadra di personaggi Marvel leggendari come Iron Man, l'incredibile Hulk, Thor, Captain America, Occhio di Falco e Vedova Nera. Quando la comparsa di un nemico inatteso minaccia la tranquillità e la sicurezza del mondo, Nick Fury, direttore dell'agenzia internazionale per il mantenimento della pace conosciuta come S.H.I.E.L.D., si trova ad aver bisogno di una squadra che salvi il pianeta dall'orlo del disastro. Inizia così, da un capo all'altro della terra, un audace lavoro di reclutamento. Dopo aver riunito la squadra, Nick Fury e il suo fidato ass",
+   "regista": [
+    "Joss Whedon"
+   ],
+   "cast": [
+    "Robert Downey Jr.",
+    "Chris Evans",
+    "Mark Ruffalo",
+    "Chris Hemsworth",
+    "Scarlett Johansson",
+    "Jeremy Renner",
+    "Tom Hiddleston",
+    "Clark Gregg"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2012-04-26"
+    },
+    {
+     "paese": "ES",
+     "data": "2012-04-27"
+    },
+    {
+     "paese": "FR",
+     "data": "2012-04-25"
+    },
+    {
+     "paese": "GB",
+     "data": "2012-04-26"
+    },
+    {
+     "paese": "IT",
+     "data": "2012-04-25"
+    },
+    {
+     "paese": "US",
+     "data": "2012-05-04"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2012-04-25"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/24428"
+  },
+  "052": {
+   "tmdb": {
+    "t": "movie",
+    "id": 119569
+   },
+   "titolo": "Irripetibili Marvel: Item 47",
+   "sinossi_it": "In seguito all'epica Battaglia di New York avvenuta in The Avengers, lo S.H.I.E.LD. ha recuperato tutti i pezzi di tecnologia aliena rimasti nella città, tranne uno... un'arma chitauriana, detta \"Item 47\". Quando una giovane coppia ritrova per caso l'arma mancante, inizia a compiere una serie di rapine in banca, mentre gli agenti dello S.H.I.E.LD. si mettono sulle sue tracce.",
+   "regista": [
+    "Louis D'Esposito"
+   ],
+   "cast": [
+    "Lizzy Caplan",
+    "Jesse Bradford",
+    "Maximiliano Hernández",
+    "Titus Welliver"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2012-09-13"
+    },
+    {
+     "paese": "FR",
+     "data": "2012-08-29"
+    },
+    {
+     "paese": "GB",
+     "data": "2012-09-17"
+    },
+    {
+     "paese": "US",
+     "data": "2012-09-25"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2012-08-29"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/119569"
+  },
+  "053": {
+   "tmdb": {
+    "t": "movie",
+    "id": 68721
+   },
+   "titolo": "Iron Man 3",
+   "sinossi_it": "Sono passati più di dieci anni da quando, nel corso di una serata in Svizzera, il miliardario genio-e-sregolatezza Tony Stark s'intratteneva con la bella Maya Hansen e lasciava sul tetto, in vana attesa, il visionario Aldrich Killian, desideroso di contare Stark tra le fila degli scienziati da lui diretti. Intanto, dal Medio Oriente, un terrorista senza scrupoli, detto il Mandarino, dopo aver seminato panico e morte in diverse zone degli Stati Uniti d'America, mira sempre più esplicitamente al Presidente, ma passa prima da villa Stark, radendola al suolo. In pena per la sicurezza di Pepper e i",
+   "regista": [
+    "Shane Black"
+   ],
+   "cast": [
+    "Robert Downey Jr.",
+    "Gwyneth Paltrow",
+    "Don Cheadle",
+    "Guy Pearce",
+    "Rebecca Hall",
+    "Jon Favreau",
+    "Ben Kingsley",
+    "James Badge Dale"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2013-05-01"
+    },
+    {
+     "paese": "ES",
+     "data": "2013-04-26"
+    },
+    {
+     "paese": "FR",
+     "data": "2013-04-24"
+    },
+    {
+     "paese": "GB",
+     "data": "2013-04-25"
+    },
+    {
+     "paese": "IT",
+     "data": "2013-04-24"
+    },
+    {
+     "paese": "US",
+     "data": "2013-05-03"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2013-04-18"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/68721"
+  },
+  "054": {
+   "tmdb": {
+    "t": "movie",
+    "id": 253980
+   },
+   "titolo": "Irripetibili Marvel: Viva il Re",
+   "sinossi_it": "A seguito degli eventi di Iron Man 3, Trevor Slattery è diventato un famigerato malvivente e si trova in un carcere di massima sicurezza. Per sua fortuna, il suo nuovo ruolo gli garantisce celebrità e protezione all'interno della prigione, e l'attore concede volentieri un'intervista approfondita a un regista di documentari.",
+   "regista": [
+    "Drew Pearce"
+   ],
+   "cast": [
+    "Ben Kingsley",
+    "Scoot McNairy",
+    "Lester Speight",
+    "Sam Rockwell",
+    "Matt Gerald",
+    "Allen Maldonado",
+    "Crystal the Monkey",
+    "Billy Choi"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2014-02-04"
+    },
+    {
+     "paese": "ES",
+     "data": "2022-01-21"
+    },
+    {
+     "paese": "FR",
+     "data": "2021-08-27"
+    },
+    {
+     "paese": "GB",
+     "data": "2014-02-24"
+    },
+    {
+     "paese": "IT",
+     "data": "2022-01-21"
+    },
+    {
+     "paese": "US",
+     "data": "2014-02-04"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2014-02-04"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/253980"
+  },
+  "055": {
+   "tmdb": {
+    "t": "movie",
+    "id": 76338
+   },
+   "titolo": "Thor: The Dark World",
+   "sinossi_it": "Thor, potente Vendicatore, è costretto a confrontarsi con un acerrimo nemico per salvare la Terra e i Nove Regni da un oscuro nemico che precede l'universo stesso. Una antica razza con a capo il vendicativo Malekith fa precipitare il cosmo nelle tenebre e, di fronte a un pericolo contro cui neanche Odino e Asgard possono nulla, Thor deve imbarcarsi nel più personale e pericoloso dei viaggi. Riunendosi con Jane Foster, sacrificherà ogni cosa pur di salvare l'umanità.",
+   "regista": [
+    "Alan Taylor"
+   ],
+   "cast": [
+    "Chris Hemsworth",
+    "Natalie Portman",
+    "Tom Hiddleston",
+    "Christopher Eccleston",
+    "Anthony Hopkins",
+    "Jaimie Alexander",
+    "Zachary Levi",
+    "Ray Stevenson"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2013-10-31"
+    },
+    {
+     "paese": "ES",
+     "data": "2013-10-31"
+    },
+    {
+     "paese": "FR",
+     "data": "2013-10-30"
+    },
+    {
+     "paese": "GB",
+     "data": "2013-10-30"
+    },
+    {
+     "paese": "IT",
+     "data": "2013-11-20"
+    },
+    {
+     "paese": "US",
+     "data": "2013-11-08"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2013-10-30"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/76338"
+  },
+  "056": {
+   "tmdb": {
+    "t": "movie",
+    "id": 100402
+   },
+   "titolo": "Captain America: The Winter Soldier",
+   "sinossi_it": "Ambientatosi nei nostri giorni Steve Rogers continua a servire gli Stati Uniti attraverso lo S.H.I.E.L.D., nonostante non sia contento della poca trasparenza e delle scarse informazioni che riceve su quel che fa. Quando anche Nick Fury comincia a scoprire che ci sono dati ed elementi che sono preclusi anche a lui è evidente che tutta la struttura serve un doppio fine. Se non bastassero le intuizioni arrivano diversi attacchi (a Fury in primis) a scoprire le carte e mostrare chi sia la talpa dentro l'organizzazione. Fuggito assieme a Vedova Nera e un reduce che forse può dare una mano, Capitan ",
+   "regista": [
+    "Joe Russo",
+    "Anthony Russo"
+   ],
+   "cast": [
+    "Chris Evans",
+    "Samuel L. Jackson",
+    "Scarlett Johansson",
+    "Robert Redford",
+    "Sebastian Stan",
+    "Anthony Mackie",
+    "Cobie Smulders",
+    "Frank Grillo"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2014-03-27"
+    },
+    {
+     "paese": "ES",
+     "data": "2014-03-28"
+    },
+    {
+     "paese": "FR",
+     "data": "2014-03-26"
+    },
+    {
+     "paese": "GB",
+     "data": "2014-03-20"
+    },
+    {
+     "paese": "IT",
+     "data": "2014-03-26"
+    },
+    {
+     "paese": "US",
+     "data": "2014-04-04"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2014-03-20"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/100402"
+  },
+  "057": {
+   "tmdb": {
+    "t": "tv",
+    "id": 1403
+   },
+   "titolo": "Agents of S.H.I.E.L.D.",
+   "sinossi_it": "L’agente Phil Coulson ritorna in attività per costituire una piccola squadra di agenti altamente qualificati provenienti da ogni parte del pianeta. L’organizzazione, nota come S.H.I.E.L.D., indaga su tutto ciò di strano e ignoto avviene nel mondo, proteggendo l’ordinario dallo straordinario. La squadra è composta da Grant Ward, addestrato in combattimento e spionaggio; Melinda May, un’abile pilota esperta di arti marziali; Leo Fitz, un brillante ingegnere; e Jemma Simmons, un genio della biochimica. A loro si aggiunge la nuova recluta e hacker Skye.",
+   "regista": [],
+   "cast": [
+    "Clark Gregg",
+    "Chloe Bennet",
+    "Elizabeth Henstridge",
+    "Ming-Na Wen",
+    "Henry Simmons",
+    "Natalia Cordova-Buckley",
+    "Jeff Ward"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2013-09-24"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/1403"
+  },
+  "058": {
+   "tmdb": {
+    "t": "movie",
+    "id": 118340
+   },
+   "titolo": "Guardiani della Galassia",
+   "sinossi_it": "L'audace esploratore Peter Quill è inseguito dai cacciatori di taglie per aver rubato una misteriosa sfera ambita da Ronan, un essere malvagio la cui sfrenata ambizione minaccia l'intero universo. Per sfuggire all’ostinato Ronan, Quill è costretto a una scomoda alleanza con quattro improbabili personaggi: Rocket, un procione armato; Groot, un umanoide dalle sembianze di un albero; la letale ed enigmatica Gamora e il vendicativo Drax il Distruttore. Ma quando Quill scopre il vero potere della sfera e la minaccia che costituisce per il cosmo, farà di tutto per guidare questa squadra improvvisata",
+   "regista": [
+    "James Gunn"
+   ],
+   "cast": [
+    "Chris Pratt",
+    "Zoe Saldaña",
+    "Dave Bautista",
+    "Vin Diesel",
+    "Bradley Cooper",
+    "Lee Pace",
+    "Michael Rooker",
+    "Karen Gillan"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2014-08-28"
+    },
+    {
+     "paese": "ES",
+     "data": "2014-08-14"
+    },
+    {
+     "paese": "FR",
+     "data": "2014-08-13"
+    },
+    {
+     "paese": "GB",
+     "data": "2014-07-31"
+    },
+    {
+     "paese": "IT",
+     "data": "2014-10-22"
+    },
+    {
+     "paese": "US",
+     "data": "2014-08-01"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2014-07-30"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/118340"
+  },
+  "059": {
+   "tmdb": {
+    "t": "movie",
+    "id": 283995
+   },
+   "titolo": "Guardiani della Galassia Vol. 2",
+   "sinossi_it": "Mentre sono alle prese con il mistero che avvolge le vere origini di Peter Quill, i Guardiani della Galassia dovranno combattere per mantenere unita la propria squadra. Il gruppo di eroi dovrà allearsi con vecchi nemici e potrà contare sull'aiuto di inaspettati alleati.",
+   "regista": [
+    "James Gunn"
+   ],
+   "cast": [
+    "Chris Pratt",
+    "Zoe Saldaña",
+    "Dave Bautista",
+    "Vin Diesel",
+    "Bradley Cooper",
+    "Kurt Russell",
+    "Michael Rooker",
+    "Karen Gillan"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2017-04-27"
+    },
+    {
+     "paese": "ES",
+     "data": "2017-04-28"
+    },
+    {
+     "paese": "FR",
+     "data": "2017-04-26"
+    },
+    {
+     "paese": "GB",
+     "data": "2017-04-28"
+    },
+    {
+     "paese": "IT",
+     "data": "2017-04-25"
+    },
+    {
+     "paese": "US",
+     "data": "2017-05-05"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2017-04-25"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/283995"
+  },
+  "060": {
+   "tmdb": {
+    "t": "tv",
+    "id": 61889
+   },
+   "titolo": "Daredevil",
+   "sinossi_it": "Hell's Kitchen, Manhattan. L'avvocato Matt Murdock, dopo aver perso la vista da bambino a causa di un incidente radioattivo, sviluppa dei sensi sovrumani e li utilizza per combattere il crimine per le strade della sua città nei panni di Daredevil. Nella prima stagione Matt affronta il potente signore del crimine Wilson Fisk (Kingpin), impegnato nella sua opera di riqualificazione del quartiere in combutta con vari esponenti della malavita della città. Nella seconda stagione Matt continua a cercare di gestire la sua doppia vita come avvocato e supereroe; il suo cammino lo porta ad incrociarsi c",
+   "regista": [],
+   "cast": [
+    "Charlie Cox",
+    "Deborah Ann Woll",
+    "Elden Henson",
+    "Vincent D'Onofrio",
+    "Jay Ali",
+    "Wilson Bethel"
+   ],
+   "stato": "Canceled",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2015-04-10"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/61889"
+  },
+  "061": {
+   "tmdb": {
+    "t": "tv",
+    "id": 38472
+   },
+   "titolo": "Jessica Jones",
+   "sinossi_it": "Jessica Jones è un ex-supereroina che si è data a un lavoro più \"normale\" dopo aver subito, per un non specificato periodo di tempo, il controllo mentale di Killgrave, un uomo con la capacità di ordinare a chiunque di fare ciò che lui vuole. Ora Jessica è un’investigatrice privata nella sua agenzia, la Alias Investigations. Le poche persone nella sua vita sono Jeri Hogarth, importante avvocato che passa i casi investigativi alla protagonista; Malcolm, vicino di casa di Jessica; e Trish Walker, sua vecchia amica ora importante conduttrice radiofonica. La protagonista incontrerà anche Luke Cage,",
+   "regista": [],
+   "cast": [
+    "Krysten Ritter",
+    "Rachael Taylor",
+    "Eka Darville",
+    "Benjamin Walker",
+    "Carrie-Anne Moss"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2015-11-20"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/38472"
+  },
+  "062": {
+   "tmdb": {
+    "t": "movie",
+    "id": 99861
+   },
+   "titolo": "Avengers: Age of Ultron",
+   "sinossi_it": "Quando Tony Stark riprende un programma di mantenimento della pace in disuso, qualcosa va storto e la squadra degli eroi più potenti della Terra composta da Iron Man, Captain America, Thor, l’Incredibile Hulk, Vedova Nera e Occhio di Falco, sarà messa a dura prova per salvare il mondo da un destino inesorabile. Toccherà agli Avengers far fronte al malvagio Ultron e impedirgli di portare a compimento i suoi terribili piani. Nuove e scomode alleanze ed eventi imprevisti daranno vita a una straordinaria ed epica avventura",
+   "regista": [
+    "Joss Whedon"
+   ],
+   "cast": [
+    "Robert Downey Jr.",
+    "Chris Hemsworth",
+    "Mark Ruffalo",
+    "Chris Evans",
+    "Scarlett Johansson",
+    "Jeremy Renner",
+    "James Spader",
+    "Samuel L. Jackson"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2015-04-23"
+    },
+    {
+     "paese": "ES",
+     "data": "2015-04-30"
+    },
+    {
+     "paese": "FR",
+     "data": "2015-04-22"
+    },
+    {
+     "paese": "GB",
+     "data": "2015-04-24"
+    },
+    {
+     "paese": "IT",
+     "data": "2015-04-22"
+    },
+    {
+     "paese": "US",
+     "data": "2015-05-01"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2015-04-22"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/99861"
+  },
+  "063": {
+   "tmdb": {
+    "t": "movie",
+    "id": 102899
+   },
+   "titolo": "Ant-Man",
+   "sinossi_it": "Lo scassinatore Scott Lang accetta un ultimo colpo, ma dentro la cassaforte anziché soldi trova una strana tuta. Quando la indossa attiva un meccanismo di miniaturizzazione che lo trasforma in un minuscolo guerriero. Contattato dal creatore della tuta, lo scienziato Hank Pym, Scott si troverà di fronte alla difficile decisione di diventare Ant-Man e salvare il mondo da un pericolo mortale.",
+   "regista": [
+    "Peyton Reed"
+   ],
+   "cast": [
+    "Paul Rudd",
+    "Michael Douglas",
+    "Evangeline Lilly",
+    "Corey Stoll",
+    "Bobby Cannavale",
+    "Anthony Mackie",
+    "Judy Greer",
+    "Abby Ryder Fortson"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2015-07-23"
+    },
+    {
+     "paese": "ES",
+     "data": "2015-07-24"
+    },
+    {
+     "paese": "FR",
+     "data": "2015-07-14"
+    },
+    {
+     "paese": "GB",
+     "data": "2015-07-17"
+    },
+    {
+     "paese": "IT",
+     "data": "2015-08-12"
+    },
+    {
+     "paese": "US",
+     "data": "2015-07-17"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2015-07-14"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/102899"
+  },
+  "064": {
+   "tmdb": {
+    "t": "tv",
+    "id": 1403
+   },
+   "titolo": "Agents of S.H.I.E.L.D.",
+   "sinossi_it": "L’agente Phil Coulson ritorna in attività per costituire una piccola squadra di agenti altamente qualificati provenienti da ogni parte del pianeta. L’organizzazione, nota come S.H.I.E.L.D., indaga su tutto ciò di strano e ignoto avviene nel mondo, proteggendo l’ordinario dallo straordinario. La squadra è composta da Grant Ward, addestrato in combattimento e spionaggio; Melinda May, un’abile pilota esperta di arti marziali; Leo Fitz, un brillante ingegnere; e Jemma Simmons, un genio della biochimica. A loro si aggiunge la nuova recluta e hacker Skye.",
+   "regista": [],
+   "cast": [
+    "Clark Gregg",
+    "Chloe Bennet",
+    "Elizabeth Henstridge",
+    "Ming-Na Wen",
+    "Henry Simmons",
+    "Natalia Cordova-Buckley",
+    "Jeff Ward"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2013-09-24"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/1403"
+  },
+  "065": {
+   "tmdb": {
+    "t": "tv",
+    "id": 61889
+   },
+   "titolo": "Daredevil",
+   "sinossi_it": "Hell's Kitchen, Manhattan. L'avvocato Matt Murdock, dopo aver perso la vista da bambino a causa di un incidente radioattivo, sviluppa dei sensi sovrumani e li utilizza per combattere il crimine per le strade della sua città nei panni di Daredevil. Nella prima stagione Matt affronta il potente signore del crimine Wilson Fisk (Kingpin), impegnato nella sua opera di riqualificazione del quartiere in combutta con vari esponenti della malavita della città. Nella seconda stagione Matt continua a cercare di gestire la sua doppia vita come avvocato e supereroe; il suo cammino lo porta ad incrociarsi c",
+   "regista": [],
+   "cast": [
+    "Charlie Cox",
+    "Deborah Ann Woll",
+    "Elden Henson",
+    "Vincent D'Onofrio",
+    "Jay Ali",
+    "Wilson Bethel"
+   ],
+   "stato": "Canceled",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2015-04-10"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/61889"
+  },
+  "066": {
+   "tmdb": {
+    "t": "tv",
+    "id": 1403
+   },
+   "titolo": "Agents of S.H.I.E.L.D.",
+   "sinossi_it": "L’agente Phil Coulson ritorna in attività per costituire una piccola squadra di agenti altamente qualificati provenienti da ogni parte del pianeta. L’organizzazione, nota come S.H.I.E.L.D., indaga su tutto ciò di strano e ignoto avviene nel mondo, proteggendo l’ordinario dallo straordinario. La squadra è composta da Grant Ward, addestrato in combattimento e spionaggio; Melinda May, un’abile pilota esperta di arti marziali; Leo Fitz, un brillante ingegnere; e Jemma Simmons, un genio della biochimica. A loro si aggiunge la nuova recluta e hacker Skye.",
+   "regista": [],
+   "cast": [
+    "Clark Gregg",
+    "Chloe Bennet",
+    "Elizabeth Henstridge",
+    "Ming-Na Wen",
+    "Henry Simmons",
+    "Natalia Cordova-Buckley",
+    "Jeff Ward"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2013-09-24"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/1403"
+  },
+  "067": {
+   "tmdb": {
+    "t": "movie",
+    "id": 271110
+   },
+   "titolo": "Captain America: Civil War",
+   "sinossi_it": "Steve Rogers e gli Avengers sono costretti ad affrontare i danni collaterali causati dalla loro lotta per proteggere il mondo. Dopo che la città di Laos, in Nigeria, viene colpita dall'ennesimo incidente internazionale che vede coinvolti gli Avengers, le pressioni politiche chiedono a gran voce un sistema di responsabilità e un consiglio d’amministrazione che decida quando richiedere l’intervento del team. Questa nuova dinamica divide gli Avengers che, al tempo stesso, tentano di proteggere il mondo da un nuovo e malvagio avversario.",
+   "regista": [
+    "Joe Russo",
+    "Anthony Russo"
+   ],
+   "cast": [
+    "Chris Evans",
+    "Robert Downey Jr.",
+    "Scarlett Johansson",
+    "Sebastian Stan",
+    "Anthony Mackie",
+    "Don Cheadle",
+    "Jeremy Renner",
+    "Chadwick Boseman"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2016-04-28"
+    },
+    {
+     "paese": "ES",
+     "data": "2016-04-29"
+    },
+    {
+     "paese": "FR",
+     "data": "2016-04-27"
+    },
+    {
+     "paese": "GB",
+     "data": "2016-04-29"
+    },
+    {
+     "paese": "IT",
+     "data": "2016-05-04"
+    },
+    {
+     "paese": "US",
+     "data": "2016-05-06"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2016-04-27"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/271110"
+  },
+  "068": {
+   "tmdb": {
+    "t": "tv",
+    "id": 62126
+   },
+   "titolo": "Luke Cage",
+   "sinossi_it": "Dopo che un esperimento sabotato gli dona forza sovrumana e pelle indistruttibile, Luke Cage diventa un fuggitivo e cerca di ricostruire la sua vita ad Harlem, ma ben presto il passato torna a perseguitarlo.",
+   "regista": [],
+   "cast": [
+    "Mike Colter",
+    "Alfre Woodard",
+    "Simone Missick",
+    "Theo Rossi",
+    "Mustafa Shakir",
+    "Gabrielle Dennis"
+   ],
+   "stato": "Canceled",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2016-09-30"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/62126"
+  },
+  "069": {
+   "tmdb": {
+    "t": "movie",
+    "id": 497698
+   },
+   "titolo": "Black Widow",
+   "sinossi_it": "Quando viene alla luce un pericoloso complotto, Natasha Romanoff alias Black Widow si trova ad affrontare il lato più oscuro del suo passato. Inseguita da una forza che non si fermerà di fronte a nulla per distruggerla, Natasha dovrà fare i conti con il suo passato da spia e con le relazioni che ha lasciato dietro di sé molto prima di diventare un Avenger.",
+   "regista": [
+    "Cate Shortland"
+   ],
+   "cast": [
+    "Scarlett Johansson",
+    "Florence Pugh",
+    "Rachel Weisz",
+    "David Harbour",
+    "Ray Winstone",
+    "Ever Anderson",
+    "Violet McGraw",
+    "O-T Fagbenle"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2021-07-08"
+    },
+    {
+     "paese": "ES",
+     "data": "2021-07-09"
+    },
+    {
+     "paese": "FR",
+     "data": "2021-07-07"
+    },
+    {
+     "paese": "GB",
+     "data": "2021-07-07"
+    },
+    {
+     "paese": "IT",
+     "data": "2021-07-07"
+    },
+    {
+     "paese": "US",
+     "data": "2021-07-09"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2021-07-07"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/497698"
+  },
+  "070": {
+   "tmdb": {
+    "t": "movie",
+    "id": 284052
+   },
+   "titolo": "Doctor Strange",
+   "sinossi_it": "Stephen Strange è un neurochirurgo dal talento straordinario e dall'ego smisurato. Incapace di accontentarsi di salvare delle singole vite, ambisce a qualcosa che vada oltre e che rivoluzioni la medicina conosciuta. Dopo un grave incidente d'auto perde l'uso delle terminazioni nervose delle mani e quindi la possibilità di intraprendere il proprio lavoro. Strange non accetta la sua nuova condizione e si spinge fino in Nepal in cerca di una cura misteriosa. A Katmandu scoprirà dei segreti che vanno ben oltre quelli spiegabili con la sola scienza.",
+   "regista": [
+    "Scott Derrickson"
+   ],
+   "cast": [
+    "Benedict Cumberbatch",
+    "Chiwetel Ejiofor",
+    "Rachel McAdams",
+    "Benedict Wong",
+    "Mads Mikkelsen",
+    "Tilda Swinton",
+    "Michael Stuhlbarg",
+    "Benjamin Bratt"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2016-10-27"
+    },
+    {
+     "paese": "ES",
+     "data": "2016-10-28"
+    },
+    {
+     "paese": "FR",
+     "data": "2016-10-26"
+    },
+    {
+     "paese": "GB",
+     "data": "2016-10-25"
+    },
+    {
+     "paese": "IT",
+     "data": "2016-10-26"
+    },
+    {
+     "paese": "US",
+     "data": "2016-11-04"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2016-10-25"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/284052"
+  },
+  "071": {
+   "tmdb": {
+    "t": "tv",
+    "id": 1403
+   },
+   "titolo": "Agents of S.H.I.E.L.D.",
+   "sinossi_it": "L’agente Phil Coulson ritorna in attività per costituire una piccola squadra di agenti altamente qualificati provenienti da ogni parte del pianeta. L’organizzazione, nota come S.H.I.E.L.D., indaga su tutto ciò di strano e ignoto avviene nel mondo, proteggendo l’ordinario dallo straordinario. La squadra è composta da Grant Ward, addestrato in combattimento e spionaggio; Melinda May, un’abile pilota esperta di arti marziali; Leo Fitz, un brillante ingegnere; e Jemma Simmons, un genio della biochimica. A loro si aggiunge la nuova recluta e hacker Skye.",
+   "regista": [],
+   "cast": [
+    "Clark Gregg",
+    "Chloe Bennet",
+    "Elizabeth Henstridge",
+    "Ming-Na Wen",
+    "Henry Simmons",
+    "Natalia Cordova-Buckley",
+    "Jeff Ward"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2013-09-24"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/1403"
+  },
+  "072": {
+   "tmdb": {
+    "t": "tv",
+    "id": 62127
+   },
+   "titolo": "Iron Fist",
+   "sinossi_it": "Presunto morto, Danny Rand ritorna nella sua città dopo 15 anni. Ora, con il potere del Pugno d'acciaio, è pronto a rivendicare il passato e a seguire il proprio destino.",
+   "regista": [],
+   "cast": [
+    "Finn Jones",
+    "Jessica Henwick",
+    "Jessica Stroup",
+    "Tom Pelphrey",
+    "Sacha Dhawan",
+    "Alice Eve"
+   ],
+   "stato": "Canceled",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2017-03-17"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/62127"
+  },
+  "075": {
+   "tmdb": {
+    "t": "movie",
+    "id": 315635
+   },
+   "titolo": "Spider-Man: Homecoming",
+   "sinossi_it": "Peter Parker non riesce a scrollarsi di dosso quanto sia stata incredibile la sua esperienza con gli Avengers in Captain America: Civil War, l'aver conosciuto Tony Stark e avere mantenuto con lui un rapporto speciale, tanto da avere un contatto diretto attraverso il suo assistente Happy Hogan e da aver ricevuto in dono un super-costume. Peter è così innamorato dell'idea di diventare un Avenger da lasciar scivolare in secondo piano anche la ragazza che gli fa battere il cuore, la bella Liz, per andare dietro ai criminali e mostrarsi pronto per la posizione in squadra.",
+   "regista": [
+    "Jon Watts"
+   ],
+   "cast": [
+    "Tom Holland",
+    "Michael Keaton",
+    "Robert Downey Jr.",
+    "Marisa Tomei",
+    "Jon Favreau",
+    "Gwyneth Paltrow",
+    "Zendaya",
+    "Donald Glover"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2017-07-13"
+    },
+    {
+     "paese": "ES",
+     "data": "2017-07-28"
+    },
+    {
+     "paese": "FR",
+     "data": "2017-07-12"
+    },
+    {
+     "paese": "GB",
+     "data": "2017-07-05"
+    },
+    {
+     "paese": "IT",
+     "data": "2017-07-06"
+    },
+    {
+     "paese": "US",
+     "data": "2017-07-07"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2017-07-05"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/315635"
+  },
+  "076": {
+   "tmdb": {
+    "t": "movie",
+    "id": 284053
+   },
+   "titolo": "Thor: Ragnarok",
+   "sinossi_it": "Thor è imprigionato dall’altro lato dell’universo senza il suo potente martello e deve lottare contro il tempo per tornare ad Asgard e fermare il Ragnarok — la distruzione del suo mondo e la fine della civiltà asgardiana — per mano di una nuova e onnipotente minaccia, la spietata Hela. Ma prima dovrà sopravvivere a un letale scontro fra gladiatori che lo metterà contro il suo vecchio alleato e compagno nel team degli Avengers: l’Incredibile Hulk.",
+   "regista": [
+    "Taika Waititi"
+   ],
+   "cast": [
+    "Chris Hemsworth",
+    "Mark Ruffalo",
+    "Tom Hiddleston",
+    "Cate Blanchett",
+    "Idris Elba",
+    "Jeff Goldblum",
+    "Tessa Thompson",
+    "Karl Urban"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2017-10-31"
+    },
+    {
+     "paese": "ES",
+     "data": "2017-10-27"
+    },
+    {
+     "paese": "FR",
+     "data": "2017-10-25"
+    },
+    {
+     "paese": "GB",
+     "data": "2017-10-27"
+    },
+    {
+     "paese": "IT",
+     "data": "2017-10-25"
+    },
+    {
+     "paese": "US",
+     "data": "2017-11-03"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2017-10-24"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/284053"
+  },
+  "078": {
+   "tmdb": {
+    "t": "movie",
+    "id": 284054
+   },
+   "titolo": "Black Panther",
+   "sinossi_it": "Il Wakanda, nazione dell'Africa centro-Orientale, si nasconde agli occhi del mondo. In apparenza Paese povero di risorse e speranze, nei fatti il più tecnologicamente avanzato del mondo, grazie alla presenza del vibranio, minerale alieno dalle inimmaginabili potenzialità. Quando T'challa sale sul trono, divenendo così la nuova Pantera Nera che protegge il proprio popolo, intende preservare la tradizione, ma un ritorno inatteso a Wakanda lo obbligherà a rivedere i propri piani.  Dopo il discusso caso di Wonder Woman a casa DC, è la volta di Black Panther, trasposizione su grande schermo delle a",
+   "regista": [
+    "Ryan Coogler"
+   ],
+   "cast": [
+    "Chadwick Boseman",
+    "Michael B. Jordan",
+    "Lupita Nyong'o",
+    "Danai Gurira",
+    "Martin Freeman",
+    "Daniel Kaluuya",
+    "Letitia Wright",
+    "Winston Duke"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2018-02-15"
+    },
+    {
+     "paese": "ES",
+     "data": "2018-02-16"
+    },
+    {
+     "paese": "FR",
+     "data": "2018-02-14"
+    },
+    {
+     "paese": "GB",
+     "data": "2018-02-13"
+    },
+    {
+     "paese": "IT",
+     "data": "2018-02-14"
+    },
+    {
+     "paese": "US",
+     "data": "2018-02-16"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2018-02-13"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/284054"
+  },
+  "079": {
+   "tmdb": {
+    "t": "tv",
+    "id": 38472
+   },
+   "titolo": "Jessica Jones",
+   "sinossi_it": "Jessica Jones è un ex-supereroina che si è data a un lavoro più \"normale\" dopo aver subito, per un non specificato periodo di tempo, il controllo mentale di Killgrave, un uomo con la capacità di ordinare a chiunque di fare ciò che lui vuole. Ora Jessica è un’investigatrice privata nella sua agenzia, la Alias Investigations. Le poche persone nella sua vita sono Jeri Hogarth, importante avvocato che passa i casi investigativi alla protagonista; Malcolm, vicino di casa di Jessica; e Trish Walker, sua vecchia amica ora importante conduttrice radiofonica. La protagonista incontrerà anche Luke Cage,",
+   "regista": [],
+   "cast": [
+    "Krysten Ritter",
+    "Rachael Taylor",
+    "Eka Darville",
+    "Benjamin Walker",
+    "Carrie-Anne Moss"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2015-11-20"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/38472"
+  },
+  "080": {
+   "tmdb": {
+    "t": "tv",
+    "id": 62126
+   },
+   "titolo": "Luke Cage",
+   "sinossi_it": "Dopo che un esperimento sabotato gli dona forza sovrumana e pelle indistruttibile, Luke Cage diventa un fuggitivo e cerca di ricostruire la sua vita ad Harlem, ma ben presto il passato torna a perseguitarlo.",
+   "regista": [],
+   "cast": [
+    "Mike Colter",
+    "Alfre Woodard",
+    "Simone Missick",
+    "Theo Rossi",
+    "Mustafa Shakir",
+    "Gabrielle Dennis"
+   ],
+   "stato": "Canceled",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2016-09-30"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/62126"
+  },
+  "081": {
+   "tmdb": {
+    "t": "tv",
+    "id": 62127
+   },
+   "titolo": "Iron Fist",
+   "sinossi_it": "Presunto morto, Danny Rand ritorna nella sua città dopo 15 anni. Ora, con il potere del Pugno d'acciaio, è pronto a rivendicare il passato e a seguire il proprio destino.",
+   "regista": [],
+   "cast": [
+    "Finn Jones",
+    "Jessica Henwick",
+    "Jessica Stroup",
+    "Tom Pelphrey",
+    "Sacha Dhawan",
+    "Alice Eve"
+   ],
+   "stato": "Canceled",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2017-03-17"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/62127"
+  },
+  "082": {
+   "tmdb": {
+    "t": "tv",
+    "id": 61889
+   },
+   "titolo": "Daredevil",
+   "sinossi_it": "Hell's Kitchen, Manhattan. L'avvocato Matt Murdock, dopo aver perso la vista da bambino a causa di un incidente radioattivo, sviluppa dei sensi sovrumani e li utilizza per combattere il crimine per le strade della sua città nei panni di Daredevil. Nella prima stagione Matt affronta il potente signore del crimine Wilson Fisk (Kingpin), impegnato nella sua opera di riqualificazione del quartiere in combutta con vari esponenti della malavita della città. Nella seconda stagione Matt continua a cercare di gestire la sua doppia vita come avvocato e supereroe; il suo cammino lo porta ad incrociarsi c",
+   "regista": [],
+   "cast": [
+    "Charlie Cox",
+    "Deborah Ann Woll",
+    "Elden Henson",
+    "Vincent D'Onofrio",
+    "Jay Ali",
+    "Wilson Bethel"
+   ],
+   "stato": "Canceled",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2015-04-10"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/61889"
+  },
+  "083": {
+   "tmdb": {
+    "t": "tv",
+    "id": 1403
+   },
+   "titolo": "Agents of S.H.I.E.L.D.",
+   "sinossi_it": "L’agente Phil Coulson ritorna in attività per costituire una piccola squadra di agenti altamente qualificati provenienti da ogni parte del pianeta. L’organizzazione, nota come S.H.I.E.L.D., indaga su tutto ciò di strano e ignoto avviene nel mondo, proteggendo l’ordinario dallo straordinario. La squadra è composta da Grant Ward, addestrato in combattimento e spionaggio; Melinda May, un’abile pilota esperta di arti marziali; Leo Fitz, un brillante ingegnere; e Jemma Simmons, un genio della biochimica. A loro si aggiunge la nuova recluta e hacker Skye.",
+   "regista": [],
+   "cast": [
+    "Clark Gregg",
+    "Chloe Bennet",
+    "Elizabeth Henstridge",
+    "Ming-Na Wen",
+    "Henry Simmons",
+    "Natalia Cordova-Buckley",
+    "Jeff Ward"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2013-09-24"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/1403"
+  },
+  "084": {
+   "tmdb": {
+    "t": "movie",
+    "id": 299536
+   },
+   "titolo": "Avengers: Infinity War",
+   "sinossi_it": "Dalla nascita dell'universo, sei gemme elementari rappresentano i vari aspetti fondamentali del cosmo e chi le possedesse tutte raggiungerebbe l'onnipotenza. È questo l'obiettivo di Thanos, il titano pazzo che ritiene se stesso come un correttivo alla sovrappopolazione universale e pensa di essere una misura necessaria e giusta, persino benevola, mentre agli altri il suo operato appare, correttamente, come una serie di genocidi. Gli Avengers e i Guardiani della Galassia dovranno cercare di fermarlo, ma come se non bastasse la sua inarrestabile potenza ci sono dalla sua armate aliene e quattro ",
+   "regista": [
+    "Joe Russo",
+    "Anthony Russo"
+   ],
+   "cast": [
+    "Robert Downey Jr.",
+    "Chris Evans",
+    "Chris Hemsworth",
+    "Josh Brolin",
+    "Mark Ruffalo",
+    "Scarlett Johansson",
+    "Don Cheadle",
+    "Benedict Cumberbatch"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2018-04-26"
+    },
+    {
+     "paese": "ES",
+     "data": "2018-04-27"
+    },
+    {
+     "paese": "FR",
+     "data": "2018-04-25"
+    },
+    {
+     "paese": "GB",
+     "data": "2018-04-29"
+    },
+    {
+     "paese": "IT",
+     "data": "2018-04-25"
+    },
+    {
+     "paese": "US",
+     "data": "2018-04-27"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2018-04-25"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/299536"
+  },
+  "085": {
+   "tmdb": {
+    "t": "movie",
+    "id": 363088
+   },
+   "titolo": "Ant-Man and the Wasp",
+   "sinossi_it": "Alle prese con la ricerca di un equilibrio tra la sua vita privata e le responsabilità di supereroe, Scott Lang si ritrova ancora una volta ad indossare i panni di Ant-Man e insieme a Hope van Dyne, in arte Wasp, andrà alla scoperta di incredibili segreti del passato.",
+   "regista": [
+    "Peyton Reed"
+   ],
+   "cast": [
+    "Paul Rudd",
+    "Evangeline Lilly",
+    "Michael Douglas",
+    "Hannah John-Kamen",
+    "Randall Park",
+    "Michelle Pfeiffer",
+    "Laurence Fishburne",
+    "Michael Peña"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2018-07-26"
+    },
+    {
+     "paese": "ES",
+     "data": "2018-07-04"
+    },
+    {
+     "paese": "FR",
+     "data": "2018-07-18"
+    },
+    {
+     "paese": "GB",
+     "data": "2018-08-02"
+    },
+    {
+     "paese": "IT",
+     "data": "2018-08-14"
+    },
+    {
+     "paese": "US",
+     "data": "2018-07-06"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2018-07-04"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/363088"
+  },
+  "087": {
+   "tmdb": {
+    "t": "tv",
+    "id": 38472
+   },
+   "titolo": "Jessica Jones",
+   "sinossi_it": "Jessica Jones è un ex-supereroina che si è data a un lavoro più \"normale\" dopo aver subito, per un non specificato periodo di tempo, il controllo mentale di Killgrave, un uomo con la capacità di ordinare a chiunque di fare ciò che lui vuole. Ora Jessica è un’investigatrice privata nella sua agenzia, la Alias Investigations. Le poche persone nella sua vita sono Jeri Hogarth, importante avvocato che passa i casi investigativi alla protagonista; Malcolm, vicino di casa di Jessica; e Trish Walker, sua vecchia amica ora importante conduttrice radiofonica. La protagonista incontrerà anche Luke Cage,",
+   "regista": [],
+   "cast": [
+    "Krysten Ritter",
+    "Rachael Taylor",
+    "Eka Darville",
+    "Benjamin Walker",
+    "Carrie-Anne Moss"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2015-11-20"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/38472"
+  },
+  "088": {
+   "tmdb": {
+    "t": "movie",
+    "id": 299537
+   },
+   "titolo": "Captain Marvel",
+   "sinossi_it": "Captain Marvel segue il percorso di Carol Danvers, colei che diventerà uno degli eroi più potenti dell'universo. Quando una guerra galattica tra due razze aliene raggiunge la Terra, Danvers si ritrova al centro del vortice insieme a un piccolo gruppo di alleati.",
+   "regista": [
+    "Ryan Fleck",
+    "Anna Boden"
+   ],
+   "cast": [
+    "Brie Larson",
+    "Samuel L. Jackson",
+    "Ben Mendelsohn",
+    "Jude Law",
+    "Annette Bening",
+    "Djimon Hounsou",
+    "Lee Pace",
+    "Lashana Lynch"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2019-03-07"
+    },
+    {
+     "paese": "ES",
+     "data": "2019-03-08"
+    },
+    {
+     "paese": "FR",
+     "data": "2019-03-06"
+    },
+    {
+     "paese": "GB",
+     "data": "2019-03-08"
+    },
+    {
+     "paese": "IT",
+     "data": "2019-03-06"
+    },
+    {
+     "paese": "US",
+     "data": "2019-03-08"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2019-03-06"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/299537"
+  },
+  "089": {
+   "tmdb": {
+    "t": "movie",
+    "id": 299534
+   },
+   "titolo": "Avengers: Endgame",
+   "sinossi_it": "In seguito alle azioni di Thanos nel precedente Avengers: Infinity War la popolazione dell'intero universo è stata dimezzata e tra i caduti c'è stato anche Nick Fury. Ma prima di morire questi è riuscito a lanciare un messaggio nello spazio alla potentissima Capitan Marvel, che tornata sulla Terra e di fronte a un gruppo di Avengers afflitto dalla sconfitta e dal lutto, vuole prendere le cose in mano. Quello che ha fatto Thanos però non si può risolvere con la semplice superforza e i colpi di energia...",
+   "regista": [
+    "Joe Russo",
+    "Anthony Russo"
+   ],
+   "cast": [
+    "Robert Downey Jr.",
+    "Chris Evans",
+    "Mark Ruffalo",
+    "Chris Hemsworth",
+    "Scarlett Johansson",
+    "Jeremy Renner",
+    "Josh Brolin",
+    "Don Cheadle"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2019-04-24"
+    },
+    {
+     "paese": "ES",
+     "data": "2019-04-25"
+    },
+    {
+     "paese": "FR",
+     "data": "2019-04-24"
+    },
+    {
+     "paese": "GB",
+     "data": "2019-04-25"
+    },
+    {
+     "paese": "IT",
+     "data": "2019-04-24"
+    },
+    {
+     "paese": "US",
+     "data": "2019-04-26"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2019-04-24"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/299534"
+  },
+  "090": {
+   "tmdb": {
+    "t": "movie",
+    "id": 429617
+   },
+   "titolo": "Spider-Man: Far from Home",
+   "sinossi_it": "Peter Parker ritorna in Spider-Man: Far From Home, il secondo capitolo della serie di Spider-Man: Homecoming! Il nostro amichevole Spider-Man di quartiere decide di partire per una vacanza in Europa con i suoi migliori amici. I propositi di Peter di non indossare i panni del supereroe per alcune settimane vengono meno quando decide, a malincuore, di aiutare Nick Fury a svelare il mistero degli attacchi di creature elementali che stanno creando scompiglio in tutto il continente.  Parte delle riprese sono state realizzate a Venezia tra settembre e ottobre 2018.",
+   "regista": [
+    "Jon Watts"
+   ],
+   "cast": [
+    "Tom Holland",
+    "Jake Gyllenhaal",
+    "Samuel L. Jackson",
+    "Marisa Tomei",
+    "Jon Favreau",
+    "Zendaya",
+    "Jacob Batalon",
+    "Tony Revolori"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2019-07-04"
+    },
+    {
+     "paese": "ES",
+     "data": "2019-07-05"
+    },
+    {
+     "paese": "FR",
+     "data": "2019-07-03"
+    },
+    {
+     "paese": "GB",
+     "data": "2019-07-02"
+    },
+    {
+     "paese": "IT",
+     "data": "2019-07-10"
+    },
+    {
+     "paese": "US",
+     "data": "2019-07-02"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2019-06-28"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/429617"
+  },
+  "091": {
+   "tmdb": {
+    "t": "tv",
+    "id": 1403
+   },
+   "titolo": "Agents of S.H.I.E.L.D.",
+   "sinossi_it": "L’agente Phil Coulson ritorna in attività per costituire una piccola squadra di agenti altamente qualificati provenienti da ogni parte del pianeta. L’organizzazione, nota come S.H.I.E.L.D., indaga su tutto ciò di strano e ignoto avviene nel mondo, proteggendo l’ordinario dallo straordinario. La squadra è composta da Grant Ward, addestrato in combattimento e spionaggio; Melinda May, un’abile pilota esperta di arti marziali; Leo Fitz, un brillante ingegnere; e Jemma Simmons, un genio della biochimica. A loro si aggiunge la nuova recluta e hacker Skye.",
+   "regista": [],
+   "cast": [
+    "Clark Gregg",
+    "Chloe Bennet",
+    "Elizabeth Henstridge",
+    "Ming-Na Wen",
+    "Henry Simmons",
+    "Natalia Cordova-Buckley",
+    "Jeff Ward"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2013-09-24"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/1403"
+  },
+  "092": {
+   "tmdb": {
+    "t": "tv",
+    "id": 1403
+   },
+   "titolo": "Agents of S.H.I.E.L.D.",
+   "sinossi_it": "L’agente Phil Coulson ritorna in attività per costituire una piccola squadra di agenti altamente qualificati provenienti da ogni parte del pianeta. L’organizzazione, nota come S.H.I.E.L.D., indaga su tutto ciò di strano e ignoto avviene nel mondo, proteggendo l’ordinario dallo straordinario. La squadra è composta da Grant Ward, addestrato in combattimento e spionaggio; Melinda May, un’abile pilota esperta di arti marziali; Leo Fitz, un brillante ingegnere; e Jemma Simmons, un genio della biochimica. A loro si aggiunge la nuova recluta e hacker Skye.",
+   "regista": [],
+   "cast": [
+    "Clark Gregg",
+    "Chloe Bennet",
+    "Elizabeth Henstridge",
+    "Ming-Na Wen",
+    "Henry Simmons",
+    "Natalia Cordova-Buckley",
+    "Jeff Ward"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2013-09-24"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/1403"
+  },
+  "093": {
+   "tmdb": {
+    "t": "tv",
+    "id": 85271
+   },
+   "titolo": "WandaVision",
+   "sinossi_it": "Wanda Maximoff e Visione, due esseri dotati di superpoteri che conducono una tranquilla vita di periferia, iniziano a sospettare che niente sia come sembra.",
+   "regista": [],
+   "cast": [
+    "Elizabeth Olsen",
+    "Paul Bettany",
+    "Kathryn Hahn",
+    "Teyonah Parris",
+    "Randall Park",
+    "Kat Dennings"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2021-01-15"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/85271"
+  },
+  "094": {
+   "tmdb": {
+    "t": "tv",
+    "id": 88396
+   },
+   "titolo": "The Falcon and the Winter Soldier",
+   "sinossi_it": "\"The Falcon and The Winter Soldier\" dei Marvel Studios vede protagonisti Anthony Mackie nei panni di Sam Wilson/Falcon e Sebastian Stan nei panni di Bucky Barnes/Il Soldato d'Inverno. I due, che si sono uniti nei momenti finali di \"Avengers: Endgame\", si alleano in un'avventura intorno al mondo che mette alla prova le loro abilità e la loro pazienza.",
+   "regista": [],
+   "cast": [
+    "Anthony Mackie",
+    "Sebastian Stan",
+    "Wyatt Russell",
+    "Erin Kellyman",
+    "Daniel Brühl",
+    "Emily VanCamp",
+    "Danny Ramirez",
+    "Adepero Oduye"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2021-03-19"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/88396"
+  },
+  "095": {
+   "tmdb": {
+    "t": "tv",
+    "id": 84958
+   },
+   "titolo": "Loki",
+   "sinossi_it": "Il volubile cattivo Loki riprende il suo ruolo di Dio del male in seguito agli eventi di \"Avengers: Endgame\".",
+   "regista": [],
+   "cast": [
+    "Tom Hiddleston",
+    "Sophia Di Martino",
+    "Wunmi Mosaku",
+    "Eugene Cordero",
+    "Ke Huy Quan",
+    "Owen Wilson"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2021-06-09"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/84958"
+  },
+  "096": {
+   "tmdb": {
+    "t": "tv",
+    "id": 91363
+   },
+   "titolo": "What If...?",
+   "sinossi_it": "Dopo gli eventi di Loki, il multiverso cade nella follia, mostrando degli universi in cui alcuni dei più importanti momenti del Marvel Cinematic Universe si svolgono in maniera differente...",
+   "regista": [],
+   "cast": [
+    "Jeffrey Wright"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2021-08-11"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/91363"
+  },
+  "097": {
+   "tmdb": {
+    "t": "movie",
+    "id": 566525
+   },
+   "titolo": "Shang-Chi e la leggenda dei dieci anelli",
+   "sinossi_it": "Xu Shang-Chi è il figlio di un potente criminale cinese. Cresciuto in un complesso isolato dal resto del mondo, è stato addestrato nelle arti marziali e ha sviluppato abilità senza precedenti. Si è però lasciato il passato alle spalle trasferendosi a San Francisco. Ben presto, il padre e la sua associazione lo costringeranno a fare i conti con chi è e con l'eredità che si porta appresso.",
+   "regista": [
+    "Destin Daniel Cretton"
+   ],
+   "cast": [
+    "Simu Liu",
+    "Tony Leung Chiu-wai",
+    "Awkwafina",
+    "Ben Kingsley",
+    "张梦儿",
+    "Fala Chen",
+    "Michelle Yeoh",
+    "Yuen Wah"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2021-09-02"
+    },
+    {
+     "paese": "ES",
+     "data": "2021-09-03"
+    },
+    {
+     "paese": "FR",
+     "data": "2021-09-01"
+    },
+    {
+     "paese": "GB",
+     "data": "2021-09-03"
+    },
+    {
+     "paese": "IT",
+     "data": "2021-09-01"
+    },
+    {
+     "paese": "US",
+     "data": "2021-09-03"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2021-09-01"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/566525"
+  },
+  "098": {
+   "tmdb": {
+    "t": "movie",
+    "id": 524434
+   },
+   "titolo": "Eternals",
+   "sinossi_it": "Ne \"Gli Eterni\" dei Marvel Studios un nuovo, entusiasmante, team di supereroi debutta nell’universo cinematografico Marvel: antichi alieni che vivono in segreto sulla Terra da migliaia di anni. A seguito degli eventi di \"Avengers: Endgame\", una tragedia inaspettata li costringe a uscire dalle ombre per ricongiungersi con il più antico nemico dell’umanità, i Devianti.",
+   "regista": [
+    "Chloé Zhao"
+   ],
+   "cast": [
+    "Gemma Chan",
+    "Richard Madden",
+    "Angelina Jolie",
+    "Salma Hayek Pinault",
+    "Kumail Nanjiani",
+    "Lia McHugh",
+    "Brian Tyree Henry",
+    "Lauren Ridloff"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2021-11-04"
+    },
+    {
+     "paese": "ES",
+     "data": "2021-11-05"
+    },
+    {
+     "paese": "FR",
+     "data": "2021-11-03"
+    },
+    {
+     "paese": "GB",
+     "data": "2021-11-05"
+    },
+    {
+     "paese": "IT",
+     "data": "2021-11-03"
+    },
+    {
+     "paese": "US",
+     "data": "2021-11-05"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2021-11-03"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/524434"
+  },
+  "099": {
+   "tmdb": {
+    "t": "movie",
+    "id": 634649
+   },
+   "titolo": "Spider-Man: No Way Home",
+   "sinossi_it": "In seguito agli eventi di Spider-Man: Far from Home, la vita di Peter Parker viene stravolta dopo che Mysterio rivela al mondo la sua identità. Peter chiede aiuto a Stephen Strange affinché usi la magia per far scordare a tutti la sua identità. Ma l'incantesimo non va come previsto e Peter si ritrova a dover affrontare nemici da altri universi e a scoprire cosa significa davvero essere Spider-Man.",
+   "regista": [
+    "Jon Watts"
+   ],
+   "cast": [
+    "Tom Holland",
+    "Zendaya",
+    "Benedict Cumberbatch",
+    "Jacob Batalon",
+    "Jon Favreau",
+    "Jamie Foxx",
+    "Willem Dafoe",
+    "Alfred Molina"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2021-12-16"
+    },
+    {
+     "paese": "ES",
+     "data": "2021-12-16"
+    },
+    {
+     "paese": "FR",
+     "data": "2021-12-15"
+    },
+    {
+     "paese": "GB",
+     "data": "2021-12-15"
+    },
+    {
+     "paese": "IT",
+     "data": "2021-12-15"
+    },
+    {
+     "paese": "US",
+     "data": "2021-12-17"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2021-12-15"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/634649"
+  },
+  "100": {
+   "tmdb": {
+    "t": "tv",
+    "id": 88329
+   },
+   "titolo": "Hawkeye",
+   "sinossi_it": "L'ex Vendicatore Clint Barton ha una missione apparentemente semplice: tornare dalla sua famiglia per Natale. Possibile? Magari con l'aiuto di Kate Bishop, un'arciere di 22 anni con il sogno di diventare un supereroe. I due sono costretti a lavorare insieme quando una presenza del passato di Barton minaccia di far deragliare molto più dello spirito festivo.",
+   "regista": [],
+   "cast": [
+    "Jeremy Renner",
+    "Hailee Steinfeld",
+    "Tony Dalton",
+    "Alaqua Cox",
+    "Fra Fee",
+    "Aleks Paunovic",
+    "Piotr Adamczyk",
+    "Vera Farmiga"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2021-11-24"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/88329"
+  },
+  "101": {
+   "tmdb": {
+    "t": "tv",
+    "id": 92749
+   },
+   "titolo": "Moon Knight",
+   "sinossi_it": "Il mite Steven Grant ha un disturbo dell'identità e condivide il proprio corpo con un mercenario.",
+   "regista": [],
+   "cast": [
+    "Oscar Isaac",
+    "Ethan Hawke",
+    "May Calamawy",
+    "Ann Akinjirin",
+    "David Ganly",
+    "Karim El Hakim",
+    "F. Murray Abraham"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2022-03-30"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/92749"
+  },
+  "102": {
+   "tmdb": {
+    "t": "movie",
+    "id": 453395
+   },
+   "titolo": "Doctor Strange nel Multiverso della Follia",
+   "sinossi_it": "Stephen Strange fa terribili incubi, in cui un suo alter ego fugge con una ragazzina in uno scenario surreale. Cerca di raggiungere un arcano libro bianco, ma un demone vuole invece prendere il controllo della ragazza e rubarle i poteri transdimensionali - uccidendola nel mentre. Quando si risveglia, Strange si reca al matrimonio della sua amata Christine con un altro uomo. Il mago cerca con scarso successo di nascondere il proprio dolore e, quasi per fortuna, arriva a toglierlo d'impiccio un enorme mostro che insegue la stessa ragazzina del suo sogno. Strange e Wong fanno così la conoscenza d",
+   "regista": [
+    "Sam Raimi"
+   ],
+   "cast": [
+    "Benedict Cumberbatch",
+    "Xochitl Gomez",
+    "Elizabeth Olsen",
+    "Chiwetel Ejiofor",
+    "Benedict Wong",
+    "Rachel McAdams",
+    "Jett Klyne",
+    "Julian Hilliard"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2022-05-05"
+    },
+    {
+     "paese": "ES",
+     "data": "2022-05-06"
+    },
+    {
+     "paese": "FR",
+     "data": "2022-05-04"
+    },
+    {
+     "paese": "GB",
+     "data": "2022-05-05"
+    },
+    {
+     "paese": "IT",
+     "data": "2022-05-04"
+    },
+    {
+     "paese": "US",
+     "data": "2022-05-06"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2022-05-04"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/453395"
+  },
+  "103": {
+   "tmdb": {
+    "t": "tv",
+    "id": 92782
+   },
+   "titolo": "Ms. Marvel",
+   "sinossi_it": "Grande studentessa, accanita giocatrice e vorace scrittrice di fan-fiction, Kamala Khan ha un'affinità speciale per i Supereroi, in particolare Captain Marvel. Tuttavia, lotta per adattarsi a casa e a scuola, fino a quando non ottiene i superpoteri come gli eroi a cui ha sempre ammirato. La vita è più facile con i superpoteri, giusto?",
+   "regista": [],
+   "cast": [
+    "Iman Vellani",
+    "Matt Lintz",
+    "Yasmeen Fletcher",
+    "Zenobia Shroff",
+    "Mohan Kapur",
+    "Saagar Shaikh",
+    "Rish Shah"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2022-06-08"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/92782"
+  },
+  "104": {
+   "tmdb": {
+    "t": "movie",
+    "id": 616037
+   },
+   "titolo": "Thor: Love and Thunder",
+   "sinossi_it": "Thor intraprende un viaggio come non ne ha mai fatti prima – la ricerca della pace interiore. Ma il suo pensionamento viene interrotto da un assassino galattico chiamato Gorr il Macellatore di Dei, che vuole portare le divinità all’estinzione. Per combattere questa minaccia, Thor chiede l’aiuto di Re Valkyrie, Korg e dell’ex fidanzata Jane Foster che – con grande sorpresa di Thor – inspiegabilmente è degna di brandire il suo martello magico, Mjolnir, come Potente Thor. Insieme, si imbarcano in una sconvolgente avventura cosmica per scoprire il mistero della vendetta del Macellatore di Dei e fe",
+   "regista": [
+    "Taika Waititi"
+   ],
+   "cast": [
+    "Chris Hemsworth",
+    "Natalie Portman",
+    "Christian Bale",
+    "Tessa Thompson",
+    "Taika Waititi",
+    "Russell Crowe",
+    "Jaimie Alexander",
+    "Idris Elba"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2022-07-07"
+    },
+    {
+     "paese": "ES",
+     "data": "2022-07-08"
+    },
+    {
+     "paese": "FR",
+     "data": "2022-07-13"
+    },
+    {
+     "paese": "GB",
+     "data": "2022-07-08"
+    },
+    {
+     "paese": "IT",
+     "data": "2022-07-06"
+    },
+    {
+     "paese": "US",
+     "data": "2022-07-07"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2022-07-06"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/616037"
+  },
+  "105": {
+   "tmdb": {
+    "t": "tv",
+    "id": 92783
+   },
+   "titolo": "She-Hulk: Attorney at Law",
+   "sinossi_it": "Jennifer Walters - un avvocato specializzato in casi legali superumani - vive una complicata vita da trentenne single, e si dà il caso che sia anche una hulk di 2 metri con superpoteri.",
+   "regista": [],
+   "cast": [
+    "Tatiana Maslany",
+    "Ginger Gonzaga",
+    "Jameela Jamil",
+    "Renée Elise Goldsberry",
+    "Josh Segarra"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2022-08-18"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/92783"
+  },
+  "106": {
+   "tmdb": {
+    "t": "movie",
+    "id": 894205
+   },
+   "titolo": "Licantropus",
+   "sinossi_it": "In una notte buia e tetra, un clan segreto di cacciatori di mostri emerge dall'ombra per riunirsi nell'inquietante Tempio dei Blooodstone, dopo la morte del loro leader. Nel corso di un bizzarro e macabro tributo alle gesta del leader, i partecipanti si trovano coinvolti in un oscuro gioco mortale per conquistare una potente reliquia: una caccia che li costringerà ad affrontare un temibile mostro.",
+   "regista": [
+    "Michael Giacchino"
+   ],
+   "cast": [
+    "Gael García Bernal",
+    "Laura Donnelly",
+    "Harriet Sansom Harris",
+    "Kirk R. Thatcher",
+    "Eugenie Bondurant",
+    "Leonardo Nam",
+    "Daniel J. Watts",
+    "Al Hamacher"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2022-10-07"
+    },
+    {
+     "paese": "ES",
+     "data": "2022-10-07"
+    },
+    {
+     "paese": "FR",
+     "data": "2022-10-07"
+    },
+    {
+     "paese": "GB",
+     "data": "2022-10-07"
+    },
+    {
+     "paese": "IT",
+     "data": "2022-10-07"
+    },
+    {
+     "paese": "US",
+     "data": "2022-10-07"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2022-09-25"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/894205"
+  },
+  "108": {
+   "tmdb": {
+    "t": "movie",
+    "id": 505642
+   },
+   "titolo": "Black Panther: Wakanda Forever",
+   "sinossi_it": "La Regina Ramonda, Shuri, M’Baku, Okoye e le Dora Milaje, lottano per proteggere la loro nazione dalle invadenti potenze mondiali dopo la morte di Re T’Challa. Mentre gli abitanti del Wakanda cercano di comprendere il prossimo capitolo della loro storia, gli eroi devono riunirsi con l’aiuto di War Dog Nakia e di Everett Ross e forgiare un nuovo percorso per il regno del Wakanda.",
+   "regista": [
+    "Ryan Coogler"
+   ],
+   "cast": [
+    "Letitia Wright",
+    "Tenoch Huerta Mejía",
+    "Lupita Nyong'o",
+    "Danai Gurira",
+    "Winston Duke",
+    "Angela Bassett",
+    "Martin Freeman",
+    "Julia Louis-Dreyfus"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2022-11-09"
+    },
+    {
+     "paese": "ES",
+     "data": "2022-11-11"
+    },
+    {
+     "paese": "FR",
+     "data": "2022-11-09"
+    },
+    {
+     "paese": "GB",
+     "data": "2022-11-11"
+    },
+    {
+     "paese": "IT",
+     "data": "2022-11-09"
+    },
+    {
+     "paese": "US",
+     "data": "2022-11-11"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2022-11-09"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/505642"
+  },
+  "109": {
+   "tmdb": {
+    "t": "movie",
+    "id": 640146
+   },
+   "titolo": "Ant-Man and the Wasp: Quantumania",
+   "sinossi_it": "I Super Eroi Scott Lang (Paul Rudd) e Hope Van Dyne (Evangeline Lilly) tornano per continuare le loro avventure come Ant-Man e The Wasp. Insieme ai genitori di Hope, Hank Pym (Michael Douglas) e Janet Van Dyne (Michelle Pfeiffer), la famiglia si ritrova a esplorare il Regno Quantico, a interagire con nuove strane creature e a intraprendere un’avventura che li spingerà oltre i limiti di ciò che pensavano fosse possibile.",
+   "regista": [
+    "Peyton Reed"
+   ],
+   "cast": [
+    "Paul Rudd",
+    "Evangeline Lilly",
+    "Michael Douglas",
+    "Michelle Pfeiffer",
+    "Jonathan Majors",
+    "Kathryn Newton",
+    "Corey Stoll",
+    "Bill Murray"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2023-02-15"
+    },
+    {
+     "paese": "ES",
+     "data": "2023-02-17"
+    },
+    {
+     "paese": "FR",
+     "data": "2023-02-15"
+    },
+    {
+     "paese": "GB",
+     "data": "2023-02-17"
+    },
+    {
+     "paese": "IT",
+     "data": "2023-02-15"
+    },
+    {
+     "paese": "US",
+     "data": "2023-02-17"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2023-02-15"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/640146"
+  },
+  "110": {
+   "tmdb": {
+    "t": "movie",
+    "id": 447365
+   },
+   "titolo": "Guardiani della Galassia Vol. 3",
+   "sinossi_it": "Peter Quill, ancora provato dalla perdita di Gamora, deve riunire la sua squadra per difendere l'universo e proteggere uno di loro. Una missione che, se non sarà portata a termine con successo, potrebbe portare alla fine dei Guardiani così come li conosciamo.",
+   "regista": [
+    "James Gunn"
+   ],
+   "cast": [
+    "Chris Pratt",
+    "Zoe Saldaña",
+    "Dave Bautista",
+    "Karen Gillan",
+    "Pom Klementieff",
+    "Vin Diesel",
+    "Bradley Cooper",
+    "Sean Gunn"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2023-05-03"
+    },
+    {
+     "paese": "ES",
+     "data": "2023-05-04"
+    },
+    {
+     "paese": "FR",
+     "data": "2023-05-03"
+    },
+    {
+     "paese": "GB",
+     "data": "2023-05-03"
+    },
+    {
+     "paese": "IT",
+     "data": "2023-05-03"
+    },
+    {
+     "paese": "US",
+     "data": "2023-05-05"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2023-05-03"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/447365"
+  },
+  "111": {
+   "tmdb": {
+    "t": "tv",
+    "id": 114472
+   },
+   "titolo": "Secret Invasion",
+   "sinossi_it": "Nick Fury viene a conoscenza di un'invasione clandestina della Terra da parte di una fazione di Skrull mutaforma. Fury si unisce ai suoi alleati, tra cui Everett Ross, Maria Hill e lo Skrull Talos, che si è creato una nuova esistenza sulla Terra. Insieme corrono contro il tempo per contrastare un'imminente invasione Skrull e salvare l'umanità.",
+   "regista": [],
+   "cast": [
+    "Samuel L. Jackson",
+    "Ben Mendelsohn",
+    "Kingsley Ben-Adir",
+    "Killian Scott",
+    "Samuel Adewunmi",
+    "Dermot Mulroney",
+    "Emilia Clarke",
+    "Olivia Colman"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2023-06-21"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/114472"
+  },
+  "112": {
+   "tmdb": {
+    "t": "tv",
+    "id": 84958
+   },
+   "titolo": "Loki",
+   "sinossi_it": "Il volubile cattivo Loki riprende il suo ruolo di Dio del male in seguito agli eventi di \"Avengers: Endgame\".",
+   "regista": [],
+   "cast": [
+    "Tom Hiddleston",
+    "Sophia Di Martino",
+    "Wunmi Mosaku",
+    "Eugene Cordero",
+    "Ke Huy Quan",
+    "Owen Wilson"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2021-06-09"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/84958"
+  },
+  "113": {
+   "tmdb": {
+    "t": "movie",
+    "id": 609681
+   },
+   "titolo": "The Marvels",
+   "sinossi_it": "Carol Danvers alias Captain Marvel si è ripresa la sua identità dal tirannico Kree e ha avuto la sua vendetta contro la Suprema Intelligenza. Ma a causa di conseguenze inaspettate, Carol si carica del fardello di un universo destabilizzato. Quando i suoi doveri la mandano in un wormhole anomalo collegato a un rivoluzionario Kree, i suoi poteri si intrecciano con quelli della super fan di Jersey City, Kamala Khan alias Ms. Marvel, e la nipote di Carol da cui si è separata da tempo, il capitano Monica Rambeau. Insieme questo trio improbabile deve fare squadra e imparare a lavorare in sinergia pe",
+   "regista": [
+    "Nia DaCosta"
+   ],
+   "cast": [
+    "Brie Larson",
+    "Teyonah Parris",
+    "Iman Vellani",
+    "Samuel L. Jackson",
+    "Zawe Ashton",
+    "Gary Lewis",
+    "박서준",
+    "Zenobia Shroff"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2023-11-08"
+    },
+    {
+     "paese": "ES",
+     "data": "2023-11-09"
+    },
+    {
+     "paese": "FR",
+     "data": "2023-11-08"
+    },
+    {
+     "paese": "GB",
+     "data": "2023-11-10"
+    },
+    {
+     "paese": "IT",
+     "data": "2023-11-08"
+    },
+    {
+     "paese": "US",
+     "data": "2023-11-10"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2023-11-08"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/609681"
+  },
+  "114": {
+   "tmdb": {
+    "t": "tv",
+    "id": 91363
+   },
+   "titolo": "What If...?",
+   "sinossi_it": "Dopo gli eventi di Loki, il multiverso cade nella follia, mostrando degli universi in cui alcuni dei più importanti momenti del Marvel Cinematic Universe si svolgono in maniera differente...",
+   "regista": [],
+   "cast": [
+    "Jeffrey Wright"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2021-08-11"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/91363"
+  },
+  "116": {
+   "tmdb": {
+    "t": "tv",
+    "id": 122226
+   },
+   "titolo": "Echo",
+   "sinossi_it": "Maya Lopez viene braccata dall'impero criminale di Fisk. Quando il suo viaggio la riporta a casa, dovrà affrontare la sua famiglia e il suo retaggio.",
+   "regista": [],
+   "cast": [
+    "Alaqua Cox",
+    "Chaske Spencer",
+    "Tantoo Cardinal",
+    "Devery Jacobs",
+    "Cody Lightning",
+    "Graham Greene",
+    "Vincent D'Onofrio"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2024-01-09"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/122226"
+  },
+  "117": {
+   "tmdb": {
+    "t": "movie",
+    "id": 533535
+   },
+   "titolo": "Deadpool & Wolverine",
+   "sinossi_it": "La vita di Wade Wilson, che ha ormai smesso di fare il mercenario in costume, non ha preso una bella piega. Negli ultimi anni la sua compagna l'ha lasciato e ora sta frequentando un altro uomo; al lavoro, come venditore di auto al fianco di Peter, gli affari arrancano; il colloquio per entrare negli Avengers è andato malissimo. Ciò nonostante Wade ha ancora i suoi amici intorno e, quando la TVA lo rapisce e gli comunica che la sua linea temporale sta per essere cancellata, ecco che Wade torna a mettere i panni di Deadpool e si lancia in una assurda impresa, per cui ha assolutamente bisogno di ",
+   "regista": [
+    "Shawn Levy"
+   ],
+   "cast": [
+    "Ryan Reynolds",
+    "Hugh Jackman",
+    "Emma Corrin",
+    "Matthew Macfadyen",
+    "Dafne Keen",
+    "Jon Favreau",
+    "Morena Baccarin",
+    "Rob Delaney"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2024-07-24"
+    },
+    {
+     "paese": "ES",
+     "data": "2024-07-25"
+    },
+    {
+     "paese": "FR",
+     "data": "2024-07-24"
+    },
+    {
+     "paese": "GB",
+     "data": "2024-07-25"
+    },
+    {
+     "paese": "IT",
+     "data": "2024-07-24"
+    },
+    {
+     "paese": "US",
+     "data": "2024-07-26"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2024-07-24"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/533535"
+  },
+  "118": {
+   "tmdb": {
+    "t": "tv",
+    "id": 138501
+   },
+   "titolo": "Agatha All Along",
+   "sinossi_it": "La famigerata Agatha Harkness si ritrova senza poteri quando uno strano Ragazzino spezza l'incantesimo di cui era vittima. Il suo interesse si risveglia quando lui le chiede di accompagnarlo sulla leggendaria Strada delle Streghe, una serie di prove magiche che, se superate, ricompensano una strega con ciò che le manca. Insieme, Agatha e questo misterioso adolescente mettono insieme una congrega disperata e si incamminano giù per la Strada...",
+   "regista": [],
+   "cast": [
+    "Kathryn Hahn",
+    "Joe Locke",
+    "Sasheer Zamata",
+    "Ali Ahn",
+    "Debra Jo Rupp",
+    "Patti LuPone",
+    "Aubrey Plaza"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2024-09-18"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/138501"
+  },
+  "119": {
+   "tmdb": {
+    "t": "tv",
+    "id": 91363
+   },
+   "titolo": "What If...?",
+   "sinossi_it": "Dopo gli eventi di Loki, il multiverso cade nella follia, mostrando degli universi in cui alcuni dei più importanti momenti del Marvel Cinematic Universe si svolgono in maniera differente...",
+   "regista": [],
+   "cast": [
+    "Jeffrey Wright"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2021-08-11"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/91363"
+  },
+  "120": {
+   "tmdb": {
+    "t": "tv",
+    "id": 138503
+   },
+   "titolo": "Il vostro amichevole Spider-Man di quartiere",
+   "sinossi_it": "Peter Parker sta per diventare un eroe, ma il suo percorso sarà tutt'altro che ordinario.",
+   "regista": [],
+   "cast": [
+    "Hudson Thames"
+   ],
+   "stato": "Returning Series",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2025-01-29"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/138503"
+  },
+  "121": {
+   "tmdb": {
+    "t": "movie",
+    "id": 822119
+   },
+   "titolo": "Captain America: Brave New World",
+   "sinossi_it": "Dopo aver incontrato il neoeletto Presidente degli Stati Uniti Thaddeus Ross, interpretato da Harrison Ford al suo debutto nel Marvel Cinematic Universe, Sam si ritrova nel bel mezzo di un incidente internazionale. Deve scoprire le ragioni di un efferato complotto globale prima che il mondo intero sia costretto a vedere rosso.",
+   "regista": [
+    "Julius Onah"
+   ],
+   "cast": [
+    "Anthony Mackie",
+    "Harrison Ford",
+    "Danny Ramirez",
+    "Shira Haas",
+    "Tim Blake Nelson",
+    "Carl Lumbly",
+    "Giancarlo Esposito",
+    "Liv Tyler"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2025-02-13"
+    },
+    {
+     "paese": "ES",
+     "data": "2025-02-14"
+    },
+    {
+     "paese": "FR",
+     "data": "2025-02-12"
+    },
+    {
+     "paese": "GB",
+     "data": "2025-02-14"
+    },
+    {
+     "paese": "IT",
+     "data": "2025-02-12"
+    },
+    {
+     "paese": "US",
+     "data": "2025-02-14"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2025-02-12"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/822119"
+  },
+  "122": {
+   "tmdb": {
+    "t": "tv",
+    "id": 202555
+   },
+   "titolo": "Daredevil: Rinascita",
+   "sinossi_it": "Matt Murdock, un avvocato cieco con abilità potenziate, lotta per la giustizia con il suo movimentato studio legale. Intanto, il boss criminale Wilson Fisk porta avanti i suoi impegni politici a New York. Quando le loro identità passate emergono, entrambi si ritrovano in un’inevitabile rotta di collisione.",
+   "regista": [],
+   "cast": [
+    "Charlie Cox",
+    "Vincent D'Onofrio",
+    "Wilson Bethel",
+    "Deborah Ann Woll",
+    "Margarita Levieva",
+    "Matthew Lillard",
+    "Lili Taylor",
+    "Michael Gandolfini"
+   ],
+   "stato": "Returning Series",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2025-03-04"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/202555"
+  },
+  "123": {
+   "tmdb": {
+    "t": "movie",
+    "id": 986056
+   },
+   "titolo": "Thunderbolts*",
+   "sinossi_it": "Anche quando hanno affrontato i peggiori pericoli dell'universo, gli Avengers sono sempre stati una forza di speranza, dei benefattori che potevano fare questo tutto il giorno. Ma una cosa è certa: i Thunderbolts non sono gli Avengers. Il prossimo film dell'MCU riunisce un team nuovo di zecca, non di supereroi dai colori primari, ma di disadattati e misantropi. C'è la Yelena Belova di Florence Pugh, un'assassina Vedova Nera con una vena sarcastica; il Bucky Barnes di Sebastian Stan, ex agente dormiente cyborg russo; l'anti-Cap in disgrazia di Wyatt Russell, John Walker; la nemica mutafase Ghos",
+   "regista": [
+    "Jake Schreier"
+   ],
+   "cast": [
+    "Florence Pugh",
+    "Sebastian Stan",
+    "Julia Louis-Dreyfus",
+    "Lewis Pullman",
+    "David Harbour",
+    "Wyatt Russell",
+    "Hannah John-Kamen",
+    "Olga Kurylenko"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2025-05-01"
+    },
+    {
+     "paese": "ES",
+     "data": "2025-04-30"
+    },
+    {
+     "paese": "FR",
+     "data": "2025-04-30"
+    },
+    {
+     "paese": "GB",
+     "data": "2025-05-01"
+    },
+    {
+     "paese": "IT",
+     "data": "2025-04-30"
+    },
+    {
+     "paese": "US",
+     "data": "2025-05-02"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2025-04-30"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/986056"
+  },
+  "124": {
+   "tmdb": {
+    "t": "tv",
+    "id": 114471
+   },
+   "titolo": "Ironheart",
+   "sinossi_it": "La tecnologia si scontra con la magia quando Riri Williams – una geniale giovane inventrice determinata a lasciare il segno nel mondo – torna nella sua città natale, Chicago. Il suo approccio unico nella creazione di armature è brillante, ma nel seguire le sue ambizioni, si ritrova coinvolta dal misterioso e affascinante Parker Robbins, a.k.a. \"Hood\".",
+   "regista": [],
+   "cast": [
+    "Dominique Thorne",
+    "Lyric Ross",
+    "Manny Montana",
+    "Matthew Elam",
+    "Anji White",
+    "Eric André",
+    "Sonia Denis",
+    "Shea Couleé"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2025-06-24"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/114471"
+  },
+  "126": {
+   "tmdb": {
+    "t": "tv",
+    "id": 241388
+   },
+   "titolo": "Eyes of Wakanda",
+   "sinossi_it": "La serie esplora il mito del Wakanda, la nazione immaginaria di cui Pantera Nera è sovrano, raccontando missioni affidate agli Hatut Zaraze, guerrieri wakandiani incaricati di recuperare manufatti sottratti al paese, con una struttura che alterna storie autoconclusive ambientate in varie epoche e con personaggi diversi.",
+   "regista": [],
+   "cast": [],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2025-08-01"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/241388"
+  },
+  "127": {
+   "tmdb": {
+    "t": "tv",
+    "id": 198178
+   },
+   "titolo": "Wonder Man",
+   "sinossi_it": "L'aspirante attore di Hollywood Simon Williams fatica a far decollare la propria carriera. Durante un incontro casuale con Trevor Slattery, un attore il cui periodo d'oro sembra ormai essere alle spalle, Simon scopre che il leggendario regista Von Kovak sta preparando un remake del film di supereroi \"Wonder Man\". I due interpreti, agli estremi opposti delle loro carriere, si lanciano con determinazione nella corsa per ottenere un ruolo che potrebbe cambiargli la vita, mentre il pubblico accede al dietro le quinte del mondo dello spettacolo.",
+   "regista": [],
+   "cast": [
+    "Yahya Abdul-Mateen II",
+    "Arian Moayed",
+    "X Mayo",
+    "Ben Kingsley"
+   ],
+   "stato": "Canceled",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2026-01-27"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/198178"
+  },
+  "128": {
+   "tmdb": {
+    "t": "tv",
+    "id": 202555
+   },
+   "titolo": "Daredevil: Rinascita",
+   "sinossi_it": "Matt Murdock, un avvocato cieco con abilità potenziate, lotta per la giustizia con il suo movimentato studio legale. Intanto, il boss criminale Wilson Fisk porta avanti i suoi impegni politici a New York. Quando le loro identità passate emergono, entrambi si ritrovano in un’inevitabile rotta di collisione.",
+   "regista": [],
+   "cast": [
+    "Charlie Cox",
+    "Vincent D'Onofrio",
+    "Wilson Bethel",
+    "Deborah Ann Woll",
+    "Margarita Levieva",
+    "Matthew Lillard",
+    "Lili Taylor",
+    "Michael Gandolfini"
+   ],
+   "stato": "Returning Series",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2025-03-04"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/202555"
+  },
+  "129": {
+   "tmdb": {
+    "t": "movie",
+    "id": 1439930
+   },
+   "titolo": "The Punisher: One Last Kill",
+   "sinossi_it": "Frank Castle è un uomo tormentato dal disturbo post-traumatico e dai fantasmi del passato dopo aver compiuto la sua vendetta. Quando la spietata boss mafiosa Ma Gnucci mette una taglia sulla sua testa, scatenando il caos dei criminali a New York, Frank deve combattere un'ultima volta per proteggere gli innocenti e ritrovare il suo scopo.",
+   "regista": [
+    "Reinaldo Marcus Green"
+   ],
+   "cast": [
+    "Jon Bernthal",
+    "Deborah Ann Woll",
+    "Jason R. Moore",
+    "Judith Light",
+    "Kelli Barrett",
+    "Andre Royo",
+    "John Douglas Thompson",
+    "Colton Hill"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2026-05-12"
+    },
+    {
+     "paese": "ES",
+     "data": "2026-05-13"
+    },
+    {
+     "paese": "FR",
+     "data": "2026-05-12"
+    },
+    {
+     "paese": "GB",
+     "data": "2026-05-13"
+    },
+    {
+     "paese": "IT",
+     "data": "2026-05-13"
+    },
+    {
+     "paese": "US",
+     "data": "2026-05-12"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2026-05-12"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/1439930"
+  },
+  "130": {
+   "tmdb": {
+    "t": "tv",
+    "id": 138502
+   },
+   "titolo": "X-Men '97",
+   "sinossi_it": "Un gruppo di mutanti usa le proprie doti incredibili per proteggere un mondo che li odia e li teme.",
+   "regista": [],
+   "cast": [],
+   "stato": "Returning Series",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2024-03-20"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/138502"
+  },
+  "131": {
+   "tmdb": {
+    "t": "tv",
+    "id": 138502
+   },
+   "titolo": "X-Men '97",
+   "sinossi_it": "Un gruppo di mutanti usa le proprie doti incredibili per proteggere un mondo che li odia e li teme.",
+   "regista": [],
+   "cast": [],
+   "stato": "Returning Series",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2024-03-20"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/138502"
+  },
+  "132": {
+   "tmdb": {
+    "t": "movie",
+    "id": 969681
+   },
+   "titolo": "Spider-Man: Brand New Day",
+   "sinossi_it": "Sono trascorsi quattro anni dagli eventi di No Way Home e Peter è ormai un adulto che vive completamente da solo, essendosi volontariamente cancellato dalla vita e dai ricordi di coloro che ama. Combattendo il crimine in una New York che non conosce più il suo nome, si è dedicato interamente alla protezione della sua città. Uno Spider-Man a tempo pieno. Ma con l'intensificarsi delle richieste, la pressione innesca una sorprendente evoluzione fisica che minaccia la sua stessa esistenza, mentre, una strana nuova serie di crimini, dà origine a una delle minacce più potenti che abbia mai affrontat",
+   "regista": [
+    "Destin Daniel Cretton"
+   ],
+   "cast": [
+    "Tom Holland",
+    "Sadie Sink",
+    "Tramell Tillman",
+    "Zendaya",
+    "Jacob Batalon",
+    "Jon Bernthal",
+    "Mark Ruffalo",
+    "Florence Pugh"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2026-07-29"
+    },
+    {
+     "paese": "ES",
+     "data": "2026-07-29"
+    },
+    {
+     "paese": "FR",
+     "data": "2026-07-29"
+    },
+    {
+     "paese": "GB",
+     "data": "2026-07-29"
+    },
+    {
+     "paese": "IT",
+     "data": "2026-07-29"
+    },
+    {
+     "paese": "US",
+     "data": "2026-07-31"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2026-07-29"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/969681"
+  },
+  "134": {
+   "tmdb": {
+    "t": "tv",
+    "id": 138503
+   },
+   "titolo": "Il vostro amichevole Spider-Man di quartiere",
+   "sinossi_it": "Peter Parker sta per diventare un eroe, ma il suo percorso sarà tutt'altro che ordinario.",
+   "regista": [],
+   "cast": [
+    "Hudson Thames"
+   ],
+   "stato": "Returning Series",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2025-01-29"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/138503"
+  },
+  "135": {
+   "tmdb": {
+    "t": "tv",
+    "id": 213375
+   },
+   "titolo": "VisionQuest",
+   "sinossi_it": "La Visione, rigenerato e fuggito da chi voleva farne un’arma, si nasconde. Cerca il suo senso della vita con l’aiuto delle AI incorporate nel suo codice, tra cui Friday, Edith, Jarvis e il famigerato Ultron. La sua discreta esistenza finisce quando una taglia sulla sua testa lo spinge alla fuga accanto a Thomas Shepherd, un ragazzo misterioso che potrebbe essere la reincarnazione del figlio di Visione. Durante la sua fuga dalla cattura, per sopravvivere Visione dovrà affrontare la sua natura e resistere all’influenza di Ultron, nonché sciogliere l’enigma rappresentato dal suo giovane compagno.",
+   "regista": [],
+   "cast": [
+    "Paul Bettany",
+    "James Spader",
+    "Ruaridh Mollica",
+    "Todd Stashwick",
+    "Lauren Morais",
+    "T'Nia Miller",
+    "Orla Brady",
+    "Henry Lewis"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2026-10-13"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/213375"
+  },
+  "136": {
+   "tmdb": {
+    "t": "movie",
+    "id": 1003596
+   },
+   "titolo": "Avengers: Doomsday",
+   "sinossi_it": "Gli universi collidono e la Saga del Multiverso dà inizio al suo capitolo finale in Avengers: Doomsday dei Marvel Studios. Amati eroi di tre universi distinti saranno messi su una rotta di collisione mortale e dovranno affrontare una minaccia esistenziale diversa da qualsiasi cosa abbiano mai incontrato. Questo epico film getterà le basi per il futuro del Marvel Cinematic Universe.",
+   "regista": [
+    "Joe Russo",
+    "Anthony Russo"
+   ],
+   "cast": [
+    "Robert Downey Jr.",
+    "Chris Evans",
+    "Chris Hemsworth",
+    "Pedro Pascal",
+    "Paul Rudd",
+    "Anthony Mackie",
+    "Florence Pugh",
+    "Vanessa Kirby"
+   ],
+   "stato": "Post Production",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2026-12-16"
+    },
+    {
+     "paese": "ES",
+     "data": "2026-12-18"
+    },
+    {
+     "paese": "FR",
+     "data": "2026-12-16"
+    },
+    {
+     "paese": "GB",
+     "data": "2026-12-16"
+    },
+    {
+     "paese": "IT",
+     "data": "2026-12-16"
+    },
+    {
+     "paese": "US",
+     "data": "2026-12-18"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2026-12-16"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/1003596"
+  },
+  "137": {
+   "tmdb": {
+    "t": "tv",
+    "id": 202555
+   },
+   "titolo": "Daredevil: Rinascita",
+   "sinossi_it": "Matt Murdock, un avvocato cieco con abilità potenziate, lotta per la giustizia con il suo movimentato studio legale. Intanto, il boss criminale Wilson Fisk porta avanti i suoi impegni politici a New York. Quando le loro identità passate emergono, entrambi si ritrovano in un’inevitabile rotta di collisione.",
+   "regista": [],
+   "cast": [
+    "Charlie Cox",
+    "Vincent D'Onofrio",
+    "Wilson Bethel",
+    "Deborah Ann Woll",
+    "Margarita Levieva",
+    "Matthew Lillard",
+    "Lili Taylor",
+    "Michael Gandolfini"
+   ],
+   "stato": "Returning Series",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2025-03-04"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/202555"
+  },
+  "138": {
+   "tmdb": {
+    "t": "tv",
+    "id": 138502
+   },
+   "titolo": "X-Men '97",
+   "sinossi_it": "Un gruppo di mutanti usa le proprie doti incredibili per proteggere un mondo che li odia e li teme.",
+   "regista": [],
+   "cast": [],
+   "stato": "Returning Series",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2024-03-20"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/138502"
+  },
+  "139": {
+   "tmdb": {
+    "t": "movie",
+    "id": 1003598
+   },
+   "titolo": "Avengers: Secret Wars",
+   "sinossi_it": "An upcoming film in Phase Six of the Marvel Cinematic Universe (MCU) and the finale of The Multiverse Saga.",
+   "regista": [
+    "Joe Russo",
+    "Anthony Russo"
+   ],
+   "cast": [
+    "Robert Downey Jr.",
+    "Pedro Pascal",
+    "Vanessa Kirby",
+    "Ebon Moss-Bachrach",
+    "Joseph Quinn",
+    "Sebastian Stan",
+    "Florence Pugh",
+    "David Harbour"
+   ],
+   "stato": "Planned",
+   "date": [
+    {
+     "paese": "ES",
+     "data": "2027-12-17"
+    },
+    {
+     "paese": "FR",
+     "data": "2027-12-15"
+    },
+    {
+     "paese": "US",
+     "data": "2027-12-17"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2027-12-15"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/1003598",
+   "sinossi_lingua": "en"
+  }
+ }
+}
