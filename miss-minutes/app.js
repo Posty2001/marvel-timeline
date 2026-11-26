@@ -358,21 +358,23 @@
   function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
   /* streaming: la bolla della risposta si riempie man mano; nessuno scorrimento forzato (mm6.1: la vista parte dall'inizio del messaggio) */
   var live = null;
-  /* Pacer (come ChatGPT): il testo ricevuto va in coda e viene mostrato a ritmo costante e leggibile, anche se rete/Gemini/Safari lo consegnano a raffiche.
-     velocita' = max(PACE_MIN caratteri/s, arretrato/PACE_TAU): la coda si smaltisce in modo continuo senza salti e senza indietro troppo. */
-  var PACE_MIN = 70, PACE_TAU = 2.4;
+  /* Pacer (come ChatGPT): il testo ricevuto va in coda e viene mostrato a ritmo quasi costante, scelto dall'utente (preferenza locale «Velocita' di lettura»:
+     Lenta 25, Normale 45 [predefinita], Rapida 80 caratteri/s; valori iniziali da calibrare). Se la rete consegna a raffiche l'arretrato si smaltisce con un recupero
+     dolce e limitato (al massimo PACE_CAP volte il ritmo scelto), mai a scatti ne' con pause artificiali. */
+  var SPEEDS = { slow: 25, normal: 45, fast: 80 }, PACE_CAP = 1.25, PACE_K = 20;
+  function paceBase() { var v = store && store.state && store.state.prefs && store.state.prefs.speed; return SPEEDS[v] || SPEEDS.normal; }
+  function paceRate(backlog) { var b = paceBase(); return b * Math.min(PACE_CAP, 1 + backlog / (b * PACE_K)); }
   function paintLive(ts) {
     if (!live) return; live.raf = 0;
     var len = live.text.length;
     if (!live.ts) live.ts = ts;
     var dt = Math.min(0.12, Math.max(0, (ts - live.ts) / 1000)); live.ts = ts;
-    if (live.n < len) { var sp = Math.max(PACE_MIN, (len - live.n) / PACE_TAU); live.n = Math.min(len, live.n + sp * dt); }
+    if (live.n < len) { var sp = paceRate(len - live.n); live.n = Math.min(len, live.n + sp * dt); }
     var k = Math.floor(live.n); if (k > 0 && k < len && /[\uD800-\uDBFF]/.test(live.text.charAt(k - 1))) k++;
     if (k !== live.k) {
       live.k = k;
       var t = live.text.slice(0, k).replace(/\s*\[\[[^\]]*$/, ''), rr = t; try { rr = resolveRefs(t, lastCtx).text; } catch (e) { /* testo grezzo */ }
-      while (live.body.firstChild) live.body.removeChild(live.body.firstChild);
-      var rc = rich(rr, false); live.body.appendChild(rc); var last = rc.lastElementChild || rc; last.appendChild(el('span', 'mm-caret')); updateDown();
+      var rc = rich(rr, false); while (live.body.firstChild) live.body.removeChild(live.body.firstChild); live.body.appendChild(rc); var last = rc.lastElementChild || rc; last.appendChild(el('span', 'mm-caret')); updateDown();
     }
     if (live.n < len) live.raf = requestAnimationFrame(paintLive);
     else if (live.waiter) { var w = live.waiter; live.waiter = null; w(); }
@@ -385,12 +387,12 @@
     }
     live.text = acc; if (!live.raf) live.raf = requestAnimationFrame(paintLive);
   }
-  /* attende che la coda sia mostrata per intero (interrompibile); in scheda nascosta o dopo 25 s si conclude subito */
+  /* attende che la coda sia mostrata per intero (interrompibile); in scheda nascosta o oltre il tempo previsto (+15 s) si conclude subito */
   function drainLive(signal) {
     return new Promise(function (res) {
       if (!live || live.n >= live.text.length || document.hidden || (signal && signal.aborted)) return res();
       var done = false, tm, fin = function () { if (done) return; done = true; clearTimeout(tm); if (signal) signal.removeEventListener('abort', fin); if (live) live.waiter = null; res(); };
-      live.waiter = fin; tm = setTimeout(fin, 25000); if (signal) signal.addEventListener('abort', fin, { once: true });
+      live.waiter = fin; tm = setTimeout(fin, Math.min(180000, 15000 + ((live.text.length - live.n) / paceBase()) * 1000)); if (signal) signal.addEventListener('abort', fin, { once: true });
     });
   }
   /* testo realmente mostrato all'utente (per le risposte parziali) */
@@ -593,6 +595,10 @@
     var sg = el('div', 'seg'); sg.setAttribute('role', 'group'); sg.setAttribute('aria-label', 'Lunghezza delle risposte');
     [['short', 'Brevi'], ['normal', 'Medie'], ['long', 'Lunghe']].forEach(function (o) { var x = btn('', null); x.textContent = o[1]; x.setAttribute('aria-pressed', String((p.length || 'normal') === o[0])); x.onclick = function () { p.length = o[0]; store.save(); [].forEach.call(sg.children, function (y) { y.setAttribute('aria-pressed', 'false'); }); x.setAttribute('aria-pressed', 'true'); }; sg.appendChild(x); });
     lr.appendChild(sg); g2.appendChild(lr);
+    var vr = el('div', 'mm-srow'); vr.appendChild(ic('lines')); var vt = el('div', 't'); vt.appendChild(el('b', '', 'Velocità di lettura')); vt.appendChild(el('small', '', 'Ritmo con cui compare il testo delle risposte AI (solo su questo dispositivo).')); vr.appendChild(vt);
+    var vg = el('div', 'seg'); vg.setAttribute('role', 'group'); vg.setAttribute('aria-label', 'Velocità di lettura');
+    [['slow', 'Lenta'], ['normal', 'Normale'], ['fast', 'Rapida']].forEach(function (o) { var x = btn('', null); x.textContent = o[1]; x.setAttribute('aria-pressed', String((p.speed || 'normal') === o[0])); x.onclick = function () { p.speed = o[0]; store.save(); [].forEach.call(vg.children, function (y) { y.setAttribute('aria-pressed', 'false'); }); x.setAttribute('aria-pressed', 'true'); }; vg.appendChild(x); });
+    vr.appendChild(vg); g2.appendChild(vr);
     toggleRow(g2, { key: 'cite', icon: 'book', title: 'Riferimenti bibliografici', sub: 'Chiede all’AI di indicare opere e cicli di riferimento solo quando attendibili.', onChange: function (v) { p.cite = v; store.save(); } });
     toggleRow(g2, { key: 'spoiler', icon: 'eye', title: 'Protezione spoiler', sub: 'Aiuto, non garanzia (v. sotto).', onChange: function (v) { p.spoiler = v; eng.setSpoilerProtection(v); store.save(); } });
     b.appendChild(g2);

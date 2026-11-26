@@ -3,7 +3,7 @@
   'use strict';
   var KEY = 'marvel-ultimate-timeline-miss-minutes-v1', MAX_S = 40, MAX_M = 120, MAX_T = 4000;
   function create(storage) {
-    var st = { v: 1, sessions: [], active: null, prefs: { online: false, consent: false, spoiler: true, voice: false, local: true, memory: true, cite: true, length: 'normal' } };
+    var st = { v: 1, sessions: [], active: null, prefs: { online: false, consent: false, spoiler: true, voice: false, local: true, memory: true, cite: true, length: 'normal', speed: 'normal' } };
     try { var r = JSON.parse(storage.getItem(KEY) || 'null'); if (r && r.v === 1 && Array.isArray(r.sessions)) { st.sessions = r.sessions.filter(function (s) { return s && typeof s.id === 'string' && Array.isArray(s.messages); }).slice(0, MAX_S); st.active = typeof r.active === 'string' ? r.active : null; st.prefs = Object.assign(st.prefs, r.prefs || {}); } } catch (e) {}
     var ok = true;
     function save() {

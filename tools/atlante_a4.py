@@ -17,7 +17,9 @@ def costruisci():
         rel.append([x['da'], x['a'], tipi.index(x['tipo']), CLS[x['classe']], VER.get(x['verifica'], 0), x.get('qualifica') or '', 1 if x.get('controversa') else 0])
     app = {i['id']: i['apparizioni'] for i in ident['identita'] if i.get('apparizioni')}
     uni = {i['id']: i.get('universo') for i in ident['identita']}
-    return {'v': 1, 'tipi': tipi, 'r': rel, 'app': app, 'nodi_senza_voce': persi}
+    mv = J('data/atlante/blob/mvMapData.json')['universi']
+    ut = {k: v['titoliIds'] for k, v in sorted(mv.items()) if v.get('titoliIds')}   # universo -> numeri dei titoli (confronto tra universi, A4.3)
+    return {'v': 1, 'tipi': tipi, 'r': rel, 'app': app, 'ut': ut, 'nodi_senza_voce': persi}
 
 def out(): return os.path.join(R, 'atlante2/data/nexus/g.json')
 
@@ -33,6 +35,7 @@ def main():
         chk('nessuna deriva rispetto al registro', cur == s)
         chk('nessuna co-apparizione tra le relazioni', all(g['tipi'][r[2]] != 'co_apparizione' for r in g['r']))
         chk('classe coerente (editoriale solo tipi editoriali)', all((r[3] == 'e') == (g['tipi'][r[2]] in ('correlato', 'stessa_scheda', 'segnaposto', 'ispirato_a')) for r in g['r']))
+        chk('titoli per universo presenti (confronto A4.3)', len(g['ut']) >= 15 and '125' in g['ut'].get('uni-earth-828', []))
         chk('relazioni narrative/controparte: 1', sum(1 for r in g['r'] if r[3] in 'nc') > 100)
         sys.exit(0 if ok else 1)
     else: print(__doc__)

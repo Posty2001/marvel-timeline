@@ -215,6 +215,44 @@ def costruisci():
                    verifica="verificata sulle fonti consultate il 26/11/2026 (Wikipedia: Matt Murdock (MCU), Daredevil in other media): Charlie Cox interpreta Matt Murdock nel MCU (Daredevil, The Defenders, She-Hulk, Echo, Born Again); apparizioni dalla scheda Atlante e da mvMapData",
                    note="Separato da id-matt-murdock-daredevil (film 2003, Ben Affleck) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente per non perdere riferimenti."))
     rel('id-matt-murdock-daredevil', 'id-matt-murdock-mcu', 'stessa_scheda_atlante', 'stessa_scheda_atlante', False, ['w-murdock-mcu', 'int-mv'], "dati interni: la scheda char-matt-murdock-daredevil copre due continuita'; nessuna parentela narrativa dichiarata", "Continuita' distinte (Daredevil 2003 / MCU): identita' distinte, non unificate.")
+    # Fantastici Quattro: una scheda per personaggio descriveva insieme piu' continuita' (richiesta dell'utente, 26/11/2026: Terra-828 mostrava solo Franklin e Galactus).
+    # Schema Wolverine/Harry/Matt: gli ID originali (id-reed-richards, ...) restano con la pagina canonica e coprono la continuita' dei film di Tim Story
+    # (Earth-121698: N°029-030); ogni altra incarnazione passa a un'identita' nuova, tracciata in apparizioni_spostate. Nessuna unificazione tra incarnazioni.
+    # Fonti (Wikipedia, consultate il 26/11/2026): Fantastic Four (2005 film), The Fantastic Four (unreleased film), Fantastic Four (2015 film), The Fantastic Four: First Steps.
+    FF_F = {'story': 'https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)', 'ff94': 'https://en.wikipedia.org/wiki/The_Fantastic_Four_(unreleased_film)',
+            'trank': 'https://en.wikipedia.org/wiki/Fantastic_Four_(2015_film)', 'fs': 'https://en.wikipedia.org/wiki/The_Fantastic_Four:_First_Steps'}
+    F.update({'ff-' + k: v for k, v in FF_F.items()})
+    FF = [  # (id, nome base, 1994, Story, Trank, First Steps)
+        ('id-reed-richards', 'Reed Richards/Mr. Fantastic', 'Alex Hyde-White', 'Ioan Gruffudd', 'Miles Teller', 'Pedro Pascal'),
+        ('id-sue-storm', 'Sue Storm/Invisible Woman', 'Rebecca Staab', 'Jessica Alba', 'Kate Mara', 'Vanessa Kirby'),
+        ('id-johnny-storm-human-torch', 'Johnny Storm/Human Torch', 'Jay Underwood', 'Chris Evans', 'Michael B. Jordan', 'Joseph Quinn'),
+        ('id-ben-grimm', 'Ben Grimm/The Thing', 'Michael Bailey Smith', 'Michael Chiklis', 'Jamie Bell', 'Ebon Moss-Bachrach'),
+        ('id-victor-von-doom', 'Victor von Doom/Dr. Doom', 'Joseph Culp', 'Julian McMahon', 'Toby Kebbell', None)]
+    CONT = [('ff94', '028', 'uni-fantastic-four-1994', '1994', 'film mai distribuito (1994)'), ('trank', '031', 'uni-earth-trn123', 'Trank', 'film del 2015'), ('fs', '125', 'uni-earth-828', 'First Steps', 'The Fantastic Four: First Steps (Earth-828)')]
+    for k, t in (('028', 'uni-fantastic-four-1994'), ('031', 'uni-earth-trn123'), ('125', 'uni-earth-828'), ('029', 'uni-earth-121698'), ('030', 'uni-earth-121698')): assert k in titoli(t)
+    for (iid, base, c94, cst, ctr, cfs) in FF:
+        o = next(i for i in I if i['id'] == iid); sp = {}
+        o['alias'] = sorted(set(o['alias']) | {o['nome']}); o['nome'] = base + ' (Story)'; o['interpreti'] = [cst]
+        o['fonte'] = (o.get('fonte') or []) + [F['ff-story']]
+        for (fk, n, uni, lab, desc), cast in zip(CONT, (c94, ctr, cfs)):
+            if iid == 'id-victor-von-doom' and n == '125': continue
+            if n not in o['apparizioni']: continue
+            nid = iid + '-' + {'ff94': '1994', 'trank': 'trank', 'fs': 'first-steps'}[fk]
+            sp[n] = nid
+            I.append(ident(nid, base + ' (' + lab + ')', 'identita', uni, o['pagine'], o['pagina_principale'], [cast], ['int-identita', 'int-mv'], apparizioni=[n],
+                           verifica="verificata sulle fonti consultate il 26/11/2026 (Wikipedia, " + desc + "): interprete " + cast + "; continuita' da mvMapData (N°" + n + " in " + uni + "); nessun dato biografico specifico attribuito",
+                           note="Separato da " + iid + " (film di Tim Story, Earth-121698) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente."))
+            I[-1]['fonte'] = I[-1]['fonte'] + [F['ff-' + fk]]
+            rel(iid, nid, 'stessa_scheda_atlante', 'stessa_scheda_atlante', False, ['int-identita', 'int-mv'], "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata", "Continuita' distinte: identita' distinte, non unificate.")
+        if iid == 'id-reed-richards':  # N°102: Reed dell'Illuminati (Terra-838), John Krasinski (Doctor Strange nel Multiverso della Follia)
+            sp['102'] = 'id-reed-richards-illuminati'
+            I.append(ident('id-reed-richards-illuminati', 'Reed Richards/Mr. Fantastic (Illuminati, Terra-838)', 'identita', 'uni-earth-838', o['pagine'], o['pagina_principale'], ['John Krasinski'], ['int-identita', 'int-mv'], apparizioni=['102'],
+                           verifica="verificata sulle fonti consultate il 26/11/2026 (Marvel Wiki/MCU Wiki: Reed Richards (Earth-838) interpretato da John Krasinski); N°102 in uni-earth-838 per mvMapData; nessun dato biografico specifico attribuito",
+                           note="Separato da id-reed-richards su richiesta dell'utente (26/11/2026): continuita' Terra-838 (Illuminati), distinta dai Fantastici Quattro di Earth-121698 e di Earth-828."))
+            rel(iid, 'id-reed-richards-illuminati', 'stessa_scheda_atlante', 'stessa_scheda_atlante', False, ['int-identita', 'int-mv'], "dati interni: la scheda condivisa copre piu' continuita'", "Continuita' distinte: identita' distinte, non unificate.")
+        if sp:
+            o['apparizioni'] = [n for n in o['apparizioni'] if n not in sp]; o['apparizioni_spostate'] = sp
+            o['nota'] = "Continuita' dei film di Tim Story (Earth-121698, N°029-030); le altre incarnazioni sono identita' separate (apparizioni_spostate), non unificate. Nota: N°117 (Deadpool & Wolverine) resta qui (Marvel Wiki: Earth-121698), mvMapData lo colloca invece in Fox-Verse: discrepanza di fonti segnalata, nessuna unificazione." if iid == 'id-johnny-storm-human-torch' else "Continuita' dei film di Tim Story (Earth-121698, N°029-030); le altre incarnazioni sono identita' separate (apparizioni_spostate), non unificate."
     # Laufey: dossier autonomo (richiesta dell'utente, 26/11/2026). Nessuna scheda nell'Atlante classico (la scheda di Loki lo cita solo come testo: «Padre biologico: Laufey»):
     # identita' nuova nell'MCU, con i soli dati verificati su fonti pubbliche (interprete e film). Nessun campo biografico inventato.
     lf = ident('id-laufey', 'Laufey', 'identita', 'uni-earth-199999-mcu', [], None, ['Colm Feore'], ['int-identita'], apparizioni=['050'],
@@ -302,6 +340,12 @@ def verifica():
     mm_ = {i['id']: i for i in r['identita']}
     chk("Matt Murdock: 035 solo nel 2003 (Affleck), 060-128 solo nell'MCU (Cox); nessuna apparizione persa; ID e pagina canonica invariati", mm_['id-matt-murdock-daredevil']['apparizioni'] == ['035'] and mm_['id-matt-murdock-mcu']['apparizioni'] == ['060', '065', '082', '105', '122', '128'] and mm_['id-matt-murdock-daredevil']['pagina_principale'] == 'char-matt-murdock-daredevil' and r['redirect']['char-matt-murdock-daredevil']['verso'] == ['id-matt-murdock-daredevil'])
     c = r['conteggi']
+    ffh = {i['id']: i for i in r['identita']}
+    chk("Fantastici Quattro: ogni incarnazione in una sola continuita' (028 1994, 029-030 Story, 031 Trank, 125 Earth-828, 102 Terra-838), nessuna apparizione persa, ID originali e pagine canoniche invariati",
+        all(set(ffh[k]['apparizioni']) | set(ffh[k]['apparizioni_spostate']) == set(v) for k, v in {'id-reed-richards': {'028', '029', '030', '031', '102', '125'}, 'id-sue-storm': {'028', '029', '030', '031', '125'}, 'id-johnny-storm-human-torch': {'028', '029', '030', '031', '117', '125'}, 'id-ben-grimm': {'028', '029', '030', '031', '125'}, 'id-victor-von-doom': {'028', '029', '030', '031'}}.items())
+        and ffh['id-reed-richards']['apparizioni'] == ['029', '030'] and ffh['id-reed-richards-first-steps']['universo'] == 'uni-earth-828' and ffh['id-reed-richards-first-steps']['interpreti'] == ['Pedro Pascal'] and ffh['id-reed-richards-illuminati']['universo'] == 'uni-earth-838'
+        and ffh['id-reed-richards-trank']['universo'] == 'uni-earth-trn123' and ffh['id-reed-richards-1994']['universo'] == 'uni-fantastic-four-1994' and 'id-victor-von-doom-first-steps' not in ffh
+        and r['redirect']['char-reed-richards']['verso'] == ['id-reed-richards'])
     chk('conteggio identita\' coerente (che contano = totali - non contanti)', c['identita_che_contano'] == sum(1 for i in r['identita'] if i['conta_come_personaggio']))
     print('ESITO:', 'OK' if ok else 'FALLITO'); return 0 if ok else 1
 if __name__ == '__main__':

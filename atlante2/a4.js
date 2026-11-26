@@ -97,6 +97,7 @@
       var ps = G.r.filter(function (r) { return r[3] === 'c' && BY[r[0]] && BY[r[1]] && ((BY[r[0]].u === a && BY[r[1]].u === b) || (BY[r[0]].u === b && BY[r[1]].u === a)); });
       if (!ps.length) sheet.appendChild(h('p', 'empty', 'Nessuna controparte documentata tra questi due universi.'));
       ps.forEach(function (r) { var d = h('div', 'a4-pair'); d.appendChild(btn('chip', nm(r[0]), function () { C.openId(r[0]); })); d.appendChild(h('span', 'soft', '↔')); d.appendChild(btn('chip', nm(r[1]), function () { C.openId(r[1]); })); d.appendChild(h('small', '', VL[r[4]])); sheet.appendChild(d); });
+      sheet.appendChild(btn('btn fill', 'Confronto dettagliato', function () { C.api.nav('a3', { a3: { v: 'cp', ua: a, ub: b } }); }));
       sheet.appendChild(btn('btn ghost', 'Chiudi il confronto', function () { cmp = ''; s.cmp = ''; sheet.hidden = true; }));
     }
     load(function () { /* dati controparti pronti per il confronto */ });
@@ -219,16 +220,18 @@
   }
   function renderPc() {
     C.frame(); var s = C.A3(); s.m = s.m || 'n'; if (s.doc === undefined) s.doc = 1; C.api.setTitle('Percorso', 'tra due identità'); var root = h('div', 'a4-root'); C.body.appendChild(root);
+    root.appendChild(tabsPc('pc'));
     root.appendChild(h('p', 'a3-note', 'Il percorso usa solo collegamenti presenti nel registro. Narrativo: relazioni e controparti documentate; nessuna associazione editoriale. Per impostazione predefinita le relazioni non verificate sono escluse.'));
     var fa = h('div', 'a4-ab'), fb = h('div', 'a4-ab'); root.appendChild(h('label', 'soft', 'Da')); root.appendChild(fa); root.appendChild(h('label', 'soft', 'A')); root.appendChild(fb);
     var la = h('p', 'a4-sel', s.a ? nm(s.a) : 'Nessuna selezione'), lb = h('p', 'a4-sel', s.b ? nm(s.b) : 'Nessuna selezione');
     var ia = pickList(fa, function (i) { s.a = i; la.textContent = nm(i); run(); }, 'Identità di partenza'), ib = pickList(fb, function (i) { s.b = i; lb.textContent = nm(i); run(); }, 'Identità di arrivo'); fa.appendChild(la); fb.appendChild(lb);
+    var sw = btn('chip a4-swap', '⇅ Inverti partenza e arrivo', function () { var t = s.a; s.a = s.b; s.b = t; renderPc(); }, { 'aria-label': 'Inverti partenza e arrivo' }); sw.disabled = !(s.a || s.b); root.appendChild(sw);
     var md = h('div', 'a4-tools'); [['n', 'Narrativo'], ['a', 'Co-apparizioni'], ['x', 'Misto']].forEach(function (x) { var k = x[0] === 'a' ? 'c' : x[0]; md.appendChild(btn('chip' + (s.m === x[0] || (x[0] === 'x' && s.m === 'mix') ? ' on' : ''), x[1], function () { s.m = x[0] === 'x' ? 'mix' : x[0] === 'a' ? 'co' : 'n'; renderPc(); })); });
     md.appendChild(btn('chip' + (s.doc ? '' : ' on'), 'Includi non verificate', function () { s.doc = s.doc ? 0 : 1; renderPc(); }, { title: 'Di default sono escluse' }));
     var nA = (s.m !== 'n' ? 1 : 0) + (s.doc ? 0 : 1), fbp = btn('chip a4-fbtn' + (nA ? ' on' : ''), 'Filtri' + (nA ? ' · ' + nA : '') + (s.fo ? ' ▴' : ' ▾'), function () { s.fo = !s.fo; md.hidden = !s.fo; fbp.textContent = 'Filtri' + (nA ? ' · ' + nA : '') + (s.fo ? ' ▴' : ' ▾'); fbp.setAttribute('aria-expanded', s.fo ? 'true' : 'false'); }, { 'aria-expanded': s.fo ? 'true' : 'false' }); md.hidden = !s.fo; root.appendChild(fbp); root.appendChild(md);
     var out = h('div', 'a4-out'); root.appendChild(out);
     function step(p) {
-      var d = h('div', 'a4-step'); d.appendChild(btn('chip', nm(p.id), function () { s.c = p.id; C.api.nav('a3', { a3: { v: 'nx', c: p.id } }); }));
+      var d = h('div', 'a4-step'); var un = BY[p.id] && BY[p.id].u ? C.uniNome(BY[p.id].u) : ''; var ch = btn('chip', nm(p.id), function () { s.c = p.id; C.api.nav('a3', { a3: { v: 'nx', c: p.id } }); }, { 'aria-label': nm(p.id) + (un ? ', ' + un : '') + ': apri nel TVA Nexus' }); d.appendChild(ch); if (un) d.appendChild(h('small', 'soft a4-un', un));
       if (p.e) { var r = p.e.k === 'r' ? G.r[p.e.i] : null; var txt = p.e.k === 'a' ? 'Co-apparizioni: ' + p.e.n + ' apparizioni in comune (non è una relazione narrativa)' : (TL[G.tipi[r[2]]] || '') + ' · ' + VL[r[4]]; d.insertBefore(h('span', 'a4-e' + (p.e.k === 'a' ? ' ca' : ''), '↓ ' + txt + (p.e.k === 'r' && r[0] === p.from ? ' (' + nm(p.from) + ' → ' + nm(p.id) + ')' : '')), d.firstChild); }
       return d;
     }
@@ -239,10 +242,48 @@
       var first = search(null); if (!first) { out.appendChild(h('p', 'empty', 'Nessun percorso documentato' + (V ? '' : '') + ' tra «' + nm(s.a) + '» e «' + nm(s.b) + '» con le regole scelte. Nessun collegamento viene inventato.' + (V ? ' Puoi includere le relazioni non verificate.' : ''))); return; }
       var paths = [first], sigs = {}; sigs[first.map(function (x) { return x.id; }).join('>')] = 1;
       for (var i = 1; i < first.length && paths.length < 3; i++) { var bl = {}, a1 = first[i - 1].id, b1 = first[i].id; bl[a1 < b1 ? a1 + '|' + b1 : b1 + '|' + a1] = 1; var alt = search(bl); if (alt) { var sg = alt.map(function (x) { return x.id; }).join('>'); if (!sigs[sg]) { sigs[sg] = 1; paths.push(alt); } } }
-      paths.forEach(function (p, k) { var card = h('section', 'a4-path'); card.appendChild(h('h3', '', (k ? 'Alternativa ' + k : 'Percorso più breve') + ' · ' + (p.length - 1) + (p.length === 2 ? ' passo' : ' passi'))); p.forEach(function (x) { card.appendChild(step(x)); }); out.appendChild(card); });
+      paths.forEach(function (p, k) { var card = h('section', 'a4-path'); card.appendChild(h('h3', '', (k ? 'Alternativa ' + k : 'Percorso più breve') + ' · ' + (p.length - 1) + (p.length === 2 ? ' passo' : ' passi'))); p.forEach(function (x) { card.appendChild(step(x)); }); card.appendChild(btn('btn ghost a4-opn', 'Apri nel TVA Nexus', function () { C.api.nav('a3', { a3: { v: 'nx', c: p[0].id } }); })); out.appendChild(card); });
     }
     load(run);
   }
-  W.tvaA4 = { mv: renderMv, nx: renderNx, pc: renderPc, state: function () { return { g: !!G, rel: G ? G.r.length : 0 }; }, data: function () { return G; } };
+
+  /* ---------- CONFRONTO TRA UNIVERSI (A4.3) ---------- */
+  function tabsPc(cur) {
+    var t = h('div', 'a4-tabs'); t.setAttribute('role', 'tablist');
+    [['pc', 'Percorso tra identità'], ['cp', 'Confronto tra universi']].forEach(function (x) {
+      var b = btn('chip' + (cur === x[0] ? ' on' : ''), x[1], function () { if (cur !== x[0]) C.api.nav('a3', { a3: x[0] === 'cp' ? { v: 'cp', ua: C.A3().ua || '', ub: C.A3().ub || '' } : { v: 'pc', a: C.A3().a || '', b: C.A3().b || '', m: 'n' } }); }, { role: 'tab', 'aria-selected': cur === x[0] ? 'true' : 'false' }); t.appendChild(b);
+    }); return t;
+  }
+  function titName(n) { var FV = W.marvelIdDaNumeroVisibile, e = W.tvaIdx && W.tvaIdx.titoli && W.tvaIdx.titoli['item-' + (FV ? FV(n) : n)]; return (e && e.title) || ''; }
+  function renderCp() {
+    C.frame(); var s = C.A3(); C.api.setTitle('Confronto', 'tra due universi'); var root = h('div', 'a4-root'); C.body.appendChild(root); root.appendChild(tabsPc('cp'));
+    root.appendChild(h('p', 'a3-note', 'Il confronto usa solo dati del registro: titoli in comune dalla mappa, controparti dichiarate dalle relazioni documentate e identità catalogate in ciascun universo. Nessuna distanza o parentela è inventata; incarnazioni diverse restano distinte.'));
+    var us = (C.ORD.U || []).filter(function (v) { return v.k !== 'h'; }), out = h('div', 'a4-out');
+    function sel(key, lab) {
+      var w = h('label', 'a4-usel'); w.appendChild(h('span', 'soft', lab)); var el = h('select', 'a3-in'); el.setAttribute('aria-label', lab); var o0 = h('option', '', 'Scegli un universo…'); o0.value = ''; el.appendChild(o0);
+      us.slice().sort(function (x, y) { return (C.uniNome(x.i) || x.n).localeCompare(C.uniNome(y.i) || y.n, 'it'); }).forEach(function (v) { var o = h('option', '', C.uniNome(v.i) || v.n); o.value = v.i; if (s[key] === v.i) o.selected = true; el.appendChild(o); });
+      el.addEventListener('change', function () { s[key] = el.value; run(); }); w.appendChild(el); return w;
+    }
+    root.appendChild(sel('ua', 'Universo A')); root.appendChild(sel('ub', 'Universo B'));
+    root.appendChild(btn('chip a4-swap', '⇅ Inverti A e B', function () { var t = s.ua; s.ua = s.ub; s.ub = t; renderCp(); })); root.appendChild(out);
+    function ids(u) { return (C.ORD.p || []).filter(function (v) { return v.u === u; }); }
+    function sec(t, n) { var d = h('section', 'a4-path'); d.appendChild(h('h3', '', t + ' · ' + n)); out.appendChild(d); return d; }
+    function run() {
+      out.textContent = ''; var a = s.ua, b = s.ub; if (!a || !b) { out.appendChild(h('p', 'empty', 'Scegli due universi per confrontarli.')); return; } if (a === b) { out.appendChild(h('p', 'empty', 'Hai scelto lo stesso universo due volte.')); return; }
+      var ta = G.ut[a] || [], tb = G.ut[b] || [], sh = ta.filter(function (n) { return tb.indexOf(n) >= 0; });
+      var ia = ids(a), ib = ids(b), setA = {}, setB = {}; ia.forEach(function (v) { setA[v.i] = 1; }); ib.forEach(function (v) { setB[v.i] = 1; });
+      var pairs = G.r.filter(function (r) { return r[3] === 'c' && ((setA[r[0]] && setB[r[1]]) || (setB[r[0]] && setA[r[1]])); }), inPair = {}; pairs.forEach(function (r) { inPair[r[0]] = 1; inPair[r[1]] = 1; });
+      var h0 = h('p', 'a3-note', (C.uniNome(a) || nm(a)) + ': ' + ia.length + ' identità · ' + ta.length + ' titoli — ' + (C.uniNome(b) || nm(b)) + ': ' + ib.length + ' identità · ' + tb.length + ' titoli.'); out.appendChild(h0);
+      var c1 = sec('Titoli in comune', sh.length); if (!sh.length) c1.appendChild(h('p', 'empty', 'Nessun titolo condiviso nei dati della mappa.')); sh.forEach(function (n) { c1.appendChild(h('div', 'a4-cmpt', 'N°' + n + (titName(n) ? ' · ' + titName(n) : ''))); });
+      var c2 = sec('Controparti dichiarate', pairs.length); if (!pairs.length) c2.appendChild(h('p', 'empty', 'Nessuna controparte documentata tra questi due universi.'));
+      pairs.forEach(function (r) { var x = setA[r[0]] ? r : [r[1], r[0], r[2], r[3], r[4]]; var d = h('div', 'a4-pair'); d.appendChild(btn('chip', nm(x[0]), function () { C.openId(x[0]); })); d.appendChild(h('span', 'soft', '↔')); d.appendChild(btn('chip', nm(x[1]), function () { C.openId(x[1]); })); d.appendChild(h('small', '', VL[r[4]])); c2.appendChild(d); });
+      [[a, ia, 'Solo in '], [b, ib, 'Solo in ']].forEach(function (z) {
+        var rest = z[1].filter(function (v) { return !inPair[v.i]; }), c = sec(z[2] + (C.uniNome(z[0]) || nm(z[0])), rest.length); if (!rest.length) c.appendChild(h('p', 'empty', 'Ogni identità ha una controparte documentata.'));
+        var g = h('div', 'a3-grid c3'); rest.slice(0, 18).forEach(function (v) { g.appendChild(C.tile(v, true)); }); if (rest.length) c.appendChild(g); if (rest.length > 18) c.appendChild(btn('btn ghost', 'Catalogo dell’universo (' + rest.length + ')', function () { C.api.nav('a3', { a3: { v: 'cat', t: 'p', m: 'c', n: 36, u: z[0] } }); }));
+      });
+    }
+    load(run);
+  }
+  W.tvaA4 = { mv: renderMv, nx: renderNx, pc: renderPc, cp: renderCp, state: function () { return { g: !!G, rel: G ? G.r.length : 0 }; }, data: function () { return G; } };
   if (W.tvaA4Boot) W.tvaA4Boot();
 })();

@@ -1511,7 +1511,7 @@
     "scheda char-ben-grimm (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -1531,7 +1531,7 @@
     "scheda char-ben-grimm (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -1551,7 +1551,7 @@
     "scheda char-ben-grimm (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -1571,7 +1571,227 @@
     "scheda char-ben-grimm (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-fa35fc09cb",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-ben-grimm-1994",
+   "a": "id-johnny-storm-human-torch-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-ben-grimm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-fa1d66fcff",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-ben-grimm-1994",
+   "a": "id-reed-richards-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-ben-grimm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-0a7c835fc2",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-ben-grimm-1994",
+   "a": "id-sue-storm-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-ben-grimm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-ce113902bf",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-ben-grimm-1994",
+   "a": "id-victor-von-doom-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-ben-grimm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-f8e93e84e2",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-ben-grimm-first-steps",
+   "a": "id-johnny-storm-human-torch-first-steps",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-ben-grimm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-828; N° 125)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-988f0b9379",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-ben-grimm-first-steps",
+   "a": "id-reed-richards-first-steps",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-ben-grimm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-828; N° 125)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-f539d44454",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-ben-grimm-first-steps",
+   "a": "id-sue-storm-first-steps",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-ben-grimm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-828; N° 125)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-e01052ba17",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-ben-grimm-trank",
+   "a": "id-johnny-storm-human-torch-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-ben-grimm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-57e7545138",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-ben-grimm-trank",
+   "a": "id-reed-richards-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-ben-grimm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-1e062d23ef",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-ben-grimm-trank",
+   "a": "id-sue-storm-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-ben-grimm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-df950008ef",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-ben-grimm-trank",
+   "a": "id-victor-von-doom-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-ben-grimm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -5925,18 +6145,18 @@
    "controversa": false
   },
   {
-   "id": "rel-6f59a1b19f",
+   "id": "rel-bd99205d98",
    "tipo": "correlato",
    "classe": "editoriale",
    "da": "id-franklin-richards",
-   "a": "id-ben-grimm",
+   "a": "id-ben-grimm-first-steps",
    "simmetrica": false,
    "qualifica": null,
    "fonte": [
     "scheda char-franklin-richards (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-828)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -5945,18 +6165,18 @@
    "controversa": false
   },
   {
-   "id": "rel-4a18da3c83",
+   "id": "rel-78361e2e4f",
    "tipo": "correlato",
    "classe": "editoriale",
    "da": "id-franklin-richards",
-   "a": "id-johnny-storm-human-torch",
+   "a": "id-johnny-storm-human-torch-first-steps",
    "simmetrica": false,
    "qualifica": null,
    "fonte": [
     "scheda char-franklin-richards (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-828)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -5965,18 +6185,18 @@
    "controversa": false
   },
   {
-   "id": "rel-575dcaa17f",
+   "id": "rel-8bb2a15759",
    "tipo": "correlato",
    "classe": "editoriale",
    "da": "id-franklin-richards",
-   "a": "id-reed-richards",
+   "a": "id-reed-richards-first-steps",
    "simmetrica": false,
    "qualifica": null,
    "fonte": [
     "scheda char-franklin-richards (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-828)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -5985,18 +6205,18 @@
    "controversa": false
   },
   {
-   "id": "rel-fc6ea1ef74",
+   "id": "rel-05d260df16",
    "tipo": "correlato",
    "classe": "editoriale",
    "da": "id-franklin-richards",
-   "a": "id-sue-storm",
+   "a": "id-sue-storm-first-steps",
    "simmetrica": false,
    "qualifica": null,
    "fonte": [
     "scheda char-franklin-richards (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-828)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -6085,18 +6305,18 @@
    "controversa": false
   },
   {
-   "id": "rel-f0f752695d",
+   "id": "rel-2eb8234691",
    "tipo": "correlato",
    "classe": "editoriale",
    "da": "id-galactus",
-   "a": "id-ben-grimm",
+   "a": "id-ben-grimm-first-steps",
    "simmetrica": false,
    "qualifica": null,
    "fonte": [
     "scheda char-galactus (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-828)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -6105,18 +6325,18 @@
    "controversa": false
   },
   {
-   "id": "rel-12408311c4",
+   "id": "rel-61327141b8",
    "tipo": "correlato",
    "classe": "editoriale",
    "da": "id-galactus",
-   "a": "id-johnny-storm-human-torch",
+   "a": "id-johnny-storm-human-torch-first-steps",
    "simmetrica": false,
    "qualifica": null,
    "fonte": [
     "scheda char-galactus (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-828)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -6125,18 +6345,18 @@
    "controversa": false
   },
   {
-   "id": "rel-ca43db4efd",
+   "id": "rel-15e85c047c",
    "tipo": "correlato",
    "classe": "editoriale",
    "da": "id-galactus",
-   "a": "id-reed-richards",
+   "a": "id-reed-richards-first-steps",
    "simmetrica": false,
    "qualifica": null,
    "fonte": [
     "scheda char-galactus (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-828)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -6145,18 +6365,18 @@
    "controversa": false
   },
   {
-   "id": "rel-8f838e2969",
+   "id": "rel-ff72b64bba",
    "tipo": "correlato",
    "classe": "editoriale",
    "da": "id-galactus",
-   "a": "id-sue-storm",
+   "a": "id-sue-storm-first-steps",
    "simmetrica": false,
    "qualifica": null,
    "fonte": [
     "scheda char-galactus (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-828)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -8737,7 +8957,7 @@
     "scheda char-johnny-storm-human-torch (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -8757,7 +8977,7 @@
     "scheda char-johnny-storm-human-torch (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -8777,7 +8997,7 @@
     "scheda char-johnny-storm-human-torch (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -8797,7 +9017,227 @@
     "scheda char-johnny-storm-human-torch (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-8be12f64d7",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-johnny-storm-human-torch-1994",
+   "a": "id-ben-grimm-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-johnny-storm-human-torch (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-fc9738e438",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-johnny-storm-human-torch-1994",
+   "a": "id-reed-richards-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-johnny-storm-human-torch (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-62ee08bdae",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-johnny-storm-human-torch-1994",
+   "a": "id-sue-storm-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-johnny-storm-human-torch (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-edc6dc39c8",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-johnny-storm-human-torch-1994",
+   "a": "id-victor-von-doom-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-johnny-storm-human-torch (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-37aaefe7af",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-johnny-storm-human-torch-first-steps",
+   "a": "id-ben-grimm-first-steps",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-johnny-storm-human-torch (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-828; N° 125)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-cd02e4aa30",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-johnny-storm-human-torch-first-steps",
+   "a": "id-reed-richards-first-steps",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-johnny-storm-human-torch (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-828; N° 125)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-f6594a9de0",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-johnny-storm-human-torch-first-steps",
+   "a": "id-sue-storm-first-steps",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-johnny-storm-human-torch (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-828; N° 125)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-68bca304d3",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-johnny-storm-human-torch-trank",
+   "a": "id-ben-grimm-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-johnny-storm-human-torch (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-41b4d3e8f6",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-johnny-storm-human-torch-trank",
+   "a": "id-reed-richards-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-johnny-storm-human-torch (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-7e6a1d67a9",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-johnny-storm-human-torch-trank",
+   "a": "id-sue-storm-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-johnny-storm-human-torch (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-8c7574cd0a",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-johnny-storm-human-torch-trank",
+   "a": "id-victor-von-doom-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-johnny-storm-human-torch (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -14666,7 +15106,7 @@
     "scheda char-reed-richards (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -14686,7 +15126,7 @@
     "scheda char-reed-richards (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -14706,7 +15146,7 @@
     "scheda char-reed-richards (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -14726,7 +15166,227 @@
     "scheda char-reed-richards (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-d4acca80b4",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-reed-richards-1994",
+   "a": "id-ben-grimm-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-reed-richards (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-393a6e737f",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-reed-richards-1994",
+   "a": "id-johnny-storm-human-torch-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-reed-richards (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-f9ac69abf7",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-reed-richards-1994",
+   "a": "id-sue-storm-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-reed-richards (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-00a581c933",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-reed-richards-1994",
+   "a": "id-victor-von-doom-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-reed-richards (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-63cf809f80",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-reed-richards-first-steps",
+   "a": "id-ben-grimm-first-steps",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-reed-richards (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-828; N° 125)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-f2e21a16ee",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-reed-richards-first-steps",
+   "a": "id-johnny-storm-human-torch-first-steps",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-reed-richards (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-828; N° 125)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-120c68edc8",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-reed-richards-first-steps",
+   "a": "id-sue-storm-first-steps",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-reed-richards (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-828; N° 125)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-caf9572aae",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-reed-richards-trank",
+   "a": "id-ben-grimm-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-reed-richards (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-9c0f556743",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-reed-richards-trank",
+   "a": "id-johnny-storm-human-torch-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-reed-richards (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-2cbfd35c77",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-reed-richards-trank",
+   "a": "id-sue-storm-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-reed-richards (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-37dda87b97",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-reed-richards-trank",
+   "a": "id-victor-von-doom-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-reed-richards (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -15966,7 +16626,7 @@
     "scheda char-silver-surfer (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-121698)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -15986,7 +16646,7 @@
     "scheda char-silver-surfer (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-121698)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -16006,7 +16666,7 @@
     "scheda char-silver-surfer (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-121698)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -16026,7 +16686,7 @@
     "scheda char-silver-surfer (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - risolto per continuita' (stesso universo: uni-earth-121698)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -16586,7 +17246,7 @@
     "scheda char-sue-storm (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -16606,7 +17266,7 @@
     "scheda char-sue-storm (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -16626,7 +17286,7 @@
     "scheda char-sue-storm (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -16646,7 +17306,227 @@
     "scheda char-sue-storm (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-ee63ef8647",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-sue-storm-1994",
+   "a": "id-ben-grimm-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-sue-storm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-974bb6768a",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-sue-storm-1994",
+   "a": "id-johnny-storm-human-torch-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-sue-storm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-fbb37ccdd6",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-sue-storm-1994",
+   "a": "id-reed-richards-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-sue-storm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-b8087ff558",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-sue-storm-1994",
+   "a": "id-victor-von-doom-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-sue-storm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-a5151befd4",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-sue-storm-first-steps",
+   "a": "id-ben-grimm-first-steps",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-sue-storm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-828; N° 125)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-12adf013f7",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-sue-storm-first-steps",
+   "a": "id-johnny-storm-human-torch-first-steps",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-sue-storm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-828; N° 125)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-4c7ce0148d",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-sue-storm-first-steps",
+   "a": "id-reed-richards-first-steps",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-sue-storm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-828; N° 125)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-04ad29bae9",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-sue-storm-trank",
+   "a": "id-ben-grimm-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-sue-storm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-8de356c32c",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-sue-storm-trank",
+   "a": "id-johnny-storm-human-torch-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-sue-storm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-41c453a13a",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-sue-storm-trank",
+   "a": "id-reed-richards-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-sue-storm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-11f9f328ad",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-sue-storm-trank",
+   "a": "id-victor-von-doom-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-sue-storm (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -18146,7 +19026,7 @@
     "scheda char-victor-von-doom (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -18166,7 +19046,7 @@
     "scheda char-victor-von-doom (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -18186,7 +19066,7 @@
     "scheda char-victor-von-doom (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -18206,7 +19086,167 @@
     "scheda char-victor-von-doom (campo CORRELATI)"
    ],
    "verifica": "guida",
-   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-121698; N° 029, 030)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-0ba9867c8e",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-victor-von-doom-1994",
+   "a": "id-ben-grimm-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-victor-von-doom (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-55a79e2af1",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-victor-von-doom-1994",
+   "a": "id-johnny-storm-human-torch-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-victor-von-doom (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-b1f63adf89",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-victor-von-doom-1994",
+   "a": "id-reed-richards-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-victor-von-doom (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-a81a53e036",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-victor-von-doom-1994",
+   "a": "id-sue-storm-1994",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-victor-von-doom (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-fantastic-four-1994; N° 028)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-d65c271595",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-victor-von-doom-trank",
+   "a": "id-ben-grimm-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-victor-von-doom (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-6fcc5c0e73",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-victor-von-doom-trank",
+   "a": "id-johnny-storm-human-torch-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-victor-von-doom (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-80da2ffcc8",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-victor-von-doom-trank",
+   "a": "id-reed-richards-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-victor-von-doom (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
+   "origine": "guida:CORRELATI",
+   "conferme": [
+    "guida:CORRELATI"
+   ],
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-68d073f37f",
+   "tipo": "correlato",
+   "classe": "editoriale",
+   "da": "id-victor-von-doom-trank",
+   "a": "id-sue-storm-trank",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "scheda char-victor-von-doom (campo CORRELATI)"
+   ],
+   "verifica": "guida",
+   "nota": "Associazione editoriale «Correlati»: non implica alcuna relazione narrativa - continuita' e opere in comune (uni-earth-trn123; N° 031)",
    "origine": "guida:CORRELATI",
    "conferme": [
     "guida:CORRELATI"
@@ -19337,6 +20377,72 @@
    "controversa": false
   },
   {
+   "id": "rel-fff5ce0a2f",
+   "tipo": "stessa_scheda",
+   "classe": "editoriale",
+   "da": "id-ben-grimm",
+   "a": "id-ben-grimm-1994",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "da verificare",
+   "nota": "Continuita' distinte: identita' distinte, non unificate.",
+   "origine": "A2:identita",
+   "conferme": [
+    "A2:identita"
+   ],
+   "verifica_originale": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-878f4ff385",
+   "tipo": "stessa_scheda",
+   "classe": "editoriale",
+   "da": "id-ben-grimm",
+   "a": "id-ben-grimm-first-steps",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "da verificare",
+   "nota": "Continuita' distinte: identita' distinte, non unificate.",
+   "origine": "A2:identita",
+   "conferme": [
+    "A2:identita"
+   ],
+   "verifica_originale": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-6b8e28e980",
+   "tipo": "stessa_scheda",
+   "classe": "editoriale",
+   "da": "id-ben-grimm",
+   "a": "id-ben-grimm-trank",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "da verificare",
+   "nota": "Continuita' distinte: identita' distinte, non unificate.",
+   "origine": "A2:identita",
+   "conferme": [
+    "A2:identita"
+   ],
+   "verifica_originale": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
    "id": "rel-a6e1305885",
    "tipo": "stessa_scheda",
    "classe": "editoriale",
@@ -19403,6 +20509,72 @@
    "controversa": false
   },
   {
+   "id": "rel-302884917e",
+   "tipo": "stessa_scheda",
+   "classe": "editoriale",
+   "da": "id-johnny-storm-human-torch",
+   "a": "id-johnny-storm-human-torch-1994",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "da verificare",
+   "nota": "Continuita' distinte: identita' distinte, non unificate.",
+   "origine": "A2:identita",
+   "conferme": [
+    "A2:identita"
+   ],
+   "verifica_originale": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-ff75b6970d",
+   "tipo": "stessa_scheda",
+   "classe": "editoriale",
+   "da": "id-johnny-storm-human-torch",
+   "a": "id-johnny-storm-human-torch-first-steps",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "da verificare",
+   "nota": "Continuita' distinte: identita' distinte, non unificate.",
+   "origine": "A2:identita",
+   "conferme": [
+    "A2:identita"
+   ],
+   "verifica_originale": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-04931d7796",
+   "tipo": "stessa_scheda",
+   "classe": "editoriale",
+   "da": "id-johnny-storm-human-torch",
+   "a": "id-johnny-storm-human-torch-trank",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "da verificare",
+   "nota": "Continuita' distinte: identita' distinte, non unificate.",
+   "origine": "A2:identita",
+   "conferme": [
+    "A2:identita"
+   ],
+   "verifica_originale": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
    "id": "rel-975dc87775",
    "tipo": "stessa_scheda",
    "classe": "editoriale",
@@ -19421,6 +20593,204 @@
     "A2:identita"
    ],
    "verifica_originale": "dati interni: la scheda char-matt-murdock-daredevil copre due continuita'; nessuna parentela narrativa dichiarata",
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-90375bf901",
+   "tipo": "stessa_scheda",
+   "classe": "editoriale",
+   "da": "id-reed-richards",
+   "a": "id-reed-richards-1994",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "da verificare",
+   "nota": "Continuita' distinte: identita' distinte, non unificate.",
+   "origine": "A2:identita",
+   "conferme": [
+    "A2:identita"
+   ],
+   "verifica_originale": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-724a06e574",
+   "tipo": "stessa_scheda",
+   "classe": "editoriale",
+   "da": "id-reed-richards",
+   "a": "id-reed-richards-first-steps",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "da verificare",
+   "nota": "Continuita' distinte: identita' distinte, non unificate.",
+   "origine": "A2:identita",
+   "conferme": [
+    "A2:identita"
+   ],
+   "verifica_originale": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-8b54d23877",
+   "tipo": "stessa_scheda",
+   "classe": "editoriale",
+   "da": "id-reed-richards",
+   "a": "id-reed-richards-illuminati",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "da verificare",
+   "nota": "Continuita' distinte: identita' distinte, non unificate.",
+   "origine": "A2:identita",
+   "conferme": [
+    "A2:identita"
+   ],
+   "verifica_originale": "dati interni: la scheda condivisa copre piu' continuita'",
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-1ba29359d4",
+   "tipo": "stessa_scheda",
+   "classe": "editoriale",
+   "da": "id-reed-richards",
+   "a": "id-reed-richards-trank",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "da verificare",
+   "nota": "Continuita' distinte: identita' distinte, non unificate.",
+   "origine": "A2:identita",
+   "conferme": [
+    "A2:identita"
+   ],
+   "verifica_originale": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-44d5938bba",
+   "tipo": "stessa_scheda",
+   "classe": "editoriale",
+   "da": "id-sue-storm",
+   "a": "id-sue-storm-1994",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "da verificare",
+   "nota": "Continuita' distinte: identita' distinte, non unificate.",
+   "origine": "A2:identita",
+   "conferme": [
+    "A2:identita"
+   ],
+   "verifica_originale": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-b297fd6357",
+   "tipo": "stessa_scheda",
+   "classe": "editoriale",
+   "da": "id-sue-storm",
+   "a": "id-sue-storm-first-steps",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "da verificare",
+   "nota": "Continuita' distinte: identita' distinte, non unificate.",
+   "origine": "A2:identita",
+   "conferme": [
+    "A2:identita"
+   ],
+   "verifica_originale": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-af50b15bcd",
+   "tipo": "stessa_scheda",
+   "classe": "editoriale",
+   "da": "id-sue-storm",
+   "a": "id-sue-storm-trank",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "da verificare",
+   "nota": "Continuita' distinte: identita' distinte, non unificate.",
+   "origine": "A2:identita",
+   "conferme": [
+    "A2:identita"
+   ],
+   "verifica_originale": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-bd1c51693b",
+   "tipo": "stessa_scheda",
+   "classe": "editoriale",
+   "da": "id-victor-von-doom",
+   "a": "id-victor-von-doom-1994",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "da verificare",
+   "nota": "Continuita' distinte: identita' distinte, non unificate.",
+   "origine": "A2:identita",
+   "conferme": [
+    "A2:identita"
+   ],
+   "verifica_originale": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "approvazione": "non_richiesta",
+   "controversa": false
+  },
+  {
+   "id": "rel-cd389e3920",
+   "tipo": "stessa_scheda",
+   "classe": "editoriale",
+   "da": "id-victor-von-doom",
+   "a": "id-victor-von-doom-trank",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "da verificare",
+   "nota": "Continuita' distinte: identita' distinte, non unificate.",
+   "origine": "A2:identita",
+   "conferme": [
+    "A2:identita"
+   ],
+   "verifica_originale": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -20912,22 +22282,21 @@
    "da": "id-ben-grimm",
    "a": "org-fantastic-four",
    "simmetrica": false,
-   "qualifica": "membro",
+   "qualifica": null,
    "fonte": [
-    "grafo classico: char-ben-grimm -> org-fantastic-four",
     "https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)"
    ],
    "verifica": "verificata",
-   "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
-   "origine": "guida:grafo-org",
+   "nota": "",
+   "origine": "lotto:lotto_01",
    "conferme": [
-    "guida:grafo-org",
     "lotto:lotto_01"
    ],
-   "esito_verifica": "confermata",
-   "data_verifica": "2026-11-26",
+   "lotto": "lotto_01",
    "approvazione": "non_richiesta",
-   "controversa": false
+   "controversa": false,
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-a026e23edf",
@@ -21404,22 +22773,21 @@
    "da": "id-johnny-storm-human-torch",
    "a": "org-fantastic-four",
    "simmetrica": false,
-   "qualifica": "membro",
+   "qualifica": null,
    "fonte": [
-    "grafo classico: char-johnny-storm-human-torch -> org-fantastic-four",
     "https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)"
    ],
    "verifica": "verificata",
-   "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
-   "origine": "guida:grafo-org",
+   "nota": "",
+   "origine": "lotto:lotto_01",
    "conferme": [
-    "guida:grafo-org",
     "lotto:lotto_01"
    ],
-   "esito_verifica": "confermata",
-   "data_verifica": "2026-11-26",
+   "lotto": "lotto_01",
    "approvazione": "non_richiesta",
-   "controversa": false
+   "controversa": false,
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-dfc9f08526",
@@ -21762,46 +23130,21 @@
    "da": "id-reed-richards",
    "a": "org-fantastic-four",
    "simmetrica": false,
-   "qualifica": "membro",
+   "qualifica": null,
    "fonte": [
-    "grafo classico: char-reed-richards -> org-fantastic-four",
     "https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)"
    ],
    "verifica": "verificata",
-   "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
-   "origine": "guida:grafo-org",
+   "nota": "",
+   "origine": "lotto:lotto_01",
    "conferme": [
-    "guida:grafo-org",
     "lotto:lotto_01"
    ],
-   "esito_verifica": "confermata",
-   "data_verifica": "2026-11-26",
+   "lotto": "lotto_01",
    "approvazione": "non_richiesta",
-   "controversa": false
-  },
-  {
-   "id": "rel-ac53121ff6",
-   "tipo": "appartenenza",
-   "classe": "narrativa",
-   "da": "id-reed-richards",
-   "a": "org-illuminati",
-   "simmetrica": false,
-   "qualifica": "membro",
-   "fonte": [
-    "grafo classico: char-reed-richards -> org-illuminati",
-    "https://marvelcinematicuniverse.fandom.com/wiki/Illuminati"
-   ],
-   "verifica": "verificata",
-   "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
-   "origine": "guida:grafo-org",
-   "conferme": [
-    "guida:grafo-org",
-    "verifica_esterna"
-   ],
+   "controversa": false,
    "esito_verifica": "confermata",
-   "data_verifica": "2026-11-26",
-   "approvazione": "non_richiesta",
-   "controversa": false
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-18543c7f32",
@@ -21881,22 +23224,21 @@
    "da": "id-sue-storm",
    "a": "org-fantastic-four",
    "simmetrica": false,
-   "qualifica": "membro",
+   "qualifica": null,
    "fonte": [
-    "grafo classico: char-sue-storm -> org-fantastic-four",
     "https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)"
    ],
    "verifica": "verificata",
-   "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
-   "origine": "guida:grafo-org",
+   "nota": "",
+   "origine": "lotto:lotto_01",
    "conferme": [
-    "guida:grafo-org",
     "lotto:lotto_01"
    ],
-   "esito_verifica": "confermata",
-   "data_verifica": "2026-11-26",
+   "lotto": "lotto_01",
    "approvazione": "non_richiesta",
-   "controversa": false
+   "controversa": false,
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-9a853f7792",
@@ -22165,21 +23507,19 @@
    "simmetrica": true,
    "qualifica": null,
    "fonte": [
-    "scheda char-reed-richards (campo RELAZIONI)",
-    "scheda char-sue-storm (campo RELAZIONI)",
     "https://en.wikipedia.org/wiki/Fantastic_Four:_Rise_of_the_Silver_Surfer"
    ],
    "verifica": "verificata",
-   "nota": "«Coniuge» dichiarato nella scheda char-reed-richards",
-   "origine": "guida:RELAZIONI",
+   "nota": "",
+   "origine": "lotto:lotto_01",
    "conferme": [
-    "guida:RELAZIONI",
     "lotto:lotto_01"
    ],
-   "esito_verifica": "confermata",
-   "data_verifica": "2026-11-26",
+   "lotto": "lotto_01",
    "approvazione": "non_richiesta",
-   "controversa": false
+   "controversa": false,
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-7f3c6746b4",
@@ -22274,27 +23614,6 @@
    "controversa": false,
    "esito_verifica": "confermata",
    "data_verifica": "2026-11-26"
-  },
-  {
-   "id": "rel-d73a67e966",
-   "tipo": "famiglia_fratelli",
-   "classe": "narrativa",
-   "da": "id-johnny-storm-human-torch",
-   "a": "id-sue-storm",
-   "simmetrica": true,
-   "qualifica": null,
-   "fonte": [
-    "scheda char-johnny-storm-human-torch (campo RELAZIONI)",
-    "scheda char-sue-storm (campo RELAZIONI)"
-   ],
-   "verifica": "guida",
-   "nota": "«Sorella» dichiarato nella scheda char-johnny-storm-human-torch",
-   "origine": "guida:RELAZIONI",
-   "conferme": [
-    "guida:RELAZIONI"
-   ],
-   "approvazione": "non_richiesta",
-   "controversa": false
   },
   {
    "id": "rel-9ca4f2abaf",
@@ -25215,7 +26534,62 @@
    "data_verifica": "2026-11-26"
   }
  ],
- "coda": [],
+ "coda": [
+  {
+   "motivo": "identita' non univoca: pagina multi-identita' non risolvibile per continuita'/opere (id-johnny-storm-human-torch, id-johnny-storm-human-torch-1994, id-johnny-storm-human-torch-trank, id-johnny-storm-human-torch-first-steps | id-sue-storm, id-sue-storm-1994, id-sue-storm-trank, id-sue-storm-first-steps)",
+   "pagina": "char-johnny-storm-human-torch",
+   "bersaglio": "char-sue-storm",
+   "etichetta": "sorella"
+  },
+  {
+   "motivo": "identita' non univoca: pagina multi-identita' non risolvibile per continuita'/opere (id-reed-richards, id-reed-richards-1994, id-reed-richards-trank, id-reed-richards-first-steps, id-reed-richards-illuminati | id-sue-storm, id-sue-storm-1994, id-sue-storm-trank, id-sue-storm-first-steps)",
+   "pagina": "char-reed-richards",
+   "bersaglio": "char-sue-storm",
+   "etichetta": "coniuge"
+  },
+  {
+   "motivo": "identita' non univoca: pagina multi-identita' non risolvibile per continuita'/opere (id-sue-storm, id-sue-storm-1994, id-sue-storm-trank, id-sue-storm-first-steps | id-reed-richards, id-reed-richards-1994, id-reed-richards-trank, id-reed-richards-first-steps, id-reed-richards-illuminati)",
+   "pagina": "char-sue-storm",
+   "bersaglio": "char-reed-richards",
+   "etichetta": "coniuge"
+  },
+  {
+   "motivo": "identita' non univoca: pagina multi-identita' non risolvibile per continuita'/opere (id-sue-storm, id-sue-storm-1994, id-sue-storm-trank, id-sue-storm-first-steps | id-johnny-storm-human-torch, id-johnny-storm-human-torch-1994, id-johnny-storm-human-torch-trank, id-johnny-storm-human-torch-first-steps)",
+   "pagina": "char-sue-storm",
+   "bersaglio": "char-johnny-storm-human-torch",
+   "etichetta": "fratello"
+  },
+  {
+   "motivo": "coppia presente solo nel grafo classico: l'etichetta e' identica nei due versi, la direzione non e' desumibile dai dati",
+   "pagine": [
+    "char-reed-richards",
+    "char-sue-storm"
+   ],
+   "etichetta": "Coniuge",
+   "identita": [
+    null,
+    null
+   ]
+  },
+  {
+   "motivo": "coppia presente solo nel grafo classico: l'etichetta e' identica nei due versi, la direzione non e' desumibile dai dati",
+   "pagine": [
+    "char-johnny-storm-human-torch",
+    "char-sue-storm"
+   ],
+   "etichetta": "Fratello",
+   "identita": [
+    null,
+    null
+   ]
+  },
+  {
+   "motivo": "identita' non univoca: pagina multi-identita' (id-reed-richards, id-reed-richards-1994, id-reed-richards-trank, id-reed-richards-first-steps, id-reed-richards-illuminati)",
+   "pagina": "char-reed-richards",
+   "org": "org-illuminati",
+   "etichetta": "Membro di"
+  }
+ ],
  "risolte": [
   {
    "motivo": "bersaglio senza scheda/ID nell'Atlante classico (nome solo testuale: non si risolve per nome)",
@@ -25238,9 +26612,37 @@
    "risolta_da": "lotto"
   },
   {
+   "motivo": "identita' non univoca: pagina multi-identita' (id-reed-richards, id-reed-richards-1994, id-reed-richards-trank, id-reed-richards-first-steps, id-reed-richards-illuminati)",
+   "pagina": "char-reed-richards",
+   "org": "org-fantastic-four",
+   "etichetta": "Membro di",
+   "risolta_da": "appartenenza documentata nel lotto per la/e identita' corretta/e"
+  },
+  {
+   "motivo": "identita' non univoca: pagina multi-identita' (id-sue-storm, id-sue-storm-1994, id-sue-storm-trank, id-sue-storm-first-steps)",
+   "pagina": "char-sue-storm",
+   "org": "org-fantastic-four",
+   "etichetta": "Membro di",
+   "risolta_da": "appartenenza documentata nel lotto per la/e identita' corretta/e"
+  },
+  {
+   "motivo": "identita' non univoca: pagina multi-identita' (id-johnny-storm-human-torch, id-johnny-storm-human-torch-1994, id-johnny-storm-human-torch-trank, id-johnny-storm-human-torch-first-steps)",
+   "pagina": "char-johnny-storm-human-torch",
+   "org": "org-fantastic-four",
+   "etichetta": "Membro di",
+   "risolta_da": "appartenenza documentata nel lotto per la/e identita' corretta/e"
+  },
+  {
    "motivo": "identita' non univoca: pagina multi-identita' (id-wolverine, id-wolverine-x-men-97)",
    "pagina": "char-wolverine",
    "org": "org-x-men",
+   "etichetta": "Membro di",
+   "risolta_da": "appartenenza documentata nel lotto per la/e identita' corretta/e"
+  },
+  {
+   "motivo": "identita' non univoca: pagina multi-identita' (id-ben-grimm, id-ben-grimm-1994, id-ben-grimm-trank, id-ben-grimm-first-steps)",
+   "pagina": "char-ben-grimm",
+   "org": "org-fantastic-four",
    "etichetta": "Membro di",
    "risolta_da": "appartenenza documentata nel lotto per la/e identita' corretta/e"
   },
@@ -25346,47 +26748,50 @@
  ],
  "proposte": [],
  "conteggi": {
-  "relazioni_totali": 1212,
+  "relazioni_totali": 1277,
   "per_classe": {
    "controparte": 5,
-   "editoriale": 960,
-   "narrativa": 247
+   "editoriale": 1027,
+   "narrativa": 245
   },
   "per_tipo": {
    "alleanza": 31,
    "amicizia": 29,
-   "appartenenza": 53,
+   "appartenenza": 52,
    "controparte": 5,
    "copia": 1,
-   "correlato": 953,
+   "correlato": 1005,
    "famiglia_coniugi": 4,
    "famiglia_discendente": 1,
-   "famiglia_fratelli": 9,
+   "famiglia_fratelli": 8,
    "famiglia_genitore": 31,
    "ispirato_a": 1,
    "mentorato": 11,
    "partner": 19,
    "rivalita": 48,
    "segnaposto": 1,
-   "stessa_scheda": 5,
+   "stessa_scheda": 20,
    "successione": 3,
    "tradimento": 7
   },
   "per_verifica": {
-   "da verificare": 41,
-   "guida": 958,
-   "verificata": 213
+   "da verificare": 56,
+   "guida": 1009,
+   "verificata": 212
   },
-  "narrative": 247,
-  "narrative_verificate_o_in_guida": 213,
-  "coda_ambigue_o_errate": 0,
-  "coda_per_motivo": {},
+  "narrative": 245,
+  "narrative_verificate_o_in_guida": 211,
+  "coda_ambigue_o_errate": 7,
+  "coda_per_motivo": {
+   "coppia presente solo nel grafo classico": 2,
+   "identita' non univoca": 5
+  },
   "proposte_intake": 0,
   "errori_intake": [],
   "respinte": 10,
-  "risolte_dalla_coda": 4,
+  "risolte_dalla_coda": 8,
   "errori_lotti": [],
-  "narrative_verificate_documentalmente": 208,
+  "narrative_verificate_documentalmente": 207,
   "narrative_da_verificare": 34,
   "controverse_in_attesa_utente": 0,
   "co_apparizioni_nel_registro": 0,

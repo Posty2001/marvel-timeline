@@ -48,7 +48,7 @@ with sync_playwright() as p:
     frame.wait_for_function("()=>window.__mm&&window.__mm.engine", timeout=8000)
     ok('motore con dati dell\'app', frame.evaluate("()=>window.__mm.engine.stats().entries>400"))
     def ask(q, wait=500):
-        frame.fill('#mmQ', q); frame.click('#mmSend'); frame.wait_for_function("()=>!document.getElementById('mmSend').disabled", timeout=15000); pg.wait_for_timeout(wait)
+        frame.fill('#mmQ', q); frame.click('#mmSend'); frame.wait_for_function("()=>!document.getElementById('mmSend').disabled", timeout=150000); pg.wait_for_timeout(wait)
         return frame.evaluate("()=>{const m=[...document.querySelectorAll('.mm-msg.assistant')];return m[m.length-1].innerText}")
     a = ask('Chi è Loki?'); ok('risposta Loki con fonte', 'Loki' in a and 'Journey into Mystery' in a, a[:200])
     a = ask('Quanti titoli ho visto?'); ok('progresso personale da dati reali (2/138)', '2 titoli su 138' in a, a[:200])
@@ -93,7 +93,7 @@ with sync_playwright() as p:
     frame.locator('.mm-row >> text=Titolo di prova').first.click(); pg.wait_for_timeout(300); ok('cronologia: apre la conversazione', view() == 'chat' and frame.locator('.mm-msg').count() >= 2)
     # impostazioni
     to_set()
-    ok('impostazioni: tutti i controlli', all(frame.locator('#set-' + k).count() == 1 for k in ['online', 'local', 'memory', 'voice', 'cite', 'spoiler']) and frame.locator('.seg button').count() == 3)
+    ok('impostazioni: tutti i controlli', all(frame.locator('#set-' + k).count() == 1 for k in ['online', 'local', 'memory', 'voice', 'cite', 'spoiler']) and frame.locator('.seg button').count() == 6)
     frame.locator('.seg button >> text=Brevi').click(); pg.wait_for_timeout(200)
     ok('impostazioni: lunghezza salvata', '"length":"short"' in pg.evaluate("()=>localStorage.getItem('marvel-ultimate-timeline-miss-minutes-v1')").replace(' ', ''))
     frame.locator('.seg button >> text=Medie').click()

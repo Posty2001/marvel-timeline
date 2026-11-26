@@ -34,7 +34,7 @@ with sync_playwright() as p:
         f = [f for f in pg.frames if 'miss-minutes' in f.url][0]; f.wait_for_function("()=>window.__mm&&window.__mm.engine", timeout=10000); return f
     pg.click('#mmFab'); fr = getframe(); pg.wait_for_timeout(400)
     M = "()=>{const c=document.getElementById('mmChat');const a=[...c.querySelectorAll('.mm-msg.assistant')].pop();const cr=c.getBoundingClientRect();const ar=a?a.getBoundingClientRect():null;const d=document.getElementById('mmDown');const dr=d.getBoundingClientRect();return {top:c.scrollTop,max:c.scrollHeight-c.clientHeight,ah:ar?ar.top-cr.top:null,down:!d.hidden&&dr.width>0,dbot:dr.bottom,cbot:cr.bottom}}"
-    def wait_done(): fr.wait_for_function("()=>!document.getElementById('mmSend').disabled", timeout=15000); pg.wait_for_timeout(500)
+    def wait_done(): fr.wait_for_function("()=>!document.getElementById('mmSend').disabled", timeout=150000); pg.wait_for_timeout(500)
     fr.evaluate("()=>{const p=window.__mm.store.state.prefs;p.online=true;p.consent=true;window.__mm.store.save()}")
     # 1. prima domanda breve: nessuna freccia se non serve
     fr.evaluate("()=>{window.__mm.ask('Ciao');return 1}"); wait_done()

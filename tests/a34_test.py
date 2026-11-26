@@ -1,5 +1,5 @@
 """A3.2 v3 – filtro «senza ritratto», contatore completati/mancanti, composizione dei ritratti delle varianti negli hub, export valutazioni (iPhone 390x844). Dati SINTETICI. Uso: python3 tests/a34_test.py"""
-import io, os, json, socket, threading, http.server, functools
+import re, io, os, json, socket, threading, http.server, functools
 from PIL import Image, ImageDraw
 from playwright.sync_api import sync_playwright
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -43,16 +43,16 @@ with sync_playwright() as p:
     br2.evaluate("()=>[...document.querySelectorAll('#atlas2 .btn')].find(b=>/Esplora il catalogo/.test(b.textContent)).click()"); br2.wait_for_timeout(1200)
     # nel nuovo contesto pagina l'IndexedDB è la stessa origine: i 4 ritratti con scena + 1 locale sono presenti
     c = br2.evaluate("()=>document.querySelector('#atlas2 .a3-count').textContent")
-    ok('contatore catalogo: «ritratti N/300 completati, M mancanti»', '/300 completati' in c and 'mancanti' in c, c)
+    ok('contatore catalogo: «ritratti N/300 completati, M mancanti»', re.search(r'/\d+ completati', c) and 'mancanti' in c, c)
     n0 = br2.evaluate("()=>document.querySelectorAll('#atlas2 .a3-tile').length")
     br2.evaluate("()=>document.querySelector('#atlas2 .a3-fbtn').click()"); br2.wait_for_timeout(200)
     ok('pulsante «Solo senza ritratto» nel pannello filtri', br2.evaluate("()=>!!document.querySelector('#atlas2 .a3-seno') && document.querySelector('#atlas2 .a3-seno').getBoundingClientRect().height>=43.5"))
     br2.evaluate("()=>document.querySelector('#atlas2 .a3-seno').click()"); br2.wait_for_timeout(700)
     c2 = br2.evaluate("()=>document.querySelector('#atlas2 .a3-count').textContent")
     nomi = br2.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-tile')].map(e=>e.getAttribute('aria-label'))")
-    ok('filtro attivo: elenco senza i personaggi con ritratto', 'su 300' in c2 and not any(n and n.startswith('Iron Man') and 'MCU' in n for n in nomi) and not any(n and n.startswith('Thor MCU') for n in nomi), (c2, nomi[:5]))
+    ok('filtro attivo: elenco senza i personaggi con ritratto', re.search(r'su \d+', c2) and not any(n and n.startswith('Iron Man') and 'MCU' in n for n in nomi) and not any(n and n.startswith('Thor MCU') for n in nomi), (c2, nomi[:5]))
     br2.evaluate("()=>document.querySelector('#atlas2 .a3-seno').click()"); br2.wait_for_timeout(500)
-    ok('filtro disattivabile', br2.evaluate("()=>document.querySelector('#atlas2 .a3-count').textContent.indexOf('su 300')<0"))
+    ok('filtro disattivabile', br2.evaluate("()=>!/su \\d+/.test(document.querySelector('#atlas2 .a3-count').textContent)"))
     ok('nessun errore JS', not errs, errs)
     br.close()
 print('\nA3.2-v3: %d / %d PASS' % (sum(res), len(res))); raise SystemExit(0 if all(res) else 1)

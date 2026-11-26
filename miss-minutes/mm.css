@@ -63,7 +63,7 @@ svg.ic .fill{fill:currentColor;stroke:none}
 .mm-note{font-size:.76rem;color:var(--dim);margin:8px 2px}
 
 /* conversazione */
-#mmChat{padding-top:6px}
+#mmChat{padding-top:6px;overflow-anchor:none}
 .mm-msg{margin:14px 0;overflow-wrap:anywhere}
 .mm-msg.user{margin-left:auto;max-width:86%;padding:10px 14px;border-radius:16px 16px 4px 16px;background:var(--usr);border:1px solid var(--line);white-space:pre-wrap}
 .mm-msg.assistant{display:flex;gap:10px;align-items:flex-start;max-width:100%}

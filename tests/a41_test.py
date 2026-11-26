@@ -30,10 +30,10 @@ def run(vw, vh):
         pg.evaluate("()=>{journeyStarted.checked=true; journeyStarted.dispatchEvent(new Event('change',{bubbles:true}))}"); pg.wait_for_timeout(600)
         pg.evaluate("()=>document.getElementById('a2Entry').click()"); pg.wait_for_timeout(900)
         pg.evaluate("()=>document.querySelector('#atlas2 .a3-ban').click()"); pg.wait_for_timeout(1500)
-        ok('[%d] Home A3 con ingressi Multiverso/Nexus/Percorso' % vw, pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-obs .btn')].filter(b=>/^(Apri la mappa|TVA Nexus|Percorso)$/.test(b.textContent)).length")==3)
+        ok('[%d] Home A3 con ingressi Multiverso/Nexus/Percorso' % vw, pg.evaluate("()=>document.querySelectorAll('#atlas2 [data-portal]').length")==3)
         ok('[%d] modulo A4 non caricato prima dell\'uso (lazy)' % vw, not any('a4.js' in r or 'nexus/g.json' in r for r in reqs))
         # Multiverso
-        pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-obs .btn')].find(b=>b.textContent==='Apri la mappa').click()"); pg.wait_for_timeout(1500)
+        pg.evaluate("()=>document.querySelector('#atlas2 [data-portal=mv]').click()"); pg.wait_for_timeout(1500)
         nn = pg.evaluate("()=>document.querySelectorAll('#atlas2 .a4-vp .a4-n').length")
         ok('[%d] Multiverso: universi come nodi (>=20)' % vw, nn >= 20, nn)
         ok('[%d] Multiverso: nessun overflow orizzontale' % vw, pg.evaluate("()=>{const b=document.querySelector('#atlas2 .a2-scroll');return b.scrollWidth<=b.clientWidth+1}"))
@@ -44,7 +44,7 @@ def run(vw, vh):
         ok('[%d] scheda universo con identità' % vw, pg.evaluate("()=>!document.querySelector('#atlas2 .a4-sheet').hidden && document.querySelector('#atlas2 .a4-sheet h2').textContent.length>2"))
         # Nexus
         pg.evaluate("()=>tvaBack()"); pg.wait_for_timeout(700)
-        pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-obs .btn')].find(b=>b.textContent==='TVA Nexus').click()"); pg.wait_for_timeout(1500)
+        pg.evaluate("()=>document.querySelector('#atlas2 [data-portal=nx]').click()"); pg.wait_for_timeout(1500)
         nn = pg.evaluate("()=>document.querySelectorAll('#atlas2 .a4-nx .a4-n').length")
         ok('[%d] Nexus: centro + collegamenti narrativi' % vw, nn >= 5, nn)
         ok('[%d] Nexus: legenda solo con tipi presenti' % vw, pg.evaluate("()=>document.querySelectorAll('#atlas2 .a4-lg').length")>=1)

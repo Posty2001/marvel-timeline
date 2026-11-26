@@ -1604,7 +1604,7 @@
   },
   {
    "id": "id-ben-grimm",
-   "nome": "Ben Grimm",
+   "nome": "Ben Grimm/The Thing (Story)",
    "tipo": "identita",
    "categorie": [
     "personaggio"
@@ -1615,21 +1615,28 @@
     "char-ben-grimm"
    ],
    "pagina_principale": "char-ben-grimm",
-   "interpreti": [],
+   "interpreti": [
+    "Michael Chiklis"
+   ],
    "apparizioni": [
-    "028",
     "029",
-    "030",
-    "031",
-    "125"
+    "030"
    ],
    "incarnazioni": [],
-   "alias": [],
+   "alias": [
+    "Ben Grimm"
+   ],
    "fonte": [
-    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro"
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)"
    ],
    "verifica": "invariata (nessuna decisione di identita' applicata)",
-   "nota": ""
+   "nota": "Continuita' dei film di Tim Story (Earth-121698, N°029-030); le altre incarnazioni sono identita' separate (apparizioni_spostate), non unificate.",
+   "apparizioni_spostate": {
+    "028": "id-ben-grimm-1994",
+    "031": "id-ben-grimm-trank",
+    "125": "id-ben-grimm-first-steps"
+   }
   },
   {
    "id": "id-ben-reilly-the-spider",
@@ -4250,7 +4257,7 @@
   },
   {
    "id": "id-johnny-storm-human-torch",
-   "nome": "Johnny Storm/Human Torch",
+   "nome": "Johnny Storm/Human Torch (Story)",
    "tipo": "identita",
    "categorie": [
     "personaggio"
@@ -4261,22 +4268,29 @@
     "char-johnny-storm-human-torch"
    ],
    "pagina_principale": "char-johnny-storm-human-torch",
-   "interpreti": [],
+   "interpreti": [
+    "Chris Evans"
+   ],
    "apparizioni": [
-    "028",
     "029",
     "030",
-    "031",
-    "117",
-    "125"
+    "117"
    ],
    "incarnazioni": [],
-   "alias": [],
+   "alias": [
+    "Johnny Storm/Human Torch"
+   ],
    "fonte": [
-    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro"
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)"
    ],
    "verifica": "invariata (nessuna decisione di identita' applicata)",
-   "nota": ""
+   "nota": "Continuita' dei film di Tim Story (Earth-121698, N°029-030); le altre incarnazioni sono identita' separate (apparizioni_spostate), non unificate. Nota: N°117 (Deadpool & Wolverine) resta qui (Marvel Wiki: Earth-121698), mvMapData lo colloca invece in Fox-Verse: discrepanza di fonti segnalata, nessuna unificazione.",
+   "apparizioni_spostate": {
+    "028": "id-johnny-storm-human-torch-1994",
+    "031": "id-johnny-storm-human-torch-trank",
+    "125": "id-johnny-storm-human-torch-first-steps"
+   }
   },
   {
    "id": "id-julia-cornwall",
@@ -6173,7 +6187,7 @@
   },
   {
    "id": "id-reed-richards",
-   "nome": "Reed Richards",
+   "nome": "Reed Richards/Mr. Fantastic (Story)",
    "tipo": "identita",
    "categorie": [
     "personaggio"
@@ -6184,22 +6198,29 @@
     "char-reed-richards"
    ],
    "pagina_principale": "char-reed-richards",
-   "interpreti": [],
+   "interpreti": [
+    "Ioan Gruffudd"
+   ],
    "apparizioni": [
-    "028",
     "029",
-    "030",
-    "031",
-    "102",
-    "125"
+    "030"
    ],
    "incarnazioni": [],
-   "alias": [],
+   "alias": [
+    "Reed Richards"
+   ],
    "fonte": [
-    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro"
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)"
    ],
    "verifica": "invariata (nessuna decisione di identita' applicata)",
-   "nota": ""
+   "nota": "Continuita' dei film di Tim Story (Earth-121698, N°029-030); le altre incarnazioni sono identita' separate (apparizioni_spostate), non unificate.",
+   "apparizioni_spostate": {
+    "028": "id-reed-richards-1994",
+    "031": "id-reed-richards-trank",
+    "125": "id-reed-richards-first-steps",
+    "102": "id-reed-richards-illuminati"
+   }
   },
   {
    "id": "id-rio-vidal",
@@ -6868,7 +6889,7 @@
   },
   {
    "id": "id-sue-storm",
-   "nome": "Sue Storm",
+   "nome": "Sue Storm/Invisible Woman (Story)",
    "tipo": "identita",
    "categorie": [
     "personaggio"
@@ -6879,21 +6900,28 @@
     "char-sue-storm"
    ],
    "pagina_principale": "char-sue-storm",
-   "interpreti": [],
+   "interpreti": [
+    "Jessica Alba"
+   ],
    "apparizioni": [
-    "028",
     "029",
-    "030",
-    "031",
-    "125"
+    "030"
    ],
    "incarnazioni": [],
-   "alias": [],
+   "alias": [
+    "Sue Storm"
+   ],
    "fonte": [
-    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro"
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)"
    ],
    "verifica": "invariata (nessuna decisione di identita' applicata)",
-   "nota": ""
+   "nota": "Continuita' dei film di Tim Story (Earth-121698, N°029-030); le altre incarnazioni sono identita' separate (apparizioni_spostate), non unificate.",
+   "apparizioni_spostate": {
+    "028": "id-sue-storm-1994",
+    "031": "id-sue-storm-trank",
+    "125": "id-sue-storm-first-steps"
+   }
   },
   {
    "id": "id-sylvie",
@@ -7444,7 +7472,7 @@
   },
   {
    "id": "id-victor-von-doom",
-   "nome": "Victor von Doom",
+   "nome": "Victor von Doom/Dr. Doom (Story)",
    "tipo": "identita",
    "categorie": [
     "personaggio"
@@ -7455,20 +7483,27 @@
     "char-victor-von-doom"
    ],
    "pagina_principale": "char-victor-von-doom",
-   "interpreti": [],
+   "interpreti": [
+    "Julian McMahon"
+   ],
    "apparizioni": [
-    "028",
     "029",
-    "030",
-    "031"
+    "030"
    ],
    "incarnazioni": [],
-   "alias": [],
+   "alias": [
+    "Victor von Doom"
+   ],
    "fonte": [
-    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro"
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "https://en.wikipedia.org/wiki/Fantastic_Four_(2005_film)"
    ],
    "verifica": "invariata (nessuna decisione di identita' applicata)",
-   "nota": ""
+   "nota": "Continuita' dei film di Tim Story (Earth-121698, N°029-030); le altre incarnazioni sono identita' separate (apparizioni_spostate), non unificate.",
+   "apparizioni_spostate": {
+    "028": "id-victor-von-doom-1994",
+    "031": "id-victor-von-doom-trank"
+   }
   },
   {
    "id": "id-viper",
@@ -7993,6 +8028,470 @@
    "nota": "Separato da id-matt-murdock-daredevil (film 2003, Ben Affleck) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente per non perdere riferimenti."
   },
   {
+   "id": "id-reed-richards-1994",
+   "nome": "Reed Richards/Mr. Fantastic (1994)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-fantastic-four-1994",
+   "pagine": [
+    "char-reed-richards"
+   ],
+   "pagina_principale": "char-reed-richards",
+   "interpreti": [
+    "Alex Hyde-White"
+   ],
+   "apparizioni": [
+    "028"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Reed Richards"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)",
+    "https://en.wikipedia.org/wiki/The_Fantastic_Four_(unreleased_film)"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Wikipedia, film mai distribuito (1994)): interprete Alex Hyde-White; continuita' da mvMapData (N°028 in uni-fantastic-four-1994); nessun dato biografico specifico attribuito",
+   "nota": "Separato da id-reed-richards (film di Tim Story, Earth-121698) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente."
+  },
+  {
+   "id": "id-reed-richards-trank",
+   "nome": "Reed Richards/Mr. Fantastic (Trank)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-earth-trn123",
+   "pagine": [
+    "char-reed-richards"
+   ],
+   "pagina_principale": "char-reed-richards",
+   "interpreti": [
+    "Miles Teller"
+   ],
+   "apparizioni": [
+    "031"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Reed Richards"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)",
+    "https://en.wikipedia.org/wiki/Fantastic_Four_(2015_film)"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Wikipedia, film del 2015): interprete Miles Teller; continuita' da mvMapData (N°031 in uni-earth-trn123); nessun dato biografico specifico attribuito",
+   "nota": "Separato da id-reed-richards (film di Tim Story, Earth-121698) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente."
+  },
+  {
+   "id": "id-reed-richards-first-steps",
+   "nome": "Reed Richards/Mr. Fantastic (First Steps)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-earth-828",
+   "pagine": [
+    "char-reed-richards"
+   ],
+   "pagina_principale": "char-reed-richards",
+   "interpreti": [
+    "Pedro Pascal"
+   ],
+   "apparizioni": [
+    "125"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Reed Richards"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)",
+    "https://en.wikipedia.org/wiki/The_Fantastic_Four:_First_Steps"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Wikipedia, The Fantastic Four: First Steps (Earth-828)): interprete Pedro Pascal; continuita' da mvMapData (N°125 in uni-earth-828); nessun dato biografico specifico attribuito",
+   "nota": "Separato da id-reed-richards (film di Tim Story, Earth-121698) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente."
+  },
+  {
+   "id": "id-reed-richards-illuminati",
+   "nome": "Reed Richards/Mr. Fantastic (Illuminati, Terra-838)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-earth-838",
+   "pagine": [
+    "char-reed-richards"
+   ],
+   "pagina_principale": "char-reed-richards",
+   "interpreti": [
+    "John Krasinski"
+   ],
+   "apparizioni": [
+    "102"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Reed Richards"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Marvel Wiki/MCU Wiki: Reed Richards (Earth-838) interpretato da John Krasinski); N°102 in uni-earth-838 per mvMapData; nessun dato biografico specifico attribuito",
+   "nota": "Separato da id-reed-richards su richiesta dell'utente (26/11/2026): continuita' Terra-838 (Illuminati), distinta dai Fantastici Quattro di Earth-121698 e di Earth-828."
+  },
+  {
+   "id": "id-sue-storm-1994",
+   "nome": "Sue Storm/Invisible Woman (1994)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-fantastic-four-1994",
+   "pagine": [
+    "char-sue-storm"
+   ],
+   "pagina_principale": "char-sue-storm",
+   "interpreti": [
+    "Rebecca Staab"
+   ],
+   "apparizioni": [
+    "028"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Sue Storm"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)",
+    "https://en.wikipedia.org/wiki/The_Fantastic_Four_(unreleased_film)"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Wikipedia, film mai distribuito (1994)): interprete Rebecca Staab; continuita' da mvMapData (N°028 in uni-fantastic-four-1994); nessun dato biografico specifico attribuito",
+   "nota": "Separato da id-sue-storm (film di Tim Story, Earth-121698) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente."
+  },
+  {
+   "id": "id-sue-storm-trank",
+   "nome": "Sue Storm/Invisible Woman (Trank)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-earth-trn123",
+   "pagine": [
+    "char-sue-storm"
+   ],
+   "pagina_principale": "char-sue-storm",
+   "interpreti": [
+    "Kate Mara"
+   ],
+   "apparizioni": [
+    "031"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Sue Storm"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)",
+    "https://en.wikipedia.org/wiki/Fantastic_Four_(2015_film)"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Wikipedia, film del 2015): interprete Kate Mara; continuita' da mvMapData (N°031 in uni-earth-trn123); nessun dato biografico specifico attribuito",
+   "nota": "Separato da id-sue-storm (film di Tim Story, Earth-121698) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente."
+  },
+  {
+   "id": "id-sue-storm-first-steps",
+   "nome": "Sue Storm/Invisible Woman (First Steps)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-earth-828",
+   "pagine": [
+    "char-sue-storm"
+   ],
+   "pagina_principale": "char-sue-storm",
+   "interpreti": [
+    "Vanessa Kirby"
+   ],
+   "apparizioni": [
+    "125"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Sue Storm"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)",
+    "https://en.wikipedia.org/wiki/The_Fantastic_Four:_First_Steps"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Wikipedia, The Fantastic Four: First Steps (Earth-828)): interprete Vanessa Kirby; continuita' da mvMapData (N°125 in uni-earth-828); nessun dato biografico specifico attribuito",
+   "nota": "Separato da id-sue-storm (film di Tim Story, Earth-121698) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente."
+  },
+  {
+   "id": "id-johnny-storm-human-torch-1994",
+   "nome": "Johnny Storm/Human Torch (1994)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-fantastic-four-1994",
+   "pagine": [
+    "char-johnny-storm-human-torch"
+   ],
+   "pagina_principale": "char-johnny-storm-human-torch",
+   "interpreti": [
+    "Jay Underwood"
+   ],
+   "apparizioni": [
+    "028"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Johnny Storm/Human Torch"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)",
+    "https://en.wikipedia.org/wiki/The_Fantastic_Four_(unreleased_film)"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Wikipedia, film mai distribuito (1994)): interprete Jay Underwood; continuita' da mvMapData (N°028 in uni-fantastic-four-1994); nessun dato biografico specifico attribuito",
+   "nota": "Separato da id-johnny-storm-human-torch (film di Tim Story, Earth-121698) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente."
+  },
+  {
+   "id": "id-johnny-storm-human-torch-trank",
+   "nome": "Johnny Storm/Human Torch (Trank)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-earth-trn123",
+   "pagine": [
+    "char-johnny-storm-human-torch"
+   ],
+   "pagina_principale": "char-johnny-storm-human-torch",
+   "interpreti": [
+    "Michael B. Jordan"
+   ],
+   "apparizioni": [
+    "031"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Johnny Storm/Human Torch"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)",
+    "https://en.wikipedia.org/wiki/Fantastic_Four_(2015_film)"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Wikipedia, film del 2015): interprete Michael B. Jordan; continuita' da mvMapData (N°031 in uni-earth-trn123); nessun dato biografico specifico attribuito",
+   "nota": "Separato da id-johnny-storm-human-torch (film di Tim Story, Earth-121698) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente."
+  },
+  {
+   "id": "id-johnny-storm-human-torch-first-steps",
+   "nome": "Johnny Storm/Human Torch (First Steps)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-earth-828",
+   "pagine": [
+    "char-johnny-storm-human-torch"
+   ],
+   "pagina_principale": "char-johnny-storm-human-torch",
+   "interpreti": [
+    "Joseph Quinn"
+   ],
+   "apparizioni": [
+    "125"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Johnny Storm/Human Torch"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)",
+    "https://en.wikipedia.org/wiki/The_Fantastic_Four:_First_Steps"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Wikipedia, The Fantastic Four: First Steps (Earth-828)): interprete Joseph Quinn; continuita' da mvMapData (N°125 in uni-earth-828); nessun dato biografico specifico attribuito",
+   "nota": "Separato da id-johnny-storm-human-torch (film di Tim Story, Earth-121698) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente."
+  },
+  {
+   "id": "id-ben-grimm-1994",
+   "nome": "Ben Grimm/The Thing (1994)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-fantastic-four-1994",
+   "pagine": [
+    "char-ben-grimm"
+   ],
+   "pagina_principale": "char-ben-grimm",
+   "interpreti": [
+    "Michael Bailey Smith"
+   ],
+   "apparizioni": [
+    "028"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Ben Grimm"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)",
+    "https://en.wikipedia.org/wiki/The_Fantastic_Four_(unreleased_film)"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Wikipedia, film mai distribuito (1994)): interprete Michael Bailey Smith; continuita' da mvMapData (N°028 in uni-fantastic-four-1994); nessun dato biografico specifico attribuito",
+   "nota": "Separato da id-ben-grimm (film di Tim Story, Earth-121698) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente."
+  },
+  {
+   "id": "id-ben-grimm-trank",
+   "nome": "Ben Grimm/The Thing (Trank)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-earth-trn123",
+   "pagine": [
+    "char-ben-grimm"
+   ],
+   "pagina_principale": "char-ben-grimm",
+   "interpreti": [
+    "Jamie Bell"
+   ],
+   "apparizioni": [
+    "031"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Ben Grimm"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)",
+    "https://en.wikipedia.org/wiki/Fantastic_Four_(2015_film)"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Wikipedia, film del 2015): interprete Jamie Bell; continuita' da mvMapData (N°031 in uni-earth-trn123); nessun dato biografico specifico attribuito",
+   "nota": "Separato da id-ben-grimm (film di Tim Story, Earth-121698) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente."
+  },
+  {
+   "id": "id-ben-grimm-first-steps",
+   "nome": "Ben Grimm/The Thing (First Steps)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-earth-828",
+   "pagine": [
+    "char-ben-grimm"
+   ],
+   "pagina_principale": "char-ben-grimm",
+   "interpreti": [
+    "Ebon Moss-Bachrach"
+   ],
+   "apparizioni": [
+    "125"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Ben Grimm"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)",
+    "https://en.wikipedia.org/wiki/The_Fantastic_Four:_First_Steps"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Wikipedia, The Fantastic Four: First Steps (Earth-828)): interprete Ebon Moss-Bachrach; continuita' da mvMapData (N°125 in uni-earth-828); nessun dato biografico specifico attribuito",
+   "nota": "Separato da id-ben-grimm (film di Tim Story, Earth-121698) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente."
+  },
+  {
+   "id": "id-victor-von-doom-1994",
+   "nome": "Victor von Doom/Dr. Doom (1994)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-fantastic-four-1994",
+   "pagine": [
+    "char-victor-von-doom"
+   ],
+   "pagina_principale": "char-victor-von-doom",
+   "interpreti": [
+    "Joseph Culp"
+   ],
+   "apparizioni": [
+    "028"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Victor von Doom"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)",
+    "https://en.wikipedia.org/wiki/The_Fantastic_Four_(unreleased_film)"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Wikipedia, film mai distribuito (1994)): interprete Joseph Culp; continuita' da mvMapData (N°028 in uni-fantastic-four-1994); nessun dato biografico specifico attribuito",
+   "nota": "Separato da id-victor-von-doom (film di Tim Story, Earth-121698) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente."
+  },
+  {
+   "id": "id-victor-von-doom-trank",
+   "nome": "Victor von Doom/Dr. Doom (Trank)",
+   "tipo": "identita",
+   "categorie": [
+    "personaggio"
+   ],
+   "conta_come_personaggio": true,
+   "universo": "uni-earth-trn123",
+   "pagine": [
+    "char-victor-von-doom"
+   ],
+   "pagina_principale": "char-victor-von-doom",
+   "interpreti": [
+    "Toby Kebbell"
+   ],
+   "apparizioni": [
+    "031"
+   ],
+   "incarnazioni": [],
+   "alias": [
+    "Victor von Doom"
+   ],
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)",
+    "https://en.wikipedia.org/wiki/Fantastic_Four_(2015_film)"
+   ],
+   "verifica": "verificata sulle fonti consultate il 26/11/2026 (Wikipedia, film del 2015): interprete Toby Kebbell; continuita' da mvMapData (N°031 in uni-earth-trn123); nessun dato biografico specifico attribuito",
+   "nota": "Separato da id-victor-von-doom (film di Tim Story, Earth-121698) su richiesta dell'utente (26/11/2026). I campi della scheda condivisa restano attribuiti all'identita' esistente."
+  },
+  {
    "id": "id-laufey",
    "nome": "Laufey",
    "tipo": "identita",
@@ -8382,6 +8881,201 @@
    ],
    "verifica": "dati interni: la scheda char-matt-murdock-daredevil copre due continuita'; nessuna parentela narrativa dichiarata",
    "nota": "Continuita' distinte (Daredevil 2003 / MCU): identita' distinte, non unificate."
+  },
+  {
+   "da": "id-reed-richards",
+   "a": "id-reed-richards-1994",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
+  },
+  {
+   "da": "id-reed-richards",
+   "a": "id-reed-richards-trank",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
+  },
+  {
+   "da": "id-reed-richards",
+   "a": "id-reed-richards-first-steps",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
+  },
+  {
+   "da": "id-reed-richards",
+   "a": "id-reed-richards-illuminati",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda condivisa copre piu' continuita'",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
+  },
+  {
+   "da": "id-sue-storm",
+   "a": "id-sue-storm-1994",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
+  },
+  {
+   "da": "id-sue-storm",
+   "a": "id-sue-storm-trank",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
+  },
+  {
+   "da": "id-sue-storm",
+   "a": "id-sue-storm-first-steps",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
+  },
+  {
+   "da": "id-johnny-storm-human-torch",
+   "a": "id-johnny-storm-human-torch-1994",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
+  },
+  {
+   "da": "id-johnny-storm-human-torch",
+   "a": "id-johnny-storm-human-torch-trank",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
+  },
+  {
+   "da": "id-johnny-storm-human-torch",
+   "a": "id-johnny-storm-human-torch-first-steps",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
+  },
+  {
+   "da": "id-ben-grimm",
+   "a": "id-ben-grimm-1994",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
+  },
+  {
+   "da": "id-ben-grimm",
+   "a": "id-ben-grimm-trank",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
+  },
+  {
+   "da": "id-ben-grimm",
+   "a": "id-ben-grimm-first-steps",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
+  },
+  {
+   "da": "id-victor-von-doom",
+   "a": "id-victor-von-doom-1994",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
+  },
+  {
+   "da": "id-victor-von-doom",
+   "a": "id-victor-von-doom-trank",
+   "tipo": "stessa_scheda_atlante",
+   "inverso": "stessa_scheda_atlante",
+   "narrativa": false,
+   "fonte": [
+    "atlasData.identita (guida, livello identita' gia' verificato) + schede del registro",
+    "mvMapData (titoliIds per universo)"
+   ],
+   "verifica": "dati interni: la scheda condivisa copre piu' continuita'; nessuna parentela narrativa dichiarata",
+   "nota": "Continuita' distinte: identita' distinte, non unificate."
   }
  ],
  "redirect": {
@@ -11078,13 +11772,13 @@
  "conteggi": {
   "pagine_char": 304,
   "pagine_che_contavano": 300,
-  "identita_totali": 300,
-  "identita_che_contano": 300,
+  "identita_totali": 315,
+  "identita_che_contano": 315,
   "hub": 3,
   "mantelli": 2,
   "segnaposto": 7,
   "relazioni_narrative": 5,
-  "relazioni_non_narrative": 7,
+  "relazioni_non_narrative": 22,
   "collegamenti_da_classificare": 76,
   "di_cui_proposta_automatica": 44
  }
