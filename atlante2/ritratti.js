@@ -15,6 +15,7 @@
   function btn(cls, txt, fn) { var b = h('button', cls, txt); b.type = 'button'; if (fn) b.addEventListener('click', fn); return b; }
 
   /* ---------- archivio ---------- */
+  var SIBLINGS = { 'id-matt-murdock-daredevil': ['id-matt-murdock-mcu'], 'id-matt-murdock-mcu': ['id-matt-murdock-daredevil'] };
   function open() {
     if (DBP) return DBP;
     DBP = new Promise(function (res) {
@@ -148,7 +149,20 @@
         if (rec && rec.kind === 'copy') row.appendChild(btn('a3r-b', 'Ritaglia di nuovo', function () { recrop(rec); }));
         if (rec && rec.kind === 'ref') row.appendChild(btn('a3r-b', 'Ritaglia di nuovo', function () { recropRef(rec); }));
         if (rec) row.appendChild(btn('a3r-b warn', 'Rimuovi', function () { confirmDel(); }));
-        main.appendChild(row); main.appendChild(h('p', 'a3r-fine', 'Archivio, esportazione e importazione di tutti i ritratti: voce «Ritratti privati» nella Home dell’TVA Atlas.'));
+        main.appendChild(row);
+        /* Riassegnazione sicura tra identità gemelle (es. Matt Murdock 2003 / MCU): mai sovrascrive un ritratto già salvato; lo spostamento cancella l'origine solo dopo la scrittura riuscita */
+        var sib = (SIBLINGS[id] || []).filter(function (t) { return t !== id; });
+        if (rec && sib.length) sib.forEach(function (t) {
+          var nm = (known && known(t)) || t, r2 = h('div', 'a3r-row');
+          function esegui(sposta) {
+            getRec(t).then(function (ex) {
+              if (ex) { msg('«' + nm + '» ha già un ritratto: non viene sovrascritto. Rimuovilo prima se vuoi sostituirlo.', true); return; }
+              var cp = {}; Object.keys(rec).forEach(function (k) { cp[k] = rec[k]; }); cp.id = t; cp.riassegnato_da = id;
+              return putRec(cp).then(function () { return sposta ? delRec(id).then(function () { drop(id); changed(id); }) : null; }).then(function () { changed(t); home(); setTimeout(function () { msg(sposta ? 'Ritratto spostato su «' + nm + '».' : 'Ritratto copiato su «' + nm + '».'); }, 80); });
+            }).catch(function () { msg('Operazione non riuscita: nessun ritratto è stato perso.', true); });
+          }
+          r2.appendChild(btn('a3r-b', 'Sposta su ' + nm, function () { esegui(true); })); r2.appendChild(btn('a3r-b', 'Copia su ' + nm, function () { esegui(false); })); main.appendChild(r2);
+        }); main.appendChild(h('p', 'a3r-fine', 'Archivio, esportazione e importazione di tutti i ritratti: voce «Ritratti privati» nella Home di TVA Atlas.'));
       });
     }
     function confirmDel() { var m = h('div', 'a3r-conf'); m.appendChild(h('p', '', 'Rimuovere il ritratto di «' + nome + '»? L’emblema tornerà come segnaposto. Non è annullabile, salvo reimportazione da un’esportazione.')); m.appendChild(btn('a3r-b warn', 'Rimuovi', function () { delRec(id).then(home); })); m.appendChild(btn('a3r-b', 'Annulla', home)); clear(); main.appendChild(m); }
