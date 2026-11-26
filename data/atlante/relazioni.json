@@ -20148,7 +20148,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/The_Wolverine_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -20157,8 +20157,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-7fcdaf9b54",
@@ -20843,14 +20843,18 @@
    "simmetrica": false,
    "qualifica": "leader",
    "fonte": [
-    "grafo classico: char-aldrich-killian -> org-a-i-m-advanced-idea-mechanics"
+    "grafo classico: char-aldrich-killian -> org-a-i-m-advanced-idea-mechanics",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Aldrich_Killian"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Leader di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -20863,14 +20867,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-alexei-guardiano-rosso -> org-new-avengers"
+    "grafo classico: char-alexei-guardiano-rosso -> org-new-avengers",
+    "https://marvelcinematicuniverse.fandom.com/wiki/New_Avengers"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -20938,6 +20946,8 @@
    "conferme": [
     "guida:grafo-org"
    ],
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -20958,6 +20968,8 @@
    "conferme": [
     "guida:grafo-org"
    ],
+   "esito_verifica": "non_confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -20970,14 +20982,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-bucky-barnes-soldato-d-inverno -> org-new-avengers"
+    "grafo classico: char-bucky-barnes-soldato-d-inverno -> org-new-avengers",
+    "https://marvelcinematicuniverse.fandom.com/wiki/New_Avengers"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -20990,14 +21006,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-bucky-barnes-soldato-d-inverno -> org-thunderbolts"
+    "grafo classico: char-bucky-barnes-soldato-d-inverno -> org-thunderbolts",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Thunderbolts*"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21010,14 +21030,18 @@
    "simmetrica": false,
    "qualifica": "leader",
    "fonte": [
-    "grafo classico: char-charles-xavier -> org-x-men"
+    "grafo classico: char-charles-xavier -> org-x-men",
+    "https://marvel.fandom.com/wiki/X-Men_(Earth-41578)"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Leader di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21054,14 +21078,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-clint-barton -> org-avengers"
+    "grafo classico: char-clint-barton -> org-avengers",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Avengers_Initiative"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21074,14 +21102,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-daisy-johnson -> org-s-h-i-e-l-d"
+    "grafo classico: char-daisy-johnson -> org-s-h-i-e-l-d",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Quake"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21138,14 +21170,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-ghost -> org-new-avengers"
+    "grafo classico: char-ghost -> org-new-avengers",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Ghost"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21158,14 +21194,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-ghost -> org-thunderbolts"
+    "grafo classico: char-ghost -> org-thunderbolts",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Thunderbolts*"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21178,14 +21218,18 @@
    "simmetrica": false,
    "qualifica": "leader",
    "fonte": [
-    "grafo classico: char-he-who-remains -> org-tva-time-variance-authority"
+    "grafo classico: char-he-who-remains -> org-tva-time-variance-authority",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Time_Variance_Authority"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Leader di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21218,14 +21262,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-hulk -> org-avengers"
+    "grafo classico: char-hulk -> org-avengers",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Avengers_Initiative"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21238,14 +21286,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-iron-man -> org-avengers"
+    "grafo classico: char-iron-man -> org-avengers",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Avengers_Initiative"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21261,13 +21313,15 @@
     "grafo classico: char-jean-grey-fenice -> org-x-men",
     "https://en.wikipedia.org/wiki/X-Men_(film)"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
     "guida:grafo-org",
     "lotto:lotto_01"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21304,14 +21358,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-john-walker -> org-new-avengers"
+    "grafo classico: char-john-walker -> org-new-avengers",
+    "https://marvelcinematicuniverse.fandom.com/wiki/New_Avengers"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21324,14 +21382,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-john-walker -> org-thunderbolts"
+    "grafo classico: char-john-walker -> org-thunderbolts",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Thunderbolts*"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21368,14 +21430,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-karl-mordo -> org-illuminati"
+    "grafo classico: char-karl-mordo -> org-illuminati",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Illuminati"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21459,14 +21525,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-melinda-may -> org-s-h-i-e-l-d"
+    "grafo classico: char-melinda-may -> org-s-h-i-e-l-d",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Melinda_May"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21479,14 +21549,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-monica-rambeau -> org-s-w-o-r-d"
+    "grafo classico: char-monica-rambeau -> org-s-w-o-r-d",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Earth"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21523,14 +21597,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-natasha-romanoff -> org-avengers"
+    "grafo classico: char-natasha-romanoff -> org-avengers",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Avengers_Initiative"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21566,14 +21644,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-peggy-carter-captain-carter -> org-illuminati"
+    "grafo classico: char-peggy-carter-captain-carter -> org-illuminati",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Illuminati"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21586,14 +21668,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-peggy-carter-captain-carter -> org-s-s-r-strategic-scientific-reserve"
+    "grafo classico: char-peggy-carter-captain-carter -> org-s-s-r-strategic-scientific-reserve",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Peggy_Carter"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21606,14 +21692,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-phil-coulson -> org-s-h-i-e-l-d"
+    "grafo classico: char-phil-coulson -> org-s-h-i-e-l-d",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Phil_Coulson"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21626,14 +21716,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-ravonna-renslayer -> org-tva-time-variance-authority"
+    "grafo classico: char-ravonna-renslayer -> org-tva-time-variance-authority",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Ravonna_Renslayer"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21646,14 +21740,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-red-guardian -> org-thunderbolts"
+    "grafo classico: char-red-guardian -> org-thunderbolts",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Thunderbolts*"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21690,14 +21788,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-reed-richards -> org-illuminati"
+    "grafo classico: char-reed-richards -> org-illuminati",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Illuminati"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21733,14 +21835,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-sabretooth -> org-fratellanza-dei-mutanti"
+    "grafo classico: char-sabretooth -> org-fratellanza-dei-mutanti",
+    "https://marvel.fandom.com/wiki/X-Men_(film)"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21753,14 +21859,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-steve-rogers-capitan-america -> org-avengers"
+    "grafo classico: char-steve-rogers-capitan-america -> org-avengers",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Avengers_Initiative"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21797,14 +21907,18 @@
    "simmetrica": false,
    "qualifica": "leader",
    "fonte": [
-    "grafo classico: char-teschio-rosso -> org-hydra"
+    "grafo classico: char-teschio-rosso -> org-hydra",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Earth"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Leader di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21817,14 +21931,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-thor -> org-avengers"
+    "grafo classico: char-thor -> org-avengers",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Avengers_Initiative"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21837,14 +21955,18 @@
    "simmetrica": false,
    "qualifica": "leader",
    "fonte": [
-    "grafo classico: char-wenwu -> org-i-dieci-anelli-organizzazione"
+    "grafo classico: char-wenwu -> org-i-dieci-anelli-organizzazione",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Prime_Universe"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Leader di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21860,13 +21982,15 @@
     "grafo classico: char-william-stryker -> org-weapon-x",
     "https://en.wikipedia.org/wiki/X-Men_Origins:_Wolverine"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Leader di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
     "guida:grafo-org",
     "lotto:lotto_01"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21925,14 +22049,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-yelena-belova -> org-new-avengers"
+    "grafo classico: char-yelena-belova -> org-new-avengers",
+    "https://marvelcinematicuniverse.fandom.com/wiki/New_Avengers"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -21945,14 +22073,18 @@
    "simmetrica": false,
    "qualifica": "membro",
    "fonte": [
-    "grafo classico: char-yelena-belova -> org-thunderbolts"
+    "grafo classico: char-yelena-belova -> org-thunderbolts",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Thunderbolts*"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Membro di» dal grafo delle relazioni dell'Atlante classico",
    "origine": "guida:grafo-org",
    "conferme": [
-    "guida:grafo-org"
+    "guida:grafo-org",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -22037,13 +22169,15 @@
     "scheda char-sue-storm (campo RELAZIONI)",
     "https://en.wikipedia.org/wiki/Fantastic_Four:_Rise_of_the_Silver_Surfer"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Coniuge» dichiarato nella scheda char-reed-richards",
    "origine": "guida:RELAZIONI",
    "conferme": [
     "guida:RELAZIONI",
     "lotto:lotto_01"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -22196,13 +22330,15 @@
     "scheda char-xialing (campo RELAZIONI)",
     "https://en.wikipedia.org/wiki/Shang-Chi_and_the_Legend_of_the_Ten_Rings"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Sorella» dichiarato nella scheda char-shang-chi",
    "origine": "guida:RELAZIONI",
    "conferme": [
     "guida:RELAZIONI",
     "lotto:lotto_01"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -22216,14 +22352,18 @@
    "qualifica": null,
    "fonte": [
     "scheda char-shuri (campo RELAZIONI)",
-    "scheda char-t-challa-black-panther (campo RELAZIONI)"
+    "scheda char-t-challa-black-panther (campo RELAZIONI)",
+    "https://marvelcinematicuniverse.fandom.com/wiki/T'Chaka"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Fratello» dichiarato nella scheda char-shuri",
    "origine": "guida:RELAZIONI",
    "conferme": [
-    "guida:RELAZIONI"
+    "guida:RELAZIONI",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -22305,14 +22445,18 @@
    "simmetrica": false,
    "qualifica": "padre biologico",
    "fonte": [
-    "scheda char-peter-quill-star-lord (campo RELAZIONI)"
+    "scheda char-peter-quill-star-lord (campo RELAZIONI)",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Prime_Universe"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Padre biologico» dichiarato nella scheda char-peter-quill-star-lord",
    "origine": "guida:RELAZIONI",
    "conferme": [
-    "guida:RELAZIONI"
+    "guida:RELAZIONI",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -22371,14 +22515,18 @@
    "simmetrica": false,
    "qualifica": "padre",
    "fonte": [
-    "scheda char-hope-van-dyne (campo RELAZIONI)"
+    "scheda char-hope-van-dyne (campo RELAZIONI)",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Wasp"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Padre» dichiarato nella scheda char-hope-van-dyne",
    "origine": "guida:RELAZIONI",
    "conferme": [
-    "guida:RELAZIONI"
+    "guida:RELAZIONI",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -22440,14 +22588,18 @@
    "simmetrica": false,
    "qualifica": "madre",
    "fonte": [
-    "scheda char-hope-van-dyne (campo RELAZIONI)"
+    "scheda char-hope-van-dyne (campo RELAZIONI)",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Wasp"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Madre» dichiarato nella scheda char-hope-van-dyne",
    "origine": "guida:RELAZIONI",
    "conferme": [
-    "guida:RELAZIONI"
+    "guida:RELAZIONI",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -22692,14 +22844,18 @@
    "simmetrica": false,
    "qualifica": "padre",
    "fonte": [
-    "scheda char-cassie-lang (campo RELAZIONI)"
+    "scheda char-cassie-lang (campo RELAZIONI)",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Cassie_Lang"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Padre» dichiarato nella scheda char-cassie-lang",
    "origine": "guida:RELAZIONI",
    "conferme": [
-    "guida:RELAZIONI"
+    "guida:RELAZIONI",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -22906,13 +23062,15 @@
     "scheda char-xialing (campo RELAZIONI)",
     "https://en.wikipedia.org/wiki/Shang-Chi_and_the_Legend_of_the_Ten_Rings"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Figlia» dichiarato nella scheda char-wenwu",
    "origine": "guida:RELAZIONI",
    "conferme": [
     "guida:RELAZIONI",
     "lotto:lotto_01"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -22927,7 +23085,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Logan_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -22936,8 +23094,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-b617b25b57",
@@ -22948,14 +23106,18 @@
    "simmetrica": false,
    "qualifica": "padre adottivo",
    "fonte": [
-    "scheda char-peter-quill-star-lord (campo RELAZIONI)"
+    "scheda char-peter-quill-star-lord (campo RELAZIONI)",
+    "https://marvelcinematicuniverse.fandom.com/wiki/Yondu"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Padre adottivo» dichiarato nella scheda char-peter-quill-star-lord",
    "origine": "guida:RELAZIONI",
    "conferme": [
-    "guida:RELAZIONI"
+    "guida:RELAZIONI",
+    "verifica_esterna"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -23224,7 +23386,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Venom:_Let_There_Be_Carnage"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23233,8 +23395,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-fa97782d46",
@@ -23430,13 +23592,12 @@
    "da": "id-nakia",
    "a": "id-t-challa-black-panther",
    "simmetrica": true,
-   "qualifica": "partner sentimentali e genitori di un figlio",
+   "qualifica": "relazione sentimentale (ex-amanti)",
    "fonte": [
-    "https://en.wikipedia.org/wiki/Black_Panther_(film)",
-    "https://en.wikipedia.org/wiki/Black_Panther:_Wakanda_Forever"
+    "https://en.wikipedia.org/wiki/Black_Panther_(film)"
    ],
    "verifica": "verificata",
-   "nota": "Fasi: ex-amanti in Black Panther; figlio Toussaint rivelato in Wakanda Forever (scena a meta' titoli di coda). Non coniugi: nessuna fonte. Qualifica decisa dall'utente 26/11",
+   "nota": "Documentato solo in Black Panther (ex-amanti). La genitorialita' (Toussaint, Wakanda Forever) e' una relazione separata e NON prova che la relazione sentimentale sia proseguita. Non coniugi: nessuna fonte",
    "origine": "lotto:lotto_01",
    "conferme": [
     "lotto:lotto_01"
@@ -23553,13 +23714,15 @@
     "scheda char-wanda-maximoff (campo RELAZIONI)",
     "https://en.wikipedia.org/wiki/WandaVision"
    ],
-   "verifica": "guida",
+   "verifica": "verificata",
    "nota": "«Compagno» dichiarato nella scheda char-wanda-maximoff",
    "origine": "guida:RELAZIONI",
    "conferme": [
     "guida:RELAZIONI",
     "lotto:lotto_01"
    ],
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26",
    "approvazione": "non_richiesta",
    "controversa": false
   },
@@ -23781,7 +23944,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Venom_(2018_film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23790,8 +23953,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-53a47b4c77",
@@ -23828,7 +23991,7 @@
    "fonte": [
     "https://en.wikipedia.org/wiki/Venom:_Let_There_Be_Carnage"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -23837,8 +24000,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-01f344b194",
@@ -24684,7 +24847,7 @@
     "https://en.wikipedia.org/wiki/X-Men_Origins:_Wolverine",
     "https://en.wikipedia.org/wiki/X2_(film)"
    ],
-   "verifica": "da verificare",
+   "verifica": "verificata",
    "nota": "",
    "origine": "lotto:lotto_01",
    "conferme": [
@@ -24693,8 +24856,8 @@
    "lotto": "lotto_01",
    "approvazione": "non_richiesta",
    "controversa": false,
-   "esito_verifica": "non_verificata",
-   "data_verifica": null
+   "esito_verifica": "confermata",
+   "data_verifica": "2026-11-26"
   },
   {
    "id": "rel-154221ba36",
@@ -25106,12 +25269,12 @@
    "tradimento": 7
   },
   "per_verifica": {
-   "da verificare": 53,
-   "guida": 1002,
-   "verificata": 153
+   "da verificare": 47,
+   "guida": 959,
+   "verificata": 202
   },
   "narrative": 243,
-  "narrative_verificate_o_in_guida": 197,
+  "narrative_verificate_o_in_guida": 203,
   "coda_ambigue_o_errate": 0,
   "coda_per_motivo": {},
   "proposte_intake": 0,
@@ -25119,8 +25282,8 @@
   "respinte": 10,
   "risolte_dalla_coda": 4,
   "errori_lotti": [],
-  "narrative_verificate_documentalmente": 148,
-  "narrative_da_verificare": 46,
+  "narrative_verificate_documentalmente": 197,
+  "narrative_da_verificare": 40,
   "controverse_in_attesa_utente": 0,
   "co_apparizioni_nel_registro": 0,
   "nota": "Le co-apparizioni sono calcolate a runtime dalle apparizioni e NON entrano nel registro ne' nei conteggi."

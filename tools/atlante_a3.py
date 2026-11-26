@@ -232,6 +232,34 @@ def verifica_link():
             amb.append(candidati(L, base, sa, su))
     return ver, amb
 
+# Pagine "universo-*" -> universo registrato (solo corrispondenze esatte e documentate)
+UNI_PAGINA = {'universo-earth-96283': 'uni-earth-96283-raimi-verse', 'universo-earth-120703': 'uni-earth-120703-garfield-verse',
+              'universo-mcu': 'uni-earth-199999-mcu', 'universo-your-friendly-neighborhood-spider-man-verse': 'uni-your-friendly-neighborhood-spider-man-verse'}
+# Schede interprete: l'attore ha interpretato quella variante (filmografia documentata nelle schede)
+INTERPRETI = {'att-tobey-maguire': 'id-peter-parker-raimi', 'att-andrew-garfield': 'id-peter-parker-garfield', 'att-tom-holland': 'id-peter-parker-mcu'}
+
+def decidi(L, base, cand, su):
+    """Risolve un link solo se l'evidenza e' univoca: (R1) universo della scheda sorgente (o della pagina-universo) uguale a quello di
+    UNA sola identita' candidata; (R2) scheda interprete -> variante interpretata; (R3) l'unica candidata con apparizioni in comune.
+    Nessuna regola vale se due o piu' candidate restano compatibili (decisione controversa -> utente)."""
+    da = L['da']
+    if da in INTERPRETI and INTERPRETI[da] in cand:
+        return INTERPRETI[da], 'scheda interprete: variante interpretata dall\'attore', 'R2'
+    uni = su
+    if not uni and da in UNI_PAGINA: uni = UNI_PAGINA[da]
+    if not uni and ('id-' + da[5:]) in IDENT: uni = IDENT['id-' + da[5:]].get('universo')
+    if uni:
+        m = [c for c in cand if IDENT[c].get('universo') == uni]
+        if len(m) == 1: return m[0], 'stesso universo (%s) di una sola identita\' candidata' % uni, 'R1'
+    com = [c for c in cand if base['sorgente_apparizioni'] and set(base['sorgente_apparizioni']) & appset(c)]
+    if len(com) == 1 and not uni: return com[0], 'unica identita\' candidata con apparizioni in comune', 'R3'
+    # Ronan: R1 non basta (entrambi i Groot nello stesso universo) -> apparizioni in comune con una sola candidata
+    if uni and len(com) == 1: return com[0], 'stesso universo, ma solo una candidata con apparizioni in comune', 'R3'
+    # R4: pagina-universo non registrata o multiversale (Legacy, Netflix, Raimi+Garfield): l'hub e' la destinazione corretta per natura
+    if da.startswith('universo-') and da not in UNI_PAGINA:
+        return None if False else ('HUB', 'pagina-universo non registrata o multiversale: destinazione corretta = hub (nessuna variante dimostrabile)', 'R4')
+    return None
+
 def candidati(L, base, sa, su):
     tgt = RED.get(L['a_pagina'], {}); cand = [c for c in (tgt.get('verso') or []) if c in IDENT]
     hub = next((c for c in (tgt.get('verso') or []) if c in HUB), None)
@@ -240,6 +268,10 @@ def candidati(L, base, sa, su):
         cu = IDENT[c].get('universo'); com = sorted(sa & appset(c))
         pos.append({'id': c, 'nome': IDENT[c]['nome'], 'universo': cu, 'comuni': com})
     su_nome, su_nat = uni_info(su)
+    ris = decidi(L, base, cand, su)
+    if ris:
+        if ris[0] == 'HUB': ris = (hub or L['a_pagina'], ris[1], ris[2])
+        return dict(base, continuita=(uni_info(su)[0] or 'non indicata'), possibili=pos, raccomandato=ris[0], motivo=ris[1], stato='risolto', regola=ris[2])
     if hub: rec, motivo = hub, 'nessuna continuita\' dimostrata per la scheda sorgente: collegamento all\'hub, nessuna relazione narrativa attribuita'
     else:
         rec = L['a_pagina']; motivo = 'nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita\' non attribuibile)'
@@ -270,10 +302,14 @@ def scrivi_tabella(ver, amb):
           '| # | Origine | Destinazione (pagina) | Identità applicata | Prova | Esito |', '|---|---|---|---|---|---|']
     for k, v in enumerate(ver, 1):
         L.append('| %d | %s (%s) | %s | %s | %s | %s |' % (k, v['da_nome'], v['origine'], v['a_pagina'], v['identita'], v['prova'] or '—', v['esito']))
-    L += ['', '## 2. I %d collegamenti ambigui (da decidere)' % len(amb), '',
-          'Soluzione consigliata: dove non è dimostrabile una variante precisa, collegamento all\'hub multiversale (nessuna relazione narrativa attribuita). Nessuna modifica applicata ai dati originali.', '',
-          '| # | Origine | Destinazione | Continuità sorgente | Identità possibili | Soluzione consigliata |', '|---|---|---|---|---|---|']
-    for k, a in enumerate(amb, 1):
+    ris = [a for a in amb if a.get('stato') == 'risolto']; dec = [a for a in amb if a.get('stato') != 'risolto']
+    L += ['', '## 2. Collegamenti esaminati (%d): %d risolti con evidenza univoca, %d realmente controversi' % (len(amb), len(ris), len(dec)), '',
+          'Regole: R1 stesso universo di una sola identità candidata · R2 scheda interprete → variante interpretata · R3 una sola candidata con apparizioni in comune. Dove due o più candidate restano compatibili la decisione è controversa e spetta all\'utente; nel frattempo vale l\'hub/scheda storica (nessuna relazione narrativa attribuita).', '',
+          '### 2a. Risolti', '', '| # | Origine | Destinazione | Identità applicata | Regola |', '|---|---|---|---|---|']
+    for k, a in enumerate(ris, 1):
+        L.append('| %d | %s (%s) | %s | `%s` | %s — %s |' % (k, a['da_nome'], a['origine'], a['a_pagina'], a['raccomandato'], a['regola'], a['motivo']))
+    L += ['', '### 2b. Da decidere (controversi)', '', '| # | Origine | Destinazione | Continuità sorgente | Identità possibili | Soluzione provvisoria |', '|---|---|---|---|---|---|']
+    for k, a in enumerate(dec, 1):
         pos = '; '.join('%s%s' % (p['nome'], ' (app. comuni: ' + ', '.join('N°' + x for x in p['comuni']) + ')' if p['comuni'] else '') for p in a['possibili']) or '—'
         L.append('| %d | %s (%s) | %s | %s | %s | `%s` — %s |' % (k, a['da_nome'], a['origine'], a['a_pagina'], a['continuita'], pos, a['raccomandato'], a['motivo']))
     open(os.path.join(ROOT, 'docs', 'ATLANTE_2_0_A3_LINK_AMBIGUI.md'), 'w', encoding='utf-8').write('\n'.join(L) + '\n')
@@ -314,7 +350,7 @@ def verifica():
     sosp = [x for x in v if x.get('s')]
     chk(all(not x['i'].startswith('hub') for x in sosp), 'Bishop/Janet restano sospesi (%d voci marcate)' % len(sosp))
     col = json.load(open(os.path.join(OUT, 'collegamenti.json'), encoding='utf-8'))
-    chk(len(col['verificate']) == 44 and len(col['ambigui']) >= 32, '44 verificate esaminate; ambigui %d (32 + non confermate)' % len(col['ambigui']))
+    chk(len(col['verificate']) == 44 and len(col['ambigui']) >= 32, '44 verificate esaminate; link esaminati %d (risolti + controversi)' % len(col['ambigui']))
     chk(all(k.split('>')[1] in RED for k in idx['lnk']), 'collegamenti applicati solo tra pagine esistenti')
     # integrita' registro: file A1/A2 immutati
     man = json.load(open(os.path.join(D, 'manifest.json'), encoding='utf-8'))

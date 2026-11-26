@@ -173,6 +173,15 @@ def build():
                 if not r0.get('qualifica') and f[3]: r0['qualifica'] = f[3]
                 continue
             add(tipo, da, a, f[3] or None, urls, ver, f[5] if len(f) > 5 else '', 'lotto:' + lotto, **ex)
+    # Verifiche documentali applicate anche alle relazioni ereditate dalla guida (non nate da un lotto)
+    for k, r in REL.items():
+        led = LED.get(k)
+        if not led or r.get('lotto') or r['verifica'] != 'guida': continue
+        r['esito_verifica'] = led.get('esito'); r['data_verifica'] = led.get('data')
+        if led.get('esito') == 'confermata':
+            r['verifica'] = 'verificata'
+            if led.get('fonte') and led['fonte'] not in r['fonte']: r['fonte'] = r['fonte'] + [led['fonte']]
+            r['conferme'] = sorted(set(r.get('conferme', [])) | {'verifica_esterna'})
     for r in REL.values(): r.setdefault('approvazione', 'non_richiesta'); r.setdefault('controversa', False)
     # coda: voci risolte da una relazione documentata; Jane/Varianti respinte (decisione dell'utente 26/11/2026)
     RIS, nc = [], []

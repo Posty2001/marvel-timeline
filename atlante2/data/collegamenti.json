@@ -879,7 +879,7 @@
     "035",
     "082"
    ],
-   "continuita": "Daredevil/Elektra-verse · Universo autonomo",
+   "continuita": "Daredevil/Elektra-verse",
    "possibili": [
     {
      "id": "id-fisk-fox-2003",
@@ -898,9 +898,10 @@
      ]
     }
    ],
-   "raccomandato": "hub-wilson-fisk",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-fisk-fox-2003",
+   "motivo": "stesso universo (uni-daredevil-elektra-verse) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "char-drax",
@@ -952,7 +953,7 @@
     "065",
     "117"
    ],
-   "continuita": "Daredevil/Elektra-verse · Universo autonomo",
+   "continuita": "Daredevil/Elektra-verse",
    "possibili": [
     {
      "id": "id-fisk-fox-2003",
@@ -969,9 +970,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "hub-wilson-fisk",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-fisk-fox-2003",
+   "motivo": "stesso universo (uni-daredevil-elektra-verse) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "char-gamora",
@@ -1023,7 +1025,7 @@
     "002",
     "003"
    ],
-   "continuita": "Earth-96283 — Raimi-Verse · Universo autonomo",
+   "continuita": "Earth-96283 — Raimi-Verse",
    "possibili": [
     {
      "id": "id-peter-parker-mcu",
@@ -1054,9 +1056,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "hub-peter-parker",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-peter-parker-raimi",
+   "motivo": "stesso universo (uni-earth-96283-raimi-verse) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "char-kate-bishop",
@@ -1081,9 +1084,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "hub-wilson-fisk",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-fisk-mcu",
+   "motivo": "stesso universo (uni-earth-199999-mcu) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "char-matt-murdock-daredevil",
@@ -1095,7 +1099,7 @@
    "sorgente_apparizioni": [
     "035"
    ],
-   "continuita": "Daredevil/Elektra-verse · Universo autonomo",
+   "continuita": "Daredevil/Elektra-verse",
    "possibili": [
     {
      "id": "id-fisk-fox-2003",
@@ -1112,9 +1116,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "hub-wilson-fisk",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-fisk-fox-2003",
+   "motivo": "stesso universo (uni-daredevil-elektra-verse) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "char-norman-osborn-green-goblin",
@@ -1128,7 +1133,7 @@
     "099",
     "120"
    ],
-   "continuita": "Earth-96283 — Raimi-Verse · Universo autonomo",
+   "continuita": "Earth-96283 — Raimi-Verse",
    "possibili": [
     {
      "id": "id-peter-parker-mcu",
@@ -1164,9 +1169,10 @@
      ]
     }
    ],
-   "raccomandato": "hub-peter-parker",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-peter-parker-raimi",
+   "motivo": "stesso universo (uni-earth-96283-raimi-verse) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "char-peter-quill-star-lord",
@@ -1301,7 +1307,7 @@
     "099",
     "120"
    ],
-   "continuita": "Earth-96283 — Raimi-Verse · Universo autonomo",
+   "continuita": "Earth-96283 — Raimi-Verse",
    "possibili": [
     {
      "id": "id-peter-parker-mcu",
@@ -1337,9 +1343,10 @@
      ]
     }
    ],
-   "raccomandato": "hub-peter-parker",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-peter-parker-raimi",
+   "motivo": "stesso universo (uni-earth-96283-raimi-verse) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "char-harry-osborn-green-goblin",
@@ -1353,7 +1360,7 @@
     "002",
     "003"
    ],
-   "continuita": "Earth-96283 — Raimi-Verse · Universo autonomo",
+   "continuita": "Earth-96283 — Raimi-Verse",
    "possibili": [
     {
      "id": "id-peter-parker-mcu",
@@ -1384,9 +1391,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "hub-peter-parker",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-peter-parker-raimi",
+   "motivo": "stesso universo (uni-earth-96283-raimi-verse) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "char-matt-murdock-daredevil",
@@ -1398,7 +1406,7 @@
    "sorgente_apparizioni": [
     "035"
    ],
-   "continuita": "Daredevil/Elektra-verse · Universo autonomo",
+   "continuita": "Daredevil/Elektra-verse",
    "possibili": [
     {
      "id": "id-fisk-fox-2003",
@@ -1415,9 +1423,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "hub-wilson-fisk",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-fisk-fox-2003",
+   "motivo": "stesso universo (uni-daredevil-elektra-verse) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "char-elektra-natchios",
@@ -1432,7 +1441,7 @@
     "065",
     "117"
    ],
-   "continuita": "Daredevil/Elektra-verse · Universo autonomo",
+   "continuita": "Daredevil/Elektra-verse",
    "possibili": [
     {
      "id": "id-fisk-fox-2003",
@@ -1449,9 +1458,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "hub-wilson-fisk",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-fisk-fox-2003",
+   "motivo": "stesso universo (uni-daredevil-elektra-verse) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "char-bullseye",
@@ -1464,7 +1474,7 @@
     "035",
     "082"
    ],
-   "continuita": "Daredevil/Elektra-verse · Universo autonomo",
+   "continuita": "Daredevil/Elektra-verse",
    "possibili": [
     {
      "id": "id-fisk-fox-2003",
@@ -1483,9 +1493,10 @@
      ]
     }
    ],
-   "raccomandato": "hub-wilson-fisk",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-fisk-fox-2003",
+   "motivo": "stesso universo (uni-daredevil-elektra-verse) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "char-gamora",
@@ -1651,7 +1662,7 @@
    "sorgente_apparizioni": [
     "058"
    ],
-   "continuita": "Earth-199999 — MCU · Continuità principale",
+   "continuita": "Earth-199999 — MCU",
    "possibili": [
     {
      "id": "id-groot-originale",
@@ -1668,9 +1679,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "char-groot",
-   "motivo": "nessun hub per questa pagina: si conserva il collegamento alla scheda storica (identita' non attribuibile)",
-   "stato": "da decidere"
+   "raccomandato": "id-groot-originale",
+   "motivo": "stesso universo, ma solo una candidata con apparizioni in comune",
+   "stato": "risolto",
+   "regola": "R3"
   },
   {
    "da": "char-kate-bishop",
@@ -1695,9 +1707,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "hub-wilson-fisk",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-fisk-mcu",
+   "motivo": "stesso universo (uni-earth-199999-mcu) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "att-tobey-maguire",
@@ -1728,9 +1741,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "hub-peter-parker",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-peter-parker-raimi",
+   "motivo": "scheda interprete: variante interpretata dall'attore",
+   "stato": "risolto",
+   "regola": "R2"
   },
   {
    "da": "att-andrew-garfield",
@@ -1761,9 +1775,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "hub-peter-parker",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-peter-parker-garfield",
+   "motivo": "scheda interprete: variante interpretata dall'attore",
+   "stato": "risolto",
+   "regola": "R2"
   },
   {
    "da": "att-tom-holland",
@@ -1794,9 +1809,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "hub-peter-parker",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-peter-parker-mcu",
+   "motivo": "scheda interprete: variante interpretata dall'attore",
+   "stato": "risolto",
+   "regola": "R2"
   },
   {
    "da": "universo-earth-96283",
@@ -1833,9 +1849,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "hub-peter-parker",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-peter-parker-raimi",
+   "motivo": "stesso universo (uni-earth-96283-raimi-verse) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "universo-earth-120703",
@@ -1872,9 +1889,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "hub-peter-parker",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-peter-parker-garfield",
+   "motivo": "stesso universo (uni-earth-120703-garfield-verse) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "universo-mcu",
@@ -1911,9 +1929,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "hub-peter-parker",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-peter-parker-mcu",
+   "motivo": "stesso universo (uni-earth-199999-mcu) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "universo-mcu",
@@ -1938,9 +1957,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "hub-wilson-fisk",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-fisk-mcu",
+   "motivo": "stesso universo (uni-earth-199999-mcu) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "universo-mcu",
@@ -2004,9 +2024,10 @@
      "comuni": []
     }
    ],
-   "raccomandato": "hub-peter-parker",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "raccomandato": "id-peter-parker-ynfsm",
+   "motivo": "stesso universo (uni-your-friendly-neighborhood-spider-man-verse) di una sola identita' candidata",
+   "stato": "risolto",
+   "regola": "R1"
   },
   {
    "da": "universo-legacy",
@@ -2032,8 +2053,9 @@
     }
    ],
    "raccomandato": "hub-wilson-fisk",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "motivo": "pagina-universo non registrata o multiversale: destinazione corretta = hub (nessuna variante dimostrabile)",
+   "stato": "risolto",
+   "regola": "R4"
   },
   {
    "da": "universo-mcu-netflix",
@@ -2059,8 +2081,9 @@
     }
    ],
    "raccomandato": "hub-wilson-fisk",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "motivo": "pagina-universo non registrata o multiversale: destinazione corretta = hub (nessuna variante dimostrabile)",
+   "stato": "risolto",
+   "regola": "R4"
   },
   {
    "da": "universo-mcu-raimi-verse-garfield-verse",
@@ -2092,8 +2115,9 @@
     }
    ],
    "raccomandato": "hub-peter-parker",
-   "motivo": "nessuna continuita' dimostrata per la scheda sorgente: collegamento all'hub, nessuna relazione narrativa attribuita",
-   "stato": "da decidere"
+   "motivo": "pagina-universo non registrata o multiversale: destinazione corretta = hub (nessuna variante dimostrabile)",
+   "stato": "risolto",
+   "regola": "R4"
   }
  ]
 }
