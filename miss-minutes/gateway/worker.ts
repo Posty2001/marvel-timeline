@@ -36,7 +36,7 @@ export interface Env {
 type Role = 'user' | 'assistant';
 interface Msg { role: Role; text: string }
 interface Ctx { id: string; title: string; text: string }
-interface ChatInput { question: string; history: Msg[]; context: Ctx[]; spoiler: 'avoid' | 'off'; length: 'short' | 'normal' | 'long'; cite: boolean }
+interface ChatInput { question: string; history: Msg[]; context: Ctx[]; spoiler: 'avoid' | 'off'; length: 'short' | 'normal' | 'long'; cite: boolean; stream: boolean }
 
 const enc = new TextEncoder();
 const TOKEN_TTL_S = 24 * 3600;
@@ -123,7 +123,49 @@ export const parseChat = (raw: unknown): ChatInput | null => {
   // preferenze di stile: solo valori enumerati, mai testo libero dell'utente nel prompt di sistema
   const length = r.length === 'short' || r.length === 'long' ? r.length : 'normal';
   const cite = r.cite !== false;
-  return { question, history, context, spoiler, length, cite };
+  return { question, history, context, spoiler, length, cite, stream: r.stream === true };
+};
+
+/* ---------- streaming: Gemini SSE -> SSE semplificato (data:{"t":"testo"} ... data:{"done":true} | data:{"e":"codice"}) ---------- */
+export const MAX_ANSWER = 4000;
+export const sseText = (ev: string): string => {
+  const line = ev.split('\n').find(l => l.startsWith('data:'));
+  if (!line) return '';
+  try {
+    const j = JSON.parse(line.slice(5)) as { candidates?: { content?: { parts?: { text?: string; thought?: boolean }[] } }[] };
+    return (j.candidates?.[0]?.content?.parts || []).filter(p => !p.thought).map(p => p.text || '').join('');
+  } catch { return ''; }
+};
+export const streamAnswer = (body: ReadableStream<Uint8Array>): ReadableStream<Uint8Array> => {
+  const reader = body.getReader(), dec = new TextDecoder();
+  let buf = '', total = 0, finished = false;
+  const frame = (o: unknown): Uint8Array => enc.encode('data: ' + JSON.stringify(o) + '\n\n');
+  return new ReadableStream<Uint8Array>({
+    async pull(ctrl) {
+      // un frammento di rete puo' non completare alcun evento: si continua a leggere finche' non c'e' qualcosa da inviare (pull non viene richiamata senza enqueue)
+      try {
+        for (;;) {
+          if (finished) return;
+          const { done, value } = await reader.read();
+          if (value) buf += dec.decode(value, { stream: true }).replace(/\r\n/g, '\n');
+          let sent = false, i: number;
+          while ((i = buf.indexOf('\n\n')) >= 0 || (done && buf.trim())) {
+            let ev: string;
+            if (i >= 0) { ev = buf.slice(0, i); buf = buf.slice(i + 2); } else { ev = buf; buf = ''; }
+            const t = sseText(ev);
+            if (t && total < MAX_ANSWER) { const piece = t.slice(0, MAX_ANSWER - total); total += piece.length; ctrl.enqueue(frame({ t: piece })); sent = true; }
+          }
+          if (done) { finished = true; ctrl.enqueue(frame(total ? { done: true } : { e: 'empty' })); ctrl.close(); return; }
+          if (sent) return;
+        }
+      } catch (e) {
+        finished = true;
+        const n = e instanceof Error ? e.name : '';
+        ctrl.enqueue(frame({ e: n === 'TimeoutError' || n === 'AbortError' ? 'provider-timeout' : 'provider-network' })); ctrl.close();
+      }
+    },
+    cancel() { void reader.cancel().catch(() => undefined); },
+  });
 };
 
 const SYSTEM = [
@@ -330,7 +372,7 @@ export default {
       turn('user', user);
       try {
         const r = await fetch(
-          `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(env.GEMINI_MODEL as string)}:generateContent`,
+          `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(env.GEMINI_MODEL as string)}:${input.stream ? 'streamGenerateContent?alt=sse' : 'generateContent'}`,
           {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'x-goog-api-key': env.GEMINI_KEY as string },
@@ -339,12 +381,15 @@ export default {
               contents,
               generationConfig: { maxOutputTokens: 2000, temperature: 0.5 },
             }),
-            signal: AbortSignal.timeout(20000),
+            signal: AbortSignal.timeout(input.stream ? 45000 : 20000),
           });
         if (!r.ok) {
           const up = await upstream(r);
           const code = r.status === 429 ? 'provider-quota' : r.status === 400 ? 'provider-request' : (r.status === 401 || r.status === 403) ? 'provider-auth' : r.status === 404 ? 'provider-model' : 'provider';
           return out(r.status === 429 ? 429 : 502, { error: code, upstream: up });
+        }
+        if (input.stream && r.body) {
+          return new Response(streamAnswer(r.body), { status: 200, headers: { ...h, 'Content-Type': 'text/event-stream; charset=utf-8', 'X-Accel-Buffering': 'no' } });
         }
         const j = (await r.json()) as { candidates?: { finishReason?: string; content?: { parts?: { text?: string; thought?: boolean }[] } }[] };
         const answer = (j.candidates?.[0]?.content?.parts || []).filter(p => !p.thought).map(p => p.text || '').join('').trim();

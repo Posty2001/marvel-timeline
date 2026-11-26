@@ -472,8 +472,12 @@
      "etichetta": "Groot adulto",
      "pagina": "char-groot",
      "apparizioni": [],
+     "apparizioni_esterne": [
+      "107",
+      "110"
+     ],
      "tipo": "fase_di_crescita",
-     "verifica": "da verificare: fase documentata (ciclo di crescita, Marvel.com) ma nessuna apparizione registrata nel progetto; non attribuita"
+     "verifica": "verificata (26/11/2026, MCU Wiki, Wikipedia, Marvel.com): N°110 Guardians Vol. 3 = «giovane adulto» (MCU Wiki, Guardians of the Galaxy); N°107 Holiday Special = Groot piu' massiccio, in crescita verso la taglia adulta (Wikipedia; Marvel.com). Le due schede dell'app non elencano Groot tra i personaggi: lacuna dei dati dell'app, non modificata"
     }
    ],
    "alias": [
@@ -8486,7 +8490,7 @@
     "id-groot-originale",
     "id-groot-successore"
    ],
-   "nota": "hub di continuita': apparizioni separate: 058 originale; 059, 084, 089, 115 successore"
+   "nota": "hub di continuita': apparizioni separate: 058 originale; 059, 084, 089, 115 successore (107 e 110 documentati da fonti esterne, non presenti nelle schede dell'app)"
   },
   "char-groot-piccolo": {
    "ruolo": "canonica",

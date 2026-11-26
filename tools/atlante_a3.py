@@ -151,7 +151,7 @@ def build():
                 o = r['a'] if r['da'] == iid else r['da']
                 var.append({'ruolo': 'rel', 'id': o, 'tipo': r['tipo'], 'nota': r.get('nota', ''), 'verifica': r.get('verifica', ''), 'narrativa': bool(r.get('narrativa'))})
         if x.get('incarnazioni'):
-            var.append({'ruolo': 'incarnazioni', 'lista': [{'id': c['id'], 'e': c.get('etichetta', ''), 'tipo': c.get('tipo', ''), 'int': c.get('interprete', ''), 'app': c.get('apparizioni', []), 'pag': c.get('pagina'), 'v': c.get('verifica', '')} for c in x['incarnazioni']]})
+            var.append({'ruolo': 'incarnazioni', 'lista': [{'id': c['id'], 'e': c.get('etichetta', ''), 'tipo': c.get('tipo', ''), 'int': c.get('interprete', ''), 'app': c.get('apparizioni', []), 'ex': c.get('apparizioni_esterne', []), 'pag': c.get('pagina'), 'v': c.get('verifica', '')} for c in x['incarnazioni']]})
         if var: d['var'] = var
         # fonti
         fnt = []

@@ -67,10 +67,61 @@
       if (r.status === 401) { token = null; exp = 0; try { store && store.removeItem(SK); } catch (e) {} }
       var e2 = r.status === 0 ? err(r.timeout ? 'timeout' : 'network', 'chat') : err(r.json.error || 'provider', r.json.error && /^provider/.test(r.json.error) ? 'gemini' : 'gateway', r.json.upstream, r.status); e2.ms = Date.now() - t0; return e2;
     }
+    // Streaming reale (SSE): onDelta(testoCumulativo) a ogni frammento. Se il gateway non supporta lo streaming (risposta JSON) o il
+    // browser non espone lo stream, ricade sulla risposta intera (streamed:false). Un'interruzione a meta' restituisce il testo gia' ricevuto in `partial`.
+    async function askStream(payload, opts) {
+      if (!endpoint) return err('disabled');
+      opts = opts || {}; var user = opts.signal || null, onDelta = typeof opts.onDelta === 'function' ? opts.onDelta : function () {}, t0 = Date.now();
+      var s = await ensureSession(user); if (!s.ok) { s.ms = Date.now() - t0; return s; }
+      var c = new AbortController(), idle = null, timedOut = false, first = true;
+      function arm(ms) { clearTimeout(idle); idle = setTimeout(function () { timedOut = true; c.abort(); }, ms); }
+      if (user) { if (user.aborted) c.abort(); else user.addEventListener('abort', function () { c.abort(); }, { once: true }); }
+      arm(25000);
+      var r, acc = '', ttfb = 0;
+      try {
+        r = await f(endpoint + '/v1/chat', { method: 'POST', signal: c.signal, credentials: 'omit', cache: 'no-store', headers: { 'Content-Type': 'application/json', Accept: 'text/event-stream', Authorization: 'Bearer ' + token }, body: JSON.stringify(Object.assign({}, payload, { stream: true })) });
+      } catch (e) { clearTimeout(idle); var ab = !!(user && user.aborted); var x = ab ? err('aborted', 'chat') : err(timedOut ? 'timeout' : 'network', 'chat'); x.ms = Date.now() - t0; return x; }
+      var ct = String(r.headers && r.headers.get && r.headers.get('content-type') || '');
+      if (r.status !== 200 || ct.indexOf('text/event-stream') < 0) {
+        clearTimeout(idle); var j = null; try { j = await r.json(); } catch (e) {}
+        j = j || {};
+        if (r.status === 200 && typeof j.answer === 'string') return { ok: true, answer: j.answer, ms: Date.now() - t0, streamed: false };
+        if (r.status === 401) { token = null; exp = 0; try { store && store.removeItem(SK); } catch (e) {} }
+        var e2 = err(j.error || 'provider', j.error && /^provider/.test(j.error) ? 'gemini' : 'gateway', j.upstream, r.status); e2.ms = Date.now() - t0; return e2;
+      }
+      if (!r.body || !r.body.getReader || typeof TextDecoder === 'undefined') {   // browser senza stream: testo intero
+        var all = ''; try { all = await r.text(); } catch (e) {} clearTimeout(idle);
+        var parsed = parseSSE(all + '\n\n'); var txt = parsed.text; if (parsed.err) { var e3 = err(parsed.err, 'gemini'); e3.partial = txt; e3.ms = Date.now() - t0; return e3; }
+        return txt ? { ok: true, answer: txt, ms: Date.now() - t0, streamed: false } : err('empty', 'gemini');
+      }
+      var rd = r.body.getReader(), dec = new TextDecoder(), buf = '', done = false, serr = '';
+      try {
+        for (;;) {
+          var chunk = await rd.read(); if (chunk.done) break; arm(20000);
+          buf += dec.decode(chunk.value, { stream: true }).replace(/\r\n/g, '\n'); var i;
+          while ((i = buf.indexOf('\n\n')) >= 0) {
+            var ev = buf.slice(0, i); buf = buf.slice(i + 2); var o = parseEvent(ev); if (!o) continue;
+            if (typeof o.t === 'string' && o.t) { if (first) { first = false; ttfb = Date.now() - t0; } acc += o.t; try { onDelta(acc, ttfb); } catch (e) {} }
+            else if (o.done) done = true; else if (o.e) serr = String(o.e).slice(0, 40);
+          }
+        }
+      } catch (e) {
+        clearTimeout(idle); try { rd.cancel().catch(function () {}); } catch (x) {}
+        if (user && user.aborted) { var a2 = err('aborted', 'chat'); a2.partial = acc; a2.ms = Date.now() - t0; return a2; }
+        var e4 = err(timedOut ? 'timeout' : 'provider-network', 'chat'); e4.partial = acc; e4.ms = Date.now() - t0; return e4;
+      }
+      clearTimeout(idle);
+      if (serr) { var e5 = err(serr, 'gemini'); e5.partial = acc; e5.ms = Date.now() - t0; return e5; }
+      if (!acc) { var e6 = err('empty', 'gemini'); e6.ms = Date.now() - t0; return e6; }
+      if (!done) { var e7 = err('provider-network', 'chat'); e7.partial = acc; e7.ms = Date.now() - t0; return e7; }
+      return { ok: true, answer: acc, ms: Date.now() - t0, streamed: true, ttfb: ttfb };
+    }
+    function parseEvent(ev) { var l = ev.split('\n').filter(function (x) { return x.indexOf('data:') === 0; })[0]; if (!l) return null; try { return JSON.parse(l.slice(5)); } catch (e) { return null; } }
+    function parseSSE(t) { var text = '', er = '', p = t.replace(/\r\n/g, '\n').split('\n\n'); p.forEach(function (x) { var o = parseEvent(x); if (!o) return; if (typeof o.t === 'string') text += o.t; else if (o.e) er = String(o.e).slice(0, 40); }); return { text: text, err: er }; }
     // errori temporanei per cui vale un solo nuovo tentativo (sovraccarico/rete); mai quote, auth, modello, richiesta, timeout
     function retriable(e) { return !!e && !e.ok && ((e.code === 'provider' && (e.http === 500 || e.http === 502 || e.http === 503 || e.http === 504 || e.http === 529)) || e.code === 'provider-network'); }
     async function health() { if (!endpoint) return { ok: false, enabled: false }; var r = await req('/v1/health', { method: 'GET' }); return { ok: r.status === 200, enabled: !!r.json.enabled, missing: Array.isArray(r.json.missing) ? r.json.missing.slice(0, 6).map(String) : [] }; }
-    return { ask: ask, health: health, retriable: retriable, available: function () { return !!endpoint; }, forget: function () { token = null; exp = 0; try { store && store.removeItem(SK); } catch (e) {} } };
+    return { ask: ask, askStream: askStream, health: health, retriable: retriable, available: function () { return !!endpoint; }, forget: function () { token = null; exp = 0; try { store && store.removeItem(SK); } catch (e) {} } };
   }
   var API = { create: create, MSG: MSG };
   if (typeof module !== 'undefined' && module.exports) module.exports = API; else root.MMGateway = API;

@@ -123,7 +123,7 @@ with sync_playwright() as p:
     ok('URL dalla risposta AI rimossi, id scheda risolto in titolo e chip', 'evil.example' not in a and 'Loki' in a and 'online' in a and frame.locator('.mm-msg.assistant').last.locator('.mm-chip').count() == 1, a)
     ok('nessuna domanda duplicata dopo "Chiedi all\'AI online"', nuser('Chi è Loki?') == n0, (n0, nuser('Chi è Loki?')))
     chat = [c for c in GW['calls'] if c[1].startswith('/v1/chat')][-1][2]; body = json.loads(chat)
-    ok('payload senza dati personali', all(k in ('question', 'history', 'context', 'spoiler', 'length', 'cite') for k in body) and body.get('length') == 'normal' and body.get('cite') is True and 'seen' not in chat and 'rating' not in chat and 'titoli su 138' not in chat and 'quanti titoli' not in chat.lower() and 'cosa guardo' not in chat.lower(), list(body))
+    ok('payload senza dati personali', all(k in ('question', 'history', 'context', 'spoiler', 'length', 'cite', 'stream') for k in body) and body.get('length') == 'normal' and body.get('cite') is True and 'seen' not in chat and 'rating' not in chat and 'titoli su 138' not in chat and 'quanti titoli' not in chat.lower() and 'cosa guardo' not in chat.lower(), list(body))
     n = len(GW['calls']); a = ask('Quanti titoli ho visto?'); ok('domanda personale mai inviata online', len(GW['calls']) == n)
     # anomalie: pannello, Riprova, archivio locale
     q = 'zxcv qwerty sconosciuto lorem'

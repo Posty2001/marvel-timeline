@@ -356,6 +356,27 @@
   }
 
   function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+  /* streaming: la bolla della risposta si riempie man mano; nessuno scorrimento forzato (mm6.1: la vista parte dall'inizio del messaggio) */
+  var live = null;
+  function paintLive() {
+    if (!live) return; live.raf = 0;
+    var t = String(live.text).replace(/\s*\[\[[^\]]*$/, ''), rr = t; try { rr = resolveRefs(t, lastCtx).text; } catch (e) { /* testo grezzo */ }
+    while (live.body.firstChild) live.body.removeChild(live.body.firstChild);
+    var rc = rich(rr, false); live.body.appendChild(rc); var last = rc.lastElementChild || rc; last.appendChild(el('span', 'mm-caret')); updateDown();
+  }
+  function liveDelta(acc) {
+    if (!live) {
+      clearTransient(); var d = el('div', 'mm-msg assistant streaming'); d.setAttribute('aria-busy', 'true'); d.appendChild(avatar('talk'));
+      var body = el('div', 'mm-body'); d.appendChild(body); $('mmChat').appendChild(d); live = { node: d, body: body, text: '', raf: 0 };
+      mood('talk'); var c = $('mmChat'); c.scrollTop = Math.max(0, d.offsetTop - 8);
+    }
+    live.text = acc; if (!live.raf) live.raf = requestAnimationFrame(paintLive);
+  }
+  function endLive() { if (!live) return; if (live.raf) cancelAnimationFrame(live.raf); if (live.node.parentNode) live.node.parentNode.removeChild(live.node); live = null; }
+  async function simulateReveal(text, signal) {
+    var n = text.length, step = Math.max(24, Math.ceil(n / 50)), i = 0;
+    while (i < n && !(signal && signal.aborted)) { i = Math.min(n, i + step); liveDelta(text.slice(0, i)); await sleep(30); }
+  }
   async function askOnline(q, s) {
     var p = store.state.prefs;
     var ctx = p.local ? eng.contextFor(q, Object.assign(convState(s), { spoilerOff: !p.spoiler })) : []; lastCtx = ctx;
@@ -365,15 +386,19 @@
     var attempts = 0, r, tot0 = Date.now();
     for (;;) {
       attempts++;
-      r = await gw.ask(payload, { signal: waitCtl.signal });
-      if (r.ok || r.code === 'aborted' || attempts >= 2 || !gw.retriable(r)) break;
+      r = await gw.askStream(payload, { signal: waitCtl.signal, onDelta: liveDelta });
+      // mai un nuovo tentativo se una parte della risposta e' gia' stata mostrata
+      if (r.ok || r.code === 'aborted' || attempts >= 2 || live || r.partial || !gw.retriable(r)) break;
       // un solo nuovo tentativo, solo per errori temporanei, ogni tentativo passa dalle stesse quote del gateway
       if (waitNode) { var wt = waitNode.querySelector('.wt'); if (wt) wt.textContent = 'Il servizio è occupato: riprovo una volta…'; }
       await sleep(1500 + Math.floor(Math.random() * 600)); if (waitCtl.signal.aborted) { r = { ok: false, code: 'aborted', stage: 'chat', http: 0, detail: '', message: 'Attesa interrotta.' }; break; }
     }
+    // gateway non ancora aggiornato (o browser senza stream): la risposta intera viene rivelata progressivamente, in modo interrompibile
+    if (r.ok && r.streamed === false && r.answer) await simulateReveal(r.answer, waitCtl.signal);
+    var partial = live ? live.text : (r.partial || ''); endLive();
     waitCtl = null;
-    var d = { at: Date.now(), ok: !!r.ok, attempts: attempts, ms: Date.now() - tot0, code: r.ok ? 'ok' : r.code, stage: r.ok ? '' : r.stage, http: r.ok ? 200 : r.http, detail: r.ok ? '' : (r.detail || ''), length: p.length || 'normal' };
-    if (!r.ok) { diag.last = d; return { ok: false, code: r.code, stage: r.stage, http: r.http, detail: r.detail, message: r.message }; }
+    var d = { at: Date.now(), ok: !!r.ok, stream: r.ok ? (r.streamed === false ? 'simulato' : 'reale') : (partial ? 'parziale' : ''), ttfb: r.ttfb || 0, partialChars: partial.length, attempts: attempts, ms: Date.now() - tot0, code: r.ok ? 'ok' : r.code, stage: r.ok ? '' : r.stage, http: r.ok ? 200 : r.http, detail: r.ok ? '' : (r.detail || ''), length: p.length || 'normal' };
+    if (!r.ok) { diag.last = d; return { ok: false, code: r.code, stage: r.stage, http: r.http, detail: r.detail, message: r.message, partial: partial }; }
     var rr = resolveRefs(r.answer, ctx);
     d.markers = rr.markers; d.dupRaw = dupCount(r.answer); d.dupShown = dupCount(rr.text); diag.last = d;
     return { ok: true, text: rr.text, refs: rr.refs, cited: rr.cited };
@@ -450,6 +475,12 @@
       var o = await askOnline(q, s);
       clearTransient();
       if (o.ok) { cited = o.cited; msg = { role: 'assistant', text: o.text, refs: o.refs, tag: 'online · AI · non verificato' + (p.spoiler ? ' · spoiler non garantiti' : '') }; }
+      else if (o.partial && o.partial.trim().length >= 1 && (o.code === 'aborted' || o.code === 'timeout' || /network|timeout|provider/.test(o.code || ''))) {
+        // il testo gia' ricevuto non va perso: resta in cronologia, con Riprova
+        var pr = resolveRefs(o.partial, lastCtx); cited = pr.cited;
+        msg = { role: 'assistant', text: pr.text, refs: pr.refs, tag: 'online · AI · ' + (o.code === 'aborted' ? 'interrotta dall’utente' : 'risposta parziale (connessione interrotta)'), action: { label: 'Riprova con l’AI online', run: function () { retryOnline(q); } } };
+        banner(o.code === 'aborted' ? 'Risposta interrotta: il testo ricevuto è stato conservato.' : 'Connessione interrotta: conservo la parte di risposta già ricevuta.');
+      }
       else if (o.code === 'aborted') { msg.tag = 'archivio locale (attesa interrotta)'; msg.action = { label: 'Riprova con l’AI online', run: function () { retryOnline(q); } }; banner('Attesa interrotta: ecco l’archivio locale.'); }
       else { setBusy(false); mood('idle'); render(); showError(o, q); return; }
     } else if (ans.needsOnline && !onlineOK()) {
@@ -586,6 +617,7 @@
     if (!d) L.push('Ultima richiesta AI: nessuna in questa sessione.');
     else {
       L.push('Ultima richiesta AI: ' + (d.ok ? 'riuscita' : 'FALLITA'), 'Tentativi: ' + d.attempts + ' · durata: ' + d.ms + ' ms', 'Lunghezza richiesta: ' + d.length);
+      if (d.stream) L.push('Streaming: ' + d.stream + (d.ttfb ? ' · primo testo dopo ' + d.ttfb + ' ms' : '') + (d.partialChars ? ' · testo parziale: ' + d.partialChars + ' caratteri' : ''));
       if (!d.ok) L.push('Codice: ' + d.code + ' · stadio: ' + (d.stage || '-') + ' · HTTP: ' + (d.http || '-') + (d.detail ? ' · ' + d.detail : ''));
       else L.push('Marcatori scheda nella risposta grezza: ' + d.markers, 'Parole ripetute adiacenti — risposta grezza: ' + d.dupRaw + ' · testo mostrato: ' + d.dupShown);
     }

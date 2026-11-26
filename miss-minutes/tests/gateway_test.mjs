@@ -101,4 +101,45 @@ ok(s9.slice(0, 8).every(s => s === 200) && s9[9] === 429, 'max 8 sessioni/ora/IP
 ok(parseChat(null) === null && parseChat({}) === null && parseChat({ question: '  ' }) === null, 'parseChat vuoti');
 const p = parseChat({ question: 'a\u0000b', context: new Array(20).fill({ id: 'a b!!', title: 't', text: 'x'.repeat(5000) }), history: 'no' });
 ok(p.context.length === 5 && p.context[0].id === 'ab' && p.context[0].text.length === 700 && p.question === 'a b' && p.history.length === 0, 'parseChat sanifica/limita');
+// ---- streaming (a41): SSE di Gemini -> SSE semplificato, stesse quote e protezioni
+{
+  const dbS = new DatabaseSync(':memory:'); const sqlS = { exec(q, ...b) { const st = dbS.prepare(q); const up = /^\s*select/i.test(q); const rows = up ? st.all(...b) : (st.run(...b), []); return { toArray: () => rows, one: () => rows[0] }; } }; const limS = new Limiter({ storage: { sql: sqlS } });
+  const envS = { ...env, GLOBAL_RPM_CAP: '100', DAILY_CAP: '100', MONTHLY_CAP: '1000', IP_DAILY_CAP: '100', DEVICE_DAILY_CAP: '100', LIMITER: { idFromName: n => n, get: () => ({ fetch: (u, i) => limS.fetch(new Request(u, i)) }) } };
+  const c = await (await call('/v1/challenge', {}, envS, '8.8.8.8')).json(); let n = 0; for (;;) { const h = createHash('sha256').update(`${c.salt}.${c.ts}.${n}`).digest(); let z = 0; for (const b of h) { if (b === 0) { z += 8; continue; } z += Math.clz32(b) - 24; break; } if (z >= c.bits) break; n++; }
+  const tk = (await (await call('/v1/session', { method: 'POST', body: JSON.stringify({ ...c, n: String(n) }) }, envS, '8.8.8.8')).json()).token;
+  const ev = (o) => 'data: ' + JSON.stringify({ candidates: [{ content: { parts: [o] } }] });
+  const wire = [ev({ text: 'Ciao ' }), ev({ text: 'segreto', thought: true }), ev({ text: 'mondo' }), ev({ text: '!' })].join('\r\n\r\n') + '\r\n\r\n';
+  const cut = [3, 40, 41, 90, 200]; // taglia gli eventi in punti arbitrari
+  let lastUrl = '', mode = 'ok';
+  const prev = globalThis.fetch;
+  globalThis.fetch = async (u, init) => {
+    if (!String(u).includes('generativelanguage')) return prev(u, init);
+    lastUrl = String(u);
+    if (!lastUrl.includes('streamGenerateContent')) return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: 'ciao' }] } }] }), { status: 200 });
+    if (mode === 'err429') return new Response(JSON.stringify({ error: { code: 429, status: 'RESOURCE_EXHAUSTED', message: 'q' } }), { status: 429 });
+    const enc = new TextEncoder(), parts = []; let a = 0; for (const b of [...cut, wire.length]) { if (b > a) parts.push(enc.encode(wire.slice(a, Math.min(b, wire.length)))); a = Math.min(b, wire.length); }
+    let i = 0;
+    const body = new ReadableStream({ pull(ctrl) { if (mode === 'cutmid' && i === 2) { ctrl.error(new Error('net')); return; } if (i < parts.length) ctrl.enqueue(parts[i++]); else ctrl.close(); } });
+    return new Response(body, { status: 200, headers: { 'Content-Type': 'text/event-stream' } });
+  };
+  const sr = await call('/v1/chat', { method: 'POST', headers: { Authorization: 'Bearer ' + tk }, body: JSON.stringify({ question: 'ciao', stream: true }) }, envS, '8.8.8.8');
+  ok(sr.status === 200 && /text\/event-stream/.test(sr.headers.get('content-type')) && sr.headers.get('access-control-allow-origin') === 'https://app.test', 'stream: 200 text/event-stream con CORS');
+  ok(/streamGenerateContent\?alt=sse/.test(lastUrl), 'stream: usa streamGenerateContent (SSE reale)');
+  const txt = await sr.text(); const evs = txt.split('\n\n').filter(Boolean).map(l => JSON.parse(l.replace(/^data: /, '')));
+  ok(evs.map(e => e.t || '').join('') === 'Ciao mondo!' && evs[evs.length - 1].done === true, 'stream: testo ricomposto, parti «thought» escluse, evento finale done ' + txt.slice(0, 120));
+  ok(evs.filter(e => e.t).length >= 2, 'stream: piu\' frammenti (progressivo, non un blocco unico)');
+  mode = 'cutmid';
+  const sc = await call('/v1/chat', { method: 'POST', headers: { Authorization: 'Bearer ' + tk }, body: JSON.stringify({ question: 'ciao2', stream: true }) }, envS, '8.8.8.8');
+  const ec = (await sc.text()).split('\n\n').filter(Boolean).map(l => JSON.parse(l.replace(/^data: /, '')));
+  ok(ec[ec.length - 1].e === 'provider-network' && !ec.some(e => e.done), 'stream: interruzione a meta\' -> evento di errore, nessun done');
+  mode = 'err429';
+  const se = await call('/v1/chat', { method: 'POST', headers: { Authorization: 'Bearer ' + tk }, body: JSON.stringify({ question: 'ciao3', stream: true }) }, envS, '8.8.8.8');
+  ok(se.status === 429 && (await se.json()).error === 'provider-quota', 'stream: errore del provider prima dell\'inizio -> JSON come prima');
+  mode = 'ok';
+  const ns = await call('/v1/chat', { method: 'POST', headers: { Authorization: 'Bearer ' + tk }, body: JSON.stringify({ question: 'ciao4' }) }, envS, '8.8.8.8');
+  ok(/streamGenerateContent/.test(lastUrl) === false || ns.status === 200, 'senza stream: percorso JSON invariato');
+  const quotaCalls = await call('/v1/chat', { method: 'POST', headers: { Authorization: 'Bearer ' + tk }, body: JSON.stringify({ question: 'x', stream: 'si' }) }, envS, '8.8.8.8');
+  ok(quotaCalls.status === 200 && /text\/event-stream/.test(quotaCalls.headers.get('content-type')) === false, 'stream attivo solo con true booleano');
+  globalThis.fetch = prev;
+}
 console.log(`gateway_test: ${pass} ok, ${failN} falliti`); process.exit(failN ? 1 : 0);

@@ -98,7 +98,7 @@ with sync_playwright() as p:
     ok('hub Groot: due identita\' (originale, successore) senza etichetta multiversale', 'Groot (originale)' in tx and 'Groot (successore)' in tx)
     pg.evaluate("()=>tvaA3.open('id-groot-successore')"); pg.wait_for_timeout(1500)
     tx = pg.evaluate("()=>document.getElementById('atlas2').innerText")
-    ok('Groot successore: fasi Baby/adolescente/adulto', 'Baby Groot' in tx and 'adolescente' in tx and 'adulto' in tx, tx[:300])
+    ok('Groot successore: fasi Baby/adolescente/adulto', 'Fasi evolutive' in tx and 'Baby Groot' in tx and 'adolescente' in tx and 'adulto' in tx, tx[:300])
     ok('nessun errore JS', not errs, errs[:3])
     b.close()
 fails = [n for n, c in res if not c]

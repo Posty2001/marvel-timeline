@@ -13,7 +13,7 @@
 .a4-n.ca .em { border-color: rgba(255,240,210,.45); border-style: dashed; opacity: .9; }
 .a4-n .lb { font-weight: 600; font-size: 10px; line-height: 1.15; max-width: 76px; text-align: center; text-shadow: 0 1px 3px #000; overflow-wrap: anywhere; hyphens: auto; }
 .a4-n:focus-visible .em { outline: 2px solid #F59A23; outline-offset: 2px; }
-.a4-ctl { position: absolute; right: 8px; bottom: 8px; display: flex; flex-direction: column; gap: 6px; z-index: 5; }
+.a4-ctl { position: absolute; left: 8px; bottom: 8px; display: flex; flex-direction: column; gap: 6px; z-index: 5; }
 .a4-ctl button { width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(227,199,155,.5); background: rgba(14,11,8,.78); color: #E3C79B; font-weight: 700; font-size: 18px; line-height: 1; }
 .a4-sheet { padding: 14px; border-radius: 14px; border: 1px solid rgba(227,199,155,.3); background: rgba(24,18,12,.92); display: flex; flex-direction: column; gap: 8px; }
 .a4-sheet h2 { margin: 0; font-size: 20px; }
@@ -41,3 +41,13 @@
 .a4-tools .soft { font-size: 12px; }
 .a4-vp { height: min(66vh, 560px); }
 .a4-sheet[hidden], .a4-sug[hidden] { display: none; }
+
+/* a41 */
+.a4-ctl.r { left: auto; right: 8px; }
+.a4-tools[hidden], .a4-leg[hidden] { display: none; }
+.a4-fbtn { align-self: flex-start; }
+.a4-n .em { border-color: var(--hu, rgba(227,199,155,.7)); box-shadow: 0 0 0 2px var(--oc, transparent) inset, 0 0 10px color-mix(in srgb, var(--hu, #e3c79b) 40%, transparent); }
+.a4-n.o2 .em { border-style: double; border-width: 3px; }
+.a4-n.o3 .em { border-style: dashed; }
+.a4-n.sun .em { border-color: #F59A23; box-shadow: 0 0 22px rgba(245,154,35,.55); }
+.a4-n .lb { max-width: 84px; }

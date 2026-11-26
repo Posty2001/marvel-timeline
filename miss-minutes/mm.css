@@ -325,3 +325,9 @@ dialog input[type=url],dialog input[type=text]{flex:1;min-width:0;background:#0b
 .mm[data-view=chat] .mm-down{display:flex}
 .mm-down[hidden]{display:none!important}
 .mm-down .ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* a41: streaming progressivo */
+.mm-msg.streaming .mm-body { min-height: 1.4em; }
+.mm-caret { display: inline-block; width: .5em; height: 1.05em; margin-left: 2px; vertical-align: text-bottom; border-radius: 2px; background: currentColor; opacity: .7; }
+@media (prefers-reduced-motion: no-preference) { .mm-caret { animation: mmCaret 1s steps(2, start) infinite; } }
+@keyframes mmCaret { to { visibility: hidden; } }
