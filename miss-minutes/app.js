@@ -6,7 +6,7 @@
   var V = window.MMVerify, LK = window.MMLookup, TMDBK = null, KN = null, FACTS = null, LIVE_ITEMS = [];
   var host = null; try { host = window.parent !== window && window.parent.tvaMissMinutesHost && window.parent.tvaMissMinutesHost.version === 1 ? window.parent.tvaMissMinutesHost : null; } catch (e) { host = null; }
   var store, eng, gw, busy = false, lastCtx = [], waitCtl = null, waitNode = null, errNode = null, heroSvg = null, speakingNode = null;
-  var diag = { last: null }, extra = null, prevView = 'home', maxH = 0;
+  var archInfo = null, diag = { last: null }, extra = null, prevView = 'home', maxH = 0;
   /* Stato dell'interfaccia (schermata, bozza, scorrimento) e registro del ciclo di vita della pagina. Chiave separata dalla
      cronologia: nessuna migrazione, nessuna scrittura sulle conversazioni. Nessun testo delle conversazioni, solo UI. */
   var UIK = 'marvel-ultimate-timeline-miss-minutes-ui-v1', ui = { view: 'home', prev: 'home', draft: '', scroll: {}, stick: {}, sid: null, life: [], boots: 0, restored: false };
@@ -766,6 +766,7 @@
     var g3 = el('div', 'mm-set');
     linkRow(g3, 'shield', 'Privacy e consenso', p.consent ? 'Consenso AI online dato' : 'Nessun consenso dato', privacy);
     linkRow(g3, 'wrench', 'Diagnostica', 'Gateway, prova AI, ultima richiesta', diagnostics);
+    linkRow(g3, 'lines', 'Valutazione risposte (fase C)', 'Set di domande documentato sull’AI online reale', evalDialog);
     linkRow(g3, 'info', 'Informazioni e crediti', VERSION + ' · Holographic Intelligence', about);
     b.appendChild(g3);
   }
@@ -802,6 +803,38 @@
       b.appendChild(el('p', 'mm-small', 'Interfaccia e mascotte olografica: disegni originali per TVA Archives.'));
     });
   }
+
+  /* ---------- fase C: valutazione guidata (solo su richiesta, risposte reali del gateway) ---------- */
+  var EKEY = 'marvel-ultimate-timeline-miss-minutes-eval-v1', evAbort = null;
+  function evLoad() { try { return JSON.parse(localStorage.getItem(EKEY) || 'null'); } catch (e) { return null; } }
+  function evSave(o) { try { localStorage.setItem(EKEY, JSON.stringify(o)); return true; } catch (e) { return false; } }
+  function loadScript(src) { return new Promise(function (res, rej) { if (window.MMEval) return res(); var s = document.createElement('script'); s.src = src; s.onload = res; s.onerror = function () { rej(new Error('eval.js non disponibile')); }; document.head.appendChild(s); }); }
+  function evalDialog() {
+    dlg('Valutazione risposte (fase C)', function (b) {
+      b.appendChild(el('p', 'mm-small', 'Esegue il set di domande documentato sull’AI online reale (una conversazione per catena, ritmo compatibile con le quote del gateway). Usa solo domande pubbliche sul Marvel Universe: nessun dato personale. I risultati restano su questo dispositivo finché non li copi.'));
+      var st = el('p', 'mm-small', ''), run = btn('mm-bigbtn primary', null), cp = btn('mm-bigbtn sub', null), clr = btn('mm-link', null), stop = btn('mm-bigbtn sub', null);
+      run.textContent = 'Avvia la valutazione'; cp.textContent = 'Copia i risultati (JSON)'; clr.textContent = 'Cancella i risultati'; stop.textContent = 'Interrompi'; stop.hidden = true;
+      var prev = evLoad(); st.textContent = prev ? 'Ultimo risultato: ' + prev.risultati.length + ' risposte (' + prev.fine + ').' : 'Nessun risultato salvato.';
+      if (!onlineOK()) st.textContent = 'AI online non attiva: attivala dalle impostazioni e dai il consenso prima di avviare. ' + st.textContent;
+      run.onclick = async function () {
+        if (!onlineOK()) { st.textContent = 'AI online non attiva.'; return; }
+        run.disabled = true; stop.hidden = false; evAbort = new AbortController();
+        try {
+          await loadScript('eval.js'); var r = await fetch('eval/domande.json', { cache: 'no-cache' }); var set = await r.json();
+          var qs = window.MMEval.pick(set.domande, {}); var cur = 0;
+          var hooks = { newChat: function () { store.state.active = null; }, count: function () { var s = store.current(); return s ? s.messages.length : 0; }, ask: function (q) { return submit(q, { forceOnline: true }); }, diag: function () { return diag.last; }, evalDialog: evalDialog,
+            last: function () { var s = store.current(); if (!s || !s.messages.length) return null; var m = s.messages[s.messages.length - 1]; return m.role === 'assistant' ? m : null; } };
+          var out = await window.MMEval.run(hooks, qs, {}, function (p) { st.textContent = (p.nota ? p.nota + ' · ' : '') + p.i + '/' + p.n + ' · ' + p.id; }, evAbort.signal);
+          evSave(out); st.textContent = 'Completata: ' + out.risultati.length + '/' + qs.length + ' risposte' + (out.quota ? ' (limite gratuito raggiunto: serie interrotta)' : '') + '. Copia i risultati.';
+        } catch (e) { st.textContent = 'Errore: ' + (e && e.message || e); }
+        run.disabled = false; stop.hidden = true; evAbort = null;
+      };
+      stop.onclick = function () { if (evAbort) evAbort.abort(); abortWait(); };
+      cp.onclick = async function () { var o = evLoad(); if (!o) { st.textContent = 'Nessun risultato.'; return; } var t = JSON.stringify(o); try { await navigator.clipboard.writeText(t); st.textContent = 'Copiati ' + t.length + ' caratteri: incollali in un file miss-minutes/eval/risultati.json.'; } catch (e) { var ta = el('textarea'); ta.value = t; ta.rows = 6; ta.readOnly = true; b.appendChild(ta); ta.select(); st.textContent = 'Copia manuale: seleziona il testo qui sotto.'; } };
+      clr.onclick = function () { try { localStorage.removeItem(EKEY); } catch (e) { } st.textContent = 'Risultati cancellati.'; };
+      b.appendChild(st); b.appendChild(run); b.appendChild(stop); b.appendChild(cp); b.appendChild(clr);
+    });
+  }
   function diagText() {
     var d = diag.last, L = ['Miss Minutes ' + VERSION, 'Gateway: ' + (gw.available() ? 'configurato' : 'non configurato'), 'AI online: ' + (onlineOK() ? 'attiva' : 'spenta')];
     if (!d) L.push('Ultima richiesta AI: nessuna in questa sessione.');
@@ -812,6 +845,7 @@
       if (!d.ok) L.push('Codice: ' + d.code + ' · stadio: ' + (d.stage || '-') + ' · HTTP: ' + (d.http || '-') + (d.detail ? ' · ' + d.detail : ''));
       else L.push('Marcatori scheda nella risposta grezza: ' + d.markers, 'Parole ripetute adiacenti — risposta grezza: ' + d.dupRaw + ' · testo mostrato: ' + d.dupShown);
     }
+    L.push('Archivio TMDB: ' + (TMDBK ? (archInfo ? archInfo.origine : 'incluso') + ' · v' + TMDBK.versione + ' · generato ' + TMDBK.generato + ' · ' + Object.keys(TMDBK.voci || {}).length + ' voci' : 'non disponibile') + (CFG.archivio ? ' · aggiornamento remoto attivo' : ' · aggiornamento remoto spento') + (archInfo && archInfo.note.length ? ' · ' + archInfo.note.join('; ') : ''));
     L.push('Avvii della pagina: ' + ui.boots + ' · ripristino schermata: ' + (ui.restored ? 'sì' : 'no'));
     var ev = ui.life.slice(-6).map(function (x) { var d = new Date(x.t); return x.e + '@' + ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2) + ':' + ('0' + d.getSeconds()).slice(-2); });
     L.push('Ultimi eventi: ' + (ev.join(', ') || '-'));
@@ -915,6 +949,7 @@
       KN = V.build({ titles: (data.titles || []).map(function (t) { return { id: t.id, num: t.num, title: t.title, release: t.release, kind: t.kind, saga: t.saga, studio: t.studio }; }), alias_titoli: FACTS && FACTS.alias_titoli, cast: cast, live: LIVE_ITEMS }, todayISO());
       KN.cast.forEach(function (e, i) { e.actors_raw = cast[i].attori; });
       try { var tr = await fetch('knowledge/tmdb_titoli.json'); TMDBK = tr.ok ? await tr.json() : null; } catch (e3) { TMDBK = null; }
+      try { if (window.MMArchive) { var ar = await window.MMArchive.load({ bundle: TMDBK, base: CFG.archivio || '' }); if (ar.archivio) TMDBK = ar.archivio; archInfo = { origine: ar.origine, note: ar.note }; } } catch (e4) { }
     } catch (e) { KN = null; }
     updateSub();
     $('mmForm').onsubmit = function (e) { e.preventDefault(); submit($('mmQ').value); };
@@ -943,7 +978,7 @@
     if (ui.draft) $('mmQ').value = String(ui.draft).slice(0, 600);
     ui.restored = !!(hadState && (start !== 'home' || ui.draft));
     setView(start, { noPush: true }); if (ui.restored) restoreScroll(start);
-    try { window.__mm = { follow: function () { return follow; }, ask: submit, engine: eng, store: store, view: function () { return view; }, diag: function () { return diag.last; }, resolveRefs: resolveRefs, go: function (v) { setView(v); }, ui: function () { return ui; }, back: goBack }; } catch (e) {}
+    try { window.__mm = { follow: function () { return follow; }, ask: submit, engine: eng, store: store, view: function () { return view; }, diag: function () { return diag.last; }, resolveRefs: resolveRefs, go: function (v) { setView(v); }, ui: function () { return ui; }, back: goBack, evalDialog: evalDialog }; } catch (e) {}
   }
   init();
 })();

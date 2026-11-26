@@ -1,0 +1,801 @@
+{
+ "versione": 1,
+ "nota": "Fase C - genera miss-minutes/eval/domande.json (set di valutazione di Miss Minutes 2.0).",
+ "domande": [
+  {
+   "id": "mcu01",
+   "cat": "MCU",
+   "q": "Chi interpreta Tony Stark nell'MCU?",
+   "tipo": "fatto",
+   "ok": [
+    "Downey"
+   ]
+  },
+  {
+   "id": "mcu02",
+   "cat": "MCU",
+   "q": "In che anno è uscito il primo Iron Man?",
+   "tipo": "fatto",
+   "ok": [
+    "2008"
+   ],
+   "no": [
+    "2007|2009"
+   ]
+  },
+  {
+   "id": "mcu03",
+   "cat": "MCU",
+   "q": "Chi ha diretto Thunderbolts*?",
+   "tipo": "fatto",
+   "ok": [
+    "Schreier"
+   ]
+  },
+  {
+   "id": "mcu04",
+   "cat": "MCU",
+   "q": "Chi è il cattivo principale di Avengers: Infinity War?",
+   "tipo": "fatto",
+   "ok": [
+    "Thanos"
+   ]
+  },
+  {
+   "id": "mcu05",
+   "cat": "MCU",
+   "q": "Quale attore interpreta Thor?",
+   "tipo": "fatto",
+   "ok": [
+    "Hemsworth"
+   ]
+  },
+  {
+   "id": "mcu06",
+   "cat": "MCU",
+   "q": "Cosa succede a Tony Stark alla fine di Avengers: Endgame?",
+   "tipo": "fatto",
+   "ok": [
+    "mu[oi]r",
+    "sacrific",
+    "schiocc"
+   ]
+  },
+  {
+   "id": "mcu07",
+   "cat": "MCU",
+   "q": "Quanti film compongono la Saga dell'Infinito?",
+   "tipo": "fatto",
+   "ok": [
+    "\\b23\\b",
+    "ventitré|ventitre"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "mcu08",
+   "cat": "MCU",
+   "q": "Quando è uscita la serie Wonder Man?",
+   "tipo": "fresco",
+   "ok": [
+    "27 gennaio",
+    "gennaio 2026"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "mcu09",
+   "cat": "MCU",
+   "q": "Chi interpreta Matt Murdock in Daredevil: Rinascita?",
+   "tipo": "fatto",
+   "ok": [
+    "Cox"
+   ]
+  },
+  {
+   "id": "mcu10",
+   "cat": "MCU",
+   "q": "Chi interpreta la Strega Scarlatta?",
+   "tipo": "fatto",
+   "ok": [
+    "Olsen"
+   ]
+  },
+  {
+   "id": "son01",
+   "cat": "Sony",
+   "q": "Chi interpreta Peter Parker nei film di Sam Raimi?",
+   "tipo": "fatto",
+   "ok": [
+    "Maguire"
+   ],
+   "no": [
+    "Garfield|Holland"
+   ]
+  },
+  {
+   "id": "son02",
+   "cat": "Sony",
+   "q": "Chi ha interpretato Peter Parker in The Amazing Spider-Man?",
+   "tipo": "fatto",
+   "ok": [
+    "Garfield"
+   ]
+  },
+  {
+   "id": "son03",
+   "cat": "Sony",
+   "q": "Chi ha diretto il Venom del 2018?",
+   "tipo": "fatto",
+   "ok": [
+    "Fleischer"
+   ]
+  },
+  {
+   "id": "son04",
+   "cat": "Sony",
+   "q": "Chi interpreta Morbius nel film Morbius?",
+   "tipo": "fatto",
+   "ok": [
+    "Leto"
+   ]
+  },
+  {
+   "id": "son05",
+   "cat": "Sony",
+   "q": "Chi interpreta Kraven nel film Kraven - Il cacciatore?",
+   "tipo": "fatto",
+   "ok": [
+    "Taylor-Johnson"
+   ]
+  },
+  {
+   "id": "son06",
+   "cat": "Sony",
+   "q": "Quale attrice interpreta Madame Web nel film omonimo?",
+   "tipo": "fatto",
+   "ok": [
+    "Dakota Johnson"
+   ]
+  },
+  {
+   "id": "son07",
+   "cat": "Sony",
+   "q": "Quando uscirà Spider-Man: Beyond the Spider-Verse?",
+   "tipo": "fresco",
+   "ok": [
+    "2027"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "fox01",
+   "cat": "Fox",
+   "q": "Chi interpreta Wolverine in Logan - The Wolverine?",
+   "tipo": "fatto",
+   "ok": [
+    "Jackman"
+   ]
+  },
+  {
+   "id": "fox02",
+   "cat": "Fox",
+   "q": "Chi ha diretto X-Men: Giorni di un futuro passato?",
+   "tipo": "fatto",
+   "ok": [
+    "Singer"
+   ]
+  },
+  {
+   "id": "fox03",
+   "cat": "Fox",
+   "q": "Chi interpreta Reed Richards nei Fantastici 4 del 2005?",
+   "tipo": "fatto",
+   "ok": [
+    "Gruffudd"
+   ],
+   "no": [
+    "Teller|Pascal"
+   ]
+  },
+  {
+   "id": "fox04",
+   "cat": "Fox",
+   "q": "Chris Evans ha recitato anche nei Fantastici 4 del 2005? Con quale ruolo?",
+   "tipo": "fatto",
+   "ok": [
+    "Johnny Storm|Torcia"
+   ]
+  },
+  {
+   "id": "fox05",
+   "cat": "Fox",
+   "q": "Chi interpreta Deadpool?",
+   "tipo": "fatto",
+   "ok": [
+    "Reynolds"
+   ]
+  },
+  {
+   "id": "fox06",
+   "cat": "Fox",
+   "q": "Quando è uscito in Italia Deadpool & Wolverine?",
+   "tipo": "fresco",
+   "ok": [
+    "24 luglio",
+    "luglio 2024"
+   ]
+  },
+  {
+   "id": "fox07",
+   "cat": "Fox",
+   "q": "Chi interpreta Matt Murdock nel film Daredevil del 2003?",
+   "tipo": "fatto",
+   "ok": [
+    "Affleck"
+   ]
+  },
+  {
+   "id": "fum01",
+   "cat": "Fumetti",
+   "q": "Chi ha creato Spider-Man nei fumetti?",
+   "tipo": "fatto",
+   "ok": [
+    "Ditko"
+   ]
+  },
+  {
+   "id": "fum02",
+   "cat": "Fumetti",
+   "q": "In quale albo appare per la prima volta Spider-Man?",
+   "tipo": "fatto",
+   "ok": [
+    "Amazing Fantasy"
+   ]
+  },
+  {
+   "id": "fum03",
+   "cat": "Fumetti",
+   "q": "Cos'è \"Brand New Day\" nei fumetti di Spider-Man?",
+   "tipo": "fatto",
+   "ok": [
+    "2008"
+   ],
+   "tutti": [
+    "(?i)fumett|storyline|ciclo|serie|albo"
+   ]
+  },
+  {
+   "id": "fum04",
+   "cat": "Fumetti",
+   "q": "Chi ha creato i Fantastici Quattro?",
+   "tipo": "fatto",
+   "ok": [
+    "Kirby"
+   ]
+  },
+  {
+   "id": "fum05",
+   "cat": "Fumetti",
+   "q": "Chi ha creato Miles Morales?",
+   "tipo": "fatto",
+   "ok": [
+    "Bendis",
+    "Pichelli"
+   ]
+  },
+  {
+   "id": "fum06",
+   "cat": "Fumetti",
+   "q": "In quale fumetto compare per la prima volta Wolverine?",
+   "tipo": "fatto",
+   "ok": [
+    "Hulk"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "fum07",
+   "cat": "Fumetti",
+   "q": "Cos'è la saga a fumetti Secret Wars del 1984?",
+   "tipo": "fatto",
+   "ok": [
+    "1984|Shooter|Beyonder"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "mul01",
+   "cat": "Multiverso",
+   "q": "Cos'è la Sacred Timeline?",
+   "tipo": "fatto",
+   "ok": [
+    "Loki",
+    "TVA",
+    "Linea temporale sacra"
+   ]
+  },
+  {
+   "id": "mul02",
+   "cat": "Multiverso",
+   "q": "Qual è il numero della Terra dell'MCU?",
+   "tipo": "fatto",
+   "ok": [
+    "199999"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "mul03",
+   "cat": "Multiverso",
+   "q": "Cos'è Terra-616?",
+   "tipo": "fatto",
+   "ok": [
+    "616"
+   ],
+   "tutti": [
+    "(?i)fumett|principale|universo"
+   ]
+  },
+  {
+   "id": "mul04",
+   "cat": "Multiverso",
+   "q": "Quali Spider-Man compaiono in Spider-Man: No Way Home?",
+   "tipo": "fatto",
+   "tutti": [
+    "Maguire",
+    "Garfield",
+    "Holland"
+   ]
+  },
+  {
+   "id": "mul05",
+   "cat": "Multiverso",
+   "q": "Cos'è un evento Nexus in Loki?",
+   "tipo": "fatto",
+   "ok": [
+    "ramific|variante|Sacred|Sacra|timeline|linea temporale"
+   ]
+  },
+  {
+   "id": "mul06",
+   "cat": "Multiverso",
+   "q": "Cos'è un'incursione nel multiverso Marvel?",
+   "tipo": "fatto",
+   "ok": [
+    "colli|scontr|distru|universi"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "mul07",
+   "cat": "Multiverso",
+   "q": "Chi è Kang il Conquistatore?",
+   "tipo": "fatto",
+   "ok": [
+    "Kang"
+   ],
+   "tutti": [
+    "(?i)Majors|varian|Conquistatore|Immortus"
+   ]
+  },
+  {
+   "id": "att01",
+   "cat": "Attori",
+   "q": "Che ruolo ha Paul Rudd nell'MCU?",
+   "tipo": "fatto",
+   "ok": [
+    "Scott Lang|Ant-Man"
+   ]
+  },
+  {
+   "id": "att02",
+   "cat": "Attori",
+   "q": "In quale ruolo Scarlett Johansson recita nell'MCU?",
+   "tipo": "fatto",
+   "ok": [
+    "Vedova Nera|Black Widow|Natasha"
+   ]
+  },
+  {
+   "id": "att03",
+   "cat": "Attori",
+   "q": "Che personaggio interpreta Tom Hardy nei film Venom?",
+   "tipo": "fatto",
+   "ok": [
+    "Eddie Brock"
+   ]
+  },
+  {
+   "id": "att04",
+   "cat": "Attori",
+   "q": "Chi recita in Thunderbolts*?",
+   "tipo": "fatto",
+   "ok": [
+    "Florence Pugh|Pugh|Sebastian Stan|Harbour"
+   ]
+  },
+  {
+   "id": "att05",
+   "cat": "Attori",
+   "q": "Chi sono gli interpreti principali di Spider-Man: Brand New Day?",
+   "tipo": "fresco",
+   "ok": [
+    "Holland"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "att06",
+   "cat": "Attori",
+   "q": "Hugh Jackman compare in Deadpool & Wolverine?",
+   "tipo": "fatto",
+   "ok": [
+    "sì|si,|Jackman"
+   ],
+   "no": [
+    "non compare|non c'è"
+   ]
+  },
+  {
+   "id": "cro01",
+   "cat": "Cronologia",
+   "q": "Captain Marvel è ambientato prima o dopo Avengers: Endgame?",
+   "tipo": "fatto",
+   "ok": [
+    "prima|1995"
+   ]
+  },
+  {
+   "id": "cro02",
+   "cat": "Cronologia",
+   "q": "In che anno è ambientato Captain Marvel?",
+   "tipo": "fatto",
+   "ok": [
+    "1995"
+   ]
+  },
+  {
+   "id": "cro03",
+   "cat": "Cronologia",
+   "q": "Black Widow è ambientato prima o dopo Captain America: Civil War?",
+   "tipo": "fatto",
+   "ok": [
+    "dopo"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "cro04",
+   "cat": "Cronologia",
+   "q": "Quale film guardo subito dopo Avengers: Endgame in ordine di uscita?",
+   "tipo": "fatto",
+   "ok": [
+    "Far From Home|WandaVision|Loki|Falcon"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "nov01",
+   "cat": "Novità",
+   "q": "Spider-Man: Brand New Day è già uscito? Di cosa parla?",
+   "tipo": "fresco",
+   "ok": [
+    "29 luglio|31 luglio|luglio 2026|2026"
+   ],
+   "no": [
+    "2008",
+    "(?i)ciclo (di )?fumett"
+   ]
+  },
+  {
+   "id": "nov02",
+   "cat": "Novità",
+   "q": "Quando esce Avengers: Doomsday?",
+   "tipo": "fresco",
+   "ok": [
+    "dicembre 2026|16 dicembre|18 dicembre"
+   ]
+  },
+  {
+   "id": "nov03",
+   "cat": "Novità",
+   "q": "Avengers: Doomsday è già uscito?",
+   "tipo": "fresco",
+   "ok": [
+    "non (è )?ancora|prossim|dicembre|uscirà"
+   ],
+   "no": [
+    "(?<!non )(?<!ancora )è (già )?uscit[oa]\\b"
+   ]
+  },
+  {
+   "id": "nov04",
+   "cat": "Novità",
+   "q": "Quando esce Avengers: Secret Wars?",
+   "tipo": "fresco",
+   "ok": [
+    "dicembre 2027|2027"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "nov05",
+   "cat": "Novità",
+   "q": "Quali sono le prossime uscite Marvel al cinema?",
+   "tipo": "fresco",
+   "ok": [
+    "Doomsday"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "nov06",
+   "cat": "Novità",
+   "q": "Chi dirige Avengers: Doomsday?",
+   "tipo": "fresco",
+   "ok": [
+    "Russo"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "nov07",
+   "cat": "Novità",
+   "q": "Chi interpreta Doctor Doom in Avengers: Doomsday?",
+   "tipo": "fresco",
+   "ok": [
+    "Downey"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "teo01",
+   "cat": "Teorie",
+   "q": "Secondo te chi sarà il cattivo finale di Secret Wars?",
+   "tipo": "incerto",
+   "hedge": true
+  },
+  {
+   "id": "teo02",
+   "cat": "Teorie",
+   "q": "È confermato che Tom Holland sarà in Secret Wars?",
+   "tipo": "incerto",
+   "hedge": true
+  },
+  {
+   "id": "teo03",
+   "cat": "Teorie",
+   "q": "Il Wolverine di Hugh Jackman tornerà in Avengers: Doomsday?",
+   "tipo": "incerto",
+   "hedge": true
+  },
+  {
+   "id": "teo04",
+   "cat": "Teorie",
+   "q": "Cosa succederà dopo Avengers: Doomsday?",
+   "tipo": "incerto",
+   "hedge": true
+  },
+  {
+   "id": "fal01",
+   "cat": "Falsa premessa",
+   "q": "Quando è uscito il film Iron Man 7?",
+   "tipo": "falsa",
+   "ok": [
+    "non (esiste|risulta|ci sono|è mai)|nessun"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "fal02",
+   "cat": "Falsa premessa",
+   "q": "In che ruolo ha recitato Tom Cruise nel primo Iron Man?",
+   "tipo": "falsa",
+   "ok": [
+    "non (ha|risulta|compare|era|recita)|nessun"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "fal03",
+   "cat": "Falsa premessa",
+   "q": "Perché Andrew Garfield ha recitato in Spider-Man: Homecoming?",
+   "tipo": "falsa",
+   "ok": [
+    "non (ha|risulta|compare|era|recita)|nessun"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "fal04",
+   "cat": "Falsa premessa",
+   "q": "Quando esce il film Marvel \"Spider-Man: Brand New Day 2\" con Tobey Maguire?",
+   "tipo": "falsa",
+   "ok": [
+    "non (risulta|esiste|è)|nessun|non ci sono|non ho"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "seg01a",
+   "cat": "Seguiti",
+   "q": "Chi ha interpretato Peter Parker in The Amazing Spider-Man?",
+   "tipo": "fatto",
+   "ok": [
+    "Garfield"
+   ]
+  },
+  {
+   "id": "seg01b",
+   "cat": "Seguiti",
+   "q": "E chi ha diretto quel film?",
+   "tipo": "fatto",
+   "ok": [
+    "Webb"
+   ],
+   "dopo": "seg01a"
+  },
+  {
+   "id": "seg01c",
+   "cat": "Seguiti",
+   "q": "In che anno è uscito?",
+   "tipo": "fatto",
+   "ok": [
+    "2012"
+   ],
+   "dopo": "seg01b"
+  },
+  {
+   "id": "seg02a",
+   "cat": "Seguiti",
+   "q": "Parlami di Deadpool & Wolverine.",
+   "tipo": "fatto",
+   "ok": [
+    "Deadpool"
+   ]
+  },
+  {
+   "id": "seg02b",
+   "cat": "Seguiti",
+   "q": "Chi sono i protagonisti?",
+   "tipo": "fatto",
+   "tutti": [
+    "Reynolds",
+    "Jackman"
+   ],
+   "dopo": "seg02a"
+  },
+  {
+   "id": "seg02c",
+   "cat": "Seguiti",
+   "q": "E chi è il regista?",
+   "tipo": "fatto",
+   "ok": [
+    "Levy"
+   ],
+   "dopo": "seg02b"
+  },
+  {
+   "id": "seg03a",
+   "cat": "Seguiti",
+   "q": "Cos'è Brand New Day?",
+   "tipo": "fatto",
+   "ok": [
+    "Brand New Day"
+   ],
+   "hedge": true
+  },
+  {
+   "id": "seg03b",
+   "cat": "Seguiti",
+   "q": "Intendevo il film, non il fumetto. Chi lo dirige?",
+   "tipo": "fatto",
+   "ok": [
+    "Cretton"
+   ],
+   "hedge": true,
+   "dopo": "seg03a"
+  },
+  {
+   "id": "seg03c",
+   "cat": "Seguiti",
+   "q": "E quando esce in Italia?",
+   "tipo": "fresco",
+   "ok": [
+    "29 luglio|luglio 2026"
+   ],
+   "hedge": true,
+   "dopo": "seg03b"
+  },
+  {
+   "id": "seg04a",
+   "cat": "Seguiti",
+   "q": "Chi interpreta Reed Richards nei Fantastici 4 del 2005?",
+   "tipo": "fatto",
+   "ok": [
+    "Gruffudd"
+   ]
+  },
+  {
+   "id": "seg04b",
+   "cat": "Seguiti",
+   "q": "E nel film del 2015?",
+   "tipo": "fatto",
+   "ok": [
+    "Teller"
+   ],
+   "dopo": "seg04a"
+  },
+  {
+   "id": "seg04c",
+   "cat": "Seguiti",
+   "q": "E nell'ultimo uscito?",
+   "tipo": "fatto",
+   "ok": [
+    "Pascal"
+   ],
+   "hedge": true,
+   "dopo": "seg04b"
+  },
+  {
+   "id": "seg05a",
+   "cat": "Seguiti",
+   "q": "Parlami di Captain Marvel.",
+   "tipo": "fatto",
+   "ok": [
+    "Captain Marvel|Carol"
+   ]
+  },
+  {
+   "id": "seg05b",
+   "cat": "Seguiti",
+   "q": "Chi la interpreta?",
+   "tipo": "fatto",
+   "ok": [
+    "Larson"
+   ],
+   "dopo": "seg05a"
+  },
+  {
+   "id": "seg05c",
+   "cat": "Seguiti",
+   "q": "È uscito prima o dopo Endgame?",
+   "tipo": "fatto",
+   "ok": [
+    "prima"
+   ],
+   "dopo": "seg05b"
+  },
+  {
+   "id": "seg06a",
+   "cat": "Seguiti",
+   "q": "Chi interpreta Loki?",
+   "tipo": "fatto",
+   "ok": [
+    "Hiddleston"
+   ]
+  },
+  {
+   "id": "seg06b",
+   "cat": "Seguiti",
+   "q": "In quali serie compare?",
+   "tipo": "fatto",
+   "ok": [
+    "Loki"
+   ],
+   "dopo": "seg06a"
+  },
+  {
+   "id": "seg06c",
+   "cat": "Seguiti",
+   "q": "E nel multiverso, chi è il suo avversario principale?",
+   "tipo": "fatto",
+   "ok": [
+    "Kang|Colui che rimane|He Who Remains|Majors"
+   ],
+   "hedge": true,
+   "dopo": "seg06b"
+  }
+ ]
+}
