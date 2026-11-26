@@ -455,19 +455,27 @@
     if (!TMDBK || !TMDBK.voci) return out;
     names.forEach(function (n) {
       var t = KN.titles.filter(function (x) { return x.title === n.name; })[0], e = t && TMDBK.voci[String(t.id)]; if (!e) return;
-      var tv = e.tmdb && e.tmdb.t === 'tv', season = tv && /\bS\d+\b|stagion/i.test(t.title), gen = String(TMDBK.generato || '').slice(0, 10);
-      var url = e.url && /^https:\/\/www\.themoviedb\.org\//.test(e.url) ? e.url : '', scope = tv ? ' della SERIE' + (season ? ' (non della singola stagione «' + t.title + '»)' : '') : '';
+      var tv = e.tmdb && e.tmdb.t === 'tv', st = tv && e.stagione ? e.stagione : null, season = tv && (st || /\bS\d+\b|stagion/i.test(t.title)), gen = String(TMDBK.generato || '').slice(0, 10);
+      var url = e.url && /^https:\/\/www\.themoviedb\.org\//.test(e.url) ? e.url : '';
+      var special = t.kind === 'speciale' ? ' (speciale/cortometraggi: la scheda TMDB è quella dell’opera o della serie che li contiene)' : '';
+      var auto = e.risoluzione === 'auto' ? ' [associazione TMDB automatica, non ancora confermata]' : '';
+      var scope = tv ? (st ? ' della stagione ' + st.n : ' della SERIE' + (season ? ' (non della singola stagione «' + t.title + '»)' : '')) : '';
       var base = { classe: 'tmdb', fonte: 'TMDB ' + gen, _url: url, _kw: [t.title], _when: TMDBK.generato };
-      if (e.sinossi_it) out.push(Object.assign({ id: 'f:tmdb:' + t.id + ':s', testo: '«' + t.title + '» — sinossi TMDB' + scope + (e.sinossi_lingua === 'en' ? ' (in inglese)' : '') + ': ' + clipW(e.sinossi_it, 330) + (e.regista && e.regista.length ? ' Regia: ' + e.regista.slice(0, 2).join(', ') + '.' : '') }, base));
+      var syn = st && st.sinossi_it ? st.sinossi_it : e.sinossi_it, synScope = st && !st.sinossi_it ? ' della SERIE (la stagione non ha sinossi propria su TMDB)' : scope;
+      if (syn) out.push(Object.assign({ id: 'f:tmdb:' + t.id + ':s', testo: '«' + t.title + '» — sinossi TMDB' + synScope + (e.sinossi_lingua === 'en' && !(st && st.sinossi_it) ? ' (in inglese)' : '') + ': ' + clipW(syn, 330) + (e.regista && e.regista.length ? ' Regia: ' + e.regista.slice(0, 2).join(', ') + '.' : '') + special + auto }, base));
       var parts = [], dd = (e.date || []).filter(function (d) { return d.paese !== 'TMDB'; }), first = (e.date || []).filter(function (d) { return d.paese === 'TMDB'; })[0];
-      if (e.stato) parts.push('stato TMDB' + scope + ': ' + e.stato);
+      if (e.stato) parts.push('stato TMDB' + (tv ? ' della SERIE' : '') + ': ' + e.stato);
       if (!tv && dd.length) {
         parts.push('uscite per paese (TMDB): ' + dd.slice(0, 6).map(function (d) { return d.paese + ' ' + dateIT(d.data); }).join('; '));
         var us = dd.filter(function (d) { return d.paese === 'US'; })[0] || dd[0];
         if (t.release && us && dayDiff(us.data, t.release) > 3) parts.push('DISCORDANZA con la Timeline (' + dateIT(t.release) + '): riporta entrambe le date e dichiara che differiscono, senza sceglierne una in silenzio');
+      } else if (st && st.data) {
+        parts.push('stagione ' + st.n + ': uscita TMDB ' + dateIT(st.data) + (st.episodi ? ', ' + st.episodi + ' episodi' : ''));
+        if (t.release && dayDiff(st.data, t.release) > 3) parts.push('DISCORDANZA con la Timeline (' + dateIT(t.release) + '): riporta entrambe le date e dichiara che differiscono, senza sceglierne una in silenzio');
       } else if (tv && first) parts.push('prima messa in onda della serie (TMDB): ' + dateIT(first.data) + (season ? ' — NON è la data di questa stagione (per quella vale la Timeline: ' + dateIT(t.release) + ')' : ''));
-      if (e.cast && e.cast.length) parts.push('cast principale' + scope + ': ' + e.cast.slice(0, 6).join(', '));
-      if (parts.length) out.push(Object.assign({ id: 'f:tmdb:' + t.id + ':d', testo: '«' + t.title + '» — ' + parts.join('. ') + '. (TMDB non è una conferma ufficiale)' }, base));
+      var cast = st && st.cast && st.cast.length ? st.cast : e.cast;
+      if (cast && cast.length) parts.push('cast principale' + (st && st.cast && st.cast.length ? ' della stagione' : scope) + ': ' + cast.slice(0, 6).join(', '));
+      if (parts.length) out.push(Object.assign({ id: 'f:tmdb:' + t.id + ':d', testo: '«' + t.title + '» — ' + parts.join('. ') + '. (TMDB non è una conferma ufficiale)' + special + auto }, base));
     });
     return out;
   }

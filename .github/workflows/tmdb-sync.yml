@@ -374,20 +374,23 @@ jobs:
           python3 tools/mm_tmdb.py --prova
           python3 tools/mm_tmdb.py --scrivi
           python3 tools/mm_tmdb.py --verifica
+          python3 tools/mm_tmdb.py --copertura | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Salva artifact
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: mm-tmdb
-          path: miss-minutes/knowledge/tmdb_titoli.json
+          path: |
+            miss-minutes/knowledge/tmdb_titoli.json
+            miss-minutes/knowledge/tmdb_risolti.json
           if-no-files-found: warn
           retention-days: 30
       - name: Commit del solo tmdb_titoli.json su test/tva-archives
         if: ${{ inputs.mm_tmdb_commit }}
         run: |
-          git add -- miss-minutes/knowledge/tmdb_titoli.json
+          git add -- miss-minutes/knowledge/tmdb_titoli.json miss-minutes/knowledge/tmdb_risolti.json
           if git diff --cached --quiet; then echo "Nessuna modifica."; exit 0; fi
-          extra="$(git diff --cached --name-only | grep -vx 'miss-minutes/knowledge/tmdb_titoli.json' || true)"
+          extra="$(git diff --cached --name-only | grep -vxE 'miss-minutes/knowledge/tmdb_(titoli|risolti).json' || true)"
           [ -z "$extra" ] || { echo "File non consentiti: $extra"; exit 4; }
           git -c user.name="tva-mm-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "data(Miss Minutes 2.0): archivio TMDB dei titoli (solo dati pubblici)"
           for i in 1 2 3; do

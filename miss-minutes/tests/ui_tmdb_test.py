@@ -69,11 +69,20 @@ def wp_route(route):
     u = route.request.url; WPREQ.append(u)
     if MODE.get('wp') == 'down': return route.abort()
     route.fulfill(status=200, content_type='application/json', headers={'Access-Control-Allow-Origin': '*'}, body=json.dumps(WP))
+def patched_archive():
+    d = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'knowledge', 'tmdb_titoli.json'), encoding='utf-8')); d['versione'] = 2
+    d['voci']['112']['stagione'] = {'n': 2, 'nome': 'Stagione 2', 'sinossi_it': 'Sinossi della seconda stagione di prova.', 'data': '2023-10-05', 'episodi': 6, 'cast': ['Attore Prova']}
+    d['voci']['112']['serie'] = {'prima': '2021-06-09', 'ultima': '2023-11-09', 'n_stagioni': 2}
+    d['voci']['119']['stagione'] = {'n': 3, 'nome': 'Stagione 3', 'sinossi_it': '', 'data': '2024-12-22', 'episodi': 4, 'cast': []}
+    d['voci']['125'] = {'tmdb': {'t': 'movie', 'id': 999999}, 'titolo': 'Fantastic Four: First Steps', 'sinossi_it': 'Sinossi di prova.', 'regista': ['Regista Prova'], 'cast': [], 'stato': 'Released', 'date': [{'paese': 'US', 'data': '2025-07-25'}], 'url': 'https://www.themoviedb.org/movie/999999', 'risoluzione': 'auto'}
+    return json.dumps(d)
+def tmdb_route(route): route.fulfill(status=200, content_type='application/json', body=patched_archive())
 with sync_playwright() as p:
     b = p.chromium.launch(args=['--host-resolver-rules=MAP miss-minutes-api.test.workers.dev 127.0.0.1'], proxy={'server': 'http://127.0.0.1:9', 'bypass': 'miss-minutes-api.test.workers.dev,127.0.0.1,localhost'}); ctx = b.new_context(viewport={'width': 390, 'height': 844}, service_workers='block', ignore_https_errors=True)
     ctx.route('**/miss-minutes/config.js', lambda r: r.fulfill(status=200, content_type='application/javascript', body=CFG))
     ctx.add_init_script("if(!localStorage.getItem('marvel-ultimate-timeline-watched'))localStorage.setItem('marvel-ultimate-timeline-watched',JSON.stringify({'001':true}))")
     ctx.route('**/en.wikipedia.org/**', wp_route)
+    ctx.route('**/knowledge/tmdb_titoli.json', tmdb_route)
     pg = ctx.new_page(); errs = []; pg.on('pageerror', lambda e: errs.append(str(e)))
     pg.goto(BASE + '/index.html', wait_until='load'); pg.wait_for_timeout(1300); pg.evaluate(START); pg.wait_for_timeout(500)
     pg.click('#mmFab'); pg.wait_for_timeout(600)
@@ -109,9 +118,14 @@ with sync_playwright() as p:
     ok('K. sinossi non tagliata a meta\' parola (termina con punteggiatura o «…»)', all(re.search(r'[.!?…]( Regia:.*)?$', x['testo'].split(' Regia:')[0]) for x in tm if ':s' in x['id']), [x['testo'][-60:] for x in tm if ':s' in x['id']])
     ok('K. «Fonti consultate»: link TMDB reale al film, con data di generazione', fr.evaluate("()=>[...document.querySelectorAll('.mm-srcs a')].some(a=>a.href==='https://www.themoviedb.org/movie/969681')") and any(x['classe'] == 'tmdb' and x['when'] for x in m.get('srcs', [])), m.get('srcs'))
     ok('K. nessun dato personale nel payload', 'seen' not in json.dumps(bs[0]) and 'rating' not in json.dumps(bs[0]))
-    # L. stagioni: i dati TMDB sono della SERIE, non della stagione
+    # L. stagioni (archivio v2): dati DELLA STAGIONE, non della serie
     m, n, bs = run('clean', 'Loki S2: quando è uscita? (L)'); tm = [x for x in bs[0]['fatti'] if x['classe'] == 'tmdb']
-    ok('L. stagione: sinossi dichiarata «della SERIE (non della singola stagione)» e data TMDB non attribuita alla stagione', any('della SERIE (non della singola stagione' in x['testo'] for x in tm) and any('NON è la data di questa stagione' in x['testo'] for x in tm), [x['testo'][:200] for x in tm])
+    ok('L. stagione: sinossi, data (05/10/2023), episodi e cast della STAGIONE 2, senza «NON è la data»', any('sinossi TMDB della stagione 2' in x['testo'] and 'seconda stagione di prova' in x['testo'] for x in tm) and any('stagione 2: uscita TMDB 05/10/2023, 6 episodi' in x['testo'] and 'Attore Prova' in x['testo'] and 'NON è la data' not in x['testo'] for x in tm), [x['testo'][:200] for x in tm])
+    m, n, bs = run('clean', 'What If...? S3: di cosa parla? (L3)'); tm = [x for x in bs[0]['fatti'] if x['classe'] == 'tmdb']
+    ok('L. stagione senza sinossi propria: dichiarato «della SERIE (la stagione non ha sinossi propria…)»', any('della SERIE (la stagione non ha sinossi propria' in x['testo'] for x in tm), [x['testo'][:200] for x in tm])
+    # N. associazione automatica: dichiarata come non confermata
+    m, n, bs = run('clean', 'Fantastic Four: First Steps: regia? (N)'); tm = [x for x in bs[0]['fatti'] if x['classe'] == 'tmdb']
+    ok('N. associazione TMDB automatica: dichiarata «non ancora confermata»', any('associazione TMDB automatica, non ancora confermata' in x['testo'] for x in tm) and any('Regista Prova' in x['testo'] for x in tm), [x['testo'][:160] for x in tm])
     # M. film con date TMDB discordanti dalla Timeline: discordanza dichiarata
     m, n, bs = run('clean', 'Ghost Rider: Spirit of Vengeance quando è uscito? (M)'); tm = [x for x in bs[0]['fatti'] if x['classe'] == 'tmdb']
     ok('M. date TMDB discordanti dalla Timeline: «DISCORDANZA» dichiarata', any('DISCORDANZA' in x['testo'] for x in tm), [x['testo'][:200] for x in tm])
