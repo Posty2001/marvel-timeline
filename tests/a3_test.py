@@ -64,7 +64,7 @@ with sync_playwright() as p:
     pg.evaluate("()=>tvaAtlas2.ext.api.nav('a3',{a3:{v:'search',q:''}})"); pg.wait_for_timeout(500)
     pg.fill('#atlas2 .a3-in', 'peter'); pg.wait_for_timeout(500)
     groups = pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-sgroup h3')].map(h=>h.firstChild.textContent)")
-    ok('ricerca "peter": risultati suddivisi per categoria', 'Personaggi' in groups and 'Hub multiversali' in groups, groups)
+    ok('ricerca "peter": risultati suddivisi per categoria', 'Personaggi' in groups and 'Hub di identità' in groups, groups)
     # hub
     pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-sgroup')].find(g=>/Hub/.test(g.querySelector('h3').textContent)).querySelector('.a3-li').click()"); pg.wait_for_timeout(1200)
     s = a3(pg); cards = pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-hc').length"); off = pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-hc.off').length")

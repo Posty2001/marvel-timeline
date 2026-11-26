@@ -6,7 +6,7 @@
   if (!C || W.tvaA4) return;
   if (!D.getElementById('a4-css')) { var lk = D.createElement('link'); lk.id = 'a4-css'; lk.rel = 'stylesheet'; lk.href = 'atlante2/a4.css'; D.head.appendChild(lk); }
   var h = C.h, btn = C.btn, BY = C.BY, NS = 'http://www.w3.org/2000/svg';
-  var G = null, ADJ = null, CO = null, ST4 = C.api.ST;
+  var G = null, ADJ = null, CO = null, ST4 = C.api.ST, LBL = {};
   var TL = { famiglia_genitore: 'Genitorialità', famiglia_fratelli: 'Fratelli', famiglia_coniugi: 'Coniugi', partner: 'Relazione sentimentale', famiglia_discendente: 'Discendenza', alleanza: 'Alleanza', amicizia: 'Amicizia', rivalita: 'Rivalità', mentorato: 'Mentorato', appartenenza: 'Appartenenza', successione: 'Successione', tradimento: 'Tradimento', copia: 'Copia', controparte: 'Controparte multiversale', ispirato_a: 'Ispirazione', correlato: 'Associazione editoriale', stessa_scheda: 'Scheda condivisa', segnaposto: 'Segnaposto' };
   var TC = { famiglia_genitore: '#e3c79b', famiglia_fratelli: '#e3c79b', famiglia_coniugi: '#f08fb0', partner: '#f08fb0', famiglia_discendente: '#e3c79b', alleanza: '#6fd08c', amicizia: '#7fd0ff', rivalita: '#ff6a5c', mentorato: '#f5c04a', appartenenza: '#b48ae0', successione: '#f59a23', tradimento: '#ff4fa0', copia: '#9fe0d4', controparte: '#4fd0ff' };
   var VL = ['Da verificare', 'Guida classica', 'Fonte consultata'];
@@ -53,25 +53,26 @@
   function bgStars(el) { var s = ''; for (var i = 0, x = 12345; i < 46; i++) { x = (Math.imul(x, 1103515245) + 12345) >>> 0; var a = x % 100, b = (x >>> 8) % 100; s += (i ? ',' : '') + 'radial-gradient(1px 1px at ' + a + '% ' + b + '%,rgba(255,240,210,.7),transparent)'; } el.style.backgroundImage = s + ',radial-gradient(circle at 50% 50%,rgba(245,154,35,.10),transparent 55%)'; }
   function nodeEl(id, cls, big) {
     var v = BY[id], n = h('button', 'a4-n ' + (cls || '') + ' t-' + (v ? v.t : 'p')); n.type = 'button'; n.dataset.id = id; n.setAttribute('aria-label', nm(id));
-    var em = h('span', 'em'); if (v) { em.appendChild(C.emblem(v, false)); C.paintAny(em, v, false); } n.appendChild(em); n.appendChild(h('span', 'lb', nm(id))); return n;
+    var em = h('span', 'em'); if (v) { em.appendChild(C.emblem(v, false)); C.paintAny(em, v, false); } n.appendChild(em); var L = LBL[id] || labels([id])[id], lb = h('span', 'lb', L[0]); if (L[1]) lb.appendChild(h('small', '', L[1])); n.appendChild(lb); n.title = nm(id); return n;
   }
   /* ---------- MULTIVERSO ---------- */
   var ORB = [['Continuità principale', 0], ['Diramazione / universo alternativo', 1], ['Universo autonomo', 2], ['Raggruppamento editoriale', 3]];
   function renderMv() {
-    C.frame(); C.api.setTitle('Multiverso', 'Osservatorio TVA'); var s = C.A3(), root = h('div', 'a4-root'); C.body.appendChild(root);
+    C.frame(); C.api.setTitle('Osservatorio del Multiverso', 'La mappa degli universi'); var s = C.A3(), root = h('div', 'a4-root'); C.body.appendChild(root);
     root.appendChild(h('p', 'a3-note', 'Le orbite raggruppano gli universi per natura documentata. Le distanze non indicano parentele né gerarchie; la TVA non è un universo.'));
     var host = h('div', 'a4-vp'), world = h('div', 'a4-world'); bgStars(host); host.appendChild(world); root.appendChild(host);
     var sheet = h('div', 'a4-sheet'); sheet.hidden = true; root.appendChild(sheet);
     var U = (C.ORD.U || []).slice(), by = {}, tva = [], R0 = 150, ST = 120;
+    LBL = labels(U.map(function (v) { return v.i; }));
     U.forEach(function (v) { var c = C.uniCont(v.i); if (/Luogo narrativo/.test(c)) { tva.push(v); return; } var o = ORB.filter(function (x) { return x[0] === c; })[0]; (by[o ? o[1] : 2] = by[o ? o[1] : 2] || []).push(v); });
     // layout adattivo: raggio dell'orbita in funzione del numero di universi (nessuna sovrapposizione di etichette)
-    var CLR = ['#F59A23', '#6fd0e0', '#b79cf0', '#9aa39a'], cnt = [1, 2, 3].map(function (i) { return (by[i] || []).length; }), RAD = [], prev = 120;
+    var CLR = C.ORBCLR, cnt = [1, 2, 3].map(function (i) { return (by[i] || []).length; }), RAD = [], prev = 120;
     [1, 2, 3].forEach(function (i) { var need = Math.ceil(cnt[i - 1] * 96 / 6.283); prev = cnt[i - 1] ? Math.max(prev + 135, need) : prev; RAD[i] = prev; });
     var RM = Math.max(RAD[1], RAD[2], RAD[3], 200), WS = Math.ceil((RM + 110) * 2), HC = WS / 2; s.WS = WS;
     var svg = sv('svg', { 'class': 'a4-orb', width: WS, height: WS, viewBox: (-HC) + ' ' + (-HC) + ' ' + WS + ' ' + WS }, world);
     [1, 2, 3].forEach(function (i) { if (cnt[i - 1]) sv('circle', { cx: 0, cy: 0, r: RAD[i], fill: 'none', stroke: CLR[i], 'stroke-opacity': .42, 'stroke-width': 1.4, 'stroke-dasharray': '3 6' }, svg); });
-    function hue(id) { var x = 7; for (var q = 0; q < id.length; q++) x = (Math.imul(x, 31) + id.charCodeAt(q)) >>> 0; return x % 360; }
-    var pos = {}; function put(v, r, a, cls, oi) { var x = r * Math.cos(a), y = r * Math.sin(a), n = nodeEl(v.i, cls); n.style.left = (HC + x) + 'px'; n.style.top = (HC + y) + 'px'; n.style.setProperty('--oc', CLR[oi]); n.style.setProperty('--hu', 'hsl(' + hue(v.i) + ',62%,62%)'); n.addEventListener('click', function () { if (host.dataset.drag) return; pick(v.i); }); world.appendChild(n); pos[v.i] = n; }
+    var hue = C.uniHue;
+    var pos = {}; function put(v, r, a, cls, oi) { var x = r * Math.cos(a), y = r * Math.sin(a), n = nodeEl(v.i, cls); n.style.left = (HC + x) + 'px'; n.style.top = (HC + y) + 'px'; n.style.setProperty('--oc', CLR[oi]); n.style.setProperty('--hu', 'hsl(' + hue(v.i) + ',66%,68%)'); n.addEventListener('click', function () { if (host.dataset.drag) return; pick(v.i); }); world.appendChild(n); pos[v.i] = n; }
     (by[0] || []).forEach(function (v) { put(v, 0, 0, 'sun', 0); });
     [1, 2, 3].forEach(function (i) { var arr = (by[i] || []).sort(function (a, b) { return a.n < b.n ? -1 : 1; }); arr.forEach(function (v, j) { put(v, RAD[i], -Math.PI / 2 + j * 2 * Math.PI / arr.length + i * .4, 'o' + i, i); }); });
     tva.forEach(function (v) { put(v, 0, 0, 'tva', 3); pos[v.i].style.left = (HC + RM - 20) + 'px'; pos[v.i].style.top = (HC + RM - 20) + 'px'; pos[v.i].title = 'Separata dagli universi'; });
@@ -101,12 +102,44 @@
     load(function () { /* dati controparti pronti per il confronto */ });
   }
   /* ---------- NEXUS ---------- */
+  /* Una sola voce per nodo vicino, ma con TUTTE le relazioni documentate della classe migliore (rels): nessuna viene nascosta o presentata come unica.
+     Es.: Iron Man e Steve Rogers → amicizia + rivalità (non «solo rivali»). Le classi inferiori (editoriali/co-apparizioni) restano in `more`. */
   function edgesOf(id, S) {
-    var out = [], seen = {};
-    (ADJ[id] || []).forEach(function (e) { var r = G.r[e[0]], t = G.tipi[r[2]], cl = r[3]; if (cl === 'e' && !S.ed) return; if (S.tp[t] === false) return; if (r[4] === 0 && !S.un) return; if (e[1] === id) return; var o = { id: e[1], cl: cl, t: t, v: r[4], q: r[5], d: r[0] === id, c: r[6] }, pr = seen[e[1]]; if (pr) { var rk = { n: 0, c: 1, e: 2, a: 3 }; if (rk[cl] < rk[pr.cl] || (cl === pr.cl && r[4] > pr.v)) { o.more = (pr.more || []).concat([pr.t]); out[out.indexOf(pr)] = o; seen[e[1]] = o; } else { pr.more = (pr.more || []); if (pr.more.indexOf(t) < 0 && pr.t !== t) pr.more.push(t); } return; } seen[e[1]] = o; out.push(o); });
-    if (S.co > 0) (G.coN[id] || []).forEach(function (c) { if (c[0] !== id && c[1] >= S.co && !out.some(function (o) { return o.id === c[0]; })) out.push({ id: c[0], cl: 'a', t: 'co_apparizione', v: 1, n: c[1] }); });
-    var rank = { n: 0, c: 1, e: 2, a: 3 }; out.sort(function (a, b) { return rank[a.cl] - rank[b.cl] || (b.v - a.v) || (b.n || 0) - (a.n || 0) || (nm(a.id) < nm(b.id) ? -1 : 1); });
+    var by = {}, order = [], rank = { n: 0, c: 1, e: 2, a: 3 };
+    (ADJ[id] || []).forEach(function (e) {
+      var r = G.r[e[0]], t = G.tipi[r[2]], cl = r[3]; if (cl === 'e' && !S.ed) return; if (S.tp[t] === false) return; if (r[4] === 0 && !S.un) return; if (e[1] === id) return;
+      var x = by[e[1]]; if (!x) { x = by[e[1]] = []; order.push(e[1]); } x.push({ cl: cl, t: t, v: r[4], q: r[5], d: r[0] === id, c: r[6] });
+    });
+    var out = order.map(function (nid) {
+      var arr = by[nid], best = Math.min.apply(null, arr.map(function (z) { return rank[z.cl]; })), top = arr.filter(function (z) { return rank[z.cl] === best; }).sort(function (a, b) { return (b.v - a.v) || (a.t < b.t ? -1 : 1); }), seenT = {}, rels = [];
+      top.forEach(function (z) { var k = z.t + '|' + z.q + '|' + z.d; if (!seenT[k]) { seenT[k] = 1; rels.push(z); } });
+      var more = []; arr.forEach(function (z) { if (rank[z.cl] > best && more.indexOf(z.t) < 0 && !rels.some(function (y) { return y.t === z.t; })) more.push(z.t); });
+      var z0 = rels[0]; return { id: nid, cl: z0.cl, t: z0.t, v: Math.max.apply(null, rels.map(function (y) { return y.v; })), q: z0.q, d: z0.d, c: z0.c, rels: rels, more: more };
+    });
+    if (S.co > 0) (G.coN[id] || []).forEach(function (c) { if (c[0] !== id && c[1] >= S.co && !out.some(function (o) { return o.id === c[0]; })) out.push({ id: c[0], cl: 'a', t: 'co_apparizione', v: 1, n: c[1], rels: [{ cl: 'a', t: 'co_apparizione', v: 1, n: c[1] }], more: [] }); });
+    out.sort(function (a, b) { return rank[a.cl] - rank[b.cl] || (b.v - a.v) || (b.n || 0) - (a.n || 0) || (b.rels.length - a.rels.length) || (nm(a.id) < nm(b.id) ? -1 : 1); });
     return out;
+  }
+  /* Etichette dei nodi: nome breve e riconoscibile (il nome completo resta in aria-label, nell'elenco e nel dossier). Le identità che
+     condividono lo stesso nome breve vengono distinte (nome civile e/o qualificatore: universo o produzione). */
+  function parts(id) {
+    var v = BY[id], n = (v && v.n) || id, m = /\s*\(([^)]*)\)\s*$/.exec(n), qual = m ? m[1] : '', base = m ? n.slice(0, m.index) : n, sp = base.split(/\s*\/\s*/);
+    if (v && v.t === 'U') { var em = /^Earth-([0-9A-Z]+)\s+—\s+(.+)$/.exec(n); if (em) return { short: em[2], civil: em[2], qual: 'Terra-' + em[1] }; var e2 = /^Earth-([0-9A-Z]+)$/.exec(n); if (e2) return { short: 'Terra-' + e2[1], civil: 'Terra-' + e2[1], qual: '' }; return { short: base, civil: base, qual: qual }; }
+    return { short: sp[1] || sp[0], civil: sp[0], qual: qual };
+  }
+  function qshort(q) { return String(q || '').replace(/Your Friendly Neighborhood Spider-Man/i, 'YFNSM').replace(/-?verse/i, '').replace(/^franchise\s+/i, '').replace(/,.*$/, '').trim().slice(0, 18); }
+  function labels(ids) {
+    var P = {}, g = {}, out = {}; ids.forEach(function (id) { P[id] = parts(id); (g[P[id].short] = g[P[id].short] || []).push(id); });
+    ids.forEach(function (id) {
+      var p = P[id], dup = g[p.short].length > 1, l1 = p.short, l2 = '';
+      if (dup) {
+        l1 = p.civil || p.short; var same = ids.filter(function (o) { return P[o].short === p.short && P[o].civil === p.civil; }).length > 1;
+        var u = BY[id] && BY[id].u && C.IDX.meta.universi[BY[id].u] ? C.IDX.meta.universi[BY[id].u].n.replace(/^Earth-[0-9A-Z]+ — /, '') : ''; var q = qshort(p.qual) || qshort(u);
+        if (same || P[id].civil === P[id].short) l2 = q; else if (q && ids.some(function (o) { return o !== id && P[o].civil === p.civil; })) l2 = q;
+        if (!l2 && p.civil !== p.short) l2 = p.short;
+      } else if (BY[id] && BY[id].t === 'U') l2 = p.qual;
+      out[id] = [l1, l2];
+    }); return out;
   }
   function pickList(host, onPick, ph) {
     var w = h('div', 'a4-pick'), inp = h('input', 'a3-in'); inp.type = 'search'; inp.placeholder = ph; inp.setAttribute('autocomplete', 'off'); inp.setAttribute('aria-label', ph); w.appendChild(inp); var ul = h('div', 'a4-sug'); ul.hidden = true; w.appendChild(ul); var tm;
@@ -116,7 +149,7 @@
     C.frame(); var s = C.A3(); s.c = s.c || 'id-iron-man'; if (!BY[s.c]) s.c = (C.ORD.p[0] || {}).i; var S = s.S = s.S || { co: 0, cap: 20, ed: false, un: true, tp: {} }; s.hist = s.hist || [];
     C.api.setTitle('TVA Nexus', nm(s.c)); var root = h('div', 'a4-root'); C.body.appendChild(root);
     pickList(root, function (id) { go(id); }, 'Cerca un’identità, un’organizzazione…');
-    var bar = h('div', 'a4-bar'), tools = h('div', 'a4-tools'); root.appendChild(bar); root.appendChild(tools);
+    var bar = h('div', 'a4-bar'), tools = h('div', 'a4-tools'), trail = h('div', 'a4-trail'); trail.setAttribute('aria-label', 'Percorso esplorato'); root.appendChild(bar); root.appendChild(trail); root.appendChild(tools);
     var host = h('div', 'a4-vp a4-nx'), world = h('div', 'a4-world'); bgStars(host); host.appendChild(world); root.appendChild(host);
     var leg = h('div', 'a4-leg'); root.appendChild(leg); var list = h('div', 'a4-rl'); root.appendChild(list);
     var pz = panzoom(host, world, { min: .4, max: 3, k: 1 }); controls(host, pz, function () { lay(); }); function lay() { var W0 = s.WS || 1000; pz.reset(W0 / 2, W0 / 2, pz.fit(W0 - 60, W0 - 60, 16)); } setTimeout(lay, 120); setTimeout(lay, 450);
@@ -124,30 +157,51 @@
     function chipT(txt, on, fn, title) { var b = btn('chip' + (on ? ' on' : ''), txt, fn, { 'aria-pressed': on ? 'true' : 'false' }); if (title) b.title = title; return b; }
     function toolbar() {
       tools.textContent = ''; bar.textContent = ''; bar.appendChild(btn('btn ghost', '← Indietro', function () { var p = s.hist.pop(); if (p) go(p, true); }, s.hist.length ? {} : { disabled: 'disabled' })); bar.appendChild(btn('btn ghost', 'Apri il dossier', function () { C.openId(s.c); })); bar.appendChild(btn('btn ghost', 'Percorso da qui', function () { C.api.nav('a3', { a3: { v: 'pc', a: s.c, b: '', m: 'mix' } }); }));
-      var nAct = (S.cap !== 20 ? 1 : 0) + (S.co > 0 ? 1 : 0) + (S.ed ? 1 : 0) + (S.un ? 0 : 1), fb = btn('chip a4-fbtn' + (nAct ? ' on' : ''), 'Filtri' + (nAct ? ' · ' + nAct : '') + (s.fo ? ' ▴' : ' ▾'), function () { s.fo = !s.fo; toolbar(); }, { 'aria-expanded': s.fo ? 'true' : 'false' }); bar.appendChild(fb); tools.hidden = !s.fo;
+      var nAct = (S.cap !== 20 ? 1 : 0) + (S.co > 0 ? 1 : 0) + (S.ed ? 1 : 0) + (S.un ? 0 : 1) + Object.keys(S.tp).filter(function (t) { return S.tp[t] === false; }).length, fb = btn('chip a4-fbtn' + (nAct ? ' on' : ''), 'Filtri' + (nAct ? ' · ' + nAct : '') + (s.fo ? ' ▴' : ' ▾'), function () { s.fo = !s.fo; toolbar(); }, { 'aria-expanded': s.fo ? 'true' : 'false' }); bar.appendChild(fb); tools.hidden = !s.fo;
       tools.appendChild(h('span', 'soft', 'Nodi')); [12, 20, 30].forEach(function (n) { tools.appendChild(chipT(String(n), S.cap === n, function () { S.cap = n; draw(); })); });
       tools.appendChild(h('span', 'soft', 'Co-apparizioni')); [[0, 'No'], [1, '1+'], [2, '2+'], [3, '3+'], [4, '4+']].forEach(function (x) { tools.appendChild(chipT(x[1], S.co === x[0], function () { S.co = x[0]; draw(); }, 'Soglia di apparizioni in comune (non sono relazioni narrative)')); });
+      var tcn = {}; (ADJ[s.c] || []).forEach(function (e) { var r = G.r[e[0]]; if (r[3] === 'n' || r[3] === 'c' || (r[3] === 'e' && S.ed)) { var t = G.tipi[r[2]]; tcn[t] = (tcn[t] || 0) + 1; } });
+      var tk = Object.keys(tcn).sort(function (a, b) { return tcn[b] - tcn[a] || (a < b ? -1 : 1); });
+      if (tk.length > 1) { tools.appendChild(h('span', 'soft', 'Tipi di relazione')); tk.forEach(function (t) { tools.appendChild(chipT((TL[t] || t) + ' · ' + tcn[t], S.tp[t] !== false, function () { S.tp[t] = S.tp[t] === false; draw(); }, 'Mostra o nascondi questo tipo di relazione')); }); }
       tools.appendChild(chipT('Editoriali', S.ed, function () { S.ed = !S.ed; draw(); }, 'Associazioni dalla scheda, non relazioni narrative')); tools.appendChild(chipT('Da verificare', S.un, function () { S.un = !S.un; draw(); }, 'Mostra le relazioni non ancora verificate'));
     }
     function pos(i, n, ring) { var R = ring === 0 ? Math.max(170, n * 92 / 6.283) : Math.max(330, 170 + 150, n * 92 / 6.283), a = -Math.PI / 2 + i * 2 * Math.PI / Math.max(n, 1) + (ring ? Math.PI / Math.max(n, 1) : 0); return [R * Math.cos(a), R * Math.sin(a)]; }
     function draw() {
-      toolbar(); world.textContent = ''; list.textContent = ''; leg.textContent = '';
+      toolbar(); world.textContent = ''; list.textContent = ''; leg.textContent = ''; trail.textContent = ''; trail.hidden = !s.hist.length;
+      if (s.hist.length) {   // traccia dell'esplorazione: ogni tappa e' toccabile e riporta a quel punto
+        trail.appendChild(h('span', 'soft', 'Percorso')); var th = s.hist.slice(-4), off = s.hist.length - th.length; if (off) trail.appendChild(h('span', 'soft', '…'));
+        th.forEach(function (id, i) { trail.appendChild(btn('chip', parts(id).short, function () { s.hist = s.hist.slice(0, off + i); go(id, true); }, { title: nm(id) })); trail.appendChild(h('span', 'soft', '›')); });
+        trail.appendChild(h('b', 'a4-here', parts(s.c).short));
+      }
       var all = edgesOf(s.c, S), nar = all.filter(function (e) { return e.cl === 'n' || e.cl === 'c'; }), oth = all.filter(function (e) { return e.cl !== 'n' && e.cl !== 'c'; });
       var sel = nar.slice(0, S.cap); var left = S.cap - sel.length; if (left > 0) sel = sel.concat(oth.slice(0, left));
+      LBL = labels([s.c].concat(sel.map(function (e) { return e.id; })));
       var N = sel.length, n1 = Math.min(N, 10), n2 = N - n1, RM = n2 ? Math.max(330, n2 * 92 / 6.283) : Math.max(170, n1 * 92 / 6.283), WS = Math.ceil((RM + 90) * 2); WS = Math.max(WS, 600); var HC = WS / 2; world.style.width = WS + 'px'; world.style.height = WS + 'px'; s.WS = WS; s.RM = RM;
       var svg = sv('svg', { 'class': 'a4-edges', width: WS, height: WS, viewBox: (-HC) + ' ' + (-HC) + ' ' + WS + ' ' + WS }, world);
       var c0 = nodeEl(s.c, 'sun'); c0.style.left = HC + 'px'; c0.style.top = HC + 'px'; var used = {};
       sel.forEach(function (e, i) {
         var n1 = Math.min(N, 10), ring = i < n1 ? 0 : 1, idx = ring ? i - n1 : i, cnt = ring ? N - n1 : n1, p = pos(idx, cnt, ring);
-        var col = e.cl === 'a' ? 'rgba(255,240,210,.5)' : e.cl === 'e' ? 'rgba(200,190,170,.55)' : (TC[e.t] || '#e3c79b'); used[e.t] = [col, e.cl];
-        var ln = sv('line', { x1: 0, y1: 0, x2: p[0].toFixed(1), y2: p[1].toFixed(1), stroke: col, 'stroke-width': e.cl === 'n' ? 2.4 : e.cl === 'c' ? 2 : 1.2, 'stroke-dasharray': e.cl === 'c' ? '8 4' : e.cl === 'e' ? '2 5' : e.cl === 'a' ? '6 3 1 3' : (e.v === 0 ? '5 5' : '0'), 'stroke-opacity': e.v === 0 && e.cl === 'n' ? .55 : .95 }, svg);
+        var rl = (e.rels || [e]).slice(0, 4), nr = rl.length, dl = Math.hypot(p[0], p[1]) || 1, ox = -p[1] / dl, oy = p[0] / dl;
+        rl.forEach(function (z, k) {
+          var col = z.cl === 'a' ? 'rgba(255,240,210,.5)' : z.cl === 'e' ? 'rgba(200,190,170,.55)' : (TC[z.t] || '#e3c79b'); used[z.t] = [col, z.cl];
+          var of = (k - (nr - 1) / 2) * 6;   // più relazioni documentate = più tratti paralleli, ciascuno con il proprio colore (nessuna prevale)
+          sv('line', { x1: (ox * of).toFixed(1), y1: (oy * of).toFixed(1), x2: (p[0] + ox * of).toFixed(1), y2: (p[1] + oy * of).toFixed(1), stroke: col, 'stroke-width': z.cl === 'n' ? 2.4 : z.cl === 'c' ? 2 : 1.2, 'stroke-dasharray': z.cl === 'c' ? '8 4' : z.cl === 'e' ? '2 5' : z.cl === 'a' ? '6 3 1 3' : (z.v === 0 ? '5 5' : '0'), 'stroke-opacity': z.v === 0 && z.cl === 'n' ? .55 : .95 }, svg);
+        });
         var n = nodeEl(e.id, e.cl === 'e' ? 'ed' : e.cl === 'a' ? 'ca' : ''); n.style.left = (HC + p[0]) + 'px'; n.style.top = (HC + p[1]) + 'px'; n.addEventListener('click', function () { if (host.dataset.drag) return; go(e.id); }); world.appendChild(n);
       });
       world.appendChild(c0); lay();
       Object.keys(used).forEach(function (t) { var l = h('span', 'a4-lg'); var sw = h('i'); sw.style.background = used[t][0]; l.appendChild(sw); l.appendChild(D.createTextNode(TL[t] || 'Co-apparizioni in comune')); leg.appendChild(l); });
       if (!N) leg.appendChild(h('p', 'empty', 'Nessuna relazione da mostrare con i filtri attuali. Prova ad attivare le co-apparizioni o le associazioni editoriali.'));
       var shownN = sel.length; list.appendChild(h('p', 'a3-note', shownN + ' collegamenti mostrati su ' + all.length + ' disponibili. Le co-apparizioni (apparizioni condivise) non sono relazioni narrative; le associazioni editoriali non sono considerate nei percorsi narrativi.'));
-      sel.forEach(function (e) { var r = h('div', 'a4-r'); r.appendChild(btn('chip', nm(e.id), function () { go(e.id); })); var lab = e.cl === 'a' ? 'Co-apparizioni: ' + e.n + ' apparizioni in comune' : (TL[e.t] || e.t) + (e.q ? ' · ' + e.q : '') + (e.cl === 'n' && e.t === 'famiglia_genitore' ? (e.d ? ' (verso il figlio)' : ' (dal genitore)') : ''); if (e.more && e.more.length) lab += ' · anche: ' + e.more.map(function (t) { return TL[t] || t; }).join(', '); r.appendChild(h('span', 's', lab)); r.appendChild(h('small', 'a4-v v' + e.v, e.cl === 'a' ? 'Calcolata' : VL[e.v])); list.appendChild(r); });
+      sel.forEach(function (e) {
+        var r = h('div', 'a4-r'); r.appendChild(btn('chip', nm(e.id), function () { go(e.id); })); var ls = h('div', 'a4-rls');
+        e.rels.forEach(function (z) {
+          var row = h('div', 'a4-rl1'), lab = z.cl === 'a' ? 'Co-apparizioni: ' + z.n + ' apparizioni in comune' : (TL[z.t] || z.t) + (z.q ? ' · ' + z.q : '') + (z.cl === 'n' && z.t === 'famiglia_genitore' ? (z.d ? ' (verso il figlio)' : ' (dal genitore)') : '');
+          row.appendChild(h('span', 's', lab)); row.appendChild(h('small', 'a4-v v' + z.v, z.cl === 'a' ? 'Calcolata' : VL[z.v])); ls.appendChild(row);
+        });
+        if (e.more && e.more.length) ls.appendChild(h('div', 'a4-more', 'Anche (non narrative): ' + e.more.map(function (t) { return TL[t] || t; }).join(', ')));
+        r.appendChild(ls); list.appendChild(r);
+      });
     }
     load(draw);
   }

@@ -141,6 +141,8 @@ export const streamAnswer = (body: ReadableStream<Uint8Array>): ReadableStream<U
   let buf = '', total = 0, finished = false;
   const frame = (o: unknown): Uint8Array => enc.encode('data: ' + JSON.stringify(o) + '\n\n');
   return new ReadableStream<Uint8Array>({
+    // prologo: commento SSE di ~2 KB. Safari/iOS (e alcuni proxy) accumulano i primi byte prima di consegnarli al fetch: senza prologo una risposta breve arriva «tutta insieme»
+    start(ctrl) { ctrl.enqueue(enc.encode(': ' + ' '.repeat(2048) + '\n\n')); },
     async pull(ctrl) {
       // un frammento di rete puo' non completare alcun evento: si continua a leggere finche' non c'e' qualcosa da inviare (pull non viene richiamata senza enqueue)
       try {
@@ -391,7 +393,7 @@ export default {
           return out(r.status === 429 ? 429 : 502, { error: code, upstream: up });
         }
         if (input.stream && r.body) {
-          return new Response(streamAnswer(r.body), { status: 200, headers: { ...h, 'Content-Type': 'text/event-stream; charset=utf-8', 'X-Accel-Buffering': 'no' } });
+          return new Response(streamAnswer(r.body), { status: 200, headers: { ...h, 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-store, no-transform', 'X-Content-Type-Options': 'nosniff', 'X-Accel-Buffering': 'no' } });
         }
         const j = (await r.json()) as { candidates?: { finishReason?: string; content?: { parts?: { text?: string; thought?: boolean }[] } }[] };
         const answer = (j.candidates?.[0]?.content?.parts || []).filter(p => !p.thought).map(p => p.text || '').join('').trim();

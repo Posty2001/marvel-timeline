@@ -125,12 +125,12 @@ ok(p.context.length === 5 && p.context[0].id === 'ab' && p.context[0].text.lengt
   const sr = await call('/v1/chat', { method: 'POST', headers: { Authorization: 'Bearer ' + tk }, body: JSON.stringify({ question: 'ciao', stream: true }) }, envS, '8.8.8.8');
   ok(sr.status === 200 && /text\/event-stream/.test(sr.headers.get('content-type')) && sr.headers.get('access-control-allow-origin') === 'https://app.test', 'stream: 200 text/event-stream con CORS');
   ok(/streamGenerateContent\?alt=sse/.test(lastUrl), 'stream: usa streamGenerateContent (SSE reale)');
-  const txt = await sr.text(); const evs = txt.split('\n\n').filter(Boolean).map(l => JSON.parse(l.replace(/^data: /, '')));
+  const txt = await sr.text(); const evs = txt.split('\n\n').filter(l => l.startsWith('data:')).map(l => JSON.parse(l.slice(5)));
   ok(evs.map(e => e.t || '').join('') === 'Ciao mondo!' && evs[evs.length - 1].done === true, 'stream: testo ricomposto, parti «thought» escluse, evento finale done ' + txt.slice(0, 120));
   ok(evs.filter(e => e.t).length >= 2, 'stream: piu\' frammenti (progressivo, non un blocco unico)');
   mode = 'cutmid';
   const sc = await call('/v1/chat', { method: 'POST', headers: { Authorization: 'Bearer ' + tk }, body: JSON.stringify({ question: 'ciao2', stream: true }) }, envS, '8.8.8.8');
-  const ec = (await sc.text()).split('\n\n').filter(Boolean).map(l => JSON.parse(l.replace(/^data: /, '')));
+  const ec = (await sc.text()).split('\n\n').filter(l => l.startsWith('data:')).map(l => JSON.parse(l.slice(5)));
   ok(ec[ec.length - 1].e === 'provider-network' && !ec.some(e => e.done), 'stream: interruzione a meta\' -> evento di errore, nessun done');
   mode = 'err429';
   const se = await call('/v1/chat', { method: 'POST', headers: { Authorization: 'Bearer ' + tk }, body: JSON.stringify({ question: 'ciao3', stream: true }) }, envS, '8.8.8.8');
@@ -157,7 +157,7 @@ ok(p.context.length === 5 && p.context[0].id === 'ab' && p.context[0].text.lengt
     ok(upstreamCancelled === 1 && gemCalls - before === 1, 'stream: la chiusura del client annulla la richiesta a monte (1 sola chiamata Gemini, nessun retry)');
     mode2 = 'cap'; upstreamCancelled = 0; const b2 = gemCalls;
     const r2 = await call('/v1/chat', { method: 'POST', headers: { Authorization: 'Bearer ' + tk }, body: JSON.stringify({ question: 'tetto', stream: true }) }, envS, '9.9.9.9');
-    const t2 = await r2.text(); const e2 = t2.split('\n\n').filter(Boolean).map(l => JSON.parse(l.replace(/^data: /, '')));
+    const t2 = await r2.text(); const e2 = t2.split('\n\n').filter(l => l.startsWith('data:')).map(l => JSON.parse(l.slice(5)));
     ok(e2.map(e => e.t || '').join('').length === 4000 && e2[e2.length - 1].done === true && upstreamCancelled === 1 && gemCalls - b2 === 1, 'stream: tetto 4000 caratteri -> done e richiesta a monte annullata');
   }
   globalThis.fetch = prev;

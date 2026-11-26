@@ -51,3 +51,11 @@
 .a4-n.o3 .em { border-style: dashed; }
 .a4-n.sun .em { border-color: #F59A23; box-shadow: 0 0 22px rgba(245,154,35,.55); }
 .a4-n .lb { max-width: 84px; }
+
+/* a42 — etichette dei nodi leggibili (nessuna parola spezzata), relazioni multiple */
+.a4-n .lb { overflow-wrap: normal; word-break: normal; hyphens: manual; width: max-content; max-width: 92px; font-size: 10.5px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; text-wrap: balance; }
+.a4-n .lb small { display: block; font-weight: 500; font-size: 9px; opacity: .8; color: #e3c79b; }
+.a4-rls { flex: 1; min-width: 160px; display: flex; flex-direction: column; gap: 4px; }
+.a4-rl1 { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; } .a4-rl1 .s { flex: 1; min-width: 120px; font-size: 13px; }
+.a4-more { font-size: 11.5px; opacity: .75; }
+.a4-trail { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12.5px; } .a4-trail[hidden] { display: none; } .a4-trail .chip { min-height: 30px; padding: 2px 10px; font-size: 12px; } .a4-here { color: #F59A23; }

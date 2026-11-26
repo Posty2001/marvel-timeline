@@ -12,13 +12,13 @@
   function vistaSalva(m) { try { W.localStorage.setItem(VKEY, m); } catch (e) {} }
   var COL3 = { p: 1, a: 1 };
   var TYPES = [
-    { t: 'p', n: 'Personaggi', s: 'identità, varianti, incarnazioni', img: 'personaggi' }, { t: 'h', n: 'Hub multiversali', s: 'varianti raccolte', img: 'multiverso' },
+    { t: 'p', n: 'Personaggi', s: 'identità, varianti, incarnazioni', img: 'personaggi' }, { t: 'h', n: 'Hub di identità', s: 'identità e continuità raccolte', img: 'multiverso' },
     { t: 'm', n: 'Mantelli', s: 'titoli passati di mano', img: 'arti_mistiche' }, { t: 'U', n: 'Universi', s: 'continuità e Terre', img: 'universi' },
     { t: 'o', n: 'Organizzazioni', s: 'agenzie e gruppi', img: 'organizzazioni' }, { t: 'a', n: 'Artefatti', s: 'oggetti e reliquie', img: 'artefatti' },
     { t: 'l', n: 'Luoghi', s: 'luoghi narrativi', img: 'luoghi' }, { t: 'P', n: 'Pianeti', s: 'mondi e dimensioni', img: 'luoghi' },
     { t: 'e', n: 'Eventi', s: 'eventi e battaglie', img: 'eventi' }, { t: 't', n: 'Attori', s: 'interpreti', img: 'attori' }];
   var TN = {}; TYPES.forEach(function (x) { TN[x.t] = x; });
-  var SING = { p: 'Personaggio', h: 'Hub multiversale', m: 'Mantello', U: 'Universo', o: 'Organizzazione', a: 'Artefatto', l: 'Luogo', P: 'Pianeta', e: 'Evento', t: 'Attore' };
+  var SING = { p: 'Personaggio', h: 'Hub di identità', m: 'Mantello', U: 'Universo', o: 'Organizzazione', a: 'Artefatto', l: 'Luogo', P: 'Pianeta', e: 'Evento', t: 'Attore' };
   var KIND = { i: 'Identità', v: 'Variante', c: 'Copia', h: 'Hub', m: 'Mantello', g: '' };
   var PAL = { p: ['#3a2f1c', '#E3C79B'], h: ['#3a1c1e', '#ff5c5f'], m: ['#2c2140', '#b48ae0'], U: ['#10303a', '#4fd0ff'], o: ['#3a2a10', '#F59A23'], a: ['#341a3c', '#d46aff'], l: ['#14283a', '#6fb3d9'], P: ['#143a34', '#9fe0d4'], e: ['#3a2010', '#ff8a3c'], t: ['#3a1c22', '#e9a0a6'] };
 
@@ -26,7 +26,7 @@
   function h(tag, cls, txt, at) { var n = D.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; if (at) Object.keys(at).forEach(function (k) { n.setAttribute(k, at[k]); }); return n; }
   function btn(cls, txt, fn, at) { var b = h('button', cls, txt, at); b.type = 'button'; if (fn) b.addEventListener('click', fn); return b; }
   function svg(path) { var s = D.createElementNS('http://www.w3.org/2000/svg', 'svg'); s.setAttribute('class', 'ic'); s.setAttribute('viewBox', '0 0 24 24'); s.setAttribute('aria-hidden', 'true'); var p = D.createElementNS('http://www.w3.org/2000/svg', 'path'); p.setAttribute('d', path); s.appendChild(p); return s; }
-  var IC = { search: 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM20 20l-4-4', grid: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z', grid3: 'M3 4h4.5v4.5H3zM9.7 4h4.5v4.5H9.7zM16.5 4H21v4.5h-4.5zM3 10h4.5v4.5H3zM9.7 10h4.5v4.5H9.7zM16.5 10H21v4.5h-4.5zM3 16h4.5v4.5H3zM9.7 16h4.5v4.5H9.7zM16.5 16H21v4.5h-4.5z', filter: 'M4 6h16M7 12h10M10 18h4', edit: 'M4 20h4L19 9l-4-4L4 16zM13 7l4 4', list: 'M4 6h16M4 12h16M4 18h16', arrow: 'M9 5l7 7-7 7' };
+  var IC = { search: 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM20 20l-4-4', grid: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z', grid3: 'M3 4h4.5v4.5H3zM9.7 4h4.5v4.5H9.7zM16.5 4H21v4.5h-4.5zM3 10h4.5v4.5H3zM9.7 10h4.5v4.5H9.7zM16.5 10H21v4.5h-4.5zM3 16h4.5v4.5H3zM9.7 16h4.5v4.5H9.7zM16.5 16H21v4.5h-4.5z', filter: 'M4 6h16M7 12h10M10 18h4', edit: 'M4 20h4L19 9l-4-4L4 16zM13 7l4 4', list: 'M4 6h16M4 12h16M4 18h16', arrow: 'M9 5l7 7-7 7', orbit: 'M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M12 12m-8 0a8 8 0 1 0 16 0a8 8 0 1 0-16 0M18 5.5l.01 0' };
   function norm(s) { return (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim(); }
   function hash(s) { var x = 2166136261; for (var i = 0; i < s.length; i++) { x ^= s.charCodeAt(i); x = Math.imul(x, 16777619); } return x >>> 0; }
   function get(path) { return fetch(BASE + path, { credentials: 'same-origin' }).then(function (r) { if (!r.ok) throw new Error(path + ' ' + r.status); return r.json(); }); }
@@ -73,26 +73,40 @@
   var NSV = 'http://www.w3.org/2000/svg';
   function S(n, a, par) { var e = D.createElementNS(NSV, n); Object.keys(a || {}).forEach(function (k) { e.setAttribute(k, String(a[k])); }); if (par) par.appendChild(e); return e; }
   function rngOf(seed) { var s = seed >>> 0; return function () { s = (s + 0x6D2B79F5) >>> 0; var x = s; x = Math.imul(x ^ (x >>> 15), x | 1); x ^= x + Math.imul(x ^ (x >>> 7), x | 61); return ((x ^ (x >>> 14)) >>> 0) / 4294967296; }; }
+
+  /* Colori e nature degli universi: UNICA definizione, condivisa con la mappa (a4.js li legge da tvaA3Ctx) */
+  var ORBCLR = ['#F59A23', '#6fd0e0', '#b79cf0', '#9aa39a'], ORBN = ['Continuità principale', 'Diramazione / universo alternativo', 'Universo autonomo', 'Raggruppamento editoriale'];
+  function uniHue(id) { var x = 7; for (var q = 0; q < id.length; q++) x = (Math.imul(x, 31) + id.charCodeAt(q)) >>> 0; return x % 360; }
+  function natIdx(v) { var c = IDX && IDX.meta.universi[v.u || v.i] ? IDX.meta.universi[v.u || v.i].c : ''; var k = ORBN.indexOf(c); return k < 0 ? (/Luogo narrativo/.test(c) ? 3 : 2) : k; }
   function terraNum(v) { var m = v.t === 'U' ? /^Earth-([0-9A-Z]+)\b/.exec(v.n) : null; return m && /\d/.test(m[1]) ? m[1] : null; }
   function emblemGen(v, big) {
     var p = PAL[v.t] || PAL.p, hs = hash(v.i), R = rngOf(hs), s = S('svg', { viewBox: '0 0 160 100', preserveAspectRatio: 'xMidYMid slice', 'class': 'a3-em', 'aria-hidden': 'true' });
     var gid = 'g' + hs.toString(36), defs = S('defs', {}, s), lg = S('linearGradient', { id: gid, x1: 0, y1: 0, x2: 1, y2: 1 }, defs);
     S('stop', { offset: 0, 'stop-color': p[0] }, lg); S('stop', { offset: 1, 'stop-color': '#0e0b08' }, lg); S('rect', { width: 160, height: 100, fill: 'url(#' + gid + ')' }, s);
-    var cx = 80, cy = 44, st = { fill: 'none', stroke: p[1], 'stroke-linecap': 'round', 'stroke-linejoin': 'round' };
+    var cx = 80, cy = 50, st = { fill: 'none', stroke: p[1], 'stroke-linecap': 'round', 'stroke-linejoin': 'round' };
     function ln(a, o) { var q = {}; Object.keys(st).forEach(function (k) { q[k] = st[k]; }); Object.keys(a).forEach(function (k) { q[k] = a[k]; }); return S(o || 'path', q, s); }
     function pt(r, a) { return [cx + r * Math.cos(a), cy + r * Math.sin(a)]; }
     function pt0(x0, y0, r, a) { return [x0 + r * Math.cos(a), y0 + r * Math.sin(a)]; }
     var i, a, q, k, n;
     if (v.t === 'U') {
-      var num = terraNum(v);
-      for (i = 0; i < 4; i++) ln({ cx: cx, cy: cy, r: 12 + i * 8, 'stroke-opacity': .5 - i * .1, 'stroke-width': 1 }, 'circle');
-      if (num) {
-        var tx = S('text', { x: cx, y: cy + (num.length > 5 ? 8 : 12), 'text-anchor': 'middle', 'font-family': 'Spectral, Georgia, serif', 'font-weight': 700, 'font-size': num.length > 5 ? 26 : num.length > 3 ? 32 : 40, fill: p[1], 'fill-opacity': .92 }, s); tx.textContent = num;
-      } else {   // universo senza numerazione documentata: costellazione unica (nessun numero inventato)
+      /* colori propri dell'universo (stessa tinta del nodo nella mappa) e simbolo per natura documentata (stessi colori delle orbite) */
+      var hu = uniHue(v.i), nat = natIdx(v), oc = ORBCLR[nat], ac = 'hsl(' + hu + ',66%,68%)';
+      s.setAttribute('preserveAspectRatio', 'xMidYMid meet'); s.querySelector('rect').setAttribute('x', -200); s.querySelector('rect').setAttribute('y', -200); s.querySelector('rect').setAttribute('width', 560); s.querySelector('rect').setAttribute('height', 500);
+      s.querySelector('stop').setAttribute('stop-color', 'hsl(' + hu + ',46%,17%)');
+      var num = terraNum(v), uc = { stroke: ac, fill: 'none', 'stroke-linecap': 'round' };
+      function ur(r, o, w, da) { return S('circle', { cx: cx, cy: cy, r: r, fill: 'none', stroke: o || ac, 'stroke-opacity': w || .4, 'stroke-width': 1.1, 'stroke-dasharray': da || '0' }, s); }
+      if (nat === 0) { ur(40, oc, .9); ur(31, ac, .5); for (i = 0; i < 16; i++) { q = pt(43, i * .3927); a = pt(50, i * .3927); S('path', { d: 'M' + q[0].toFixed(1) + ' ' + q[1].toFixed(1) + 'L' + a[0].toFixed(1) + ' ' + a[1].toFixed(1), stroke: oc, 'stroke-width': 1.4, 'stroke-linecap': 'round', 'stroke-opacity': .85 }, s); } }
+      else if (nat === 1) { ur(38, oc, .8, '4 3'); ur(28, ac, .45); S('path', { d: 'M' + (cx - 46) + ' ' + (cy + 40) + 'Q' + cx + ' ' + (cy + 6) + ' ' + (cx + 46) + ' ' + (cy - 36) + 'M' + (cx - 30) + ' ' + (cy + 44) + 'Q' + (cx + 10) + ' ' + (cy + 20) + ' ' + (cx + 50) + ' ' + (cy + 18), stroke: oc, fill: 'none', 'stroke-width': 1.5, 'stroke-opacity': .85, 'stroke-linecap': 'round' }, s); }
+      else if (nat === 2) { ur(38, oc, .85, '2 4'); ur(27, ac, .45); a = pt(38, -.9 + (hu % 7) * .35); S('circle', { cx: a[0].toFixed(1), cy: a[1].toFixed(1), r: 3.6, fill: oc }, s); a = pt(27, 2.2 + (hu % 5) * .3); S('circle', { cx: a[0].toFixed(1), cy: a[1].toFixed(1), r: 2.4, fill: ac }, s); }
+      else { var hx = ''; for (i = 0; i < 6; i++) { q = pt(40, i * 1.0472 + .5236); hx += (i ? 'L' : 'M') + q[0].toFixed(1) + ' ' + q[1].toFixed(1); } S('path', { d: hx + 'Z', fill: 'none', stroke: oc, 'stroke-opacity': .85, 'stroke-width': 1.4, 'stroke-linejoin': 'round' }, s); ur(26, ac, .4); }
+      if (num) {   // numero intero e centrato: il corpo si adatta al numero di cifre (nessun troncamento)
+        var fz = num.length > 5 ? 21 : num.length > 3 ? 27 : 36;
+        var tx = S('text', { x: cx, y: cy + fz * .34, 'text-anchor': 'middle', 'font-family': 'Spectral, Georgia, serif', 'font-weight': 700, 'font-size': fz, fill: ac, 'fill-opacity': .96 }, s); tx.textContent = num;
+      } else {   // universo senza numerazione documentata: costellazione propria (nessun numero inventato)
         n = 7 + Math.floor(R() * 5); var pts = [];
-        for (i = 0; i < n; i++) { a = R() * 6.2832; q = 8 + R() * 28; pts.push(pt(q, a)); }
-        for (i = 1; i < n; i++) ln({ d: 'M' + pts[i - 1][0].toFixed(1) + ' ' + pts[i - 1][1].toFixed(1) + 'L' + pts[i][0].toFixed(1) + ' ' + pts[i][1].toFixed(1), 'stroke-opacity': .5, 'stroke-width': 1 });
-        pts.forEach(function (c, j) { S('circle', { cx: c[0].toFixed(1), cy: c[1].toFixed(1), r: j === 0 ? 3.6 : 1.8 + R() * 1.4, fill: p[1], 'fill-opacity': j === 0 ? 1 : .8 }, s); });
+        for (i = 0; i < n; i++) { a = R() * 6.2832; q = 6 + R() * 24; pts.push(pt(q, a)); }
+        for (i = 1; i < n; i++) S('path', { d: 'M' + pts[i - 1][0].toFixed(1) + ' ' + pts[i - 1][1].toFixed(1) + 'L' + pts[i][0].toFixed(1) + ' ' + pts[i][1].toFixed(1), stroke: ac, fill: 'none', 'stroke-opacity': .55, 'stroke-width': 1 }, s);
+        pts.forEach(function (c, j) { S('circle', { cx: c[0].toFixed(1), cy: c[1].toFixed(1), r: j === 0 ? 3.6 : 1.8 + R() * 1.4, fill: ac, 'fill-opacity': j === 0 ? 1 : .85 }, s); });
       }
     } else if (v.t === 'h') {   // hub: una ramificazione con tanti rami quante sono le voci collegate
       n = Math.max(2, Math.min(8, v.a || 3)); var off = R() * 6.28;
@@ -176,23 +190,27 @@
 
   /* ---------- tile / riga ---------- */
   function nk(s) { return norm(String(s || '').replace(/^Earth-/i, 'Terra ')); }
-  function shown(v) {   // titolo e sottotitolo senza ripetizioni (il nome completo resta in aria-label e nel dossier)
+  function uniFull(v) { return String(v.n || '').replace(/^Earth-([0-9A-Z]+)(?= —|$)/, 'Terra-$1').replace(/ — /, ' · '); }
+  function shown(v) {   // titolo senza ripetizioni; per gli universi: nome/denominazione COMPLETA + classificazione separata (il nome completo resta anche in aria-label e nel dossier)
     var n = v.n, sub = v.u ? uniNome(v.u) : (v.a ? v.a + (v.t === 'h' ? ' voci collegate' : v.t === 'm' ? ' titolari' : ' apparizioni') : '');
-    if (v.t === 'U') { var m = /^Earth-[0-9A-Z]+ — (.+)$/.exec(v.n); if (terraNum(v)) { if (m) { n = m[1]; sub = uniCont(v.i) && nk(uniCont(v.i)) !== nk(n) ? uniCont(v.i) : ''; } else { n = uniCont(v.i) || 'Terra ' + terraNum(v); sub = ''; } } else sub = uniCont(v.i) && nk(uniCont(v.i)) !== nk(n) ? uniCont(v.i) : ''; }
-    else if (sub && (nk(sub) === nk(n) || nk(n).indexOf(nk(sub)) >= 0)) sub = '';
+    if (v.t === 'U') return { n: uniFull(v), s: uniCont(v.i) || '' };
+    if (sub && (nk(sub) === nk(n) || nk(n).indexOf(nk(sub)) >= 0)) sub = '';
     return { n: n, s: sub };
   }
   function tile(v, compact) {
     var b = btn('a3-tile t-' + v.t, null, function () { openId(v.i); }, { 'aria-label': v.n + (badge(v) ? ' — ' + badge(v) : '') });
     var em = h('span', 'em'); em.appendChild(emblem(v)); b.appendChild(em); paintAny(em, v, false);
     if (v.s) b.appendChild(h('span', 'bd', badge(v)));
-    var sh = shown(v), t = h('span', 't'); t.appendChild(h('b', '', sh.n)); if (sh.s) t.appendChild(h('span', '', sh.s)); b.appendChild(t);
+    var sh = shown(v), t = h('span', 't'); t.appendChild(h('b', '', sh.n));
+    if (sh.s) { var cl = h('span', v.t === 'U' ? 'cls' : '', sh.s); if (v.t === 'U') cl.style.setProperty('--oc', ORBCLR[natIdx(v)]); t.appendChild(cl); }
+    if (v.t === 'U') b.style.setProperty('--hu', 'hsl(' + uniHue(v.i) + ',66%,68%)');
+    b.appendChild(t);
     return b;
   }
   function li(v) {
     var b = btn('a3-li t-' + v.t, null, function () { openId(v.i); });
     var em = h('span', 'em'); em.appendChild(emblem(v)); b.appendChild(em); paintAny(em, v, false);
-    var sh = shown(v), t = h('span'); t.appendChild(h('b', '', sh.n)); var sub = (v.t === 'U' ? sh.s : (sh.s || (v.a ? v.a + ' apparizioni' : ''))); if (sub) t.appendChild(h('span', 's', sub)); b.appendChild(t);
+    var sh = shown(v), t = h('span'); t.appendChild(h('b', '', sh.n)); var sub = (v.t === 'U' ? sh.s : (sh.s || (v.a ? v.a + ' apparizioni' : ''))); if (sub) { var sp = h('span', 's', sub); if (v.t === 'U') sp.style.setProperty('--oc', ORBCLR[natIdx(v)]); t.appendChild(sp); } b.appendChild(t);
     if (v.s) b.appendChild(h('span', 'bd', badge(v)));
     return b;
   }
@@ -203,6 +221,14 @@
     [['circle', { cx: 32, cy: 32, r: 29, fill: 'none', stroke: 'currentColor', 'stroke-width': 1.6 }], ['circle', { cx: 32, cy: 32, r: 24, fill: 'none', stroke: 'currentColor', 'stroke-width': .6, 'stroke-dasharray': '1.5 3' }],
       ['path', { d: 'M32 54V34M32 34C32 26 20 24 17 14M32 34C32 26 44 24 47 14M32 34V10', fill: 'none', stroke: 'currentColor', 'stroke-width': 2, 'stroke-linecap': 'round' }],
       ['circle', { cx: 17, cy: 13, r: 2.6, fill: 'currentColor' }], ['circle', { cx: 32, cy: 9, r: 2.6, fill: 'currentColor' }], ['circle', { cx: 47, cy: 13, r: 2.6, fill: 'currentColor' }], ['circle', { cx: 32, cy: 54, r: 2.2, fill: 'currentColor' }]].forEach(function (x) { var n = D.createElementNS(ns, x[0]); for (var k in x[1]) n.setAttribute(k, x[1][k]); e.appendChild(n); });
+    return e;
+  }
+  /* anteprima della mappa: stesse orbite e stessi colori dell'Osservatorio (una sola definizione: ORBCLR) */
+  function obsPreview() {
+    var e = S('svg', { viewBox: '-100 -100 200 200', 'class': 'a3-obs-svg', 'aria-hidden': 'true' }); var us = (ORD.U || []).slice(0, 24), R = [0, 34, 60, 84], cnt = [0, 0, 0, 0];
+    [1, 2, 3].forEach(function (i) { S('circle', { cx: 0, cy: 0, r: R[i], fill: 'none', stroke: ORBCLR[i], 'stroke-opacity': .5, 'stroke-width': .8, 'stroke-dasharray': '2 3' }, e); });
+    S('circle', { cx: 0, cy: 0, r: 7, fill: ORBCLR[0] }, e); S('circle', { cx: 0, cy: 0, r: 11, fill: 'none', stroke: ORBCLR[0], 'stroke-opacity': .5 }, e);
+    us.forEach(function (v) { var k = natIdx(v); if (!k || k > 3) return; var a = hash(v.i) / 4294967296 * 6.2832 + k, r = R[k]; S('circle', { cx: (r * Math.cos(a)).toFixed(1), cy: (r * Math.sin(a)).toFixed(1), r: 3.6, fill: 'hsl(' + uniHue(v.i) + ',66%,64%)', stroke: ORBCLR[k], 'stroke-width': 1 }, e); cnt[k]++; });
     return e;
   }
   /* ---------- HOME ---------- */
@@ -217,9 +243,16 @@
     var h1 = h('h1', '', 'TVA Atlas'); h1.id = 'a3H1'; t.appendChild(h1); t.appendChild(h('p', 'a3-sub', 'L’Atlante del Multiverso')); t.appendChild(h('p', 'a3-motto', 'Ogni universo. Ogni identità. Ogni connessione.'));
     var st = h('ul', 'a3-stats'); [[np, 'identità'], [nu, 'universi'], [n, 'voci in archivio']].forEach(function (x) { var l = h('li'); l.appendChild(h('b', '', String(x[0]))); l.appendChild(D.createTextNode(x[1])); st.appendChild(l); }); t.appendChild(st);
     var sb = btn('a3-sbar', null, function () { api.nav('a3', { a3: { v: 'search', q: '' } }); }, { 'aria-label': 'Cerca in TVA Atlas' }); sb.appendChild(svg(IC.search)); sb.appendChild(h('span', '', 'Cerca personaggi, universi, luoghi…')); t.appendChild(sb);
-    var row = h('div', 'a3-row'); row.appendChild(btn('btn fill', 'Esplora il catalogo', function () { api.nav('a3', { a3: { v: 'cat', t: 'p', m: vistaPref(), n: 36 } }); }));
-    row.appendChild(btn('btn ghost', 'Atlante classico', function () { W.__a3Classic = true; A.openHome(); })); t.appendChild(row);
+    var row = h('div', 'a3-row a3-hrow'); var ob = btn('btn fill a3-obsbtn', null, function () { api.nav('a3', { a3: { v: 'mv' } }); }, { 'aria-label': 'Apri l’Osservatorio del Multiverso, la mappa degli universi' }); ob.appendChild(svg(IC.orbit)); ob.appendChild(h('span', '', 'Osservatorio del Multiverso')); row.appendChild(ob);
+    row.appendChild(btn('btn ghost', 'Esplora il catalogo', function () { api.nav('a3', { a3: { v: 'cat', t: 'p', m: vistaPref(), n: 36 } }); })); t.appendChild(row);
     hero.appendChild(t); body.appendChild(hero);
+    /* Osservatorio del Multiverso: funzione centrale, subito dopo l'ingresso. Non e' il catalogo (che elenca le schede): e' la MAPPA interattiva. */
+    var obs = h('section', 'a3-obs'); obs.setAttribute('aria-labelledby', 'a3ObsT');
+    var prev = btn('a3-obs-map', null, function () { api.nav('a3', { a3: { v: 'mv' } }); }, { 'aria-label': 'Apri la mappa del Multiverso' }); prev.appendChild(obsPreview()); obs.appendChild(prev);
+    var ot = h('div', 'a3-obs-t'); ot.appendChild(h('span', 'kick', 'La mappa')); var oh = h('h2', '', 'Osservatorio del Multiverso'); oh.id = 'a3ObsT'; ot.appendChild(oh);
+    ot.appendChild(h('p', '', 'La mappa interattiva di tutti gli universi, raggruppati per natura documentata: tocca un universo per vederne le identità, confrontalo con un altro, segui le relazioni nel TVA Nexus o traccia un percorso. Il catalogo, invece, è l’elenco delle schede.'));
+    var orow = h('div', 'a3-row'); orow.appendChild(btn('btn fill', 'Apri la mappa', function () { api.nav('a3', { a3: { v: 'mv' } }); })); orow.appendChild(btn('btn ghost', 'TVA Nexus', function () { api.nav('a3', { a3: { v: 'nx', c: 'id-iron-man' } }); })); orow.appendChild(btn('btn ghost', 'Percorso', function () { api.nav('a3', { a3: { v: 'pc', a: '', b: '', m: 'n' } }); })); ot.appendChild(orow);
+    obs.appendChild(ot); body.appendChild(obs);
     var last = load(LASTKEY);
     if (last && BY[last.id]) { var rs = btn('a3-resume rev t-' + last.t, null, function () { openId(last.id); }); var em = h('span', 'em'); em.style.cssText = 'width:48px;height:48px;border-radius:12px;overflow:hidden;flex:none'; em.appendChild(emblem(BY[last.id])); rs.appendChild(em); var tx = h('span'); tx.appendChild(h('small', 'kick', 'Riprendi da dove eri')); tx.appendChild(h('b', '', BY[last.id].n)); rs.appendChild(tx); body.appendChild(rs); }
     // dossier in evidenza: sceglie tra le identità con più apparizioni, a rotazione giornaliera (nessun contenuto inventato)
@@ -228,17 +261,16 @@
       var f = top[Math.floor(Date.now() / 86400000) % top.length], sec = h('section', 'a3-sec'); var hd = h('header'); hd.appendChild(h('h2', '', 'Dossier in evidenza')); hd.appendChild(h('p', '', 'A rotazione tra le identità con più apparizioni.')); sec.appendChild(hd);
       var fb = btn('a3-feat rev t-' + f.t, null, function () { openId(f.i); }); var fe = h('span', 'em'); fe.appendChild(emblem(f)); fb.appendChild(fe); fb.appendChild(h('span', 'kick', badge(f) || 'Identità')); fb.appendChild(h('h3', '', f.n)); fb.appendChild(h('p', '', (f.u ? uniNome(f.u) + ' · ' : '') + f.a + ' apparizioni')); sec.appendChild(fb); body.appendChild(sec);
     }
-    var sm = h('section', 'a3-sec'); var hm = h('header'); hm.appendChild(h('h2', '', 'Multiverso e TVA Nexus')); hm.appendChild(h('p', '', 'Esplora gli universi, le relazioni documentate e i percorsi tra le identità.')); sm.appendChild(hm);
-    var mrow = h('div', 'a3-row'); mrow.appendChild(btn('btn fill', 'Multiverso', function () { api.nav('a3', { a3: { v: 'mv' } }); })); mrow.appendChild(btn('btn ghost', 'TVA Nexus', function () { api.nav('a3', { a3: { v: 'nx', c: 'id-iron-man' } }); })); mrow.appendChild(btn('btn ghost', 'Percorso', function () { api.nav('a3', { a3: { v: 'pc', a: '', b: '', m: 'n' } }); })); sm.appendChild(mrow); body.appendChild(sm);
     var sc = h('section', 'a3-sec'); var hc = h('header'); hc.appendChild(h('h2', '', 'Categorie')); hc.appendChild(h('p', '', 'Un archivio, dieci modi di entrarci.')); sc.appendChild(hc);
     var rail = h('div', 'a3-rail'); TYPES.forEach(function (x) {
       var cnt = (ORD[x.t] || []).length; if (!cnt) return; var c = btn('a3-cat rev t-' + x.t, null, function () { api.nav('a3', { a3: { v: 'cat', t: x.t, m: vistaPref(), n: 36 } }); }, { 'aria-label': x.n + ', ' + cnt });
       bgImg(c, x.img, false); var tt = h('span', 't'); tt.appendChild(h('b', '', x.n)); tt.appendChild(h('span', '', cnt + ' · ' + x.s)); c.appendChild(tt); rail.appendChild(c);
     }); sc.appendChild(rail); body.appendChild(sc);
     var hubs = (ORD.h || []); if (hubs.length) {
-      var sh = h('section', 'a3-sec'); var hh = h('header'); hh.appendChild(h('h2', '', 'Hub multiversali')); hh.appendChild(h('p', '', 'Una pagina per ogni personaggio che vive in più continuità. Nessuna parentela narrativa è attribuita senza fonte.')); sh.appendChild(hh);
+      var sh = h('section', 'a3-sec'); var hh = h('header'); hh.appendChild(h('h2', '', 'Hub di identità')); hh.appendChild(h('p', '', 'Una pagina che raccoglie le identità di uno stesso personaggio (varianti multiversali o fasi di una stessa continuità). Nessuna parentela narrativa è attribuita senza fonte.')); sh.appendChild(hh);
       var hw = h('div', 'a3-hubs'); hubs.forEach(function (v) { var c = btn('a3-hc rev t-h', null, function () { openId(v.i); }); c.appendChild(h('span', 'kick', 'Hub')); c.appendChild(h('b', '', v.n)); c.appendChild(h('span', 'soft', v.a + ' voci collegate')); hw.appendChild(c); }); sh.appendChild(hw); body.appendChild(sh);
     }
+    var cl = btn('btn ghost a3-classic', 'Atlante classico', function () { W.__a3Classic = true; A.openHome(); }); body.appendChild(cl);
     body.appendChild(btn('a3-ritlink', 'Ritratti privati — pilota A3.1: scene, importazione, esportazione', function () { api.nav('a3', { a3: { v: 'rit' } }); }));
     body.appendChild(h('p', 'a3-note', 'Anteprima A3 in collaudo: l’Atlante classico resta disponibile e invariato. I ritratti specifici compariranno solo quando disponibili e utilizzabili; fino ad allora ogni voce mostra un emblema. Fonti: registro dati dell’Atlante e fonti secondarie dichiarate nella scheda.'));
     reveal(body); parallax(bg);
@@ -259,8 +291,9 @@
   function renderCat() {
     frame(); var s = A3(); s.t = s.t || 'p'; s.m = s.m && s.m !== 'g0' ? s.m : vistaPref(); s.n = s.n || 36; api.setTitle('Catalogo', TN[s.t].n);
     var tools = h('div', 'a3-tools'); var chips = h('div', 'chips'); chips.setAttribute('role', 'tablist');
-    TYPES.forEach(function (x) { var c = (ORD[x.t] || []).length; if (!c) return; var b = btn('chip t-' + x.t + (x.t === s.t ? ' on' : ''), x.n, function () { ST.a3 = { v: 'cat', t: x.t, m: s.m, n: 36, q: '', u: '', c: '' }; api.draw(); api.setScroll(0); }, { role: 'tab', 'aria-selected': x.t === s.t ? 'true' : 'false' }); b.appendChild(h('small', '', String(c))); chips.appendChild(b); });
+    TYPES.forEach(function (x) { var c = (ORD[x.t] || []).length; if (!c) return; var b = btn('chip t-' + x.t + (x.t === s.t ? ' on' : ''), x.n, function () { ST.a3 = { v: 'cat', t: x.t, m: s.m, n: 36, q: '', u: '', c: '', cx: chips.scrollLeft, cz: 1 }; api.draw(); api.setScroll(0); }, { role: 'tab', 'aria-selected': x.t === s.t ? 'true' : 'false' }); b.appendChild(h('small', '', String(c))); chips.appendChild(b); });
     tools.appendChild(chips);
+    chips.addEventListener('scroll', function () { s.cx = chips.scrollLeft; }, { passive: true });   // la posizione orizzontale fa parte dello stato (ripristino dal dossier, cambio vista, nuovi render)
     var l1 = h('div', 'line'); var inp = h('input', 'a3-in'); inp.type = 'search'; inp.placeholder = 'Filtra in ' + TN[s.t].n.toLowerCase(); inp.value = s.q || ''; inp.setAttribute('aria-label', 'Filtra'); inp.setAttribute('autocomplete', 'off');
     var tm; inp.addEventListener('input', function () { clearTimeout(tm); tm = setTimeout(function () { s.q = inp.value; s.n = 36; listOnly(); }, 120); });
     l1.appendChild(inp);
@@ -281,7 +314,23 @@
       }
       tools.appendChild(fp);
     }
-    body.appendChild(tools); var cnt = h('div', 'a3-count'); cnt.setAttribute('aria-live', 'polite'); body.appendChild(cnt); var host = h('div'); body.appendChild(host);
+    body.appendChild(tools);
+    /* barra categorie: mai riportata all'inizio. Si ripristina la posizione salvata e, solo se la categoria scelta non e' del tutto visibile
+       (o e' appena cambiata), la si centra dolcemente partendo dalla posizione corrente (nessun salto). */
+    function chipsFix(anim) {
+      var on = chips.querySelector('.chip.on'); if (!on) return; var vw = chips.clientWidth; if (!vw) return;
+      if (typeof s.cx === 'number') chips.scrollLeft = s.cx;
+      var l = on.offsetLeft, r = l + on.offsetWidth, v0 = chips.scrollLeft, need = s.cz || l < v0 + 12 || r > v0 + vw - 12;
+      if (!need) return; var tg = Math.max(0, Math.min(chips.scrollWidth - vw, Math.round(l - (vw - on.offsetWidth) / 2)));
+      var calm = W.matchMedia && W.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (anim && !calm) { try { chips.scrollTo({ left: tg, behavior: 'smooth' }); } catch (e) { chips.scrollLeft = tg; } } else chips.scrollLeft = tg;
+      s.cz = 0; if (!(anim && !calm)) s.cx = tg; return anim && !calm;
+    }
+    var smooth = chipsFix(true); if (!smooth) requestAnimationFrame(function () { if (chips.isConnected) chipsFix(false); });
+    if (s.t === 'U') {   // il catalogo degli universi e' un elenco di schede: la mappa e' un'altra funzione
+      var bn = h('div', 'a3-obsnote'); bn.appendChild(h('span', '', 'Questo è il catalogo (l’elenco delle schede). Per vedere gli universi sulla mappa:')); bn.appendChild(btn('btn ghost', 'Osservatorio del Multiverso', function () { api.nav('a3', { a3: { v: 'mv' } }); })); body.appendChild(bn);
+    }
+    var cnt = h('div', 'a3-count'); cnt.setAttribute('aria-live', 'polite'); body.appendChild(cnt); var host = h('div'); body.appendChild(host);
     var sent = h('div', 'a3-sent'), io = null;
     function listOnly() {
       var arr = filtered(s), shown = Math.min(s.n, arr.length); host.textContent = '';
@@ -359,7 +408,7 @@
     var w = h('div');
     d.var.forEach(function (x) {
       var b = h('div', 'a3-vb');
-      if (x.ruolo === 'hub') { b.appendChild(h('h3', '', 'Hub multiversale: ' + x.n)); b.appendChild(h('p', '', 'Questa identità appartiene a un hub che raccoglie le sue controparti. L’appartenenza all’hub non è una relazione narrativa.')); b.appendChild(btn('chip t-h', 'Apri l’hub', function () { openId(x.id); })); if (x.membri.length) { b.appendChild(h('p', '', 'Altre voci dell’hub')); b.appendChild(chipsFor(x.membri)); } }
+      if (x.ruolo === 'hub') { b.appendChild(h('h3', '', 'Hub di identità: ' + x.n)); b.appendChild(h('p', '', 'Questa identità appartiene a un hub che raccoglie le sue controparti. L’appartenenza all’hub non è una relazione narrativa.')); b.appendChild(btn('chip t-h', 'Apri l’hub', function () { openId(x.id); })); if (x.membri.length) { b.appendChild(h('p', '', 'Altre voci dell’hub')); b.appendChild(chipsFor(x.membri)); } }
       else if (x.ruolo === 'mantello') { b.appendChild(h('h3', '', 'Mantello: ' + x.n)); b.appendChild(h('p', '', 'Titolo portato da più identità distinte: non sono la stessa persona.')); b.appendChild(btn('chip t-m', 'Apri il mantello', function () { openId(x.id); })); if (x.membri.length) b.appendChild(chipsFor(x.membri)); }
       else if (x.ruolo === 'rel') { b.appendChild(h('h3', '', RELT[x.tipo] || x.tipo.replace(/_/g, ' '))); b.appendChild(chipsFor([x.id])); if (x.nota) b.appendChild(h('p', '', x.nota)); if (x.verifica) b.appendChild(h('p', '', 'Verifica: ' + x.verifica)); }
       else if (x.ruolo === 'incarnazioni') {
@@ -425,9 +474,9 @@
   /* ---------- HUB / MANTELLO ---------- */
   function renderHub() {
     frame(); var s = A3(), v = BY[s.id]; if (!v) { body.appendChild(h('div', 'empty', 'Voce non trovata.')); return; }
-    api.setTitle(v.n, v.t === 'h' ? 'Hub multiversale' : 'Mantello');
+    api.setTitle(v.n, v.t === 'h' ? 'Hub di identità' : 'Mantello');
     var root = h('div', 't-' + v.t); body.appendChild(root); var hd = h('header', 'a3-dh'); var em = h('div', 'em'); em.appendChild(emblem(v, true)); hd.appendChild(em); paintAny(em, v, true);
-    var t = h('div', 't'); t.appendChild(h('span', 'kick', v.t === 'h' ? 'Hub multiversale' : 'Mantello')); t.appendChild(h('h1', '', v.n)); hd.appendChild(t); root.appendChild(hd);
+    var t = h('div', 't'); t.appendChild(h('span', 'kick', v.t === 'h' ? 'Hub di identità' : 'Mantello')); t.appendChild(h('h1', '', v.n)); hd.appendChild(t); root.appendChild(hd);
     var holder = h('div', 'a3-load', 'Caricamento…'); root.appendChild(holder);
     dossier(s.id, function (d) {
       if (ST.a3 !== s || !root.isConnected) return; holder.remove();
@@ -461,11 +510,11 @@
     var sc = D.createElement('script'); sc.src = BASE + 'a4.js'; sc.async = true; sc.onload = function () { var q = A4Q.splice(0); q.forEach(function (f) { f(W.tvaA4); }); }; sc.onerror = function () { A4L = 0; A4Q.length = 0; frame(); body.appendChild(h('div', 'empty', 'Modulo Multiverso non disponibile.')); }; D.head.appendChild(sc);
   }
   function a4view(k) { return function () { frame(); body.appendChild(h('div', 'a3-load', 'Caricamento…')); var st = A3(); withA4(function (m) { if (ST.a3 !== st) return; m[k](); }); }; }
-  W.tvaA3Ctx = function () { return { h: h, btn: btn, BY: BY, ORD: ORD, emblem: emblem, paintAny: paintAny, paintRit: paintRit, tile: tile, uniNome: uniNome, uniCont: uniCont, openId: openId, frame: frame, api: api, search: search, get: get, A3: A3, body: body, get IDX() { return IDX; } }; };
+  W.tvaA3Ctx = function () { return { h: h, btn: btn, BY: BY, ORD: ORD, emblem: emblem, paintAny: paintAny, paintRit: paintRit, tile: tile, uniNome: uniNome, uniCont: uniCont, uniHue: uniHue, natIdx: natIdx, ORBCLR: ORBCLR, openId: openId, frame: frame, api: api, search: search, get: get, A3: A3, body: body, get IDX() { return IDX; } }; };
   var VIEWS = { rit: renderRit, home: renderHome, cat: renderCat, search: renderSearch, dos: renderDossier, hub: renderHub, mv: a4view('mv'), nx: a4view('nx'), pc: a4view('pc') };
   W.tvaA3 = {
     render: function () { ensure(function () { (VIEWS[A3().v] || renderHome)(); reveal(body); }); },
-    label: function (s) { var a = s.a3 || {}; if (a.v === 'dos' || a.v === 'hub') return (BY[a.id] && BY[a.id].n) || 'Dossier'; if (a.v === 'cat') return 'Catalogo'; if (a.v === 'rit') return 'Ritratti privati'; if (a.v === 'mv') return 'Multiverso'; if (a.v === 'nx') return 'TVA Nexus'; if (a.v === 'pc') return 'Percorso'; if (a.v === 'search') return 'Ricerca'; return 'TVA Atlas'; },
+    label: function (s) { var a = s.a3 || {}; if (a.v === 'dos' || a.v === 'hub') return (BY[a.id] && BY[a.id].n) || 'Dossier'; if (a.v === 'cat') return 'Catalogo'; if (a.v === 'rit') return 'Ritratti privati'; if (a.v === 'mv') return 'Osservatorio del Multiverso'; if (a.v === 'nx') return 'TVA Nexus'; if (a.v === 'pc') return 'Percorso'; if (a.v === 'search') return 'Ricerca'; return 'TVA Atlas'; },
     ctx: function () { return W.tvaA3Ctx(); }, open: openId, search: function (q) { return IDX ? search(q) : null; }, state: function () { return { idx: !!IDX, shards: Object.keys(SH).length }; }, ensure: ensure
   };
   if (W.tvaA3Boot) W.tvaA3Boot();

@@ -30,7 +30,7 @@ def run(vw, vh):
         pg.evaluate("()=>{journeyStarted.checked=true; journeyStarted.dispatchEvent(new Event('change',{bubbles:true}))}"); pg.wait_for_timeout(600)
         pg.evaluate("()=>document.getElementById('a2Entry').click()"); pg.wait_for_timeout(900)
         pg.evaluate("()=>document.querySelector('#atlas2 .a3-ban').click()"); pg.wait_for_timeout(1500)
-        pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-sec .btn')].find(b=>b.textContent==='Multiverso').click()"); pg.wait_for_timeout(1800)
+        pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-obs .btn')].find(b=>b.textContent==='Apri la mappa').click()"); pg.wait_for_timeout(1800)
         # tap reale (touch) su un universo: deve aprire la scheda
         box = pg.evaluate("()=>{const n=[...document.querySelectorAll('#atlas2 .a4-vp .a4-n')].find(x=>!x.classList.contains('tva')&&!x.classList.contains('sun')); const r=n.querySelector('.em').getBoundingClientRect(); return {x:r.x+r.width/2,y:r.y+r.height/2,id:n.dataset.id}}")
         pg.touchscreen.tap(box['x'], box['y']); pg.wait_for_timeout(500)
@@ -49,7 +49,7 @@ def run(vw, vh):
         pg.evaluate("()=>{const f=document.getElementById('mmFab');f.style.left='';f.style.right='0';f.style.top=''}")
         # Nexus
         pg.evaluate("()=>tvaBack()"); pg.wait_for_timeout(700)
-        pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-sec .btn')].find(b=>b.textContent==='TVA Nexus').click()"); pg.wait_for_timeout(1800)
+        pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-obs .btn')].find(b=>b.textContent==='TVA Nexus').click()"); pg.wait_for_timeout(1800)
         for cap in (20, 30):
             pg.evaluate("()=>{const t=document.querySelector('#atlas2 .a4-tools');t.hidden=false;[...t.querySelectorAll('.chip')].find(c=>c.textContent==='%d').click()}" % cap); pg.wait_for_timeout(500)
             ids = pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a4-nx .a4-n')].map(n=>n.dataset.id)")
@@ -69,7 +69,7 @@ def run(vw, vh):
         ok('[%d] Nexus: controlli non sovrapposti a Miss Minutes' % vw, r is None or not inter(r[0], r[1]), r)
         # Percorso: filtri compatti
         pg.evaluate("()=>tvaBack()"); pg.wait_for_timeout(600)
-        pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-sec .btn')].find(b=>b.textContent==='Percorso').click()"); pg.wait_for_timeout(1200)
+        pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-obs .btn')].find(b=>b.textContent==='Percorso').click()"); pg.wait_for_timeout(1200)
         ok('[%d] Percorso: filtri compatti' % vw, pg.evaluate("()=>!!document.querySelector('#atlas2 .a4-fbtn') && document.querySelector('#atlas2 .a4-tools').hidden"))
         b.close()
 run(390, 844); run(430, 932)

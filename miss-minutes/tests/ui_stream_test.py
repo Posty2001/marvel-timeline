@@ -30,6 +30,12 @@ class G(http.server.BaseHTTPRequestHandler):
             except Exception: MODE['body'] = None
             if MODE['m'] == 'json': return self._j({'answer': '\n\n'.join(PARAS[:6])})
             self._h(200, 'text/event-stream; charset=utf-8')
+            if MODE['m'] == 'burst':   # Gemini/Safari a raffica: prologo + tutto il testo in un solo evento
+                try:
+                    self.wfile.write((': ' + ' ' * 2048 + '\n\n').encode()); self.wfile.flush(); time.sleep(0.4)
+                    self.wfile.write(sse({'t': '\n\n'.join(PARAS[:7])})); self.wfile.write(sse({'done': True})); self.wfile.flush()
+                except Exception: pass
+                return
             parts = ['Ciao! ', 'Questa è la risposta ', 'in streaming su [[kc:lo', 'ki]] e prosegue.\n\n'] + [p + '\n\n' for p in PARAS]
             try:
                 for i, t in enumerate(parts):
@@ -98,6 +104,23 @@ with sync_playwright() as p:
     done(); m = fr.evaluate(LAST); d = fr.evaluate("()=>window.__mm.diag()")
     ok('4. fallback: risposta completa e diagnostica «simulato»', 'Paragrafo 5' in m['text'] and d['stream'] == 'simulato', d['stream'])
     ok('4. fallback: chiamata unica al gateway', MODE['chat'] - n0 == 1)
+    # 5. raffica: tutto il testo arriva in un colpo solo -> deve comparire a ritmo regolare, senza salti
+    MODE['m'] = 'burst'; fr.evaluate("(q)=>{window.__mm.ask(q);return 1}", Q + ' (5)'); sb = []; t0 = time.time()
+    while time.time() - t0 < 25:
+        s = fr.evaluate(S); sb.append((time.time() - t0, len(s['txt']), s['at'] if s['at'] is not None else 0, s['max']))
+        if sb[-1][1] and not s['busy']: break
+        pg.wait_for_timeout(100)
+    done(); m = fr.evaluate(LAST); tot = len(m['text'])
+    vis = [x for x in sb if x[1] > 0]; stages = sorted(set(x[1] for x in vis)); dur = vis[-1][0] - vis[0][0] if vis else 0
+    jump = max([b[1] - a[1] for a, b in zip(vis, vis[1:])] + [0])
+    ok('5. raffica: la risposta compare in >=15 stadi e in oltre 2 s', len(stages) >= 15 and dur > 2, (len(stages), round(dur, 1)))
+    ok('5. raffica: nessun salto > 25% del testo tra due campioni', jump < 0.25 * tot, (jump, tot))
+    ok('5. raffica: risposta finale completa e senza residui', 'Paragrafo 6' in m['text'] and fr.evaluate("()=>!document.querySelector('.mm-caret')&&!document.querySelector('.mm-msg.streaming')"))
+    ok('5. raffica: la posizione dell\'utente non viene spostata', all(abs(x[2] - vis[min(5, len(vis) - 1)][2]) < 3 for x in vis[5:]), [round(x[2]) for x in vis][:8])   # dopo l'assestamento iniziale (scroll fluido) la bolla non si muove
+    # 6. Interrompi durante lo smaltimento: resta solo il testo mostrato
+    MODE['m'] = 'burst'; fr.evaluate("(q)=>{window.__mm.ask(q);return 1}", Q + ' (6)'); pg.wait_for_timeout(1700)
+    got = fr.evaluate(S)['txt']; fr.click('#mmStop'); done(); m = fr.evaluate(LAST)
+    ok('6. Interrompi nello smaltimento: salvato il testo visto, non tutta la coda', 0 < len(got) < 0.9 * tot and len(m['text']) < 0.95 * tot and 'interrotta' in m['tag'], (len(got), len(m['text']), tot))
     ok('nessun errore JS', not errs, errs[:2])
 bad = [n for n, c in res if not c]
 print('\nui_stream_test: %d ok, %d falliti' % (len(res) - len(bad), len(bad))); raise SystemExit(1 if bad else 0)

@@ -358,25 +358,45 @@
   function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
   /* streaming: la bolla della risposta si riempie man mano; nessuno scorrimento forzato (mm6.1: la vista parte dall'inizio del messaggio) */
   var live = null;
-  function paintLive() {
+  /* Pacer (come ChatGPT): il testo ricevuto va in coda e viene mostrato a ritmo costante e leggibile, anche se rete/Gemini/Safari lo consegnano a raffiche.
+     velocita' = max(PACE_MIN caratteri/s, arretrato/PACE_TAU): la coda si smaltisce in modo continuo senza salti e senza indietro troppo. */
+  var PACE_MIN = 70, PACE_TAU = 2.4;
+  function paintLive(ts) {
     if (!live) return; live.raf = 0;
-    var t = String(live.text).replace(/\s*\[\[[^\]]*$/, ''), rr = t; try { rr = resolveRefs(t, lastCtx).text; } catch (e) { /* testo grezzo */ }
-    while (live.body.firstChild) live.body.removeChild(live.body.firstChild);
-    var rc = rich(rr, false); live.body.appendChild(rc); var last = rc.lastElementChild || rc; last.appendChild(el('span', 'mm-caret')); updateDown();
+    var len = live.text.length;
+    if (!live.ts) live.ts = ts;
+    var dt = Math.min(0.12, Math.max(0, (ts - live.ts) / 1000)); live.ts = ts;
+    if (live.n < len) { var sp = Math.max(PACE_MIN, (len - live.n) / PACE_TAU); live.n = Math.min(len, live.n + sp * dt); }
+    var k = Math.floor(live.n); if (k > 0 && k < len && /[\uD800-\uDBFF]/.test(live.text.charAt(k - 1))) k++;
+    if (k !== live.k) {
+      live.k = k;
+      var t = live.text.slice(0, k).replace(/\s*\[\[[^\]]*$/, ''), rr = t; try { rr = resolveRefs(t, lastCtx).text; } catch (e) { /* testo grezzo */ }
+      while (live.body.firstChild) live.body.removeChild(live.body.firstChild);
+      var rc = rich(rr, false); live.body.appendChild(rc); var last = rc.lastElementChild || rc; last.appendChild(el('span', 'mm-caret')); updateDown();
+    }
+    if (live.n < len) live.raf = requestAnimationFrame(paintLive);
+    else if (live.waiter) { var w = live.waiter; live.waiter = null; w(); }
   }
   function liveDelta(acc) {
     if (!live) {
       clearTransient(); var d = el('div', 'mm-msg assistant streaming'); d.setAttribute('aria-busy', 'true'); d.appendChild(avatar('talk'));
-      var body = el('div', 'mm-body'); d.appendChild(body); $('mmChat').appendChild(d); live = { node: d, body: body, text: '', raf: 0 };
+      var body = el('div', 'mm-body'); d.appendChild(body); $('mmChat').appendChild(d); live = { node: d, body: body, text: '', n: 0, k: -1, ts: 0, raf: 0, waiter: null };
       mood('talk'); var c = $('mmChat'); c.scrollTop = Math.max(0, d.offsetTop - 8);
     }
     live.text = acc; if (!live.raf) live.raf = requestAnimationFrame(paintLive);
   }
-  function endLive() { if (!live) return; if (live.raf) cancelAnimationFrame(live.raf); if (live.node.parentNode) live.node.parentNode.removeChild(live.node); live = null; }
-  async function simulateReveal(text, signal) {
-    var n = text.length, step = Math.max(24, Math.ceil(n / 50)), i = 0;
-    while (i < n && !(signal && signal.aborted)) { i = Math.min(n, i + step); liveDelta(text.slice(0, i)); await sleep(30); }
+  /* attende che la coda sia mostrata per intero (interrompibile); in scheda nascosta o dopo 25 s si conclude subito */
+  function drainLive(signal) {
+    return new Promise(function (res) {
+      if (!live || live.n >= live.text.length || document.hidden || (signal && signal.aborted)) return res();
+      var done = false, tm, fin = function () { if (done) return; done = true; clearTimeout(tm); if (signal) signal.removeEventListener('abort', fin); if (live) live.waiter = null; res(); };
+      live.waiter = fin; tm = setTimeout(fin, 25000); if (signal) signal.addEventListener('abort', fin, { once: true });
+    });
   }
+  /* testo realmente mostrato all'utente (per le risposte parziali) */
+  function shownLive() { return live ? live.text.slice(0, Math.floor(live.n)).replace(/\s*\[\[[^\]]*$/, '') : ''; }
+  function endLive() { if (!live) return; if (live.raf) cancelAnimationFrame(live.raf); if (live.node.parentNode) live.node.parentNode.removeChild(live.node); live = null; }
+  async function simulateReveal(text, signal) { liveDelta(text); await drainLive(signal); }
   async function askOnline(q, s) {
     var p = store.state.prefs;
     var ctx = p.local ? eng.contextFor(q, Object.assign(convState(s), { spoilerOff: !p.spoiler })) : []; lastCtx = ctx;
@@ -395,7 +415,10 @@
     }
     // gateway non ancora aggiornato (o browser senza stream): la risposta intera viene rivelata progressivamente, in modo interrompibile
     if (r.ok && r.streamed === false && r.answer) await simulateReveal(r.answer, waitCtl.signal);
-    var partial = live ? live.text : (r.partial || ''); endLive();
+    else if (r.ok) await drainLive(waitCtl.signal);   // lo stream e' finito: la coda in arretrato viene mostrata fino in fondo, senza salti
+    // Interrompi premuto mentre la coda veniva ancora mostrata: vale come interruzione (si conserva solo il testo visto)
+    if (r.ok && live && waitCtl.signal.aborted && live.n < live.text.length) r = { ok: false, code: 'aborted', stage: 'chat', http: 0, detail: '', message: 'Generazione interrotta.' };
+    var partial = live ? (r.code === 'aborted' || (waitCtl && waitCtl.signal.aborted) ? shownLive() : live.text.replace(/\s*\[\[[^\]]*$/, '')) : (r.partial || ''); endLive();
     waitCtl = null;
     var d = { at: Date.now(), ok: !!r.ok, stream: r.ok ? (r.streamed === false ? 'simulato' : 'reale') : (partial ? 'parziale' : ''), ttfb: r.ttfb || 0, partialChars: partial.length, attempts: attempts, ms: Date.now() - tot0, code: r.ok ? 'ok' : r.code, stage: r.ok ? '' : r.stage, http: r.ok ? 200 : r.http, detail: r.ok ? '' : (r.detail || ''), length: p.length || 'normal' };
     if (!r.ok) { diag.last = d; return { ok: false, code: r.code, stage: r.stage, http: r.http, detail: r.detail, message: r.message, partial: partial }; }
