@@ -156,6 +156,8 @@ export const streamAnswer = (body: ReadableStream<Uint8Array>): ReadableStream<U
             if (t && total < MAX_ANSWER) { const piece = t.slice(0, MAX_ANSWER - total); total += piece.length; ctrl.enqueue(frame({ t: piece })); sent = true; }
           }
           if (done) { finished = true; ctrl.enqueue(frame(total ? { done: true } : { e: 'empty' })); ctrl.close(); return; }
+          // tetto raggiunto: si chiude e si annulla la richiesta a monte (niente token generati e fatturabili oltre il limite)
+          if (total >= MAX_ANSWER) { finished = true; void reader.cancel().catch(() => undefined); ctrl.enqueue(frame({ done: true })); ctrl.close(); return; }
           if (sent) return;
         }
       } catch (e) {

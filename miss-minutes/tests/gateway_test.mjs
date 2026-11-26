@@ -140,6 +140,26 @@ ok(p.context.length === 5 && p.context[0].id === 'ab' && p.context[0].text.lengt
   ok(/streamGenerateContent/.test(lastUrl) === false || ns.status === 200, 'senza stream: percorso JSON invariato');
   const quotaCalls = await call('/v1/chat', { method: 'POST', headers: { Authorization: 'Bearer ' + tk }, body: JSON.stringify({ question: 'x', stream: 'si' }) }, envS, '8.8.8.8');
   ok(quotaCalls.status === 200 && /text\/event-stream/.test(quotaCalls.headers.get('content-type')) === false, 'stream attivo solo con true booleano');
+  // annullamento a monte + nessuna richiesta duplicata
+  {
+    let upstreamCancelled = 0, gemCalls = 0, mode2 = 'client';
+    globalThis.fetch = async (u, init) => {
+      if (!String(u).includes('generativelanguage')) return prev(u, init);
+      gemCalls++;
+      const enc = new TextEncoder();
+      const body = new ReadableStream({ pull(ctrl) { return new Promise(r => setTimeout(() => { ctrl.enqueue(enc.encode(ev({ text: mode2 === 'cap' ? 'x'.repeat(1500) : 'parola ' }) + '\n\n')); r(); }, 5)); }, cancel() { upstreamCancelled++; } });
+      return new Response(body, { status: 200, headers: { 'Content-Type': 'text/event-stream' } });
+    };
+    const before = gemCalls;
+    const r1 = await call('/v1/chat', { method: 'POST', headers: { Authorization: 'Bearer ' + tk }, body: JSON.stringify({ question: 'annulla', stream: true }) }, envS, '9.9.9.9');
+    const rd = r1.body.getReader(); await rd.read(); await rd.read(); await rd.cancel();
+    await new Promise(r => setTimeout(r, 50));
+    ok(upstreamCancelled === 1 && gemCalls - before === 1, 'stream: la chiusura del client annulla la richiesta a monte (1 sola chiamata Gemini, nessun retry)');
+    mode2 = 'cap'; upstreamCancelled = 0; const b2 = gemCalls;
+    const r2 = await call('/v1/chat', { method: 'POST', headers: { Authorization: 'Bearer ' + tk }, body: JSON.stringify({ question: 'tetto', stream: true }) }, envS, '9.9.9.9');
+    const t2 = await r2.text(); const e2 = t2.split('\n\n').filter(Boolean).map(l => JSON.parse(l.replace(/^data: /, '')));
+    ok(e2.map(e => e.t || '').join('').length === 4000 && e2[e2.length - 1].done === true && upstreamCancelled === 1 && gemCalls - b2 === 1, 'stream: tetto 4000 caratteri -> done e richiesta a monte annullata');
+  }
   globalThis.fetch = prev;
 }
 console.log(`gateway_test: ${pass} ok, ${failN} falliti`); process.exit(failN ? 1 : 0);
