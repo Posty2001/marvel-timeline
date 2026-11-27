@@ -332,3 +332,7 @@ dialog input[type=url],dialog input[type=text]{flex:1;min-width:0;background:#0b
 .mm-caret { display: inline-block; width: .5em; height: 1.05em; margin-left: 2px; vertical-align: text-bottom; border-radius: 2px; background: currentColor; opacity: .7; }
 @media (prefers-reduced-motion: no-preference) { .mm-caret { animation: mmCaret 1s steps(2, start) infinite; } }
 @keyframes mmCaret { to { visibility: hidden; } }
+
+/* hotfix mm2e.1: il documento dell'assistente non scorre mai (nessuna catena di scorrimento verso la pagina ospite) */
+html{overflow:hidden;overscroll-behavior:none}
+body{position:fixed;inset:0;width:100%;overflow:hidden}

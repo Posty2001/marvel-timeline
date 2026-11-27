@@ -104,10 +104,11 @@
 
   /* ---------- composizione ---------- */
   var TONE = {
-    open: ['Ah, una domanda interessante. Il Tempo non perdona, ma io sì.', 'Consultando gli archivi… non toccare nulla, per favore.', 'Variante, hai una scelta eccellente di domande. Rispondo subito.', 'Un attimo: sistemo la Linea Temporale e poi ti rispondo.'],
-    empty: ['Su questo gli archivi tacciono. Succede anche alle linee temporali migliori.', 'Non trovo nulla di affidabile. Meglio un silenzio che una variante inventata.'],
-    close: ['Altro da potare?', 'Chiedi pure: i Guardiani del Tempo non guardano.', 'Prossima domanda, prima che il Tempo se ne accorga.']
+    open: [],
+    empty: ['Su questo non trovo nulla di affidabile nell’archivio locale.', 'Nell’archivio locale non ho informazioni affidabili su questo.'],
+    close: []
   };
+
 
   function lvLine(h) {
     if (!h) return '';
@@ -116,25 +117,41 @@
     return parts.join(' · ');
   }
 
-  function describe(e, ctx) {
-    var L = [], refs = [];
-    L.push(e.name + (e.universe ? ' — ' + e.universe : ''));
-    if (e.text) L.push('Fatto: ' + e.text);
-    if (e.host) {
-      if (e.host.power) L.push('Poteri e capacità (dati dell’app): ' + e.host.power);
-      var lv = lvLine(e.host); if (lv) L.push(lv);
-      var rel = relationsOf(ctx.ix, e, 6);
-      if (rel.length) L.push('Legami: ' + rel.map(function (r) { return r.name + ' (' + r.label.toLowerCase() + ')'; }).join('; '));
+  /* aspetto richiesto dalla domanda: la risposta locale contiene SOLO cio' che e' stato chiesto (mai l'intero dossier) */
+  function aspectOf(n) {
+    if (/\b(poteri|poter\w+|abilit\w+|capacit\w+|superpoter\w+|livello|scala dei poteri|quanto e forte|forza)\b/.test(n)) return 'poteri';
+    if (/\b(legami|legat\w+|parenti|famiglia|alleat\w+|nemic\w+|relazion\w+|collegat\w+)\b/.test(n)) return 'legami';
+    if (/\b(universo|terra|multiverso|continuita|che universo|di quale universo)\b/.test(n)) return 'universo';
+    if (/\b(quando e uscit\w*|data di uscita|uscita|quando esce|che anno)\b/.test(n)) return 'uscita';
+    if (/\b(saga|scheda n|numero della scheda|in che posizione|ordine)\b/.test(n)) return 'posizione';
+    return 'generale';
+  }
+  function describe(e, ctx, aspect) {
+    var L = [], refs = [], miss = false; aspect = aspect || 'generale';
+    var h = e.host, who = e.name + (e.universe ? ' (' + e.universe + ')' : '');
+    if (aspect === 'poteri') {
+      if (h && h.power) { L.push('Poteri e capacità di ' + who + ' secondo la guida dell’app: ' + h.power); var lv = lvLine(h); if (lv) L.push(lv + ' — scala interna dell’app, non dei fumetti.'); }
+      else miss = true;
+      if (miss) L.push('Per ' + e.name + ' nella guida dell’app non ci sono dati sui poteri.');
+    } else if (aspect === 'legami') {
+      var rel = relationsOf(ctx.ix, e, 8);
+      if (rel.length) L.push('Legami di ' + who + ' nella guida dell’app: ' + rel.map(function (r) { return r.name + ' (' + r.label.toLowerCase() + ')'; }).join('; ') + '.'); else { miss = true; L.push('Per ' + e.name + ' nella guida dell’app non ci sono legami registrati.'); }
+    } else if (aspect === 'universo') {
+      if (e.universe) L.push(e.name + ' appartiene a: ' + e.universe + '.'); else { miss = true; L.push('Per ' + e.name + ' nella guida non è indicato l’universo.'); }
+    } else if (e.title && (aspect === 'uscita' || aspect === 'posizione')) {
+      var t0 = e.title;
+      if (aspect === 'uscita') { if (t0.release) L.push(e.name + ': uscita ' + fmtDate(t0.release) + ' (data della Timeline).'); else { miss = true; L.push('Per ' + e.name + ' la Timeline non riporta una data di uscita.'); } }
+      else L.push(e.name + ' è la scheda N°' + t0.id + (t0.saga ? ', ' + t0.saga : '') + '.');
+    } else if (aspect === 'uscita' || aspect === 'posizione') {
+      miss = true; L.push('Per ' + e.name + ' nella guida non ho questo dato.');
+    } else {
+      L.push(e.name + (e.universe ? ' — ' + e.universe : ''));
+      if (e.text) { L.push(e.text); if (e.source) L.push('Riferimento nei fumetti: ' + e.source + '.'); }
+      else if (e.title) L.push('Scheda N°' + e.title.id + (e.title.saga ? ' · ' + e.title.saga : '') + (e.title.release ? ' · uscita ' + fmtDate(e.title.release) : ''));
+      else if (h && h.power) L.push('Poteri e capacità (dati dell’app): ' + h.power);
     }
-    if (e.kind === 'universo' && e.curated === false) L.push('Aperto dall’Atlante troverai tutte le schede collegate.');
-    if (e.title) {
-      var t = e.title;
-      L.push('Scheda N°' + t.id + ' · ' + (t.saga || '') + (t.release ? ' · uscita ' + fmtDate(t.release) : ''));
-      L.push(t.seen === true ? 'Lo hai già visto' + (t.rating ? ' (voto ' + String(t.rating).replace('.', ',') + ')' : '') + '.' : t.seen === false ? 'Non lo hai ancora visto.' : '');
-    }
-    if (e.source) L.push('Riferimento: ' + e.source + ' [' + e.verification + ']');
     if (e.link) refs.push({ label: e.name, link: e.link });
-    return { text: L.filter(Boolean).join('\n'), refs: refs };
+    return { text: L.filter(Boolean).join('\n'), refs: refs, missing: miss };
   }
 
   function relationsOf(ix, e, max) {
@@ -177,7 +194,7 @@
     var unseen = T.filter(function (t) { return t.seen !== true; }).sort(function (a, b) { return a.num - b.num; });
     if (kind === 'advice') {
       var nxt = unseen.slice(0, 3);
-      if (!nxt.length) return { text: 'Hai visto tutti i ' + tot + ' titoli. La Linea Temporale è completa: complimenti, Variante. Prova un Quiz o l’Arcade per tenerti in allenamento.', refs: [{ label: 'Arcade', link: 'page:arcade' }], personal: true };
+      if (!nxt.length) return { text: 'Hai visto tutti i ' + tot + ' titoli. Non resta nulla da recuperare nella Timeline.', refs: [{ label: 'Arcade', link: 'page:arcade' }], personal: true };
       L.push('Seguendo l’ordine della guida, i prossimi per te sono:');
       nxt.forEach(function (t, i) { L.push((i + 1) + '. ' + t.title + ' (N°' + t.id + (t.saga ? ' · ' + t.saga : '') + ')'); refs.push({ label: t.title, link: 'item:' + t.id }); });
       L.push('Sto solo guardando cosa ti manca e l’ordine, non i tuoi gusti: nessuno spoiler, promesso.');
@@ -269,7 +286,7 @@
       if (!n) { out.text = 'Dimmi pure cosa vuoi sapere.'; return out; }
 
       if (/^(ciao|salve|hey|buongiorno|buonasera|ehi)\b/.test(n) && n.split(' ').length <= 3) {
-        out.text = 'Benvenuto, Variante. Sono Miss Minutes. Chiedimi di personaggi, universi, fumetti, di cosa guardare o dei tuoi progressi.';
+        out.text = 'Ciao, sono Miss Minutes. Chiedimi di personaggi, universi, fumetti, di cosa guardare o dei tuoi progressi.';
         out.intent = 'saluto'; out.confidence = 1; return out;
       }
       var pk = personalIntent(n);
@@ -323,16 +340,16 @@
         out.refs = main.link ? [{ label: main.name, link: main.link }] : [];
         return out;
       }
-      var d = describe(main, ctx); out.text = d.text; out.refs = d.refs;
+      var asp = aspectOf(n); var d = describe(main, ctx, asp); out.text = d.text; out.refs = d.refs; out.aspect = asp; if (d.missing) { out.needsOnline = true; out.confidence = 0.4; }
       if (!main.curated && !main.host && !main.title && main.kind !== 'universo') out.text += '\nHo poche informazioni affidabili su questo.';
-      if (others.length) { out.text += '\nVedi anche: ' + others.map(function (e) { return e.name; }).join(', ') + '.'; others.forEach(function (e) { if (e.link) out.refs.push({ label: e.name, link: e.link }); }); }
+      if (others.length && asp === 'generale') { out.text += '\nVedi anche: ' + others.map(function (e) { return e.name; }).join(', ') + '.'; others.forEach(function (e) { if (e.link) out.refs.push({ label: e.name, link: e.link }); }); }
       if (main.spoiler) out.text = '⚠ Contiene spoiler.\n' + out.text;
       return finalize(out, state);
     }
 
     function finalize(out, state) {
       out.tag = out.tag || 'locale';
-      if (out.confidence >= 0.8 && out.text && !/^Ciao|^Benvenuto/.test(out.text)) out.flair = pick(TONE.close, out.text);
+      
       return out;
     }
 

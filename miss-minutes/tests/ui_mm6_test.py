@@ -102,7 +102,7 @@ with sync_playwright() as p:
     ok('«Nuova conversazione» esplicita: nessuna chat vuota creata, quelle vecchie intatte', len(s2['sessions']) == n_before and s2['active'] is None and fr.evaluate("()=>window.__mm.view()") == 'home', (n_before, len(s2['sessions'])))
     # 4. instradamento
     c1 = GW['chat']; fr.evaluate("()=>window.__mm.ask('Doom vincerà in Doomsday?')"); fr.wait_for_function("()=>!document.getElementById('mmSend').disabled"); pg.wait_for_timeout(600)
-    tag = fr.evaluate("()=>[...document.querySelectorAll('.mm-tag')].pop().textContent")
+    tag = fr.evaluate("()=>{const m=window.__mm.store.current().messages;return m[m.length-1].tag||''}")
     ok('«Doom vincerà in Doomsday?» va a Gemini (analisi teorica, non scheda anagrafica)', GW['chat'] == c1 + 1 and 'online' in tag, (GW['chat'] - c1, tag))
     body = None
     for q, expect_ai in [('Chi è Loki?', False), ('Cosa succederà a Thor dopo Ragnarok secondo te?', True), ('Differenza tra Terra-616 e Terra-1610', True), ('Quanti titoli ho visto?', False)]:

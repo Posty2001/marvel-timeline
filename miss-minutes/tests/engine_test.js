@@ -12,8 +12,14 @@ const seen = new Set([1, 2, 3, 4, 5, 6, 9]);
 const eng = E.create({ data: data(seen), knowledge: kc });
 const st = eng.stats(); console.log('indice', JSON.stringify(st));
 ok(st.curated === 62, '62 schede curate');
-let a = eng.ask('Chi è Loki?'); ok(/Loki/.test(a.text) && /Fatto:/.test(a.text) && a.refs.some(r => /^char:/.test(r.link)), 'Loki: fatto + link scheda app (' + a.text.slice(0, 80) + ')');
+let a = eng.ask('Chi è Loki?'); ok(/Loki/.test(a.text) && !/Fatto:|\[verific|Livello poteri|Legami:/.test(a.text) && a.refs.some(r => /^char:/.test(r.link)), 'Loki: fatto + link scheda app (' + a.text.slice(0, 80) + ')');
 ok(/Journey into Mystery #85/.test(a.text), 'Loki: riferimento fumetto');
+ok(!/Chiedi pure|Il Tempo non perdona|Linea Temporale|Altro da potare/.test(a.text + (a.flair || '')), 'niente battute/flair forzati');
+{ const p = eng.ask('Che poteri ha Miles Morales?'), g = eng.ask('Chi è Miles Morales?');
+  ok(!/Legami|Scheda N°|\[verific|Riferimento:/.test(p.text), 'poteri di Miles: solo poteri (' + p.text.slice(0, 120) + ')');
+  ok(!/Poteri e capacità|Livello poteri|Legami/.test(g.text) || g.text.split('\n').length <= 3, 'chi è Miles: non l\'intero dossier (' + g.text.slice(0, 160) + ')');
+  const l = eng.ask('Quali sono i legami di Miles Morales?'); ok(/Legami|legami/.test(l.text) && !/Poteri e capacità/.test(l.text), 'legami di Miles: solo legami'); }
+{ const x = eng.ask('Che livello ha Loki?'); ok(!/Legami|Fatto:/.test(x.text), 'livello: nessun dossier'); }
 a = eng.ask('chi è il dottor destino'); ok(/Doom/.test(a.text), 'alias italiano Doom');
 a = eng.ask('Parlami di Terra-616'); ok(/616/.test(a.text) && a.entities[0].startsWith('kc:'), 'Terra-616 -> scheda curata');
 a = eng.ask('Chi è Knull?'); ok(a.withheld.length === 1 && !/simbionti/.test(a.text) && /spoiler/i.test(a.text), 'spoiler: scheda trattenuta');
