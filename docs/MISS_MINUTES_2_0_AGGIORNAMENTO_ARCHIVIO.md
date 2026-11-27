@@ -1,12 +1,23 @@
-# Miss Minutes 2.0 — aggiornamento automatico dell'archivio TMDB (progetto)
+# Miss Minutes 2.0 — aggiornamento automatico dell'archivio TMDB
 
-**Stato: progettato; il lato app è implementato e testato ma SPENTO (nessuna richiesta di rete). Nessun servizio esterno, workflow di pubblicazione o deploy è stato attivato.** Per accenderlo servono le autorizzazioni elencate in fondo.
+**Stato (27/11/2026): IMPLEMENTATO su autorizzazione dell'utente (01:25), in attesa del primo avvio reale.** Costo 0 €. Nessun Netlify, nessun GitHub Pages, nessuna modifica a TVA Live / Episodi.
 
-## Obiettivi e vincoli
-- Archivio sempre fresco (date di uscita, cast, sinossi) **senza un deploy Netlify per ogni aggiornamento** e senza toccare TVA Live / Episodi (nessun file, workflow, segreto o pointer condiviso).
-- Copia locale **verificata** per l'uso offline; un aggiornamento difettoso non può mai peggiorare ciò che l'utente ha già.
-- Costo 0 € (Actions nei limiti gratuiti, hosting statico gratuito), nessun dato personale in uscita: l'app fa solo due `GET` di file pubblici.
+## Come funziona (implementato)
+- **Repo scheduler** (`Posty2001/tva-live-scheduler`, commit `080fb7f`): workflow `.github/workflows/miss-minutes-archivio.yml` — **ogni lunedì 03:41 UTC** + avvio manuale (`Run workflow`, opzione *Prova a secco*). Gruppo di concorrenza proprio `mm-archivio`; non tocca `live-scheduler.yml`, `catalog/`, il sito Pages.
+- **Generazione:** il workflow avvia `tmdb-sync.yml` di marvel-timeline su `test/tva-archives` con `mm_tmdb=true`, `mm_tmdb_commit=false` (il run si ritrova da `dispatch_id` = `mm-<run>-<tentativo>`; il `run-name` di `tmdb-sync.yml` è stato esteso, il comportamento di TVA Live è invariato). Accetta solo un run **riuscito** (l'artifact viene caricato anche in caso di errore e conterrebbe il file vecchio), verifica che `main` non sia cambiato, scarica l'artifact `mm-tmdb`. Riusa il secret già esistente `TVA_DISPATCH_TOKEN`.
+- **Validazione e anti-regressione** (`scripts/mm_archivio.py`, 15 prove + archivio reale accettato): schema, ≥ 50 voci, campi ben formati, date ISO, file < 1,5 MB, **nessuna perdita > 10 % di voci / sinossi / cast** rispetto all'ultima versione pubblicata, `generato` non retrocesso, schema non più vecchio. Se non passa: **nulla viene scritto**, il workflow diventa rosso e resta l'ultima versione valida.
+- **SHA-256:** calcolato sui byte del file; `pointer.json` = `{versione, generato, sha256, file, n, pubblicato, precedente}`; il file è immutabile `tmdb_titoli.<sha8>.json`. Il puntatore si scrive per ultimo. Ultime 8 versioni conservate in `storico.json` (ripristino = riportare il puntatore a una versione precedente).
+- **Canale indipendente:** branch dati dedicato **`mm-archivio`** dello stesso repo (orfano, creato al primo avvio), servito da `https://raw.githubusercontent.com/Posty2001/tva-live-scheduler/mm-archivio/` (HTTPS, CORS `*`). Un push su quel branch non attiva né sostituisce il sito Pages di TVA Live. Dopo la pubblicazione il workflow **verifica l'endpoint pubblico reale** (puntatore, CORS, SHA-256 del file) e diventa rosso se qualcosa non torna.
+- **App** (`miss-minutes/archive.js`, già nel pacchetto, **acceso** con `config.archivio` = URL del canale; CSP `connect-src` limitata a quel percorso): pacchetto incluso → copia locale verificata → remoto. Un controllo ogni 12 h, timeout 4,5 s, solo https, scarica solo se `generato` è più recente, verifica SHA-256 e le stesse regole prima di salvare la copia locale; errore = si resta sulla versione verificata. **Offline:** pacchetto o copia locale. La Diagnostica mostra origine, data e voci dell'archivio. Nessun deploy Netlify per gli aggiornamenti dei dati.
+- Il pacchetto incluso nell'app resta il paracadute (precache PWA).
 
+## Limiti dichiarati
+- **Non è stato eseguito alcun avvio reale** del workflow (il token `gh` della sandbox non è valido e non raggiungo GitHub Actions): logica provata in locale (simulazione del branch orfano, aggiornamento, invariato, rifiuto per regressione) ma il primo giro va lanciato dall'utente (Actions → «Miss Minutes - archivio TMDB» → Run workflow, con *Prova a secco* se vuole). Prima serve che `tmdb-sync.yml` modificato sia su `test/tva-archives` (pubblicato).
+- Cache di raw.githubusercontent.com: fino a ~5 minuti di ritardo sul puntatore.
+- L'endpoint reale dal browser dell'iPhone non è provato.
+- TMDB è la fonte: errori TMDB si propagano; le correzioni dell'utente (`tmdb_overrides.json`) vincono sempre e vanno nel generatore.
+
+## Cronologia della progettazione (storica)
 ## Cosa si riusa da TVA Live (e cosa no)
 Si riusa lo **schema**, non l'istanza: generazione offline con `tools/mm_tmdb.py` tramite `tmdb-sync.yml` (opzione `mm_tmdb`, chiave TMDB solo nei Secret), file immutabili con impronta + puntatore `pointer.json` con `sha256`. Si **evita** di pubblicare sullo stesso sito GitHub Pages di TVA Live: due pubblicatori sullo stesso sito si sovrascrivono a vicenda. Per questo l'archivio usa un **canale separato** con proprio gruppo di concorrenza (`mm-archivio`).
 

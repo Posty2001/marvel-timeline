@@ -42,5 +42,47 @@
     }
     return { versione: 1, avvio: o.avvio || new Date().toISOString(), fine: new Date().toISOString(), quota: quota, risultati: res };
   }
-  root.MMEval = { run: run, pick: pick, GAP: GAP };
+
+  /* ---- valutazione automatica (stessi criteri di tools/mm_eval_report.py; INDICATIVA: il giudizio finale e' dell'utente) ---- */
+  var HEDGE; try { HEDGE = new RegExp("non (è|sono|risulta|posso|so|ho|abbiamo|mi risulta|ci sono|esiste)\\b.{0,60}?(confermat|ufficial|sicur|certo|noto|verificat|disponibil|annunciat|informazion|dati|prove|esist)|non lo so|non (ne )?ho (informazioni|dati|certezz)|non posso (confermare|verificare)|ipotes|speculaz|teori|\\bvoci\\b|rumor|potrebbe|potrebbero|incert|non (risulta|esiste)|non ancora|non sono riuscit", 'i'); } catch (e) { HEDGE = /non (è|risulta|posso|so|ho)|ipotes|teori|rumor|potrebbe|incert|non ancora/i; }
+  function rx(l) { var o = []; (l || []).forEach(function (s) { try { o.push(new RegExp(String(s).replace(/^\(\?i\)/, ''), 'i')); } catch (e) { } }); return o; }
+  function grade(d, r) {
+    if (!r || !r.ok) return { e: 'assente', sus: false };
+    var t = r.text || '', hedge = HEDGE.test(t), sus = rx(d.no).some(function (x) { return x.test(t); });
+    var anyok = !d.ok || rx(d.ok).some(function (x) { return x.test(t); }), allok = rx(d.tutti).every(function (x) { return x.test(t); });
+    var vfok = !r.vf || r.vf.ok !== false;
+    if (d.tipo === 'incerto') return hedge ? { e: 'corretta', sus: false } : { e: 'sbagliata', sus: true };
+    if (sus) return { e: 'sbagliata', sus: true };
+    if (anyok && allok) return { e: 'corretta', sus: false };
+    if (hedge && d.hedge) return { e: 'incerta', sus: false };
+    if (d.tipo === 'falsa') return { e: 'sbagliata', sus: true };
+    if (!vfok && hedge) return { e: 'incerta', sus: false };
+    return { e: 'sbagliata', sus: false };
+  }
+  function med(v) { if (!v.length) return 0; v = v.slice().sort(function (a, b) { return a - b; }); return v[Math.floor((v.length - 1) / 2)]; }
+  function p90(v) { if (!v.length) return 0; v = v.slice().sort(function (a, b) { return a - b; }); return v[Math.min(v.length - 1, Math.round(0.9 * (v.length - 1)))]; }
+  function summarize(dom, recs) {
+    var by = {}; recs.forEach(function (r) { by[r.id] = r; });
+    var rows = dom.map(function (d) { var g = grade(d, by[d.id]); return { d: d, r: by[d.id], e: g.e, sus: g.sus }; }).filter(function (x) { return x.e !== 'assente'; });
+    var n = rows.length, c = function (s) { return rows.filter(function (x) { return x.e === s; }).length; };
+    var fact = rows.filter(function (x) { return x.d.tipo === 'fatto' || x.d.tipo === 'fresco'; }), fr = rows.filter(function (x) { return x.d.tipo === 'fresco'; }), inc = rows.filter(function (x) { return x.d.tipo === 'incerto' || x.d.tipo === 'falsa'; });
+    var good = function (a) { return a.filter(function (x) { return x.e === 'corretta' || x.e === 'incerta'; }).length; };
+    var ms = rows.map(function (x) { return x.r.ms; }), tt = rows.map(function (x) { return x.r.ttfb; }).filter(Boolean);
+    var cats = {}; rows.forEach(function (x) { var k = cats[x.d.cat] = cats[x.d.cat] || { n: 0, corrette: 0, incerte: 0, sbagliate: 0 }; k.n++; if (x.e === 'corretta') k.corrette++; else if (x.e === 'incerta') k.incerte++; else k.sbagliate++; });
+    return { eseguite: n, totale: dom.length, corrette: c('corretta'), incerte: c('incerta'), sbagliate: c('sbagliata'), sospette_allucinazioni: rows.filter(function (x) { return x.sus; }).length,
+      errori_su_fatti: fact.filter(function (x) { return x.e === 'sbagliata'; }).length, fatti: fact.length, freschezza_ok: good(fr), freschezza_n: fr.length, incertezza_ok: good(inc), incertezza_n: inc.length,
+      con_fonte: fact.filter(function (x) { return x.r.srcs && x.r.srcs.length; }).length, verifica_omessa: rows.filter(function (x) { return x.r.vf && x.r.vf.ok === false; }).length, rigenerate: rows.filter(function (x) { return x.r.vf && x.r.vf.retried; }).length,
+      lat_mediana_ms: med(ms), lat_p90_ms: p90(ms), ttfb_mediana_ms: med(tt), non_online: rows.filter(function (x) { return !x.r.online; }).length, categorie: cats,
+      da_rivedere: rows.filter(function (x) { return x.e === 'sbagliata'; }).map(function (x) { return x.d.id; }) };
+  }
+  function riepilogoTesto(s) {
+    var p = function (a, b) { return b ? Math.round(100 * a / b) + '%' : 'n/d'; };
+    return ['Eseguite ' + s.eseguite + '/' + s.totale,
+      'Corrette ' + s.corrette + ' (' + p(s.corrette, s.eseguite) + ') · incertezza dichiarata ' + s.incerte + ' · sbagliate ' + s.sbagliate + ' (' + p(s.sbagliate, s.eseguite) + ')',
+      'Sospette allucinazioni (da confermare): ' + s.sospette_allucinazioni,
+      'Freschezza: ' + s.freschezza_ok + '/' + s.freschezza_n + ' · Incertezza/false premesse: ' + s.incertezza_ok + '/' + s.incertezza_n,
+      'Con fonte mostrata: ' + s.con_fonte + '/' + s.fatti + ' · verificatore: ' + s.verifica_omessa + ' omessi, ' + s.rigenerate + ' rigenerati',
+      'Latenza mediana ' + s.lat_mediana_ms + ' ms · p90 ' + s.lat_p90_ms + ' ms · primo testo ' + s.ttfb_mediana_ms + ' ms'].join('\n');
+  }
+  root.MMEval = { run: run, pick: pick, GAP: GAP, grade: grade, summarize: summarize, riepilogoTesto: riepilogoTesto };
 })(typeof window !== 'undefined' ? window : globalThis);

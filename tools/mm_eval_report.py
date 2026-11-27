@@ -40,10 +40,14 @@ def p90(v):
     v = sorted(v); return int(v[min(len(v) - 1, int(round(0.9 * (len(v) - 1))))])
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument('--risultati', default=D('miss-minutes', 'eval', 'risultati.json')); ap.add_argument('--manuale', default=D('miss-minutes', 'eval', 'manuale.json'))
+    ap = argparse.ArgumentParser(); ap.add_argument('--risultati', default=None); ap.add_argument('--manuale', default=D('miss-minutes', 'eval', 'manuale.json'))
     ap.add_argument('--md'); ap.add_argument('--autotest', action='store_true'); a = ap.parse_args()
     dom = json.load(open(D('miss-minutes', 'eval', 'domande.json')))['domande']; byid = {d['id']: d for d in dom}
     if a.autotest: return autotest(dom)
+    if not a.risultati:   # file esportato dall'iPhone (miss-minutes-valutazione-AAAAMMGG-HHMM.json) piu' recente, altrimenti risultati.json
+        import glob
+        cand = sorted(glob.glob(D('miss-minutes', 'eval', 'miss-minutes-valutazione-*.json')) + glob.glob(D('miss-minutes', 'eval', 'risultati.json')))
+        a.risultati = cand[-1] if cand else D('miss-minutes', 'eval', 'risultati.json')
     if not os.path.exists(a.risultati):
         print('NESSUN RISULTATO REALE: %s non esiste. Esegui la valutazione in-app (Impostazioni → Valutazione risposte), copia il JSON e salvalo qui.' % a.risultati); return 2
     raw = json.load(open(a.risultati)); recs = {r['id']: r for r in raw['risultati']}

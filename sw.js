@@ -13,9 +13,9 @@
 // URL dei file .woff2 referenziati, e li mette in cache esplicitamente — indipendentemente da
 // quando/come la pagina stessa li carica.
 
-const SW_BUILD = '20261127-1200-mm2c';
+const SW_BUILD = '20261127-0200-mm2d';
 const CACHE_PREFIX = 'marvel-timeline-cache-';   // C26: si cancellano solo le cache di questa app
-const CACHE_NAME = 'marvel-timeline-cache-20261127-1200-mm2c';
+const CACHE_NAME = 'marvel-timeline-cache-20261127-0200-mm2d';
 const FONT_CSS_URL = 'https://fonts.googleapis.com/css2?family=Special+Elite&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap';
 
 /* 3.2.4: ritratti avatar approvati, precaricati per l'uso offline (Tessera, editor, esportazione PNG). */
@@ -141,7 +141,7 @@ self.addEventListener('fetch', function (event) {
   var req = event.request;
   if (req.method !== 'GET') return;
   // Gateway Miss Minutes (Cloudflare Workers): mai intercettato ne' messo in cache (sfide e sessioni sono monouso)
-  try { if (/\.workers\.dev$/.test(new URL(req.url).hostname)) return; } catch (e) { /* URL non valido: prosegue */ }
+  try { if (/(\.workers\.dev|^raw\.githubusercontent\.com)$/.test(new URL(req.url).hostname)) return; } catch (e) { /* URL non valido: prosegue */ }
 
   // Navigazione (l'HTML): rivalida sempre con il server, senza passare dalla cache HTTP del WebView
   // (una copia "fresca" li' darebbe una versione precedente anche con rete presente). Se la costruzione

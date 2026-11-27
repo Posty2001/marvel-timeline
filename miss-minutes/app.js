@@ -809,30 +809,43 @@
   function evLoad() { try { return JSON.parse(localStorage.getItem(EKEY) || 'null'); } catch (e) { return null; } }
   function evSave(o) { try { localStorage.setItem(EKEY, JSON.stringify(o)); return true; } catch (e) { return false; } }
   function loadScript(src) { return new Promise(function (res, rej) { if (window.MMEval) return res(); var s = document.createElement('script'); s.src = src; s.onload = res; s.onerror = function () { rej(new Error('eval.js non disponibile')); }; document.head.appendChild(s); }); }
+  function evFileName() { var d = new Date(); function z(n) { return ('0' + n).slice(-2); } return 'miss-minutes-valutazione-' + d.getFullYear() + z(d.getMonth() + 1) + z(d.getDate()) + '-' + z(d.getHours()) + z(d.getMinutes()) + '.json'; }
+  // Esporta il JSON come FILE: foglio di condivisione (Salva su File / AirDrop / Mail) su iPhone, altrimenti download diretto, altrimenti testo selezionabile
+  async function evExport(o, setSt, b) {
+    var txt = JSON.stringify(o, null, 1), name = evFileName(), blob = new Blob([txt], { type: 'application/json' });
+    try { var f = new File([blob], name, { type: 'application/json' }); if (navigator.canShare && navigator.canShare({ files: [f] })) { await navigator.share({ files: [f], title: name }); setSt('File «' + name + '» condiviso: scegli «Salva su File».'); return; } } catch (e) { if (e && e.name === 'AbortError') { setSt('Condivisione annullata.'); return; } }
+    try { var u = URL.createObjectURL(blob), a = document.createElement('a'); a.href = u; a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(u); }, 30000); setSt('Scaricato «' + name + '».'); return; } catch (e2) { }
+    var ta = el('textarea'); ta.value = txt; ta.rows = 6; ta.readOnly = true; b.appendChild(ta); ta.select(); setSt('Il dispositivo non consente il salvataggio come file: seleziona il testo qui sotto.');
+  }
   function evalDialog() {
     dlg('Valutazione risposte (fase C)', function (b) {
-      b.appendChild(el('p', 'mm-small', 'Esegue il set di domande documentato sull’AI online reale (una conversazione per catena, ritmo compatibile con le quote del gateway). Usa solo domande pubbliche sul Marvel Universe: nessun dato personale. I risultati restano su questo dispositivo finché non li copi.'));
-      var st = el('p', 'mm-small', ''), run = btn('mm-bigbtn primary', null), cp = btn('mm-bigbtn sub', null), clr = btn('mm-link', null), stop = btn('mm-bigbtn sub', null);
-      run.textContent = 'Avvia la valutazione'; cp.textContent = 'Copia i risultati (JSON)'; clr.textContent = 'Cancella i risultati'; stop.textContent = 'Interrompi'; stop.hidden = true;
-      var prev = evLoad(); st.textContent = prev ? 'Ultimo risultato: ' + prev.risultati.length + ' risposte (' + prev.fine + ').' : 'Nessun risultato salvato.';
-      if (!onlineOK()) st.textContent = 'AI online non attiva: attivala dalle impostazioni e dai il consenso prima di avviare. ' + st.textContent;
+      b.appendChild(el('p', 'mm-small', 'Esegue il set di domande documentato sull’AI online reale (una conversazione per catena, ritmo compatibile con le quote del gateway). Solo domande pubbliche sul Marvel Universe: nessun dato personale. I risultati restano su questo dispositivo finché non li esporti o li cancelli.'));
+      var st = el('p', 'mm-small', ''), sm = el('pre', 'mm-small'), run = btn('mm-bigbtn primary', null), sv = btn('mm-bigbtn sub', null), cp = btn('mm-link', null), clr = btn('mm-link', null), stop = btn('mm-bigbtn sub', null);
+      sm.style.whiteSpace = 'pre-wrap'; run.textContent = 'Avvia la valutazione'; sv.textContent = 'Salva il file JSON'; cp.textContent = 'Copia come testo'; clr.textContent = 'Cancella i risultati'; stop.textContent = 'Interrompi'; stop.hidden = true;
+      function setSt(t) { st.textContent = t; }
+      var SET = null;
+      async function getSet() { if (SET) return SET; await loadScript('eval.js'); var r = await fetch('eval/domande.json', { cache: 'no-cache' }); SET = (await r.json()).domande; return SET; }
+      async function showSummary(o) { try { var dom = await getSet(); var s = window.MMEval.summarize(dom, o.risultati); o.riepilogo = s; sm.textContent = window.MMEval.riepilogoTesto(s); } catch (e) { sm.textContent = ''; } }
+      var prev = evLoad(); setSt(prev ? 'Ultimo risultato: ' + prev.risultati.length + ' risposte (' + prev.fine + ').' : 'Nessun risultato salvato.');
+      if (prev) showSummary(prev);
+      if (!onlineOK()) setSt('AI online non attiva: attivala dalle impostazioni e dai il consenso prima di avviare. ' + st.textContent);
       run.onclick = async function () {
-        if (!onlineOK()) { st.textContent = 'AI online non attiva.'; return; }
+        if (!onlineOK()) { setSt('AI online non attiva.'); return; }
         run.disabled = true; stop.hidden = false; evAbort = new AbortController();
         try {
-          await loadScript('eval.js'); var r = await fetch('eval/domande.json', { cache: 'no-cache' }); var set = await r.json();
-          var qs = window.MMEval.pick(set.domande, {}); var cur = 0;
-          var hooks = { newChat: function () { store.state.active = null; }, count: function () { var s = store.current(); return s ? s.messages.length : 0; }, ask: function (q) { return submit(q, { forceOnline: true }); }, diag: function () { return diag.last; }, evalDialog: evalDialog,
+          var dom = await getSet(); var qs = window.MMEval.pick(dom, {});
+          var hooks = { newChat: function () { store.state.active = null; }, count: function () { var s = store.current(); return s ? s.messages.length : 0; }, ask: function (q) { return submit(q, { forceOnline: true }); }, diag: function () { return diag.last; },
             last: function () { var s = store.current(); if (!s || !s.messages.length) return null; var m = s.messages[s.messages.length - 1]; return m.role === 'assistant' ? m : null; } };
-          var out = await window.MMEval.run(hooks, qs, {}, function (p) { st.textContent = (p.nota ? p.nota + ' · ' : '') + p.i + '/' + p.n + ' · ' + p.id; }, evAbort.signal);
-          evSave(out); st.textContent = 'Completata: ' + out.risultati.length + '/' + qs.length + ' risposte' + (out.quota ? ' (limite gratuito raggiunto: serie interrotta)' : '') + '. Copia i risultati.';
-        } catch (e) { st.textContent = 'Errore: ' + (e && e.message || e); }
+          var out = await window.MMEval.run(hooks, qs, {}, function (p) { setSt((p.nota ? p.nota + ' · ' : '') + p.i + '/' + p.n + ' · ' + p.id); }, evAbort.signal);
+          await showSummary(out); evSave(out); setSt('Completata: ' + out.risultati.length + '/' + qs.length + ' risposte' + (out.quota ? ' (limite gratuito raggiunto: serie interrotta)' : '') + '. Premi «Salva il file JSON».');
+        } catch (e) { setSt('Errore: ' + (e && e.message || e)); }
         run.disabled = false; stop.hidden = true; evAbort = null;
       };
       stop.onclick = function () { if (evAbort) evAbort.abort(); abortWait(); };
-      cp.onclick = async function () { var o = evLoad(); if (!o) { st.textContent = 'Nessun risultato.'; return; } var t = JSON.stringify(o); try { await navigator.clipboard.writeText(t); st.textContent = 'Copiati ' + t.length + ' caratteri: incollali in un file miss-minutes/eval/risultati.json.'; } catch (e) { var ta = el('textarea'); ta.value = t; ta.rows = 6; ta.readOnly = true; b.appendChild(ta); ta.select(); st.textContent = 'Copia manuale: seleziona il testo qui sotto.'; } };
-      clr.onclick = function () { try { localStorage.removeItem(EKEY); } catch (e) { } st.textContent = 'Risultati cancellati.'; };
-      b.appendChild(st); b.appendChild(run); b.appendChild(stop); b.appendChild(cp); b.appendChild(clr);
+      sv.onclick = async function () { var o = evLoad(); if (!o) { setSt('Nessun risultato da salvare.'); return; } await showSummary(o); await evExport(o, setSt, b); };
+      cp.onclick = async function () { var o = evLoad(); if (!o) { setSt('Nessun risultato.'); return; } var t = JSON.stringify(o); try { await navigator.clipboard.writeText(t); setSt('Copiati ' + t.length + ' caratteri.'); } catch (e) { var ta = el('textarea'); ta.value = t; ta.rows = 6; ta.readOnly = true; b.appendChild(ta); ta.select(); setSt('Copia manuale: seleziona il testo qui sotto.'); } };
+      clr.onclick = function () { try { localStorage.removeItem(EKEY); } catch (e) { } setSt('Risultati cancellati.'); sm.textContent = ''; };
+      b.appendChild(st); b.appendChild(sm); b.appendChild(run); b.appendChild(stop); b.appendChild(sv); b.appendChild(cp); b.appendChild(clr);
     });
   }
   function diagText() {

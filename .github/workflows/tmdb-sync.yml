@@ -1,7 +1,7 @@
 name: TMDB sync (manuale)
 
 # Nome del run: se avviato dallo scheduler porta l identificativo di correlazione (il run si ritrova senza ambiguita).
-run-name: ${{ inputs.dispatch_id != '' && format('TVA Live update {0}', inputs.dispatch_id) || github.workflow }}
+run-name: ${{ startsWith(inputs.dispatch_id, 'mm-') && format('Miss Minutes archivio {0}', inputs.dispatch_id) || (inputs.dispatch_id != '' && format('TVA Live update {0}', inputs.dispatch_id)) || github.workflow }}
 
 # Solo avvio manuale. Non modifica il repository, non fa deploy, non tocca Firebase.
 # Risultati: artifact scaricabile "tmdb-sync" (tmdb_map.json + tmdb_review.json).
