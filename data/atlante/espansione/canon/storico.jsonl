@@ -1,0 +1,452 @@
+{"id": "id-a-bomb", "livello": "A", "nome": "A-Bomb", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-marvel-animation-universe-2006-2017"}
+{"id": "id-abby-miller", "livello": "A", "nome": "Abby Miller", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-daredevil-elektra-verse"}
+{"id": "id-abigail-whistler", "livello": "A", "nome": "Abigail Whistler", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-blade-verse"}
+{"id": "id-adam-warlock", "livello": "A", "nome": "Adam Warlock", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-adrian-toomes-avvoltoio", "livello": "A", "nome": "Adrian Toomes/Avvoltoio", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-agatha-harkness", "livello": "A", "nome": "Agatha Harkness", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-ajak", "livello": "A", "nome": "Ajak", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-aldrich-killian", "livello": "A", "nome": "Aldrich Killian", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-aleksei-sytsevich-rhino", "livello": "A", "nome": "Aleksei Sytsevich/Rhino", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "id-alexandra-the-hand", "livello": "A", "nome": "Alexandra/The Hand", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-alexei-guardiano-rosso", "livello": "A", "nome": "Alexei/Guardiano Rosso", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-alisa-jones", "livello": "A", "nome": "Alisa Jones", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-alto-evoluzionario", "livello": "A", "nome": "Alto Evoluzionario", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-america-chavez", "livello": "A", "nome": "America Chavez", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-amy-bendix", "livello": "A", "nome": "Amy Bendix", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-anne-weying", "livello": "A", "nome": "Anne Weying", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "id-anya-corazon", "livello": "A", "nome": "Anya Corazon", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "id-apocalypse", "livello": "A", "nome": "Apocalypse", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-arishem", "livello": "A", "nome": "Arishem", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-arthur-harrow", "livello": "A", "nome": "Arthur Harrow", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-ayesha", "livello": "A", "nome": "Ayesha", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-beast", "livello": "A", "nome": "Beast", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"alias": ["Ben Grimm"], "id": "id-ben-grimm-1994", "livello": "A", "nome": "Ben Grimm/The Thing (1994)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-fantastic-four-1994"}
+{"alias": ["Ben Grimm"], "id": "id-ben-grimm-first-steps", "livello": "A", "nome": "Ben Grimm/The Thing (First Steps)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-828"}
+{"alias": ["Ben Grimm"], "id": "id-ben-grimm", "livello": "A", "nome": "Ben Grimm/The Thing (Story)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-121698"}
+{"alias": ["Ben Grimm"], "id": "id-ben-grimm-trank", "livello": "A", "nome": "Ben Grimm/The Thing (Trank)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-trn123"}
+{"id": "id-ben-reilly-the-spider", "livello": "A", "nome": "Ben Reilly/The Spider", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-spider-noir-verse"}
+{"id": "id-benny-pollack", "livello": "A", "nome": "Benny Pollack", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-betty-ross", "livello": "A", "nome": "Betty Ross", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-hulk-2003-verse"}
+{"id": "id-billy-russo-jigsaw", "livello": "A", "nome": "Billy Russo/Jigsaw", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-bishop", "livello": "A", "nome": "Bishop", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-blind-al", "livello": "A", "nome": "Blind Al", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-bob-sentry", "livello": "A", "nome": "Bob/Sentry", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-bonnie-lopez", "livello": "A", "nome": "Bonnie Lopez", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-hulk", "livello": "A", "nome": "Bruce Banner/Hulk", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-bruno", "livello": "A", "nome": "Bruno", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-bucky-barnes-soldato-d-inverno", "livello": "A", "nome": "Bucky Barnes/Soldato d'Inverno", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-bullseye", "livello": "A", "nome": "Bullseye", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-daredevil-elektra-verse"}
+{"id": "id-bushmaster", "livello": "A", "nome": "Bushmaster", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-cable", "livello": "A", "nome": "Cable", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-capitano-stacy", "livello": "A", "nome": "capitano Stacy", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-120703-garfield-verse"}
+{"id": "id-carlton-drake-riot", "livello": "A", "nome": "Carlton Drake/Riot", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "id-carol-danvers-captain-marvel", "livello": "A", "nome": "Carol Danvers/Captain Marvel", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-cassandra-nova", "livello": "A", "nome": "Cassandra Nova", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-cassandra-webb", "livello": "A", "nome": "Cassandra Webb", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "id-cassie-lang", "livello": "A", "nome": "Cassie Lang", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-cat-hardy", "livello": "A", "nome": "Cat Hardy", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-spider-noir-verse"}
+{"id": "id-cecilia-reyes", "livello": "A", "nome": "Cecilia Reyes", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"alias": ["Charles Xavier", "Xavier", "Xavier (giovane e anziano)"], "id": "id-charles-xavier-fox", "livello": "A", "nome": "Charles Xavier (Fox-Verse)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-ciclope", "livello": "A", "nome": "Ciclope", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-claire-wise", "livello": "A", "nome": "Claire Wise", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-cletus-kasady-carnage", "livello": "A", "nome": "Cletus Kasady/Carnage", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "id-clint-barton", "livello": "A", "nome": "Clint Barton/Occhio di Falco", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-colleen-wing", "livello": "A", "nome": "Colleen Wing", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-colossus", "livello": "A", "nome": "Colossus", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-corvus-glaive", "livello": "A", "nome": "Corvus Glaive", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-cottonmouth", "livello": "A", "nome": "Cottonmouth", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-coulson-lmd", "livello": "A", "nome": "Coulson (LMD)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-cull-obsidian", "livello": "A", "nome": "Cull Obsidian", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-curt-connors-lizard", "livello": "A", "nome": "Curt Connors/Lizard", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-120703-garfield-verse"}
+{"id": "id-daniel-sousa", "livello": "A", "nome": "Daniel Sousa", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-danielle-moonstar", "livello": "A", "nome": "Danielle Moonstar", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-danny-rand-iron-fist", "livello": "A", "nome": "Danny Rand/Iron Fist", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-dar-benn", "livello": "A", "nome": "Dar-Benn", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-darren-cross", "livello": "A", "nome": "Darren Cross", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-darryl-jacobson", "livello": "A", "nome": "Darryl Jacobson", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-david-banner", "livello": "A", "nome": "David Banner", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-hulk-2003-verse"}
+{"id": "id-davos", "livello": "A", "nome": "Davos", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-deacon-frost", "livello": "A", "nome": "Deacon Frost", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-blade-verse"}
+{"id": "id-deke-shaw", "livello": "A", "nome": "Deke Shaw", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-dmitri-smerdyakov-chameleon", "livello": "A", "nome": "Dmitri Smerdyakov/Chameleon", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "id-domino", "livello": "A", "nome": "Domino", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-dopinder", "livello": "A", "nome": "Dopinder", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-dracula", "livello": "A", "nome": "Dracula", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-blade-verse"}
+{"id": "id-drax", "livello": "A", "nome": "Drax", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-druig", "livello": "A", "nome": "Druig", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-ebony-maw", "livello": "A", "nome": "Ebony Maw", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-eddie-brock-venom", "livello": "A", "nome": "Eddie Brock/Venom", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-96283-raimi-verse"}
+{"id": "id-edwin-jarvis", "livello": "A", "nome": "Edwin Jarvis", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-ego", "livello": "A", "nome": "Ego", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-elektra-natchios", "livello": "A", "nome": "Elektra Natchios", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-daredevil-elektra-verse"}
+{"id": "id-elsa-bloodstone", "livello": "A", "nome": "Elsa Bloodstone", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-emil-blonsky-abominio", "livello": "A", "nome": "Emil Blonsky/Abominio", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-enoch", "livello": "A", "nome": "Enoch", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-blade", "livello": "A", "nome": "Eric Brooks/Blade", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-blade-verse"}
+{"id": "id-erik-gelden", "livello": "A", "nome": "Erik Gelden", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-erik-killmonger", "livello": "A", "nome": "Erik Killmonger", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-magneto", "livello": "A", "nome": "Erik Lehnsherr/Magneto", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-everett-ross", "livello": "A", "nome": "Everett Ross", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-ezekiel-sims", "livello": "A", "nome": "Ezekiel Sims", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "id-firestar-angelica-jones", "livello": "A", "nome": "Firestar/Angelica Jones", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-marvel-productions-universe-anni-80"}
+{"id": "id-fitz", "livello": "A", "nome": "Fitz", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-flint-marko-sandman", "livello": "A", "nome": "Flint Marko/Sandman", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-96283-raimi-verse"}
+{"id": "id-foggy-nelson", "livello": "A", "nome": "Foggy Nelson", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-frances-barrison-shriek", "livello": "A", "nome": "Frances Barrison/Shriek", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "id-frank-castle-punisher", "livello": "A", "nome": "Frank Castle/Punisher", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-franklin-richards", "livello": "A", "nome": "Franklin Richards", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-828"}
+{"id": "id-frigga", "livello": "A", "nome": "Frigga", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-galactus", "livello": "A", "nome": "Galactus", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-828"}
+{"id": "id-gambit", "livello": "A", "nome": "Gambit", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-gamora", "livello": "A", "nome": "Gamora", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-ghost", "livello": "A", "nome": "Ghost", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-gilgamesh", "livello": "A", "nome": "Gilgamesh", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-gorr", "livello": "A", "nome": "Gorr", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-grant-ward-hive", "livello": "A", "nome": "Grant Ward/Hive", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-gravik", "livello": "A", "nome": "Gravik", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"alias": ["Groot"], "id": "id-groot-originale", "livello": "A", "nome": "Groot (originale)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"alias": ["Groot", "Groot (piccolo)"], "id": "id-groot-successore", "livello": "A", "nome": "Groot (successore)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-guardiani-della-galassia", "livello": "A", "nome": "Guardiani della Galassia", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-gwen-stacy-spider-woman", "livello": "A", "nome": "Gwen Stacy/Spider-Woman", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-120703-garfield-verse"}
+{"id": "id-hank-pym", "livello": "A", "nome": "Hank Pym", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-hannibal-king", "livello": "A", "nome": "Hannibal King", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-blade-verse"}
+{"alias": ["Harry Osborn/Green Goblin"], "id": "id-harry-osborn-green-goblin", "livello": "A", "nome": "Harry Osborn/Green Goblin (Raimi)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-96283-raimi-verse"}
+{"alias": ["Harry Osborn/Green Goblin"], "id": "id-harry-osborn-webb", "livello": "A", "nome": "Harry Osborn/Green Goblin (Webb)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-120703-garfield-verse"}
+{"alias": ["Harry Osborn/Green Goblin"], "id": "id-harry-osborn-ynfsm", "livello": "A", "nome": "Harry Osborn/Green Goblin (Your Friendly Neighborhood Spider-Man)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-your-friendly-neighborhood-spider-man-verse"}
+{"id": "id-he-who-remains", "livello": "A", "nome": "He Who Remains", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-tva-fuori-dal-tempo"}
+{"id": "id-hela", "livello": "A", "nome": "Hela", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-hope-van-dyne", "livello": "A", "nome": "Hope van Dyne", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-howard-stark", "livello": "A", "nome": "Howard Stark", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-hunter-b-15", "livello": "A", "nome": "Hunter B-15", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-i-quattro-protagonisti", "livello": "A", "nome": "I quattro protagonisti", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-ikaris", "livello": "A", "nome": "Ikaris", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-illyana-rasputin-magik", "livello": "A", "nome": "Illyana Rasputin/Magik", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-ivan-vanko-whiplash", "livello": "A", "nome": "Ivan Vanko/Whiplash", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-jack-russell-werewolf-by-night", "livello": "A", "nome": "Jack Russell/Werewolf by Night", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-jackson-norriss", "livello": "A", "nome": "Jackson Norriss", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-james-rhodes-war-machine", "livello": "A", "nome": "James Rhodes/War Machine", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-james-rogers", "livello": "A", "nome": "James Rogers", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-marvel-animation-universe-2006-2017"}
+{"id": "id-jane-foster-mighty-thor", "livello": "A", "nome": "Jane Foster/Mighty Thor", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-janet", "livello": "A", "nome": "Janet", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-spider-noir-verse"}
+{"id": "id-janet-van-dyne", "livello": "A", "nome": "Janet van Dyne", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-jasper-sitwell", "livello": "A", "nome": "Jasper Sitwell", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-jean-grey-fenice", "livello": "A", "nome": "Jean Grey/Fenice", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-jennifer-walters-she-hulk", "livello": "A", "nome": "Jennifer Walters/She-Hulk", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-jessica-jones", "livello": "A", "nome": "Jessica Jones", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-joaquin-torres-falcon", "livello": "A", "nome": "Joaquin Torres/Falcon", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-john-walker", "livello": "A", "nome": "John Walker", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-johnny-blaze-ghost-rider", "livello": "A", "nome": "Johnny Blaze/Ghost Rider", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-ghost-rider-verse"}
+{"alias": ["Johnny Storm/Human Torch"], "id": "id-johnny-storm-human-torch-1994", "livello": "A", "nome": "Johnny Storm/Human Torch (1994)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-fantastic-four-1994"}
+{"alias": ["Johnny Storm/Human Torch"], "id": "id-johnny-storm-human-torch-first-steps", "livello": "A", "nome": "Johnny Storm/Human Torch (First Steps)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-828"}
+{"alias": ["Johnny Storm/Human Torch"], "id": "id-johnny-storm-human-torch", "livello": "A", "nome": "Johnny Storm/Human Torch (Story)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-121698"}
+{"alias": ["Johnny Storm/Human Torch"], "id": "id-johnny-storm-human-torch-trank", "livello": "A", "nome": "Johnny Storm/Human Torch (Trank)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-trn123"}
+{"id": "id-julia-cornwall", "livello": "A", "nome": "Julia Cornwall", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "id-kamala-khan-ms-marvel", "livello": "A", "nome": "Kamala Khan/Ms. Marvel", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-kang-il-conquistatore", "livello": "A", "nome": "Kang il Conquistatore", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-karen-page", "livello": "A", "nome": "Karen Page", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-karl-mordo", "livello": "A", "nome": "Karl Mordo", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-kate-bishop", "livello": "A", "nome": "Kate Bishop", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-katy", "livello": "A", "nome": "Katy", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-kevin-bacon-se-stesso", "livello": "A", "nome": "Kevin Bacon (se stesso)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-khonshu", "livello": "A", "nome": "Khonshu", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-kilgrave", "livello": "A", "nome": "Kilgrave", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-kingo", "livello": "A", "nome": "Kingo", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-kingpin-spider-verse", "livello": "A", "nome": "Kingpin (Spider-Verse)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-spider-verse-sony-animato"}
+{"id": "id-knull", "livello": "A", "nome": "Knull", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "id-l-antico", "livello": "A", "nome": "l'Antico", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-laufey", "livello": "A", "nome": "Laufey", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-laura-x-23", "livello": "A", "nome": "Laura/X-23", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-wolverine", "livello": "A", "nome": "Logan/Wolverine", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"alias": ["Logan/Wolverine"], "id": "id-wolverine-x-men-97", "livello": "A", "nome": "Logan/Wolverine (X-Men '97)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-x-men-97-verse"}
+{"id": "id-loki", "livello": "A", "nome": "Loki", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-luke-cage", "livello": "A", "nome": "Luke Cage", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-m-baku", "livello": "A", "nome": "M'Baku", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-major-glenn-talbot", "livello": "A", "nome": "Major Glenn Talbot", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-hulk-2003-verse"}
+{"id": "id-makkari", "livello": "A", "nome": "Makkari", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-malekith", "livello": "A", "nome": "Malekith", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-man-thing", "livello": "A", "nome": "Man-Thing", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-mandarino", "livello": "A", "nome": "Mandarino", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-mantis", "livello": "A", "nome": "Mantis", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-maria-stark", "livello": "A", "nome": "Maria Stark", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-mariah-dillard", "livello": "A", "nome": "Mariah Dillard", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-mariko-yashida", "livello": "A", "nome": "Mariko Yashida", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-mark-miller", "livello": "A", "nome": "Mark Miller", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-daredevil-elektra-verse"}
+{"id": "id-martine-bancroft", "livello": "A", "nome": "Martine Bancroft", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"alias": ["Mary Jane", "Mary Jane Watson"], "id": "id-mary-jane-watson-raimi", "livello": "A", "nome": "Mary Jane Watson (Raimi-Verse)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-96283-raimi-verse"}
+{"alias": ["Matt Murdock/Daredevil"], "id": "id-matt-murdock-daredevil", "livello": "A", "nome": "Matt Murdock/Daredevil (2003)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-daredevil-elektra-verse"}
+{"alias": ["Matt Murdock/Daredevil"], "id": "id-matt-murdock-mcu", "livello": "A", "nome": "Matt Murdock/Daredevil (MCU)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-mattie-franklin", "livello": "A", "nome": "Mattie Franklin", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "id-max-dillon-electro", "livello": "A", "nome": "Max Dillon/Electro", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-120703-garfield-verse"}
+{"id": "id-maya-lopez-echo", "livello": "A", "nome": "Maya Lopez/Echo", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-mefisto-roarke", "livello": "A", "nome": "Mefisto/Roarke", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-ghost-rider-verse"}
+{"id": "id-melina", "livello": "A", "nome": "Melina", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-melinda-may", "livello": "A", "nome": "Melinda May", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-michael-morbius", "livello": "A", "nome": "Michael Morbius", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "id-miguel-o-hara-spider-man-2099", "livello": "A", "nome": "Miguel O'Hara/Spider-Man 2099", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-spider-verse-sony-animato"}
+{"id": "id-miles-morales", "livello": "A", "nome": "Miles Morales", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-spider-verse-sony-animato"}
+{"id": "id-milo-loxias-crown", "livello": "A", "nome": "Milo/Loxias Crown", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "id-misty-knight", "livello": "A", "nome": "Misty Knight", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"alias": ["MJ"], "id": "id-michelle-jones-watson-mcu", "livello": "A", "nome": "MJ (Michelle Jones-Watson, MCU)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-mobius", "livello": "A", "nome": "Mobius", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-tva-fuori-dal-tempo"}
+{"id": "id-monica-rambeau", "livello": "A", "nome": "Monica Rambeau", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-morgan-stark", "livello": "A", "nome": "Morgan Stark", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-mr-paradox", "livello": "A", "nome": "Mr. Paradox", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-mrs-chen", "livello": "A", "nome": "Mrs. Chen", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "id-nadya", "livello": "A", "nome": "Nadya", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-ghost-rider-verse"}
+{"id": "id-najma", "livello": "A", "nome": "Najma", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-nakia", "livello": "A", "nome": "Nakia", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-namor", "livello": "A", "nome": "Namor", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-natasha-romanoff", "livello": "A", "nome": "Natasha Romanoff/Vedova Nera", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-nebula", "livello": "A", "nome": "Nebula", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-ned-leeds", "livello": "A", "nome": "Ned Leeds", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-negasonic-teenage-warhead", "livello": "A", "nome": "Negasonic Teenage Warhead", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-nick-fury", "livello": "A", "nome": "Nick Fury", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-nightcrawler", "livello": "A", "nome": "Nightcrawler", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-nomak", "livello": "A", "nome": "Nomak", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-blade-verse"}
+{"id": "id-noni", "livello": "A", "nome": "Noni", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-norman-osborn-green-goblin", "livello": "A", "nome": "Norman Osborn/Green Goblin", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-96283-raimi-verse"}
+{"id": "id-nyssa", "livello": "A", "nome": "Nyssa", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-blade-verse"}
+{"id": "id-obadiah-stane", "livello": "A", "nome": "Obadiah Stane", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-odino", "livello": "A", "nome": "Odino", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-okoye", "livello": "A", "nome": "Okoye", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-otto-octavius-doc-ock", "livello": "A", "nome": "Otto Octavius/Doc Ock", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-96283-raimi-verse"}
+{"id": "id-parker-robbins-the-hood", "livello": "A", "nome": "Parker Robbins/The Hood", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-peggy-carter-captain-carter", "livello": "A", "nome": "Peggy Carter/Captain Carter", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-peni-parker", "livello": "A", "nome": "Peni Parker", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-spider-verse-sony-animato"}
+{"id": "id-pepper-potts", "livello": "A", "nome": "Pepper Potts", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"alias": ["Peter"], "id": "id-peter", "livello": "A", "nome": "Peter (franchise Deadpool)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-peter-b-parker", "livello": "A", "nome": "Peter B. Parker", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-spider-verse-sony-animato"}
+{"alias": ["Peter Parker", "Peter Parker (Holland/Maguire/Garfield)"], "id": "id-peter-parker-garfield", "livello": "A", "nome": "Peter Parker (Garfield-Verse)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-120703-garfield-verse"}
+{"alias": ["Peter Parker", "Peter Parker (Holland/Maguire/Garfield)", "Spider-Man"], "id": "id-peter-parker-mcu", "livello": "A", "nome": "Peter Parker (MCU)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"alias": ["Peter Parker", "Peter Parker (Holland/Maguire/Garfield)"], "id": "id-peter-parker-raimi", "livello": "A", "nome": "Peter Parker (Raimi-Verse)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-96283-raimi-verse"}
+{"alias": ["Peter Parker"], "id": "id-peter-parker-ynfsm", "livello": "A", "nome": "Peter Parker (Your Friendly Neighborhood Spider-Man)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-your-friendly-neighborhood-spider-man-verse"}
+{"id": "id-peter-quill-star-lord", "livello": "A", "nome": "Peter Quill/Star-Lord", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-phastos", "livello": "A", "nome": "Phastos", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"alias": ["Coulson"], "id": "id-phil-coulson", "livello": "A", "nome": "Phil Coulson", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-professor-x-terra-838", "livello": "A", "nome": "Professor X (Terra-838)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-838"}
+{"id": "id-proxima-midnight", "livello": "A", "nome": "Proxima Midnight", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-pyro", "livello": "A", "nome": "Pyro", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-quentin-beck-mysterio", "livello": "A", "nome": "Quentin Beck/Mysterio", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-ramonda", "livello": "A", "nome": "Ramonda", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-mystica", "livello": "A", "nome": "Raven/Mystica", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"alias": ["Renslayer"], "id": "id-ravonna-renslayer", "livello": "A", "nome": "Ravonna Renslayer", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-tva-fuori-dal-tempo"}
+{"id": "id-red-guardian", "livello": "A", "nome": "Red Guardian", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"alias": ["Reed Richards"], "id": "id-reed-richards-1994", "livello": "A", "nome": "Reed Richards/Mr. Fantastic (1994)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-fantastic-four-1994"}
+{"alias": ["Reed Richards"], "id": "id-reed-richards-first-steps", "livello": "A", "nome": "Reed Richards/Mr. Fantastic (First Steps)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-828"}
+{"alias": ["Reed Richards"], "id": "id-reed-richards-illuminati", "livello": "A", "nome": "Reed Richards/Mr. Fantastic (Illuminati, Terra-838)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-838"}
+{"alias": ["Reed Richards"], "id": "id-reed-richards", "livello": "A", "nome": "Reed Richards/Mr. Fantastic (Story)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-121698"}
+{"alias": ["Reed Richards"], "id": "id-reed-richards-trank", "livello": "A", "nome": "Reed Richards/Mr. Fantastic (Trank)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-trn123"}
+{"id": "id-rio-vidal", "livello": "A", "nome": "Rio Vidal", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-riri-williams-ironheart", "livello": "A", "nome": "Riri Williams/Ironheart", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-robbie-reyes-ghost-rider", "livello": "A", "nome": "Robbie Reyes/Ghost Rider", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-robbie-robertson", "livello": "A", "nome": "Robbie Robertson", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-spider-noir-verse"}
+{"id": "id-robert-downey-jr-dottor-destino", "livello": "A", "nome": "Robert Downey Jr./Dottor Destino", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-rocket", "livello": "A", "nome": "Rocket", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-rogue", "livello": "A", "nome": "Rogue", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-ronan-l-accusatore", "livello": "A", "nome": "Ronan l'Accusatore", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-roxanne-simpson", "livello": "A", "nome": "Roxanne Simpson", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-ghost-rider-verse"}
+{"id": "id-sam-wilson-capitan-america", "livello": "A", "nome": "Sam Wilson/Capitan America", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-scott-lang-ant-man", "livello": "A", "nome": "Scott Lang/Ant-Man", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-sebastian-shaw", "livello": "A", "nome": "Sebastian Shaw", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-sergei-kravinoff-kraven", "livello": "A", "nome": "Sergei Kravinoff/Kraven", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "id-sersi", "livello": "A", "nome": "Sersi", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-shang-chi", "livello": "A", "nome": "Shang-Chi", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-sharon-carter", "livello": "A", "nome": "Sharon Carter", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-shuri", "livello": "A", "nome": "Shuri", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-silver-surfer", "livello": "A", "nome": "Silver Surfer", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-121698"}
+{"id": "id-simmons", "livello": "A", "nome": "Simmons", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-simon-williams-wonder-man", "livello": "A", "nome": "Simon Williams/Wonder Man", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-skaar", "livello": "A", "nome": "Skaar", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-marvel-animation-universe-2006-2017"}
+{"id": "id-daisy-johnson", "livello": "A", "nome": "Skye/Daisy Johnson", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-spider-ham", "livello": "A", "nome": "Spider-Ham", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-spider-verse-sony-animato"}
+{"id": "id-spider-man-noir", "livello": "A", "nome": "Spider-Man Noir", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-spider-verse-sony-animato"}
+{"id": "id-sprite", "livello": "A", "nome": "Sprite", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-stephen-strange", "livello": "A", "nome": "Stephen Strange/Doctor Strange", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-steve-rogers-capitan-america", "livello": "A", "nome": "Steve Rogers/Capitan America", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-steven-grant-marc-spector-moon-knight", "livello": "A", "nome": "Steven Grant/Marc Spector/Moon Knight", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-stick", "livello": "A", "nome": "Stick", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-daredevil-elektra-verse"}
+{"alias": ["Sue Storm"], "id": "id-sue-storm-1994", "livello": "A", "nome": "Sue Storm/Invisible Woman (1994)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-fantastic-four-1994"}
+{"alias": ["Sue Storm"], "id": "id-sue-storm-first-steps", "livello": "A", "nome": "Sue Storm/Invisible Woman (First Steps)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-828"}
+{"alias": ["Sue Storm"], "id": "id-sue-storm", "livello": "A", "nome": "Sue Storm/Invisible Woman (Story)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-121698"}
+{"alias": ["Sue Storm"], "id": "id-sue-storm-trank", "livello": "A", "nome": "Sue Storm/Invisible Woman (Trank)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-trn123"}
+{"id": "id-sylvie", "livello": "A", "nome": "Sylvie", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-tva-fuori-dal-tempo"}
+{"id": "id-t-chaka", "livello": "A", "nome": "T'Chaka", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-t-challa-black-panther", "livello": "A", "nome": "T'Challa/Black Panther", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-talos", "livello": "A", "nome": "Talos", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-teen-billy-maximoff", "livello": "A", "nome": "Teen (Billy Maximoff)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-teschio-rosso", "livello": "A", "nome": "Teschio Rosso", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"alias": ["generale Thaddeus Ross"], "id": "id-ross-hulk-2003", "livello": "A", "nome": "Thaddeus Ross (Hulk 2003)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-hulk-2003-verse"}
+{"alias": ["Thaddeus Ross", "generale Ross"], "id": "id-thaddeus-ross-mcu", "livello": "A", "nome": "Thaddeus Ross (MCU)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-thanos", "livello": "A", "nome": "Thanos", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-the-lion-n-kati", "livello": "A", "nome": "The Lion/N'Kati", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-the-watcher", "livello": "A", "nome": "The Watcher", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-thena", "livello": "A", "nome": "Thena", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-thor", "livello": "A", "nome": "Thor", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-iron-man", "livello": "A", "nome": "Tony Stark/Iron Man", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-torunn", "livello": "A", "nome": "Torunn", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-marvel-animation-universe-2006-2017"}
+{"id": "id-toussaint", "livello": "A", "nome": "Toussaint", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-trevor-slattery", "livello": "A", "nome": "Trevor Slattery", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-trish-walker", "livello": "A", "nome": "Trish Walker", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-ultron", "livello": "A", "nome": "Ultron", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-ulysses-klaue", "livello": "A", "nome": "Ulysses Klaue", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-valchiria", "livello": "A", "nome": "Valchiria", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-valentina-de-fontaine", "livello": "A", "nome": "Valentina de Fontaine", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-vanessa", "livello": "A", "nome": "Vanessa", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-sabretooth", "livello": "A", "nome": "Victor Creed/Sabretooth", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-victor-timely-variante-kang", "livello": "A", "nome": "Victor Timely (variante Kang)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-tva-fuori-dal-tempo"}
+{"alias": ["Victor von Doom"], "id": "id-victor-von-doom-1994", "livello": "A", "nome": "Victor von Doom/Dr. Doom (1994)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-fantastic-four-1994"}
+{"alias": ["Victor von Doom"], "id": "id-victor-von-doom", "livello": "A", "nome": "Victor von Doom/Dr. Doom (Story)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-121698"}
+{"alias": ["Victor von Doom"], "id": "id-victor-von-doom-trank", "livello": "A", "nome": "Victor von Doom/Dr. Doom (Trank)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-trn123"}
+{"id": "id-viper", "livello": "A", "nome": "Viper", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-visione", "livello": "A", "nome": "Visione", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-wade-wilson-deadpool", "livello": "A", "nome": "Wade Wilson/Deadpool", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-wanda-maximoff", "livello": "A", "nome": "Wanda Maximoff", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-wenwu", "livello": "A", "nome": "Wenwu", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-whistler", "livello": "A", "nome": "Whistler", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-blade-verse"}
+{"id": "id-whitney-frost", "livello": "A", "nome": "Whitney Frost", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-william-stryker", "livello": "A", "nome": "William Stryker", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"alias": ["Wilson Fisk/Kingpin"], "id": "id-fisk-fox-2003", "livello": "A", "nome": "Wilson Fisk (Daredevil 2003)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-daredevil-elektra-verse"}
+{"alias": ["Wilson Fisk/Kingpin"], "id": "id-fisk-mcu", "livello": "A", "nome": "Wilson Fisk (MCU, ex Netflix)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-wong", "livello": "A", "nome": "Wong", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-xialing", "livello": "A", "nome": "Xialing", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-yelena-belova", "livello": "A", "nome": "Yelena Belova", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-yondu", "livello": "A", "nome": "Yondu", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "id-yukio", "livello": "A", "nome": "Yukio", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-10005-fox-verse"}
+{"id": "id-zemo", "livello": "A", "nome": "Zemo", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "identita", "universo": "uni-earth-199999-mcu"}
+{"id": "hub-peter-parker", "livello": "B", "nome": "Peter Parker / Spider-Man", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "hub"}
+{"id": "hub-groot", "livello": "B", "nome": "Groot", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "hub"}
+{"id": "hub-wilson-fisk", "livello": "B", "nome": "Wilson Fisk / Kingpin", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "hub"}
+{"id": "man-capitan-america", "livello": "B", "nome": "Capitan America", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "mantello", "universo": "uni-earth-199999-mcu"}
+{"id": "man-ghost-rider", "livello": "B", "nome": "Ghost Rider (Spirito della Vendetta)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "mantello"}
+{"id": "uni-blade-verse", "livello": "B", "nome": "Blade-verse", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-blade-verse"}
+{"id": "uni-continuity-animate-isolate-minori", "livello": "B", "nome": "Continuity animate isolate minori", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-continuity-animate-isolate-minori"}
+{"id": "uni-daredevil-elektra-verse", "livello": "B", "nome": "Daredevil/Elektra-verse", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-daredevil-elektra-verse"}
+{"id": "uni-earth-10005-fox-verse", "livello": "B", "nome": "Earth-10005 — Fox-Verse", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-earth-10005-fox-verse"}
+{"id": "uni-earth-120703-garfield-verse", "livello": "B", "nome": "Earth-120703 — Garfield-Verse", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-earth-120703-garfield-verse"}
+{"id": "uni-earth-121698", "livello": "B", "nome": "Earth-121698", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-earth-121698"}
+{"id": "uni-earth-199999-mcu", "livello": "B", "nome": "Earth-199999 — MCU", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-earth-199999-mcu"}
+{"id": "uni-earth-828", "livello": "B", "nome": "Earth-828", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-earth-828"}
+{"id": "uni-earth-838", "livello": "B", "nome": "Earth-838", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-earth-838"}
+{"id": "uni-earth-96283-raimi-verse", "livello": "B", "nome": "Earth-96283 — Raimi-Verse", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-earth-96283-raimi-verse"}
+{"id": "uni-earth-trn123", "livello": "B", "nome": "Earth-TRN123", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-earth-trn123"}
+{"id": "uni-fantastic-four-1994", "livello": "B", "nome": "Fantastic Four (1994)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-fantastic-four-1994"}
+{"id": "uni-ghost-rider-verse", "livello": "B", "nome": "Ghost Rider-verse", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-ghost-rider-verse"}
+{"id": "uni-hulk-2003-verse", "livello": "B", "nome": "Hulk (2003)-verse", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-hulk-2003-verse"}
+{"id": "uni-legion-verse", "livello": "B", "nome": "Legion-verse", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-legion-verse"}
+{"id": "uni-marvel-animation-universe-2006-2017", "livello": "B", "nome": "Marvel Animation Universe (2006-2017)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-marvel-animation-universe-2006-2017"}
+{"id": "uni-marvel-productions-universe-anni-80", "livello": "B", "nome": "Marvel Productions Universe (anni '80)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-marvel-productions-universe-anni-80"}
+{"id": "uni-marvel-productions-universe-anni-90", "livello": "B", "nome": "Marvel Productions Universe (anni '90)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-marvel-productions-universe-anni-90"}
+{"id": "uni-marvel-zombies-verse", "livello": "B", "nome": "Marvel Zombies-verse", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-marvel-zombies-verse"}
+{"id": "uni-rami-di-what-if", "livello": "B", "nome": "Rami di What If...?", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-rami-di-what-if"}
+{"id": "uni-sony-s-spider-man-universe-ssu", "livello": "B", "nome": "Sony's Spider-Man Universe (SSU)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-sony-s-spider-man-universe-ssu"}
+{"id": "uni-spider-noir-verse", "livello": "B", "nome": "Spider-Noir-verse", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-spider-noir-verse"}
+{"id": "uni-spider-verse-sony-animato", "livello": "B", "nome": "Spider-Verse Sony (animato)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-spider-verse-sony-animato"}
+{"id": "uni-the-gifted-verse", "livello": "B", "nome": "The Gifted-verse", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-the-gifted-verse"}
+{"id": "uni-tva-fuori-dal-tempo", "livello": "B", "nome": "TVA — fuori dal tempo", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-tva-fuori-dal-tempo"}
+{"id": "uni-x-men-97-verse", "livello": "B", "nome": "X-Men '97-verse", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-x-men-97-verse"}
+{"id": "uni-your-friendly-neighborhood-spider-man-verse", "livello": "B", "nome": "Your Friendly Neighborhood Spider-Man-verse", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "universo", "universo": "uni-your-friendly-neighborhood-spider-man-verse"}
+{"id": "org-a-i-m-advanced-idea-mechanics", "livello": "B", "nome": "A.I.M. (Advanced Idea Mechanics)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "org-avengers", "livello": "B", "nome": "Avengers", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "org-defenders", "livello": "B", "nome": "Defenders", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "org-fantastic-four", "livello": "B", "nome": "Fantastic Four", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "org-fratellanza-dei-mutanti", "livello": "B", "nome": "Fratellanza dei Mutanti", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "org-hydra", "livello": "B", "nome": "HYDRA", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "org-i-dieci-anelli-organizzazione", "livello": "B", "nome": "I Dieci Anelli (organizzazione)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "org-illuminati", "livello": "B", "nome": "Illuminati", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "org-new-avengers", "livello": "B", "nome": "New Avengers", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "org-s-h-i-e-l-d", "livello": "B", "nome": "S.H.I.E.L.D.", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "org-s-s-r-strategic-scientific-reserve", "livello": "B", "nome": "S.S.R. (Strategic Scientific Reserve)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "org-s-w-o-r-d", "livello": "B", "nome": "S.W.O.R.D.", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "org-the-hand", "livello": "B", "nome": "The Hand", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "org-thunderbolts", "livello": "B", "nome": "Thunderbolts", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "org-tva-time-variance-authority", "livello": "B", "nome": "TVA (Time Variance Authority)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "org-weapon-x", "livello": "B", "nome": "Weapon X", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "org-x-men", "livello": "B", "nome": "X-Men", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "organizzazione"}
+{"id": "art-adamantio", "livello": "B", "nome": "Adamantio", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "artefatto"}
+{"id": "art-bracciale-di-kamala-khan", "livello": "B", "nome": "Bracciale di Kamala Khan", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "artefatto"}
+{"id": "art-darkhold", "livello": "B", "nome": "Darkhold", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "artefatto"}
+{"id": "art-dieci-anelli", "livello": "B", "nome": "Dieci Anelli", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "artefatto"}
+{"id": "art-gemma-del-potere", "livello": "B", "nome": "Gemma del Potere", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "artefatto"}
+{"id": "art-gemma-del-tempo", "livello": "B", "nome": "Gemma del Tempo", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "artefatto"}
+{"id": "art-gemma-dell-anima", "livello": "B", "nome": "Gemma dell'Anima", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "artefatto"}
+{"id": "art-gemma-della-mente", "livello": "B", "nome": "Gemma della Mente", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "artefatto"}
+{"id": "art-gemma-della-realta-etere", "livello": "B", "nome": "Gemma della Realtà (Etere)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "artefatto"}
+{"id": "art-gemma-dello-spazio-tesseract", "livello": "B", "nome": "Gemma dello Spazio (Tesseract)", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "artefatto"}
+{"id": "art-guanto-dell-infinito", "livello": "B", "nome": "Guanto dell'Infinito", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "artefatto"}
+{"id": "art-libro-dei-vishanti", "livello": "B", "nome": "Libro dei Vishanti", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "artefatto"}
+{"id": "art-mjolnir", "livello": "B", "nome": "Mjolnir", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "artefatto"}
+{"id": "art-occhio-di-agamotto", "livello": "B", "nome": "Occhio di Agamotto", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "artefatto"}
+{"id": "art-scudo-di-vibranio", "livello": "B", "nome": "Scudo di Vibranio", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "artefatto"}
+{"id": "art-stormbreaker", "livello": "B", "nome": "Stormbreaker", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "artefatto"}
+{"id": "luo-avengers-compound", "livello": "B", "nome": "Avengers Compound", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "luogo"}
+{"id": "luo-avengers-tower", "livello": "B", "nome": "Avengers Tower", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "luogo"}
+{"id": "luo-celestial-island", "livello": "B", "nome": "Celestial Island", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "luogo"}
+{"id": "luo-il-void", "livello": "B", "nome": "Il Void", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "luogo"}
+{"id": "luo-kamar-taj", "livello": "B", "nome": "Kamar-Taj", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "luogo"}
+{"id": "luo-latveria", "livello": "B", "nome": "Latveria", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "luogo"}
+{"id": "luo-new-asgard", "livello": "B", "nome": "New Asgard", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "luogo"}
+{"id": "luo-sanctum-sanctorum", "livello": "B", "nome": "Sanctum Sanctorum", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "luogo"}
+{"id": "luo-wakanda", "livello": "B", "nome": "Wakanda", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "luogo"}
+{"id": "pia-ego", "livello": "B", "nome": "Ego", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "luogo"}
+{"id": "pia-hala", "livello": "B", "nome": "Hala", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "luogo"}
+{"id": "pia-morag", "livello": "B", "nome": "Morag", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "luogo"}
+{"id": "pia-sakaar", "livello": "B", "nome": "Sakaar", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "luogo"}
+{"id": "pia-titan", "livello": "B", "nome": "Titan", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "luogo"}
+{"id": "pia-vormir", "livello": "B", "nome": "Vormir", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "luogo"}
+{"id": "pia-xandar", "livello": "B", "nome": "Xandar", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "luogo"}
+{"id": "evt-accordi-di-sokovia", "livello": "B", "nome": "Accordi di Sokovia", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "evento"}
+{"id": "evt-caduta-dello-s-h-i-e-l-d", "livello": "B", "nome": "Caduta dello S.H.I.E.L.D.", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "evento"}
+{"id": "evt-il-blip", "livello": "B", "nome": "Il Blip", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "evento"}
+{"id": "bat-battaglia-di-new-york", "livello": "B", "nome": "Battaglia di New York", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "evento"}
+{"id": "bat-battaglia-di-sokovia", "livello": "B", "nome": "Battaglia di Sokovia", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "evento"}
+{"id": "bat-battaglia-di-wakanda", "livello": "B", "nome": "Battaglia di Wakanda", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "evento"}
+{"id": "bat-battaglia-finale-contro-thanos", "livello": "B", "nome": "Battaglia finale contro Thanos", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "evento"}
+{"id": "att-alan-cumming", "livello": "B", "nome": "Alan Cumming", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-alfred-molina", "livello": "B", "nome": "Alfred Molina", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-andrew-garfield", "livello": "B", "nome": "Andrew Garfield", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-angela-bassett", "livello": "B", "nome": "Angela Bassett", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-anthony-hopkins", "livello": "B", "nome": "Anthony Hopkins", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-anthony-mackie", "livello": "B", "nome": "Anthony Mackie", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-benedict-cumberbatch", "livello": "B", "nome": "Benedict Cumberbatch", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-brie-larson", "livello": "B", "nome": "Brie Larson", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-cate-blanchett", "livello": "B", "nome": "Cate Blanchett", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-chadwick-boseman", "livello": "B", "nome": "Chadwick Boseman", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-channing-tatum", "livello": "B", "nome": "Channing Tatum", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-chris-evans", "livello": "B", "nome": "Chris Evans", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-chris-hemsworth", "livello": "B", "nome": "Chris Hemsworth", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-chris-pratt", "livello": "B", "nome": "Chris Pratt", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-danai-gurira", "livello": "B", "nome": "Danai Gurira", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-dave-bautista", "livello": "B", "nome": "Dave Bautista", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-elizabeth-olsen", "livello": "B", "nome": "Elizabeth Olsen", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-florence-pugh", "livello": "B", "nome": "Florence Pugh", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-hayley-atwell", "livello": "B", "nome": "Hayley Atwell", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-hugh-jackman", "livello": "B", "nome": "Hugh Jackman", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-ian-mckellen", "livello": "B", "nome": "Ian McKellen", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-iman-vellani", "livello": "B", "nome": "Iman Vellani", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-james-marsden", "livello": "B", "nome": "James Marsden", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-jamie-foxx", "livello": "B", "nome": "Jamie Foxx", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-jennifer-garner", "livello": "B", "nome": "Jennifer Garner", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-josh-brolin", "livello": "B", "nome": "Josh Brolin", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-karen-gillan", "livello": "B", "nome": "Karen Gillan", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-kelsey-grammer", "livello": "B", "nome": "Kelsey Grammer", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-letitia-wright", "livello": "B", "nome": "Letitia Wright", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-lupita-nyong-o", "livello": "B", "nome": "Lupita Nyong'o", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-mark-ruffalo", "livello": "B", "nome": "Mark Ruffalo", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-nicolas-cage", "livello": "B", "nome": "Nicolas Cage", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-oscar-isaac", "livello": "B", "nome": "Oscar Isaac", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-patrick-stewart", "livello": "B", "nome": "Patrick Stewart", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-paul-bettany", "livello": "B", "nome": "Paul Bettany", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-rebecca-romijn", "livello": "B", "nome": "Rebecca Romijn", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-rhys-ifans", "livello": "B", "nome": "Rhys Ifans", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-robert-downey-jr", "livello": "B", "nome": "Robert Downey Jr.", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-ryan-reynolds", "livello": "B", "nome": "Ryan Reynolds", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-scarlett-johansson", "livello": "B", "nome": "Scarlett Johansson", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-sebastian-stan", "livello": "B", "nome": "Sebastian Stan", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-thomas-haden-church", "livello": "B", "nome": "Thomas Haden Church", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-tobey-maguire", "livello": "B", "nome": "Tobey Maguire", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-tom-hiddleston", "livello": "B", "nome": "Tom Hiddleston", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-tom-holland", "livello": "B", "nome": "Tom Holland", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-wesley-snipes", "livello": "B", "nome": "Wesley Snipes", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-willem-dafoe", "livello": "B", "nome": "Willem Dafoe", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-xochitl-gomez", "livello": "B", "nome": "Xochitl Gomez", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}
+{"id": "att-zoe-saldana", "livello": "B", "nome": "Zoe Saldana", "origine": "registro-storico", "stato_verifica": "verificata", "tipo": "titolo"}

@@ -1,0 +1,23 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "tva-archives/espansione/record_canonico.v1",
+ "title": "Record canonico TVA Atlas (Database Expansion)",
+ "type": "object",
+ "required": ["id", "tipo", "nome", "livello", "stato_verifica", "origine"],
+ "additionalProperties": false,
+ "properties": {
+  "id": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "description": "Immutabile; <prefisso>-<slug ascii>[-continuita]"},
+  "tipo": {"enum": ["identita","variante","incarnazione","mantello","hub","universo","entita-cosmica","organizzazione","specie","civilta","pianeta","luogo","evento","battaglia","artefatto","arma","attore","creatore","opera","fumetto","titolo"]},
+  "nome": {"type": "string", "minLength": 1},
+  "nome_it": {"type": "string"},
+  "alias": {"type": "array", "items": {"type": "string"}, "description": "Denominazioni alternative, anche italiane/originali/parziali"},
+  "universo": {"type": ["string","null"], "description": "ID continuita'; mai dedotto"},
+  "livello": {"enum": ["A","B","C"], "description": "A dossier completo, B scheda sintetica, C voce essenziale"},
+  "stato_verifica": {"enum": ["verificata","da-verificare","staging"], "description": "D12: 1 fonte primaria inequivocabile OPPURE 2 secondarie indipendenti; altrimenti staging"},
+  "origine": {"enum": ["registro-storico","W1","W2","W3","W4","W5","W6","W7"]},
+  "ids_esterni": {"type": "object", "additionalProperties": {"type": "string"}, "description": "wikidata, tmdb, comicvine, gcd: solo chiavi forti"},
+  "fonti": {"type": "array", "items": {"type": "object", "required": ["fonte","licenza"], "properties": {"fonte": {"type": "string"}, "url": {"type": "string"}, "licenza": {"type": "string"}, "recuperata": {"type": "string"}}}},
+  "relazioni": {"type": "array", "items": {"type": "string"}, "description": "ID nel registro relazioni (mai co-apparizioni)"},
+  "dossier": {"type": "object", "description": "Testi originali in italiano (D8); campi strutturati: poteri, abilita, trasformazioni, equipaggiamento, debolezze"}
+ }
+}

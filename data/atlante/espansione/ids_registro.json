@@ -1,0 +1,6630 @@
+{
+ "conteggi": {
+  "attivi": 751,
+  "totale": 751
+ },
+ "ids": {
+  "art-adamantio": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "art-adamantio"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "a"
+  },
+  "art-bracciale-di-kamala-khan": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "art-bracciale-di-kamala-khan"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "a"
+  },
+  "art-darkhold": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "art-darkhold"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "a"
+  },
+  "art-dieci-anelli": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "art-dieci-anelli"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "a"
+  },
+  "art-gemma-del-potere": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "art-gemma-del-potere"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "a"
+  },
+  "art-gemma-del-tempo": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "art-gemma-del-tempo"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "a"
+  },
+  "art-gemma-dell-anima": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "art-gemma-dell-anima"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "a"
+  },
+  "art-gemma-della-mente": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "art-gemma-della-mente"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "a"
+  },
+  "art-gemma-della-realta-etere": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "art-gemma-della-realta-etere"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "a"
+  },
+  "art-gemma-dello-spazio-tesseract": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "art-gemma-dello-spazio-tesseract"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "a"
+  },
+  "art-guanto-dell-infinito": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "art-guanto-dell-infinito"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "a"
+  },
+  "art-libro-dei-vishanti": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "art-libro-dei-vishanti"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "a"
+  },
+  "art-mjolnir": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "art-mjolnir"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "a"
+  },
+  "art-occhio-di-agamotto": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "art-occhio-di-agamotto"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "a"
+  },
+  "art-scudo-di-vibranio": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "art-scudo-di-vibranio"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "a"
+  },
+  "art-stormbreaker": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "art-stormbreaker"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "a"
+  },
+  "att-alan-cumming": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-alan-cumming"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-alfred-molina": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-alfred-molina"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-andrew-garfield": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-andrew-garfield"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-angela-bassett": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-angela-bassett"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-anthony-hopkins": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-anthony-hopkins"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-anthony-mackie": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-anthony-mackie"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-benedict-cumberbatch": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-benedict-cumberbatch"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-brie-larson": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-brie-larson"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-cate-blanchett": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-cate-blanchett"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-chadwick-boseman": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-chadwick-boseman"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-channing-tatum": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-channing-tatum"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-chris-evans": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-chris-evans"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-chris-hemsworth": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-chris-hemsworth"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-chris-pratt": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-chris-pratt"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-danai-gurira": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-danai-gurira"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-dave-bautista": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-dave-bautista"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-elizabeth-olsen": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-elizabeth-olsen"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-florence-pugh": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-florence-pugh"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-hayley-atwell": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-hayley-atwell"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-hugh-jackman": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-hugh-jackman"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-ian-mckellen": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-ian-mckellen"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-iman-vellani": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-iman-vellani"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-james-marsden": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-james-marsden"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-jamie-foxx": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-jamie-foxx"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-jennifer-garner": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-jennifer-garner"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-josh-brolin": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-josh-brolin"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-karen-gillan": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-karen-gillan"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-kelsey-grammer": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-kelsey-grammer"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-letitia-wright": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-letitia-wright"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-lupita-nyong-o": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-lupita-nyong-o"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-mark-ruffalo": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-mark-ruffalo"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-nicolas-cage": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-nicolas-cage"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-oscar-isaac": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-oscar-isaac"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-patrick-stewart": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-patrick-stewart"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-paul-bettany": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-paul-bettany"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-rebecca-romijn": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-rebecca-romijn"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-rhys-ifans": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-rhys-ifans"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-robert-downey-jr": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-robert-downey-jr"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-ryan-reynolds": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-ryan-reynolds"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-scarlett-johansson": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-scarlett-johansson"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-sebastian-stan": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-sebastian-stan"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-thomas-haden-church": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-thomas-haden-church"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-tobey-maguire": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-tobey-maguire"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-tom-hiddleston": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-tom-hiddleston"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-tom-holland": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-tom-holland"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-wesley-snipes": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-wesley-snipes"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-willem-dafoe": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-willem-dafoe"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-xochitl-gomez": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-xochitl-gomez"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "att-zoe-saldana": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "att-zoe-saldana"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "t"
+  },
+  "bat-battaglia-di-new-york": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "bat-battaglia-di-new-york"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "e"
+  },
+  "bat-battaglia-di-sokovia": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "bat-battaglia-di-sokovia"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "e"
+  },
+  "bat-battaglia-di-wakanda": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "bat-battaglia-di-wakanda"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "e"
+  },
+  "bat-battaglia-finale-contro-thanos": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "bat-battaglia-finale-contro-thanos"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "e"
+  },
+  "char-a-bomb": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-abby-miller": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-abigail-whistler": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-adam-warlock": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-adrian-toomes-avvoltoio": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-agatha-harkness": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ajak": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-aldrich-killian": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-aleksei-sytsevich-rhino": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-alexandra-the-hand": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-alexei-guardiano-rosso": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-alisa-jones": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-alto-evoluzionario": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-america-chavez": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-amy-bendix": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-anne-weying": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-anya-corazon": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-apocalypse": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-arishem": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-arthur-harrow": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ayesha": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-beast": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ben-grimm": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ben-reilly-the-spider": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-benny-pollack": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-betty-ross": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-billy-russo-jigsaw": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-bishop": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-blade": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-blind-al": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-bob-sentry": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-bonnie-lopez": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-bruno": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-bucky-barnes-soldato-d-inverno": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-bullseye": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-bushmaster": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-cable": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-capitano-stacy": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-carlton-drake-riot": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-carol-danvers-captain-marvel": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-cassandra-nova": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-cassandra-webb": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-cassie-lang": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-cat-hardy": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-cecilia-reyes": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-charles-xavier": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ciclope": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-claire-wise": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-cletus-kasady-carnage": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-clint-barton": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-colleen-wing": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-colossus": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-corvus-glaive": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-cottonmouth": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-coulson": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-coulson-lmd": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-cull-obsidian": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-curt-connors-lizard": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-daisy-johnson": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-daniel-sousa": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-danielle-moonstar": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-danny-rand-iron-fist": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-dar-benn": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-darren-cross": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-darryl-jacobson": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-david-banner": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-davos": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-deacon-frost": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-deke-shaw": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-dmitri-smerdyakov-chameleon": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-domino": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-dopinder": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-dracula": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-drax": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-druig": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ebony-maw": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-eddie-brock-venom": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-edwin-jarvis": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ego": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-elektra-natchios": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-elsa-bloodstone": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-emil-blonsky-abominio": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-enoch": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-erik-gelden": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-erik-killmonger": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-everett-ross": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ezekiel-sims": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-firestar-angelica-jones": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-fitz": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-flint-marko-sandman": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-foggy-nelson": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-frances-barrison-shriek": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-frank-castle-punisher": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-franklin-richards": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-frigga": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-galactus": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-gambit": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-gamora": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-generale-ross": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-generale-thaddeus-ross": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ghost": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-gilgamesh": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-gorr": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-grant-ward-hive": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-gravik": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-groot": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-groot-piccolo": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-guardiani-della-galassia": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-gwen-stacy-spider-woman": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-hank-pym": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-hannibal-king": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-harry-osborn-green-goblin": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-he-who-remains": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-hela": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-hope-van-dyne": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-howard-stark": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-hulk": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-hunter-b-15": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-i-quattro-protagonisti": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ikaris": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-illyana-rasputin-magik": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-iron-man": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ivan-vanko-whiplash": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-jack-russell-werewolf-by-night": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-jackson-norriss": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-james-rhodes-war-machine": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-james-rogers": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-jane-foster-mighty-thor": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-janet": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-janet-van-dyne": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-jasper-sitwell": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-jean-grey-fenice": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-jennifer-walters-she-hulk": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-jessica-jones": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-joaquin-torres-falcon": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-john-walker": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-johnny-blaze-ghost-rider": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-johnny-storm-human-torch": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-julia-cornwall": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-kamala-khan-ms-marvel": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-kang-il-conquistatore": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-karen-page": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-karl-mordo": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-kate-bishop": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-katy": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-kevin-bacon-se-stesso": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-khonshu": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-kilgrave": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-kingo": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-kingpin": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-knull": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-l-antico": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-laura-x-23": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-loki": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-luke-cage": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-m-baku": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-magneto": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-major-glenn-talbot": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-makkari": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-malekith": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-man-thing": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-mandarino": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-mantis": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-maria-stark": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-mariah-dillard": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-mariko-yashida": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-mark-miller": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-martine-bancroft": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-mary-jane": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-mary-jane-watson": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-matt-murdock-daredevil": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-mattie-franklin": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-max-dillon-electro": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-maya-lopez-echo": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-mefisto-roarke": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-melina": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-melinda-may": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-michael-morbius": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-miguel-o-hara-spider-man-2099": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-miles-morales": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-milo-loxias-crown": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-misty-knight": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-mj": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-mobius": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-monica-rambeau": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-morgan-stark": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-mr-paradox": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-mrs-chen": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-mystica": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-nadya": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-najma": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-nakia": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-namor": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-natasha-romanoff": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-nebula": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ned-leeds": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-negasonic-teenage-warhead": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-nick-fury": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-nightcrawler": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-nomak": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-noni": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-norman-osborn-green-goblin": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-nyssa": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-obadiah-stane": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-odino": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-okoye": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-otto-octavius-doc-ock": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-parker-robbins-the-hood": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-peggy-carter-captain-carter": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-peni-parker": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-pepper-potts": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-peter": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-peter-b-parker": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-peter-parker": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-peter-parker-holland-maguire-garfield": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-peter-quill-star-lord": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-phastos": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-phil-coulson": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-professor-x-terra-838": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-proxima-midnight": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-pyro": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-quentin-beck-mysterio": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ramonda": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ravonna-renslayer": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-red-guardian": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-reed-richards": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-renslayer": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-rio-vidal": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-riri-williams-ironheart": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-robbie-reyes-ghost-rider": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-robbie-robertson": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-robert-downey-jr-dottor-destino": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-rocket": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-rogue": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ronan-l-accusatore": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-roxanne-simpson": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-sabretooth": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-sam-wilson-capitan-america": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-scott-lang-ant-man": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-sebastian-shaw": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-sergei-kravinoff-kraven": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-sersi": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-shang-chi": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-sharon-carter": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-shuri": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-silver-surfer": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-simmons": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-simon-williams-wonder-man": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-skaar": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-spider-ham": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-spider-man": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-spider-man-noir": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-sprite": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-stephen-strange": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-steve-rogers-capitan-america": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-steven-grant-marc-spector-moon-knight": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-stick": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-sue-storm": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-sylvie": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-t-chaka": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-t-challa-black-panther": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-talos": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-teen-billy-maximoff": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-teschio-rosso": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-thaddeus-ross": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-thanos": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-the-lion-n-kati": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-the-watcher": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-thena": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-thor": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-torunn": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-toussaint": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-trevor-slattery": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-trish-walker": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ultron": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-ulysses-klaue": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-valchiria": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-valentina-de-fontaine": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-vanessa": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-victor-timely-variante-kang": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-victor-von-doom": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-viper": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-visione": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-wade-wilson-deadpool": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-wanda-maximoff": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-wenwu": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-whistler": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-whitney-frost": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-william-stryker": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-wilson-fisk-kingpin": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-wolverine": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-wong": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-xavier": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-xavier-giovane-e-anziano": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-xialing": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-yelena-belova": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-yondu": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-yukio": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "char-zemo": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "rif": "pagina-registro-storico",
+   "stato": "attivo",
+   "tipo": "pagina"
+  },
+  "evt-accordi-di-sokovia": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "evt-accordi-di-sokovia"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "e"
+  },
+  "evt-caduta-dello-s-h-i-e-l-d": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "evt-caduta-dello-s-h-i-e-l-d"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "e"
+  },
+  "evt-il-blip": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "evt-il-blip"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "e"
+  },
+  "hub-groot": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-groot"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "h"
+  },
+  "hub-peter-parker": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-peter-parker",
+    "char-peter-parker-holland-maguire-garfield"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "h"
+  },
+  "hub-wilson-fisk": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-wilson-fisk-kingpin"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "h"
+  },
+  "id-a-bomb": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-a-bomb"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-abby-miller": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-abby-miller"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-abigail-whistler": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-abigail-whistler"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-adam-warlock": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-adam-warlock"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-adrian-toomes-avvoltoio": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-adrian-toomes-avvoltoio"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-agatha-harkness": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-agatha-harkness"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ajak": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ajak"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-aldrich-killian": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-aldrich-killian"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-aleksei-sytsevich-rhino": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-aleksei-sytsevich-rhino"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-alexandra-the-hand": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-alexandra-the-hand"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-alexei-guardiano-rosso": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-alexei-guardiano-rosso"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-alisa-jones": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-alisa-jones"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-alto-evoluzionario": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-alto-evoluzionario"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-america-chavez": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-america-chavez"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-amy-bendix": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-amy-bendix"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-anne-weying": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-anne-weying"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-anya-corazon": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-anya-corazon"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-apocalypse": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-apocalypse"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-arishem": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-arishem"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-arthur-harrow": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-arthur-harrow"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ayesha": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ayesha"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-beast": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-beast"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ben-grimm": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ben-grimm"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ben-grimm-1994": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ben-grimm"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ben-grimm-first-steps": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ben-grimm"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ben-grimm-trank": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ben-grimm"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ben-reilly-the-spider": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ben-reilly-the-spider"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-benny-pollack": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-benny-pollack"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-betty-ross": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-betty-ross"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-billy-russo-jigsaw": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-billy-russo-jigsaw"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-bishop": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-bishop"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-blade": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-blade"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-blind-al": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-blind-al"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-bob-sentry": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-bob-sentry"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-bonnie-lopez": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-bonnie-lopez"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-bruno": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-bruno"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-bucky-barnes-soldato-d-inverno": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-bucky-barnes-soldato-d-inverno"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-bullseye": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-bullseye"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-bushmaster": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-bushmaster"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-cable": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-cable"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-capitano-stacy": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-capitano-stacy"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-carlton-drake-riot": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-carlton-drake-riot"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-carol-danvers-captain-marvel": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-carol-danvers-captain-marvel"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-cassandra-nova": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-cassandra-nova"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-cassandra-webb": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-cassandra-webb"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-cassie-lang": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-cassie-lang"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-cat-hardy": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-cat-hardy"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-cecilia-reyes": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-cecilia-reyes"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-charles-xavier-fox": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-charles-xavier",
+    "char-xavier",
+    "char-xavier-giovane-e-anziano"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ciclope": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ciclope"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-claire-wise": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-claire-wise"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-cletus-kasady-carnage": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-cletus-kasady-carnage"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-clint-barton": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-clint-barton"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-colleen-wing": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-colleen-wing"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-colossus": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-colossus"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-corvus-glaive": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-corvus-glaive"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-cottonmouth": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-cottonmouth"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-coulson-lmd": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-coulson-lmd"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-cull-obsidian": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-cull-obsidian"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-curt-connors-lizard": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-curt-connors-lizard"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-daisy-johnson": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-daisy-johnson"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-daniel-sousa": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-daniel-sousa"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-danielle-moonstar": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-danielle-moonstar"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-danny-rand-iron-fist": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-danny-rand-iron-fist"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-dar-benn": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-dar-benn"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-darren-cross": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-darren-cross"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-darryl-jacobson": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-darryl-jacobson"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-david-banner": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-david-banner"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-davos": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-davos"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-deacon-frost": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-deacon-frost"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-deke-shaw": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-deke-shaw"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-dmitri-smerdyakov-chameleon": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-dmitri-smerdyakov-chameleon"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-domino": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-domino"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-dopinder": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-dopinder"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-dracula": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-dracula"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-drax": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-drax"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-druig": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-druig"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ebony-maw": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ebony-maw"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-eddie-brock-venom": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-eddie-brock-venom"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-edwin-jarvis": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-edwin-jarvis"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ego": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ego"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-elektra-natchios": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-elektra-natchios"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-elsa-bloodstone": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-elsa-bloodstone"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-emil-blonsky-abominio": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-emil-blonsky-abominio"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-enoch": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-enoch"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-erik-gelden": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-erik-gelden"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-erik-killmonger": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-erik-killmonger"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-everett-ross": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-everett-ross"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ezekiel-sims": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ezekiel-sims"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-firestar-angelica-jones": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-firestar-angelica-jones"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-fisk-fox-2003": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-wilson-fisk-kingpin"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-fisk-mcu": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-wilson-fisk-kingpin"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-fitz": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-fitz"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-flint-marko-sandman": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-flint-marko-sandman"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-foggy-nelson": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-foggy-nelson"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-frances-barrison-shriek": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-frances-barrison-shriek"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-frank-castle-punisher": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-frank-castle-punisher"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-franklin-richards": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-franklin-richards"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-frigga": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-frigga"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-galactus": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-galactus"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-gambit": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-gambit"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-gamora": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-gamora"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ghost": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ghost"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-gilgamesh": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-gilgamesh"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-gorr": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-gorr"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-grant-ward-hive": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-grant-ward-hive"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-gravik": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-gravik"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-groot-originale": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-groot"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-groot-successore": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-groot",
+    "char-groot-piccolo"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-guardiani-della-galassia": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-guardiani-della-galassia"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-gwen-stacy-spider-woman": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-gwen-stacy-spider-woman"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-hank-pym": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-hank-pym"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-hannibal-king": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-hannibal-king"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-harry-osborn-green-goblin": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-harry-osborn-green-goblin"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-harry-osborn-webb": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-harry-osborn-green-goblin"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-harry-osborn-ynfsm": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-harry-osborn-green-goblin"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-he-who-remains": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-he-who-remains"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-hela": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-hela"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-hope-van-dyne": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-hope-van-dyne"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-howard-stark": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-howard-stark"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-hulk": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-hulk"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-hunter-b-15": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-hunter-b-15"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-i-quattro-protagonisti": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-i-quattro-protagonisti"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ikaris": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ikaris"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-illyana-rasputin-magik": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-illyana-rasputin-magik"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-iron-man": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-iron-man"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ivan-vanko-whiplash": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ivan-vanko-whiplash"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-jack-russell-werewolf-by-night": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-jack-russell-werewolf-by-night"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-jackson-norriss": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-jackson-norriss"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-james-rhodes-war-machine": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-james-rhodes-war-machine"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-james-rogers": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-james-rogers"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-jane-foster-mighty-thor": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-jane-foster-mighty-thor"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-janet": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-janet"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-janet-van-dyne": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-janet-van-dyne"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-jasper-sitwell": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-jasper-sitwell"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-jean-grey-fenice": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-jean-grey-fenice"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-jennifer-walters-she-hulk": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-jennifer-walters-she-hulk"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-jessica-jones": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-jessica-jones"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-joaquin-torres-falcon": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-joaquin-torres-falcon"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-john-walker": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-john-walker"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-johnny-blaze-ghost-rider": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-johnny-blaze-ghost-rider"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-johnny-storm-human-torch": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-johnny-storm-human-torch"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-johnny-storm-human-torch-1994": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-johnny-storm-human-torch"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-johnny-storm-human-torch-first-steps": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-johnny-storm-human-torch"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-johnny-storm-human-torch-trank": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-johnny-storm-human-torch"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-julia-cornwall": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-julia-cornwall"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-kamala-khan-ms-marvel": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-kamala-khan-ms-marvel"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-kang-il-conquistatore": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-kang-il-conquistatore"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-karen-page": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-karen-page"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-karl-mordo": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-karl-mordo"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-kate-bishop": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-kate-bishop"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-katy": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-katy"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-kevin-bacon-se-stesso": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-kevin-bacon-se-stesso"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-khonshu": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-khonshu"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-kilgrave": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-kilgrave"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-kingo": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-kingo"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-kingpin-spider-verse": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-kingpin"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-knull": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-knull"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-l-antico": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-l-antico"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-laufey": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-laura-x-23": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-laura-x-23"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-loki": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-loki"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-luke-cage": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-luke-cage"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-m-baku": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-m-baku"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-magneto": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-magneto"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-major-glenn-talbot": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-major-glenn-talbot"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-makkari": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-makkari"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-malekith": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-malekith"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-man-thing": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-man-thing"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-mandarino": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-mandarino"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-mantis": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-mantis"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-maria-stark": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-maria-stark"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-mariah-dillard": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-mariah-dillard"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-mariko-yashida": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-mariko-yashida"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-mark-miller": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-mark-miller"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-martine-bancroft": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-martine-bancroft"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-mary-jane-watson-raimi": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-mary-jane-watson",
+    "char-mary-jane"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-matt-murdock-daredevil": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-matt-murdock-daredevil"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-matt-murdock-mcu": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-matt-murdock-daredevil"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-mattie-franklin": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-mattie-franklin"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-max-dillon-electro": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-max-dillon-electro"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-maya-lopez-echo": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-maya-lopez-echo"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-mefisto-roarke": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-mefisto-roarke"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-melina": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-melina"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-melinda-may": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-melinda-may"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-michael-morbius": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-michael-morbius"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-michelle-jones-watson-mcu": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-mj"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-miguel-o-hara-spider-man-2099": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-miguel-o-hara-spider-man-2099"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-miles-morales": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-miles-morales"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-milo-loxias-crown": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-milo-loxias-crown"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-misty-knight": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-misty-knight"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-mobius": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-mobius"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-monica-rambeau": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-monica-rambeau"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-morgan-stark": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-morgan-stark"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-mr-paradox": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-mr-paradox"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-mrs-chen": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-mrs-chen"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-mystica": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-mystica"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-nadya": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-nadya"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-najma": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-najma"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-nakia": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-nakia"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-namor": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-namor"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-natasha-romanoff": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-natasha-romanoff"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-nebula": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-nebula"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ned-leeds": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ned-leeds"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-negasonic-teenage-warhead": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-negasonic-teenage-warhead"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-nick-fury": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-nick-fury"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-nightcrawler": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-nightcrawler"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-nomak": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-nomak"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-noni": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-noni"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-norman-osborn-green-goblin": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-norman-osborn-green-goblin"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-nyssa": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-nyssa"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-obadiah-stane": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-obadiah-stane"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-odino": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-odino"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-okoye": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-okoye"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-otto-octavius-doc-ock": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-otto-octavius-doc-ock"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-parker-robbins-the-hood": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-parker-robbins-the-hood"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-peggy-carter-captain-carter": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-peggy-carter-captain-carter"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-peni-parker": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-peni-parker"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-pepper-potts": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-pepper-potts"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-peter": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-peter"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-peter-b-parker": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-peter-b-parker"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-peter-parker-garfield": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-peter-parker",
+    "char-peter-parker-holland-maguire-garfield"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-peter-parker-mcu": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-peter-parker",
+    "char-peter-parker-holland-maguire-garfield",
+    "char-spider-man"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-peter-parker-raimi": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-peter-parker",
+    "char-peter-parker-holland-maguire-garfield"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-peter-parker-ynfsm": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-peter-parker"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-peter-quill-star-lord": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-peter-quill-star-lord"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-phastos": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-phastos"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-phil-coulson": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-phil-coulson",
+    "char-coulson"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-professor-x-terra-838": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-professor-x-terra-838"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-proxima-midnight": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-proxima-midnight"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-pyro": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-pyro"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-quentin-beck-mysterio": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-quentin-beck-mysterio"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ramonda": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ramonda"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ravonna-renslayer": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ravonna-renslayer",
+    "char-renslayer"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-red-guardian": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-red-guardian"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-reed-richards": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-reed-richards"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-reed-richards-1994": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-reed-richards"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-reed-richards-first-steps": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-reed-richards"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-reed-richards-illuminati": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-reed-richards"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-reed-richards-trank": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-reed-richards"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-rio-vidal": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-rio-vidal"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-riri-williams-ironheart": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-riri-williams-ironheart"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-robbie-reyes-ghost-rider": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-robbie-reyes-ghost-rider"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-robbie-robertson": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-robbie-robertson"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-robert-downey-jr-dottor-destino": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-robert-downey-jr-dottor-destino"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-rocket": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-rocket"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-rogue": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-rogue"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ronan-l-accusatore": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ronan-l-accusatore"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ross-hulk-2003": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-generale-thaddeus-ross"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-roxanne-simpson": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-roxanne-simpson"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-sabretooth": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-sabretooth"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-sam-wilson-capitan-america": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-sam-wilson-capitan-america"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-scott-lang-ant-man": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-scott-lang-ant-man"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-sebastian-shaw": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-sebastian-shaw"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-sergei-kravinoff-kraven": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-sergei-kravinoff-kraven"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-sersi": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-sersi"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-shang-chi": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-shang-chi"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-sharon-carter": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-sharon-carter"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-shuri": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-shuri"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-silver-surfer": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-silver-surfer"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-simmons": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-simmons"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-simon-williams-wonder-man": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-simon-williams-wonder-man"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-skaar": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-skaar"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-spider-ham": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-spider-ham"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-spider-man-noir": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-spider-man-noir"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-sprite": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-sprite"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-stephen-strange": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-stephen-strange"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-steve-rogers-capitan-america": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-steve-rogers-capitan-america"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-steven-grant-marc-spector-moon-knight": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-steven-grant-marc-spector-moon-knight"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-stick": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-stick"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-sue-storm": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-sue-storm"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-sue-storm-1994": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-sue-storm"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-sue-storm-first-steps": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-sue-storm"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-sue-storm-trank": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-sue-storm"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-sylvie": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-sylvie"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-t-chaka": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-t-chaka"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-t-challa-black-panther": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-t-challa-black-panther"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-talos": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-talos"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-teen-billy-maximoff": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-teen-billy-maximoff"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-teschio-rosso": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-teschio-rosso"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-thaddeus-ross-mcu": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-thaddeus-ross",
+    "char-generale-ross"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-thanos": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-thanos"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-the-lion-n-kati": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-the-lion-n-kati"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-the-watcher": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-the-watcher"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-thena": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-thena"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-thor": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-thor"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-torunn": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-torunn"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-toussaint": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-toussaint"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-trevor-slattery": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-trevor-slattery"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-trish-walker": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-trish-walker"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ultron": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ultron"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-ulysses-klaue": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-ulysses-klaue"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-valchiria": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-valchiria"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-valentina-de-fontaine": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-valentina-de-fontaine"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-vanessa": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-vanessa"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-victor-timely-variante-kang": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-victor-timely-variante-kang"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-victor-von-doom": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-victor-von-doom"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-victor-von-doom-1994": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-victor-von-doom"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-victor-von-doom-trank": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-victor-von-doom"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-viper": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-viper"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-visione": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-visione"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-wade-wilson-deadpool": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-wade-wilson-deadpool"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-wanda-maximoff": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-wanda-maximoff"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-wenwu": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-wenwu"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-whistler": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-whistler"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-whitney-frost": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-whitney-frost"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-william-stryker": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-william-stryker"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-wolverine": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-wolverine"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-wolverine-x-men-97": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-wolverine"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-wong": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-wong"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-xialing": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-xialing"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-yelena-belova": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-yelena-belova"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-yondu": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-yondu"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-yukio": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-yukio"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "id-zemo": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "char-zemo"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "p"
+  },
+  "luo-avengers-compound": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "luo-avengers-compound"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "l"
+  },
+  "luo-avengers-tower": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "luo-avengers-tower"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "l"
+  },
+  "luo-celestial-island": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "luo-celestial-island"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "l"
+  },
+  "luo-il-void": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "luo-il-void"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "l"
+  },
+  "luo-kamar-taj": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "luo-kamar-taj"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "l"
+  },
+  "luo-latveria": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "luo-latveria"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "l"
+  },
+  "luo-new-asgard": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "luo-new-asgard"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "l"
+  },
+  "luo-sanctum-sanctorum": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "luo-sanctum-sanctorum"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "l"
+  },
+  "luo-wakanda": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "luo-wakanda"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "l"
+  },
+  "man-capitan-america": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "m"
+  },
+  "man-ghost-rider": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "m"
+  },
+  "org-a-i-m-advanced-idea-mechanics": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-a-i-m-advanced-idea-mechanics"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "org-avengers": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-avengers"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "org-defenders": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-defenders"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "org-fantastic-four": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-fantastic-four"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "org-fratellanza-dei-mutanti": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-fratellanza-dei-mutanti"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "org-hydra": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-hydra"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "org-i-dieci-anelli-organizzazione": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-i-dieci-anelli-organizzazione"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "org-illuminati": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-illuminati"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "org-new-avengers": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-new-avengers"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "org-s-h-i-e-l-d": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-s-h-i-e-l-d"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "org-s-s-r-strategic-scientific-reserve": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-s-s-r-strategic-scientific-reserve"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "org-s-w-o-r-d": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-s-w-o-r-d"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "org-the-hand": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-the-hand"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "org-thunderbolts": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-thunderbolts"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "org-tva-time-variance-authority": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-tva-time-variance-authority"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "org-weapon-x": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-weapon-x"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "org-x-men": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "org-x-men"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "o"
+  },
+  "pia-ego": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "pia-ego"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "P"
+  },
+  "pia-hala": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "pia-hala"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "P"
+  },
+  "pia-morag": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "pia-morag"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "P"
+  },
+  "pia-sakaar": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "pia-sakaar"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "P"
+  },
+  "pia-titan": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "pia-titan"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "P"
+  },
+  "pia-vormir": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "pia-vormir"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "P"
+  },
+  "pia-xandar": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "pia-xandar"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "P"
+  },
+  "uni-blade-verse": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-blade-verse"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-continuity-animate-isolate-minori": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-continuity-animate-isolate-minori"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-daredevil-elektra-verse": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-daredevil-elektra-verse"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-earth-10005-fox-verse": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-earth-10005-fox-verse"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-earth-120703-garfield-verse": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-earth-120703-garfield-verse"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-earth-121698": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-earth-121698"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-earth-199999-mcu": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-earth-199999-mcu"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-earth-828": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-earth-828"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-earth-838": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-earth-838"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-earth-96283-raimi-verse": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-earth-96283-raimi-verse"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-earth-trn123": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-earth-trn123"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-fantastic-four-1994": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-fantastic-four-1994"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-ghost-rider-verse": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-ghost-rider-verse"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-hulk-2003-verse": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-hulk-2003-verse"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-legion-verse": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-legion-verse"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-marvel-animation-universe-2006-2017": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-marvel-animation-universe-2006-2017"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-marvel-productions-universe-anni-80": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-marvel-productions-universe-anni-80"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-marvel-productions-universe-anni-90": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-marvel-productions-universe-anni-90"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-marvel-zombies-verse": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-marvel-zombies-verse"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-rami-di-what-if": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-rami-di-what-if"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-sony-s-spider-man-universe-ssu": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-sony-s-spider-man-universe-ssu"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-spider-noir-verse": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-spider-noir-verse"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-spider-verse-sony-animato": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-spider-verse-sony-animato"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-the-gifted-verse": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-the-gifted-verse"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-tva-fuori-dal-tempo": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-tva-fuori-dal-tempo"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-x-men-97-verse": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-x-men-97-verse"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  },
+  "uni-your-friendly-neighborhood-spider-man-verse": {
+   "ondata": "W0",
+   "origine": "registro-storico",
+   "pagine": [
+    "uni-your-friendly-neighborhood-spider-man-verse"
+   ],
+   "rif": "voce",
+   "stato": "attivo",
+   "tipo": "U"
+  }
+ },
+ "ids_sha256": "a221d77905d9c49b13e1b0e3860e0c313195ff481b993b49c636d7dd4f1abeb9",
+ "politica": "append-only; ID mai riusati; rimozioni solo come lapide con redirect",
+ "versione": 1
+}

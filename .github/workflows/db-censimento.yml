@@ -1,0 +1,31 @@
+name: DB Expansion - censimento (manuale)
+# W0: SOLA LETTURA. Nessun commit, nessun deploy, nessun servizio attivato. Produce l'artifact "db-censimento" con i conteggi interni ed esterni.
+# Usa il Secret TMDB_READ_TOKEN gia' esistente; COMICVINE_API_KEY e' opzionale (piano gratuito, D7). Le chiavi non vengono mai stampate.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: db-censimento
+  cancel-in-progress: false
+jobs:
+  censimento:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: test/tva-archives
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Censimento interno ed esterno
+        env:
+          TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
+          COMICVINE_API_KEY: ${{ secrets.COMICVINE_API_KEY }}
+        run: python3 tools/db_censimento.py --esterni --out censimento.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: db-censimento
+          path: censimento.json
+          retention-days: 30
