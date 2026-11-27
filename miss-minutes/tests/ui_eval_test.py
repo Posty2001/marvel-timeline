@@ -98,11 +98,11 @@ with sync_playwright() as p:
     fr.evaluate("()=>window.__mm.go('set')"); fr.wait_for_timeout(300)
     ok('riga Valutazione risposte in Impostazioni', fr.evaluate("()=>[...document.querySelectorAll('.mm-srow')].some(b=>/Valutazione risposte/.test(b.innerText))"))
     fr.evaluate("()=>window.__mm.evalDialog()"); fr.wait_for_timeout(300)
-    ok('dialogo con Avvia / Salva il file JSON', fr.evaluate("()=>{const t=document.getElementById('mmDlgBody').innerText;return /Avvia la valutazione/.test(t)&&/Salva il file JSON/.test(t)}"))
+    ok('dialogo con Avvia / Salva il file JSON', fr.evaluate("()=>{const t=document.getElementById('mmDlgBody').innerText;return /Avvia la valutazione completa/.test(t)&&/Salva il file JSON/.test(t)}"))
     # export come FILE dall'interfaccia (download), con riepilogo calcolato sul dispositivo
     fr.evaluate("(o)=>localStorage.setItem('marvel-ultimate-timeline-miss-minutes-eval-v1',JSON.stringify(o))", out)
     fr.evaluate("()=>document.getElementById('mmDlg').close&&document.getElementById('mmDlg').close()"); fr.evaluate("()=>window.__mm.evalDialog()"); fr.wait_for_timeout(600)
-    ok('riepilogo mostrato nel dialogo', fr.evaluate("()=>/Eseguite 4\\/81/.test(document.getElementById('mmDlgBody').innerText)"), fr.evaluate("()=>document.getElementById('mmDlgBody').innerText.slice(0,300)"))
+    ok('riepilogo mostrato nel dialogo', fr.evaluate("()=>/Eseguite 4\\/123/.test(document.getElementById('mmDlgBody').innerText)"), fr.evaluate("()=>document.getElementById('mmDlgBody').innerText.slice(0,300)"))
     with pg.expect_download(timeout=8000) as dl:
         fr.evaluate("()=>[...document.querySelectorAll('#mmDlgBody button')].find(b=>/Salva il file JSON/.test(b.innerText)).click()")
     f = dl.value; import json as _j; body = _j.load(open(f.path()))

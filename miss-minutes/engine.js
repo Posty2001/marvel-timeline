@@ -149,8 +149,13 @@
   /* ---------- intenti ---------- */
   function has(n, re) { return re.test(n); }
 
+  /* Un'intenzione PERSONALE richiede un riferimento a chi parla o all'app (ho/mi/mio..., Timeline, Tessera, TVA Live...):
+     «Quanti film compongono la Saga dell'Infinito?» o «Quali sono le prossime uscite Marvel?» sono domande generali sul Marvel Universe. */
+  var SELF = /\b(mi|ho|hai|mio|mia|miei|mie|me|sono|sto|stiamo|nostr[oa]|nostri|mancano)\b|\b(tva archives|nella timeline|la timeline|tessera|profilo|tva live|calendario dell app|missioni|friends)\b/;
   function personalIntent(n) {
+    var self = SELF.test(n) || n.split(' ').length <= 3;   // comandi brevi dell'app («Cosa guardo?», «Prossime uscite»)
     if (has(n, /\b(mi manc[ao]|mi mancano|non ho (ancora )?visto|da recuperare)\b/)) return 'missing';
+    if (!self) return null;
     if (has(n, /\b(cosa|che cosa|che)\b.*\b(guard|vedere|vedo)|\bprossim[oi] (da|titolo|film|serie)|consigli|cosa mi consigli|da vedere/)) return 'advice';
     if (has(n, /\b(ho visto|quanti|quanto ho|progresso|percentuale|a che punto)\b/)) return 'progress';
     if (has(n, /\b(miei voti|mie valutazioni|i miei voti|voti piu alti|migliori per me|classifica|classifiche|preferiti)\b/)) return 'ratings';

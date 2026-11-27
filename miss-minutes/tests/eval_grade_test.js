@@ -8,5 +8,5 @@ const cases = [['mcu01', 'Tony Stark è interpretato da Robert Downey Jr.', 'cor
 let n = 0, bad = 0; for (const [id, t, e] of cases) { n++; const g = E.grade(D(id), rec(id, t)).e; if (g !== e) { bad++; console.log('FAIL', id, g, '!=', e); } else console.log('PASS', id); }
 n++; if (E.grade(D('mcu03'), { id: 'mcu03', ok: false }).e !== 'assente') { bad++; console.log('FAIL assente'); }
 const s = E.summarize(dom, cases.map(c => rec(c[0], c[1]))); n++; if (!(s.eseguite === 9 && s.corrette === 6 && s.sbagliate === 3 && s.lat_mediana_ms === 3000)) { bad++; console.log('FAIL summarize', JSON.stringify(s).slice(0, 200)); } else console.log('PASS riepilogo');
-n++; if (!/Eseguite 9\/81/.test(E.riepilogoTesto(s))) { bad++; console.log('FAIL testo'); } else console.log('PASS testo');
+n++; if (!/Eseguite 9\/123/.test(E.riepilogoTesto(s))) { bad++; console.log('FAIL testo'); } else console.log('PASS testo');
 console.log(`${n - bad}/${n}`); process.exit(bad ? 1 : 0);

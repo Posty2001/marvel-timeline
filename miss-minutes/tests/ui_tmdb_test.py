@@ -115,10 +115,10 @@ with sync_playwright() as p:
     tm = [x for x in f if x['classe'] == 'tmdb']
     ok('K. archivio TMDB usato: sinossi e regia di BND nei fatti inviati', any('sinossi TMDB' in x['testo'] and 'quattro anni' in x['testo'] and 'Destin Daniel Cretton' in x['testo'] for x in tm), [x['id'] for x in f])
     ok('K. date per paese (IT 29/07/2026, US 31/07/2026) e nessuna discordanza con la Timeline', any('IT 29/07/2026' in x['testo'] and 'US 31/07/2026' in x['testo'] and 'DISCORDANZA' not in x['testo'] for x in tm), [x['testo'][:160] for x in tm])
-    ok('K. con la sinossi TMDB non c\'e\' la «lacuna» anche con Wikipedia giù', not any(x['classe'] == 'lacuna' for x in f), [x['classe'] for x in f])
-    ok('K. il fatto TMDB e\' dichiarato non ufficiale e ordinato dopo archivio-app', all('non è una conferma ufficiale' in x['testo'] for x in tm if ':d' in x['id']) and [x['classe'] for x in f].index('archivio-app') < [x['classe'] for x in f].index('tmdb'), [x['classe'] for x in f])
+    ok('K. con Wikipedia giù la «lacuna» (rete) e\' l\'ultimo fatto, dopo archivio-app e TMDB', [x['classe'] for x in f][-1] == 'lacuna' and sum(1 for x in f if x['classe'] == 'lacuna') == 1, [x['classe'] for x in f])
+    ok('K. il fatto TMDB non porta formule tecniche ed e\' ordinato dopo archivio-app', not any('non è una conferma ufficiale' in x['testo'] for x in tm) and [x['classe'] for x in f].index('archivio-app') < [x['classe'] for x in f].index('tmdb'), [x['classe'] for x in f])
     ok('K. sinossi non tagliata a meta\' parola (termina con punteggiatura o «…»)', all(re.search(r'[.!?…]( Regia:.*)?$', x['testo'].split(' Regia:')[0]) for x in tm if ':s' in x['id']), [x['testo'][-60:] for x in tm if ':s' in x['id']])
-    ok('K. «Fonti consultate»: link TMDB reale al film, con data di generazione', fr.evaluate("()=>[...document.querySelectorAll('.mm-srcs a')].some(a=>a.href==='https://www.themoviedb.org/movie/969681')") and any(x['classe'] == 'tmdb' and x['when'] for x in m.get('srcs', [])), m.get('srcs'))
+    ok('K. pulsante «Fonti»: link TMDB reale al film, senza data di consultazione', fr.evaluate("()=>[...document.querySelectorAll('.mm-srcs a')].some(a=>a.href==='https://www.themoviedb.org/movie/969681')") and any(x['classe'] == 'tmdb' and not x.get('when') for x in m.get('srcs', [])), m.get('srcs'))
     ok('K. nessun dato personale nel payload', 'seen' not in json.dumps(bs[0]) and 'rating' not in json.dumps(bs[0]))
     # L. stagioni (archivio v2): dati DELLA STAGIONE, non della serie
     m, n, bs = run('clean', 'Loki S2: quando è uscita? (L)'); tm = [x for x in bs[0]['fatti'] if x['classe'] == 'tmdb']

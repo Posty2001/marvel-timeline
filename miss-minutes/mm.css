@@ -90,12 +90,13 @@ svg.ic .fill{fill:currentColor;stroke:none}
 .mm-acts button{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;color:var(--mut)}
 .mm-acts button:active{background:rgba(245,154,35,.2);color:var(--acc2)}
 .mm-acts button[aria-pressed=true]{color:var(--acc2)}
+.mm-acts button.mm-fonti{width:auto;height:30px;padding:0 11px;border-radius:99px;font-size:.72rem;letter-spacing:.03em;border:1px solid var(--line);align-self:center;margin-left:4px}.mm-acts button.mm-fonti[aria-expanded=true]{color:var(--acc2);border-color:var(--line2)}
 .mm-refs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .mm-chip,.mm-act{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 13px;border-radius:99px;border:1px solid var(--line2);color:var(--acc2);font-size:.85rem;background:rgba(245,154,35,.07)}
 .mm-chip:active,.mm-act:active{background:rgba(245,154,35,.22)}
 .mm-chip .ic{width:1.05em;height:1.05em}
 .mm-act{border-color:var(--line);color:var(--mut)}
-.mm-srcs{margin-top:10px;padding-top:8px;border-top:1px solid var(--line,rgba(255,255,255,.12));font-size:.78rem;color:var(--mut)}.mm-srcs b{display:block;margin-bottom:3px;font-weight:600;letter-spacing:.02em}.mm-src{padding:1px 0;overflow-wrap:anywhere}.mm-src a{color:var(--acc,#e2b04a);text-decoration:underline;text-underline-offset:2px}.mm-flair{margin-top:8px;font-size:.8rem;color:var(--mut);font-style:italic}
+.mm-srcs{margin-top:8px;padding-top:6px;border-top:1px solid var(--line,rgba(255,255,255,.12));font-size:.78rem;color:var(--mut)}.mm-srcs b{display:block;margin-bottom:3px;font-weight:600;letter-spacing:.02em}.mm-src{padding:1px 0;overflow-wrap:anywhere}.mm-src a{color:var(--acc,#e2b04a);text-decoration:underline;text-underline-offset:2px}.mm-flair{margin-top:8px;font-size:.8rem;color:var(--mut);font-style:italic}
 .mm-toast{position:absolute;left:50%;bottom:130px;transform:translateX(-50%);z-index:9;padding:7px 14px;border-radius:99px;background:#241706;border:1px solid var(--line2);color:var(--acc2);font-size:.82rem;box-shadow:var(--glow)}
 
 /* attesa / anomalie */

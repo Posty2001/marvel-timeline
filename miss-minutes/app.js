@@ -288,26 +288,28 @@
       m.refs.forEach(function (x) { var b = btn('mm-chip', null); b.appendChild(ic('book')); b.appendChild(el('span', '', x.label)); b.onclick = function () { openLink(x.link); }; r.appendChild(b); });
       body.appendChild(r);
     }
-    if (m.srcs && m.srcs.length) {
-      var sr = el('div', 'mm-srcs'); sr.appendChild(el('b', '', 'Fonti consultate'));
-      m.srcs.forEach(function (x) {
-        var li = el('div', 'mm-src');
-        if (x.url) { var an = el('a', '', x.label); an.href = x.url; an.target = '_blank'; an.rel = 'noopener noreferrer'; li.appendChild(an); } else li.appendChild(el('span', '', x.label));
-        if (x.when) li.appendChild(el('small', '', ' · consultata il ' + fmtIso(x.when)));
-        sr.appendChild(li);
-      });
-      body.appendChild(sr);
-    }
-    if (m.flair) body.appendChild(el('div', 'mm-flair', m.flair));
+    if (m.flair && !(m.tag && m.tag.indexOf('online') === 0)) body.appendChild(el('div', 'mm-flair', m.flair));
     if (m.action) {
       var a = btn('mm-act', null); a.textContent = m.action.label; a.onclick = function () { a.disabled = true; m.action.run(); }; var w = el('div', 'mm-refs'); w.appendChild(a); body.appendChild(w);
     }
     var meta = el('div', 'mm-meta');
-    if (m.tag) meta.appendChild(el('span', 'mm-tag' + (m.tag.indexOf('online') === 0 ? ' online' : ''), m.tag));
+    // etichette tecniche («online · AI · controlli...») non si mostrano: restano solo gli stati che l'utente deve conoscere (risposta locale, parziale, interrotta)
+    if (m.tag && !/^online · AI · (controlli|verifica)/.test(m.tag) && m.tag !== 'online · AI') meta.appendChild(el('span', 'mm-tag' + (m.tag.indexOf('online') === 0 ? ' online' : ''), m.tag));
     var acts = el('div', 'mm-acts');
     var c = iconBtn('copy', 'Copia la risposta'); c.onclick = function () { copyText(m.text); }; acts.appendChild(c);
     if (isLast && canRegen) { var rg = iconBtn('refresh', 'Rigenera la risposta'); rg.onclick = regenerate; acts.appendChild(rg); }
     var l = iconBtn('volume', 'Ascolta la risposta'); l.setAttribute('aria-pressed', 'false'); l.onclick = function () { speak(m.text, l); }; acts.appendChild(l);
+    if (m.srcs && m.srcs.length) {      // fonti solo su richiesta
+      var fb = btn('mm-fonti', 'Mostra le fonti'); fb.textContent = 'Fonti'; fb.setAttribute('aria-expanded', 'false');
+      var sr = el('div', 'mm-srcs'); sr.hidden = true;
+      m.srcs.forEach(function (x) {
+        var li = el('div', 'mm-src');
+        if (x.url) { var an = el('a', '', x.label); an.href = x.url; an.target = '_blank'; an.rel = 'noopener noreferrer'; li.appendChild(an); } else li.appendChild(el('span', '', x.label));
+        sr.appendChild(li);
+      });
+      fb.onclick = function () { var open = sr.hidden; sr.hidden = !open; fb.setAttribute('aria-expanded', open ? 'true' : 'false'); };
+      acts.appendChild(fb); body.appendChild(sr);
+    }
     meta.appendChild(acts); body.appendChild(meta);
     return d;
   }
@@ -427,7 +429,9 @@
     var nq = V.norm(q), pools = [nq].concat(recent), out = [], today = KN.today;
     function mentioned(names) { return pools.some(function (n) { return names.some(function (x) { return x && (' ' + n + ' ').indexOf(' ' + x + ' ') >= 0; }); }); }
     KN.titles.filter(function (t) { return mentioned(t.names); }).slice(0, 4).forEach(function (t) {
-      var rel = (t.release || '').slice(0, 10), st = !rel ? 'data non presente in archivio' : rel <= today ? 'già uscito alla data odierna' : 'non ancora uscito alla data odierna';
+      var rel = (t.release || '').slice(0, 10), te = TMDBK && TMDBK.voci && TMDBK.voci[String(t.id)], tst = te ? String(te.stato || '') : '';
+      var st = t.stato === 'released' ? 'già uscito (stato TMDB: ' + tst + ')' : t.stato === 'unreleased' ? 'NON ancora uscito (stato TMDB: ' + tst + ')' + (rel && rel <= today ? ': la data indicata in Timeline è trascorsa ma risulta non uscito, quindi probabilmente slittato' : '')
+        : !rel ? 'data non presente in archivio' : rel > today ? 'in uscita, prevista per ' + fmtIso(rel) + ' (le date possono cambiare)' : 'l’uscita effettiva non è confermata da una fonte esterna: la data in Timeline è trascorsa ma NON va usata per dedurre che sia uscito (se tra i fatti c’è una fonte aggiornata usa quella, altrimenti dichiara di non poterlo verificare)';
       out.push({ id: 'f:ti:' + t.id, _kw: [t.title], testo: t.title + ' — opera audiovisiva del catalogo Timeline (' + (t.kind === 'serie' ? 'serie TV' : t.kind === 'film' ? 'film' : (t.kind || 'film/serie')) + (t.saga ? ', saga ' + t.saga : '') + (t.studio ? ', ' + t.studio : '') + ') — ' + (rel ? 'uscita ' + fmtIso(rel) + ' (Timeline dell’app, un solo mercato, non per paese)' : 'nessuna data in Timeline') + '. Stato: ' + st + '.', classe: 'archivio-app', fonte: 'Timeline TVA Archives' });
     });
     KN.live.filter(function (t) { return mentioned(t.names); }).slice(0, 3).forEach(function (l) {
@@ -443,6 +447,17 @@
     return out.slice(0, 8).map(function (f) { f.testo = f.testo.slice(0, 450); return f; });
   }
 
+  /* stato di uscita e date regionali dall'archivio TMDB: lo stato NON si deduce dalla sola data trascorsa */
+  function applyArchive() {
+    if (!KN || !TMDBK || !TMDBK.voci) return;
+    KN.titles.forEach(function (t) {
+      var e = TMDBK.voci[String(t.id)]; if (!e) return;
+      var st = String(e.stato || ''), tv = e.tmdb && e.tmdb.t === 'tv';
+      t.stato = /^(Released|Ended|Canceled|Returning Series)$/.test(st) ? 'released' : /^(Planned|In Production|Post Production|Rumored)$/.test(st) ? 'unreleased' : '';
+      if (tv && t.stato === 'released' && t.release && t.release > KN.today) t.stato = '';
+      t.dates = (e.date || []).filter(function (d) { return d.paese !== 'TMDB' && d.data; }).map(function (d) { return d.data; });
+    });
+  }
   /* mm2.0-b: raccolta dei fatti con gerarchia di fonti (ufficiale > archivio-app > TMDB > Wikipedia/Wikidata > modello); lacune dichiarate; solo NOMI verso le fonti esterne */
   var QPLOT = /trama|di cosa parla|di che parla|di che cosa parla|sinossi|racconta|cosa succede|plot\b|storia del film/;
   var RANK = { ufficiale: 0, 'archivio-app': 1, confermato: 1, provvisorio: 2, tmdb: 3, documentato: 4, wikipedia: 5, lacuna: 6 };
@@ -475,7 +490,7 @@
       } else if (tv && first) parts.push('prima messa in onda della serie (TMDB): ' + dateIT(first.data) + (season ? ' — NON è la data di questa stagione (per quella vale la Timeline: ' + dateIT(t.release) + ')' : ''));
       var cast = st && st.cast && st.cast.length ? st.cast : e.cast;
       if (cast && cast.length) parts.push('cast principale' + (st && st.cast && st.cast.length ? ' della stagione' : scope) + ': ' + cast.slice(0, 6).join(', '));
-      if (parts.length) out.push(Object.assign({ id: 'f:tmdb:' + t.id + ':d', testo: '«' + t.title + '» — ' + parts.join('. ') + '. (TMDB non è una conferma ufficiale)' + special + auto }, base));
+      if (parts.length) out.push(Object.assign({ id: 'f:tmdb:' + t.id + ':d', testo: '«' + t.title + '» — ' + parts.join('. ') + '.' + special + auto }, base));
     });
     return out;
   }
@@ -493,20 +508,44 @@
     if (QPLOT.test(V.norm(q)) && names.length && !all.some(function (f) { return f.classe === 'tmdb' && /sinossi/.test(f.testo) || f.classe === 'wikipedia' && !/OMONIMIA/.test(f.testo); })) {
       all.push({ id: 'f:lacuna:trama', testo: 'Nessuna sinossi verificata disponibile per «' + names[0].name + '» (né in archivio né nelle fonti consultate). NON inventare la trama: dichiara che non è verificabile e rispondi solo con i dati forniti (tipo, data, saga).', classe: 'lacuna', fonte: 'TVA Archives' });
     }
+    if (p.lookup !== false && names.length && lk.failed && !lk.facts.length) all.push({ id: 'f:lacuna:rete', testo: 'Le fonti esterne aggiornate non erano raggiungibili in questo momento: per dati recenti non presenti in questi fatti dichiara con naturalezza, dentro la risposta, che non puoi verificarli ora (senza formule tecniche).', classe: 'lacuna', fonte: 'Stato del servizio' });
     all.sort(function (x, y) { return (RANK[x.classe] == null ? 4 : RANK[x.classe]) - (RANK[y.classe] == null ? 4 : RANK[y.classe]); });
     return { all: all.slice(0, 10), lk: lk, names: names };
   }
   function wire(all) { return all.map(function (f) { return { id: f.id, testo: f.testo.slice(0, 450), classe: f.classe, fonte: f.fonte }; }); }
   var SRC_HOSTS = /^https:\/\/(?:[a-z]{2}\.wikipedia\.org|www\.wikidata\.org|www\.themoviedb\.org|www\.marvel\.com|www\.sonypictures\.com)\//;
-  var CL_LABEL = { wikipedia: 'Wikipedia (non ufficiale)', tmdb: 'TMDB (non ufficiale)', ufficiale: 'fonte ufficiale', 'archivio-app': 'archivio dell’app', documentato: 'registro TVA Atlas' };
-  /* fonti realmente fornite al modello e pertinenti al testo mostrato (il nome compare nella risposta): niente collegamenti inventati dal modello */
+  var CL_LABEL = { wikipedia: 'Wikipedia', tmdb: 'TMDB', ufficiale: 'Fonte ufficiale', 'archivio-app': 'Archivio dell’app', documentato: 'Registro TVA Atlas' };
+  /* Quando un passaggio contraddice un dato documentato non lo si ripresenta: lo si sostituisce con il dato documentato (composto dai fatti, mai dal modello). */
+  function fmtD(iso) { return fmtIso(String(iso || '').slice(0, 10)); }
+  function correctionFor(v, all) {
+    var t = v && v.title ? KN.titles.filter(function (x) { return x.title === v.title; })[0] : null;
+    if (t && /^(tempo|esistenza|formato)$/.test(v.kind)) {
+      var e = TMDBK && TMDBK.voci && TMDBK.voci[String(t.id)], tv = (e && e.tmdb && e.tmdb.t === 'tv') || t.kind === 'serie', rel = (t.release || '').slice(0, 10), parts = [];
+      var dd = e ? (e.date || []).filter(function (d) { return d.paese !== 'TMDB' && d.data; }) : [], it = dd.filter(function (d) { return d.paese === 'IT'; })[0], us = dd.filter(function (d) { return d.paese === 'US'; })[0];
+      var kind = tv ? 'una serie' : 'un film';
+      if (t.stato === 'released') parts.push('«' + t.title + '» è ' + kind + ' già uscito' + (tv ? 'a' : '') + (it ? ': in Italia dal ' + fmtD(it.data) + (us && us.data !== it.data ? ' (negli Stati Uniti dal ' + fmtD(us.data) + ')' : '') : rel ? ' (data in archivio: ' + fmtD(rel) + ')' : ''));
+      else if (t.stato === 'unreleased') parts.push('«' + t.title + '» risulta ancora non uscito' + (rel ? ' (data indicata in archivio: ' + fmtD(rel) + ', soggetta a cambiamenti)' : ''));
+      else if (rel) parts.push('Per «' + t.title + '» l’archivio indica la data del ' + fmtD(rel) + (v.kind === 'formato' ? ' ed è ' + kind + ' del catalogo' : ''));
+      if (parts.length) return 'Su questo punto mi attengo ai dati documentati: ' + parts[0] + '.';
+    }
+    return 'Su questo punto non ho una conferma abbastanza solida, quindi preferisco non darti un’informazione che potrebbe essere sbagliata.';
+  }
+  var STOPW = /^(Il|Lo|La|Le|Gli|Un|Una|Per|Con|Nel|Nella|Del|Della|Dei|Che|Come|Dopo|Prima|Anche|Quando)$/;
+  /* una fonte e' mostrata solo se SUPPORTA il testo: condivide dati caratteristici (date, anni, nomi propri) con la risposta */
+  function supports(f, ansNorm, ans) {
+    var t = String(f.testo || ''), hit = 0, m;
+    var yrs = t.match(/\b(?:19|20)\d{2}\b/g) || []; yrs.forEach(function (y) { if (ans.indexOf(y) >= 0) hit++; });
+    var re = /\b([A-ZÀ-Ý][\p{L}'’\-]{3,})\b/gu, seen = {}; while ((m = re.exec(t))) { if (STOPW.test(m[1]) || seen[m[1]]) continue; seen[m[1]] = 1; if (ans.indexOf(m[1]) >= 0 && !(f._kw && f._kw.some(function (k) { return V.norm(k).split(' ').indexOf(V.norm(m[1])) >= 0; }))) hit++; }
+    return hit >= 2;
+  }
+  /* fonti realmente fornite al modello, pertinenti al titolo e che supportano davvero la risposta; ordinate per autorevolezza; Wikidata e date di consultazione non si mostrano */
   function sourcesFor(all, text) {
     var n = ' ' + V.norm(text) + ' ', out = [], seen = {};
-    all.forEach(function (f) {
-      if (!f._kw || !f._kw.some(function (k) { var kn = V.norm(k); return kn && n.indexOf(' ' + kn + ' ') >= 0; })) return;
-      var url = f._url && SRC_HOSTS.test(f._url) ? f._url : '', key = url || f.fonte; if (seen[key] || out.length >= 5) return; seen[key] = 1;
-      out.push({ label: (CL_LABEL[f.classe] || f.fonte) + (f._kw[1] ? ' · ' + f._kw[1] : ''), url: url, when: f._when ? String(f._when).slice(0, 10) : '', classe: f.classe });
-      if (f._wd && SRC_HOSTS.test(f._wd) && out.length < 5 && !seen[f._wd]) { seen[f._wd] = 1; out.push({ label: 'Wikidata · ' + f._kw[1], url: f._wd, when: f._when ? String(f._when).slice(0, 10) : '', classe: 'wikipedia' }); }
+    all.slice().sort(function (x, y) { return (RANK[x.classe] == null ? 4 : RANK[x.classe]) - (RANK[y.classe] == null ? 4 : RANK[y.classe]); }).forEach(function (f) {
+      if (!f._kw || f.classe === 'lacuna' || !f._kw.some(function (k) { var kn = V.norm(k); return kn && n.indexOf(' ' + kn + ' ') >= 0; })) return;
+      if (!supports(f, n, text)) return;
+      var url = f._url && SRC_HOSTS.test(f._url) ? f._url : '', key = (url || f.fonte) + '|' + f.classe; if (seen[key] || out.length >= 4) return; seen[key] = 1;
+      out.push({ label: (CL_LABEL[f.classe] || f.fonte) + (f._kw[0] ? ' — ' + f._kw[0] : ''), url: url, classe: f.classe });
     });
     return out;
   }
@@ -524,15 +563,18 @@
       return { role: 'assistant', text: bad ? '[risposta precedente omessa: non ha superato i controlli di verifica]' : m.text.slice(0, 700) };
     });
   }
+  var SPOIL_Q = /\bspoiler\b|\bspoilera|\bcome (?:finisce|va a finire|si conclude|e finit[oa])\b|\bnel finale\b|\balla fine (?:di|del|della|dei)\b|\bchi muore\b|\bmuore\b|\bsi scopre (?:che|chi)\b|\bdimmi tutto\b|\brivela/i;
+  function explicitSpoiler(q) { return SPOIL_Q.test(String(q).normalize('NFD').replace(/[̀-ͯ]/g, '')); }
   async function askOnline(q, s) {
     var p = store.state.prefs;
-    var ctx = p.local ? eng.contextFor(q, Object.assign(convState(s), { spoilerOff: !p.spoiler })) : []; lastCtx = ctx;
-    var prevU = ''; if (s && s.messages) for (var pi = s.messages.length - 2; pi >= 0; pi--) if (s.messages[pi].role === 'user') { prevU = s.messages[pi].text; break; }
-    if (KN) V.setFocus(KN, q, prevU);
+    var wantSp = explicitSpoiler(q);   // spoiler richiesti esplicitamente per QUESTA domanda: la preferenza generale resta invariata
+    var ctx = p.local ? eng.contextFor(q, Object.assign(convState(s), { spoilerOff: !p.spoiler || wantSp })) : []; lastCtx = ctx;
+    var prevQs = []; if (s && s.messages) for (var pi = s.messages.length - 2; pi >= 0 && prevQs.length < 4; pi--) if (s.messages[pi].role === 'user') prevQs.push(s.messages[pi].text);
+    if (KN) V.setFocus(KN, q, prevQs);
     var hist = p.memory ? sanitizeHistory(s) : [];
     waitCtl = new AbortController();
     var G = await gatherFacts(q, s, ctx, waitCtl.signal);
-    var payload = { question: q, history: hist, context: ctx, fatti: wire(G.all), spoiler: p.spoiler ? 'avoid' : 'off', length: p.length || 'normal', cite: p.cite !== false };
+    var payload = { question: q, history: hist, context: ctx, fatti: wire(G.all), spoiler: p.spoiler && !wantSp ? 'avoid' : 'off', length: p.length || 'normal', cite: p.cite !== false };
     var attempts = 0, r, tot0 = Date.now(), base = '', retried = 0, finalViol = null, rawTexts = [];
     function mkLink(sig) { var c = new AbortController(); if (sig.aborted) c.abort(); else sig.addEventListener('abort', function () { c.abort(); }, { once: true }); return c; }
     for (;;) {            // un solo ciclo di rigenerazione al massimo (ripresa dal testo gia' verificato), mai oltre
@@ -574,8 +616,8 @@
     if (!r.ok) { diag.last = d; return { ok: false, code: r.code, stage: r.stage, http: r.http, detail: r.detail, message: r.message, partial: partial }; }
     var rr = resolveRefs(shownAll || r.answer, ctx), text = rr.text, notes = [];
     try { notes = KN ? V.softNotes(text, KN) : []; } catch (e) { notes = []; }
-    if (failed) text = (text ? text + '\n\n' : '') + '⚠ Non sono riuscita a verificare un passaggio di questa risposta (' + finalViol.msg + '). Per non darti un dato sbagliato non lo riporto: controlla Timeline, Atlante o le fonti ufficiali.';
-    if (notes.length) text += '\n\nNota: ' + notes.join(' ');
+    if (failed) text = (text ? text + '\n\n' : '') + correctionFor(finalViol, G.all);
+    if (notes.length) text += '\n\n' + notes.join(' ');
     d.markers = rr.markers; d.dupRaw = dupCount(r.answer); d.dupShown = dupCount(rr.text); diag.last = d;
     if (store.state.prefs.diag) diagSave(q, rawTexts.join('\n⟂\n'), text, d);
     var srcs = failed ? [] : sourcesFor(G.all, text), nameSet = G.names.length, flair = '';
@@ -654,7 +696,7 @@
       mood('think'); showWait(true);
       var o = await askOnline(q, s);
       clearTransient();
-      if (o.ok) { cited = o.cited; msg = { role: 'assistant', text: o.text, refs: o.refs, srcs: o.srcs, flair: o.flair, vf: o.vf, tag: 'online · AI · ' + (o.vf && o.vf.ok ? 'controlli automatici superati (non è una conferma ufficiale)' : 'verifica non superata') + (p.spoiler ? ' · spoiler non garantiti' : '') }; }
+      if (o.ok) { cited = o.cited; msg = { role: 'assistant', text: o.text, refs: o.refs, srcs: o.srcs, flair: o.flair, vf: o.vf, tag: o.vf && o.vf.ok ? 'online · AI' : 'online · AI · verifica non superata' }; }
       else if (o.partial && o.partial.trim().length >= 1 && (o.code === 'aborted' || o.code === 'timeout' || /network|timeout|provider/.test(o.code || ''))) {
         // il testo gia' ricevuto non va perso: resta in cronologia, con Riprova
         var pr = resolveRefs(o.partial, lastCtx); cited = pr.cited;
@@ -820,8 +862,8 @@
   function evalDialog() {
     dlg('Valutazione risposte (fase C)', function (b) {
       b.appendChild(el('p', 'mm-small', 'Esegue il set di domande documentato sull’AI online reale (una conversazione per catena, ritmo compatibile con le quote del gateway). Solo domande pubbliche sul Marvel Universe: nessun dato personale. I risultati restano su questo dispositivo finché non li esporti o li cancelli.'));
-      var st = el('p', 'mm-small', ''), sm = el('pre', 'mm-small'), run = btn('mm-bigbtn primary', null), sv = btn('mm-bigbtn sub', null), cp = btn('mm-link', null), clr = btn('mm-link', null), stop = btn('mm-bigbtn sub', null);
-      sm.style.whiteSpace = 'pre-wrap'; run.textContent = 'Avvia la valutazione'; sv.textContent = 'Salva il file JSON'; cp.textContent = 'Copia come testo'; clr.textContent = 'Cancella i risultati'; stop.textContent = 'Interrompi'; stop.hidden = true;
+      var st = el('p', 'mm-small', ''), sm = el('pre', 'mm-small'), run = btn('mm-bigbtn primary', null), runV = btn('mm-bigbtn sub', null), sv = btn('mm-bigbtn sub', null), cp = btn('mm-link', null), clr = btn('mm-link', null), stop = btn('mm-bigbtn sub', null);
+      sm.style.whiteSpace = 'pre-wrap'; run.textContent = 'Avvia la valutazione completa'; runV.textContent = 'Solo le domande nuove (validazione)'; sv.textContent = 'Salva il file JSON'; cp.textContent = 'Copia come testo'; clr.textContent = 'Cancella i risultati'; stop.textContent = 'Interrompi'; stop.hidden = true;
       function setSt(t) { st.textContent = t; }
       var SET = null;
       async function getSet() { if (SET) return SET; await loadScript('eval.js'); var r = await fetch('eval/domande.json', { cache: 'no-cache' }); SET = (await r.json()).domande; return SET; }
@@ -829,23 +871,24 @@
       var prev = evLoad(); setSt(prev ? 'Ultimo risultato: ' + prev.risultati.length + ' risposte (' + prev.fine + ').' : 'Nessun risultato salvato.');
       if (prev) showSummary(prev);
       if (!onlineOK()) setSt('AI online non attiva: attivala dalle impostazioni e dai il consenso prima di avviare. ' + st.textContent);
-      run.onclick = async function () {
+      async function go(only) {
         if (!onlineOK()) { setSt('AI online non attiva.'); return; }
-        run.disabled = true; stop.hidden = false; evAbort = new AbortController();
+        run.disabled = true; runV.disabled = true; stop.hidden = false; evAbort = new AbortController();
         try {
-          var dom = await getSet(); var qs = window.MMEval.pick(dom, {});
+          var dom = await getSet(); var qs = window.MMEval.pick(dom, only ? { set: 'V' } : {});
           var hooks = { newChat: function () { store.state.active = null; }, count: function () { var s = store.current(); return s ? s.messages.length : 0; }, ask: function (q) { return submit(q, { forceOnline: true }); }, diag: function () { return diag.last; },
             last: function () { var s = store.current(); if (!s || !s.messages.length) return null; var m = s.messages[s.messages.length - 1]; return m.role === 'assistant' ? m : null; } };
           var out = await window.MMEval.run(hooks, qs, {}, function (p) { setSt((p.nota ? p.nota + ' · ' : '') + p.i + '/' + p.n + ' · ' + p.id); }, evAbort.signal);
           await showSummary(out); evSave(out); setSt('Completata: ' + out.risultati.length + '/' + qs.length + ' risposte' + (out.quota ? ' (limite gratuito raggiunto: serie interrotta)' : '') + '. Premi «Salva il file JSON».');
         } catch (e) { setSt('Errore: ' + (e && e.message || e)); }
-        run.disabled = false; stop.hidden = true; evAbort = null;
-      };
+        run.disabled = false; runV.disabled = false; stop.hidden = true; evAbort = null;
+      }
+      run.onclick = function () { go(false); }; runV.onclick = function () { go(true); };
       stop.onclick = function () { if (evAbort) evAbort.abort(); abortWait(); };
       sv.onclick = async function () { var o = evLoad(); if (!o) { setSt('Nessun risultato da salvare.'); return; } await showSummary(o); await evExport(o, setSt, b); };
       cp.onclick = async function () { var o = evLoad(); if (!o) { setSt('Nessun risultato.'); return; } var t = JSON.stringify(o); try { await navigator.clipboard.writeText(t); setSt('Copiati ' + t.length + ' caratteri.'); } catch (e) { var ta = el('textarea'); ta.value = t; ta.rows = 6; ta.readOnly = true; b.appendChild(ta); ta.select(); setSt('Copia manuale: seleziona il testo qui sotto.'); } };
       clr.onclick = function () { try { localStorage.removeItem(EKEY); } catch (e) { } setSt('Risultati cancellati.'); sm.textContent = ''; };
-      b.appendChild(st); b.appendChild(sm); b.appendChild(run); b.appendChild(stop); b.appendChild(sv); b.appendChild(cp); b.appendChild(clr);
+      b.appendChild(st); b.appendChild(sm); b.appendChild(run); b.appendChild(runV); b.appendChild(stop); b.appendChild(sv); b.appendChild(cp); b.appendChild(clr);
     });
   }
   function diagText() {
@@ -962,7 +1005,8 @@
       KN = V.build({ titles: (data.titles || []).map(function (t) { return { id: t.id, num: t.num, title: t.title, release: t.release, kind: t.kind, saga: t.saga, studio: t.studio }; }), alias_titoli: FACTS && FACTS.alias_titoli, cast: cast, live: LIVE_ITEMS }, todayISO());
       KN.cast.forEach(function (e, i) { e.actors_raw = cast[i].attori; });
       try { var tr = await fetch('knowledge/tmdb_titoli.json'); TMDBK = tr.ok ? await tr.json() : null; } catch (e3) { TMDBK = null; }
-      try { if (window.MMArchive) { var ar = await window.MMArchive.load({ bundle: TMDBK, base: CFG.archivio || '' }); if (ar.archivio) TMDBK = ar.archivio; archInfo = { origine: ar.origine, note: ar.note }; } } catch (e4) { }
+      applyArchive();
+      try { if (window.MMArchive) { var ar = await window.MMArchive.load({ bundle: TMDBK, base: CFG.archivio || '' }); if (ar.archivio) TMDBK = ar.archivio; applyArchive(); archInfo = { origine: ar.origine, note: ar.note }; } } catch (e4) { }
     } catch (e) { KN = null; }
     updateSub();
     $('mmForm').onsubmit = function (e) { e.preventDefault(); submit($('mmQ').value); };

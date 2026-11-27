@@ -47,6 +47,7 @@
   /* mm2.0-b: contraddizioni di formato/esistenza su un titolo del catalogo (film/serie): generali, valide per qualunque titolo Marvel */
   var FORMAT_DENY = /\bnon (?:e|risulta|sembra|si tratta di|rappresenta|costituisce)(?: essere)? (?:un |uno |il |un )?(?:film|lungometraggio|titolo cinematografico|opera cinematografica|produzione cinematografica|serie tv|serie televisiva|uscit[oa] (?:al cinema|nelle sale)|stat[oa] (?:prodott|realizzat))|\bnon (?:si riferisce|fa riferimento|corrisponde) a(?:d)? (?:un |uno |il )?(?:film|lungometraggio|titolo cinematografico|produzione)/;
   var NOT_EXIST = /\bnon (?:e|risulta|e stat[oa]) (?:mai |ancora |ufficialmente )?(?:uscit|rilasciat|distribuit|prodott|annunciat)|\bnon esiste (?:alcun |nessun |ancora )?(?:film|produzione|titolo)|\bnon e (?:mai )?esistit/;
+  var NOT_QUAL = /\bnon e (?:mai |ancora )?(?:uscit|rilasciat|distribuit)\w* (?:prima|dopo|fino|in |nel|a |il |negli|entro|durante|con|ovunque|dappertutto|in tutti)/;   // «non è uscito prima di luglio» e' una precisazione temporale
   var IS_COMIC = /\b(?:e|si tratta di|riguarda|corrisponde a|indica|fa riferimento a|appartiene a|rimanda a) (?:un |uno |una |il |la |l )?(?:ciclo|arco narrativo|storyline|story arc|crossover|evento editoriale|miniserie a fumetti|numero|volume|albo|fumetto|graphic novel|serie a fumetti|trama fumettistica)\b|\bciclo fumettistic/;
   var COMIC_OK = /\banche\b|\bomonim|\bispirat|\bbasat|\btratt[ao] da|\badattament|\bdistint|\bconfond|\bdiverso da|\boltre\b|\binoltre\b|\bnei fumetti\b|\bnon va confus/;
   var Q_COMICS = /fumett|comics|\balbi\b|\balbo\b|graphic novel|storyline|story arc|ciclo|arco narrativo/;
@@ -55,6 +56,11 @@
   var RX_PASSIVE = new RegExp('(?:interpretat[oa]|impersonat[oa]|doppiat[oa]|portat[oa] sullo schermo)\\s+(?:dall[\'’]attore |dall[\'’]attrice |dalla attrice |da )' + NAME, 'u');
   var RX_ACTIVE = new RegExp(NAME + '\\s+(?:interpreta|ha interpretato|interpretava|interpretera|veste i panni di|presta (?:il volto|la voce) a|doppia|impersona)\\s+(?:il personaggio di |il ruolo di |la parte di )?' + NAME, 'u');
 
+  /* riferimenti ad ALTRO rispetto al titolo (seguiti, spin-off...): le frasi su di essi non descrivono lo stato del titolo in discussione */
+  var SEQ = /\b(seguito|seguiti|sequel|prequel|spin off|spinoff|prossimo capitolo|capitolo successivo|terzo capitolo|quarto capitolo|nuova stagione|stagione successiva|crossover|reboot futuro)\b/;
+  /* un'affermazione e' tale solo se non negata poco prima («non e ancora uscito» non e' «e uscito») */
+  function affirms(re, n) { var m = re.exec(n); if (!m) return false; var pre = n.slice(Math.max(0, m.index - 22), m.index); return !/\bnon (?:\w+ ){0,2}$/.test(pre) && !/\bmai (?:\w+ )?$/.test(pre); }
+
   function build(raw, today) {
     var K = { today: today || new Date().toISOString().slice(0, 10), titles: [], cast: [], actors: {} };
     raw = raw || {};
@@ -62,7 +68,7 @@
       var n = norm(t.title); if (!n) return;
       var al = [n].concat((raw.alias_titoli && raw.alias_titoli[String(t.num || t.id)] || []).map(norm));
       al = al.filter(function (a, i) { return a && al.indexOf(a) === i && (a.split(' ').length >= 2 || (raw.alias_titoli && raw.alias_titoli[String(t.num || t.id)])); });
-      if (al.length) K.titles.push({ id: t.id, title: t.title, release: t.release || '', kind: t.kind || '', names: al });
+      if (al.length) K.titles.push({ id: t.id, title: t.title, release: t.release || '', kind: t.kind || '', names: al, stato: t.stato || '', dates: (t.dates || []).filter(Boolean) });
     });
     (raw.cast || []).forEach(function (c) {
       var e = { names: (c.pers || []).map(norm), actors: (c.attori || []).map(norm), cues: (c.cues || []).map(norm), univ: c.univ || '', prod: c.prod || '' };
@@ -117,15 +123,16 @@
     var hits = titleHits(K, n), subj = null, inferred = false;
     if (hits.length === 1) subj = hits[0]; else if (!hits.length && cur && cur.length === 1) { subj = cur[0]; inferred = true; }
     if (subj && !HEDGE.test(n)) {
-      var rel = dateOf(subj.release), rtxt = '«' + subj.title + '»' + (inferred ? ' (titolo in discussione)' : '');
-      if (rel) {
-        if (rel <= K.today && DEV.test(n)) v.push({ kind: 'tempo', msg: rtxt + ' risulta già uscito (' + rel + ') ma è descritto come non ancora uscito' });
-        else if (rel > K.today && PAST.test(n)) v.push({ kind: 'tempo', msg: rtxt + ' risulta in uscita il ' + rel + ' ma è descritto come già uscito' });
-        else if (rel <= K.today && NOT_EXIST.test(n)) v.push({ kind: 'esistenza', msg: rtxt + ' è in archivio come già uscito (' + rel + ') ma ne è negata l’esistenza/uscita' });
+      var rel = dateOf(subj.release), rtxt = '«' + subj.title + '»' + (inferred ? ' (titolo in discussione)' : ''), st = subj.stato || '';
+      /* lo stato di uscita NON si deduce dalla sola data trascorsa: serve una fonte (stato TMDB). Una data futura documentata resta un indizio di «non ancora uscito». */
+      if (!SEQ.test(n)) {
+        if (DEV.test(n) && ((st === 'released' && (!rel || rel <= K.today)))) v.push({ kind: 'tempo', title: subj.title, msg: rtxt + ' risulta già uscito (' + (rel || 'stato TMDB: uscito') + ') ma è descritto come non ancora uscito' });
+        else if (affirms(PAST, n) && (st === 'unreleased' || (!st && rel && rel > K.today))) v.push({ kind: 'tempo', title: subj.title, msg: rtxt + (rel ? ' risulta in uscita il ' + rel : ' risulta non ancora uscito') + ' ma è descritto come già uscito' });
+        else if (NOT_EXIST.test(n) && !NOT_QUAL.test(n) && st === 'released') v.push({ kind: 'esistenza', title: subj.title, msg: rtxt + ' è in archivio come già uscito' + (rel ? ' (' + rel + ')' : '') + ' ma ne è negata l’esistenza/uscita' });
       }
       if (!COMIC_OK.test(n)) {
-        if (FORMAT_DENY.test(n)) v.push({ kind: 'formato', msg: rtxt + ' è un' + (subj.kind === 'serie' ? 'a serie' : ' film') + ' del catalogo, ma ne viene negato il formato' });
-        else if (IS_COMIC.test(n) && !K.qcomics) v.push({ kind: 'formato', msg: rtxt + ' è un titolo audiovisivo del catalogo, ma viene descritto come un’opera a fumetti' });
+        if (FORMAT_DENY.test(n)) v.push({ kind: 'formato', title: subj.title, msg: rtxt + ' è un' + (subj.kind === 'serie' ? 'a serie' : ' film') + ' del catalogo, ma ne viene negato il formato' });
+        else if (IS_COMIC.test(n) && !K.qcomics) v.push({ kind: 'formato', title: subj.title, msg: rtxt + ' è un titolo audiovisivo del catalogo, ma viene descritto come un’opera a fumetti' });
       }
     }
     return v;
@@ -140,7 +147,7 @@
       if (!s.done && !final) { safe = TRIG.test(norm(str)) ? s.s : text.length; return { safe: safe, viol: viol, sentences: ss.length }; }
       hh = titleHits(K, norm(str)); if (hh.length === 1) cur = [hh[0]];
       vs = check(str, K, cur);
-      if (vs.length) { viol = { at: s.s, end: s.e, kind: vs[0].kind, msg: vs[0].msg, all: vs }; return { safe: s.s, viol: viol, sentences: ss.length }; }
+      if (vs.length) { viol = { at: s.s, end: s.e, kind: vs[0].kind, msg: vs[0].msg, title: vs[0].title || '', all: vs }; return { safe: s.s, viol: viol, sentences: ss.length }; }
       safe = s.e;
     }
     return { safe: text.length, viol: null, sentences: ss.length };
@@ -154,17 +161,18 @@
       if (hits.length !== 1) return;
       var re = /(\d{1,2})\s+(gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)\s+(\d{4})/gi, m;
       while ((m = re.exec(str))) {
-        var iso = m[3] + '-' + ('0' + MESI[m[2].toLowerCase()]).slice(-2) + '-' + ('0' + m[1]).slice(-2), known = [dateOf(hits[0].release)];
+        var iso = m[3] + '-' + ('0' + MESI[m[2].toLowerCase()]).slice(-2) + '-' + ('0' + m[1]).slice(-2), known = [dateOf(hits[0].release)].concat((hits[0].dates || []).map(dateOf));
         K.live.forEach(function (l) { if (l.names.some(function (x) { return hasWord(norm(hits[0].title), x); })) { known.push(l.date, l.dateIT); l.official.forEach(function (o) { known.push(o.date); }); } });
         known = known.filter(Boolean);
-        if (known.length && known.indexOf(iso) < 0) notes.push('La data «' + m[0] + '» per «' + hits[0].title + '» non coincide con quelle in archivio (' + known.filter(function (x, i, a) { return a.indexOf(x) === i; }).join(', ') + '): le uscite variano per paese, verifica la fonte.');
+        if (known.length && known.indexOf(iso) < 0) notes.push('Per «' + hits[0].title + '» in archivio risultano queste date: ' + known.filter(function (x, i, a) { return a.indexOf(x) === i; }).map(function (x) { return x.slice(8, 10) + '/' + x.slice(5, 7) + '/' + x.slice(0, 4); }).join(', ') + '.');
       }
     });
     return notes;
   }
   /* titolo in discussione: quello della domanda, o (domanda di seguito) quello della domanda precedente */
   function setFocus(K, q, prevQ) {
-    var h = titleHits(K, norm(q)); if (!h.length && prevQ) h = titleHits(K, norm(prevQ));
+    var h = titleHits(K, norm(q)), pq = Array.isArray(prevQ) ? prevQ : (prevQ ? [prevQ] : []);
+    for (var i = 0; !h.length && i < pq.length; i++) h = titleHits(K, norm(pq[i]));      // il soggetto resta quello dell'ultima domanda che nominava un titolo
     K.focus = h.length === 1 ? [h[0]] : []; K.qcomics = Q_COMICS.test(norm(q)); return K.focus;
   }
   var api = { setFocus: setFocus, titleHits: titleHits, norm: norm, resolveRefs: resolveRefs, sentences: sentences, build: build, check: check, scan: scan, softNotes: softNotes };

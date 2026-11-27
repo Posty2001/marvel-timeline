@@ -7,7 +7,8 @@ const titles = [
   { id: 't132', num: 132, title: 'Spider-Man: Brand New Day', release: '2026-07-31' },
   { id: 't136', num: 136, title: 'Avengers: Doomsday', release: '2026-12-18' },
   { id: 't139', num: 139, title: 'Avengers: Secret Wars', release: '2027-12-17' }];
-const K = V.build({ titles, alias_titoli: fatti.alias_titoli, cast: fatti.cast, live: [{ title: 'Avengers: Doomsday', date: '2026-12-16', confidence: 'provisional' }] }, '2026-11-26');
+const withSt = a => a.map(t => Object.assign({ stato: t.release && t.release <= '2026-11-26' ? 'released' : (t.release ? 'unreleased' : '') }, t));   // come se TMDB confermasse lo stato
+const K = V.build({ titles: withSt(titles), alias_titoli: fatti.alias_titoli, cast: fatti.cast, live: [{ title: 'Avengers: Doomsday', date: '2026-12-16', confidence: 'provisional' }] }, '2026-11-26');
 const kinds = t => V.scan(t, K, true).viol && V.scan(t, K, true).viol.kind;
 
 // resolveRefs: mai inserimento di testo
@@ -49,7 +50,7 @@ ok(V.softNotes('Spider-Man: Brand New Day esce il 15 agosto 2026.', K).length ==
 ok(V.softNotes('Spider-Man: Brand New Day è uscito il 31 luglio 2026.', K).length === 0, 'softNotes: data coincidente');
 // mm2.0-b: contraddizioni di formato/esistenza, anche senza ripetere il titolo (titolo in discussione) - regole GENERALI
 const titles2 = titles.concat([{ id: 't100', num: 100, title: 'Captain America: Civil War', release: '2016-04-27', kind: 'film' }, { id: 't117', num: 117, title: 'Fantastic Four: First Steps', release: '2025-07-25', kind: 'film' }]);
-const K2 = V.build({ titles: titles2, alias_titoli: fatti.alias_titoli, cast: fatti.cast, live: [] }, '2026-11-26');
+const K2 = V.build({ titles: withSt(titles2), alias_titoli: fatti.alias_titoli, cast: fatti.cast, live: [] }, '2026-11-26');
 const kk = (q, t, prev) => { V.setFocus(K2, q, prev); const r = V.scan(t, K2, true); return r.viol ? r.viol.kind : null; };
 ok(kk('Spider-Man: Brand New Day è già uscito? Di cosa parla?', 'Si tratta di un ciclo fumettistico del 2008.') === 'formato', 'focus: ciclo fumettistico senza titolo nella frase');
 ok(kk('Spider-Man: Brand New Day è già uscito?', 'Non risulta essere un film uscito al cinema.') === 'formato', 'focus: negazione del formato');
@@ -64,6 +65,17 @@ ok(kk('Cosa fa Knull?', 'Non è un film, è un personaggio.') === null, 'nessun 
 ok(kk('E quando esce?', 'Non è ancora uscito.', 'Avengers: Doomsday uscita?') === null, 'follow-up su titolo futuro: corretto');
 ok(kk('E quando è uscito?', 'Non è ancora uscito.', 'Spider-Man: Brand New Day è già uscito?') === 'tempo', 'follow-up (domanda precedente): contraddizione intercettata');
 ok(kk('Parlami di Spider-Man e Doomsday', 'Non è un film uscito al cinema.') === null, 'focus ambiguo (due titoli): nessun giudizio arbitrario');
+// C.1: stato di uscita da fonte (non dedotto dalla data), negazioni, riferimenti ad altro, date regionali
+const K3 = V.build({ titles: [{ id: 'a', num: 1, title: 'Titolo Senza Stato', release: '2025-07-25', kind: 'film' }, { id: 'b', num: 2, title: 'Film Rimandato', release: '2026-06-01', kind: 'film', stato: 'unreleased' }, { id: 'c', num: 3, title: 'Film Uscito Davvero', release: '2026-07-31', kind: 'film', stato: 'released', dates: ['2026-07-29', '2026-07-31'] }], alias_titoli: {}, cast: [], live: [] }, '2026-11-26');
+const k3 = (q, a, prev) => { V.setFocus(K3, q, prev || ''); const r = V.scan(a, K3, true); return r.viol ? r.viol.kind : null; };
+ok(k3('Titolo Senza Stato quando è uscito?', 'Titolo Senza Stato non è ancora uscito.') === null, 'data trascorsa senza stato di fonte: nessuna deduzione automatica');
+ok(k3('Film Rimandato è uscito?', 'Film Rimandato è uscito nelle sale a giugno.') === 'tempo', 'data trascorsa ma stato TMDB «non uscito»: affermazione di uscita intercettata');
+ok(k3('Film Rimandato è uscito?', 'Film Rimandato non è ancora uscito: la data prevista è slittata.') === null, 'slittamento descritto correttamente');
+ok(k3('Film Uscito Davvero è uscito?', 'Film Uscito Davvero non è ancora uscito.') === 'tempo', 'stato TMDB uscito ma descritto come non uscito');
+ok(k3('Film Uscito Davvero?', 'Il suo seguito non è ancora uscito.') === null, 'frase sul seguito: nessun giudizio sul titolo');
+ok(k3('Film Uscito Davvero?', 'Film Uscito Davvero non è uscito prima di luglio.') === null, 'negazione: «non è uscito» non e\' un\'affermazione di uscita futura');
+const sn = V.softNotes('Film Uscito Davvero è uscito il 29 luglio 2026 in Italia.', K3); ok(sn.length === 0, 'data regionale documentata (IT): nessun falso avviso');
+const sn2 = V.softNotes('Film Uscito Davvero è uscito il 3 agosto 2026.', K3); ok(sn2.length === 1 && /29\/07\/2026/.test(sn2[0]) && !/verifica la fonte/.test(sn2[0]), 'data non documentata: nota naturale con le date note');
 // fatti.json
 ok(Array.isArray(fatti.cast) && fatti.cast.length >= 40 && fatti.cast.every(c => c.pers && c.attori && c.fonte), 'fatti.json: voci con fonte');
 console.log(`verify_test: ${pass} ok, ${failN} falliti`); process.exit(failN ? 1 : 0);

@@ -6,7 +6,7 @@
   function sleep(ms, sig) { return new Promise(function (res) { var t = setTimeout(res, ms); if (sig) sig.addEventListener('abort', function () { clearTimeout(t); res(); }); }); }
   function pick(qs, o) {
     o = o || {}; var cats = o.cats && o.cats.length ? o.cats : null, lim = o.max || 0, out = [];
-    qs.forEach(function (x) { if (!cats || cats.indexOf(x.cat) >= 0) out.push(x); });
+    qs.forEach(function (x) { if ((!cats || cats.indexOf(x.cat) >= 0) && (!o.set || (x.set || 'S') === o.set)) out.push(x); });
     // una catena di seguiti resta intera: se manca l'antecedente lo si aggiunge
     var ids = {}; out.forEach(function (x) { ids[x.id] = 1; });
     qs.forEach(function (x) { if (ids[x.id]) { var p = x.dopo; while (p && !ids[p]) { ids[p] = 1; p = (qs.filter(function (y) { return y.id === p; })[0] || {}).dopo; } } });
@@ -45,17 +45,20 @@
 
   /* ---- valutazione automatica (stessi criteri di tools/mm_eval_report.py; INDICATIVA: il giudizio finale e' dell'utente) ---- */
   var HEDGE; try { HEDGE = new RegExp("non (è|sono|risulta|posso|so|ho|abbiamo|mi risulta|ci sono|esiste)\\b.{0,60}?(confermat|ufficial|sicur|certo|noto|verificat|disponibil|annunciat|informazion|dati|prove|esist)|non lo so|non (ne )?ho (informazioni|dati|certezz)|non posso (confermare|verificare)|ipotes|speculaz|teori|\\bvoci\\b|rumor|potrebbe|potrebbero|incert|non (risulta|esiste)|non ancora|non sono riuscit", 'i'); } catch (e) { HEDGE = /non (è|risulta|posso|so|ho)|ipotes|teori|rumor|potrebbe|incert|non ancora/i; }
+  var DENY; try { DENY = new RegExp("\\bnon (?:ha|hanno|è|e'|era|sono|compare|compaiono|appare|recita|risulta|figura|c'è|esiste|esistono|partecipa|prende parte|interpreta|fa parte)\\b|\\bnessun\\w*|\\bin realtà\\b|\\bnon (?:è|e') (?:mai )?(?:stato|apparso)|\\bmai (?:stato|apparso|esistit|uscit|recitat)|\\bfals[oa]\\b|\\berrat[oa]\\b|\\bpremessa\\b|\\bconfond|\\bsmentit", 'i'); } catch (e) { DENY = /\bnon (ha|è|risulta|compare)|\bnessun|\bin realtà/i; }
+  var TECH = /\[link rimosso\]|\[\[|controlli automatici|non è una conferma ufficiale|secondo (?:i miei |i )?(?:fatti|dati forniti)|fatti forniti|\bverifica non superata|⚠|Non sono riuscit[ao] a verificare|\(TMDB|archivio TMDB|fonti consultate/i;
   function rx(l) { var o = []; (l || []).forEach(function (s) { try { o.push(new RegExp(String(s).replace(/^\(\?i\)/, ''), 'i')); } catch (e) { } }); return o; }
   function grade(d, r) {
     if (!r || !r.ok) return { e: 'assente', sus: false };
     var t = r.text || '', hedge = HEDGE.test(t), sus = rx(d.no).some(function (x) { return x.test(t); });
     var anyok = !d.ok || rx(d.ok).some(function (x) { return x.test(t); }), allok = rx(d.tutti).every(function (x) { return x.test(t); });
     var vfok = !r.vf || r.vf.ok !== false;
+    if (d.nopers && /^dati locali/.test(r.tag || '')) return { e: 'sbagliata', sus: false };
     if (d.tipo === 'incerto') return hedge ? { e: 'corretta', sus: false } : { e: 'sbagliata', sus: true };
     if (sus) return { e: 'sbagliata', sus: true };
     if (anyok && allok) return { e: 'corretta', sus: false };
     if (hedge && d.hedge) return { e: 'incerta', sus: false };
-    if (d.tipo === 'falsa') return { e: 'sbagliata', sus: true };
+    if (d.tipo === 'falsa') return DENY.test(t) && (allok || !d.tutti) ? { e: 'corretta', sus: false } : { e: 'sbagliata', sus: true };
     if (!vfok && hedge) return { e: 'incerta', sus: false };
     return { e: 'sbagliata', sus: false };
   }
@@ -72,6 +75,7 @@
     return { eseguite: n, totale: dom.length, corrette: c('corretta'), incerte: c('incerta'), sbagliate: c('sbagliata'), sospette_allucinazioni: rows.filter(function (x) { return x.sus; }).length,
       errori_su_fatti: fact.filter(function (x) { return x.e === 'sbagliata'; }).length, fatti: fact.length, freschezza_ok: good(fr), freschezza_n: fr.length, incertezza_ok: good(inc), incertezza_n: inc.length,
       con_fonte: fact.filter(function (x) { return x.r.srcs && x.r.srcs.length; }).length, verifica_omessa: rows.filter(function (x) { return x.r.vf && x.r.vf.ok === false; }).length, rigenerate: rows.filter(function (x) { return x.r.vf && x.r.vf.retried; }).length,
+      tecnici: rows.filter(function (x) { return TECH.test(x.r.text || ''); }).length, nuove: rows.filter(function (x) { return x.d.set === 'V'; }).length, nuove_ok: rows.filter(function (x) { return x.d.set === 'V' && (x.e === 'corretta' || x.e === 'incerta'); }).length,
       lat_mediana_ms: med(ms), lat_p90_ms: p90(ms), ttfb_mediana_ms: med(tt), non_online: rows.filter(function (x) { return !x.r.online; }).length, categorie: cats,
       da_rivedere: rows.filter(function (x) { return x.e === 'sbagliata'; }).map(function (x) { return x.d.id; }) };
   }
@@ -81,6 +85,7 @@
       'Corrette ' + s.corrette + ' (' + p(s.corrette, s.eseguite) + ') · incertezza dichiarata ' + s.incerte + ' · sbagliate ' + s.sbagliate + ' (' + p(s.sbagliate, s.eseguite) + ')',
       'Sospette allucinazioni (da confermare): ' + s.sospette_allucinazioni,
       'Freschezza: ' + s.freschezza_ok + '/' + s.freschezza_n + ' · Incertezza/false premesse: ' + s.incertezza_ok + '/' + s.incertezza_n,
+      'Naturalezza: ' + s.tecnici + ' risposte con marcatori tecnici' + (s.nuove ? ' · domande nuove ' + s.nuove_ok + '/' + s.nuove : ''),
       'Con fonte mostrata: ' + s.con_fonte + '/' + s.fatti + ' · verificatore: ' + s.verifica_omessa + ' omessi, ' + s.rigenerate + ' rigenerati',
       'Latenza mediana ' + s.lat_mediana_ms + ' ms · p90 ' + s.lat_p90_ms + ' ms · primo testo ' + s.ttfb_mediana_ms + ' ms'].join('\n');
   }
