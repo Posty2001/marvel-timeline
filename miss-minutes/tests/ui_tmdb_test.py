@@ -71,6 +71,8 @@ def wp_route(route):
     route.fulfill(status=200, content_type='application/json', headers={'Access-Control-Allow-Origin': '*'}, body=json.dumps(WP))
 def patched_archive():
     d = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'knowledge', 'tmdb_titoli.json'), encoding='utf-8')); d['versione'] = 2
+    for x in d['voci']['038']['date']:   # fixture: data discordante dalla Timeline (non dipende dai dati reali)
+        if x['paese'] in ('US', 'IT'): x['data'] = '2012-04-20'
     d['voci']['112']['stagione'] = {'n': 2, 'nome': 'Stagione 2', 'sinossi_it': 'Sinossi della seconda stagione di prova.', 'data': '2023-10-05', 'episodi': 6, 'cast': ['Attore Prova']}
     d['voci']['112']['serie'] = {'prima': '2021-06-09', 'ultima': '2023-11-09', 'n_stagioni': 2}
     d['voci']['119']['stagione'] = {'n': 3, 'nome': 'Stagione 3', 'sinossi_it': '', 'data': '2024-12-22', 'episodi': 4, 'cast': []}
