@@ -27,5 +27,7 @@ for t in ('tools/atlante_a3.py','tools/atlante_identita.py','tools/atlante_relaz
 b = run('python3','tools/db_proto/build_search.py','/tmp/dbp_t','5000'); chk(b.returncode==0,'build indice prototipo')
 chk(run('node','tools/db_proto/test_search.js','/tmp/dbp_t').returncode==0, 'ricerca alias/infix/accenti')
 chk(run('python3','tests/db_w1_test.py').returncode==0, 'pipeline W1 su fixture')
+chk(run('python3','tests/db_wiki_parse_test.py').returncode==0, 'parser Fandom (infobox/sezioni)')
+chk(run('python3','tests/db_harvest_test.py').returncode==0, 'raccoglitori robusti (query/parser, errori, ripresa, job indipendenti)')
 chk(run('python3','tests/db_ui_test.py').returncode==0, 'UI Archivio esteso (fixture)')
 print(f'db_test: {ok} ok, {fail} fail'); sys.exit(1 if fail else 0)
