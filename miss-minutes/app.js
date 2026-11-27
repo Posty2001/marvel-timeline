@@ -565,8 +565,21 @@
   }
   var SPOIL_Q = /\bspoiler\b|\bspoilera|\bcome (?:finisce|va a finire|si conclude|e finit[oa])\b|\bnel finale\b|\balla fine (?:di|del|della|dei)\b|\bchi muore\b|\bmuore\b|\bsi scopre (?:che|chi)\b|\bdimmi tutto\b|\brivela/i;
   function explicitSpoiler(q) { return SPOIL_Q.test(String(q).normalize('NFD').replace(/[̀-ͯ]/g, '')); }
+  /* Quota esaurita: si ricorda fino all'orario di ripristino e NON si fanno nuove richieste di rete (nessun tentativo inutile). */
+  var QBK = 'marvel-ultimate-timeline-miss-minutes-quota';
+  function nowS() { return Math.floor(Date.now() / 1000); }
+  function qbGet() { try { var o = JSON.parse(localStorage.getItem(QBK) || 'null'); if (o && o.q && o.until > nowS()) return o; if (o) localStorage.removeItem(QBK); } catch (e) { } return null; }
+  function qbSet(q) { if (!q || !(q.resetAt || q.retryAfter)) return; var until = q.resetAt || (nowS() + (q.retryAfter || 60)); try { localStorage.setItem(QBK, JSON.stringify({ q: q, until: until })); } catch (e) { } }
+  function qbClear() { try { localStorage.removeItem(QBK); } catch (e) { } }
+  function quotaText(q) { return window.MMGateway && window.MMGateway.describeQuota ? window.MMGateway.describeQuota(q, nowS()) : ''; }
   async function askOnline(q, s) {
     var p = store.state.prefs;
+    var qb = qbGet();
+    if (qb) {   // limite gia' noto e non ancora ripristinato: nessuna richiesta di rete, nessuna ricerca esterna
+      var bq = qb.q, bc = bq.source === 'gemini' ? 'provider-quota' : 'quota';
+      diag.last = { at: Date.now(), ok: false, stream: '', ttfb: 0, partialChars: 0, attempts: 0, ms: 0, code: bc, stage: 'bloccata localmente', http: 429, detail: 'nessuna richiesta inviata: limite noto fino al ripristino', length: p.length || 'normal', quota: bq };
+      return { ok: false, code: bc, stage: 'bloccata localmente', http: 429, detail: '', message: quotaText(bq), partial: '', quota: bq, blocked: true };
+    }
     var wantSp = explicitSpoiler(q);   // spoiler richiesti esplicitamente per QUESTA domanda: la preferenza generale resta invariata
     var ctx = p.local ? eng.contextFor(q, Object.assign(convState(s), { spoilerOff: !p.spoiler || wantSp })) : []; lastCtx = ctx;
     var prevQs = []; if (s && s.messages) for (var pi = s.messages.length - 2; pi >= 0 && prevQs.length < 4; pi--) if (s.messages[pi].role === 'user') prevQs.push(s.messages[pi].text);
@@ -613,7 +626,7 @@
     var partial = live ? (r.code === 'aborted' || (waitCtl && waitCtl.signal.aborted) ? shownLive() : live.text.replace(/\s*\[\[[^\]]*\]?$/, '')) : (r.partial || ''); endLive();
     waitCtl = null;
     var d = { at: Date.now(), ok: !!r.ok, stream: r.ok ? (r.streamed === false ? 'simulato' : 'reale') : (partial ? 'parziale' : ''), ttfb: r.ttfb || 0, partialChars: partial.length, attempts: attempts, ms: Date.now() - tot0, code: r.ok ? 'ok' : r.code, stage: r.ok ? '' : r.stage, http: r.ok ? 200 : r.http, detail: r.ok ? '' : (r.detail || ''), length: p.length || 'normal', rigenerata: retried, verifica: failed ? 'non superata: ' + (finalViol && finalViol.kind) : 'superata' };
-    if (!r.ok) { diag.last = d; return { ok: false, code: r.code, stage: r.stage, http: r.http, detail: r.detail, message: r.message, partial: partial }; }
+    if (!r.ok) { d.quota = r.quota || null; if (r.quota) { qbSet(r.quota); r.message = quotaText(r.quota); } diag.last = d; return { ok: false, code: r.code, stage: r.stage, http: r.http, detail: r.detail, message: r.message, partial: partial, quota: r.quota || null }; }
     var rr = resolveRefs(shownAll || r.answer, ctx), text = rr.text, notes = [];
     try { notes = KN ? V.softNotes(text, KN) : []; } catch (e) { notes = []; }
     if (failed) text = (text ? text + '\n\n' : '') + correctionFor(finalViol, G.all);
@@ -660,9 +673,9 @@
     clearTransient();
     var k = ERR[errKind(e)], w = el('div', 'mm-state err'); w.setAttribute('role', 'alert');
     var m = el('div', 'mm-mascot-big'); m.appendChild(bigMascot(k.mood)); w.appendChild(m);
-    w.appendChild(el('h3', '', k.title)); w.appendChild(el('p', '', k.text));
+    w.appendChild(el('h3', '', k.title)); w.appendChild(el('p', '', errKind(e) === 'limit' && e.quota && (e.quota.scope || e.quota.resetAt || e.quota.retryAfter) ? quotaText(e.quota) + ' La tua domanda è al sicuro: l’archivio locale resta a disposizione.' : k.text));
     var ok = onlineOK(), retry = btn('mm-bigbtn' + (errKind(e) === 'limit' || errKind(e) === 'config' ? ' sub' : ' primary'), null); retry.appendChild(ic('refresh')); retry.appendChild(el('span', '', 'Riprova'));
-    retry.onclick = function () { var s = store.current(); if (s) answer(q, s, { forceOnline: ok }); };
+    retry.onclick = async function () { var s = store.current(); if (!s) return; if (errKind(e) === 'limit' && qbGet()) { retry.disabled = true; try { var qr = await gw.quota(); if (qr && qr.ok && qr.disponibili > 0) qbClear(); } catch (x) { } retry.disabled = false; } answer(q, s, { forceOnline: ok }); };
     var loc = btn('mm-bigbtn sub', null); loc.appendChild(ic('book')); var t = el('span', '', 'Consulta l’archivio locale'); var sm = el('small', '', 'modalità offline'); t.appendChild(sm); loc.appendChild(t);
     loc.onclick = function () { var s = store.current(); if (s) answer(q, s, { forceLocal: true }); };
     w.appendChild(retry); w.appendChild(loc);
@@ -862,34 +875,50 @@
   function evalDialog() {
     dlg('Valutazione risposte (fase C)', function (b) {
       b.appendChild(el('p', 'mm-small', 'Esegue il set di domande documentato sull’AI online reale (una conversazione per catena, ritmo compatibile con le quote del gateway). Solo domande pubbliche sul Marvel Universe: nessun dato personale. I risultati restano su questo dispositivo finché non li esporti o li cancelli.'));
-      var st = el('p', 'mm-small', ''), sm = el('pre', 'mm-small'), run = btn('mm-bigbtn primary', null), runV = btn('mm-bigbtn sub', null), sv = btn('mm-bigbtn sub', null), cp = btn('mm-link', null), clr = btn('mm-link', null), stop = btn('mm-bigbtn sub', null);
-      sm.style.whiteSpace = 'pre-wrap'; run.textContent = 'Avvia la valutazione completa'; runV.textContent = 'Solo le domande nuove (validazione)'; sv.textContent = 'Salva il file JSON'; cp.textContent = 'Copia come testo'; clr.textContent = 'Cancella i risultati'; stop.textContent = 'Interrompi'; stop.hidden = true;
+      var st = el('p', 'mm-small', ''), sm = el('pre', 'mm-small'), resume = btn('mm-bigbtn primary', null), run = btn('mm-bigbtn sub', null), runV = btn('mm-bigbtn sub', null), sv = btn('mm-bigbtn sub', null), cp = btn('mm-link', null), clr = btn('mm-link', null), stop = btn('mm-bigbtn sub', null);
+      sm.style.whiteSpace = 'pre-wrap'; run.textContent = 'Avvia la valutazione completa (da capo)'; resume.textContent = 'Riprendi (salta le già completate)'; resume.hidden = true; runV.textContent = 'Solo le domande nuove (validazione)'; sv.textContent = 'Salva il file JSON'; cp.textContent = 'Copia come testo'; clr.textContent = 'Cancella i risultati'; stop.textContent = 'Interrompi'; stop.hidden = true;
       function setSt(t) { st.textContent = t; }
       var SET = null;
       async function getSet() { if (SET) return SET; await loadScript('eval.js'); var r = await fetch('eval/domande.json', { cache: 'no-cache' }); SET = (await r.json()).domande; return SET; }
       async function showSummary(o) { try { var dom = await getSet(); var s = window.MMEval.summarize(dom, o.risultati); o.riepilogo = s; sm.textContent = window.MMEval.riepilogoTesto(s); } catch (e) { sm.textContent = ''; } }
-      var prev = evLoad(); setSt(prev ? 'Ultimo risultato: ' + prev.risultati.length + ' risposte (' + prev.fine + ').' : 'Nessun risultato salvato.');
+      function evStatus() { var pv = evLoad(); if (!pv) { setSt('Nessun risultato salvato.'); resume.hidden = true; return pv; } var okn = pv.risultati.filter(function (r) { return r.ok; }).length; var sus = pv.sospesa && typeof pv.sospesa === 'object' ? pv.sospesa : null; resume.hidden = !(pv.sospesa || okn < 123 && okn > 0);
+        setSt('Ultimo risultato: ' + pv.risultati.length + ' risposte, ' + okn + ' completate (' + pv.fine + ').' + (pv.sospesa ? ' SERIE SOSPESA' + (sus ? ' per limite ' + (sus.source === 'gemini' ? 'di Google' : 'del gateway') + (sus.resetAt ? ': si ripristina ' + window.MMGateway.fmtWhen(sus.resetAt, nowS()) + ' (ora italiana)' : '') : '') + '. Puoi riprendere senza ripetere quelle già fatte.' : '')); return pv; }
+      var prev = evStatus();
       if (prev) showSummary(prev);
       if (!onlineOK()) setSt('AI online non attiva: attivala dalle impostazioni e dai il consenso prima di avviare. ' + st.textContent);
-      async function go(only) {
+      async function go(only, riprendi) {
         if (!onlineOK()) { setSt('AI online non attiva.'); return; }
-        run.disabled = true; runV.disabled = true; stop.hidden = false; evAbort = new AbortController();
+        var pv0 = riprendi ? evLoad() : null;
+        if (riprendi && pv0 && pv0.set === 'V') only = true;
+        var qb0 = qbGet(); if (qb0) { setSt('Limite già raggiunto: ' + quotaText(qb0.q) + ' Non avvio richieste inutili.'); return; }
+        run.disabled = true; runV.disabled = true; resume.disabled = true; stop.hidden = false; evAbort = new AbortController();
         try {
           var dom = await getSet(); var qs = window.MMEval.pick(dom, only ? { set: 'V' } : {});
           var hooks = { newChat: function () { store.state.active = null; }, count: function () { var s = store.current(); return s ? s.messages.length : 0; }, ask: function (q) { return submit(q, { forceOnline: true }); }, diag: function () { return diag.last; },
+            seed: function (recs) { var s0 = store.fresh('Valutazione'); recs.forEach(function (r) { store.push(s0, { role: 'user', text: r.q }); store.push(s0, { role: 'assistant', text: r.text, tag: r.tag || 'online · AI' }); }); },
             last: function () { var s = store.current(); if (!s || !s.messages.length) return null; var m = s.messages[s.messages.length - 1]; return m.role === 'assistant' ? m : null; } };
-          var out = await window.MMEval.run(hooks, qs, {}, function (p) { setSt((p.nota ? p.nota + ' · ' : '') + p.i + '/' + p.n + ' · ' + p.id); }, evAbort.signal);
-          await showSummary(out); evSave(out); setSt('Completata: ' + out.risultati.length + '/' + qs.length + ' risposte' + (out.quota ? ' (limite gratuito raggiunto: serie interrotta)' : '') + '. Premi «Salva il file JSON».');
+          var out = await window.MMEval.run(hooks, qs, { prev: pv0 ? pv0.risultati : null, avvio: pv0 ? pv0.avvio : null, set: only ? 'V' : 'S+V', checkpoint: function (sn) { evSave(sn); } }, function (p) { setSt((p.nota ? p.nota + ' · ' : '') + p.i + '/' + p.n + ' · ' + p.id); }, evAbort.signal);
+          await showSummary(out); evSave(out);
+          var okn = out.risultati.filter(function (r) { return r.ok; }).length;
+          if (out.sospesa) { var sq = typeof out.sospesa === 'object' ? out.sospesa : null; if (sq) qbSet(sq); setSt('SERIE SOSPESA: ' + okn + '/' + qs.length + ' risposte completate e salvate. ' + (sq ? quotaText(sq) : 'Limite raggiunto.') + ' Alla ripresa non verranno ripetute le domande già completate.'); }
+          else setSt('Completata: ' + okn + '/' + qs.length + ' risposte. Premi «Salva il file JSON».');
         } catch (e) { setSt('Errore: ' + (e && e.message || e)); }
-        run.disabled = false; runV.disabled = false; stop.hidden = true; evAbort = null;
+        run.disabled = false; runV.disabled = false; resume.disabled = false; stop.hidden = true; evAbort = null; var pv2 = evLoad(); if (pv2 && pv2.sospesa) { resume.hidden = false; } else if (pv2) { var ok2 = pv2.risultati.filter(function (r) { return r.ok; }).length; resume.hidden = !(ok2 > 0 && ok2 < qs0n()); }
       }
-      run.onclick = function () { go(false); }; runV.onclick = function () { go(true); };
+      function qs0n() { return SET ? SET.length : 123; }
+      run.onclick = function () { go(false, false); }; runV.onclick = function () { go(true, false); }; resume.onclick = function () { go(false, true); };
       stop.onclick = function () { if (evAbort) evAbort.abort(); abortWait(); };
       sv.onclick = async function () { var o = evLoad(); if (!o) { setSt('Nessun risultato da salvare.'); return; } await showSummary(o); await evExport(o, setSt, b); };
       cp.onclick = async function () { var o = evLoad(); if (!o) { setSt('Nessun risultato.'); return; } var t = JSON.stringify(o); try { await navigator.clipboard.writeText(t); setSt('Copiati ' + t.length + ' caratteri.'); } catch (e) { var ta = el('textarea'); ta.value = t; ta.rows = 6; ta.readOnly = true; b.appendChild(ta); ta.select(); setSt('Copia manuale: seleziona il testo qui sotto.'); } };
       clr.onclick = function () { try { localStorage.removeItem(EKEY); } catch (e) { } setSt('Risultati cancellati.'); sm.textContent = ''; };
-      b.appendChild(st); b.appendChild(sm); b.appendChild(run); b.appendChild(runV); b.appendChild(stop); b.appendChild(sv); b.appendChild(cp); b.appendChild(clr);
+      b.appendChild(st); b.appendChild(sm); b.appendChild(resume); b.appendChild(run); b.appendChild(runV); b.appendChild(stop); b.appendChild(sv); b.appendChild(cp); b.appendChild(clr);
     });
+  }
+  var SCN = { 'rete-minuto': 'Rete · al minuto', 'rete-giorno': 'Rete · al giorno (mezzanotte UTC)', 'dispositivo-giorno': 'Questo dispositivo · al giorno (mezzanotte UTC)', 'globale-minuto': 'Tutti gli utenti · al minuto', 'globale-giorno': 'Tutti gli utenti · al giorno (mezzanotte Pacific)', 'globale-mese': 'Tutti gli utenti · al mese' };
+  function quotaSummary(qr) {
+    var L = ['Richieste disponibili ora: ' + qr.disponibili + (qr.limitante ? ' (limite più stringente: ' + (SCN[qr.limitante] || qr.limitante) + ')' : '')];
+    qr.limiti.forEach(function (l) { L.push('• ' + (SCN[l.scope] || l.scope) + ' [' + l.kind + ']: ' + l.remaining + ' di ' + l.limit + ' · si ripristina ' + window.MMGateway.fmtWhen(l.resetAt, qr.now || nowS()) + ' (ora italiana)'); });
+    return L.join('\n');
   }
   function diagText() {
     var d = diag.last, L = ['Miss Minutes ' + VERSION, 'Gateway: ' + (gw.available() ? 'configurato' : 'non configurato'), 'AI online: ' + (onlineOK() ? 'attiva' : 'spenta')];
@@ -898,6 +927,7 @@
       L.push('Ultima richiesta AI: ' + (d.ok ? 'riuscita' : 'FALLITA'), 'Tentativi: ' + d.attempts + ' · durata: ' + d.ms + ' ms', 'Lunghezza richiesta: ' + d.length);
       if (d.stream) L.push('Streaming: ' + d.stream + (d.ttfb ? ' · primo testo dopo ' + d.ttfb + ' ms' : '') + (d.partialChars ? ' · testo parziale: ' + d.partialChars + ' caratteri' : ''));
       if (d.lk) L.push('Fonti: ' + d.fatti + ' fatti inviati · ricerca esterna: ' + d.lk.net + ' in rete, ' + d.lk.cache + ' da cache, ' + d.lk.ko + ' non riuscite · fonti mostrate: ' + d.fonti);
+      if (!d.ok && d.quota) { var dq = d.quota; L.push('Limite raggiunto: ' + (dq.source === 'gemini' ? 'GOOGLE (modello gratuito)' : 'GATEWAY di Miss Minutes') + ' · ambito: ' + (dq.scope || 'non indicato') + ' · tipo: ' + dq.kind + (dq.limit ? ' · limite: ' + dq.limit + ' (usate ' + dq.used + ')' : '') + (dq.resetAt ? ' · ripristino: ' + window.MMGateway.fmtWhen(dq.resetAt, nowS()) + ' (ora italiana)' : '') + (d.stage === 'bloccata localmente' ? ' · richiesta NON inviata (limite già noto)' : '')); }
       if (!d.ok) L.push('Codice: ' + d.code + ' · stadio: ' + (d.stage || '-') + ' · HTTP: ' + (d.http || '-') + (d.detail ? ' · ' + d.detail : ''));
       else L.push('Marcatori scheda nella risposta grezza: ' + d.markers, 'Parole ripetute adiacenti — risposta grezza: ' + d.dupRaw + ' · testo mostrato: ' + d.dupShown);
     }
@@ -933,6 +963,11 @@
           dm.textContent = r.ok ? 'Tutto funziona. Gemini ha risposto: «' + r.answer.slice(0, 60) + '»' : 'Fallito allo stadio «' + r.stage + '»: ' + r.message + (r.detail ? ' [' + r.detail + ']' : ''); dg.disabled = false;
         };
         b.appendChild(dg); b.appendChild(dm);
+      }
+      if (gw.available()) {
+        var qbn = btn('', null); qbn.textContent = 'Richieste disponibili (non ne consuma)'; var qtx = el('p', 'mm-small', 'Mostra il residuo dei limiti del gateway. I limiti di Google non sono leggibili da qui (si vedono in AI Studio).'); qtx.style.whiteSpace = 'pre-wrap';
+        qbn.onclick = async function () { qbn.disabled = true; qtx.textContent = 'Controllo…'; var qr = await gw.quota(); qbn.disabled = false; if (!qr.ok) { qtx.textContent = 'Non riesco a leggere le quote: ' + (qr.message || qr.code); return; } qtx.textContent = quotaSummary(qr); if (qr.disponibili > 0 && qbGet()) { qbClear(); qtx.textContent += '\nIl blocco locale è stato rimosso: puoi riprovare.'; } };
+        b.appendChild(qbn); b.appendChild(qtx);
       }
       var kv = el('div', 'mm-kv', diagText()); kv.id = 'mmDiag'; b.appendChild(kv);
       var cp = btn('', null); cp.textContent = 'Copia diagnostica'; cp.onclick = function () { copyText(diagText()); }; b.appendChild(cp);

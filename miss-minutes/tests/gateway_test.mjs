@@ -1,7 +1,7 @@
 // Test della logica del gateway con Durable Object simulato su node:sqlite (non è workerd: vedi DEPLOY.md).
 import { DatabaseSync } from 'node:sqlite';
 import { createHash } from 'node:crypto';
-import worker, { Limiter, parseChat } from '../gateway/worker.ts';
+import worker, { Limiter, parseChat, limitMeta, providerQuota } from '../gateway/worker.ts';
 
 let pass = 0, failN = 0;
 const ok = (c, m) => { if (c) pass++; else { failN++; console.log('FAIL', m); } };
@@ -69,6 +69,20 @@ ok(/EVENTI FUTURI, TEORIE E INDISCREZIONI/.test(lastBody.systemInstruction.parts
 // quota globale: cap 5/giorno (3 richieste già consumate sopra) -> le successive sono rifiutate prima del provider
 let st = []; for (let i = 0; i < 6; i++) st.push((await chat(token, { question: 'q' + i })).status);
 ok(st.slice(0, 2).every(s => s === 200) && st.slice(2).every(s => s === 429), 'cap globale giornaliero (cap 5, 3 già usate) ' + st);
+{ const qd = await chat(token, { question: 'oltre' }), qj = await qd.json(), nowS = Math.floor(Date.now() / 1000);
+  ok(qd.status === 429 && qj.error === 'quota' && qj.scope === 'globale-giorno' && qj.kind === 'giornaliero' && qj.source === 'gateway', 'quota: ambito, tipo e origine nel 429 ' + JSON.stringify(qj));
+  ok(qj.limit === 5 && qj.used === 5 && qj.resetAt > nowS && qj.resetAt <= nowS + 90000 && qj.retryAfter === qj.resetAt - nowS || Math.abs(qj.retryAfter - (qj.resetAt - nowS)) <= 2, 'quota: limite, usate, orario di ripristino futuro');
+  ok(Number(qd.headers.get('retry-after')) > 0, 'quota: header Retry-After');
+  const qr = await call('/v1/quota', { headers: { Authorization: 'Bearer ' + token } }), qq = await qr.json();
+  ok(qr.status === 200 && qq.disponibili === 0 && qq.limitante === 'globale-giorno' && qq.limiti.length === 6 && qq.limiti.every(l => l.remaining === Math.max(0, l.limit - l.used)), 'GET /v1/quota: residuo e limite più stringente ' + JSON.stringify(qq.limiti.map(l => [l.scope, l.remaining])));
+  const qn = await call('/v1/quota'); ok(qn.status === 401, '/v1/quota senza token rifiutato');
+  const qr2 = await (await call('/v1/quota', { headers: { Authorization: 'Bearer ' + token } })).json(); ok(JSON.stringify(qr2.limiti.map(l => l.used)) === JSON.stringify(qq.limiti.map(l => l.used)), '/v1/quota non consuma richieste'); }
+{ const t = 1795790000;
+  ok(limitMeta('i:x:m:5', t).kind === 'temporaneo' && limitMeta('v:y:d:2026-11-27', t).scope === 'dispositivo-giorno' && limitMeta('g:m:2026-11', t).kind === 'mensile', 'limitMeta: tipi per chiave');
+  ok(limitMeta('v:y:d:z', t).resetAt === (Math.floor(t / 86400) + 1) * 86400, 'limitMeta: dispositivo/rete si azzerano a mezzanotte UTC');
+  const pm = limitMeta('g:d:2026-11-27', 1795860000).resetAt - 1795860000; ok(pm > 0 && pm <= 86400, 'limitMeta: globale giornaliero = mezzanotte Pacific (' + pm + ' s)');
+  const a = providerQuota({ message: 'Quota exceeded', quotaId: 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', retryDelay: 34 }, t), b = providerQuota({ message: 'x', quotaId: 'GenerateRequestsPerDayPerProjectPerModel-FreeTier' }, t), c = providerQuota({ message: 'boh' }, t);
+  ok(a.kind === 'temporaneo' && a.retryAfter === 34, 'provider 429 al minuto: retryDelay di Google'); ok(b.kind === 'giornaliero' && b.resetAt > t, 'provider 429 giornaliero: ripristino a mezzanotte Pacific'); ok(c.kind === 'sconosciuto' && c.retryAfter === 60, 'provider 429 non classificabile: tipo sconosciuto, attesa 60 s'); }
 ok(providerCalls === before + 5, 'provider chiamato esattamente 5 volte (' + (providerCalls - before) + ')');
 const dbR = new DatabaseSync(':memory:'); const sqlR = { exec(q, ...b) { const st = dbR.prepare(q); const up = /^\s*select/i.test(q); const rows = up ? st.all(...b) : (st.run(...b), []); return { toArray: () => rows, one: () => rows[0] }; } }; const limR = new Limiter({ storage: { sql: sqlR } });
 const envR = { ...env, GLOBAL_RPM_CAP: '2', DAILY_CAP: '100', MONTHLY_CAP: '1000', LIMITER: { idFromName: n => n, get: () => ({ fetch: (u, i) => limR.fetch(new Request(u, i)) }) } }; const mm = await (async () => { const c = await (await call('/v1/challenge', {}, envR, '5.5.5.5')).json(); let n = 0; for (;;) { const h = createHash('sha256').update(`${c.salt}.${c.ts}.${n}`).digest(); let z = 0; for (const b of h) { if (b === 0) { z += 8; continue; } z += Math.clz32(b) - 24; break; } if (z >= c.bits) break; n++; } return (await call('/v1/session', { method: 'POST', body: JSON.stringify({ ...c, n: String(n) }) }, envR, '5.5.5.5')).json(); })();

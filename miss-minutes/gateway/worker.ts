@@ -248,7 +248,7 @@ export class Limiter {
     if (body.op === 'admit' && Array.isArray(body.checks)) {
       // tutto-o-niente: prima verifica ogni limite, poi incrementa
       for (const c of body.checks) {
-        if (this.get(c.k, now) >= c.max) return Response.json({ ok: false, k: c.k.split(':')[0] }, { status: 429 });
+        { const n = this.get(c.k, now); if (n >= c.max) return Response.json({ ok: false, k: c.k.split(':')[0], full: c.k, n, max: c.max }, { status: 429 }); }
       }
       for (const c of body.checks) {
         this.sql.exec(
@@ -256,6 +256,9 @@ export class Limiter {
           c.k, now + c.ttl);
       }
       return Response.json({ ok: true });
+    }
+    if (body.op === 'peekmany' && Array.isArray(body.checks)) {   // sola lettura: non consuma quota
+      return Response.json({ items: body.checks.map(c => ({ k: c.k, n: this.get(c.k, now), max: c.max })) });
     }
     if (body.op === 'peek' && typeof body.k === 'string') {
       return Response.json({ n: this.get(body.k, now) });
@@ -283,14 +286,48 @@ const callLimiter = async (env: Env, payload: Record<string, unknown>): Promise<
 };
 
 /** Dettaglio sicuro dell'errore Google: solo stato HTTP, codice e messaggio breve, con qualsiasi sequenza simile a una chiave oscurata. */
-const upstream = async (r: Response): Promise<{ http: number; status: string; message: string }> => {
-  let status = '', message = '';
+const upstream = async (r: Response): Promise<{ http: number; status: string; message: string; quotaId?: string; retryDelay?: number }> => {
+  let status = '', message = '', quotaId = '', retryDelay = 0;
   try {
-    const j = JSON.parse((await r.text()).slice(0, 4000)) as { error?: { status?: string; message?: string } };
+    const j = JSON.parse((await r.text()).slice(0, 8000)) as { error?: { status?: string; message?: string; details?: { '@type'?: string; retryDelay?: string; violations?: { quotaId?: string }[] }[] } };
+    for (const dt of j.error?.details || []) {
+      if (typeof dt.retryDelay === 'string') { const m = /^(\d+(?:\.\d+)?)s$/.exec(dt.retryDelay); if (m) retryDelay = Number(m[1]); }
+      const qv = dt.violations?.[0]?.quotaId; if (typeof qv === 'string' && !quotaId) quotaId = qv.replace(/[^\w-]/g, '').slice(0, 90);
+    }
     status = String(j.error?.status ?? '').replace(/[^A-Z_]/g, '').slice(0, 40);
     message = String(j.error?.message ?? '').replace(/AIza[\w-]{10,}/g, '[chiave]').replace(/[\u0000-\u001f]/g, ' ').slice(0, 160);
   } catch { /* corpo non JSON */ }
-  return { http: r.status, status, message };
+  return { http: r.status, status, message, ...(quotaId ? { quotaId } : {}), ...(retryDelay ? { retryDelay } : {}) };
+};
+
+/* ---------- descrizione dei limiti (solo metadati: nessun dato personale) ---------- */
+export type Kind = 'temporaneo' | 'giornaliero' | 'mensile' | 'sconosciuto';
+const pacificNextMidnight = (nowS: number): number => {
+  const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' }).formatToParts(new Date(nowS * 1000));
+  const g = (t: string): number => Number(parts.find(x => x.type === t)?.value || 0) % 24;
+  return nowS + 86400 - (g('hour') * 3600 + g('minute') * 60 + g('second'));
+};
+const utcNextMidnight = (nowS: number): number => (Math.floor(nowS / 86400) + 1) * 86400;
+const utcNextMonth = (nowS: number): number => { const d = new Date(nowS * 1000); return Math.floor(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1) / 1000); };
+/** Dalla chiave del contatore: ambito leggibile, tipo, origine e orario (epoch s) del ripristino. */
+export const limitMeta = (key: string, nowS: number): { scope: string; kind: Kind; source: 'gateway'; resetAt: number } => {
+  const q = key.split(':');
+  if (q[0] === 'i' && q[2] === 'm') return { scope: 'rete-minuto', kind: 'temporaneo', source: 'gateway', resetAt: (Math.floor(nowS / 60) + 1) * 60 };
+  if (q[0] === 'i') return { scope: 'rete-giorno', kind: 'giornaliero', source: 'gateway', resetAt: utcNextMidnight(nowS) };
+  if (q[0] === 'v') return { scope: 'dispositivo-giorno', kind: 'giornaliero', source: 'gateway', resetAt: utcNextMidnight(nowS) };
+  if (q[0] === 'g' && q[1] === 'r') return { scope: 'globale-minuto', kind: 'temporaneo', source: 'gateway', resetAt: (Math.floor(nowS / 60) + 1) * 60 };
+  if (q[0] === 'g' && q[1] === 'd') return { scope: 'globale-giorno', kind: 'giornaliero', source: 'gateway', resetAt: pacificNextMidnight(nowS) };
+  if (q[0] === 'g' && q[1] === 'm') return { scope: 'globale-mese', kind: 'mensile', source: 'gateway', resetAt: utcNextMonth(nowS) };
+  return { scope: 'sconosciuto', kind: 'sconosciuto', source: 'gateway', resetAt: nowS + 60 };
+};
+/** Tipo e ripristino di un 429 di Google dai soli campi strutturati (quotaId, retryDelay) o dal messaggio. */
+export const providerQuota = (up: { message: string; quotaId?: string; retryDelay?: number }, nowS: number): { kind: Kind; resetAt: number; retryAfter: number } => {
+  const t = (up.quotaId || '') + ' ' + (up.message || '');
+  let kind: Kind = 'sconosciuto';
+  if (/PerDay|per day|daily/i.test(t)) kind = 'giornaliero'; else if (/PerMonth|per month/i.test(t)) kind = 'mensile'; else if (/PerMinute|per minute|rate/i.test(t)) kind = 'temporaneo';
+  const retryAfter = up.retryDelay && up.retryDelay > 0 ? Math.min(Math.ceil(up.retryDelay), 86400) : kind === 'temporaneo' || kind === 'sconosciuto' ? 60 : 0;
+  const resetAt = kind === 'giornaliero' ? pacificNextMidnight(nowS) : kind === 'mensile' ? utcNextMonth(nowS) : nowS + (retryAfter || 60);
+  return { kind, resetAt, retryAfter: Math.max(0, resetAt - nowS) };
 };
 
 /* ---------- handler ---------- */
@@ -326,6 +363,16 @@ export default {
     const month = day.slice(0, 7);
     // le quote giornaliere del piano gratuito Google si azzerano a mezzanotte (fuso Pacific): il tetto globale segue lo stesso giorno
     const gday = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(new Date());
+
+    // contatori del chat (stessa definizione per l'ammissione e per la lettura del residuo)
+    const chatChecks = (did: string): Check[] => [
+      { k: `i:${ih}:m:${Math.floor(now / 60)}`, max: 6, ttl: 90 },
+      { k: `i:${ih}:d:${day}`, max: num(env.IP_DAILY_CAP, 100, 1, 1000), ttl: 90000 },
+      { k: `v:${did}:d:${day}`, max: num(env.DEVICE_DAILY_CAP, 100, 1, 1000), ttl: 90000 },
+      { k: `g:r:${Math.floor(now / 60)}`, max: num(env.GLOBAL_RPM_CAP, 12, 1, 1000), ttl: 90 },
+      { k: `g:d:${gday}`, max: num(env.DAILY_CAP, 450, 1, 100000), ttl: 129600 },
+      { k: `g:m:${month}`, max: num(env.MONTHLY_CAP, 12000, 1, 1000000), ttl: 32 * 86400 },
+    ];
 
     // IP bloccato dopo troppi tentativi falliti
     const failKey = `f:${ih}:${Math.floor(now / 3600)}`;
@@ -363,6 +410,20 @@ export default {
       return out(200, { token: `${payload}.${await sign(secret, 'tk:' + payload)}`, exp });
     }
 
+    /* 2b) residuo delle quote: sola lettura, non consuma richieste e non chiama Google */
+    if (url.pathname === '/v1/quota' && req.method === 'GET') {
+      const auth = req.headers.get('Authorization') || '';
+      const parts = auth.startsWith('Bearer ') ? auth.slice(7).split('.') : [];
+      if (parts.length !== 3) return fail(401, 'auth');
+      const [did, expS, tsig] = parts as [string, string, string];
+      if (!/^[\w-]{10,24}$/.test(did) || !Number.isFinite(Number(expS)) || !(await verify(secret, `tk:${did}.${expS}`, tsig))) return fail(401, 'auth');
+      if (Number(expS) < now) return out(401, { error: 'expired' });
+      const r = await callLimiter(env, { op: 'peekmany', checks: chatChecks(did) });
+      const items = ((r.json.items as { k: string; n: number; max: number }[]) || []).map(i => { const m = limitMeta(i.k, now); return { scope: m.scope, kind: m.kind, source: 'gateway', limit: i.max, used: i.n, remaining: Math.max(0, i.max - i.n), resetAt: m.resetAt }; });
+      const tight = items.reduce((a, b) => (b.remaining < a.remaining ? b : a), items[0] || { remaining: 0 } as never);
+      return out(200, { now, limiti: items, disponibili: tight ? tight.remaining : 0, limitante: tight ? tight.scope : '', ripristino: tight ? tight.resetAt : 0, note: 'Limiti del gateway. I limiti di Google (modello gratuito) non sono leggibili da qui: si vedono in AI Studio.' });
+    }
+
     /* 3) chat */
     if (url.pathname === '/v1/chat' && req.method === 'POST') {
       const auth = req.headers.get('Authorization') || '';
@@ -378,18 +439,11 @@ export default {
       const input = parseChat(raw);
       if (!input) return fail(400, 'input');
 
-      const adm = await callLimiter(env, {
-        op: 'admit',
-        checks: [
-          { k: `i:${ih}:m:${Math.floor(now / 60)}`, max: 6, ttl: 90 },
-          { k: `i:${ih}:d:${day}`, max: num(env.IP_DAILY_CAP, 100, 1, 1000), ttl: 90000 },
-          { k: `v:${did}:d:${day}`, max: num(env.DEVICE_DAILY_CAP, 100, 1, 1000), ttl: 90000 },
-          { k: `g:r:${Math.floor(now / 60)}`, max: num(env.GLOBAL_RPM_CAP, 12, 1, 1000), ttl: 90 },
-          { k: `g:d:${gday}`, max: num(env.DAILY_CAP, 450, 1, 100000), ttl: 129600 },
-          { k: `g:m:${month}`, max: num(env.MONTHLY_CAP, 12000, 1, 1000000), ttl: 32 * 86400 },
-        ],
-      });
-      if (adm.status !== 200) return out(429, { error: 'quota', scope: String(adm.json.k || '') });
+      const adm = await callLimiter(env, { op: 'admit', checks: chatChecks(did) });
+      if (adm.status !== 200) {
+        const full = String(adm.json.full || adm.json.k || ''), m = limitMeta(full, now);
+        return new Response(JSON.stringify({ error: 'quota', ...m, limit: Number(adm.json.max || 0), used: Number(adm.json.n || 0), retryAfter: Math.max(1, m.resetAt - now) }), { status: 429, headers: { ...h, 'Retry-After': String(Math.max(1, m.resetAt - now)) } });
+      }
 
       const user = JSON.stringify({ domanda: input.question, schede: input.context, fatti: input.fatti });
       // Gemini richiede turni alternati user/model che iniziano da user: si scartano i modelli iniziali e si fondono i turni consecutivi
@@ -422,7 +476,8 @@ export default {
         if (!r.ok) {
           const up = await upstream(r);
           const code = r.status === 429 ? 'provider-quota' : r.status === 400 ? 'provider-request' : (r.status === 401 || r.status === 403) ? 'provider-auth' : r.status === 404 ? 'provider-model' : 'provider';
-          return out(r.status === 429 ? 429 : 502, { error: code, upstream: up });
+          if (r.status === 429) { const pq = providerQuota(up, now); return new Response(JSON.stringify({ error: code, source: 'gemini', upstream: up, ...pq }), { status: 429, headers: { ...h, 'Retry-After': String(Math.max(1, pq.retryAfter)) } }); }
+          return out(502, { error: code, upstream: up });
         }
         if (input.stream && r.body) {
           return new Response(streamAnswer(r.body), { status: 200, headers: { ...h, 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-store, no-transform', 'X-Content-Type-Options': 'nosniff', 'X-Accel-Buffering': 'no' } });

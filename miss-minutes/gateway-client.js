@@ -13,6 +13,27 @@
   };
   function lz(bytes) { var n = 0; for (var i = 0; i < bytes.length; i++) { var b = bytes[i]; if (b === 0) { n += 8; continue; } n += Math.clz32(b) - 24; break; } return n; }
 
+  /* Testo italiano per un limite raggiunto: quale limite, quanto vale, quando torna disponibile (ora italiana). Funzione pura (testabile). */
+  var SCOPES = { 'rete-minuto': 'le richieste al minuto della tua rete', 'rete-giorno': 'il limite giornaliero della tua rete', 'dispositivo-giorno': 'il limite giornaliero di questo dispositivo', 'globale-minuto': 'le richieste al minuto dell’AI di Miss Minutes (condivise tra tutti)', 'globale-giorno': 'il limite giornaliero complessivo dell’AI di Miss Minutes (condiviso tra tutti)', 'globale-mese': 'il limite mensile complessivo dell’AI di Miss Minutes' };
+  function fmtWhen(epochS, nowS, tz) {
+    try {
+      var d = new Date(epochS * 1000), tzn = tz || 'Europe/Rome', day = function (x) { return new Intl.DateTimeFormat('sv-SE', { timeZone: tzn }).format(x); };
+      var hm = new Intl.DateTimeFormat('it-IT', { timeZone: tzn, hour: '2-digit', minute: '2-digit' }).format(d), dd = day(d), t0 = day(new Date(nowS * 1000)), t1 = day(new Date((nowS + 86400) * 1000));
+      return dd === t0 ? 'alle ' + hm : dd === t1 ? 'domani alle ' + hm : 'il ' + new Intl.DateTimeFormat('it-IT', { timeZone: tzn, day: 'numeric', month: 'long' }).format(d) + ' alle ' + hm;
+    } catch (e) { return 'tra poco'; }
+  }
+  function describeQuota(q, nowS, tz) {
+    if (!q || (!q.scope && !q.resetAt && !q.retryAfter && q.kind === 'sconosciuto')) return q && q.source === 'gemini' ? MSG['provider-quota'] : MSG.quota; nowS = nowS || Math.floor(Date.now() / 1000);
+    var wait = q.resetAt ? Math.max(1, q.resetAt - nowS) : (q.retryAfter || 60), when = q.resetAt ? fmtWhen(q.resetAt, nowS, tz) : null;
+    var back = q.kind === 'temporaneo' || wait < 120 ? 'Riprova tra ' + wait + ' secondi' + (when ? ' (' + when + ')' : '') + '.' : 'Torna disponibile ' + (when || 'più tardi') + ' (ora italiana).';
+    if (q.source === 'gemini') {
+      var k = q.kind === 'giornaliero' ? 'è esaurita la quota giornaliera gratuita di Google (si azzera a mezzanotte, ora della costa Pacifica)' : q.kind === 'mensile' ? 'è esaurita la quota mensile gratuita di Google' : q.kind === 'temporaneo' ? 'è stato raggiunto il limite al minuto del servizio gratuito di Google' : 'è stata raggiunta una quota del servizio gratuito di Google (tipo non indicato)';
+      return 'Limite di Google, non di Miss Minutes: ' + k + '. ' + back;
+    }
+    var sc = SCOPES[q.scope] || 'un limite del gateway', num = q.limit ? ' (' + q.limit + ' richieste)' : '';
+    return 'Limite di Miss Minutes, non di Google: hai esaurito ' + sc + num + '. ' + back;
+  }
+
   function create(o) {
     var endpoint = String(o.endpoint || '').replace(/\/+$/, '');
     var f = o.fetch || (typeof fetch === 'function' ? fetch.bind(root) : null);
@@ -22,7 +43,8 @@
     var token = null, exp = 0, enc = new TextEncoder();
     try { var raw = store && JSON.parse(store.getItem(SK) || 'null'); if (raw && raw.exp > now() + 60 && typeof raw.token === 'string') { token = raw.token; exp = raw.exp; } } catch (e) {}
 
-    function err(code, stage, up, http) { var d = up ? 'HTTP ' + up.http + (up.status ? ' ' + up.status : '') + (up.message ? ': ' + up.message : '') : (http ? 'HTTP ' + http : ''); return { ok: false, code: code, stage: stage || 'chat', http: http || (up && up.http) || 0, detail: d, message: MSG[code] || MSG.provider }; }
+    function err(code, stage, up, http, qj) { var d = up ? 'HTTP ' + up.http + (up.status ? ' ' + up.status : '') + (up.message ? ': ' + up.message : '') : (http ? 'HTTP ' + http : ''); return { ok: false, code: code, stage: stage || 'chat', http: http || (up && up.http) || 0, detail: d, message: MSG[code] || MSG.provider, quota: (code === 'quota' || code === 'provider-quota') ? quotaInfo(code, qj) : null }; }
+    function quotaInfo(code, j) { j = j || {}; var n = function (v) { v = Number(v); return isFinite(v) && v > 0 ? v : 0; }; return { source: code === 'provider-quota' ? 'gemini' : 'gateway', scope: String(j.scope || '').slice(0, 30), kind: /^(temporaneo|giornaliero|mensile)$/.test(j.kind) ? j.kind : 'sconosciuto', limit: n(j.limit), used: n(j.used), resetAt: n(j.resetAt), retryAfter: n(j.retryAfter) }; }
     // segnale unico: scadenza + eventuale interruzione dell'utente (AbortSignal.any non e' disponibile su tutti i Safari)
     function timeout(ms, user) {
       var c = new AbortController(), t = setTimeout(function () { c.__timeout = true; c.abort(); }, ms);
@@ -65,7 +87,7 @@
       if (r.aborted) { var ab = err('aborted', 'chat'); ab.ms = Date.now() - t0; return ab; }
       if (r.status === 200 && typeof r.json.answer === 'string') return { ok: true, answer: r.json.answer, ms: Date.now() - t0 };
       if (r.status === 401) { token = null; exp = 0; try { store && store.removeItem(SK); } catch (e) {} }
-      var e2 = r.status === 0 ? err(r.timeout ? 'timeout' : 'network', 'chat') : err(r.json.error || 'provider', r.json.error && /^provider/.test(r.json.error) ? 'gemini' : 'gateway', r.json.upstream, r.status); e2.ms = Date.now() - t0; return e2;
+      var e2 = r.status === 0 ? err(r.timeout ? 'timeout' : 'network', 'chat') : err(r.json.error || 'provider', r.json.error && /^provider/.test(r.json.error) ? 'gemini' : 'gateway', r.json.upstream, r.status, r.json); e2.ms = Date.now() - t0; return e2;
     }
     // Streaming reale (SSE): onDelta(testoCumulativo) a ogni frammento. Se il gateway non supporta lo streaming (risposta JSON) o il
     // browser non espone lo stream, ricade sulla risposta intera (streamed:false). Un'interruzione a meta' restituisce il testo gia' ricevuto in `partial`.
@@ -87,7 +109,7 @@
         j = j || {};
         if (r.status === 200 && typeof j.answer === 'string') return { ok: true, answer: j.answer, ms: Date.now() - t0, streamed: false };
         if (r.status === 401) { token = null; exp = 0; try { store && store.removeItem(SK); } catch (e) {} }
-        var e2 = err(j.error || 'provider', j.error && /^provider/.test(j.error) ? 'gemini' : 'gateway', j.upstream, r.status); e2.ms = Date.now() - t0; return e2;
+        var e2 = err(j.error || 'provider', j.error && /^provider/.test(j.error) ? 'gemini' : 'gateway', j.upstream, r.status, j); e2.ms = Date.now() - t0; return e2;
       }
       if (!r.body || !r.body.getReader || typeof TextDecoder === 'undefined') {   // browser senza stream: testo intero
         var all = ''; try { all = await r.text(); } catch (e) {} clearTimeout(idle);
@@ -121,8 +143,17 @@
     // errori temporanei per cui vale un solo nuovo tentativo (sovraccarico/rete); mai quote, auth, modello, richiesta, timeout
     function retriable(e) { return !!e && !e.ok && ((e.code === 'provider' && (e.http === 500 || e.http === 502 || e.http === 503 || e.http === 504 || e.http === 529)) || e.code === 'provider-network'); }
     async function health() { if (!endpoint) return { ok: false, enabled: false }; var r = await req('/v1/health', { method: 'GET' }); return { ok: r.status === 200, enabled: !!r.json.enabled, missing: Array.isArray(r.json.missing) ? r.json.missing.slice(0, 6).map(String) : [] }; }
-    return { ask: ask, askStream: askStream, health: health, retriable: retriable, available: function () { return !!endpoint; }, forget: function () { token = null; exp = 0; try { store && store.removeItem(SK); } catch (e) {} } };
+    // residuo delle quote del gateway (sola lettura: non consuma richieste, non chiama Google)
+    async function quota(opts) {
+      if (!endpoint) return { ok: false, code: 'disabled' };
+      var user = opts && opts.signal || null, s = await ensureSession(user); if (!s.ok) return s;
+      var r = await req('/v1/quota', { method: 'GET', headers: { Authorization: 'Bearer ' + token } }, user);
+      if (r.status === 401) { token = null; exp = 0; try { store && store.removeItem(SK); } catch (e) {} }
+      if (r.status !== 200 || !Array.isArray(r.json.limiti)) return err(r.status === 0 ? 'network' : (r.json.error || 'provider'), 'quota', null, r.status);
+      return { ok: true, now: Number(r.json.now) || now(), disponibili: Number(r.json.disponibili) || 0, limitante: String(r.json.limitante || ''), ripristino: Number(r.json.ripristino) || 0, limiti: r.json.limiti.slice(0, 8).map(function (l) { return { scope: String(l.scope || '').slice(0, 30), kind: /^(temporaneo|giornaliero|mensile)$/.test(l.kind) ? l.kind : 'sconosciuto', limit: Number(l.limit) || 0, used: Number(l.used) || 0, remaining: Number(l.remaining) || 0, resetAt: Number(l.resetAt) || 0 }; }) };
+    }
+    return { ask: ask, askStream: askStream, health: health, quota: quota, retriable: retriable, available: function () { return !!endpoint; }, forget: function () { token = null; exp = 0; try { store && store.removeItem(SK); } catch (e) {} } };
   }
-  var API = { create: create, MSG: MSG };
+  var API = { create: create, MSG: MSG, describeQuota: describeQuota, fmtWhen: fmtWhen };
   if (typeof module !== 'undefined' && module.exports) module.exports = API; else root.MMGateway = API;
 })(typeof globalThis !== 'undefined' ? globalThis : this);
