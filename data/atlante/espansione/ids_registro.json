@@ -1,7 +1,7 @@
 {
  "conteggi": {
-  "attivi": 1035,
-  "totale": 1035
+  "attivi": 1037,
+  "totale": 1038
  },
  "ids": {
   "art-adamantio": {
@@ -23,6 +23,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "a"
+  },
+  "art-cosmic-cube": {
+   "ids_esterni": {
+    "wikidata": "Q19836"
+   },
+   "ondata": "W0",
+   "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
   },
   "art-darkhold": {
    "ondata": "W0",
@@ -163,6 +173,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "a"
+  },
+  "art-registration-acts": {
+   "ids_esterni": {
+    "wikidata": "Q2893095"
+   },
+   "ondata": "W0",
+   "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
   },
   "art-scudo-di-vibranio": {
    "ondata": "W0",
@@ -1434,6 +1454,16 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-kevin-bacon": {
+   "ids_esterni": {
+    "wikidata": "Q3454165"
+   },
+   "ondata": "W0",
+   "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-kirk-acevedo": {
    "ids_esterni": {
     "wikidata": "Q456614"
@@ -2351,8 +2381,9 @@
    "ondata": "W0",
    "origine": "W1",
    "rif": "canon",
-   "stato": "attivo",
-   "tipo": "battaglia"
+   "stato": "lapide",
+   "tipo": "battaglia",
+   "verso": "bat-battaglia-di-sokovia"
   },
   "char-a-bomb": {
    "ondata": "W0",
@@ -9464,7 +9495,7 @@
    "tipo": "U"
   }
  },
- "ids_sha256": "98e2d6e66c521b575f5ff456c66692269faa608201df13b76dde507faa78d148",
+ "ids_sha256": "dd5ed39bd2fad45381d2ba47fb31aeac60e2fe855cac33064dc456b62e071779",
  "politica": "append-only; ID mai riusati; rimozioni solo come lapide con redirect",
  "versione": 1
 }

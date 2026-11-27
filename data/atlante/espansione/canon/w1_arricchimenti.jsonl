@@ -11,38 +11,59 @@
 {"alias_nuovi": ["Thomas Richard McMillen"], "fonte": "Wikidata (CC0)", "id": "att-thomas-haden-church", "interpreti": [], "wikidata": "Q311615"}
 {"alias_nuovi": ["Christopher Michael Pratt"], "fonte": "Wikidata (CC0)", "id": "att-chris-pratt", "interpreti": ["Tony McFarr"], "wikidata": "Q503706"}
 {"alias_nuovi": ["Phillip \"Phil\" Coulson", "Phillip Coulson", "Phillip J. Coulson"], "fonte": "Wikidata (CC0)", "id": "id-phil-coulson", "interpreti": ["Clark Gregg"], "wikidata": "Q1369292"}
+{"alias_nuovi": ["Quake"], "fonte": "Wikidata (CC0)", "id": "id-daisy-johnson", "interpreti": ["Chloe Bennet"], "regola": "risoluzione assistita", "wikidata": "Q1424480"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "att-tom-holland", "interpreti": [], "wikidata": "Q2023710"}
+{"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-grant-ward-hive", "interpreti": [], "regola": "risoluzione assistita", "wikidata": "Q3785970"}
 {"alias_nuovi": ["Brass", "Maguna", "Morgan H. Stark"], "fonte": "Wikidata (CC0)", "id": "id-morgan-stark", "interpreti": ["Lexi Rabe"], "wikidata": "Q6911845"}
 {"alias_nuovi": ["Ravonna", "Ravonna Lexus Renslayer"], "fonte": "Wikidata (CC0)", "id": "id-ravonna-renslayer", "interpreti": ["Gugu Mbatha-Raw"], "wikidata": "Q7296820"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "luo-sanctum-sanctorum", "interpreti": [], "wikidata": "Q11703564"}
 {"alias_nuovi": ["M.J.", "Michelle Jones-Watson"], "fonte": "Wikidata (CC0)", "id": "id-michelle-jones-watson-mcu", "interpreti": ["Zendaya"], "wikidata": "Q23894605"}
+{"alias_nuovi": ["Anthony Edward Stark", "Anthony Stark"], "fonte": "Wikidata (CC0)", "id": "id-iron-man", "interpreti": ["Davin Ransom", "Robert Downey Jr."], "regola": "risoluzione assistita", "wikidata": "Q23894967"}
 {"alias_nuovi": ["Virginia Potts"], "fonte": "Wikidata (CC0)", "id": "id-pepper-potts", "interpreti": ["Gwyneth Paltrow"], "wikidata": "Q23895000"}
+{"alias_nuovi": ["War Machine"], "fonte": "Wikidata (CC0)", "id": "id-james-rhodes-war-machine", "interpreti": ["Don Cheadle", "Terrence Howard"], "regola": "risoluzione assistita", "wikidata": "Q23895040"}
+{"alias_nuovi": ["Natalia Alianovna Romanoff", "Natalia Alianovna Romanova", "Natalia Ivanovna Romanoff", "Natalia Ivanovna Romanova", "Natalie Rushman", "Natasha Romanoff (Marvel Cinematic Universe)"], "fonte": "Wikidata (CC0)", "id": "id-natasha-romanoff", "interpreti": ["Ever Anderson", "Scarlett Johansson"], "regola": "risoluzione assistita", "wikidata": "Q23895063"}
+{"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-ivan-vanko-whiplash", "interpreti": ["Mickey Rourke"], "regola": "risoluzione assistita", "wikidata": "Q23900364"}
 {"alias_nuovi": ["Nicholas Joseph Fury"], "fonte": "Wikidata (CC0)", "id": "id-nick-fury", "interpreti": ["Samuel L. Jackson"], "wikidata": "Q23900377"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-howard-stark", "interpreti": ["Dominic Cooper", "Gerard Sanders", "John Slattery"], "wikidata": "Q23900446"}
+{"alias_nuovi": ["Iron Spider", "Night Monkey", "Peter #1", "Peter 1", "Peter One", "Peter-One"], "fonte": "Wikidata (CC0)", "id": "id-peter-parker-mcu", "interpreti": ["Tom Holland"], "regola": "risoluzione assistita", "wikidata": "Q23991129"}
+{"alias_nuovi": ["Winter Soldier"], "fonte": "Wikidata (CC0)", "id": "id-bucky-barnes-soldato-d-inverno", "interpreti": ["Sebastian Stan"], "regola": "risoluzione assistita", "wikidata": "Q23991694"}
+{"alias_nuovi": ["Black Panther"], "fonte": "Wikidata (CC0)", "id": "id-t-challa-black-panther", "interpreti": ["Ashton Tyler", "Chadwick Boseman"], "regola": "risoluzione assistita", "wikidata": "Q24004885"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-t-chaka", "interpreti": ["Atandwa Kani", "John Kani"], "wikidata": "Q24004905"}
+{"alias_nuovi": ["Captain America", "Steven Grant Rogers"], "fonte": "Wikidata (CC0)", "id": "id-steve-rogers-capitan-america", "interpreti": ["Chris Evans"], "regola": "risoluzione assistita", "wikidata": "Q24022098"}
+{"alias_nuovi": ["Falcon"], "fonte": "Wikidata (CC0)", "id": "id-sam-wilson-capitan-america", "interpreti": ["Anthony Mackie"], "regola": "risoluzione assistita", "wikidata": "Q24022345"}
 {"alias_nuovi": ["Baron Zemo"], "fonte": "Wikidata (CC0)", "id": "id-zemo", "interpreti": ["Daniel Brühl"], "wikidata": "Q24022457"}
 {"alias_nuovi": ["Scarlet Witch", "Wanda Maximoff (Marvel Cinematic Universe)"], "fonte": "Wikidata (CC0)", "id": "id-wanda-maximoff", "interpreti": ["Elizabeth Olsen"], "wikidata": "Q24022542"}
 {"alias_nuovi": ["The Vision"], "fonte": "Wikidata (CC0)", "id": "id-visione", "interpreti": ["Paul Bettany"], "wikidata": "Q24022584"}
+{"alias_nuovi": ["Hawkeye"], "fonte": "Wikidata (CC0)", "id": "id-clint-barton", "interpreti": ["Jeremy Renner"], "regola": "risoluzione assistita", "wikidata": "Q24026688"}
+{"alias_nuovi": ["Ant-Man", "Ant-Man (Marvel Cinematic Universe)", "Scott Lang (Marvel Cinematic Universe)"], "fonte": "Wikidata (CC0)", "id": "id-scott-lang-ant-man", "interpreti": ["Bazlo LeClair", "Jackson A. Dunn", "Lee Moore", "Loen LeClair", "Paul Rudd"], "regola": "risoluzione assistita", "wikidata": "Q24026703"}
+{"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-thaddeus-ross-mcu", "interpreti": ["Harrison Ford", "William Hurt"], "regola": "risoluzione assistita", "wikidata": "Q24027376"}
 {"alias_nuovi": ["Agent 13"], "fonte": "Wikidata (CC0)", "id": "id-sharon-carter", "interpreti": ["Emily VanCamp"], "wikidata": "Q24027486"}
 {"alias_nuovi": ["The Cavalry"], "fonte": "Wikidata (CC0)", "id": "id-melinda-may", "interpreti": ["Ming-Na Wen"], "wikidata": "Q24027955"}
+{"alias_nuovi": ["Quake", "Skye"], "fonte": "Wikidata (CC0)", "id": "id-daisy-johnson", "interpreti": ["Chloe Bennet"], "regola": "risoluzione assistita", "wikidata": "Q24027972"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-fitz", "interpreti": ["Iain De Caestecker"], "wikidata": "Q24027982"}
+{"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-peggy-carter-captain-carter", "interpreti": [], "regola": "risoluzione assistita", "wikidata": "Q24034679"}
+{"alias_nuovi": ["Doctor Strange", "Dottor Strange"], "fonte": "Wikidata (CC0)", "id": "id-stephen-strange", "interpreti": ["Benedict Cumberbatch"], "regola": "risoluzione assistita", "wikidata": "Q24034722"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-maria-stark", "interpreti": ["Hope Davis"], "wikidata": "Q24040935"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-karl-mordo", "interpreti": ["Chiwetel Ejiofor"], "wikidata": "Q24043637"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-wong", "interpreti": ["Benedict Wong"], "wikidata": "Q24045752"}
 {"alias_nuovi": ["Thor Odinson"], "fonte": "Wikidata (CC0)", "id": "id-thor", "interpreti": ["Chris Hemsworth", "Dakota Goyo"], "wikidata": "Q24046102"}
+{"alias_nuovi": ["Mighty Thor", "Potente Thor"], "fonte": "Wikidata (CC0)", "id": "id-jane-foster-mighty-thor", "interpreti": ["Natalie Portman"], "regola": "risoluzione assistita", "wikidata": "Q24046106"}
 {"alias_nuovi": ["Loki Laufeyson", "Loki Odinson"], "fonte": "Wikidata (CC0)", "id": "id-loki", "interpreti": ["Ted Allpress", "Tom Hiddleston"], "wikidata": "Q24046118"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-laufey", "interpreti": ["Colm Feore"], "wikidata": "Q24046153"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-frigga", "interpreti": ["Rene Russo"], "wikidata": "Q24049999"}
+{"alias_nuovi": ["Peter Jason Quill", "Star-Lord", "Starlord"], "fonte": "Wikidata (CC0)", "id": "id-peter-quill-star-lord", "interpreti": ["Chris Pratt", "Wyatt Oleff"], "regola": "risoluzione assistita", "wikidata": "Q24050065"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-gamora", "interpreti": ["Ariana Greenblatt", "Zoe Saldaña"], "wikidata": "Q24050072"}
 {"alias_nuovi": ["Drax (Marvel Cinematic Universe)", "Drax the Destroyer"], "fonte": "Wikidata (CC0)", "id": "id-drax", "interpreti": ["Dave Bautista"], "wikidata": "Q24050079"}
 {"alias_nuovi": ["Rocket Raccoon", "Subject 89P13"], "fonte": "Wikidata (CC0)", "id": "id-rocket", "interpreti": ["Bradley Cooper", "Sean Gunn"], "wikidata": "Q24050088"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-nebula", "interpreti": ["Karen Gillan"], "wikidata": "Q24050097"}
 {"alias_nuovi": ["Mantis (Marvel Cinematic Universe)"], "fonte": "Wikidata (CC0)", "id": "id-mantis", "interpreti": [], "wikidata": "Q24050108"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "pia-ego", "interpreti": ["Kurt Russell"], "wikidata": "Q24050114"}
+{"alias_nuovi": ["Hulk", "The Hulk"], "fonte": "Wikidata (CC0)", "id": "id-hulk", "interpreti": ["Edward Norton", "Lou Ferrigno", "Mark Ruffalo"], "regola": "risoluzione assistita", "wikidata": "Q24050117"}
 {"alias_nuovi": ["Hela (Marvel Cinematic Universe)", "Hela Odinsdottir"], "fonte": "Wikidata (CC0)", "id": "id-hela", "interpreti": ["Cate Blanchett"], "wikidata": "Q24050122"}
 {"alias_nuovi": ["Wasp"], "fonte": "Wikidata (CC0)", "id": "id-hope-van-dyne", "interpreti": ["Evangeline Lilly", "Madeleine McGraw"], "wikidata": "Q24050133"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-jasper-sitwell", "interpreti": ["Maximiliano Hernández"], "wikidata": "Q24083294"}
 {"alias_nuovi": ["The Mandarin"], "fonte": "Wikidata (CC0)", "id": "id-trevor-slattery", "interpreti": ["Ben Kingsley"], "wikidata": "Q24207018"}
+{"alias_nuovi": ["Ant-Man"], "fonte": "Wikidata (CC0)", "id": "id-hank-pym", "interpreti": ["Dax Griffin", "John Michael Morris", "Michael Douglas"], "regola": "risoluzione assistita", "wikidata": "Q24265423"}
 {"alias_nuovi": ["Yellowjacket"], "fonte": "Wikidata (CC0)", "id": "id-darren-cross", "interpreti": ["Corey Stoll"], "wikidata": "Q24275986"}
 {"alias_nuovi": ["Erik Stevens", "N'Jadaka"], "fonte": "Wikidata (CC0)", "id": "id-erik-killmonger", "interpreti": ["Michael B. Jordan", "Seth Carr"], "wikidata": "Q26268850"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-nakia", "interpreti": ["Lupita Nyong'o"], "wikidata": "Q26268859"}
@@ -55,10 +76,14 @@
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-ulysses-klaue", "interpreti": ["Andy Serkis"], "wikidata": "Q27092482"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-ultron", "interpreti": ["James Spader"], "wikidata": "Q27101591"}
 {"alias_nuovi": ["Cottonmouth (personaggio)"], "fonte": "Wikidata (CC0)", "id": "id-cottonmouth", "interpreti": ["Mahershala Ali"], "wikidata": "Q27132943"}
+{"alias_nuovi": ["Vulture"], "fonte": "Wikidata (CC0)", "id": "id-adrian-toomes-avvoltoio", "interpreti": ["Michael Keaton"], "regola": "risoluzione assistita", "wikidata": "Q27813421"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-ramonda", "interpreti": ["Angela Bassett"], "wikidata": "Q27902081"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-shuri", "interpreti": ["Letitia Wright"], "wikidata": "Q29051978"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-ned-leeds", "interpreti": ["Jacob Batalon"], "wikidata": "Q29053559"}
 {"alias_nuovi": ["Okoye (comics)"], "fonte": "Wikidata (CC0)", "id": "id-okoye", "interpreti": ["Danai Gurira"], "wikidata": "Q53417307"}
+{"alias_nuovi": ["Mysterio"], "fonte": "Wikidata (CC0)", "id": "id-quentin-beck-mysterio", "interpreti": ["Jake Gyllenhaal"], "regola": "risoluzione assistita", "wikidata": "Q60485245"}
+{"alias_nuovi": ["Kingpin", "Wilson Grant Fisk"], "fonte": "Wikidata (CC0)", "id": "id-fisk-mcu", "interpreti": ["Vincent D'Onofrio"], "regola": "risoluzione assistita", "wikidata": "Q64099772"}
+{"alias_nuovi": ["Captain Marvel", "Carol Danvers (Marvel Cinematic Universe)"], "fonte": "Wikidata (CC0)", "id": "id-carol-danvers-captain-marvel", "interpreti": ["Brie Larson", "London Fuller", "Mckenna Grace"], "regola": "risoluzione assistita", "wikidata": "Q64658380"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-thanos", "interpreti": ["Damion Poitier", "Josh Brolin"], "wikidata": "Q64825451"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-edwin-jarvis", "interpreti": ["James D'Arcy"], "wikidata": "Q65920871"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-aldrich-killian", "interpreti": ["Guy Pearce"], "wikidata": "Q65929156"}
@@ -67,6 +92,7 @@
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-malekith", "interpreti": ["Christopher Eccleston"], "wikidata": "Q65929729"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-betty-ross", "interpreti": ["Liv Tyler"], "wikidata": "Q65929788"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-obadiah-stane", "interpreti": ["Jeff Bridges"], "wikidata": "Q65935271"}
+{"alias_nuovi": ["Abomination"], "fonte": "Wikidata (CC0)", "id": "id-emil-blonsky-abominio", "interpreti": ["Tim Roth"], "regola": "risoluzione assistita", "wikidata": "Q65935380"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-corvus-glaive", "interpreti": ["Michael James Shaw"], "wikidata": "Q65935802"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-ajak", "interpreti": ["Salma Hayek"], "wikidata": "Q65935830"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-red-guardian", "interpreti": ["David Harbour"], "wikidata": "Q65935848"}
@@ -90,13 +116,25 @@
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-deke-shaw", "interpreti": ["Jeff Ward"], "wikidata": "Q106962400"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-yelena-belova", "interpreti": ["Florence Pugh"], "wikidata": "Q107506977"}
 {"alias_nuovi": ["Sylvie Laufeydottir"], "fonte": "Wikidata (CC0)", "id": "id-sylvie", "interpreti": ["Sophia Di Martino"], "wikidata": "Q107723311"}
+{"alias_nuovi": ["Punitore", "The Punisher"], "fonte": "Wikidata (CC0)", "id": "id-frank-castle-punisher", "interpreti": ["Jon Bernthal"], "regola": "risoluzione assistita", "wikidata": "Q108403692"}
+{"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-daisy-johnson", "interpreti": ["Chloe Bennet"], "regola": "risoluzione assistita", "wikidata": "Q108415935"}
+{"alias_nuovi": ["Daredevil", "Matthew Michael Murdock", "Red", "The Devil of Hell's Kitchen"], "fonte": "Wikidata (CC0)", "id": "id-matt-murdock-mcu", "interpreti": ["Charlie Cox"], "regola": "risoluzione assistita", "wikidata": "Q110414906"}
+{"alias_nuovi": ["Tesseract (Marvel Cinematic Universe)"], "fonte": "Wikidata (CC0)", "id": "art-gemma-dello-spazio-tesseract", "interpreti": [], "regola": "risoluzione assistita", "wikidata": "Q110818826"}
+{"alias_nuovi": ["Eye of Agamotto (Marvel Cinematic Universe)"], "fonte": "Wikidata (CC0)", "id": "art-occhio-di-agamotto", "interpreti": [], "regola": "risoluzione assistita", "wikidata": "Q110825083"}
+{"alias_nuovi": ["Hawkeye", "Occhio di Falco"], "fonte": "Wikidata (CC0)", "id": "id-kate-bishop", "interpreti": [], "regola": "risoluzione assistita", "wikidata": "Q111385820"}
+{"alias_nuovi": ["Ms. Marvel", "Night Light"], "fonte": "Wikidata (CC0)", "id": "id-kamala-khan-ms-marvel", "interpreti": ["Iman Vellani"], "regola": "risoluzione assistita", "wikidata": "Q113169240"}
+{"alias_nuovi": ["Jake Lockley", "Marc Spector", "Marc Spector e Steven Grant", "Mr. Knight", "Steven Grant"], "fonte": "Wikidata (CC0)", "id": "id-steven-grant-marc-spector-moon-knight", "interpreti": ["Oscar Isaac"], "regola": "risoluzione assistita", "wikidata": "Q113177483"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-namor", "interpreti": ["Tenoch Huerta"], "wikidata": "Q116025879"}
 {"alias_nuovi": ["Tønsberg"], "fonte": "Wikidata (CC0)", "id": "luo-new-asgard", "interpreti": [], "wikidata": "Q116294493"}
+{"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "org-s-s-r-strategic-scientific-reserve", "interpreti": [], "regola": "risoluzione assistita", "wikidata": "Q116461762"}
+{"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "bat-battaglia-di-sokovia", "interpreti": [], "regola": "risoluzione assistita", "wikidata": "Q121381059"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "luo-avengers-compound", "interpreti": [], "wikidata": "Q122449889"}
 {"alias_nuovi": ["Ego/Age of Ultron"], "fonte": "Wikidata (CC0)", "id": "pia-ego", "interpreti": [], "wikidata": "Q122620721"}
 {"alias_nuovi": ["Ego/Ravager T'Challa"], "fonte": "Wikidata (CC0)", "id": "pia-ego", "interpreti": [], "wikidata": "Q122621143"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "pia-hala", "interpreti": [], "wikidata": "Q122652355"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-america-chavez", "interpreti": ["Xochitl Gomez"], "wikidata": "Q123507539"}
+{"alias_nuovi": ["Mister Fantastic"], "fonte": "Wikidata (CC0)", "id": "id-reed-richards-first-steps", "interpreti": ["Pedro Pascal"], "regola": "risoluzione assistita", "wikidata": "Q125179103"}
+{"alias_nuovi": ["Maya Lopez"], "fonte": "Wikidata (CC0)", "id": "id-maya-lopez-echo", "interpreti": [], "regola": "risoluzione assistita", "wikidata": "Q126066680"}
 {"alias_nuovi": ["Benjamin Poindexter"], "fonte": "Wikidata (CC0)", "id": "id-bullseye", "interpreti": ["Wilson Bethel"], "wikidata": "Q129084796"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-stick", "interpreti": ["Scott Glenn"], "wikidata": "Q129086434"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-elektra-natchios", "interpreti": ["Élodie Yung"], "wikidata": "Q129144133"}
@@ -104,6 +142,12 @@
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-karen-page", "interpreti": ["Deborah Ann Woll"], "wikidata": "Q129167274"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-arishem", "interpreti": [], "wikidata": "Q129514009"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "id-agatha-harkness", "interpreti": [], "wikidata": "Q131448287"}
+{"alias_nuovi": ["Invisible Woman"], "fonte": "Wikidata (CC0)", "id": "id-sue-storm-first-steps", "interpreti": ["Vanessa Kirby"], "regola": "risoluzione assistita", "wikidata": "Q133697747"}
+{"alias_nuovi": ["Human Torch"], "fonte": "Wikidata (CC0)", "id": "id-johnny-storm-human-torch-first-steps", "interpreti": ["Joseph Quinn"], "regola": "risoluzione assistita", "wikidata": "Q133697756"}
+{"alias_nuovi": ["Thing"], "fonte": "Wikidata (CC0)", "id": "id-ben-grimm-first-steps", "interpreti": ["Ebon Moss-Bachrach"], "regola": "risoluzione assistita", "wikidata": "Q133697772"}
+{"alias_nuovi": ["Falcon", "Joaquin Torres"], "fonte": "Wikidata (CC0)", "id": "id-joaquin-torres-falcon", "interpreti": ["Danny Ramirez"], "regola": "risoluzione assistita", "wikidata": "Q133806334"}
 {"alias_nuovi": ["Galan"], "fonte": "Wikidata (CC0)", "id": "id-galactus", "interpreti": ["Ralph Ineson"], "wikidata": "Q133857993"}
 {"alias_nuovi": ["Shalla-Bal"], "fonte": "Wikidata (CC0)", "id": "id-silver-surfer", "interpreti": ["Julia Garner"], "wikidata": "Q133858017"}
+{"alias_nuovi": ["Wonder Man"], "fonte": "Wikidata (CC0)", "id": "id-simon-williams-wonder-man", "interpreti": ["Yahya Abdul-Mateen II"], "regola": "risoluzione assistita", "wikidata": "Q137425443"}
 {"alias_nuovi": ["Remy LeBeau"], "fonte": "Wikidata (CC0)", "id": "id-gambit", "interpreti": ["Channing Tatum"], "wikidata": "Q142282765"}
+{"alias_nuovi": ["Robert Reynolds", "Void"], "fonte": "Wikidata (CC0)", "id": "id-bob-sentry", "interpreti": ["Lewis Pullman"], "regola": "risoluzione assistita", "wikidata": "Q142295108"}

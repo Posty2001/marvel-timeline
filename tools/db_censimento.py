@@ -20,7 +20,7 @@ def interni():
             'relazioni_per_classe': {'narrativa': per_classe.get('narrativa', 0), 'editoriale': per_classe.get('editoriale', 0),
                                      'controparte': per_classe.get('controparte', 0), 'co_apparizione': 0},
             'relazioni_narrative_per_verifica': dict(collections.Counter(x.get('verifica') for x in narr)),
-            'titoli_timeline_numerata': len(tl), 'titoli_con_voce_atlas': c.get('t', 0)}
+            'titoli_timeline_numerata': len(tl), 'attori_con_scheda_atlas': c.get('t', 0)}
 def get(url, headers=None, tries=3):
     for i in range(tries):
         try:

@@ -71,6 +71,14 @@ on:
         description: Database Expansion W1 - raccolta MCU da Wikidata (CC0, nessun dato TMDB) e salvataggio SOLO sul branch dati db-raw (mai su main ne su test/tva-archives); artifact db-w1
         type: boolean
         default: false
+      db_w1b:
+        description: Database Expansion W1.b - raccolta di FATTI da MCU Wiki e Marvel Database (Fandom, API MediaWiki, CC BY-SA 3.0, solo fatti strutturati) per le voci in staging; scrive SOLO sul branch dati db-raw
+        type: boolean
+        default: false
+      db_w2:
+        description: Database Expansion W2 - raccolta Wikidata (CC0) dei film Marvel pre-MCU e paralleli (Fox, Raimi, Garfield, SSU, Blade, Daredevil/Elektra, Ghost Rider, Hulk 2003, Fantastici Quattro); scrive SOLO sul branch dati db-raw
+        type: boolean
+        default: false
       live_recover_from:
         description: TVA Live RECUPERO di emergenza - SHA di un commit precedente di questo branch con un catalogo valido; con live_commit lo ripristina con generated_at nuovo (senza TMDB)
         type: string
@@ -81,7 +89,7 @@ permissions:
 
 jobs:
   sync:
-    if: ${{ !inputs.db_censimento && !inputs.db_w1 && !inputs.mm_tmdb && !inputs.solo_atlante_pilot && inputs.atlante_job == '' && !((inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit) }}
+    if: ${{ !inputs.db_censimento && !inputs.db_w1 && !inputs.db_w1b && !inputs.db_w2 && !inputs.mm_tmdb && !inputs.solo_atlante_pilot && inputs.atlante_job == '' && !((inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit) }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -175,7 +183,7 @@ jobs:
 
   live-update:
     # Aggiornamento automatico del CATALOGO (solo dati). Pubblicazione dell app = operazione separata.
-    if: ${{ !inputs.db_censimento && !inputs.db_w1 && !inputs.mm_tmdb && !inputs.solo_atlante_pilot && inputs.atlante_job == '' && (inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit }}
+    if: ${{ !inputs.db_censimento && !inputs.db_w1 && !inputs.db_w1b && !inputs.db_w2 && !inputs.mm_tmdb && !inputs.solo_atlante_pilot && inputs.atlante_job == '' && (inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -255,7 +263,7 @@ jobs:
 
   atlante-pilot:
     # Atlante A3.1 pilota: SOLO metadati (percorsi CDN, dimensioni, voti). La chiave resta nei Secret, mai nell output ne nel frontend.
-    if: ${{ !inputs.db_censimento && !inputs.db_w1 && !inputs.mm_tmdb && (inputs.solo_atlante_pilot || (inputs.atlante_job != '' && !startsWith(inputs.atlante_job, 'engine'))) }}
+    if: ${{ !inputs.db_censimento && !inputs.db_w1 && !inputs.db_w1b && !inputs.db_w2 && !inputs.mm_tmdb && (inputs.solo_atlante_pilot || (inputs.atlante_job != '' && !startsWith(inputs.atlante_job, 'engine'))) }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -351,7 +359,7 @@ jobs:
 
   mm-tmdb:
     # Miss Minutes 2.0: archivio TMDB dei titoli (dati pubblici, 0 EUR). La chiave resta nei Secret. Solo branch TEST; mai main.
-    if: ${{ inputs.mm_tmdb && !inputs.db_censimento && !inputs.db_w1 }}
+    if: ${{ inputs.mm_tmdb && !inputs.db_censimento && !inputs.db_w1 && !inputs.db_w1b && !inputs.db_w2 }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -411,7 +419,7 @@ jobs:
   atlante-engine:
     # A3.2 Visual Asset Engine (prototipo, 10 identità): CLIP/SigLIP su CPU del runner (gratuito). Solo metadati in uscita; le immagini restano nel runner.
     # atlante_job = engine-clip | engine-siglip | engine-smoke
-    if: ${{ !inputs.db_censimento && !inputs.db_w1 && !inputs.mm_tmdb && startsWith(inputs.atlante_job, 'engine') }}
+    if: ${{ !inputs.db_censimento && !inputs.db_w1 && !inputs.db_w1b && !inputs.db_w2 && !inputs.mm_tmdb && startsWith(inputs.atlante_job, 'engine') }}
     runs-on: ubuntu-latest
     timeout-minutes: 130
     permissions:
@@ -503,7 +511,7 @@ jobs:
 
   db-w1:
     # Database Expansion W1: raccolta dati pubblici (Wikidata CC0). Scrive SOLO sul branch dati db-raw; nessun deploy, nessun Secret usato.
-    if: ${{ inputs.db_w1 && !inputs.db_censimento }}
+    if: ${{ inputs.db_w1 && !inputs.db_w1b && !inputs.db_w2 && !inputs.db_censimento }}
     runs-on: ubuntu-latest
     timeout-minutes: 40
     permissions:
@@ -538,5 +546,50 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: db-w1
+          path: raw_out
+          retention-days: 30
+
+  db-raccolta:
+    # Database Expansion W1.b / W2: raccolta di dati pubblici (Wikidata CC0; Fandom CC BY-SA 3.0 solo fatti). Scrive SOLO sul branch dati db-raw. Nessun Secret, nessun TMDB.
+    if: ${{ (inputs.db_w1b || inputs.db_w2) && !inputs.db_censimento }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      contents: write
+    concurrency:
+      group: db-raccolta
+      cancel-in-progress: false
+    steps:
+      - name: Verifica ref TEST
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/test/tva-archives" ]; then echo "::error::consentito solo con ref test/tva-archives (attuale: $GITHUB_REF)"; exit 1; fi
+      - uses: actions/checkout@v4
+        with:
+          ref: test/tva-archives
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: W2 - raccolta Wikidata
+        if: ${{ inputs.db_w2 }}
+        run: python3 tools/db_w2_harvest.py raw_out
+      - name: W1.b - raccolta fatti MCU Wiki e Marvel Database
+        if: ${{ inputs.db_w1b }}
+        run: python3 tools/db_w1b_harvest.py raw_out
+      - name: Salva sul branch dati db-raw
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          D=$(mktemp -d); cd "$D"; git init -q
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git fetch -q --depth=1 origin db-raw 2>/dev/null; then git checkout -q -b db-raw FETCH_HEAD; else git checkout -q --orphan db-raw; fi
+          cp "$GITHUB_WORKSPACE"/raw_out/*.json .
+          git add -A; git commit -q -m "W1.b/W2: raccolta ($(date -u +%FT%TZ))" || echo "nessuna modifica"
+          git push -q origin db-raw
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: db-raccolta
           path: raw_out
           retention-days: 30

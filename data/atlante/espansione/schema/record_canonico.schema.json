@@ -84,6 +84,7 @@
    "enum": [
     "registro-storico",
     "W1",
+    "W1b",
     "W2",
     "W3",
     "W4",
@@ -156,6 +157,14 @@
   },
   "continuita_nota": {
    "type": "string"
+  },
+  "fatti": {
+   "type": "object",
+   "description": "Fatti strutturati (specie, stato, genere, affiliazioni, poteri, abilita, equipaggiamento, debolezze, trasformazioni, prima_apparizione, alias_fonte); mai prosa copiata"
+  },
+  "fatti_fonti": {
+   "type": "object",
+   "description": "campo -> elenco fonti che lo attestano (mcuwiki, marveldb); due fonti = confermato"
   }
  }
 }

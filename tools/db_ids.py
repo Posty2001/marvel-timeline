@@ -61,8 +61,8 @@ def verifica():
     for k, v in reg['ids'].items():
         if v['stato'] == 'MANCANTE' or (v['stato'] == 'attivo' and k not in cur):
             errs.append('ID sparito senza lapide: ' + k)
-        if v['stato'] == 'lapide' and not v.get('verso'):
-            errs.append('lapide senza redirect: ' + k)
+        if v['stato'] == 'lapide' and not (v.get('verso') or v.get('motivo')):
+            errs.append('lapide senza redirect/motivo: ' + k)
         if not SLUG.match(k): errs.append('ID non conforme (slug ascii): ' + k)
     for k in cur:
         if k not in reg['ids']: errs.append('ID non registrato (eseguire --scrivi): ' + k)

@@ -17,7 +17,7 @@ rp = T/'data/atlante/espansione/ids_registro.json'; rg = json.load(open(rp)); rg
 rg['ids_sha256'] = hashlib.sha256('\n'.join(sorted(rg['ids'])).encode()).hexdigest(); json.dump(rg, open(rp, 'w'), sort_keys=True)
 for f in ('identita.json', 'manifest.json'): shutil.copy(ROOT/'data/atlante'/f, T/'data/atlante'/f)
 shutil.copy(ROOT/'atlante2/data/index.json', T/'atlante2/data/index.json')
-subprocess.run(['python3', 'tools/db_w1_build.py', 'tests/fixtures/w1_raw_fixture.json', '--scrivi'], cwd=ROOT, env=dict(os.environ, DB_ROOT=str(T)), check=True, capture_output=True)
+subprocess.run(['python3', 'tools/db_w1_build.py', 'tests/fixtures/w1_raw_fixture.json', '--scrivi', '--w1b', 'tests/fixtures/w1b'], cwd=ROOT, env=dict(os.environ, DB_ROOT=str(T)), check=True, capture_output=True)
 def free():
     s = socket.socket(); s.bind(('127.0.0.1', 0)); p = s.getsockname()[1]; s.close(); return p
 class Q(http.server.SimpleHTTPRequestHandler):
@@ -46,6 +46,17 @@ try:
         ok('scheda: Livello C dichiarato, fonti, nessun dossier inventato', 'Livello C' in txt and 'Wikidata' in txt and 'Poteri' not in txt, txt[:120])
         ok('scheda: link Wikidata sicuro', pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-dbsrc a')].every(a=>a.rel.includes('noopener')&&a.target==='_blank'&&a.href.startsWith('https://'))"))
         pg.go_back(); pg.wait_for_timeout(800)
+        vai(pg, 'orphan entry'); pg.evaluate("()=>document.querySelector('#atlas2 .a3-dbg .a3-dbi').click()"); pg.wait_for_timeout(900)
+        t2 = pg.evaluate("()=>document.querySelector('#atlas2 .a3-dbx').textContent")
+        ok('scheda Livello B: poteri/specie/organizzazioni con provenienza', 'Livello B' in t2 and 'Poteri' in t2 and 'Volo' in t2 and 'Telepatia' in t2 and 'Organizzazioni di appartenenza' in t2 and 'confermato da due fonti' in t2, t2[:300])
+        ok('scheda B: fonti MCU Wiki con licenza CC BY-SA', pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-dbsrc a')].some(a=>/CC BY-SA 3.0/.test(a.textContent)&&a.href.includes('fandom.com'))"))
+        pg.go_back(); pg.wait_for_timeout(600)
+        pg.evaluate("()=>tvaAtlas2.ext.api.nav('a3',{a3:{v:'search',q:''}})"); pg.wait_for_timeout(700)
+        pg.evaluate("()=>document.querySelector('#atlas2 .a3-dbopen').click()"); pg.wait_for_timeout(900)
+        tiles = pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-dbtile')].map(b=>b.textContent)")
+        ok('catalogo esteso: categorie con conteggi', any('Personaggi' in x for x in tiles) and any('Interpreti' in x for x in tiles), tiles)
+        pg.evaluate("()=>[...document.querySelectorAll('#atlas2 .a3-dbtile')].find(b=>/Personaggi/.test(b.textContent)).click()"); pg.wait_for_timeout(900)
+        ok('catalogo esteso: elenco apribile', pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-dbi').length")>=2)
         vai(pg, 'scarlet witch')
         ok('alias di voce esistente apre la scheda ESISTENTE', 'Wanda Maximoff' in pg.evaluate("()=>document.querySelector('#atlas2 .a3-dbg')?.textContent||''"))
         vai(pg, 'peter')

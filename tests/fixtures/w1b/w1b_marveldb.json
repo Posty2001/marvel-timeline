@@ -1,0 +1,30 @@
+{
+ "ricerca": {
+  "Orphan Entry": "Orphan Entry (Earth-199999)"
+ },
+ "pagine": {
+  "Orphan Entry (Earth-199999)": {
+   "titolo": "Orphan Entry",
+   "pageid": 1,
+   "revid": 1,
+   "categorie": [
+    "Characters"
+   ],
+   "infobox": {
+    "species": "Human",
+    "gender": "Male"
+   },
+   "sezioni": {
+    "poteri": [
+     "Flight",
+     "Telepathy"
+    ],
+    "debolezze": [
+     "Magic"
+    ]
+   },
+   "disambigua": false,
+   "url": "https://marvelcinematicuniverse.fandom.com/wiki/Orphan_Entry_(Earth-199999)"
+  }
+ }
+}

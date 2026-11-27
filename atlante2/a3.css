@@ -291,3 +291,7 @@ html:has(#atlas2Toggle:checked + #atlas2 .a3) #mmFab:focus-visible, html:has(#at
 .a3-dbsrc { display: flex; flex-wrap: wrap; gap: 8px 14px; font-size: 12.5px; }
 .a3-dbsrc a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .a3-dbg { margin-top: 12px; }
+.a3-ff { color: var(--a3-soft); font-size: 11px; }
+.a3-dbtiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; padding: 4px 0 20px; }
+.a3-dbtile { min-height: 54px; text-align: left; }
+.a3-dbopen { margin-top: 14px; }

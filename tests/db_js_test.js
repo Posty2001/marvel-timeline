@@ -18,7 +18,7 @@ const S=q=>new Promise(r=>tvaDb.search(q,r));
   ok((await S('zz')).length>=0,'query corta senza errori');
   ok((await S('qqqqqq')).length===0,'nessun falso positivo');
   const g=await new Promise(r=>tvaDb.get('luo-hidden-vault',r));ok(g&&g.wd==='Q104','get per id');
-  ok(!(await S('orphan entry')).length,'staging NON nel runtime');
+  ok(!(await S('rogue case')).length,'staging NON nel runtime');
   ok(!(await S('some episode')).length,'episodi fuori ambito');
   console.log('db_js_test: record',m.N,fail?'FAIL':'ok');process.exit(fail?1:0);
 })();

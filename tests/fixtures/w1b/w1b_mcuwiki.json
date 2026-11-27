@@ -1,0 +1,74 @@
+{
+ "pagine": {
+  "Orphan Entry": {
+   "titolo": "Orphan Entry",
+   "pageid": 1,
+   "revid": 1,
+   "categorie": [
+    "Characters"
+   ],
+   "infobox": {
+    "species": "Human",
+    "status": "Alive",
+    "affiliation": "Kree Collective; Avengers",
+    "portrayedby": "Someone"
+   },
+   "sezioni": {
+    "poteri": [
+     "Flight",
+     "Super Strength"
+    ]
+   },
+   "disambigua": false,
+   "url": "https://marvelcinematicuniverse.fandom.com/wiki/Orphan_Entry"
+  },
+  "Rogue Case": {
+   "titolo": "Rogue Case",
+   "pageid": 1,
+   "revid": 1,
+   "categorie": [
+    "Characters"
+   ],
+   "infobox": {
+    "portrayedby": "Someone Else"
+   },
+   "sezioni": {},
+   "disambigua": false,
+   "url": "https://marvelcinematicuniverse.fandom.com/wiki/Rogue_Case"
+  },
+  "Hidden Vault": {
+   "titolo": "Hidden Vault",
+   "pageid": 1,
+   "revid": 1,
+   "categorie": [
+    "Locations"
+   ],
+   "infobox": {},
+   "sezioni": {},
+   "disambigua": false,
+   "url": "https://marvelcinematicuniverse.fandom.com/wiki/Hidden_Vault"
+  },
+  "Ancient Blade": {
+   "titolo": "Ancient Blade",
+   "pageid": 1,
+   "revid": 1,
+   "categorie": [
+    "Characters"
+   ],
+   "infobox": {},
+   "sezioni": {},
+   "disambigua": false,
+   "url": "https://marvelcinematicuniverse.fandom.com/wiki/Ancient_Blade"
+  },
+  "Kree Collective": {
+   "titolo": "Kree Collective",
+   "pageid": 1,
+   "revid": 1,
+   "categorie": [],
+   "infobox": {},
+   "sezioni": {},
+   "disambigua": false,
+   "url": "https://marvelcinematicuniverse.fandom.com/wiki/Kree_Collective"
+  }
+ }
+}

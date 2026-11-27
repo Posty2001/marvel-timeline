@@ -1,6 +1,6 @@
 # Database Expansion – W1 «Espansione MCU» (27–28/11/2026) — REPORT
 
-Stato: **pipeline, integrazione e prima raccolta reale consegnate: 284 nuove voci verificate (Livello C) + 109 arricchimenti**. Non dichiarata completata. Build TEST `20261128-0100-db1`. 0 €, produzione congelata.
+Stato: **pipeline, integrazione e prima raccolta reale consegnate: 286 nuove voci verificate (Livello C) + 153 arricchimenti (risolutore a regole W1.b)**. Non dichiarata completata. Build TEST `20261128-0100-db1`. 0 €, produzione congelata.
 
 ## 1. Correzioni al censimento (richieste dell'utente)
 | Problema | Causa | Correzione |
@@ -45,3 +45,14 @@ Le 59 possibili duplicazioni sono volutamente non risolte automaticamente (conti
 2. Revisione della coda (59 duplicati, 89 non classificati): posso proporre decisioni a regole come per i link ambigui di A3.
 3. W2 (pre-MCU e paralleli) solo dopo la tua approvazione.
 Rigenerazione: il raw (`data/atlante/espansione/raw/`, ignorato da git) si scarica da `db-raw`; `python3 tools/db_w1_build.py <raw> --scrivi` è idempotente (ID stabili).
+
+
+## Aggiornamento 28/11 – W1.b/W2 (strumenti pronti, raccolta da eseguire)
+
+- **Correzione**: i «49 titoli con voce Atlas» erano in realtà 49 attori (tipo `t`); i titoli numerati della Timeline sono 138 (`altTimelineData.json`).
+- **Code risolte a regole** (verifica identità/continuità/alias/ID esterni/interpreti, omonimi mai fusi): possibili duplicati 59 → 3 realmente ambigui (Groot originale/successore; Blade MCU/Blade-verse; Grant Ward/Hive); classi non classificate 89 → 35 (fuori ambito o classe non riconosciuta).
+- **Numeri verificati nel codice**: canon 286 (163 attori, 53 creatori, 39 opere, 23 identità, 4 artefatti, 2 universi, 1 battaglia, 1 organizzazione), arricchimenti 153, staging 1.093 (987 a fonte singola), runtime 439 record; registro 1.038 ID, 0 errori.
+- **W1.b** (`tools/db_w1b_harvest.py`, `db_wiki_parse.py`): MCU Wiki e Marvel Database via API MediaWiki Fandom (testo CC BY-SA 3.0; solo fatti strutturati con attribuzione e URL, mai prosa; 1,2 s tra richieste; User-Agent dichiarato). marvel.com non usato (termini Disney vietano l'accesso automatico). Livelli B: poteri/abilità/equipaggiamento/debolezze/trasformazioni (nomi). Testato solo su mock/fixture: **contenuti reali = DA RACCOGLIERE**.
+- **W2** (`tools/db_w2_harvest.py`, `--onda w2`): Fox X-Men/Deadpool/New Mutants, Raimi, Webb, SSU, Blade, Daredevil/Elektra, Ghost Rider, Hulk 2003, Fantastici Quattro. Test su fixture; contenuti reali da raccogliere.
+- **Raccolta**: Actions → «TMDB sync (manuale)» → ref `test/tva-archives` → spunte `db_w1b` e `db_w2` (job `db-raccolta`, scrive solo sul branch `db-raw`).
+- **Non fatto / bloccato**: integrazione nei cataloghi nativi di Atlas/Multiverso/Nexus (oggi: ricerca e catalogo «Archivio esteso»); relazioni narrative da Wikidata (P22/P25/P26/P40/P3373/P463 non ancora raccolte); ritratti privati per le nuove identità (la pipeline usa metadati TMDB: termini di archiviazione non chiariti); Comic Vine rimandato; tag `release/atlante-2.0-a70` non pushabile dal proxy.
