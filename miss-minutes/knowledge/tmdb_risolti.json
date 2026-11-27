@@ -1,0 +1,55 @@
+{
+ "versione": 1,
+ "generato": "2026-11-27T00:24:43Z",
+ "nota": "Associazioni TMDB per i titoli senza mappa/override. 'auto' = regola stringente (titolo identico + anno identico + candidato unico), DA CONFERMARE dall'utente copiandola in tmdb_overrides.json; 'ambiguo'/'nessuno' = nessuna associazione.",
+ "voci": {
+  "077": {
+   "titolo": "Team Thor / Team Darryl shorts",
+   "anno": "2016",
+   "tipo": "speciale",
+   "stato": "ambiguo",
+   "candidati": [
+    {
+     "t": "movie",
+     "id": 413279,
+     "titolo": "Team Thor: Parte 1",
+     "anno": "2016",
+     "nome_cercato": "Team Thor"
+    }
+   ]
+  },
+  "107": {
+   "titolo": "Guardians of the Galaxy Holiday Special",
+   "anno": "2022",
+   "tipo": "speciale",
+   "stato": "auto",
+   "t": "movie",
+   "id": 774752,
+   "evidenza": {
+    "titolo_tmdb": "Guardiani della Galassia: Holiday Special",
+    "anno": "2022",
+    "regola": "titolo normalizzato identico + anno identico + candidato unico"
+   }
+  },
+  "115": {
+   "titolo": "I Am Groot shorts",
+   "anno": "2022",
+   "tipo": "speciale",
+   "stato": "auto",
+   "t": "tv",
+   "id": 232125,
+   "evidenza": {
+    "titolo_tmdb": "I Am Groot",
+    "anno": "2022",
+    "regola": "titolo normalizzato identico + anno identico + candidato unico"
+   }
+  },
+  "125": {
+   "titolo": "Fantastic Four: First Steps",
+   "anno": "2025",
+   "tipo": "film",
+   "stato": "nessuno",
+   "candidati": []
+  }
+ }
+}

@@ -1,6 +1,6 @@
 {
- "versione": 1,
- "generato": "2026-11-26T22:40:49Z",
+ "versione": 2,
+ "generato": "2026-11-27T00:25:00Z",
  "fonte": "TMDB (api.themoviedb.org)",
  "attribuzione": "Questo prodotto usa le API di TMDB ma non è approvato né certificato da TMDB.",
  "voci": {
@@ -55,7 +55,8 @@
      "data": "2002-05-01"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/557"
+   "url": "https://www.themoviedb.org/movie/557",
+   "risoluzione": "mappa"
   },
   "002": {
    "tmdb": {
@@ -108,7 +109,8 @@
      "data": "2004-06-25"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/558"
+   "url": "https://www.themoviedb.org/movie/558",
+   "risoluzione": "mappa"
   },
   "003": {
    "tmdb": {
@@ -161,7 +163,8 @@
      "data": "2007-05-01"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/559"
+   "url": "https://www.themoviedb.org/movie/559",
+   "risoluzione": "mappa"
   },
   "004": {
    "tmdb": {
@@ -214,7 +217,8 @@
      "data": "2012-06-23"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/1930"
+   "url": "https://www.themoviedb.org/movie/1930",
+   "risoluzione": "mappa"
   },
   "005": {
    "tmdb": {
@@ -267,7 +271,8 @@
      "data": "2014-04-16"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/102382"
+   "url": "https://www.themoviedb.org/movie/102382",
+   "risoluzione": "mappa"
   },
   "006": {
    "tmdb": {
@@ -320,7 +325,8 @@
      "data": "2018-09-28"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/335983"
+   "url": "https://www.themoviedb.org/movie/335983",
+   "risoluzione": "mappa"
   },
   "007": {
    "tmdb": {
@@ -373,7 +379,8 @@
      "data": "2021-09-30"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/580489"
+   "url": "https://www.themoviedb.org/movie/580489",
+   "risoluzione": "mappa"
   },
   "008": {
    "tmdb": {
@@ -426,7 +433,8 @@
      "data": "2022-03-30"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/526896"
+   "url": "https://www.themoviedb.org/movie/526896",
+   "risoluzione": "mappa"
   },
   "009": {
    "tmdb": {
@@ -479,7 +487,8 @@
      "data": "2024-02-14"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/634492"
+   "url": "https://www.themoviedb.org/movie/634492",
+   "risoluzione": "mappa"
   },
   "010": {
    "tmdb": {
@@ -532,7 +541,8 @@
      "data": "2024-12-11"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/539972"
+   "url": "https://www.themoviedb.org/movie/539972",
+   "risoluzione": "mappa"
   },
   "011": {
    "tmdb": {
@@ -585,7 +595,8 @@
      "data": "2024-10-22"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/912649"
+   "url": "https://www.themoviedb.org/movie/912649",
+   "risoluzione": "mappa"
   },
   "012": {
    "tmdb": {
@@ -638,7 +649,8 @@
      "data": "2011-06-01"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/49538"
+   "url": "https://www.themoviedb.org/movie/49538",
+   "risoluzione": "mappa"
   },
   "013": {
    "tmdb": {
@@ -691,7 +703,8 @@
      "data": "2014-05-15"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/127585"
+   "url": "https://www.themoviedb.org/movie/127585",
+   "risoluzione": "mappa"
   },
   "014": {
    "tmdb": {
@@ -744,7 +757,8 @@
      "data": "2016-05-18"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/246655"
+   "url": "https://www.themoviedb.org/movie/246655",
+   "risoluzione": "mappa"
   },
   "015": {
    "tmdb": {
@@ -797,7 +811,8 @@
      "data": "2000-07-13"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/36657"
+   "url": "https://www.themoviedb.org/movie/36657",
+   "risoluzione": "mappa"
   },
   "016": {
    "tmdb": {
@@ -850,7 +865,8 @@
      "data": "2003-04-27"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/36658"
+   "url": "https://www.themoviedb.org/movie/36658",
+   "risoluzione": "mappa"
   },
   "017": {
    "tmdb": {
@@ -903,7 +919,8 @@
      "data": "2006-05-24"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/36668"
+   "url": "https://www.themoviedb.org/movie/36668",
+   "risoluzione": "mappa"
   },
   "018": {
    "tmdb": {
@@ -956,7 +973,8 @@
      "data": "2009-04-28"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/2080"
+   "url": "https://www.themoviedb.org/movie/2080",
+   "risoluzione": "mappa"
   },
   "019": {
    "tmdb": {
@@ -1009,7 +1027,8 @@
      "data": "2013-07-24"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/76170"
+   "url": "https://www.themoviedb.org/movie/76170",
+   "risoluzione": "mappa"
   },
   "020": {
    "tmdb": {
@@ -1062,7 +1081,8 @@
      "data": "2019-06-05"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/320288"
+   "url": "https://www.themoviedb.org/movie/320288",
+   "risoluzione": "mappa"
   },
   "021": {
    "tmdb": {
@@ -1115,7 +1135,8 @@
      "data": "2020-08-26"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/340102"
+   "url": "https://www.themoviedb.org/movie/340102",
+   "risoluzione": "mappa"
   },
   "022": {
    "tmdb": {
@@ -1168,7 +1189,8 @@
      "data": "2016-02-09"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/293660"
+   "url": "https://www.themoviedb.org/movie/293660",
+   "risoluzione": "mappa"
   },
   "023": {
    "tmdb": {
@@ -1221,7 +1243,8 @@
      "data": "2018-05-15"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/383498"
+   "url": "https://www.themoviedb.org/movie/383498",
+   "risoluzione": "mappa"
   },
   "024": {
    "tmdb": {
@@ -1274,7 +1297,8 @@
      "data": "2017-02-28"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/263115"
+   "url": "https://www.themoviedb.org/movie/263115",
+   "risoluzione": "mappa"
   },
   "025": {
    "tmdb": {
@@ -1328,7 +1352,8 @@
      "data": "2018-12-06"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/324857"
+   "url": "https://www.themoviedb.org/movie/324857",
+   "risoluzione": "mappa"
   },
   "026": {
    "tmdb": {
@@ -1382,7 +1407,8 @@
      "data": "2023-05-31"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/569094"
+   "url": "https://www.themoviedb.org/movie/569094",
+   "risoluzione": "mappa"
   },
   "027": {
    "tmdb": {
@@ -1429,7 +1455,8 @@
     }
    ],
    "url": "https://www.themoviedb.org/movie/911916",
-   "sinossi_lingua": "en"
+   "sinossi_lingua": "en",
+   "risoluzione": "mappa"
   },
   "028": {
    "tmdb": {
@@ -1462,7 +1489,8 @@
      "data": "1994-01-19"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/22059"
+   "url": "https://www.themoviedb.org/movie/22059",
+   "risoluzione": "mappa"
   },
   "029": {
    "tmdb": {
@@ -1515,7 +1543,8 @@
      "data": "2005-06-29"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/9738"
+   "url": "https://www.themoviedb.org/movie/9738",
+   "risoluzione": "mappa"
   },
   "030": {
    "tmdb": {
@@ -1568,7 +1597,8 @@
      "data": "2007-06-13"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/1979"
+   "url": "https://www.themoviedb.org/movie/1979",
+   "risoluzione": "mappa"
   },
   "031": {
    "tmdb": {
@@ -1621,7 +1651,8 @@
      "data": "2015-08-05"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/166424"
+   "url": "https://www.themoviedb.org/movie/166424",
+   "risoluzione": "mappa"
   },
   "032": {
    "tmdb": {
@@ -1674,7 +1705,8 @@
      "data": "1998-08-21"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/36647"
+   "url": "https://www.themoviedb.org/movie/36647",
+   "risoluzione": "mappa"
   },
   "033": {
    "tmdb": {
@@ -1727,7 +1759,8 @@
      "data": "2002-03-22"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/36586"
+   "url": "https://www.themoviedb.org/movie/36586",
+   "risoluzione": "mappa"
   },
   "034": {
    "tmdb": {
@@ -1780,7 +1813,8 @@
      "data": "2004-12-08"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/36648"
+   "url": "https://www.themoviedb.org/movie/36648",
+   "risoluzione": "mappa"
   },
   "035": {
    "tmdb": {
@@ -1833,7 +1867,8 @@
      "data": "2003-02-14"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/9480"
+   "url": "https://www.themoviedb.org/movie/9480",
+   "risoluzione": "mappa"
   },
   "036": {
    "tmdb": {
@@ -1886,7 +1921,8 @@
      "data": "2005-01-13"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/9947"
+   "url": "https://www.themoviedb.org/movie/9947",
+   "risoluzione": "override"
   },
   "037": {
    "tmdb": {
@@ -1939,7 +1975,8 @@
      "data": "2007-01-15"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/1250"
+   "url": "https://www.themoviedb.org/movie/1250",
+   "risoluzione": "mappa"
   },
   "038": {
    "tmdb": {
@@ -1993,7 +2030,8 @@
      "data": "2011-12-10"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/71676"
+   "url": "https://www.themoviedb.org/movie/71676",
+   "risoluzione": "mappa"
   },
   "039": {
    "tmdb": {
@@ -2019,7 +2057,13 @@
      "data": "2026-05-25"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/220102"
+   "url": "https://www.themoviedb.org/tv/220102",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2026-05-25",
+    "ultima": "2026-05-25",
+    "n_stagioni": 1
+   }
   },
   "040": {
    "tmdb": {
@@ -2072,7 +2116,8 @@
      "data": "2003-06-19"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/1927"
+   "url": "https://www.themoviedb.org/movie/1927",
+   "risoluzione": "mappa"
   },
   "041": {
    "tmdb": {
@@ -2125,7 +2170,8 @@
      "data": "2011-07-22"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/1771"
+   "url": "https://www.themoviedb.org/movie/1771",
+   "risoluzione": "mappa"
   },
   "042": {
    "tmdb": {
@@ -2166,7 +2212,8 @@
      "data": "2013-10-04"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/211387"
+   "url": "https://www.themoviedb.org/movie/211387",
+   "risoluzione": "mappa"
   },
   "043": {
    "tmdb": {
@@ -2189,7 +2236,26 @@
      "data": "2015-01-06"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/61550"
+   "url": "https://www.themoviedb.org/tv/61550",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2015-01-06",
+    "ultima": "2016-03-01",
+    "n_stagioni": 2
+   },
+   "stagione": {
+    "n": 1,
+    "nome": "Stagione 1",
+    "sinossi_it": "1946. La pace infligge un duro colpo all'Agente Carter, che si trova messa in disparte quando gli uomini tornano a casa dalla guerra. Lavorando per l'SSR, Peggy deve svolgere mansioni amministrativi, quando preferirebbe andare sul campo a sconfiggere i cattivi. Inoltre, cerca anche di affontare la vita da single, dopo aver perso l'amore della sua vita, Captain America. Quando Howard Stark, una sua vecchia conoscenza, viene incastrato per aver venduto le sue armi mortali, contatta Peggy per rintracciare i responsabili e ripristinare la propria reputazione.",
+    "data": "2015-01-06",
+    "episodi": 8,
+    "cast": [
+     "Hayley Atwell",
+     "James D'Arcy",
+     "Enver Gjokaj",
+     "Chad Michael Murray"
+    ]
+   }
   },
   "044": {
    "tmdb": {
@@ -2212,7 +2278,26 @@
      "data": "2015-01-06"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/61550"
+   "url": "https://www.themoviedb.org/tv/61550",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2015-01-06",
+    "ultima": "2016-03-01",
+    "n_stagioni": 2
+   },
+   "stagione": {
+    "n": 2,
+    "nome": "Stagione 2",
+    "sinossi_it": "Hayley Atwell torna a vestire i panni dell'eroina Marvel nella serie ispirata alla saga di 'Captain America'.",
+    "data": "2016-01-19",
+    "episodi": 10,
+    "cast": [
+     "Hayley Atwell",
+     "James D'Arcy",
+     "Enver Gjokaj",
+     "Wynn Everett"
+    ]
+   }
   },
   "045": {
    "tmdb": {
@@ -2265,7 +2350,8 @@
      "data": "2008-04-30"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/1726"
+   "url": "https://www.themoviedb.org/movie/1726",
+   "risoluzione": "mappa"
   },
   "046": {
    "tmdb": {
@@ -2299,7 +2385,8 @@
      "data": "2011-09-13"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/76122"
+   "url": "https://www.themoviedb.org/movie/76122",
+   "risoluzione": "mappa"
   },
   "047": {
    "tmdb": {
@@ -2352,7 +2439,8 @@
      "data": "2010-04-28"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/10138"
+   "url": "https://www.themoviedb.org/movie/10138",
+   "risoluzione": "mappa"
   },
   "048": {
    "tmdb": {
@@ -2389,7 +2477,8 @@
      "data": "2011-10-25"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/76535"
+   "url": "https://www.themoviedb.org/movie/76535",
+   "risoluzione": "mappa"
   },
   "049": {
    "tmdb": {
@@ -2442,7 +2531,8 @@
      "data": "2008-06-12"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/1724"
+   "url": "https://www.themoviedb.org/movie/1724",
+   "risoluzione": "mappa"
   },
   "050": {
    "tmdb": {
@@ -2495,7 +2585,8 @@
      "data": "2011-04-27"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/10195"
+   "url": "https://www.themoviedb.org/movie/10195",
+   "risoluzione": "mappa"
   },
   "051": {
    "tmdb": {
@@ -2548,7 +2639,8 @@
      "data": "2012-04-25"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/24428"
+   "url": "https://www.themoviedb.org/movie/24428",
+   "risoluzione": "mappa"
   },
   "052": {
    "tmdb": {
@@ -2589,7 +2681,8 @@
      "data": "2012-08-29"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/119569"
+   "url": "https://www.themoviedb.org/movie/119569",
+   "risoluzione": "mappa"
   },
   "053": {
    "tmdb": {
@@ -2642,7 +2735,8 @@
      "data": "2013-04-18"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/68721"
+   "url": "https://www.themoviedb.org/movie/68721",
+   "risoluzione": "mappa"
   },
   "054": {
    "tmdb": {
@@ -2695,7 +2789,8 @@
      "data": "2014-02-04"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/253980"
+   "url": "https://www.themoviedb.org/movie/253980",
+   "risoluzione": "mappa"
   },
   "055": {
    "tmdb": {
@@ -2748,7 +2843,8 @@
      "data": "2013-10-30"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/76338"
+   "url": "https://www.themoviedb.org/movie/76338",
+   "risoluzione": "mappa"
   },
   "056": {
    "tmdb": {
@@ -2802,7 +2898,8 @@
      "data": "2014-03-20"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/100402"
+   "url": "https://www.themoviedb.org/movie/100402",
+   "risoluzione": "mappa"
   },
   "057": {
    "tmdb": {
@@ -2828,7 +2925,28 @@
      "data": "2013-09-24"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/1403"
+   "url": "https://www.themoviedb.org/tv/1403",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2013-09-24",
+    "ultima": "2020-08-12",
+    "n_stagioni": 7
+   },
+   "stagione": {
+    "n": 1,
+    "nome": "Stagione 1",
+    "sinossi_it": "La prima stagione inizia dove sono stati interrotti i \"Marvel's The Avengers\". È appena dopo la battaglia di New York, e ora che l'esistenza di supereroi e alieni è diventata di dominio pubblico, il mondo sta cercando di fare i conti con questa nuova realtà. L'agente Phil Coulson è tornato in azione e ora ha messo gli occhi su un misterioso gruppo chiamato The Rising Tide. Al fine di rintracciare questo nemico invisibile e sconosciuto, ha riunito un piccolo gruppo altamente selezionato di agenti dall'organizzazione mondiale di polizia nota come S.H.I.E.L.D.",
+    "data": "2013-09-24",
+    "episodi": 22,
+    "cast": [
+     "Clark Gregg",
+     "Chloe Bennet",
+     "Elizabeth Henstridge",
+     "Ming-Na Wen",
+     "Brett Dalton",
+     "Iain De Caestecker"
+    ]
+   }
   },
   "058": {
    "tmdb": {
@@ -2881,7 +2999,8 @@
      "data": "2014-07-30"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/118340"
+   "url": "https://www.themoviedb.org/movie/118340",
+   "risoluzione": "mappa"
   },
   "059": {
    "tmdb": {
@@ -2934,7 +3053,8 @@
      "data": "2017-04-25"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/283995"
+   "url": "https://www.themoviedb.org/movie/283995",
+   "risoluzione": "mappa"
   },
   "060": {
    "tmdb": {
@@ -2959,7 +3079,26 @@
      "data": "2015-04-10"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/61889"
+   "url": "https://www.themoviedb.org/tv/61889",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2015-04-10",
+    "ultima": "2018-10-19",
+    "n_stagioni": 3
+   },
+   "stagione": {
+    "n": 1,
+    "nome": "Stagione 1",
+    "sinossi_it": "Matt Murdock è un avvocato non vedente che ha appena aperto uno studio insieme al collega e amico Foggy Nelson e insieme alla loro segretaria tuttofare Karen Paige - la loro prima cliente - cercano di trovare le prove per incastrare l'uomo che sta tramando nell'ombra per ottenere il controllo di Hell's Kitchen, il pericoloso e misterioso Wilson Fisk.",
+    "data": "2015-04-10",
+    "episodi": 13,
+    "cast": [
+     "Charlie Cox",
+     "Deborah Ann Woll",
+     "Elden Henson",
+     "Vincent D'Onofrio"
+    ]
+   }
   },
   "061": {
    "tmdb": {
@@ -2983,7 +3122,27 @@
      "data": "2015-11-20"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/38472"
+   "url": "https://www.themoviedb.org/tv/38472",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2015-11-20",
+    "ultima": "2019-06-14",
+    "n_stagioni": 3
+   },
+   "stagione": {
+    "n": 1,
+    "nome": "Stagione 1",
+    "sinossi_it": "Jessica Jones è un ex-supereroina che si è data a un lavoro più \"normale” dopo aver subito, per un non specificato periodo di tempo, il controllo mentale di Killgrave, un uomo con la capacità di ordinare a chiunque di fare ciò che lui vuole. Ora Jessica è un’investigatrice privata nella sua agenzia, la Alias Investigations. Le poche persone nella sua vita sono Jeri Hogarth, importante avvocato che passa i casi investigativi alla protagonista; Malcolm, vicino di casa di Jessica; e Trish Walker, sua vecchia amica ora importante conduttrice radiofonica.",
+    "data": "2015-11-20",
+    "episodi": 13,
+    "cast": [
+     "Krysten Ritter",
+     "Rachael Taylor",
+     "Eka Darville",
+     "Carrie-Anne Moss",
+     "David Tennant"
+    ]
+   }
   },
   "062": {
    "tmdb": {
@@ -3036,7 +3195,8 @@
      "data": "2015-04-22"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/99861"
+   "url": "https://www.themoviedb.org/movie/99861",
+   "risoluzione": "mappa"
   },
   "063": {
    "tmdb": {
@@ -3089,7 +3249,8 @@
      "data": "2015-07-14"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/102899"
+   "url": "https://www.themoviedb.org/movie/102899",
+   "risoluzione": "mappa"
   },
   "064": {
    "tmdb": {
@@ -3115,7 +3276,30 @@
      "data": "2013-09-24"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/1403"
+   "url": "https://www.themoviedb.org/tv/1403",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2013-09-24",
+    "ultima": "2020-08-12",
+    "n_stagioni": 7
+   },
+   "stagione": {
+    "n": 2,
+    "nome": "Stagione 2",
+    "sinossi_it": "Questa seconda stagione vede il Direttore Phil Coulson (interpretato, ancora una volta, da Clark Gregg) doversi confrontare con numerose problematiche e nemici. Inizialmente, le sue incisioni in seguito al Progetto T.A.H.I.T.I. lo porteranno a scontrarsi con l'HYDRA, capeggiata dal Dr. Whitehall, e alla scoperta di una razza di persone con poteri denominata 'Inumani'. Di queste ne faranno parte Raina, che si tramuterà in un 'mostro' capace di vedere brandelli di futuro, e Skye alias Daisy Johnson, in grado di creare scosse di terremoto.",
+    "data": "2014-09-23",
+    "episodi": 22,
+    "cast": [
+     "Clark Gregg",
+     "Chloe Bennet",
+     "Elizabeth Henstridge",
+     "Ming-Na Wen",
+     "Brett Dalton",
+     "Iain De Caestecker",
+     "Nick Blood",
+     "Adrianne Palicki"
+    ]
+   }
   },
   "065": {
    "tmdb": {
@@ -3140,7 +3324,26 @@
      "data": "2015-04-10"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/61889"
+   "url": "https://www.themoviedb.org/tv/61889",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2015-04-10",
+    "ultima": "2018-10-19",
+    "n_stagioni": 3
+   },
+   "stagione": {
+    "n": 2,
+    "nome": "Stagione 2",
+    "sinossi_it": "Proprio quando Matt pensa di aver riportato un po’ d’ordine in città, a Hell’s Kitchen emergono nuove forze del male. Ora l’Uomo senza paura deve affrontare un nuovo avversario, Frank Castle, e anche una vecchia fiamma: Elektra Natchios. I problemi si moltiplicano quando Frank Castle ritorna in cerca di vendetta nel quartiere di Matt, prendendo la giustizia nelle proprie mani, con lo pseudonimo The Punisher.",
+    "data": "2016-03-18",
+    "episodi": 13,
+    "cast": [
+     "Charlie Cox",
+     "Deborah Ann Woll",
+     "Elden Henson",
+     "Jon Bernthal"
+    ]
+   }
   },
   "066": {
    "tmdb": {
@@ -3166,7 +3369,30 @@
      "data": "2013-09-24"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/1403"
+   "url": "https://www.themoviedb.org/tv/1403",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2013-09-24",
+    "ultima": "2020-08-12",
+    "n_stagioni": 7
+   },
+   "stagione": {
+    "n": 3,
+    "nome": "Stagione 3",
+    "sinossi_it": "In questa terza stagione la squadra di Coulson si ritroverà a dover gestire il crescente problema dei super umani e delle misteriose figure che vogliono sfruttare questa nuova razza per i propri scopi. Tra vecchie conoscenze e nuovi nemici, lo SHIELD scoprirà le origini del’Hydra e della misteriosa entità primordiale tornata sulla Terra per dar vita a una nuova era di Inumani.",
+    "data": "2015-09-29",
+    "episodi": 22,
+    "cast": [
+     "Clark Gregg",
+     "Chloe Bennet",
+     "Elizabeth Henstridge",
+     "Ming-Na Wen",
+     "Henry Simmons",
+     "Brett Dalton",
+     "Iain De Caestecker",
+     "Nick Blood"
+    ]
+   }
   },
   "067": {
    "tmdb": {
@@ -3220,7 +3446,8 @@
      "data": "2016-04-27"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/271110"
+   "url": "https://www.themoviedb.org/movie/271110",
+   "risoluzione": "mappa"
   },
   "068": {
    "tmdb": {
@@ -3245,7 +3472,26 @@
      "data": "2016-09-30"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/62126"
+   "url": "https://www.themoviedb.org/tv/62126",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2016-09-30",
+    "ultima": "2018-06-22",
+    "n_stagioni": 2
+   },
+   "stagione": {
+    "n": 1,
+    "nome": "Stagione 1",
+    "sinossi_it": "Luke Cage veste i panni dell'invincibile difensore di Harlem e affronta politici corrotti e spietati gangster, oltre ai demoni del suo passato.",
+    "data": "2016-09-30",
+    "episodi": 13,
+    "cast": [
+     "Mike Colter",
+     "Alfre Woodard",
+     "Simone Missick",
+     "Theo Rossi"
+    ]
+   }
   },
   "069": {
    "tmdb": {
@@ -3298,7 +3544,8 @@
      "data": "2021-07-07"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/497698"
+   "url": "https://www.themoviedb.org/movie/497698",
+   "risoluzione": "mappa"
   },
   "070": {
    "tmdb": {
@@ -3351,7 +3598,8 @@
      "data": "2016-10-25"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/284052"
+   "url": "https://www.themoviedb.org/movie/284052",
+   "risoluzione": "mappa"
   },
   "071": {
    "tmdb": {
@@ -3377,7 +3625,29 @@
      "data": "2013-09-24"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/1403"
+   "url": "https://www.themoviedb.org/tv/1403",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2013-09-24",
+    "ultima": "2020-08-12",
+    "n_stagioni": 7
+   },
+   "stagione": {
+    "n": 4,
+    "nome": "Stagione 4",
+    "sinossi_it": "Nel tentativo di scongiurare la minaccia dei Life Model Decoys, Daisy e Simmons rimangono intrappolate nella realtà virtuale del Framework, in un mondo molto diverso dal nostro: il controllo è in mano all'organizzazione terroristica Hydra, per la quale lavorano May, Fitz e Daisy, la quale è anche legata sentimentalmente al redivivo Grant Ward. Quanto a Coulson, egli è un insegnante costretto a seguire le linee guida dell'Hydra, che dà la caccia agli Inumani, mentre Simmons è ufficialmente morta. Spetterà a lei e Daisy cercare di riportare tutto alla normalità, ma non sarà facile...",
+    "data": "2016-09-20",
+    "episodi": 22,
+    "cast": [
+     "Clark Gregg",
+     "Chloe Bennet",
+     "Elizabeth Henstridge",
+     "Ming-Na Wen",
+     "Henry Simmons",
+     "Iain De Caestecker",
+     "John Hannah"
+    ]
+   }
   },
   "072": {
    "tmdb": {
@@ -3402,7 +3672,106 @@
      "data": "2017-03-17"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/62127"
+   "url": "https://www.themoviedb.org/tv/62127",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2017-03-17",
+    "ultima": "2018-09-07",
+    "n_stagioni": 2
+   },
+   "stagione": {
+    "n": 1,
+    "nome": "Stagione 1",
+    "sinossi_it": "",
+    "data": "2017-03-17",
+    "episodi": 13,
+    "cast": [
+     "Finn Jones",
+     "Jessica Henwick",
+     "Jessica Stroup",
+     "Tom Pelphrey",
+     "David Wenham"
+    ]
+   }
+  },
+  "073": {
+   "tmdb": {
+    "t": "tv",
+    "id": 62285
+   },
+   "titolo": "Marvel's The Defenders",
+   "sinossi_it": "Daredevil, Jessica Jones, Luke Cage e Iron Fist uniscono le forze per combattere nemici comuni quando New York è minacciata da un sinistro complotto.",
+   "regista": [],
+   "cast": [
+    "Charlie Cox",
+    "Krysten Ritter",
+    "Mike Colter",
+    "Finn Jones",
+    "Élodie Yung"
+   ],
+   "stato": "Ended",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2017-08-18"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/62285",
+   "risoluzione": "override",
+   "serie": {
+    "prima": "2017-08-18",
+    "ultima": "2017-08-18",
+    "n_stagioni": 1
+   }
+  },
+  "074": {
+   "tmdb": {
+    "t": "tv",
+    "id": 67178
+   },
+   "titolo": "Marvel's The Punisher",
+   "sinossi_it": "Un ex marine, determinato a punire i criminali responsabili della morte della propria famiglia, si ritrova coinvolto in un complotto militare.",
+   "regista": [],
+   "cast": [
+    "Jon Bernthal",
+    "Ben Barnes",
+    "Amber Rose Revah",
+    "Josh Stewart",
+    "Jason R. Moore",
+    "Floriana Lima",
+    "Giorgia Whigham"
+   ],
+   "stato": "Canceled",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2017-11-17"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/67178",
+   "risoluzione": "override",
+   "serie": {
+    "prima": "2017-11-17",
+    "ultima": "2019-01-18",
+    "n_stagioni": 2
+   },
+   "stagione": {
+    "n": 1,
+    "nome": "Stagione 1",
+    "sinossi_it": "L'ex soldato della Marina Frank Castle cerca vendetta per la morte di sua moglie e dei suoi figli, scoprendo una cospirazione che si estende oltre la malavita di New York e fino ai militari stessi.",
+    "data": "2017-11-17",
+    "episodi": 13,
+    "cast": [
+     "Jon Bernthal",
+     "Ebon Moss-Bachrach",
+     "Ben Barnes",
+     "Amber Rose Revah",
+     "Daniel Webber",
+     "Paul Schulze",
+     "Jason R. Moore",
+     "Michael Nathanson"
+    ]
+   }
   },
   "075": {
    "tmdb": {
@@ -3455,7 +3824,8 @@
      "data": "2017-07-05"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/315635"
+   "url": "https://www.themoviedb.org/movie/315635",
+   "risoluzione": "mappa"
   },
   "076": {
    "tmdb": {
@@ -3508,7 +3878,8 @@
      "data": "2017-10-24"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/284053"
+   "url": "https://www.themoviedb.org/movie/284053",
+   "risoluzione": "mappa"
   },
   "078": {
    "tmdb": {
@@ -3561,7 +3932,8 @@
      "data": "2018-02-13"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/284054"
+   "url": "https://www.themoviedb.org/movie/284054",
+   "risoluzione": "mappa"
   },
   "079": {
    "tmdb": {
@@ -3585,7 +3957,28 @@
      "data": "2015-11-20"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/38472"
+   "url": "https://www.themoviedb.org/tv/38472",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2015-11-20",
+    "ultima": "2019-06-14",
+    "n_stagioni": 3
+   },
+   "stagione": {
+    "n": 2,
+    "nome": "Stagione 2",
+    "sinossi_it": "",
+    "data": "2018-03-08",
+    "episodi": 13,
+    "cast": [
+     "Krysten Ritter",
+     "Rachael Taylor",
+     "Eka Darville",
+     "Carrie-Anne Moss",
+     "Janet McTeer",
+     "J.R. Ramirez"
+    ]
+   }
   },
   "080": {
    "tmdb": {
@@ -3610,7 +4003,28 @@
      "data": "2016-09-30"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/62126"
+   "url": "https://www.themoviedb.org/tv/62126",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2016-09-30",
+    "ultima": "2018-06-22",
+    "n_stagioni": 2
+   },
+   "stagione": {
+    "n": 2,
+    "nome": "Stagione 2",
+    "sinossi_it": "Mentre fama e responsabilità crescono, la vita di Luke Cage è sconvolta da un misterioso personaggio dotato di poteri speciali e con un piano per conquistare Harlem.",
+    "data": "2018-06-22",
+    "episodi": 13,
+    "cast": [
+     "Mike Colter",
+     "Alfre Woodard",
+     "Simone Missick",
+     "Theo Rossi",
+     "Mustafa Shakir",
+     "Gabrielle Dennis"
+    ]
+   }
   },
   "081": {
    "tmdb": {
@@ -3635,7 +4049,28 @@
      "data": "2017-03-17"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/62127"
+   "url": "https://www.themoviedb.org/tv/62127",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2017-03-17",
+    "ultima": "2018-09-07",
+    "n_stagioni": 2
+   },
+   "stagione": {
+    "n": 2,
+    "nome": "Stagione 2",
+    "sinossi_it": "",
+    "data": "2018-09-07",
+    "episodi": 10,
+    "cast": [
+     "Finn Jones",
+     "Jessica Henwick",
+     "Jessica Stroup",
+     "Tom Pelphrey",
+     "Sacha Dhawan",
+     "Alice Eve"
+    ]
+   }
   },
   "082": {
    "tmdb": {
@@ -3660,7 +4095,28 @@
      "data": "2015-04-10"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/61889"
+   "url": "https://www.themoviedb.org/tv/61889",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2015-04-10",
+    "ultima": "2018-10-19",
+    "n_stagioni": 3
+   },
+   "stagione": {
+    "n": 3,
+    "nome": "Stagione 3",
+    "sinossi_it": "Con Wilson Fisk che riguadagna terreno, Matt Murdock cerca di risorgere dalle ceneri della sua vita, pronto a fare tutto il possibile per proteggere Hell's Kitchen.",
+    "data": "2018-10-19",
+    "episodi": 13,
+    "cast": [
+     "Charlie Cox",
+     "Deborah Ann Woll",
+     "Elden Henson",
+     "Vincent D'Onofrio",
+     "Jay Ali",
+     "Wilson Bethel"
+    ]
+   }
   },
   "083": {
    "tmdb": {
@@ -3686,7 +4142,29 @@
      "data": "2013-09-24"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/1403"
+   "url": "https://www.themoviedb.org/tv/1403",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2013-09-24",
+    "ultima": "2020-08-12",
+    "n_stagioni": 7
+   },
+   "stagione": {
+    "n": 5,
+    "nome": "Stagione 5",
+    "sinossi_it": "Dopo aver affrontato le vicende legate al Framework lo S.H.I.E.L.D viene inaspettatamente inviato nel futuro, dove la Terra è stata distrutta e i pochi rimasti vivono in schiavitù. La squadra dovrà affrontare varie sfide, ma riusciranno a tornare nel loro tempo. Sarà così che tenteranno di cambiare il corso degli eventi, per evitare che il loop temporale si ripeta e la fine del mondo avvenga ancora una volta.",
+    "data": "2017-12-01",
+    "episodi": 22,
+    "cast": [
+     "Clark Gregg",
+     "Chloe Bennet",
+     "Elizabeth Henstridge",
+     "Ming-Na Wen",
+     "Henry Simmons",
+     "Natalia Cordova-Buckley",
+     "Iain De Caestecker"
+    ]
+   }
   },
   "084": {
    "tmdb": {
@@ -3740,7 +4218,8 @@
      "data": "2018-04-25"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/299536"
+   "url": "https://www.themoviedb.org/movie/299536",
+   "risoluzione": "mappa"
   },
   "085": {
    "tmdb": {
@@ -3793,7 +4272,56 @@
      "data": "2018-07-04"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/363088"
+   "url": "https://www.themoviedb.org/movie/363088",
+   "risoluzione": "mappa"
+  },
+  "086": {
+   "tmdb": {
+    "t": "tv",
+    "id": 67178
+   },
+   "titolo": "Marvel's The Punisher",
+   "sinossi_it": "Un ex marine, determinato a punire i criminali responsabili della morte della propria famiglia, si ritrova coinvolto in un complotto militare.",
+   "regista": [],
+   "cast": [
+    "Jon Bernthal",
+    "Ben Barnes",
+    "Amber Rose Revah",
+    "Josh Stewart",
+    "Jason R. Moore",
+    "Floriana Lima",
+    "Giorgia Whigham"
+   ],
+   "stato": "Canceled",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2017-11-17"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/67178",
+   "risoluzione": "override",
+   "serie": {
+    "prima": "2017-11-17",
+    "ultima": "2019-01-18",
+    "n_stagioni": 2
+   },
+   "stagione": {
+    "n": 2,
+    "nome": "Stagione 2",
+    "sinossi_it": "Frank cerca di proteggere un adolescente coinvolto in un oscuro complotto mentre fa di tutto e di più pur di distruggere definitivamente Russo.",
+    "data": "2019-01-18",
+    "episodi": 13,
+    "cast": [
+     "Jon Bernthal",
+     "Ben Barnes",
+     "Amber Rose Revah",
+     "Josh Stewart",
+     "Jason R. Moore",
+     "Floriana Lima",
+     "Giorgia Whigham"
+    ]
+   }
   },
   "087": {
    "tmdb": {
@@ -3817,7 +4345,27 @@
      "data": "2015-11-20"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/38472"
+   "url": "https://www.themoviedb.org/tv/38472",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2015-11-20",
+    "ultima": "2019-06-14",
+    "n_stagioni": 3
+   },
+   "stagione": {
+    "n": 3,
+    "nome": "Stagione 3",
+    "sinossi_it": "",
+    "data": "2019-06-14",
+    "episodi": 13,
+    "cast": [
+     "Krysten Ritter",
+     "Rachael Taylor",
+     "Eka Darville",
+     "Benjamin Walker",
+     "Carrie-Anne Moss"
+    ]
+   }
   },
   "088": {
    "tmdb": {
@@ -3871,7 +4419,8 @@
      "data": "2019-03-06"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/299537"
+   "url": "https://www.themoviedb.org/movie/299537",
+   "risoluzione": "mappa"
   },
   "089": {
    "tmdb": {
@@ -3925,7 +4474,8 @@
      "data": "2019-04-24"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/299534"
+   "url": "https://www.themoviedb.org/movie/299534",
+   "risoluzione": "mappa"
   },
   "090": {
    "tmdb": {
@@ -3978,7 +4528,8 @@
      "data": "2019-06-28"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/429617"
+   "url": "https://www.themoviedb.org/movie/429617",
+   "risoluzione": "mappa"
   },
   "091": {
    "tmdb": {
@@ -4004,7 +4555,30 @@
      "data": "2013-09-24"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/1403"
+   "url": "https://www.themoviedb.org/tv/1403",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2013-09-24",
+    "ultima": "2020-08-12",
+    "n_stagioni": 7
+   },
+   "stagione": {
+    "n": 6,
+    "nome": "Stagione 6",
+    "sinossi_it": "Dopo la morte di Coulson, la squadra dovrà affrontare un nuovo nemico, con le sembianze del loro defunto capo, ma che nasconde un segreto riguardante le sue origini. Nel mentre, nello spazio, parte della squadra è alla ricerca di Fitz; una volta ricongiunti, dovranno combattere per salvare il mondo da un'invasione.",
+    "data": "2019-05-10",
+    "episodi": 13,
+    "cast": [
+     "Clark Gregg",
+     "Chloe Bennet",
+     "Elizabeth Henstridge",
+     "Ming-Na Wen",
+     "Henry Simmons",
+     "Natalia Cordova-Buckley",
+     "Jeff Ward",
+     "Iain De Caestecker"
+    ]
+   }
   },
   "092": {
    "tmdb": {
@@ -4030,7 +4604,29 @@
      "data": "2013-09-24"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/1403"
+   "url": "https://www.themoviedb.org/tv/1403",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2013-09-24",
+    "ultima": "2020-08-12",
+    "n_stagioni": 7
+   },
+   "stagione": {
+    "n": 7,
+    "nome": "Stagione 7",
+    "sinossi_it": "Settimo e ultimo capitolo della saga dedicata agli agenti segreti dell'universo Marvel, che viaggiano nel tempo per cercare di impedire l'invasione della Terra da parte dei bellicosi alieni Chronicom.",
+    "data": "2020-05-27",
+    "episodi": 13,
+    "cast": [
+     "Clark Gregg",
+     "Chloe Bennet",
+     "Elizabeth Henstridge",
+     "Ming-Na Wen",
+     "Henry Simmons",
+     "Natalia Cordova-Buckley",
+     "Jeff Ward"
+    ]
+   }
   },
   "093": {
    "tmdb": {
@@ -4055,7 +4651,13 @@
      "data": "2021-01-15"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/85271"
+   "url": "https://www.themoviedb.org/tv/85271",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2021-01-15",
+    "ultima": "2021-03-05",
+    "n_stagioni": 1
+   }
   },
   "094": {
    "tmdb": {
@@ -4082,7 +4684,13 @@
      "data": "2021-03-19"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/88396"
+   "url": "https://www.themoviedb.org/tv/88396",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2021-03-19",
+    "ultima": "2021-04-23",
+    "n_stagioni": 1
+   }
   },
   "095": {
    "tmdb": {
@@ -4107,7 +4715,28 @@
      "data": "2021-06-09"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/84958"
+   "url": "https://www.themoviedb.org/tv/84958",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2021-06-09",
+    "ultima": "2023-11-09",
+    "n_stagioni": 2
+   },
+   "stagione": {
+    "n": 1,
+    "nome": "Stagione 1",
+    "sinossi_it": "In \"Loki\" dei Marvel Studios, l'imprevedibile cattivo Loki (Tom Hiddleston) riprende il suo ruolo di Dio dell'ingano in una nuova serie ambientata dopo gli eventi di \"Avengers: Endgame\".",
+    "data": "2021-06-09",
+    "episodi": 6,
+    "cast": [
+     "Tom Hiddleston",
+     "Sophia Di Martino",
+     "Gugu Mbatha-Raw",
+     "Wunmi Mosaku",
+     "Tara Strong",
+     "Owen Wilson"
+    ]
+   }
   },
   "096": {
    "tmdb": {
@@ -4127,7 +4756,23 @@
      "data": "2021-08-11"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/91363"
+   "url": "https://www.themoviedb.org/tv/91363",
+   "risoluzione": "override",
+   "serie": {
+    "prima": "2021-08-11",
+    "ultima": "2024-12-29",
+    "n_stagioni": 3
+   },
+   "stagione": {
+    "n": 1,
+    "nome": "Stagione 1",
+    "sinossi_it": "",
+    "data": "2021-08-11",
+    "episodi": 9,
+    "cast": [
+     "Jeffrey Wright"
+    ]
+   }
   },
   "097": {
    "tmdb": {
@@ -4180,7 +4825,8 @@
      "data": "2021-09-01"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/566525"
+   "url": "https://www.themoviedb.org/movie/566525",
+   "risoluzione": "mappa"
   },
   "098": {
    "tmdb": {
@@ -4233,7 +4879,8 @@
      "data": "2021-11-03"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/524434"
+   "url": "https://www.themoviedb.org/movie/524434",
+   "risoluzione": "mappa"
   },
   "099": {
    "tmdb": {
@@ -4286,7 +4933,8 @@
      "data": "2021-12-15"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/634649"
+   "url": "https://www.themoviedb.org/movie/634649",
+   "risoluzione": "mappa"
   },
   "100": {
    "tmdb": {
@@ -4313,7 +4961,13 @@
      "data": "2021-11-24"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/88329"
+   "url": "https://www.themoviedb.org/tv/88329",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2021-11-24",
+    "ultima": "2021-12-22",
+    "n_stagioni": 1
+   }
   },
   "101": {
    "tmdb": {
@@ -4339,7 +4993,13 @@
      "data": "2022-03-30"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/92749"
+   "url": "https://www.themoviedb.org/tv/92749",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2022-03-30",
+    "ultima": "2022-05-04",
+    "n_stagioni": 1
+   }
   },
   "102": {
    "tmdb": {
@@ -4392,7 +5052,8 @@
      "data": "2022-05-04"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/453395"
+   "url": "https://www.themoviedb.org/movie/453395",
+   "risoluzione": "mappa"
   },
   "103": {
    "tmdb": {
@@ -4418,7 +5079,13 @@
      "data": "2022-06-08"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/92782"
+   "url": "https://www.themoviedb.org/tv/92782",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2022-06-08",
+    "ultima": "2022-07-13",
+    "n_stagioni": 1
+   }
   },
   "104": {
    "tmdb": {
@@ -4471,7 +5138,8 @@
      "data": "2022-07-06"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/616037"
+   "url": "https://www.themoviedb.org/movie/616037",
+   "risoluzione": "mappa"
   },
   "105": {
    "tmdb": {
@@ -4495,7 +5163,13 @@
      "data": "2022-08-18"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/92783"
+   "url": "https://www.themoviedb.org/tv/92783",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2022-08-18",
+    "ultima": "2022-10-13",
+    "n_stagioni": 1
+   }
   },
   "106": {
    "tmdb": {
@@ -4548,7 +5222,62 @@
      "data": "2022-09-25"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/894205"
+   "url": "https://www.themoviedb.org/movie/894205",
+   "risoluzione": "mappa"
+  },
+  "107": {
+   "tmdb": {
+    "t": "movie",
+    "id": 774752
+   },
+   "titolo": "Guardiani della Galassia: Holiday Special",
+   "sinossi_it": "Star Lord (Chris Pratt) è depresso dopo la scomparsa della sua Gamora: la sua tristezza preoccupa gli altri Guardiani, che vogliono aiutare l’amico. Essendo un terrestre, pensano, dovrebbe amare il Natale, perciò si organizzano per fargli un regalo davvero speciale. Vista la sua passione per le musicassette, i Guardiani decidono di regalargli Kevin Bacon, in carne e ossa, che si ritrova quindi prelevato, per non dire sequestrato, da casa sua. La star cerca, naturalmente, di scappare.",
+   "regista": [
+    "James Gunn"
+   ],
+   "cast": [
+    "Chris Pratt",
+    "Dave Bautista",
+    "Karen Gillan",
+    "Pom Klementieff",
+    "Vin Diesel",
+    "Bradley Cooper",
+    "Sean Gunn",
+    "Rhett Miller"
+   ],
+   "stato": "Released",
+   "date": [
+    {
+     "paese": "DE",
+     "data": "2022-11-25"
+    },
+    {
+     "paese": "ES",
+     "data": "2022-11-25"
+    },
+    {
+     "paese": "FR",
+     "data": "2022-11-25"
+    },
+    {
+     "paese": "GB",
+     "data": "2022-11-25"
+    },
+    {
+     "paese": "IT",
+     "data": "2022-11-25"
+    },
+    {
+     "paese": "US",
+     "data": "2022-11-25"
+    },
+    {
+     "paese": "TMDB",
+     "data": "2022-11-24"
+    }
+   ],
+   "url": "https://www.themoviedb.org/movie/774752",
+   "risoluzione": "auto"
   },
   "108": {
    "tmdb": {
@@ -4601,7 +5330,8 @@
      "data": "2022-11-09"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/505642"
+   "url": "https://www.themoviedb.org/movie/505642",
+   "risoluzione": "mappa"
   },
   "109": {
    "tmdb": {
@@ -4654,7 +5384,8 @@
      "data": "2023-02-15"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/640146"
+   "url": "https://www.themoviedb.org/movie/640146",
+   "risoluzione": "mappa"
   },
   "110": {
    "tmdb": {
@@ -4707,7 +5438,8 @@
      "data": "2023-05-03"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/447365"
+   "url": "https://www.themoviedb.org/movie/447365",
+   "risoluzione": "mappa"
   },
   "111": {
    "tmdb": {
@@ -4734,7 +5466,13 @@
      "data": "2023-06-21"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/114472"
+   "url": "https://www.themoviedb.org/tv/114472",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2023-06-21",
+    "ultima": "2023-07-26",
+    "n_stagioni": 1
+   }
   },
   "112": {
    "tmdb": {
@@ -4759,7 +5497,28 @@
      "data": "2021-06-09"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/84958"
+   "url": "https://www.themoviedb.org/tv/84958",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2021-06-09",
+    "ultima": "2023-11-09",
+    "n_stagioni": 2
+   },
+   "stagione": {
+    "n": 2,
+    "nome": "Stagione 2",
+    "sinossi_it": "Dopo la prima stagione, Loki si trova in una battaglia per l'anima dell'Autorità della Varianza Temporale. Insieme a Mobius, Hunter B-15 e un team di nuovi personaggi e di ritorno, Loki naviga in un multiverso sempre più grande e sempre più pericoloso alla ricerca di Sylvie, del Giudice Renslayer, di Miss Minutes e della verità su cosa significhi possedere libero arbitrio e uno scopo glorioso.",
+    "data": "2023-10-05",
+    "episodi": 6,
+    "cast": [
+     "Tom Hiddleston",
+     "Sophia Di Martino",
+     "Wunmi Mosaku",
+     "Eugene Cordero",
+     "Ke Huy Quan",
+     "Owen Wilson"
+    ]
+   }
   },
   "113": {
    "tmdb": {
@@ -4812,7 +5571,8 @@
      "data": "2023-11-08"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/609681"
+   "url": "https://www.themoviedb.org/movie/609681",
+   "risoluzione": "mappa"
   },
   "114": {
    "tmdb": {
@@ -4832,7 +5592,49 @@
      "data": "2021-08-11"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/91363"
+   "url": "https://www.themoviedb.org/tv/91363",
+   "risoluzione": "override",
+   "serie": {
+    "prima": "2021-08-11",
+    "ultima": "2024-12-29",
+    "n_stagioni": 3
+   },
+   "stagione": {
+    "n": 2,
+    "nome": "Stagione 2",
+    "sinossi_it": "",
+    "data": "2023-12-22",
+    "episodi": 9,
+    "cast": [
+     "Jeffrey Wright"
+    ]
+   }
+  },
+  "115": {
+   "tmdb": {
+    "t": "tv",
+    "id": 232125
+   },
+   "titolo": "I Am Groot",
+   "sinossi_it": "Non è possibile proteggere la galassia da questo bambino dispettoso! Preparati mentre Baby Groot è al centro della scena nella sua collezione di cortometraggi, esplorando i suoi giorni di gloria crescendo e mettendosi nei guai tra le stelle.",
+   "regista": [],
+   "cast": [
+    "Vin Diesel"
+   ],
+   "stato": "Canceled",
+   "date": [
+    {
+     "paese": "TMDB",
+     "data": "2022-08-10"
+    }
+   ],
+   "url": "https://www.themoviedb.org/tv/232125",
+   "risoluzione": "auto",
+   "serie": {
+    "prima": "2022-08-10",
+    "ultima": "2023-09-06",
+    "n_stagioni": 2
+   }
   },
   "116": {
    "tmdb": {
@@ -4858,7 +5660,13 @@
      "data": "2024-01-09"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/122226"
+   "url": "https://www.themoviedb.org/tv/122226",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2024-01-09",
+    "ultima": "2024-01-09",
+    "n_stagioni": 1
+   }
   },
   "117": {
    "tmdb": {
@@ -4911,7 +5719,8 @@
      "data": "2024-07-24"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/533535"
+   "url": "https://www.themoviedb.org/movie/533535",
+   "risoluzione": "mappa"
   },
   "118": {
    "tmdb": {
@@ -4937,7 +5746,13 @@
      "data": "2024-09-18"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/138501"
+   "url": "https://www.themoviedb.org/tv/138501",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2024-09-18",
+    "ultima": "2024-10-30",
+    "n_stagioni": 1
+   }
   },
   "119": {
    "tmdb": {
@@ -4957,7 +5772,23 @@
      "data": "2021-08-11"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/91363"
+   "url": "https://www.themoviedb.org/tv/91363",
+   "risoluzione": "override",
+   "serie": {
+    "prima": "2021-08-11",
+    "ultima": "2024-12-29",
+    "n_stagioni": 3
+   },
+   "stagione": {
+    "n": 3,
+    "nome": "Stagione 3",
+    "sinossi_it": "",
+    "data": "2024-12-22",
+    "episodi": 8,
+    "cast": [
+     "Jeffrey Wright"
+    ]
+   }
   },
   "120": {
    "tmdb": {
@@ -4977,7 +5808,23 @@
      "data": "2025-01-29"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/138503"
+   "url": "https://www.themoviedb.org/tv/138503",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2025-01-29",
+    "ultima": "2025-02-19",
+    "n_stagioni": 2
+   },
+   "stagione": {
+    "n": 1,
+    "nome": "Stagione 1",
+    "sinossi_it": "",
+    "data": "2025-01-27",
+    "episodi": 10,
+    "cast": [
+     "Hudson Thames"
+    ]
+   }
   },
   "121": {
    "tmdb": {
@@ -5030,7 +5877,8 @@
      "data": "2025-02-12"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/822119"
+   "url": "https://www.themoviedb.org/movie/822119",
+   "risoluzione": "mappa"
   },
   "122": {
    "tmdb": {
@@ -5057,7 +5905,30 @@
      "data": "2025-03-04"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/202555"
+   "url": "https://www.themoviedb.org/tv/202555",
+   "risoluzione": "override",
+   "serie": {
+    "prima": "2025-03-04",
+    "ultima": "2026-05-05",
+    "n_stagioni": 2
+   },
+   "stagione": {
+    "n": 1,
+    "nome": "Stagione 1",
+    "sinossi_it": "È passato un anno da quando Matt Murdock si è ritirato dalla lotta al crimine come Daredevil. Wilson Fisk è stato eletto sindaco di New York dopo aver basato la sua campagna elettorale su una posizione contraria ai vigilanti. Il Kingpin potrebbe costringere Daredevil a tornare in azione.",
+    "data": "2025-03-04",
+    "episodi": 9,
+    "cast": [
+     "Charlie Cox",
+     "Vincent D'Onofrio",
+     "Margarita Levieva",
+     "Michael Gandolfini",
+     "Nikki M. James",
+     "Arty Froushan",
+     "Genneya Walton",
+     "Zabryna Guevara"
+    ]
+   }
   },
   "123": {
    "tmdb": {
@@ -5110,7 +5981,8 @@
      "data": "2025-04-30"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/986056"
+   "url": "https://www.themoviedb.org/movie/986056",
+   "risoluzione": "mappa"
   },
   "124": {
    "tmdb": {
@@ -5137,7 +6009,13 @@
      "data": "2025-06-24"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/114471"
+   "url": "https://www.themoviedb.org/tv/114471",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2025-06-24",
+    "ultima": "2025-07-01",
+    "n_stagioni": 1
+   }
   },
   "126": {
    "tmdb": {
@@ -5155,7 +6033,13 @@
      "data": "2025-08-01"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/241388"
+   "url": "https://www.themoviedb.org/tv/241388",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2025-08-01",
+    "ultima": "2025-08-01",
+    "n_stagioni": 1
+   }
   },
   "127": {
    "tmdb": {
@@ -5178,7 +6062,13 @@
      "data": "2026-01-27"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/198178"
+   "url": "https://www.themoviedb.org/tv/198178",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2026-01-27",
+    "ultima": "2026-01-27",
+    "n_stagioni": 1
+   }
   },
   "128": {
    "tmdb": {
@@ -5205,7 +6095,30 @@
      "data": "2025-03-04"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/202555"
+   "url": "https://www.themoviedb.org/tv/202555",
+   "risoluzione": "override",
+   "serie": {
+    "prima": "2025-03-04",
+    "ultima": "2026-05-05",
+    "n_stagioni": 2
+   },
+   "stagione": {
+    "n": 2,
+    "nome": "Stagione 2",
+    "sinossi_it": "Il sindaco Wilson Fisk tiene New York City sotto il suo giogo mentre dà la caccia al nemico pubblico numero uno, il giustiziere di Hell's Kitchen noto come Daredevil. Ma, sotto la maschera cornuta, Matt Murdock cercherà di reagire dall'ombra per abbattere l'impero corrotto di Kingpin e riscattare la sua città. Resisti. Ribellati. Ricostruisci.",
+    "data": "2026-03-24",
+    "episodi": 8,
+    "cast": [
+     "Charlie Cox",
+     "Vincent D'Onofrio",
+     "Wilson Bethel",
+     "Deborah Ann Woll",
+     "Margarita Levieva",
+     "Matthew Lillard",
+     "Lili Taylor",
+     "Michael Gandolfini"
+    ]
+   }
   },
   "129": {
    "tmdb": {
@@ -5258,7 +6171,8 @@
      "data": "2026-05-12"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/1439930"
+   "url": "https://www.themoviedb.org/movie/1439930",
+   "risoluzione": "mappa"
   },
   "130": {
    "tmdb": {
@@ -5276,7 +6190,21 @@
      "data": "2024-03-20"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/138502"
+   "url": "https://www.themoviedb.org/tv/138502",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2024-03-20",
+    "ultima": "2026-08-12",
+    "n_stagioni": 2
+   },
+   "stagione": {
+    "n": 1,
+    "nome": "Stagione 1",
+    "sinossi_it": "Riprendendo da dove si era interrotta la serie “X-Men” del 1992, gli X-Men si trovano in un periodo di transizione. A un anno dalla partenza del Professor X, Magneto assume la guida degli X-Men, determinato a onorare il sogno di Xavier. Mentre cresce il sentimento anti-mutante, la squadra combatte minacce che vanno dalle Sentinelle alle cospirazioni genetiche, affrontando alleanze instabili, conflitti personali e un mondo che li teme e allo stesso tempo ha bisogno di loro.",
+    "data": "2024-03-20",
+    "episodi": 10,
+    "cast": []
+   }
   },
   "131": {
    "tmdb": {
@@ -5294,7 +6222,21 @@
      "data": "2024-03-20"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/138502"
+   "url": "https://www.themoviedb.org/tv/138502",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2024-03-20",
+    "ultima": "2026-08-12",
+    "n_stagioni": 2
+   },
+   "stagione": {
+    "n": 2,
+    "nome": "Stagione 2",
+    "sinossi_it": "La serie continua con l'eroico gruppo di mutanti degli X-Men, diviso e disperso in diverse epoche temporali, che lotta per ritrovare la strada di casa. Nel frattempo negli anni ’90, in assenza degli X-Men, si fanno strada nemici sospetti e crescono nuove forme di intolleranza nei confronti dei mutanti.",
+    "data": "2026-07-01",
+    "episodi": 9,
+    "cast": []
+   }
   },
   "132": {
    "tmdb": {
@@ -5347,7 +6289,8 @@
      "data": "2026-07-29"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/969681"
+   "url": "https://www.themoviedb.org/movie/969681",
+   "risoluzione": "mappa"
   },
   "134": {
    "tmdb": {
@@ -5367,7 +6310,23 @@
      "data": "2025-01-29"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/138503"
+   "url": "https://www.themoviedb.org/tv/138503",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2025-01-29",
+    "ultima": "2025-02-19",
+    "n_stagioni": 2
+   },
+   "stagione": {
+    "n": 2,
+    "nome": "Stagione 2",
+    "sinossi_it": "",
+    "data": "2027-01-13",
+    "episodi": 1,
+    "cast": [
+     "Hudson Thames"
+    ]
+   }
   },
   "135": {
    "tmdb": {
@@ -5394,7 +6353,13 @@
      "data": "2026-10-13"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/213375"
+   "url": "https://www.themoviedb.org/tv/213375",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2026-10-13",
+    "ultima": "2026-11-10",
+    "n_stagioni": 1
+   }
   },
   "136": {
    "tmdb": {
@@ -5448,7 +6413,8 @@
      "data": "2026-12-16"
     }
    ],
-   "url": "https://www.themoviedb.org/movie/1003596"
+   "url": "https://www.themoviedb.org/movie/1003596",
+   "risoluzione": "mappa"
   },
   "137": {
    "tmdb": {
@@ -5475,7 +6441,13 @@
      "data": "2025-03-04"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/202555"
+   "url": "https://www.themoviedb.org/tv/202555",
+   "risoluzione": "override",
+   "serie": {
+    "prima": "2025-03-04",
+    "ultima": "2026-05-05",
+    "n_stagioni": 2
+   }
   },
   "138": {
    "tmdb": {
@@ -5493,7 +6465,13 @@
      "data": "2024-03-20"
     }
    ],
-   "url": "https://www.themoviedb.org/tv/138502"
+   "url": "https://www.themoviedb.org/tv/138502",
+   "risoluzione": "mappa",
+   "serie": {
+    "prima": "2024-03-20",
+    "ultima": "2026-08-12",
+    "n_stagioni": 2
+   }
   },
   "139": {
    "tmdb": {
@@ -5536,7 +6514,8 @@
     }
    ],
    "url": "https://www.themoviedb.org/movie/1003598",
-   "sinossi_lingua": "en"
+   "sinossi_lingua": "en",
+   "risoluzione": "mappa"
   }
  }
 }
