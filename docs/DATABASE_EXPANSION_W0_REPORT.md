@@ -9,7 +9,7 @@ Stato: **W0 eseguita (parte eseguibile in sandbox); NON dichiarata completata** 
 | Schema canonico v1 (tipi, livelli A/B/C, stato verifica D12, ID esterni forti, fonti con licenza) | `data/atlante/espansione/schema/record_canonico.schema.json` | usato dal validatore |
 | Import sottile dei 452 record storici (nessun dato nuovo, ID invariati) | `data/atlante/espansione/canon/storico.jsonl`, `tools/db_canon.py` | 452/452, 0 errori |
 | Prototipo indice a shard + ricerca globale (alias, nomi it/originali, infix, accenti) – **fuori dal runtime** | `tools/db_proto/` | v. §3 |
-| Censimento (interno subito; esterno solo con rete) | `tools/db_censimento.py`, `.github/workflows/db-censimento.yml` (solo `workflow_dispatch`, sola lettura) | interno eseguito |
+| Censimento (interno subito; esterno solo con rete) | `tools/db_censimento.py`, modalità `db_censimento` in `.github/workflows/tmdb-sync.yml` (solo `workflow_dispatch`, sola lettura; il file separato `db-censimento.yml` è stato rimosso perché GitHub elenca i workflow solo se presenti sul branch predefinito `main`) | interno eseguito |
 | Test automatici | `tests/db_test.py` | 14/14 + verificatori Atlas invariati |
 
 ## 2. Conteggi reali (interni, verificati nel codice)

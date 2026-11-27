@@ -63,6 +63,10 @@ on:
         description: Miss Minutes 2.0 - con mm_tmdb, scrive il solo tmdb_titoli.json su test/tva-archives (mai su main)
         type: boolean
         default: false
+      db_censimento:
+        description: Database Expansion W0 - censimento in SOLA LETTURA (conteggi interni + Wikidata/TMDB/Comic Vine se la chiave c e; artifact db-censimento, nessun commit) e salta il resto
+        type: boolean
+        default: false
       live_recover_from:
         description: TVA Live RECUPERO di emergenza - SHA di un commit precedente di questo branch con un catalogo valido; con live_commit lo ripristina con generated_at nuovo (senza TMDB)
         type: string
@@ -73,7 +77,7 @@ permissions:
 
 jobs:
   sync:
-    if: ${{ !inputs.mm_tmdb && !inputs.solo_atlante_pilot && inputs.atlante_job == '' && !((inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit) }}
+    if: ${{ !inputs.db_censimento && !inputs.mm_tmdb && !inputs.solo_atlante_pilot && inputs.atlante_job == '' && !((inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit) }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -167,7 +171,7 @@ jobs:
 
   live-update:
     # Aggiornamento automatico del CATALOGO (solo dati). Pubblicazione dell app = operazione separata.
-    if: ${{ !inputs.mm_tmdb && !inputs.solo_atlante_pilot && inputs.atlante_job == '' && (inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit }}
+    if: ${{ !inputs.db_censimento && !inputs.mm_tmdb && !inputs.solo_atlante_pilot && inputs.atlante_job == '' && (inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -247,7 +251,7 @@ jobs:
 
   atlante-pilot:
     # Atlante A3.1 pilota: SOLO metadati (percorsi CDN, dimensioni, voti). La chiave resta nei Secret, mai nell output ne nel frontend.
-    if: ${{ !inputs.mm_tmdb && (inputs.solo_atlante_pilot || (inputs.atlante_job != '' && !startsWith(inputs.atlante_job, 'engine'))) }}
+    if: ${{ !inputs.db_censimento && !inputs.mm_tmdb && (inputs.solo_atlante_pilot || (inputs.atlante_job != '' && !startsWith(inputs.atlante_job, 'engine'))) }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -343,7 +347,7 @@ jobs:
 
   mm-tmdb:
     # Miss Minutes 2.0: archivio TMDB dei titoli (dati pubblici, 0 EUR). La chiave resta nei Secret. Solo branch TEST; mai main.
-    if: ${{ inputs.mm_tmdb }}
+    if: ${{ inputs.mm_tmdb && !inputs.db_censimento }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -403,7 +407,7 @@ jobs:
   atlante-engine:
     # A3.2 Visual Asset Engine (prototipo, 10 identità): CLIP/SigLIP su CPU del runner (gratuito). Solo metadati in uscita; le immagini restano nel runner.
     # atlante_job = engine-clip | engine-siglip | engine-smoke
-    if: ${{ !inputs.mm_tmdb && startsWith(inputs.atlante_job, 'engine') }}
+    if: ${{ !inputs.db_censimento && !inputs.mm_tmdb && startsWith(inputs.atlante_job, 'engine') }}
     runs-on: ubuntu-latest
     timeout-minutes: 130
     permissions:
@@ -469,3 +473,26 @@ jobs:
             sleep 3
           done
           exit 5
+
+  db-censimento:
+    # Database Expansion W0: SOLA LETTURA, nessun commit/deploy. Chiavi solo dai Secret, mai stampate.
+    if: ${{ inputs.db_censimento }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: test/tva-archives
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Censimento interno ed esterno
+        env:
+          TMDB_READ_TOKEN: ${{ secrets.TMDB_READ_TOKEN }}
+          COMICVINE_API_KEY: ${{ secrets.COMICVINE_API_KEY }}
+        run: python3 tools/db_censimento.py --esterni --out censimento.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: db-censimento
+          path: censimento.json
+          retention-days: 30
