@@ -154,7 +154,8 @@
     var host = h('div', 'a4-vp a4-nx'), world = h('div', 'a4-world'); bgStars(host); host.appendChild(world); root.appendChild(host);
     var leg = h('div', 'a4-leg'); root.appendChild(leg); var list = h('div', 'a4-rl'); root.appendChild(list);
     var pz = panzoom(host, world, { min: .4, max: 3, k: 1 }); controls(host, pz, function () { lay(); }); function lay() { var W0 = s.WS || 1000; pz.reset(W0 / 2, W0 / 2, pz.fit(W0 - 60, W0 - 60, 16)); } setTimeout(lay, 120); setTimeout(lay, 450);
-    function go(id, back) { if (!back && s.c !== id) s.hist.push(s.c); s.c = id; C.api.setTitle('TVA Nexus', nm(id)); draw(); }
+    function trackRel(a, b) { try { var recs = []; (ADJ[a] || []).forEach(function (e) { if (e[1] === b) { var r = G.r[e[0]]; recs.push([r[0], r[1], G.tipi[r[2]], r[3], r[4]]); } }); if (recs.length && C.a5) C.a5(function (m) { m.onRelation(recs); }); } catch (e) { /* ok */ } }
+    function go(id, back) { if (!back && s.c && s.c !== id) trackRel(s.c, id); if (!back && s.c !== id) s.hist.push(s.c); s.c = id; C.api.setTitle('TVA Nexus', nm(id)); draw(); }
     function chipT(txt, on, fn, title) { var b = btn('chip' + (on ? ' on' : ''), txt, fn, { 'aria-pressed': on ? 'true' : 'false' }); if (title) b.title = title; return b; }
     function toolbar() {
       tools.textContent = ''; bar.textContent = ''; bar.appendChild(btn('btn ghost', '← Indietro', function () { var p = s.hist.pop(); if (p) go(p, true); }, s.hist.length ? {} : { disabled: 'disabled' })); bar.appendChild(btn('btn ghost', 'Apri il dossier', function () { C.openId(s.c); })); bar.appendChild(btn('btn ghost', 'Percorso da qui', function () { C.api.nav('a3', { a3: { v: 'pc', a: s.c, b: '', m: 'mix' } }); }));
@@ -270,6 +271,7 @@
     function sec(t, n) { var d = h('section', 'a4-path'); d.appendChild(h('h3', '', t + ' · ' + n)); out.appendChild(d); return d; }
     function run() {
       out.textContent = ''; var a = s.ua, b = s.ub; if (!a || !b) { out.appendChild(h('p', 'empty', 'Scegli due universi per confrontarli.')); return; } if (a === b) { out.appendChild(h('p', 'empty', 'Hai scelto lo stesso universo due volte.')); return; }
+      if (C.a5) C.a5(function (m) { m.onConfronto(); });
       var ta = G.ut[a] || [], tb = G.ut[b] || [], sh = ta.filter(function (n) { return tb.indexOf(n) >= 0; });
       var ia = ids(a), ib = ids(b), setA = {}, setB = {}; ia.forEach(function (v) { setA[v.i] = 1; }); ib.forEach(function (v) { setB[v.i] = 1; });
       var pairs = G.r.filter(function (r) { return r[3] === 'c' && ((setA[r[0]] && setB[r[1]]) || (setB[r[0]] && setA[r[1]])); }), inPair = {}; pairs.forEach(function (r) { inPair[r[0]] = 1; inPair[r[1]] = 1; });
