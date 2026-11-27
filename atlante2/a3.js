@@ -277,8 +277,8 @@
       var hw = h('div', 'a3-hubs'); hubs.forEach(function (v) { var c = btn('a3-hc rev t-h', null, function () { openId(v.i); }); c.appendChild(h('span', 'kick', 'Hub')); c.appendChild(h('b', '', v.n)); c.appendChild(h('span', 'soft', v.a + ' voci collegate')); hw.appendChild(c); }); sh.appendChild(hw); body.appendChild(sh);
     }
     var cl = btn('btn ghost a3-classic', 'Atlante classico', function () { W.__a3Classic = true; A.openHome(); }); body.appendChild(cl);
-    body.appendChild(btn('a3-ritlink', 'Ritratti privati — pilota A3.1: scene, importazione, esportazione', function () { api.nav('a3', { a3: { v: 'rit' } }); }));
-    body.appendChild(h('p', 'a3-note', 'Anteprima A3 in collaudo: l’Atlante classico resta disponibile e invariato. I ritratti specifici compariranno solo quando disponibili e utilizzabili; fino ad allora ogni voce mostra un emblema. Fonti: registro dati dell’Atlante e fonti secondarie dichiarate nella scheda.'));
+    body.appendChild(btn('a3-ritlink', 'Ritratti privati: scene, importazione, esportazione', function () { api.nav('a3', { a3: { v: 'rit' } }); }));
+    body.appendChild(h('p', 'a3-note', 'L’Atlante classico resta disponibile e invariato. I ritratti compariranno solo quando disponibili e utilizzabili; fino ad allora ogni voce mostra un emblema. Fonti: dati dell’Atlante e fonti secondarie dichiarate nella scheda.'));
     reveal(body); parallax(bg);
   }
   function parallax(el) {
@@ -470,12 +470,19 @@
       if (!secs.length) { root.appendChild(h('div', 'empty', 'Per questa voce non sono ancora disponibili altre informazioni.')); return; }
       jump.appendChild(chips); jump.appendChild(pr); root.appendChild(jump);
       secs.forEach(function (sx) { var sec = h('section', 'a3-ds rev', null, { id: 'a3s-' + sx.k }); sec.appendChild(h('h2', '', sx.t)); sec.appendChild(sx.n); root.appendChild(sec); });
-      reveal(root); (function at5() { if (tr5) tr5.attach(root); else setTimeout(at5, 300); })();
+      split2(root); reveal(root); (function at5() { if (tr5) tr5.attach(root); else setTimeout(at5, 300); })();
       if ('IntersectionObserver' in W) {
         var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { var k = e.target.id; if (!seen[k]) { seen[k] = 1; nseen++;  pt.textContent = 'Sezioni viste ' + nseen + '/' + secs.length; fill.style.width = Math.round(nseen / secs.length * 100) + '%'; } var idx = secs.map(function (x) { return 'a3s-' + x.k; }).indexOf(k); Array.prototype.forEach.call(chips.children, function (c, i) { c.classList.toggle('on', i === idx); }); } }); }, { root: body, rootMargin: '-30% 0px -60% 0px' });
         Array.prototype.forEach.call(root.querySelectorAll('.a3-ds'), function (e) { io.observe(e); });
       }
     });
+  }
+
+  /* A7: su tablet il dossier ha una colonna laterale (ritratto, azioni, sezioni) e una principale; su telefono i due contenitori sono trasparenti (display: contents) */
+  function split2(root) {
+    if (root.querySelector(':scope > .a3-side')) return; var side = h('div', 'a3-side'), main = h('div', 'a3-main');
+    Array.prototype.slice.call(root.children).forEach(function (c) { (c.classList.contains('a3-dh') || c.classList.contains('a5-slot') || c.classList.contains('a3-jump') ? side : main).appendChild(c); });
+    root.appendChild(side); root.appendChild(main);
   }
 
   /* ---------- HUB / MANTELLO ---------- */
@@ -508,7 +515,7 @@
 
   /* ---------- regia ---------- */
   function renderRit() {
-    frame(); api.setTitle('Ritratti privati', 'Pilota A3.1'); var host = h('div', 'a3-ritmgr'); body.appendChild(host);
+    frame(); api.setTitle('Ritratti privati', 'TVA Atlas'); var host = h('div', 'a3-ritmgr'); body.appendChild(host);
     withRit(function (r) { r.renderManager(host, function (i) { return BY[i] && BY[i].n; }); });
   }
   /* A4.1: Multiverso / Nexus / Percorso — modulo lazy atlante2/a4.js */

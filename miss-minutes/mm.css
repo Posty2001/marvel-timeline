@@ -336,3 +336,14 @@ dialog input[type=url],dialog input[type=text]{flex:1;min-width:0;background:#0b
 /* hotfix mm2e.1: il documento dell'assistente non scorre mai (nessuna catena di scorrimento verso la pagina ospite) */
 html{overflow:hidden;overscroll-behavior:none}
 body{position:fixed;inset:0;width:100%;overflow:hidden}
+
+/* A7 — adattamento GRAFICO per tablet (nessuna modifica a motore, intelligenza, gateway o quote): da 768x600 colonna più ampia, argomenti su due colonne, testo leggermente più grande. iPhone invariato. */
+@media (min-width:768px) and (min-height:600px){
+  .mm{max-width:900px}
+  .mm-view{padding-left:max(28px,env(safe-area-inset-left));padding-right:max(28px,env(safe-area-inset-right))}
+  .mm-bar{padding-left:max(28px,env(safe-area-inset-left));padding-right:max(28px,env(safe-area-inset-right))}
+  #mmTopics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .mm-bubble h2{font-size:1.5rem}
+  .mm-mascot-big{transform:scale(1.15);transform-origin:center top}
+  #mmChat{font-size:17px}
+}

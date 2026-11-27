@@ -13,9 +13,9 @@
 // URL dei file .woff2 referenziati, e li mette in cache esplicitamente — indipendentemente da
 // quando/come la pagina stessa li carica.
 
-const SW_BUILD = '20261127-2100-a60';
+const SW_BUILD = '20261127-2200-a70';
 const CACHE_PREFIX = 'marvel-timeline-cache-';   // C26: si cancellano solo le cache di questa app
-const CACHE_NAME = 'marvel-timeline-cache-20261127-2100-a60';
+const CACHE_NAME = 'marvel-timeline-cache-20261127-2200-a70';
 const FONT_CSS_URL = 'https://fonts.googleapis.com/css2?family=Special+Elite&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap';
 
 /* 3.2.4: ritratti avatar approvati, precaricati per l'uso offline (Tessera, editor, esportazione PNG). */
@@ -57,7 +57,7 @@ const ARCADE_FILES = ['./arcade/shared/arcade-nav.css', './arcade/shared/arcade-
 /* Miss Minutes (./miss-minutes/): pagina, script e Knowledge Core same-origin in cache per l'uso offline. Un file mancante non blocca l'installazione. */
 const MM_FILES = ['./miss-minutes/index.html', './miss-minutes/mm.css', './miss-minutes/config.js', './miss-minutes/engine.js', './miss-minutes/verify.js', './miss-minutes/lookup.js', './miss-minutes/archive.js', './miss-minutes/eval.js', './miss-minutes/eval/domande.json', './miss-minutes/knowledge/fatti.json', './miss-minutes/knowledge/tmdb_titoli.json', './miss-minutes/store.js', './miss-minutes/gateway-client.js', './miss-minutes/app.js', './miss-minutes/knowledge/core.json'];
 /* Atlante 2.0 (A3): modulo UI e indice leggero per l'uso offline; gli shard dei dossier e le immagini si memorizzano all'uso (cattura dinamica). Un file mancante non blocca l'installazione. */
-const A3_FILES = ['./atlante2/a3.js', './atlante2/a3.css', './atlante2/ritratti.js', './atlante2/a4.js', './atlante2/a4.css', './atlante2/a5.js', './atlante2/a5.css', './atlante2/data/nexus/g.json', './atlante2/data/index.json', './atlante2/data/pilot/candidati.json', './atlante2/data/pilot/proposte.json', './atlante2/data/pilot/proposte2.json', './atlante2/data/pilot/c/_indice.json'];
+const A3_FILES = ['./atlante2/a3.js', './atlante2/a3.css', './atlante2/ritratti.js', './atlante2/a4.js', './atlante2/a4.css', './atlante2/a5.js', './atlante2/a5.css', './assets/tablet.css', './atlante2/data/nexus/g.json', './atlante2/data/index.json', './atlante2/data/pilot/candidati.json', './atlante2/data/pilot/proposte.json', './atlante2/data/pilot/proposte2.json', './atlante2/data/pilot/c/_indice.json'];
 function precacheA3(cache) {
   return Promise.all(A3_FILES.map(function (u) { return cache.add(new Request(u, { cache: 'no-cache' })).catch(function () { /* assente/offline */ }); }));
 }

@@ -190,7 +190,7 @@
   function viewPF() {
     C.frame(); api.setTitle('Preferiti e raccolte', 'TVA Atlas'); S = read();
     var root = h('div', 'pad a5-root'); body.appendChild(root); root.appendChild(h('h1', '', 'Preferiti e raccolte'));
-    root.appendChild(h('p', 'soft', 'Salvati solo su questo dispositivo, in una chiave separata: non toccano la Tessera né gli altri progressi.'));
+    root.appendChild(h('p', 'soft', 'Salvati solo su questo dispositivo, separati dagli altri progressi.'));
     var favs = Object.keys(S.fav).sort(function (a, b) { return S.fav[b] - S.fav[a]; }).filter(function (i) { return BY[i]; });
     root.appendChild(h('h2', '', 'Preferiti (' + favs.length + ')')); root.appendChild(favs.length ? listOf(favs) : h('p', 'soft', 'Tocca ☆ in un dossier per salvarlo qui.'));
     var cids = Object.keys(S.col); root.appendChild(h('h2', '', 'Raccolte (' + cids.length + ')'));
@@ -219,6 +219,7 @@
     [['Dossier esplorato', '+' + Core.REW.dossier], ['Hub completato', '+' + Core.REW.hub], ['Universo completato', '+' + Core.REW.uni], ['Primo confronto', '+' + Core.REW.confronto], ['Prima raccolta (3 schede)', '+' + Core.REW.raccolta], ['Relazione narrativa seguita (max ' + Core.REL_DAY_MAX + '/giorno)', '+' + Core.REW.rel], ['Badge', '+' + Core.BADGE_XP], ['Preferiti', 'sistema esistente +3']].forEach(function (x) { var li = h('li'); li.appendChild(h('span', '', x[0])); li.appendChild(h('b', '', x[1])); tb.appendChild(li); }); how.appendChild(tb);
     how.appendChild(h('p', 'soft', 'Un dossier è «esplorato» se nella stessa apertura resti almeno 10 secondi, scorri almeno il 60% e consulti almeno 2 sezioni. Ogni ricompensa vale una sola volta; copie, hub, mantelli, alias e voci in verifica non ne generano.')); root.appendChild(how);
     root.appendChild(h('h2', '', 'Dossier esplorati: ' + c.tot + ' su ' + rg.tot));
+    root.appendChild(h('p', 'soft', 'Contano solo i dossier effettivi e documentati: segnaposto, alias e voci in verifica sono esclusi, quindi il totale può essere inferiore alle voci del catalogo.'));
     var ul = h('ul', 'a5-bytype'); Object.keys(TNAME).forEach(function (t) { if (!rg.byT[t]) return; var li = h('li'); li.appendChild(h('span', '', TNAME[t])); li.appendChild(h('b', '', (c.byT[t] || 0) + ' / ' + rg.byT[t])); ul.appendChild(li); }); root.appendChild(ul);
     root.appendChild(h('p', 'soft', 'Hub completati: ' + Object.keys(S.hub).length + ' · Universi completati: ' + Object.keys(S.uni).length + ' · Relazioni narrative seguite: ' + Object.keys(S.rel).length));
     root.appendChild(h('h2', '', 'Badge di esplorazione'));

@@ -193,7 +193,7 @@
     function scene() {
       clear(); main.appendChild(h('p', 'a3r-info', 'Caricamento delle scene candidate…')); candId(id).then(function (inf) {
         clear();
-        if (!inf || !inf.immagini.length) { main.appendChild(h('p', 'a3r-info', 'Per questa identità non ci sono ancora scene candidate (l’ondata attuale riguarda 40 identità). Puoi importare una tua immagine.')); main.appendChild(btn('a3r-b', 'Indietro', home)); return; }
+        if (!inf || !inf.immagini.length) { main.appendChild(h('p', 'a3r-info', 'Per questa identità non ci sono ancora scene candidate. Puoi importare una tua immagine.')); main.appendChild(btn('a3r-b', 'Indietro', home)); return; }
         main.appendChild(btn('a3r-b', 'Indietro', home));
         main.appendChild(h('p', 'a3r-info', 'Interprete: ' + inf.attore.nome + '. ' + (inf.nota || 'Scegli una scena in cui il personaggio è chiaramente riconoscibile in questa continuità.')));
         var tabs = h('div', 'a3r-tabs'), grid = h('div', 'a3r-grid'), nums = []; inf.titoli.forEach(function (t) { if (t.verificato) nums.push(t); });
