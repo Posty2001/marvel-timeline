@@ -30,7 +30,7 @@ def run(vw, vh):
         pg.evaluate("()=>{journeyStarted.checked=true; journeyStarted.dispatchEvent(new Event('change',{bubbles:true}))}"); pg.wait_for_timeout(600)
         pg.evaluate("()=>document.getElementById('a2Entry').click()"); pg.wait_for_timeout(900)
         pg.evaluate("()=>document.querySelector('#atlas2 .a3-ban').click()"); pg.wait_for_timeout(1500)
-        ok('[%d] Home A3 con ingressi Multiverso/Nexus/Percorso' % vw, pg.evaluate("()=>document.querySelectorAll('#atlas2 [data-portal]').length")==3)
+        ok('[%d] Home A3 con ingressi Multiverso/Nexus/Percorso' % vw, pg.evaluate("()=>['mv','nx','pc'].every(k=>!!document.querySelector('#atlas2 [data-portal='+k+']'))")==True)
         ok('[%d] modulo A4 non caricato prima dell\'uso (lazy)' % vw, not any('a4.js' in r or 'nexus/g.json' in r for r in reqs))
         # Multiverso
         pg.evaluate("()=>document.querySelector('#atlas2 [data-portal=mv]').click()"); pg.wait_for_timeout(1500)

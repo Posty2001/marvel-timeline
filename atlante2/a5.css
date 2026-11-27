@@ -1,0 +1,31 @@
+/* Atlante 2.0 — A5: preferiti, raccolte, progressione. Stile coerente con a3 (nero/ambra). */
+.a5-slot:empty { display: none; }
+.a5-acts { display: flex; gap: 8px; padding: 10px 16px 0; flex-wrap: wrap; }
+.a5-act { min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(227,199,155,.5); background: rgba(14,11,8,.55); color: #E3C79B; font: 600 13px/1 Inter, system-ui, sans-serif; }
+.a5-act.on { border-color: #F59A23; color: #F59A23; background: rgba(245,154,35,.12); }
+.a5-root { padding-top: 16px !important; padding-bottom: 28px; display: flex; flex-direction: column; gap: 10px; }
+.a5-root h2 { font-size: 17px; margin-top: 10px; }
+.a5-big { display: block; font: 700 26px/1.2 Spectral, Georgia, serif; color: #f6ecd2; margin: 4px 0; }
+.a5-colcard { border: 1px solid #4a3f2f; border-radius: 14px; background: #1c1812; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+.a5-colhd { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.a5-colhd b { flex: 1; min-width: 0; }
+.a5-mini { min-height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid #4a3f2f; background: transparent; color: #E3C79B; font: 600 12px/1 Inter, system-ui, sans-serif; }
+.a5-mini.warn { color: #ff8a8c; border-color: #7a3a3c; } .a5-mini.arm { background: #ff5c5f; color: #1a0a0a; }
+.a5-list { display: flex; flex-direction: column; gap: 6px; }
+.a5-item { text-align: left; display: flex; flex-direction: column; gap: 1px; min-height: 44px; padding: 8px 12px; border-radius: 10px; border: 1px solid #3a3022; background: #14100b; color: #ede0c0; }
+.a5-item small { color: #b8a888; font-size: 11.5px; }
+.a5-inp { flex: 1; min-width: 0; min-height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid #4a3f2f; background: #0e0b08; color: #ede0c0; font: 16px/1 Inter, system-ui, sans-serif; }
+.a5-btns { display: flex; gap: 8px; align-items: center; }
+.a5-bytype { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; }
+.a5-bytype li { display: flex; justify-content: space-between; gap: 8px; border-bottom: 1px solid #2c2318; padding: 4px 0; }
+.a5-badge { display: flex; gap: 12px; align-items: center; padding: 12px; border: 1px solid #4a3f2f; border-radius: 14px; background: #1c1812; }
+.a5-badge.got { border-color: #F59A23; box-shadow: 0 0 14px rgba(245,154,35,.3); } .a5-badge.lock { opacity: .78; }
+.a5-bt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; } .a5-bt small { color: #b8a888; } .a5-bt small.ok { color: #F59A23; } .a5-bt small.why { color: #d9a35a; }
+.a5-xp { color: #F59A23; font-weight: 700; font-size: 13px; flex: none; }
+.a5-ov { position: fixed; inset: 0; z-index: 9500; background: rgba(6,4,3,.72); display: flex; align-items: flex-end; justify-content: center; }
+.a5-sheet { width: 100%; max-width: 560px; max-height: 80vh; overflow-y: auto; background: #1c1812; border: 1px solid #4a3f2f; border-radius: 18px 18px 0 0; padding: 16px 16px calc(16px + env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; gap: 10px; color: #ede0c0; font-family: Inter, system-ui, sans-serif; }
+.a5-sheet h2 { margin: 0; font: 700 19px/1.2 Spectral, Georgia, serif; color: #f6ecd2; }
+.a5-row { display: flex; gap: 10px; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid #3a3022; background: #14100b; color: #ede0c0; text-align: left; font-size: 14px; }
+.a5-chk { width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid #F59A23; display: inline-flex; align-items: center; justify-content: center; color: #F59A23; font-weight: 700; flex: none; }
+.a5-toast { position: fixed; left: 50%; bottom: calc(86px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 12px); opacity: 0; transition: opacity .3s, transform .3s; z-index: 9600; max-width: min(92vw, 420px); background: #1c1812; color: #f6ecd2; border: 1px solid #F59A23; border-radius: 14px; padding: 10px 14px; font: 600 13px/1.35 Inter, system-ui, sans-serif; box-shadow: 0 8px 28px rgba(0,0,0,.5); pointer-events: none; }
+.a5-toast.on { opacity: 1; transform: translate(-50%, 0); }
