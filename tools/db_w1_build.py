@@ -13,7 +13,7 @@ def norm(s):
     return re.sub(r'[^a-z0-9]+', ' ', s).strip()
 def slug(s): return norm(s).replace(' ', '-')
 PREF = {'identita':'id','organizzazione':'org','artefatto':'art','luogo':'luo','pianeta':'pia','evento':'ev','battaglia':'bat','specie':'sp','civilta':'civ',
-        'opera':'op','attore':'act','creatore':'cr','universo':'uni','entita-cosmica':'cos'}
+        'opera':'op','attore':'att','creatore':'cr','universo':'uni','entita-cosmica':'cos'}
 # P31 (etichetta en, minuscola) -> tipo. Ordine = priorita'.
 REGOLE = [
  ('episodio', ('television series episode','episode of','television season','season of')),
@@ -21,13 +21,14 @@ REGOLE = [
  ('evento', ('fictional event','fictional conflict')),
  ('pianeta', ('fictional planet','fictional star','fictional moon','fictional celestial')),
  ('universo', ('fictional universe','fictional dimension','fictional realm','fictional plane of existence','fictional world')),
- ('luogo', ('fictional location','fictional city','fictional country','fictional building','fictional locale','fictional state','fictional nation','fictional island','fictional prison','fictional school','fictional place','fictional town','fictional village','fictional kingdom','fictional continent','fictional region','fictional organization headquarters')),
+ ('organizzazione', ('fictional television network','fictional television station','fictional newspaper','fictional news ','fictional media')),
+ ('luogo', ('fictional facility','fictional apartment','fictional residence','fictional restaurant','fictional house','fictional drinking establishment','fictional store','fictional hospital','fictional shop','fictional military base','fictional laboratory','fictional high or secondary school','fictional hotel','fictional diner','fictional university','fictional caf','fictional club','fictional police station','fictional bar','fictional bank','fictional office','fictional museum','fictional church','fictional street','fictional park','fictional airport','fictional bridge','fictional neighborhood','fictional neighbourhood','fictional district','fictional headquarters','fictional laboratory','fictional gym','fictional theater','fictional theatre','fictional casino','fictional warehouse','fictional factory','fictional hideout','fictional lair','fictional base','fictional embassy','fictional castle','fictional temple','fictional palace','fictional tower','fictional station','fictional location','fictional city','fictional country','fictional building','fictional locale','fictional state','fictional nation','fictional island','fictional prison','fictional school','fictional place','fictional town','fictional village','fictional kingdom','fictional continent','fictional region','fictional organization headquarters')),
  ('civilta', ('fictional civilization','fictional nation state','fictional empire')),
  ('specie', ('fictional species','fictional race','fictional alien species','fictional ethnic group','fictional mutant species','fictional population')),
  ('organizzazione', ('fictional organization','fictional organisation','fictional team','superhero team','fictional intelligence agency','fictional government','fictional criminal organization','fictional company','fictional military unit','fictional group','fictional corporation','fictional agency','fictional institution','fictional secret society','fictional gang','fictional cult','fictional religion','fictional political party','fictional army')),
- ('artefatto', ('fictional weapon','fictional object','fictional artifact','fictional artefact','fictional material','fictional element','fictional technology','fictional vehicle','fictional item','fictional gem','fictional device','fictional spacecraft','fictional aircraft','fictional ship','fictional substance','fictional metal','fictional book','fictional magic','fictional language','fictional currency','fictional drug','fictional food')),
+ ('artefatto', ('fictional armor','fictional armour','fictional automobile','fictional car','fictional suit','fictional weapon','fictional object','fictional artifact','fictional artefact','fictional material','fictional element','fictional technology','fictional vehicle','fictional item','fictional gem','fictional device','fictional spacecraft','fictional aircraft','fictional ship','fictional substance','fictional metal','fictional book','fictional magic','fictional language','fictional currency','fictional drug','fictional food')),
  ('entita-cosmica', ('fictional deity','fictional god','fictional cosmic entity','fictional entity','fictional celestial being','fictional demon','fictional spirit','fictional monster','fictional being','fictional creature')),
- ('identita', ('fictional human','fictional character','fictional alien','fictional robot','superhero','supervillain','fictional mutant','fictional animal','fictional cyborg','fictional android','fictional humanoid','fictional person','fictional hero','fictional villain','fictional antihero','fictional artificial intelligence','fictional extraterrestrial','fictional wizard','fictional sorcerer','fictional soldier','fictional spy','fictional scientist','fictional journalist','fictional lawyer','fictional physician','fictional criminal','fictional dog','fictional cat','fictional monkey','fictional bird','fictional dragon','fictional vampire','fictional zombie','fictional superhuman','fictional giant','fictional dwarf','fictional elf','fictional genius','fictional pirate','fictional president','fictional politician','fictional king','fictional queen','fictional prince','fictional princess','fictional warrior','fictional knight','fictional witch','fictional thief','fictional assassin','fictional mercenary','fictional detective','fictional doctor','fictional teacher','fictional student','fictional child','fictional woman','fictional man','fictional girl','fictional boy','fictional fictional character','fictional demigod','fictional ghost','fictional mutant character','fictional inventor','fictional engineer','fictional pilot','fictional astronaut','fictional agent','fictional officer','fictional commander','fictional captain','fictional general','fictional emperor','fictional priest','fictional monk','fictional sorceress')),
+ ('identita', ('comics character','television character','film character','fictional human','fictional character','fictional alien','fictional robot','superhero','supervillain','fictional mutant','fictional animal','fictional cyborg','fictional android','fictional humanoid','fictional person','fictional hero','fictional villain','fictional antihero','fictional artificial intelligence','fictional extraterrestrial','fictional wizard','fictional sorcerer','fictional soldier','fictional spy','fictional scientist','fictional journalist','fictional lawyer','fictional physician','fictional criminal','fictional dog','fictional cat','fictional monkey','fictional bird','fictional dragon','fictional vampire','fictional zombie','fictional superhuman','fictional giant','fictional dwarf','fictional elf','fictional genius','fictional pirate','fictional president','fictional politician','fictional king','fictional queen','fictional prince','fictional princess','fictional warrior','fictional knight','fictional witch','fictional thief','fictional assassin','fictional mercenary','fictional detective','fictional doctor','fictional teacher','fictional student','fictional child','fictional woman','fictional man','fictional girl','fictional boy','fictional fictional character','fictional demigod','fictional ghost','fictional mutant character','fictional inventor','fictional engineer','fictional pilot','fictional astronaut','fictional agent','fictional officer','fictional commander','fictional captain','fictional general','fictional emperor','fictional priest','fictional monk','fictional sorceress')),
  ('opera', ('film','television series','animated series','animated film','video game','web series','short film','television film','miniseries','anthology','television program','animated television series','film series','media franchise','comic book series','novel','book series','tv series','streaming','documentary','television special','one-shot')),
 ]
 def classifica(p31_labels, gruppi):
@@ -48,7 +49,8 @@ def carica_esistente():
         for k in keys:
             if k: pieni[k].add(v['i'])
         nome = v['n']; base = re.sub(r'\s*\(.*?\)', '', nome)
-        for k in {norm(base)} | {norm(x) for x in re.split(r'[/,]', base)}:
+        par = set(re.findall(r'\(([^)]*)\)', nome))
+        for k in {norm(base)} | {norm(x) for x in re.split(r'[/,]', base)} | {norm(x) for x in par}:
             if k and k not in keys: parz[k].add(v['i'])
     return idx, pieni, parz
 def qnum(q): return int(q[1:])
@@ -73,13 +75,19 @@ def main():
         if mot:
             cont['staging:' + (tipo or 'n/d')] += 1; stag.append({'q': q, 'nome': nome, 'tipo': tipo, 'motivo': mot}); continue
         alias = sorted({a for l in ('en', 'it') for a in r['a'].get(l, []) if a} | ({r['l']['it']} if r['l'].get('it') and r['l']['it'] != nome else set()))
-        chiavi = {norm(nome)} | {norm(a) for a in alias}
+        chiavi = {norm(nome)} | {norm(a) for a in alias} | ({norm(re.sub(r'\s*\(.*?\)', '', r['sl']['itwiki']))} if r['sl'].get('itwiki') else set())
         # risoluzione contro l'archivio storico: solo tipi compatibili contano
         compat = {'identita': 'p', 'universo': 'U', 'organizzazione': 'o', 'artefatto': 'a', 'luogo': 'l', 'pianeta': 'P', 'evento': 'e', 'opera': 't', 'attore': None, 'creatore': None}
         full = set().union(*[pieni.get(k, set()) for k in chiavi if k]) if chiavi else set()
         full = {i for i in full if compat.get(tipo) is None or tipo_esist[i] == compat.get(tipo) or tipo_esist[i] in ('h', 'm')}
         part = set().union(*[parz.get(k, set()) for k in chiavi if k])
         part = {i for i in part if compat.get(tipo) is None or tipo_esist[i] == compat.get(tipo)} - full
+        if tipo not in ('identita', 'attore', 'creatore', 'opera') and not full:
+            # categorie non-persona: l'archivio storico e' in italiano e Wikidata spesso non ha l'etichetta italiana -> confronto cross-lingua per token distintivi
+            STOP = {'battle', 'battaglia', 'stone', 'stones', 'gemma', 'armor', 'armour', 'infinity', 'avengers', 'universe', 'realm', 'earth'}
+            tk = {w for k in chiavi for w in k.split() if len(w) >= 5} - STOP
+            for v in idx:
+                if compat.get(tipo) == v['t'] and tk & ({w for w in norm(v['n']).split() if len(w) >= 5} - STOP): part.add(v['i'])
         if len(full) == 1 and not part:
             arr.append({'id': next(iter(full)), 'wikidata': q, 'alias_nuovi': [a for a in alias if norm(a) not in pieni or next(iter(full)) not in pieni[norm(a)]][:20],
                         'interpreti': sorted({et.get(x) for x in r['c'].get('P175', []) if et.get(x)}), 'fonte': 'Wikidata (CC0)'}); cont['arricchimento'] += 1; continue
@@ -87,7 +95,7 @@ def main():
             coda['possibili_duplicati'].append({'q': q, 'nome': nome, 'tipo': tipo, 'esistenti_esatti': sorted(full), 'esistenti_parziali': sorted(part)})
             stag.append({'q': q, 'nome': nome, 'tipo': tipo, 'motivo': 'possibile duplicato: in coda di revisione'}); cont['coda_duplicati'] += 1; continue
         # D12: dichiarazione Wikidata + articolo Wikipedia indipendente (en) => verificata a livello di identita'/esistenza; altrimenti staging
-        if 'enwiki' not in r['sl']:
+        if not ({'enwiki', 'itwiki'} & set(r['sl'])):
             stag.append({'q': q, 'nome': nome, 'tipo': tipo, 'motivo': 'una sola fonte (nessun articolo Wikipedia): resta in staging (D12)'}); cont['staging:una_fonte'] += 1; continue
         if q in q2id: rid = q2id[q]
         else:
@@ -98,7 +106,7 @@ def main():
         rec = {'id': rid, 'tipo': tipo, 'nome': nome, 'livello': 'C', 'stato_verifica': 'verificata', 'origine': 'W1',
                'ids_esterni': {'wikidata': q}, 'gruppi': r['g'],
                'fonti': [{'fonte': 'Wikidata', 'url': 'https://www.wikidata.org/wiki/' + q, 'licenza': 'CC0'},
-                         {'fonte': 'Wikipedia (en) - solo riferimento', 'url': 'https://en.wikipedia.org/wiki/' + r['sl']['enwiki'].replace(' ', '_'), 'licenza': 'CC BY-SA 4.0 (nessun testo copiato)'}]}
+                         {'fonte': 'Wikipedia (en) - solo riferimento', 'url': ('https://en.wikipedia.org/wiki/' + r['sl']['enwiki'].replace(' ', '_')) if 'enwiki' in r['sl'] else ('https://it.wikipedia.org/wiki/' + r['sl']['itwiki'].replace(' ', '_')), 'licenza': 'CC BY-SA 4.0 (nessun testo copiato)'}]}
         if r['l'].get('it') and r['l']['it'] != nome: rec['nome_it'] = r['l']['it']
         if alias: rec['alias'] = alias
         if uni: rec['universo'] = uni

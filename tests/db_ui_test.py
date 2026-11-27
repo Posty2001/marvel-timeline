@@ -5,10 +5,16 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DB = ROOT/'atlante2/data/db'
 res = []; errs = []
 def ok(n, c, d=''): res.append(bool(c)); print(('PASS ' if c else 'FAIL ') + n + ((' ' + str(d)) if (d and not c) else ''))
-if DB.exists(): print('SKIP: atlante2/data/db gia presente (dati reali): il test fixture non sovrascrive'); sys.exit(0)
+REAL = None
+if DB.exists():
+    REAL = pathlib.Path(tempfile.mkdtemp())/'db_reale'; shutil.move(str(DB), str(REAL))
 T = pathlib.Path(tempfile.mkdtemp())
 (T/'data/atlante').mkdir(parents=True); (T/'atlante2/data').mkdir(parents=True)
-shutil.copytree(ROOT/'data/atlante/espansione', T/'data/atlante/espansione')
+shutil.copytree(ROOT/'data/atlante/espansione', T/'data/atlante/espansione', ignore=shutil.ignore_patterns('raw'))
+import json, hashlib
+for f in (T/'data/atlante/espansione/canon').glob('w*_*.jsonl'): f.unlink()
+rp = T/'data/atlante/espansione/ids_registro.json'; rg = json.load(open(rp)); rg['ids'] = {k: v for k, v in rg['ids'].items() if v.get('origine') == 'registro-storico'}
+rg['ids_sha256'] = hashlib.sha256('\n'.join(sorted(rg['ids'])).encode()).hexdigest(); json.dump(rg, open(rp, 'w'), sort_keys=True)
 for f in ('identita.json', 'manifest.json'): shutil.copy(ROOT/'data/atlante'/f, T/'data/atlante'/f)
 shutil.copy(ROOT/'atlante2/data/index.json', T/'atlante2/data/index.json')
 subprocess.run(['python3', 'tools/db_w1_build.py', 'tests/fixtures/w1_raw_fixture.json', '--scrivi'], cwd=ROOT, env=dict(os.environ, DB_ROOT=str(T)), check=True, capture_output=True)
@@ -49,4 +55,5 @@ try:
     ok('nessun errore JS', not errs, errs)
 finally:
     shutil.rmtree(DB, ignore_errors=True)
+    if REAL: shutil.move(str(REAL), str(DB))
 sys.exit(0 if all(res) else 1)

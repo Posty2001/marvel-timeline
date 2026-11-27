@@ -1,0 +1,30 @@
+{
+ "arricchimenti": 109,
+ "canon": 284,
+ "coda": {
+  "non_classificati": 89,
+  "possibili_duplicati": 59
+ },
+ "input_entita": 1532,
+ "mcu_qid": [
+  "Q642878"
+ ],
+ "per_tipo": {
+  "artefatto": 2,
+  "attore": 162,
+  "battaglia": 2,
+  "creatore": 53,
+  "identita": 23,
+  "opera": 39,
+  "organizzazione": 1,
+  "universo": 2
+ },
+ "staging": 1139,
+ "staging_per_motivo": {
+  "classe non riconosciuta": 89,
+  "episodio/stagione": 3,
+  "possibile duplicato": 59,
+  "senza etichetta inglese": 28,
+  "una sola fonte (nessun articolo Wikipedia)": 960
+ }
+}

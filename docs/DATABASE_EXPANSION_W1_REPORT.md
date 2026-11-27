@@ -1,6 +1,6 @@
 # Database Expansion – W1 «Espansione MCU» (27–28/11/2026) — REPORT
 
-Stato: **pipeline e integrazione consegnate e collaudate su fixture; contenuti reali NON ancora aggiunti** (la raccolta richiede la rete: va eseguita una volta in GitHub Actions). Non dichiarata completata. Build TEST `20261128-0100-db1`. 0 €, produzione congelata.
+Stato: **pipeline, integrazione e prima raccolta reale consegnate: 284 nuove voci verificate (Livello C) + 109 arricchimenti**. Non dichiarata completata. Build TEST `20261128-0100-db1`. 0 €, produzione congelata.
 
 ## 1. Correzioni al censimento (richieste dell'utente)
 | Problema | Causa | Correzione |
@@ -26,8 +26,22 @@ Dati dell'esecuzione dell'utente (19 s): 104 film e 39 serie Marvel Studios, 20 
 ## 4. Verifiche automatiche
 `tests/db_w1_test.py` 13/13 (idempotenza ID, nessuna collisione con gli ID storici, omonimi non fusi, solo Livello C verificato, staging/coda corretti, ricerca JS); `tests/db_ui_test.py` 10/10 (lazy, omonimi, scheda, link sicuri, alias→scheda esistente, ricerca storica invariata, nessun overflow, nessun errore JS); `tests/db_test.py` (W0 + W1); regressioni Atlas v. roadmap. Le fixture sono **sintetiche e non finiscono nel runtime**.
 
-## 5. Contenuti aggiunti: **0 reali, in attesa della raccolta**
-Il sandbox non raggiunge Wikidata. Conteggi reali per tipo, arricchimenti, staging e coda verranno prodotti da `python3 tools/db_w1_build.py <raw> --scrivi` subito dopo la raccolta e riportati qui. Atteso (ordine di grandezza, non verificato): ~1.200 elementi MCU + opere + interpreti/creatori, di cui solo una parte promossa.
+## 5. Contenuti aggiunti (raccolta reale eseguita il 27/11 alle 23:55: 1.532 entità Wikidata, 2.319 etichette di riferimento)
+Raccolta: universo MCU 1.197 · opere 92 · interpreti 187 · creatori 59 (esito `w1_manifest.json`, tutti i gruppi ok).
+| Esito | Quantità |
+|---|---|
+| **Nuove voci verificate in archivio (Livello C)** | **284**: 162 interpreti, 53 creatori, 39 opere, 23 personaggi, 2 artefatti, 2 battaglie, 2 universi/dimensioni, 1 organizzazione |
+| **Arricchimenti di voci storiche** (ID invariati: alias, nomi italiani, interpreti, QID Wikidata) | **109** |
+| **Coda di revisione – possibili duplicati** (non importati) | **59** (es. «Tony Stark»↔`id-iron-man`, «Peter Parker» ↔ 4 identità, «Tesseract»/«Eye of Agamotto» ↔ schede italiane) |
+| **Coda – classi non riconosciute** (non importate) | **89** (es. «fictional occurrence» 34: fasi/eventi editoriali da valutare) |
+| **Staging – una sola fonte (D12)** | **970**: 352 luoghi, 341 personaggi, 146 artefatti, 36 organizzazioni, 21 battaglie, 18 opere, 14 pianeti, 9 specie, 8 universi, 4 entità cosmiche, 11 persone |
+| Staging – senza etichetta inglese / episodi | 28 / 3 |
+Indice runtime `atlante2/data/db/`: 394 record (284 nuovi + 109 arricchimenti + 1), **33 KB compressi**, 156 KB su disco; ricerca reale ≤ 5 ms (es. «hemsworth»→Thor, «zoe saldana»→Gamora e scheda attrice, «Batista»→Dave Bautista, «guardians», «quantum»).
+**Lettura onesta del risultato:** la quota di **personaggi** nuovi verificati è bassa (23) perché la gran parte dei personaggi minori MCU in Wikidata non ha un articolo Wikipedia: per la regola D12 (due fonti indipendenti) resta in staging (341 personaggi, 352 luoghi, 146 artefatti). Non è un limite del sistema ma di fonti: **non ho abbassato la soglia** per gonfiare i numeri. Per promuoverli serve una **seconda fonte indipendente** compatibile con le licenze (proposta W1.b: wiki MCU su Fandom, CC BY-SA 3.0, solo fatti e mai prosa; oppure TMDB solo dopo chiarimento dei termini): decisione tua.
+Le 59 possibili duplicazioni sono volutamente non risolte automaticamente (continuità diverse, es. Peter Parker; Hive ≠ Grant Ward): vanno decise caso per caso, non inventate.
 
-## 6. Azione richiesta (una sola)
-Actions → **TMDB sync (manuale)** → Run workflow, ref `test/tva-archives`, spunta **`db_w1`** (l'altra casella `db_censimento` spenta). Esito atteso: artifact `db-w1` + branch `db-raw` con `w1_wikidata.json`. Poi scrivimi «raccolta fatta»: costruisco canon, indice, test e report con i numeri reali.
+## 6. Prossimi passi
+1. (Opzionale, tua decisione) **W1.b**: seconda fonte per promuovere lo staging (Fandom MCU, solo fatti, o TMDB dopo verifica dei termini).
+2. Revisione della coda (59 duplicati, 89 non classificati): posso proporre decisioni a regole come per i link ambigui di A3.
+3. W2 (pre-MCU e paralleli) solo dopo la tua approvazione.
+Rigenerazione: il raw (`data/atlante/espansione/raw/`, ignorato da git) si scarica da `db-raw`; `python3 tools/db_w1_build.py <raw> --scrivi` è idempotente (ID stabili).

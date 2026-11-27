@@ -1,0 +1,1192 @@
+{
+ "non_classificati": [
+  {
+   "nome": "Registration acts",
+   "p31": [
+    "fictional document"
+   ],
+   "q": "Q2893095"
+  },
+  {
+   "nome": "Most Wanted",
+   "p31": [
+    "television pilot",
+    "abandoned project"
+   ],
+   "q": "Q24053125"
+  },
+  {
+   "nome": "New Warriors",
+   "p31": [
+    "television pilot",
+    "abandoned project"
+   ],
+   "q": "Q29512121"
+  },
+  {
+   "nome": "I am Groot",
+   "p31": [
+    "catchphrase",
+    "phrase originating from a work of fiction"
+   ],
+   "q": "Q64692748"
+  },
+  {
+   "nome": "Captain Marvel – Original Motion Picture Soundtrack",
+   "p31": [
+    "album"
+   ],
+   "q": "Q65076287"
+  },
+  {
+   "nome": "list of unproduced Marvel Cinematic Universe projects",
+   "p31": [
+    "Wikimedia list article"
+   ],
+   "q": "Q96390335"
+  },
+  {
+   "nome": "The Blip",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q106856883"
+  },
+  {
+   "nome": "Kidnapping of Tony Stark",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114241293"
+  },
+  {
+   "nome": "Duel of Los Angeles",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114241386"
+  },
+  {
+   "nome": "Bruce Banner Manhunt",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114247358"
+  },
+  {
+   "nome": "Ambush in Rio de Janeiro",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114247413"
+  },
+  {
+   "nome": "Duel of Harlem",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114247554"
+  },
+  {
+   "nome": "Duel of Monaco",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114775011"
+  },
+  {
+   "nome": "Escape from the Batiment B3",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114775031"
+  },
+  {
+   "nome": "Duel at Tony Stark's Mansion",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114775087"
+  },
+  {
+   "nome": "Infiltration into Hammer Industries Headquarters",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114775109"
+  },
+  {
+   "nome": "Infiltration into Odin's Vault",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114795631"
+  },
+  {
+   "nome": "Odin's Vault",
+   "p31": [
+    "fictional room"
+   ],
+   "q": "Q114795653"
+  },
+  {
+   "nome": "Infiltration into the S.H.I.E.L.D. Crater Investigation Site",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114795825"
+  },
+  {
+   "nome": "Duel at the Rainbow Bridge",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114795890"
+  },
+  {
+   "nome": "Destruction of Castle Rock Tower",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114860532"
+  },
+  {
+   "nome": "Liberation of Allied Prisoners of War",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114860828"
+  },
+  {
+   "nome": "Attack on HYDRA Facilities",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114860880"
+  },
+  {
+   "nome": "Capture of Arnim Zola",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114860904"
+  },
+  {
+   "nome": "Attack on HYDRA Headquarters",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114861024"
+  },
+  {
+   "nome": "Destruction of Project P.E.G.A.S.U.S.",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114872275"
+  },
+  {
+   "nome": "Skirmish in Germany",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114872313"
+  },
+  {
+   "nome": "Attack on the Helicarrier",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q114872362"
+  },
+  {
+   "nome": "Destruction of the Chinese Theatre",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q115331100"
+  },
+  {
+   "nome": "Destruction of Tony Stark's Mansion",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q115331185"
+  },
+  {
+   "nome": "Kidnapping of James Rhodes",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q115331237"
+  },
+  {
+   "nome": "Infiltration into Aldrich Killian's Mansion",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q115331282"
+  },
+  {
+   "nome": "Kidnapping of President Ellis",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q115331403"
+  },
+  {
+   "nome": "Convergence",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q115361944"
+  },
+  {
+   "nome": "Sacking of Asgard",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q115362155"
+  },
+  {
+   "nome": "Stanley's Pizza Parlor",
+   "p31": [
+    "fictional pizzeria"
+   ],
+   "q": "Q116215847"
+  },
+  {
+   "nome": "Smoky Mountain National Forest",
+   "p31": [
+    "fictional forest"
+   ],
+   "q": "Q116216019"
+  },
+  {
+   "nome": "Five Mile Fork",
+   "p31": [
+    "fictional motel"
+   ],
+   "q": "Q116216038"
+  },
+  {
+   "nome": "Grayburn College",
+   "p31": [
+    "fictional college"
+   ],
+   "q": "Q116216070"
+  },
+  {
+   "nome": "Pingo Doce",
+   "p31": [
+    "fictional drink"
+   ],
+   "q": "Q116216511"
+  },
+  {
+   "nome": "Super Soldier Serum",
+   "p31": [
+    "fictional chemical substance"
+   ],
+   "q": "Q116216575"
+  },
+  {
+   "nome": "Stark Industries Rocket Launcher",
+   "p31": [
+    "fictional rocket launcher"
+   ],
+   "q": "Q116216769"
+  },
+  {
+   "nome": "Bio-Tech Force Enhancement Project",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q116217056"
+  },
+  {
+   "nome": "Avengers Initiative",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q116217808"
+  },
+  {
+   "nome": "Project P.E.G.A.S.U.S.",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q116298865"
+  },
+  {
+   "nome": "Captain America's USO Show",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q116460141"
+  },
+  {
+   "nome": "Captain America's Motorcycle",
+   "p31": [
+    "fictional motorcycle"
+   ],
+   "q": "Q116460157"
+  },
+  {
+   "nome": "Schnellzug EB912",
+   "p31": [
+    "fictional train"
+   ],
+   "q": "Q116460183"
+  },
+  {
+   "nome": "Lindworm-5 Motorbike",
+   "p31": [
+    "fictional motorcycle"
+   ],
+   "q": "Q116460298"
+  },
+  {
+   "nome": "HYDRA Truck",
+   "p31": [
+    "fictional truck"
+   ],
+   "q": "Q116460457"
+  },
+  {
+   "nome": "Fieser Dorsch",
+   "p31": [
+    "fictional submarine"
+   ],
+   "q": "Q116460599"
+  },
+  {
+   "nome": "Project Rebirth",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q116462067"
+  },
+  {
+   "nome": "Sanctuary",
+   "p31": [
+    "fictional asteroid belt"
+   ],
+   "q": "Q116476742"
+  },
+  {
+   "nome": "S.H.I.E.L.D. SUV",
+   "p31": [
+    "fictional SUV"
+   ],
+   "q": "Q116478260"
+  },
+  {
+   "nome": "S.H.I.E.L.D. Helicopter",
+   "p31": [
+    "fictional helicopter"
+   ],
+   "q": "Q116478319"
+  },
+  {
+   "nome": "Phase 2",
+   "p31": [
+    "fictional occurrence"
+   ],
+   "q": "Q116478785"
+  },
+  {
+   "nome": "House Party Protocol",
+   "p31": [
+    "fictional command"
+   ],
+   "q": "Q116835766"
+  },
+  {
+   "nome": "Clean Slate Protocol",
+   "p31": [
+    "fictional command"
+   ],
+   "q": "Q116835905"
+  },
+  {
+   "nome": "Rose Hill Police Department",
+   "p31": [
+    "fictional law enforcement agency"
+   ],
+   "q": "Q116837761"
+  },
+  {
+   "nome": "Exitar",
+   "p31": [
+    "fictional colony"
+   ],
+   "q": "Q116850689"
+  },
+  {
+   "nome": "Asgardian Shield",
+   "p31": [
+    "fictional shield"
+   ],
+   "q": "Q116851551"
+  },
+  {
+   "nome": "Giant Butterfly",
+   "p31": [
+    "fictional insect"
+   ],
+   "q": "Q116853498"
+  },
+  {
+   "nome": "Rogers: The Musical",
+   "p31": [
+    "fictional musical",
+    "amusement park show"
+   ],
+   "q": "Q117036032"
+  },
+  {
+   "nome": "Marvel character",
+   "p31": [],
+   "q": "Q121996995"
+  },
+  {
+   "nome": "Afterlife",
+   "p31": [
+    "fictional settlement"
+   ],
+   "q": "Q122445274"
+  },
+  {
+   "nome": "Amanzi Kwakhona Umlambo",
+   "p31": [
+    "fictional river"
+   ],
+   "q": "Q122446022"
+  },
+  {
+   "nome": "Arctic HYDRA Research Facility",
+   "p31": [
+    "fictional research facility"
+   ],
+   "q": "Q122446567"
+  },
+  {
+   "nome": "Asgardian Theater",
+   "p31": [
+    "fictional play"
+   ],
+   "q": "Q122447284"
+  },
+  {
+   "nome": "Bishop Family Cemetery",
+   "p31": [
+    "fictional cemetery"
+   ],
+   "q": "Q122549392"
+  },
+  {
+   "nome": "Black Raven Tavern",
+   "p31": [
+    "fictional tavern"
+   ],
+   "q": "Q122550353"
+  },
+  {
+   "nome": "Bob's Market",
+   "p31": [
+    "fictional gas station"
+   ],
+   "q": "Q122554222"
+  },
+  {
+   "nome": "Bronwyn University",
+   "p31": [
+    "fictional college"
+   ],
+   "q": "Q122557645"
+  },
+  {
+   "nome": "Brookemont Elementary School",
+   "p31": [
+    "fictional primary school"
+   ],
+   "q": "Q122557843"
+  },
+  {
+   "nome": "Cave of the Dragon",
+   "p31": [
+    "fictional cave"
+   ],
+   "q": "Q122587073"
+  },
+  {
+   "nome": "Clint Barton's Homestead",
+   "p31": [
+    "fictional farmhouse"
+   ],
+   "q": "Q122599228"
+  },
+  {
+   "nome": "Coronet",
+   "p31": [
+    "fictional cinema"
+   ],
+   "q": "Q122600591"
+  },
+  {
+   "nome": "Coulson Academy",
+   "p31": [
+    "fictional academy"
+   ],
+   "q": "Q122601113"
+  },
+  {
+   "nome": "Culper Woods",
+   "p31": [
+    "fictional forest"
+   ],
+   "q": "Q122602589"
+  },
+  {
+   "nome": "Customs Station CI-741",
+   "p31": [
+    "fictional space station"
+   ],
+   "q": "Q122602691"
+  },
+  {
+   "nome": "Dark Gate",
+   "p31": [
+    "fictional gate"
+   ],
+   "q": "Q122617484"
+  },
+  {
+   "nome": "Easterling Farms",
+   "p31": [
+    "fictional farm"
+   ],
+   "q": "Q122619800"
+  },
+  {
+   "nome": "El Monte Junk and Salvage",
+   "p31": [
+    "fictional junkyard"
+   ],
+   "q": "Q122621621"
+  },
+  {
+   "nome": "F.E.A.S.T. Community Center",
+   "p31": [
+    "fictional community center"
+   ],
+   "q": "Q122624675"
+  },
+  {
+   "nome": "Ginny's Supper Club",
+   "p31": [
+    "restaurant"
+   ],
+   "q": "Q122643059"
+  },
+  {
+   "nome": "Golden City",
+   "p31": [
+    "fictional capital city"
+   ],
+   "q": "Q122643265"
+  },
+  {
+   "nome": "Good Rest Motel",
+   "p31": [
+    "fictional motel"
+   ],
+   "q": "Q122643402"
+  },
+  {
+   "nome": "Green-Wood Cemetery",
+   "p31": [
+    "fictional cemetery"
+   ],
+   "q": "Q122648494"
+  },
+  {
+   "nome": "Gunner Henderson's Homestead",
+   "p31": [
+    "fictional property"
+   ],
+   "q": "Q122648825"
+  },
+  {
+   "nome": "Harlem Jets Practice Field",
+   "p31": [
+    "fictional field"
+   ],
+   "q": "Q122653112"
+  }
+ ],
+ "possibili_duplicati": [
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "art-gemma-dello-spazio-tesseract"
+   ],
+   "nome": "Cosmic Cube",
+   "q": "Q19836",
+   "tipo": "artefatto"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-daisy-johnson"
+   ],
+   "nome": "Daisy Johnson",
+   "q": "Q1424480",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-kevin-bacon-se-stesso"
+   ],
+   "nome": "Kevin Bacon",
+   "q": "Q3454165",
+   "tipo": "attore"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-grant-ward-hive"
+   ],
+   "nome": "Hive",
+   "q": "Q3785970",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-iron-man"
+   ],
+   "nome": "Tony Stark",
+   "q": "Q23894967",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-james-rhodes-war-machine"
+   ],
+   "nome": "James Rhodes",
+   "q": "Q23895040",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-natasha-romanoff"
+   ],
+   "nome": "Natasha Romanoff",
+   "q": "Q23895063",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-ivan-vanko-whiplash"
+   ],
+   "nome": "Ivan Vanko",
+   "q": "Q23900364",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "id-peter-parker-garfield",
+    "id-peter-parker-mcu",
+    "id-peter-parker-raimi",
+    "id-peter-parker-ynfsm"
+   ],
+   "esistenti_parziali": [],
+   "nome": "Peter Parker",
+   "q": "Q23991129",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-bucky-barnes-soldato-d-inverno"
+   ],
+   "nome": "Bucky Barnes",
+   "q": "Q23991694",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-t-challa-black-panther"
+   ],
+   "nome": "T'Challa",
+   "q": "Q24004885",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-steve-rogers-capitan-america"
+   ],
+   "nome": "Steve Rogers",
+   "q": "Q24022098",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-joaquin-torres-falcon",
+    "id-sam-wilson-capitan-america"
+   ],
+   "nome": "Sam Wilson",
+   "q": "Q24022345",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-clint-barton"
+   ],
+   "nome": "Clint Barton",
+   "q": "Q24026688",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-scott-lang-ant-man"
+   ],
+   "nome": "Scott Lang",
+   "q": "Q24026703",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "id-thaddeus-ross-mcu"
+   ],
+   "esistenti_parziali": [
+    "id-ross-hulk-2003"
+   ],
+   "nome": "Thaddeus Ross",
+   "q": "Q24027376",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-daisy-johnson"
+   ],
+   "nome": "Daisy Johnson",
+   "q": "Q24027972",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-peggy-carter-captain-carter"
+   ],
+   "nome": "Peggy Carter",
+   "q": "Q24034679",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-stephen-strange"
+   ],
+   "nome": "Stephen Strange",
+   "q": "Q24034722",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-jane-foster-mighty-thor"
+   ],
+   "nome": "Jane Foster",
+   "q": "Q24046106",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-peter-quill-star-lord"
+   ],
+   "nome": "Peter Quill",
+   "q": "Q24050065",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "hub-groot",
+    "id-groot-originale",
+    "id-groot-successore"
+   ],
+   "esistenti_parziali": [],
+   "nome": "Groot",
+   "q": "Q24050083",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-hulk"
+   ],
+   "nome": "Bruce Banner",
+   "q": "Q24050117",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "id-hank-pym"
+   ],
+   "esistenti_parziali": [
+    "id-scott-lang-ant-man"
+   ],
+   "nome": "Hank Pym",
+   "q": "Q24265423",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-adrian-toomes-avvoltoio"
+   ],
+   "nome": "Adrian Toomes",
+   "q": "Q27813421",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-quentin-beck-mysterio"
+   ],
+   "nome": "Quentin Beck",
+   "q": "Q60485245",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-fisk-fox-2003",
+    "id-fisk-mcu",
+    "id-kingpin-spider-verse"
+   ],
+   "nome": "Wilson Fisk",
+   "q": "Q64099772",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-carol-danvers-captain-marvel"
+   ],
+   "nome": "Carol Danvers",
+   "q": "Q64658380",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-blade"
+   ],
+   "nome": "Blade",
+   "q": "Q65929709",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-emil-blonsky-abominio"
+   ],
+   "nome": "Emil Blonsky",
+   "q": "Q65935380",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-grant-ward-hive"
+   ],
+   "nome": "Grant Ward",
+   "q": "Q96379857",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-frank-castle-punisher"
+   ],
+   "nome": "Frank Castle",
+   "q": "Q108403692",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-daisy-johnson"
+   ],
+   "nome": "Daisy Johnson",
+   "q": "Q108415935",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-matt-murdock-daredevil",
+    "id-matt-murdock-mcu"
+   ],
+   "nome": "Matt Murdock",
+   "q": "Q110414906",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "art-gemma-dello-spazio-tesseract"
+   ],
+   "nome": "Tesseract",
+   "q": "Q110818826",
+   "tipo": "artefatto"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "art-occhio-di-agamotto"
+   ],
+   "nome": "Eye of Agamotto",
+   "q": "Q110825083",
+   "tipo": "artefatto"
+  },
+  {
+   "esistenti_esatti": [
+    "id-kate-bishop"
+   ],
+   "esistenti_parziali": [
+    "id-clint-barton"
+   ],
+   "nome": "Kate Bishop",
+   "q": "Q111385820",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-kamala-khan-ms-marvel"
+   ],
+   "nome": "Kamala Khan",
+   "q": "Q113169240",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-steven-grant-marc-spector-moon-knight"
+   ],
+   "nome": "Moon Knight",
+   "q": "Q113177483",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "luo-new-asgard"
+   ],
+   "nome": "Hall of Asgard",
+   "q": "Q116295398",
+   "tipo": "luogo"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "art-gemma-dello-spazio-tesseract"
+   ],
+   "nome": "Tesseract Battery",
+   "q": "Q116459867",
+   "tipo": "artefatto"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "art-gemma-dello-spazio-tesseract"
+   ],
+   "nome": "Tesseract Cradle",
+   "q": "Q116459911",
+   "tipo": "artefatto"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "org-s-s-r-strategic-scientific-reserve"
+   ],
+   "nome": "Strategic Scientific Reserve",
+   "q": "Q116461762",
+   "tipo": "organizzazione"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "org-s-s-r-strategic-scientific-reserve"
+   ],
+   "nome": "Strategic Operations Command Center",
+   "q": "Q116854252",
+   "tipo": "organizzazione"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "luo-avengers-tower"
+   ],
+   "nome": "Blake Tower's Office",
+   "q": "Q122550568",
+   "tipo": "luogo"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "luo-celestial-island"
+   ],
+   "nome": "Bruce Banner's Island",
+   "q": "Q122558644",
+   "tipo": "luogo"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "luo-avengers-compound"
+   ],
+   "nome": "Cerberus Squad Compound",
+   "q": "Q122587371",
+   "tipo": "luogo"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "luo-avengers-compound"
+   ],
+   "nome": "Druig's Compound",
+   "q": "Q122618473",
+   "tipo": "luogo"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "luo-avengers-tower"
+   ],
+   "nome": "Essex Tower Hotel",
+   "q": "Q122624138",
+   "tipo": "luogo"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "luo-avengers-compound"
+   ],
+   "nome": "Hand Compound",
+   "q": "Q122652538",
+   "tipo": "luogo"
+  },
+  {
+   "esistenti_esatti": [
+    "id-reed-richards",
+    "id-reed-richards-1994",
+    "id-reed-richards-first-steps",
+    "id-reed-richards-illuminati",
+    "id-reed-richards-trank"
+   ],
+   "esistenti_parziali": [],
+   "nome": "Reed Richards",
+   "q": "Q125179103",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-maya-lopez-echo"
+   ],
+   "nome": "Echo",
+   "q": "Q126066680",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "id-sue-storm",
+    "id-sue-storm-1994",
+    "id-sue-storm-first-steps",
+    "id-sue-storm-trank"
+   ],
+   "esistenti_parziali": [],
+   "nome": "Sue Storm",
+   "q": "Q133697747",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-johnny-storm-human-torch",
+    "id-johnny-storm-human-torch-1994",
+    "id-johnny-storm-human-torch-first-steps",
+    "id-johnny-storm-human-torch-trank"
+   ],
+   "nome": "Johnny Storm",
+   "q": "Q133697756",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "id-ben-grimm",
+    "id-ben-grimm-1994",
+    "id-ben-grimm-first-steps",
+    "id-ben-grimm-trank"
+   ],
+   "esistenti_parziali": [],
+   "nome": "Ben Grimm",
+   "q": "Q133697772",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-joaquin-torres-falcon"
+   ],
+   "nome": "Joaquín Torres",
+   "q": "Q133806334",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-simon-williams-wonder-man"
+   ],
+   "nome": "Simon Williams",
+   "q": "Q137425443",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "id-victor-von-doom",
+    "id-victor-von-doom-1994",
+    "id-victor-von-doom-trank"
+   ],
+   "esistenti_parziali": [],
+   "nome": "Doctor Doom",
+   "q": "Q139685559",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-bob-sentry"
+   ],
+   "nome": "Sentry",
+   "q": "Q142295108",
+   "tipo": "identita"
+  }
+ ]
+}

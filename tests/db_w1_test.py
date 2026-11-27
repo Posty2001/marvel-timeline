@@ -9,7 +9,14 @@ def chk(c, m):
     else: fail += 1; print('FAIL', m)
 T = pathlib.Path(tempfile.mkdtemp(prefix='dbroot_'))
 (T/'data/atlante').mkdir(parents=True); (T/'atlante2/data').mkdir(parents=True)
-shutil.copytree(R/'data/atlante/espansione', T/'data/atlante/espansione')
+shutil.copytree(R/'data/atlante/espansione', T/'data/atlante/espansione', ignore=shutil.ignore_patterns('raw'))
+# base W0: via i risultati W1 reali (canon/staging/review) e dal registro le voci non storiche
+for f in (T/'data/atlante/espansione/canon').glob('w*_*.jsonl'): f.unlink()
+import hashlib
+rp = T/'data/atlante/espansione/ids_registro.json'; rg = json.load(open(rp))
+rg['ids'] = {k: v for k, v in rg['ids'].items() if v.get('origine') == 'registro-storico'}
+rg['conteggi'] = {'totale': len(rg['ids']), 'attivi': len(rg['ids'])}; rg['ids_sha256'] = hashlib.sha256('\n'.join(sorted(rg['ids'])).encode()).hexdigest()
+json.dump(rg, open(rp, 'w'), ensure_ascii=False, indent=1, sort_keys=True)
 for f in ('identita.json', 'manifest.json'): shutil.copy(R/'data/atlante'/f, T/'data/atlante'/f)
 shutil.copy(R/'atlante2/data/index.json', T/'atlante2/data/index.json')
 env = dict(os.environ, DB_ROOT=str(T))
