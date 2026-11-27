@@ -354,6 +354,43 @@
     listOnly(); if (s.t === 'p') loadKeys(function () { listOnly(); });
   }
 
+  /* ---------- ARCHIVIO ESTESO (Database Expansion): modulo lazy, inerte se i dati non esistono ---------- */
+  var DBQ = [], DBL = 0;
+  function withDb(cb) {
+    if (W.tvaDb) return cb(W.tvaDb); DBQ.push(cb); if (DBL) return; DBL = 1;
+    var sc = D.createElement('script'); sc.src = BASE + 'db.js'; sc.async = true; sc.onload = function () { var q = DBQ.splice(0); q.forEach(function (f) { if (W.tvaDb) f(W.tvaDb); }); }; sc.onerror = function () { DBL = 0; DBQ.length = 0; }; D.head.appendChild(sc);
+  }
+  function dbGroup(q, out, token) {
+    withDb(function (db) { db.search(q, function (rs) {
+      if (token.q !== q || !rs.length) return;
+      var g = h('section', 'a3-sgroup a3-dbg'), hd = h('h3', '', 'Archivio esteso'); hd.appendChild(h('small', '', rs.length + (rs.length === 1 ? ' risultato' : ' risultati'))); g.appendChild(hd);
+      var ls = h('div', 'a3-list'), n = 0;
+      rs.forEach(function (r) {
+        if (n >= 12) return; var ex = r.x && BY[r.x]; if (r.t === 'x' && !ex) return; n++;
+        var b = btn('a3-li a3-dbi', null, function () { if (ex) openId(r.x); else api.nav('a3', { a3: { v: 'dbx', id: r.i } }); });
+        var t = h('span'); t.appendChild(h('b', '', ex ? BY[r.x].n : r.n)); t.appendChild(h('span', 's', ex ? 'Scheda del registro' + (r.al && r.al.length ? ' · trovata tramite alias' : '') : (db.TIPO[r.t] || r.t) + (r.it && r.it !== r.n ? ' · ' + r.it : '') + ' · voce essenziale')); b.appendChild(t); ls.appendChild(b);
+      });
+      if (!n) return; g.appendChild(ls); Array.prototype.forEach.call(out.querySelectorAll('.empty'), function (e) { e.remove(); }); out.appendChild(g);
+    }); });
+  }
+  function renderDbx() {
+    frame(); var s = A3(); body.appendChild(h('div', 'a3-load', 'Caricamento…'));
+    withDb(function (db) { db.get(s.id, function (r) {
+      if (ST.a3 !== s) return; frame();
+      if (!r) { body.appendChild(h('div', 'empty', 'Voce non disponibile.')); return; }
+      api.setTitle(r.n, 'TVA Atlas');
+      var c = h('article', 'a3-dbx'); c.appendChild(h('div', 'k', (db.TIPO[r.t] || r.t) + ' · voce essenziale (Livello C)'));
+      c.appendChild(h('h2', '', r.n)); if (r.it && r.it !== r.n) c.appendChild(h('div', 'it', 'In italiano: ' + r.it));
+      if (r.d) c.appendChild(h('p', 'd', r.d.charAt(0).toUpperCase() + r.d.slice(1) + '.'));
+      var kv = function (k, v) { if (!v || (v.length === 0)) return; var d = h('div', 'a3-kv'); d.appendChild(h('span', 'k', k)); d.appendChild(h('div', 'v', Array.isArray(v) ? v.join(', ') : v)); c.appendChild(d); };
+      kv('Alias e denominazioni', r.al); kv('Interpreti', r.ip);
+      if (r.u && BY[r.u]) { var d = h('div', 'a3-kv'); d.appendChild(h('span', 'k', 'Continuità')); var v = h('div', 'v'); v.appendChild(btn('a3-lk', BY[r.u].n, function () { openId(r.u); })); d.appendChild(v); c.appendChild(d); }
+      c.appendChild(h('p', 'a3-dbnote', 'Voce essenziale: identità, tipo e riferimenti verificati. Il dossier approfondito arriverà con le ondate successive; nessun testo è copiato da altre fonti.'));
+      var f = h('div', 'a3-dbsrc'); [['Wikidata (CC0)', 'https://www.wikidata.org/wiki/' + r.wd], r.wp ? ['Wikipedia (solo riferimento)', 'https://en.wikipedia.org/wiki/' + encodeURIComponent(r.wp.replace(/ /g, '_'))] : null].forEach(function (x) { if (!x) return; var a = h('a', '', x[0]); a.href = x[1]; a.target = '_blank'; a.rel = 'noopener noreferrer'; f.appendChild(a); }); c.appendChild(f);
+      body.appendChild(c);
+    }); });
+  }
+
   /* ---------- RICERCA ---------- */
   function search(q) {
     var toks = norm(q).split(' ').filter(Boolean), res = {}; if (!toks.length) return res;
@@ -367,15 +404,16 @@
   function renderSearch() {
     frame(); var s = A3(); api.setTitle('Ricerca', 'TVA Atlas');
     var tools = h('div', 'a3-tools'), l = h('div', 'line'), inp = h('input', 'a3-in'); inp.type = 'search'; inp.placeholder = 'Cerca in TVA Atlas…'; inp.value = s.q || ''; inp.setAttribute('aria-label', 'Cerca'); inp.setAttribute('autocomplete', 'off'); l.appendChild(inp); tools.appendChild(l); body.appendChild(tools);
-    var out = h('div'); body.appendChild(out); var tm;
+    var out = h('div'); body.appendChild(out); var tm, tok = { q: '' };
     function run() {
-      s.q = inp.value; out.textContent = ''; var q = norm(s.q); if (!q) { out.appendChild(h('div', 'empty', 'Scrivi un nome, un universo, un interprete…')); return; }
+      s.q = inp.value; out.textContent = ''; tok.q = s.q; var q = norm(s.q); if (!q) { out.appendChild(h('div', 'empty', 'Scrivi un nome, un universo, un interprete…')); return; }
       var r = search(s.q), any = false;
       TYPES.forEach(function (x) {
         var a = r[x.t]; if (!a) return; any = true; var g = h('section', 'a3-sgroup t-' + x.t), hd = h('h3', '', x.n); hd.appendChild(h('small', '', a.length + (a.length === 1 ? ' risultato' : ' risultati'))); g.appendChild(hd);
         var ls = h('div', 'a3-list'); a.slice(0, 5).forEach(function (e) { ls.appendChild(li(e[1])); }); g.appendChild(ls);
         if (a.length > 5) { var m = btn('btn ghost a3-more', 'Mostra tutti (' + a.length + ')', function () { api.nav('a3', { a3: { v: 'cat', t: x.t, m: 'l', n: 36, q: s.q } }); }); g.appendChild(m); } out.appendChild(g);
       });
+      dbGroup(s.q, out, tok);
       if (!any) out.appendChild(h('div', 'empty', 'Nessun risultato per «' + s.q + '».'));
     }
     inp.addEventListener('input', function () { clearTimeout(tm); tm = setTimeout(run, 100); }); run();
@@ -546,10 +584,10 @@
   try { new W.MutationObserver(fitSoon).observe(D.body, { childList: true, subtree: true }); W.addEventListener('resize', function () { D.querySelectorAll('[data-fit]').forEach(function (n) { n.removeAttribute('data-fit'); n.style.fontSize = ''; }); fitSoon(); }); } catch (e) { /* ok */ }
   W.tvaFitTitles = fitTitles;
   W.tvaA3Ctx = function () { return { a5: withA5, dossier: dossier, h: h, btn: btn, BY: BY, ORD: ORD, emblem: emblem, paintAny: paintAny, paintRit: paintRit, tile: tile, uniNome: uniNome, uniCont: uniCont, uniHue: uniHue, natIdx: natIdx, ORBCLR: ORBCLR, openId: openId, frame: frame, api: api, search: search, get: get, A3: A3, body: body, get IDX() { return IDX; } }; };
-  var VIEWS = { rit: renderRit, home: renderHome, cat: renderCat, search: renderSearch, dos: renderDossier, hub: renderHub, mv: a4view('mv'), nx: a4view('nx'), pc: a4view('pc'), cp: a4view('cp'), pf: a5view('viewPF'), pr: a5view('viewPR') };
+  var VIEWS = { rit: renderRit, home: renderHome, cat: renderCat, search: renderSearch, dbx: renderDbx, dos: renderDossier, hub: renderHub, mv: a4view('mv'), nx: a4view('nx'), pc: a4view('pc'), cp: a4view('cp'), pf: a5view('viewPF'), pr: a5view('viewPR') };
   W.tvaA3 = {
     render: function () { ensure(function () { (VIEWS[A3().v] || renderHome)(); reveal(body); }); },
-    label: function (s) { var a = s.a3 || {}; if (a.v === 'dos' || a.v === 'hub') return (BY[a.id] && BY[a.id].n) || 'Dossier'; if (a.v === 'cat') return 'Catalogo'; if (a.v === 'rit') return 'Ritratti privati'; if (a.v === 'mv') return 'Osservatorio del Multiverso'; if (a.v === 'nx') return 'TVA Nexus'; if (a.v === 'pc') return 'Percorso'; if (a.v === 'cp') return 'Confronto universi'; if (a.v === 'pf') return 'Preferiti e raccolte'; if (a.v === 'pr') return 'Progressione'; if (a.v === 'search') return 'Ricerca'; return 'TVA Atlas'; },
+    label: function (s) { var a = s.a3 || {}; if (a.v === 'dos' || a.v === 'hub') return (BY[a.id] && BY[a.id].n) || 'Dossier'; if (a.v === 'cat') return 'Catalogo'; if (a.v === 'rit') return 'Ritratti privati'; if (a.v === 'mv') return 'Osservatorio del Multiverso'; if (a.v === 'nx') return 'TVA Nexus'; if (a.v === 'pc') return 'Percorso'; if (a.v === 'cp') return 'Confronto universi'; if (a.v === 'pf') return 'Preferiti e raccolte'; if (a.v === 'pr') return 'Progressione'; if (a.v === 'search') return 'Ricerca'; if (a.v === 'dbx') return 'Archivio esteso'; return 'TVA Atlas'; },
     ctx: function () { return W.tvaA3Ctx(); }, open: openId, go: function (pid, cb) { ensure(function () { var r = resolve(pid, null); if (r) openId(r); if (cb) cb(!!r); }); }, search: function (q) { return IDX ? search(q) : null; }, state: function () { return { idx: !!IDX, shards: Object.keys(SH).length }; }, ensure: ensure
   };
   if (W.tvaA3Boot) W.tvaA3Boot();

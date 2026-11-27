@@ -281,3 +281,13 @@ html:has(#atlas2Toggle:checked + #atlas2 .a3) #mmFab:focus-visible, html:has(#at
 .a3-grid.c2 .a3-tile .t .cls { font-size: 10px; }
 .a3-grid.big .a3-tile .t b { font-size: 16px; }
 .a3-tile.t-U { border-color: var(--hu, var(--a3-line)); }
+
+/* Archivio esteso (Database Expansion) */
+.a3-dbx { display: flex; flex-direction: column; gap: 10px; padding: 4px 2px 24px; }
+.a3-dbx .k { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--a3-soft); }
+.a3-dbx h2 { margin: 0; font-family: Spectral, serif; font-size: 26px; color: #fff; overflow-wrap: anywhere; }
+.a3-dbx .it, .a3-dbx .d { margin: 0; color: var(--a3-soft); font-size: 14px; line-height: 1.5; }
+.a3-dbnote { margin: 6px 0 0; font-size: 12px; line-height: 1.5; color: var(--a3-soft); }
+.a3-dbsrc { display: flex; flex-wrap: wrap; gap: 8px 14px; font-size: 12.5px; }
+.a3-dbsrc a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.a3-dbg { margin-top: 12px; }

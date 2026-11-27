@@ -5,7 +5,8 @@ Registro: data/atlante/espansione/ids_registro.json
 Regole: un ID gia' registrato non cambia e non sparisce (al piu' 'lapide' con redirect);
         nuovi ID solo in append; nessun ID reinventato."""
 import json, sys, hashlib, re, pathlib
-R = pathlib.Path(__file__).resolve().parent.parent
+import os
+R = pathlib.Path(os.environ.get('DB_ROOT') or pathlib.Path(__file__).resolve().parent.parent)
 IDX = R/'atlante2/data/index.json'
 REG = R/'data/atlante/espansione/ids_registro.json'
 MAN = R/'data/atlante/manifest.json'
@@ -24,6 +25,11 @@ def corrente():
     for old, new in i['redirect'].items():
         if old not in ids:
             ids[old] = {'tipo': 'redirect', 'rif': 'redirect', 'verso': new}
+    for f in sorted((R/'data/atlante/espansione/canon').glob('w*_*.jsonl')):
+        if 'arricchimenti' in f.name: continue
+        for l in f.read_text().splitlines():
+            r = json.loads(l)
+            ids[r['id']] = {'tipo': r['tipo'], 'rif': 'canon', 'ids_esterni': r.get('ids_esterni', {}), 'origine': r['origine']}
     return ids
 
 def carica():
@@ -37,7 +43,7 @@ def scrivi():
     n_new = 0
     for k, v in sorted(cur.items()):
         if k not in reg['ids']:
-            reg['ids'][k] = dict(v, stato='attivo', origine='registro-storico', ondata='W0'); n_new += 1
+            reg['ids'][k] = dict({'origine': 'registro-storico', 'ondata': 'W0'}, **v, stato='attivo'); n_new += 1
         else:
             reg['ids'][k]['stato'] = 'attivo' if reg['ids'][k].get('stato') != 'lapide' else 'lapide'
     for k, v in reg['ids'].items():

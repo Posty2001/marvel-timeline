@@ -11,13 +11,16 @@ def interni():
     c = collections.Counter(v['t'] for v in idx)
     ide = json.load(open(R/'data/atlante/identita.json'))
     rel = json.load(open(R/'data/atlante/relazioni.json'))
-    nrel = len(rel.get('relazioni', rel if isinstance(rel, list) else []))
-    ritr = 0
-    try: ritr = len(json.load(open(R/'data/atlante/assets.json')).get('ritratti', {}))
-    except Exception: pass
+    per_classe = collections.Counter(x.get('classe') for x in rel['relazioni'])
+    narr = [x for x in rel['relazioni'] if x.get('classe') == 'narrativa']
+    tl = json.load(open(R/'data/atlante/blob/altTimelineData.json'))  # = window.marvelGetAltTimelineData: la Timeline numerata
     return {'voci_indice': len(idx), 'per_tipo': dict(c), 'identita': len(ide['identita']),
             'con_alias': sum(1 for x in ide['identita'] if x.get('alias')), 'con_interpreti': sum(1 for x in ide['identita'] if x.get('interpreti')),
-            'relazioni_registro': nrel, 'titoli_timeline': c.get('t', 0)}
+            # le 4 classi NON si sommano mai in un unico «collegamenti»; le co-apparizioni NON sono nel registro (0 per regola)
+            'relazioni_per_classe': {'narrativa': per_classe.get('narrativa', 0), 'editoriale': per_classe.get('editoriale', 0),
+                                     'controparte': per_classe.get('controparte', 0), 'co_apparizione': 0},
+            'relazioni_narrative_per_verifica': dict(collections.Counter(x.get('verifica') for x in narr)),
+            'titoli_timeline_numerata': len(tl), 'titoli_con_voce_atlas': c.get('t', 0)}
 def get(url, headers=None, tries=3):
     for i in range(tries):
         try:
@@ -30,16 +33,32 @@ def sparql(q):
     return get('https://query.wikidata.org/sparql?format=json&query=' + urllib.parse.quote(q), {'Accept': 'application/sparql-results+json'})
 def esterni():
     out = {}
-    lab = get('https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=labels&languages=en&ids=Q931597|Q642878|Q95074|Q1235940')
-    out['wikidata_etichette_qid'] = {k: v.get('labels', {}).get('en', {}).get('value') for k, v in lab.get('entities', {}).items()} if 'entities' in lab else lab
-    for nome, q in {
-        'personaggi_universo_marvel_P1080': 'SELECT (COUNT(DISTINCT ?x) AS ?n) WHERE { ?x wdt:P1080 wd:Q931597 . }',
-        'personaggi_fittizi_marvel_P1080_istanza': 'SELECT (COUNT(DISTINCT ?x) AS ?n) WHERE { ?x wdt:P1080 wd:Q931597 ; wdt:P31/wdt:P279* wd:Q95074 . }',
-        'elementi_MCU_P1080': 'SELECT (COUNT(DISTINCT ?x) AS ?n) WHERE { ?x wdt:P1080 wd:Q642878 . }',
-        'con_etichetta_italiana': 'SELECT (COUNT(DISTINCT ?x) AS ?n) WHERE { ?x wdt:P1080 wd:Q931597 . ?x rdfs:label ?l FILTER(LANG(?l)="it") }',
-    }.items():
-        r = sparql(q); time.sleep(2)
-        out['wikidata_' + nome] = r['results']['bindings'][0]['n']['value'] if 'results' in r else r
+    # 1) QID mai dati per scontati: si risolvono per etichetta esatta e si stampano per la verifica umana
+    cand = {}
+    for nome in ('Marvel Cinematic Universe', 'Marvel Universe', 'Marvel Comics'):
+        r = get('https://www.wikidata.org/w/api.php?action=wbsearchentities&format=json&language=en&type=item&limit=6&search=' + urllib.parse.quote(nome))
+        cand[nome] = [{'id': x['id'], 'label': x.get('label'), 'desc': x.get('description')} for x in r.get('search', [])] if 'search' in r else r
+        time.sleep(1)
+    out['wikidata_candidati_qid'] = cand
+    # 2) universi di finzione con 'Marvel' nell'etichetta, con conteggio degli elementi (P1080), senza QID scritti a mano
+    r = sparql('SELECT ?u ?ul (COUNT(DISTINCT ?x) AS ?n) WHERE { ?x wdt:P1080 ?u . ?u rdfs:label ?ul . FILTER(LANG(?ul)="en" && CONTAINS(LCASE(?ul),"marvel")) } GROUP BY ?u ?ul ORDER BY DESC(?n) LIMIT 60')
+    time.sleep(2)
+    out['wikidata_universi_marvel_P1080'] = [{'qid': b['u']['value'].rsplit('/', 1)[-1], 'label': b['ul']['value'], 'n': int(b['n']['value'])} for b in r['results']['bindings']] if 'results' in r else r
+    # 3) fiction MCU: elementi per classe (P31 etichetta inglese) tramite l'universo MCU risolto per etichetta esatta
+    q = ('SELECT ?cl (COUNT(DISTINCT ?x) AS ?n) WHERE { ?u rdfs:label "Marvel Cinematic Universe"@en . ?x wdt:P1080 ?u . ?x wdt:P31 ?c . ?c rdfs:label ?cl FILTER(LANG(?cl)="en") } GROUP BY ?cl ORDER BY DESC(?n) LIMIT 60')
+    r = sparql(q); time.sleep(2)
+    out['wikidata_MCU_per_classe_P31'] = [{'classe': b['cl']['value'], 'n': int(b['n']['value'])} for b in r['results']['bindings']] if 'results' in r else r
+    # 4) personaggi Marvel (universo con 'Marvel' nell'etichetta, istanza di personaggio di finzione, anche sottoclassi)
+    q = ('SELECT (COUNT(DISTINCT ?x) AS ?n) WHERE { ?x wdt:P1080 ?u . ?u rdfs:label ?ul FILTER(LANG(?ul)="en" && CONTAINS(LCASE(?ul),"marvel")) . ?x wdt:P31/wdt:P279* wd:Q95074 }')
+    r = sparql(q); time.sleep(2)
+    out['wikidata_personaggi_fittizi_Marvel'] = r['results']['bindings'][0]['n']['value'] if 'results' in r else r
+    # 5) personaggi Marvel per EDITORE (P123 = etichetta Marvel Comics) - copre i fumetti anche senza P1080
+    q = ('SELECT (COUNT(DISTINCT ?x) AS ?n) WHERE { ?x wdt:P31/wdt:P279* wd:Q95074 ; wdt:P123 ?e . ?e rdfs:label "Marvel Comics"@en }')
+    r = sparql(q); time.sleep(2)
+    out['wikidata_personaggi_fittizi_editore_Marvel_Comics'] = r['results']['bindings'][0]['n']['value'] if 'results' in r else r
+    q = ('SELECT (COUNT(DISTINCT ?x) AS ?n) WHERE { ?x wdt:P1080 ?u . ?u rdfs:label ?ul FILTER(LANG(?ul)="en" && CONTAINS(LCASE(?ul),"marvel")) . ?x rdfs:label ?l FILTER(LANG(?l)="it") }')
+    r = sparql(q); time.sleep(2)
+    out['wikidata_Marvel_con_etichetta_italiana'] = r['results']['bindings'][0]['n']['value'] if 'results' in r else r
     tok = os.environ.get('TMDB_READ_TOKEN')
     if tok:
         h = {'Authorization': 'Bearer ' + tok}
@@ -48,12 +67,8 @@ def esterni():
             r = get('https://api.themoviedb.org/3/' + u, h); out[nome] = r.get('total_results', r)
     else: out['tmdb'] = 'saltato: TMDB_READ_TOKEN assente'
     k = os.environ.get('COMICVINE_API_KEY')
-    if k:
-        for nome, res in {'comicvine_personaggi_marvel': 'characters', 'comicvine_volumi_marvel': 'volumes'}.items():
-            r = get('https://comicvine.gamespot.com/api/%s/?api_key=%s&format=json&limit=1&field_list=id&filter=publisher:31' % (res, k))
-            out[nome] = r.get('number_of_total_results', r.get('error', r)); time.sleep(1)
-    else: out['comicvine'] = 'saltato: COMICVINE_API_KEY assente (D7: solo piano gratuito)'
-    out['gcd'] = 'non interrogato in W0: servono account gratuito e dump (CC BY-SA 4.0)'
+    out['comicvine'] = 'rimandato alle ondate fumetti (W5-W6) su decisione dell\'utente' if not k else 'chiave presente ma non usata in W1'
+    out['gcd'] = 'non interrogato: servono account gratuito e dump (CC BY-SA 4.0)'
     return out
 if __name__ == '__main__':
     res = {'quando': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'interni': interni()}

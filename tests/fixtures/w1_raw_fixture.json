@@ -1,0 +1,340 @@
+{
+ "fonte": "FIXTURE SINTETICA (solo test)",
+ "entita": {
+  "Q100": {
+   "q": "Q100",
+   "g": [
+    "universo_MCU"
+   ],
+   "l": {
+    "en": "Wanda Maximoff",
+    "it": "Wanda Maximoff"
+   },
+   "d": {},
+   "a": {
+    "en": [
+     "Scarlet Witch"
+    ]
+   },
+   "sl": {
+    "enwiki": "Wanda Maximoff"
+   },
+   "c": {
+    "P31": [
+     "Q1"
+    ],
+    "P1080": [
+     "Q642878"
+    ]
+   }
+  },
+  "Q101": {
+   "q": "Q101",
+   "g": [
+    "universo_MCU"
+   ],
+   "l": {
+    "en": "Iron Man"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Iron Man"
+   },
+   "c": {
+    "P31": [
+     "Q1"
+    ],
+    "P1080": [
+     "Q642878"
+    ]
+   }
+  },
+  "Q102": {
+   "q": "Q102",
+   "g": [
+    "universo_MCU"
+   ],
+   "l": {
+    "en": "Zaxx the Wanderer",
+    "it": "Zaxx il Vagabondo"
+   },
+   "d": {
+    "en": "fictional wanderer"
+   },
+   "a": {
+    "en": [
+     "Z-Man"
+    ]
+   },
+   "sl": {
+    "enwiki": "Zaxx the Wanderer"
+   },
+   "c": {
+    "P31": [
+     "Q1"
+    ],
+    "P1080": [
+     "Q642878"
+    ],
+    "P175": [
+     "Q900"
+    ]
+   }
+  },
+  "Q103": {
+   "q": "Q103",
+   "g": [
+    "universo_MCU"
+   ],
+   "l": {
+    "en": "Orphan Entry"
+   },
+   "d": {},
+   "a": {},
+   "sl": {},
+   "c": {
+    "P31": [
+     "Q1"
+    ],
+    "P1080": [
+     "Q642878"
+    ]
+   }
+  },
+  "Q104": {
+   "q": "Q104",
+   "g": [
+    "universo_MCU"
+   ],
+   "l": {
+    "en": "Hidden Vault"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Hidden Vault"
+   },
+   "c": {
+    "P31": [
+     "Q2"
+    ],
+    "P1080": [
+     "Q642878"
+    ]
+   }
+  },
+  "Q105": {
+   "q": "Q105",
+   "g": [
+    "universo_MCU"
+   ],
+   "l": {
+    "en": "Ancient Blade"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Ancient Blade"
+   },
+   "c": {
+    "P31": [
+     "Q3"
+    ],
+    "P1080": [
+     "Q642878"
+    ]
+   }
+  },
+  "Q106": {
+   "q": "Q106",
+   "g": [
+    "universo_MCU"
+   ],
+   "l": {
+    "en": "Some Episode"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Some Episode"
+   },
+   "c": {
+    "P31": [
+     "Q4"
+    ],
+    "P1080": [
+     "Q642878"
+    ]
+   }
+  },
+  "Q107": {
+   "q": "Q107",
+   "g": [
+    "universo_MCU"
+   ],
+   "l": {
+    "en": "Mystery Thing"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Mystery Thing"
+   },
+   "c": {
+    "P31": [
+     "Q5"
+    ],
+    "P1080": [
+     "Q642878"
+    ]
+   }
+  },
+  "Q108": {
+   "q": "Q108",
+   "g": [
+    "universo_MCU"
+   ],
+   "l": {
+    "en": "Zaxx the Wanderer"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Zaxx the Wanderer"
+   },
+   "c": {
+    "P31": [
+     "Q1"
+    ],
+    "P1080": [
+     "Q642878"
+    ]
+   }
+  },
+  "Q109": {
+   "q": "Q109",
+   "g": [
+    "universo_MCU"
+   ],
+   "l": {
+    "en": "Kree Collective"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Kree Collective"
+   },
+   "c": {
+    "P31": [
+     "Q6"
+    ],
+    "P1080": [
+     "Q642878"
+    ]
+   }
+  },
+  "Q110": {
+   "q": "Q110",
+   "g": [
+    "opere_MCU"
+   ],
+   "l": {
+    "en": "Test Film",
+    "it": "Film di Prova"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Test Film"
+   },
+   "c": {
+    "P31": [
+     "Q7"
+    ],
+    "P1080": [
+     "Q642878"
+    ]
+   }
+  },
+  "Q111": {
+   "q": "Q111",
+   "g": [
+    "interpreti_MCU"
+   ],
+   "l": {
+    "en": "Jane Actor"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Jane Actor"
+   },
+   "c": {
+    "P31": [
+     "Q8"
+    ],
+    "P1080": [
+     "Q642878"
+    ]
+   }
+  },
+  "Q112": {
+   "q": "Q112",
+   "g": [
+    "creatori_MCU"
+   ],
+   "l": {
+    "en": "Sam Director"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Sam Director"
+   },
+   "c": {
+    "P31": [
+     "Q8"
+    ],
+    "P1080": [
+     "Q642878"
+    ]
+   }
+  },
+  "Q113": {
+   "q": "Q113",
+   "g": [
+    "universo_MCU"
+   ],
+   "l": {
+    "en": "Xandar"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Xandar"
+   },
+   "c": {
+    "P31": [
+     "Q9"
+    ],
+    "P1080": [
+     "Q642878"
+    ]
+   }
+  }
+ },
+ "etichette": {
+  "Q642878": "Marvel Cinematic Universe",
+  "Q1": "fictional character",
+  "Q2": "fictional location",
+  "Q3": "fictional weapon",
+  "Q4": "television series episode",
+  "Q5": "thing",
+  "Q6": "fictional organization",
+  "Q7": "film",
+  "Q8": "human",
+  "Q9": "fictional planet",
+  "Q900": "Test Performer"
+ }
+}

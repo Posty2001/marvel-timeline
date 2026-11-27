@@ -2,7 +2,8 @@
 """W0: importazione sottile dei 452 record storici nel formato canonico (nessun dato nuovo, ID invariati).
 Uso: python3 tools/db_canon.py --scrivi | --verifica"""
 import json, sys, pathlib, re
-R = pathlib.Path(__file__).resolve().parent.parent
+import os
+R = pathlib.Path(os.environ.get('DB_ROOT') or pathlib.Path(__file__).resolve().parent.parent)
 IDX = R/'atlante2/data/index.json'; IDE = R/'data/atlante/identita.json'
 OUT = R/'data/atlante/espansione/canon/storico.jsonl'
 SCH = R/'data/atlante/espansione/schema/record_canonico.schema.json'
@@ -39,5 +40,10 @@ if __name__ == '__main__':
     cur = [json.loads(l) for l in OUT.read_text().splitlines()] if OUT.exists() else []
     errs = valida(cur)
     if cur != rows: errs.append('canon non allineato al registro storico (eseguire --scrivi)')
+    for f in sorted((OUT.parent).glob('w*_*.jsonl')):
+        if 'arricchimenti' in f.name: continue
+        extra = [json.loads(l) for l in f.read_text().splitlines()]
+        errs += [f.name + ': ' + e for e in valida(extra)]
+        errs += [f.name + ': id gia\' in storico ' + r['id'] for r in extra if r['id'] in {c['id'] for c in cur}]
     print('record canonici:', len(cur), '| errori:', len(errs)); [print(' -', e) for e in errs[:15]]
     sys.exit(1 if errs else 0)
