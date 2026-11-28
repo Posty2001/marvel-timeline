@@ -1,0 +1,103 @@
+{
+ "avvio": "2026-11-28T07:14:56Z",
+ "film": {
+  "netflix-mcu|Daredevil|2015": [
+   "Q16977365"
+  ],
+  "netflix-mcu|Jessica Jones|2015": [
+   "Q18605540"
+  ],
+  "netflix-mcu|Luke Cage|2016": [
+   "Q20646602"
+  ],
+  "netflix-mcu|Iron Fist|2017": [
+   "Q21148896"
+  ],
+  "netflix-mcu|The Defenders|2017": [
+   "Q22988401"
+  ],
+  "netflix-mcu|The Punisher|2017": [
+   "Q27089570"
+  ],
+  "agents-of-shield|Agents of S.H.I.E.L.D.|2013": [
+   "Q537911"
+  ],
+  "agents-of-shield|Agent Carter|2015": [
+   "Q16860023"
+  ],
+  "marvel-tv-mcu|Inhumans|2017": [
+   "Q23781164"
+  ],
+  "marvel-tv-mcu|Runaways|2017": [
+   "Q28746336"
+  ],
+  "marvel-tv-mcu|Cloak & Dagger|2018": [
+   "Q28736747"
+  ],
+  "marvel-tv-mcu|Helstrom|2020": [
+   "Q70209134"
+  ],
+  "legion|Legion|2017": [
+   "Q24279305"
+  ],
+  "the-gifted|The Gifted|2017": [
+   "Q29018745"
+  ],
+  "marvel-tv-classico|The Incredible Hulk|1977": [
+   "Q670579",
+   "Q51267193"
+  ],
+  "marvel-tv-classico|The Amazing Spider-Man|1977": [
+   "Q1462394",
+   "Q1831060"
+  ],
+  "marvel-tv-classico|Doctor Strange|1978": [],
+  "marvel-tv-classico|Captain America|1979": [
+   "Q2937620",
+   "Q121069116"
+  ],
+  "marvel-tv-classico|Generation X|1996": [
+   "Q1501999"
+  ],
+  "marvel-tv-classico|Nick Fury: Agent of SHIELD|1998": [
+   "Q392691"
+  ],
+  "marvel-tv-classico|Blade: The Series|2006": [
+   "Q583870"
+  ],
+  "marvel-tv-classico|Mutant X|2001": [
+   "Q1955802"
+  ],
+  "film-live-action-altri|Howard the Duck|1986": [
+   "Q1146570"
+  ],
+  "film-live-action-altri|The Punisher|1989": [
+   "Q1153794"
+  ],
+  "film-live-action-altri|Captain America|1990": [
+   "Q1035093"
+  ],
+  "film-live-action-altri|The Punisher|2004": [
+   "Q909802"
+  ],
+  "film-live-action-altri|Man-Thing|2005": [
+   "Q770701"
+  ],
+  "film-live-action-altri|Punisher: War Zone|2008": [
+   "Q1065829"
+  ],
+  "film-live-action-altri|The Incredible Hulk|2008": [
+   "Q466611"
+  ]
+ },
+ "film_errori": [],
+ "entita": 1048,
+ "fine": "2026-11-28T07:21:23Z",
+ "anomalie": [
+  "film trovato solo con ricerca testuale (fallback verificato per anno): marvel-tv-mcu|Cloak & Dagger|2018 -> ['Q28736747']",
+  "film non trovato su Wikidata (query e ricerca): marvel-tv-classico|Doctor Strange|1978",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): marvel-tv-classico|Nick Fury: Agent of SHIELD|1998 -> ['Q392691']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): film-live-action-altri|The Incredible Hulk|2008 -> ['Q466611']"
+ ],
+ "completa": true
+}
