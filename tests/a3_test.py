@@ -45,7 +45,7 @@ with sync_playwright() as p:
     n1 = pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-tile').length")
     ok('scorrendo si caricano altre voci', n1 > n0, (n0, n1))
     y_before = pg.evaluate("()=>{const b=document.querySelector('#atlas2 .a2-scroll'); b.scrollTop=1500; return b.scrollTop}"); pg.wait_for_timeout(300)
-    pg.evaluate("()=>document.querySelectorAll('#atlas2 .a3-tile')[20].click()"); pg.wait_for_timeout(900)
+    pg.evaluate("()=>{const t=[...document.querySelectorAll('#atlas2 .a3-tile:not([data-db])')];t[Math.min(20,t.length-1)].click()}"); pg.wait_for_timeout(900)
     s = a3(pg); ok('tile -> dossier', s['a3']['v'] == 'dos', s)
     ok('dossier: shard caricato solo ora (1)', len([r for r in reqs if '/data/d/' in r]) == 1)
     nm = pg.evaluate("()=>document.querySelector('#atlas2 .a3-dh h1').textContent")

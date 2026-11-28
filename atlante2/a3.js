@@ -217,7 +217,7 @@
     return { n: n, s: sub };
   }
   function tile(v, compact) {
-    var b = btn('a3-tile t-' + v.t, null, function () { openId(v.i); }, { 'aria-label': v.n + (badge(v) ? ' — ' + badge(v) : '') });
+    var b = btn('a3-tile t-' + v.t, null, function () { openId(v.i); }, { 'aria-label': v.n + (badge(v) ? ' — ' + badge(v) : '') }); if (v.db) b.setAttribute('data-db', '1');
     var em = h('span', 'em'); em.appendChild(emblem(v)); b.appendChild(em); paintAny(em, v, false);
     if (v.s) b.appendChild(h('span', 'bd', badge(v)));
     var sh = shown(v), t = h('span', 't'); t.appendChild(h('b', '', sh.n));

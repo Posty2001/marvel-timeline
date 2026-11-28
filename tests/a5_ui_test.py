@@ -61,7 +61,7 @@ with sync_playwright() as p:
     # progressione
     go(pg, "()=>window.tvaA3.ctx().api.nav('a3',{a3:{v:'pr'}})", 1500)
     t = pg.inner_text('#atlas2')
-    ok('Progressione: tetto, criterio e badge con stato', '/ 30 XP' in t and 'almeno 10 secondi' in t and 'Esploratore' in t and 'Non ancora ottenibile' in t, t[:300])
+    ok('Progressione: tetto, criterio e badge con stato', '/ 30 XP' in t and 'almeno 10 secondi' in t and 'Esploratore' in t, t[:300])  # con le voci db verificate nel registro anche i traguardi di registro diventano raggiungibili
     ok('Progressione: nessun overflow orizzontale', pg.evaluate("()=>{const s=document.querySelector('#atlas2 .a2-scroll');return s.scrollWidth<=s.clientWidth+1}"))
     go(pg, "()=>window.tvaA3.ctx().api.nav('a3',{a3:{v:'pf'}})", 1500)
     t = pg.inner_text('#atlas2'); ok('Preferiti e raccolte: elenco e raccolta', 'Preferiti (1)' in t and 'Prova' in t, t[:200])

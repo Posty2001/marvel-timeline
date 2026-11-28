@@ -317,6 +317,15 @@
      "id-gwen-stacy-spider-woman"
     ],
     "regola": "C1"
+   },
+   {
+    "q": "Q59826",
+    "nome": "Miles Morales",
+    "onda": "w5",
+    "identita": [
+     "id-miles-morales"
+    ],
+    "regola": "C1"
    }
   ],
   "C2": [
@@ -420,12 +429,19 @@
     "onda": "w4",
     "identita": [],
     "regola": "C3"
+   },
+   {
+    "q": "Q47471875",
+    "nome": "Ultimate Spider-Man",
+    "onda": "w5",
+    "identita": [],
+    "regola": "C3"
    }
   ]
  },
  "conteggi": {
-  "C1": 35,
+  "C1": 36,
   "C2": 7,
-  "C3": 3
+  "C3": 4
  }
 }

@@ -32,7 +32,7 @@ def classifica(r):
     return 'C3', []
 def main():
     tot = {'C1': [], 'C2': [], 'C3': []}; viste = set()
-    for w in ('w1', 'w2', 'w3', 'w4'):
+    for w in ('w1', 'w2', 'w3', 'w4', 'w5', 'w6'):
         f = E/'review'/f'{w}_coda.json'
         if not f.exists(): continue
         for r in json.load(open(f)).get('possibili_duplicati', []):
