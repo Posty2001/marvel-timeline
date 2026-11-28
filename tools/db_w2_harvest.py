@@ -35,7 +35,7 @@ def cerca_film(titolo, anno):
         if not isinstance(e, dict) or 'missing' in e: continue
         desc = next((x.get('description') or '' for x in r['search'] if x['id'] == q), '').lower()
         classi = set(H.claim_ids(e.get('claims', {}), 'P31')) | set(H.claim_ids(e.get('claims', {}), 'P279'))
-        if anno in set(anno_di(e)) and ('Q11424' in classi or 'film' in desc): out.append(q)
+        if anno in set(anno_di(e)) and ('Q11424' in classi or 'film' in desc) and not any(w in desc for w in ('soundtrack', 'album', 'score', 'song', 'video game', 'novel')): out.append(q)
     return out
 def salva(out, nome, obj): json.dump(obj, open(out / nome, 'w'), ensure_ascii=False, separators=(',', ':'))
 def main():

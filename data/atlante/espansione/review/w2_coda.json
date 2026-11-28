@@ -1,0 +1,222 @@
+{
+ "non_classificati": [
+  {
+   "nome": "retroviral hyperplasia",
+   "p31": [
+    "fictional medical condition"
+   ],
+   "q": "Q55763516"
+  },
+  {
+   "nome": "Doomstadt",
+   "p31": [
+    "fictional capital city"
+   ],
+   "q": "Q91676251"
+  },
+  {
+   "nome": "X-Men: Days of Future Past",
+   "p31": [
+    "album"
+   ],
+   "q": "Q113561883"
+  },
+  {
+   "nome": "Venom: Let There Be Carnage",
+   "p31": [
+    "album"
+   ],
+   "q": "Q116197060"
+  },
+  {
+   "nome": "People Get Up and Drive Your Funky Soul",
+   "p31": [
+    "musical work/composition"
+   ],
+   "q": "Q138020090"
+  }
+ ],
+ "possibili_duplicati": [
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-curt-connors-lizard"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-curt-connors-lizard",
+   "nome": "Lizard",
+   "q": "Q19382",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "id-peter-parker-garfield",
+    "id-peter-parker-mcu",
+    "id-peter-parker-raimi",
+    "id-peter-parker-ynfsm"
+   ],
+   "esistenti_parziali": [
+    "id-harry-osborn-ynfsm"
+   ],
+   "motivo": "piu' identita con lo stesso interprete: id-peter-parker-garfield,id-peter-parker-mcu",
+   "nome": "Spider-Man",
+   "q": "Q79037",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "id-sue-storm",
+    "id-sue-storm-1994",
+    "id-sue-storm-first-steps",
+    "id-sue-storm-trank"
+   ],
+   "esistenti_parziali": [],
+   "motivo": "piu' identita con lo stesso interprete: id-sue-storm,id-sue-storm-1994,id-sue-storm-trank",
+   "nome": "Invisible Woman",
+   "q": "Q510450",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "id-sprite"
+   ],
+   "esistenti_parziali": [
+    "id-peter-quill-star-lord"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-peter-quill-star-lord,id-sprite",
+   "nome": "Kitty Pryde",
+   "q": "Q547306",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-aleksei-sytsevich-rhino"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-aleksei-sytsevich-rhino",
+   "nome": "Rhino",
+   "q": "Q572626",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-harry-osborn-green-goblin",
+    "id-harry-osborn-webb",
+    "id-harry-osborn-ynfsm",
+    "id-norman-osborn-green-goblin"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-harry-osborn-green-goblin,id-harry-osborn-webb,id-harry-osborn-ynfsm,id-norman-osborn-green-goblin",
+   "nome": "Green Goblin",
+   "q": "Q735721",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-mystica"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-mystica",
+   "nome": "Mystique",
+   "q": "Q737236",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-gwen-stacy-spider-woman"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-gwen-stacy-spider-woman",
+   "nome": "Gwen Stacy",
+   "q": "Q945817",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-fisk-fox-2003",
+    "id-fisk-mcu",
+    "id-kingpin-spider-verse"
+   ],
+   "motivo": "piu' identita con lo stesso interprete: id-fisk-fox-2003,id-fisk-mcu",
+   "nome": "Kingpin",
+   "q": "Q1753322",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-harry-osborn-green-goblin",
+    "id-harry-osborn-webb",
+    "id-harry-osborn-ynfsm",
+    "id-norman-osborn-green-goblin"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-harry-osborn-green-goblin,id-harry-osborn-webb,id-harry-osborn-ynfsm,id-norman-osborn-green-goblin",
+   "nome": "Harry Osborn",
+   "q": "Q1779361",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-harry-osborn-green-goblin",
+    "id-harry-osborn-webb",
+    "id-harry-osborn-ynfsm",
+    "id-norman-osborn-green-goblin"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-harry-osborn-green-goblin,id-harry-osborn-webb,id-harry-osborn-ynfsm,id-norman-osborn-green-goblin",
+   "nome": "Norman Osborn",
+   "q": "Q17090877",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-adrian-toomes-avvoltoio"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-adrian-toomes-avvoltoio",
+   "nome": "Adrian Toomes",
+   "q": "Q27813421",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-hulk"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-hulk",
+   "nome": "Bruce Banner",
+   "q": "Q51817522",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-curt-connors-lizard"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-curt-connors-lizard",
+   "nome": "Curt Connors",
+   "q": "Q63933757",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-milo-loxias-crown"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-milo-loxias-crown",
+   "nome": "Hunger",
+   "q": "Q85767763",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-eddie-brock-venom"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-eddie-brock-venom",
+   "nome": "Venom",
+   "q": "Q108923148",
+   "tipo": "identita"
+  }
+ ]
+}

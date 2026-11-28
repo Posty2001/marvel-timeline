@@ -1,7 +1,7 @@
 {
  "conteggi": {
-  "attivi": 1037,
-  "totale": 1038
+  "attivi": 1616,
+  "totale": 1617
  },
  "ids": {
   "art-adamantio": {
@@ -204,6 +204,126 @@
    "stato": "attivo",
    "tipo": "a"
   },
+  "art-terrigen-mist": {
+   "ids_esterni": {
+    "wikidata": "Q4465300"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "att-aaron-douglas": {
+   "ids_esterni": {
+    "wikidata": "Q301940"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-aaron-jeffery": {
+   "ids_esterni": {
+    "wikidata": "Q302175"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-aaron-pearl": {
+   "ids_esterni": {
+    "wikidata": "Q2820077"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-aaron-stanford": {
+   "ids_esterni": {
+    "wikidata": "Q302786"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-aaron-taylor-johnson": {
+   "ids_esterni": {
+    "wikidata": "Q45923"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-aasif-mandvi": {
+   "ids_esterni": {
+    "wikidata": "Q303538"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-adam-beach": {
+   "ids_esterni": {
+    "wikidata": "Q348755"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-adam-scott": {
+   "ids_esterni": {
+    "wikidata": "Q201842"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-adan-canto": {
+   "ids_esterni": {
+    "wikidata": "Q11984875"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-adelaide-clemens": {
+   "ids_esterni": {
+    "wikidata": "Q45414"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-adria-arjona": {
+   "ids_esterni": {
+    "wikidata": "Q18684239"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-adrian-pasdar": {
    "ids_esterni": {
     "wikidata": "Q311303"
@@ -224,6 +344,16 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-al-madrigal": {
+   "ids_esterni": {
+    "wikidata": "Q4704337"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-alan-cumming": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -234,12 +364,92 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-alan-tudyk": {
+   "ids_esterni": {
+    "wikidata": "Q349350"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-alanna-ubach": {
+   "ids_esterni": {
+    "wikidata": "Q2830641"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-aleksander-krupa": {
+   "ids_esterni": {
+    "wikidata": "Q125354"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-alessandro-nivola": {
+   "ids_esterni": {
+    "wikidata": "Q350424"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-alex-gonzalez": {
+   "ids_esterni": {
+    "wikidata": "Q3390414"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-alex-hyde-white": {
    "ids_esterni": {
     "wikidata": "Q2641365"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-alexandra-davies": {
+   "ids_esterni": {
+    "wikidata": "Q4720620"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-alexandra-shipp": {
+   "ids_esterni": {
+    "wikidata": "Q14914898"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-alf-humphreys": {
+   "ids_esterni": {
+    "wikidata": "Q2834731"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -264,12 +474,42 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-alice-braga": {
+   "ids_esterni": {
+    "wikidata": "Q230903"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-alicia-lagano": {
    "ids_esterni": {
     "wikidata": "Q2836768"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-alicia-morton": {
+   "ids_esterni": {
+    "wikidata": "Q2836771"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-ally-sheedy": {
+   "ids_esterni": {
+    "wikidata": "Q253513"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -294,12 +534,52 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-amber-stevens-west": {
+   "ids_esterni": {
+    "wikidata": "Q444146"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-amy-acker": {
    "ids_esterni": {
     "wikidata": "Q152773"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-andre-braugher": {
+   "ids_esterni": {
+    "wikidata": "Q463397"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-andre-tricoteux": {
+   "ids_esterni": {
+    "wikidata": "Q20687426"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-andrew-airlie": {
+   "ids_esterni": {
+    "wikidata": "Q4756190"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -324,6 +604,26 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-andy-pessoa": {
+   "ids_esterni": {
+    "wikidata": "Q1057851"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-andy-serkis": {
+   "ids_esterni": {
+    "wikidata": "Q206922"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-angela-bassett": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -340,6 +640,36 @@
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-anna-paquin": {
+   "ids_esterni": {
+    "wikidata": "Q199884"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-annabelle-wallis": {
+   "ids_esterni": {
+    "wikidata": "Q258220"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-annie-parisse": {
+   "ids_esterni": {
+    "wikidata": "Q127273"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -364,6 +694,26 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-antonio-banderas": {
+   "ids_esterni": {
+    "wikidata": "Q41548"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-anya-taylor-joy": {
+   "ids_esterni": {
+    "wikidata": "Q20882479"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-aramis-knight": {
    "ids_esterni": {
     "wikidata": "Q4784027"
@@ -384,12 +734,52 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-ariana-debose": {
+   "ids_esterni": {
+    "wikidata": "Q27733932"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-arly-jover": {
+   "ids_esterni": {
+    "wikidata": "Q458375"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-aron-tager": {
+   "ids_esterni": {
+    "wikidata": "Q2863472"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-asif-ali": {
    "ids_esterni": {
     "wikidata": "Q4806897"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-ato-essandoh": {
+   "ids_esterni": {
+    "wikidata": "Q4817144"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -424,12 +814,62 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-b-j-novak": {
+   "ids_esterni": {
+    "wikidata": "Q459925"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-barbara-eve-harris": {
+   "ids_esterni": {
+    "wikidata": "Q2883939"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-beau-garrett": {
+   "ids_esterni": {
+    "wikidata": "Q236574"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-ben-barnes": {
    "ids_esterni": {
     "wikidata": "Q310086"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-ben-foster": {
+   "ids_esterni": {
+    "wikidata": "Q311804"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-ben-hardy": {
+   "ids_esterni": {
+    "wikidata": "Q16300642"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -454,12 +894,62 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-benjamin-ayres": {
+   "ids_esterni": {
+    "wikidata": "Q817386"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-bethany-joy-lenz": {
    "ids_esterni": {
     "wikidata": "Q230424"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-bill-duke": {
+   "ids_esterni": {
+    "wikidata": "Q722312"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-bill-heck": {
+   "ids_esterni": {
+    "wikidata": "Q28007210"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-bill-milner": {
+   "ids_esterni": {
+    "wikidata": "Q902800"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-bill-nunn": {
+   "ids_esterni": {
+    "wikidata": "Q279834"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -474,12 +964,62 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-bill-skarsgard": {
+   "ids_esterni": {
+    "wikidata": "Q862460"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-blair-underwood": {
    "ids_esterni": {
     "wikidata": "Q525304"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-blu-hunt": {
+   "ids_esterni": {
+    "wikidata": "Q35569582"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-bob-sapp": {
+   "ids_esterni": {
+    "wikidata": "Q463644"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-booboo-stewart": {
+   "ids_esterni": {
+    "wikidata": "Q368129"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-boyd-holbrook": {
+   "ids_esterni": {
+    "wikidata": "Q611096"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -494,12 +1034,72 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-brad-loree": {
+   "ids_esterni": {
+    "wikidata": "Q3489660"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-brad-pitt": {
+   "ids_esterni": {
+    "wikidata": "Q35332"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-brendan-fehr": {
+   "ids_esterni": {
+    "wikidata": "Q707823"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-brett-cullen": {
+   "ids_esterni": {
+    "wikidata": "Q176277"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-brett-dalton": {
    "ids_esterni": {
     "wikidata": "Q15144287"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-brian-cox": {
+   "ids_esterni": {
+    "wikidata": "Q34975"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-brian-posehn": {
+   "ids_esterni": {
+    "wikidata": "Q912938"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -514,6 +1114,16 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-brianna-hildebrand": {
+   "ids_esterni": {
+    "wikidata": "Q19956159"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-brie-larson": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -523,6 +1133,106 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "t"
+  },
+  "att-bruce-campbell": {
+   "ids_esterni": {
+    "wikidata": "Q309932"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-bruce-davison": {
+   "ids_esterni": {
+    "wikidata": "Q355163"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-bryan-singer": {
+   "ids_esterni": {
+    "wikidata": "Q220751"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-bryce-dallas-howard": {
+   "ids_esterni": {
+    "wikidata": "Q229775"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-c-thomas-howell": {
+   "ids_esterni": {
+    "wikidata": "Q464522"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-caleb-landry-jones": {
+   "ids_esterni": {
+    "wikidata": "Q920607"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-callum-keith-rennie": {
+   "ids_esterni": {
+    "wikidata": "Q551558"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-cameron-bright": {
+   "ids_esterni": {
+    "wikidata": "Q452019"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-campbell-scott": {
+   "ids_esterni": {
+    "wikidata": "Q528527"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-cara-buono": {
+   "ids_esterni": {
+    "wikidata": "Q289540"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
   },
   "att-carlo-rota": {
    "ids_esterni": {
@@ -544,6 +1254,16 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-cary-hiroyuki-tagawa": {
+   "ids_esterni": {
+    "wikidata": "Q381799"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-cate-blanchett": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -553,6 +1273,36 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "t"
+  },
+  "att-cayden-boyd": {
+   "ids_esterni": {
+    "wikidata": "Q641050"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-celeste-o-connor": {
+   "ids_esterni": {
+    "wikidata": "Q97065529"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-celia-weston": {
+   "ids_esterni": {
+    "wikidata": "Q289931"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
   },
   "att-chad-lindberg": {
    "ids_esterni": {
@@ -594,12 +1344,72 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-charlie-heaton": {
+   "ids_esterni": {
+    "wikidata": "Q20974088"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-chet-hanks": {
+   "ids_esterni": {
+    "wikidata": "Q20993895"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-chiara-zanni": {
+   "ids_esterni": {
+    "wikidata": "Q3306432"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-chiwetel-ejiofor": {
+   "ids_esterni": {
+    "wikidata": "Q317343"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-chloe-bennet": {
    "ids_esterni": {
     "wikidata": "Q3208406"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-chris-claremont": {
+   "ids_esterni": {
+    "wikidata": "Q631369"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-chris-cooper": {
+   "ids_esterni": {
+    "wikidata": "Q273208"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -634,12 +1444,52 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-chris-zylka": {
+   "ids_esterni": {
+    "wikidata": "Q507888"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-christine-adams": {
    "ids_esterni": {
     "wikidata": "Q16149374"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-christine-estabrook": {
+   "ids_esterni": {
+    "wikidata": "Q391445"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-christopher-abbott": {
+   "ids_esterni": {
+    "wikidata": "Q5111829"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-clark-backo": {
+   "ids_esterni": {
+    "wikidata": "Q64869409"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -654,12 +1504,52 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-cliff-robertson": {
+   "ids_esterni": {
+    "wikidata": "Q181899"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-cobie-smulders": {
    "ids_esterni": {
     "wikidata": "Q200566"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-colin-alexander-cunningham": {
+   "ids_esterni": {
+    "wikidata": "Q648783"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-colin-farrell": {
+   "ids_esterni": {
+    "wikidata": "Q172035"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-colm-feore": {
+   "ids_esterni": {
+    "wikidata": "Q449679"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -674,12 +1564,112 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-coolio": {
+   "ids_esterni": {
+    "wikidata": "Q310357"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-corey-johnson": {
+   "ids_esterni": {
+    "wikidata": "Q1132632"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-cotter-smith": {
+   "ids_esterni": {
+    "wikidata": "Q785863"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-coy-stewart": {
    "ids_esterni": {
     "wikidata": "Q3404060"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-cristo-fernandez": {
+   "ids_esterni": {
+    "wikidata": "Q110273210"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-crystal-lowe": {
+   "ids_esterni": {
+    "wikidata": "Q264985"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-dafne-keen": {
+   "ids_esterni": {
+    "wikidata": "Q27560621"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-dakota-johnson": {
+   "ids_esterni": {
+    "wikidata": "Q2315802"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-dan-castellaneta": {
+   "ids_esterni": {
+    "wikidata": "Q44442"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-dan-duran": {
+   "ids_esterni": {
+    "wikidata": "Q5213433"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-dan-lett": {
+   "ids_esterni": {
+    "wikidata": "Q253931"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -694,6 +1684,66 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-dane-dehaan": {
+   "ids_esterni": {
+    "wikidata": "Q860876"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-dania-ramirez": {
+   "ids_esterni": {
+    "wikidata": "Q230960"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-daniel-cudmore": {
+   "ids_esterni": {
+    "wikidata": "Q553181"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-daniel-dae-kim": {
+   "ids_esterni": {
+    "wikidata": "Q299700"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-daniel-gillies": {
+   "ids_esterni": {
+    "wikidata": "Q512006"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-daniel-henney": {
+   "ids_esterni": {
+    "wikidata": "Q529413"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-daniel-j-watts": {
    "ids_esterni": {
     "wikidata": "Q100593535"
@@ -704,12 +1754,32 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-daniel-magder": {
+   "ids_esterni": {
+    "wikidata": "Q613411"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-daniel-roebuck": {
    "ids_esterni": {
     "wikidata": "Q552031"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-daniel-vivian": {
+   "ids_esterni": {
+    "wikidata": "Q16195381"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -734,6 +1804,26 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-danny-huston": {
+   "ids_esterni": {
+    "wikidata": "Q357762"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-danny-john-jules": {
+   "ids_esterni": {
+    "wikidata": "Q2701386"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-dave-bautista": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -750,6 +1840,46 @@
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-david-hayter": {
+   "ids_esterni": {
+    "wikidata": "Q711792"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-david-kaye": {
+   "ids_esterni": {
+    "wikidata": "Q3018199"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-david-keith": {
+   "ids_esterni": {
+    "wikidata": "Q537190"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-david-leitch": {
+   "ids_esterni": {
+    "wikidata": "Q5236475"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -784,6 +1914,26 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-demetri-goritsas": {
+   "ids_esterni": {
+    "wikidata": "Q3022086"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-denis-leary": {
+   "ids_esterni": {
+    "wikidata": "Q310283"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-deniz-akdeniz": {
    "ids_esterni": {
     "wikidata": "Q138140"
@@ -800,6 +1950,16 @@
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-derrick-o-connor": {
+   "ids_esterni": {
+    "wikidata": "Q2746012"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -824,12 +1984,102 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-dominic-monaghan": {
+   "ids_esterni": {
+    "wikidata": "Q152165"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-dominic-purcell": {
+   "ids_esterni": {
+    "wikidata": "Q205278"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-dominic-rains": {
    "ids_esterni": {
     "wikidata": "Q339060"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-don-creech": {
+   "ids_esterni": {
+    "wikidata": "Q920702"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-donal-logue": {
+   "ids_esterni": {
+    "wikidata": "Q517137"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-donavon-stinson": {
+   "ids_esterni": {
+    "wikidata": "Q17353027"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-donna-murphy": {
+   "ids_esterni": {
+    "wikidata": "Q439457"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-donnie-yen": {
+   "ids_esterni": {
+    "wikidata": "Q311723"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-doug-jones": {
+   "ids_esterni": {
+    "wikidata": "Q461309"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-doug-lennox": {
+   "ids_esterni": {
+    "wikidata": "Q5300660"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -864,6 +2114,16 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-dylan-baker": {
+   "ids_esterni": {
+    "wikidata": "Q726128"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-dylan-minnette": {
    "ids_esterni": {
     "wikidata": "Q2469915"
@@ -880,6 +2140,36 @@
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-ed-skrein": {
+   "ids_esterni": {
+    "wikidata": "Q5335413"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-eddie-marsan": {
+   "ids_esterni": {
+    "wikidata": "Q45647"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-edi-gathegi": {
+   "ids_esterni": {
+    "wikidata": "Q324647"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -904,6 +2194,36 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-elise-neal": {
+   "ids_esterni": {
+    "wikidata": "Q1319793"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-elisha-cuthbert": {
+   "ids_esterni": {
+    "wikidata": "Q188500"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-elizabeth-banks": {
+   "ids_esterni": {
+    "wikidata": "Q219373"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-elizabeth-henstridge": {
    "ids_esterni": {
     "wikidata": "Q14566609"
@@ -924,12 +2244,92 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-elizabeth-rodriguez": {
+   "ids_esterni": {
+    "wikidata": "Q2256321"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-ellen-gerstein": {
+   "ids_esterni": {
+    "wikidata": "Q3051407"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-ellen-pompeo": {
+   "ids_esterni": {
+    "wikidata": "Q215849"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-elliot-page": {
+   "ids_esterni": {
+    "wikidata": "Q173399"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-elya-baskin": {
+   "ids_esterni": {
+    "wikidata": "Q1334420"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-embeth-davidtz": {
+   "ids_esterni": {
+    "wikidata": "Q260622"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-emily-baldoni": {
    "ids_esterni": {
     "wikidata": "Q3052368"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-emily-deschanel": {
+   "ids_esterni": {
+    "wikidata": "Q204672"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-emily-hirst": {
+   "ids_esterni": {
+    "wikidata": "Q450256"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -944,12 +2344,72 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-eric-bana": {
+   "ids_esterni": {
+    "wikidata": "Q4440"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-eric-dane": {
+   "ids_esterni": {
+    "wikidata": "Q299421"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-eric-edwards": {
+   "ids_esterni": {
+    "wikidata": "Q3731476"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-erick-avari": {
+   "ids_esterni": {
+    "wikidata": "Q711035"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-erin-way": {
    "ids_esterni": {
     "wikidata": "Q45966"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-eriq-la-salle": {
+   "ids_esterni": {
+    "wikidata": "Q532944"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-ethan-cohn": {
+   "ids_esterni": {
+    "wikidata": "Q1371096"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -964,12 +2424,62 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-eva-mendes": {
+   "ids_esterni": {
+    "wikidata": "Q170606"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-evan-arnold": {
+   "ids_esterni": {
+    "wikidata": "Q20675897"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-evan-jonigkeit": {
+   "ids_esterni": {
+    "wikidata": "Q17146814"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-evan-peters": {
    "ids_esterni": {
     "wikidata": "Q785270"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-famke-janssen": {
+   "ids_esterni": {
+    "wikidata": "Q190794"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-fan-bingbing": {
+   "ids_esterni": {
+    "wikidata": "Q381074"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -994,6 +2504,16 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-felicity-jones": {
+   "ids_esterni": {
+    "wikidata": "Q234447"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-florence-faivre": {
    "ids_esterni": {
     "wikidata": "Q13018340"
@@ -1013,6 +2533,46 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "t"
+  },
+  "att-francoise-yip": {
+   "ids_esterni": {
+    "wikidata": "Q455986"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-frank-miller": {
+   "ids_esterni": {
+    "wikidata": "Q207676"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-fred-hechinger": {
+   "ids_esterni": {
+    "wikidata": "Q104902570"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-fred-savage": {
+   "ids_esterni": {
+    "wikidata": "Q447392"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
   },
   "att-gabriel-luna": {
    "ids_esterni": {
@@ -1044,12 +2604,102 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-gary-goddard": {
+   "ids_esterni": {
+    "wikidata": "Q5525138"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-gene-farber": {
+   "ids_esterni": {
+    "wikidata": "Q16207719"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-george-buza": {
+   "ids_esterni": {
+    "wikidata": "Q5537509"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-george-gaynes": {
+   "ids_esterni": {
+    "wikidata": "Q279225"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-gerald-okamura": {
+   "ids_esterni": {
+    "wikidata": "Q1963814"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-gerry-becker": {
+   "ids_esterni": {
+    "wikidata": "Q982840"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-gina-carano": {
+   "ids_esterni": {
+    "wikidata": "Q233017"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-gina-holden": {
+   "ids_esterni": {
+    "wikidata": "Q272965"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-giorgia-whigham": {
    "ids_esterni": {
     "wikidata": "Q42415490"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-giuliana-rancic": {
+   "ids_esterni": {
+    "wikidata": "Q1281335"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1064,6 +2714,66 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-gonzalo-menendez": {
+   "ids_esterni": {
+    "wikidata": "Q3110623"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-goran-visnjic": {
+   "ids_esterni": {
+    "wikidata": "Q318158"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-hakeem-kae-kazim": {
+   "ids_esterni": {
+    "wikidata": "Q962681"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-hal-sparks": {
+   "ids_esterni": {
+    "wikidata": "Q445367"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-halle-berry": {
+   "ids_esterni": {
+    "wikidata": "Q1033016"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-hamish-linklater": {
+   "ids_esterni": {
+    "wikidata": "Q558301"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-hannibal-buress": {
    "ids_esterni": {
     "wikidata": "Q5649155"
@@ -1074,12 +2784,42 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-happy-anderson": {
+   "ids_esterni": {
+    "wikidata": "Q24883904"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-harriet-sansom-harris": {
    "ids_esterni": {
     "wikidata": "Q270622"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-harry-standjofski": {
+   "ids_esterni": {
+    "wikidata": "Q3127916"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-haruhiko-yamanouchi": {
+   "ids_esterni": {
+    "wikidata": "Q3783562"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1110,6 +2850,36 @@
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-henry-zaga": {
+   "ids_esterni": {
+    "wikidata": "Q30998289"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-hiro-kanagawa": {
+   "ids_esterni": {
+    "wikidata": "Q3136238"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-hiroyuki-sanada": {
+   "ids_esterni": {
+    "wikidata": "Q705522"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1164,6 +2934,46 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-ioan-gruffudd": {
+   "ids_esterni": {
+    "wikidata": "Q295974"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-irrfan-khan": {
+   "ids_esterni": {
+    "wikidata": "Q360927"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-isaac-c-singleton-jr": {
+   "ids_esterni": {
+    "wikidata": "Q3154735"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-isabela-merced": {
+   "ids_esterni": {
+    "wikidata": "Q20830731"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-j-august-richards": {
    "ids_esterni": {
     "wikidata": "Q1253845"
@@ -1184,6 +2994,16 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-j-d-walsh": {
+   "ids_esterni": {
+    "wikidata": "Q1676307"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-j-k-simmons": {
    "ids_esterni": {
     "wikidata": "Q150482"
@@ -1194,12 +3014,42 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-jack-betts": {
+   "ids_esterni": {
+    "wikidata": "Q955019"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jack-kesy": {
+   "ids_esterni": {
+    "wikidata": "Q30110185"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-jacob-batalon": {
    "ids_esterni": {
     "wikidata": "Q26213909"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jade-ramsey": {
+   "ids_esterni": {
+    "wikidata": "Q439554"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1220,6 +3070,46 @@
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-james-colby": {
+   "ids_esterni": {
+    "wikidata": "Q22667671"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-james-cromwell": {
+   "ids_esterni": {
+    "wikidata": "Q299483"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-james-faulkner": {
+   "ids_esterni": {
+    "wikidata": "Q1343000"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-james-franco": {
+   "ids_esterni": {
+    "wikidata": "Q306403"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1254,6 +3144,36 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-james-mcavoy": {
+   "ids_esterni": {
+    "wikidata": "Q193659"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-james-remar": {
+   "ids_esterni": {
+    "wikidata": "Q441913"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jamie-bell": {
+   "ids_esterni": {
+    "wikidata": "Q297071"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-jamie-foxx": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -1274,12 +3194,92 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-january-jones": {
+   "ids_esterni": {
+    "wikidata": "Q223786"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jared-harris": {
+   "ids_esterni": {
+    "wikidata": "Q362500"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jared-leto": {
+   "ids_esterni": {
+    "wikidata": "Q484523"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jason-beghe": {
+   "ids_esterni": {
+    "wikidata": "Q944681"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jason-flemyng": {
+   "ids_esterni": {
+    "wikidata": "Q472504"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jason-isaacs": {
+   "ids_esterni": {
+    "wikidata": "Q214223"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-jason-o-mara": {
    "ids_esterni": {
     "wikidata": "Q127113"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jay-underwood": {
+   "ids_esterni": {
+    "wikidata": "Q3163273"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jed-rees": {
+   "ids_esterni": {
+    "wikidata": "Q6172620"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1304,6 +3304,16 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-jennifer-connelly": {
+   "ids_esterni": {
+    "wikidata": "Q103343"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-jennifer-garner": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -1314,12 +3324,142 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-jennifer-lawrence": {
+   "ids_esterni": {
+    "wikidata": "Q189490"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jenny-slate": {
+   "ids_esterni": {
+    "wikidata": "Q744166"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jenya-lano": {
+   "ids_esterni": {
+    "wikidata": "Q3177224"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jesse-corti": {
+   "ids_esterni": {
+    "wikidata": "Q1271923"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jesse-heiman": {
+   "ids_esterni": {
+    "wikidata": "Q978367"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jessica-alba": {
+   "ids_esterni": {
+    "wikidata": "Q44077"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jessica-biel": {
+   "ids_esterni": {
+    "wikidata": "Q163249"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jessica-chastain": {
+   "ids_esterni": {
+    "wikidata": "Q229313"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jessica-napier": {
+   "ids_esterni": {
+    "wikidata": "Q451216"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jill-flint": {
+   "ids_esterni": {
+    "wikidata": "Q439804"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-jill-hennessy": {
+   "ids_esterni": {
+    "wikidata": "Q237925"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-joe-locke": {
    "ids_esterni": {
     "wikidata": "Q106596551"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-joe-manganiello": {
+   "ids_esterni": {
+    "wikidata": "Q470005"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-joe-pantoliano": {
+   "ids_esterni": {
+    "wikidata": "Q296883"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1334,12 +3474,72 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-joel-mchale": {
+   "ids_esterni": {
+    "wikidata": "Q311993"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-joel-tobeck": {
+   "ids_esterni": {
+    "wikidata": "Q966678"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-john-enos-iii": {
+   "ids_esterni": {
+    "wikidata": "Q2298419"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-john-hannah": {
    "ids_esterni": {
     "wikidata": "Q298243"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-john-landis": {
+   "ids_esterni": {
+    "wikidata": "Q51564"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-john-michael-higgins": {
+   "ids_esterni": {
+    "wikidata": "Q967130"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-john-ottman": {
+   "ids_esterni": {
+    "wikidata": "Q956822"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1374,12 +3574,42 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-jose-maria-yazpik": {
+   "ids_esterni": {
+    "wikidata": "Q5943686"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-jose-zuniga": {
    "ids_esterni": {
     "wikidata": "Q966151"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-josef-sommer": {
+   "ids_esterni": {
+    "wikidata": "Q550928"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-joseph-culp": {
+   "ids_esterni": {
+    "wikidata": "Q15479218"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1394,12 +3624,72 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-josh-helman": {
+   "ids_esterni": {
+    "wikidata": "Q5799862"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-josh-lucas": {
+   "ids_esterni": {
+    "wikidata": "Q53651"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-juan-pablo-raba": {
    "ids_esterni": {
     "wikidata": "Q1269056"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-julian-dennison": {
+   "ids_esterni": {
+    "wikidata": "Q24189388"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-julian-mcmahon": {
+   "ids_esterni": {
+    "wikidata": "Q4223"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-juno-temple": {
+   "ids_esterni": {
+    "wikidata": "Q234434"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-karan-soni": {
+   "ids_esterni": {
+    "wikidata": "Q22815258"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1414,12 +3704,62 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-karine-vanasse": {
+   "ids_esterni": {
+    "wikidata": "Q536673"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-kate-mara": {
+   "ids_esterni": {
+    "wikidata": "Q231249"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-kathryn-hahn": {
    "ids_esterni": {
     "wikidata": "Q271986"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-katie-stuart": {
+   "ids_esterni": {
+    "wikidata": "Q452347"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-kelly-hu": {
+   "ids_esterni": {
+    "wikidata": "Q231116"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-kelsey-asbille": {
+   "ids_esterni": {
+    "wikidata": "Q238849"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1434,12 +3774,42 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-ken-leung": {
+   "ids_esterni": {
+    "wikidata": "Q312051"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-kenneth-choi": {
    "ids_esterni": {
     "wikidata": "Q3558573"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-kenneth-welsh": {
+   "ids_esterni": {
+    "wikidata": "Q918404"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-kenny-johnson": {
+   "ids_esterni": {
+    "wikidata": "Q1371295"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1454,12 +3824,82 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-kerry-bishe": {
+   "ids_esterni": {
+    "wikidata": "Q465200"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-kerry-washington": {
+   "ids_esterni": {
+    "wikidata": "Q232104"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-kevin-bacon": {
    "ids_esterni": {
     "wikidata": "Q3454165"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-kevin-durand": {
+   "ids_esterni": {
+    "wikidata": "Q320084"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-kevin-mcnulty": {
+   "ids_esterni": {
+    "wikidata": "Q3195759"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-kevin-rankin": {
+   "ids_esterni": {
+    "wikidata": "Q80782"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-kevin-rushton": {
+   "ids_esterni": {
+    "wikidata": "Q3195794"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-kevin-smith": {
+   "ids_esterni": {
+    "wikidata": "Q489831"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1484,6 +3924,46 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-kirsten-dunst": {
+   "ids_esterni": {
+    "wikidata": "Q76478"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-kirsten-prout": {
+   "ids_esterni": {
+    "wikidata": "Q235701"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-kodi-smit-mcphee": {
+   "ids_esterni": {
+    "wikidata": "Q716251"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-kris-kristofferson": {
+   "ids_esterni": {
+    "wikidata": "Q208681"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-kris-lemche": {
    "ids_esterni": {
     "wikidata": "Q951061"
@@ -1504,12 +3984,62 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-ladislav-beran": {
+   "ids_esterni": {
+    "wikidata": "Q1800000"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-laith-nakli": {
    "ids_esterni": {
     "wikidata": "Q45740631"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-lamar-johnson": {
+   "ids_esterni": {
+    "wikidata": "Q40763613"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-lana-condor": {
+   "ids_esterni": {
+    "wikidata": "Q24250404"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-lance-e-nichols": {
+   "ids_esterni": {
+    "wikidata": "Q6483378"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-lance-kinsey": {
+   "ids_esterni": {
+    "wikidata": "Q768677"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1534,12 +4064,62 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-laurence-fishburne": {
+   "ids_esterni": {
+    "wikidata": "Q193048"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-laurie-holden": {
+   "ids_esterni": {
+    "wikidata": "Q18947"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-layke-anderson": {
+   "ids_esterni": {
+    "wikidata": "Q6505586"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-leland-orser": {
+   "ids_esterni": {
+    "wikidata": "Q1320006"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-leonor-varela": {
    "ids_esterni": {
     "wikidata": "Q235913"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-leslie-uggams": {
+   "ids_esterni": {
+    "wikidata": "Q534925"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1554,12 +4134,62 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-levan-uchaneishvili": {
+   "ids_esterni": {
+    "wikidata": "Q3831263"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-lewis-tan": {
+   "ids_esterni": {
+    "wikidata": "Q27244661"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-liev-schreiber": {
+   "ids_esterni": {
+    "wikidata": "Q298368"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-lorena-gale": {
+   "ids_esterni": {
+    "wikidata": "Q1920467"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-lorenzo-henrie": {
    "ids_esterni": {
     "wikidata": "Q3086608"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-lou-ferrigno": {
+   "ids_esterni": {
+    "wikidata": "Q313306"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1574,12 +4204,62 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-lucas-till": {
+   "ids_esterni": {
+    "wikidata": "Q316541"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-lucy-gordon": {
+   "ids_esterni": {
+    "wikidata": "Q232371"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-lucy-lawless": {
    "ids_esterni": {
     "wikidata": "Q133112"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-lucy-liu": {
+   "ids_esterni": {
+    "wikidata": "Q188375"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-ludger-pistor": {
+   "ids_esterni": {
+    "wikidata": "Q95316"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-luke-goss": {
+   "ids_esterni": {
+    "wikidata": "Q911462"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1604,12 +4284,52 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-lynn-collins": {
+   "ids_esterni": {
+    "wikidata": "Q233237"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-mackenzie-astin": {
    "ids_esterni": {
     "wikidata": "Q2575752"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-macy-gray": {
+   "ids_esterni": {
+    "wikidata": "Q232456"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-mageina-tovah": {
+   "ids_esterni": {
+    "wikidata": "Q271059"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-maisie-williams": {
+   "ids_esterni": {
+    "wikidata": "Q234363"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1634,12 +4354,62 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-manuel-tadros": {
+   "ids_esterni": {
+    "wikidata": "Q3286945"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-marco-st-john": {
+   "ids_esterni": {
+    "wikidata": "Q434014"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-marek-vasut": {
+   "ids_esterni": {
+    "wikidata": "Q324068"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-maria-dizzia": {
    "ids_esterni": {
     "wikidata": "Q6761145"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-maria-menounos": {
+   "ids_esterni": {
+    "wikidata": "Q233618"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-marilyn-manson": {
+   "ids_esterni": {
+    "wikidata": "Q186327"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1664,12 +4434,32 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-marit-velle-kile": {
+   "ids_esterni": {
+    "wikidata": "Q6765727"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-mark-dacascos": {
    "ids_esterni": {
     "wikidata": "Q314200"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-mark-margolis": {
+   "ids_esterni": {
+    "wikidata": "Q934506"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1684,6 +4474,56 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-martin-sheen": {
+   "ids_esterni": {
+    "wikidata": "Q184572"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-marton-csokas": {
+   "ids_esterni": {
+    "wikidata": "Q315118"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-mary-pat-green": {
+   "ids_esterni": {
+    "wikidata": "Q6778733"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-matt-craven": {
+   "ids_esterni": {
+    "wikidata": "Q1396699"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-matt-damon": {
+   "ids_esterni": {
+    "wikidata": "Q175535"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-matt-lintz": {
    "ids_esterni": {
     "wikidata": "Q20684509"
@@ -1694,12 +4534,52 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-matt-long": {
+   "ids_esterni": {
+    "wikidata": "Q960170"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-matt-mullins": {
    "ids_esterni": {
     "wikidata": "Q3288421"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-matt-schulze": {
+   "ids_esterni": {
+    "wikidata": "Q538716"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-matt-smith": {
+   "ids_esterni": {
+    "wikidata": "Q312385"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-matt-weinberg": {
+   "ids_esterni": {
+    "wikidata": "Q1190686"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1724,12 +4604,212 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-meiling-melancon": {
+   "ids_esterni": {
+    "wikidata": "Q1629331"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-melora-walters": {
+   "ids_esterni": {
+    "wikidata": "Q242763"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-mercedes-mcnab": {
+   "ids_esterni": {
+    "wikidata": "Q256112"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-michael-b-jordan": {
+   "ids_esterni": {
+    "wikidata": "Q3308007"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-michael-bailey-smith": {
+   "ids_esterni": {
+    "wikidata": "Q981765"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-michael-chiklis": {
+   "ids_esterni": {
+    "wikidata": "Q313653"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-michael-clarke-duncan": {
+   "ids_esterni": {
+    "wikidata": "Q483148"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-michael-fassbender": {
+   "ids_esterni": {
+    "wikidata": "Q57147"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-michael-ironside": {
+   "ids_esterni": {
+    "wikidata": "Q344973"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-michael-keaton": {
+   "ids_esterni": {
+    "wikidata": "Q138005"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-michael-lerner": {
+   "ids_esterni": {
+    "wikidata": "Q527303"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-michael-massee": {
+   "ids_esterni": {
+    "wikidata": "Q526468"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-michael-murphy": {
+   "ids_esterni": {
+    "wikidata": "Q492789"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-michael-nathanson": {
    "ids_esterni": {
     "wikidata": "Q39073127"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-michael-papajohn": {
+   "ids_esterni": {
+    "wikidata": "Q948751"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-michael-reid-mckay": {
+   "ids_esterni": {
+    "wikidata": "Q3856247"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-michelle-williams": {
+   "ids_esterni": {
+    "wikidata": "Q156796"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-mike-dopud": {
+   "ids_esterni": {
+    "wikidata": "Q974103"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-mike-epps": {
+   "ids_esterni": {
+    "wikidata": "Q311962"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-mike-erwin": {
+   "ids_esterni": {
+    "wikidata": "Q1933137"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-miles-teller": {
+   "ids_esterni": {
+    "wikidata": "Q267330"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1764,12 +4844,122 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-monique-ganderton": {
+   "ids_esterni": {
+    "wikidata": "Q6900353"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-morena-baccarin": {
+   "ids_esterni": {
+    "wikidata": "Q231091"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-morgan-lily": {
+   "ids_esterni": {
+    "wikidata": "Q268076"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-myles-pollard": {
+   "ids_esterni": {
+    "wikidata": "Q931873"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-n-bushe-wright": {
+   "ids_esterni": {
+    "wikidata": "Q536025"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-naomie-harris": {
+   "ids_esterni": {
+    "wikidata": "Q156586"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-natasha-lyonne": {
+   "ids_esterni": {
+    "wikidata": "Q234207"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-natassia-malthe": {
+   "ids_esterni": {
+    "wikidata": "Q235677"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-neal-mcdonough": {
    "ids_esterni": {
     "wikidata": "Q445125"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-neil-fingleton": {
+   "ids_esterni": {
+    "wikidata": "Q3874300"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-newton-thomas-sigel": {
+   "ids_esterni": {
+    "wikidata": "Q1367452"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-nicholas-hoult": {
+   "ids_esterni": {
+    "wikidata": "Q298347"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1784,6 +4974,16 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-nick-nolte": {
+   "ids_esterni": {
+    "wikidata": "Q188018"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-nicolas-cage": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -1794,12 +4994,52 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-nicole-munoz": {
+   "ids_esterni": {
+    "wikidata": "Q15650724"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-nimra-bucha": {
    "ids_esterni": {
     "wikidata": "Q7037747"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-nolan-gerard-funk": {
+   "ids_esterni": {
+    "wikidata": "Q763546"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-norman-reedus": {
+   "ids_esterni": {
+    "wikidata": "Q503545"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-octavia-spencer": {
+   "ids_esterni": {
+    "wikidata": "Q229254"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1814,6 +5054,56 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-oliver-platt": {
+   "ids_esterni": {
+    "wikidata": "Q343510"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-olivia-munn": {
+   "ids_esterni": {
+    "wikidata": "Q236475"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-olivia-williams": {
+   "ids_esterni": {
+    "wikidata": "Q231163"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-omahyra-mota": {
+   "ids_esterni": {
+    "wikidata": "Q273820"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-omar-sy": {
+   "ids_esterni": {
+    "wikidata": "Q357387"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-oscar-isaac": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -1824,12 +5114,32 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-parker-posey": {
+   "ids_esterni": {
+    "wikidata": "Q204586"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-parminder-nagra": {
    "ids_esterni": {
     "wikidata": "Q236374"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-pascale-hutton": {
+   "ids_esterni": {
+    "wikidata": "Q1607244"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1884,6 +5194,16 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-paul-ben-victor": {
+   "ids_esterni": {
+    "wikidata": "Q746337"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-paul-bettany": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -1893,6 +5213,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "t"
+  },
+  "att-paul-giamatti": {
+   "ids_esterni": {
+    "wikidata": "Q208649"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
   },
   "att-paul-schulze": {
    "ids_esterni": {
@@ -1914,12 +5244,92 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-peggy-lu": {
+   "ids_esterni": {
+    "wikidata": "Q109986660"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-perla-haney-jardine": {
+   "ids_esterni": {
+    "wikidata": "Q1193457"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-peter-dinklage": {
+   "ids_esterni": {
+    "wikidata": "Q310937"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-peter-fonda": {
+   "ids_esterni": {
+    "wikidata": "Q210148"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-peter-james-bryant": {
+   "ids_esterni": {
+    "wikidata": "Q16201114"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-peter-macnicol": {
    "ids_esterni": {
     "wikidata": "Q299309"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-peter-o-brien": {
+   "ids_esterni": {
+    "wikidata": "Q522724"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-peter-wingfield": {
+   "ids_esterni": {
+    "wikidata": "Q1082835"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-phillip-van-dyke": {
+   "ids_esterni": {
+    "wikidata": "Q941774"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1944,6 +5354,76 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-rade-serbedzija": {
+   "ids_esterni": {
+    "wikidata": "Q434291"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-randal-reeder": {
+   "ids_esterni": {
+    "wikidata": "Q7291478"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-randall-batinkoff": {
+   "ids_esterni": {
+    "wikidata": "Q3418797"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-randy-savage": {
+   "ids_esterni": {
+    "wikidata": "Q59635"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-raquel-alessi": {
+   "ids_esterni": {
+    "wikidata": "Q900740"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-ray-park": {
+   "ids_esterni": {
+    "wikidata": "Q361154"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-ray-wise": {
+   "ids_esterni": {
+    "wikidata": "Q530646"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-rebecca-romijn": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -1954,12 +5434,62 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-rebecca-staab": {
+   "ids_esterni": {
+    "wikidata": "Q2421597"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-rebel-wilson": {
+   "ids_esterni": {
+    "wikidata": "Q442897"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-reed-diamond": {
    "ids_esterni": {
     "wikidata": "Q977086"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-reg-e-cathey": {
+   "ids_esterni": {
+    "wikidata": "Q973783"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-reid-scott": {
+   "ids_esterni": {
+    "wikidata": "Q2139900"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-rhiannon-leigh-wryn": {
+   "ids_esterni": {
+    "wikidata": "Q2652491"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -1974,12 +5504,82 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-richard-e-grant": {
+   "ids_esterni": {
+    "wikidata": "Q380856"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-richard-ian-cox": {
+   "ids_esterni": {
+    "wikidata": "Q721273"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-ricky-dean-logan": {
+   "ids_esterni": {
+    "wikidata": "Q3935047"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-rila-fukushima": {
+   "ids_esterni": {
+    "wikidata": "Q7334155"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-rish-shah": {
    "ids_esterni": {
     "wikidata": "Q111259963"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-riz-ahmed": {
+   "ids_esterni": {
+    "wikidata": "Q1861917"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-rob-delaney": {
+   "ids_esterni": {
+    "wikidata": "Q762782"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-rob-liefeld": {
+   "ids_esterni": {
+    "wikidata": "Q2061990"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -2004,12 +5604,92 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-robert-kerman": {
+   "ids_esterni": {
+    "wikidata": "Q1291283"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-robert-maillet": {
+   "ids_esterni": {
+    "wikidata": "Q589775"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-roger-cross": {
+   "ids_esterni": {
+    "wikidata": "Q1093611"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-ron-glass": {
    "ids_esterni": {
     "wikidata": "Q951335"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-ron-perkins": {
+   "ids_esterni": {
+    "wikidata": "Q1123336"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-ron-perlman": {
+   "ids_esterni": {
+    "wikidata": "Q220698"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-rose-byrne": {
+   "ids_esterni": {
+    "wikidata": "Q228717"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-rosemary-harris": {
+   "ids_esterni": {
+    "wikidata": "Q234195"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-russell-crowe": {
+   "ids_esterni": {
+    "wikidata": "Q129817"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -2044,6 +5724,26 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-sally-field": {
+   "ids_esterni": {
+    "wikidata": "Q187033"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-sam-elliott": {
+   "ids_esterni": {
+    "wikidata": "Q311314"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-samina-ahmad": {
    "ids_esterni": {
     "wikidata": "Q7409455"
@@ -2060,6 +5760,46 @@
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-sanaa-lathan": {
+   "ids_esterni": {
+    "wikidata": "Q241783"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-santiago-segura": {
+   "ids_esterni": {
+    "wikidata": "Q509900"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-sara-ramirez": {
+   "ids_esterni": {
+    "wikidata": "Q40069"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-sarah-gadon": {
+   "ids_esterni": {
+    "wikidata": "Q459945"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -2084,6 +5824,66 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-scott-adkins": {
+   "ids_esterni": {
+    "wikidata": "Q28310"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-scott-haze": {
+   "ids_esterni": {
+    "wikidata": "Q7436480"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-scott-l-schwartz": {
+   "ids_esterni": {
+    "wikidata": "Q2260913"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-scott-leva": {
+   "ids_esterni": {
+    "wikidata": "Q7436695"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-scott-spiegel": {
+   "ids_esterni": {
+    "wikidata": "Q965826"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-scott-terra": {
+   "ids_esterni": {
+    "wikidata": "Q3099585"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-sean-gunn": {
    "ids_esterni": {
     "wikidata": "Q431753"
@@ -2104,12 +5904,102 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-shabana-azmi": {
+   "ids_esterni": {
+    "wikidata": "Q465863"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-shailene-woodley": {
+   "ids_esterni": {
+    "wikidata": "Q231058"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-shannon-lee": {
+   "ids_esterni": {
+    "wikidata": "Q698411"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-shannon-lucio": {
    "ids_esterni": {
     "wikidata": "Q439767"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-shawn-ashmore": {
+   "ids_esterni": {
+    "wikidata": "Q313579"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-shawn-roberts": {
+   "ids_esterni": {
+    "wikidata": "Q554132"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-shiori-kutsuna": {
+   "ids_esterni": {
+    "wikidata": "Q4390382"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-shohreh-aghdashloo": {
+   "ids_esterni": {
+    "wikidata": "Q229766"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-skyler-gisondo": {
+   "ids_esterni": {
+    "wikidata": "Q1190692"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-sophie-turner": {
+   "ids_esterni": {
+    "wikidata": "Q240573"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -2124,6 +6014,206 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-stanley-anderson": {
+   "ids_esterni": {
+    "wikidata": "Q2052002"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-stefan-kapicic": {
+   "ids_esterni": {
+    "wikidata": "Q1262154"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-stephen-dorff": {
+   "ids_esterni": {
+    "wikidata": "Q334195"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-stephen-graham": {
+   "ids_esterni": {
+    "wikidata": "Q442547"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-stephen-merchant": {
+   "ids_esterni": {
+    "wikidata": "Q23814"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-stephen-norrington": {
+   "ids_esterni": {
+    "wikidata": "Q1346611"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-steve-bacic": {
+   "ids_esterni": {
+    "wikidata": "Q2038188"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-summer-fontana": {
+   "ids_esterni": {
+    "wikidata": "Q56878072"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-svetlana-khodchenkova": {
+   "ids_esterni": {
+    "wikidata": "Q536524"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-sydney-sweeney": {
+   "ids_esterni": {
+    "wikidata": "Q49561909"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-t-j-miller": {
+   "ids_esterni": {
+    "wikidata": "Q1148822"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-tahar-rahim": {
+   "ids_esterni": {
+    "wikidata": "Q981690"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-tahyna-tozzi": {
+   "ids_esterni": {
+    "wikidata": "Q254075"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-tao-okamoto": {
+   "ids_esterni": {
+    "wikidata": "Q4353280"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-taylor-hickson": {
+   "ids_esterni": {
+    "wikidata": "Q23048182"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-taylor-kitsch": {
+   "ids_esterni": {
+    "wikidata": "Q335880"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-ted-king": {
+   "ids_esterni": {
+    "wikidata": "Q546369"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-ted-raimi": {
+   "ids_esterni": {
+    "wikidata": "Q447713"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-terence-stamp": {
+   "ids_esterni": {
+    "wikidata": "Q77298"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-theresa-russell": {
+   "ids_esterni": {
+    "wikidata": "Q253467"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-thomas-haden-church": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -2133,6 +6223,76 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "t"
+  },
+  "att-thomas-kretschmann": {
+   "ids_esterni": {
+    "wikidata": "Q57614"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-tia-texada": {
+   "ids_esterni": {
+    "wikidata": "Q270186"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-tim-blake-nelson": {
+   "ids_esterni": {
+    "wikidata": "Q515095"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-tim-de-zarn": {
+   "ids_esterni": {
+    "wikidata": "Q15288220"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-tim-guinee": {
+   "ids_esterni": {
+    "wikidata": "Q788586"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-tim-heidecker": {
+   "ids_esterni": {
+    "wikidata": "Q7803640"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-tim-pocock": {
+   "ids_esterni": {
+    "wikidata": "Q773060"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
   },
   "att-titus-welliver": {
    "ids_esterni": {
@@ -2154,6 +6314,36 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-toby-kebbell": {
+   "ids_esterni": {
+    "wikidata": "Q719359"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-tom-desanto": {
+   "ids_esterni": {
+    "wikidata": "Q6811130"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-tom-hardy": {
+   "ids_esterni": {
+    "wikidata": "Q208026"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-tom-hiddleston": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -2174,12 +6364,52 @@
    "stato": "attivo",
    "tipo": "t"
   },
+  "att-tomas-lemarquis": {
+   "ids_esterni": {
+    "wikidata": "Q736652"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-tony-curran": {
+   "ids_esterni": {
+    "wikidata": "Q711054"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-tony-revolori": {
    "ids_esterni": {
     "wikidata": "Q16237562"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-topher-grace": {
+   "ids_esterni": {
+    "wikidata": "Q277978"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-traci-lords": {
+   "ids_esterni": {
+    "wikidata": "Q233118"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -2194,6 +6424,26 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-triple-h": {
+   "ids_esterni": {
+    "wikidata": "Q44567"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-troye-sivan": {
+   "ids_esterni": {
+    "wikidata": "Q1362028"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-tsai-chin": {
    "ids_esterni": {
     "wikidata": "Q434790"
@@ -2204,12 +6454,82 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-ty-olsson": {
+   "ids_esterni": {
+    "wikidata": "Q552972"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-tye-sheridan": {
+   "ids_esterni": {
+    "wikidata": "Q760896"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-tyler-mane": {
+   "ids_esterni": {
+    "wikidata": "Q374239"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-tyrese-gibson": {
+   "ids_esterni": {
+    "wikidata": "Q311232"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-tzi-ma": {
    "ids_esterni": {
     "wikidata": "Q598178"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-udo-kier": {
+   "ids_esterni": {
+    "wikidata": "Q77035"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-vanessa-ferlito": {
+   "ids_esterni": {
+    "wikidata": "Q233724"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-vanessa-lachey": {
+   "ids_esterni": {
+    "wikidata": "Q270638"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -2234,6 +6554,46 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-vinnie-jones": {
+   "ids_esterni": {
+    "wikidata": "Q296822"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-wade-williams": {
+   "ids_esterni": {
+    "wikidata": "Q275658"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-wayne-pere": {
+   "ids_esterni": {
+    "wikidata": "Q18655744"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-wes-bentley": {
+   "ids_esterni": {
+    "wikidata": "Q368037"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-wesley-snipes": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -2243,6 +6603,36 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "t"
+  },
+  "att-wilfried-hochholdinger": {
+   "ids_esterni": {
+    "wikidata": "Q89486"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-will-i-am": {
+   "ids_esterni": {
+    "wikidata": "Q185610"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-will-yun-lee": {
+   "ids_esterni": {
+    "wikidata": "Q974139"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
   },
   "att-willem-dafoe": {
    "ondata": "W0",
@@ -2274,6 +6664,26 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-wolfgang-muller": {
+   "ids_esterni": {
+    "wikidata": "Q2590682"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-woody-harrelson": {
+   "ids_esterni": {
+    "wikidata": "Q201279"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-xochitl-gomez": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -2290,6 +6700,46 @@
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-zabryna-guevara": {
+   "ids_esterni": {
+    "wikidata": "Q18390633"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-zach-grenier": {
+   "ids_esterni": {
+    "wikidata": "Q139341"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-zazie-beetz": {
+   "ids_esterni": {
+    "wikidata": "Q26997611"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
+  "att-zeljko-ivanek": {
+   "ids_esterni": {
+    "wikidata": "Q382197"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "attore"
@@ -2314,6 +6764,16 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "att-zoe-kravitz": {
+   "ids_esterni": {
+    "wikidata": "Q227129"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
+  },
   "att-zoe-saldana": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -2323,6 +6783,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "t"
+  },
+  "att-zosia-mamet": {
+   "ids_esterni": {
+    "wikidata": "Q4965286"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "attore"
   },
   "bat-battaglia-di-new-york": {
    "ondata": "W0",
@@ -4478,6 +8948,46 @@
    "stato": "attivo",
    "tipo": "pagina"
   },
+  "cos-blackheart": {
+   "ids_esterni": {
+    "wikidata": "Q1839684"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-demon-bear": {
+   "ids_esterni": {
+    "wikidata": "Q5256192"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-doctor-doom": {
+   "ids_esterni": {
+    "wikidata": "Q430178"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-mephisto": {
+   "ids_esterni": {
+    "wikidata": "Q2418665"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
   "cr-a-c-bradley": {
    "ids_esterni": {
     "wikidata": "Q2818917"
@@ -4508,12 +9018,52 @@
    "stato": "attivo",
    "tipo": "creatore"
   },
+  "cr-alex-kurtzman": {
+   "ids_esterni": {
+    "wikidata": "Q432598"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-alfred-gough": {
+   "ids_esterni": {
+    "wikidata": "Q622651"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-alvin-sargent": {
+   "ids_esterni": {
+    "wikidata": "Q449238"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
   "cr-andy-goddard": {
    "ids_esterni": {
     "wikidata": "Q4760715"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-ang-lee": {
+   "ids_esterni": {
+    "wikidata": "Q160726"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "creatore"
@@ -4528,6 +9078,16 @@
    "stato": "attivo",
    "tipo": "creatore"
   },
+  "cr-ashley-miller": {
+   "ids_esterni": {
+    "wikidata": "Q4805527"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
   "cr-bisha-k-ali": {
    "ids_esterni": {
     "wikidata": "Q102020052"
@@ -4538,12 +9098,32 @@
    "stato": "attivo",
    "tipo": "creatore"
   },
+  "cr-brett-ratner": {
+   "ids_esterni": {
+    "wikidata": "Q319204"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
   "cr-brian-michael-bendis": {
    "ids_esterni": {
     "wikidata": "Q720012"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-burk-sharpless": {
+   "ids_esterni": {
+    "wikidata": "Q27061532"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "creatore"
@@ -4564,6 +9144,56 @@
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-dan-harris": {
+   "ids_esterni": {
+    "wikidata": "Q2556156"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-daniel-espinosa": {
+   "ids_esterni": {
+    "wikidata": "Q977624"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-david-benioff": {
+   "ids_esterni": {
+    "wikidata": "Q503997"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-david-koepp": {
+   "ids_esterni": {
+    "wikidata": "Q270178"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-david-s-goyer": {
+   "ids_esterni": {
+    "wikidata": "Q352010"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "creatore"
@@ -4594,6 +9224,16 @@
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-don-payne": {
+   "ids_esterni": {
+    "wikidata": "Q2502683"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "creatore"
@@ -4678,6 +9318,46 @@
    "stato": "attivo",
    "tipo": "creatore"
   },
+  "cr-gavin-hood": {
+   "ids_esterni": {
+    "wikidata": "Q443106"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-guillermo-del-toro": {
+   "ids_esterni": {
+    "wikidata": "Q219124"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-ivan-raimi": {
+   "ids_esterni": {
+    "wikidata": "Q1134855"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-j-c-chandor": {
+   "ids_esterni": {
+    "wikidata": "Q1676295"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
   "cr-jac-schaeffer": {
    "ids_esterni": {
     "wikidata": "Q6110444"
@@ -4708,6 +9388,46 @@
    "stato": "attivo",
    "tipo": "creatore"
   },
+  "cr-james-mangold": {
+   "ids_esterni": {
+    "wikidata": "Q433893"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-james-schamus": {
+   "ids_esterni": {
+    "wikidata": "Q1354081"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-james-vanderbilt": {
+   "ids_esterni": {
+    "wikidata": "Q919049"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-jane-goldman": {
+   "ids_esterni": {
+    "wikidata": "Q32661"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
   "cr-jason-aaron": {
    "ids_esterni": {
     "wikidata": "Q13220782"
@@ -4728,12 +9448,32 @@
    "stato": "attivo",
    "tipo": "creatore"
   },
+  "cr-jeff-pinkner": {
+   "ids_esterni": {
+    "wikidata": "Q3267145"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
   "cr-jeph-loeb": {
    "ids_esterni": {
     "wikidata": "Q1372513"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-jeremy-slater": {
+   "ids_esterni": {
+    "wikidata": "Q21064531"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "creatore"
@@ -4768,12 +9508,42 @@
    "stato": "attivo",
    "tipo": "creatore"
   },
+  "cr-john-turman": {
+   "ids_esterni": {
+    "wikidata": "Q6261409"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
   "cr-jon-watts": {
    "ids_esterni": {
     "wikidata": "Q18519749"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-josh-boone": {
+   "ids_esterni": {
+    "wikidata": "Q6288682"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-josh-trank": {
+   "ids_esterni": {
+    "wikidata": "Q3186007"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "creatore"
@@ -4794,6 +9564,16 @@
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-kelly-marcel": {
+   "ids_esterni": {
+    "wikidata": "Q6386180"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "creatore"
@@ -4838,6 +9618,66 @@
    "stato": "attivo",
    "tipo": "creatore"
   },
+  "cr-marc-webb": {
+   "ids_esterni": {
+    "wikidata": "Q357998"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-mark-bomback": {
+   "ids_esterni": {
+    "wikidata": "Q250201"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-mark-frost": {
+   "ids_esterni": {
+    "wikidata": "Q778585"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-mark-steven-johnson": {
+   "ids_esterni": {
+    "wikidata": "Q1320761"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-matt-sazama": {
+   "ids_esterni": {
+    "wikidata": "Q27061530"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-matthew-vaughn": {
+   "ids_esterni": {
+    "wikidata": "Q2593"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
   "cr-maurissa-tancharoen": {
    "ids_esterni": {
     "wikidata": "Q3301656"
@@ -4858,12 +9698,72 @@
    "stato": "attivo",
    "tipo": "creatore"
   },
+  "cr-michael-chabon": {
+   "ids_esterni": {
+    "wikidata": "Q313466"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-michael-dougherty": {
+   "ids_esterni": {
+    "wikidata": "Q771590"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-michael-france": {
+   "ids_esterni": {
+    "wikidata": "Q1658604"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
   "cr-michael-giacchino": {
    "ids_esterni": {
     "wikidata": "Q155124"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-michael-green": {
+   "ids_esterni": {
+    "wikidata": "Q6830765"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-michael-h-weber": {
+   "ids_esterni": {
+    "wikidata": "Q16886480"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-miles-millar": {
+   "ids_esterni": {
+    "wikidata": "Q1074029"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "creatore"
@@ -4878,12 +9778,32 @@
    "stato": "attivo",
    "tipo": "creatore"
   },
+  "cr-oley-sassone": {
+   "ids_esterni": {
+    "wikidata": "Q3350388"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
   "cr-paul-rudd": {
    "ids_esterni": {
     "wikidata": "Q276525"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-paul-wernick": {
+   "ids_esterni": {
+    "wikidata": "Q7154302"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "creatore"
@@ -4908,12 +9828,112 @@
    "stato": "attivo",
    "tipo": "creatore"
   },
+  "cr-rhett-reese": {
+   "ids_esterni": {
+    "wikidata": "Q7320469"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-richard-wenk": {
+   "ids_esterni": {
+    "wikidata": "Q3934894"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-rob-bowman": {
+   "ids_esterni": {
+    "wikidata": "Q693016"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-roberto-orci": {
+   "ids_esterni": {
+    "wikidata": "Q467500"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-ruben-fleischer": {
+   "ids_esterni": {
+    "wikidata": "Q521691"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-s-j-clarkson": {
+   "ids_esterni": {
+    "wikidata": "Q7387197"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-sam-raimi": {
+   "ids_esterni": {
+    "wikidata": "Q275402"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
   "cr-scott-derrickson": {
    "ids_esterni": {
     "wikidata": "Q558806"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-scott-frank": {
+   "ids_esterni": {
+    "wikidata": "Q557208"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-scott-neustadter": {
+   "ids_esterni": {
+    "wikidata": "Q5965293"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-scott-rosenberg": {
+   "ids_esterni": {
+    "wikidata": "Q3476302"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "creatore"
@@ -4938,12 +9958,52 @@
    "stato": "attivo",
    "tipo": "creatore"
   },
+  "cr-simon-kinberg": {
+   "ids_esterni": {
+    "wikidata": "Q219507"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-skip-woods": {
+   "ids_esterni": {
+    "wikidata": "Q2545066"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
   "cr-stephen-surjik": {
    "ids_esterni": {
     "wikidata": "Q3498661"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-steve-ditko": {
+   "ids_esterni": {
+    "wikidata": "Q355652"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-steve-kloves": {
+   "ids_esterni": {
+    "wikidata": "Q362061"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "creatore"
@@ -4964,6 +10024,26 @@
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-tim-miller": {
+   "ids_esterni": {
+    "wikidata": "Q19561563"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "creatore"
+  },
+  "cr-tim-story": {
+   "ids_esterni": {
+    "wikidata": "Q2005037"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "creatore"
@@ -5099,6 +10179,26 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-abraham-cornelius": {
+   "ids_esterni": {
+    "wikidata": "Q4668817"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-abraham-whistler": {
+   "ids_esterni": {
+    "wikidata": "Q1137153"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-adam-warlock": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -5138,6 +10238,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-ajax": {
+   "ids_esterni": {
+    "wikidata": "Q4699585"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-aldrich-killian": {
    "ondata": "W0",
@@ -5289,6 +10399,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-azazel": {
+   "ids_esterni": {
+    "wikidata": "Q2642022"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-beast": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -5298,6 +10418,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-bedlam": {
+   "ids_esterni": {
+    "wikidata": "Q2893582"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-ben-grimm": {
    "ondata": "W0",
@@ -5349,6 +10479,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-ben-urich": {
+   "ids_esterni": {
+    "wikidata": "Q1150975"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-benny-pollack": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -5358,6 +10498,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-betsy-braddock": {
+   "ids_esterni": {
+    "wikidata": "Q973050"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-betty-ross": {
    "ondata": "W0",
@@ -5389,6 +10539,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-black-tom-cassidy": {
+   "ids_esterni": {
+    "wikidata": "Q2236431"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-blade": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -5408,6 +10568,26 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-blink": {
+   "ids_esterni": {
+    "wikidata": "Q2624390"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-bob-agent-of-hydra": {
+   "ids_esterni": {
+    "wikidata": "Q3545619"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-bob-sentry": {
    "ondata": "W0",
@@ -5459,6 +10639,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-burglar": {
+   "ids_esterni": {
+    "wikidata": "Q606569"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-bushmaster": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -5478,6 +10668,26 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-caliban": {
+   "ids_esterni": {
+    "wikidata": "Q2624756"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-cannonball": {
+   "ids_esterni": {
+    "wikidata": "Q1194236"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-capitano-stacy": {
    "ondata": "W0",
@@ -5640,6 +10850,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-copycat": {
+   "ids_esterni": {
+    "wikidata": "Q2916404"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-corvus-glaive": {
    "ondata": "W0",
@@ -5841,6 +11061,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-donald-pierce": {
+   "ids_esterni": {
+    "wikidata": "Q2741605"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-dopinder": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -5960,6 +11190,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-emma-frost": {
+   "ids_esterni": {
+    "wikidata": "Q1995969"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-enoch": {
    "ondata": "W0",
@@ -6111,6 +11351,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-franklin-storm": {
+   "ids_esterni": {
+    "wikidata": "Q20858389"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-frigga": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -6150,6 +11400,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-george-stacy": {
+   "ids_esterni": {
+    "wikidata": "Q7879740"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-ghost": {
    "ondata": "W0",
@@ -6312,6 +11572,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-hope-summers": {
+   "ids_esterni": {
+    "wikidata": "Q2398372"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-hope-van-dyne": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -6372,6 +11642,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-iceman": {
+   "ids_esterni": {
+    "wikidata": "Q838088"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-ikaris": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -6421,6 +11701,26 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-j-jonah-jameson": {
+   "ids_esterni": {
+    "wikidata": "Q109253048"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-jack-murdock": {
+   "ids_esterni": {
+    "wikidata": "Q21188801"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-jack-russell-werewolf-by-night": {
    "ondata": "W0",
@@ -6491,6 +11791,26 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-jared-nomak": {
+   "ids_esterni": {
+    "wikidata": "Q3807318"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-jason-stryker": {
+   "ids_esterni": {
+    "wikidata": "Q20979405"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-jasper-sitwell": {
    "ondata": "W0",
@@ -6612,6 +11932,26 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-jubilee": {
+   "ids_esterni": {
+    "wikidata": "Q59665"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-juggernaut": {
+   "ids_esterni": {
+    "wikidata": "Q841372"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-julia-cornwall": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -6691,6 +12031,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-kestrel": {
+   "ids_esterni": {
+    "wikidata": "Q2400241"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-kevin-bacon-se-stesso": {
    "ondata": "W0",
@@ -6782,6 +12132,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-lady-deathstrike": {
+   "ids_esterni": {
+    "wikidata": "Q2448071"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-lady-sif": {
    "ids_esterni": {
     "wikidata": "Q24049994"
@@ -6849,6 +12209,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-maggie-murdock": {
+   "ids_esterni": {
+    "wikidata": "Q23306601"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-magneto": {
    "ondata": "W0",
@@ -7130,6 +12500,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-mister-sinister": {
+   "ids_esterni": {
+    "wikidata": "Q302534"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-misty-knight": {
    "ondata": "W0",
@@ -7451,6 +12831,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-peter-maximoff": {
+   "ids_esterni": {
+    "wikidata": "Q105697028"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-peter-parker-garfield": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -7576,6 +12966,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-quicksilver": {
+   "ids_esterni": {
+    "wikidata": "Q929273"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-ramonda": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -7616,6 +13016,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-red-lotus": {
+   "ids_esterni": {
+    "wikidata": "Q3837487"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-reed-richards": {
    "ondata": "W0",
@@ -7717,6 +13127,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-robert-kelly": {
+   "ids_esterni": {
+    "wikidata": "Q662139"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-rocket": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -7766,6 +13186,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-rusty-collins": {
+   "ids_esterni": {
+    "wikidata": "Q3453575"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-sabretooth": {
    "ondata": "W0",
@@ -7847,6 +13277,26 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-shatterstar": {
+   "ids_esterni": {
+    "wikidata": "Q2275950"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-shingen-yashida": {
+   "ids_esterni": {
+    "wikidata": "Q7497450"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-shuri": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -7927,6 +13377,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-spyke": {
+   "ids_esterni": {
+    "wikidata": "Q2679732"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-stephen-strange": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -7967,6 +13427,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-storm": {
+   "ids_esterni": {
+    "wikidata": "Q632212"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-sue-storm": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -8006,6 +13476,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-sunspot": {
+   "ids_esterni": {
+    "wikidata": "Q601199"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-sylvie": {
    "ondata": "W0",
@@ -8138,6 +13618,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-toad": {
+   "ids_esterni": {
+    "wikidata": "Q2377661"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-torunn": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -8227,6 +13717,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-vanisher": {
+   "ids_esterni": {
+    "wikidata": "Q1168830"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-victor-timely-variante-kang": {
    "ondata": "W0",
@@ -8318,6 +13818,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-weasel": {
+   "ids_esterni": {
+    "wikidata": "Q1403772"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-wenwu": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -8357,6 +13867,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-wolfsbane": {
+   "ids_esterni": {
+    "wikidata": "Q996154"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-wolverine": {
    "ondata": "W0",
@@ -8428,6 +13948,16 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-zeitgeist": {
+   "ids_esterni": {
+    "wikidata": "Q8068621"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-zeke-stane": {
    "ids_esterni": {
     "wikidata": "Q2790757"
@@ -8477,6 +14007,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "l"
+  },
+  "luo-baxter-building": {
+   "ids_esterni": {
+    "wikidata": "Q2338333"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
   },
   "luo-celestial-island": {
    "ondata": "W0",
@@ -8674,12 +14214,72 @@
    "stato": "attivo",
    "tipo": "opera"
   },
+  "op-blade-ii": {
+   "ids_esterni": {
+    "wikidata": "Q159638"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
+  "op-blade-q3429263": {
+   "ids_esterni": {
+    "wikidata": "Q3429263"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
+  "op-blade-trinity": {
+   "ids_esterni": {
+    "wikidata": "Q217008"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
   "op-captain-america-brave-new-world": {
    "ids_esterni": {
     "wikidata": "Q112322116"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
+  "op-daredevil": {
+   "ids_esterni": {
+    "wikidata": "Q751805"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
+  "op-deadpool": {
+   "ids_esterni": {
+    "wikidata": "Q19347291"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
+  "op-deadpool-2": {
+   "ids_esterni": {
+    "wikidata": "Q25431158"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "opera"
@@ -8704,12 +14304,62 @@
    "stato": "attivo",
    "tipo": "opera"
   },
+  "op-fantastic-four": {
+   "ids_esterni": {
+    "wikidata": "Q224130"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
+  "op-fantastic-four-q16795448": {
+   "ids_esterni": {
+    "wikidata": "Q16795448"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
+  "op-fantastic-four-rise-of-the-silver-surfer": {
+   "ids_esterni": {
+    "wikidata": "Q390063"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
+  "op-ghost-rider": {
+   "ids_esterni": {
+    "wikidata": "Q41754"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
   "op-guardians-of-the-galaxy-vol-3": {
    "ids_esterni": {
     "wikidata": "Q29226331"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
+  "op-hulk": {
+   "ids_esterni": {
+    "wikidata": "Q696042"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "opera"
@@ -8754,6 +14404,16 @@
    "stato": "attivo",
    "tipo": "opera"
   },
+  "op-kraven-the-hunter": {
+   "ids_esterni": {
+    "wikidata": "Q107390449"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
   "op-lego-marvel-s-avengers": {
    "ids_esterni": {
     "wikidata": "Q18920891"
@@ -8770,6 +14430,16 @@
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
+  "op-madame-web": {
+   "ids_esterni": {
+    "wikidata": "Q111677117"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "opera"
@@ -8824,6 +14494,36 @@
    "stato": "attivo",
    "tipo": "opera"
   },
+  "op-spider-man": {
+   "ids_esterni": {
+    "wikidata": "Q484442"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
+  "op-spider-man-2": {
+   "ids_esterni": {
+    "wikidata": "Q190145"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
+  "op-spider-man-3": {
+   "ids_esterni": {
+    "wikidata": "Q182212"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
   "op-spider-man-brand-new-day": {
    "ids_esterni": {
     "wikidata": "Q113244935"
@@ -8864,6 +14564,26 @@
    "stato": "attivo",
    "tipo": "opera"
   },
+  "op-the-amazing-spider-man": {
+   "ids_esterni": {
+    "wikidata": "Q229808"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
+  "op-the-fantastic-four": {
+   "ids_esterni": {
+    "wikidata": "Q2628001"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
   "op-the-fantastic-four-first-steps": {
    "ids_esterni": {
     "wikidata": "Q105105219"
@@ -8890,6 +14610,16 @@
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
+  "op-the-new-mutants": {
+   "ids_esterni": {
+    "wikidata": "Q28912376"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "opera"
@@ -8930,6 +14660,16 @@
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
+  "op-venom-the-last-dance": {
+   "ids_esterni": {
+    "wikidata": "Q113371337"
+   },
+   "ondata": "W0",
+   "origine": "W2",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "opera"
@@ -9054,6 +14794,26 @@
    "stato": "attivo",
    "tipo": "o"
   },
+  "org-nightstalkers": {
+   "ids_esterni": {
+    "wikidata": "Q1892114"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-reavers": {
+   "ids_esterni": {
+    "wikidata": "Q2915630"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
   "org-s-h-i-e-l-d": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -9083,6 +14843,26 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "o"
+  },
+  "org-sentinel": {
+   "ids_esterni": {
+    "wikidata": "Q782181"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-stepford-cuckoos": {
+   "ids_esterni": {
+    "wikidata": "Q898593"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
   },
   "org-the-hand": {
    "ondata": "W0",
@@ -9123,6 +14903,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "o"
+  },
+  "org-x-force": {
+   "ids_esterni": {
+    "wikidata": "Q938034"
+   },
+   "ondata": "W0",
+   "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
   },
   "org-x-men": {
    "ondata": "W0",
@@ -9495,7 +15285,7 @@
    "tipo": "U"
   }
  },
- "ids_sha256": "dd5ed39bd2fad45381d2ba47fb31aeac60e2fe855cac33064dc456b62e071779",
+ "ids_sha256": "8cdd02ba0a9e743812b157fd3bfcffc72be7d297610aa82c370522128b5c456f",
  "politica": "append-only; ID mai riusati; rimozioni solo come lapide con redirect",
  "versione": 1
 }

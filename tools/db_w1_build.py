@@ -185,16 +185,17 @@ def main():
                 if compat.get(tipo) == v['t'] and tk & ({w for w in norm(v['n']).split() if len(w) >= 5} - STOP): part.add(v['i'])
         if len(full) == 1 and not part:
             arr.append({'id': next(iter(full)), 'wikidata': q, 'alias_nuovi': [a for a in alias if norm(a) not in pieni or next(iter(full)) not in pieni[norm(a)]][:20],
-                        'interpreti': sorted({et.get(x) for x in r['c'].get('P175', []) if et.get(x)}), 'fonte': 'Wikidata (CC0)'}); cont['arricchimento'] += 1; continue
+                        'interpreti': sorted({et.get(x) for x in r['c'].get('P175', []) if et.get(x)}), '_sc': bool(uni_di(r)) and INFO.get(next(iter(full)), {}).get('universo') == uni_di(r), 'fonte': 'Wikidata (CC0)'}); cont['arricchimento'] += 1; continue
         if full or part:
             perf = [et.get(x) for x in r['c'].get('P175', []) if et.get(x)]
             esito, arg = risolvi(tipo, nome, chiavi, full, part, perf, uni_di(r), INFO, IDX_BY)
             if esito == 'arricchisci':
-                if arg in gia_arr and gia_arr[arg][0] != norm(nome):
+                stessa_cont = bool(uni_di(r)) and INFO.get(arg, {}).get('universo') == uni_di(r)   # stessa continuita' dell'identita' storica: elementi Wikidata multipli = stesso personaggio (arricchimento additivo)
+                if arg in gia_arr and gia_arr[arg][0] != norm(nome) and not stessa_cont:
                     coda['possibili_duplicati'].append({'q': q, 'nome': nome, 'tipo': tipo, 'esistenti_esatti': sorted(full), 'esistenti_parziali': sorted(part), 'motivo': 'stessa voce storica gia\' arricchita da un altro elemento Wikidata con nome diverso: ' + arg})
                     stag.append({'q': q, 'nome': nome, 'tipo': tipo, 'motivo': 'ambiguo: due elementi Wikidata distinti per la stessa voce storica'}); cont['coda_ambigui'] += 1; continue
                 gia_arr.setdefault(arg, (norm(nome), q))
-                arr.append({'id': arg, 'wikidata': q, 'alias_nuovi': [a for a in alias if arg not in pieni.get(norm(a), set())][:20], 'interpreti': sorted(set(perf)), 'fonte': 'Wikidata (CC0)', 'regola': 'risoluzione assistita'}); cont['arricchimento_regole'] += 1; continue
+                arr.append({'id': arg, 'wikidata': q, 'alias_nuovi': [a for a in alias if arg not in pieni.get(norm(a), set())][:20], 'interpreti': sorted(set(perf)), '_sc': stessa_cont, 'fonte': 'Wikidata (CC0)', 'regola': 'risoluzione assistita'}); cont['arricchimento_regole'] += 1; continue
             if esito == 'ambiguo':
                 coda['possibili_duplicati'].append({'q': q, 'nome': nome, 'tipo': tipo, 'esistenti_esatti': sorted(full), 'esistenti_parziali': sorted(part), 'motivo': arg})
                 stag.append({'q': q, 'nome': nome, 'tipo': tipo, 'motivo': 'ambiguo: ' + arg[:80]}); cont['coda_ambigui'] += 1; continue
@@ -232,7 +233,7 @@ def main():
     per_id = collections.defaultdict(set)
     nome_q = {a['wikidata']: norm(ent[a['wikidata']]['l'].get('en')) for a in arr}
     for a in arr: per_id[a['id']].add(nome_q[a['wikidata']])
-    conf = {i for i, n in per_id.items() if len(n) > 1}
+    conf = {i for i, n in per_id.items() if len(n) > 1 and not all(a.get('_sc') for a in arr if a['id'] == i)}
     for a in [a for a in arr if a['id'] in conf]:
         r = ent[a['wikidata']]; coda['possibili_duplicati'].append({'q': a['wikidata'], 'nome': r['l'].get('en'), 'tipo': 'identita', 'esistenti_esatti': [a['id']], 'esistenti_parziali': [], 'motivo': 'nomi Wikidata diversi puntano alla stessa voce storica'})
         stag.append({'q': a['wikidata'], 'nome': r['l'].get('en'), 'tipo': 'identita', 'motivo': 'ambiguo: nomi diversi per la stessa voce storica'}); cont['coda_ambigui'] += 1
@@ -243,7 +244,7 @@ def main():
     if not scrivi: return
     (E/'canon').mkdir(exist_ok=True); (E/'staging').mkdir(exist_ok=True); (E/'review').mkdir(exist_ok=True)
     w = lambda p, rows: (E/p).write_text('\n'.join(json.dumps(x, ensure_ascii=False, sort_keys=True) for x in rows) + ('\n' if rows else ''))
-    w(f'canon/{NOMEFILE}.jsonl', canon); w(f'canon/{ONDA}_arricchimenti.jsonl', arr); w(f'staging/{ONDA}_staging.jsonl', stag)
+    w(f'canon/{NOMEFILE}.jsonl', canon); w(f'canon/{ONDA}_arricchimenti.jsonl', [{k: v for k, v in a.items() if k != '_sc'} for a in arr]); w(f'staging/{ONDA}_staging.jsonl', stag)
     json.dump(dict(coda), open(E/f'review/{ONDA}_coda.json', 'w'), ensure_ascii=False, indent=1, sort_keys=True)
     json.dump(ris, open(E/f'{ONDA}_conteggi.json', 'w'), ensure_ascii=False, indent=1, sort_keys=True)
     rp = E/'ids_registro.json'; rg = json.load(open(rp)); vivi = {c['id'] for c in canon}; q_arr = {a['wikidata']: a['id'] for a in arr}; ritirati = 0
