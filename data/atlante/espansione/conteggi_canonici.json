@@ -21,9 +21,9 @@
   "pianeta": 11
  },
  "per_livello": {
-  "A": 448,
-  "B": 453,
-  "C": 5690
+  "A": 452,
+  "B": 472,
+  "C": 5667
  },
  "per_ondata": {
   "w1_mcu": {
@@ -126,5 +126,77 @@
   "narrative_totali": 245,
   "editoriali_escluse": 1027
  },
- "note": "co-apparizioni e collegamenti editoriali NON sono relazioni narrative e non entrano nei conteggi"
+ "note": "co-apparizioni e collegamenti editoriali NON sono relazioni narrative e non entrano nei conteggi",
+ "categoria_per_livello": {
+  "artefatto": {
+   "B": 17,
+   "C": 375
+  },
+  "attore": {
+   "C": 979
+  },
+  "battaglia": {
+   "C": 20
+  },
+  "creatore": {
+   "C": 458
+  },
+  "entita-cosmica": {
+   "A": 4,
+   "B": 16,
+   "C": 23
+  },
+  "evento": {
+   "B": 7,
+   "C": 50
+  },
+  "hub": {
+   "B": 3
+  },
+  "identita": {
+   "A": 448,
+   "B": 248,
+   "C": 1262
+  },
+  "luogo": {
+   "B": 16,
+   "C": 379
+  },
+  "mantello": {
+   "B": 2
+  },
+  "opera": {
+   "C": 1579
+  },
+  "organizzazione": {
+   "B": 81,
+   "C": 492
+  },
+  "pianeta": {
+   "C": 11
+  },
+  "specie": {
+   "B": 6,
+   "C": 23
+  },
+  "titolo": {
+   "B": 49
+  },
+  "universo": {
+   "B": 27,
+   "C": 16
+  }
+ },
+ "conteggi_separati": {
+  "identita_canoniche": 1958,
+  "personaggi_distinti (identita che contano come personaggio)": 1958,
+  "varianti_verificate (canon tipo variante)": 0,
+  "varianti_storiche_marcate (variante_multiversale/copia_artificiale in identita.json)": 4,
+  "varianti_in_staging (una sola fonte, D12)": 2691,
+  "incarnazioni_documentate": 7,
+  "identita_con_incarnazioni": 3,
+  "mantelli": 2,
+  "hub": 3,
+  "nota": "ogni termine e contato dai dati; hub e mantelli NON contano come personaggi; le incarnazioni sono fasi/interpreti della stessa identita, non voci autonome"
+ }
 }

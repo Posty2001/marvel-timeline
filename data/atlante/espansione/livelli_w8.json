@@ -1,5 +1,25 @@
 {
  "livelli": {
+  "cos-abraxas": "B",
+  "cos-belasco": "A",
+  "cos-bruce-banner-earth-69413": "B",
+  "cos-chaos-witchcraft-s-consort": "B",
+  "cos-choir": "B",
+  "cos-cyttorak": "A",
+  "cos-d-spayre": "A",
+  "cos-demogoblin": "B",
+  "cos-exitar-multiverse": "B",
+  "cos-garokk": "B",
+  "cos-hogun": "A",
+  "cos-malevolence": "B",
+  "cos-n-astirh": "B",
+  "cos-olivier": "B",
+  "cos-phemous": "B",
+  "cos-quentin-beck-earth-10955": "B",
+  "cos-siffror": "B",
+  "cos-surtur": "B",
+  "cos-thog": "B",
+  "cos-viliven": "B",
   "id-abner-jenkins": "B",
   "id-abraham-cornelius-earth-616": "B",
   "id-abraham-erskine": "B",
@@ -367,7 +387,13 @@
   "id-zeke-stane": "A",
   "id-zuri": "A",
   "id-zylak": "B",
-  "id-zzzax": "B"
+  "id-zzzax": "B",
+  "sp-cotati": "B",
+  "sp-giganto": "B",
+  "sp-hounds": "B",
+  "sp-leviathans": "B",
+  "sp-neo": "B",
+  "sp-stark": "B"
  },
  "regola": "A: >=6 sezioni, >=900 car., >=10 campi-fatto, >=1 relazione verificata o >=3 fonti; B: >=4 sezioni, >=450 car., >=6 campi"
 }

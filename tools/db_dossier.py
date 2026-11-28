@@ -18,13 +18,17 @@ def U(v):   # valore -> lista di stringhe
     return [x for x in (v if isinstance(v, list) else re.split(r'\s*;\s*', str(v))) if x]
 def pick(r, *alt):   # variante di frase deterministica (evita testi tutti uguali senza inventare nulla)
     return alt[sum(map(ord, r['id'])) % len(alt)]
+NOUN = {'identita': 'un personaggio', 'entita-cosmica': 'entità cosmica o sovrannaturale', 'artefatto': 'artefatto o arma', 'specie': 'specie o razza'}
+TIPI = tuple(NOUN)
 def componi(r, rels, nomi, altre=None, uni=None, cvn=None):
     f = r.get('fatti', {}); S = []; usati = set(); nome = r['nome']
     def u(*k): usati.update(x for x in k if f.get(x)); return [y for x in k for y in U(f.get(x))]
     # 1) Sintesi
     t = []
     cont = (uni or {}).get(r.get('universo') or '')
-    t.append(pick(r, '%s è un personaggio%s.', '%s compare come personaggio%s.', 'La scheda riguarda %s, personaggio%s.') % (nome, (' della continuità «%s»' % cont) if cont else ''))
+    nn = NOUN.get(r['tipo'], 'un personaggio'); cs = (' della continuità «%s»' % cont) if cont else ''
+    if r['tipo'] == 'identita': t.append(pick(r, '%s è un personaggio%s.', '%s compare come personaggio%s.', 'La scheda riguarda %s, personaggio%s.') % (nome, cs))
+    else: t.append('Nell\'Atlante «%s» è classificata come %s%s (classificazione editoriale della scheda, non una tesi sulla natura del personaggio).' % (nome, nn, cs))
     cr = u('creatori_fonte')
     if cr: t.append('Secondo le fonti consultate è stato creato da %s.' % lista(cr, 4))
     pa = u('prima_apparizione')
@@ -122,12 +126,12 @@ def main():
         except Exception: pass
     out = {}; liv = {}; stat = collections.Counter()
     for i, r in canon.items():
-        if r['tipo'] != 'identita': continue
-        top = r.get('livello') == 'B' or len(rels.get(i, [])) >= 3 or any(g.startswith(('fumetti:40', 'fumetti:20-40', 'fumetti:12-20', 'fumetti_pubbl:40', 'fumetti_pubbl:20-40')) for g in r.get('gruppi', [])) or (cv.get(i) or 0) >= 150
+        if r['tipo'] not in TIPI: continue
+        top = r['tipo'] != 'identita' or r.get('livello') == 'B' or len(rels.get(i, [])) >= 3 or any(g.startswith(('fumetti:40', 'fumetti:20-40', 'fumetti:12-20', 'fumetti_pubbl:40', 'fumetti_pubbl:20-40')) for g in r.get('gruppi', [])) or (cv.get(i) or 0) >= 150
         if not top: continue
         altre = sorted({u for j, u in per_nome.get(base(r['nome']), []) if j != i and u})
         S, nf = componi(r, rels.get(i, []), nomi, altre, uni, cv.get(i))
-        if len(S) < 3: continue
+        if len(S) < 3 or sum(len(x) for _, x in S) < 200: continue
         car = sum(len(x) for _, x in S); nver = len(rels.get(i, []))
         q = 'A' if (len(S) >= 6 and car >= 900 and nf >= 10 and (nver >= 1 or len(r.get('fonti', [])) >= 3)) else ('B' if (len(S) >= 4 and car >= 450 and nf >= 6) else 'C')
         out[i] = {'sezioni': [{'t': t, 'x': x} for t, x in S], 'q': {'sezioni': len(S), 'caratteri': car, 'campi': nf, 'relazioni_verificate': nver}, 'generato': 'da fatti verificati del canon (nessun testo copiato)'}
