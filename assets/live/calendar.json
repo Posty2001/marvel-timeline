@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T10:54:43+00:00",
+ "generated_at": "2026-11-28T14:18:00+00:00",
  "items": [
   {
    "category": "film",
@@ -25,18 +25,11 @@
      "market": "UK",
      "title": "Avengers: Doomsday | Final Trailer | In UK Cinemas December 16",
      "url": "https://www.youtube.com/watch?v=hGaXQ8L_Z28"
-    },
-    {
-     "channel": "Marvel Entertainment",
-     "date": "2026-12-18",
-     "market": "US",
-     "title": "Avengers: Doomsday | Final Trailer | In Theaters December 18",
-     "url": "https://www.youtube.com/watch?v=Wb8Tq_HD4E8"
     }
    ],
    "poster": "/6uOkzW0gF1ANWz2flhwXfTUQuLY.jpg",
    "precision": "day",
-   "reason": "Data da TMDB, non confermata da una fonte ufficiale. In post-produzione. Fonti ufficiali per altri mercati, non valide per l Italia: Regno Unito 16 dic 2026; USA 18 dic 2026",
+   "reason": "Data da TMDB, non confermata da una fonte ufficiale. In post-produzione. Fonti ufficiali per altri mercati, non valide per l Italia: Regno Unito 16 dic 2026",
    "signals": [
     "company",
     "keyword"

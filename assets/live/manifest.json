@@ -2,7 +2,7 @@
  "attribution": {
   "tmdb": true
  },
- "content_hash": "fd7321b02599da44",
+ "content_hash": "9f2a4024e8d9ba47",
  "counts": {
   "by_category": {
    "animazione": 2,
@@ -12,22 +12,22 @@
   },
   "calendar": 7,
   "confirmed": 0,
-  "excluded": 8,
+  "excluded": 7,
   "in_timeline": 4,
   "not_in_timeline": 3,
   "provisional": 7,
   "released": 0,
-  "trailers": 2,
+  "trailers": 1,
   "trailers_by_category": {
    "None": 0,
    "animazione": 0,
-   "film": 2,
+   "film": 1,
    "serie": 0,
    "videogioco": 0
   },
   "undated_candidates": 2
  },
- "generated_at": "2026-11-24T10:54:43+00:00",
+ "generated_at": "2026-11-28T14:18:00+00:00",
  "notes": [
   "Confermato = fonte ufficiale verificabile; altrimenti provvisorio.",
   "Indiscrezioni escluse in 1.0."
@@ -45,11 +45,11 @@
   "tmdb": {
    "count": 7,
    "errors": [],
-   "requests": 49,
+   "requests": 48,
    "status": "ok"
   },
   "youtube": {
-   "count": 2,
+   "count": 1,
    "identity": [
     {
      "author": "Marvel Entertainment",
