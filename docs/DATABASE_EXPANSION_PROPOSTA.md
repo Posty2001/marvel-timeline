@@ -1,5 +1,7 @@
 # Database Expansion — Proposta operativa (da approvare, NON avviata)
 
+> **Correzione 28/11/2026 (utente):** l'obiettivo storico approvato per le relazioni narrative documentate NON era 500 ma **10.000+**; gli obiettivi orientativi della Database Expansion sono: 1.000+ personaggi, 300+ varianti, 200+ artefatti e armi, 100+ universi e dimensioni, 10.000+ relazioni narrative documentate. Sono traguardi orientativi: nessun contenuto va inventato per raggiungerli.
+
 Data: 27/11/2026 · Base: build a70 congelata · Complemento di `docs/DATABASE_EXPANSION_PREPARAZIONE.md` (stato verificato, fonti, vincoli).
 Obiettivo: archivio Marvel estremamente completo (MCU, universi cinematografici precedenti, serie TV, animazione, fumetti), **tutte** le categorie dell'Atlante, scalabile, documentato, automatizzabile, a costo zero, senza duplicati né dati inventati.
 

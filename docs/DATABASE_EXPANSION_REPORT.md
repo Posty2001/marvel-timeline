@@ -1,4 +1,6 @@
-# Database Expansion — Report definitivo (build `20261128-1500-db6`, TEST)
+> **Correzione 28/11/2026 (utente):** l'obiettivo storico approvato per le relazioni narrative documentate NON era 500 ma **10.000+**; gli obiettivi orientativi della Database Expansion sono: 1.000+ personaggi, 300+ varianti, 200+ artefatti e armi, 100+ universi e dimensioni, 10.000+ relazioni narrative documentate. Sono traguardi orientativi: nessun contenuto va inventato per raggiungerli.
+
+# Database Expansion — Report (db6) (build `20261128-1500-db6`, TEST)
 
 Stato: **consegnata per collaudo; NON dichiarata «completata»** (serve l'approvazione esplicita dell'utente). Solo branch `test/tva-archives`, `main` congelato, 0 €, Tessera TVA 2.0 non avviata, motore/gateway/quote di Miss Minutes non modificati (solo dati letti dal caricatore).
 
@@ -29,7 +31,7 @@ Livelli: A 315 · B 351 · C 5.589. Per ondata (nuove): W1 1.006 · W2 592 · W3
 | Obiettivo storico | Esito |
 |---|---|
 | 452 voci storiche invariate, ID immutabili | rispettato (test `db_test`) |
-| 500 relazioni narrative (non raggiunto in Atlas 2.0) | storiche 207 verificate + db 783 verificate = 990 verificate; la quota db usa fonti diverse (Wikidata/Wikipedia/MD) e regole distinte: non si equipara al conteggio storico |
+| 10.000+ relazioni narrative documentate (corretto: non 500) | 990 verificate (207 storiche + 783 db) su 2.031 narrative censite: obiettivo lontano, vedi report W8 |
 | Copertura MCU, pre-MCU, TV, animazione, fumetti, creatori | W1–W6 eseguite; Comics Library futura resta distinta |
 | Livello A | 315 (invariato: solo voci storiche; nuove voci non promosse ad A senza dossier editoriale) |
 | Miss Minutes (D14) | integrato come dati (W7 minimo); nessuna riprogettazione |

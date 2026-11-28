@@ -71,10 +71,6 @@ on:
         description: Database Expansion W1.b - raccolta di FATTI da MCU Wiki e Marvel Database (Fandom, API MediaWiki, CC BY-SA 3.0, solo fatti strutturati) per le voci in staging; scrive SOLO sul branch dati db-raw
         type: boolean
         default: false
-      db_w2:
-        description: Database Expansion W2 - raccolta Wikidata (CC0) dei film Marvel pre-MCU e paralleli (Fox, Raimi, Garfield, SSU, Blade, Daredevil/Elektra, Ghost Rider, Hulk 2003, Fantastici Quattro); scrive SOLO sul branch dati db-raw
-        type: boolean
-        default: false
       db_w3:
         description: 'DB Expansion W3 - serie TV e film live-action non MCU (raccolta Wikidata, branch db-raw)'
         type: boolean
@@ -89,6 +85,10 @@ on:
         default: false
       db_w5c:
         description: 'DB Expansion W5.c - fumetti Marvel: ranking e ID da Comic Vine (richiede il Secret gratuito COMICVINE_API_KEY; branch db-raw)'
+        type: boolean
+        default: false
+      db_w8:
+        description: 'DB Expansion W8: raccolta mirata Marvel Database (artefatti, universi, cosmiche, specie, eventi, varianti)'
         type: boolean
         default: false
       db_cvmd:
@@ -121,7 +121,7 @@ permissions:
 
 jobs:
   sync:
-    if: ${{ !inputs.db_censimento && !inputs.db_w1 && !inputs.db_w1b && !inputs.db_w2 && !inputs.db_w3 && !inputs.db_w4 && !inputs.db_w5 && !inputs.db_w5b && !inputs.db_cvmd && !inputs.db_w5c && !inputs.db_relv && !inputs.db_w6 && !inputs.db_rel && !inputs.mm_tmdb && !inputs.solo_atlante_pilot && inputs.atlante_job == '' && !((inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit) }}
+    if: ${{ !inputs.db_censimento && !inputs.db_w1 && !inputs.db_w1b && !inputs.db_w2 && !inputs.db_w3 && !inputs.db_w4 && !inputs.db_w5 && !inputs.db_w5b && !inputs.db_cvmd && !inputs.db_w8 && !inputs.db_w5c && !inputs.db_relv && !inputs.db_w6 && !inputs.db_rel && !inputs.mm_tmdb && !inputs.solo_atlante_pilot && inputs.atlante_job == '' && !((inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit) }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -1091,6 +1091,63 @@ jobs:
         if: always()
         with:
           name: db-cvmd
+          path: raw_out
+          retention-days: 30
+      - name: Esito raccolta
+        if: always() && steps.raccolta.outcome == 'failure'
+        run: echo "::warning::la raccolta ha restituito errore (nessun dato valido o errore grave); i parziali eventuali sono stati salvati. Vedi anomalie nel manifest."
+  db-w8:
+    # Database Expansion W8: fumetti Marvel - fatti da Marvel Database (CC BY-SA 3.0, solo fatti; branch db-raw). Scrive SOLO sul branch dati db-raw. Nessun Secret, nessun TMDB.
+    # Indipendente dall'altro job; riprende dal checkpoint su db-raw; salva sempre i risultati parziali validi.
+    if: ${{ inputs.db_w8 && !inputs.db_censimento }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      contents: write
+    concurrency:
+      group: db-w8
+      cancel-in-progress: false
+    steps:
+      - name: Verifica ref TEST
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/test/tva-archives" ]; then echo "::error::consentito solo con ref test/tva-archives (attuale: $GITHUB_REF)"; exit 1; fi
+      - uses: actions/checkout@v4
+        with:
+          ref: test/tva-archives
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Riprendi checkpoint da db-raw (se presente)
+        run: |
+          mkdir -p raw_out
+          if git fetch -q --depth=1 origin db-raw 2>/dev/null; then for f in w8_checkpoint.json w8_md.json w8_manifest.json; do git show FETCH_HEAD:$f > raw_out/$f 2>/dev/null || rm -f raw_out/$f; done; fi
+          ls -la raw_out
+      - name: Raccolta
+        id: raccolta
+        continue-on-error: true
+        run: python3 tools/db_w8_harvest.py raw_out
+      - name: Salva sul branch dati db-raw (anche risultati parziali)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          ls raw_out/*.json >/dev/null 2>&1 || { echo "nessun risultato da salvare"; exit 0; }
+          D=$(mktemp -d); cd "$D"; git init -q
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          for i in 1 2 3 4 5; do
+            if git fetch -q --depth=1 origin db-raw 2>/dev/null; then git checkout -q -B db-raw FETCH_HEAD; else git checkout -q --orphan db-raw; fi
+            cp "$GITHUB_WORKSPACE"/raw_out/*.json .
+            git add -A; git commit -q -m "W8: raccolta ($(date -u +%FT%TZ))" || { echo "nessuna modifica"; exit 0; }
+            if git push -q origin db-raw; then exit 0; fi
+            echo "push in conflitto, nuovo tentativo $i"; sleep $((i*5))
+          done
+          exit 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: db-w8
           path: raw_out
           retention-days: 30
       - name: Esito raccolta

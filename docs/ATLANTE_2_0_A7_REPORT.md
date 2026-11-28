@@ -1,5 +1,7 @@
 # TVA Atlas (Atlante 2.0) — A7: rifinitura finale e ottimizzazione iPad (build a70, TEST)
 
+> **Correzione 28/11/2026 (utente):** l'obiettivo storico approvato per le relazioni narrative documentate NON era 500 ma **10.000+**; gli obiettivi orientativi della Database Expansion sono: 1.000+ personaggi, 300+ varianti, 200+ artefatti e armi, 100+ universi e dimensioni, 10.000+ relazioni narrative documentate. Sono traguardi orientativi: nessun contenuto va inventato per raggiungerli.
+
 Autorizzata dall'utente il 27/11/2026 (19:55). Una sola build consolidata, nessun collaudo manuale intermedio. Produzione invariata, 0 €, dati personali preservati, Miss Minutes congelata (solo adattamento grafico per tablet).
 
 ## Decisioni applicate

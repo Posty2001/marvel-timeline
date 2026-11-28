@@ -1,5 +1,7 @@
 # Database Expansion — Preparazione (NON AVVIATA)
 
+> **Correzione 28/11/2026 (utente):** l'obiettivo storico approvato per le relazioni narrative documentate NON era 500 ma **10.000+**; gli obiettivi orientativi della Database Expansion sono: 1.000+ personaggi, 300+ varianti, 200+ artefatti e armi, 100+ universi e dimensioni, 10.000+ relazioni narrative documentate. Sono traguardi orientativi: nessun contenuto va inventato per raggiungerli.
+
 Data: 27/11/2026 · Stato: **solo pianificazione**. Nessun dato è stato aggiunto, nessun codice di espansione scritto.
 Documento gemello: `docs/DATABASE_EXPANSION_PROPOSTA.md` (proposta operativa). Base: build **a70** (TVA Atlas congelato).
 
