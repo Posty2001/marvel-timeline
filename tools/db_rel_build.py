@@ -131,6 +131,38 @@ def costruisci(raw):
             visti.add(k)
             out.append({'id': 'rel-db-' + hashlib.sha1('|'.join(k).encode()).hexdigest()[:10], 'tipo': 'appartenenza', 'classe': 'narrativa', 'da': S, 'a': U_, 'simmetrica': False, 'qualifica': 'membro',
                         'fonte': ['parametro "affiliation" infobox MCU Wiki/Marvel Database (CC BY-SA 3.0), una sola fonte'], 'verifica': 'da verificare', 'origine': 'db:infobox:affiliazioni', 'controversa': False})
+    # --- quarta via: amici/nemici/team da Comic Vine (solo ID; UNA sola fonte: «da verificare»), solo tra voci Earth-616 gia' nel canon ---
+    cvf = E / 'raw/cv_rel.json'
+    if cvf.exists():
+        ch, tm = {}, {}
+        try:
+            for x in json.load(open(E / 'cv_match.json')): (ch if x['ris'] == 'characters' else tm if x['ris'] == 'teams' else {})[x['cv']] = x['id']
+        except Exception: pass
+        for i_, r_ in canon.items():
+            c_ = (r_.get('ids_esterni') or {}).get('comicvine')
+            if c_ and r_['tipo'] == 'identita': ch.setdefault(int(c_), i_)
+            if c_ and r_['tipo'] == 'organizzazione': tm.setdefault(int(c_), i_)
+        for scv, d in json.load(open(cvf))['personaggi'].items():
+            S = ch.get(int(scv))
+            if not S: continue
+            for chiave, tipo, ins, qual in (('f', 'alleanza', ch, 'alleato'), ('e', 'rivalita', ch, 'avversario'), ('t', 'appartenenza', tm, 'membro')):
+                for tid in d.get(chiave, []):
+                    T = ins.get(tid)
+                    if not T or T == S or not (uni(S) == 'uni-earth-616' and uni(T) == 'uni-earth-616'): continue
+                    da, a = ((min(S, T), max(S, T)) if tipo in SIMM else (S, T)); k = (tipo, da, a)
+                    if k in visti or frozenset((da, a)) in paia and tipo != 'appartenenza': continue
+                    if any(x['tipo'] == tipo and x['da'] == da and x['a'] == a for x in out): continue
+                    visti.add(k)
+                    ch_ = {'f': 'alleati', 'e': 'nemici'}.get(chiave)
+                    def cita(x, y):   # il parametro-fatto dell'infobox di x (MCU Wiki/Marvel Database) cita y per nome, nella lista giusta
+                        f_ = (canon.get(x) or {}).get('fatti') or {}
+                        l_ = (f_.get('relazioni_fonte') or {}).get(ch_, []) if ch_ else (f_.get('affiliazioni') or [])
+                        n_ = nome(y).split('(')[0].strip().lower()
+                        return bool(n_) and any(n_ == re.sub(r'\s*\([^)]*\)\s*$', '', z).strip().lower() for z in l_)
+                    conf = cita(S, T) or (ch_ is not None and cita(T, S))
+                    out.append({'id': 'rel-db-' + hashlib.sha1('|'.join(k).encode()).hexdigest()[:10], 'tipo': tipo, 'classe': 'narrativa', 'da': da, 'a': a, 'simmetrica': tipo in SIMM, 'qualifica': qual,
+                                'fonte': ['Comic Vine (solo ID delle relazioni)'] + (['parametro infobox Marvel Database (CC BY-SA 3.0): stessa relazione indicata dal wiki'] if conf else ['una sola fonte']),
+                                'verifica': 'verificata' if conf else 'da verificare', 'origine': 'db:comicvine:' + chiave, 'controversa': False})
     # --- controparti: variante (Marvel Database «Nome (Earth-N)» + seconda fonte) <-> identita' base; classe separata, mai relazione narrativa ---
     for S, rec in sorted(canon.items()):
         for g in rec.get('gruppi', []):
@@ -140,10 +172,12 @@ def costruisci(raw):
                 visti.add(k)
                 out.append({'id': 'rel-db-' + hashlib.sha1('|'.join(k).encode()).hexdigest()[:10], 'tipo': 'controparte', 'classe': 'controparte', 'da': da, 'a': a, 'simmetrica': True, 'qualifica': 'variante',
                             'fonte': ['Marvel Database (CC BY-SA 3.0): pagina «Nome (Earth-N)» + seconda fonte indipendente della voce'], 'verifica': 'verificata', 'origine': 'db:w8:variante', 'controversa': False})
-    for x in out:   # metodo di verifica: SEMPRE esplicito (le verifiche automatiche non sono verifiche documentali effettive)
-        x['metodo'] = ('automatica: Wikidata + riscontro relazionale direzionale (Wikipedia)' if x['verifica'] == 'verificata' and any('Wikipedia' in f for f in x['fonte']) else
-                       ('automatica: nome della pagina + seconda fonte della voce' if x['classe'] == 'controparte' else 'automatica: Wikidata + parametro infobox') if x['verifica'] == 'verificata' else 'nessuna verifica (una sola fonte)')
     return {'versione': 1, 'fonte': 'Wikidata CC0 (+ seconda fonte dove indicata)', 'relazioni': out, 'staging': stag, 'conteggi': dict(cont) | {'relazioni': len(out), 'verificate': sum(1 for x in out if x['verifica'] == 'verificata'), 'staging': len(stag)}}
+def etichetta_metodo(g):
+    for x in g['relazioni']:   # metodo di verifica: SEMPRE esplicito (le verifiche automatiche non sono verifiche documentali effettive)
+        x['metodo'] = ('automatica: Comic Vine + parametro infobox (nome nella lista pertinente)' if x['verifica'] == 'verificata' and x['origine'].startswith('db:comicvine') else 'automatica: Wikidata + riscontro relazionale direzionale (Wikipedia)' if x['verifica'] == 'verificata' and any('Wikipedia' in f for f in x['fonte']) else
+                       ('automatica: nome della pagina + seconda fonte della voce' if x['classe'] == 'controparte' else 'automatica: Wikidata + parametro infobox') if x['verifica'] == 'verificata' else 'nessuna verifica (una sola fonte)')
+
 def wp_titolo(rec):
     for f in (rec or {}).get('fonti', []):
         if f.get('fonte', '').startswith('Wikipedia') and '/wiki/' in f.get('url', ''): return urllib.parse.unquote(f['url'].split('/wiki/', 1)[1]).replace('_', ' ')
@@ -180,6 +214,7 @@ def main():
     raw = json.load(open(sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith('--') else str(R / 'data/atlante/espansione/raw/rel_wikidata.json'))); g = costruisci(raw)
     vf = R / 'data/atlante/espansione/raw/relverify2.json'
     if vf.exists(): g['conteggi']['confermate_wikipedia'] = applica_verifica(g, json.load(open(vf))['esiti']); g['conteggi']['verificate'] = sum(1 for x in g['relazioni'] if x['verifica'] == 'verificata')
+    etichetta_metodo(g); g['conteggi']['verificate'] = sum(1 for x in g['relazioni'] if x['verifica'] == 'verificata'); g['conteggi']['per_metodo'] = dict(collections.Counter(x['metodo'] for x in g['relazioni']))
     print(json.dumps(g['conteggi'], ensure_ascii=False, indent=1))
     if '--input-verifica' in sys.argv:
         (R / 'data/atlante/espansione/relverify_input.json').write_text(json.dumps(input_verifica(g), ensure_ascii=False, separators=(',', ':')) + '\n'); print('scritto relverify_input.json')

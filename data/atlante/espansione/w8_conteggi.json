@@ -1,14 +1,17 @@
 {
- "nuovi": 346,
- "staging": 7940,
+ "nuovi": 344,
+ "staging": 10384,
  "dettaglio": {
-  "staging": 7940,
-  "nuovi:artefatto": 58,
-  "gia presente": 830,
-  "nuovi:specie": 83,
+  "staging": 10384,
+  "nuovi:artefatto": 282,
+  "gia presente": 443,
+  "gia presente (QID)": 26,
+  "nuovi:specie": 19,
   "titolo con universo/volume": 13,
-  "nuovi:evento": 20,
-  "nuovi:entita-cosmica": 49,
-  "nuovi:universo": 136
+  "nuovi:evento": 14,
+  "nuovi:entita-cosmica": 24,
+  "cosmica: categoria non pertinente": 610,
+  "nuovi:universo": 5,
+  "variante senza base": 286
  }
 }

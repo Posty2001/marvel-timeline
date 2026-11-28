@@ -4,6 +4,10 @@ Comic Vine = SOLO ID, nome e conteggi (nessun testo copiato). Regola D12: voce n
 titolo esatto); altrimenti staging. Abbinamento a voci esistenti solo per nome normalizzato esatto con candidato Earth-616 UNICO.
 Uso: python3 tools/db_cv_espandi.py --bersagli | --scrivi | --verifica   (nessuna rete)"""
 import json, sys, re, pathlib, unicodedata, collections
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+_argv = sys.argv; sys.argv = ['x', '--solo-runtime']
+import db_w1_build as W   # solo funzioni pure (fatti_da)
+sys.argv = _argv
 R = pathlib.Path(__file__).resolve().parent.parent
 E = R / 'data/atlante/espansione'
 SOGLIA_PERS = 40   # numero minimo di albi in cui compare (Comic Vine) per un personaggio nuovo
@@ -64,13 +68,18 @@ PREF = {'identita': 'id', 'organizzazione': 'org', 'evento': 'ev', 'opera': 'op'
 CVF = lambda x: {'fonte': 'Comic Vine', 'url': x['u'], 'licenza': 'solo ID/nome/conteggi (nessun testo copiato)'}
 def scrivi():
     cv = carica_cv(); canon = canon_tutto(); abb, nuovi = candidati(cv, canon)
-    md = json.load(open(E / 'raw/cvmd.json'))['pagine'] if (E / 'raw/cvmd.json').exists() else {}
+    mf = E / 'raw/cvmd2.json' if (E / 'raw/cvmd2.json').exists() else E / 'raw/cvmd.json'
+    md = {}
+    for f_ in (E / 'raw/cvmd.json', E / 'raw/cvmd2.json'):   # unione: v2 (con parametri-fatto) sovrascrive v1; i titoli gia' verificati non si perdono mai (ID immutabili)
+        if f_.exists(): md.update({t: v for t, v in json.load(open(f_))['pagine'].items() if v})
     reg = json.load(open(E / 'ids_registro.json'))['ids']; usati = set(reg) | {c['id'] for c in canon}
     cvx = {(r, norm(base(x['n']))): x for r, l in cv.items() for x in l}
     ricon = {(c['nome'], c['tipo']) for c in canon}
     out, stag, cont = [], [], collections.Counter()
     nomi_esist = {norm(base(c['nome'])) for c in canon} | {norm(base(v['n'])) for v in storico()}
+    cvreg = {(v.get('tipo'), str(v['ids_esterni'].get('comicvine'))): k for k, v in sorted(reg.items(), key=lambda kv: -len(kv[0])) if v.get('origine') == 'W5c' and v.get('ids_esterni', {}).get('comicvine')}
     def nuovo_id(tipo, nome, cvid):
+        if (tipo, str(cvid)) in cvreg: return cvreg[(tipo, str(cvid))]   # ID gia' registrato per la stessa voce Comic Vine: stabile (immutabile)
         b = PREF[tipo] + '-' + (slug(nome) or 'cv-%d' % cvid)
         if b in usati: b = b + '-cv%d' % cvid
         usati.add(b); return b
@@ -85,6 +94,11 @@ def scrivi():
         rec = {'id': rid, 'tipo': b['tipo'], 'nome': nome, 'livello': 'C', 'stato_verifica': 'verificata', 'origine': 'W5c', 'universo': 'uni-earth-616', 'gruppi': ['cv:' + b['ris']],
                'ids_esterni': {'comicvine': str(b['cv']), 'marveldb': pag['titolo']},
                'fonti': [CVF(b), {'fonte': 'Marvel Database', 'url': pag['url'], 'licenza': 'CC BY-SA 3.0'}]}
+        fa = W.fatti_da({'infobox': pag.get('infobox', {}), 'sezioni': {}}, b['tipo']) if pag.get('infobox') else {}
+        if fa:
+            rec['fatti'] = fa; rec['fatti_fonti'] = {k: ['marveldb'] for k in fa}
+            if sum(1 for c in ('poteri', 'abilita', 'equipaggiamento', 'debolezze', 'affiliazioni', 'specie', 'stato', 'origine') if fa.get(c)) >= 3: rec['livello'] = 'B'
+            cont['con_fatti'] += 1
         out.append(rec); cont['nuovi:' + b['tipo']] += 1
     # promozione dello staging «una sola fonte» di W5/W6 (Wikidata) con corrispondenza esatta Comic Vine = seconda fonte indipendente
     prom = 0

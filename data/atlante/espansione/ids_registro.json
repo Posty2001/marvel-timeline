@@ -1,9 +1,29 @@
 {
  "conteggi": {
-  "attivi": 6554,
-  "totale": 6567
+  "attivi": 6898,
+  "totale": 6911
  },
  "ids": {
+  "art-absorbatron": {
+   "ids_esterni": {
+    "marveldb": "Absorbatron (Nuclear Weapon)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-absorbing-man-s-ball-and-chain": {
+   "ids_esterni": {
+    "marveldb": "Absorbing Man's Ball and Chain"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-acura-2012-stark-industries-super-car": {
    "ids_esterni": {
     "mcuwiki": "Acura 2012 Stark Industries Super Car",
@@ -25,6 +45,156 @@
    "stato": "attivo",
    "tipo": "a"
   },
+  "art-adhesive-x": {
+   "ids_esterni": {
+    "marveldb": "Adhesive X"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-alchemy-gun": {
+   "ids_esterni": {
+    "marveldb": "Alchemy Gun"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-all-blood": {
+   "ids_esterni": {
+    "marveldb": "All-Blood"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-alpha-stone": {
+   "ids_esterni": {
+    "marveldb": "Alpha Stone"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-amulet-of-agamotto": {
+   "ids_esterni": {
+    "marveldb": "Amulet of Agamotto"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-amulet-of-pazuzu": {
+   "ids_esterni": {
+    "marveldb": "Amulet of Pazuzu"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-amulet-of-power": {
+   "ids_esterni": {
+    "marveldb": "Amulet of Power"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-amulet-of-quiox": {
+   "ids_esterni": {
+    "marveldb": "Amulet of Quiox"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-amulet-of-right": {
+   "ids_esterni": {
+    "marveldb": "Amulet of Right"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-amulets-of-power": {
+   "ids_esterni": {
+    "marveldb": "Amulets of Power"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-ant-man-s-helmet": {
+   "ids_esterni": {
+    "marveldb": "Ant-Man's Helmet"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-anti-cosmic-flying-wing": {
+   "ids_esterni": {
+    "marveldb": "Anti-Cosmic Flying Wing"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-anti-galactus-suit": {
+   "ids_esterni": {
+    "marveldb": "Anti-Galactus Suit"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-antigen-tree": {
+   "ids_esterni": {
+    "marveldb": "Antigen Tree"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-arc-reactor": {
+   "ids_esterni": {
+    "marveldb": "Arc Reactor"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-arete-laboratories": {
    "ids_esterni": {
     "mcuwiki": "Arête Laboratories",
@@ -32,6 +202,16 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-ark-of-the-covenant": {
+   "ids_esterni": {
+    "marveldb": "Ark of the Covenant"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -91,12 +271,62 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-atlantean-amulet": {
+   "ids_esterni": {
+    "marveldb": "Atlantean Amulet"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-atmo-gun": {
+   "ids_esterni": {
+    "marveldb": "Atmo-Gun"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-avengers-quinjet": {
    "ids_esterni": {
     "wikidata": "Q23807854"
    },
    "ondata": "W0",
    "origine": "W5",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-axe-of-angarruumus": {
+   "ids_esterni": {
+    "marveldb": "Axe of Angarruumus"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-baba-yaga-s-hut": {
+   "ids_esterni": {
+    "marveldb": "Baba Yaga's Hut"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-behaviour-modification-device": {
+   "ids_esterni": {
+    "marveldb": "Behaviour Modification Device"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -112,6 +342,36 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-black-blade-of-baghdad": {
+   "ids_esterni": {
+    "marveldb": "Black Blade of Baghdad"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-black-cat-s-grappling-hook": {
+   "ids_esterni": {
+    "marveldb": "Black Cat's Grappling Hook"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-black-clock": {
+   "ids_esterni": {
+    "marveldb": "Black Clock"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-black-hole-grenade": {
    "ids_esterni": {
     "mcuwiki": "Black Hole Grenade",
@@ -119,6 +379,36 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-black-mirror": {
+   "ids_esterni": {
+    "marveldb": "Black Mirror"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-black-pearl": {
+   "ids_esterni": {
+    "marveldb": "Black Pearl (Item)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-black-vortex": {
+   "ids_esterni": {
+    "marveldb": "Black Vortex"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -140,6 +430,87 @@
    },
    "ondata": "W0",
    "origine": "W5",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-blackout-bomb": {
+   "ids_esterni": {
+    "marveldb": "Blackout Bomb"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-bloodaxe": {
+   "ids_esterni": {
+    "marveldb": "Bloodaxe (Weapon)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-bloodgem": {
+   "ids_esterni": {
+    "marveldb": "Bloodgem"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-book-of-cagliostro": {
+   "ids_esterni": {
+    "marveldb": "Book of Cagliostro"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-book-of-eibon": {
+   "ids_esterni": {
+    "marveldb": "Book of Eibon"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-book-of-many-things": {
+   "ids_esterni": {
+    "marveldb": "Book of Many Things"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-book-of-the-vishanti": {
+   "ids_esterni": {
+    "marveldb": "Book of the Vishanti",
+    "wikidata": "Q4943130"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-book-of-thoth": {
+   "ids_esterni": {
+    "marveldb": "Book of Thoth"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -187,6 +558,36 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-brazier-of-truth": {
+   "ids_esterni": {
+    "marveldb": "Brazier of Truth"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-buchcub": {
+   "ids_esterni": {
+    "marveldb": "Buchcub"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-caliburn": {
+   "ids_esterni": {
+    "marveldb": "Caliburn"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-camera-taser": {
    "ids_esterni": {
     "mcuwiki": "Camera Taser",
@@ -220,12 +621,32 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-captain-britain-s-quarterstaff": {
+   "ids_esterni": {
+    "marveldb": "Captain Britain's Quarterstaff"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-carbonadium": {
    "ids_esterni": {
     "wikidata": "Q5748961"
    },
    "ondata": "W0",
    "origine": "W5",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-carbonadium-synthesizer": {
+   "ids_esterni": {
+    "marveldb": "Carbonadium Synthesizer"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -241,12 +662,52 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-cauldron-of-the-cosmos": {
+   "ids_esterni": {
+    "marveldb": "Cauldron of the Cosmos"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-cerebro": {
    "ids_esterni": {
     "wikidata": "Q1961349"
    },
    "ondata": "W0",
    "origine": "W5",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-cerebro-sword": {
+   "ids_esterni": {
+    "marveldb": "Cerebro Sword"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-chalice-of-ruins": {
+   "ids_esterni": {
+    "marveldb": "Chalice of Ruins"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-chariot-of-time": {
+   "ids_esterni": {
+    "marveldb": "Chariot of Time"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -339,6 +800,37 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-circuits-breaker": {
+   "ids_esterni": {
+    "marveldb": "Circuits Breaker"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-cloak-of-levitation": {
+   "ids_esterni": {
+    "marveldb": "Cloak of Levitation",
+    "wikidata": "Q4242484"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-cobra-crown": {
+   "ids_esterni": {
+    "marveldb": "Cobra Crown"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-colantotte-bracelets": {
    "ids_esterni": {
     "mcuwiki": "Colantotte Bracelets",
@@ -361,12 +853,93 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-concordance-engine": {
+   "ids_esterni": {
+    "marveldb": "Concordance Engine"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-cosmic-cube": {
    "ids_esterni": {
     "wikidata": "Q19836"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-cosmic-storm-machine": {
+   "ids_esterni": {
+    "marveldb": "Cosmic Storm Machine"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-creation-constellation": {
+   "ids_esterni": {
+    "marveldb": "Creation Constellation"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-crimson-dawn": {
+   "ids_esterni": {
+    "marveldb": "Crimson Dawn",
+    "wikidata": "Q5185687"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-crimson-gem-of-cyttorak": {
+   "ids_esterni": {
+    "marveldb": "Crimson Gem of Cyttorak"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-crown-of-wolves": {
+   "ids_esterni": {
+    "marveldb": "Crown of Wolves"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-crystal-of-kadavus": {
+   "ids_esterni": {
+    "marveldb": "Crystal of Kadavus"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-dalek": {
+   "ids_esterni": {
+    "marveldb": "Dalek"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -414,6 +987,16 @@
    "stato": "attivo",
    "tipo": "a"
   },
+  "art-death-seed": {
+   "ids_esterni": {
+    "marveldb": "Death Seed"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-destroyer-armor-prototype-gun": {
    "ids_esterni": {
     "mcuwiki": "Destroyer Armor Prototype Gun",
@@ -435,6 +1018,168 @@
    "stato": "attivo",
    "tipo": "a"
   },
+  "art-dimensional-transporter": {
+   "ids_esterni": {
+    "marveldb": "Dimensional Transporter"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-doctor-doom-s-armor": {
+   "ids_esterni": {
+    "marveldb": "Doctor Doom's Armor"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-doctor-doom-s-armor-earth-20051": {
+   "ids_esterni": {
+    "marveldb": "Doctor Doom's Armor (Earth-20051)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-doom-2099-armor": {
+   "ids_esterni": {
+    "marveldb": "Doom 2099 Armor"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-doomlock": {
+   "ids_esterni": {
+    "marveldb": "Doomlock"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-dragonfang": {
+   "ids_esterni": {
+    "marveldb": "Dragonfang"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-draupnir": {
+   "ids_esterni": {
+    "marveldb": "Draupnir"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-dream-machine-dream-master": {
+   "ids_esterni": {
+    "marveldb": "Dream Machine (Dream Master)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-dream-machine-emma-frost": {
+   "ids_esterni": {
+    "marveldb": "Dream Machine (Emma Frost)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-dreamstone": {
+   "ids_esterni": {
+    "marveldb": "Dreamstone"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-ebony-blade": {
+   "ids_esterni": {
+    "marveldb": "Ebony Blade",
+    "wikidata": "Q5331929"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-ebony-blade-replica": {
+   "ids_esterni": {
+    "marveldb": "Ebony Blade (Replica)",
+    "wikidata": "Q5331929"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-ebony-chalice": {
+   "ids_esterni": {
+    "marveldb": "Ebony Chalice"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-ebony-dagger": {
+   "ids_esterni": {
+    "marveldb": "Ebony Dagger"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-ebony-shield": {
+   "ids_esterni": {
+    "marveldb": "Ebony Shield"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-edge-of-reality": {
+   "ids_esterni": {
+    "marveldb": "Edge of Reality"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-einherjar-shield": {
    "ids_esterni": {
     "mcuwiki": "Einherjar Shield",
@@ -442,6 +1187,56 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-eir-gram": {
+   "ids_esterni": {
+    "marveldb": "Eir-Gram"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-electronic-mass-influencer": {
+   "ids_esterni": {
+    "marveldb": "Electronic Mass Influencer"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-eternal-flame": {
+   "ids_esterni": {
+    "marveldb": "Eternal Flame"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-evil-eye": {
+   "ids_esterni": {
+    "marveldb": "Evil Eye"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-evil-eye-scavulture": {
+   "ids_esterni": {
+    "marveldb": "Evil Eye (Scavulture)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -457,6 +1252,36 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-excelsior": {
+   "ids_esterni": {
+    "marveldb": "Excelsior (Star-Sword)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-exogen-spice": {
+   "ids_esterni": {
+    "marveldb": "Exogen Spice"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-exorcist-gun": {
+   "ids_esterni": {
+    "marveldb": "Exorcist Gun"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-extremis": {
    "ids_esterni": {
     "mcuwiki": "Extremis",
@@ -464,6 +1289,100 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-eye-of-agamakko": {
+   "ids_esterni": {
+    "marveldb": "Eye of Agamakko"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-eye-of-agamotto-fake": {
+   "ids_esterni": {
+    "marveldb": "Eye of Agamotto (Fake)",
+    "wikidata": "Q110825083"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-eye-of-agamotto-knowledge": {
+   "ids_esterni": {
+    "marveldb": "Eye of Agamotto (Knowledge)",
+    "wikidata": "Q110825083"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-eye-of-agamotto-power": {
+   "ids_esterni": {
+    "marveldb": "Eye of Agamotto (Power)",
+    "wikidata": "Q110825083"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-eye-of-agamotto-unidentified": {
+   "ids_esterni": {
+    "marveldb": "Eye of Agamotto (Unidentified)",
+    "wikidata": "Q110825083"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-eye-of-horus": {
+   "ids_esterni": {
+    "marveldb": "Eye of Horus"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-eye-of-xot": {
+   "ids_esterni": {
+    "marveldb": "Eye of Xot"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-eye-of-yin": {
+   "ids_esterni": {
+    "marveldb": "Eye of Yin"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-eyes-of-the-dragon": {
+   "ids_esterni": {
+    "marveldb": "Eyes of the Dragon"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -489,6 +1408,16 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-fearsome-fist-of-farallah": {
+   "ids_esterni": {
+    "marveldb": "Fearsome Fist of Farallah"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-fimbuldraugr": {
    "ids_esterni": {
     "mcuwiki": "Fimbuldraugr",
@@ -496,6 +1425,36 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-fistigons": {
+   "ids_esterni": {
+    "marveldb": "Fistigons"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-flame-of-truth": {
+   "ids_esterni": {
+    "marveldb": "Flame of Truth"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-force-field-glove": {
+   "ids_esterni": {
+    "marveldb": "Force Field Glove"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -511,6 +1470,16 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-frogjolnir": {
+   "ids_esterni": {
+    "marveldb": "Frogjolnir"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-gamma-ray-projector": {
    "ids_esterni": {
     "mcuwiki": "Gamma Ray Projector",
@@ -518,6 +1487,26 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-gauntlet-of-shuma-gorath": {
+   "ids_esterni": {
+    "marveldb": "Gauntlet of Shuma-Gorath"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-gehenna-stone": {
+   "ids_esterni": {
+    "marveldb": "Gehenna Stone"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -582,6 +1571,137 @@
    "stato": "attivo",
    "tipo": "a"
   },
+  "art-ghost-rider-s-chain": {
+   "ids_esterni": {
+    "marveldb": "Ghost Rider's Chain"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-gjallarhorn": {
+   "ids_esterni": {
+    "marveldb": "Gjallarhorn"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-gleipnir": {
+   "ids_esterni": {
+    "marveldb": "Gleipnir"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-godbomb": {
+   "ids_esterni": {
+    "marveldb": "Godbomb (Item)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-godkiller": {
+   "ids_esterni": {
+    "marveldb": "Godkiller (Sword)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-gods-whisper": {
+   "ids_esterni": {
+    "marveldb": "Gods' Whisper"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-godstone": {
+   "ids_esterni": {
+    "marveldb": "Godstone"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-golden-fleece": {
+   "ids_esterni": {
+    "marveldb": "Golden Fleece"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-golden-mace": {
+   "ids_esterni": {
+    "marveldb": "Golden Mace"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-gram": {
+   "ids_esterni": {
+    "marveldb": "Gram"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-grasscutter": {
+   "ids_esterni": {
+    "marveldb": "Grasscutter"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-grim-reaper-s-scythe": {
+   "ids_esterni": {
+    "marveldb": "Grim Reaper's Scythe"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-growing-man": {
+   "ids_esterni": {
+    "marveldb": "Growing Man (Earth-6311)",
+    "wikidata": "Q3549055"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-guanto-dell-infinito": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -592,6 +1712,87 @@
    "stato": "attivo",
    "tipo": "a"
   },
+  "art-hammer-drones": {
+   "ids_esterni": {
+    "marveldb": "Hammer Drones",
+    "wikidata": "Q116280545"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-hammer-of-skadi": {
+   "ids_esterni": {
+    "marveldb": "Hammer of Skadi"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-heart-of-darkness": {
+   "ids_esterni": {
+    "marveldb": "Heart of Darkness (Mandarin)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-heart-of-the-universe": {
+   "ids_esterni": {
+    "marveldb": "Heart of the Universe"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-hellstorm-s-trident": {
+   "ids_esterni": {
+    "marveldb": "Hellstorm's Trident"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-helm-of-hades": {
+   "ids_esterni": {
+    "marveldb": "Helm of Hades"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-helmet-of-razadazar": {
+   "ids_esterni": {
+    "marveldb": "Helmet of Razadazar"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-herodotron": {
+   "ids_esterni": {
+    "marveldb": "Herodotron"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-hofund": {
    "ids_esterni": {
     "mcuwiki": "Hofund",
@@ -599,6 +1800,26 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-holy-grail": {
+   "ids_esterni": {
+    "marveldb": "Holy Grail"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-horn-of-proteus": {
+   "ids_esterni": {
+    "marveldb": "Horn of Proteus"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -636,6 +1857,26 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-illuminatrix": {
+   "ids_esterni": {
+    "marveldb": "Illuminatrix"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-image-inducer": {
+   "ids_esterni": {
+    "marveldb": "Image Inducer"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-infinity-gems": {
    "ids_esterni": {
     "wikidata": "Q4405595"
@@ -656,6 +1897,26 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-infinity-union": {
+   "ids_esterni": {
+    "marveldb": "Infinity Union"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-inhibitor-collar": {
+   "ids_esterni": {
+    "marveldb": "Inhibitor Collar"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-inventory-of-rare-and-endangered-tracheophyta-of-amazonia": {
    "ids_esterni": {
     "mcuwiki": "Inventory of Rare and Endangered Tracheophyta of Amazônia",
@@ -663,6 +1924,36 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-ionic-bomb": {
+   "ids_esterni": {
+    "marveldb": "Ionic Bomb"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-ionic-lock": {
+   "ids_esterni": {
+    "marveldb": "Ionic Lock"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-iron-bound-books-of-shuma-gorath": {
+   "ids_esterni": {
+    "marveldb": "Iron-Bound Books of Shuma-Gorath"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -688,6 +1979,16 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-iron-man-s-briefcase": {
+   "ids_esterni": {
+    "marveldb": "Iron Man's Briefcase"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-iron-monger-armor": {
    "ids_esterni": {
     "mcuwiki": "Iron Monger Armor",
@@ -695,6 +1996,46 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-iron-sight": {
+   "ids_esterni": {
+    "marveldb": "Iron Sight"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-isogen-orbs": {
+   "ids_esterni": {
+    "marveldb": "Isogen Orbs"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-ivory-idol-of-ikonn": {
+   "ids_esterni": {
+    "marveldb": "Ivory Idol of Ikonn"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-jarnbjorn": {
+   "ids_esterni": {
+    "marveldb": "Jarnbjorn"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -721,6 +2062,67 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-ka-stone": {
+   "ids_esterni": {
+    "marveldb": "Ka Stone"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-kang-armor": {
+   "ids_esterni": {
+    "marveldb": "Kang Armor"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-kestrel-key-of-krakkan": {
+   "ids_esterni": {
+    "marveldb": "Kestrel Key of Krakkan"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-kill-switch": {
+   "ids_esterni": {
+    "marveldb": "Kill Switch"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-king-solomon-s-frogs": {
+   "ids_esterni": {
+    "marveldb": "King Solomon's Frogs",
+    "wikidata": "Q6412052"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-krakoan-grimoires": {
+   "ids_esterni": {
+    "marveldb": "Krakoan Grimoires"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-kurse-stone": {
    "ids_esterni": {
     "mcuwiki": "Kurse Stone",
@@ -742,6 +2144,16 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-liberty-bell": {
+   "ids_esterni": {
+    "marveldb": "Liberty Bell"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-libro-dei-vishanti": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -751,6 +2163,107 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "a"
+  },
+  "art-life-model-decoy": {
+   "ids_esterni": {
+    "marveldb": "Life Model Decoy",
+    "wikidata": "Q3832182"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-life-seed": {
+   "ids_esterni": {
+    "marveldb": "Life Seed"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-life-seed-fad3d": {
+   "ids_esterni": {
+    "marveldb": "Life-Seed"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-living-mask": {
+   "ids_esterni": {
+    "marveldb": "Living Mask"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-m-kraan-crystal": {
+   "ids_esterni": {
+    "marveldb": "M'kraan Crystal"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-magus-sword": {
+   "ids_esterni": {
+    "marveldb": "Magus Sword"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-manbreaker": {
+   "ids_esterni": {
+    "marveldb": "Manbreaker"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-medallion-of-power": {
+   "ids_esterni": {
+    "marveldb": "Medallion of Power"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-mental-wave-absorbatron": {
+   "ids_esterni": {
+    "marveldb": "Mental-Wave Absorbatron"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-mento-helmet": {
+   "ids_esterni": {
+    "marveldb": "Mento-Helmet"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
   },
   "art-milano": {
    "ids_esterni": {
@@ -784,6 +2297,46 @@
    "stato": "attivo",
    "tipo": "a"
   },
+  "art-molecular-rearranger": {
+   "ids_esterni": {
+    "marveldb": "Molecular Rearranger"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-mournblade": {
+   "ids_esterni": {
+    "marveldb": "Mournblade"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-muramasa-bullets": {
+   "ids_esterni": {
+    "marveldb": "Muramasa Bullets"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-mystical-mirror-of-mysandragor": {
+   "ids_esterni": {
+    "marveldb": "Mystical Mirror of Mysandragor"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-myths-and-ledgends-from-around-the-world": {
    "ids_esterni": {
     "mcuwiki": "Myths and Ledgends from Around the World",
@@ -791,6 +2344,106 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-naglfar-beacon": {
+   "ids_esterni": {
+    "marveldb": "Naglfar Beacon"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-necronomicon": {
+   "ids_esterni": {
+    "marveldb": "Necronomicon"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-nega-bands": {
+   "ids_esterni": {
+    "marveldb": "Nega-Bands"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-negative-zone-portal": {
+   "ids_esterni": {
+    "marveldb": "Negative Zone Portal"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-nemean-lion-skin": {
+   "ids_esterni": {
+    "marveldb": "Nemean Lion Skin"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-netheranium": {
+   "ids_esterni": {
+    "marveldb": "Netheranium"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-nexus-amplifier": {
+   "ids_esterni": {
+    "marveldb": "Nexus Amplifier"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-nightmare-box": {
+   "ids_esterni": {
+    "marveldb": "Nightmare Box"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-nivashi-stone": {
+   "ids_esterni": {
+    "marveldb": "Nivashi Stone"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-nomad-s-stun-discs": {
+   "ids_esterni": {
+    "marveldb": "Nomad's Stun Discs"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -806,6 +2459,46 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-norn-stones": {
+   "ids_esterni": {
+    "marveldb": "Norn Stones"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-nth-projector": {
+   "ids_esterni": {
+    "marveldb": "Nth Projector"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-null-time-sequencer": {
+   "ids_esterni": {
+    "marveldb": "Null Time Sequencer"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-nullgem": {
+   "ids_esterni": {
+    "marveldb": "Nullgem"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-occhio-di-agamotto": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -816,6 +2509,68 @@
    "stato": "attivo",
    "tipo": "a"
   },
+  "art-odinsword": {
+   "ids_esterni": {
+    "marveldb": "Odinsword",
+    "wikidata": "Q7077830"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-omega-stone": {
+   "ids_esterni": {
+    "marveldb": "Omega Stone"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-omni-wave-projector": {
+   "ids_esterni": {
+    "marveldb": "Omni-Wave Projector"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-orb-of-agamotto": {
+   "ids_esterni": {
+    "marveldb": "Orb of Agamotto",
+    "wikidata": "Q7099989"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-orb-of-necromancy": {
+   "ids_esterni": {
+    "marveldb": "Orb of Necromancy"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-orb-of-ra": {
+   "ids_esterni": {
+    "marveldb": "Orb of Ra"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-ornament-bomb": {
    "ids_esterni": {
     "mcuwiki": "Ornament Bomb",
@@ -823,6 +2578,16 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-pandora-s-box-item": {
+   "ids_esterni": {
+    "marveldb": "Pandora's Box (Item)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -838,6 +2603,26 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-philosopher-s-stone": {
+   "ids_esterni": {
+    "marveldb": "Philosopher's Stone"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-phoenix-cage": {
+   "ids_esterni": {
+    "marveldb": "Phoenix Cage"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-pick-lock-device": {
    "ids_esterni": {
     "mcuwiki": "Pick-Lock Device",
@@ -845,6 +2630,16 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-pocket-battlefield": {
+   "ids_esterni": {
+    "marveldb": "Pocket Battlefield"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -860,6 +2655,96 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-power-prism": {
+   "ids_esterni": {
+    "marveldb": "Power Prism"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-prisma-crystal": {
+   "ids_esterni": {
+    "marveldb": "Prisma-Crystal"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-promethean-flame": {
+   "ids_esterni": {
+    "marveldb": "Promethean Flame"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-promethium": {
+   "ids_esterni": {
+    "marveldb": "Promethium"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-psyche-magnitron": {
+   "ids_esterni": {
+    "marveldb": "Psyche-Magnitron"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-psycho-prism": {
+   "ids_esterni": {
+    "marveldb": "Psycho-Prism"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-purity": {
+   "ids_esterni": {
+    "marveldb": "Purity (Sword)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-quantum-bands": {
+   "ids_esterni": {
+    "marveldb": "Quantum Bands"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-raven-s-eye": {
+   "ids_esterni": {
+    "marveldb": "Raven's Eye"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-reality-stone": {
    "ids_esterni": {
     "mcuwiki": "Reality Stone",
@@ -867,6 +2752,17 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-redwing": {
+   "ids_esterni": {
+    "marveldb": "Redwing (Drone)",
+    "wikidata": "Q27940634"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -881,6 +2777,96 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-resurrection-stone": {
+   "ids_esterni": {
+    "marveldb": "Resurrection Stone"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-ringed-ruby-of-raggadorr": {
+   "ids_esterni": {
+    "marveldb": "Ringed Ruby of Raggadorr"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-rosetta-stone": {
+   "ids_esterni": {
+    "marveldb": "Rosetta Stone (Item)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-ruby-scarab": {
+   "ids_esterni": {
+    "marveldb": "Ruby Scarab"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-runestaff": {
+   "ids_esterni": {
+    "marveldb": "Runestaff"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-sacred-sword-of-satan": {
+   "ids_esterni": {
+    "marveldb": "Sacred Sword of Satan"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-satan-claw": {
+   "ids_esterni": {
+    "marveldb": "Satan Claw"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-scell": {
+   "ids_esterni": {
+    "marveldb": "Scell"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-screaming-idol": {
+   "ids_esterni": {
+    "marveldb": "Screaming Idol"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-scudo-di-vibranio": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -890,6 +2876,26 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "a"
+  },
+  "art-seduction-gem": {
+   "ids_esterni": {
+    "marveldb": "Seduction Gem"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-serpent-amulet": {
+   "ids_esterni": {
+    "marveldb": "Serpent Amulet"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
   },
   "art-serpent-crown": {
    "ids_esterni": {
@@ -901,6 +2907,86 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-serpent-ring": {
+   "ids_esterni": {
+    "marveldb": "Serpent Ring"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-serpent-scepter": {
+   "ids_esterni": {
+    "marveldb": "Serpent Scepter"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-serpent-tiara": {
+   "ids_esterni": {
+    "marveldb": "Serpent Tiara"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-shadow-key": {
+   "ids_esterni": {
+    "marveldb": "Shadow Key"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-shaman-s-medicine-pouch": {
+   "ids_esterni": {
+    "marveldb": "Shaman's Medicine Pouch"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-shield-of-endless-misery": {
+   "ids_esterni": {
+    "marveldb": "Shield of Endless Misery"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-shield-of-perseus": {
+   "ids_esterni": {
+    "marveldb": "Shield of Perseus"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-siege-perilous": {
+   "ids_esterni": {
+    "marveldb": "Siege Perilous"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-sif-s-sword-and-shield": {
    "ids_esterni": {
     "mcuwiki": "Sif's Sword and Shield",
@@ -908,6 +2994,67 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-sigil": {
+   "ids_esterni": {
+    "marveldb": "Sigil (Spell)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-silver-dagger": {
+   "ids_esterni": {
+    "marveldb": "Silver Dagger (Weapon)",
+    "wikidata": "Q3483990"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-skull-of-daimon": {
+   "ids_esterni": {
+    "marveldb": "Skull of Daimon"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-slave-engine": {
+   "ids_esterni": {
+    "marveldb": "Slave Engine"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-sol-s-hammer": {
+   "ids_esterni": {
+    "marveldb": "Sol's Hammer"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-sonic-blaster": {
+   "ids_esterni": {
+    "marveldb": "Sonic Blaster"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -934,6 +3081,36 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-soulcutter": {
+   "ids_esterni": {
+    "marveldb": "Soulcutter"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-souldagger": {
+   "ids_esterni": {
+    "marveldb": "Souldagger"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-soulsword": {
+   "ids_esterni": {
+    "marveldb": "Soulsword"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-space-stone": {
    "ids_esterni": {
     "mcuwiki": "Space Stone",
@@ -952,6 +3129,106 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-spider-man-s-belt-camera": {
+   "ids_esterni": {
+    "marveldb": "Spider-Man's Belt Camera"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-spider-man-s-utility-belt": {
+   "ids_esterni": {
+    "marveldb": "Spider-Man's Utility Belt"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-spider-tracer": {
+   "ids_esterni": {
+    "marveldb": "Spider-Tracer"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-sputnik-1": {
+   "ids_esterni": {
+    "marveldb": "Sputnik 1"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-staff-of-legba": {
+   "ids_esterni": {
+    "marveldb": "Staff of Legba"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-staff-of-moses": {
+   "ids_esterni": {
+    "marveldb": "Staff of Moses"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-staff-of-polar-power": {
+   "ids_esterni": {
+    "marveldb": "Staff of Polar Power"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-staff-of-the-living-tribunal": {
+   "ids_esterni": {
+    "marveldb": "Staff of the Living Tribunal"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-star-of-capistan": {
+   "ids_esterni": {
+    "marveldb": "Star of Capistan"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-stargate": {
+   "ids_esterni": {
+    "marveldb": "Stargate"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -1000,6 +3277,36 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-starlight-sword": {
+   "ids_esterni": {
+    "marveldb": "Starlight Sword"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-starstone": {
+   "ids_esterni": {
+    "marveldb": "Starstone (Kulthas)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-statue-of-khonshu": {
+   "ids_esterni": {
+    "marveldb": "Statue of Khonshu"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-steve-rogers-compass": {
    "ids_esterni": {
     "mcuwiki": "Steve Rogers' Compass",
@@ -1021,6 +3328,96 @@
    "stato": "attivo",
    "tipo": "a"
   },
+  "art-stormcaster": {
+   "ids_esterni": {
+    "marveldb": "Stormcaster"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-streamsword": {
+   "ids_esterni": {
+    "marveldb": "Streamsword"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-supersoul-stone": {
+   "ids_esterni": {
+    "marveldb": "Supersoul Stone"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-sword-of-bone": {
+   "ids_esterni": {
+    "marveldb": "Sword of Bone"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-sword-of-fangs": {
+   "ids_esterni": {
+    "marveldb": "Sword of Fangs"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-sword-of-fu-xi": {
+   "ids_esterni": {
+    "marveldb": "Sword of Fu Xi"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-sword-of-kamuu": {
+   "ids_esterni": {
+    "marveldb": "Sword of Kamuu"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-sword-of-might": {
+   "ids_esterni": {
+    "marveldb": "Sword of Might"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-sword-of-peleus": {
+   "ids_esterni": {
+    "marveldb": "Sword of Peleus"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-synthetic-man": {
    "ids_esterni": {
     "mcuwiki": "Synthetic Man",
@@ -1039,6 +3436,36 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-tachyon-pulse-generator": {
+   "ids_esterni": {
+    "marveldb": "Tachyon Pulse Generator"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-talaria": {
+   "ids_esterni": {
+    "marveldb": "Talaria"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-taotie-mask": {
+   "ids_esterni": {
+    "marveldb": "Taotie Mask"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -1075,6 +3502,16 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-ten-rings-weapons": {
+   "ids_esterni": {
+    "marveldb": "Ten Rings (Weapons)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-terrigen-mist": {
    "ids_esterni": {
     "wikidata": "Q4465300"
@@ -1107,6 +3544,116 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-the-scream": {
+   "ids_esterni": {
+    "marveldb": "The Scream (A.I.M Space Station)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-thing-rings": {
+   "ids_esterni": {
+    "marveldb": "Thing Rings"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-third-eye-of-horus": {
+   "ids_esterni": {
+    "marveldb": "Third Eye of Horus"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-thrudstok": {
+   "ids_esterni": {
+    "marveldb": "Thrudstok"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-thunderball-s-ball-and-chain": {
+   "ids_esterni": {
+    "marveldb": "Thunderball's Ball and Chain"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-thunderstrike": {
+   "ids_esterni": {
+    "marveldb": "Thunderstrike (Item)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-time-cube": {
+   "ids_esterni": {
+    "marveldb": "Time Cube (Zarrko)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-time-machine-earth-8311": {
+   "ids_esterni": {
+    "marveldb": "Time Machine (Earth-8311)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-time-machine-earth-9047": {
+   "ids_esterni": {
+    "marveldb": "Time Machine (Earth-9047)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-time-machine-thanos": {
+   "ids_esterni": {
+    "marveldb": "Time Machine (Thanos)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-tome-of-zhered-na": {
+   "ids_esterni": {
+    "marveldb": "Tome of Zhered-Na"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-tony-stark-s-new-element": {
    "ids_esterni": {
     "mcuwiki": "Tony Stark's New Element",
@@ -1114,6 +3661,36 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-toolbot": {
+   "ids_esterni": {
+    "marveldb": "Toolbot"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-torpedo-armor": {
+   "ids_esterni": {
+    "marveldb": "Torpedo Armor"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-torunn-s-sword": {
+   "ids_esterni": {
+    "marveldb": "Torunn's Sword"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -1129,12 +3706,92 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-trident-of-neptune": {
+   "ids_esterni": {
+    "marveldb": "Trident of Neptune"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-trojan-horse": {
+   "ids_esterni": {
+    "marveldb": "Trojan Horse"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-twilight-sword-amenth": {
+   "ids_esterni": {
+    "marveldb": "Twilight Sword (Amenth)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-twilight-sword-surtur": {
+   "ids_esterni": {
+    "marveldb": "Twilight Sword (Surtur)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-ultimate-annihilator": {
+   "ids_esterni": {
+    "marveldb": "Ultimate Annihilator"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-ultimate-machine": {
+   "ids_esterni": {
+    "marveldb": "Ultimate Machine"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-ultimate-nullifier": {
    "ids_esterni": {
     "wikidata": "Q10338137"
    },
    "ondata": "W0",
    "origine": "W5",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-undrjarn": {
+   "ids_esterni": {
+    "marveldb": "Undrjarn"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-universal-compressor": {
+   "ids_esterni": {
+    "marveldb": "Universal Compressor"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -1160,6 +3817,26 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-vatsayana-s-tryst": {
+   "ids_esterni": {
+    "marveldb": "Vatsayana's Tryst"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-verdant-vial-of-valtorr": {
+   "ids_esterni": {
+    "marveldb": "Verdant Vial of Valtorr"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-vibranium": {
    "ids_esterni": {
     "wikidata": "Q12579"
@@ -1181,6 +3858,38 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-vita-ray-chamber": {
+   "ids_esterni": {
+    "marveldb": "Vita-Ray Chamber",
+    "wikidata": "Q116459803"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-voyager-2": {
+   "ids_esterni": {
+    "marveldb": "Voyager 2"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-wand-of-watoomb": {
+   "ids_esterni": {
+    "marveldb": "Wand of Watoomb",
+    "wikidata": "Q7967096"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-warlock-s-eye": {
    "ids_esterni": {
     "mcuwiki": "Warlock's Eye",
@@ -1188,6 +3897,126 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-waterfall-of-watoomb": {
+   "ids_esterni": {
+    "marveldb": "Waterfall of Watoomb"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-web-shooters": {
+   "ids_esterni": {
+    "marveldb": "Web-Shooters"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-what-if-machine": {
+   "ids_esterni": {
+    "marveldb": "What-If Machine"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-wings-of-needless-sorrow": {
+   "ids_esterni": {
+    "marveldb": "Wings of Needless Sorrow"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-wonder-man-s-jet-belt": {
+   "ids_esterni": {
+    "marveldb": "Wonder Man's Jet-Belt"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-word-of-god": {
+   "ids_esterni": {
+    "marveldb": "Word of God"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-wordsword": {
+   "ids_esterni": {
+    "marveldb": "Wordsword"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-world-engine": {
+   "ids_esterni": {
+    "marveldb": "World-Engine"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-wrecker-s-crowbar": {
+   "ids_esterni": {
+    "marveldb": "Wrecker's Crowbar"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-wundagore-everbloom": {
+   "ids_esterni": {
+    "marveldb": "Wundagore Everbloom"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-xz-12-device": {
+   "ids_esterni": {
+    "marveldb": "XZ-12 Device"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-yazdi-gem": {
+   "ids_esterni": {
+    "marveldb": "Yazdi Gem"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -1210,6 +4039,16 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-zodiac-key": {
+   "ids_esterni": {
+    "marveldb": "Zodiac Key"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -13868,6 +16707,16 @@
    "stato": "attivo",
    "tipo": "pagina"
   },
+  "cos-abraxas": {
+   "ids_esterni": {
+    "marveldb": "Abraxas (Multiverse)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
   "cos-adversary": {
    "ids_esterni": {
     "wikidata": "Q2604584"
@@ -13918,6 +16767,57 @@
    "stato": "attivo",
    "tipo": "entita-cosmica"
   },
+  "cos-bruce-banner-earth-69413": {
+   "ids_esterni": {
+    "marveldb": "Bruce Banner (Earth-69413)",
+    "wikidata": "Q24050117"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-brutus-klor": {
+   "ids_esterni": {
+    "marveldb": "Brutus Klor (Earth-616)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-celestials": {
+   "ids_esterni": {
+    "marveldb": "Celestials"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-chaos-witchcraft-s-consort": {
+   "ids_esterni": {
+    "marveldb": "Chaos (Witchcraft's Consort) (Earth-616)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-choir": {
+   "ids_esterni": {
+    "marveldb": "Choir (Earth-14412)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
   "cos-cyttorak": {
    "ids_esterni": {
     "wikidata": "Q3009556"
@@ -13934,6 +16834,16 @@
    },
    "ondata": "W0",
    "origine": "W5",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-dark-gods": {
+   "ids_esterni": {
+    "marveldb": "Dark Gods (Narcisson)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "entita-cosmica"
@@ -13968,6 +16878,17 @@
    "stato": "attivo",
    "tipo": "entita-cosmica"
   },
+  "cos-exitar-multiverse": {
+   "ids_esterni": {
+    "marveldb": "Exitar (Multiverse)",
+    "wikidata": "Q116850689"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
   "cos-garokk": {
    "ids_esterni": {
     "wikidata": "Q3098432"
@@ -13988,12 +16909,53 @@
    "stato": "attivo",
    "tipo": "entita-cosmica"
   },
+  "cos-hope": {
+   "ids_esterni": {
+    "marveldb": "Hope (Earth-616)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-knowhere": {
+   "ids_esterni": {
+    "marveldb": "Knowhere",
+    "wikidata": "Q6423207"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
   "cos-korvac": {
    "ids_esterni": {
     "wikidata": "Q3067381"
    },
    "ondata": "W0",
    "origine": "W5",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-magus-earth-41940": {
+   "ids_esterni": {
+    "marveldb": "Magus (Earth-41940)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-malevolence": {
+   "ids_esterni": {
+    "marveldb": "Malevolence (Earth-616)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "entita-cosmica"
@@ -14008,12 +16970,106 @@
    "stato": "attivo",
    "tipo": "entita-cosmica"
   },
+  "cos-molgotha": {
+   "ids_esterni": {
+    "marveldb": "Molgotha (Earth-616)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
   "cos-n-astirh": {
    "ids_esterni": {
     "wikidata": "Q1222745"
    },
    "ondata": "W0",
    "origine": "W5",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-olivier": {
+   "ids_esterni": {
+    "marveldb": "Olivier (Earth-616)",
+    "wikidata": "Q7088114"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-origin-earth-616": {
+   "ids_esterni": {
+    "marveldb": "Origin (Earth-616)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-origin-earth-77640": {
+   "ids_esterni": {
+    "marveldb": "Origin (Earth-77640)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-phemous": {
+   "ids_esterni": {
+    "marveldb": "Phemous (Earth-616)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-proemial-gods": {
+   "ids_esterni": {
+    "marveldb": "Proemial Gods"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-quentin-beck-earth-10955": {
+   "ids_esterni": {
+    "marveldb": "Quentin Beck (Earth-10955)",
+    "wikidata": "Q60485245"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-quentin-beck-earth-73565": {
+   "ids_esterni": {
+    "marveldb": "Quentin Beck (Earth-73565)",
+    "wikidata": "Q60485245"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-quentin-beck-earth-96835": {
+   "ids_esterni": {
+    "marveldb": "Quentin Beck (Earth-96835)",
+    "wikidata": "Q60485245"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "entita-cosmica"
@@ -14048,6 +17104,16 @@
    "stato": "attivo",
    "tipo": "entita-cosmica"
   },
+  "cos-siffror": {
+   "ids_esterni": {
+    "marveldb": "Siffror (Earth-616)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
   "cos-surtur": {
    "ids_esterni": {
     "mcuwiki": "Surtur",
@@ -14059,12 +17125,32 @@
    "stato": "attivo",
    "tipo": "entita-cosmica"
   },
+  "cos-thog": {
+   "ids_esterni": {
+    "marveldb": "Thog (Earth-616)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
   "cos-typhon": {
    "ids_esterni": {
     "wikidata": "Q3546216"
    },
    "ondata": "W0",
    "origine": "W5",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
+  "cos-viliven": {
+   "ids_esterni": {
+    "marveldb": "Viliven (Earth-616)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "entita-cosmica"
@@ -18679,12 +21765,42 @@
    "stato": "attivo",
    "tipo": "evento"
   },
+  "ev-all-new-all-different-marvel": {
+   "ids_esterni": {
+    "marveldb": "All-New, All-Different Marvel"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "evento"
+  },
   "ev-annihilation-conquest": {
    "ids_esterni": {
     "wikidata": "Q746900"
    },
    "ondata": "W0",
    "origine": "W6",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "evento"
+  },
+  "ev-annihilation-scourge": {
+   "ids_esterni": {
+    "marveldb": "Annihilation - Scourge"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "evento"
+  },
+  "ev-atlantis-attacks": {
+   "ids_esterni": {
+    "marveldb": "Atlantis Attacks"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "evento"
@@ -18705,6 +21821,16 @@
    },
    "ondata": "W0",
    "origine": "W6",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "evento"
+  },
+  "ev-avengers-now": {
+   "ids_esterni": {
+    "marveldb": "Avengers NOW!"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "evento"
@@ -18759,6 +21885,16 @@
    "stato": "attivo",
    "tipo": "evento"
   },
+  "ev-captain-america-cold-war": {
+   "ids_esterni": {
+    "marveldb": "Captain America: Cold War"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "evento"
+  },
   "ev-civil-war": {
    "ids_esterni": {
     "wikidata": "Q726495"
@@ -18789,12 +21925,33 @@
    "stato": "attivo",
    "tipo": "evento"
   },
+  "ev-darkhold": {
+   "ids_esterni": {
+    "marveldb": "Darkhold (Event)",
+    "wikidata": "Q5223650"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "evento"
+  },
   "ev-dawn-of-x": {
    "ids_esterni": {
     "wikidata": "Q85755923"
    },
    "ondata": "W0",
    "origine": "W6",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "evento"
+  },
+  "ev-deadpool-til-death-do-us": {
+   "ids_esterni": {
+    "marveldb": "Deadpool: Til Death Do Us..."
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "evento"
@@ -18849,6 +22006,16 @@
    "stato": "attivo",
    "tipo": "evento"
   },
+  "ev-hellfire-gala": {
+   "ids_esterni": {
+    "marveldb": "Hellfire Gala"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "evento"
+  },
   "ev-house-of-m": {
    "ids_esterni": {
     "wikidata": "Q1072636"
@@ -18869,12 +22036,62 @@
    "stato": "attivo",
    "tipo": "evento"
   },
+  "ev-iron-man-2020": {
+   "ids_esterni": {
+    "marveldb": "Iron Man 2020 (Event)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "evento"
+  },
+  "ev-marvel-legacy": {
+   "ids_esterni": {
+    "marveldb": "Marvel Legacy"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "evento"
+  },
+  "ev-marvel-now-2012-event": {
+   "ids_esterni": {
+    "marveldb": "Marvel NOW! (2012 Event)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "evento"
+  },
+  "ev-marvel-now-2016-event": {
+   "ids_esterni": {
+    "marveldb": "Marvel NOW! (2016 Event)"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "evento"
+  },
   "ev-maximum-carnage": {
    "ids_esterni": {
     "wikidata": "Q1773074"
    },
    "ondata": "W0",
    "origine": "W5",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "evento"
+  },
+  "ev-nuff-said": {
+   "ids_esterni": {
+    "marveldb": "'Nuff Said"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "evento"
@@ -18935,6 +22152,16 @@
    },
    "ondata": "W0",
    "origine": "W6",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "evento"
+  },
+  "ev-superior-spider-month": {
+   "ids_esterni": {
+    "marveldb": "Superior Spider-Month"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "evento"
@@ -67025,6 +70252,28 @@
    "stato": "attivo",
    "tipo": "P"
   },
+  "sp-acanti": {
+   "ids_esterni": {
+    "marveldb": "Acanti",
+    "wikidata": "Q4672079"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-anansi": {
+   "ids_esterni": {
+    "marveldb": "Anansi (Race)",
+    "wikidata": "Q133260606"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
   "sp-asgardian-ravens": {
    "ids_esterni": {
     "mcuwiki": "Asgardian Ravens",
@@ -67032,6 +70281,28 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-atlanteans": {
+   "ids_esterni": {
+    "marveldb": "Atlanteans (Homo mermanus)",
+    "wikidata": "Q131462430"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-cotati": {
+   "ids_esterni": {
+    "marveldb": "Cotati",
+    "wikidata": "Q5175296"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "specie"
@@ -67068,6 +70339,50 @@
    "stato": "attivo",
    "tipo": "specie"
   },
+  "sp-frost-beasts": {
+   "ids_esterni": {
+    "marveldb": "Frost Beasts",
+    "wikidata": "Q116298446"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-gibborim": {
+   "ids_esterni": {
+    "marveldb": "Gibborim",
+    "wikidata": "Q122642983"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-giganto": {
+   "ids_esterni": {
+    "marveldb": "Giganto (Atlantean Beast)",
+    "wikidata": "Q115433584"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-hounds": {
+   "ids_esterni": {
+    "marveldb": "Hounds (Mutants)",
+    "wikidata": "Q5913245"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
   "sp-hurctarians": {
    "ids_esterni": {
     "mcuwiki": "Hurctarians",
@@ -67079,12 +70394,89 @@
    "stato": "attivo",
    "tipo": "specie"
   },
+  "sp-infinites": {
+   "ids_esterni": {
+    "marveldb": "Infinites (Cosmic Beings)",
+    "wikidata": "Q10772967"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-kree": {
+   "ids_esterni": {
+    "marveldb": "Kree",
+    "wikidata": "Q66311395"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-leviathans": {
+   "ids_esterni": {
+    "marveldb": "Leviathans (Chitauri)",
+    "wikidata": "Q116478695"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
   "sp-mutant": {
    "ids_esterni": {
     "wikidata": "Q1094617"
    },
    "ondata": "W0",
    "origine": "W5",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-n-garai": {
+   "ids_esterni": {
+    "marveldb": "N'Garai",
+    "wikidata": "Q6951269"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-neo": {
+   "ids_esterni": {
+    "marveldb": "Neo (Race)",
+    "wikidata": "Q734724"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-new-men": {
+   "ids_esterni": {
+    "marveldb": "New Men",
+    "wikidata": "Q13512250"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-psyklop": {
+   "ids_esterni": {
+    "marveldb": "Psyklop (Race)",
+    "wikidata": "Q7256565"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "specie"
@@ -67107,6 +70499,50 @@
    },
    "ondata": "W0",
    "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-sovereign": {
+   "ids_esterni": {
+    "marveldb": "Sovereign (Race)",
+    "wikidata": "Q66311342"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-stark": {
+   "ids_esterni": {
+    "marveldb": "Stark (Race)",
+    "wikidata": "Q7601947"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-ultras": {
+   "ids_esterni": {
+    "marveldb": "Ultras",
+    "wikidata": "Q7880618"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-wendigo": {
+   "ids_esterni": {
+    "marveldb": "Wendigo (Race)",
+    "wikidata": "Q112109904"
+   },
+   "ondata": "W0",
+   "origine": "W8",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "specie"
@@ -67277,6 +70713,17 @@
    "stato": "attivo",
    "tipo": "U"
   },
+  "uni-earth-8280": {
+   "ids_esterni": {
+    "marveldb": "Earth-8280",
+    "wikidata": "Q115765714"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
   "uni-earth-838": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -67391,6 +70838,39 @@
    "stato": "attivo",
    "tipo": "U"
   },
+  "uni-limbo-kang": {
+   "ids_esterni": {
+    "marveldb": "Limbo (Kang)",
+    "wikidata": "Q10318372"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-limbo-otherplace": {
+   "ids_esterni": {
+    "marveldb": "Limbo (Otherplace)",
+    "wikidata": "Q10318372"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-limbo-temporal": {
+   "ids_esterni": {
+    "marveldb": "Limbo (Temporal)",
+    "wikidata": "Q10318372"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
   "uni-marvel-animation-universe-2006-2017": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -67501,6 +70981,17 @@
    "stato": "attivo",
    "tipo": "U"
   },
+  "uni-ta-lo": {
+   "ids_esterni": {
+    "marveldb": "Ta-Lo",
+    "wikidata": "Q108696250"
+   },
+   "ondata": "W0",
+   "origine": "W8",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
   "uni-the-gifted-verse": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -67542,7 +71033,7 @@
    "tipo": "U"
   }
  },
- "ids_sha256": "e6fa718f7817fcf766ed43e2458dbe7386af40a93e9cef7b6fbf72e800307752",
+ "ids_sha256": "a48ec1fb52fbd81143913263c6e29bb9c1cc4404d79f5afc86932e3a2190e9f0",
  "politica": "append-only; ID mai riusati; rimozioni solo come lapide con redirect",
  "versione": 1
 }

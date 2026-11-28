@@ -50,12 +50,16 @@ def costruisci():
             num_uni |= set(re.findall(r'earth-?\s?(\d+)', c['nome'].lower()))
     for u in idx['meta']['universi'].values(): num_uni |= set(re.findall(r'earth-?\s?(\d+)', u['n'].lower()))
     wd = md.get('wd', {}); pag = md['pagine']
+    qid_es = {(c.get('ids_esterni') or {}).get('wikidata') for c in can} | {v.get('ids_esterni', {}).get('wikidata') for v in reg.values()}; qid_es.discard(None)
     out, stag, cont = [], [], collections.Counter()
     def seconda(tipo, titolo, p, nome):
         """Seconda fonte INDIPENDENTE sull'esistenza della voce: Wikidata (etichetta esatta + classe fictional + legame con Marvel) o Comic Vine (nome esatto nella risorsa corrispondente).
         La prima apparizione dell'infobox che cita una testata di Comic Vine NON e' considerata verifica (attesta la serie, non la voce)."""
         s = []
-        if wd.get(nome): s.append(('wikidata', sorted(wd[nome])[0]))
+        if wd.get(nome):
+            q_ = [q for q in sorted(wd[nome]) if q not in qid_es]
+            if q_: s.append(('wikidata', q_[0]))
+            else: return None   # elemento Wikidata gia' presente nel canon (voce esistente)
         if len(norm(nome)) >= 4 and norm(nome) in CVN.get(tipo, set()): s.append(('comicvine-nome', nome))
         return s
     def aggiungi(tipo, nome, titolo, p, sec, extra=None, gruppo='w8'):
@@ -76,6 +80,8 @@ def costruisci():
         out.append(rec); cont['nuovi:' + tipo] += 1
     # 1) membri di categoria
     visti = set()
+    conta = collections.Counter((m['tipo'], norm(base(t))) for c_, m in md['membri'].items() if not c_.startswith('prefisso:') for t in dict.fromkeys(m['t']))
+    COSM = {'Abstract Entities', 'Celestials', 'Alien Gods', 'Dimensional Rulers', 'Pantheons', 'Elder Gods', 'Living Embodiments', 'Cosmic Entities'}
     for cat, m in md['membri'].items():
         tipo = m['tipo']
         if cat.startswith('prefisso:'): continue
@@ -83,10 +89,13 @@ def costruisci():
             p = pag.get(t)
             if not p or p['disambigua'] or (tipo, t) in visti: continue
             visti.add((tipo, t)); nome = base(t)
+            if tipo == 'entita-cosmica' and not (COSM & set(p.get('categorie', []))): cont['cosmica: categoria non pertinente'] += 1; continue
+            if conta[(tipo, norm(nome))] > 1: nome = t   # omonimi tra continuita': il titolo completo distingue (mai fusi)
             if not nome or len(nome) > 70: continue
-            if tipo in esiste.get(norm(nome), ()) or (tipo == 'entita-cosmica' and 'identita' in esiste.get(norm(nome), ())): cont['gia presente'] += 1; continue
+            if tipo in esiste.get(norm(base(nome)), ()) or (tipo == 'entita-cosmica' and 'identita' in esiste.get(norm(base(nome)), ())): cont['gia presente'] += 1; continue
             if tipo in ('artefatto', 'specie', 'evento') and re.search(r'\b(Earth-\d+|Vol \d+|Vol\.)', t) and tipo != 'artefatto': cont['titolo con universo/volume'] += 1
-            sec = seconda(tipo, t, p, nome)
+            sec = seconda(tipo, t, p, base(nome))
+            if sec is None: cont['gia presente (QID)'] += 1; continue
             if not sec: stag.append({'nome': nome, 'tipo': tipo, 'marveldb': t, 'motivo': 'una sola fonte (Marvel Database): resta in staging (D12)'}); cont['staging'] += 1; continue
             aggiungi(tipo, nome, t, p, sec)
     # 2) universi «Earth-N»
@@ -98,6 +107,7 @@ def costruisci():
             p = pag.get(t)
             if not p or p['disambigua']: continue
             sec = seconda('universo', t, p, t)
+            if sec is None: cont['gia presente (QID)'] += 1; continue
             if not sec: stag.append({'nome': t, 'tipo': 'universo', 'marveldb': t, 'motivo': 'una sola fonte (Marvel Database): resta in staging (D12)'}); cont['staging'] += 1; continue
             num_uni.add(n.group(1)); aggiungi('universo', t, t, p, sec)
     # 3) varianti: «Nome (Earth-N)» di un personaggio gia' nel canon/storico, universo diverso da Earth-616
@@ -125,6 +135,7 @@ def costruisci():
             nm = '%s (Earth-%s)' % (mm.group(1), mm.group(2))
             if 'variante' in esiste.get(norm(base(nm)), ()) and False: continue
             sec = seconda('variante', t, p, nm)
+            if sec is None: continue
             if not sec: stag.append({'nome': nm, 'tipo': 'variante', 'marveldb': t, 'base': base_ids[0], 'motivo': 'una sola fonte (Marvel Database): resta in staging (D12)'}); cont['staging'] += 1; continue
             ex = {'gruppi': ['w8:variante', 'base:' + base_ids[0]]}
             if mm.group(2) in uni_ids: ex['universo'] = uni_ids[mm.group(2)]

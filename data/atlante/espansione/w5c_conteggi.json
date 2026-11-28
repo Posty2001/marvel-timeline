@@ -1,10 +1,11 @@
 {
- "abbinati": 591,
+ "abbinati": 601,
  "nuovi": 2023,
  "promosse": 0,
- "staging": 2467,
+ "staging": 2466,
  "dettaglio": {
-  "staging": 2467,
+  "staging": 2466,
+  "con_fatti": 639,
   "nuovi:identita": 241,
   "nuovi:organizzazione": 446,
   "nuovi:opera": 1336,

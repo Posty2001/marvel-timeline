@@ -1,29 +1,29 @@
 {
- "voci_canoniche": 6255,
+ "voci_canoniche": 6599,
  "duplicati_id_scartati": 698,
- "duplicati_qid_scartati": 0,
+ "duplicati_qid_scartati": 8,
  "per_categoria": {
   "identita": 1958,
   "hub": 3,
   "mantello": 2,
-  "universo": 40,
+  "universo": 43,
   "organizzazione": 573,
-  "artefatto": 114,
+  "artefatto": 392,
   "luogo": 395,
-  "evento": 43,
+  "evento": 57,
   "titolo": 49,
   "creatore": 458,
   "attore": 979,
   "opera": 1579,
-  "entita-cosmica": 21,
-  "specie": 10,
+  "entita-cosmica": 43,
+  "specie": 29,
   "battaglia": 20,
   "pianeta": 11
  },
  "per_livello": {
-  "A": 315,
-  "B": 351,
-  "C": 5589
+  "A": 448,
+  "B": 453,
+  "C": 5690
  },
  "per_ondata": {
   "w1_mcu": {
@@ -94,6 +94,14 @@
    "opera": 119,
    "organizzazione": 1,
    "identita": 1
+  },
+  "w8_narrativo": {
+   "totale": 336,
+   "artefatto": 278,
+   "specie": 19,
+   "evento": 14,
+   "entita-cosmica": 22,
+   "universo": 3
   }
  },
  "storico": {
@@ -108,10 +116,10 @@
   "titolo": 49
  },
  "relazioni_db": {
-  "narrative": 1786,
+  "narrative": 8145,
   "controparti": 0,
-  "verificate": 783,
-  "da_verificare": 1003
+  "verificate": 786,
+  "da_verificare": 7359
  },
  "relazioni_storiche": {
   "narrative_verificate": 207,
