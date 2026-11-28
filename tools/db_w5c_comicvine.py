@@ -45,6 +45,23 @@ def main():
             got['off'] += len(res); got['visti'] = got.get('visti', 0) + len(res)
             if len(res) < 100 or got['off'] >= r.get('number_of_total_results', 0): got['fine'] = True
             json.dump(ck, open(ckf, 'w'), ensure_ascii=False, separators=(',', ':'))
+    # fase risorse narrative extra (W8): solo ID e nome di oggetti, origini (specie), concetti e luoghi: seconda fonte per nome (nessun testo); niente filtro editore (non disponibile)
+    ef = out / 'cv_extra_checkpoint.json'; ex = {}
+    if ef.exists():
+        try: ex = json.load(open(ef))
+        except Exception: ex = {}
+    for ris, mx in (('objects', 70000), ('origins', 2000), ('concepts', 25000), ('locations', 40000)):
+        got = ex.setdefault(ris, {'off': 0, 'fine': False, 'v': []})
+        while not got['fine'] and got['off'] < mx:
+            r = api(ris, {'field_list': 'id,name', 'limit': 100, 'offset': got['off']})
+            if 'errore' in r: anom.append('%s offset %d: %s' % (ris, got['off'], r['errore'])); break
+            res = r.get('results') or []
+            got['v'] += [[x['id'], x.get('name')] for x in res if x.get('name')]
+            got['off'] += len(res)
+            if len(res) < 100 or got['off'] >= r.get('number_of_total_results', 0): got['fine'] = True
+            if (got['off'] // 100) % 20 == 0: json.dump(ex, open(ef, 'w'), separators=(',', ':'))
+        json.dump(ex, open(ef, 'w'), separators=(',', ':'))
+    json.dump({'fonte': 'Comic Vine API (chiave gratuita): solo ID e nome', 'recuperato': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'risorse': {k: v['v'] for k, v in ex.items()}}, open(out / 'cv_extra.json', 'w'), separators=(',', ':'))
     # fase relazioni (W8): amici/nemici/team dei personaggi indicati in data/atlante/espansione/cv_rel_bersagli.json (solo ID e nomi; nessun testo)
     bf = pathlib.Path(__file__).resolve().parent.parent / 'data/atlante/espansione/cv_rel_bersagli.json'
     if bf.exists():

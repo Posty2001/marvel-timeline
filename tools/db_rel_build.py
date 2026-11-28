@@ -131,9 +131,18 @@ def costruisci(raw):
             visti.add(k)
             out.append({'id': 'rel-db-' + hashlib.sha1('|'.join(k).encode()).hexdigest()[:10], 'tipo': 'appartenenza', 'classe': 'narrativa', 'da': S, 'a': U_, 'simmetrica': False, 'qualifica': 'membro',
                         'fonte': ['parametro "affiliation" infobox MCU Wiki/Marvel Database (CC BY-SA 3.0), una sola fonte'], 'verifica': 'da verificare', 'origine': 'db:infobox:affiliazioni', 'controversa': False})
+    # --- controparti: variante (Marvel Database «Nome (Earth-N)» + seconda fonte) <-> identita' base; classe separata, mai relazione narrativa ---
+    for S, rec in sorted(canon.items()):
+        for g in rec.get('gruppi', []):
+            if g.startswith('base:') and rec['tipo'] == 'variante':
+                B_ = g[5:]; da, a = min(S, B_), max(S, B_); k = ('controparte', da, a)
+                if k in visti: continue
+                visti.add(k)
+                out.append({'id': 'rel-db-' + hashlib.sha1('|'.join(k).encode()).hexdigest()[:10], 'tipo': 'controparte', 'classe': 'controparte', 'da': da, 'a': a, 'simmetrica': True, 'qualifica': 'variante',
+                            'fonte': ['Marvel Database (CC BY-SA 3.0): pagina «Nome (Earth-N)» + seconda fonte indipendente della voce'], 'verifica': 'verificata', 'origine': 'db:w8:variante', 'controversa': False})
     for x in out:   # metodo di verifica: SEMPRE esplicito (le verifiche automatiche non sono verifiche documentali effettive)
         x['metodo'] = ('automatica: Wikidata + riscontro relazionale direzionale (Wikipedia)' if x['verifica'] == 'verificata' and any('Wikipedia' in f for f in x['fonte']) else
-                       'automatica: Wikidata + parametro infobox' if x['verifica'] == 'verificata' else 'nessuna verifica (una sola fonte)')
+                       ('automatica: nome della pagina + seconda fonte della voce' if x['classe'] == 'controparte' else 'automatica: Wikidata + parametro infobox') if x['verifica'] == 'verificata' else 'nessuna verifica (una sola fonte)')
     return {'versione': 1, 'fonte': 'Wikidata CC0 (+ seconda fonte dove indicata)', 'relazioni': out, 'staging': stag, 'conteggi': dict(cont) | {'relazioni': len(out), 'verificate': sum(1 for x in out if x['verifica'] == 'verificata'), 'staging': len(stag)}}
 def wp_titolo(rec):
     for f in (rec or {}).get('fonti', []):

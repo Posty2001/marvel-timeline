@@ -424,7 +424,7 @@ def costruisci_runtime():
             for x in sorted(l): dl.append(x - prev); prev = x
             d[t] = dl
         (OUTRT/'t'/f'{s}.json').write_text(json.dumps(d, separators=(',', ':')))
-    LET = {'identita': 'p', 'entita-cosmica': 'p', 'organizzazione': 'o', 'artefatto': 'a', 'luogo': 'l', 'pianeta': 'P', 'evento': 'e', 'battaglia': 'e', 'universo': 'U', 'attore': 't', 'opera': 'O', 'creatore': 'C', 'specie': 'S', 'civilta': 'S'}
+    LET = {'variante': 'p', 'identita': 'p', 'entita-cosmica': 'p', 'organizzazione': 'o', 'artefatto': 'a', 'luogo': 'l', 'pianeta': 'P', 'evento': 'e', 'battaglia': 'e', 'universo': 'U', 'attore': 't', 'opera': 'O', 'creatore': 'C', 'specie': 'S', 'civilta': 'S'}
     stub = {'v': 1, 'r': [], 'x': {}, 'uni': {}}
     for o, r in enumerate(recs):
         if r['t'] == 'x': stub['x'][r['x']] = ' '.join(dict.fromkeys(norm(a) for a in r['al'] if a))[:160]; continue

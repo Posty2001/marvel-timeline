@@ -3,7 +3,7 @@
 (function () {
   'use strict';
   var W = window, SRC = (document.currentScript && document.currentScript.src) || '', BASE = SRC ? SRC.replace(/db\.js(\?.*)?$/, 'data/db/') : 'atlante2/data/db/';
-  var META = null, C = {}, TIPO = { identita: 'Personaggi', organizzazione: 'Organizzazioni', artefatto: 'Artefatti', luogo: 'Luoghi', pianeta: 'Pianeti', evento: 'Eventi', battaglia: 'Battaglie', specie: 'Specie', civilta: 'Civiltà', opera: 'Opere', attore: 'Interpreti', creatore: 'Creatori', universo: 'Universi', 'entita-cosmica': 'Entità cosmiche' };
+  var META = null, C = {}, TIPO = { identita: 'Personaggi', variante: 'Varianti e incarnazioni', organizzazione: 'Organizzazioni', artefatto: 'Artefatti', luogo: 'Luoghi', pianeta: 'Pianeti', evento: 'Eventi', battaglia: 'Battaglie', specie: 'Specie', civilta: 'Civiltà', opera: 'Opere', attore: 'Interpreti', creatore: 'Creatori', universo: 'Universi', 'entita-cosmica': 'Entità cosmiche' };
   function norm(s) { return String(s || '').toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim(); }
   var T = null; function crc(s) {
     if (!T) { T = []; for (var n = 0, c; n < 256; n++) { c = n; for (var k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; T[n] = c >>> 0; } }

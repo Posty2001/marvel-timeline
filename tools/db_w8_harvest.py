@@ -40,7 +40,8 @@ def wd_etichette(nomi, anom):
     for i in range(0, len(nomi), 100):
         bl = nomi[i:i + 100]
         vals = ' '.join('"%s"@en' % n.replace('\\', '').replace('"', '') for n in bl)
-        q = ('SELECT ?l ?x ?cl WHERE { VALUES ?l { %s } ?x rdfs:label ?l . ?x wdt:P31 ?c . ?c rdfs:label ?cl . FILTER(LANG(?cl)="en" && CONTAINS(LCASE(STR(?cl)),"fictional")) }' % vals)
+        q = ('SELECT ?l ?x ?cl WHERE { VALUES ?l { %s } ?x rdfs:label ?l . ?x wdt:P31 ?c . ?c rdfs:label ?cl . FILTER(LANG(?cl)="en" && CONTAINS(LCASE(STR(?cl)),"fictional")) '
+             '{ ?x wdt:P1080 ?u . ?u rdfs:label ?ul . FILTER(LANG(?ul)="en" && (CONTAINS(LCASE(STR(?ul)),"marvel") || CONTAINS(LCASE(STR(?ul)),"earth-"))) } UNION { { ?x wdt:P1441 ?w } UNION { ?w wdt:P674 ?x } ?w wdt:P123 ?pub . ?pub rdfs:label "Marvel Comics"@en } }' % vals)
         for t in range(3):
             try:
                 time.sleep(1.5)
@@ -91,7 +92,7 @@ def main():
             ck['membri'][k] = {'tipo': tipo, 't': pagine_prefisso(pre, anom, rx)}; salva()
     # varianti: ricerca per prefisso sui personaggi con piu' albi
     try:
-        cv = json.load(open(E / 'raw/cv2_marvel.json'))['risorse']['characters']
+        cv = json.load(open(out / 'cv2_marvel.json' if (out / 'cv2_marvel.json').exists() else E / 'raw/cv2_marvel.json'))['risorse']['characters']
     except Exception: cv = []
     pers = [x for x in cv if (x.get('c') or 0) >= cfg.get('varianti_min_albi', 400)]
     for x in pers:
@@ -112,15 +113,15 @@ def main():
         if (i // 20) % 10 == 0: salva()
     salva()
     base = lambda t: _re.sub(r'\s*\([^)]*\)\s*$', '', t).strip()
-    nomi = sorted({base(t) for m in ck['membri'].values() for t in m['t'] if ck['pagine'].get(t)} - set(ck.setdefault('wd', {}).keys()))
+    nomi = sorted({base(t) for m in ck['membri'].values() for t in m['t'] if ck['pagine'].get(t)} - set(ck.setdefault('wd2', {}).keys()))
     ck.setdefault('wd_fatti', [])
     gia = set(ck['wd_fatti']); nuovi = [n for n in nomi if n not in gia]
     for i in range(0, len(nuovi), 400):
         bl = nuovi[i:i + 400]; r = wd_etichette(bl, anom)
-        for n in bl: ck['wd'][n] = r.get(n, {}); ck['wd_fatti'].append(n)
+        for n in bl: ck['wd2'][n] = r.get(n, {}); ck['wd_fatti'].append(n)
         salva()
     trov = {t: v for t, v in ck['pagine'].items() if v}
-    json.dump({'fonte': 'Marvel Database (Fandom), CC BY-SA 3.0, solo categorie/parametri-fatto', 'recuperato': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'membri': {c: m for c, m in ck['membri'].items()}, 'varianti': ck['varianti'], 'wd': {n: v for n, v in ck.get('wd', {}).items() if v}, 'pagine': trov},
+    json.dump({'fonte': 'Marvel Database (Fandom), CC BY-SA 3.0, solo categorie/parametri-fatto', 'recuperato': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'membri': {c: m for c, m in ck['membri'].items()}, 'varianti': ck['varianti'], 'wd': {n: v for n, v in ck.get('wd2', {}).items() if v}, 'pagine': trov},
               open(out / 'w8_md.json', 'w'), ensure_ascii=False, separators=(',', ':'))
     man.update({'membri': {c: len(m['t']) for c, m in ck['membri'].items()}, 'varianti_nomi': len(ck['varianti']), 'pagine': len(trov), 'anomalie': (anom + B.ERRLOG)[:200], 'fine': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())})
     json.dump(man, open(out / 'w8_manifest.json', 'w'), indent=1, ensure_ascii=False); print(json.dumps({k: v for k, v in man.items() if k not in ('anomalie', 'membri')})); sys.exit(0 if trov else 1)
