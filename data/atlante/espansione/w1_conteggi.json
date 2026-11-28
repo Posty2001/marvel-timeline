@@ -1,31 +1,35 @@
 {
- "arricchimenti": 153,
- "canon": 286,
+ "arricchimenti": 154,
+ "canon": 1006,
  "coda": {
   "non_classificati": 35,
-  "possibili_duplicati": 3
+  "possibili_duplicati": 2
  },
  "input_entita": 1532,
  "mcu_qid": [
   "Q642878"
  ],
  "per_tipo": {
-  "artefatto": 4,
+  "artefatto": 85,
   "attore": 163,
-  "battaglia": 1,
+  "battaglia": 20,
   "creatore": 53,
-  "identita": 23,
+  "entita-cosmica": 1,
+  "identita": 223,
+  "luogo": 363,
   "opera": 39,
-  "organizzazione": 1,
-  "universo": 2
+  "organizzazione": 30,
+  "pianeta": 11,
+  "specie": 8,
+  "universo": 10
  },
- "staging": 1093,
+ "staging": 372,
  "staging_per_motivo": {
-  "ambiguo": 3,
+  "ambiguo": 2,
   "classe non riconosciuta": 35,
   "episodio/stagione": 5,
   "fuori ambito": 35,
   "senza etichetta inglese": 28,
-  "una sola fonte (nessun articolo Wikipedia)": 987
+  "una sola fonte (nessun articolo Wikipedia; seconda fonte scartata": 267
  }
 }

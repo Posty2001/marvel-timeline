@@ -267,16 +267,6 @@
    "nome": "Blade",
    "q": "Q65929709",
    "tipo": "identita"
-  },
-  {
-   "esistenti_esatti": [],
-   "esistenti_parziali": [
-    "id-grant-ward-hive"
-   ],
-   "motivo": "stessa voce storica gia' arricchita da un altro elemento Wikidata con nome diverso: id-grant-ward-hive",
-   "nome": "Grant Ward",
-   "q": "Q96379857",
-   "tipo": "identita"
   }
  ]
 }

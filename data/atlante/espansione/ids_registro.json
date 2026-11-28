@@ -1,9 +1,20 @@
 {
  "conteggi": {
-  "attivi": 1616,
-  "totale": 1617
+  "attivi": 2336,
+  "totale": 2337
  },
  "ids": {
+  "art-acura-2012-stark-industries-super-car": {
+   "ids_esterni": {
+    "mcuwiki": "Acura 2012 Stark Industries Super Car",
+    "wikidata": "Q116478599"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-adamantio": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -13,6 +24,127 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "a"
+  },
+  "art-arete-laboratories": {
+   "ids_esterni": {
+    "mcuwiki": "Arête Laboratories",
+    "wikidata": "Q122446728"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-arnimhilation-99l-assault-weapon": {
+   "ids_esterni": {
+    "mcuwiki": "Arnimhilation 99L Assault Weapon",
+    "wikidata": "Q116460015"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-asgardian-armor": {
+   "ids_esterni": {
+    "mcuwiki": "Asgardian Armor",
+    "wikidata": "Q116295832"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-asgardian-cannon": {
+   "ids_esterni": {
+    "mcuwiki": "Asgardian Cannon",
+    "wikidata": "Q116851433"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-asgardian-collar": {
+   "ids_esterni": {
+    "mcuwiki": "Asgardian Collar",
+    "wikidata": "Q116856277"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-asgardian-skiff": {
+   "ids_esterni": {
+    "mcuwiki": "Asgardian Skiff",
+    "wikidata": "Q116852173"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-benatar": {
+   "ids_esterni": {
+    "mcuwiki": "Benatar",
+    "wikidata": "Q96265004"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-black-hole-grenade": {
+   "ids_esterni": {
+    "mcuwiki": "Black Hole Grenade",
+    "wikidata": "Q116851285"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-black-widow-s-bite": {
+   "ids_esterni": {
+    "mcuwiki": "Black Widow's Bite",
+    "wikidata": "Q116477589"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-book-of-yggdrasil": {
+   "ids_esterni": {
+    "mcuwiki": "Book of Yggdrasil",
+    "wikidata": "Q116851655"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-bottle-bomb": {
+   "ids_esterni": {
+    "mcuwiki": "Bottle Bomb",
+    "wikidata": "Q116836535"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
   },
   "art-bracciale-di-kamala-khan": {
    "ondata": "W0",
@@ -24,12 +156,210 @@
    "stato": "attivo",
    "tipo": "a"
   },
+  "art-brandrheid-undrsigr": {
+   "ids_esterni": {
+    "mcuwiki": "Brandrheid Undrsigr",
+    "wikidata": "Q116297188"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-camera-taser": {
+   "ids_esterni": {
+    "mcuwiki": "Camera Taser",
+    "wikidata": "Q116836183"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-captain-america-card-collection": {
+   "ids_esterni": {
+    "mcuwiki": "Captain America Card Collection",
+    "wikidata": "Q116478104"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-captain-america-s-uniform": {
+   "ids_esterni": {
+    "mcuwiki": "Captain America's Uniform",
+    "wikidata": "Q116459697"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-casket-of-ancient-winters": {
+   "ids_esterni": {
+    "mcuwiki": "Casket of Ancient Winters",
+    "wikidata": "Q116295948"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-chitauri-bomb": {
+   "ids_esterni": {
+    "mcuwiki": "Chitauri Bomb",
+    "wikidata": "Q116477939"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-chitauri-chariot": {
+   "ids_esterni": {
+    "mcuwiki": "Chitauri Chariot",
+    "wikidata": "Q116478498"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-chitauri-command-center": {
+   "ids_esterni": {
+    "mcuwiki": "Chitauri Command Center",
+    "wikidata": "Q116478572"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-chitauri-energy-core": {
+   "ids_esterni": {
+    "mcuwiki": "Chitauri Energy Core",
+    "wikidata": "Q116478044"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-chitauri-gun": {
+   "ids_esterni": {
+    "mcuwiki": "Chitauri Gun",
+    "wikidata": "Q116477823"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-chitauri-helmet": {
+   "ids_esterni": {
+    "mcuwiki": "Chitauri Helmet",
+    "wikidata": "Q116477978"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-chitauri-neural-link": {
+   "ids_esterni": {
+    "mcuwiki": "Chitauri Neural Link",
+    "wikidata": "Q116478025"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-chitauri-staff": {
+   "ids_esterni": {
+    "mcuwiki": "Chitauri Staff",
+    "wikidata": "Q116477895"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-colantotte-bracelets": {
+   "ids_esterni": {
+    "mcuwiki": "Colantotte Bracelets",
+    "wikidata": "Q116477759"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-compact-portuguese-english-dictionary": {
+   "ids_esterni": {
+    "mcuwiki": "Compact Portuguese English Dictionary",
+    "wikidata": "Q116216857"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-cosmic-cube": {
    "ids_esterni": {
     "wikidata": "Q19836"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-dark-elf-harrow": {
+   "ids_esterni": {
+    "mcuwiki": "Dark Elf Harrow",
+    "wikidata": "Q116852442"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-dark-elf-particle-rifle": {
+   "ids_esterni": {
+    "mcuwiki": "Dark Elf Particle Rifle",
+    "wikidata": "Q116851183"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-dark-matter-dagger": {
+   "ids_esterni": {
+    "mcuwiki": "Dark Matter Dagger",
+    "wikidata": "Q116851408"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -44,6 +374,17 @@
    "stato": "attivo",
    "tipo": "a"
   },
+  "art-destroyer-armor-prototype-gun": {
+   "ids_esterni": {
+    "mcuwiki": "Destroyer Armor Prototype Gun",
+    "wikidata": "Q116477698"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-dieci-anelli": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -53,6 +394,83 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "a"
+  },
+  "art-einherjar-shield": {
+   "ids_esterni": {
+    "mcuwiki": "Einherjar Shield",
+    "wikidata": "Q116851162"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-ex-wife-missile": {
+   "ids_esterni": {
+    "mcuwiki": "Ex-Wife Missile",
+    "wikidata": "Q116280770"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-extremis": {
+   "ids_esterni": {
+    "mcuwiki": "Extremis",
+    "wikidata": "Q116835573"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-fake-infinity-gauntlet": {
+   "ids_esterni": {
+    "mcuwiki": "Fake Infinity Gauntlet",
+    "wikidata": "Q116296434"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-fimbuldraugr": {
+   "ids_esterni": {
+    "mcuwiki": "Fimbuldraugr",
+    "wikidata": "Q116296844"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-ford-flathead-roadster": {
+   "ids_esterni": {
+    "mcuwiki": "Ford Flathead Roadster",
+    "wikidata": "Q116208146"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-gamma-ray-projector": {
+   "ids_esterni": {
+    "mcuwiki": "Gamma Ray Projector",
+    "wikidata": "Q116216161"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
   },
   "art-gemma-del-potere": {
    "ondata": "W0",
@@ -124,12 +542,78 @@
    "stato": "attivo",
    "tipo": "a"
   },
+  "art-hofund": {
+   "ids_esterni": {
+    "mcuwiki": "Hofund",
+    "wikidata": "Q116296633"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-howard-stark-s-s-h-i-e-l-d-box": {
+   "ids_esterni": {
+    "mcuwiki": "Howard Stark's S.H.I.E.L.D. Box",
+    "wikidata": "Q116280838"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-hridgandr": {
+   "ids_esterni": {
+    "mcuwiki": "Hridgandr",
+    "wikidata": "Q116296953"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-i-c-e-r": {
+   "ids_esterni": {
+    "mcuwiki": "I.C.E.R.",
+    "wikidata": "Q56379586"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-infinity-stones": {
    "ids_esterni": {
     "wikidata": "Q106939354"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-inventory-of-rare-and-endangered-tracheophyta-of-amazonia": {
+   "ids_esterni": {
+    "mcuwiki": "Inventory of Rare and Endangered Tracheophyta of Amazônia",
+    "wikidata": "Q116216818"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-iron-man-mark-xlii-telepresence-headset": {
+   "ids_esterni": {
+    "mcuwiki": "Iron Man Mark XLII Telepresence Headset",
+    "wikidata": "Q116835335"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -144,6 +628,50 @@
    "stato": "attivo",
    "tipo": "artefatto"
   },
+  "art-iron-monger-armor": {
+   "ids_esterni": {
+    "mcuwiki": "Iron Monger Armor",
+    "wikidata": "Q116207798"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-johann-schmidt-s-coupe": {
+   "ids_esterni": {
+    "mcuwiki": "Johann Schmidt's Coupe",
+    "wikidata": "Q116460171"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-johann-schmidt-s-prosthetic-mask": {
+   "ids_esterni": {
+    "mcuwiki": "Johann Schmidt's Prosthetic Mask",
+    "wikidata": "Q116856256"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-kurse-stone": {
+   "ids_esterni": {
+    "mcuwiki": "Kurse Stone",
+    "wikidata": "Q116851266"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-libro-dei-vishanti": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -153,6 +681,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "a"
+  },
+  "art-milano": {
+   "ids_esterni": {
+    "mcuwiki": "Milano",
+    "wikidata": "Q96280132"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-mind-stone": {
+   "ids_esterni": {
+    "mcuwiki": "Mind Stone",
+    "wikidata": "Q116477184"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
   },
   "art-mjolnir": {
    "ondata": "W0",
@@ -164,6 +714,28 @@
    "stato": "attivo",
    "tipo": "a"
   },
+  "art-myths-and-ledgends-from-around-the-world": {
+   "ids_esterni": {
+    "mcuwiki": "Myths and Ledgends from Around the World",
+    "wikidata": "Q116297615"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-norco": {
+   "ids_esterni": {
+    "mcuwiki": "Norco",
+    "wikidata": "Q116837159"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-occhio-di-agamotto": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -173,6 +745,61 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "a"
+  },
+  "art-ornament-bomb": {
+   "ids_esterni": {
+    "mcuwiki": "Ornament Bomb",
+    "wikidata": "Q116836362"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-phase-meter": {
+   "ids_esterni": {
+    "mcuwiki": "Phase Meter",
+    "wikidata": "Q116851937"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-pick-lock-device": {
+   "ids_esterni": {
+    "mcuwiki": "Pick-Lock Device",
+    "wikidata": "Q116207938"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-potato-bomb": {
+   "ids_esterni": {
+    "mcuwiki": "Potato Bomb",
+    "wikidata": "Q116280895"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-reality-stone": {
+   "ids_esterni": {
+    "mcuwiki": "Reality Stone",
+    "wikidata": "Q116851083"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
   },
   "art-registration-acts": {
    "ids_esterni": {
@@ -194,6 +821,116 @@
    "stato": "attivo",
    "tipo": "a"
   },
+  "art-sif-s-sword-and-shield": {
+   "ids_esterni": {
+    "mcuwiki": "Sif's Sword and Shield",
+    "wikidata": "Q116296740"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-sonic-taser": {
+   "ids_esterni": {
+    "mcuwiki": "Sonic Taser",
+    "wikidata": "Q116207824"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-soul-forge": {
+   "ids_esterni": {
+    "mcuwiki": "Soul Forge",
+    "wikidata": "Q116851895"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-space-stone": {
+   "ids_esterni": {
+    "mcuwiki": "Space Stone",
+    "wikidata": "Q116297518"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-space-throne": {
+   "ids_esterni": {
+    "mcuwiki": "Space Throne",
+    "wikidata": "Q116478141"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-stark-industries-fragmentation-shell": {
+   "ids_esterni": {
+    "mcuwiki": "Stark Industries Fragmentation Shell",
+    "wikidata": "Q116207967"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-stark-industries-private-jet": {
+   "ids_esterni": {
+    "mcuwiki": "Stark Industries Private Jet",
+    "wikidata": "Q116208119"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-stark-medical-scanner": {
+   "ids_esterni": {
+    "mcuwiki": "Stark Medical Scanner",
+    "wikidata": "Q116280807"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-stark-sonic-cannon": {
+   "ids_esterni": {
+    "mcuwiki": "Stark Sonic Cannon",
+    "wikidata": "Q116216737"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-steve-rogers-compass": {
+   "ids_esterni": {
+    "mcuwiki": "Steve Rogers' Compass",
+    "wikidata": "Q116460112"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-stormbreaker": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -204,12 +941,166 @@
    "stato": "attivo",
    "tipo": "a"
   },
+  "art-synthetic-man": {
+   "ids_esterni": {
+    "mcuwiki": "Synthetic Man",
+    "wikidata": "Q116460065"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-tablet-of-life-and-time": {
+   "ids_esterni": {
+    "mcuwiki": "Tablet of Life and Time",
+    "wikidata": "Q116296539"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-taser-disk": {
+   "ids_esterni": {
+    "mcuwiki": "Taser Disk",
+    "wikidata": "Q116280678"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-taser-glove": {
+   "ids_esterni": {
+    "mcuwiki": "Taser Glove",
+    "wikidata": "Q116836677"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
   "art-terrigen-mist": {
    "ids_esterni": {
     "wikidata": "Q4465300"
    },
    "ondata": "W0",
    "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-tesseract-cradle": {
+   "ids_esterni": {
+    "mcuwiki": "Tesseract Cradle",
+    "wikidata": "Q116459911"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-thanos-armor": {
+   "ids_esterni": {
+    "mcuwiki": "Thanos' Armor",
+    "wikidata": "Q116856289"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-tony-stark-s-new-element": {
+   "ids_esterni": {
+    "mcuwiki": "Tony Stark's New Element",
+    "wikidata": "Q116280396"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-track-bomb": {
+   "ids_esterni": {
+    "mcuwiki": "Track Bomb",
+    "wikidata": "Q116460082"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-uru": {
+   "ids_esterni": {
+    "mcuwiki": "Uru",
+    "wikidata": "Q116280954"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-vita-radiation": {
+   "ids_esterni": {
+    "mcuwiki": "Vita Radiation",
+    "wikidata": "Q116459832"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-warlock-s-eye": {
+   "ids_esterni": {
+    "mcuwiki": "Warlock's Eye",
+    "wikidata": "Q116296496"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-zephyr-one": {
+   "ids_esterni": {
+    "mcuwiki": "Zephyr One",
+    "wikidata": "Q118344903"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-zip-line-gun": {
+   "ids_esterni": {
+    "mcuwiki": "Zip-Line Gun",
+    "wikidata": "Q116460101"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "artefatto"
+  },
+  "art-zolanator-2000x-assault-rifle": {
+   "ids_esterni": {
+    "mcuwiki": "Zolanator 2000X Assault Rifle",
+    "wikidata": "Q116459979"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "artefatto"
@@ -6794,6 +7685,28 @@
    "stato": "attivo",
    "tipo": "attore"
   },
+  "bat-asgard-jotunheim-war": {
+   "ids_esterni": {
+    "mcuwiki": "Asgard-Jotunheim War",
+    "wikidata": "Q114795569"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
+  "bat-attack-on-jotunheim": {
+   "ids_esterni": {
+    "mcuwiki": "Attack on Jotunheim",
+    "wikidata": "Q114795810"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
   "bat-battaglia-di-new-york": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -6834,12 +7747,100 @@
    "stato": "attivo",
    "tipo": "e"
   },
+  "bat-battle-at-culver-university": {
+   "ids_esterni": {
+    "mcuwiki": "Battle at Culver University",
+    "wikidata": "Q114247462"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
+  "bat-battle-at-stark-expo": {
+   "ids_esterni": {
+    "mcuwiki": "Battle at Stark Expo",
+    "wikidata": "Q114775169"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
+  "bat-battle-in-the-valkyrie": {
+   "ids_esterni": {
+    "mcuwiki": "Battle in the Valkyrie",
+    "wikidata": "Q114861030"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
+  "bat-battle-of-greenwich": {
+   "ids_esterni": {
+    "mcuwiki": "Battle of Greenwich",
+    "wikidata": "Q115362282"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
+  "bat-battle-of-gulmira": {
+   "ids_esterni": {
+    "mcuwiki": "Battle of Gulmira",
+    "wikidata": "Q114241357"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
+  "bat-battle-of-jotunheim": {
+   "ids_esterni": {
+    "mcuwiki": "Battle of Jotunheim",
+    "wikidata": "Q114795609"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
   "bat-battle-of-new-york": {
    "ids_esterni": {
     "wikidata": "Q114872399"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
+  "bat-battle-of-puente-antiguo": {
+   "ids_esterni": {
+    "mcuwiki": "Battle of Puente Antiguo",
+    "wikidata": "Q114795863"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
+  "bat-battle-of-rose-hill": {
+   "ids_esterni": {
+    "mcuwiki": "Battle of Rose Hill",
+    "wikidata": "Q115331208"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "battaglia"
@@ -6854,6 +7855,105 @@
    "stato": "lapide",
    "tipo": "battaglia",
    "verso": "bat-battaglia-di-sokovia"
+  },
+  "bat-battle-of-t-nsberg": {
+   "ids_esterni": {
+    "mcuwiki": "Battle of Tønsberg",
+    "wikidata": "Q114795595"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
+  "bat-battle-of-vanaheim": {
+   "ids_esterni": {
+    "mcuwiki": "Battle of Vanaheim",
+    "wikidata": "Q115361748"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
+  "bat-battle-on-the-norco": {
+   "ids_esterni": {
+    "mcuwiki": "Battle on the Norco",
+    "wikidata": "Q115331422"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
+  "bat-chitauri-invasion": {
+   "ids_esterni": {
+    "mcuwiki": "Chitauri Invasion",
+    "wikidata": "Q114872180"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
+  "bat-first-battle-of-svartalfheim": {
+   "ids_esterni": {
+    "mcuwiki": "First Battle of Svartalfheim",
+    "wikidata": "Q116850977"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
+  "bat-first-dark-elf-conflict": {
+   "ids_esterni": {
+    "mcuwiki": "First Dark Elf Conflict",
+    "wikidata": "Q116850940"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
+  "bat-second-battle-of-svartalfheim": {
+   "ids_esterni": {
+    "mcuwiki": "Second Battle of Svartalfheim",
+    "wikidata": "Q115362231"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
+  "bat-second-dark-elf-conflict": {
+   "ids_esterni": {
+    "mcuwiki": "Second Dark Elf Conflict",
+    "wikidata": "Q115362072"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
+  },
+  "bat-war-of-the-nine-realms": {
+   "ids_esterni": {
+    "mcuwiki": "War of the Nine Realms",
+    "wikidata": "Q115361593"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "battaglia"
   },
   "char-a-bomb": {
    "ondata": "W0",
@@ -8988,6 +10088,17 @@
    "stato": "attivo",
    "tipo": "entita-cosmica"
   },
+  "cos-surtur": {
+   "ids_esterni": {
+    "mcuwiki": "Surtur",
+    "wikidata": "Q42269449"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "entita-cosmica"
+  },
   "cr-a-c-bradley": {
    "ids_esterni": {
     "wikidata": "Q2818917"
@@ -10189,12 +11300,34 @@
    "stato": "attivo",
    "tipo": "identita"
   },
+  "id-abraham-erskine": {
+   "ids_esterni": {
+    "mcuwiki": "Abraham Erskine",
+    "wikidata": "Q65935296"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-abraham-whistler": {
    "ids_esterni": {
     "wikidata": "Q1137153"
    },
    "ondata": "W0",
    "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-abu-bakaar": {
+   "ids_esterni": {
+    "mcuwiki": "Abu Bakaar",
+    "wikidata": "Q23750547"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
@@ -10229,6 +11362,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-ahmed": {
+   "ids_esterni": {
+    "mcuwiki": "Ahmed",
+    "wikidata": "Q23751352"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-ajak": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -10245,6 +11389,17 @@
    },
    "ondata": "W0",
    "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-akihiko": {
+   "ids_esterni": {
+    "mcuwiki": "Akihiko",
+    "wikidata": "Q66191257"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
@@ -10268,6 +11423,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-aleta-ogord": {
+   "ids_esterni": {
+    "mcuwiki": "Aleta Ogord",
+    "wikidata": "Q66133333"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-alexander-pierce": {
+   "ids_esterni": {
+    "mcuwiki": "Alexander Pierce",
+    "wikidata": "Q65929755"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-alexandra-the-hand": {
    "ondata": "W0",
@@ -10329,6 +11506,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-amira-ahmed": {
+   "ids_esterni": {
+    "mcuwiki": "Amira Ahmed",
+    "wikidata": "Q23750808"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-amy-bendix": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -10339,6 +11527,28 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-anitolov": {
+   "ids_esterni": {
+    "mcuwiki": "Anitolov",
+    "wikidata": "Q66197650"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-anne-marie-hoag": {
+   "ids_esterni": {
+    "mcuwiki": "Anne Marie Hoag",
+    "wikidata": "Q66192949"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-anne-weying": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -10348,6 +11558,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-antoine-triplett": {
+   "ids_esterni": {
+    "mcuwiki": "Antoine Triplett",
+    "wikidata": "Q113043464"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-anya-corazon": {
    "ondata": "W0",
@@ -10379,6 +11600,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-arnim-zola": {
+   "ids_esterni": {
+    "mcuwiki": "Arnim Zola",
+    "wikidata": "Q26817985"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-arthur-harrow": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -10388,6 +11620,39 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-atahraks": {
+   "ids_esterni": {
+    "mcuwiki": "Atahraks",
+    "wikidata": "Q124805670"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-att-lass": {
+   "ids_esterni": {
+    "mcuwiki": "Att-Lass",
+    "wikidata": "Q66133428"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-attuma": {
+   "ids_esterni": {
+    "mcuwiki": "Attuma",
+    "wikidata": "Q142296729"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-ayesha": {
    "ondata": "W0",
@@ -10399,12 +11664,34 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-ayo": {
+   "ids_esterni": {
+    "mcuwiki": "Ayo",
+    "wikidata": "Q26758863"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-azazel": {
    "ids_esterni": {
     "wikidata": "Q2642022"
    },
    "ondata": "W0",
    "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-bb-urich": {
+   "ids_esterni": {
+    "mcuwiki": "BB Urich",
+    "wikidata": "Q129167340"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
@@ -10425,6 +11712,17 @@
    },
    "ondata": "W0",
    "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-beerbot-5000": {
+   "ids_esterni": {
+    "mcuwiki": "Beerbot 5000",
+    "wikidata": "Q42272028"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
@@ -10489,6 +11787,17 @@
    "stato": "attivo",
    "tipo": "identita"
   },
+  "id-ben-urich-q129144472": {
+   "ids_esterni": {
+    "mcuwiki": "Ben Urich",
+    "wikidata": "Q129144472"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-benny-pollack": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -10499,12 +11808,34 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-bereet": {
+   "ids_esterni": {
+    "mcuwiki": "Bereet",
+    "wikidata": "Q66133358"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-betsy-braddock": {
    "ids_esterni": {
     "wikidata": "Q973050"
    },
    "ondata": "W0",
    "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-betty-brant": {
+   "ids_esterni": {
+    "mcuwiki": "Betty Brant",
+    "wikidata": "Q65935876"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
@@ -10518,6 +11849,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-bill-foster": {
+   "ids_esterni": {
+    "mcuwiki": "Bill Foster",
+    "wikidata": "Q66133372"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-billy-russo-jigsaw": {
    "ondata": "W0",
@@ -10558,6 +11900,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-blake-tower": {
+   "ids_esterni": {
+    "mcuwiki": "Blake Tower",
+    "wikidata": "Q129084731"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-blind-al": {
    "ondata": "W0",
@@ -10609,6 +11962,61 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-bor": {
+   "ids_esterni": {
+    "mcuwiki": "Bor",
+    "wikidata": "Q65937880"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-brad-davis": {
+   "ids_esterni": {
+    "mcuwiki": "Brad Davis",
+    "wikidata": "Q66192354"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-brahl": {
+   "ids_esterni": {
+    "mcuwiki": "Brahl",
+    "wikidata": "Q26772388"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-brock-rumlow": {
+   "ids_esterni": {
+    "mcuwiki": "Crossbones",
+    "wikidata": "Q24040742"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-bron-char": {
+   "ids_esterni": {
+    "mcuwiki": "Bron-Char",
+    "wikidata": "Q66189422"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-bruno": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -10618,6 +12026,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-buck-cashman": {
+   "ids_esterni": {
+    "mcuwiki": "Buck Cashman",
+    "wikidata": "Q129167244"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-bucky-barnes-soldato-d-inverno": {
    "ondata": "W0",
@@ -10649,6 +12068,17 @@
    "stato": "attivo",
    "tipo": "identita"
   },
+  "id-burleigh": {
+   "ids_esterni": {
+    "mcuwiki": "Burleigh",
+    "wikidata": "Q66197725"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-bushmaster": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -10669,12 +12099,34 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-cale": {
+   "ids_esterni": {
+    "mcuwiki": "Cale",
+    "wikidata": "Q66196905"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-caliban": {
    "ids_esterni": {
     "wikidata": "Q2624756"
    },
    "ondata": "W0",
    "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-cameron-klein": {
+   "ids_esterni": {
+    "mcuwiki": "Cameron Klein",
+    "wikidata": "Q66132762"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
@@ -10698,6 +12150,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-carina": {
+   "ids_esterni": {
+    "mcuwiki": "Carina",
+    "wikidata": "Q52947928"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-carlton-drake-riot": {
    "ondata": "W0",
@@ -10759,6 +12222,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-catherine-starr": {
+   "ids_esterni": {
+    "mcuwiki": "Catherine Starr",
+    "wikidata": "Q66133388"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-cecilia-reyes": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -10768,6 +12242,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-chad-davis": {
+   "ids_esterni": {
+    "mcuwiki": "Chad Davis",
+    "wikidata": "Q66191655"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-charles-murphy": {
+   "ids_esterni": {
+    "mcuwiki": "Charles Murphy",
+    "wikidata": "Q66195769"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-charles-xavier-fox": {
    "ondata": "W0",
@@ -10781,6 +12277,61 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-charlie-27": {
+   "ids_esterni": {
+    "mcuwiki": "Charlie-27",
+    "wikidata": "Q66133335"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-chess-roberts": {
+   "ids_esterni": {
+    "mcuwiki": "Chess Roberts",
+    "wikidata": "Q24073681"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-chester-phillips": {
+   "ids_esterni": {
+    "mcuwiki": "Chester Phillips",
+    "wikidata": "Q65935329"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-christine-everhart": {
+   "ids_esterni": {
+    "mcuwiki": "Christine Everhart",
+    "wikidata": "Q23900407"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-christine-palmer": {
+   "ids_esterni": {
+    "mcuwiki": "Christine Palmer",
+    "wikidata": "Q26224467"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-ciclope": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -10791,12 +12342,34 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-cindy-moon": {
+   "ids_esterni": {
+    "mcuwiki": "Cindy Moon",
+    "wikidata": "Q66133282"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-claire-temple": {
    "ids_esterni": {
     "wikidata": "Q27468455"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-claire-weiss": {
+   "ids_esterni": {
+    "mcuwiki": "Claire Weiss",
+    "wikidata": "Q53519878"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
@@ -10851,6 +12424,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-cooper-barton": {
+   "ids_esterni": {
+    "mcuwiki": "Cooper Barton",
+    "wikidata": "Q66132777"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-copycat": {
    "ids_esterni": {
     "wikidata": "Q2916404"
@@ -10870,6 +12454,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-costel": {
+   "ids_esterni": {
+    "mcuwiki": "Costel",
+    "wikidata": "Q66195604"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-cottonmouth": {
    "ondata": "W0",
@@ -10921,6 +12516,28 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-dale": {
+   "ids_esterni": {
+    "mcuwiki": "Dale",
+    "wikidata": "Q27057308"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-daniel-drumm": {
+   "ids_esterni": {
+    "mcuwiki": "Daniel Drumm",
+    "wikidata": "Q27670314"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-daniel-sousa": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -10961,6 +12578,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-darcy-lewis": {
+   "ids_esterni": {
+    "mcuwiki": "Darcy Lewis",
+    "wikidata": "Q21042559"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-darren-cross": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -10980,6 +12608,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-dave": {
+   "ids_esterni": {
+    "mcuwiki": "Dave",
+    "wikidata": "Q24276097"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-david-banner": {
    "ondata": "W0",
@@ -11031,12 +12670,34 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-delancey": {
+   "ids_esterni": {
+    "mcuwiki": "Delancey",
+    "wikidata": "Q66196786"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-destroyer": {
    "ids_esterni": {
     "wikidata": "Q2473486"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-dimitri-smerdyakov": {
+   "ids_esterni": {
+    "mcuwiki": "Dimitri Smerdyakov",
+    "wikidata": "Q66198367"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
@@ -11050,6 +12711,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-doctor-doom": {
+   "ids_esterni": {
+    "mcuwiki": "Doctor Doom",
+    "wikidata": "Q139685559"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-domino": {
    "ondata": "W0",
@@ -11080,6 +12752,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-doris-toomes": {
+   "ids_esterni": {
+    "mcuwiki": "Doris Toomes",
+    "wikidata": "Q66192865"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-dormammu": {
+   "ids_esterni": {
+    "mcuwiki": "Dormammu",
+    "wikidata": "Q27627816"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-dracula": {
    "ondata": "W0",
@@ -11121,6 +12815,28 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-dum-dum-dugan": {
+   "ids_esterni": {
+    "mcuwiki": "Dum Dum Dugan",
+    "wikidata": "Q65935285"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-e-d-i-t-h": {
+   "ids_esterni": {
+    "mcuwiki": "E.D.I.T.H.",
+    "wikidata": "Q66192035"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-ebony-maw": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -11161,6 +12877,28 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-eir": {
+   "ids_esterni": {
+    "mcuwiki": "Eir",
+    "wikidata": "Q65937899"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-eitri": {
+   "ids_esterni": {
+    "mcuwiki": "Eitri",
+    "wikidata": "Q65935811"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-elektra-natchios": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -11170,6 +12908,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-elihas-starr": {
+   "ids_esterni": {
+    "mcuwiki": "Elihas Starr",
+    "wikidata": "Q66133383"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-ellen-brandt": {
+   "ids_esterni": {
+    "mcuwiki": "Ellen Brandt",
+    "wikidata": "Q66196208"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-elsa-bloodstone": {
    "ondata": "W0",
@@ -11210,6 +12970,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-eric-savin": {
+   "ids_esterni": {
+    "mcuwiki": "Eric Savin",
+    "wikidata": "Q65929267"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-erik-gelden": {
    "ondata": "W0",
@@ -11261,6 +13032,28 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-fandral": {
+   "ids_esterni": {
+    "mcuwiki": "Fandral",
+    "wikidata": "Q24049985"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-fine": {
+   "ids_esterni": {
+    "mcuwiki": "Fine",
+    "wikidata": "Q66197283"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-firestar-angelica-jones": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -11300,6 +13093,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-flash-thompson": {
+   "ids_esterni": {
+    "mcuwiki": "Flash Thompson",
+    "wikidata": "Q23894608"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-flint-marko-sandman": {
    "ondata": "W0",
@@ -11371,6 +13175,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-gabe-jones": {
+   "ids_esterni": {
+    "mcuwiki": "Gabe Jones",
+    "wikidata": "Q65935320"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-galactus": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -11380,6 +13195,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-gale": {
+   "ids_esterni": {
+    "mcuwiki": "Gale",
+    "wikidata": "Q24276107"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-gambit": {
    "ondata": "W0",
@@ -11401,12 +13227,56 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-garrett": {
+   "ids_esterni": {
+    "mcuwiki": "Garrett",
+    "wikidata": "Q66196831"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-garthan-saal": {
+   "ids_esterni": {
+    "mcuwiki": "Garthan Saal",
+    "wikidata": "Q66196351"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-gef": {
+   "ids_esterni": {
+    "mcuwiki": "Gef",
+    "wikidata": "Q26772344"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-george-stacy": {
    "ids_esterni": {
     "wikidata": "Q7879740"
    },
    "ondata": "W0",
    "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-georgi-luchkov": {
+   "ids_esterni": {
+    "mcuwiki": "Georgi Luchkov",
+    "wikidata": "Q66133315"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
@@ -11421,6 +13291,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-gideon-malick": {
+   "ids_esterni": {
+    "mcuwiki": "Gideon Malick",
+    "wikidata": "Q66198533"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-gilgamesh": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -11431,6 +13312,28 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-gilmore-hodge": {
+   "ids_esterni": {
+    "mcuwiki": "Gilmore Hodge",
+    "wikidata": "Q66194002"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-goose": {
+   "ids_esterni": {
+    "mcuwiki": "Goose",
+    "wikidata": "Q66133393"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-gorr": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -11440,6 +13343,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-grandmaster": {
+   "ids_esterni": {
+    "mcuwiki": "Grandmaster",
+    "wikidata": "Q24176023"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-grant-ward-hive": {
    "ondata": "W0",
@@ -11492,6 +13406,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-guterman": {
+   "ids_esterni": {
+    "mcuwiki": "Guterman",
+    "wikidata": "Q66198151"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-gwen-stacy-spider-woman": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -11501,6 +13426,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-hailstrum": {
+   "ids_esterni": {
+    "mcuwiki": "Hailstrum",
+    "wikidata": "Q24206844"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-hamir": {
+   "ids_esterni": {
+    "mcuwiki": "Hamir",
+    "wikidata": "Q27624531"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-hank-pym": {
    "ondata": "W0",
@@ -11521,6 +13468,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-happy-hogan": {
+   "ids_esterni": {
+    "mcuwiki": "Happy Hogan",
+    "wikidata": "Q23900470"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-harley-keener": {
+   "ids_esterni": {
+    "mcuwiki": "Harley Keener",
+    "wikidata": "Q25936379"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-harry-osborn-green-goblin": {
    "ondata": "W0",
@@ -11562,6 +13531,39 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-heather-glenn": {
+   "ids_esterni": {
+    "mcuwiki": "Heather Glenn",
+    "wikidata": "Q129167317"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-heimdall": {
+   "ids_esterni": {
+    "mcuwiki": "Heimdall",
+    "wikidata": "Q24046150"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-heinz-kruger": {
+   "ids_esterni": {
+    "mcuwiki": "Heinz Kruger",
+    "wikidata": "Q65935363"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-hela": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -11571,6 +13573,39 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-helen-cho": {
+   "ids_esterni": {
+    "mcuwiki": "Helen Cho",
+    "wikidata": "Q66190910"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-ho-yinsen": {
+   "ids_esterni": {
+    "mcuwiki": "Ho Yinsen",
+    "wikidata": "Q65929293"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-hogun": {
+   "ids_esterni": {
+    "mcuwiki": "Hogun",
+    "wikidata": "Q24049976"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-hope-summers": {
    "ids_esterni": {
@@ -11592,6 +13627,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-horuz": {
+   "ids_esterni": {
+    "mcuwiki": "Horuz",
+    "wikidata": "Q66133359"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-howard-stark": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -11601,6 +13647,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-howard-the-duck": {
+   "ids_esterni": {
+    "mcuwiki": "Howard the Duck",
+    "wikidata": "Q63405860"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-huhtar": {
+   "ids_esterni": {
+    "mcuwiki": "Huhtar",
+    "wikidata": "Q66133337"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-hulk": {
    "ondata": "W0",
@@ -11632,6 +13700,28 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-hutter": {
+   "ids_esterni": {
+    "mcuwiki": "Hutter",
+    "wikidata": "Q66194056"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-hydra-buyer": {
+   "ids_esterni": {
+    "mcuwiki": "Hydra Buyer",
+    "wikidata": "Q27804665"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-i-quattro-protagonisti": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -11641,6 +13731,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-ian-boothby": {
+   "ids_esterni": {
+    "mcuwiki": "Ian Boothby",
+    "wikidata": "Q66133325"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-ian-quinn": {
+   "ids_esterni": {
+    "mcuwiki": "Ian Quinn",
+    "wikidata": "Q64514325"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-iceman": {
    "ids_esterni": {
@@ -11672,6 +13784,28 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-irani-rael": {
+   "ids_esterni": {
+    "mcuwiki": "Irani Rael",
+    "wikidata": "Q24050112"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-irina": {
+   "ids_esterni": {
+    "mcuwiki": "Irina",
+    "wikidata": "Q116281107"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-iron-legion": {
    "ids_esterni": {
     "wikidata": "Q109649169"
@@ -11692,6 +13826,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-isabela-alvarez": {
+   "ids_esterni": {
+    "mcuwiki": "Isabela Alvarez",
+    "wikidata": "Q24083312"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-ivan-vanko-whiplash": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -11702,12 +13847,45 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-j-a-r-v-i-s": {
+   "ids_esterni": {
+    "mcuwiki": "J.A.R.V.I.S.",
+    "wikidata": "Q23750365"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-j-jonah-jameson": {
    "ids_esterni": {
     "wikidata": "Q109253048"
    },
    "ondata": "W0",
    "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-j-jonah-jameson-q65935839": {
+   "ids_esterni": {
+    "mcuwiki": "J. Jonah Jameson",
+    "wikidata": "Q65935839"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-jack-mcgee": {
+   "ids_esterni": {
+    "mcuwiki": "Jack McGee",
+    "wikidata": "Q66133307"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
@@ -11722,6 +13900,17 @@
    "stato": "attivo",
    "tipo": "identita"
   },
+  "id-jack-rollins": {
+   "ids_esterni": {
+    "mcuwiki": "Jack Rollins",
+    "wikidata": "Q66190289"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-jack-russell-werewolf-by-night": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -11732,6 +13921,28 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-jack-taggart": {
+   "ids_esterni": {
+    "mcuwiki": "Jack Taggart",
+    "wikidata": "Q66191596"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-jackson-brice": {
+   "ids_esterni": {
+    "mcuwiki": "Jackson Brice",
+    "wikidata": "Q66193113"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-jackson-norriss": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -11741,6 +13952,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-jacques-dernier": {
+   "ids_esterni": {
+    "mcuwiki": "Jacques Dernier",
+    "wikidata": "Q66194115"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-james-montgomery-falsworth": {
+   "ids_esterni": {
+    "mcuwiki": "James Montgomery Falsworth",
+    "wikidata": "Q66194263"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-james-rhodes-war-machine": {
    "ondata": "W0",
@@ -11761,6 +13994,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-james-wesley": {
+   "ids_esterni": {
+    "mcuwiki": "James Wesley",
+    "wikidata": "Q129175900"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-jane-foster-mighty-thor": {
    "ondata": "W0",
@@ -11792,12 +14036,34 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-janice-lincoln": {
+   "ids_esterni": {
+    "mcuwiki": "Janice Lincoln",
+    "wikidata": "Q66198065"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-jared-nomak": {
    "ids_esterni": {
     "wikidata": "Q3807318"
    },
    "ondata": "W0",
    "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-jason-ionello": {
+   "ids_esterni": {
+    "mcuwiki": "Jason Ionello",
+    "wikidata": "Q66192223"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
@@ -11842,6 +14108,17 @@
    "stato": "attivo",
    "tipo": "identita"
   },
+  "id-jennifer-kale": {
+   "ids_esterni": {
+    "mcuwiki": "Jennifer Kale",
+    "wikidata": "Q139846964"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-jennifer-walters-she-hulk": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -11862,6 +14139,28 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-jim-morita": {
+   "ids_esterni": {
+    "mcuwiki": "Jim Morita",
+    "wikidata": "Q65935346"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-jimmy-woo": {
+   "ids_esterni": {
+    "mcuwiki": "Jimmy Woo",
+    "wikidata": "Q66133381"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-joaquin-torres-falcon": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -11871,6 +14170,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-johann-schmidt": {
+   "ids_esterni": {
+    "mcuwiki": "Red Skull",
+    "wikidata": "Q24200251"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-john-garrett": {
+   "ids_esterni": {
+    "mcuwiki": "John Garrett",
+    "wikidata": "Q60485305"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-john-walker": {
    "ondata": "W0",
@@ -11932,6 +14253,39 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-jonathan-pangborn": {
+   "ids_esterni": {
+    "mcuwiki": "Jonathan Pangborn",
+    "wikidata": "Q27237328"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-josef": {
+   "ids_esterni": {
+    "mcuwiki": "Josef",
+    "wikidata": "Q26771565"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-joseph-danvers": {
+   "ids_esterni": {
+    "mcuwiki": "Joseph Danvers",
+    "wikidata": "Q66189681"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-jubilee": {
    "ids_esterni": {
     "wikidata": "Q59665"
@@ -11962,6 +14316,39 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-julius-dell": {
+   "ids_esterni": {
+    "mcuwiki": "Julius Dell",
+    "wikidata": "Q66198297"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-justin-hammer": {
+   "ids_esterni": {
+    "mcuwiki": "Justin Hammer",
+    "wikidata": "Q23895076"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-kaecilius": {
+   "ids_esterni": {
+    "mcuwiki": "Kaecilius",
+    "wikidata": "Q65935548"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-kahhori": {
    "ids_esterni": {
     "wikidata": "Q124220396"
@@ -11991,6 +14378,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-karen": {
+   "ids_esterni": {
+    "mcuwiki": "Karen",
+    "wikidata": "Q55405344"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-karen-page": {
    "ondata": "W0",
@@ -12112,12 +14510,34 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-korg": {
+   "ids_esterni": {
+    "mcuwiki": "Korg",
+    "wikidata": "Q42268330"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-kraglin": {
    "ids_esterni": {
     "wikidata": "Q29842885"
    },
    "ondata": "W0",
    "origine": "W1",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-kurse": {
+   "ids_esterni": {
+    "mcuwiki": "Kurse",
+    "wikidata": "Q65929568"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
@@ -12170,6 +14590,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-laura-barton": {
+   "ids_esterni": {
+    "mcuwiki": "Laura Barton",
+    "wikidata": "Q66190494"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-laura-x-23": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -12180,6 +14611,72 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-lead-scrapper": {
+   "ids_esterni": {
+    "mcuwiki": "Lead Scrapper",
+    "wikidata": "Q42271004"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-leonard-samson": {
+   "ids_esterni": {
+    "mcuwiki": "Leonard Samson",
+    "wikidata": "Q65929830"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-lila-barton": {
+   "ids_esterni": {
+    "mcuwiki": "Lila Barton",
+    "wikidata": "Q66190801"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-lilia-calderu": {
+   "ids_esterni": {
+    "mcuwiki": "Lilia Calderu",
+    "wikidata": "Q139850347"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-limbani": {
+   "ids_esterni": {
+    "mcuwiki": "Limbani",
+    "wikidata": "Q66195847"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-lincoln-campbell": {
+   "ids_esterni": {
+    "mcuwiki": "Lincoln Campbell",
+    "wikidata": "Q26857638"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-loki": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -12189,6 +14686,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-love": {
+   "ids_esterni": {
+    "mcuwiki": "Love",
+    "wikidata": "Q142296725"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-luis": {
+   "ids_esterni": {
+    "mcuwiki": "Luis",
+    "wikidata": "Q24276086"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-luke-cage": {
    "ondata": "W0",
@@ -12209,6 +14728,50 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-mac-gargan": {
+   "ids_esterni": {
+    "mcuwiki": "Scorpion",
+    "wikidata": "Q66193253"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-maddie": {
+   "ids_esterni": {
+    "mcuwiki": "Maddie",
+    "wikidata": "Q66196008"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-maggie-grace": {
+   "ids_esterni": {
+    "mcuwiki": "Maggie Grace",
+    "wikidata": "Q129175907"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-maggie-lang": {
+   "ids_esterni": {
+    "mcuwiki": "Maggie Lang",
+    "wikidata": "Q24276092"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-maggie-murdock": {
    "ids_esterni": {
@@ -12290,6 +14853,28 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-mar-vell": {
+   "ids_esterni": {
+    "mcuwiki": "Mar-Vell",
+    "wikidata": "Q66189877"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-maria-hill": {
+   "ids_esterni": {
+    "mcuwiki": "Maria Hill",
+    "wikidata": "Q60485274"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-maria-pym": {
    "ids_esterni": {
     "wikidata": "Q107203470"
@@ -12350,6 +14935,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-martina": {
+   "ids_esterni": {
+    "mcuwiki": "Martina",
+    "wikidata": "Q23767804"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-martine-bancroft": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -12359,6 +14955,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-martinex": {
+   "ids_esterni": {
+    "mcuwiki": "Martinex",
+    "wikidata": "Q66133338"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-mary-jane-watson-raimi": {
    "ondata": "W0",
@@ -12370,6 +14977,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-mary-walker": {
+   "ids_esterni": {
+    "mcuwiki": "Mary Walker",
+    "wikidata": "Q129165717"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-matt-murdock-daredevil": {
    "ondata": "W0",
@@ -12391,6 +15009,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-matthew-ellis": {
+   "ids_esterni": {
+    "mcuwiki": "Matthew Ellis",
+    "wikidata": "Q66191882"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-mattie-franklin": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -12410,6 +15039,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-may-parker": {
+   "ids_esterni": {
+    "mcuwiki": "May Parker",
+    "wikidata": "Q23991271"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-maya-hansen": {
+   "ids_esterni": {
+    "mcuwiki": "Maya Hansen",
+    "wikidata": "Q65928804"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-maya-lopez-echo": {
    "ondata": "W0",
@@ -12450,6 +15101,50 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-melissa-bowen": {
+   "ids_esterni": {
+    "mcuwiki": "Melissa Bowen",
+    "wikidata": "Q60828180"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-melvin-potter": {
+   "ids_esterni": {
+    "mcuwiki": "Melvin Potter",
+    "wikidata": "Q129167228"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-meredith-quill": {
+   "ids_esterni": {
+    "mcuwiki": "Meredith Quill",
+    "wikidata": "Q65952811"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-michael-duffy": {
+   "ids_esterni": {
+    "mcuwiki": "Michael Duffy",
+    "wikidata": "Q66194497"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-michael-morbius": {
    "ondata": "W0",
@@ -12501,6 +15196,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-minn-erva": {
+   "ids_esterni": {
+    "mcuwiki": "Minn-Erva",
+    "wikidata": "Q66189072"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-mister-sinister": {
    "ids_esterni": {
     "wikidata": "Q302534"
@@ -12521,6 +15227,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-mitchell-carson": {
+   "ids_esterni": {
+    "mcuwiki": "Mitchell Carson",
+    "wikidata": "Q27057247"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-mobius": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -12530,6 +15247,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-moloka-dar": {
+   "ids_esterni": {
+    "mcuwiki": "Moloka Dar",
+    "wikidata": "Q66133364"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-monica-rambeau": {
    "ondata": "W0",
@@ -12570,6 +15298,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-mrs-davis": {
+   "ids_esterni": {
+    "mcuwiki": "Mrs. Davis",
+    "wikidata": "Q66196132"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-mystica": {
    "ondata": "W0",
@@ -12631,6 +15370,28 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-namora": {
+   "ids_esterni": {
+    "mcuwiki": "Namora",
+    "wikidata": "Q142296711"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-narblik": {
+   "ids_esterni": {
+    "mcuwiki": "Narblik",
+    "wikidata": "Q26772438"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-natasha-romanoff": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -12640,6 +15401,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-navid": {
+   "ids_esterni": {
+    "mcuwiki": "Navid",
+    "wikidata": "Q66196036"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-nebula": {
    "ondata": "W0",
@@ -12711,6 +15483,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-norex": {
+   "ids_esterni": {
+    "mcuwiki": "Norex",
+    "wikidata": "Q66189735"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-norman-osborn-green-goblin": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -12740,6 +15523,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-oblo": {
+   "ids_esterni": {
+    "mcuwiki": "Oblo",
+    "wikidata": "Q26772430"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-odin": {
+   "ids_esterni": {
+    "mcuwiki": "Odin",
+    "wikidata": "Q24046126"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-odino": {
    "ondata": "W0",
@@ -12780,6 +15585,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-peachy": {
+   "ids_esterni": {
+    "mcuwiki": "Peachy",
+    "wikidata": "Q66133331"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-peggy-carter-captain-carter": {
    "ondata": "W0",
@@ -12916,6 +15732,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-phineas-mason": {
+   "ids_esterni": {
+    "mcuwiki": "Tinkerer",
+    "wikidata": "Q26261996"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-pietro-maximoff": {
    "ids_esterni": {
     "wikidata": "Q27101792"
@@ -12976,6 +15803,28 @@
    "stato": "attivo",
    "tipo": "identita"
   },
+  "id-raina": {
+   "ids_esterni": {
+    "mcuwiki": "Raina",
+    "wikidata": "Q64514311"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-ramirez": {
+   "ids_esterni": {
+    "mcuwiki": "Ramirez",
+    "wikidata": "Q23751498"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-ramonda": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -12996,6 +15845,17 @@
    "stato": "attivo",
    "tipo": "identita"
   },
+  "id-randy-vale": {
+   "ids_esterni": {
+    "mcuwiki": "Randy Vale",
+    "wikidata": "Q66193924"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-ravonna-renslayer": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -13006,6 +15866,39 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-ray-nadeem": {
+   "ids_esterni": {
+    "mcuwiki": "Ray Nadeem",
+    "wikidata": "Q129175910"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-rebecca": {
+   "ids_esterni": {
+    "mcuwiki": "Rebecca",
+    "wikidata": "Q24068402"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-red-dagger": {
+   "ids_esterni": {
+    "mcuwiki": "Red Dagger",
+    "wikidata": "Q122680258"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-red-guardian": {
    "ondata": "W0",
@@ -13077,6 +15970,61 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-renata": {
+   "ids_esterni": {
+    "mcuwiki": "Renata",
+    "wikidata": "Q66197241"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-retch": {
+   "ids_esterni": {
+    "mcuwiki": "Retch",
+    "wikidata": "Q26772371"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-rhomann-dey": {
+   "ids_esterni": {
+    "mcuwiki": "Rhomann Dey",
+    "wikidata": "Q65935522"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-richard-madison": {
+   "ids_esterni": {
+    "mcuwiki": "Richard Madison",
+    "wikidata": "Q66195968"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-ricky": {
+   "ids_esterni": {
+    "mcuwiki": "Ricky",
+    "wikidata": "Q116216921"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-rio-vidal": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -13147,6 +16095,28 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-roeder": {
+   "ids_esterni": {
+    "mcuwiki": "Roeder",
+    "wikidata": "Q66194598"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-roger-harrington": {
+   "ids_esterni": {
+    "mcuwiki": "Roger Harrington",
+    "wikidata": "Q66192435"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-rogue": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -13156,6 +16126,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-ronan": {
+   "ids_esterni": {
+    "mcuwiki": "Ronan the Accuser",
+    "wikidata": "Q52947626"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-ronan-l-accusatore": {
    "ondata": "W0",
@@ -13207,6 +16188,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-sally-avril": {
+   "ids_esterni": {
+    "mcuwiki": "Sally Avril",
+    "wikidata": "Q66133287"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-sam-wilson-capitan-america": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -13226,6 +16218,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-scrote": {
+   "ids_esterni": {
+    "mcuwiki": "Scrote",
+    "wikidata": "Q26772446"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-sebastian-shaw": {
    "ondata": "W0",
@@ -13283,6 +16286,17 @@
    },
    "ondata": "W0",
    "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-shawna-lynde": {
+   "ids_esterni": {
+    "mcuwiki": "Shawna Lynde",
+    "wikidata": "Q66133320"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
@@ -13347,6 +16361,50 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-soh-larr": {
+   "ids_esterni": {
+    "mcuwiki": "Soh-Larr",
+    "wikidata": "Q66189190"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-sol-rama": {
+   "ids_esterni": {
+    "mcuwiki": "Sol Rama",
+    "wikidata": "Q27624560"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-sonny-burch": {
+   "ids_esterni": {
+    "mcuwiki": "Sonny Burch",
+    "wikidata": "Q66133380"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-soren": {
+   "ids_esterni": {
+    "mcuwiki": "Soren",
+    "wikidata": "Q66189494"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-spider-ham": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -13383,6 +16441,17 @@
    },
    "ondata": "W0",
    "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-stakar-ogord": {
+   "ids_esterni": {
+    "mcuwiki": "Stakar Ogord",
+    "wikidata": "Q65952746"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
@@ -13537,6 +16606,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-taserface": {
+   "ids_esterni": {
+    "mcuwiki": "Taserface",
+    "wikidata": "Q65935573"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-teen-billy-maximoff": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -13608,6 +16688,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-thomas-richards": {
+   "ids_esterni": {
+    "mcuwiki": "Thomas Richards",
+    "wikidata": "Q66191701"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-thor": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -13624,6 +16715,17 @@
    },
    "ondata": "W0",
    "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-topaz": {
+   "ids_esterni": {
+    "mcuwiki": "Topaz",
+    "wikidata": "Q42201389"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
@@ -13668,6 +16770,39 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-tullk": {
+   "ids_esterni": {
+    "mcuwiki": "Tullk",
+    "wikidata": "Q66133342"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-tyler-corbyn": {
+   "ids_esterni": {
+    "mcuwiki": "Tyler Corbyn",
+    "wikidata": "Q66197979"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-tyr": {
+   "ids_esterni": {
+    "mcuwiki": "Tyr",
+    "wikidata": "Q65929641"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-ultron": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -13687,6 +16822,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-uzman": {
+   "ids_esterni": {
+    "mcuwiki": "Uzman",
+    "wikidata": "Q66197610"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-valchiria": {
    "ondata": "W0",
@@ -13708,6 +16854,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-valkyrie": {
+   "ids_esterni": {
+    "mcuwiki": "Valkyrie",
+    "wikidata": "Q24175951"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-vanessa": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -13718,12 +16875,45 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-vanessa-fisk": {
+   "ids_esterni": {
+    "mcuwiki": "Vanessa Fisk",
+    "wikidata": "Q129167347"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-vanisher": {
    "ids_esterni": {
     "wikidata": "Q1168830"
    },
    "ondata": "W0",
    "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-vasily-karpov": {
+   "ids_esterni": {
+    "mcuwiki": "Vasily Karpov",
+    "wikidata": "Q24040968"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-vertigo": {
+   "ids_esterni": {
+    "mcuwiki": "Vertigo",
+    "wikidata": "Q139850358"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
@@ -13788,6 +16978,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-volstagg": {
+   "ids_esterni": {
+    "mcuwiki": "Volstagg",
+    "wikidata": "Q24046160"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-w-kabi": {
    "ids_esterni": {
     "wikidata": "Q27147410"
@@ -13817,6 +17018,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-watcher-informant": {
+   "ids_esterni": {
+    "mcuwiki": "Watcher Informant",
+    "wikidata": "Q24040958"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-weasel": {
    "ids_esterni": {
@@ -13848,6 +17060,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-whitcher": {
+   "ids_esterni": {
+    "mcuwiki": "Whitcher",
+    "wikidata": "Q66197086"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-whitney-frost": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -13857,6 +17080,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-wiccan": {
+   "ids_esterni": {
+    "mcuwiki": "Wiccan",
+    "wikidata": "Q139847093"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-william-ginter-riva": {
+   "ids_esterni": {
+    "mcuwiki": "William Ginter Riva",
+    "wikidata": "Q23750514"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-william-stryker": {
    "ondata": "W0",
@@ -13918,6 +17163,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-yasmin-monette": {
+   "ids_esterni": {
+    "mcuwiki": "Yasmin Monette",
+    "wikidata": "Q66197825"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-yelena-belova": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -13927,6 +17183,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-yon-rogg": {
+   "ids_esterni": {
+    "mcuwiki": "Yon-Rogg",
+    "wikidata": "Q66133436"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-yondu": {
    "ondata": "W0",
@@ -13947,6 +17214,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "p"
+  },
+  "id-yusuf-khan": {
+   "ids_esterni": {
+    "mcuwiki": "Yusuf Khan",
+    "wikidata": "Q129168851"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "id-zach-cooper": {
+   "ids_esterni": {
+    "mcuwiki": "Zach Cooper",
+    "wikidata": "Q66197897"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
   },
   "id-zeitgeist": {
    "ids_esterni": {
@@ -13978,6 +17267,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-zrinka": {
+   "ids_esterni": {
+    "mcuwiki": "Zrinka",
+    "wikidata": "Q66195568"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-zuri": {
    "ids_esterni": {
     "wikidata": "Q27147335"
@@ -13987,6 +17287,446 @@
    "rif": "canon",
    "stato": "attivo",
    "tipo": "identita"
+  },
+  "id-zylak": {
+   "ids_esterni": {
+    "mcuwiki": "Zylak",
+    "wikidata": "Q66133355"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
+  "luo-1337-connect": {
+   "ids_esterni": {
+    "mcuwiki": "1337 Connect",
+    "wikidata": "Q122389588"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-15th-precinct-police-station": {
+   "ids_esterni": {
+    "mcuwiki": "15th Precinct Police Station",
+    "wikidata": "Q122389608"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-29th-precinct-police-station": {
+   "ids_esterni": {
+    "mcuwiki": "29th Precinct Police Station",
+    "wikidata": "Q122418265"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-a-b-c-chinese-restaurant": {
+   "ids_esterni": {
+    "mcuwiki": "A.B.C. Chinese Restaurant",
+    "wikidata": "Q122443368"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-a-s-memorial-medical-center": {
+   "ids_esterni": {
+    "mcuwiki": "A.S. Memorial Medical Center",
+    "wikidata": "Q122443783"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-aaron-s-market": {
+   "ids_esterni": {
+    "mcuwiki": "Aaron's Market",
+    "wikidata": "Q122443888"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-abandoned-building": {
+   "ids_esterni": {
+    "mcuwiki": "Abandoned Building",
+    "wikidata": "Q122444030"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-abandoned-warehouse": {
+   "ids_esterni": {
+    "mcuwiki": "Abandoned Warehouse",
+    "wikidata": "Q122444270"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-abe-lebewhol-park": {
+   "ids_esterni": {
+    "mcuwiki": "Abe Lebewhol Park",
+    "wikidata": "Q122444464"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-adrian-toomes-headquarters": {
+   "ids_esterni": {
+    "mcuwiki": "Adrian Toomes' Headquarters",
+    "wikidata": "Q122445037"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-ajak-s-homestead": {
+   "ids_esterni": {
+    "mcuwiki": "Ajak's Homestead",
+    "wikidata": "Q122445399"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-al-and-cam-s-arcade": {
+   "ids_esterni": {
+    "mcuwiki": "Al and Cam's Arcade",
+    "wikidata": "Q122445538"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-aldrich-killian-s-mansion": {
+   "ids_esterni": {
+    "mcuwiki": "Aldrich Killian's Mansion",
+    "wikidata": "Q116818380"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-alexander-pierce-high-school": {
+   "ids_esterni": {
+    "mcuwiki": "Alexander Pierce High School",
+    "wikidata": "Q122445929"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-alexander-pierce-s-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Alexander Pierce's Residence",
+    "wikidata": "Q122445947"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-alias-investigations-office": {
+   "ids_esterni": {
+    "mcuwiki": "Alias Investigations Office",
+    "wikidata": "Q122445979"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-amanzi-kwakhona-umlambo": {
+   "ids_esterni": {
+    "mcuwiki": "Amanzi Kwakhona Umlambo",
+    "wikidata": "Q122446022"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-ana-s-house": {
+   "ids_esterni": {
+    "mcuwiki": "Ana's House",
+    "wikidata": "Q122446067"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-ancient-village": {
+   "ids_esterni": {
+    "mcuwiki": "Ancient Village",
+    "wikidata": "Q122446080"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-andrew-brandt-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Andrew Brandt's Apartment",
+    "wikidata": "Q122446094"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-antoine-grier-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Antoine Grier's Apartment",
+    "wikidata": "Q122446140"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-anton-mogart-s-estate": {
+   "ids_esterni": {
+    "mcuwiki": "Anton Mogart's Estate",
+    "wikidata": "Q122446158"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-anvil-headquarters": {
+   "ids_esterni": {
+    "mcuwiki": "Anvil Headquarters",
+    "wikidata": "Q122446178"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-anvil-studios": {
+   "ids_esterni": {
+    "mcuwiki": "Anvil Studios",
+    "wikidata": "Q122446267"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-anvil-training-facility": {
+   "ids_esterni": {
+    "mcuwiki": "Anvil Training Facility",
+    "wikidata": "Q122446289"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-anzhou": {
+   "ids_esterni": {
+    "mcuwiki": "Anzhou",
+    "wikidata": "Q122446467"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-apartment-412": {
+   "ids_esterni": {
+    "mcuwiki": "Apartment 412",
+    "wikidata": "Q122446502"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-apartment-6f": {
+   "ids_esterni": {
+    "mcuwiki": "Apartment 6F",
+    "wikidata": "Q122446516"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-arbus-storage": {
+   "ids_esterni": {
+    "mcuwiki": "Arbus Storage",
+    "wikidata": "Q122446556"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-arena-club": {
+   "ids_esterni": {
+    "mcuwiki": "Arena Club",
+    "wikidata": "Q122446585"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-arthur-walsh-s-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Arthur Walsh's Residence",
+    "wikidata": "Q122446617"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-asgardian-catacombs": {
+   "ids_esterni": {
+    "mcuwiki": "Asgardian Catacombs",
+    "wikidata": "Q122446954"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-asgardian-dungeons": {
+   "ids_esterni": {
+    "mcuwiki": "Asgardian Dungeons",
+    "wikidata": "Q116850467"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-atcu-storage-facility": {
+   "ids_esterni": {
+    "mcuwiki": "ATCU Storage Facility",
+    "wikidata": "Q122447921"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-atf-field-office": {
+   "ids_esterni": {
+    "mcuwiki": "ATF Field Office",
+    "wikidata": "Q122448329"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-atlas-academy": {
+   "ids_esterni": {
+    "mcuwiki": "Atlas Academy",
+    "wikidata": "Q122448832"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-attilan-mines": {
+   "ids_esterni": {
+    "mcuwiki": "Attilan Mines",
+    "wikidata": "Q122449186"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-audrey-eastman-s-secret-warehouse": {
+   "ids_esterni": {
+    "mcuwiki": "Audrey Eastman's Secret Warehouse",
+    "wikidata": "Q122449359"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-auerbach-theatrical-agency": {
+   "ids_esterni": {
+    "mcuwiki": "Auerbach Theatrical Agency",
+    "wikidata": "Q122449554"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
   },
   "luo-avengers-compound": {
    "ondata": "W0",
@@ -14008,12 +17748,815 @@
    "stato": "attivo",
    "tipo": "l"
   },
+  "luo-axia": {
+   "ids_esterni": {
+    "mcuwiki": "Axia",
+    "wikidata": "Q122450339"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bailey-s-auction-house": {
+   "ids_esterni": {
+    "mcuwiki": "Bailey's Auction House",
+    "wikidata": "Q122538749"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-baltimore-police-station": {
+   "ids_esterni": {
+    "mcuwiki": "Baltimore Police Station",
+    "wikidata": "Q122538792"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-barbershop-headquarters": {
+   "ids_esterni": {
+    "mcuwiki": "Barbershop Headquarters",
+    "wikidata": "Q122538968"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-barnes-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Barnes Residence",
+    "wikidata": "Q122539367"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bart-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Bart's Apartment",
+    "wikidata": "Q122539662"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bashenga-s-courtyard": {
+   "ids_esterni": {
+    "mcuwiki": "Bashenga's Courtyard",
+    "wikidata": "Q122539900"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-batesville": {
+   "ids_esterni": {
+    "mcuwiki": "Batesville",
+    "wikidata": "Q122540160"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-batiment-b3": {
+   "ids_esterni": {
+    "mcuwiki": "Batiment B3",
+    "wikidata": "Q114775065"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-battle-of-new-york-memorial": {
+   "ids_esterni": {
+    "mcuwiki": "Battle of New York Memorial",
+    "wikidata": "Q122541010"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
   "luo-baxter-building": {
    "ids_esterni": {
     "wikidata": "Q2338333"
    },
    "ondata": "W0",
    "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bay-ridge-rail-yard": {
+   "ids_esterni": {
+    "mcuwiki": "Bay Ridge Rail Yard",
+    "wikidata": "Q122545985"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bayard-community-center": {
+   "ids_esterni": {
+    "mcuwiki": "Bayard Community Center",
+    "wikidata": "Q122546363"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bayou-brothers-truck-stop": {
+   "ids_esterni": {
+    "mcuwiki": "Bayou Brothers Truck Stop",
+    "wikidata": "Q122546604"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-ben-urich-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Ben Urich's Apartment",
+    "wikidata": "Q122547067"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-benjamin-poindexter-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Benjamin Poindexter's Apartment",
+    "wikidata": "Q122547467"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-berlin-correctional-facility": {
+   "ids_esterni": {
+    "mcuwiki": "Berlin Correctional Facility",
+    "wikidata": "Q122547875"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bess-mahoney-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Bess Mahoney's Apartment",
+    "wikidata": "Q122548157"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-beth-quinn-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Beth Quinn's Apartment",
+    "wikidata": "Q122548393"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-birch-psychiatric-hospital": {
+   "ids_esterni": {
+    "mcuwiki": "Birch Psychiatric Hospital",
+    "wikidata": "Q122548897"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-birthing-chamber": {
+   "ids_esterni": {
+    "mcuwiki": "Birthing Chamber",
+    "wikidata": "Q122549162"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bishop-family-cemetery": {
+   "ids_esterni": {
+    "mcuwiki": "Bishop Family Cemetery",
+    "wikidata": "Q122549392"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bishop-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Bishop Residence",
+    "wikidata": "Q122549671"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bishop-security-headquarters": {
+   "ids_esterni": {
+    "mcuwiki": "Bishop Security Headquarters",
+    "wikidata": "Q122549915"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-black-box": {
+   "ids_esterni": {
+    "mcuwiki": "Black Box",
+    "wikidata": "Q122550173"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-blake-tower-s-office": {
+   "ids_esterni": {
+    "mcuwiki": "Blake Tower's Office",
+    "wikidata": "Q122550568"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-blaskowski-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Blaskowski Residence",
+    "wikidata": "Q122550804"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bloodstone-manor": {
+   "ids_esterni": {
+    "mcuwiki": "Bloodstone Manor",
+    "wikidata": "Q122551062"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bloom-estate-winery": {
+   "ids_esterni": {
+    "mcuwiki": "Bloom Estate Winery",
+    "wikidata": "Q122551258"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-blue-raven-ridge": {
+   "ids_esterni": {
+    "mcuwiki": "Blue Raven Ridge",
+    "wikidata": "Q122553593"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-blvd-bistro": {
+   "ids_esterni": {
+    "mcuwiki": "BLVD Bistro",
+    "wikidata": "Q122553922"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bob-s-market": {
+   "ids_esterni": {
+    "mcuwiki": "Bob's Market",
+    "wikidata": "Q122554222"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bombay-spice": {
+   "ids_esterni": {
+    "mcuwiki": "Bombay Spice",
+    "wikidata": "Q122554541"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-boot-of-jemiah": {
+   "ids_esterni": {
+    "mcuwiki": "Boot of Jemiah",
+    "wikidata": "Q122554823"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-border-village": {
+   "ids_esterni": {
+    "mcuwiki": "Border Village",
+    "wikidata": "Q122555186"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bowen-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Bowen Residence",
+    "wikidata": "Q122555483"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bradley-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Bradley Residence",
+    "wikidata": "Q122555777"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-brass-monkey-saloon": {
+   "ids_esterni": {
+    "mcuwiki": "Brass Monkey Saloon",
+    "wikidata": "Q122556051"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-brasserie": {
+   "ids_esterni": {
+    "mcuwiki": "Brasserie",
+    "wikidata": "Q122556185"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bridge-donuts": {
+   "ids_esterni": {
+    "mcuwiki": "Bridge Donuts",
+    "wikidata": "Q122556482"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-brigid-o-reilly-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Brigid O'Reilly's Apartment",
+    "wikidata": "Q122556693"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-broadway-restaurant": {
+   "ids_esterni": {
+    "mcuwiki": "Broadway Restaurant",
+    "wikidata": "Q122557129"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-broker-s-shop": {
+   "ids_esterni": {
+    "mcuwiki": "Broker's Shop",
+    "wikidata": "Q122557434"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bronwyn-university": {
+   "ids_esterni": {
+    "mcuwiki": "Bronwyn University",
+    "wikidata": "Q122557645"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-brooklyn-karate-academy": {
+   "ids_esterni": {
+    "mcuwiki": "Brooklyn Karate Academy",
+    "wikidata": "Q122558050"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bruce-banner-s-apartment-building": {
+   "ids_esterni": {
+    "mcuwiki": "Bruce Banner's Apartment Building",
+    "wikidata": "Q116215722"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bruce-banner-s-hideout": {
+   "ids_esterni": {
+    "mcuwiki": "Bruce Banner's Hideout",
+    "wikidata": "Q116216121"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bruce-banner-s-house": {
+   "ids_esterni": {
+    "mcuwiki": "Bruce Banner's House",
+    "wikidata": "Q122558414"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bruce-banner-s-island": {
+   "ids_esterni": {
+    "mcuwiki": "Bruce Banner's Island",
+    "wikidata": "Q122558644"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bruce-s-bar": {
+   "ids_esterni": {
+    "mcuwiki": "Bruce's Bar",
+    "wikidata": "Q122558878"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bruno-carrelli-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Bruno Carrelli's Apartment",
+    "wikidata": "Q122559107"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-brynmore-psychiatric-facility": {
+   "ids_esterni": {
+    "mcuwiki": "Brynmore Psychiatric Facility",
+    "wikidata": "Q122559380"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-buccaneer-bay": {
+   "ids_esterni": {
+    "mcuwiki": "Buccaneer Bay",
+    "wikidata": "Q122559647"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-buck-s": {
+   "ids_esterni": {
+    "mcuwiki": "Buck's",
+    "wikidata": "Q122560048"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bucky-barnes-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Bucky Barnes' Apartment",
+    "wikidata": "Q122560300"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bud-schultz-s-house": {
+   "ids_esterni": {
+    "mcuwiki": "Bud Schultz's House",
+    "wikidata": "Q122560502"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-buildwell-wood-shop": {
+   "ids_esterni": {
+    "mcuwiki": "Buildwell Wood Shop",
+    "wikidata": "Q122560911"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-burkov-mining-facility": {
+   "ids_esterni": {
+    "mcuwiki": "Burkov Mining Facility",
+    "wikidata": "Q122561282"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-burren-club": {
+   "ids_esterni": {
+    "mcuwiki": "Burren Club",
+    "wikidata": "Q122561581"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-bywater-station-house": {
+   "ids_esterni": {
+    "mcuwiki": "Bywater Station House",
+    "wikidata": "Q122561912"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cafe-beau-ba": {
+   "ids_esterni": {
+    "mcuwiki": "Café Beau-Ba",
+    "wikidata": "Q122585951"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-calderwood-auction-house": {
+   "ids_esterni": {
+    "mcuwiki": "Calderwood Auction House",
+    "wikidata": "Q122585972"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-california-centipede-base": {
+   "ids_esterni": {
+    "mcuwiki": "California Centipede Base",
+    "wikidata": "Q122586003"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-callisto-aerospace-control-center": {
+   "ids_esterni": {
+    "mcuwiki": "Callisto Aerospace Control Center",
+    "wikidata": "Q122586028"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-calvin-zabo-s-clandestine-clinic": {
+   "ids_esterni": {
+    "mcuwiki": "Calvin Zabo's Clandestine Clinic",
+    "wikidata": "Q122586076"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-camp-lehigh": {
+   "ids_esterni": {
+    "mcuwiki": "Camp Lehigh",
+    "wikidata": "Q116458582"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-campervan-hideout": {
+   "ids_esterni": {
+    "mcuwiki": "Campervan Hideout",
+    "wikidata": "Q122586132"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-canelo-s-auto-and-body": {
+   "ids_esterni": {
+    "mcuwiki": "Canelo's Auto and Body",
+    "wikidata": "Q122586155"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-carlo-iv-hotel": {
+   "ids_esterni": {
+    "mcuwiki": "Carlo IV Hotel",
+    "wikidata": "Q122586296"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-carson-wolf-s-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Carson Wolf's Residence",
+    "wikidata": "Q122586417"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-carter-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Carter Residence",
+    "wikidata": "Q122586640"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cassaro-gallery": {
+   "ids_esterni": {
+    "mcuwiki": "Cassaro Gallery",
+    "wikidata": "Q122586770"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-castle-de-krake": {
+   "ids_esterni": {
+    "mcuwiki": "Castle de Krake",
+    "wikidata": "Q122586883"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-castle-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Castle Residence",
+    "wikidata": "Q122586969"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "luogo"
@@ -14028,6 +18571,2349 @@
    "stato": "attivo",
    "tipo": "l"
   },
+  "luo-celestium": {
+   "ids_esterni": {
+    "mcuwiki": "Celestium",
+    "wikidata": "Q122587195"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-central-london-storage": {
+   "ids_esterni": {
+    "mcuwiki": "Central London Storage",
+    "wikidata": "Q122587305"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-central-new-york-city-gymnasium": {
+   "ids_esterni": {
+    "mcuwiki": "Central New York City Gymnasium",
+    "wikidata": "Q122587335"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cerberus-squad-compound": {
+   "ids_esterni": {
+    "mcuwiki": "Cerberus Squad Compound",
+    "wikidata": "Q122587371"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-chadwick-ranch": {
+   "ids_esterni": {
+    "mcuwiki": "Chadwick Ranch",
+    "wikidata": "Q122587394"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-chadwick-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Chadwick Residence",
+    "wikidata": "Q122587417"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-chan-ho-yin-s-house": {
+   "ids_esterni": {
+    "mcuwiki": "Chan Ho Yin's House",
+    "wikidata": "Q122587435"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-charmont-jewelers": {
+   "ids_esterni": {
+    "mcuwiki": "Charmont Jewelers",
+    "wikidata": "Q122587520"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-chatsworth-high-school": {
+   "ids_esterni": {
+    "mcuwiki": "Chatsworth High School",
+    "wikidata": "Q122587537"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-chen-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Chen Residence",
+    "wikidata": "Q122587672"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-chikara-dojo": {
+   "ids_esterni": {
+    "mcuwiki": "Chikara Dojo",
+    "wikidata": "Q122594618"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-chinatown-crew-headquarters": {
+   "ids_esterni": {
+    "mcuwiki": "Chinatown Crew Headquarters",
+    "wikidata": "Q122594916"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-chinatown-crew-hideout": {
+   "ids_esterni": {
+    "mcuwiki": "Chinatown Crew Hideout",
+    "wikidata": "Q122595131"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-chris-french-cleaners": {
+   "ids_esterni": {
+    "mcuwiki": "Chris French Cleaners",
+    "wikidata": "Q122595399"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-christmas-castle": {
+   "ids_esterni": {
+    "mcuwiki": "Christmas Castle",
+    "wikidata": "Q122595669"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-church-of-all-saints-hospital": {
+   "ids_esterni": {
+    "mcuwiki": "Church of All Saints Hospital",
+    "wikidata": "Q122596064"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-church-of-gibborim-executive-office": {
+   "ids_esterni": {
+    "mcuwiki": "Church of Gibborim Executive Office",
+    "wikidata": "Q122596317"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cia-safe-house": {
+   "ids_esterni": {
+    "mcuwiki": "CIA Safe House",
+    "wikidata": "Q122596505"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cia-south-korean-black-site": {
+   "ids_esterni": {
+    "mcuwiki": "CIA South Korean Black Site",
+    "wikidata": "Q122596735"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cincinnati-memorial-hospital": {
+   "ids_esterni": {
+    "mcuwiki": "Cincinnati Memorial Hospital",
+    "wikidata": "Q122596957"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-circle-q": {
+   "ids_esterni": {
+    "mcuwiki": "Circle Q",
+    "wikidata": "Q122597354"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-circo-s-pastry-shop": {
+   "ids_esterni": {
+    "mcuwiki": "Circo's Pastry Shop",
+    "wikidata": "Q122597650"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-citadel": {
+   "ids_esterni": {
+    "mcuwiki": "Citadel",
+    "wikidata": "Q122597958"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-citadel-at-the-end-of-time": {
+   "ids_esterni": {
+    "mcuwiki": "Citadel at the End of Time",
+    "wikidata": "Q122598374"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-city-of-the-dead": {
+   "ids_esterni": {
+    "mcuwiki": "City of the Dead",
+    "wikidata": "Q122598840"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-claire-temple-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Claire Temple's Apartment",
+    "wikidata": "Q122599113"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-clemence-convent": {
+   "ids_esterni": {
+    "mcuwiki": "Clemence Convent",
+    "wikidata": "Q122599140"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-clinica-sonando": {
+   "ids_esterni": {
+    "mcuwiki": "Clinica Sonando",
+    "wikidata": "Q122599152"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-clint-barton-s-homestead": {
+   "ids_esterni": {
+    "mcuwiki": "Clint Barton's Homestead",
+    "wikidata": "Q122599228"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-clinton-church": {
+   "ids_esterni": {
+    "mcuwiki": "Clinton Church",
+    "wikidata": "Q122599287"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-clive-s-photo-studio": {
+   "ids_esterni": {
+    "mcuwiki": "Clive's Photo Studio",
+    "wikidata": "Q122599322"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-club-delight": {
+   "ids_esterni": {
+    "mcuwiki": "Club Delight",
+    "wikidata": "Q122599381"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cockroach-s-casino-warehouse": {
+   "ids_esterni": {
+    "mcuwiki": "Cockroach's Casino Warehouse",
+    "wikidata": "Q122599468"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cocoon": {
+   "ids_esterni": {
+    "mcuwiki": "Cocoon",
+    "wikidata": "Q122599559"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cole-miller-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Cole Miller's Apartment",
+    "wikidata": "Q122599738"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-coles-academic-high-school": {
+   "ids_esterni": {
+    "mcuwiki": "Coles Academic High School",
+    "wikidata": "Q122599757"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-collector-s-museum": {
+   "ids_esterni": {
+    "mcuwiki": "Collector's Museum",
+    "wikidata": "Q116850804"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-colleen-o-brien-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Colleen O'Brien's Apartment",
+    "wikidata": "Q122599778"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-colombian-police-station": {
+   "ids_esterni": {
+    "mcuwiki": "Colombian Police Station",
+    "wikidata": "Q122599800"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-colon-s-gym": {
+   "ids_esterni": {
+    "mcuwiki": "Colon's Gym",
+    "wikidata": "Q122599834"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-computational-services-inc-headquarters": {
+   "ids_esterni": {
+    "mcuwiki": "Computational Services Inc. Headquarters",
+    "wikidata": "Q122599966"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cosmogenic-manufacturing-warehouse": {
+   "ids_esterni": {
+    "mcuwiki": "Cosmogenic Manufacturing Warehouse",
+    "wikidata": "Q122600705"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cotton-club": {
+   "ids_esterni": {
+    "mcuwiki": "Cotton Club",
+    "wikidata": "Q122600870"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cotton-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Cotton Residence",
+    "wikidata": "Q122601016"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-county-cold-storage-building": {
+   "ids_esterni": {
+    "mcuwiki": "County Cold Storage Building",
+    "wikidata": "Q122601246"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-court-square-diner": {
+   "ids_esterni": {
+    "mcuwiki": "Court Square Diner",
+    "wikidata": "Q122601576"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-crane-sisters-tattoo-shop": {
+   "ids_esterni": {
+    "mcuwiki": "Crane Sisters' Tattoo Shop",
+    "wikidata": "Q122601779"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cranky-pete-s-deli": {
+   "ids_esterni": {
+    "mcuwiki": "Cranky Pete's Deli",
+    "wikidata": "Q122602172"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-crater": {
+   "ids_esterni": {
+    "mcuwiki": "Crater",
+    "wikidata": "Q122602385"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-crispus-attucks-complex": {
+   "ids_esterni": {
+    "mcuwiki": "Crispus Attucks Complex",
+    "wikidata": "Q122602494"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-crown-regent-hotel": {
+   "ids_esterni": {
+    "mcuwiki": "Crown Regent Hotel",
+    "wikidata": "Q122602524"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cuchifritos": {
+   "ids_esterni": {
+    "mcuwiki": "Cuchifritos",
+    "wikidata": "Q122602568"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-culper-woods": {
+   "ids_esterni": {
+    "mcuwiki": "Culper Woods",
+    "wikidata": "Q122602589"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-culver-university": {
+   "ids_esterni": {
+    "mcuwiki": "Culver University",
+    "wikidata": "Q114247494"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-curtis-hoyle-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Curtis Hoyle's Apartment",
+    "wikidata": "Q122602617"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-custer-s-grove": {
+   "ids_esterni": {
+    "mcuwiki": "Custer's Grove",
+    "wikidata": "Q122602641"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-custer-s-grove-high-school": {
+   "ids_esterni": {
+    "mcuwiki": "Custer's Grove High School",
+    "wikidata": "Q122602670"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cybercoffee": {
+   "ids_esterni": {
+    "mcuwiki": "CyberCoffee",
+    "wikidata": "Q122602738"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cybertek-corporate-headquarters": {
+   "ids_esterni": {
+    "mcuwiki": "Cybertek Corporate Headquarters",
+    "wikidata": "Q122602752"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-cybertek-manufacturing-facility": {
+   "ids_esterni": {
+    "mcuwiki": "Cybertek Manufacturing Facility",
+    "wikidata": "Q122602810"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-da-vinci-museum": {
+   "ids_esterni": {
+    "mcuwiki": "Da Vinci Museum",
+    "wikidata": "Q122617201"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-daily-bugle-broadcasting-center": {
+   "ids_esterni": {
+    "mcuwiki": "Daily Bugle Broadcasting Center",
+    "wikidata": "Q122617228"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-daisy-clover-milk-factory": {
+   "ids_esterni": {
+    "mcuwiki": "Daisy Clover Milk Factory",
+    "wikidata": "Q122617265"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-damage-control-deep-storage-vault": {
+   "ids_esterni": {
+    "mcuwiki": "Damage Control Deep Storage Vault",
+    "wikidata": "Q122617298"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-damballah-voodoo-tours-shop": {
+   "ids_esterni": {
+    "mcuwiki": "Damballah Voodoo Tours & Shop",
+    "wikidata": "Q122617368"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-danny-rand-s-penthouse": {
+   "ids_esterni": {
+    "mcuwiki": "Danny Rand's Penthouse",
+    "wikidata": "Q122617392"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-dario-marquez-s-dress-shop": {
+   "ids_esterni": {
+    "mcuwiki": "Dario Marquez's Dress Shop",
+    "wikidata": "Q122617425"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-darius-davis-house": {
+   "ids_esterni": {
+    "mcuwiki": "Darius Davis' House",
+    "wikidata": "Q122617450"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-darkhold-castle": {
+   "ids_esterni": {
+    "mcuwiki": "Darkhold Castle",
+    "wikidata": "Q122617506"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-dave-s-ranch": {
+   "ids_esterni": {
+    "mcuwiki": "Dave's Ranch",
+    "wikidata": "Q122617533"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-david-schultz-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "David Schultz's Apartment",
+    "wikidata": "Q122617572"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-dean-mansion": {
+   "ids_esterni": {
+    "mcuwiki": "Dean Mansion",
+    "wikidata": "Q122617600"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-declan-research-facility": {
+   "ids_esterni": {
+    "mcuwiki": "Declan Research Facility",
+    "wikidata": "Q122617621"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-declan-research-facility-lab": {
+   "ids_esterni": {
+    "mcuwiki": "Declan Research Facility Lab",
+    "wikidata": "Q122617711"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-decommissioned-cdc-facility": {
+   "ids_esterni": {
+    "mcuwiki": "Decommissioned CDC Facility",
+    "wikidata": "Q122617735"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-defense-logistics-building": {
+   "ids_esterni": {
+    "mcuwiki": "Defense Logistics Building",
+    "wikidata": "Q122617755"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-deke-shaw-s-company-s-office": {
+   "ids_esterni": {
+    "mcuwiki": "Deke Shaw's Company's Office",
+    "wikidata": "Q122617774"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-delaney-hall": {
+   "ids_esterni": {
+    "mcuwiki": "Delaney Hall",
+    "wikidata": "Q122617799"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-delmar-s-deli-grocery": {
+   "ids_esterni": {
+    "mcuwiki": "Delmar's Deli-Grocery",
+    "wikidata": "Q122617835"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-demolished-bar": {
+   "ids_esterni": {
+    "mcuwiki": "Demolished Bar",
+    "wikidata": "Q116216142"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-denton-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Denton Residence",
+    "wikidata": "Q122617920"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-devil-s-anus": {
+   "ids_esterni": {
+    "mcuwiki": "Devil's Anus",
+    "wikidata": "Q122617946"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-diamond-head-crater": {
+   "ids_esterni": {
+    "mcuwiki": "Diamond Head Crater",
+    "wikidata": "Q122617956"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-diamondback-s-warehouse-hideout": {
+   "ids_esterni": {
+    "mcuwiki": "Diamondback's Warehouse Hideout",
+    "wikidata": "Q122618128"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-dinah-madani-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Dinah Madani's Apartment",
+    "wikidata": "Q122618160"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-disciples-of-ammit-s-london-base": {
+   "ids_esterni": {
+    "mcuwiki": "Disciples of Ammit's London Base",
+    "wikidata": "Q122618188"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-distant-star-facility": {
+   "ids_esterni": {
+    "mcuwiki": "Distant Star Facility",
+    "wikidata": "Q122618210"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-district-27-west-side-station": {
+   "ids_esterni": {
+    "mcuwiki": "District 27 West Side Station",
+    "wikidata": "Q122618229"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-dolores-miller-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Dolores Miller's Apartment",
+    "wikidata": "Q122618281"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-donatello-s": {
+   "ids_esterni": {
+    "mcuwiki": "Donatello's",
+    "wikidata": "Q122618303"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-dontrell-hamilton-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Dontrell Hamilton's Apartment",
+    "wikidata": "Q122618365"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-dorothy-walker-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Dorothy Walker's Apartment",
+    "wikidata": "Q122618404"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-dreykov-s-budapest-office": {
+   "ids_esterni": {
+    "mcuwiki": "Dreykov's Budapest Office",
+    "wikidata": "Q122618425"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-drone-command-center": {
+   "ids_esterni": {
+    "mcuwiki": "Drone Command Center",
+    "wikidata": "Q122618461"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-druig-s-compound": {
+   "ids_esterni": {
+    "mcuwiki": "Druig's Compound",
+    "wikidata": "Q122618473"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-duke-s-pool-hall": {
+   "ids_esterni": {
+    "mcuwiki": "Duke's Pool Hall",
+    "wikidata": "Q122618496"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-duncan-dotter-design-office": {
+   "ids_esterni": {
+    "mcuwiki": "Duncan + Dotter Design Office",
+    "wikidata": "Q122618536"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-duquesne-brownstone": {
+   "ids_esterni": {
+    "mcuwiki": "Duquesne Brownstone",
+    "wikidata": "Q122618570"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-e-z-slow-salvage-tow-yard": {
+   "ids_esterni": {
+    "mcuwiki": "E-Z Slow Salvage Tow Yard",
+    "wikidata": "Q122619146"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-east-brook-building": {
+   "ids_esterni": {
+    "mcuwiki": "East Brook Building",
+    "wikidata": "Q122619774"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-easterling-farms": {
+   "ids_esterni": {
+    "mcuwiki": "Easterling Farms",
+    "wikidata": "Q122619800"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-eastern-regional-detention-center": {
+   "ids_esterni": {
+    "mcuwiki": "Eastern Regional Detention Center",
+    "wikidata": "Q122619854"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-eastman-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Eastman Residence",
+    "wikidata": "Q122619876"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-ecorse-hope-hospital": {
+   "ids_esterni": {
+    "mcuwiki": "Ecorse Hope Hospital",
+    "wikidata": "Q122619905"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-eddie-s-memorabilia": {
+   "ids_esterni": {
+    "mcuwiki": "Eddie's Memorabilia",
+    "wikidata": "Q122619937"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-eden-towers": {
+   "ids_esterni": {
+    "mcuwiki": "Eden Towers",
+    "wikidata": "Q122620096"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-edgecombe-funeral-house": {
+   "ids_esterni": {
+    "mcuwiki": "Edgecombe Funeral House",
+    "wikidata": "Q122620335"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-elektra-natchios-penthouse": {
+   "ids_esterni": {
+    "mcuwiki": "Elektra Natchios' Penthouse",
+    "wikidata": "Q122621921"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-elena-cardenas-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Elena Cardenas' Apartment",
+    "wikidata": "Q122622156"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-ellison-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Ellison Residence",
+    "wikidata": "Q122622336"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-endotex-labs": {
+   "ids_esterni": {
+    "mcuwiki": "Endotex Labs",
+    "wikidata": "Q122622628"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-enoch-s-house": {
+   "ids_esterni": {
+    "mcuwiki": "Enoch's House",
+    "wikidata": "Q122622842"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-eric-s-growhouse": {
+   "ids_esterni": {
+    "mcuwiki": "Eric's Growhouse",
+    "wikidata": "Q122623135"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-erik-gelden-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Erik Gelden's Apartment",
+    "wikidata": "Q122623855"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-essex-tower-hotel": {
+   "ids_esterni": {
+    "mcuwiki": "Essex Tower Hotel",
+    "wikidata": "Q122624138"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-everett-ross-house": {
+   "ids_esterni": {
+    "mcuwiki": "Everett Ross' House",
+    "wikidata": "Q122624361"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-fagan-corners": {
+   "ids_esterni": {
+    "mcuwiki": "Fagan Corners",
+    "wikidata": "Q122624691"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-farm": {
+   "ids_esterni": {
+    "mcuwiki": "Farm",
+    "wikidata": "Q122624715"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-farmers-merchants-bank": {
+   "ids_esterni": {
+    "mcuwiki": "Farmers & Merchants Bank",
+    "wikidata": "Q122624798"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-fat-man-auto-repair": {
+   "ids_esterni": {
+    "mcuwiki": "Fat Man Auto Repair",
+    "wikidata": "Q122624823"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-fault": {
+   "ids_esterni": {
+    "mcuwiki": "Fault",
+    "wikidata": "Q122624862"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-feldman-electronics": {
+   "ids_esterni": {
+    "mcuwiki": "Feldman Electronics",
+    "wikidata": "Q122624891"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-finley-s": {
+   "ids_esterni": {
+    "mcuwiki": "Finley's",
+    "wikidata": "Q122624926"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-fisk-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Fisk Residence",
+    "wikidata": "Q122624946"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-five-mile-fork": {
+   "ids_esterni": {
+    "mcuwiki": "Five Mile Fork",
+    "wikidata": "Q116216038"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-flag-smashers-hideout": {
+   "ids_esterni": {
+    "mcuwiki": "Flag Smashers Hideout",
+    "wikidata": "Q122624968"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-flying-rocket-diner": {
+   "ids_esterni": {
+    "mcuwiki": "Flying Rocket Diner",
+    "wikidata": "Q122624996"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-fogwell-s-gym": {
+   "ids_esterni": {
+    "mcuwiki": "Fogwell's Gym",
+    "wikidata": "Q122625003"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-fort-bryon": {
+   "ids_esterni": {
+    "mcuwiki": "Fort Bryon",
+    "wikidata": "Q122625030"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-fort-johnson": {
+   "ids_esterni": {
+    "mcuwiki": "Fort Johnson",
+    "wikidata": "Q116215927"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-fragment-616": {
+   "ids_esterni": {
+    "mcuwiki": "Fragment 616",
+    "wikidata": "Q122625056"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-frank-castle-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Frank Castle's Apartment",
+    "wikidata": "Q122625068"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-frank-choi-s-furniture": {
+   "ids_esterni": {
+    "mcuwiki": "Frank Choi's Furniture",
+    "wikidata": "Q122625086"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-frankie-s-famous-24-hour-pawnshop": {
+   "ids_esterni": {
+    "mcuwiki": "Frankie's Famous 24-Hour Pawnshop",
+    "wikidata": "Q122625106"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-franklin-d-roosevelt-high-school": {
+   "ids_esterni": {
+    "mcuwiki": "Franklin D. Roosevelt High School",
+    "wikidata": "Q122625179"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-franklin-deli-market": {
+   "ids_esterni": {
+    "mcuwiki": "Franklin Deli Market",
+    "wikidata": "Q122625349"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-fred-62": {
+   "ids_esterni": {
+    "mcuwiki": "Fred 62",
+    "wikidata": "Q122625529"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-freyer-national-park": {
+   "ids_esterni": {
+    "mcuwiki": "Freyer National Park",
+    "wikidata": "Q122625738"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-fridge": {
+   "ids_esterni": {
+    "mcuwiki": "Fridge",
+    "wikidata": "Q122625751"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-frolic-room-bar": {
+   "ids_esterni": {
+    "mcuwiki": "Frolic Room Bar",
+    "wikidata": "Q122625766"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-fun-arcade-games": {
+   "ids_esterni": {
+    "mcuwiki": "Fun Arcade Games",
+    "wikidata": "Q122625775"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-gabriel-soto-s-mansion": {
+   "ids_esterni": {
+    "mcuwiki": "Gabriel Soto's Mansion",
+    "wikidata": "Q122642624"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-gasel-bank": {
+   "ids_esterni": {
+    "mcuwiki": "Gasel Bank",
+    "wikidata": "Q122642764"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-gates-of-eternity": {
+   "ids_esterni": {
+    "mcuwiki": "Gates of Eternity",
+    "wikidata": "Q122642792"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-gates-of-osiris": {
+   "ids_esterni": {
+    "mcuwiki": "Gates of Osiris",
+    "wikidata": "Q122642814"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-genghis-connie-s": {
+   "ids_esterni": {
+    "mcuwiki": "Genghis Connie's",
+    "wikidata": "Q122642843"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-genghis-connie-s-too": {
+   "ids_esterni": {
+    "mcuwiki": "Genghis Connie's Too",
+    "wikidata": "Q122642879"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-geosciences-research-center": {
+   "ids_esterni": {
+    "mcuwiki": "Geosciences Research Center",
+    "wikidata": "Q122642942"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-ghost-s-hideout": {
+   "ids_esterni": {
+    "mcuwiki": "Ghost's Hideout",
+    "wikidata": "Q122642963"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-gideon-malick-s-penthouse": {
+   "ids_esterni": {
+    "mcuwiki": "Gideon Malick's Penthouse",
+    "wikidata": "Q122643003"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-gilgamesh-s-house": {
+   "ids_esterni": {
+    "mcuwiki": "Gilgamesh's House",
+    "wikidata": "Q122643041"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-glitter-gutter-club": {
+   "ids_esterni": {
+    "mcuwiki": "Glitter Gutter Club",
+    "wikidata": "Q122643156"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-glk-h-los-angeles-office": {
+   "ids_esterni": {
+    "mcuwiki": "GLK&H Los Angeles Office",
+    "wikidata": "Q122643178"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-godthab-omega": {
+   "ids_esterni": {
+    "mcuwiki": "Godthab Omega",
+    "wikidata": "Q122643205"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-goldbrix-tavern": {
+   "ids_esterni": {
+    "mcuwiki": "Goldbrix Tavern",
+    "wikidata": "Q122643237"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-golden-daggers-club": {
+   "ids_esterni": {
+    "mcuwiki": "Golden Daggers Club",
+    "wikidata": "Q122643306"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-golden-sands": {
+   "ids_esterni": {
+    "mcuwiki": "Golden Sands",
+    "wikidata": "Q122643330"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-golden-tigers-hideout": {
+   "ids_esterni": {
+    "mcuwiki": "Golden Tigers' Hideout",
+    "wikidata": "Q122643352"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-golden-tigers-nightclub": {
+   "ids_esterni": {
+    "mcuwiki": "Golden Tigers' Nightclub",
+    "wikidata": "Q122643371"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-good-rest-motel": {
+   "ids_esterni": {
+    "mcuwiki": "Good Rest Motel",
+    "wikidata": "Q122643402"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-goodman-university": {
+   "ids_esterni": {
+    "mcuwiki": "Goodman University",
+    "wikidata": "Q122643416"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-gordon-hotel": {
+   "ids_esterni": {
+    "mcuwiki": "Gordon Hotel",
+    "wikidata": "Q122643445"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-gorilla-city": {
+   "ids_esterni": {
+    "mcuwiki": "Gorilla City",
+    "wikidata": "Q122643464"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-gothic-renaissance": {
+   "ids_esterni": {
+    "mcuwiki": "Gothic Renaissance",
+    "wikidata": "Q122643488"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-government-storage-warehouse": {
+   "ids_esterni": {
+    "mcuwiki": "Government Storage Warehouse",
+    "wikidata": "Q122643507"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-gower-car-wash": {
+   "ids_esterni": {
+    "mcuwiki": "Gower Car Wash",
+    "wikidata": "Q122643537"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-grace-s-house": {
+   "ids_esterni": {
+    "mcuwiki": "Grace's House",
+    "wikidata": "Q122643566"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-graciela-aguirre-s-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Graciela Aguirre's Residence",
+    "wikidata": "Q122643583"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-grand-arena": {
+   "ids_esterni": {
+    "mcuwiki": "Grand Arena",
+    "wikidata": "Q122643603"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-grand-cayman-royal-bank": {
+   "ids_esterni": {
+    "mcuwiki": "Grand Cayman Royal Bank",
+    "wikidata": "Q122643632"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-grandmaster-palace": {
+   "ids_esterni": {
+    "mcuwiki": "Grandmaster Palace",
+    "wikidata": "Q122643675"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-graniteville-diner": {
+   "ids_esterni": {
+    "mcuwiki": "Graniteville Diner",
+    "wikidata": "Q122643715"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-grayburn-college": {
+   "ids_esterni": {
+    "mcuwiki": "Grayburn College",
+    "wikidata": "Q116216070"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-grc-new-york-headquarters": {
+   "ids_esterni": {
+    "mcuwiki": "GRC New York Headquarters",
+    "wikidata": "Q122648445"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-great-mound": {
+   "ids_esterni": {
+    "mcuwiki": "Great Mound",
+    "wikidata": "Q122648463"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-green-wood-cemetery": {
+   "ids_esterni": {
+    "mcuwiki": "Green-Wood Cemetery",
+    "wikidata": "Q122648494"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-greenleaf-veterinary": {
+   "ids_esterni": {
+    "mcuwiki": "Greenleaf Veterinary",
+    "wikidata": "Q122648509"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-greenwich-university": {
+   "ids_esterni": {
+    "mcuwiki": "Greenwich University",
+    "wikidata": "Q122648530"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-greg-pressfield-esq-law-office": {
+   "ids_esterni": {
+    "mcuwiki": "Greg Pressfield, ESQ. Law Office",
+    "wikidata": "Q122648547"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-gregory-sallinger-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Gregory Sallinger's Apartment",
+    "wikidata": "Q122648565"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-grills-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Grills' Apartment",
+    "wikidata": "Q122648596"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-grubmates": {
+   "ids_esterni": {
+    "mcuwiki": "GrubMates",
+    "wikidata": "Q122648622"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-gt-agrochemical-facility": {
+   "ids_esterni": {
+    "mcuwiki": "GT Agrochemical Facility",
+    "wikidata": "Q122648653"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-gt-agrochemical-office": {
+   "ids_esterni": {
+    "mcuwiki": "GT Agrochemical Office",
+    "wikidata": "Q122648693"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-guest-house": {
+   "ids_esterni": {
+    "mcuwiki": "Guest House",
+    "wikidata": "Q122648746"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-gulmira": {
+   "ids_esterni": {
+    "mcuwiki": "Gulmira",
+    "wikidata": "Q114241396"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-gwen-s": {
+   "ids_esterni": {
+    "mcuwiki": "Gwen's",
+    "wikidata": "Q122649358"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-halfway-house-cafe": {
+   "ids_esterni": {
+    "mcuwiki": "Halfway House Cafe",
+    "wikidata": "Q122652428"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-hall-of-asgard": {
+   "ids_esterni": {
+    "mcuwiki": "Hall of Asgard",
+    "wikidata": "Q116295398"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-hamilton-county-memorial-hall": {
+   "ids_esterni": {
+    "mcuwiki": "Hamilton County Memorial Hall",
+    "wikidata": "Q116818362"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-hammer-industries-headquarters": {
+   "ids_esterni": {
+    "mcuwiki": "Hammer Industries Headquarters",
+    "wikidata": "Q114775129"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-hand-compound": {
+   "ids_esterni": {
+    "mcuwiki": "Hand Compound",
+    "wikidata": "Q122652538"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-hand-s-anzhou-laboratory": {
+   "ids_esterni": {
+    "mcuwiki": "Hand's Anzhou Laboratory",
+    "wikidata": "Q122652580"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-hand-s-brooklyn-warehouse": {
+   "ids_esterni": {
+    "mcuwiki": "Hand's Brooklyn Warehouse",
+    "wikidata": "Q122652633"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-hannah-hutchins-house": {
+   "ids_esterni": {
+    "mcuwiki": "Hannah Hutchins' House",
+    "wikidata": "Q122652681"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-happy-haus": {
+   "ids_esterni": {
+    "mcuwiki": "Happy Haus",
+    "wikidata": "Q122652959"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-happy-hogan-s-condominium": {
+   "ids_esterni": {
+    "mcuwiki": "Happy Hogan's Condominium",
+    "wikidata": "Q122653001"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-harbor-arms": {
+   "ids_esterni": {
+    "mcuwiki": "Harbor Arms",
+    "wikidata": "Q122653053"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-harlem-s-paradise": {
+   "ids_esterni": {
+    "mcuwiki": "Harlem's Paradise",
+    "wikidata": "Q122653221"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-harlem-women-s-clinic": {
+   "ids_esterni": {
+    "mcuwiki": "Harlem Women's Clinic",
+    "wikidata": "Q122653164"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-harold-meachum-s-penthouse": {
+   "ids_esterni": {
+    "mcuwiki": "Harold Meachum's Penthouse",
+    "wikidata": "Q122653289"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-hasan-s-house": {
+   "ids_esterni": {
+    "mcuwiki": "Hasan's House",
+    "wikidata": "Q122653520"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-hattley-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Hattley Residence",
+    "wikidata": "Q122653853"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-hauser-s-bakery": {
+   "ids_esterni": {
+    "mcuwiki": "Hauser's Bakery",
+    "wikidata": "Q122654153"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-haven-hills": {
+   "ids_esterni": {
+    "mcuwiki": "Haven Hills",
+    "wikidata": "Q122654430"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-havenworth-federal-penitentiary": {
+   "ids_esterni": {
+    "mcuwiki": "Havenworth Federal Penitentiary",
+    "wikidata": "Q122654483"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-hell-s-harbor": {
+   "ids_esterni": {
+    "mcuwiki": "Hell's Harbor",
+    "wikidata": "Q122654560"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-helmut-zemo-s-garage": {
+   "ids_esterni": {
+    "mcuwiki": "Helmut Zemo's Garage",
+    "wikidata": "Q122654766"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-helmut-zemo-s-latvian-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Helmut Zemo's Latvian Residence",
+    "wikidata": "Q122654858"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-henson-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Henson Residence",
+    "wikidata": "Q122654921"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-herman-s-hearty-slice": {
+   "ids_esterni": {
+    "mcuwiki": "Herman's Hearty Slice",
+    "wikidata": "Q122654967"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-hess-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Hess Residence",
+    "wikidata": "Q122655021"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-hydra-headquarters": {
+   "ids_esterni": {
+    "mcuwiki": "Hydra Headquarters",
+    "wikidata": "Q116458569"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
   "luo-il-void": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -14037,6 +20923,50 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "l"
+  },
+  "luo-isabela-s-diner": {
+   "ids_esterni": {
+    "mcuwiki": "Isabela's Diner",
+    "wikidata": "Q116294759"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-ivan-vanko-s-workshop": {
+   "ids_esterni": {
+    "mcuwiki": "Ivan Vanko's Workshop",
+    "wikidata": "Q116278718"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-jane-foster-s-apartment": {
+   "ids_esterni": {
+    "mcuwiki": "Jane Foster's Apartment",
+    "wikidata": "Q116850578"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-joint-dark-energy-mission-facility": {
+   "ids_esterni": {
+    "mcuwiki": "Joint Dark Energy Mission Facility",
+    "wikidata": "Q116295236"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
   },
   "luo-kamar-taj": {
    "ondata": "W0",
@@ -14048,6 +20978,17 @@
    "stato": "attivo",
    "tipo": "l"
   },
+  "luo-keener-residence": {
+   "ids_esterni": {
+    "mcuwiki": "Keener Residence",
+    "wikidata": "Q116818342"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
   "luo-latveria": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -14057,6 +20998,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "l"
+  },
+  "luo-loki-s-hideout": {
+   "ids_esterni": {
+    "mcuwiki": "Loki's Hideout",
+    "wikidata": "Q116477026"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-medina": {
+   "ids_esterni": {
+    "mcuwiki": "Medina",
+    "wikidata": "Q116850410"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
   },
   "luo-new-asgard": {
    "ondata": "W0",
@@ -14068,6 +21031,149 @@
    "stato": "attivo",
    "tipo": "l"
   },
+  "luo-nine-realms": {
+   "ids_esterni": {
+    "mcuwiki": "Nine Realms",
+    "wikidata": "Q116295317"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-obadiah-stane-s-mansion": {
+   "ids_esterni": {
+    "mcuwiki": "Obadiah Stane's Mansion",
+    "wikidata": "Q116207649"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-pet-palace": {
+   "ids_esterni": {
+    "mcuwiki": "Pet Palace",
+    "wikidata": "Q116295124"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-pier-13": {
+   "ids_esterni": {
+    "mcuwiki": "Pier 13",
+    "wikidata": "Q116458473"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-pingo-doce-bottling-plant": {
+   "ids_esterni": {
+    "mcuwiki": "Pingo Doce Bottling Plant",
+    "wikidata": "Q116215785"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-puente-antiguo": {
+   "ids_esterni": {
+    "mcuwiki": "Puente Antiguo",
+    "wikidata": "Q24131920"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-puente-antiguo-county-hospital": {
+   "ids_esterni": {
+    "mcuwiki": "Puente Antiguo County Hospital",
+    "wikidata": "Q116295067"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-rainbow-bridge": {
+   "ids_esterni": {
+    "mcuwiki": "Rainbow Bridge",
+    "wikidata": "Q116295569"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-rose-hill": {
+   "ids_esterni": {
+    "mcuwiki": "Rose Hill",
+    "wikidata": "Q116818301"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-roxxon-corporation-building": {
+   "ids_esterni": {
+    "mcuwiki": "Roxxon Corporation Building",
+    "wikidata": "Q116207612"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-royal-palace-of-valaskjalf": {
+   "ids_esterni": {
+    "mcuwiki": "Royal Palace of Valaskjalf",
+    "wikidata": "Q114795703"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-s-h-i-e-l-d-crater-investigation-site": {
+   "ids_esterni": {
+    "mcuwiki": "S.H.I.E.L.D. Crater Investigation Site",
+    "wikidata": "Q114795842"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-s-h-i-e-l-d-los-angeles-office": {
+   "ids_esterni": {
+    "mcuwiki": "S.H.I.E.L.D. Los Angeles Office",
+    "wikidata": "Q116207587"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
   "luo-sanctum-sanctorum": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -14078,6 +21184,149 @@
    "stato": "attivo",
    "tipo": "l"
   },
+  "luo-schafer-sicherheitsdienst-building": {
+   "ids_esterni": {
+    "mcuwiki": "Schäfer Sicherheitsdienst Building",
+    "wikidata": "Q116477056"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-shawarma-palace": {
+   "ids_esterni": {
+    "mcuwiki": "Shawarma Palace",
+    "wikidata": "Q116476893"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-smith-motors": {
+   "ids_esterni": {
+    "mcuwiki": "Smith Motors",
+    "wikidata": "Q116294729"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-smoky-mountain-national-forest": {
+   "ids_esterni": {
+    "mcuwiki": "Smoky Mountain National Forest",
+    "wikidata": "Q116216019"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-sokovia": {
+   "ids_esterni": {
+    "mcuwiki": "Sokovia",
+    "wikidata": "Q106143110"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-solenski-plaza": {
+   "ids_esterni": {
+    "mcuwiki": "Solenski Plaza",
+    "wikidata": "Q116476870"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-stark-expo": {
+   "ids_esterni": {
+    "mcuwiki": "Stark Expo",
+    "wikidata": "Q114775196"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-stark-industries-headquarters": {
+   "ids_esterni": {
+    "mcuwiki": "Stark Industries Headquarters",
+    "wikidata": "Q116207510"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-strategic-scientific-reserve-brooklyn-facility": {
+   "ids_esterni": {
+    "mcuwiki": "Strategic Scientific Reserve Brooklyn Facility",
+    "wikidata": "Q114860587"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-strategic-scientific-reserve-headquarters": {
+   "ids_esterni": {
+    "mcuwiki": "Strategic Scientific Reserve Headquarters",
+    "wikidata": "Q116458652"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-talokan": {
+   "ids_esterni": {
+    "mcuwiki": "Talokan",
+    "wikidata": "Q116818251"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-ten-rings-base": {
+   "ids_esterni": {
+    "mcuwiki": "Ten Rings Base",
+    "wikidata": "Q116207455"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-tony-stark-s-mansion": {
+   "ids_esterni": {
+    "mcuwiki": "Tony Stark's Mansion",
+    "wikidata": "Q111442407"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
   "luo-wakanda": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -14087,6 +21336,61 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "l"
+  },
+  "luo-walker-s": {
+   "ids_esterni": {
+    "mcuwiki": "Walker's",
+    "wikidata": "Q116818325"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-watcher-informant-s-house": {
+   "ids_esterni": {
+    "mcuwiki": "Watcher Informant's House",
+    "wikidata": "Q116215803"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-wheaton": {
+   "ids_esterni": {
+    "mcuwiki": "Wheaton",
+    "wikidata": "Q116458536"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-whip-fiddle": {
+   "ids_esterni": {
+    "mcuwiki": "Whip & Fiddle",
+    "wikidata": "Q116458685"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
+  },
+  "luo-willowdale": {
+   "ids_esterni": {
+    "mcuwiki": "Willowdale",
+    "wikidata": "Q116215906"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "luogo"
   },
   "man-capitan-america": {
    "ondata": "W0",
@@ -14694,6 +21998,39 @@
    "stato": "attivo",
    "tipo": "opera"
   },
+  "org-2": {
+   "ids_esterni": {
+    "mcuwiki": "2",
+    "wikidata": "Q116818123"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-5-albany": {
+   "ids_esterni": {
+    "mcuwiki": "5 Albany",
+    "wikidata": "Q116478939"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-6-new-york": {
+   "ids_esterni": {
+    "mcuwiki": "6 New York",
+    "wikidata": "Q116478896"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
   "org-a-i-m-advanced-idea-mechanics": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -14704,6 +22041,28 @@
    "stato": "attivo",
    "tipo": "o"
   },
+  "org-accutech": {
+   "ids_esterni": {
+    "mcuwiki": "AccuTech",
+    "wikidata": "Q116461571"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-action-news": {
+   "ids_esterni": {
+    "mcuwiki": "Action News",
+    "wikidata": "Q116478957"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
   "org-avengers": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -14713,6 +22072,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "o"
+  },
+  "org-channel-21-news": {
+   "ids_esterni": {
+    "mcuwiki": "Channel 21 News",
+    "wikidata": "Q116837974"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-channel-65-news": {
+   "ids_esterni": {
+    "mcuwiki": "Channel 65 News",
+    "wikidata": "Q116837980"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
   },
   "org-defenders": {
    "ondata": "W0",
@@ -14733,6 +22114,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "o"
+  },
+  "org-fbx": {
+   "ids_esterni": {
+    "mcuwiki": "FBX",
+    "wikidata": "Q116208470"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
   },
   "org-fratellanza-dei-mutanti": {
    "ondata": "W0",
@@ -14784,6 +22176,83 @@
    "stato": "attivo",
    "tipo": "o"
   },
+  "org-khej": {
+   "ids_esterni": {
+    "mcuwiki": "KHEJ",
+    "wikidata": "Q116208846"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-knkv-news": {
+   "ids_esterni": {
+    "mcuwiki": "KNKV News",
+    "wikidata": "Q116208369"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-kpfw": {
+   "ids_esterni": {
+    "mcuwiki": "KPFW",
+    "wikidata": "Q116208626"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-krxj-los-angeles": {
+   "ids_esterni": {
+    "mcuwiki": "KRXJ Los Angeles",
+    "wikidata": "Q116837946"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-london-express-news": {
+   "ids_esterni": {
+    "mcuwiki": "London Express News",
+    "wikidata": "Q116281271"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-lucky-star-cab-company": {
+   "ids_esterni": {
+    "mcuwiki": "Lucky Star Cab Company",
+    "wikidata": "Q116462283"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-manhattan-telegraph": {
+   "ids_esterni": {
+    "mcuwiki": "Manhattan Telegraph",
+    "wikidata": "Q116462338"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
   "org-new-avengers": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -14793,6 +22262,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "o"
+  },
+  "org-news-2": {
+   "ids_esterni": {
+    "mcuwiki": "News 2",
+    "wikidata": "Q116478978"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
   },
   "org-nightstalkers": {
    "ids_esterni": {
@@ -14810,6 +22290,28 @@
    },
    "ondata": "W0",
    "origine": "W2",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-rj-news": {
+   "ids_esterni": {
+    "mcuwiki": "RJ News",
+    "wikidata": "Q116208311"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-rose-hill-weekly": {
+   "ids_esterni": {
+    "mcuwiki": "Rose Hill Weekly",
+    "wikidata": "Q116837954"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "organizzazione"
@@ -14844,6 +22346,17 @@
    "stato": "attivo",
    "tipo": "o"
   },
+  "org-schafer-sicherheitsdienst": {
+   "ids_esterni": {
+    "mcuwiki": "Schäfer Sicherheitsdienst",
+    "wikidata": "Q116478860"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
   "org-sentinel": {
    "ids_esterni": {
     "wikidata": "Q782181"
@@ -14864,6 +22377,39 @@
    "stato": "attivo",
    "tipo": "organizzazione"
   },
+  "org-strategic-operations-command-center": {
+   "ids_esterni": {
+    "mcuwiki": "Strategic Operations Command Center",
+    "wikidata": "Q116854252"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-the-boston-guardian": {
+   "ids_esterni": {
+    "mcuwiki": "The Boston Guardian",
+    "wikidata": "Q116281359"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-the-dallas-record": {
+   "ids_esterni": {
+    "mcuwiki": "The Dallas Record",
+    "wikidata": "Q116281305"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
   "org-the-hand": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -14874,6 +22420,28 @@
    "stato": "attivo",
    "tipo": "o"
   },
+  "org-the-new-york-examiner": {
+   "ids_esterni": {
+    "mcuwiki": "The New York Examiner",
+    "wikidata": "Q116462294"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-the-washington-inquirer": {
+   "ids_esterni": {
+    "mcuwiki": "The Washington Inquirer",
+    "wikidata": "Q116837962"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
   "org-thunderbolts": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -14883,6 +22451,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "o"
+  },
+  "org-tky": {
+   "ids_esterni": {
+    "mcuwiki": "TKY",
+    "wikidata": "Q116478994"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-toronto-telegraph": {
+   "ids_esterni": {
+    "mcuwiki": "Toronto Telegraph",
+    "wikidata": "Q116281397"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
   },
   "org-tva-time-variance-authority": {
    "ondata": "W0",
@@ -14904,6 +22494,39 @@
    "stato": "attivo",
    "tipo": "o"
   },
+  "org-whih-world-news": {
+   "ids_esterni": {
+    "mcuwiki": "WHiH World News",
+    "wikidata": "Q116217292"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-wyax": {
+   "ids_esterni": {
+    "mcuwiki": "WYAX",
+    "wikidata": "Q116837950"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
+  "org-wzpz": {
+   "ids_esterni": {
+    "mcuwiki": "WZPZ",
+    "wikidata": "Q116837942"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "organizzazione"
+  },
   "org-x-force": {
    "ids_esterni": {
     "wikidata": "Q938034"
@@ -14924,6 +22547,94 @@
    "stato": "attivo",
    "tipo": "o"
   },
+  "pia-aakon": {
+   "ids_esterni": {
+    "mcuwiki": "Aakon",
+    "wikidata": "Q122443824"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "pianeta"
+  },
+  "pia-aladna": {
+   "ids_esterni": {
+    "mcuwiki": "Aladna",
+    "wikidata": "Q122445717"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "pianeta"
+  },
+  "pia-arago-7": {
+   "ids_esterni": {
+    "mcuwiki": "Arago-7",
+    "wikidata": "Q122446534"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "pianeta"
+  },
+  "pia-berhert": {
+   "ids_esterni": {
+    "mcuwiki": "Berhert",
+    "wikidata": "Q122547522"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "pianeta"
+  },
+  "pia-chronyca-2": {
+   "ids_esterni": {
+    "mcuwiki": "Chronyca-2",
+    "wikidata": "Q122595857"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "pianeta"
+  },
+  "pia-contraxia": {
+   "ids_esterni": {
+    "mcuwiki": "Contraxia",
+    "wikidata": "Q122600253"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "pianeta"
+  },
+  "pia-d-rill": {
+   "ids_esterni": {
+    "mcuwiki": "D'Rill",
+    "wikidata": "Q122617170"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "pianeta"
+  },
+  "pia-drez-lar": {
+   "ids_esterni": {
+    "mcuwiki": "Drez-Lar",
+    "wikidata": "Q122618440"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "pianeta"
+  },
   "pia-ego": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -14933,6 +22644,28 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "P"
+  },
+  "pia-gangalor": {
+   "ids_esterni": {
+    "mcuwiki": "Gangalor",
+    "wikidata": "Q122642680"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "pianeta"
+  },
+  "pia-grundar": {
+   "ids_esterni": {
+    "mcuwiki": "Grundar",
+    "wikidata": "Q122648635"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "pianeta"
   },
   "pia-hala": {
    "ondata": "W0",
@@ -14953,6 +22686,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "P"
+  },
+  "pia-planet-0259-s": {
+   "ids_esterni": {
+    "mcuwiki": "Planet 0259-S",
+    "wikidata": "Q122642735"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "pianeta"
   },
   "pia-sakaar": {
    "ondata": "W0",
@@ -14994,6 +22738,116 @@
    "stato": "attivo",
    "tipo": "P"
   },
+  "sp-asgardian-ravens": {
+   "ids_esterni": {
+    "mcuwiki": "Asgardian Ravens",
+    "wikidata": "Q116297828"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-easik": {
+   "ids_esterni": {
+    "mcuwiki": "Easik",
+    "wikidata": "Q116852994"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-flerken": {
+   "ids_esterni": {
+    "mcuwiki": "Flerken",
+    "wikidata": "Q66311420"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-hurctarians": {
+   "ids_esterni": {
+    "mcuwiki": "Hurctarians",
+    "wikidata": "Q116853379"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-r-malk-i": {
+   "ids_esterni": {
+    "mcuwiki": "R'malk'i",
+    "wikidata": "Q116853228"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-sakaarans": {
+   "ids_esterni": {
+    "mcuwiki": "Sakaarans",
+    "wikidata": "Q116852825"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-xeronians": {
+   "ids_esterni": {
+    "mcuwiki": "Xeronians",
+    "wikidata": "Q116853473"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "sp-yrds": {
+   "ids_esterni": {
+    "mcuwiki": "Yrds",
+    "wikidata": "Q116853033"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "specie"
+  },
+  "uni-actiniaria-dimension": {
+   "ids_esterni": {
+    "mcuwiki": "Actiniaria Dimension",
+    "wikidata": "Q122444810"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-alt-new-york": {
+   "ids_esterni": {
+    "mcuwiki": "Alt New York",
+    "wikidata": "Q122446009"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
   "uni-blade-verse": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -15004,6 +22858,17 @@
    "stato": "attivo",
    "tipo": "U"
   },
+  "uni-comic-book-world": {
+   "ids_esterni": {
+    "mcuwiki": "Comic Book World",
+    "wikidata": "Q122599908"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
   "uni-continuity-animate-isolate-minori": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -15013,6 +22878,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "U"
+  },
+  "uni-cube-world": {
+   "ids_esterni": {
+    "mcuwiki": "Cube World",
+    "wikidata": "Q122602546"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
   },
   "uni-daredevil-elektra-verse": {
    "ondata": "W0",
@@ -15104,6 +22980,17 @@
    "stato": "attivo",
    "tipo": "U"
   },
+  "uni-eternity-s-realm": {
+   "ids_esterni": {
+    "mcuwiki": "Eternity's Realm",
+    "wikidata": "Q122624341"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
   "uni-fantastic-four-1994": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -15114,6 +23001,28 @@
    "stato": "attivo",
    "tipo": "U"
   },
+  "uni-flowering-incense-dimension": {
+   "ids_esterni": {
+    "mcuwiki": "Flowering Incense Dimension",
+    "wikidata": "Q122624986"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-gap-junction": {
+   "ids_esterni": {
+    "mcuwiki": "Gap Junction",
+    "wikidata": "Q122642715"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
   "uni-ghost-rider-verse": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -15123,6 +23032,17 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "U"
+  },
+  "uni-grass-jelly-dimension": {
+   "ids_esterni": {
+    "mcuwiki": "Grass Jelly Dimension",
+    "wikidata": "Q122643747"
+   },
+   "ondata": "W0",
+   "origine": "W1b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
   },
   "uni-hulk-2003-verse": {
    "ondata": "W0",
@@ -15285,7 +23205,7 @@
    "tipo": "U"
   }
  },
- "ids_sha256": "8cdd02ba0a9e743812b157fd3bfcffc72be7d297610aa82c370522128b5c456f",
+ "ids_sha256": "a1c6b1118f7db46d0037eb31cb9d11a599188aa40a669abd9ca5eeb3977a3460",
  "politica": "append-only; ID mai riusati; rimozioni solo come lapide con redirect",
  "versione": 1
 }

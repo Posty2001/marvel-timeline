@@ -90,15 +90,28 @@ CAT = {'identita': ('characters', 'individuals', 'people'), 'luogo': ('locations
 CAMPI = {'specie': ('species', 'race', 'races'), 'stato': ('status',), 'genere': ('gender', 'sex'), 'affiliazioni': ('affiliation', 'affiliations', 'team', 'teams', 'organization', 'organizations'),
          'prima_apparizione': ('firstappearance', 'debut', 'firstappearances', 'first'), 'alias_fonte': ('aliases', 'alias', 'currentalias', 'nicknames', 'nickname', 'otheraliases'),
          'interpreti_fonte': ('portrayedby', 'actor', 'actors', 'portrayed', 'playedby'), 'parenti': ('relatives', 'family', 'relations'),
-         'poteri': ('powers',), 'abilita': ('abilities',), 'equipaggiamento': ('weapons', 'equipment', 'transportation'), 'debolezze': ('weaknesses',), 'origine': ('origin',), 'creatori_fonte': ('creators',)}
+         'poteri': ('powers',), 'abilita': ('abilities',), 'equipaggiamento': ('weapons', 'equipment', 'transportation'), 'debolezze': ('weaknesses',), 'origine': ('origin',), 'creatori_fonte': ('creators',),
+         'nome_reale': ('realname',), 'cittadinanza': ('citizenship',), 'occupazione': ('occupation',), 'nascita': ('dob', 'placeofbirth'), 'morte': ('dod', 'death', 'causeofdeath', 'killedby'),
+         'ubicazione': ('location', 'continent', 'homeplanet', 'place', 'baseofoperations', 'headquarters', 'locations'), 'utenti': ('users', 'owners', 'owner', 'notableusers', 'notableowners', 'currentowner', 'pilot'),
+         'creatore_oggetto': ('creator', 'made', 'builder'), 'membri': ('members', 'leader', 'leaders', 'founder', 'currentmembers', 'formermembers'), 'esito': ('result', 'date'), 'popolazione': ('population',),
+         'apparizioni': ('movie', 'tvseries', 'webseries', 'docuseries', 'tvmovie', 'oneshot', 'book', 'game', 'comic', 'themepark')}
 LISTE = ('poteri', 'abilita', 'equipaggiamento', 'debolezze')
+SCALARI = ('stato', 'genere', 'prima_apparizione', 'origine', 'nome_reale', 'nascita', 'morte', 'esito', 'popolazione')
 def carica_w1b(d):
     if not d: return {}, {}
     d = pathlib.Path(d); m = json.load(open(d/'w1b_mcuwiki.json'))['pagine'] if (d/'w1b_mcuwiki.json').exists() else {}
     db = json.load(open(d/'w1b_marveldb.json')) if (d/'w1b_marveldb.json').exists() else {'pagine': {}, 'ricerca': {}}
     mdb = {n: db['pagine'].get(t) for n, t in db.get('ricerca', {}).items()}
     return m, mdb
-def _lista(v): return [x.strip() for x in re.split(r'[;,]', v) if x.strip()][:12]
+def _lista(v):
+    v = re.sub(r'\(\s*(?:formerly|former|mentioned|footage|flashbacks?|deceased)\s*\)', '', v, flags=re.I)   # annotazioni del wiki, non nomi
+    v = re.sub(r'\b(?:formerly|currently|previously)\s*:', ';', v, flags=re.I)
+    out = []
+    for x in re.split(r'[;,*]', v):
+        x = x.strip(' :.-')
+        if x.count('(') != x.count(')'): x = x.replace('(', '').replace(')', '').strip()
+        if len(x) >= 3 and re.search(r'[A-Za-z]', x) and x not in out: out.append(x)
+    return out[:12]
 def fatti_da(pag, tipo):
     f = {}
     ib = pag.get('infobox', {})
@@ -111,14 +124,20 @@ def fatti_da(pag, tipo):
                 for x in _lista(v):
                     if len(x) <= 80 and x not in voci: voci.append(x)   # solo nomi brevi (mai frasi/prosa)
             if voci: f[campo] = voci[:25]
-        elif campo in ('stato', 'genere', 'prima_apparizione', 'origine'): f[campo] = vals[0][:120]
-        else: f[campo] = _lista(vals[0])
+        elif campo in SCALARI: f[campo] = '; '.join(dict.fromkeys(v[:120] for v in vals))[:160]
+        else:
+            voci = []
+            for v in vals:
+                for x in _lista(v):
+                    if x not in voci: voci.append(x)
+            f[campo] = voci[:12]
     for c in LISTE:
         v = pag.get('sezioni', {}).get(c)
         if v:
             cur = f.setdefault(c, [])
             for x in v[:25]:
-                if x not in cur: cur.append(x)
+                x = x.strip(' :')
+                if x and x not in cur: cur.append(x)
             f[c] = cur[:25]
     return f
 def corrobora(nome, alias, tipo, perf, mcu_p, mdb_p):

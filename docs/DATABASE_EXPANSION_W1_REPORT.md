@@ -56,3 +56,17 @@ Rigenerazione: il raw (`data/atlante/espansione/raw/`, ignorato da git) si scari
 - **W2** (`tools/db_w2_harvest.py`, `--onda w2`): Fox X-Men/Deadpool/New Mutants, Raimi, Webb, SSU, Blade, Daredevil/Elektra, Ghost Rider, Hulk 2003, Fantastici Quattro. Test su fixture; contenuti reali da raccogliere.
 - **Raccolta**: Actions → «TMDB sync (manuale)» → ref `test/tva-archives` → spunte `db_w1b` e `db_w2` (job `db-w1b` e `db-w2`, scrive solo sul branch `db-raw`).
 - **Non fatto / bloccato**: integrazione nei cataloghi nativi di Atlas/Multiverso/Nexus (oggi: ricerca e catalogo «Archivio esteso»); relazioni narrative da Wikidata (P22/P25/P26/P40/P3373/P463 non ancora raccolte); ritratti privati per le nuove identità (la pipeline usa metadati TMDB: termini di archiviazione non chiariti); Comic Vine rimandato; tag `release/atlante-2.0-a70` non pushabile dal proxy.
+
+
+## Aggiornamento 28/11 04:00 – W1.b e W2 su dati reali
+
+| Voce | Contenuti |
+|---|---|
+| W1 + W1.b acquisiti e verificati | **1.006** (828 Livello C + **178 Livello B**): 223 personaggi, 363 luoghi, 85 artefatti, 163 interpreti, 53 creatori, 39 opere, 30 organizzazioni, 20 battaglie, 11 pianeti, 10 universi, 8 specie |
+| Arricchimenti di voci storiche | 154 |
+| W2 pre-MCU/paralleli acquisiti | **592** (457 interpreti, 59 creatori, 45 personaggi, 20 opere, 5 organizzazioni, 4 entità cosmiche, 2 altri) + 103 arricchimenti; 35/36 film |
+| Ancora in staging | W1 372 (seconda fonte non coerente/assente), W2 113; coda ambigua: W1 2, W2 16 (personaggi con più continuità: Peter Parker, Sue Storm, Harry Osborn, Lizard…) |
+| Registro / runtime | 2.337 ID (0 errori); indice runtime 1.855 record, ~180 KB gz |
+
+Fonti: Wikidata CC0; MCU Wiki e Marvel Database (Fandom, CC BY-SA 3.0) solo parametri brevi di infobox con attribuzione e URL; nessun testo di prosa; marvel.com non usato; nessun nuovo metadato TMDB. Il campo «Apparizioni» riporta i titoli elencati dalla fonte (include media non canonici come LEGO/giochi, indicati dalla fonte).
+Limiti noti: le relazioni narrative Wikidata, i ritratti privati delle nuove identità e l'integrazione nei cataloghi nativi (Atlas/Multiverso/Nexus) NON sono ancora fatti; Ghost Rider: Spirit of Vengeance (2011) non risolto su Wikidata.
