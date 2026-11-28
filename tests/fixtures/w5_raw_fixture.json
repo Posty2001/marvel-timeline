@@ -1,0 +1,177 @@
+{
+ "fonte": "fixture",
+ "entita": {
+  "Q9001": {
+   "q": "Q9001",
+   "g": [
+    "universi_fumetti"
+   ],
+   "l": {
+    "en": "Marvel Universe"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Marvel Universe"
+   },
+   "c": {
+    "P31": [
+     "Q5"
+    ]
+   }
+  },
+  "Q9002": {
+   "q": "Q9002",
+   "g": [
+    "fumetti:40-max"
+   ],
+   "l": {
+    "en": "Moon Knight Zzyx"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Moon Knight Zzyx"
+   },
+   "c": {
+    "P31": [
+     "Q1"
+    ],
+    "P1080": [
+     "Q6"
+    ]
+   }
+  },
+  "Q9003": {
+   "q": "Q9003",
+   "g": [
+    "fumetti:20-40"
+   ],
+   "l": {
+    "en": "Order of the Zzyx"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Order of the Zzyx"
+   },
+   "c": {
+    "P31": [
+     "Q7"
+    ],
+    "P1080": [
+     "Q6"
+    ]
+   }
+  },
+  "Q9004": {
+   "q": "Q9004",
+   "g": [
+    "fumetti:12-20"
+   ],
+   "l": {
+    "en": "Zzyx Species"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Zzyx Species"
+   },
+   "c": {
+    "P31": [
+     "Q8"
+    ],
+    "P1080": [
+     "Q6"
+    ]
+   }
+  },
+  "Q9005": {
+   "q": "Q9005",
+   "g": [
+    "opere:40-max"
+   ],
+   "l": {
+    "en": "Zzyx Saga"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Zzyx Saga"
+   },
+   "c": {
+    "P31": [
+     "Q3"
+    ]
+   }
+  },
+  "Q9006": {
+   "q": "Q9006",
+   "g": [
+    "opere:20-40"
+   ],
+   "l": {
+    "en": "Zzyx Comics Vol. 1"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Zzyx Comics Vol. 1"
+   },
+   "c": {
+    "P31": [
+     "Q2"
+    ]
+   }
+  },
+  "Q9007": {
+   "q": "Q9007",
+   "g": [
+    "creatori:40-max"
+   ],
+   "l": {
+    "en": "Zzyx Writer"
+   },
+   "d": {},
+   "a": {},
+   "sl": {
+    "enwiki": "Zzyx Writer"
+   },
+   "c": {
+    "P31": [
+     "Q4"
+    ]
+   }
+  },
+  "Q9008": {
+   "q": "Q9008",
+   "g": [
+    "fumetti:3-5"
+   ],
+   "l": {
+    "en": "Lone Source Zzyx"
+   },
+   "d": {},
+   "a": {},
+   "sl": {},
+   "c": {
+    "P31": [
+     "Q1"
+    ],
+    "P1080": [
+     "Q6"
+    ]
+   }
+  }
+ },
+ "etichette": {
+  "Q1": "fictional character",
+  "Q2": "comic book series",
+  "Q3": "comic book storyline",
+  "Q4": "human",
+  "Q5": "fictional universe",
+  "Q6": "Marvel Universe",
+  "Q7": "fictional organization",
+  "Q8": "fictional species"
+ }
+}

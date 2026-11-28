@@ -1,6 +1,6 @@
 {
  "arricchimenti": 35,
- "canon": 585,
+ "canon": 867,
  "coda": {
   "non_classificati": 16,
   "possibili_duplicati": 8
@@ -10,21 +10,23 @@
   "Q642878"
  ],
  "per_tipo": {
-  "artefatto": 1,
+  "artefatto": 24,
   "attore": 461,
+  "battaglia": 1,
   "creatore": 60,
-  "identita": 31,
-  "luogo": 1,
+  "identita": 53,
+  "luogo": 230,
   "opera": 28,
-  "organizzazione": 2,
+  "organizzazione": 7,
+  "pianeta": 2,
   "universo": 1
  },
- "staging": 428,
+ "staging": 146,
  "staging_per_motivo": {
   "ambiguo": 8,
   "classe non riconosciuta": 16,
   "fuori ambito": 5,
   "senza etichetta inglese": 10,
-  "una sola fonte (nessun articolo Wikipedia)": 389
+  "una sola fonte (nessun articolo Wikipedia; seconda fonte scartata": 107
  }
 }

@@ -31,14 +31,23 @@ REGOLE = [
  ('identita', ('comics character','television character','film character','fictional human','fictional character','fictional alien','fictional robot','superhero','supervillain','fictional mutant','fictional animal','fictional cyborg','fictional android','fictional humanoid','fictional person','fictional hero','fictional villain','fictional antihero','fictional artificial intelligence','fictional extraterrestrial','fictional wizard','fictional sorcerer','fictional soldier','fictional spy','fictional scientist','fictional journalist','fictional lawyer','fictional physician','fictional criminal','fictional dog','fictional cat','fictional monkey','fictional bird','fictional dragon','fictional vampire','fictional zombie','fictional superhuman','fictional giant','fictional dwarf','fictional elf','fictional genius','fictional pirate','fictional president','fictional politician','fictional king','fictional queen','fictional prince','fictional princess','fictional warrior','fictional knight','fictional witch','fictional thief','fictional assassin','fictional mercenary','fictional detective','fictional doctor','fictional teacher','fictional student','fictional child','fictional woman','fictional man','fictional girl','fictional boy','fictional fictional character','fictional demigod','fictional ghost','fictional mutant character','fictional inventor','fictional engineer','fictional pilot','fictional astronaut','fictional agent','fictional officer','fictional commander','fictional captain','fictional general','fictional emperor','fictional priest','fictional monk','fictional sorceress')),
  ('opera', ('film','television series','animated series','animated film','video game','web series','short film','television film','miniseries','anthology','television program','animated television series','film series','media franchise','comic book series','novel','book series','tv series','streaming','documentary','television special','one-shot')),
 ]
+REGOLE_FUM = [   # solo W5/W6 (fumetti): saghe, eventi e testate sono OPERE/EVENTI documentati, non «raggruppamenti editoriali»
+ ('evento', ('comic book crossover', 'comics crossover', 'comic book storyline', 'comics storyline', 'story arc', 'crossover event', 'comic book event', 'comics event')),
+ ('opera', ('comic book', 'comic strip', 'graphic novel', 'comic series', 'limited series', 'miniseries', 'manga', 'webcomic', 'comics series', 'comics anthology', 'one-shot', 'comic magazine')),
+]
+FUMETTI = False
 def classifica(p31_labels, gruppi):
     L = [x.lower() for x in p31_labels if x]
+    if FUMETTI:
+        for tipo, keys in REGOLE_FUM:
+            for l in L:
+                if any(l == k or l.startswith(k) or k in l for k in keys): return tipo
     for tipo, keys in REGOLE:
         for l in L:
             if any(l == k or l.startswith(k) or k in l for k in keys): return tipo
     if 'human' in L:
-        if any(g == 'interpreti_MCU' or g.endswith(':interpreti') for g in gruppi): return 'attore'
-        if any(g == 'creatori_MCU' or g.endswith(':creatori') for g in gruppi): return 'creatore'
+        if any(g == 'interpreti_MCU' or g.endswith(':interpreti') or g.startswith('interpreti:') for g in gruppi): return 'attore'
+        if any(g == 'creatori_MCU' or g.endswith(':creatori') or g.startswith('creatori:') for g in gruppi): return 'creatore'
     return None
 def carica_esistente():
     idx = json.load(open(R/'atlante2/data/index.json'))['voci']
@@ -211,6 +220,7 @@ def main():
     ent, et = raw['entita'], raw['etichette']
     mcu = {q for q, l in et.items() if l == 'Marvel Cinematic Universe'}
     ONDA = sys.argv[sys.argv.index('--onda') + 1] if '--onda' in sys.argv else 'w1'
+    global FUMETTI; FUMETTI = ONDA in ('w5', 'w6')
     GRP_UNI = {'x-men-fox': 'uni-earth-10005-fox-verse', 'wolverine-fox': 'uni-earth-10005-fox-verse', 'deadpool-fox': 'uni-earth-10005-fox-verse', 'new-mutants-fox': 'uni-earth-10005-fox-verse',
                'spider-man-raimi': 'uni-earth-96283-raimi-verse', 'spider-man-garfield': 'uni-earth-120703-garfield-verse', 'venom-ssu': 'uni-sony-s-spider-man-universe-ssu', 'morbius-ssu': 'uni-sony-s-spider-man-universe-ssu',
                'madame-web-ssu': 'uni-sony-s-spider-man-universe-ssu', 'kraven-ssu': 'uni-sony-s-spider-man-universe-ssu', 'blade': 'uni-blade-verse', 'daredevil-elektra': 'uni-daredevil-elektra-verse', 'ghost-rider': 'uni-ghost-rider-verse',
@@ -221,10 +231,13 @@ def main():
                'what-if': 'uni-rami-di-what-if', 'x-men-97': 'uni-x-men-97-verse', 'spider-verse-sony': 'uni-spider-verse-sony-animato', 'yfnsm': 'uni-your-friendly-neighborhood-spider-man-verse',
                'marvel-zombies': 'uni-marvel-zombies-verse', 'marvel-animation-universe': 'uni-marvel-animation-universe-2006-2017'}
     def uni_di(r):
+        if ONDA in ('w5', 'w6'):   # fumetti: solo la continuita' principale e' assegnata in modo certo (P1080 = Marvel Universe / Earth-616); altri universi non si assegnano automaticamente
+            ls = {et.get(x) for x in r['c'].get('P1080', [])}
+            return 'uni-earth-616' if ls & {'Marvel Universe', 'Earth-616', 'Marvel Comics Universe'} else None
         if ONDA == 'w1': return 'uni-earth-199999-mcu' if (mcu & set(r['c'].get('P1080', []))) else None
         us = {GRP_UNI[g] for g in r['g'] if g in GRP_UNI}
         return next(iter(us)) if len(us) == 1 else None   # piu' continuita' (es. interprete in piu' franchise) = nessuna assegnazione automatica
-    NOMEFILE = {'w1': 'w1_mcu', 'w2': 'w2_pre_mcu', 'w3': 'w3_tv_live_action', 'w4': 'w4_animazione'}[ONDA]; ORIG = {'w1': 'W1', 'w2': 'W2', 'w3': 'W3', 'w4': 'W4'}[ONDA]
+    NOMEFILE = {'w1': 'w1_mcu', 'w2': 'w2_pre_mcu', 'w3': 'w3_tv_live_action', 'w4': 'w4_animazione', 'w5': 'w5_fumetti_entita', 'w6': 'w6_fumetti_opere'}[ONDA]; ORIG = {'w1': 'W1', 'w2': 'W2', 'w3': 'W3', 'w4': 'W4', 'w5': 'W5', 'w6': 'W6'}[ONDA]
     idx, pieni, parz = carica_esistente(); tipo_esist = {v['i']: v['t'] for v in idx}
     reg = json.load(open(E/'ids_registro.json'))['ids']
     q2id = {v['ids_esterni']['wikidata']: k for k, v in reg.items() if v.get('ids_esterni', {}).get('wikidata') and v.get('stato') != 'lapide'}
@@ -283,6 +296,7 @@ def main():
         if q in q2id: rid = q2id[q]
         else:
             base = PREF[tipo] + '-' + (slug(nome) or q.lower()); rid = base
+            if ONDA == 'w5' and tipo == 'universo' and nome in ('Marvel Universe', 'Earth-616', 'Marvel Comics Universe') and 'uni-earth-616' not in usati: rid = base = 'uni-earth-616'
             if rid in usati: rid = base + '-' + q.lower()
         usati.add(rid)
         uni = uni_di(r)

@@ -1,7 +1,7 @@
 {
  "conteggi": {
-  "attivi": 2890,
-  "totale": 2891
+  "attivi": 2892,
+  "totale": 2893
  },
  "ids": {
   "art-acura-2012-stark-industries-super-car": {
@@ -15680,6 +15680,17 @@
    "stato": "attivo",
    "tipo": "p"
   },
+  "id-aaron-davis": {
+   "ids_esterni": {
+    "mcuwiki": "Prowler",
+    "wikidata": "Q60484975"
+   },
+   "ondata": "W0",
+   "origine": "W4b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-abby-miller": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -26988,6 +26999,16 @@
    "stato": "attivo",
    "tipo": "opera"
   },
+  "op-marvel-s-spider-man": {
+   "ids_esterni": {
+    "wikidata": "Q28207200"
+   },
+   "ondata": "W0",
+   "origine": "W4",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "opera"
+  },
   "op-marvel-s-young-adult-television-series": {
    "ids_esterni": {
     "wikidata": "Q85784065"
@@ -28745,7 +28766,7 @@
    "tipo": "U"
   }
  },
- "ids_sha256": "e6879485f2ee305eb50cb59dd3d873dc07cca93d955acfcb97d7854f23a89b73",
+ "ids_sha256": "d757cce23c10a444b278453bbaf4ec72177ae6ac11ded3d15bc9a72b620a6119",
  "politica": "append-only; ID mai riusati; rimozioni solo come lapide con redirect",
  "versione": 1
 }
