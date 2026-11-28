@@ -1,0 +1,135 @@
+{
+ "avvio": "2026-11-28T00:55:06Z",
+ "film": {
+  "x-men-fox|X-Men|2000": [
+   "Q106182"
+  ],
+  "x-men-fox|X2|2003": [
+   "Q219776"
+  ],
+  "x-men-fox|X-Men: The Last Stand|2006": [
+   "Q221168"
+  ],
+  "x-men-fox|X-Men Origins: Wolverine|2009": [
+   "Q217552"
+  ],
+  "x-men-fox|X-Men: First Class|2011": [
+   "Q223596"
+  ],
+  "x-men-fox|The Wolverine|2013": [
+   "Q197491"
+  ],
+  "x-men-fox|X-Men: Days of Future Past|2014": [
+   "Q4985891",
+   "Q113561883"
+  ],
+  "x-men-fox|X-Men: Apocalypse|2016": [
+   "Q17042878"
+  ],
+  "x-men-fox|Logan|2017": [
+   "Q24053263"
+  ],
+  "x-men-fox|Dark Phoenix|2019": [
+   "Q31188935"
+  ],
+  "deadpool-fox|Deadpool|2016": [
+   "Q19347291"
+  ],
+  "deadpool-fox|Deadpool 2|2018": [
+   "Q25431158"
+  ],
+  "new-mutants-fox|The New Mutants|2020": [
+   "Q28912376"
+  ],
+  "spider-man-raimi|Spider-Man|2002": [
+   "Q484442"
+  ],
+  "spider-man-raimi|Spider-Man 2|2004": [
+   "Q190145"
+  ],
+  "spider-man-raimi|Spider-Man 3|2007": [
+   "Q182212"
+  ],
+  "spider-man-garfield|The Amazing Spider-Man|2012": [
+   "Q229808"
+  ],
+  "spider-man-garfield|The Amazing Spider-Man 2|2014": [
+   "Q4254026"
+  ],
+  "venom-ssu|Venom|2018": [
+   "Q23006268"
+  ],
+  "venom-ssu|Venom: Let There Be Carnage|2021": [
+   "Q60498064",
+   "Q116197060"
+  ],
+  "venom-ssu|Venom: The Last Dance|2024": [
+   "Q113371337"
+  ],
+  "morbius-ssu|Morbius|2022": [
+   "Q55405369"
+  ],
+  "madame-web-ssu|Madame Web|2024": [
+   "Q111677117"
+  ],
+  "kraven-ssu|Kraven the Hunter|2024": [
+   "Q107390449"
+  ],
+  "blade|Blade|1998": [
+   "Q3429263"
+  ],
+  "blade|Blade II|2002": [
+   "Q159638"
+  ],
+  "blade|Blade: Trinity|2004": [
+   "Q217008"
+  ],
+  "daredevil-elektra|Daredevil|2003": [
+   "Q751805"
+  ],
+  "daredevil-elektra|Elektra|2005": [
+   "Q610159"
+  ],
+  "ghost-rider|Ghost Rider|2007": [
+   "Q41754"
+  ],
+  "ghost-rider|Ghost Rider: Spirit of Vengeance|2011": [],
+  "hulk-2003|Hulk|2003": [
+   "Q696042"
+  ],
+  "fantastic-four-1994|The Fantastic Four|1994": [
+   "Q2628001"
+  ],
+  "fantastic-four-fox|Fantastic Four|2005": [
+   "Q224130"
+  ],
+  "fantastic-four-fox|Fantastic Four: Rise of the Silver Surfer|2007": [
+   "Q390063"
+  ],
+  "fantastic-four-trank|Fantastic Four|2015": [
+   "Q16795448"
+  ]
+ },
+ "film_errori": [],
+ "entita": 808,
+ "fine": "2026-11-28T01:00:00Z",
+ "anomalie": [
+  "film trovato solo con ricerca testuale (fallback verificato per anno): x-men-fox|X-Men|2000 -> ['Q106182']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): x-men-fox|X2|2003 -> ['Q219776']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): x-men-fox|X-Men: The Last Stand|2006 -> ['Q221168']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): x-men-fox|X-Men Origins: Wolverine|2009 -> ['Q217552']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): x-men-fox|X-Men: First Class|2011 -> ['Q223596']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): x-men-fox|The Wolverine|2013 -> ['Q197491']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): x-men-fox|X-Men: Days of Future Past|2014 -> ['Q4985891', 'Q113561883']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): x-men-fox|X-Men: Apocalypse|2016 -> ['Q17042878']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): x-men-fox|Logan|2017 -> ['Q24053263']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): x-men-fox|Dark Phoenix|2019 -> ['Q31188935']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): spider-man-garfield|The Amazing Spider-Man 2|2014 -> ['Q4254026']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): venom-ssu|Venom|2018 -> ['Q23006268']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): venom-ssu|Venom: Let There Be Carnage|2021 -> ['Q60498064', 'Q116197060']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): morbius-ssu|Morbius|2022 -> ['Q55405369']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): daredevil-elektra|Elektra|2005 -> ['Q610159']",
+  "film non trovato su Wikidata (query e ricerca): ghost-rider|Ghost Rider: Spirit of Vengeance|2011"
+ ],
+ "completa": true
+}

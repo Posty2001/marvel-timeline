@@ -1,0 +1,24 @@
+{
+ "avvio": "2026-11-27T22:55:27Z",
+ "gruppi": {
+  "universo_MCU": {
+   "ok": true,
+   "n": 1197
+  },
+  "opere_MCU": {
+   "ok": true,
+   "n": 92
+  },
+  "interpreti_MCU": {
+   "ok": true,
+   "n": 187
+  },
+  "creatori_MCU": {
+   "ok": true,
+   "n": 59
+  }
+ },
+ "entita": 1532,
+ "etichette_riferimenti": 2319,
+ "fine": "2026-11-27T22:56:26Z"
+}
