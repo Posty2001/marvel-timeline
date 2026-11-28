@@ -1,7 +1,7 @@
 {
- "avvio": "2026-11-28T10:34:57Z",
+ "avvio": "2026-11-28T10:54:41Z",
  "modo": "raccolta",
- "titoli": 9123,
+ "titoli": 33751,
  "membri": {
   "Artifact": 151,
   "Weapons": 89,
@@ -17,8 +17,8 @@
   "Dimensions": 298,
   "prefisso:Earth-": 3848
  },
- "varianti_nomi": 0,
- "pagine": 9123,
+ "varianti_nomi": 375,
+ "pagine": 33751,
  "anomalie": [],
- "fine": "2026-11-28T10:49:38Z"
+ "fine": "2026-11-28T11:35:09Z"
 }
