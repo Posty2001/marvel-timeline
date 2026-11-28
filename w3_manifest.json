@@ -1,5 +1,5 @@
 {
- "avvio": "2026-11-28T07:14:56Z",
+ "avvio": "2026-11-28T08:25:40Z",
  "film": {
   "netflix-mcu|Daredevil|2015": [
    "Q16977365"
@@ -92,12 +92,7 @@
  },
  "film_errori": [],
  "entita": 1048,
- "fine": "2026-11-28T07:21:23Z",
- "anomalie": [
-  "film trovato solo con ricerca testuale (fallback verificato per anno): marvel-tv-mcu|Cloak & Dagger|2018 -> ['Q28736747']",
-  "film non trovato su Wikidata (query e ricerca): marvel-tv-classico|Doctor Strange|1978",
-  "film trovato solo con ricerca testuale (fallback verificato per anno): marvel-tv-classico|Nick Fury: Agent of SHIELD|1998 -> ['Q392691']",
-  "film trovato solo con ricerca testuale (fallback verificato per anno): film-live-action-altri|The Incredible Hulk|2008 -> ['Q466611']"
- ],
+ "fine": "2026-11-28T08:26:11Z",
+ "anomalie": [],
  "completa": true
 }
