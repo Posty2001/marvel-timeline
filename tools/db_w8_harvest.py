@@ -114,11 +114,11 @@ def main():
     salva()
     base = lambda t: _re.sub(r'\s*\([^)]*\)\s*$', '', t).strip()
     nomi = sorted({base(t) for m in ck['membri'].values() for t in m['t'] if ck['pagine'].get(t)} - set(ck.setdefault('wd2', {}).keys()))
-    ck.setdefault('wd_fatti', [])
-    gia = set(ck['wd_fatti']); nuovi = [n for n in nomi if n not in gia]
+    ck.setdefault('wd2_fatti', [])
+    gia = set(ck['wd2_fatti']); nuovi = [n for n in nomi if n not in gia]
     for i in range(0, len(nuovi), 400):
         bl = nuovi[i:i + 400]; r = wd_etichette(bl, anom)
-        for n in bl: ck['wd2'][n] = r.get(n, {}); ck['wd_fatti'].append(n)
+        for n in bl: ck['wd2'][n] = r.get(n, {}); ck['wd2_fatti'].append(n)
         salva()
     trov = {t: v for t, v in ck['pagine'].items() if v}
     json.dump({'fonte': 'Marvel Database (Fandom), CC BY-SA 3.0, solo categorie/parametri-fatto', 'recuperato': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'membri': {c: m for c, m in ck['membri'].items()}, 'varianti': ck['varianti'], 'wd': {n: v for n, v in ck.get('wd2', {}).items() if v}, 'pagine': trov},
