@@ -1,7 +1,7 @@
 {
  "conteggi": {
-  "attivi": 6898,
-  "totale": 6911
+  "attivi": 7100,
+  "totale": 7116
  },
  "ids": {
   "art-absorbatron": {
@@ -16875,8 +16875,9 @@
    "ondata": "W0",
    "origine": "W2",
    "rif": "canon",
-   "stato": "attivo",
-   "tipo": "entita-cosmica"
+   "stato": "lapide",
+   "tipo": "entita-cosmica",
+   "verso": "id-doctor-doom"
   },
   "cos-exitar-multiverse": {
    "ids_esterni": {
@@ -16906,8 +16907,9 @@
    "ondata": "W0",
    "origine": "W5",
    "rif": "canon",
-   "stato": "attivo",
-   "tipo": "entita-cosmica"
+   "stato": "lapide",
+   "tipo": "entita-cosmica",
+   "verso": "id-hogun"
   },
   "cos-hope": {
    "ids_esterni": {
@@ -17122,8 +17124,9 @@
    "ondata": "W0",
    "origine": "W1b",
    "rif": "canon",
-   "stato": "attivo",
-   "tipo": "entita-cosmica"
+   "stato": "lapide",
+   "tipo": "entita-cosmica",
+   "verso": "id-surtur"
   },
   "cos-thog": {
    "ids_esterni": {
@@ -70663,6 +70666,16 @@
    "stato": "attivo",
    "tipo": "U"
   },
+  "uni-earth-12041": {
+   "ids_esterni": {
+    "marveldb": "Earth-12041"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
   "uni-earth-120703-garfield-verse": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -70672,6 +70685,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "U"
+  },
+  "uni-earth-12131": {
+   "ids_esterni": {
+    "marveldb": "Earth-12131"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
   },
   "uni-earth-121698": {
    "ondata": "W0",
@@ -70683,6 +70706,86 @@
    "stato": "attivo",
    "tipo": "U"
   },
+  "uni-earth-13122": {
+   "ids_esterni": {
+    "marveldb": "Earth-13122"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-13178": {
+   "ids_esterni": {
+    "marveldb": "Earth-13178"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-15730": {
+   "ids_esterni": {
+    "marveldb": "Earth-15730"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-161": {
+   "ids_esterni": {
+    "marveldb": "Earth-161"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-1610": {
+   "ids_esterni": {
+    "marveldb": "Earth-1610"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-16524": {
+   "ids_esterni": {
+    "marveldb": "Earth-16524"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-17741": {
+   "ids_esterni": {
+    "marveldb": "Earth-17741"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-19345": {
+   "ids_esterni": {
+    "marveldb": "Earth-19345"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
   "uni-earth-199999-mcu": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -70693,12 +70796,212 @@
    "stato": "attivo",
    "tipo": "U"
   },
+  "uni-earth-20051": {
+   "ids_esterni": {
+    "marveldb": "Earth-20051"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-2099": {
+   "ids_esterni": {
+    "marveldb": "Earth-2099"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-2149": {
+   "ids_esterni": {
+    "marveldb": "Earth-2149"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-22145": {
+   "ids_esterni": {
+    "marveldb": "Earth-22145"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-24201": {
+   "ids_esterni": {
+    "marveldb": "Earth-24201"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-25221": {
+   "ids_esterni": {
+    "marveldb": "Earth-25221"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-295": {
+   "ids_esterni": {
+    "marveldb": "Earth-295"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-31690": {
+   "ids_esterni": {
+    "marveldb": "Earth-31690"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-51156": {
+   "ids_esterni": {
+    "marveldb": "Earth-51156"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-517": {
+   "ids_esterni": {
+    "marveldb": "Earth-517"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-58163": {
+   "ids_esterni": {
+    "marveldb": "Earth-58163"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-60713": {
+   "ids_esterni": {
+    "marveldb": "Earth-60713"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-6109": {
+   "ids_esterni": {
+    "marveldb": "Earth-6109"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-61284": {
+   "ids_esterni": {
+    "marveldb": "Earth-61284"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
   "uni-earth-616": {
    "ids_esterni": {
     "wikidata": "Q2246088"
    },
    "ondata": "W0",
    "origine": "W5",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-6160": {
+   "ids_esterni": {
+    "marveldb": "Earth-6160"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-71912": {
+   "ids_esterni": {
+    "marveldb": "Earth-71912"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-77640": {
+   "ids_esterni": {
+    "marveldb": "Earth-77640"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-78149": {
+   "ids_esterni": {
+    "marveldb": "Earth-78149"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-7964": {
+   "ids_esterni": {
+    "marveldb": "Earth-7964"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-8096": {
+   "ids_esterni": {
+    "marveldb": "Earth-8096"
+   },
+   "ondata": "W0",
+   "origine": "W9",
    "rif": "canon",
    "stato": "attivo",
    "tipo": "universo"
@@ -70734,6 +71037,36 @@
    "stato": "attivo",
    "tipo": "U"
   },
+  "uni-earth-92131": {
+   "ids_esterni": {
+    "marveldb": "Earth-92131"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-93342": {
+   "ids_esterni": {
+    "marveldb": "Earth-93342"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
+  "uni-earth-9411": {
+   "ids_esterni": {
+    "marveldb": "Earth-9411"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
+  },
   "uni-earth-96283-raimi-verse": {
    "ondata": "W0",
    "origine": "registro-storico",
@@ -70743,6 +71076,16 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "U"
+  },
+  "uni-earth-9997": {
+   "ids_esterni": {
+    "marveldb": "Earth-9997"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "universo"
   },
   "uni-earth-trn123": {
    "ondata": "W0",
@@ -71031,9 +71374,1719 @@
    "rif": "voce",
    "stato": "attivo",
    "tipo": "U"
+  },
+  "var-brock-rumlow-earth-12041": {
+   "ids_esterni": {
+    "marveldb": "Brock Rumlow (Earth-12041)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-brock-rumlow-earth-13122": {
+   "ids_esterni": {
+    "marveldb": "Brock Rumlow (Earth-13122)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-brock-rumlow-earth-1610": {
+   "ids_esterni": {
+    "marveldb": "Brock Rumlow (Earth-1610)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-brock-rumlow-earth-22145": {
+   "ids_esterni": {
+    "marveldb": "Brock Rumlow (Earth-22145)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-brock-rumlow-earth-51156": {
+   "ids_esterni": {
+    "marveldb": "Brock Rumlow (Earth-51156)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-brock-rumlow-earth-517": {
+   "ids_esterni": {
+    "marveldb": "Brock Rumlow (Earth-517)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-brock-rumlow-earth-58163": {
+   "ids_esterni": {
+    "marveldb": "Brock Rumlow (Earth-58163)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-brock-rumlow-earth-60713": {
+   "ids_esterni": {
+    "marveldb": "Brock Rumlow (Earth-60713)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-brock-rumlow-earth-61284": {
+   "ids_esterni": {
+    "marveldb": "Brock Rumlow (Earth-61284)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-brock-rumlow-earth-78149": {
+   "ids_esterni": {
+    "marveldb": "Brock Rumlow (Earth-78149)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-brock-rumlow-earth-93342": {
+   "ids_esterni": {
+    "marveldb": "Brock Rumlow (Earth-93342)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-brock-rumlow-earth-9411": {
+   "ids_esterni": {
+    "marveldb": "Brock Rumlow (Earth-9411)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-cameron-hodge-earth-161": {
+   "ids_esterni": {
+    "marveldb": "Cameron Hodge (Earth-161)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-cameron-hodge-earth-16524": {
+   "ids_esterni": {
+    "marveldb": "Cameron Hodge (Earth-16524)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-cameron-hodge-earth-24201": {
+   "ids_esterni": {
+    "marveldb": "Cameron Hodge (Earth-24201)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-cameron-hodge-earth-58163": {
+   "ids_esterni": {
+    "marveldb": "Cameron Hodge (Earth-58163)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-cameron-hodge-earth-7964": {
+   "ids_esterni": {
+    "marveldb": "Cameron Hodge (Earth-7964)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-cameron-hodge-earth-92131": {
+   "ids_esterni": {
+    "marveldb": "Cameron Hodge (Earth-92131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-death-earth-2149": {
+   "ids_esterni": {
+    "marveldb": "Death (Earth-2149)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-doop-earth-13178": {
+   "ids_esterni": {
+    "marveldb": "Doop (Earth-13178)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-doop-earth-15730": {
+   "ids_esterni": {
+    "marveldb": "Doop (Earth-15730)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-doop-earth-19345": {
+   "ids_esterni": {
+    "marveldb": "Doop (Earth-19345)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-doop-earth-2099": {
+   "ids_esterni": {
+    "marveldb": "Doop (Earth-2099)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-doop-earth-6160": {
+   "ids_esterni": {
+    "marveldb": "Doop (Earth-6160)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-doop-earth-71912": {
+   "ids_esterni": {
+    "marveldb": "Doop (Earth-71912)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-doop-earth-92131": {
+   "ids_esterni": {
+    "marveldb": "Doop (Earth-92131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-doop-earth-93342": {
+   "ids_esterni": {
+    "marveldb": "Doop (Earth-93342)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-dormammu-earth-12041": {
+   "ids_esterni": {
+    "marveldb": "Dormammu (Earth-12041)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-dormammu-earth-12131": {
+   "ids_esterni": {
+    "marveldb": "Dormammu (Earth-12131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-dormammu-earth-13122": {
+   "ids_esterni": {
+    "marveldb": "Dormammu (Earth-13122)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-dormammu-earth-1610": {
+   "ids_esterni": {
+    "marveldb": "Dormammu (Earth-1610)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-dormammu-earth-20051": {
+   "ids_esterni": {
+    "marveldb": "Dormammu (Earth-20051)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-dormammu-earth-51156": {
+   "ids_esterni": {
+    "marveldb": "Dormammu (Earth-51156)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-dormammu-earth-517": {
+   "ids_esterni": {
+    "marveldb": "Dormammu (Earth-517)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-dormammu-earth-6109": {
+   "ids_esterni": {
+    "marveldb": "Dormammu (Earth-6109)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-dormammu-earth-78149": {
+   "ids_esterni": {
+    "marveldb": "Dormammu (Earth-78149)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-dormammu-earth-92131": {
+   "ids_esterni": {
+    "marveldb": "Dormammu (Earth-92131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-dormammu-earth-9411": {
+   "ids_esterni": {
+    "marveldb": "Dormammu (Earth-9411)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-dormammu-earth-9997": {
+   "ids_esterni": {
+    "marveldb": "Dormammu (Earth-9997)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-elektra-natchios-earth-12131": {
+   "ids_esterni": {
+    "marveldb": "Elektra Natchios (Earth-12131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-elektra-natchios-earth-13122": {
+   "ids_esterni": {
+    "marveldb": "Elektra Natchios (Earth-13122)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-elektra-natchios-earth-1610": {
+   "ids_esterni": {
+    "marveldb": "Elektra Natchios (Earth-1610)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-elektra-natchios-earth-199999": {
+   "ids_esterni": {
+    "marveldb": "Elektra Natchios (Earth-199999)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-elektra-natchios-earth-2149": {
+   "ids_esterni": {
+    "marveldb": "Elektra Natchios (Earth-2149)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-elektra-natchios-earth-51156": {
+   "ids_esterni": {
+    "marveldb": "Elektra Natchios (Earth-51156)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-elektra-natchios-earth-517": {
+   "ids_esterni": {
+    "marveldb": "Elektra Natchios (Earth-517)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-elektra-natchios-earth-58163": {
+   "ids_esterni": {
+    "marveldb": "Elektra Natchios (Earth-58163)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-elektra-natchios-earth-6109": {
+   "ids_esterni": {
+    "marveldb": "Elektra Natchios (Earth-6109)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-elektra-natchios-earth-78149": {
+   "ids_esterni": {
+    "marveldb": "Elektra Natchios (Earth-78149)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-elektra-natchios-earth-9411": {
+   "ids_esterni": {
+    "marveldb": "Elektra Natchios (Earth-9411)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-elektra-natchios-earth-9997": {
+   "ids_esterni": {
+    "marveldb": "Elektra Natchios (Earth-9997)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-fandral-earth-12041": {
+   "ids_esterni": {
+    "marveldb": "Fandral (Earth-12041)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-fandral-earth-12131": {
+   "ids_esterni": {
+    "marveldb": "Fandral (Earth-12131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-fandral-earth-13122": {
+   "ids_esterni": {
+    "marveldb": "Fandral (Earth-13122)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-fandral-earth-1610": {
+   "ids_esterni": {
+    "marveldb": "Fandral (Earth-1610)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-fandral-earth-20051": {
+   "ids_esterni": {
+    "marveldb": "Fandral (Earth-20051)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-fandral-earth-2149": {
+   "ids_esterni": {
+    "marveldb": "Fandral (Earth-2149)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-fandral-earth-31690": {
+   "ids_esterni": {
+    "marveldb": "Fandral (Earth-31690)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-fandral-earth-51156": {
+   "ids_esterni": {
+    "marveldb": "Fandral (Earth-51156)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-fandral-earth-61284": {
+   "ids_esterni": {
+    "marveldb": "Fandral (Earth-61284)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-fandral-earth-8096": {
+   "ids_esterni": {
+    "marveldb": "Fandral (Earth-8096)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-fandral-earth-9411": {
+   "ids_esterni": {
+    "marveldb": "Fandral (Earth-9411)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-fandral-earth-9997": {
+   "ids_esterni": {
+    "marveldb": "Fandral (Earth-9997)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-gateway-earth-25221": {
+   "ids_esterni": {
+    "marveldb": "Gateway (Earth-25221)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-gateway-earth-295": {
+   "ids_esterni": {
+    "marveldb": "Gateway (Earth-295)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-gateway-earth-31690": {
+   "ids_esterni": {
+    "marveldb": "Gateway (Earth-31690)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-gateway-earth-58163": {
+   "ids_esterni": {
+    "marveldb": "Gateway (Earth-58163)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-gateway-earth-7964": {
+   "ids_esterni": {
+    "marveldb": "Gateway (Earth-7964)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-heimdall-earth-12041": {
+   "ids_esterni": {
+    "marveldb": "Heimdall (Earth-12041)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-heimdall-earth-12131": {
+   "ids_esterni": {
+    "marveldb": "Heimdall (Earth-12131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-heimdall-earth-13122": {
+   "ids_esterni": {
+    "marveldb": "Heimdall (Earth-13122)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-heimdall-earth-13178": {
+   "ids_esterni": {
+    "marveldb": "Heimdall (Earth-13178)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-heimdall-earth-1610": {
+   "ids_esterni": {
+    "marveldb": "Heimdall (Earth-1610)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-heimdall-earth-20051": {
+   "ids_esterni": {
+    "marveldb": "Heimdall (Earth-20051)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-heimdall-earth-51156": {
+   "ids_esterni": {
+    "marveldb": "Heimdall (Earth-51156)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-heimdall-earth-517": {
+   "ids_esterni": {
+    "marveldb": "Heimdall (Earth-517)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-heimdall-earth-6109": {
+   "ids_esterni": {
+    "marveldb": "Heimdall (Earth-6109)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-heimdall-earth-78149": {
+   "ids_esterni": {
+    "marveldb": "Heimdall (Earth-78149)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-heimdall-earth-8096": {
+   "ids_esterni": {
+    "marveldb": "Heimdall (Earth-8096)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-heimdall-earth-9997": {
+   "ids_esterni": {
+    "marveldb": "Heimdall (Earth-9997)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-hogun-earth-12041": {
+   "ids_esterni": {
+    "marveldb": "Hogun (Earth-12041)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-hogun-earth-12131": {
+   "ids_esterni": {
+    "marveldb": "Hogun (Earth-12131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-hogun-earth-13122": {
+   "ids_esterni": {
+    "marveldb": "Hogun (Earth-13122)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-hogun-earth-1610": {
+   "ids_esterni": {
+    "marveldb": "Hogun (Earth-1610)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-hogun-earth-20051": {
+   "ids_esterni": {
+    "marveldb": "Hogun (Earth-20051)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-hogun-earth-2149": {
+   "ids_esterni": {
+    "marveldb": "Hogun (Earth-2149)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-hogun-earth-31690": {
+   "ids_esterni": {
+    "marveldb": "Hogun (Earth-31690)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-hogun-earth-51156": {
+   "ids_esterni": {
+    "marveldb": "Hogun (Earth-51156)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-hogun-earth-61284": {
+   "ids_esterni": {
+    "marveldb": "Hogun (Earth-61284)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-hogun-earth-8096": {
+   "ids_esterni": {
+    "marveldb": "Hogun (Earth-8096)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-hogun-earth-9411": {
+   "ids_esterni": {
+    "marveldb": "Hogun (Earth-9411)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-hogun-earth-9997": {
+   "ids_esterni": {
+    "marveldb": "Hogun (Earth-9997)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-janet-van-dyne-earth-12041": {
+   "ids_esterni": {
+    "marveldb": "Janet Van Dyne (Earth-12041)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-janet-van-dyne-earth-12131": {
+   "ids_esterni": {
+    "marveldb": "Janet Van Dyne (Earth-12131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-janet-van-dyne-earth-13122": {
+   "ids_esterni": {
+    "marveldb": "Janet Van Dyne (Earth-13122)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-janet-van-dyne-earth-13178": {
+   "ids_esterni": {
+    "marveldb": "Janet Van Dyne (Earth-13178)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-janet-van-dyne-earth-1610": {
+   "ids_esterni": {
+    "marveldb": "Janet Van Dyne (Earth-1610)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-janet-van-dyne-earth-20051": {
+   "ids_esterni": {
+    "marveldb": "Janet Van Dyne (Earth-20051)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-janet-van-dyne-earth-31690": {
+   "ids_esterni": {
+    "marveldb": "Janet Van Dyne (Earth-31690)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-janet-van-dyne-earth-51156": {
+   "ids_esterni": {
+    "marveldb": "Janet Van Dyne (Earth-51156)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-janet-van-dyne-earth-58163": {
+   "ids_esterni": {
+    "marveldb": "Janet Van Dyne (Earth-58163)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-janet-van-dyne-earth-8096": {
+   "ids_esterni": {
+    "marveldb": "Janet Van Dyne (Earth-8096)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-janet-van-dyne-earth-9411": {
+   "ids_esterni": {
+    "marveldb": "Janet Van Dyne (Earth-9411)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-janet-van-dyne-earth-9997": {
+   "ids_esterni": {
+    "marveldb": "Janet Van Dyne (Earth-9997)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-johann-schmidt-earth-12041": {
+   "ids_esterni": {
+    "marveldb": "Johann Schmidt (Earth-12041)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-johann-schmidt-earth-12131": {
+   "ids_esterni": {
+    "marveldb": "Johann Schmidt (Earth-12131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-johann-schmidt-earth-17741": {
+   "ids_esterni": {
+    "marveldb": "Johann Schmidt (Earth-17741)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-johann-schmidt-earth-51156": {
+   "ids_esterni": {
+    "marveldb": "Johann Schmidt (Earth-51156)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-johann-schmidt-earth-6109": {
+   "ids_esterni": {
+    "marveldb": "Johann Schmidt (Earth-6109)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-johann-schmidt-earth-6160": {
+   "ids_esterni": {
+    "marveldb": "Johann Schmidt (Earth-6160)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-johann-schmidt-earth-78149": {
+   "ids_esterni": {
+    "marveldb": "Johann Schmidt (Earth-78149)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-leonard-samson-earth-12041": {
+   "ids_esterni": {
+    "marveldb": "Leonard Samson (Earth-12041)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-leonard-samson-earth-1610": {
+   "ids_esterni": {
+    "marveldb": "Leonard Samson (Earth-1610)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-leonard-samson-earth-20051": {
+   "ids_esterni": {
+    "marveldb": "Leonard Samson (Earth-20051)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-leonard-samson-earth-2149": {
+   "ids_esterni": {
+    "marveldb": "Leonard Samson (Earth-2149)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-leonard-samson-earth-31690": {
+   "ids_esterni": {
+    "marveldb": "Leonard Samson (Earth-31690)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-leonard-samson-earth-6109": {
+   "ids_esterni": {
+    "marveldb": "Leonard Samson (Earth-6109)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-leonard-samson-earth-77640": {
+   "ids_esterni": {
+    "marveldb": "Leonard Samson (Earth-77640)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-leonard-samson-earth-8096": {
+   "ids_esterni": {
+    "marveldb": "Leonard Samson (Earth-8096)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-leonard-samson-earth-92131": {
+   "ids_esterni": {
+    "marveldb": "Leonard Samson (Earth-92131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-leonard-samson-earth-93342": {
+   "ids_esterni": {
+    "marveldb": "Leonard Samson (Earth-93342)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-leonard-samson-earth-9411": {
+   "ids_esterni": {
+    "marveldb": "Leonard Samson (Earth-9411)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-leonard-samson-earth-9997": {
+   "ids_esterni": {
+    "marveldb": "Leonard Samson (Earth-9997)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-michael-morbius-earth-12041": {
+   "ids_esterni": {
+    "marveldb": "Michael Morbius (Earth-12041)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-michael-morbius-earth-12131": {
+   "ids_esterni": {
+    "marveldb": "Michael Morbius (Earth-12131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-michael-morbius-earth-13122": {
+   "ids_esterni": {
+    "marveldb": "Michael Morbius (Earth-13122)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-michael-morbius-earth-13178": {
+   "ids_esterni": {
+    "marveldb": "Michael Morbius (Earth-13178)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-michael-morbius-earth-2149": {
+   "ids_esterni": {
+    "marveldb": "Michael Morbius (Earth-2149)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-michael-morbius-earth-51156": {
+   "ids_esterni": {
+    "marveldb": "Michael Morbius (Earth-51156)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-michael-morbius-earth-517": {
+   "ids_esterni": {
+    "marveldb": "Michael Morbius (Earth-517)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-michael-morbius-earth-58163": {
+   "ids_esterni": {
+    "marveldb": "Michael Morbius (Earth-58163)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-michael-morbius-earth-6109": {
+   "ids_esterni": {
+    "marveldb": "Michael Morbius (Earth-6109)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-michael-morbius-earth-78149": {
+   "ids_esterni": {
+    "marveldb": "Michael Morbius (Earth-78149)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-michael-morbius-earth-92131": {
+   "ids_esterni": {
+    "marveldb": "Michael Morbius (Earth-92131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-michael-morbius-earth-9411": {
+   "ids_esterni": {
+    "marveldb": "Michael Morbius (Earth-9411)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-ronan-earth-12041": {
+   "ids_esterni": {
+    "marveldb": "Ronan (Earth-12041)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-ronan-earth-12131": {
+   "ids_esterni": {
+    "marveldb": "Ronan (Earth-12131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-ronan-earth-13122": {
+   "ids_esterni": {
+    "marveldb": "Ronan (Earth-13122)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-ronan-earth-1610": {
+   "ids_esterni": {
+    "marveldb": "Ronan (Earth-1610)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-ronan-earth-31690": {
+   "ids_esterni": {
+    "marveldb": "Ronan (Earth-31690)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-ronan-earth-51156": {
+   "ids_esterni": {
+    "marveldb": "Ronan (Earth-51156)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-ronan-earth-517": {
+   "ids_esterni": {
+    "marveldb": "Ronan (Earth-517)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-ronan-earth-58163": {
+   "ids_esterni": {
+    "marveldb": "Ronan (Earth-58163)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-ronan-earth-78149": {
+   "ids_esterni": {
+    "marveldb": "Ronan (Earth-78149)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-ronan-earth-8096": {
+   "ids_esterni": {
+    "marveldb": "Ronan (Earth-8096)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-ronan-earth-92131": {
+   "ids_esterni": {
+    "marveldb": "Ronan (Earth-92131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-ronan-earth-9997": {
+   "ids_esterni": {
+    "marveldb": "Ronan (Earth-9997)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-volstagg-earth-12041": {
+   "ids_esterni": {
+    "marveldb": "Volstagg (Earth-12041)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-volstagg-earth-12131": {
+   "ids_esterni": {
+    "marveldb": "Volstagg (Earth-12131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-volstagg-earth-13122": {
+   "ids_esterni": {
+    "marveldb": "Volstagg (Earth-13122)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-volstagg-earth-1610": {
+   "ids_esterni": {
+    "marveldb": "Volstagg (Earth-1610)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-volstagg-earth-20051": {
+   "ids_esterni": {
+    "marveldb": "Volstagg (Earth-20051)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-volstagg-earth-2149": {
+   "ids_esterni": {
+    "marveldb": "Volstagg (Earth-2149)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-volstagg-earth-31690": {
+   "ids_esterni": {
+    "marveldb": "Volstagg (Earth-31690)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-volstagg-earth-51156": {
+   "ids_esterni": {
+    "marveldb": "Volstagg (Earth-51156)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-volstagg-earth-61284": {
+   "ids_esterni": {
+    "marveldb": "Volstagg (Earth-61284)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-volstagg-earth-8096": {
+   "ids_esterni": {
+    "marveldb": "Volstagg (Earth-8096)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-volstagg-earth-9411": {
+   "ids_esterni": {
+    "marveldb": "Volstagg (Earth-9411)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-volstagg-earth-9997": {
+   "ids_esterni": {
+    "marveldb": "Volstagg (Earth-9997)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-zabu-earth-12041": {
+   "ids_esterni": {
+    "marveldb": "Zabu (Earth-12041)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-zabu-earth-12131": {
+   "ids_esterni": {
+    "marveldb": "Zabu (Earth-12131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-zabu-earth-1610": {
+   "ids_esterni": {
+    "marveldb": "Zabu (Earth-1610)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-zabu-earth-20051": {
+   "ids_esterni": {
+    "marveldb": "Zabu (Earth-20051)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-zabu-earth-2149": {
+   "ids_esterni": {
+    "marveldb": "Zabu (Earth-2149)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-zabu-earth-58163": {
+   "ids_esterni": {
+    "marveldb": "Zabu (Earth-58163)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-zabu-earth-61284": {
+   "ids_esterni": {
+    "marveldb": "Zabu (Earth-61284)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-zabu-earth-78149": {
+   "ids_esterni": {
+    "marveldb": "Zabu (Earth-78149)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-zabu-earth-92131": {
+   "ids_esterni": {
+    "marveldb": "Zabu (Earth-92131)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-zabu-earth-93342": {
+   "ids_esterni": {
+    "marveldb": "Zabu (Earth-93342)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-zabu-earth-9411": {
+   "ids_esterni": {
+    "marveldb": "Zabu (Earth-9411)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
+  },
+  "var-zabu-earth-9997": {
+   "ids_esterni": {
+    "marveldb": "Zabu (Earth-9997)"
+   },
+   "ondata": "W0",
+   "origine": "W9",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "variante"
   }
  },
- "ids_sha256": "a48ec1fb52fbd81143913263c6e29bb9c1cc4404d79f5afc86932e3a2190e9f0",
+ "ids_sha256": "2c721204813819061a993a8a380e86b23b2c969bc9d6622194be9371cd7258d3",
  "politica": "append-only; ID mai riusati; rimozioni solo come lapide con redirect",
  "versione": 1
 }

@@ -48,11 +48,24 @@ chk(sum(1 for r in voci if r['t'] == 'universo') + sum(1 for v in idx['voci'] if
 chk(all(r.get('lv') in ('A', 'B', 'C') for r in voci), 'progressione: ogni voce ha livello A/B/C')
 a5 = (R / 'atlante2/a5.js').read_text()
 for v in ('+2', '15', '25', '40'): pass
-chk(subprocess.run(['git', 'diff', '--quiet', '6055210', '--', 'atlante2/a5.js'], cwd=R).returncode == 0, 'XP/regole a5.js invariati rispetto a db7')
+d = subprocess.run(['git', 'diff', '-U0', '5f6e522', '--', 'atlante2/a5.js'], cwd=R, capture_output=True, text=True).stdout
+mod = [l for l in d.splitlines() if l[:1] in '+-' and not l.startswith(('+++', '---'))]
+chk(len(mod) == 2 and '!v.sv' in mod[1], 'XP/regole a5.js: unica modifica = esclusione delle voci «fonte singola» da eligible()')
+# deroga D12: tre stati, nessuna voce a fonte singola nella progressione
+sv = [r for r in voci if r.get('sv')]
+chk(len(sv) > 100 and all(r['t'] in ('variante', 'universo') for r in sv), 'deroga D12: solo varianti/universi a fonte singola (%d)' % len(sv))
+chk(all(canon[r['i']]['stato_verifica'] == 'documentata-fonte-singola' and len(canon[r['i']]['fonti']) == 1 for r in sv), 'fonte singola = esattamente una fonte, stato dichiarato')
+chk(all(r.get('vd') in canon for r in sv if r['t'] == 'variante') and all(r.get('u') for r in sv if r['t'] == 'variante'), 'varianti: identita base e universo documentati')
+chk(not any(r.get('sv') and r.get('dz') for r in voci), 'nessun dossier verificato per voci a fonte singola')
+# classificazione: Doctor Doom e Mephisto non sono entita cosmiche; nessuna scheda duplicata
+chk(per_id.get('cos-mephisto', {}).get('t') == 'identita' and 'cos-doctor-doom' not in per_id and 'id-doctor-doom' in per_id, 'Doctor Doom (scheda unica) e Mephisto (identita) corretti')
+chk(len({r['n'].lower() for r in voci if r['t'] == 'identita' and r['i'].startswith('cos-')} & {r['n'].lower() for r in voci if r['i'].startswith('id-')}) == 0, 'nessuna scheda duplicata tra cos-* e id-*')
+reg = json.load(open(E / 'ids_registro.json'))['ids']
+chk(all(reg[i]['stato'] == 'lapide' and reg[i].get('verso') for i in ('cos-doctor-doom', 'cos-hogun', 'cos-surtur')), 'ID fusi: lapide con redirect (mai cancellati)')
 # 5) MISS MINUTES: schede db nell'archivio; engine/gateway/quote/verificatore INVARIATI
 mm = json.load(open(R / 'miss-minutes/knowledge/atlas_db.json'))['records']
 chk(len(mm) == meta['nuove'], 'Miss Minutes: una scheda per ogni voce nuova (%d)' % len(mm))
-chk(all(x['verification'] in ('verificata',) or x['verification'] for x in mm) and all(x['id'].startswith('db:') for x in mm), 'Miss Minutes: schede db con id db: e stato di verifica')
+chk(all(x['verification'] in ('verificata', 'documentata da fonte singola (non verificata)') for x in mm) and all(x['id'].startswith('db:') for x in mm), 'Miss Minutes: schede db con id db: e stato di verifica')
 for p in ('miss-minutes/engine.js', 'miss-minutes/verify.js', 'miss-minutes/lookup.js', 'miss-minutes/config.js', 'miss-minutes/gateway'):
     chk(subprocess.run(['git', 'diff', '--quiet', '6055210', '--', p], cwd=R).returncode == 0, 'invariato: ' + p)
 # 6) Dossier: ogni dossier appartiene a una voce runtime e ha il campo dz

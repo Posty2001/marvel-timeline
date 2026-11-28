@@ -1,12 +1,12 @@
 {
- "voci_canoniche": 6599,
- "duplicati_id_scartati": 698,
+ "voci_canoniche": 6801,
+ "duplicati_id_scartati": 697,
  "duplicati_qid_scartati": 8,
  "per_categoria": {
-  "identita": 1958,
+  "identita": 1976,
   "hub": 3,
   "mantello": 2,
-  "universo": 43,
+  "universo": 77,
   "organizzazione": 573,
   "artefatto": 392,
   "luogo": 395,
@@ -15,26 +15,26 @@
   "creatore": 458,
   "attore": 979,
   "opera": 1579,
-  "entita-cosmica": 43,
   "specie": 29,
   "battaglia": 20,
-  "pianeta": 11
+  "pianeta": 11,
+  "entita-cosmica": 22,
+  "variante": 171
  },
  "per_livello": {
-  "A": 452,
-  "B": 472,
-  "C": 5667
+  "A": 449,
+  "B": 469,
+  "C": 5875
  },
  "per_ondata": {
   "w1_mcu": {
-   "totale": 1006,
+   "totale": 1005,
    "creatore": 53,
    "artefatto": 85,
    "attore": 163,
    "opera": 39,
    "identita": 223,
    "luogo": 363,
-   "entita-cosmica": 1,
    "specie": 8,
    "universo": 10,
    "organizzazione": 30,
@@ -42,12 +42,11 @@
    "pianeta": 11
   },
   "w2_pre_mcu": {
-   "totale": 592,
+   "totale": 591,
    "creatore": 60,
    "attore": 455,
    "opera": 21,
-   "identita": 45,
-   "entita-cosmica": 4,
+   "identita": 48,
    "organizzazione": 5,
    "luogo": 1,
    "artefatto": 1
@@ -76,11 +75,10 @@
    "opera": 1336
   },
   "w5_fumetti_entita": {
-   "totale": 1208,
+   "totale": 1207,
    "artefatto": 12,
-   "identita": 1079,
+   "identita": 1094,
    "organizzazione": 72,
-   "entita-cosmica": 16,
    "luogo": 14,
    "opera": 7,
    "universo": 3,
@@ -102,6 +100,11 @@
    "evento": 14,
    "entita-cosmica": 22,
    "universo": 3
+  },
+  "w9_deroga": {
+   "totale": 205,
+   "universo": 34,
+   "variante": 171
   }
  },
  "storico": {
@@ -116,10 +119,10 @@
   "titolo": 49
  },
  "relazioni_db": {
-  "narrative": 8145,
+  "narrative": 8127,
   "controparti": 0,
   "verificate": 786,
-  "da_verificare": 7359
+  "da_verificare": 7341
  },
  "relazioni_storiche": {
   "narrative_verificate": 207,
@@ -127,6 +130,21 @@
   "editoriali_escluse": 1027
  },
  "note": "co-apparizioni e collegamenti editoriali NON sono relazioni narrative e non entrano nei conteggi",
+ "stati_verifica": {
+  "voci_canoniche_per_stato": {
+   "verificata": 6588,
+   "documentata-fonte-singola": 205
+  },
+  "documentate_fonte_singola_per_tipo": {
+   "universo": 34,
+   "variante": 171
+  },
+  "staging_da_verificare_per_tipo": {
+   "variante": 2520,
+   "universo": 4088
+  },
+  "nota": "documentata-fonte-singola NON e' verificata: nessuna progressione/XP; i totali per categoria includono entrambi gli stati, qui separati"
+ },
  "categoria_per_livello": {
   "artefatto": {
    "B": 17,
@@ -142,9 +160,8 @@
    "C": 458
   },
   "entita-cosmica": {
-   "A": 4,
-   "B": 16,
-   "C": 23
+   "B": 12,
+   "C": 10
   },
   "evento": {
    "B": 7,
@@ -154,9 +171,9 @@
    "B": 3
   },
   "identita": {
-   "A": 448,
-   "B": 248,
-   "C": 1262
+   "A": 449,
+   "B": 249,
+   "C": 1278
   },
   "luogo": {
    "B": 16,
@@ -184,15 +201,19 @@
   },
   "universo": {
    "B": 27,
-   "C": 16
+   "C": 50
+  },
+  "variante": {
+   "C": 171
   }
  },
  "conteggi_separati": {
-  "identita_canoniche": 1958,
-  "personaggi_distinti (identita che contano come personaggio)": 1958,
-  "varianti_verificate (canon tipo variante)": 0,
+  "identita_canoniche": 1976,
+  "personaggi_distinti (identita che contano come personaggio)": 1976,
+  "varianti_verificate (>=2 fonti)": 0,
+  "varianti_documentate_fonte_singola": 171,
   "varianti_storiche_marcate (variante_multiversale/copia_artificiale in identita.json)": 4,
-  "varianti_in_staging (una sola fonte, D12)": 2691,
+  "varianti_in_staging (da-verificare)": 2520,
   "incarnazioni_documentate": 7,
   "identita_con_incarnazioni": 3,
   "mantelli": 2,

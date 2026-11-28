@@ -394,7 +394,7 @@ def costruisci_runtime():
     recs = []
     for c in sorted(canon, key=lambda x: x['id']):
         recs.append({'i': c['id'], 'n': c['nome'], 'it': c.get('nome_it'), 't': c['tipo'], 'al': c.get('alias', []), 'd': (c.get('descrizione', {}).get('it') or c.get('descrizione', {}).get('en')),
-                     'u': c.get('universo'), 'ip': c.get('interpreti', []), 'wd': c['ids_esterni'].get('wikidata'), 'cv': next((x['url'] for x in c['fonti'] if x['fonte'] == 'Comic Vine'), None), 'wp': c.get('wikipedia', {}).get('en'), 'lv': LIV8.get(c['id'], c['livello']),
+                     'u': c.get('universo'), 'ip': c.get('interpreti', []), 'wd': c['ids_esterni'].get('wikidata'), 'cv': next((x['url'] for x in c['fonti'] if x['fonte'] == 'Comic Vine'), None), 'wp': c.get('wikipedia', {}).get('en'), 'lv': LIV8.get(c['id'], c['livello']), 'sv': ('d' if c.get('stato_verifica') == 'documentata-fonte-singola' else None), 'cg': c.get('categorie') or None, 'vd': c.get('variante_di'), 'cn': c.get('continuita_nota') if c.get('stato_verifica') == 'documentata-fonte-singola' else None,
                      'f': {k: ([it(x) for x in v] if isinstance(v, list) else it(v)) for k, v in c.get('fatti', {}).items() if k not in ('interpreti_fonte', 'parenti', 'alias_fonte', 'creatori_fonte', 'relazioni_fonte')} or None,
                      'ff': {k: len(set(v)) for k, v in c.get('fatti_fonti', {}).items()} or None, 'xs': [[x['fonte'].split(' (')[0], x['url']] for x in c['fonti'] if x.get('licenza') == 'CC BY-SA 3.0']})
     for a in arr:  # alias/interpreti di voci GIA' esistenti: servono solo alla ricerca (aprono la scheda esistente)
@@ -429,8 +429,8 @@ def costruisci_runtime():
     for o, r in enumerate(recs):
         if r['t'] == 'x': stub['x'][r['x']] = ' '.join(dict.fromkeys(norm(a) for a in r['al'] if a))[:160]; continue
         q = ' '.join(dict.fromkeys(w for w in norm(' '.join([r.get('it') or ''] + r['al'][:6] + r.get('ip', [])[:3])).split() if w))[:140]
-        stub['r'].append([r['i'], r['n'], LET.get(r['t'], 'p'), r.get('u') or '', r['lv'], o, q])
-        if r['t'] == 'universo': stub['uni'][r['i']] = {'n': r['n'], 'c': 'Luogo narrativo'}
+        stub['r'].append([r['i'], r['n'], LET.get(r['t'], 'p'), r.get('u') or '', r['lv'], o, q, r.get('sv') or ''])
+        if r['t'] == 'universo': stub['uni'][r['i']] = {'n': r['n'], 'c': 'Universo documentato da fonte singola' if r.get('sv') else 'Luogo narrativo'}
     (OUTRT/'stub.json').write_text(json.dumps(stub, ensure_ascii=False, separators=(',', ':')))
     (OUTRT/'pre.json').write_text(json.dumps({p: sorted(l)[:300] for p, l in pre.items()}, separators=(',', ':')))
     tot = sum(len(gzip.compress(p.read_bytes())) for p in OUTRT.rglob('*.json'))

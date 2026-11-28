@@ -75,10 +75,11 @@
   "stato_verifica": {
    "enum": [
     "verificata",
+    "documentata-fonte-singola",
     "da-verificare",
     "staging"
    ],
-   "description": "D12: 1 fonte primaria inequivocabile OPPURE 2 secondarie indipendenti; altrimenti staging"
+   "description": "D12 + deroga W9: verificata = >=2 fonti indipendenti; documentata-fonte-singola = una fonte attendibile con identita/universo/continuita documentati (nessun XP/completamento); da-verificare = casi ambigui, solo staging"
   },
   "origine": {
    "enum": [
@@ -90,7 +91,9 @@
     "W4",
     "W5",
     "W6",
-    "W7"
+    "W7",
+    "W8",
+    "W9"
    ]
   },
   "ids_esterni": {
@@ -165,6 +168,17 @@
   "fatti_fonti": {
    "type": "object",
    "description": "campo -> elenco fonti che lo attestano (mcuwiki, marveldb); due fonti = confermato"
+  },
+  "categorie": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "description": "Categorie multiple della stessa identita (personaggio, demone, divinita, entita-cosmica...) senza duplicare schede, ID o progressione"
+  },
+  "variante_di": {
+   "type": "string",
+   "description": "ID dell'identita' base di cui la voce e' variante"
   }
  }
 }

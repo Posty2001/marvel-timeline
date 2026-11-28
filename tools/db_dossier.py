@@ -29,6 +29,8 @@ def componi(r, rels, nomi, altre=None, uni=None, cvn=None):
     nn = NOUN.get(r['tipo'], 'un personaggio'); cs = (' della continuità «%s»' % cont) if cont else ''
     if r['tipo'] == 'identita': t.append(pick(r, '%s è un personaggio%s.', '%s compare come personaggio%s.', 'La scheda riguarda %s, personaggio%s.') % (nome, cs))
     else: t.append('Nell\'Atlante «%s» è classificata come %s%s (classificazione editoriale della scheda, non una tesi sulla natura del personaggio).' % (nome, nn, cs))
+    cg = [x for x in (r.get('categorie') or []) if x != 'personaggio']
+    if cg and r['tipo'] == 'identita': t.append('Nell\'Atlante è registrata anche come: %s (stessa scheda, nessun duplicato).' % ', '.join({'demone': 'demone', 'divinita': 'divinità', 'entita-cosmica': 'entità cosmica'}.get(x, x) for x in cg))
     cr = u('creatori_fonte')
     if cr: t.append('Secondo le fonti consultate è stato creato da %s.' % lista(cr, 4))
     pa = u('prima_apparizione')

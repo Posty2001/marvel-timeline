@@ -72,7 +72,7 @@
       var tocc = {};
       st.r.forEach(function (r) {
         if (BY[r[0]]) return; var u = r[3] && IDX.meta.universi[r[3]] ? r[3] : '';
-        var v = { i: r[0], n: r[1], t: r[2], k: 'i', u: u, a: 0, q: norm(r[1] + ' ' + (r[6] || '')), pg: [], s: 0, sh: -1, db: 1, lv: r[4], o: r[5] };
+        var v = { i: r[0], n: r[1], t: r[2], k: 'i', u: u, a: 0, q: norm(r[1] + ' ' + (r[6] || '')), pg: [], s: 0, sh: -1, db: 1, lv: r[4], o: r[5], sv: r[7] || '' };
         BY[v.i] = v; IDX.voci.push(v); (ORD[v.t] = ORD[v.t] || []).push(v); tocc[v.t] = 1;
       });
       Object.keys(st.x || {}).forEach(function (id) { if (BY[id] && st.x[id]) BY[id].q += ' ' + st.x[id]; });
@@ -212,7 +212,7 @@
   function shown(v) {   // titolo senza ripetizioni; per gli universi: nome/denominazione COMPLETA + classificazione separata (il nome completo resta anche in aria-label e nel dossier)
     var n = v.n, sub = v.u ? uniNome(v.u) : (v.a ? v.a + (v.t === 'h' ? ' voci collegate' : v.t === 'm' ? ' titolari' : ' apparizioni') : '');
     if (v.t === 'U') return { n: uniFull(v), s: uniCont(v.i) || '' };
-    if (v.db && !sub) sub = v.lv === 'A' ? 'dossier approfondito' : v.lv === 'B' ? 'scheda strutturata' : 'voce essenziale';
+    if (v.db && v.sv && !sub) sub = 'documentata da fonte singola'; if (v.db && !sub) sub = v.lv === 'A' ? 'dossier approfondito' : v.lv === 'B' ? 'scheda strutturata' : 'voce essenziale';
     if (sub && (nk(sub) === nk(n) || nk(n).indexOf(nk(sub)) >= 0)) sub = '';
     return { n: n, s: sub };
   }
@@ -393,6 +393,9 @@
       var F = r.f || {}, FF = r.ff || {}, ET = [['specie', 'Specie'], ['genere', 'Genere'], ['stato', 'Stato'], ['affiliazioni', 'Organizzazioni di appartenenza'], ['poteri', 'Poteri'], ['abilita', 'Abilità'], ['equipaggiamento', 'Equipaggiamento'], ['trasformazioni', 'Trasformazioni'], ['debolezze', 'Debolezze'], ['prima_apparizione', 'Prima apparizione'], ['origine', 'Origine'], ['nome_reale', 'Nome reale'], ['cittadinanza', 'Cittadinanza'], ['occupazione', 'Occupazione'], ['nascita', 'Nascita'], ['morte', 'Morte'], ['ubicazione', 'Ubicazione'], ['utenti', 'Utenti e proprietari'], ['creatore_oggetto', 'Creato da'], ['membri', 'Membri e capi'], ['esito', 'Esito'], ['popolazione', 'Popolazione'], ['apparizioni_narrativa', 'Apparizioni nella continuità narrativa'], ['apparizioni_alternativi', 'Apparizioni in universi alternativi (varianti, non la stessa incarnazione)'], ['apparizioni_fumetti', 'Fumetti'], ['apparizioni_videogiochi', 'Videogiochi'], ['apparizioni_adattamenti', 'Adattamenti, LEGO, parodie e altri media']];
       ET.forEach(function (e) { kv(e[1], F[e[0]], FF[e[0]] >= 2 ? 'confermato da due fonti' : (FF[e[0]] === 1 ? 'una fonte' : '')); });
       if (r.u && BY[r.u]) { var d = h('div', 'a3-kv'); d.appendChild(h('span', 'k', 'Continuità')); var v = h('div', 'v'); v.appendChild(btn('a3-lk', BY[r.u].n, function () { openId(r.u); })); d.appendChild(v); c.appendChild(d); }
+      if (r.sv) { var sn = h('p', 'a3-dbnote a3-sv', 'Stato: documentata da una singola fonte (non verificata). ' + (r.cn || '') + ' Non conta per progressione, XP e completamenti.'); c.appendChild(sn); }
+      if (r.cg && r.cg.length > 1) kv('Categorie', r.cg.map(function (x) { return { personaggio: 'Personaggio', demone: 'Demone', divinita: 'Divinità', 'entita-cosmica': 'Entità cosmica', luogo: 'Luogo' }[x] || x; }));
+      if (r.vd && BY[r.vd]) { var dv = h('div', 'a3-kv'); dv.appendChild(h('span', 'k', 'Variante di')); var vv2 = h('div', 'v'); vv2.appendChild(btn('a3-lk', BY[r.vd].n, function () { openId(r.vd); })); dv.appendChild(vv2); c.appendChild(dv); }
       if (r.dz && r.dz.length) {   // dossier discorsivo in italiano (livello A): testo originale composto solo da fatti verificati
         var dzb = h('div', 'a3-dz'); r.dz.forEach(function (x) { var sc = h('section', 'a3-ds'); sc.appendChild(h('h3', '', x[0])); sc.appendChild(h('p', '', x[1])); dzb.appendChild(sc); }); c.appendChild(dzb);
         c.appendChild(h('p', 'a3-dbnote', 'Dossier composto da TVA Archives con frasi originali a partire dai soli fatti verificati indicati nelle fonti; nessun testo è copiato. I termini tecnici restano nella lingua originale.'));

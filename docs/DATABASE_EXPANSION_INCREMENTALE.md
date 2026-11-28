@@ -16,6 +16,8 @@ Tutto è riprendibile e additivo: gli ID del registro (`data/atlante/espansione/
 
 Guardie: lo script si ferma se il registro ID perde ID rispetto a `HEAD` (gli ID rimossi devono diventare lapidi). Il passo runtime cancella `atlante2/data/db/`, quindi `rel.json` va sempre rigenerato dopo (lo script lo fa nell'ordine corretto).
 
+**Stati di verifica (dal 28/11, deroga D12)**: `verificata` (≥2 fonti), `documentata-fonte-singola` (varianti/universi con identità, universo e continuità documentati; mai XP; `tools/db_w9_chiusura.py`), `da-verificare` (solo staging).
+
 **Regola D12 per le nuove voci**: una voce entra nel canon solo con due fonti indipendenti (Wikidata con collegamento Marvel, oppure nome esatto su Comic Vine nella risorsa coerente); altrimenti resta in `staging/*.jsonl` con il motivo («una sola fonte»). Revisione dello staging: aprire `staging/w8_staging.jsonl`, per i candidati con una seconda fonte reale aggiungere l'abbinamento (`cv_match.json` o QID) e rilanciare la costruzione; mai promuovere a mano senza fonte.
 
 **Dove mancano ancora dati (limiti documentati, nessuna forzatura)**

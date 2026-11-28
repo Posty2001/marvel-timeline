@@ -6,7 +6,7 @@ const core = JSON.parse(fs.readFileSync(path.join(__dirname, '../knowledge/core.
 const db = JSON.parse(fs.readFileSync(path.join(__dirname, '../knowledge/atlas_db.json'), 'utf8')).records;
 let p = 0, f = 0; const ok = (c, m) => { if (c) p++; else { f++; console.log('FAIL', m); } };
 ok(db.length > 3000 && new Set(db.map(r => r.id)).size === db.length, 'record unici (' + db.length + ')');
-ok(db.every(r => r.category === 'scheda' && r.verification === 'verificata' && r.text && r.id.indexOf('db:') === 0), 'schema: solo schede verificate, kind scheda (nessuna fusione con i personaggi dell\'app)');
+ok(db.every(r => r.category === 'scheda' && (r.verification === 'verificata' || r.verification === 'documentata da fonte singola (non verificata)') && r.text && r.id.indexOf('db:') === 0), 'schema: schede verificate o dichiarate «fonte singola», kind scheda (nessuna fusione con i personaggi dell\'app)');
 const data = { titles: [], graph: blob('relationshipGraphData'), powers: blob('tesseraCharPowersData'), levels: blob('tesseraCharLevelsData'), levelNames: blob('tesseraLevelNamesData'), charIds: {} };
 const base = E.create({ data, knowledge: core }), est = E.create({ data, knowledge: core.concat(db) });
 ok(est.stats().entries > base.stats().entries + 3000, 'indice esteso: +' + (est.stats().entries - base.stats().entries) + ' voci');

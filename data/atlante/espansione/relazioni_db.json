@@ -21665,6 +21665,54 @@
    "metodo": "nessuna verifica (una sola fonte)"
   },
   {
+   "id": "rel-db-a5e3685d35",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-doctor-doom",
+   "a": "org-cabal",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q430178"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false,
+   "metodo": "nessuna verifica (una sola fonte)"
+  },
+  {
+   "id": "rel-db-4a46a855b3",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-doctor-doom",
+   "a": "org-future-foundation",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q430178"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false,
+   "metodo": "nessuna verifica (una sola fonte)"
+  },
+  {
+   "id": "rel-db-340f29235e",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-doctor-doom",
+   "a": "org-avengers",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q430178"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false,
+   "metodo": "nessuna verifica (una sola fonte)"
+  },
+  {
    "id": "rel-db-4c4ba7476f",
    "tipo": "rivalita",
    "classe": "narrativa",
@@ -35809,23 +35857,6 @@
    "classe": "narrativa",
    "da": "id-danielle-moonstar-earth-616",
    "a": "id-hercules",
-   "simmetrica": true,
-   "qualifica": "alleato",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:f",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-292df36d1a",
-   "tipo": "alleanza",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-danielle-moonstar-earth-616",
    "simmetrica": true,
    "qualifica": "alleato",
    "fonte": [
@@ -73000,23 +73031,6 @@
    "metodo": "nessuna verifica (una sola fonte)"
   },
   {
-   "id": "rel-db-79d6a0edfa",
-   "tipo": "alleanza",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-jane-foster-earth-616",
-   "simmetrica": true,
-   "qualifica": "alleato",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:f",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
    "id": "rel-db-d55c360ef8",
    "tipo": "alleanza",
    "classe": "narrativa",
@@ -80599,23 +80613,6 @@
    "metodo": "nessuna verifica (una sola fonte)"
   },
   {
-   "id": "rel-db-8b24ad0b89",
-   "tipo": "rivalita",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "cos-mephisto",
-   "simmetrica": true,
-   "qualifica": "avversario",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:e",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
    "id": "rel-db-d6cffa47b6",
    "tipo": "rivalita",
    "classe": "narrativa",
@@ -81351,23 +81348,6 @@
    "tipo": "rivalita",
    "classe": "narrativa",
    "da": "id-patsy-walker-earth-616",
-   "a": "id-pluto",
-   "simmetrica": true,
-   "qualifica": "avversario",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:e",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-403a05de7a",
-   "tipo": "rivalita",
-   "classe": "narrativa",
-   "da": "cos-hogun",
    "a": "id-pluto",
    "simmetrica": true,
    "qualifica": "avversario",
@@ -98109,23 +98089,6 @@
    "metodo": "nessuna verifica (una sola fonte)"
   },
   {
-   "id": "rel-db-a07046ab4e",
-   "tipo": "alleanza",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-heimdall-q1139706",
-   "simmetrica": true,
-   "qualifica": "alleato",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:f",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
    "id": "rel-db-274eb9e99d",
    "tipo": "alleanza",
    "classe": "narrativa",
@@ -98190,278 +98153,6 @@
    ],
    "verifica": "da verificare",
    "origine": "db:comicvine:e",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-e6305bdb43",
-   "tipo": "alleanza",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-balder",
-   "simmetrica": true,
-   "qualifica": "alleato",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:f",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-aa21ca3c0d",
-   "tipo": "alleanza",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-beta-ray-bill",
-   "simmetrica": true,
-   "qualifica": "alleato",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:f",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-1d1ce3424e",
-   "tipo": "alleanza",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-enchantress",
-   "simmetrica": true,
-   "qualifica": "alleato",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:f",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-cf9014c1fd",
-   "tipo": "alleanza",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-fandral-q3545295",
-   "simmetrica": true,
-   "qualifica": "alleato",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:f",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-dc50cb4733",
-   "tipo": "alleanza",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-hannah-fairmont",
-   "simmetrica": true,
-   "qualifica": "alleato",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:f",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-9dc4bace31",
-   "tipo": "alleanza",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "cos-sif",
-   "simmetrica": true,
-   "qualifica": "alleato",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:f",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-e2191722d1",
-   "tipo": "alleanza",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-sunspot",
-   "simmetrica": true,
-   "qualifica": "alleato",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:f",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-71e8e0c599",
-   "tipo": "alleanza",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-volstagg-q7940698",
-   "simmetrica": true,
-   "qualifica": "alleato",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:f",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-d1ad99cba7",
-   "tipo": "alleanza",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-nate-grey",
-   "simmetrica": true,
-   "qualifica": "alleato",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:f",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-b329768f61",
-   "tipo": "rivalita",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-annihilus",
-   "simmetrica": true,
-   "qualifica": "avversario",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:e",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-4f1ad850e9",
-   "tipo": "rivalita",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-ares",
-   "simmetrica": true,
-   "qualifica": "avversario",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:e",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-4edfe8c1ae",
-   "tipo": "rivalita",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-grey-gargoyle",
-   "simmetrica": true,
-   "qualifica": "avversario",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:e",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-82df084469",
-   "tipo": "rivalita",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-kurse-q1775092",
-   "simmetrica": true,
-   "qualifica": "avversario",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:e",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-84a3bfb746",
-   "tipo": "rivalita",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-malekith-the-accursed-earth-616",
-   "simmetrica": true,
-   "qualifica": "avversario",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:e",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-87f74988ce",
-   "tipo": "rivalita",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "id-ulik",
-   "simmetrica": true,
-   "qualifica": "avversario",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:e",
-   "controversa": false,
-   "metodo": "nessuna verifica (una sola fonte)"
-  },
-  {
-   "id": "rel-db-b3e303b279",
-   "tipo": "appartenenza",
-   "classe": "narrativa",
-   "da": "cos-hogun",
-   "a": "org-warriors-three",
-   "simmetrica": false,
-   "qualifica": "membro",
-   "fonte": [
-    "Comic Vine (solo ID delle relazioni)",
-    "una sola fonte"
-   ],
-   "verifica": "da verificare",
-   "origine": "db:comicvine:t",
    "controversa": false,
    "metodo": "nessuna verifica (una sola fonte)"
   },
@@ -137552,10 +137243,10 @@
    "motivo": "estremi non entrambi identita"
   },
   {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "id-impossible-man",
    "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-earth-616): non e una relazione narrativa unica, possibile controparte"
   },
   {
    "da": "id-vanisher",
@@ -137828,10 +137519,10 @@
    "motivo": "continuita diverse (uni-earth-616 / uni-marvel-animation-universe-2006-2017): non e una relazione narrativa unica, possibile controparte"
   },
   {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "id-galactus-earth-616",
    "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-earth-616): non e una relazione narrativa unica, possibile controparte"
   },
   {
    "da": "id-galactus-earth-616",
@@ -137846,7 +137537,7 @@
    "motivo": "estremi non entrambi identita"
   },
   {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "org-fantastic-four",
    "tipo": "rivalita",
    "motivo": "estremi non entrambi identita"
@@ -138044,10 +137735,10 @@
    "motivo": "estremi non entrambi identita"
   },
   {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "id-kang-the-conqueror-earth-616",
    "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-earth-616): non e una relazione narrativa unica, possibile controparte"
   },
   {
    "da": "id-kang-the-conqueror-earth-616",
@@ -138068,10 +137759,10 @@
    "motivo": "estremi non entrambi identita"
   },
   {
-   "da": "cos-doctor-doom",
-   "a": "id-beyonder",
+   "da": "id-beyonder",
+   "a": "id-doctor-doom",
    "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
+   "motivo": "continuita diverse (uni-earth-616 / uni-earth-199999-mcu): non e una relazione narrativa unica, possibile controparte"
   },
   {
    "da": "id-emma-frost",
@@ -138350,8 +138041,8 @@
    "motivo": "estremi non entrambi identita"
   },
   {
-   "da": "cos-doctor-doom",
-   "a": "cos-mephisto",
+   "da": "cos-mephisto",
+   "a": "id-doctor-doom",
    "tipo": "rivalita",
    "motivo": "estremi non entrambi identita"
   },
@@ -138476,7 +138167,7 @@
    "motivo": "estremi non entrambi identita"
   },
   {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "org-excalibur",
    "tipo": "rivalita",
    "motivo": "estremi non entrambi identita"
@@ -138692,10 +138383,10 @@
    "motivo": "continuita diverse (uni-spider-verse-sony-animato / uni-earth-616): non e una relazione narrativa unica, possibile controparte"
   },
   {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "id-dreadknight",
    "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-earth-616): non e una relazione narrativa unica, possibile controparte"
   },
   {
    "da": "id-hela-earth-616",
@@ -138854,10 +138545,10 @@
    "motivo": "estremi non entrambi identita"
   },
   {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "id-kristoff-vernard",
    "tipo": "famiglia_genitore",
-   "motivo": "estremi non entrambi identita"
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-earth-616): non e una relazione narrativa unica, possibile controparte"
   },
   {
    "da": "cos-typhon",
@@ -138932,146 +138623,80 @@
    "motivo": "continuita diverse (uni-earth-199999-mcu / uni-earth-616): non e una relazione narrativa unica, possibile controparte"
   },
   {
-   "da": "cos-surtur",
-   "a": "id-thor",
-   "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
-  },
-  {
    "da": "id-cynthia-von-doom",
-   "a": "cos-doctor-doom",
+   "a": "id-doctor-doom",
    "tipo": "famiglia_genitore",
-   "motivo": "estremi non entrambi identita"
+   "motivo": "continuita diverse (uni-earth-616 / uni-earth-199999-mcu): non e una relazione narrativa unica, possibile controparte"
   },
   {
-   "da": "cos-doctor-doom",
-   "a": "id-kristoff-vernard",
-   "tipo": "famiglia_genitore",
-   "motivo": "estremi non entrambi identita"
-  },
-  {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "id-morgan-le-fay",
    "tipo": "partner",
-   "motivo": "estremi non entrambi identita"
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-earth-616): non e una relazione narrativa unica, possibile controparte"
   },
   {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "id-scarlet-witch",
    "tipo": "partner",
-   "motivo": "estremi non entrambi identita"
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-earth-616): non e una relazione narrativa unica, possibile controparte"
   },
   {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "org-fantastic-four",
    "tipo": "rivalita",
    "motivo": "estremi non entrambi identita"
   },
   {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "id-squirrel-girl",
    "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-earth-616): non e una relazione narrativa unica, possibile controparte"
   },
   {
-   "da": "cos-doctor-doom",
-   "a": "cos-mephisto",
+   "da": "cos-mephisto",
+   "a": "id-doctor-doom",
    "tipo": "rivalita",
    "motivo": "estremi non entrambi identita"
   },
   {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "id-silver-surfer-earth-616",
    "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-earth-616): non e una relazione narrativa unica, possibile controparte"
   },
   {
-   "da": "cos-doctor-doom",
-   "a": "id-galactus-earth-616",
-   "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
-  },
-  {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "id-invisible-woman-earth-616",
    "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-earth-616): non e una relazione narrativa unica, possibile controparte"
   },
   {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "id-human-torch-earth-616",
    "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-earth-616): non e una relazione narrativa unica, possibile controparte"
   },
   {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "id-mister-fantastic-earth-616",
    "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-earth-616): non e una relazione narrativa unica, possibile controparte"
   },
   {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "id-thing-earth-616",
    "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-earth-616): non e una relazione narrativa unica, possibile controparte"
   },
   {
-   "da": "cos-doctor-doom",
-   "a": "id-dreadknight",
-   "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
-  },
-  {
-   "da": "cos-doctor-doom",
+   "da": "id-doctor-doom",
    "a": "org-excalibur",
    "tipo": "rivalita",
    "motivo": "estremi non entrambi identita"
   },
   {
-   "da": "cos-doctor-doom",
-   "a": "id-kang-the-conqueror-earth-616",
-   "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
-  },
-  {
-   "da": "cos-doctor-doom",
-   "a": "id-beyonder",
-   "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
-  },
-  {
-   "da": "cos-doctor-doom",
-   "a": "id-impossible-man",
-   "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
-  },
-  {
-   "da": "cos-doctor-doom",
-   "a": "org-cabal",
-   "tipo": "appartenenza",
-   "motivo": "estremi non coerenti (serve identita -> organizzazione)"
-  },
-  {
-   "da": "cos-doctor-doom",
-   "a": "org-future-foundation",
-   "tipo": "appartenenza",
-   "motivo": "estremi non coerenti (serve identita -> organizzazione)"
-  },
-  {
-   "da": "cos-doctor-doom",
-   "a": "org-avengers",
-   "tipo": "appartenenza",
-   "motivo": "estremi non coerenti (serve identita -> organizzazione)"
-  },
-  {
    "da": "id-sabretooth-earth-616",
    "a": "org-x-men",
-   "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
-  },
-  {
-   "da": "cos-doctor-doom",
-   "a": "id-squirrel-girl",
    "tipo": "rivalita",
    "motivo": "estremi non entrambi identita"
   },
@@ -139100,21 +138725,9 @@
    "motivo": "estremi non coerenti (serve identita -> organizzazione)"
   },
   {
-   "da": "cos-doctor-doom",
-   "a": "id-invisible-woman-earth-616",
-   "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
-  },
-  {
    "da": "org-brotherhood-of-mutants",
    "a": "org-x-men",
    "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
-  },
-  {
-   "da": "id-cynthia-von-doom",
-   "a": "cos-doctor-doom",
-   "tipo": "famiglia_genitore",
    "motivo": "estremi non entrambi identita"
   },
   {
@@ -139166,12 +138779,6 @@
    "motivo": "estremi non entrambi identita"
   },
   {
-   "da": "cos-doctor-doom",
-   "a": "id-human-torch-earth-616",
-   "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
-  },
-  {
    "da": "id-human-torch-earth-616",
    "a": "id-uncanny-avengers",
    "tipo": "appartenenza",
@@ -139200,12 +138807,6 @@
    "a": "id-inhumans",
    "tipo": "appartenenza",
    "motivo": "estremi non coerenti (serve identita -> organizzazione)"
-  },
-  {
-   "da": "cos-doctor-doom",
-   "a": "id-morgan-le-fay",
-   "tipo": "partner",
-   "motivo": "estremi non entrambi identita"
   },
   {
    "da": "id-morgan-le-fay",
@@ -139412,12 +139013,6 @@
    "motivo": "estremi non entrambi identita"
   },
   {
-   "da": "cos-doctor-doom",
-   "a": "id-mister-fantastic-earth-616",
-   "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
-  },
-  {
    "da": "cos-mephisto",
    "a": "id-ghost-rider-earth-616",
    "tipo": "rivalita",
@@ -139432,12 +139027,6 @@
   {
    "da": "cos-shuma-gorath",
    "a": "id-doctor-strange-earth-616",
-   "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
-  },
-  {
-   "da": "cos-doctor-doom",
-   "a": "id-thing-earth-616",
    "tipo": "rivalita",
    "motivo": "estremi non entrambi identita"
   },
@@ -139460,12 +139049,6 @@
    "motivo": "estremi non coerenti (serve identita -> organizzazione)"
   },
   {
-   "da": "cos-doctor-doom",
-   "a": "id-scarlet-witch",
-   "tipo": "partner",
-   "motivo": "estremi non entrambi identita"
-  },
-  {
    "da": "id-arcade",
    "a": "org-excalibur",
    "tipo": "rivalita",
@@ -139480,12 +139063,6 @@
   {
    "da": "org-mutant-liberation-front",
    "a": "org-x-force",
-   "tipo": "rivalita",
-   "motivo": "estremi non entrambi identita"
-  },
-  {
-   "da": "cos-doctor-doom",
-   "a": "id-silver-surfer-earth-616",
    "tipo": "rivalita",
    "motivo": "estremi non entrambi identita"
   },
@@ -139520,13 +139097,13 @@
   "affiliazioni non univoco/assente": 507,
   "alleati non univoco/assente": 12,
   "nemici non univoco/assente": 11,
-  "relazioni": 8145,
+  "relazioni": 8127,
   "verificate": 786,
-  "staging": 346,
+  "staging": 327,
   "confermate_wikipedia": 705,
   "per_metodo": {
    "automatica: Wikidata + riscontro relazionale direzionale (Wikipedia)": 705,
-   "nessuna verifica (una sola fonte)": 7359,
+   "nessuna verifica (una sola fonte)": 7341,
    "automatica: Wikidata + parametro infobox": 81
   }
  }
