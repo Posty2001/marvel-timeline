@@ -122,6 +122,7 @@ def classe_app(titolo, chiave):
 
 LISTE = ('poteri', 'abilita', 'equipaggiamento', 'debolezze')
 SCALARI = ('stato', 'genere', 'prima_apparizione', 'origine', 'nome_reale', 'nascita', 'morte', 'esito', 'popolazione')
+LIV8 = json.load(open(E/'livelli_w8.json'))['livelli'] if (E/'livelli_w8.json').exists() else {}   # promozioni A/B da dossier approfonditi (W8; tools/db_dossier.py)
 def carica_w1b(d, pref='w1b'):
     if not d: return {}, {}
     d = pathlib.Path(d); m = json.load(open(d/'w1b_mcuwiki.json'))['pagine'] if (pref == 'w1b' and (d/'w1b_mcuwiki.json').exists()) else {}
@@ -393,7 +394,7 @@ def costruisci_runtime():
     recs = []
     for c in sorted(canon, key=lambda x: x['id']):
         recs.append({'i': c['id'], 'n': c['nome'], 'it': c.get('nome_it'), 't': c['tipo'], 'al': c.get('alias', []), 'd': (c.get('descrizione', {}).get('it') or c.get('descrizione', {}).get('en')),
-                     'u': c.get('universo'), 'ip': c.get('interpreti', []), 'wd': c['ids_esterni'].get('wikidata'), 'cv': next((x['url'] for x in c['fonti'] if x['fonte'] == 'Comic Vine'), None), 'wp': c.get('wikipedia', {}).get('en'), 'lv': c['livello'],
+                     'u': c.get('universo'), 'ip': c.get('interpreti', []), 'wd': c['ids_esterni'].get('wikidata'), 'cv': next((x['url'] for x in c['fonti'] if x['fonte'] == 'Comic Vine'), None), 'wp': c.get('wikipedia', {}).get('en'), 'lv': LIV8.get(c['id'], c['livello']),
                      'f': {k: ([it(x) for x in v] if isinstance(v, list) else it(v)) for k, v in c.get('fatti', {}).items() if k not in ('interpreti_fonte', 'parenti', 'alias_fonte', 'creatori_fonte', 'relazioni_fonte')} or None,
                      'ff': {k: len(set(v)) for k, v in c.get('fatti_fonti', {}).items()} or None, 'xs': [[x['fonte'].split(' (')[0], x['url']] for x in c['fonti'] if x.get('licenza') == 'CC BY-SA 3.0']})
     for a in arr:  # alias/interpreti di voci GIA' esistenti: servono solo alla ricerca (aprono la scheda esistente)

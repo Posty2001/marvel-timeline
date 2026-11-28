@@ -21,6 +21,37 @@ def membri(cat, anom, mx=100000):
         cont = r.get('continue', {}).get('cmcontinue')
         if not cont: break
     return out
+def pagine_prefisso(pre, anom, rx):
+    import re
+    out, cont = [], None
+    while True:
+        p = {'action': 'query', 'list': 'allpages', 'apprefix': pre, 'aplimit': 500, 'apnamespace': 0, 'apfilterredir': 'nonredirects'}
+        if cont: p['apcontinue'] = cont
+        r = B.api(B.WIKI['marveldb'], p)
+        if 'errore' in r: anom.append('prefisso %s: %s' % (pre, r['errore'])); break
+        out += [x['title'] for x in r.get('query', {}).get('allpages', []) if re.match(rx, x['title'])]
+        cont = r.get('continue', {}).get('apcontinue')
+        if not cont: break
+    return out
+import urllib.request, urllib.parse, re as _re
+def wd_etichette(nomi, anom):
+    """Seconda fonte: elementi Wikidata con ETICHETTA inglese esatta e classe «fictional ...» (nessun testo; solo QID/etichetta/classe)."""
+    out = {}
+    for i in range(0, len(nomi), 100):
+        bl = nomi[i:i + 100]
+        vals = ' '.join('"%s"@en' % n.replace('\\', '').replace('"', '') for n in bl)
+        q = ('SELECT ?l ?x ?cl WHERE { VALUES ?l { %s } ?x rdfs:label ?l . ?x wdt:P31 ?c . ?c rdfs:label ?cl . FILTER(LANG(?cl)="en" && CONTAINS(LCASE(STR(?cl)),"fictional")) }' % vals)
+        for t in range(3):
+            try:
+                time.sleep(1.5)
+                r = json.load(urllib.request.urlopen(urllib.request.Request('https://query.wikidata.org/sparql?' + urllib.parse.urlencode({'query': q, 'format': 'json'}), headers={'User-Agent': B.UA, 'Accept': 'application/sparql-results+json'}), timeout=90))
+                for b in r['results']['bindings']:
+                    out.setdefault(b['l']['value'], {})[b['x']['value'].rsplit('/', 1)[-1]] = b['cl']['value']
+                break
+            except Exception as e:
+                if t == 2: anom.append('wd blocco %d: %s' % (i, str(e)[:80]))
+                time.sleep(8 * (t + 1))
+    return out
 def scoperta(anom):
     cats = {}
     for pre in PREFISSI:
@@ -53,6 +84,11 @@ def main():
         for c in cs:
             if c in ck['membri']: continue
             ck['membri'][c] = {'tipo': tipo, 't': membri(c, anom, mx)}; salva()
+    for tipo, ps in cfg.get('prefissi_pagine', {}).items():
+        for pre, rx in ps:
+            k = 'prefisso:' + pre
+            if k in ck['membri']: continue
+            ck['membri'][k] = {'tipo': tipo, 't': pagine_prefisso(pre, anom, rx)}; salva()
     # varianti: ricerca per prefisso sui personaggi con piu' albi
     try:
         cv = json.load(open(E / 'raw/cv2_marvel.json'))['risorse']['characters']
@@ -75,8 +111,16 @@ def main():
         for t, v in r.items(): ck['pagine'][t] = None if not v else {'titolo': v['titolo'], 'url': v['url'], 'disambigua': v['disambigua'], 'categorie': v['categorie'][:25], 'infobox': v['infobox']}
         if (i // 20) % 10 == 0: salva()
     salva()
+    base = lambda t: _re.sub(r'\s*\([^)]*\)\s*$', '', t).strip()
+    nomi = sorted({base(t) for m in ck['membri'].values() for t in m['t'] if ck['pagine'].get(t)} - set(ck.setdefault('wd', {}).keys()))
+    ck.setdefault('wd_fatti', [])
+    gia = set(ck['wd_fatti']); nuovi = [n for n in nomi if n not in gia]
+    for i in range(0, len(nuovi), 400):
+        bl = nuovi[i:i + 400]; r = wd_etichette(bl, anom)
+        for n in bl: ck['wd'][n] = r.get(n, {}); ck['wd_fatti'].append(n)
+        salva()
     trov = {t: v for t, v in ck['pagine'].items() if v}
-    json.dump({'fonte': 'Marvel Database (Fandom), CC BY-SA 3.0, solo categorie/parametri-fatto', 'recuperato': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'membri': {c: m for c, m in ck['membri'].items()}, 'varianti': ck['varianti'], 'pagine': trov},
+    json.dump({'fonte': 'Marvel Database (Fandom), CC BY-SA 3.0, solo categorie/parametri-fatto', 'recuperato': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'membri': {c: m for c, m in ck['membri'].items()}, 'varianti': ck['varianti'], 'wd': {n: v for n, v in ck.get('wd', {}).items() if v}, 'pagine': trov},
               open(out / 'w8_md.json', 'w'), ensure_ascii=False, separators=(',', ':'))
     man.update({'membri': {c: len(m['t']) for c, m in ck['membri'].items()}, 'varianti_nomi': len(ck['varianti']), 'pagine': len(trov), 'anomalie': (anom + B.ERRLOG)[:200], 'fine': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())})
     json.dump(man, open(out / 'w8_manifest.json', 'w'), indent=1, ensure_ascii=False); print(json.dumps({k: v for k, v in man.items() if k not in ('anomalie', 'membri')})); sys.exit(0 if trov else 1)

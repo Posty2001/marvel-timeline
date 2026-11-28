@@ -2,6 +2,7 @@
 """Conteggi CANONICI deduplicati (per ID e per QID Wikidata) per categoria e per ondata; relazioni narrative separate da co-apparizioni/editoriali (mai nei conteggi). Uso: python3 tools/db_conteggi.py [--scrivi]"""
 import json, pathlib, collections, sys
 R = pathlib.Path(__file__).resolve().parent.parent; E = R/'data/atlante/espansione'
+LIV = json.load(open(E/'livelli_w8.json'))['livelli'] if (E/'livelli_w8.json').exists() else {}
 def main():
     ids, qid, per_t, per_w, livelli = set(), {}, collections.Counter(), collections.defaultdict(collections.Counter), collections.Counter()
     dup_id = dup_q = 0
@@ -15,7 +16,7 @@ def main():
             if q:
                 if q in qid: dup_q += 1; continue
                 qid[q] = r['id']
-            per_t[r['tipo']] += 1; per_w[f.stem][r['tipo']] += 1; livelli[r.get('livello', '?')] += 1
+            per_t[r['tipo']] += 1; per_w[f.stem][r['tipo']] += 1; livelli[LIV.get(r['id'], r.get('livello', '?'))] += 1
     storico = per_w.pop('storico', {})
     rel_db = json.load(open(E/'relazioni_db.json'))['relazioni']; rel_st = json.load(open(R/'data/atlante/relazioni.json'))['relazioni']
     cl = lambda L: collections.Counter((x['classe'], x['verifica']) for x in L)

@@ -37,7 +37,7 @@
     if (st.ric[key]) return false; var today = dayStr(now); st.ric[key] = { xp: xp, ts: now, d: today }; if (xp > 0) schedule(st, xp, today); return true;
   }
   /* ---- conteggi: solo dossier EFFETTIVI e documentati: esclusi copie, hub, mantelli e voci «in verifica» (segnaposto/da verificare non danno ricompense) ---- */
-  function eligible(v) { return !!v && v.k !== 'c' && v.t !== 'h' && v.t !== 'm' && !v.s && (!v.db || v.lv === 'B' || v.lv === 'C'); }   /* le voci del database esteso VERIFICATE (canon: Livello B/C; mai staging, alias o segnaposto) partecipano con le stesse regole; ricompense già ottenute mai revocate */
+  function eligible(v) { return !!v && v.k !== 'c' && v.t !== 'h' && v.t !== 'm' && !v.s && (!v.db || v.lv === 'A' || v.lv === 'B' || v.lv === 'C'); }   /* le voci del database esteso VERIFICATE (canon: Livello B/C; mai staging, alias o segnaposto) partecipano con le stesse regole; ricompense già ottenute mai revocate */
   function canon(id, BY, red) { var r = red && red[id]; return r && BY[r] ? r : id; }   /* alias/unificazioni: un'identità vale una sola volta, anche se l'id storico viene reindirizzato */
   function exploredSet(st, BY, red) { var o = {}; Object.keys(st.esp).forEach(function (id) { var c = canon(id, BY, red); if (eligible(BY[c])) o[c] = 1; }); return o; }
   function counts(st, BY, red) {

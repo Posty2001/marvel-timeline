@@ -212,7 +212,7 @@
   function shown(v) {   // titolo senza ripetizioni; per gli universi: nome/denominazione COMPLETA + classificazione separata (il nome completo resta anche in aria-label e nel dossier)
     var n = v.n, sub = v.u ? uniNome(v.u) : (v.a ? v.a + (v.t === 'h' ? ' voci collegate' : v.t === 'm' ? ' titolari' : ' apparizioni') : '');
     if (v.t === 'U') return { n: uniFull(v), s: uniCont(v.i) || '' };
-    if (v.db && !sub) sub = v.lv === 'B' ? 'scheda strutturata' : 'voce essenziale';
+    if (v.db && !sub) sub = v.lv === 'A' ? 'dossier approfondito' : v.lv === 'B' ? 'scheda strutturata' : 'voce essenziale';
     if (sub && (nk(sub) === nk(n) || nk(n).indexOf(nk(sub)) >= 0)) sub = '';
     return { n: n, s: sub };
   }
@@ -385,7 +385,7 @@
       if (ST.a3 !== s) return; frame();
       if (!r) { body.appendChild(h('div', 'empty', 'Voce non disponibile.')); return; }
       api.setTitle(r.n, (db.TIPO[r.t] || 'TVA Atlas'));
-      var c = h('article', 'a3-dbx'); c.appendChild(h('div', 'k', (SING[(BY[r.i] || {}).t] || db.TIPO[r.t] || r.t) + (r.lv === 'B' ? ' · scheda strutturata' : ' · voce essenziale')));
+      var c = h('article', 'a3-dbx'); c.appendChild(h('div', 'k', (SING[(BY[r.i] || {}).t] || db.TIPO[r.t] || r.t) + (r.lv === 'A' ? ' · dossier approfondito' : r.lv === 'B' ? ' · scheda strutturata' : ' · voce essenziale')));
       c.appendChild(h('h2', '', r.n)); if (r.it && r.it !== r.n) c.appendChild(h('div', 'it', 'In italiano: ' + r.it));
       if (r.d) c.appendChild(h('p', 'd', r.d.charAt(0).toUpperCase() + r.d.slice(1) + '.'));
       var kv = function (k, v, tag) { if (!v || (v.length === 0)) return; var d = h('div', 'a3-kv'); d.appendChild(h('span', 'k', k)); var vv = h('div', 'v', Array.isArray(v) ? v.join(', ') : v); if (tag) vv.appendChild(h('small', 'a3-ff', ' · ' + tag)); d.appendChild(vv); c.appendChild(d); };
@@ -397,7 +397,7 @@
         var dzb = h('div', 'a3-dz'); r.dz.forEach(function (x) { var sc = h('section', 'a3-ds'); sc.appendChild(h('h3', '', x[0])); sc.appendChild(h('p', '', x[1])); dzb.appendChild(sc); }); c.appendChild(dzb);
         c.appendChild(h('p', 'a3-dbnote', 'Dossier composto da TVA Archives con frasi originali a partire dai soli fatti verificati indicati nelle fonti; nessun testo è copiato. I termini tecnici restano nella lingua originale.'));
       }
-      c.appendChild(h('p', 'a3-dbnote', r.lv === 'B' ? 'Scheda strutturata (Livello B): fatti documentati dalle fonti indicate, senza testi copiati; i termini non tradotti restano nella lingua originale. Le schede di livello superiore arriveranno con le ondate successive.' : 'Voce essenziale: identità, tipo e riferimenti verificati. Il dossier approfondito arriverà con le ondate successive; nessun testo è copiato da altre fonti.'));
+      c.appendChild(h('p', 'a3-dbnote', r.lv === 'A' ? 'Dossier approfondito (Livello A): sintesi originale in italiano composta soltanto da fatti documentati dalle fonti indicate, con relazioni verificate separate da quelle solo indicate dalle fonti; nessun testo copiato.' : r.lv === 'B' ? 'Scheda strutturata (Livello B): fatti documentati dalle fonti indicate, senza testi copiati; i termini non tradotti restano nella lingua originale. Le schede di livello superiore arriveranno con le ondate successive.' : 'Voce essenziale: identità, tipo e riferimenti verificati. Il dossier approfondito arriverà con le ondate successive; nessun testo è copiato da altre fonti.'));
       var f = h('div', 'a3-dbsrc'); [r.wd ? ['Wikidata (CC0)', 'https://www.wikidata.org/wiki/' + r.wd] : null, r.cv ? ['Comic Vine (solo riferimento)', r.cv] : null, r.wp ? ['Wikipedia (solo riferimento)', 'https://en.wikipedia.org/wiki/' + encodeURIComponent(r.wp.replace(/ /g, '_'))] : null].forEach(function (x) { if (!x) return; var a = h('a', '', x[0]); a.href = x[1]; a.target = '_blank'; a.rel = 'noopener noreferrer'; f.appendChild(a); });
       (r.xs || []).forEach(function (x) { var a = h('a', '', x[0] + ' (CC BY-SA 3.0)'); a.href = x[1]; a.target = '_blank'; a.rel = 'noopener noreferrer'; f.appendChild(a); }); c.appendChild(f);
       if (BY[r.i] && (BY[r.i].t === 'p' || BY[r.i].t === 'o')) c.appendChild(btn('btn ghost a3-dbopen', 'Apri nel TVA Nexus', function () { api.nav('a3', { a3: { v: 'nx', c: r.i } }); }));

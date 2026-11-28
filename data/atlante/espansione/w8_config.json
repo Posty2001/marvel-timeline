@@ -1,2 +1,37 @@
-{"modo": "scoperta", "max_per_tipo": 4000, "varianti_min_albi": 400,
- "categorie": {"artefatto": ["Artifacts", "Weapons"], "universo": ["Universes", "Alternate Universes"], "entita-cosmica": ["Cosmic Entities"], "specie": ["Races", "Species"], "evento": ["Events", "Crossover Events"]}}
+{
+ "modo": "raccolta",
+ "max_per_tipo": 4000,
+ "varianti_min_albi": 400,
+ "categorie": {
+  "artefatto": [
+   "Artifact",
+   "Weapons",
+   "Magical Items",
+   "Magical Books",
+   "Technology"
+  ],
+  "specie": [
+   "Races"
+  ],
+  "evento": [
+   "Events"
+  ],
+  "entita-cosmica": [
+   "Cosmic Beings",
+   "Celestials",
+   "Alien Gods",
+   "Dimensional Rulers"
+  ],
+  "universo": [
+   "Dimensions"
+  ]
+ },
+ "prefissi_pagine": {
+  "universo": [
+   [
+    "Earth-",
+    "^Earth-\\d+$"
+   ]
+  ]
+ }
+}
