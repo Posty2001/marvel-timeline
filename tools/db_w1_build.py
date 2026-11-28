@@ -89,7 +89,9 @@ CAT = {'identita': ('characters', 'individuals', 'people'), 'luogo': ('locations
        'entita-cosmica': ('characters', 'deities', 'cosmic', 'beings', 'entities'), 'civilta': ('civilizations', 'nations', 'species', 'organizations')}
 CAMPI = {'specie': ('species', 'race', 'races'), 'stato': ('status',), 'genere': ('gender', 'sex'), 'affiliazioni': ('affiliation', 'affiliations', 'team', 'teams', 'organization', 'organizations'),
          'prima_apparizione': ('firstappearance', 'debut', 'firstappearances', 'first'), 'alias_fonte': ('aliases', 'alias', 'currentalias', 'nicknames', 'nickname', 'otheraliases'),
-         'interpreti_fonte': ('portrayedby', 'actor', 'actors', 'portrayed', 'playedby'), 'parenti': ('relatives', 'family', 'relations')}
+         'interpreti_fonte': ('portrayedby', 'actor', 'actors', 'portrayed', 'playedby'), 'parenti': ('relatives', 'family', 'relations'),
+         'poteri': ('powers',), 'abilita': ('abilities',), 'equipaggiamento': ('weapons', 'equipment', 'transportation'), 'debolezze': ('weaknesses',), 'origine': ('origin',), 'creatori_fonte': ('creators',)}
+LISTE = ('poteri', 'abilita', 'equipaggiamento', 'debolezze')
 def carica_w1b(d):
     if not d: return {}, {}
     d = pathlib.Path(d); m = json.load(open(d/'w1b_mcuwiki.json'))['pagine'] if (d/'w1b_mcuwiki.json').exists() else {}
@@ -101,11 +103,23 @@ def fatti_da(pag, tipo):
     f = {}
     ib = pag.get('infobox', {})
     for campo, chiavi in CAMPI.items():
-        for k in chiavi:
-            if k in ib: f[campo] = _lista(ib[k]) if campo not in ('stato', 'genere', 'prima_apparizione') else ib[k][:120]; break
-    for c in ('poteri', 'abilita', 'equipaggiamento', 'debolezze', 'trasformazioni'):
+        vals = [ib[k] for k in chiavi if k in ib]
+        if not vals: continue
+        if campo in LISTE:
+            voci = []
+            for v in vals:
+                for x in _lista(v):
+                    if len(x) <= 80 and x not in voci: voci.append(x)   # solo nomi brevi (mai frasi/prosa)
+            if voci: f[campo] = voci[:25]
+        elif campo in ('stato', 'genere', 'prima_apparizione', 'origine'): f[campo] = vals[0][:120]
+        else: f[campo] = _lista(vals[0])
+    for c in LISTE:
         v = pag.get('sezioni', {}).get(c)
-        if v: f[c] = v[:25]
+        if v:
+            cur = f.setdefault(c, [])
+            for x in v[:25]:
+                if x not in cur: cur.append(x)
+            f[c] = cur[:25]
     return f
 def corrobora(nome, alias, tipo, perf, mcu_p, mdb_p):
     """Seconda fonte indipendente (D12): pagina MCU Wiki coerente per titolo, categoria e (se disponibili) interpreti. Marvel Database = conferma/fatti aggiuntivi."""
@@ -277,7 +291,7 @@ def costruisci_runtime():
     for c in sorted(canon, key=lambda x: x['id']):
         recs.append({'i': c['id'], 'n': c['nome'], 'it': c.get('nome_it'), 't': c['tipo'], 'al': c.get('alias', []), 'd': (c.get('descrizione', {}).get('it') or c.get('descrizione', {}).get('en')),
                      'u': c.get('universo'), 'ip': c.get('interpreti', []), 'wd': c['ids_esterni']['wikidata'], 'wp': c.get('wikipedia', {}).get('en'), 'lv': c['livello'],
-                     'f': {k: ([it(x) for x in v] if isinstance(v, list) else it(v)) for k, v in c.get('fatti', {}).items() if k not in ('interpreti_fonte', 'parenti', 'alias_fonte')} or None,
+                     'f': {k: ([it(x) for x in v] if isinstance(v, list) else it(v)) for k, v in c.get('fatti', {}).items() if k not in ('interpreti_fonte', 'parenti', 'alias_fonte', 'creatori_fonte')} or None,
                      'ff': {k: len(set(v)) for k, v in c.get('fatti_fonti', {}).items()} or None, 'xs': [[x['fonte'].split(' (')[0], x['url']] for x in c['fonti'] if x.get('licenza') == 'CC BY-SA 3.0']})
     for a in arr:  # alias/interpreti di voci GIA' esistenti: servono solo alla ricerca (aprono la scheda esistente)
         recs.append({'i': a['id'], 'x': a['id'], 'n': a['id'], 't': 'x', 'al': a['alias_nuovi'] + a['interpreti'], 'wd': a['wikidata']})

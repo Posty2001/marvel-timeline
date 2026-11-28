@@ -1,6 +1,7 @@
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent/'tools'))
 import db_wiki_parse as P
 ok = fail = 0
+def t(m, c, d=''): chk(c, m + ' ' + str(d))
 def chk(c, m):
     global ok, fail
     if c: ok += 1
@@ -31,4 +32,15 @@ chk(P.categorie_wikitext(WT) == ['Characters', 'Kree'], 'categorie')
 chk(all(len(v) <= 400 for v in ib.values()), 'lunghezza massima'); chk('long prose' not in str(ib) + str(s), 'nessuna prosa conservata')
 chk(P.infobox('{{Marvel Database:Character Template\n|CurrentAlias=Thing\n|Gender=Male\n}}').get('currentalias') == 'Thing', 'template Marvel Database')
 chk(P.infobox('niente template') == {}, 'assenza')
+wt2 = """{{Quote|a|b}}
+{{Character
+|name = Arnim Zola
+|actor = [[Toby Jones]]<ref name="AEVFX">[https://x.com a|b]</ref>
+|first = ''[[Captain America]]''<!-- c|d -->
+|status = Deceased
+}}"""
+ib2 = P.infobox(wt2)
+t('infobox con nome di modello non standard (euristica) e note con | e =', ib2.get('name') == 'Arnim Zola' and ib2.get('actor') == 'Toby Jones' and ib2.get('status') == 'Deceased', ib2)
+t('chiave non valida scartata', 'x' not in P.infobox('{{Foo infobox|name=A|bad text = x = y|status=Alive}}') and P.infobox('{{Foo infobox|name=A|status=Alive}}').get('status') == 'Alive')
+t('modelli(): nomi dei primi modelli', P.modelli(wt2) == ['Quote', 'Character'], P.modelli(wt2))
 print(f'db_wiki_parse_test: {ok} ok, {fail} fail'); sys.exit(1 if fail else 0)

@@ -48,7 +48,13 @@ def bersagli():
     for b in out:
         if b['q'] not in seen: seen.add(b['q']); res.append(b)
     return res
-def pagine(wiki, titoli):
+# Solo parametri-FATTO (mai prosa: history/notes/trivia/personality/quotation/overview... non si conservano)
+CHIAVI_FATTO = {'name', 'status', 'gender', 'sex', 'species', 'race', 'races', 'origin', 'reality', 'identity', 'citizenship', 'occupation', 'baseofoperations', 'homeworld', 'affiliation', 'affiliations', 'team', 'teams',
+                'organization', 'organizations', 'first', 'firstappearance', 'firstappearances', 'debut', 'creators', 'aliases', 'alias', 'currentalias', 'nicknames', 'nickname', 'otheraliases', 'codenames', 'actor', 'actors',
+                'portrayedby', 'portrayed', 'playedby', 'relatives', 'family', 'relations', 'powers', 'abilities', 'weapons', 'equipment', 'transportation', 'weaknesses', 'allies', 'enemies', 'education', 'eyes', 'hair',
+                'placeofbirth', 'maritalstatus', 'causeofdeath', 'death', 'killedby', 'currentowner', 'type', 'leaders', 'currentmembers', 'formermembers', 'height', 'weight'}
+CACHE_CAR = 15000   # caratteri di wikitext per pagina nella cache LOCALE (artifact Actions, non committata): serve a riparsare senza nuova raccolta
+def pagine(wiki, titoli, cache=None):
     """Per ogni titolo trovato: categorie + fatti. Batch da 20 titoli (contenuto), redirect risolti."""
     out = {}
     base = WIKI[wiki]
@@ -63,8 +69,9 @@ def pagine(wiki, titoli):
             tt = rid.get(norm.get(t, t), norm.get(t, t)); p = by.get(tt)
             if not p or p.get('missing'): out[t] = None; continue
             rev = (p.get('revisions') or [{}])[0]; wt = (rev.get('slots', {}).get('main', {}).get('content')) or ''
+            if cache is not None: cache[t] = wt[:CACHE_CAR]
             cats = [c['title'].split(':', 1)[-1] for c in p.get('categories', [])] or P.categorie_wikitext(wt)
-            out[t] = {'titolo': p['title'], 'pageid': p.get('pageid'), 'revid': rev.get('revid'), 'categorie': cats[:40], 'infobox': P.infobox(wt), 'sezioni': P.sezioni(wt),
+            out[t] = {'titolo': p['title'], 'pageid': p.get('pageid'), 'revid': rev.get('revid'), 'categorie': cats[:40], 'infobox': {k: v for k, v in P.infobox(wt).items() if k in CHIAVI_FATTO}, 'sezioni': P.sezioni(wt), 'modelli': P.modelli(wt),
                       'disambigua': ('disambig' in wt[:600].lower()) or any('disambiguation' in c.lower() for c in cats), 'url': 'https://%s/wiki/%s' % (base.split('/')[2], urllib.parse.quote(p['title'].replace(' ', '_')))}
     return out
 def cerca_marveldb(nome):
@@ -78,9 +85,17 @@ def main():
     ogni blocco e' isolato, errori/anomalie nel manifest, risultati parziali sempre salvati."""
     out = pathlib.Path(sys.argv[1]); out.mkdir(parents=True, exist_ok=True); ANOM = []
     mx = int(sys.argv[sys.argv.index('--max') + 1]) if '--max' in sys.argv else 10**9
-    ck = {'mcuwiki': {}, 'marveldb': {}, 'ricerca': {}}
+    ck = {'v': 2, 'mcuwiki': {}, 'marveldb': {}, 'ricerca': {}}
+    cdir = out / '_cache'; cdir.mkdir(exist_ok=True); cache = {'mcuwiki': {}, 'marveldb': {}}
+    for w in cache:
+        if (cdir / (w + '.json')).exists():
+            try: cache[w] = json.load(open(cdir / (w + '.json')))
+            except Exception: pass
     if (out/'w1b_checkpoint.json').exists():
-        try: ck = json.load(open(out/'w1b_checkpoint.json')); print('ripresa da checkpoint')
+        try:
+            c0 = json.load(open(out/'w1b_checkpoint.json'))
+            if c0.get('v') == 2: ck = c0; print('ripresa da checkpoint')
+            else: ck['ricerca'] = c0.get('ricerca', {}); print('checkpoint v1: pagine da rileggere (parser aggiornato), ricerche mantenute')
         except Exception as e: ANOM.append('checkpoint illeggibile: %s' % e)
     def salva_ck(): json.dump(ck, open(out/'w1b_checkpoint.json', 'w'), ensure_ascii=False, separators=(',', ':'))
     B = bersagli()[:mx]; man = {'avvio': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'bersagli': len(B)}
@@ -89,11 +104,11 @@ def main():
         for i in range(0, len(da), 20):
             blocco = da[i:i + 20]
             try:
-                r = pagine(wiki, blocco)
+                r = pagine(wiki, blocco, cache[wiki])
                 if r is None: continue
                 ck[wiki].update(r)
             except Exception as e: ANOM.append('%s blocco %s: %s' % (wiki, blocco[0], str(e)[:100]))
-            salva_ck()
+            salva_ck(); json.dump(cache[wiki], open(cdir / (wiki + '.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
     fase('mcuwiki', [b['nome'] for b in B])
     for b in B:
         if b['tipo'] in ('identita', 'entita-cosmica', 'specie') and b['nome'] not in ck['ricerca']:
@@ -106,6 +121,11 @@ def main():
     fase('marveldb', sorted(set(titoli.values())))
     mcu = ck['mcuwiki']; mdb = ck['marveldb']
     man['mcuwiki_trovate'] = sum(1 for v in mcu.values() if v); man['marveldb_cercati'] = len(ck['ricerca']); man['marveldb_trovate'] = sum(1 for v in mdb.values() if v)
+    import collections
+    for w, dd in (('mcuwiki', mcu), ('marveldb', mdb)):
+        pp = [v for v in dd.values() if v]
+        man['diag_' + w] = {'pagine': len(pp), 'con_infobox': sum(1 for v in pp if v['infobox']), 'modelli_primi': collections.Counter(m for v in pp for m in v.get('modelli', [])[:3]).most_common(25),
+                            'chiavi': collections.Counter(k for v in pp for k in v['infobox']).most_common(40), 'sezioni': collections.Counter(k for v in pp for k in v['sezioni']).most_common()}
     man['non_ottenuti'] = sum(1 for b in B if b['nome'] not in mcu)
     man['anomalie'] = (ANOM + ERRLOG)[:300]; man['completa'] = not man['non_ottenuti'] and not ANOM and not ERRLOG
     json.dump({'fonte': 'Marvel Cinematic Universe Wiki (Fandom), CC BY-SA 3.0, solo fatti strutturati', 'pagine': mcu}, open(out/'w1b_mcuwiki.json', 'w'), ensure_ascii=False, separators=(',', ':'))

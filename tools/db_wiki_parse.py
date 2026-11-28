@@ -20,12 +20,15 @@ def _split_params(body):
         if body[i] == '|' and depth == 0: out.append(cur); cur = ''; i += 1; continue
         cur += body[i]; i += 1
     out.append(cur); return out
-def infobox(wt):
-    """Primo template il cui nome contiene 'infobox' o 'template' (es. 'Character Infobox', 'Marvel Database:Character Template')."""
-    i = 0
+CHIAVI_NOTE = {'name', 'image', 'status', 'actor', 'actors', 'portrayedby', 'species', 'race', 'gender', 'sex', 'first', 'firstappearance', 'debut', 'aliases', 'alias', 'affiliation', 'affiliations', 'occupation', 'relatives', 'family', 'eyes', 'hair', 'homeworld', 'origin', 'reality', 'powers', 'abilities', 'equipment', 'weapons'}
+KEY_OK = re.compile(r'^[A-Za-z][A-Za-z0-9 _\-]{0,40}$')
+def _template_toplevel(wt, limite=20000):
+    """[(nome_modello, corpo)] dei modelli di primo livello nei primi `limite` caratteri."""
+    wt = re.sub(r'<!--.*?-->', '', wt, flags=re.S); wt = re.sub(r'<ref[^>]*?/>|<ref[^>]*>.*?</ref>', '', wt, flags=re.S)   # note/commenti rimossi prima (contengono | e =)
+    out, i, wt = [], 0, wt[:limite]
     while True:
         i = wt.find('{{', i)
-        if i < 0: return {}
+        if i < 0: return out
         depth, j = 0, i
         while j < len(wt):
             if wt[j:j + 2] == '{{': depth += 1; j += 2; continue
@@ -34,16 +37,30 @@ def infobox(wt):
                 if depth == 0: break
                 continue
             j += 1
-        blocco = wt[i + 2:j - 2]; parti = _split_params(blocco); nome = parti[0].strip().lower()
-        if 'infobox' in nome or nome.endswith('template'):
-            d = {}
-            for p in parti[1:]:
-                if '=' not in p: continue
-                k, v = p.split('=', 1); k = re.sub(r'[^a-z0-9]', '', k.lower())
-                v = clean(v)
-                if k and v: d[k] = v
-            return d
-        i += 2
+        if depth != 0: return out   # modello non chiuso (troncato): stop
+        blocco = wt[i + 2:j - 2]; parti = _split_params(blocco)
+        out.append((parti[0].strip(), parti[1:])); i = j
+def modelli(wt, n=10): return [nm[:50] for nm, _ in _template_toplevel(wt)[:n]]
+def _params(parti):
+    d = {}
+    for p in parti:
+        if '=' not in p: continue
+        k, v = p.split('=', 1)
+        if not KEY_OK.match(k.strip()): continue      # chiave non valida (es. '=' dentro a un <ref>): il parametro non viene interpretato
+        k = re.sub(r'[^a-z0-9]', '', k.lower()); v = clean(v)
+        if k and v: d[k] = v
+    return d
+def infobox(wt):
+    """Infobox: 1) primo modello il cui nome contiene 'infobox' o finisce con 'template'; 2) altrimenti il primo modello di primo livello con almeno 3 parametri con nome
+    tra le chiavi tipiche (nomi di modello diversi tra le wiki). Chiavi non valide scartate."""
+    tl = _template_toplevel(wt)
+    for nome, parti in tl:
+        n = nome.lower()
+        if 'infobox' in n or n.endswith('template'): return _params(parti)
+    for nome, parti in tl:
+        d = _params(parti)
+        if len(set(d) & CHIAVI_NOTE) >= 3: return d
+    return {}
 SEZ = {'poteri': ('powers and abilities', 'powers', 'abilities', 'powers & abilities', 'superhuman abilities', 'special abilities'),
        'abilita': ('skills', 'skills and abilities', 'abilities', 'talents'),
        'equipaggiamento': ('equipment', 'weapons', 'gear', 'weapons and equipment', 'equipment and weapons', 'transportation', 'items'),
