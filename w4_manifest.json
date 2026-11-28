@@ -1,5 +1,5 @@
 {
- "avvio": "2026-11-28T07:14:55Z",
+ "avvio": "2026-11-28T08:25:37Z",
  "film": {
   "what-if|What If...?|2021": [
    "Q65980671"
@@ -46,7 +46,9 @@
   "marvel-animation-universe|Guardians of the Galaxy|2015": [
    "Q20649425"
   ],
-  "marvel-animation-universe|Spider-Man|2017": [],
+  "marvel-animation-universe|Marvel's Spider-Man|2017": [
+   "Q28207200"
+  ],
   "marvel-animation-universe|Avengers: Earth's Mightiest Heroes|2010": [
    "Q1211225"
   ],
@@ -115,20 +117,8 @@
   ]
  },
  "film_errori": [],
- "entita": 348,
- "fine": "2026-11-28T07:21:35Z",
- "anomalie": [
-  "film trovato solo con ricerca testuale (fallback verificato per anno): spider-verse-sony|Spider-Man: Into the Spider-Verse|2018 -> ['Q29588607']",
-  "film trovato solo con ricerca testuale (fallback verificato per anno): spider-verse-sony|Spider-Man: Across the Spider-Verse|2023 -> ['Q76448600']",
-  "film trovato solo con ricerca testuale (fallback verificato per anno): marvel-animation-universe|Avengers Assemble|2013 -> ['Q3896442']",
-  "film non trovato su Wikidata (query e ricerca): marvel-animation-universe|Spider-Man|2017",
-  "film trovato solo con ricerca testuale (fallback verificato per anno): marvel-animation-universe|Avengers: Earth's Mightiest Heroes|2010 -> ['Q1211225']",
-  "film trovato solo con ricerca testuale (fallback verificato per anno): marvel-productions-80-90|X-Men: The Animated Series|1992 -> ['Q1340065']",
-  "film trovato solo con ricerca testuale (fallback verificato per anno): marvel-productions-80-90|Spider-Man: The Animated Series|1994 -> ['Q569934']",
-  "film non trovato su Wikidata (query e ricerca): marvel-productions-80-90|Fantastic Four|1967",
-  "film non trovato su Wikidata (query e ricerca): animazione-2000-2010|Wolverine and the X-Men|2008",
-  "film non trovato su Wikidata (query e ricerca): animazione-2000-2010|Iron Man: Armored Adventures|2008",
-  "film trovato solo con ricerca testuale (fallback verificato per anno): marvel-anime-e-altri|Big Hero 6|2014 -> ['Q13091172']"
- ],
+ "entita": 349,
+ "fine": "2026-11-28T08:26:08Z",
+ "anomalie": [],
  "completa": true
 }
