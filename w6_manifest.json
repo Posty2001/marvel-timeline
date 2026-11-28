@@ -1,0 +1,53 @@
+{
+ "avvio": "2026-11-28T08:27:57Z",
+ "gruppi": {
+  "opere:40-max": {
+   "ok": true,
+   "n": 1
+  },
+  "opere:20-40": {
+   "ok": true,
+   "n": 6
+  },
+  "opere:12-20": {
+   "ok": true,
+   "n": 17
+  },
+  "opere:8-12": {
+   "ok": true,
+   "n": 32
+  },
+  "opere:5-8": {
+   "ok": true,
+   "n": 43
+  },
+  "opere:3-5": {
+   "ok": true,
+   "n": 100
+  },
+  "creatori:40-max": {
+   "ok": true,
+   "n": 16
+  },
+  "creatori:20-40": {
+   "ok": true,
+   "n": 28
+  },
+  "creatori:12-20": {
+   "ok": true,
+   "n": 73
+  },
+  "creatori:8-12": {
+   "ok": true,
+   "n": 83
+  },
+  "creatori:5-8": {
+   "ok": true,
+   "n": 118
+  }
+ },
+ "anomalie": [],
+ "entita": 517,
+ "fine": "2026-11-28T08:33:32Z",
+ "completa": true
+}
