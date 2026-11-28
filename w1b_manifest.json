@@ -1,5 +1,5 @@
 {
- "avvio": "2026-11-28T07:15:27Z",
+ "avvio": "2026-11-28T07:17:54Z",
  "bersagli": 989,
  "mcuwiki_trovate": 832,
  "marveldb_cercati": 372,
@@ -378,7 +378,7 @@
    ],
    [
     "relatives",
-    69
+    77
    ],
    [
     "killedby",
@@ -1842,5 +1842,5 @@
  "non_ottenuti": 0,
  "anomalie": [],
  "completa": true,
- "fine": "2026-11-28T07:17:06Z"
+ "fine": "2026-11-28T07:19:29Z"
 }
