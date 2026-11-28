@@ -1,0 +1,414 @@
+{
+ "non_classificati": [
+  {
+   "nome": "Mantis",
+   "p31": [
+    "mutate"
+   ],
+   "q": "Q2009899"
+  },
+  {
+   "nome": "Stryfe",
+   "p31": [
+    "mutant",
+    "fictional clone"
+   ],
+   "q": "Q2265799"
+  },
+  {
+   "nome": "Avalanche",
+   "p31": [
+    "mutant",
+    "animated character"
+   ],
+   "q": "Q2320292"
+  },
+  {
+   "nome": "Magma",
+   "p31": [
+    "mutant"
+   ],
+   "q": "Q2660736"
+  },
+  {
+   "nome": "Phil Lord and Christopher Miller",
+   "p31": [
+    "male duo"
+   ],
+   "q": "Q7182133"
+  },
+  {
+   "nome": "Odin's Vault",
+   "p31": [
+    "fictional room"
+   ],
+   "q": "Q114795653"
+  },
+  {
+   "nome": "Principal's office",
+   "p31": [
+    "fictional room"
+   ],
+   "q": "Q115148182"
+  },
+  {
+   "nome": "School hallway",
+   "p31": [
+    "fictional room"
+   ],
+   "q": "Q115148188"
+  },
+  {
+   "nome": "Asteroid M",
+   "p31": [
+    "fictional asteroid"
+   ],
+   "q": "Q115185594"
+  },
+  {
+   "nome": "Graymalkin Lane",
+   "p31": [
+    "fictional lane"
+   ],
+   "q": "Q115185697"
+  },
+  {
+   "nome": "Rogue and Kitty's room",
+   "p31": [
+    "fictional room"
+   ],
+   "q": "Q115185910"
+  },
+  {
+   "nome": "Super Soldier Serum",
+   "p31": [
+    "fictional chemical substance"
+   ],
+   "q": "Q116216575"
+  },
+  {
+   "nome": "Schnellzug EB912",
+   "p31": [
+    "fictional train"
+   ],
+   "q": "Q116460183"
+  },
+  {
+   "nome": "HYDRA Truck",
+   "p31": [
+    "fictional truck"
+   ],
+   "q": "Q116460457"
+  },
+  {
+   "nome": "Exitar",
+   "p31": [
+    "fictional colony"
+   ],
+   "q": "Q116850689"
+  },
+  {
+   "nome": "Golden City",
+   "p31": [
+    "fictional capital city"
+   ],
+   "q": "Q122643265"
+  },
+  {
+   "nome": "Morph",
+   "p31": [
+    "animated character"
+   ],
+   "q": "Q125503795"
+  },
+  {
+   "nome": "Storm",
+   "p31": [
+    "character",
+    "animated character",
+    "mutant"
+   ],
+   "q": "Q140354695"
+  }
+ ],
+ "possibili_duplicati": [
+  {
+   "esistenti_esatti": [
+    "id-peter-parker-garfield",
+    "id-peter-parker-mcu",
+    "id-peter-parker-raimi",
+    "id-peter-parker-ynfsm"
+   ],
+   "esistenti_parziali": [
+    "id-harry-osborn-ynfsm"
+   ],
+   "motivo": "piu' identita con lo stesso interprete: id-peter-parker-garfield,id-peter-parker-mcu",
+   "nome": "Spider-Man",
+   "q": "Q79037",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-scott-lang-ant-man"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-scott-lang-ant-man",
+   "nome": "Eric O'Grady",
+   "q": "Q166113",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-iron-man"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-iron-man",
+   "nome": "Iron Man",
+   "q": "Q180704",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-wolverine",
+    "id-wolverine-x-men-97"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-wolverine,id-wolverine-x-men-97",
+   "nome": "Wolverine",
+   "q": "Q186422",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-sabretooth"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-sabretooth",
+   "nome": "Sabretooth",
+   "q": "Q431862",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "id-sue-storm",
+    "id-sue-storm-1994",
+    "id-sue-storm-first-steps",
+    "id-sue-storm-trank"
+   ],
+   "esistenti_parziali": [],
+   "motivo": "piu' identita con lo stesso interprete: id-sue-storm,id-sue-storm-1994,id-sue-storm-trank",
+   "nome": "Invisible Woman",
+   "q": "Q510450",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "id-sprite"
+   ],
+   "esistenti_parziali": [
+    "id-peter-quill-star-lord"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-peter-quill-star-lord,id-sprite",
+   "nome": "Kitty Pryde",
+   "q": "Q547306",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-firestar-angelica-jones"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-firestar-angelica-jones",
+   "nome": "Firestar",
+   "q": "Q578279",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-carol-danvers-captain-marvel",
+    "id-kamala-khan-ms-marvel"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-carol-danvers-captain-marvel,id-kamala-khan-ms-marvel",
+   "nome": "Carol Danvers",
+   "q": "Q726756",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-frank-castle-punisher"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-frank-castle-punisher",
+   "nome": "Punisher",
+   "q": "Q729150",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-mystica"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-mystica",
+   "nome": "Mystique",
+   "q": "Q737236",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-magneto"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-magneto",
+   "nome": "Magneto",
+   "q": "Q840291",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-blade"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-blade",
+   "nome": "Blade",
+   "q": "Q881024",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-stephen-strange"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-stephen-strange",
+   "nome": "Doctor Strange",
+   "q": "Q907767",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-gwen-stacy-spider-woman"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-gwen-stacy-spider-woman",
+   "nome": "Gwen Stacy",
+   "q": "Q945817",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-daisy-johnson"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-daisy-johnson",
+   "nome": "Daisy Johnson",
+   "q": "Q1424480",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-wade-wilson-deadpool"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-wade-wilson-deadpool",
+   "nome": "Deadpool",
+   "q": "Q1631090",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-laura-x-23",
+    "id-wolverine",
+    "id-wolverine-x-men-97"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-laura-x-23,id-wolverine,id-wolverine-x-men-97",
+   "nome": "X-23",
+   "q": "Q1872439",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-max-dillon-electro"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-max-dillon-electro",
+   "nome": "Electro",
+   "q": "Q2297886",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-illyana-rasputin-magik"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-illyana-rasputin-magik",
+   "nome": "Magik",
+   "q": "Q2651308",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "id-yelena-belova"
+   ],
+   "esistenti_parziali": [
+    "id-natasha-romanoff"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-natasha-romanoff,id-yelena-belova",
+   "nome": "Yelena Belova",
+   "q": "Q4009216",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-jean-grey-fenice"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-jean-grey-fenice",
+   "nome": "Jean Grey",
+   "q": "Q5350072",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-gwen-stacy-spider-woman"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-gwen-stacy-spider-woman",
+   "nome": "Spider-Woman",
+   "q": "Q20979395",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-jane-foster-mighty-thor"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-jane-foster-mighty-thor",
+   "nome": "Jane Foster",
+   "q": "Q24046106",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "hub-groot",
+    "id-groot-originale",
+    "id-groot-successore"
+   ],
+   "esistenti_parziali": [],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: hub-groot,id-groot-originale,id-groot-successore",
+   "nome": "Groot",
+   "q": "Q24050083",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-gwen-stacy-spider-woman"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-gwen-stacy-spider-woman",
+   "nome": "Gwen Stacy",
+   "q": "Q119806001",
+   "tipo": "identita"
+  }
+ ]
+}

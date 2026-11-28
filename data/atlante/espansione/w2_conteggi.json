@@ -1,29 +1,29 @@
 {
  "arricchimenti": 103,
- "canon": 592,
+ "canon": 605,
  "coda": {
   "non_classificati": 5,
   "possibili_duplicati": 16
  },
- "input_entita": 808,
+ "input_entita": 822,
  "mcu_qid": [
   "Q642878"
  ],
  "per_tipo": {
   "artefatto": 1,
-  "attore": 457,
-  "creatore": 59,
+  "attore": 466,
+  "creatore": 62,
   "entita-cosmica": 4,
   "identita": 45,
   "luogo": 1,
-  "opera": 20,
+  "opera": 21,
   "organizzazione": 5
  },
- "staging": 113,
+ "staging": 114,
  "staging_per_motivo": {
   "ambiguo": 16,
   "classe non riconosciuta": 5,
-  "senza etichetta inglese": 24,
+  "senza etichetta inglese": 25,
   "una sola fonte (nessun articolo Wikipedia)": 68
  }
 }

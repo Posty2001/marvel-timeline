@@ -1,0 +1,205 @@
+{
+ "non_classificati": [
+  {
+   "nome": "Stanley's Pizza Parlor",
+   "p31": [
+    "fictional pizzeria"
+   ],
+   "q": "Q116215847"
+  },
+  {
+   "nome": "Pingo Doce",
+   "p31": [
+    "fictional drink"
+   ],
+   "q": "Q116216511"
+  },
+  {
+   "nome": "Super Soldier Serum",
+   "p31": [
+    "fictional chemical substance"
+   ],
+   "q": "Q116216575"
+  },
+  {
+   "nome": "Stark Industries Rocket Launcher",
+   "p31": [
+    "fictional rocket launcher"
+   ],
+   "q": "Q116216769"
+  },
+  {
+   "nome": "HYDRA Truck",
+   "p31": [
+    "fictional truck"
+   ],
+   "q": "Q116460457"
+  },
+  {
+   "nome": "S.H.I.E.L.D. SUV",
+   "p31": [
+    "fictional SUV"
+   ],
+   "q": "Q116478260"
+  },
+  {
+   "nome": "S.H.I.E.L.D. Helicopter",
+   "p31": [
+    "fictional helicopter"
+   ],
+   "q": "Q116478319"
+  },
+  {
+   "nome": "Afterlife",
+   "p31": [
+    "fictional settlement"
+   ],
+   "q": "Q122445274"
+  },
+  {
+   "nome": "Arctic HYDRA Research Facility",
+   "p31": [
+    "fictional research facility"
+   ],
+   "q": "Q122446567"
+  },
+  {
+   "nome": "Cave of the Dragon",
+   "p31": [
+    "fictional cave"
+   ],
+   "q": "Q122587073"
+  },
+  {
+   "nome": "Coulson Academy",
+   "p31": [
+    "fictional academy"
+   ],
+   "q": "Q122601113"
+  },
+  {
+   "nome": "Customs Station CI-741",
+   "p31": [
+    "fictional space station"
+   ],
+   "q": "Q122602691"
+  },
+  {
+   "nome": "El Monte Junk and Salvage",
+   "p31": [
+    "fictional junkyard"
+   ],
+   "q": "Q122621621"
+  },
+  {
+   "nome": "Ginny's Supper Club",
+   "p31": [
+    "restaurant"
+   ],
+   "q": "Q122643059"
+  },
+  {
+   "nome": "Gunner Henderson's Homestead",
+   "p31": [
+    "fictional property"
+   ],
+   "q": "Q122648825"
+  },
+  {
+   "nome": "Harlem Jets Practice Field",
+   "p31": [
+    "fictional field"
+   ],
+   "q": "Q122653112"
+  }
+ ],
+ "possibili_duplicati": [
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-blade"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-blade",
+   "nome": "Blade",
+   "q": "Q881024",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "id-david-banner"
+   ],
+   "esistenti_parziali": [
+    "id-hulk"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-david-banner,id-hulk",
+   "nome": "David Bruce Banner",
+   "q": "Q3703118",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-iron-man"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-iron-man",
+   "nome": "Tony Stark",
+   "q": "Q23894967",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "id-thaddeus-ross-mcu"
+   ],
+   "esistenti_parziali": [
+    "id-ross-hulk-2003"
+   ],
+   "motivo": "stessa voce storica gia' arricchita da un altro elemento Wikidata con nome diverso: id-thaddeus-ross-mcu",
+   "nome": "Thaddeus Ross",
+   "q": "Q24027376",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-hulk"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-hulk",
+   "nome": "Bruce Banner",
+   "q": "Q24050117",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-emil-blonsky-abominio"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-emil-blonsky-abominio",
+   "nome": "Emil Blonsky",
+   "q": "Q65935380",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [],
+   "esistenti_parziali": [
+    "id-frank-castle-punisher"
+   ],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-frank-castle-punisher",
+   "nome": "Frank Castle",
+   "q": "Q125179100",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "id-peter-parker-garfield",
+    "id-peter-parker-mcu",
+    "id-peter-parker-raimi",
+    "id-peter-parker-ynfsm"
+   ],
+   "esistenti_parziali": [],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-peter-parker-garfield,id-peter-parker-mcu,id-peter-parker-raimi,id-peter-parker-ynfsm",
+   "nome": "Peter Parker",
+   "q": "Q135939741",
+   "tipo": "identita"
+  }
+ ]
+}

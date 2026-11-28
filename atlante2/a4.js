@@ -12,7 +12,15 @@
   var VL = ['Da verificare', 'Guida classica', 'Fonte consultata'];
   function sv(n, a, p) { var e = D.createElementNS(NS, n); Object.keys(a || {}).forEach(function (k) { e.setAttribute(k, String(a[k])); }); if (p) p.appendChild(e); return e; }
   function load(cb) {
-    if (G) return cb(); C.get('data/nexus/g.json').then(function (d) { G = d; build(); cb(); }).catch(function () { C.body.textContent = ''; C.body.appendChild(h('div', 'empty', 'Dati di TVA Nexus non disponibili offline.')); });
+    if (G) return cb(); C.get('data/nexus/g.json').then(function (d) { G = d; return C.get('data/db/rel.json').catch(function () { return null; }).then(function (x) { mergeRel(x); build(); cb(); }); }).catch(function () { C.body.textContent = ''; C.body.appendChild(h('div', 'empty', 'Dati di TVA Nexus non disponibili offline.')); });
+  }
+  /* relazioni narrative documentate dal database esteso (stesso formato, stesse regole: verifica, classe, nessuna co-apparizione); si uniscono solo se entrambi i nodi esistono */
+  function mergeRel(x) {
+    if (!x || !x.r) return;
+    x.r.forEach(function (r) {
+      if (!BY[r[0]] || !BY[r[1]]) return; var t = x.tipi[r[2]], gi = G.tipi.indexOf(t); if (gi < 0) { G.tipi.push(t); gi = G.tipi.length - 1; }
+      G.r.push([r[0], r[1], gi, r[3], r[4], r[5], r[6]]);
+    });
   }
   function build() {
     G.coT = 2; ADJ = {}; G.r.forEach(function (r, i) { (ADJ[r[0]] = ADJ[r[0]] || []).push([i, r[1]]); (ADJ[r[1]] = ADJ[r[1]] || []).push([i, r[0]]); });
