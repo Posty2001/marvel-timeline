@@ -1,0 +1,29 @@
+{
+ "arricchimenti": 18,
+ "canon": 1308,
+ "coda": {
+  "non_classificati": 39,
+  "possibili_duplicati": 2
+ },
+ "input_entita": 1375,
+ "mcu_qid": [
+  "Q642878"
+ ],
+ "per_tipo": {
+  "artefatto": 13,
+  "evento": 3,
+  "identita": 1243,
+  "luogo": 14,
+  "opera": 6,
+  "organizzazione": 25,
+  "specie": 1,
+  "universo": 3
+ },
+ "staging": 49,
+ "staging_per_motivo": {
+  "ambiguo": 2,
+  "classe non riconosciuta": 39,
+  "senza etichetta inglese": 5,
+  "una sola fonte (nessun articolo Wikipedia)": 3
+ }
+}

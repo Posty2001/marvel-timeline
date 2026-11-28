@@ -1,0 +1,301 @@
+{
+ "non_classificati": [
+  {
+   "nome": "Barack Obama",
+   "p31": [
+    "human"
+   ],
+   "q": "Q76"
+  },
+  {
+   "nome": "Richard and Mary Parker",
+   "p31": [
+    "fictional couple"
+   ],
+   "q": "Q667544"
+  },
+  {
+   "nome": "Captain America's shield",
+   "p31": [
+    "fictional shield"
+   ],
+   "q": "Q690141"
+  },
+  {
+   "nome": "Bucky",
+   "p31": [
+    "hero name"
+   ],
+   "q": "Q850685"
+  },
+  {
+   "nome": "Warriors Three",
+   "p31": [
+    "fictional trio"
+   ],
+   "q": "Q1118413"
+  },
+  {
+   "nome": "Jonathan",
+   "p31": [
+    "fictional hammer"
+   ],
+   "q": "Q1401384"
+  },
+  {
+   "nome": "Adam Warlock",
+   "p31": [
+    "cosmic entity"
+   ],
+   "q": "Q1735229"
+  },
+  {
+   "nome": "Ikaris",
+   "p31": [
+    "Eternal"
+   ],
+   "q": "Q2320351"
+  },
+  {
+   "nome": "Cloak and Dagger",
+   "p31": [
+    "fictional duo"
+   ],
+   "q": "Q2419540"
+  },
+  {
+   "nome": "Paibok",
+   "p31": [
+    "Skrull"
+   ],
+   "q": "Q2420248"
+  },
+  {
+   "nome": "Helicarrier",
+   "p31": [
+    "fictional military aircraft",
+    "airborne aircraft carrier"
+   ],
+   "q": "Q2524036"
+  },
+  {
+   "nome": "Agony",
+   "p31": [
+    "Symbiote"
+   ],
+   "q": "Q2827065"
+  },
+  {
+   "nome": "Bengal",
+   "p31": [],
+   "q": "Q2895809"
+  },
+  {
+   "nome": "Sersi",
+   "p31": [
+    "Eternal"
+   ],
+   "q": "Q2974182"
+  },
+  {
+   "nome": "Frigga",
+   "p31": [
+    "Asgardian"
+   ],
+   "q": "Q3087835"
+  },
+  {
+   "nome": "Kronos",
+   "p31": [
+    "cosmic entity",
+    "Eternal"
+   ],
+   "q": "Q3199922"
+  },
+  {
+   "nome": "Lilith",
+   "p31": [
+    "vampire in Marvel Universe",
+    "succubus"
+   ],
+   "q": "Q3240860"
+  },
+  {
+   "nome": "Lorelei",
+   "p31": [
+    "Asgardian"
+   ],
+   "q": "Q3259423"
+  },
+  {
+   "nome": "Makkari",
+   "p31": [
+    "Eternal"
+   ],
+   "q": "Q3280860"
+  },
+  {
+   "nome": "Mongoose",
+   "p31": [
+    "fictional mongoose"
+   ],
+   "q": "Q3285785"
+  },
+  {
+   "nome": "Ms. Marvel",
+   "p31": [
+    "persona in a work of fiction"
+   ],
+   "q": "Q3316552"
+  },
+  {
+   "nome": "Tribble",
+   "p31": [
+    "fictional taxon"
+   ],
+   "q": "Q3538741"
+  },
+  {
+   "nome": "Fallen One",
+   "p31": [
+    "extraterrestrials in fiction"
+   ],
+   "q": "Q3545647"
+  },
+  {
+   "nome": "Captain America (set index)",
+   "p31": [],
+   "q": "Q3656901"
+  },
+  {
+   "nome": "Life Model Decoy",
+   "p31": [
+    "class of fictional entities"
+   ],
+   "q": "Q3832182"
+  },
+  {
+   "nome": "Savage Land",
+   "p31": [
+    "fictional geographic region"
+   ],
+   "q": "Q3984530"
+  },
+  {
+   "nome": "Cloak of Levitation",
+   "p31": [
+    "fictional clothing",
+    "cloak"
+   ],
+   "q": "Q4242484"
+  },
+  {
+   "nome": "Electron",
+   "p31": [
+    "Shi'ar"
+   ],
+   "q": "Q5358140"
+  },
+  {
+   "nome": "Hulkbusters",
+   "p31": [
+    "class of fictional entities"
+   ],
+   "q": "Q5574746"
+  },
+  {
+   "nome": "Knowhere",
+   "p31": [
+    "fictional astronomical object"
+   ],
+   "q": "Q6423207"
+  },
+  {
+   "nome": "Thena",
+   "p31": [
+    "Eternal"
+   ],
+   "q": "Q7781352"
+  },
+  {
+   "nome": "Anti-Venom",
+   "p31": [
+    "Symbiote"
+   ],
+   "q": "Q9617362"
+  },
+  {
+   "nome": "Iron Patriot",
+   "p31": [],
+   "q": "Q13108244"
+  },
+  {
+   "nome": "cosmic entity",
+   "p31": [
+    "class of fictional entities"
+   ],
+   "q": "Q16251459"
+  },
+  {
+   "nome": "Kamar-Taj",
+   "p31": [
+    "fictional geographic region"
+   ],
+   "q": "Q27685395"
+  },
+  {
+   "nome": "Iron Spider",
+   "p31": [
+    "fictional powered exoskeleton"
+   ],
+   "q": "Q28129997"
+  },
+  {
+   "nome": "Bron-Char",
+   "p31": [
+    "Kree"
+   ],
+   "q": "Q62035836"
+  },
+  {
+   "nome": "Knull",
+   "p31": [
+    "Elder God"
+   ],
+   "q": "Q85774745"
+  },
+  {
+   "nome": "Mandarin's rings",
+   "p31": [
+    "weapon model"
+   ],
+   "q": "Q112136099"
+  }
+ ],
+ "possibili_duplicati": [
+  {
+   "esistenti_esatti": [
+    "id-miles-morales",
+    "id-peter-parker-mcu"
+   ],
+   "esistenti_parziali": [],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-miles-morales,id-peter-parker-mcu",
+   "nome": "Miles Morales",
+   "q": "Q59826",
+   "tipo": "identita"
+  },
+  {
+   "esistenti_esatti": [
+    "id-peter-parker-garfield",
+    "id-peter-parker-mcu",
+    "id-peter-parker-raimi",
+    "id-peter-parker-ynfsm"
+   ],
+   "esistenti_parziali": [],
+   "motivo": "continuita'/identita' non determinabili da fonti strutturate: id-peter-parker-garfield,id-peter-parker-mcu,id-peter-parker-raimi,id-peter-parker-ynfsm",
+   "nome": "Ultimate Spider-Man",
+   "q": "Q47471875",
+   "tipo": "identita"
+  }
+ ]
+}

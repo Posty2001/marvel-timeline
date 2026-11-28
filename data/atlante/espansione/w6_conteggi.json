@@ -1,0 +1,22 @@
+{
+ "arricchimenti": 2,
+ "canon": 496,
+ "coda": {
+  "non_classificati": 2
+ },
+ "input_entita": 517,
+ "mcu_qid": [],
+ "per_tipo": {
+  "creatore": 306,
+  "evento": 36,
+  "identita": 34,
+  "opera": 119,
+  "organizzazione": 1
+ },
+ "staging": 19,
+ "staging_per_motivo": {
+  "classe non riconosciuta": 2,
+  "senza etichetta inglese": 16,
+  "una sola fonte (nessun articolo Wikipedia)": 1
+ }
+}

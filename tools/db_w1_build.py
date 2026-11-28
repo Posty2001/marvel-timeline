@@ -33,7 +33,8 @@ REGOLE = [
 ]
 REGOLE_FUM = [   # solo W5/W6 (fumetti): saghe, eventi e testate sono OPERE/EVENTI documentati, non «raggruppamenti editoriali»
  ('evento', ('comic book crossover', 'comics crossover', 'comic book storyline', 'comics storyline', 'story arc', 'crossover event', 'comic book event', 'comics event')),
- ('opera', ('comic book', 'comic strip', 'graphic novel', 'comic series', 'limited series', 'miniseries', 'manga', 'webcomic', 'comics series', 'comics anthology', 'one-shot', 'comic magazine')),
+ ('identita', ('mutant', 'mutate', 'character', 'inhuman', 'human mutant', 'alien', 'superhero', 'supervillain', 'antihero', 'fictional human', 'cyborg', 'robot', 'android', 'mutate human')),
+ ('opera', ('ongoing series', 'comic', 'magazine', 'written work', 'comic book', 'comic strip', 'graphic novel', 'comic series', 'limited series', 'miniseries', 'manga', 'webcomic', 'comics series', 'comics anthology', 'one-shot', 'comic magazine')),
 ]
 FUMETTI = False
 def classifica(p31_labels, gruppi):
@@ -272,6 +273,9 @@ def main():
             tk = {w for k in chiavi for w in k.split() if len(w) >= 5} - STOP
             for v in idx:
                 if compat.get(tipo) == v['t'] and tk & ({w for w in norm(v['n']).split() if len(w) >= 5} - STOP): part.add(v['i'])
+        if FUMETTI and (full or part) and uni_di(r) == 'uni-earth-616' and tipo == 'identita' and not any(INFO.get(i, {}).get('universo') == 'uni-earth-616' for i in full | part):
+            # incarnazione dei fumetti (Earth-616): le identita' storiche dell'archivio appartengono ad altre continuita' (MCU, Fox, Raimi...): NESSUNA fusione, nuova voce con denominazione disambiguata
+            nome = nome + ' (Earth-616)'; chiavi = {norm(nome)}; full = set(); part = set(); cont['fumetti_distinta_da_storiche'] += 1
         if len(full) == 1 and not part:
             arr.append({'id': next(iter(full)), 'wikidata': q, 'alias_nuovi': [a for a in alias if norm(a) not in pieni or next(iter(full)) not in pieni[norm(a)]][:20],
                         'interpreti': sorted({et.get(x) for x in r['c'].get('P175', []) if et.get(x)}), '_sc': bool(uni_di(r)) and INFO.get(next(iter(full)), {}).get('universo') == uni_di(r), 'fonte': 'Wikidata (CC0)'}); cont['arricchimento'] += 1; continue
