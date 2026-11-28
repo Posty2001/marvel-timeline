@@ -93,8 +93,18 @@ CAMPI = {'specie': ('species', 'race', 'races'), 'stato': ('status',), 'genere':
          'poteri': ('powers',), 'abilita': ('abilities',), 'equipaggiamento': ('weapons', 'equipment', 'transportation'), 'debolezze': ('weaknesses',), 'origine': ('origin',), 'creatori_fonte': ('creators',),
          'nome_reale': ('realname',), 'cittadinanza': ('citizenship',), 'occupazione': ('occupation',), 'nascita': ('dob', 'placeofbirth'), 'morte': ('dod', 'death', 'causeofdeath', 'killedby'),
          'ubicazione': ('location', 'continent', 'homeplanet', 'place', 'baseofoperations', 'headquarters', 'locations'), 'utenti': ('users', 'owners', 'owner', 'notableusers', 'notableowners', 'currentowner', 'pilot'),
-         'creatore_oggetto': ('creator', 'made', 'builder'), 'membri': ('members', 'leader', 'leaders', 'founder', 'currentmembers', 'formermembers'), 'esito': ('result', 'date'), 'popolazione': ('population',),
-         'apparizioni': ('movie', 'tvseries', 'webseries', 'docuseries', 'tvmovie', 'oneshot', 'book', 'game', 'comic', 'themepark')}
+         'creatore_oggetto': ('creator', 'made', 'builder'), 'membri': ('members', 'leader', 'leaders', 'founder', 'currentmembers', 'formermembers'), 'esito': ('result', 'date'), 'popolazione': ('population',)}
+APP_CHIAVI = {'movie': 'n', 'tvseries': 'n', 'webseries': 'n', 'docuseries': 'n', 'tvmovie': 'n', 'oneshot': 'n', 'comic': 'f', 'game': 'v', 'book': 'a', 'themepark': 'a'}
+APP_CAMPI = {'n': 'apparizioni_narrativa', 'x': 'apparizioni_alternativi', 'f': 'apparizioni_fumetti', 'v': 'apparizioni_videogiochi', 'a': 'apparizioni_adattamenti'}
+RE_ADATT = re.compile(r'\b(lego|parod|adaptation|trailer maker|prequel comic|animated adaptation|junior|puzzle|novelization|audio)\b', re.I)
+RE_ALT = re.compile(r"what if|marvel zombies|\(alternate|alternate (?:universe|timeline|reality|version)|variant|\(earth-|multiverse of madness variant", re.I)
+def classe_app(titolo, chiave):
+    c = APP_CHIAVI.get(chiave, 'n')
+    if c == 'n':
+        if RE_ADATT.search(titolo): return 'a'
+        if RE_ALT.search(titolo): return 'x'   # universo alternativo: NON si attribuisce alla stessa incarnazione
+    return c
+
 LISTE = ('poteri', 'abilita', 'equipaggiamento', 'debolezze')
 SCALARI = ('stato', 'genere', 'prima_apparizione', 'origine', 'nome_reale', 'nascita', 'morte', 'esito', 'popolazione')
 def carica_w1b(d):
@@ -103,7 +113,7 @@ def carica_w1b(d):
     db = json.load(open(d/'w1b_marveldb.json')) if (d/'w1b_marveldb.json').exists() else {'pagine': {}, 'ricerca': {}}
     mdb = {n: db['pagine'].get(t) for n, t in db.get('ricerca', {}).items()}
     return m, mdb
-def _lista(v):
+def _lista(v, cap=12):
     v = re.sub(r'\(\s*(?:formerly|former|mentioned|footage|flashbacks?|deceased)\s*\)', '', v, flags=re.I)   # annotazioni del wiki, non nomi
     v = re.sub(r'\b(?:formerly|currently|previously)\s*:', ';', v, flags=re.I)
     out = []
@@ -111,7 +121,7 @@ def _lista(v):
         x = x.strip(' :.-')
         if x.count('(') != x.count(')'): x = x.replace('(', '').replace(')', '').strip()
         if len(x) >= 3 and re.search(r'[A-Za-z]', x) and x not in out: out.append(x)
-    return out[:12]
+    return out[:cap]
 def fatti_da(pag, tipo):
     f = {}
     ib = pag.get('infobox', {})
@@ -131,6 +141,13 @@ def fatti_da(pag, tipo):
                 for x in _lista(v):
                     if x not in voci: voci.append(x)
             f[campo] = voci[:12]
+    app = {}
+    for k, c in APP_CHIAVI.items():
+        for v in ([ib[k]] if k in ib else []):
+            for x in _lista(v, 40):
+                cl = classe_app(x, k)
+                if x not in app.setdefault(cl, []): app[cl].append(x)
+    for cl, voci in app.items(): f[APP_CAMPI[cl]] = voci[:20]
     for c in LISTE:
         v = pag.get('sezioni', {}).get(c)
         if v:
@@ -178,12 +195,17 @@ def main():
     GRP_UNI = {'x-men-fox': 'uni-earth-10005-fox-verse', 'wolverine-fox': 'uni-earth-10005-fox-verse', 'deadpool-fox': 'uni-earth-10005-fox-verse', 'new-mutants-fox': 'uni-earth-10005-fox-verse',
                'spider-man-raimi': 'uni-earth-96283-raimi-verse', 'spider-man-garfield': 'uni-earth-120703-garfield-verse', 'venom-ssu': 'uni-sony-s-spider-man-universe-ssu', 'morbius-ssu': 'uni-sony-s-spider-man-universe-ssu',
                'madame-web-ssu': 'uni-sony-s-spider-man-universe-ssu', 'kraven-ssu': 'uni-sony-s-spider-man-universe-ssu', 'blade': 'uni-blade-verse', 'daredevil-elektra': 'uni-daredevil-elektra-verse', 'ghost-rider': 'uni-ghost-rider-verse',
-               'hulk-2003': 'uni-hulk-2003-verse', 'fantastic-four-1994': 'uni-fantastic-four-1994', 'fantastic-four-fox': 'uni-earth-121698', 'fantastic-four-trank': 'uni-earth-trn123'}
+               'hulk-2003': 'uni-hulk-2003-verse', 'fantastic-four-1994': 'uni-fantastic-four-1994', 'fantastic-four-fox': 'uni-earth-121698', 'fantastic-four-trank': 'uni-earth-trn123',
+               # W3 (serie TV e film live-action non MCU)
+               'netflix-mcu': 'uni-earth-199999-mcu', 'agents-of-shield': 'uni-earth-199999-mcu', 'marvel-tv-mcu': 'uni-earth-199999-mcu', 'legion': 'uni-legion-verse', 'the-gifted': 'uni-the-gifted-verse',
+               # W4 (animazione)
+               'what-if': 'uni-rami-di-what-if', 'x-men-97': 'uni-x-men-97-verse', 'spider-verse-sony': 'uni-spider-verse-sony-animato', 'yfnsm': 'uni-your-friendly-neighborhood-spider-man-verse',
+               'marvel-zombies': 'uni-marvel-zombies-verse', 'marvel-animation-universe': 'uni-marvel-animation-universe-2006-2017'}
     def uni_di(r):
         if ONDA == 'w1': return 'uni-earth-199999-mcu' if (mcu & set(r['c'].get('P1080', []))) else None
         us = {GRP_UNI[g] for g in r['g'] if g in GRP_UNI}
         return next(iter(us)) if len(us) == 1 else None   # piu' continuita' (es. interprete in piu' franchise) = nessuna assegnazione automatica
-    NOMEFILE = {'w1': 'w1_mcu', 'w2': 'w2_pre_mcu'}[ONDA]; ORIG = {'w1': 'W1', 'w2': 'W2'}[ONDA]
+    NOMEFILE = {'w1': 'w1_mcu', 'w2': 'w2_pre_mcu', 'w3': 'w3_tv_live_action', 'w4': 'w4_animazione'}[ONDA]; ORIG = {'w1': 'W1', 'w2': 'W2', 'w3': 'W3', 'w4': 'W4'}[ONDA]
     idx, pieni, parz = carica_esistente(); tipo_esist = {v['i']: v['t'] for v in idx}
     reg = json.load(open(E/'ids_registro.json'))['ids']
     q2id = {v['ids_esterni']['wikidata']: k for k, v in reg.items() if v.get('ids_esterni', {}).get('wikidata') and v.get('stato') != 'lapide'}
