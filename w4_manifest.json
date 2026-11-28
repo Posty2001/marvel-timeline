@@ -1,0 +1,134 @@
+{
+ "avvio": "2026-11-28T07:14:55Z",
+ "film": {
+  "what-if|What If...?|2021": [
+   "Q65980671"
+  ],
+  "x-men-97|X-Men '97|2024": [
+   "Q109558622"
+  ],
+  "spider-verse-sony|Spider-Man: Into the Spider-Verse|2018": [
+   "Q29588607"
+  ],
+  "spider-verse-sony|Spider-Man: Across the Spider-Verse|2023": [
+   "Q76448600"
+  ],
+  "yfnsm|Your Friendly Neighborhood Spider-Man|2025": [
+   "Q113005299"
+  ],
+  "marvel-zombies|Marvel Zombies|2025": [
+   "Q111382701"
+  ],
+  "marvel-animation-altre|Hit-Monkey|2021": [
+   "Q108640888"
+  ],
+  "marvel-animation-altre|M.O.D.O.K.|2021": [
+   "Q85782784"
+  ],
+  "marvel-animation-altre|I Am Groot|2022": [
+   "Q108170999"
+  ],
+  "marvel-animation-altre|Eyes of Wakanda|2025": [
+   "Q123953931"
+  ],
+  "marvel-animation-altre|Moon Girl and Devil Dinosaur|2023": [
+   "Q105562871"
+  ],
+  "marvel-animation-universe|Ultimate Spider-Man|2012": [
+   "Q401601"
+  ],
+  "marvel-animation-universe|Avengers Assemble|2013": [
+   "Q3896442"
+  ],
+  "marvel-animation-universe|Hulk and the Agents of S.M.A.S.H.|2013": [
+   "Q5935752"
+  ],
+  "marvel-animation-universe|Guardians of the Galaxy|2015": [
+   "Q20649425"
+  ],
+  "marvel-animation-universe|Spider-Man|2017": [],
+  "marvel-animation-universe|Avengers: Earth's Mightiest Heroes|2010": [
+   "Q1211225"
+  ],
+  "marvel-productions-80-90|Spider-Man and His Amazing Friends|1981": [
+   "Q1365411"
+  ],
+  "marvel-productions-80-90|X-Men: The Animated Series|1992": [
+   "Q1340065"
+  ],
+  "marvel-productions-80-90|Spider-Man: The Animated Series|1994": [
+   "Q569934"
+  ],
+  "marvel-productions-80-90|Iron Man|1994": [
+   "Q268679"
+  ],
+  "marvel-productions-80-90|The Incredible Hulk|1996": [
+   "Q2282514"
+  ],
+  "marvel-productions-80-90|The Fantastic Four|1994": [
+   "Q2628001"
+  ],
+  "marvel-productions-80-90|Silver Surfer|1998": [
+   "Q786090"
+  ],
+  "marvel-productions-80-90|Spider-Man|1967": [
+   "Q2333456"
+  ],
+  "marvel-productions-80-90|Fantastic Four|1967": [],
+  "animazione-2000-2010|The Avengers: United They Stand|1999": [
+   "Q1327957"
+  ],
+  "animazione-2000-2010|X-Men: Evolution|2000": [
+   "Q369286"
+  ],
+  "animazione-2000-2010|Wolverine and the X-Men|2008": [],
+  "animazione-2000-2010|The Spectacular Spider-Man|2008": [
+   "Q460707"
+  ],
+  "animazione-2000-2010|Iron Man: Armored Adventures|2008": [],
+  "animazione-2000-2010|The Super Hero Squad Show|2009": [
+   "Q1509756"
+  ],
+  "animazione-2000-2010|Ultimate Avengers|2006": [
+   "Q1051702"
+  ],
+  "animazione-2000-2010|Doctor Strange: The Sorcerer Supreme|2007": [
+   "Q2320247"
+  ],
+  "animazione-2000-2010|Planet Hulk|2010": [
+   "Q2662947"
+  ],
+  "marvel-anime-e-altri|Iron Man|2010": [
+   "Q3802095"
+  ],
+  "marvel-anime-e-altri|Blade|2011": [
+   "Q10896756"
+  ],
+  "marvel-anime-e-altri|Big Hero 6|2014": [
+   "Q13091172"
+  ],
+  "marvel-anime-e-altri|Big Hero 6: The Series|2017": [
+   "Q28196461"
+  ],
+  "marvel-anime-e-altri|Marvel Rising: Secret Warriors|2018": [
+   "Q45040781"
+  ]
+ },
+ "film_errori": [],
+ "entita": 348,
+ "fine": "2026-11-28T07:21:35Z",
+ "anomalie": [
+  "film trovato solo con ricerca testuale (fallback verificato per anno): spider-verse-sony|Spider-Man: Into the Spider-Verse|2018 -> ['Q29588607']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): spider-verse-sony|Spider-Man: Across the Spider-Verse|2023 -> ['Q76448600']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): marvel-animation-universe|Avengers Assemble|2013 -> ['Q3896442']",
+  "film non trovato su Wikidata (query e ricerca): marvel-animation-universe|Spider-Man|2017",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): marvel-animation-universe|Avengers: Earth's Mightiest Heroes|2010 -> ['Q1211225']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): marvel-productions-80-90|X-Men: The Animated Series|1992 -> ['Q1340065']",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): marvel-productions-80-90|Spider-Man: The Animated Series|1994 -> ['Q569934']",
+  "film non trovato su Wikidata (query e ricerca): marvel-productions-80-90|Fantastic Four|1967",
+  "film non trovato su Wikidata (query e ricerca): animazione-2000-2010|Wolverine and the X-Men|2008",
+  "film non trovato su Wikidata (query e ricerca): animazione-2000-2010|Iron Man: Armored Adventures|2008",
+  "film trovato solo con ricerca testuale (fallback verificato per anno): marvel-anime-e-altri|Big Hero 6|2014 -> ['Q13091172']"
+ ],
+ "completa": true
+}
