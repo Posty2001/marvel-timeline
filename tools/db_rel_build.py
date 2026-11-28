@@ -136,7 +136,7 @@ def runtime(g):
     return {'v': 1, 'tipi': tipi, 'r': rows}
 def main():
     raw = json.load(open(sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith('--') else str(R / 'data/atlante/espansione/raw/rel_wikidata.json'))); g = costruisci(raw)
-    vf = R / 'data/atlante/espansione/raw/relverify.json'
+    vf = R / 'data/atlante/espansione/raw/relverify2.json'
     if vf.exists(): g['conteggi']['confermate_wikipedia'] = applica_verifica(g, json.load(open(vf))['esiti']); g['conteggi']['verificate'] = sum(1 for x in g['relazioni'] if x['verifica'] == 'verificata')
     print(json.dumps(g['conteggi'], ensure_ascii=False, indent=1))
     if '--input-verifica' in sys.argv:
