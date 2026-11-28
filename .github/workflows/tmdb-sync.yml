@@ -954,7 +954,7 @@ jobs:
         continue-on-error: true
         env:
           COMICVINE_API_KEY: ${{ secrets.COMICVINE_API_KEY }}
-        run: python3 tools/db_w5c_harvest.py raw_out w5
+        run: python3 tools/db_w5c_comicvine.py raw_out
       - name: Salva sul branch dati db-raw (anche risultati parziali)
         if: always()
         env:
