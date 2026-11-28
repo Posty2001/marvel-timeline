@@ -36,7 +36,8 @@ def cerca_film(titolo, anno):
         if not isinstance(e, dict) or 'missing' in e: continue
         desc = next((x.get('description') or '' for x in r['search'] if x['id'] == q), '').lower()
         classi = set(H.claim_ids(e.get('claims', {}), 'P31')) | set(H.claim_ids(e.get('claims', {}), 'P279'))
-        if anno in set(anno_di(e)) and (set(CLASSI) & classi or any(w in desc for w in ('film', 'series', 'television'))) and not any(w in desc for w in ('soundtrack', 'album', 'score', 'song', 'video game', 'novel', 'comic')): out.append(q)
+        ann = set(anno_di(e)); lab = (e.get('labels', {}).get('en', {}) or {}).get('value', '').lower()
+        if (anno in ann or (lab == titolo.lower() and (anno - 1 in ann or anno + 1 in ann))) and (set(CLASSI) & classi or any(w in desc for w in ('film', 'series', 'television'))) and not any(w in desc for w in ('soundtrack', 'album', 'score', 'song', 'video game', 'novel', 'comic')): out.append(q)
     return out
 def salva(out, nome, obj): json.dump(obj, open(out / nome, 'w'), ensure_ascii=False, separators=(',', ':'))
 ONDA = sys.argv[2] if len(sys.argv) > 2 else 'w2'

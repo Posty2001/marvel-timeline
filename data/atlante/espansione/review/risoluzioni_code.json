@@ -1,0 +1,431 @@
+{
+ "versione": 1,
+ "regole": "Risoluzione a regole delle code ambigue W1-W4 (nessuna fusione per solo nome, continuita' sempre distinte).\nRegole (deterministiche, documentate):\n C1 «collegamento al personaggio-base»: UN solo candidato storico e nome/alias coincidenti (dopo normalizzazione) -> l'elemento Wikidata e' il personaggio generale: si registra come ID esterno ALTERNATIVO\n    dell'identita' (nessun fatto copiato, nessuna fusione).\n C2 «concetto multi-continuita'»: l'elemento coincide per nome con PIU' identita' di continuita' diverse (o con un hub) -> non e' una voce nuova ne' un arricchimento: si registra come riferimento generico dell'hub/del\n    gruppo di identita' (mai attribuito a una sola incarnazione).\n C3 «nome non corrispondente»: nessun candidato ha lo stesso nome/alias (il match era solo parziale) -> e' un personaggio diverso: rinviato all'ondata fumetti (W5) come voce nuova da verificare.\nUso: python3 tools/db_code_risolvi.py [--scrivi]  -> data/atlante/espansione/review/risoluzioni_code.json",
+ "esiti": {
+  "C1": [
+   {
+    "q": "Q65929709",
+    "nome": "Blade",
+    "onda": "w1",
+    "identita": [
+     "id-blade"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q19382",
+    "nome": "Lizard",
+    "onda": "w2",
+    "identita": [
+     "id-curt-connors-lizard"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q79037",
+    "nome": "Spider-Man",
+    "onda": "w2",
+    "identita": [
+     "id-peter-parker-mcu"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q572626",
+    "nome": "Rhino",
+    "onda": "w2",
+    "identita": [
+     "id-aleksei-sytsevich-rhino"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q737236",
+    "nome": "Mystique",
+    "onda": "w2",
+    "identita": [
+     "id-mystica"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q945817",
+    "nome": "Gwen Stacy",
+    "onda": "w2",
+    "identita": [
+     "id-gwen-stacy-spider-woman"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q1753322",
+    "nome": "Kingpin",
+    "onda": "w2",
+    "identita": [
+     "id-kingpin-spider-verse"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q17090877",
+    "nome": "Norman Osborn",
+    "onda": "w2",
+    "identita": [
+     "id-norman-osborn-green-goblin"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q27813421",
+    "nome": "Adrian Toomes",
+    "onda": "w2",
+    "identita": [
+     "id-adrian-toomes-avvoltoio"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q51817522",
+    "nome": "Bruce Banner",
+    "onda": "w2",
+    "identita": [
+     "id-hulk"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q63933757",
+    "nome": "Curt Connors",
+    "onda": "w2",
+    "identita": [
+     "id-curt-connors-lizard"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q108923148",
+    "nome": "Venom",
+    "onda": "w2",
+    "identita": [
+     "id-eddie-brock-venom"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q881024",
+    "nome": "Blade",
+    "onda": "w3",
+    "identita": [
+     "id-blade"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q3703118",
+    "nome": "David Bruce Banner",
+    "onda": "w3",
+    "identita": [
+     "id-david-banner"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q23894967",
+    "nome": "Tony Stark",
+    "onda": "w3",
+    "identita": [
+     "id-iron-man"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q24050117",
+    "nome": "Bruce Banner",
+    "onda": "w3",
+    "identita": [
+     "id-hulk"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q65935380",
+    "nome": "Emil Blonsky",
+    "onda": "w3",
+    "identita": [
+     "id-emil-blonsky-abominio"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q125179100",
+    "nome": "Frank Castle",
+    "onda": "w3",
+    "identita": [
+     "id-frank-castle-punisher"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q180704",
+    "nome": "Iron Man",
+    "onda": "w4",
+    "identita": [
+     "id-iron-man"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q431862",
+    "nome": "Sabretooth",
+    "onda": "w4",
+    "identita": [
+     "id-sabretooth"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q578279",
+    "nome": "Firestar",
+    "onda": "w4",
+    "identita": [
+     "id-firestar-angelica-jones"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q726756",
+    "nome": "Carol Danvers",
+    "onda": "w4",
+    "identita": [
+     "id-carol-danvers-captain-marvel"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q729150",
+    "nome": "Punisher",
+    "onda": "w4",
+    "identita": [
+     "id-frank-castle-punisher"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q840291",
+    "nome": "Magneto",
+    "onda": "w4",
+    "identita": [
+     "id-magneto"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q907767",
+    "nome": "Doctor Strange",
+    "onda": "w4",
+    "identita": [
+     "id-stephen-strange"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q1424480",
+    "nome": "Daisy Johnson",
+    "onda": "w4",
+    "identita": [
+     "id-daisy-johnson"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q1631090",
+    "nome": "Deadpool",
+    "onda": "w4",
+    "identita": [
+     "id-wade-wilson-deadpool"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q1872439",
+    "nome": "X-23",
+    "onda": "w4",
+    "identita": [
+     "id-laura-x-23"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q2297886",
+    "nome": "Electro",
+    "onda": "w4",
+    "identita": [
+     "id-max-dillon-electro"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q2651308",
+    "nome": "Magik",
+    "onda": "w4",
+    "identita": [
+     "id-illyana-rasputin-magik"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q4009216",
+    "nome": "Yelena Belova",
+    "onda": "w4",
+    "identita": [
+     "id-yelena-belova"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q5350072",
+    "nome": "Jean Grey",
+    "onda": "w4",
+    "identita": [
+     "id-jean-grey-fenice"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q20979395",
+    "nome": "Spider-Woman",
+    "onda": "w4",
+    "identita": [
+     "id-gwen-stacy-spider-woman"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q24046106",
+    "nome": "Jane Foster",
+    "onda": "w4",
+    "identita": [
+     "id-jane-foster-mighty-thor"
+    ],
+    "regola": "C1"
+   },
+   {
+    "q": "Q119806001",
+    "nome": "Gwen Stacy",
+    "onda": "w4",
+    "identita": [
+     "id-gwen-stacy-spider-woman"
+    ],
+    "regola": "C1"
+   }
+  ],
+  "C2": [
+   {
+    "q": "Q24050083",
+    "nome": "Groot",
+    "onda": "w1",
+    "identita": [
+     "hub-groot",
+     "id-groot-originale",
+     "id-groot-successore"
+    ],
+    "regola": "C2"
+   },
+   {
+    "q": "Q510450",
+    "nome": "Invisible Woman",
+    "onda": "w2",
+    "identita": [
+     "id-sue-storm",
+     "id-sue-storm-1994",
+     "id-sue-storm-first-steps",
+     "id-sue-storm-trank"
+    ],
+    "regola": "C2"
+   },
+   {
+    "q": "Q735721",
+    "nome": "Green Goblin",
+    "onda": "w2",
+    "identita": [
+     "id-harry-osborn-green-goblin",
+     "id-harry-osborn-webb",
+     "id-harry-osborn-ynfsm",
+     "id-norman-osborn-green-goblin"
+    ],
+    "regola": "C2"
+   },
+   {
+    "q": "Q1779361",
+    "nome": "Harry Osborn",
+    "onda": "w2",
+    "identita": [
+     "id-harry-osborn-green-goblin",
+     "id-harry-osborn-webb",
+     "id-harry-osborn-ynfsm"
+    ],
+    "regola": "C2"
+   },
+   {
+    "q": "Q24027376",
+    "nome": "Thaddeus Ross",
+    "onda": "w3",
+    "identita": [
+     "id-thaddeus-ross-mcu",
+     "id-ross-hulk-2003"
+    ],
+    "regola": "C2"
+   },
+   {
+    "q": "Q135939741",
+    "nome": "Peter Parker",
+    "onda": "w3",
+    "identita": [
+     "id-peter-parker-garfield",
+     "id-peter-parker-mcu",
+     "id-peter-parker-raimi",
+     "id-peter-parker-ynfsm"
+    ],
+    "regola": "C2"
+   },
+   {
+    "q": "Q186422",
+    "nome": "Wolverine",
+    "onda": "w4",
+    "identita": [
+     "id-wolverine",
+     "id-wolverine-x-men-97"
+    ],
+    "regola": "C2"
+   }
+  ],
+  "C3": [
+   {
+    "q": "Q547306",
+    "nome": "Kitty Pryde",
+    "onda": "w2",
+    "identita": [],
+    "regola": "C3"
+   },
+   {
+    "q": "Q85767763",
+    "nome": "Hunger",
+    "onda": "w2",
+    "identita": [],
+    "regola": "C3"
+   },
+   {
+    "q": "Q166113",
+    "nome": "Eric O'Grady",
+    "onda": "w4",
+    "identita": [],
+    "regola": "C3"
+   }
+  ]
+ },
+ "conteggi": {
+  "C1": 35,
+  "C2": 7,
+  "C3": 3
+ }
+}

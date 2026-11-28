@@ -397,7 +397,10 @@
       var f = h('div', 'a3-dbsrc'); [['Wikidata (CC0)', 'https://www.wikidata.org/wiki/' + r.wd], r.wp ? ['Wikipedia (solo riferimento)', 'https://en.wikipedia.org/wiki/' + encodeURIComponent(r.wp.replace(/ /g, '_'))] : null].forEach(function (x) { if (!x) return; var a = h('a', '', x[0]); a.href = x[1]; a.target = '_blank'; a.rel = 'noopener noreferrer'; f.appendChild(a); });
       (r.xs || []).forEach(function (x) { var a = h('a', '', x[0] + ' (CC BY-SA 3.0)'); a.href = x[1]; a.target = '_blank'; a.rel = 'noopener noreferrer'; f.appendChild(a); }); c.appendChild(f);
       if (BY[r.i] && (BY[r.i].t === 'p' || BY[r.i].t === 'o')) c.appendChild(btn('btn ghost a3-dbopen', 'Apri nel TVA Nexus', function () { api.nav('a3', { a3: { v: 'nx', c: r.i } }); }));
+      c.id = 'dbx-s'; c.classList.add('a3-ds');   /* una sezione: stessa regola di esplorazione dei dossier (tempo, scorrimento, sezioni) */
       body.appendChild(c);
+      var acts = h('div', 'a5-slot'); body.appendChild(acts); var tr5 = null;
+      withA5(function (m) { if (ST.a3 !== s || !c.isConnected) return; acts.appendChild(m.acts(s.id)); tr5 = m.track(s.id, s); tr5.total(1); tr5.attach(c); });
     }); });
   }
 

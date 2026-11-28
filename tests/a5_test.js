@@ -55,4 +55,11 @@ const s7 = C.empty(); ok(C.toggleFav(s7, 'p1', 1) === true && C.toggleFav(s7, 'p
 const c7 = C.newCol(s7, '  Miei  ', 5); ok(c7 && s7.col[c7].n === 'Miei' && C.newCol(s7, '  ', 5) === null && C.colToggle(s7, c7, 'p1') && !C.colToggle(s7, c7, 'p1') && C.renameCol(s7, c7, 'Altro') && C.delCol(s7, c7), 'raccolte: crea/aggiungi/rinomina/elimina');
 ok(JSON.stringify(C.sane('x')) === JSON.stringify(C.empty()) && !Array.isArray(C.sane({ fav: [] }).fav) && C.sane({ v: 1 }).hub && C.sane({ v: 1 }).rel, 'stato corrotto/vecchio → struttura completa');
 ok(C.addDays('2026-12-31', 1) === '2027-01-01', 'addDays a cavallo d\'anno');
+// voci del database esteso: le VERIFICATE (canon B/C) partecipano; staging/segnaposto no; ricompense già ottenute mai revocate quando il registro cresce
+const BD = Object.assign({}, BY, { d1: { t: 'p', k: 'i', db: 1, lv: 'C', u: 'U1' }, d2: { t: 'p', k: 'i', db: 1, lv: 'B', u: 'U1' }, d3: { t: 'p', k: 'i', db: 1, u: 'U1' } });
+ok(C.eligible(BD.d1) && C.eligible(BD.d2) && !C.eligible(BD.d3), 'voci db verificate idonee; senza livello (non verificate) escluse');
+const sD = C.empty(); ['p0', 'p1', 'p2', 'p3'].forEach(i => C.markExplored(sD, i, BY, t0, ex)); const xpPrima = JSON.stringify(sD.xp), uniPrima = Object.keys(sD.uni).join();
+ok(C.markExplored(sD, 'd1', BD, t0, ex).ok && sD.esp.d1, 'dossier db +2 con le stesse regole'); const uSt = uniPrima;
+ok(Object.keys(sD.uni).join() === uSt || Object.keys(sD.uni).length >= uSt.split(',').filter(Boolean).length, 'completamenti già ottenuti non revocati');
+ok(C.REW.dossier === 2 && C.CAP === 30, 'valori XP e tetto invariati');
 console.log('a5_test: ' + p + ' ok, ' + f + ' falliti'); process.exit(f ? 1 : 0);
