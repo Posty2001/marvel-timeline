@@ -103,5 +103,35 @@
       return svg(u, '<linearGradient id="' + u + 'g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a66bff"/><stop offset=".5" stop-color="#ffc94a"/><stop offset="1" stop-color="#4aa8ff"/></linearGradient>' + rad(u + 'bg', '#2a1a40', '#050308', .5, .5, .8), '<rect width="320" height="200" fill="#050308"/><rect width="320" height="200" fill="url(#' + u + 'bg)"/>' + o);
     }
   };
-  W.tvaT2Scenes = { scene: function (id, uid) { var f = S[id]; return f ? f('t2s' + (uid || '') + id.replace(/[^a-z]/g, '').slice(0, 6)) : ''; }, ids: Object.keys(S) };
+  /* Rifinitura grafica t4: strati aggiuntivi per rendere ogni sfondo riconoscibile a colpo d'occhio (solo forme originali, animazioni transform/opacity) */
+  var X = {
+    'sacra-linea': function (u) {
+      return '<path d="M96 92 C130 60 190 56 250 40" stroke="#b86bff" stroke-opacity=".55" stroke-width="1.6" fill="none"/><path d="M178 106 C210 140 250 150 318 160" stroke="#ff5a6e" stroke-opacity=".5" stroke-width="1.6" fill="none"/>' +
+        '<circle cx="250" cy="40" r="3" fill="#b86bff"' + an('t2a-pulse', 3.4, .3, 'center') + '/><circle cx="300" cy="158" r="3" fill="#ff5a6e"' + an('t2a-pulse', 3.8, .9, 'center') + '/>' +
+        '<ellipse cx="150" cy="96" rx="46" ry="9" fill="#F6C86A" fill-opacity=".10"' + an('t2a-pulse', 5, 0, 'center') + '/>';
+    },
+    'terminale-tva': function (u) {
+      var o = '<path d="M8 8h22M8 8v22M312 8h-22M312 8v22M8 192h22M8 192v-22M312 192h-22M312 192v-22" stroke="#6fe0d0" stroke-opacity=".6" stroke-width="1.4" fill="none"/>';
+      for (var i = 0; i < 8; i++) o += '<rect x="' + (214 + i * 12) + '" y="' + (150 - (i % 4) * 8) + '" width="7" height="' + (14 + (i % 4) * 8) + '" fill="#6fe0d0" fill-opacity=".35"' + an('t2a-wave', 2.2 + i * .25, i * .2) + '/>';
+      return o + '<text x="214" y="30" font-family="monospace" font-size="9" fill="#6fe0d0" fill-opacity=".7">TVA // SYS.OK</text>';
+    },
+    'dimensione-specchio': function (u) {
+      return '<line x1="0" y1="100" x2="320" y2="100" stroke="#cfd8ff" stroke-opacity=".5" stroke-width="1"/><rect x="0" y="100" width="320" height="100" fill="#0a0d20" fill-opacity=".35"/>' +
+        '<g stroke="#8fa8ff" stroke-opacity=".18">' + [40, 80, 120, 160, 200, 240, 280].map(function (x) { return '<path d="M' + x + ' 0V200"/>'; }).join('') + '</g>';
+    },
+    'dimensione-oscura': function (u) {
+      return '<circle cx="160" cy="100" r="30" fill="none" stroke="#ff2e63" stroke-opacity=".5" stroke-width="2"' + an('t2a-pulse', 6, 0, 'center') + '/><path d="M0 200 Q160 120 320 200" stroke="#7a3fd0" stroke-opacity=".25" fill="none"/>';
+    },
+    'il-vuoto': function (u) {
+      var o = ''; for (var i = 0; i < 5; i++) o += '<circle cx="160" cy="100" r="' + (74 + i * 22) + '" fill="none" stroke="#E3C79B" stroke-opacity="' + n1(.12 - i * .02) + '" stroke-dasharray="3 9"' + an(i % 2 ? 't2a-spin' : 't2a-spin-r', 120 + i * 30, 0, '160px 100px') + '/>';
+      return o + '<path d="M160 100L40 20M160 100L300 40M160 100L280 190M160 100L30 170" stroke="#E3C79B" stroke-opacity=".08"/>';
+    },
+    'regno-quantico': function (u) {
+      var o = '', pts = []; for (var i = 0; i < 6; i++) for (var j = 0; j < 4; j++) pts.push([30 + i * 52, 30 + j * 46]);
+      pts.forEach(function (p, k) { var q = pts[(k + 5) % pts.length]; o += '<path d="M' + p[0] + ' ' + p[1] + 'L' + q[0] + ' ' + q[1] + '" stroke="#6fe8ff" stroke-opacity=".12"/>'; });
+      pts.forEach(function (p, k) { if (k % 3 === 0) o += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="2.4" fill="#bff6ff"' + an('t2a-twinkle', 2 + (k % 5) * .4, k * .1) + '/>'; });
+      return o;
+    }
+  };
+  W.tvaT2Scenes = { scene: function (id, uid) { var f = S[id]; if (!f) return ''; var u = 't2s' + (uid || '') + id.replace(/[^a-z]/g, '').slice(0, 6), r = f(u); return X[id] ? r.replace(/<\/svg>$/, X[id](u) + '</svg>') : r; }, ids: Object.keys(S) };
 })(window);

@@ -4,6 +4,10 @@ os.environ.setdefault('Q_ROOT',os.path.dirname(os.path.dirname(os.path.abspath(_
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'_qcommon.py')).read())
 srv,base=start_server()
 P='marvel-ultimate-timeline-'
+# t4: questo test verifica la Tessera CLASSICA (editor «Personalizza»), che resta il ripiego della nuova vista: la forza con la chiave additiva tessera-v2.
+_nc0=newctx
+def newctx(b,*a,**k):
+    c=_nc0(b,*a,**k);c.add_init_script("try{if(!localStorage.getItem('marvel-ultimate-timeline-tessera-v2'))localStorage.setItem('marvel-ultimate-timeline-tessera-v2',JSON.stringify({v:1,classica:true}))}catch(e){}");return c
 def ls(pg,k): return pg.evaluate("k=>localStorage.getItem(k)",k)
 def open_t(pg):
     pg.click('#appTabTessera');pg.wait_for_timeout(800)

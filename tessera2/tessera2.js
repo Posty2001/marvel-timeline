@@ -61,7 +61,11 @@
   function cur() { return T.current(); }
   function draftView(d) {
     var c = cur(), v = { name: c.name, avatar: c.avatar, badges: c.badges, titolo: c.titolo, cornice: c.cornice, tema: c.tema, effetto: c.effetto, photo: c.photo, st: c.st, id: c.id };
-    if (d) { v.titolo = d.titolo; v.cornice = d.cornice; v.tema = d.tema; v.effetto = d.effetto; v.st = d.st; if (d.avatar === 'photo') { if (c.photo) v.avatar = { kind: 'photo', id: c.avatar.id }; } else v.avatar = { kind: 'preset', id: d.avatar }; }
+    if (d) {
+      v.titolo = d.titolo; v.cornice = d.cornice; v.tema = d.tema; v.effetto = d.effetto; v.st = d.st; v.name = d.name; v.photo = d.photo; v.badges = d.badges;
+      v.id = Object.assign({}, c.id, d.id);
+      if (d.avatar === 'photo' && d.photo) v.avatar = { kind: 'photo', id: (c.avatar && c.avatar.id) || 'agente' }; else v.avatar = { kind: 'preset', id: d.avatar === 'photo' ? 'agente' : d.avatar };
+    }
     return v;
   }
   function modelOf(v, d) {
@@ -71,34 +75,50 @@
   }
 
   /* ---------- stage: carta 3D + sfondo animato + controlli ---------- */
-  var stage, side = 'front', draft = null, draftBase = null, rq = 0;
+  var stage, side = 'front', draft = null, draftBase = null, rq = 0, shim = null;
   function animMode() { var m = draft ? draft.anim : S2.anim; return m === 'auto' ? (T3.reduced() ? 'statico' : 'auto') : m; }
   function activeBg() { var id = draft ? draft.bg : S2.sfondoAnim; return id && C.isUnlocked(S2, id) ? id : null; }
+  function tiltOn() { var st = draft ? draft.st : T3.styleNow(); return st.rot !== false && animMode() !== 'off' && !T3.reduced(); }
   function buildStage() {
     var v = draftView(draft), m = modelOf(v, draft), box = $('t2Card'); if (!box) return;
     var w = box.clientWidth || 340, layout = w >= 520 ? 'wide' : 'compact', f, b;
     try { f = T3.render(m, v.st, v.id, layout, 't2f', 'front'); b = T3.render(m, v.st, v.id, layout, 't2b', 'back'); } catch (e) { return; }
     var key = f + '\u0001' + b + '\u0001' + activeBg() + '\u0001' + animMode() + '\u0001' + side; if (box.getAttribute('data-k') === key) return; box.setAttribute('data-k', key);
-    var mode = animMode(), bg = activeBg(), rot = (draft ? draft.st.rot : T3.styleNow().rot) !== false && mode !== 'off' && !T3.reduced();
-    stage.className = 't2-stage' + (mode === 'statico' ? ' t2-static' : '') + (mode === 'off' ? ' t2-noanim' : '') + (rot ? ' t2-rot' : '') + (side === 'back' ? ' t2-back' : '');
+    var mode = animMode(), bg = activeBg();
+    stage.className = 't2-stage' + (mode === 'statico' ? ' t2-static' : '') + (mode === 'off' ? ' t2-noanim' : '') + (side === 'back' ? ' t2-back' : '');
     box.textContent = '';
     if (bg && mode !== 'off') { var sc = el('div', 't2-scene'); sc.innerHTML = SC.scene(bg, 'a'); box.appendChild(sc); }
     var c3 = el('div', 't2-3d'), ff = el('div', 't2-face t2-front'), fb = el('div', 't2-face t2-bk'); ff.innerHTML = f; fb.innerHTML = b;
-    if (bg && mode !== 'off') { var fx = el('div', 't2-fx'); fx.innerHTML = SC.scene(bg, 'b'); ff.appendChild(fx); }
     c3.appendChild(ff); c3.appendChild(fb); box.appendChild(c3);
     ff.setAttribute('aria-hidden', side === 'back' ? 'true' : 'false'); fb.setAttribute('aria-hidden', side === 'back' ? 'false' : 'true');
     var fl = $('t2Flip'); if (fl) fl.setAttribute('aria-pressed', side === 'back' ? 'true' : 'false');
+    lastFront = f; var mn = $('t2Mini'); if (mn) mn.innerHTML = f;
   }
+  var lastFront = '';
   function stageLater() { if (rq) return; rq = W.requestAnimationFrame(function () { rq = 0; buildStage(); renderVetrina(); }); }
-  function flip() { side = side === 'back' ? 'front' : 'back'; var box = $('t2Card'); if (box) { box.removeAttribute('data-k'); } stageLater(); }
-  function rotToggle(on) { var st = Object.assign({}, T3.styleNow(), { rot: !!on }); ID.styleSave(st); if (draft) draft.st.rot = !!on; var box = $('t2Card'); if (box) box.removeAttribute('data-k'); stageLater(); try { T.render(); } catch (e) {} }
+  function reStage() { var box = $('t2Card'); if (box) box.removeAttribute('data-k'); stageLater(); }
+  function flip() { side = side === 'back' ? 'front' : 'back'; reStage(); }
+  /* Inclinazione 3D solo a contatto (dito/mouse): a riposo la carta resta piana e nitida su display Retina */
+  function bindTilt(box) {
+    if (box._tl) return; box._tl = 1; var down = null, moved = false;
+    function c3() { return box.querySelector('.t2-3d'); }
+    function tilt(e) { var c = c3(); if (!c || side !== 'front' || !tiltOn()) return; var r = box.getBoundingClientRect(); c.style.transform = 'rotateX(' + ((((e.clientY - r.top) / r.height) - .5) * -9).toFixed(1) + 'deg) rotateY(' + ((((e.clientX - r.left) / r.width) - .5) * 12).toFixed(1) + 'deg)'; }
+    function rest() { var c = c3(); if (c) c.style.transform = ''; }
+    box.addEventListener('pointerdown', function (e) { down = { x: e.clientX, y: e.clientY }; moved = false; tilt(e); });
+    box.addEventListener('pointermove', function (e) { if (down && (Math.abs(e.clientX - down.x) > 6 || Math.abs(e.clientY - down.y) > 6)) moved = true; if (down || e.pointerType === 'mouse') tilt(e); });
+    box.addEventListener('pointerup', function () { var tap = down && !moved; down = null; rest(); if (tap) flip(); });
+    box.addEventListener('pointercancel', function () { down = null; rest(); }); box.addEventListener('pointerleave', function () { if (!down) rest(); });
+    box.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } });
+  }
+  function rotToggle(on) { var st = Object.assign({}, T3.styleNow(), { rot: !!on }); ID.styleSave(st); if (draft) draft.st.rot = !!on; reStage(); try { T.render(); } catch (e) {} }
 
   /* ---------- vetrina (6 slot) ---------- */
   var BADGES = function () { var out = []; Array.prototype.forEach.call(D.querySelectorAll('.badge-chip'), function (c) { var id = (c.id || '').replace(/^badge-/, ''); if (id) out.push({ id: id, name: c.getAttribute('data-name') || id, desc: c.getAttribute('data-desc') || '', got: c.classList.contains('badge-unlocked'), glyph: c.textContent.trim() }); }); return out; };
+  var GLY = function (id) { return '<svg viewBox="-24 -24 48 48" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" transform="scale(1.5)">' + A.glyph(id) + '</g></svg>'; };
   function vet() { var lk = {}; try { lk = T.lookLoad(); } catch (e) {} return C.effVetrina(S2, lk.b); }
   function itemInfo(it) {
     if (!it) return null;
-    if (it.t === 'badge') { var b = BADGES().filter(function (x) { return x.id === it.id; })[0]; return b ? { name: b.name, ok: b.got, html: '<svg viewBox="-24 -24 48 48" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" transform="scale(1.5)">' + A.glyph(b.id) + '</g></svg>' } : null; }
+    if (it.t === 'badge') { var b = BADGES().filter(function (x) { return x.id === it.id; })[0]; return b ? { name: b.name, ok: b.got, html: GLY(b.id) } : null; }
     if (it.t === 'emblema') { var n = +it.id.slice(1); return { name: 'Emblema · ' + (EM.names[n] || n), ok: true, html: EM.svg(n, { p: '#2a1519', s: '#e3c79b' }) }; }
     if (it.t === 'ricompensa') { var r = RW.catalog.filter(function (x) { return x.id === it.id; })[0]; return r ? { name: r.nome, ok: RW.isUnlocked(r.id), rar: r.rar, html: '' } : null; }
     return null;
@@ -107,7 +127,7 @@
     var inf = itemInfo(it), b = el('button', 't2-slot' + (inf ? ' on' : '')); b.type = 'button'; b.setAttribute('data-slot', i);
     if (inf && inf.ok) {
       b.setAttribute('aria-label', 'Slot ' + (i + 1) + ': ' + inf.name); b.title = inf.name;
-      if (inf.html) b.appendChild(fromHtml(inf.html, 't2-slot-art')); else { var g = el('span', 't2-slot-rw r-' + (inf.rar || 'c'), '✦'); b.appendChild(g); }
+      if (inf.html) b.appendChild(fromHtml(inf.html, 't2-slot-art')); else b.appendChild(el('span', 't2-slot-rw r-' + (inf.rar || 'c'), '✦'));
     } else { b.setAttribute('aria-label', 'Slot ' + (i + 1) + ': vuoto, tocca per scegliere'); b.appendChild(ic('plus')); }
     b.addEventListener('click', function () { onTap(i); }); return b;
   }
@@ -116,7 +136,7 @@
     var h = el('div', 't2-vet-h'); h.appendChild(el('b', '', 'Vetrina')); h.appendChild(el('span', 't2-dim', filled + '/' + C.SLOTS)); box.appendChild(h);
     var row = el('div', 't2-vet-row'); v.forEach(function (it, i) { row.appendChild(slotNode(it, i, slotSheet)); }); box.appendChild(row);
   }
-  function setSlot(i, it) { var v = vet(); v[i] = it ? C.validItem(it) : null; var seen = {}; v = v.map(function (x) { if (!x) return null; var k = x.t + ':' + x.id; if (seen[k]) return null; seen[k] = 1; return x; }); S2.vetrina = v; saveS2(); renderVetrina(); renderPanel(); }
+  function setSlot(i, it) { var v = vet(); v[i] = it ? C.validItem(it) : null; var seen = {}; v = v.map(function (x) { if (!x) return null; var k = x.t + ':' + x.id; if (seen[k]) return null; seen[k] = 1; return x; }); S2.vetrina = v; saveS2(); renderVetrina(); if (sec !== 'atelier') renderPanel(); }
   function moveSlot(i, d) { var v = vet(), j = i + d; if (j < 0 || j >= v.length) return; var t = v[i]; v[i] = v[j]; v[j] = t; S2.vetrina = v; saveS2(); renderVetrina(); }
 
   /* ---------- finestre (sheet) ---------- */
@@ -157,7 +177,7 @@
   /* ---------- Atlas picker (universo / personaggio) ---------- */
   function norm(s) { return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
   function atlasPicker(kind, onPick) {
-    var body = openSheet(kind === 'uni' ? 'Scegli un universo (TVA Atlas)' : 'Scegli un personaggio (TVA Atlas)'), inp = el('input', 't2-in'), list = el('div', 't2-pick t2-list'), msg = el('p', 't2-dim', 'Caricamento di TVA Atlas…');
+    var body = openSheet(kind === 'uni' ? 'Scegli un universo' : 'Scegli un personaggio'), inp = el('input', 't2-in'), list = el('div', 't2-pick t2-list'), msg = el('p', 't2-dim', 'Apro TVA Atlas…');
     inp.type = 'search'; inp.placeholder = 'Cerca…'; inp.setAttribute('aria-label', 'Cerca'); inp.maxLength = 40; body.appendChild(inp); body.appendChild(msg); body.appendChild(list);
     function draw() {
       list.textContent = ''; var q = norm(inp.value.trim()), out = [];
@@ -169,7 +189,7 @@
       if (!out.length) list.appendChild(el('p', 't2-dim', 'Nessun risultato.'));
       out.forEach(function (v) { var b = el('button', 't2-pk t2-pk-row'); b.type = 'button'; b.appendChild(el('span', 't2-pk-n', v.n)); if (kind === 'ch' && v.u && AT.uni[v.u]) b.appendChild(el('span', 't2-dim', AT.uni[v.u].n)); b.addEventListener('click', function () { onPick(v); closeSheet(); }); list.appendChild(b); });
     }
-    loadAtlas(function (ok) { if (!sheetEl) return; if (!ok) { msg.textContent = 'Dati di TVA Atlas non disponibili offline: puoi scrivere il nome a mano nei campi dell’identità.'; return; } msg.remove(); draw(); inp.addEventListener('input', draw); inp.focus(); });
+    loadAtlas(function (ok) { if (!sheetEl) return; if (!ok) { msg.textContent = 'TVA Atlas non è raggiungibile offline: riprova più tardi.'; return; } msg.remove(); draw(); inp.addEventListener('input', draw); inp.focus(); });
   }
 
   /* ---------- sezioni ---------- */
@@ -177,165 +197,180 @@
   function head(t, s) { var h = el('div', 't2-ph'); h.appendChild(el('h3', '', t)); if (s) h.appendChild(el('p', 't2-dim', s)); return h; }
   function card(title) { var c = el('section', 't2-card-p'); if (title) c.appendChild(el('h4', '', title)); return c; }
   function kv(box, k, v) { var r = el('div', 't2-kv'); r.appendChild(el('span', '', k)); r.appendChild(el('b', '', v)); box.appendChild(r); return r; }
+  function num(id) { var m = txt(id).match(/\d+/); return m ? +m[0] : 0; }
+  function xpParts() { var m = txt('tesseraXpSub').match(/(\d+)\s*\/\s*(\d+)/); return m ? { cur: +m[1], tot: +m[2] } : { cur: 0, tot: 100 }; }
 
   function secTessera(b) {
-    var v = cur(), c = card();
-    c.appendChild(el('div', 't2-eyebrow', 'AGENTE TVA')); c.appendChild(el('div', 't2-name', v.name || 'Variante'));
-    var m = modelOf(draftView(null), null); c.appendChild(el('div', 't2-sub', m.title)); c.appendChild(el('div', 't2-varid', txt('tesseraId') || 'VAR-000000'));
-    var r = el('div', 't2-two'); kv(r, 'Rango', txt('tesseraRank')); kv(r, 'Livello', 'LV ' + txt('tesseraLivello') + ' · ' + txt('tesseraXpTotale') + ' XP'); c.appendChild(r);
-    b.appendChild(c);
-    var act = el('div', 't2-row');
-    act.appendChild(button('Personalizza', 't2-primary', function () { go('atelier'); }, 'atelier')); act.appendChild(button('Condividi', '', function () { try { T.share(side); } catch (e) {} }, 'share')); b.appendChild(act);
-    b.appendChild(el('p', 't2-dim t2-note', 'Tocca uno slot della vetrina per sceglierne il contenuto: puoi lasciarne di vuoti, spostarli e cambiarli quando vuoi.'));
+    var v = cur(), c = card('Riepilogo'), m = modelOf(draftView(null), null), xp = xpParts();
+    var top = el('div', 't2-sum'); var l = el('div', 't2-sum-l'); l.appendChild(el('div', 't2-name', v.name || 'Variante')); l.appendChild(el('div', 't2-sub', m.title)); l.appendChild(el('div', 't2-varid', txt('tesseraId') || 'VAR-000000')); top.appendChild(l);
+    var r = el('div', 't2-sum-r'); r.appendChild(el('small', '', 'Livello')); r.appendChild(el('b', '', txt('tesseraLivello') || '1')); top.appendChild(r); c.appendChild(top);
+    var bar = el('div', 't2-bar'); var fill = el('i'); fill.style.width = Math.round(Math.min(1, xp.cur / Math.max(1, xp.tot)) * 100) + '%'; bar.appendChild(fill); c.appendChild(bar);
+    var two = el('div', 't2-two'); kv(two, 'Rango TVA', txt('tesseraRank')); kv(two, 'Esperienza', (txt('tesseraXpTotale') || '0') + ' XP'); c.appendChild(two); b.appendChild(c);
+    var nx = nextBg(); if (nx) { var n = card('Prossimo sfondo da sbloccare'); n.appendChild(el('p', '', nx.g.n)); n.appendChild(el('p', 't2-dim', C.reqText(nx.g.cond) + ' · ' + C.progText(nx.g.cond, nx.r))); b.appendChild(n); }
   }
+  function nextBg() { return C.BGS.filter(function (g) { return !C.isUnlocked(S2, g.id); }).map(function (g) { return { g: g, r: C.evalCond(g.cond, snap()) }; }).filter(function (x) { return !x.r.pend; }).sort(function (a, b2) { return (b2.r.have / b2.r.need) - (a.r.have / a.r.need); })[0]; }
 
   function secCarriera(b) {
-    b.appendChild(head('Passaporto di carriera', 'Rango e livello sono due scale distinte, con le regole di sempre.'));
-    var c = card(), row = el('div', 't2-pass'), lv = el('div', 't2-lv');
-    var sub = txt('tesseraXpSub'), mm = sub.match(/(\d+)\s*\/\s*(\d+)/), frac = mm ? Math.min(1, (+mm[1]) / Math.max(1, +mm[2])) : 0, R = 34, L = 2 * Math.PI * R;
-    lv.innerHTML = '<svg viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="' + R + '" fill="none" stroke="rgba(227,199,155,.2)" stroke-width="6"/><circle cx="42" cy="42" r="' + R + '" fill="none" stroke="#E3C79B" stroke-width="6" stroke-linecap="round" stroke-dasharray="' + (L * frac).toFixed(1) + ' ' + L.toFixed(1) + '" transform="rotate(-90 42 42)"/></svg>';
-    var n = el('div', 't2-lv-n'); n.appendChild(el('small', '', 'Livello')); n.appendChild(el('b', '', txt('tesseraLivello') || '1')); lv.appendChild(n); row.appendChild(lv);
-    var rk = el('div', 't2-rk'); rk.appendChild(el('small', '', 'Rango TVA')); rk.appendChild(el('b', '', txt('tesseraRank') || 'Recluta')); rk.appendChild(el('span', 't2-dim', 'Guida completata: ' + (txt('tesseraPct') || '0%'))); row.appendChild(rk);
-    c.appendChild(row); kv(c, 'XP totale', (txt('tesseraXpTotale') || '0') + ' XP'); kv(c, 'Prossimo livello', sub); b.appendChild(c);
-    var pr = card('Progressione'); var p = txt('tesseraProssimo'); if (p) pr.appendChild(el('p', '', p));
-    var bar = el('div', 't2-bar'); var fill = el('i'); fill.style.width = Math.round(frac * 100) + '%'; bar.appendChild(fill); pr.appendChild(bar);
-    var nx = C.BGS.filter(function (g) { return !C.isUnlocked(S2, g.id); }).map(function (g) { var r = C.evalCond(g.cond, snap()); return { g: g, r: r }; }).filter(function (x) { return !x.r.pend; }).sort(function (a, b2) { return (b2.r.have / b2.r.need) - (a.r.have / a.r.need); })[0];
-    if (nx) pr.appendChild(el('p', 't2-dim', 'Prossimo sfondo: ' + nx.g.n + ' — ' + C.reqText(nx.g.cond) + ' (' + C.progText(nx.g.cond, nx.r) + ')'));
-    b.appendChild(pr);
-    var st = card('Statistiche di servizio');
-    kv(st, 'Titoli visti', txt('tesseraTitoliAssoluti')); kv(st, 'Ore viste', txt('tesseraOre')); kv(st, 'Voto medio', txt('tesseraVoto')); kv(st, 'Serie consecutive (giorni)', txt('tesseraStreak'));
-    kv(st, 'Universi visitati', txt('tesseraUniversi')); kv(st, 'Studi', txt('tesseraStudi')); kv(st, 'Distintivi', txt('tesseraBadges'));
-    kv(st, 'Ricompense ottenute', RW.unlocked().length + ' / ' + RW.catalog.length);
-    var ex = Object.keys(espNow()).length; var kx = kv(st, 'Dossier Atlas esplorati', String(ex)); if (atCounts) kv(st, 'di cui verificati', String(atCounts.dossier)); b.appendChild(st);
-    var rc = card('Riconoscimenti ottenuti'), got = BADGES().filter(function (x) { return x.got; });
-    if (!got.length) rc.appendChild(el('p', 't2-dim', 'Nessun distintivo ancora: i prossimi arrivano con la visione.')); else { var g = el('div', 't2-badges'); got.forEach(function (x) { var s = el('span', 't2-bd'); s.appendChild(fromHtml('<svg viewBox="-24 -24 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" transform="scale(1.5)">' + A.glyph(x.id) + '</g></svg>', 't2-bd-ic')); s.appendChild(el('span', '', x.name)); g.appendChild(s); }); rc.appendChild(g); }
+    var xp = xpParts(), frac = Math.min(1, xp.cur / Math.max(1, xp.tot)), R = 52, L = 2 * Math.PI * R, lvl = txt('tesseraLivello') || '1';
+    var hero = el('section', 't2-hero');
+    var lv = el('div', 't2-lv'); lv.innerHTML = '<svg viewBox="0 0 124 124" aria-hidden="true"><circle cx="62" cy="62" r="' + R + '" fill="none" stroke="rgba(227,199,155,.16)" stroke-width="8"/><circle cx="62" cy="62" r="' + R + '" fill="none" stroke="url(#t2lg)" stroke-width="8" stroke-linecap="round" stroke-dasharray="' + (L * frac).toFixed(1) + ' ' + L.toFixed(1) + '" transform="rotate(-90 62 62)"/><defs><linearGradient id="t2lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F59A23"/><stop offset="1" stop-color="#F6DCA8"/></linearGradient></defs></svg>';
+    var n = el('div', 't2-lv-n'); n.appendChild(el('small', '', 'Livello')); n.appendChild(el('b', '', lvl)); lv.appendChild(n); hero.appendChild(lv);
+    var rk = el('div', 't2-hero-r'); rk.appendChild(el('small', '', 'Il tuo rango')); rk.appendChild(el('b', 't2-rank', txt('tesseraRank') || 'Recluta')); rk.appendChild(el('span', 't2-xpbig', (txt('tesseraXpTotale') || '0') + ' XP'));
+    rk.appendChild(el('span', 't2-dim', 'Ti mancano ' + Math.max(0, xp.tot - xp.cur) + ' XP per il livello ' + ((+lvl || 1) + 1) + '.')); hero.appendChild(rk); b.appendChild(hero);
+    var bar = el('div', 't2-bar t2-bar-lg'); var fill = el('i'); fill.style.width = Math.round(frac * 100) + '%'; bar.appendChild(fill); b.appendChild(bar);
+    var pr = card('Il cammino'); pr.appendChild(el('p', 't2-dim', 'Il rango racconta quanta parte della Sacra Linea Temporale hai percorso. Il livello cresce con ogni XP guadagnato: sono due strade diverse, e procedono in parallelo.'));
+    kv(pr, 'Guida percorsa', txt('tesseraPct') || '0%'); var p = txt('tesseraProssimo'); if (p) pr.appendChild(el('p', 't2-next', p));
+    var nx = nextBg(); if (nx) pr.appendChild(el('p', 't2-dim', 'Sulla strada verso lo sfondo «' + nx.g.n + '»: ' + C.reqText(nx.g.cond).toLowerCase() + ' (' + C.progText(nx.g.cond, nx.r) + ').')); b.appendChild(pr);
+    var st = card('Registro di servizio'), g = el('div', 't2-stats');
+    [['Titoli visti', txt('tesseraTitoliAssoluti')], ['Ore negli Archivi', txt('tesseraOre')], ['Voto medio', txt('tesseraVoto')], ['Giorni di fila', txt('tesseraStreak')], ['Universi visitati', txt('tesseraUniversi')], ['Studi esplorati', txt('tesseraStudi')], ['Distintivi', txt('tesseraBadges')], ['Ricompense', RW.unlocked().length + '/' + RW.catalog.length], ['Dossier Atlas', String(Object.keys(espNow()).length)]].forEach(function (x) { var t = el('div', 't2-stat'); t.appendChild(el('b', '', x[1] || '—')); t.appendChild(el('span', '', x[0])); g.appendChild(t); });
+    st.appendChild(g); b.appendChild(st);
+    var rc = card('Riconoscimenti'), got = BADGES().filter(function (x) { return x.got; });
+    if (!got.length) rc.appendChild(el('p', 't2-dim', 'Nessun distintivo ancora: arriveranno con le tue visioni.')); else { var gb = el('div', 't2-badges'); got.forEach(function (x) { var s = el('span', 't2-bd'); s.appendChild(fromHtml(GLY(x.id), 't2-bd-ic')); s.appendChild(el('span', '', x.name)); gb.appendChild(s); }); rc.appendChild(gb); }
     b.appendChild(rc);
     if (!atCounts) loadAtlas(function (ok) { if (ok && sec === 'carriera') renderPanel(); });
   }
 
   /* ---- Atelier ---- */
-  var atTab = 'avatar';
+  var atTab = 'avatar', DIRTY_KEYS = ['avatar', 'titolo', 'cornice', 'tema', 'effetto', 'bg', 'anim', 'tmodo', 'ttesto', 'name', 'photo'];
   function ensureDraft() {
-    if (draft) return; var c = cur(); draft = { avatar: c.avatar.kind === 'photo' ? 'photo' : c.avatar.id, titolo: c.titolo, cornice: c.cornice, tema: c.tema, effetto: c.effetto, st: clone(c.st || { v: 1 }), bg: S2.sfondoAnim, anim: S2.anim, tmodo: S2.titolo.modo, ttesto: S2.titolo.testo };
-    draftBase = clone(draft);
+    if (draft) return; var c = cur(), id0 = ID.get();
+    draft = { avatar: c.avatar.kind === 'photo' ? 'photo' : c.avatar.id, titolo: c.titolo, cornice: c.cornice, tema: c.tema, effetto: c.effetto, st: clone(c.st || { v: 1 }), bg: S2.sfondoAnim, anim: S2.anim, tmodo: S2.titolo.modo, ttesto: S2.titolo.testo,
+      name: c.name || '', photo: c.photo || null, badges: (c.badges || []).slice(0, 3), id: { emx: id0.emx, motto: id0.motto || '', univ: id0.univ || '', ch: id0.ch || '' } };
+    draftBase = clone(draft); shim = { get draft() { return draft; }, undo: [], side: 'front', focusKey: '' };
   }
-  function dirtyN() { if (!draft) return 0; var n = 0; ['avatar', 'titolo', 'cornice', 'tema', 'effetto', 'bg', 'anim', 'tmodo', 'ttesto'].forEach(function (k) { if (draft[k] !== draftBase[k]) n++; }); if (JSON.stringify(draft.st) !== JSON.stringify(draftBase.st)) n++; return n; }
-  function dirtyUI() { var n = dirtyN(), s = $('t2Save'), t = $('t2State'); if (s) { s.textContent = n ? 'Salva · ' + n : 'Salva'; s.classList.toggle('t2-idle', !n); } if (t) { t.textContent = n ? '● Non salvato' : '✓ Salvato'; t.classList.toggle('dirty', !!n); } }
-  function dchg() { var box = $('t2Card'); if (box) box.removeAttribute('data-k'); stageLater(); dirtyUI(); }
-  function setSt(patch) { var o = Object.assign({}, draft.st); Object.keys(patch).forEach(function (k) { if (patch[k] === null) delete o[k]; else o[k] = patch[k]; }); if (patch.pr === undefined && Object.keys(patch).some(function (k) { return ['bg', 'tx', 'fr', 'fx', 'ic', 'ty', 'fi', 'pc', 'sc', 'dc', 'ac'].indexOf(k) >= 0; })) delete o.pr; draft.st = ID.styleSanitize(o); dchg(); }
-  function discard() { draft = null; draftBase = null; var box = $('t2Card'); if (box) box.removeAttribute('data-k'); stageLater(); renderPanel(); }
+  function dirtyN() { if (!draft) return 0; var n = 0; DIRTY_KEYS.forEach(function (k) { if (draft[k] !== draftBase[k]) n++; }); ['st', 'badges', 'id'].forEach(function (k) { if (JSON.stringify(draft[k]) !== JSON.stringify(draftBase[k])) n++; }); return n; }
+  function dirtyUI() { var n = dirtyN(), s = $('t2Save'), t = $('t2State'); if (s) { s.textContent = n ? 'Salva · ' + n : 'Salva'; s.classList.toggle('t2-idle', !n); } if (t) { t.textContent = n ? '● Modifiche non salvate' : '✓ Tutto salvato'; t.classList.toggle('dirty', !!n); } }
+  function dchg() { reStage(); dirtyUI(); }
+  function discard() { draft = null; draftBase = null; shim = null; reStage(); renderPanel(); }
+  function setNameValue(val) { var src = $('tesseraNameInput'); if (src) { src.value = val; src.dispatchEvent(new W.Event('input', { bubbles: true })); } else { try { W.localStorage.setItem(P + 'user-name', val); } catch (e) {} } }
   function saveDraft() {
-    if (!draft) return; var c = cur(), bad = '';
+    if (!draft) return; var bad = '';
     ['titolo', 'cornice', 'tema', 'effetto'].forEach(function (s) { if (draft[s] !== draftBase[s]) { var r = RW.equip(s, draft[s]); if (!r.ok) bad = s; } });
     if (bad) { toast('Impossibile salvare «' + bad + '»: non è sbloccato.'); return; }
+    if (draft.photo !== draftBase.photo) { try { if (draft.photo) W.localStorage.setItem(T.keys.photo, draft.photo); else W.localStorage.removeItem(T.keys.photo); } catch (e) { toast('Spazio insufficiente: la foto non è stata salvata. Nessuna modifica applicata.'); return; } }
     if (JSON.stringify(draft.st) !== JSON.stringify(draftBase.st)) { var o = Object.assign({}, draft.st); delete o.ts; var keep = Object.keys(o).filter(function (k) { return k !== 'v' && k !== 'rot'; }).length; if (!keep && o.rot === undefined) ID.styleReset(); else ID.styleSave(o); }
-    if (draft.avatar !== draftBase.avatar) { var lk = T.lookLoad(); try { W.localStorage.setItem(T.keys.look, JSON.stringify(T.sanitizeLook({ v: 1, a: draft.avatar, b: lk.b, ts: Date.now() }))); D.dispatchEvent(new W.CustomEvent('tva:look', { detail: { saved: true } })); } catch (e) {} }
+    var idp = {}; ['emx', 'motto', 'univ', 'ch'].forEach(function (k) { if (draft.id[k] !== draftBase.id[k]) idp[k] = draft.id[k]; }); if (Object.keys(idp).length) ID.set(idp, { fromTessera: true });
+    if (draft.name !== draftBase.name) setNameValue(C.validTitle(draft.name).slice(0, 20));
+    var av = draft.avatar === 'photo' && draft.photo ? 'photo' : (draft.avatar === 'photo' ? 'agente' : draft.avatar);
+    if (draft.avatar !== draftBase.avatar || draft.photo !== draftBase.photo || JSON.stringify(draft.badges) !== JSON.stringify(draftBase.badges)) { var lk = T.lookLoad(); try { W.localStorage.setItem(T.keys.look, JSON.stringify(T.sanitizeLook({ v: 1, a: av, b: draft.badges.slice(0, 3), ts: Date.now() }))); D.dispatchEvent(new W.CustomEvent('tva:look', { detail: { saved: true } })); } catch (e) {} }
     if (draft.bg !== draftBase.bg) S2.sfondoAnim = draft.bg && C.isUnlocked(S2, draft.bg) ? draft.bg : null;
     S2.anim = draft.anim; S2.titolo.modo = draft.tmodo; S2.titolo.testo = C.validTitle(draft.ttesto); if (S2.titolo.modo === 'personale' && !S2.titolo.testo) S2.titolo.modo = 'ufficiale';
-    S2 = C.sane(S2); saveS2(); draft = null; draftBase = null; try { T.render(); } catch (e) {} var box = $('t2Card'); if (box) box.removeAttribute('data-k'); toast('Salvato'); stageLater(); renderPanel();
+    S2 = C.sane(S2); saveS2(); draft = null; draftBase = null; shim = null; try { T.render(); } catch (e) {} toast('Salvato'); reStage(); renderPanel();
   }
   function tile(sel, locked, label, thumbHtml, sub, fn) {
     var b = el('button', 't2-tile' + (sel ? ' sel' : '') + (locked ? ' lock' : '')); b.type = 'button'; b.setAttribute('aria-pressed', sel ? 'true' : 'false'); if (locked) b.setAttribute('aria-disabled', 'true');
-    if (thumbHtml) b.appendChild(fromHtml(thumbHtml, 't2-tile-th')); b.appendChild(el('span', 't2-tile-n', label)); if (sub) b.appendChild(el('span', 't2-tile-s', sub)); if (locked) b.appendChild(ic('lock', 't2-lk')); b.addEventListener('click', fn); return b;
+    if (thumbHtml) b.appendChild(fromHtml(thumbHtml, 't2-tile-th')); b.appendChild(el('span', 't2-tile-n', label)); if (sub) b.appendChild(el('span', 't2-tile-s', sub));
+    if (locked) b.appendChild(ic('lock', 't2-lk')); else if (sel) b.appendChild(ic('check', 't2-ck')); b.addEventListener('click', fn); return b;
   }
   function rewardTiles(cat, wrap, msg) {
     var grid = el('div', 't2-grid');
     RW.catalog.filter(function (r) { return r.cat === cat; }).forEach(function (r, i) {
       var un = RW.isUnlocked(r.id), th = cat === 'titolo' ? '' : A.thumb(cat, r.id, 'q' + cat + i, { theme: draft.tema, frame: draft.cornice }), pg = RW.progress(r.id);
       var sub = un ? RW.rarities[r.rar] : RW.rarities[r.rar] + ' · ' + r.desc + (pg && !pg.ok && pg.tot > 1 ? ' (' + pg.cur + '/' + pg.tot + ')' : '');
-      grid.appendChild(tile(draft[cat] === r.id, !un, r.nome, th, sub, function () { if (!un) { msg.textContent = 'Bloccata: ' + r.desc; return; } msg.textContent = ''; draft[cat] = r.id; if (cat === 'titolo') draft.tmodo = 'ufficiale'; dchg(); renderPanel(); }));
+      grid.appendChild(tile(draft[cat] === r.id, !un, r.nome, th, sub, function () { if (!un) { msg.textContent = 'Ancora bloccata: ' + r.desc; return; } msg.textContent = ''; draft[cat] = r.id; if (cat === 'titolo') draft.tmodo = 'ufficiale'; dchg(); renderPanel(); }));
     });
     if (cat === 'effetto') grid.insertBefore(tile(draft.effetto === null, false, 'Nessun effetto', '', '', function () { draft.effetto = null; dchg(); renderPanel(); }), grid.firstChild);
     wrap.appendChild(grid);
   }
-  function chipsFor(map, key, label, wrap, multi) {
-    var f = el('div', 't2-fld'); f.appendChild(el('span', 't2-lab', label)); var row = el('div', 't2-chips');
-    Object.keys(map).forEach(function (k) {
-      var nm = Array.isArray(map[k]) ? map[k][0] : map[k], on = multi ? (draft.st.dc || []).indexOf(k) >= 0 : (draft.st[key] !== undefined ? draft.st[key] : T3.DEFAULTS[key]) === k;
-      var c = el('button', 't2-chip' + (on ? ' on' : ''), nm); c.type = 'button'; c.setAttribute('aria-pressed', on ? 'true' : 'false');
-      c.addEventListener('click', function () { if (multi) { var l = (draft.st.dc || []).slice(), i = l.indexOf(k); if (i >= 0) l.splice(i, 1); else if (l.length < 4) l.push(k); setSt({ dc: l.length ? l : null }); } else setSt(Object.fromEntries([[key, k]])); renderPanel(); });
-      row.appendChild(c);
-    }); f.appendChild(row); wrap.appendChild(f);
+  function startPhoto(file, dataUrl, msg) {
+    var ok = T.photoFlow($('t2Root'), draft.avatar === 'photo' ? { kind: 'photo', id: 'agente' } : { kind: 'preset', id: draft.avatar }, file, dataUrl, function (dr, err) { if (dr && dr.photo) { draft.photo = dr.photo; draft.avatar = 'photo'; dchg(); renderPanel(); } else if (err) msg.textContent = err; });
+    if (!ok) msg.textContent = 'Chiudi prima l’editor classico.';
   }
+  function backupCard(body, msg) {
+    var c = card('Copie di sicurezza'); body.appendChild(c); var info = {}; try { info = ID.backupInfo(); } catch (e) {}
+    c.appendChild(el('p', 't2-dim', info && info.valid ? 'Esiste una copia verificata dei dati d’identità e Friends, creata prima dell’aggiornamento dell’identità. Conservane un file.' : 'Non serve nessuna copia: non c’erano dati da proteggere.'));
+    if (info && info.valid) {
+      var row = el('div', 't2-row');
+      row.appendChild(button('Scarica copia', 't2-primary', function () { var t = ID.backupText(); if (!t) { msg.textContent = 'Copia non disponibile.'; return; } var a = D.createElement('a'); a.href = W.URL.createObjectURL(new W.Blob([t], { type: 'application/json' })); a.download = 'tva-backup-identita-' + today() + '.json'; D.body.appendChild(a); a.click(); a.remove(); W.setTimeout(function () { W.URL.revokeObjectURL(a.href); }, 4000); }, 'share'));
+      var conf = el('div', 't2-conf'); conf.hidden = true; conf.appendChild(el('p', '', 'Il ripristino sostituisce i dati Friends e d’identità attuali con quelli della copia: ciò che è arrivato dopo andrà perso. Continuare?'));
+      var cr = el('div', 't2-row'); cr.appendChild(button('Sì, ripristina', 't2-primary', function () { var r = ID.restoreFull(null); msg.textContent = r && r.ok ? 'Copia ripristinata.' : ((r && r.reason) || 'Ripristino non riuscito.'); conf.hidden = true; if (r && r.ok) { reStage(); } })); cr.appendChild(button('Annulla', 't2-ghost', function () { conf.hidden = true; })); conf.appendChild(cr);
+      row.appendChild(button('Ripristina dalla copia…', 't2-ghost', function () { conf.hidden = false; })); c.appendChild(row); c.appendChild(conf);
+    }
+    if (ID.backupParse) {
+      var f = el('label', 't2-fld'); f.appendChild(el('span', 't2-lab', 'Ripristina da un file di copia')); var fi = el('input'); fi.type = 'file'; fi.accept = 'application/json,.json'; fi.setAttribute('aria-label', 'Ripristina da file di copia');
+      fi.addEventListener('change', function () { var fl = fi.files && fi.files[0]; if (!fl) return; if (fl.size > 6 * 1024 * 1024) { msg.textContent = 'File troppo grande.'; return; } var rd = new W.FileReader(); rd.onload = function () { var bk = ID.backupParse(String(rd.result)); fi.value = ''; if (!bk) { msg.textContent = 'File non valido: nessuna modifica.'; return; } var r = ID.restoreFull(bk); msg.textContent = r && r.ok ? 'Copia ripristinata dal file.' : ((r && r.reason) || 'Ripristino non riuscito.'); }; rd.readAsText(fl); });
+      f.appendChild(fi); c.appendChild(f);
+    }
+    c.appendChild(el('p', 't2-dim', 'La foto personale resta solo su questo dispositivo e non è inclusa nelle copie.'));
+  }
+  var AT_CATS = [['avatar', 'Avatar'], ['stile', 'Stile'], ['titolo', 'Titoli'], ['cornice', 'Cornici'], ['tema', 'Temi'], ['effetto', 'Effetti'], ['sfondo', 'Sfondi'], ['dati', 'Copie']];
   function secAtelier(b) {
     ensureDraft(); var msg = el('p', 't2-note t2-dim', ''); msg.setAttribute('role', 'status'); msg.setAttribute('aria-live', 'polite');
     var bar = el('div', 't2-atbar'); bar.appendChild(button('Annulla', 't2-ghost', discard));
-    var mid = el('div', 't2-atmid'); mid.appendChild(el('b', '', 'Atelier')); var stt = el('small', '', ''); stt.id = 't2State'; stt.setAttribute('role', 'status'); mid.appendChild(stt); bar.appendChild(mid);
+    var mid = el('div', 't2-atmid'); var mini = el('div', 't2-mini'); mini.id = 't2Mini'; mini.setAttribute('aria-hidden', 'true'); mini.innerHTML = lastFront; mid.appendChild(mini); var stt = el('small', '', ''); stt.id = 't2State'; stt.setAttribute('role', 'status'); mid.appendChild(stt); bar.appendChild(mid);
     var sv = button('Salva', 't2-primary', saveDraft); sv.id = 't2Save'; bar.appendChild(sv); b.appendChild(bar);
-    var tabs = el('div', 't2-subtabs'); tabs.setAttribute('role', 'tablist');
-    [['avatar', 'Avatar'], ['stile', 'Stile'], ['titolo', 'Titoli'], ['cornice', 'Cornici'], ['tema', 'Temi'], ['effetto', 'Effetti'], ['sfondo', 'Sfondi']].forEach(function (t) { var x = el('button', 't2-subtab' + (atTab === t[0] ? ' on' : ''), t[1]); x.type = 'button'; x.setAttribute('role', 'tab'); x.setAttribute('aria-selected', atTab === t[0] ? 'true' : 'false'); x.addEventListener('click', function () { atTab = t[0]; renderPanel(); }); tabs.appendChild(x); });
-    b.appendChild(tabs); var body = el('div', 't2-atbody');
+    var tabs = el('div', 't2-cats'); tabs.setAttribute('role', 'tablist');
+    AT_CATS.forEach(function (t) { var x = el('button', 't2-cat' + (atTab === t[0] ? ' on' : ''), t[1]); x.type = 'button'; x.setAttribute('role', 'tab'); x.setAttribute('aria-selected', atTab === t[0] ? 'true' : 'false'); x.addEventListener('click', function () { atTab = t[0]; renderPanel(); }); tabs.appendChild(x); });
+    b.appendChild(tabs); var cur_ = AT_CATS.filter(function (t) { return t[0] === atTab; })[0]; b.appendChild(el('h4', 't2-curcat', 'Stai modificando: ' + (cur_ ? cur_[1] : ''))); var body = el('div', 't2-atbody');
     if (atTab === 'avatar') {
-      body.appendChild(el('p', 't2-dim t2-note', 'Otto avatar originali. La tua foto resta sul dispositivo (mai sincronizzata): per cambiarla apri l’editor completo.'));
+      var nf = el('label', 't2-fld'); nf.appendChild(el('span', 't2-lab', 'Nome agente')); var ni = el('input', 't2-in'); ni.type = 'text'; ni.maxLength = 20; ni.value = draft.name; ni.placeholder = 'Il tuo nome…'; ni.addEventListener('input', function () { draft.name = ni.value.slice(0, 20); dchg(); }); nf.appendChild(ni); body.appendChild(nf);
       var g = el('div', 't2-grid t2-grid-av'); A.avatars.forEach(function (a, i) { g.appendChild(tile(draft.avatar === a.id, false, a.nome, A.avatarThumb({ avatar: { kind: 'preset', id: a.id } }, 'qa' + i), '', function () { draft.avatar = a.id; dchg(); renderPanel(); })); });
-      if (cur().photo) g.appendChild(tile(draft.avatar === 'photo', false, 'La tua foto', A.avatarThumb({ avatar: { kind: 'photo', url: cur().photo } }, 'qap'), '', function () { draft.avatar = 'photo'; dchg(); renderPanel(); }));
-      body.appendChild(g);
+      if (draft.photo) g.appendChild(tile(draft.avatar === 'photo', false, 'La tua foto', A.avatarThumb({ avatar: { kind: 'photo', url: draft.photo } }, 'qap'), '', function () { draft.avatar = 'photo'; dchg(); renderPanel(); }));
+      body.appendChild(g); body.appendChild(el('h4', 't2-h4', 'Foto personale'));
+      var pr = el('div', 't2-row'), file = el('input'); file.type = 'file'; file.accept = 'image/*'; file.hidden = true; file.setAttribute('aria-label', 'Scegli una foto'); file.addEventListener('change', function () { if (file.files && file.files[0]) startPhoto(file.files[0], null, msg); });
+      pr.appendChild(button(draft.photo ? 'Cambia foto' : 'Carica foto', 't2-primary', function () { file.value = ''; file.click(); })); pr.appendChild(file);
+      if (draft.photo) { pr.appendChild(button('Modifica ritaglio', 't2-ghost', function () { startPhoto(null, draft.photo, msg); })); pr.appendChild(button('Rimuovi', 't2-ghost', function () { draft.photo = null; if (draft.avatar === 'photo') draft.avatar = 'agente'; msg.textContent = 'Foto rimossa (si applica al salvataggio).'; dchg(); renderPanel(); })); }
+      body.appendChild(pr); body.appendChild(el('p', 't2-dim', 'La foto resta solo su questo dispositivo: non viene caricata online né sincronizzata, e non è inclusa nelle copie.'));
+      var got = BADGES().filter(function (x) { return x.got; }); body.appendChild(el('h4', 't2-h4', 'Distintivi in evidenza · ' + draft.badges.length + '/3'));
+      if (!got.length) body.appendChild(el('p', 't2-dim', 'Non hai ancora distintivi: appariranno qui appena ne otterrai uno.')); else { var bl = el('div', 't2-chips'); got.forEach(function (x) { var on = draft.badges.indexOf(x.id) >= 0, c = el('button', 't2-chip t2-chip-b' + (on ? ' on' : '')); c.type = 'button'; c.setAttribute('aria-pressed', on ? 'true' : 'false'); c.appendChild(fromHtml(GLY(x.id), 't2-chip-ic')); c.appendChild(D.createTextNode(x.name)); c.addEventListener('click', function () { var i = draft.badges.indexOf(x.id); if (i >= 0) draft.badges.splice(i, 1); else if (draft.badges.length >= 3) { msg.textContent = 'Puoi esporne al massimo tre: toglierne uno per sceglierne un altro.'; return; } else draft.badges.push(x.id); msg.textContent = ''; dchg(); renderPanel(); }); bl.appendChild(c); }); body.appendChild(bl); }
     } else if (atTab === 'stile') {
-      body.appendChild(el('p', 't2-dim t2-note', 'I preset usano solo elementi liberi: non sbloccano né sostituiscono cornici, temi o effetti legati ai gradi.'));
-      var pg = el('div', 't2-grid t2-grid-pr'); T3.PRESETS.forEach(function (p) { pg.appendChild(tile(draft.st.pr === p.id, false, p.name, '', '', function () { draft.st = T3.applyPreset(draft.st, p.id); dchg(); renderPanel(); })); }); body.appendChild(pg);
-      chipsFor(T3.TYPO, 'ty', 'Carattere', body); chipsFor(T3.BGS, 'bg', 'Sfondo (statico)', body); chipsFor(T3.TEXS, 'tx', 'Texture', body); chipsFor(T3.FRS, 'fr', 'Cornice di stile', body); chipsFor(T3.DECS, 'dc', 'Decorazioni (fino a 4)', body, true); chipsFor(T3.FXS, 'fx', 'Effetto di stile', body); chipsFor(T3.ICS, 'ic', 'Codice', body); chipsFor(T3.LYS, 'ly', 'Layout', body);
-      var fin = {}; EM.finishKeys.forEach(function (k) { fin[k] = k.charAt(0).toUpperCase() + k.slice(1); }); chipsFor(fin, 'fi', 'Finitura', body);
-      [['pc', 'Colore primario'], ['sc', 'Colore secondario']].forEach(function (q) { var f = el('label', 't2-fld'); f.appendChild(el('span', 't2-lab', q[1])); var i = el('input'); i.type = 'color'; i.value = draft.st[q[0]] || T3.DEFAULTS[q[0]]; i.addEventListener('input', function () { setSt(Object.fromEntries([[q[0], i.value]])); }); f.appendChild(i); body.appendChild(f); });
-      var rf = el('label', 't2-fld'), rl = el('span', 't2-lab', 'Intensità effetto ' + (draft.st.fxi !== undefined ? draft.st.fxi : T3.DEFAULTS.fxi) + '%'), ri = el('input'); ri.type = 'range'; ri.min = 0; ri.max = 100; ri.step = 5; ri.value = draft.st.fxi !== undefined ? draft.st.fxi : T3.DEFAULTS.fxi; ri.addEventListener('input', function () { rl.textContent = 'Intensità effetto ' + ri.value + '%'; setSt({ fxi: +ri.value }); }); rf.appendChild(rl); rf.appendChild(ri); body.appendChild(rf);
+      T3.panel(body, shim, { el: el, flash: toast, refresh: function () { if (shim.side && shim.side !== side) side = shim.side; dchg(); renderPanel(); }, soft: function () { dchg(); } });
     } else if (atTab === 'titolo') {
       var pf = el('div', 't2-fld'); pf.appendChild(el('span', 't2-lab', 'Titolo personale (max ' + C.TITLE_MAX + ' caratteri) — distinto dal rango'));
       var ti = el('input', 't2-in'); ti.type = 'text'; ti.maxLength = C.TITLE_MAX; ti.value = draft.ttesto; ti.placeholder = 'Es. Guardiano delle Varianti'; var cnt = el('small', 't2-dim', Array.from(draft.ttesto).length + '/' + C.TITLE_MAX);
-      ti.addEventListener('input', function () { draft.ttesto = C.validTitle(ti.value.slice(0, 80)); if (draft.ttesto) draft.tmodo = 'personale'; else draft.tmodo = 'ufficiale'; cnt.textContent = Array.from(draft.ttesto).length + '/' + C.TITLE_MAX; dchg(); });
+      ti.addEventListener('input', function () { draft.ttesto = C.validTitle(ti.value.slice(0, 80)); draft.tmodo = draft.ttesto ? 'personale' : 'ufficiale'; cnt.textContent = Array.from(draft.ttesto).length + '/' + C.TITLE_MAX; dchg(); });
       pf.appendChild(ti); pf.appendChild(cnt); var use = el('div', 't2-chips'); [['ufficiale', 'Usa un titolo ufficiale'], ['personale', 'Usa il titolo personale']].forEach(function (m) { var c = el('button', 't2-chip' + (draft.tmodo === m[0] ? ' on' : ''), m[1]); c.type = 'button'; c.setAttribute('aria-pressed', draft.tmodo === m[0] ? 'true' : 'false'); c.addEventListener('click', function () { if (m[0] === 'personale' && !draft.ttesto) { msg.textContent = 'Scrivi prima il titolo personale.'; return; } draft.tmodo = m[0]; dchg(); renderPanel(); }); use.appendChild(c); }); pf.appendChild(use); body.appendChild(pf);
       body.appendChild(el('h4', 't2-h4', 'Titoli ufficiali (ottenuti con la progressione)')); rewardTiles('titolo', body, msg);
     } else if (atTab === 'sfondo') {
-      var sn = snap(); body.appendChild(el('h4', 't2-h4', 'Sfondi animati (12)'));
-      var ag = el('div', 't2-grid t2-grid-bg'); C.BGS.forEach(function (bg) {
-        var un = C.isUnlocked(S2, bg.id), r = C.evalCond(bg.cond, sn), th = '<span class="t2-bgth">' + (un ? SC.scene(bg.id, 'th' + bg.id.length) : '<span class="t2-bgph"></span>') + '</span>';
+      var sn = snap(); var ag = el('div', 't2-grid t2-grid-bg'); C.BGS.forEach(function (bg) {
+        var un = C.isUnlocked(S2, bg.id), r = C.evalCond(bg.cond, sn), th = '<span class="t2-bgth' + (un ? '' : ' t2-bgl') + '">' + SC.scene(bg.id, 'th' + bg.id.length) + '</span>';
         ag.appendChild(tile(draft.bg === bg.id, !un, bg.n, th, un ? (C.isFree(bg) ? 'Disponibile' : 'Sbloccato') : C.reqText(bg.cond) + ' · ' + C.progText(bg.cond, r), function () { if (!un) { msg.textContent = C.reqText(bg.cond) + ' — ' + C.progText(bg.cond, r); if (r.pend) loadAtlas(function () { refreshUnlocks(); renderPanel(); }); return; } msg.textContent = ''; draft.bg = draft.bg === bg.id ? null : bg.id; dchg(); renderPanel(); }));
       }); body.appendChild(ag);
       body.appendChild(el('h4', 't2-h4', 'Animazioni')); var ar = el('div', 't2-chips'); [['auto', 'Automatiche'], ['statico', 'Statico'], ['off', 'Nessuno sfondo animato']].forEach(function (m) { var c = el('button', 't2-chip' + (draft.anim === m[0] ? ' on' : ''), m[1]); c.type = 'button'; c.setAttribute('aria-pressed', draft.anim === m[0] ? 'true' : 'false'); c.addEventListener('click', function () { draft.anim = m[0]; dchg(); renderPanel(); }); ar.appendChild(c); }); body.appendChild(ar);
-      body.appendChild(el('p', 't2-dim t2-note', 'Le animazioni sono leggere e si fermano con «Statico» o con la riduzione del movimento del sistema. Gli sfondi si aggiungono a quelli statici dello stile.'));
-      var sg = el('div', 't2-fld'); sg.appendChild(el('span', 't2-lab', 'Sfondi statici esistenti: scheda Stile → «Sfondo (statico)».')); body.appendChild(sg);
-      if (sn.dossier === null || sn.uni === null) loadAtlas(function (ok) { if (ok) { var n0 = Object.keys(S2.sbloccati).length; refreshUnlocks(); if (Object.keys(S2.sbloccati).length !== n0 || atTab === 'sfondo') renderPanel(); } });
-    } else { rewardTiles(atTab, body, msg); }
+      body.appendChild(el('p', 't2-dim t2-note', 'Gli sfondi animati si aggiungono a quelli statici dello stile (scheda Stile). Le animazioni sono leggere e si fermano con «Statico» o con la riduzione del movimento del sistema.'));
+      if (sn.dossier === null || sn.uni === null) loadAtlas(function (ok) { if (ok) { var n0 = Object.keys(S2.sbloccati).length; refreshUnlocks(); if (Object.keys(S2.sbloccati).length !== n0 && atTab === 'sfondo' && sec === 'atelier') renderPanel(); } });
+    } else if (atTab === 'dati') { backupCard(body, msg); }
+    else rewardTiles(atTab, body, msg);
     b.appendChild(body); b.appendChild(msg);
-    var ec = el('div', 't2-row'); ec.appendChild(button('Editor completo', 't2-ghost', function () { try { T.open(atTab === 'avatar' ? 'avatar' : atTab === 'stile' ? 'stile' : atTab === 'sfondo' ? 'stile' : atTab); } catch (e) {} })); b.appendChild(ec);
+    var ec = el('div', 't2-row'); ec.appendChild(button('Apri l’editor classico', 't2-ghost', function () { try { T.open(atTab === 'avatar' ? 'avatar' : atTab === 'stile' ? 'stile' : ['titolo', 'cornice', 'tema', 'effetto'].indexOf(atTab) >= 0 ? atTab : 'stile'); } catch (e) {} })); b.appendChild(ec);
     dirtyUI();
   }
 
   /* ---- Collezione ---- */
   var colTab = 'emblemi', colF = { cat: 'tutte', rar: 'tutte', stato: 'tutti' }, colSel = null;
-  function chipRow(opts, val, fn) { var row = el('div', 't2-chips'); opts.forEach(function (o) { var c = el('button', 't2-chip' + (val === o[0] ? ' on' : ''), o[1]); c.type = 'button'; c.setAttribute('aria-pressed', val === o[0] ? 'true' : 'false'); c.addEventListener('click', function () { fn(o[0]); }); row.appendChild(c); }); return row; }
+  function select(label, opts, val, fn) { var s = el('select', 't2-sel'); s.setAttribute('aria-label', label); opts.forEach(function (o) { var op = el('option', '', o[1]); op.value = o[0]; if (val === o[0]) op.selected = true; s.appendChild(op); }); s.addEventListener('change', function () { fn(s.value); }); return s; }
   function detail(box, o) {
-    var d = card(o.title); if (o.sub) d.appendChild(el('p', 't2-dim', o.sub)); if (o.desc) d.appendChild(el('p', '', o.desc)); if (o.req) d.appendChild(el('p', 't2-req', o.req));
+    var d = card(o.title); d.classList.add('t2-detc'); if (o.sub) d.appendChild(el('p', 't2-dim', o.sub)); if (o.desc) d.appendChild(el('p', '', o.desc)); if (o.req) d.appendChild(el('p', 't2-req', o.req));
     var row = el('div', 't2-row'); (o.acts || []).forEach(function (a) { row.appendChild(button(a[0], a[2] || '', a[1])); }); if (row.childNodes.length) d.appendChild(row); box.appendChild(d);
   }
   function addToVetrina(it) { return function () { var v = vet(), i = v.findIndex(function (x) { return x && x.t === it.t && x.id === it.id; }); if (i >= 0) { toast('È già nella vetrina'); return; } var e = v.findIndex(function (x) { return !x; }); if (e < 0) { toast('Vetrina piena: libera uno slot dalla scheda Tessera.'); return; } setSlot(e, it); toast('Aggiunto alla vetrina'); }; }
   function secCollezione(b) {
-    b.appendChild(head('Collezione', 'Emblemi, ricompense, distintivi e sfondi: ottenuti e ancora da sbloccare.'));
-    b.appendChild(chipRow([['emblemi', 'Emblemi (56)'], ['ricompense', 'Ricompense (' + RW.catalog.length + ')'], ['badge', 'Distintivi'], ['sfondi', 'Sfondi (12)']], colTab, function (t) { colTab = t; colSel = null; renderPanel(); }));
-    var g = el('div', 't2-grid t2-grid-col'), det = el('div', 't2-det');
+    var seg = el('div', 't2-seg'); [['emblemi', 'Emblemi'], ['ricompense', 'Ricompense'], ['badge', 'Distintivi'], ['sfondi', 'Sfondi']].forEach(function (t) { var x = el('button', 't2-segb' + (colTab === t[0] ? ' on' : ''), t[1]); x.type = 'button'; x.setAttribute('aria-pressed', colTab === t[0] ? 'true' : 'false'); x.addEventListener('click', function () { colTab = t[0]; colSel = null; renderPanel(); }); seg.appendChild(x); }); b.appendChild(seg);
+    var g = el('div', 't2-grid t2-grid-col'), det = el('div', 't2-det'), fl = el('div', 't2-filters');
     if (colTab === 'emblemi') {
-      b.appendChild(chipRow([['tutte', 'Tutte']].concat(EM.cats.map(function (c, i) { return [String(i), c]; })), colF.cat, function (v) { colF.cat = v; renderPanel(); }));
-      var inUse = ID.get().emx;
+      var inUse = ID.get().emx; fl.appendChild(select('Categoria di emblemi', [['tutte', 'Tutte le categorie']].concat(EM.cats.map(function (c, i) { return [String(i), c]; })), colF.cat, function (v) { colF.cat = v; renderPanel(); })); b.appendChild(fl);
       for (var n = 0; n < 56; n++) (function (n) {
         if (colF.cat !== 'tutte' && Math.floor(n / 8) !== +colF.cat) return;
-        var t = tile(colSel === 'e' + n, false, EM.names[n] || ('Emblema ' + n), EM.svg(n, { p: '#2a1519', s: '#e3c79b' }), inUse === n ? 'In uso' : '', function () { colSel = 'e' + n; renderPanel(); }); g.appendChild(t);
+        g.appendChild(tile(colSel === 'e' + n, false, EM.names[n] || ('Emblema ' + n), EM.svg(n, { p: '#2a1519', s: '#e3c79b' }), inUse === n ? 'In uso' : '', function () { colSel = 'e' + n; renderPanel(); }));
       })(n);
-      if (colSel && colSel[0] === 'e') { var k = +colSel.slice(1); detail(det, { title: EM.names[k], sub: 'Categoria: ' + EM.cats[Math.floor(k / 8)], acts: [[inUse === k ? 'In uso' : 'Usa come emblema', function () { ID.set({ emx: k }, { fromTessera: true }); try { T.render(); } catch (e) {} var bx = $('t2Card'); if (bx) bx.removeAttribute('data-k'); stageLater(); renderPanel(); }, 't2-primary'], ['Aggiungi alla vetrina', addToVetrina({ t: 'emblema', id: 'e' + k })]] }); }
+      if (colSel && colSel[0] === 'e') { var k = +colSel.slice(1); detail(det, { title: EM.names[k], sub: 'Categoria: ' + EM.cats[Math.floor(k / 8)], acts: [[inUse === k ? 'In uso' : 'Usa come emblema', function () { ID.set({ emx: k }, { fromTessera: true }); try { T.render(); } catch (e) {} reStage(); renderPanel(); }, 't2-primary'], ['Aggiungi alla vetrina', addToVetrina({ t: 'emblema', id: 'e' + k })]] }); }
     } else if (colTab === 'ricompense') {
-      b.appendChild(chipRow([['tutte', 'Tutte'], ['titolo', 'Titoli'], ['cornice', 'Cornici'], ['tema', 'Temi'], ['effetto', 'Effetti']], colF.cat, function (v) { colF.cat = v; renderPanel(); }));
-      b.appendChild(chipRow([['tutte', 'Tutte le rarità']].concat(Object.keys(RW.rarities).map(function (k) { return [k, RW.rarities[k]]; })), colF.rar, function (v) { colF.rar = v; renderPanel(); }));
-      b.appendChild(chipRow([['tutti', 'Tutte'], ['ottenute', 'Ottenute'], ['bloccate', 'Da sbloccare']], colF.stato, function (v) { colF.stato = v; renderPanel(); }));
-      var n2 = 0; RW.catalog.forEach(function (r, i) {
-        if ((colF.cat !== 'tutte' && r.cat !== colF.cat) || (colF.rar !== 'tutte' && r.rar !== colF.rar)) return; var un = RW.isUnlocked(r.id); if ((colF.stato === 'ottenute' && !un) || (colF.stato === 'bloccate' && un)) return; n2++;
-        g.appendChild(tile(colSel === r.id, !un, r.nome, r.cat === 'titolo' ? '' : A.thumb(r.cat, r.id, 'qc' + i, {}), RW.rarities[r.rar], function () { colSel = r.id; renderPanel(); }));
+      fl.appendChild(select('Tipo di ricompensa', [['tutte', 'Tutti i tipi'], ['titolo', 'Titoli'], ['cornice', 'Cornici'], ['tema', 'Temi'], ['effetto', 'Effetti']], colF.cat, function (v) { colF.cat = v; renderPanel(); }));
+      fl.appendChild(select('Rarità', [['tutte', 'Tutte le rarità']].concat(Object.keys(RW.rarities).map(function (k) { return [k, RW.rarities[k]]; })), colF.rar, function (v) { colF.rar = v; renderPanel(); }));
+      fl.appendChild(select('Stato', [['tutti', 'Tutte'], ['ottenute', 'Ottenute'], ['bloccate', 'Da sbloccare']], colF.stato, function (v) { colF.stato = v; renderPanel(); })); b.appendChild(fl);
+      var n2 = 0, got = 0; RW.catalog.forEach(function (r, i) {
+        if ((colF.cat !== 'tutte' && r.cat !== colF.cat) || (colF.rar !== 'tutte' && r.rar !== colF.rar)) return; var un = RW.isUnlocked(r.id); if ((colF.stato === 'ottenute' && !un) || (colF.stato === 'bloccate' && un)) return; n2++; if (un) got++;
+        g.appendChild(tile(colSel === r.id, !un, r.nome, r.cat === 'titolo' ? '' : A.thumb(r.cat, r.id, 'qc' + i, {}), RW.rarities[r.rar] + (un ? ' · ottenuta' : ''), function () { colSel = r.id; renderPanel(); }));
       });
       if (!n2) g.appendChild(el('p', 't2-dim', 'Nessuna ricompensa con questi filtri.'));
       var rr = colSel && RW.catalog.filter(function (x) { return x.id === colSel; })[0];
-      if (rr) { var un2 = RW.isUnlocked(rr.id), pg2 = RW.progress(rr.id), eq = RW.equipped()[rr.cat] === rr.id; detail(det, { title: rr.nome, sub: RW.rarities[rr.rar] + ' · ' + ({ titolo: 'Titolo', cornice: 'Cornice', tema: 'Tema', effetto: 'Effetto' })[rr.cat], desc: rr.desc, req: un2 ? 'Ottenuta' : 'Da sbloccare' + (pg2 && pg2.tot > 1 ? ' (' + pg2.cur + '/' + pg2.tot + ')' : ''), acts: un2 ? [[eq ? 'Equipaggiata' : 'Equipaggia', function () { RW.equip(rr.cat, rr.id); try { T.render(); } catch (e) {} var bx = $('t2Card'); if (bx) bx.removeAttribute('data-k'); stageLater(); renderPanel(); }, 't2-primary'], ['Aggiungi alla vetrina', addToVetrina({ t: 'ricompensa', id: rr.id })]] : [] }); }
+      if (rr) { var un2 = RW.isUnlocked(rr.id), pg2 = RW.progress(rr.id), eq = RW.equipped()[rr.cat] === rr.id; detail(det, { title: rr.nome, sub: RW.rarities[rr.rar] + ' · ' + ({ titolo: 'Titolo', cornice: 'Cornice', tema: 'Tema', effetto: 'Effetto' })[rr.cat], desc: rr.desc, req: un2 ? 'Ottenuta' : 'Da sbloccare' + (pg2 && pg2.tot > 1 ? ' (' + pg2.cur + '/' + pg2.tot + ')' : ''), acts: un2 ? [[eq ? 'Equipaggiata' : 'Equipaggia', function () { RW.equip(rr.cat, rr.id); try { T.render(); } catch (e) {} reStage(); renderPanel(); }, 't2-primary'], ['Aggiungi alla vetrina', addToVetrina({ t: 'ricompensa', id: rr.id })]] : [] }); }
     } else if (colTab === 'badge') {
-      BADGES().forEach(function (x) { var t = tile(colSel === x.id, !x.got, x.name, '<svg viewBox="-24 -24 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" transform="scale(1.5)">' + A.glyph(x.id) + '</g></svg>', x.got ? 'Ottenuto' : 'Da ottenere', function () { colSel = x.id; renderPanel(); }); g.appendChild(t); });
+      BADGES().forEach(function (x) { g.appendChild(tile(colSel === x.id, !x.got, x.name, GLY(x.id), x.got ? 'Ottenuto' : 'Da ottenere', function () { colSel = x.id; renderPanel(); })); });
       var bb = colSel && BADGES().filter(function (x) { return x.id === colSel; })[0]; if (bb) detail(det, { title: bb.name, desc: bb.desc, req: bb.got ? 'Ottenuto' : 'Da ottenere', acts: bb.got ? [['Aggiungi alla vetrina', addToVetrina({ t: 'badge', id: bb.id })]] : [] });
     } else {
-      var sn2 = snap(); C.BGS.forEach(function (bg) { var un = C.isUnlocked(S2, bg.id), r = C.evalCond(bg.cond, sn2); g.appendChild(tile(colSel === bg.id, !un, bg.n, '<span class="t2-bgth">' + (un ? SC.scene(bg.id, 'cc' + bg.id.length) : '<span class="t2-bgph"></span>') + '</span>', un ? (C.isFree(bg) ? 'Disponibile' : 'Sbloccato') : C.progText(bg.cond, r), function () { colSel = bg.id; renderPanel(); })); });
-      var gg = colSel && C.BG_BY[colSel]; if (gg) { var un3 = C.isUnlocked(S2, gg.id), r3 = C.evalCond(gg.cond, sn2); detail(det, { title: gg.n, req: un3 ? (C.isFree(gg) ? 'Disponibile subito' : 'Sbloccato (permanente)') : C.reqText(gg.cond) + ' — ' + C.progText(gg.cond, r3), acts: un3 ? [['Usa come sfondo', function () { S2.sfondoAnim = gg.id; saveS2(); if (draft) draft.bg = gg.id; var bx = $('t2Card'); if (bx) bx.removeAttribute('data-k'); stageLater(); toast('Sfondo applicato'); renderPanel(); }, 't2-primary']] : [] }); }
+      var sn2 = snap(); C.BGS.forEach(function (bg) { var un = C.isUnlocked(S2, bg.id), r = C.evalCond(bg.cond, sn2); g.appendChild(tile(colSel === bg.id, !un, bg.n, '<span class="t2-bgth' + (un ? '' : ' t2-bgl') + '">' + SC.scene(bg.id, 'cc' + bg.id.length) + '</span>', un ? (C.isFree(bg) ? 'Disponibile' : 'Sbloccato') : C.progText(bg.cond, r), function () { colSel = bg.id; renderPanel(); })); });
+      var gg = colSel && C.BG_BY[colSel]; if (gg) { var un3 = C.isUnlocked(S2, gg.id), r3 = C.evalCond(gg.cond, sn2); detail(det, { title: gg.n, req: un3 ? (C.isFree(gg) ? 'Disponibile subito' : 'Sbloccato (permanente)') : C.reqText(gg.cond) + ' — ' + C.progText(gg.cond, r3), acts: un3 ? [['Usa come sfondo', function () { S2.sfondoAnim = gg.id; saveS2(); if (draft) draft.bg = gg.id; reStage(); toast('Sfondo applicato'); renderPanel(); }, 't2-primary']] : [] }); }
       if (sn2.dossier === null) loadAtlas(function (ok) { if (ok) { refreshUnlocks(); if (sec === 'collezione' && colTab === 'sfondi') renderPanel(); } });
     }
     b.appendChild(g); b.appendChild(det);
@@ -343,68 +378,66 @@
 
   /* ---- Identità ---- */
   function secIdentita(b) {
-    b.appendChild(head('Passaporto Variante', 'La tua identità, condivisa con Tessera e (in futuro) con Friends: nessun profilo duplicato.'));
-    var idt = ID.get(), c = card(); kv(c, 'VAR-ID', txt('tesseraId') || 'VAR-000000');
-    var nf = el('label', 't2-fld'); nf.appendChild(el('span', 't2-lab', 'Nome')); var ni = el('input', 't2-in'); ni.type = 'text'; ni.maxLength = 20; ni.value = (cur().name || ''); ni.addEventListener('change', function () { var src = $('tesseraNameInput'); var val = C.validTitle(ni.value).slice(0, 20); if (src) { src.value = val; src.dispatchEvent(new W.Event('input', { bubbles: true })); } else { try { W.localStorage.setItem(P + 'user-name', val); } catch (e) {} } stageLater(); toast('Nome aggiornato'); }); nf.appendChild(ni); c.appendChild(nf);
-    var mf = el('label', 't2-fld'); mf.appendChild(el('span', 't2-lab', 'Motto')); var mi = el('input', 't2-in'); mi.type = 'text'; mi.maxLength = 60; mi.value = idt.motto || ''; mi.addEventListener('change', function () { ID.set({ motto: C.validTitle(mi.value).slice(0, 60) }, { fromTessera: true }); var bx = $('t2Card'); if (bx) bx.removeAttribute('data-k'); stageLater(); toast('Motto salvato'); }); mf.appendChild(mi); c.appendChild(mf);
-    function pickRow(label, val, kind, onPick, onClear) { var r = el('div', 't2-kv'); r.appendChild(el('span', '', label)); var bt = button(val || 'Scegli da TVA Atlas', 't2-ghost t2-pickbtn', function () { atlasPicker(kind, onPick); }); r.appendChild(bt); if (val) { var x = button('Rimuovi', 't2-ghost t2-x', onClear); x.setAttribute('aria-label', 'Rimuovi ' + label); r.appendChild(x); } c.appendChild(r); }
-    pickRow('Universo di origine', S2.origine.univ, 'uni', function (v) { S2.origine = { univ: v.n.slice(0, 60), uid: v.i.slice(0, 48) }; saveS2(); renderPanel(); }, function () { S2.origine = { univ: '', uid: '' }; saveS2(); renderPanel(); });
-    pickRow('Universo preferito', idt.univ, 'uni', function (v) { ID.set({ univ: v.n.slice(0, 60) }, { fromTessera: true }); S2.pref.univ = v.i; saveS2(); stageLater(); renderPanel(); }, function () { ID.set({ univ: '' }, { fromTessera: true }); S2.pref.univ = ''; saveS2(); stageLater(); renderPanel(); });
-    pickRow('Personaggio preferito', idt.ch, 'ch', function (v) { ID.set({ ch: v.n.slice(0, 60) }, { fromTessera: true }); S2.pref.ch = v.i; saveS2(); stageLater(); renderPanel(); }, function () { ID.set({ ch: '' }, { fromTessera: true }); S2.pref.ch = ''; saveS2(); stageLater(); renderPanel(); });
-    var m = modelOf(draftView(null), null); kv(c, 'Titolo', m.title + (S2.titolo.modo === 'personale' ? ' (personale)' : ' (ufficiale)')); b.appendChild(c);
-    var inf = card('Impostazioni identità'), bi = {}; try { bi = ID.backupInfo(); } catch (e) {}
-    kv(inf, 'Copia di sicurezza dell’identità', bi && bi.exists ? (bi.valid ? 'Presente e valida' : 'Presente, da verificare') : 'Non necessaria'); kv(inf, 'Foto personale', 'Solo su questo dispositivo');
-    var vc = el('label', 't2-sw'); var cb = el('input'); cb.type = 'checkbox'; cb.checked = !!S2.classica; cb.addEventListener('change', function () { S2.classica = cb.checked; saveS2(); applyMode(); }); vc.appendChild(cb); vc.appendChild(el('span', '', 'Mostra la vista classica della Tessera')); inf.appendChild(vc); b.appendChild(inf);
-    var pv = card('Privacy e condivisione'); pv.appendChild(el('p', 't2-dim', 'Predisposizione per la futura condivisione con il tuo partner (Friends 3.0). Oggi nulla viene condiviso o inviato: queste scelte restano sul dispositivo.'));
-    var NAMES = { carta: 'Tessera (fronte e retro)', identita: 'VAR-ID e identità Variante', rango: 'Rango e livello', titolo: 'Titolo personale', preferiti: 'Universo e personaggio preferito', statistiche: 'Statistiche di carriera', emblemi: 'Emblemi e ricompense', vetrina: 'Vetrina personale' };
-    C.CATEGORIES.forEach(function (k) { var r = el('label', 't2-sw'); var i = el('input'); i.type = 'checkbox'; i.checked = S2.privacy[k] === 'a'; i.addEventListener('change', function () { S2.privacy[k] = i.checked ? 'a' : 'p'; saveS2(); }); r.appendChild(i); r.appendChild(el('span', '', NAMES[k] + ' — ' + (i.checked ? 'condivisibile' : 'privato'))); i.addEventListener('change', function () { r.lastChild.textContent = NAMES[k] + ' — ' + (i.checked ? 'condivisibile' : 'privato'); }); pv.appendChild(r); });
+    var idt = ID.get(), c = el('section', 't2-pass-card'), v = cur(), m = modelOf(draftView(null), null);
+    var hd = el('div', 't2-pass-h'); hd.appendChild(el('span', '', 'PASSAPORTO VARIANTE')); hd.appendChild(el('span', '', 'TIME VARIANCE AUTHORITY')); c.appendChild(hd);
+    var mid = el('div', 't2-pass-m'); var em = el('div', 't2-pass-em'); em.innerHTML = EM.svg(typeof idt.emx === 'number' ? idt.emx : 0, { p: '#2a1519', s: '#e3c79b' }); mid.appendChild(em);
+    var tx = el('div', 't2-pass-t'); tx.appendChild(el('div', 't2-varid-lg', txt('tesseraId') || 'VAR-000000')); tx.appendChild(el('div', 't2-name', v.name || 'Variante')); tx.appendChild(el('div', 't2-sub', m.title)); if (idt.motto) tx.appendChild(el('div', 't2-motto', '«' + idt.motto + '»')); mid.appendChild(tx); c.appendChild(mid);
+    function stamp(label, val, kind, onPick, onClear) { var r = el('div', 't2-stamp'); var bt = el('button', 't2-stamp-b'); bt.type = 'button'; bt.appendChild(el('small', '', label)); bt.appendChild(el('b', val ? '' : 't2-empty', val || 'Non ancora scelto')); bt.appendChild(ic('right', 't2-chev')); bt.setAttribute('aria-label', label + ': ' + (val || 'non ancora scelto') + '. Cambia'); bt.addEventListener('click', function () { atlasPicker(kind, onPick); }); r.appendChild(bt); if (val) { var x = button('Rimuovi', 't2-ghost t2-x', onClear); x.setAttribute('aria-label', 'Rimuovi ' + label); r.appendChild(x); } c.appendChild(r); }
+    stamp('Universo di origine', S2.origine.univ, 'uni', function (q) { S2.origine = { univ: q.n.slice(0, 60), uid: q.i.slice(0, 48) }; saveS2(); renderPanel(); }, function () { S2.origine = { univ: '', uid: '' }; saveS2(); renderPanel(); });
+    stamp('Universo preferito', idt.univ, 'uni', function (q) { ID.set({ univ: q.n.slice(0, 60) }, { fromTessera: true }); S2.pref.univ = q.i; saveS2(); reStage(); renderPanel(); }, function () { ID.set({ univ: '' }, { fromTessera: true }); S2.pref.univ = ''; saveS2(); reStage(); renderPanel(); });
+    stamp('Personaggio preferito', idt.ch, 'ch', function (q) { ID.set({ ch: q.n.slice(0, 60) }, { fromTessera: true }); S2.pref.ch = q.i; saveS2(); reStage(); renderPanel(); }, function () { ID.set({ ch: '' }, { fromTessera: true }); S2.pref.ch = ''; saveS2(); reStage(); renderPanel(); });
+    b.appendChild(c);
+    var dt = el('details', 't2-det-x'); dt.appendChild(el('summary', '', 'Nome e motto'));
+    var nf = el('label', 't2-fld'); nf.appendChild(el('span', 't2-lab', 'Nome')); var ni = el('input', 't2-in'); ni.type = 'text'; ni.maxLength = 20; ni.value = (cur().name || ''); ni.addEventListener('change', function () { setNameValue(C.validTitle(ni.value).slice(0, 20)); reStage(); renderPanel(); toast('Nome aggiornato'); }); nf.appendChild(ni); dt.appendChild(nf);
+    var mf = el('label', 't2-fld'); mf.appendChild(el('span', 't2-lab', 'Motto')); var mi = el('input', 't2-in'); mi.type = 'text'; mi.maxLength = 60; mi.value = idt.motto || ''; mi.addEventListener('change', function () { ID.set({ motto: C.validTitle(mi.value).slice(0, 60) }, { fromTessera: true }); reStage(); renderPanel(); toast('Motto salvato'); }); mf.appendChild(mi); dt.appendChild(mf); b.appendChild(dt);
+    var pv = card('Cosa può vedere un amico'); pv.appendChild(el('p', 't2-dim', 'Quando potrai condividere la tua Tessera con un amico, vedrà solo ciò che scegli qui. Per ora non viene condiviso nulla: queste scelte restano sul tuo dispositivo.'));
+    var NAMES = { carta: 'La Tessera (fronte e retro)', identita: 'VAR-ID e nome', rango: 'Rango e livello', titolo: 'Titolo personale', preferiti: 'Universo e personaggio preferiti', statistiche: 'Registro di servizio', emblemi: 'Emblemi e ricompense', vetrina: 'La vetrina' };
+    C.CATEGORIES.forEach(function (k) { var r = el('label', 't2-sw'); var i = el('input'); i.type = 'checkbox'; i.checked = S2.privacy[k] === 'a'; var lab = el('span', '', NAMES[k] + ' — ' + (i.checked ? 'visibile' : 'privato')); i.addEventListener('change', function () { S2.privacy[k] = i.checked ? 'a' : 'p'; saveS2(); lab.textContent = NAMES[k] + ' — ' + (i.checked ? 'visibile' : 'privato'); }); r.appendChild(i); r.appendChild(lab); pv.appendChild(r); });
     b.appendChild(pv);
+    var al = el('details', 't2-det-x'); al.appendChild(el('summary', '', 'Altro')); var vc = el('label', 't2-sw'); var cb = el('input'); cb.type = 'checkbox'; cb.checked = !!S2.classica; cb.addEventListener('change', function () { S2.classica = cb.checked; saveS2(); applyMode(); }); vc.appendChild(cb); vc.appendChild(el('span', '', 'Mostra la vista classica della Tessera')); al.appendChild(vc); b.appendChild(al);
   }
 
   /* ---------- struttura ---------- */
-  function go(s) { sec = s; closeSheet(); renderTabs(); renderPanel(); if (panel && panel.scrollIntoView) { try { OV.scrollTo({ top: 0 }); } catch (e) { OV.scrollTop = 0; } } }
+  function go(s) { sec = s; closeSheet(); renderTabs(); renderPanel(); try { OV.scrollTo({ top: 0 }); } catch (e) { OV.scrollTop = 0; } }
   function renderTabs() { var bar = $('t2Tabs'); if (!bar) return; Array.prototype.forEach.call(bar.children, function (b) { var on = b.getAttribute('data-s') === sec; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); b.tabIndex = on ? 0 : -1; }); var r = $('t2Body'); if (r) r.setAttribute('data-sec', sec); }
   function renderPanel() {
-    if (!panel) return; panel.textContent = ''; var b = el('div', 't2-sec'); panel.appendChild(b);
+    if (!panel) return; var keep = OV.scrollTop; panel.textContent = ''; var b = el('div', 't2-sec'); panel.appendChild(b);
     try { ({ tessera: secTessera, carriera: secCarriera, atelier: secAtelier, collezione: secCollezione, identita: secIdentita })[sec](b); } catch (e) { b.appendChild(el('p', 't2-dim', 'Sezione momentaneamente non disponibile.')); if (W.console) W.console.error('Tessera TVA 3.0:', e); }
+    if (sec !== 'tessera') { try { OV.scrollTop = keep; } catch (e) {} }
   }
-  var origTitle = null;
   function applyMode() {
-    var h2 = OV.querySelector('.mg-header h2'), sub = OV.querySelector('.mg-header .mg-sub');
-    if (origTitle === null && h2) origTitle = [h2.innerHTML, sub ? sub.innerHTML : ''];
     var on = !S2.classica; OV.classList.toggle('t2-on', on);
-    if (h2) { if (on) h2.textContent = 'La mia Tessera'; else if (origTitle) h2.innerHTML = origTitle[0]; }
-    if (sub) { if (on) sub.textContent = 'La tua identità ufficiale negli Archivi Temporali.'; else if (origTitle) sub.innerHTML = origTitle[1]; }
     var back = $('t2Back'); if (!on) { if (!back) { var wrap = OV.querySelector('.tessera-wrap'); if (wrap) { var bb = button('Passa a «La mia Tessera»', 't2-primary t2-ret', function () { S2.classica = false; saveS2(); applyMode(); renderPanel(); }); bb.id = 't2Back'; wrap.parentNode.insertBefore(bb, wrap); } } } else if (back) back.remove();
     if (on) { stageLater(); renderPanel(); }
   }
   function build() {
     var root = el('div', 't2'); root.id = 't2Root';
+    var top = el('div', 't2-top'); var bk = el('label', 't2-back'); bk.setAttribute('for', 'tesseraToggle'); bk.setAttribute('role', 'button'); bk.tabIndex = 0; bk.setAttribute('aria-label', 'Torna alla guida'); bk.appendChild(ic('left')); bk.appendChild(el('span', '', 'Guida'));
+    bk.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); bk.click(); } }); top.appendChild(bk); top.appendChild(el('h2', 't2-title', 'La mia Tessera')); root.appendChild(top);
     var tabs = el('div', 't2-tabs'); tabs.id = 't2Tabs'; tabs.setAttribute('role', 'tablist'); tabs.setAttribute('aria-label', 'Sezioni di La mia Tessera');
     SECS.forEach(function (s) { var t = el('button', 't2-tab'); t.type = 'button'; t.setAttribute('role', 'tab'); t.setAttribute('data-s', s[0]); t.appendChild(ic(s[0])); t.appendChild(el('span', '', s[1])); t.addEventListener('click', function () { go(s[0]); }); t.addEventListener('keydown', function (e) { var i = SECS.findIndex(function (x) { return x[0] === sec; }); if (e.key === 'ArrowRight') { go(SECS[(i + 1) % 5][0]); tabs.children[(i + 1) % 5].focus(); } else if (e.key === 'ArrowLeft') { go(SECS[(i + 4) % 5][0]); tabs.children[(i + 4) % 5].focus(); } }); tabs.appendChild(t); });
     root.appendChild(tabs);
     var body = el('div', 't2-body'); body.id = 't2Body'; stage = el('div', 't2-stage'); stage.id = 't2Stage';
-    var cb = el('div', 't2-card'); cb.id = 't2Card'; stage.appendChild(cb);
+    var cb = el('div', 't2-card'); cb.id = 't2Card'; cb.tabIndex = 0; cb.setAttribute('role', 'button'); cb.setAttribute('aria-label', 'Tessera TVA: tocca per girare la carta'); stage.appendChild(cb); bindTilt(cb);
     var ctr = el('div', 't2-ctr'); var fl = button('Gira la carta', 't2-ghost', flip, 'flip'); fl.id = 't2Flip'; fl.setAttribute('aria-pressed', 'false'); ctr.appendChild(fl);
     var rl = el('label', 't2-sw t2-rot'); var ri = el('input'); ri.type = 'checkbox'; ri.checked = T3.styleNow().rot !== false; ri.addEventListener('change', function () { rotToggle(ri.checked); }); rl.appendChild(ri); rl.appendChild(el('span', '', 'Rotazione 3D')); ctr.appendChild(rl); stage.appendChild(ctr);
+    var acts = el('div', 't2-acts'); acts.appendChild(button('Personalizza', 't2-primary', function () { go('atelier'); }, 'atelier')); acts.appendChild(button('Condividi', '', function () { try { T.share(side); } catch (e) {} }, 'share')); stage.appendChild(acts);
     var vt = el('div', 't2-vet'); vt.id = 't2Vet'; stage.appendChild(vt); body.appendChild(stage); panel = el('div', 't2-panel'); panel.id = 't2Panel'; body.appendChild(panel); root.appendChild(body);
     var ts = el('div', 't2-toast'); ts.id = 't2Toast'; ts.setAttribute('role', 'status'); ts.setAttribute('aria-live', 'polite'); root.appendChild(ts);
     var h = OV.querySelector('.mg-header'); if (h && h.nextSibling) OV.insertBefore(root, h.nextSibling); else OV.appendChild(root);
     renderTabs();
   }
-  var opened = false;
   function onOpen() {
-    refreshUnlocks(); recompute(); if (!atCounts) loadAtlas(function (ok) { if (ok) { refreshUnlocks(); if (sec === 'atelier' || sec === 'collezione' || sec === 'carriera') renderPanel(); } });
-    if (!S2.classica) { var box = $('t2Card'); if (box) box.removeAttribute('data-k'); stageLater(); renderPanel(); }
+    refreshUnlocks(); recompute(); if (!atCounts) loadAtlas(function (ok) { if (ok) { refreshUnlocks(); if (sec === 'atelier' || sec === 'collezione' || sec === 'carriera' || sec === 'tessera') renderPanel(); } });
+    if (!S2.classica) { reStage(); renderPanel(); }
   }
-  /* Rivalutazione quando i dati reali cambiano (retroattiva): XP/livello e progresso Timeline */
   var obs = 0; function watch() { var x = $('tesseraXpTotale'); if (x && W.MutationObserver) new W.MutationObserver(function () { W.clearTimeout(obs); obs = W.setTimeout(function () { refreshUnlocks(); }, 300); }).observe(x, { childList: true, characterData: true, subtree: true }); }
   D.addEventListener('visibilitychange', function () { if (stage) stage.classList.toggle('t2-paused', D.hidden); });
-  W.addEventListener('resize', function () { if (OV.classList.contains('t2-on')) { var box = $('t2Card'); if (box) box.removeAttribute('data-k'); stageLater(); } });
-  D.addEventListener('tva:look', function () { if (OV.classList.contains('t2-on') && !draft) { var box = $('t2Card'); if (box) box.removeAttribute('data-k'); stageLater(); renderPanel(); } });
+  W.addEventListener('resize', function () { if (OV.classList.contains('t2-on')) reStage(); });
+  D.addEventListener('tva:look', function () { if (OV.classList.contains('t2-on') && !draft) { reStage(); renderPanel(); } });
 
   /* ---------- API pubblica e predisposizioni (nessuna rete, nessun XP) ---------- */
-  function publicIdentity() {   /* contratto «identità condivisa v1» per Friends 3.0: solo ciò che l'utente ha marcato «condivisibile»; oggi non è inviato a nessuno */
+  function publicIdentity() {   /* contratto «identità condivisa v1»: solo ciò che l'utente ha marcato visibile; oggi non è inviato a nessuno */
     var p = S2.privacy, idt = ID.get(), o = { v: 1, legameNexus: 'nessuno' };
     if (p.identita === 'a') { o.varId = txt('tesseraId'); o.nome = cur().name; }
     if (p.rango === 'a') { o.rango = txt('tesseraRank'); o.livello = +txt('tesseraLivello') || 1; }
@@ -412,8 +445,8 @@
     if (p.preferiti === 'a') { o.universoPreferito = idt.univ; o.personaggioPreferito = idt.ch; }
     return o;
   }
-  W.tvaT2 = { version: 1, core: C, state: function () { return clone(S2); }, snapshot: snap, refresh: onOpen, go: go, section: function () { return sec; }, publicIdentity: publicIdentity, loadAtlas: loadAtlas, atlasCounts: function () { return atCounts && clone(atCounts); }, draft: function () { return draft && clone(draft); } };
-  if (!W.tvaTrophies) W.tvaTrophies = { v: 1, list: function () { return []; } };   /* predisposizione: Arcade, Quiz, Rankings (nessun dato oggi) */
+  W.tvaT2 = { version: 2, core: C, state: function () { return clone(S2); }, snapshot: snap, refresh: onOpen, go: go, section: function () { return sec; }, publicIdentity: publicIdentity, loadAtlas: loadAtlas, atlasCounts: function () { return atCounts && clone(atCounts); }, draft: function () { return draft && clone(draft); } };
+  if (!W.tvaTrophies) W.tvaTrophies = { v: 1, list: function () { return []; } };
 
   build(); watch(); applyMode(); onOpen();
 })(window);
