@@ -2,7 +2,25 @@
 
 Stato: **SOLO ANALISI E PROGETTAZIONE** (28/11/2026). Nessuna implementazione; nessun file dell'app modificato. In attesa di approvazione dell'utente.
 Nome: la macro-fase 4 si chiama «Tessera TVA 2.0», ma il **nome ufficiale visibile resta «Tessera TVA 3.0»** (decisione del 24/11, in continuità con la numerazione già pubblicata). Nel progetto: «Tessera 2.0» = la macro-fase; «Tessera TVA 3.0» = il prodotto.
-Vincoli: produzione congelata (`main` = 82a73c7), solo `test/tva-archives`, 0 €, dati personali preservati, regole XP invariate, Missioni/Evolution e Friends 3.0 NON anticipati (solo predisposizioni), roadmap a 13 macro-fasi invariata.
+Vincolo prioritario (28/11, 16:09): **restyling esclusivamente evolutivo e additivo** (v. §0). Vincoli: produzione congelata (`main` = 82a73c7), solo `test/tva-archives`, 0 €, dati personali preservati, regole XP invariate, Missioni/Evolution e Friends 3.0 NON anticipati (solo predisposizioni), roadmap a 13 macro-fasi invariata.
+
+---
+
+## 0. Principio di non regressione (VINCOLANTE — decisione dell'utente 28/11/2026 16:09)
+Il restyling è **esclusivamente evolutivo e additivo**. È vietato eliminare, sostituire, ridurre o rendere inutilizzabile qualsiasi personalizzazione oggi disponibile. Le anteprime indicano la **direzione estetica**, non autorizzano la rimozione di funzioni o contenuti. In particolare:
+1. **Catalogo intero riutilizzato**: la nuova interfaccia espone *tutto* ciò che esiste oggi (inventario verificato nel codice reale, snapshot in `docs/tessera2/inventario_personalizzazioni_28112026.json`):
+   | Famiglia | Esistenti (da preservare) |
+   |---|---|
+   | Avatar (SVG originali) | 8 |
+   | Cornici (motore grafico) / Temi / Effetti | 12 / 10 / 6 |
+   | Stile Tessera 3.0: font · sfondi · texture · cornici di stile · decorazioni · effetti · icone · layout · preset gratuiti | 4 · 9 · 6 · 7 · 6 · 6 · 3 · 4 · 7 |
+   | Emblemi (7 categorie × 8, 6 finiture) | 56 |
+   | Ricompense cosmetiche (20 titoli, 12 cornici, 10 temi, 6 effetti; 5 rarità) | 48 |
+   | Foto personale locale · titolo/nome · distintivi in vetrina (3) · esportazione PNG · retro · «segui il premio equipaggiato» | tutte |
+2. **Nessuna sostituzione**: dove i mockup mostrano un «Atelier», esso è una **nuova porta d'accesso guidata** che *si aggiunge* all'editor «Personalizza» attuale. L'**Editor classico (6 schede + stile 3.0) resta integralmente disponibile** e raggiungibile (voce «Editor completo») per tutta la durata del progetto; l'Atelier mostra le stesse famiglie e gli stessi elementi, con in più anteprima viva e nuove opzioni. Eventuali ritiri futuri solo su richiesta esplicita dell'utente.
+3. **Identificativi, condizioni di sblocco, ricompense ottenute, selezioni personali e chiavi di salvataggio immutati**: nessun ID rinominato o rimosso; nessuna condizione di sblocco modificata o resa più difficile; stato di `rewards` (sblocchi + equipaggiato), `tessera-look`, `tessera-style-v1`, `identity-v1`, `tessera-id`, `tessera-photo` letti e scritti nello stesso formato; le nuove impostazioni vivono in una chiave nuova (`tessera-v2`), con valori di ripiego.
+4. **Solo aggiunte**: slot vetrina 3 → 6 (i 3 attuali restano i primi tre e invariati), nuovi sfondi animati, titolo libero, statistiche scelte, nuove ricompense con condizioni nuove e proprie (le 48 attuali non cambiano); le nuove opzioni non sottraggono né sostituiscono le vecchie.
+5. **Garanzie verificabili** (fase T0, prima di qualunque modifica visiva): test di non regressione «catalogo congelato» che confronta il catalogo vivo con lo snapshot (ogni ID presente, stesse condizioni/rarità/nomi; conteggi ≥ a quelli attuali), test di compatibilità dei dati (profilo campione con sblocchi, selezioni, foto e identità → identico dopo il caricamento della nuova UI), test «l'editor classico apre e salva come oggi», regressione XP/rango/badge. Una fase non viene proposta per l'approvazione se questi test falliscono.
 
 ---
 
@@ -36,7 +54,7 @@ Vincoli: produzione congelata (`main` = 82a73c7), solo `test/tva-archives`, 0 �
 |---|---|---|
 | `tc-js` (≈39317) | Tessera: carta, editor «Personalizza» (6 schede: Avatar, Stile, Titoli, Cornici, Temi, Effetti), foto locale, esportazione PNG, sezioni **Carriera TVA** e **Collezione** | 3 distintivi esponibili; layout wide/compact/vertical |
 | `tc-art-js` (≈38251) | motore grafico SVG puro: 8 avatar originali, 12 cornici, 10 temi, 6 effetti | nessuna immagine esterna |
-| `tva-tessera3` (≈38958) | stile personalizzabile 3.0: font (4), sfondi (9), texture (6), cornici, decorazioni (6), effetti, retro, preset gratuiti | «segue il premio equipaggiato» di default |
+| `tva-tessera3` (≈38958) | stile personalizzabile 3.0: font (4), sfondi (9), texture (6), cornici di stile (7), decorazioni (6), effetti (6), icone (3), layout (4), retro, preset gratuiti (7) | «segue il premio equipaggiato» di default |
 | `tva-emblems` | 56 emblemi originali (7 categorie × 8), SVG procedurali | senza marchi protetti |
 | `tva-identity` | identità condivisa Tessera↔Variante: nome, VAR-ID, emblema, motto, universo e personaggio preferiti; migrazione non distruttiva con copia di sicurezza | conflitti conservati, mai sovrascritti |
 | `rw-js` (≈37721) | **48 ricompense cosmetiche** (20 titoli, 12 cornici, 10 temi, 6 effetti), 5 rarità, 4 tier; stato di sblocco persistente; nessun XP/valuta nuovi | condizioni verificabili (`titles`, `level`, `badge`, `seasons`, `missions`, `anim`…) |
@@ -91,7 +109,7 @@ Principi: nessuna chiave rinominata; ogni nuova chiave è **additiva**; migrazio
 **Hub «La mia Tessera»** a schermo intero con intestazione TVA (Indietro · titolo), carta 3D (fronte/retro con flip, effetto olografico, parallasse leggera con giroscopio opzionale e rispetto di *reduce motion*) e cinque schede inferiori:
 1. **Tessera** — carta, nome, VAR-ID, rango, livello, barra XP, emblema, titolo equipaggiato, 3→6 distintivi in vetrina.
 2. **Carriera** — Passaporto di carriera: rango e livello affiancati (stesse regole), prossimo traguardo, registro XP per fonte (Timeline, serie animate, voti, note, preferiti, distintivi, missioni, Atlas), 14 distintivi, Stagioni, statistiche personali (ore viste, studi, serie, voto medio, giorni attivi, esplorazione Atlas, episodi).
-3. **Atelier** — personalizzazione guidata (sostituisce le 6 schede lunghe con un flusso a anteprima viva): Avatar · Sfondo (statico/animato) · Cornice · Tema · Titolo · Emblema · Effetti · Universo di appartenenza · Personaggio preferito · Layout. Ogni voce mostra rarità e condizione di sblocco; le bloccate sono visibili con requisito.
+3. **Atelier** — porta d'accesso guidata **che si aggiunge** all'editor «Personalizza» (che resta intero, v. §0): scelte con anteprima viva per **tutte** le famiglie esistenti (Avatar · Foto · Font · Sfondi · Texture · Cornici · Decorazioni · Temi · Effetti · Titoli · Emblemi · Layout · Preset) più le novità (sfondi animati, titolo libero, universo, preferito). Ogni voce mostra rarità e condizione di sblocco; le bloccate restano visibili con il requisito. Voce «Editor completo» sempre presente.
 4. **Collezione** — le 48 ricompense (e le nuove) per categoria e rarità, % di completamento, «prossime da sbloccare».
 5. **Identità** — Passaporto Variante: VAR-ID, universo di appartenenza, motto, personaggio preferito, backup/ripristino identità; sezione **Legame Nexus** (predisposta, disattivata) e **Vetrina condivisibile** (esportazione PNG).
 
@@ -101,7 +119,7 @@ Principi: nessuna chiave rinominata; ogni nuova chiave è **additiva**; migrazio
 | Correzione sovrapposizioni / responsive | griglia fluida della carta con misure in `cqw`, test a 320/375/390/430 px e iPad portrait/landscape; nessun testo troncato | priorità T1 |
 | Sfondi statici e animati | 9 sfondi statici esistenti + nuovi **sfondi animati leggeri** (CSS/SVG: portale temporale, nebulosa, griglia TVA, pioggia di glifi), disattivati con *reduce motion* e in risparmio energetico; anteprima in Atelier | sbloccabili per rarità |
 | Cornici e rarità | 12 cornici esistenti con bordo di rarità (comune → leggendario) visibile ovunque | estensione catalogo opzionale |
-| Avatar | 8 avatar originali conservati; opzione foto locale conservata | nessuna foto caricata altrove |
+| Avatar | 8 avatar originali conservati; opzione foto locale conservata (nessuna rimozione) | nessuna foto caricata altrove |
 | Titoli personalizzabili | 20 titoli esistenti + **titolo libero** (≤24 caratteri, validato) accanto al titolo equipaggiato | il titolo libero non sostituisce quelli di rango |
 | Emblemi | 56 emblemi esistenti con selettore per categoria e finitura | |
 | Universo di appartenenza | scelta dal catalogo universi di Atlas (voci verificate) | usa `identity-v1`, già predisposto |
@@ -137,10 +155,10 @@ Input validati (lunghezza, charset, schema), nessun HTML da dati utente (solo `t
 ## 4. Fasi operative proposte (una per volta, ciascuna con approvazione)
 | Fase | Contenuto | Uscita | Test essenziali |
 |---|---|---|---|
-| **T0 Fondamenta** | inventario chiavi, copia di sicurezza verificata, schema `tessera-v2` (solo lettura/scrittura isolata), test di regressione XP/rango/badge | doc + test, nessun cambio visibile | regressione XP, backup/ripristino |
+| **T0 Fondamenta** | inventario chiavi, copia di sicurezza verificata, schema `tessera-v2` (solo lettura/scrittura isolata), **test «catalogo congelato» e di compatibilità dati (v. §0.5)**, regressione XP/rango/badge | doc + test, nessun cambio visibile | non regressione catalogo, compatibilità profilo, backup/ripristino |
 | **T1 Hub immersivo** | nuova schermata «La mia Tessera», carta fronte/retro, correzione sovrapposizioni, responsive iPhone | build in collaudo | layout 320–430 px, nessun overflow |
 | **T2 Carriera** | Passaporto di carriera, registro XP per fonte, statistiche, badge | build in collaudo | coerenza con i calcoli esistenti |
-| **T3 Atelier** | personalizzazione guidata, sfondi animati, titolo libero, rarità | build in collaudo | validazione input, reduce-motion |
+| **T3 Atelier** | personalizzazione guidata additiva (editor classico intatto), sfondi animati, titolo libero, rarità | build in collaudo | validazione input, reduce-motion |
 | **T4 Vetrina e Collezione** | 6 slot, statistiche scelte, esportazione PNG, Collezione estesa | build in collaudo | export PNG, sblocchi |
 | **T5 Identità Variante** | Passaporto Variante, universo/preferito da Atlas, backup identità, predisposizioni Friends | build in collaudo | migrazione non distruttiva |
 | **T6 Predisposizioni** | `tvaTrophies`, slot Missioni, contratto identità pubblica | solo hook disattivati | nessun effetto XP |
@@ -149,6 +167,7 @@ Ordine consigliato: T0 → T1 → T2 → T3 → T4 → T5 → T6 → T7 (T1 e T2
 
 ## 5. Rischi e mitigazioni
 - Regressione su XP/rango → test di regressione T0 e confronto prima/dopo su profili campione.
+- Regressione sul catalogo di personalizzazioni → test «catalogo congelato» (T0) bloccante per ogni fase; editor classico sempre raggiungibile.
 - Perdita dati → copia di sicurezza verificata + chiavi additive + nessuna cancellazione.
 - Peso di `index.html` (43.000 righe) → il nuovo hub è un modulo lazy separato (`tessera2/`), come per Atlas.
 - Animazioni su iPhone datati → opzione «Effetti ridotti» e rispetto di *reduce motion*.
@@ -163,7 +182,7 @@ Ordine consigliato: T0 → T1 → T2 → T3 → T4 → T5 → T6 → T7 (T1 e T2
 6. **Cosa sarà visibile al partner** in Friends (nome, VAR-ID, emblema, motto, universo, preferito, aspetto, rango/livello?). Predisposto ma da decidere prima della macro-fase 8.
 7. **Foto locale**: confermare che resti esclusa da sync e backup condivisi.
 8. **Trofei Arcade/Quiz/Rankings** in vetrina: confermare solo come predisposizione.
-9. Anteprime: approvare la direzione grafica (nero e oro, SVG originale) prima di T1.
+9. Anteprime: approvare la direzione grafica (nero e oro, SVG originale) prima di T1 — resta inteso (§0) che i mockup non rimuovono alcuna funzione esistente.
 
 ## 7. Anteprime grafiche
 `docs/tessera2/anteprima.html` (statica, navigabile, nessun codice dell'app): carta fronte/retro, Hub iPhone (5 schede), Carriera, Atelier, Collezione, Identità con slot Missioni/Friends predisposti, layout iPad. Sono mockup di progetto, non l'implementazione.
