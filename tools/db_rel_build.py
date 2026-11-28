@@ -4,7 +4,7 @@ Regole: solo relazioni narrative (mai co-apparizioni ne' collegamenti editoriali
 (resta in coda: puo' essere una controparte); gia' presenti in `data/atlante/relazioni.json` -> non duplicate. Verifica D12: 'verificata' solo se confermata anche da una SECONDA fonte indipendente
 (parametri infobox MCU Wiki/Marvel Database nei fatti del canon), altrimenti 'da verificare' (mostrata come tale, esclusa di default dai percorsi).
 Uso: python3 tools/db_rel_build.py <rel_wikidata.json> [--scrivi]"""
-import json, sys, pathlib, re, collections, hashlib
+import json, sys, pathlib, re, collections, hashlib, urllib.parse
 R = pathlib.Path(__file__).resolve().parent.parent; E = R / 'data/atlante/espansione'
 # proprieta' -> (tipo, direzione, qualifica): 'in' = (da=target, a=sorgente), 'out' = (da=sorgente, a=target)
 MAPPA = {'P22': ('famiglia_genitore', 'in', 'padre'), 'P25': ('famiglia_genitore', 'in', 'madre'), 'P40': ('famiglia_genitore', 'out', None), 'P26': ('famiglia_coniugi', 'sim', None),
@@ -101,13 +101,45 @@ def costruisci(raw):
             out.append({'id': rid, 'tipo': tipo, 'classe': 'narrativa', 'da': da, 'a': a, 'simmetrica': tipo in SIMM, 'qualifica': qual, 'fonte': ['parametro "parenti" infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)'],
                         'verifica': 'da verificare', 'origine': 'db:infobox:parenti', 'controversa': False})
     return {'versione': 1, 'fonte': 'Wikidata CC0 (+ seconda fonte dove indicata)', 'relazioni': out, 'staging': stag, 'conteggi': dict(cont) | {'relazioni': len(out), 'verificate': sum(1 for x in out if x['verifica'] == 'verificata'), 'staging': len(stag)}}
+def wp_titolo(rec):
+    for f in (rec or {}).get('fonti', []):
+        if f.get('fonte', '').startswith('Wikipedia') and '/wiki/' in f.get('url', ''): return urllib.parse.unquote(f['url'].split('/wiki/', 1)[1]).replace('_', ' ')
+    return None
+def input_verifica(g):
+    """Input per tools/db_relverify.py (seconda fonte Wikipedia): per ogni relazione da verificare, titoli Wikipedia e nomi distintivi dei due estremi."""
+    reg, q2id, canon = carica(); ident = {x['id']: x for x in json.load(open(R / 'data/atlante/identita.json'))['identita']}
+    IDXN = {v['i']: v['n'] for v in json.load(open(R / 'atlante2/data/index.json'))['voci']}
+    def nomi(i):
+        if i in canon: return [canon[i]['nome']] + canon[i].get('alias', [])[:6]
+        x = ident.get(i) or {}; nm = IDXN.get(i) or x.get('nome') or i; return [p for p in re.split(r'/| - ', re.sub(r'\(.*?\)', ' ', nm)) if p.strip()] + x.get('alias', [])[:6]
+    def wp(i):
+        t = wp_titolo(canon.get(i))
+        if t: return t
+        if i in canon: return None
+        x = ident.get(i) or {}; return None   # le voci storiche non hanno titolo Wikipedia verificato: nessun tentativo per nome (evita omonimi)
+    out = []
+    for x in g['relazioni']:
+        if x['verifica'] == 'verificata': continue
+        out.append({'id': x['id'], 'tipo': x['tipo'], 'da_wp': wp(x['da']), 'a_wp': wp(x['a']), 'da_nomi': nomi(x['da']), 'a_nomi': nomi(x['a'])})
+    return {'versione': 1, 'relazioni': [o for o in out if o['da_wp'] or o['a_wp']]}
+def applica_verifica(g, ver):
+    n = 0
+    for x in g['relazioni']:
+        v = (ver or {}).get(x['id'])
+        if x['verifica'] != 'verificata' and v and v.get('ok'):
+            x['verifica'] = 'verificata'; x['fonte'].append('Wikipedia (CC BY-SA 4.0), riscontro nella stessa frase: ' + v['url']); n += 1
+    return n
 def runtime(g):
     tipi = sorted({x['tipo'] for x in g['relazioni']}); V = {'verificata': 2, 'da verificare': 0}
     rows = [[x['da'], x['a'], tipi.index(x['tipo']), 'c' if x['classe'] == 'controparte' else 'n', V[x['verifica']], x['qualifica'] or '', 0] for x in g['relazioni']]
     return {'v': 1, 'tipi': tipi, 'r': rows}
 def main():
     raw = json.load(open(sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith('--') else str(R / 'data/atlante/espansione/raw/rel_wikidata.json'))); g = costruisci(raw)
+    vf = R / 'data/atlante/espansione/raw/relverify.json'
+    if vf.exists(): g['conteggi']['confermate_wikipedia'] = applica_verifica(g, json.load(open(vf))['esiti']); g['conteggi']['verificate'] = sum(1 for x in g['relazioni'] if x['verifica'] == 'verificata')
     print(json.dumps(g['conteggi'], ensure_ascii=False, indent=1))
+    if '--input-verifica' in sys.argv:
+        (R / 'data/atlante/espansione/relverify_input.json').write_text(json.dumps(input_verifica(g), ensure_ascii=False, separators=(',', ':')) + '\n'); print('scritto relverify_input.json')
     if '--scrivi' in sys.argv:
         (E / 'relazioni_db.json').write_text(json.dumps(g, ensure_ascii=False, indent=1) + '\n')
         (R / 'atlante2/data/db').mkdir(parents=True, exist_ok=True)

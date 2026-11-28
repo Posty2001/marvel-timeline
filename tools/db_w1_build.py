@@ -116,10 +116,10 @@ def classe_app(titolo, chiave):
 
 LISTE = ('poteri', 'abilita', 'equipaggiamento', 'debolezze')
 SCALARI = ('stato', 'genere', 'prima_apparizione', 'origine', 'nome_reale', 'nascita', 'morte', 'esito', 'popolazione')
-def carica_w1b(d):
+def carica_w1b(d, pref='w1b'):
     if not d: return {}, {}
-    d = pathlib.Path(d); m = json.load(open(d/'w1b_mcuwiki.json'))['pagine'] if (d/'w1b_mcuwiki.json').exists() else {}
-    db = json.load(open(d/'w1b_marveldb.json')) if (d/'w1b_marveldb.json').exists() else {'pagine': {}, 'ricerca': {}}
+    d = pathlib.Path(d); m = json.load(open(d/'w1b_mcuwiki.json'))['pagine'] if (pref == 'w1b' and (d/'w1b_mcuwiki.json').exists()) else {}
+    db = json.load(open(d/(pref + '_marveldb.json'))) if (d/(pref + '_marveldb.json')).exists() else {'pagine': {}, 'ricerca': {}}
     mdb = {n: db['pagine'].get(t) for n, t in db.get('ricerca', {}).items()}
     return m, mdb
 def split_par(v):
@@ -184,7 +184,7 @@ def fatti_da(pag, tipo):
                 if x and x not in cur: cur.append(x)
             f[c] = cur[:25]
     return f
-def corrobora(nome, alias, tipo, perf, mcu_p, mdb_p):
+def corrobora(nome, alias, tipo, perf, mcu_p, mdb_p, fum=False):
     """Seconda fonte indipendente (D12): pagina MCU Wiki coerente per titolo, categoria e (se disponibili) interpreti. Marvel Database = conferma/fatti aggiuntivi."""
     chiavi = {norm(nome)} | {norm(a) for a in alias}
     out = {'ok': False, 'motivo': None, 'fonti': [], 'fatti': {}, 'fatti_fonti': {}}
@@ -208,7 +208,7 @@ def corrobora(nome, alias, tipo, perf, mcu_p, mdb_p):
                 for x in v:
                     if x not in cur: cur.append(x)
             out['fatti_fonti'].setdefault(c, []).append(cod)
-    out['ok'] = any(f['cod'] == 'mcuwiki' for f in out['fonti'])   # la seconda fonte di identita' e' la MCU Wiki; Marvel DB da sola non basta per l'MCU
+    out['ok'] = any(f['cod'] == 'mcuwiki' or (fum and f['cod'] == 'marveldb') for f in out['fonti'])   # fumetti: la seconda fonte e' la pagina Earth-616 di Marvel Database   # la seconda fonte di identita' e' la MCU Wiki; Marvel DB da sola non basta per l'MCU
     if out['ok']: out['motivo'] = None
     return out
 
@@ -216,7 +216,9 @@ def qnum(q): return int(q[1:])
 def main():
     if '--solo-runtime' in sys.argv: return costruisci_runtime()   # rigenera solo l'indice runtime dai canon esistenti
     raw = json.load(open(sys.argv[1])); scrivi = '--scrivi' in sys.argv
-    MCUP, MDBP = carica_w1b(sys.argv[sys.argv.index('--w1b') + 1] if '--w1b' in sys.argv else None)
+    W1B = sys.argv[sys.argv.index('--w1b') + 1] if '--w1b' in sys.argv else None
+    _on = sys.argv[sys.argv.index('--onda') + 1] if '--onda' in sys.argv else 'w1'
+    MCUP, MDBP = carica_w1b(W1B, 'w5b' if _on in ('w5', 'w6') else 'w1b')
     ent, et = raw['entita'], raw['etichette']
     mcu = {q for q, l in et.items() if l == 'Marvel Cinematic Universe'}
     ONDA = sys.argv[sys.argv.index('--onda') + 1] if '--onda' in sys.argv else 'w1'
@@ -289,7 +291,7 @@ def main():
             cont['nuovo_dopo_confronto'] += 1   # distinto dalle voci storiche: prosegue come nuova voce
         # D12: dichiarazione Wikidata + articolo Wikipedia indipendente (en) => verificata a livello di identita'/esistenza; altrimenti staging
         perf_wd = [et.get(x) for x in r['c'].get('P175', []) if et.get(x)]
-        cor = corrobora(nome, alias, tipo, perf_wd, MCUP.get(nome), MDBP.get(nome)) if (MCUP or MDBP) else {'ok': False, 'motivo': None, 'fonti': [], 'fatti': {}, 'fatti_fonti': {}}
+        cor = corrobora(nome, alias, tipo, perf_wd, MCUP.get(nome), MDBP.get(nome), FUMETTI) if (MCUP or MDBP) else {'ok': False, 'motivo': None, 'fonti': [], 'fatti': {}, 'fatti_fonti': {}}
         wiki = bool({'enwiki', 'itwiki'} & set(r['sl']))
         if not wiki and not cor['ok']:
             stag.append({'q': q, 'nome': nome, 'tipo': tipo, 'motivo': 'una sola fonte (nessun articolo Wikipedia' + ('; seconda fonte scartata: ' + cor['motivo'] if cor['motivo'] else '') + '): resta in staging (D12)'}); cont['staging:una_fonte'] += 1; continue
@@ -308,7 +310,9 @@ def main():
         if cor['fatti']:
             rec['fatti'] = cor['fatti']; rec['fatti_fonti'] = cor['fatti_fonti']
             if sum(1 for c in ('poteri', 'abilita', 'equipaggiamento', 'debolezze', 'affiliazioni', 'specie', 'stato', 'trasformazioni') if rec['fatti'].get(c)) >= 3: rec['livello'] = 'B'
-        if cor['ok']: rec['ids_esterni']['mcuwiki'] = MCUP[nome]['titolo']
+        if cor['ok']:
+            if MCUP.get(nome) and any(f['cod'] == 'mcuwiki' for f in cor['fonti']): rec['ids_esterni']['mcuwiki'] = MCUP[nome]['titolo']
+            elif MDBP.get(nome): rec['ids_esterni']['marveldb'] = MDBP[nome]['titolo']
         if r['l'].get('it') and r['l']['it'] != nome: rec['nome_it'] = r['l']['it']
         if alias: rec['alias'] = alias
         if uni: rec['universo'] = uni

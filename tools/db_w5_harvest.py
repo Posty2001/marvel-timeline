@@ -19,6 +19,9 @@ FASCE = [(40, 0), (20, 40), (12, 20), (8, 12), (5, 8), (3, 5)]
 GRUPPI = {}
 if ONDA == 'w5':
     for lo, hi in FASCE: GRUPPI['fumetti:%d-%s' % (lo, hi or 'max')] = sel('%s ?x wdt:P1080 ?u .' % U, lo, hi)
+    # elementi senza P1080 ma presenti in opere pubblicate da Marvel Comics (P1441 «presente nell'opera», P674 «personaggi»): solo con almeno 5 collegamenti Wikipedia;
+    # NON ricevono automaticamente la continuita' 616 (nessuna attribuzione certa)
+    for lo, hi in FASCE[:5]: GRUPPI['fumetti_pubbl:%d-%s' % (lo, hi or 'max')] = sel('%s { ?x wdt:P1441 ?w } UNION { ?w wdt:P674 ?x } ?w wdt:P123 ?pub .' % PUB, lo, hi)
 else:
     for lo, hi in FASCE:
         GRUPPI['opere:%d-%s' % (lo, hi or 'max')] = sel('%s ?x wdt:P123 ?pub .' % PUB, lo, hi)

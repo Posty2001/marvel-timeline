@@ -91,8 +91,16 @@ on:
         description: 'DB Expansion W5 - fumetti Marvel: entita narrative (raccolta Wikidata, branch db-raw)'
         type: boolean
         default: false
+      db_w5b:
+        description: 'DB Expansion W5.b - fumetti Marvel: fatti da Marvel Database (CC BY-SA, solo fatti; branch db-raw)'
+        type: boolean
+        default: false
       db_w6:
         description: 'DB Expansion W6 - fumetti Marvel: opere, saghe e creatori (raccolta Wikidata, branch db-raw)'
+        type: boolean
+        default: false
+      db_relv:
+        description: 'DB Expansion - seconda fonte Wikipedia (solo esito) per le relazioni narrative (branch db-raw)'
         type: boolean
         default: false
       db_rel:
@@ -109,7 +117,7 @@ permissions:
 
 jobs:
   sync:
-    if: ${{ !inputs.db_censimento && !inputs.db_w1 && !inputs.db_w1b && !inputs.db_w2 && !inputs.db_w3 && !inputs.db_w4 && !inputs.db_w5 && !inputs.db_w6 && !inputs.db_rel && !inputs.mm_tmdb && !inputs.solo_atlante_pilot && inputs.atlante_job == '' && !((inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit) }}
+    if: ${{ !inputs.db_censimento && !inputs.db_w1 && !inputs.db_w1b && !inputs.db_w2 && !inputs.db_w3 && !inputs.db_w4 && !inputs.db_w5 && !inputs.db_w5b && !inputs.db_relv && !inputs.db_w6 && !inputs.db_rel && !inputs.mm_tmdb && !inputs.solo_atlante_pilot && inputs.atlante_job == '' && !((inputs.solo_live_build || inputs.live_recover_from != '') && inputs.live_commit) }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -797,6 +805,63 @@ jobs:
       - name: Esito raccolta
         if: always() && steps.raccolta.outcome == 'failure'
         run: echo "::warning::la raccolta ha restituito errore (nessun dato valido o errore grave); i parziali eventuali sono stati salvati. Vedi anomalie nel manifest."
+  db-relv:
+    # Database Expansion RELV: raccolta di dati pubblici (Wikidata CC0; Fandom CC BY-SA 3.0 solo fatti). Scrive SOLO sul branch dati db-raw. Nessun Secret, nessun TMDB.
+    # Indipendente dall'altro job; riprende dal checkpoint su db-raw; salva sempre i risultati parziali validi.
+    if: ${{ inputs.db_relv && !inputs.db_censimento }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      contents: write
+    concurrency:
+      group: db-relv
+      cancel-in-progress: false
+    steps:
+      - name: Verifica ref TEST
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/test/tva-archives" ]; then echo "::error::consentito solo con ref test/tva-archives (attuale: $GITHUB_REF)"; exit 1; fi
+      - uses: actions/checkout@v4
+        with:
+          ref: test/tva-archives
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Riprendi checkpoint da db-raw (se presente)
+        run: |
+          mkdir -p raw_out
+          if git fetch -q --depth=1 origin db-raw 2>/dev/null; then for f in relverify_checkpoint.json relverify.json; do git show FETCH_HEAD:$f > raw_out/$f 2>/dev/null || rm -f raw_out/$f; done; fi
+          ls -la raw_out
+      - name: Raccolta
+        id: raccolta
+        continue-on-error: true
+        run: python3 tools/db_relverify.py raw_out
+      - name: Salva sul branch dati db-raw (anche risultati parziali)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          ls raw_out/*.json >/dev/null 2>&1 || { echo "nessun risultato da salvare"; exit 0; }
+          D=$(mktemp -d); cd "$D"; git init -q
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          for i in 1 2 3 4 5; do
+            if git fetch -q --depth=1 origin db-raw 2>/dev/null; then git checkout -q -B db-raw FETCH_HEAD; else git checkout -q --orphan db-raw; fi
+            cp "$GITHUB_WORKSPACE"/raw_out/*.json .
+            git add -A; git commit -q -m "RELV: raccolta ($(date -u +%FT%TZ))" || { echo "nessuna modifica"; exit 0; }
+            if git push -q origin db-raw; then exit 0; fi
+            echo "push in conflitto, nuovo tentativo $i"; sleep $((i*5))
+          done
+          exit 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: db-relv
+          path: raw_out
+          retention-days: 30
+      - name: Esito raccolta
+        if: always() && steps.raccolta.outcome == 'failure'
+        run: echo "::warning::la raccolta ha restituito errore (nessun dato valido o errore grave); i parziali eventuali sono stati salvati. Vedi anomalie nel manifest."
   db-w5:
     # Database Expansion W5: fumetti Marvel - entita narrative (Wikidata CC0, branch db-raw). Scrive SOLO sul branch dati db-raw. Nessun Secret, nessun TMDB.
     # Indipendente dall'altro job; riprende dal checkpoint su db-raw; salva sempre i risultati parziali validi.
@@ -849,6 +914,63 @@ jobs:
         if: always()
         with:
           name: db-w5
+          path: raw_out
+          retention-days: 30
+      - name: Esito raccolta
+        if: always() && steps.raccolta.outcome == 'failure'
+        run: echo "::warning::la raccolta ha restituito errore (nessun dato valido o errore grave); i parziali eventuali sono stati salvati. Vedi anomalie nel manifest."
+  db-w5b:
+    # Database Expansion W5.b: fumetti Marvel - fatti da Marvel Database (CC BY-SA 3.0, solo fatti; branch db-raw). Scrive SOLO sul branch dati db-raw. Nessun Secret, nessun TMDB.
+    # Indipendente dall'altro job; riprende dal checkpoint su db-raw; salva sempre i risultati parziali validi.
+    if: ${{ inputs.db_w5b && !inputs.db_censimento }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      contents: write
+    concurrency:
+      group: db-w5b
+      cancel-in-progress: false
+    steps:
+      - name: Verifica ref TEST
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/test/tva-archives" ]; then echo "::error::consentito solo con ref test/tva-archives (attuale: $GITHUB_REF)"; exit 1; fi
+      - uses: actions/checkout@v4
+        with:
+          ref: test/tva-archives
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Riprendi checkpoint da db-raw (se presente)
+        run: |
+          mkdir -p raw_out
+          if git fetch -q --depth=1 origin db-raw 2>/dev/null; then for f in w5b_checkpoint.json w5b_marveldb.json w5b_manifest.json; do git show FETCH_HEAD:$f > raw_out/$f 2>/dev/null || rm -f raw_out/$f; done; fi
+          ls -la raw_out
+      - name: Raccolta
+        id: raccolta
+        continue-on-error: true
+        run: python3 tools/db_w5b_harvest.py raw_out w5
+      - name: Salva sul branch dati db-raw (anche risultati parziali)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          ls raw_out/*.json >/dev/null 2>&1 || { echo "nessun risultato da salvare"; exit 0; }
+          D=$(mktemp -d); cd "$D"; git init -q
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          for i in 1 2 3 4 5; do
+            if git fetch -q --depth=1 origin db-raw 2>/dev/null; then git checkout -q -B db-raw FETCH_HEAD; else git checkout -q --orphan db-raw; fi
+            cp "$GITHUB_WORKSPACE"/raw_out/*.json .
+            git add -A; git commit -q -m "W5.b: raccolta ($(date -u +%FT%TZ))" || { echo "nessuna modifica"; exit 0; }
+            if git push -q origin db-raw; then exit 0; fi
+            echo "push in conflitto, nuovo tentativo $i"; sleep $((i*5))
+          done
+          exit 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: db-w5b
           path: raw_out
           retention-days: 30
       - name: Esito raccolta
