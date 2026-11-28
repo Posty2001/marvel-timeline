@@ -113,6 +113,16 @@ def carica_w1b(d):
     db = json.load(open(d/'w1b_marveldb.json')) if (d/'w1b_marveldb.json').exists() else {'pagine': {}, 'ricerca': {}}
     mdb = {n: db['pagine'].get(t) for n, t in db.get('ricerca', {}).items()}
     return m, mdb
+def split_par(v):
+    """Elenco con possibili parentesi: spezza su virgole/punto e virgola/asterischi FUORI dalle parentesi (conserva «Nome (relazione)»)."""
+    out, cur, d = [], '', 0
+    for ch in v:
+        if ch == '(': d += 1
+        elif ch == ')': d = max(0, d - 1)
+        if ch in ',;*' and d == 0: out.append(cur); cur = ''
+        else: cur += ch
+    out.append(cur)
+    return [x.strip(' :.-') for x in out if 3 <= len(x.strip(' :.-')) <= 90 and re.search(r'[A-Za-z]', x)]
 def _lista(v, cap=12):
     v = re.sub(r'\(\s*(?:formerly|former|mentioned|footage|flashbacks?|deceased)\s*\)', '', v, flags=re.I)   # annotazioni del wiki, non nomi
     v = re.sub(r'\b(?:formerly|currently|previously)\s*:', ';', v, flags=re.I)
@@ -141,6 +151,14 @@ def fatti_da(pag, tipo):
                 for x in _lista(v):
                     if x not in voci: voci.append(x)
             f[campo] = voci[:12]
+    rf = {}
+    for campo, chiavi in (('parenti', ('relatives', 'family')), ('alleati', ('allies',)), ('nemici', ('enemies',))):
+        voci = []
+        for k in chiavi:
+            for x in split_par(ib.get(k, '')):
+                if x not in voci: voci.append(x)
+        if voci: rf[campo] = voci[:30]
+    if rf: f['relazioni_fonte'] = rf
     app = {}
     for k, c in APP_CHIAVI.items():
         for v in ([ib[k]] if k in ib else []):
@@ -187,6 +205,7 @@ def corrobora(nome, alias, tipo, perf, mcu_p, mdb_p):
 
 def qnum(q): return int(q[1:])
 def main():
+    if '--solo-runtime' in sys.argv: return costruisci_runtime()   # rigenera solo l'indice runtime dai canon esistenti
     raw = json.load(open(sys.argv[1])); scrivi = '--scrivi' in sys.argv
     MCUP, MDBP = carica_w1b(sys.argv[sys.argv.index('--w1b') + 1] if '--w1b' in sys.argv else None)
     ent, et = raw['entita'], raw['etichette']
@@ -332,7 +351,7 @@ def costruisci_runtime():
     for c in sorted(canon, key=lambda x: x['id']):
         recs.append({'i': c['id'], 'n': c['nome'], 'it': c.get('nome_it'), 't': c['tipo'], 'al': c.get('alias', []), 'd': (c.get('descrizione', {}).get('it') or c.get('descrizione', {}).get('en')),
                      'u': c.get('universo'), 'ip': c.get('interpreti', []), 'wd': c['ids_esterni']['wikidata'], 'wp': c.get('wikipedia', {}).get('en'), 'lv': c['livello'],
-                     'f': {k: ([it(x) for x in v] if isinstance(v, list) else it(v)) for k, v in c.get('fatti', {}).items() if k not in ('interpreti_fonte', 'parenti', 'alias_fonte', 'creatori_fonte')} or None,
+                     'f': {k: ([it(x) for x in v] if isinstance(v, list) else it(v)) for k, v in c.get('fatti', {}).items() if k not in ('interpreti_fonte', 'parenti', 'alias_fonte', 'creatori_fonte', 'relazioni_fonte')} or None,
                      'ff': {k: len(set(v)) for k, v in c.get('fatti_fonti', {}).items()} or None, 'xs': [[x['fonte'].split(' (')[0], x['url']] for x in c['fonti'] if x.get('licenza') == 'CC BY-SA 3.0']})
     for a in arr:  # alias/interpreti di voci GIA' esistenti: servono solo alla ricerca (aprono la scheda esistente)
         recs.append({'i': a['id'], 'x': a['id'], 'n': a['id'], 't': 'x', 'al': a['alias_nuovi'] + a['interpreti'], 'wd': a['wikidata']})
@@ -358,6 +377,14 @@ def costruisci_runtime():
             for x in sorted(l): dl.append(x - prev); prev = x
             d[t] = dl
         (OUTRT/'t'/f'{s}.json').write_text(json.dumps(d, separators=(',', ':')))
+    LET = {'identita': 'p', 'entita-cosmica': 'p', 'organizzazione': 'o', 'artefatto': 'a', 'luogo': 'l', 'pianeta': 'P', 'evento': 'e', 'battaglia': 'e', 'universo': 'U', 'attore': 't', 'opera': 'O', 'creatore': 'C', 'specie': 'S', 'civilta': 'S'}
+    stub = {'v': 1, 'r': [], 'x': {}, 'uni': {}}
+    for o, r in enumerate(recs):
+        if r['t'] == 'x': stub['x'][r['x']] = ' '.join(dict.fromkeys(norm(a) for a in r['al'] if a))[:160]; continue
+        q = ' '.join(dict.fromkeys(w for w in norm(' '.join([r.get('it') or ''] + r['al'][:6] + r.get('ip', [])[:3])).split() if w))[:140]
+        stub['r'].append([r['i'], r['n'], LET.get(r['t'], 'p'), r.get('u') or '', r['lv'], o, q])
+        if r['t'] == 'universo': stub['uni'][r['i']] = {'n': r['n'], 'c': 'Luogo narrativo'}
+    (OUTRT/'stub.json').write_text(json.dumps(stub, ensure_ascii=False, separators=(',', ':')))
     (OUTRT/'pre.json').write_text(json.dumps({p: sorted(l)[:300] for p, l in pre.items()}, separators=(',', ':')))
     tot = sum(len(gzip.compress(p.read_bytes())) for p in OUTRT.rglob('*.json'))
     tipi = collections.Counter(r['t'] for r in recs if r['t'] != 'x')

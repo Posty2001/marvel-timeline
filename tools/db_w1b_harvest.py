@@ -53,7 +53,8 @@ BLOCCA = {'history', 'notes', 'trivia', 'personality', 'quotation', 'quote', 'sp
           'appearances', 'powersandabilities', 'unusualfeatures', 'distinguish1', 'distinguish2', 'marvel', 'mcu', 'marvelmovies', 'marvelcinematicuniverse', 'impersonations', 'editorialnames', 'additionalattributes'}   # prosa/non-fatti
 LUN_MAX = 160   # un fatto e' breve: valori piu' lunghi sono prosa e non si conservano
 CHIAVI_APP = {'movie', 'tvseries', 'webseries', 'docuseries', 'tvmovie', 'oneshot', 'book', 'game', 'comic', 'themepark'}   # elenchi di titoli: possono essere piu' lunghi
-def fatto_ok(k, v): return k not in BLOCCA and len(v) <= (900 if k in CHIAVI_APP else LUN_MAX) and not k.startswith('image')
+CHIAVI_REL = {'relatives', 'family', 'allies', 'enemies', 'leaders', 'currentmembers', 'formermembers', 'affiliation', 'affiliations', 'members'}   # nomi di persone/gruppi collegati: elenchi di fatti
+def fatto_ok(k, v): return k not in BLOCCA and len(v) <= (900 if (k in CHIAVI_APP or k in CHIAVI_REL) else LUN_MAX) and not k.startswith('image')
 CACHE_CAR = 15000   # caratteri di wikitext per pagina nella cache LOCALE (artifact Actions, non committata): serve a riparsare senza nuova raccolta
 def pagine(wiki, titoli, cache=None):
     """Per ogni titolo trovato: categorie + fatti. Batch da 20 titoli (contenuto), redirect risolti."""
@@ -86,7 +87,7 @@ def main():
     ogni blocco e' isolato, errori/anomalie nel manifest, risultati parziali sempre salvati."""
     out = pathlib.Path(sys.argv[1]); out.mkdir(parents=True, exist_ok=True); ANOM = []
     mx = int(sys.argv[sys.argv.index('--max') + 1]) if '--max' in sys.argv else 10**9
-    ck = {'v': 4, 'mcuwiki': {}, 'marveldb': {}, 'ricerca': {}}
+    ck = {'v': 5, 'mcuwiki': {}, 'marveldb': {}, 'ricerca': {}}
     cdir = out / '_cache'; cdir.mkdir(exist_ok=True); cache = {'mcuwiki': {}, 'marveldb': {}}
     for w in cache:
         if (cdir / (w + '.json')).exists():
@@ -95,7 +96,7 @@ def main():
     if (out/'w1b_checkpoint.json').exists():
         try:
             c0 = json.load(open(out/'w1b_checkpoint.json'))
-            if c0.get('v') == 4: ck = c0; print('ripresa da checkpoint')
+            if c0.get('v') == 5: ck = c0; print('ripresa da checkpoint')
             else: ck['ricerca'] = c0.get('ricerca', {}); print('checkpoint v1: pagine da rileggere (parser aggiornato), ricerche mantenute')
         except Exception as e: ANOM.append('checkpoint illeggibile: %s' % e)
     def salva_ck(): json.dump(ck, open(out/'w1b_checkpoint.json', 'w'), ensure_ascii=False, separators=(',', ':'))

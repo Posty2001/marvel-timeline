@@ -45,5 +45,6 @@
     meta().then(function (m) { if (!m) return cb([]); var n = Math.ceil(m.N / m.CH), out = [], i = 0;
       (function next() { if (i >= n) return cb(out.sort(function (a, b) { return a.n < b.n ? -1 : a.n > b.n ? 1 : 0; })); load('n/' + (i++) + '.json').then(function (c) { (c || []).forEach(function (r) { if (r.t === t) out.push(r); }); next(); }); })(); });
   }
-  W.tvaDb = { lista: lista, tipi: function (cb) { meta().then(function (m) { cb(m ? m.tipi || {} : {}); }); }, search: search, get: get, norm: norm, TIPO: TIPO, available: function (cb) { meta().then(function (m) { cb(!!m); }); } };
+  function at(o, id) { return rec(o).then(function (r) { return r && (!id || r.i === id) ? r : null; }); }
+  W.tvaDb = { at: at, lista: lista, tipi: function (cb) { meta().then(function (m) { cb(m ? m.tipi || {} : {}); }); }, search: search, get: get, norm: norm, TIPO: TIPO, available: function (cb) { meta().then(function (m) { cb(!!m); }); } };
 })();

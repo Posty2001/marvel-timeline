@@ -16,11 +16,12 @@
     { t: 'm', n: 'Mantelli', s: 'titoli passati di mano', img: 'arti_mistiche' }, { t: 'U', n: 'Universi', s: 'continuità e Terre', img: 'universi' },
     { t: 'o', n: 'Organizzazioni', s: 'agenzie e gruppi', img: 'organizzazioni' }, { t: 'a', n: 'Artefatti', s: 'oggetti e reliquie', img: 'artefatti' },
     { t: 'l', n: 'Luoghi', s: 'luoghi narrativi', img: 'luoghi' }, { t: 'P', n: 'Pianeti', s: 'mondi e dimensioni', img: 'luoghi' },
-    { t: 'e', n: 'Eventi', s: 'eventi e battaglie', img: 'eventi' }, { t: 't', n: 'Attori', s: 'interpreti', img: 'attori' }];
+    { t: 'e', n: 'Eventi', s: 'eventi e battaglie', img: 'eventi' }, { t: 't', n: 'Attori', s: 'interpreti', img: 'attori' },
+    { t: 'O', n: 'Opere', s: 'film, serie e produzioni', img: 'eventi' }, { t: 'C', n: 'Creatori', s: 'autori, registi, sceneggiatori', img: 'attori' }, { t: 'S', n: 'Specie e civiltà', s: 'popoli e razze', img: 'personaggi' }];
   var TN = {}; TYPES.forEach(function (x) { TN[x.t] = x; });
-  var SING = { p: 'Personaggio', h: 'Hub di identità', m: 'Mantello', U: 'Universo', o: 'Organizzazione', a: 'Artefatto', l: 'Luogo', P: 'Pianeta', e: 'Evento', t: 'Attore' };
+  var SING = { p: 'Personaggio', h: 'Hub di identità', m: 'Mantello', U: 'Universo', o: 'Organizzazione', a: 'Artefatto', l: 'Luogo', P: 'Pianeta', e: 'Evento', t: 'Attore', O: 'Opera', C: 'Creatore', S: 'Specie o civiltà' };
   var KIND = { i: 'Identità', v: 'Variante', c: 'Copia', h: 'Hub', m: 'Mantello', g: '' };
-  var PAL = { p: ['#3a2f1c', '#E3C79B'], h: ['#3a1c1e', '#ff5c5f'], m: ['#2c2140', '#b48ae0'], U: ['#10303a', '#4fd0ff'], o: ['#3a2a10', '#F59A23'], a: ['#341a3c', '#d46aff'], l: ['#14283a', '#6fb3d9'], P: ['#143a34', '#9fe0d4'], e: ['#3a2010', '#ff8a3c'], t: ['#3a1c22', '#e9a0a6'] };
+  var PAL = { p: ['#3a2f1c', '#E3C79B'], h: ['#3a1c1e', '#ff5c5f'], m: ['#2c2140', '#b48ae0'], U: ['#10303a', '#4fd0ff'], o: ['#3a2a10', '#F59A23'], a: ['#341a3c', '#d46aff'], l: ['#14283a', '#6fb3d9'], P: ['#143a34', '#9fe0d4'], e: ['#3a2010', '#ff8a3c'], t: ['#3a1c22', '#e9a0a6'] , O: ['#2a2a3a', '#9aa8ff'], C: ['#2b2f2a', '#b6d98a'], S: ['#2a3a2f', '#7fe0a8']};
 
   /* ---------- utilità ---------- */
   function h(tag, cls, txt, at) { var n = D.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; if (at) Object.keys(at).forEach(function (k) { n.setAttribute(k, at[k]); }); return n; }
@@ -59,8 +60,25 @@
     if (IDX) return cb();
     get('data/index.json').then(function (d) {
       IDX = d; d.voci.forEach(function (v) { BY[v.i] = v; (ORD[v.t] = ORD[v.t] || []).push(v); });
-      cb();
+      mergeDb(cb);
     }).catch(function () { body.className = 'a2-scroll a3'; body.textContent = ''; body.appendChild(h('div', 'empty', 'Dati di TVA Atlas non disponibili offline. Puoi usare l’Atlante classico.')); });
+  }
+  /* Integrazione NATIVA del database esteso: le voci entrano nei cataloghi, nella ricerca, nel Multiverso e nel Nexus come tutte le altre.
+     Si carica solo un elenco leggero (atlante2/data/db/stub.json); le schede complete arrivano a richiesta. Se i dati non esistono, nulla cambia. */
+  function mergeDb(cb) {
+    get('data/db/stub.json').then(function (st) {
+      if (!st || !st.r) return cb();
+      Object.keys(st.uni || {}).forEach(function (u) { if (!IDX.meta.universi[u]) IDX.meta.universi[u] = { n: st.uni[u].n, c: st.uni[u].c, nt: '' }; });
+      var tocc = {};
+      st.r.forEach(function (r) {
+        if (BY[r[0]]) return; var u = r[3] && IDX.meta.universi[r[3]] ? r[3] : '';
+        var v = { i: r[0], n: r[1], t: r[2], k: 'i', u: u, a: 0, q: norm(r[1] + ' ' + (r[6] || '')), pg: [], s: 0, sh: -1, db: 1, lv: r[4], o: r[5] };
+        BY[v.i] = v; IDX.voci.push(v); (ORD[v.t] = ORD[v.t] || []).push(v); tocc[v.t] = 1;
+      });
+      Object.keys(st.x || {}).forEach(function (id) { if (BY[id] && st.x[id]) BY[id].q += ' ' + st.x[id]; });
+      Object.keys(tocc).forEach(function (t) { ORD[t].sort(function (a, b) { var x = norm(a.n), y = norm(b.n); return x < y ? -1 : x > y ? 1 : 0; }); });
+      cb();
+    }).catch(function () { cb(); });
   }
   function dossier(id, cb) {
     var v = BY[id]; if (!v) return cb(null);
@@ -177,7 +195,7 @@
   function openId(id, push) {
     var v = BY[id]; if (!v) return false;
     save(LASTKEY, { id: id, n: v.n, t: v.t });
-    var p = { v: v.t === 'h' || v.t === 'm' ? 'hub' : 'dos', id: id }; if (push === false) { ST.a3 = p; api.draw(); api.setScroll(0); } else api.nav('a3', { a3: p });
+    var p = v.db ? { v: 'dbx', id: id, o: v.o } : { v: v.t === 'h' || v.t === 'm' ? 'hub' : 'dos', id: id }; if (push === false) { ST.a3 = p; api.draw(); api.setScroll(0); } else api.nav('a3', { a3: p });
     return true;
   }
   W.tvaA3 = {};
@@ -194,6 +212,7 @@
   function shown(v) {   // titolo senza ripetizioni; per gli universi: nome/denominazione COMPLETA + classificazione separata (il nome completo resta anche in aria-label e nel dossier)
     var n = v.n, sub = v.u ? uniNome(v.u) : (v.a ? v.a + (v.t === 'h' ? ' voci collegate' : v.t === 'm' ? ' titolari' : ' apparizioni') : '');
     if (v.t === 'U') return { n: uniFull(v), s: uniCont(v.i) || '' };
+    if (v.db && !sub) sub = v.lv === 'B' ? 'scheda strutturata' : 'voce essenziale';
     if (sub && (nk(sub) === nk(n) || nk(n).indexOf(nk(sub)) >= 0)) sub = '';
     return { n: n, s: sub };
   }
@@ -360,48 +379,24 @@
     if (W.tvaDb) return cb(W.tvaDb); DBQ.push(cb); if (DBL) return; DBL = 1;
     var sc = D.createElement('script'); sc.src = BASE + 'db.js'; sc.async = true; sc.onload = function () { var q = DBQ.splice(0); q.forEach(function (f) { if (W.tvaDb) f(W.tvaDb); }); }; sc.onerror = function () { DBL = 0; DBQ.length = 0; }; D.head.appendChild(sc);
   }
-  function dbGroup(q, out, token) {
-    withDb(function (db) { db.search(q, function (rs) {
-      if (token.q !== q || !rs.length) return;
-      var g = h('section', 'a3-sgroup a3-dbg'), hd = h('h3', '', 'Archivio esteso'); hd.appendChild(h('small', '', rs.length + (rs.length === 1 ? ' risultato' : ' risultati'))); g.appendChild(hd);
-      var ls = h('div', 'a3-list'), n = 0;
-      rs.forEach(function (r) {
-        if (n >= 12) return; var ex = r.x && BY[r.x]; if (r.t === 'x' && !ex) return; n++;
-        var b = btn('a3-li a3-dbi', null, function () { if (ex) openId(r.x); else api.nav('a3', { a3: { v: 'dbx', id: r.i } }); });
-        var t = h('span'); t.appendChild(h('b', '', ex ? BY[r.x].n : r.n)); t.appendChild(h('span', 's', ex ? 'Scheda del registro' + (r.al && r.al.length ? ' · trovata tramite alias' : '') : (db.TIPO[r.t] || r.t) + (r.it && r.it !== r.n ? ' · ' + r.it : '') + ' · voce essenziale')); b.appendChild(t); ls.appendChild(b);
-      });
-      if (!n) return; g.appendChild(ls); Array.prototype.forEach.call(out.querySelectorAll('.empty'), function (e) { e.remove(); }); out.appendChild(g);
-    }); });
-  }
-  function renderDbc() {
-    frame(); var s = A3(); body.appendChild(h('div', 'a3-load', 'Caricamento…'));
-    withDb(function (db) {
-      if (ST.a3 !== s) return;
-      if (!s.t) { db.tipi(function (tp) { if (ST.a3 !== s) return; frame(); api.setTitle('Archivio esteso', 'TVA Atlas'); var g = h('div', 'a3-dbtiles');
-        Object.keys(tp).sort(function (a, b) { return tp[b] - tp[a]; }).forEach(function (k) { g.appendChild(btn('btn ghost a3-dbtile', (db.TIPO[k] || k) + ' · ' + tp[k], function () { api.nav('a3', { a3: { v: 'dbc', t: k, n: 40 } }); })); });
-        body.appendChild(Object.keys(tp).length ? g : h('div', 'empty', 'Archivio esteso non disponibile.')); }); return; }
-      db.lista(s.t, function (rs) { if (ST.a3 !== s) return; frame(); api.setTitle(db.TIPO[s.t] || s.t, 'Archivio esteso'); var ls = h('div', 'a3-list');
-        rs.slice(0, s.n || 40).forEach(function (r) { var b = btn('a3-li a3-dbi', null, function () { api.nav('a3', { a3: { v: 'dbx', id: r.i } }); }); var t = h('span'); t.appendChild(h('b', '', r.n)); t.appendChild(h('span', 's', (r.it && r.it !== r.n ? r.it + ' · ' : '') + (r.lv === 'B' ? 'scheda strutturata' : 'voce essenziale'))); b.appendChild(t); ls.appendChild(b); });
-        body.appendChild(ls); if (rs.length > (s.n || 40)) body.appendChild(btn('btn ghost a3-more', 'Mostra altre (' + (rs.length - (s.n || 40)) + ')', function () { s.n = (s.n || 40) + 40; renderDbc(); })); });
-    });
-  }
   function renderDbx() {
     frame(); var s = A3(); body.appendChild(h('div', 'a3-load', 'Caricamento…'));
-    withDb(function (db) { db.get(s.id, function (r) {
+    withDb(function (db) { (s.o != null && db.at ? db.at(s.o, s.id) : { then: function (f) { db.get(s.id, f); } }).then(function (r) {
       if (ST.a3 !== s) return; frame();
       if (!r) { body.appendChild(h('div', 'empty', 'Voce non disponibile.')); return; }
-      api.setTitle(r.n, 'TVA Atlas');
-      var c = h('article', 'a3-dbx'); c.appendChild(h('div', 'k', (db.TIPO[r.t] || r.t) + (r.lv === 'B' ? ' · scheda strutturata (Livello B)' : ' · voce essenziale (Livello C)')));
+      api.setTitle(r.n, (db.TIPO[r.t] || 'TVA Atlas'));
+      var c = h('article', 'a3-dbx'); c.appendChild(h('div', 'k', (SING[(BY[r.i] || {}).t] || db.TIPO[r.t] || r.t) + (r.lv === 'B' ? ' · scheda strutturata' : ' · voce essenziale')));
       c.appendChild(h('h2', '', r.n)); if (r.it && r.it !== r.n) c.appendChild(h('div', 'it', 'In italiano: ' + r.it));
       if (r.d) c.appendChild(h('p', 'd', r.d.charAt(0).toUpperCase() + r.d.slice(1) + '.'));
       var kv = function (k, v, tag) { if (!v || (v.length === 0)) return; var d = h('div', 'a3-kv'); d.appendChild(h('span', 'k', k)); var vv = h('div', 'v', Array.isArray(v) ? v.join(', ') : v); if (tag) vv.appendChild(h('small', 'a3-ff', ' · ' + tag)); d.appendChild(vv); c.appendChild(d); };
       kv('Alias e denominazioni', r.al); kv('Interpreti', r.ip);
-      var F = r.f || {}, FF = r.ff || {}, ET = [['specie', 'Specie'], ['genere', 'Genere'], ['stato', 'Stato'], ['affiliazioni', 'Organizzazioni di appartenenza'], ['poteri', 'Poteri'], ['abilita', 'Abilità'], ['equipaggiamento', 'Equipaggiamento'], ['trasformazioni', 'Trasformazioni'], ['debolezze', 'Debolezze'], ['prima_apparizione', 'Prima apparizione'], ['origine', 'Origine'], ['nome_reale', 'Nome reale'], ['cittadinanza', 'Cittadinanza'], ['occupazione', 'Occupazione'], ['nascita', 'Nascita'], ['morte', 'Morte'], ['ubicazione', 'Ubicazione'], ['utenti', 'Utenti e proprietari'], ['creatore_oggetto', 'Creato da'], ['membri', 'Membri e capi'], ['esito', 'Esito'], ['popolazione', 'Popolazione'], ['apparizioni', 'Apparizioni']];
+      var F = r.f || {}, FF = r.ff || {}, ET = [['specie', 'Specie'], ['genere', 'Genere'], ['stato', 'Stato'], ['affiliazioni', 'Organizzazioni di appartenenza'], ['poteri', 'Poteri'], ['abilita', 'Abilità'], ['equipaggiamento', 'Equipaggiamento'], ['trasformazioni', 'Trasformazioni'], ['debolezze', 'Debolezze'], ['prima_apparizione', 'Prima apparizione'], ['origine', 'Origine'], ['nome_reale', 'Nome reale'], ['cittadinanza', 'Cittadinanza'], ['occupazione', 'Occupazione'], ['nascita', 'Nascita'], ['morte', 'Morte'], ['ubicazione', 'Ubicazione'], ['utenti', 'Utenti e proprietari'], ['creatore_oggetto', 'Creato da'], ['membri', 'Membri e capi'], ['esito', 'Esito'], ['popolazione', 'Popolazione'], ['apparizioni_narrativa', 'Apparizioni nella continuità narrativa'], ['apparizioni_alternativi', 'Apparizioni in universi alternativi (varianti, non la stessa incarnazione)'], ['apparizioni_fumetti', 'Fumetti'], ['apparizioni_videogiochi', 'Videogiochi'], ['apparizioni_adattamenti', 'Adattamenti, LEGO, parodie e altri media']];
       ET.forEach(function (e) { kv(e[1], F[e[0]], FF[e[0]] >= 2 ? 'confermato da due fonti' : (FF[e[0]] === 1 ? 'una fonte' : '')); });
       if (r.u && BY[r.u]) { var d = h('div', 'a3-kv'); d.appendChild(h('span', 'k', 'Continuità')); var v = h('div', 'v'); v.appendChild(btn('a3-lk', BY[r.u].n, function () { openId(r.u); })); d.appendChild(v); c.appendChild(d); }
-      c.appendChild(h('p', 'a3-dbnote', r.lv === 'B' ? 'Scheda strutturata (Livello B): fatti documentati dalle fonti indicate, senza testi copiati; i termini non tradotti restano nella lingua originale. Il dossier narrativo arriverà con le ondate successive.' : 'Voce essenziale: identità, tipo e riferimenti verificati. Il dossier approfondito arriverà con le ondate successive; nessun testo è copiato da altre fonti.'));
+      c.appendChild(h('p', 'a3-dbnote', r.lv === 'B' ? 'Scheda strutturata (Livello B): fatti documentati dalle fonti indicate, senza testi copiati; i termini non tradotti restano nella lingua originale. Le schede di livello superiore arriveranno con le ondate successive.' : 'Voce essenziale: identità, tipo e riferimenti verificati. Il dossier approfondito arriverà con le ondate successive; nessun testo è copiato da altre fonti.'));
       var f = h('div', 'a3-dbsrc'); [['Wikidata (CC0)', 'https://www.wikidata.org/wiki/' + r.wd], r.wp ? ['Wikipedia (solo riferimento)', 'https://en.wikipedia.org/wiki/' + encodeURIComponent(r.wp.replace(/ /g, '_'))] : null].forEach(function (x) { if (!x) return; var a = h('a', '', x[0]); a.href = x[1]; a.target = '_blank'; a.rel = 'noopener noreferrer'; f.appendChild(a); });
       (r.xs || []).forEach(function (x) { var a = h('a', '', x[0] + ' (CC BY-SA 3.0)'); a.href = x[1]; a.target = '_blank'; a.rel = 'noopener noreferrer'; f.appendChild(a); }); c.appendChild(f);
+      if (BY[r.i] && (BY[r.i].t === 'p' || BY[r.i].t === 'o')) c.appendChild(btn('btn ghost a3-dbopen', 'Apri nel TVA Nexus', function () { api.nav('a3', { a3: { v: 'nx', c: r.i } }); }));
       body.appendChild(c);
     }); });
   }
@@ -421,14 +416,13 @@
     var tools = h('div', 'a3-tools'), l = h('div', 'line'), inp = h('input', 'a3-in'); inp.type = 'search'; inp.placeholder = 'Cerca in TVA Atlas…'; inp.value = s.q || ''; inp.setAttribute('aria-label', 'Cerca'); inp.setAttribute('autocomplete', 'off'); l.appendChild(inp); tools.appendChild(l); body.appendChild(tools);
     var out = h('div'); body.appendChild(out); var tm, tok = { q: '' };
     function run() {
-      s.q = inp.value; out.textContent = ''; tok.q = s.q; var q = norm(s.q); if (!q) { out.appendChild(h('div', 'empty', 'Scrivi un nome, un universo, un interprete…')); withDb(function (db) { db.available(function (ok2) { if (ok2 && !norm(s.q)) out.appendChild(btn('btn ghost a3-dbopen', 'Sfoglia l\'Archivio esteso', function () { api.nav('a3', { a3: { v: 'dbc' } }); })); }); }); return; }
+      s.q = inp.value; out.textContent = ''; tok.q = s.q; var q = norm(s.q); if (!q) { out.appendChild(h('div', 'empty', 'Scrivi un nome, un universo, un interprete…')); return; }
       var r = search(s.q), any = false;
       TYPES.forEach(function (x) {
         var a = r[x.t]; if (!a) return; any = true; var g = h('section', 'a3-sgroup t-' + x.t), hd = h('h3', '', x.n); hd.appendChild(h('small', '', a.length + (a.length === 1 ? ' risultato' : ' risultati'))); g.appendChild(hd);
         var ls = h('div', 'a3-list'); a.slice(0, 5).forEach(function (e) { ls.appendChild(li(e[1])); }); g.appendChild(ls);
         if (a.length > 5) { var m = btn('btn ghost a3-more', 'Mostra tutti (' + a.length + ')', function () { api.nav('a3', { a3: { v: 'cat', t: x.t, m: 'l', n: 36, q: s.q } }); }); g.appendChild(m); } out.appendChild(g);
       });
-      dbGroup(s.q, out, tok);
       if (!any) out.appendChild(h('div', 'empty', 'Nessun risultato per «' + s.q + '».'));
     }
     inp.addEventListener('input', function () { clearTimeout(tm); tm = setTimeout(run, 100); }); run();
@@ -599,10 +593,10 @@
   try { new W.MutationObserver(fitSoon).observe(D.body, { childList: true, subtree: true }); W.addEventListener('resize', function () { D.querySelectorAll('[data-fit]').forEach(function (n) { n.removeAttribute('data-fit'); n.style.fontSize = ''; }); fitSoon(); }); } catch (e) { /* ok */ }
   W.tvaFitTitles = fitTitles;
   W.tvaA3Ctx = function () { return { a5: withA5, dossier: dossier, h: h, btn: btn, BY: BY, ORD: ORD, emblem: emblem, paintAny: paintAny, paintRit: paintRit, tile: tile, uniNome: uniNome, uniCont: uniCont, uniHue: uniHue, natIdx: natIdx, ORBCLR: ORBCLR, openId: openId, frame: frame, api: api, search: search, get: get, A3: A3, body: body, get IDX() { return IDX; } }; };
-  var VIEWS = { rit: renderRit, home: renderHome, cat: renderCat, search: renderSearch, dbx: renderDbx, dbc: renderDbc, dos: renderDossier, hub: renderHub, mv: a4view('mv'), nx: a4view('nx'), pc: a4view('pc'), cp: a4view('cp'), pf: a5view('viewPF'), pr: a5view('viewPR') };
+  var VIEWS = { rit: renderRit, home: renderHome, cat: renderCat, search: renderSearch, dbx: renderDbx, dos: renderDossier, hub: renderHub, mv: a4view('mv'), nx: a4view('nx'), pc: a4view('pc'), cp: a4view('cp'), pf: a5view('viewPF'), pr: a5view('viewPR') };
   W.tvaA3 = {
     render: function () { ensure(function () { (VIEWS[A3().v] || renderHome)(); reveal(body); }); },
-    label: function (s) { var a = s.a3 || {}; if (a.v === 'dos' || a.v === 'hub') return (BY[a.id] && BY[a.id].n) || 'Dossier'; if (a.v === 'cat') return 'Catalogo'; if (a.v === 'rit') return 'Ritratti privati'; if (a.v === 'mv') return 'Osservatorio del Multiverso'; if (a.v === 'nx') return 'TVA Nexus'; if (a.v === 'pc') return 'Percorso'; if (a.v === 'cp') return 'Confronto universi'; if (a.v === 'pf') return 'Preferiti e raccolte'; if (a.v === 'pr') return 'Progressione'; if (a.v === 'search') return 'Ricerca'; if (a.v === 'dbx' || a.v === 'dbc') return 'Archivio esteso'; return 'TVA Atlas'; },
+    label: function (s) { var a = s.a3 || {}; if (a.v === 'dos' || a.v === 'hub') return (BY[a.id] && BY[a.id].n) || 'Dossier'; if (a.v === 'cat') return 'Catalogo'; if (a.v === 'rit') return 'Ritratti privati'; if (a.v === 'mv') return 'Osservatorio del Multiverso'; if (a.v === 'nx') return 'TVA Nexus'; if (a.v === 'pc') return 'Percorso'; if (a.v === 'cp') return 'Confronto universi'; if (a.v === 'pf') return 'Preferiti e raccolte'; if (a.v === 'pr') return 'Progressione'; if (a.v === 'search') return 'Ricerca'; if (a.v === 'dbx') return (BY[a.id] && BY[a.id].n) || 'Scheda'; return 'TVA Atlas'; },
     ctx: function () { return W.tvaA3Ctx(); }, open: openId, go: function (pid, cb) { ensure(function () { var r = resolve(pid, null); if (r) openId(r); if (cb) cb(!!r); }); }, search: function (q) { return IDX ? search(q) : null; }, state: function () { return { idx: !!IDX, shards: Object.keys(SH).length }; }, ensure: ensure
   };
   if (W.tvaA3Boot) W.tvaA3Boot();
