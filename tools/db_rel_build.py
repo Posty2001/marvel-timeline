@@ -101,6 +101,39 @@ def costruisci(raw):
             rid = 'rel-db-' + hashlib.sha1('|'.join(k).encode()).hexdigest()[:10]
             out.append({'id': rid, 'tipo': tipo, 'classe': 'narrativa', 'da': da, 'a': a, 'simmetrica': tipo in SIMM, 'qualifica': qual, 'fonte': ['parametro "parenti" infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)'],
                         'verifica': 'da verificare', 'origine': 'db:infobox:parenti', 'controversa': False})
+    # --- terza via: alleati, avversari e appartenenze citati dalle infobox (UNA sola fonte: restano «da verificare»; mai verificate automaticamente senza seconda fonte) ---
+    org_nome = collections.defaultdict(set)
+    for i in list(canon) + list(ident):
+        if i.startswith(('org-', 'id-')): org_nome[nn(nome(i))].add(i)
+    VIA = (('alleati', 'alleanza', 'alleato'), ('nemici', 'rivalita', 'avversario'))
+    for S, rec in sorted(canon.items()):
+        if not S.startswith('id-'): continue
+        f_ = rec.get('fatti') or {}
+        for chiave, tipo, qual in VIA:
+            for nm in ((f_.get('relazioni_fonte') or {}).get(chiave) or []):
+                T = re.sub(r'\s*\([^)]*\)\s*$', '', nm).strip()
+                cand = {c for c in per_nome.get(nn(T), ()) if c != S and uni(c) and uni(S) and uni(c) == uni(S)}
+                if len(cand) != 1: cont['%s non univoco/assente' % chiave] += 1; continue
+                U_ = next(iter(cand)); da, a = (min(S, U_), max(S, U_))
+                if frozenset((da, a)) in paia: cont['%s gia nel registro' % chiave] += 1; continue
+                k = (tipo, da, a)
+                if k in visti or any(x['tipo'] == tipo and {x['da'], x['a']} == {da, a} for x in out if x['origine'].startswith('db:infobox')): continue
+                visti.add(k)
+                out.append({'id': 'rel-db-' + hashlib.sha1('|'.join(k).encode()).hexdigest()[:10], 'tipo': tipo, 'classe': 'narrativa', 'da': da, 'a': a, 'simmetrica': True, 'qualifica': None,
+                            'fonte': ['parametro "%s" infobox MCU Wiki/Marvel Database (CC BY-SA 3.0), una sola fonte' % ('allies' if chiave == 'alleati' else 'enemies')], 'verifica': 'da verificare', 'origine': 'db:infobox:' + chiave, 'controversa': False})
+        for nm in (f_.get('affiliazioni') or []):
+            T = re.sub(r'\s*\([^)]*\)\s*$', '', nm).strip()
+            cand = {c for c in org_nome.get(nn(T), ()) if c != S and (c.startswith('org-') or c.startswith('id-')) and uni(c) and uni(S) and uni(c) == uni(S)}
+            if len(cand) != 1: cont['affiliazioni non univoco/assente'] += 1; continue
+            U_ = next(iter(cand)); k = ('appartenenza', S, U_)
+            if frozenset((S, U_)) in paia or k in visti or any(x['tipo'] == 'appartenenza' and x['da'] == S and x['a'] == U_ for x in out): continue
+            if not (U_.startswith('org-') or (U_.startswith('id-') and 'x-men' in U_ or U_.startswith('id-') and U_ != S and not nn(nome(U_)) == nn(nome(S)) and (canon.get(U_, {}).get('fatti', {}) or {}).get('membri'))): continue
+            visti.add(k)
+            out.append({'id': 'rel-db-' + hashlib.sha1('|'.join(k).encode()).hexdigest()[:10], 'tipo': 'appartenenza', 'classe': 'narrativa', 'da': S, 'a': U_, 'simmetrica': False, 'qualifica': 'membro',
+                        'fonte': ['parametro "affiliation" infobox MCU Wiki/Marvel Database (CC BY-SA 3.0), una sola fonte'], 'verifica': 'da verificare', 'origine': 'db:infobox:affiliazioni', 'controversa': False})
+    for x in out:   # metodo di verifica: SEMPRE esplicito (le verifiche automatiche non sono verifiche documentali effettive)
+        x['metodo'] = ('automatica: Wikidata + riscontro relazionale direzionale (Wikipedia)' if x['verifica'] == 'verificata' and any('Wikipedia' in f for f in x['fonte']) else
+                       'automatica: Wikidata + parametro infobox' if x['verifica'] == 'verificata' else 'nessuna verifica (una sola fonte)')
     return {'versione': 1, 'fonte': 'Wikidata CC0 (+ seconda fonte dove indicata)', 'relazioni': out, 'staging': stag, 'conteggi': dict(cont) | {'relazioni': len(out), 'verificate': sum(1 for x in out if x['verifica'] == 'verificata'), 'staging': len(stag)}}
 def wp_titolo(rec):
     for f in (rec or {}).get('fonti', []):
@@ -128,7 +161,7 @@ def applica_verifica(g, ver):
     for x in g['relazioni']:
         v = (ver or {}).get(x['id'])
         if x['verifica'] != 'verificata' and v and v.get('ok'):
-            x['verifica'] = 'verificata'; x['fonte'].append('Wikipedia (CC BY-SA 4.0), riscontro nella stessa frase: ' + v['url']); n += 1
+            x['verifica'] = 'verificata'; x['fonte'].append('Wikipedia (CC BY-SA 4.0), riscontro relazionale direzionale: ' + v['url']); n += 1
     return n
 def runtime(g):
     tipi = sorted({x['tipo'] for x in g['relazioni']}); V = {'verificata': 2, 'da verificare': 0}

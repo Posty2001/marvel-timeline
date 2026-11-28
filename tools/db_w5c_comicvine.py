@@ -45,6 +45,25 @@ def main():
             got['off'] += len(res); got['visti'] = got.get('visti', 0) + len(res)
             if len(res) < 100 or got['off'] >= r.get('number_of_total_results', 0): got['fine'] = True
             json.dump(ck, open(ckf, 'w'), ensure_ascii=False, separators=(',', ':'))
+    # fase relazioni (W8): amici/nemici/team dei personaggi indicati in data/atlante/espansione/cv_rel_bersagli.json (solo ID e nomi; nessun testo)
+    bf = pathlib.Path(__file__).resolve().parent.parent / 'data/atlante/espansione/cv_rel_bersagli.json'
+    if bf.exists():
+        ids = json.load(open(bf))['ids']; rf = out / 'cv_rel_checkpoint.json'; rel = {}
+        if rf.exists():
+            try: rel = json.load(open(rf))
+            except Exception: rel = {}
+        for n, cid in enumerate(ids):
+            if str(cid) in rel: continue
+            try:
+                time.sleep(1.1)
+                u = 'https://comicvine.gamespot.com/api/character/4005-%d/?%s' % (cid, urllib.parse.urlencode({'api_key': KEY, 'format': 'json', 'field_list': 'id,character_friends,character_enemies,teams'}))
+                r = json.load(urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': UA}), timeout=60))
+                if r.get('status_code') != 1: anom.append('rel %d: %s' % (cid, str(r.get('error'))[:60])); continue
+                x = r['results']; rel[str(cid)] = {'f': [y['id'] for y in x.get('character_friends') or []], 'e': [y['id'] for y in x.get('character_enemies') or []], 't': [y['id'] for y in x.get('teams') or []]}
+            except Exception as e: anom.append('rel %d: %s' % (cid, str(e)[:60])); time.sleep(5)
+            if n % 25 == 0: json.dump(rel, open(rf, 'w'), separators=(',', ':'))
+        json.dump(rel, open(rf, 'w'), separators=(',', ':'))
+        json.dump({'fonte': 'Comic Vine API (chiave gratuita): solo ID di amici/nemici/team', 'recuperato': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'personaggi': rel}, open(out / 'cv_rel.json', 'w'), separators=(',', ':'))
     json.dump({'fonte': 'Comic Vine API (chiave gratuita, uso non commerciale; solo ID e numeri)', 'recuperato': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'risorse': {k: v['v'] for k, v in ck.items()}, 'anomalie': anom}, open(out / 'cv2_marvel.json', 'w'), ensure_ascii=False, separators=(',', ':'))
     print(json.dumps({k: len(v['v']) for k, v in ck.items()}), anom[:3]); sys.exit(0)
 if __name__ == '__main__': main()
