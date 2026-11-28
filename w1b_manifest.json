@@ -1,5 +1,5 @@
 {
- "avvio": "2026-11-28T01:25:07Z",
+ "avvio": "2026-11-28T07:15:27Z",
  "bersagli": 989,
  "mcuwiki_trovate": 832,
  "marveldb_cercati": 372,
@@ -77,11 +77,11 @@
     19
    ],
    [
-    "AltUniverse",
+    "OrgHub",
     16
    ],
    [
-    "OrgHub",
+    "AltUniverse",
     16
    ],
    [
@@ -112,11 +112,11 @@
   "chiavi": [
    [
     "tvseries",
-    424
+    429
    ],
    [
     "movie",
-    384
+    401
    ],
    [
     "status",
@@ -152,27 +152,27 @@
    ],
    [
     "comic",
-    197
+    214
+   ],
+   [
+    "book",
+    201
    ],
    [
     "affiliation",
     180
    ],
    [
-    "book",
-    124
+    "dod",
+    95
    ],
    [
     "title",
     95
    ],
    [
-    "dod",
-    95
-   ],
-   [
     "game",
-    82
+    85
    ],
    [
     "users",
@@ -219,15 +219,15 @@
     23
    ],
    [
-    "oneshot",
-    22
-   ],
-   [
     "population",
     22
    ],
    [
     "locations",
+    22
+   ],
+   [
+    "oneshot",
     22
    ],
    [
@@ -684,6 +684,68 @@
     1
    ]
   ],
+  "mcuwiki:race": [
+   [
+    "movie",
+    27
+   ],
+   [
+    "image",
+    26
+   ],
+   [
+    "homeplanet",
+    24
+   ],
+   [
+    "tv series",
+    24
+   ],
+   [
+    "comic",
+    21
+   ],
+   [
+    "book",
+    21
+   ],
+   [
+    "theme park",
+    18
+   ],
+   [
+    "game",
+    17
+   ],
+   [
+    "tv movie",
+    12
+   ],
+   [
+    "alias",
+    10
+   ],
+   [
+    "web series",
+    3
+   ],
+   [
+    "name",
+    1
+   ],
+   [
+    "oneshot",
+    1
+   ],
+   [
+    "docuseries",
+    1
+   ],
+   [
+    "notable",
+    1
+   ]
+  ],
   "mcuwiki:location": [
    [
     "image",
@@ -786,155 +848,15 @@
     1
    ],
    [
+    "capital",
+    1
+   ],
+   [
     "students",
     1
    ],
    [
     "inhabitants",
-    1
-   ],
-   [
-    "capital",
-    1
-   ]
-  ],
-  "mcuwiki:race": [
-   [
-    "movie",
-    27
-   ],
-   [
-    "image",
-    26
-   ],
-   [
-    "homeplanet",
-    24
-   ],
-   [
-    "tv series",
-    24
-   ],
-   [
-    "comic",
-    21
-   ],
-   [
-    "book",
-    21
-   ],
-   [
-    "theme park",
-    18
-   ],
-   [
-    "game",
-    17
-   ],
-   [
-    "tv movie",
-    12
-   ],
-   [
-    "alias",
-    10
-   ],
-   [
-    "web series",
-    3
-   ],
-   [
-    "name",
-    1
-   ],
-   [
-    "oneshot",
-    1
-   ],
-   [
-    "docuseries",
-    1
-   ],
-   [
-    "notable",
-    1
-   ]
-  ],
-  "mcuwiki:vehicle": [
-   [
-    "image",
-    12
-   ],
-   [
-    "status",
-    12
-   ],
-   [
-    "users",
-    11
-   ],
-   [
-    "movie",
-    11
-   ],
-   [
-    "passengers",
-    10
-   ],
-   [
-    "owner",
-    9
-   ],
-   [
-    "tv series",
-    9
-   ],
-   [
-    "comic",
-    9
-   ],
-   [
-    "book",
-    9
-   ],
-   [
-    "builder",
-    9
-   ],
-   [
-    "game",
-    7
-   ],
-   [
-    "prisoners",
-    4
-   ],
-   [
-    "weapons",
-    4
-   ],
-   [
-    "name",
-    3
-   ],
-   [
-    "speed",
-    3
-   ],
-   [
-    "theme park",
-    2
-   ],
-   [
-    "alias",
-    2
-   ],
-   [
-    "web series",
-    2
-   ],
-   [
-    "pilot",
     1
    ]
   ],
@@ -1017,6 +939,334 @@
    ],
    [
     "commanders4",
+    1
+   ]
+  ],
+  "mcuwiki:organization": [
+   [
+    "image",
+    38
+   ],
+   [
+    "movie",
+    37
+   ],
+   [
+    "status",
+    37
+   ],
+   [
+    "locations",
+    25
+   ],
+   [
+    "members",
+    14
+   ],
+   [
+    "headquarters",
+    12
+   ],
+   [
+    "comic",
+    12
+   ],
+   [
+    "formermembers",
+    10
+   ],
+   [
+    "tv series",
+    10
+   ],
+   [
+    "affiliation",
+    9
+   ],
+   [
+    "name",
+    9
+   ],
+   [
+    "leader",
+    9
+   ],
+   [
+    "book",
+    7
+   ],
+   [
+    "founder",
+    4
+   ],
+   [
+    "vehicles",
+    4
+   ],
+   [
+    "formerleaders",
+    3
+   ],
+   [
+    "web series",
+    2
+   ],
+   [
+    "full name",
+    1
+   ],
+   [
+    "oneshot",
+    1
+   ],
+   [
+    "tv movie",
+    1
+   ],
+   [
+    "location",
+    1
+   ]
+  ],
+  "mcuwiki:project": [
+   [
+    "image",
+    2
+   ],
+   [
+    "date",
+    2
+   ],
+   [
+    "begin",
+    2
+   ],
+   [
+    "leader",
+    2
+   ],
+   [
+    "affiliation",
+    2
+   ],
+   [
+    "movie",
+    2
+   ],
+   [
+    "comic",
+    2
+   ],
+   [
+    "book",
+    2
+   ],
+   [
+    "participants",
+    1
+   ],
+   [
+    "end",
+    1
+   ],
+   [
+    "location",
+    1
+   ],
+   [
+    "result",
+    1
+   ]
+  ],
+  "mcuwiki:hub wide": [
+   [
+    "image",
+    2
+   ],
+   [
+    "link",
+    2
+   ],
+   [
+    "name",
+    2
+   ],
+   [
+    "diff",
+    2
+   ]
+  ],
+  "mcuwiki:vehicle": [
+   [
+    "image",
+    12
+   ],
+   [
+    "status",
+    12
+   ],
+   [
+    "users",
+    11
+   ],
+   [
+    "movie",
+    11
+   ],
+   [
+    "passengers",
+    10
+   ],
+   [
+    "owner",
+    9
+   ],
+   [
+    "tv series",
+    9
+   ],
+   [
+    "comic",
+    9
+   ],
+   [
+    "book",
+    9
+   ],
+   [
+    "builder",
+    9
+   ],
+   [
+    "game",
+    7
+   ],
+   [
+    "prisoners",
+    4
+   ],
+   [
+    "weapons",
+    4
+   ],
+   [
+    "name",
+    3
+   ],
+   [
+    "speed",
+    3
+   ],
+   [
+    "theme park",
+    2
+   ],
+   [
+    "alias",
+    2
+   ],
+   [
+    "web series",
+    2
+   ],
+   [
+    "pilot",
+    1
+   ]
+  ],
+  "mcuwiki:armor": [
+   [
+    "image",
+    1
+   ],
+   [
+    "creator",
+    1
+   ],
+   [
+    "alias",
+    1
+   ],
+   [
+    "made",
+    1
+   ],
+   [
+    "movie",
+    1
+   ],
+   [
+    "tv series",
+    1
+   ],
+   [
+    "theme park",
+    1
+   ],
+   [
+    "web series",
+    1
+   ],
+   [
+    "comic",
+    1
+   ],
+   [
+    "book",
+    1
+   ],
+   [
+    "game",
+    1
+   ],
+   [
+    "status",
+    1
+   ]
+  ],
+  "mcuwiki:concept": [
+   [
+    "image",
+    2
+   ],
+   [
+    "movie",
+    2
+   ],
+   [
+    "tv series",
+    2
+   ],
+   [
+    "comic",
+    2
+   ],
+   [
+    "book",
+    2
+   ],
+   [
+    "theme park",
+    2
+   ],
+   [
+    "oneshot",
+    1
+   ],
+   [
+    "tv movie",
+    1
+   ],
+   [
+    "web series",
+    1
+   ],
+   [
+    "game",
+    1
+   ],
+   [
+    "notable users",
     1
    ]
   ],
@@ -1106,206 +1356,6 @@
     1
    ]
   ],
-  "mcuwiki:organization": [
-   [
-    "image",
-    38
-   ],
-   [
-    "movie",
-    37
-   ],
-   [
-    "status",
-    37
-   ],
-   [
-    "locations",
-    25
-   ],
-   [
-    "members",
-    14
-   ],
-   [
-    "comic",
-    12
-   ],
-   [
-    "headquarters",
-    12
-   ],
-   [
-    "tv series",
-    10
-   ],
-   [
-    "formermembers",
-    10
-   ],
-   [
-    "affiliation",
-    9
-   ],
-   [
-    "name",
-    9
-   ],
-   [
-    "leader",
-    9
-   ],
-   [
-    "book",
-    7
-   ],
-   [
-    "founder",
-    4
-   ],
-   [
-    "vehicles",
-    4
-   ],
-   [
-    "formerleaders",
-    3
-   ],
-   [
-    "web series",
-    2
-   ],
-   [
-    "full name",
-    1
-   ],
-   [
-    "location",
-    1
-   ],
-   [
-    "oneshot",
-    1
-   ],
-   [
-    "tv movie",
-    1
-   ]
-  ],
-  "mcuwiki:concept": [
-   [
-    "image",
-    2
-   ],
-   [
-    "movie",
-    2
-   ],
-   [
-    "tv series",
-    2
-   ],
-   [
-    "comic",
-    2
-   ],
-   [
-    "book",
-    2
-   ],
-   [
-    "theme park",
-    2
-   ],
-   [
-    "notable users",
-    1
-   ],
-   [
-    "oneshot",
-    1
-   ],
-   [
-    "tv movie",
-    1
-   ],
-   [
-    "web series",
-    1
-   ],
-   [
-    "game",
-    1
-   ]
-  ],
-  "mcuwiki:project": [
-   [
-    "image",
-    2
-   ],
-   [
-    "date",
-    2
-   ],
-   [
-    "begin",
-    2
-   ],
-   [
-    "leader",
-    2
-   ],
-   [
-    "affiliation",
-    2
-   ],
-   [
-    "movie",
-    2
-   ],
-   [
-    "comic",
-    2
-   ],
-   [
-    "book",
-    2
-   ],
-   [
-    "participants",
-    1
-   ],
-   [
-    "end",
-    1
-   ],
-   [
-    "location",
-    1
-   ],
-   [
-    "result",
-    1
-   ]
-  ],
-  "mcuwiki:hub wide": [
-   [
-    "image",
-    2
-   ],
-   [
-    "link",
-    2
-   ],
-   [
-    "name",
-    2
-   ],
-   [
-    "diff",
-    2
-   ]
-  ],
   "mcuwiki:universe": [
    [
     "image",
@@ -1318,56 +1368,6 @@
    [
     "movie",
     3
-   ]
-  ],
-  "mcuwiki:armor": [
-   [
-    "image",
-    1
-   ],
-   [
-    "creator",
-    1
-   ],
-   [
-    "alias",
-    1
-   ],
-   [
-    "made",
-    1
-   ],
-   [
-    "movie",
-    1
-   ],
-   [
-    "tv series",
-    1
-   ],
-   [
-    "theme park",
-    1
-   ],
-   [
-    "web series",
-    1
-   ],
-   [
-    "comic",
-    1
-   ],
-   [
-    "book",
-    1
-   ],
-   [
-    "game",
-    1
-   ],
-   [
-    "status",
-    1
    ]
   ],
   "marveldb:marvel database:character template": [
@@ -1842,5 +1842,5 @@
  "non_ottenuti": 0,
  "anomalie": [],
  "completa": true,
- "fine": "2026-11-28T01:26:39Z"
+ "fine": "2026-11-28T07:17:06Z"
 }
