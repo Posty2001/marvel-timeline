@@ -27499,11 +27499,41 @@
    "controversa": false
   },
   {
+   "id": "rel-db-527bd2639c",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-ikaris-earth-616",
+   "a": "id-icarus",
+   "simmetrica": false,
+   "qualifica": "padre",
+   "fonte": [
+    "parametro \"parenti\" infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:infobox:parenti",
+   "controversa": false
+  },
+  {
    "id": "rel-db-9bf43b16e1",
    "tipo": "famiglia_coniugi",
    "classe": "narrativa",
    "da": "id-hela-earth-616",
    "a": "id-karnilla",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "parametro \"parenti\" infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:infobox:parenti",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-e5de02f2ab",
+   "tipo": "famiglia_fratelli",
+   "classe": "narrativa",
+   "da": "id-jack-power",
+   "a": "id-katie-power",
    "simmetrica": true,
    "qualifica": null,
    "fonte": [
@@ -29648,10 +29678,10 @@
   "gia nel registro": 49,
   "proprieta ignorata P1038": 81,
   "proprieta ignorata P1344": 4,
-  "parente non univoco/assente": 187,
+  "parente non univoco/assente": 185,
   "parente non mappato": 343,
   "parente confermato (seconda fonte)": 24,
-  "relazioni": 1786,
+  "relazioni": 1788,
   "verificate": 783,
   "staging": 344,
   "confermate_wikipedia": 705

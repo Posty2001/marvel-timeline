@@ -393,7 +393,7 @@ def costruisci_runtime():
     recs = []
     for c in sorted(canon, key=lambda x: x['id']):
         recs.append({'i': c['id'], 'n': c['nome'], 'it': c.get('nome_it'), 't': c['tipo'], 'al': c.get('alias', []), 'd': (c.get('descrizione', {}).get('it') or c.get('descrizione', {}).get('en')),
-                     'u': c.get('universo'), 'ip': c.get('interpreti', []), 'wd': c['ids_esterni']['wikidata'], 'wp': c.get('wikipedia', {}).get('en'), 'lv': c['livello'],
+                     'u': c.get('universo'), 'ip': c.get('interpreti', []), 'wd': c['ids_esterni'].get('wikidata'), 'cv': next((x['url'] for x in c['fonti'] if x['fonte'] == 'Comic Vine'), None), 'wp': c.get('wikipedia', {}).get('en'), 'lv': c['livello'],
                      'f': {k: ([it(x) for x in v] if isinstance(v, list) else it(v)) for k, v in c.get('fatti', {}).items() if k not in ('interpreti_fonte', 'parenti', 'alias_fonte', 'creatori_fonte', 'relazioni_fonte')} or None,
                      'ff': {k: len(set(v)) for k, v in c.get('fatti_fonti', {}).items()} or None, 'xs': [[x['fonte'].split(' (')[0], x['url']] for x in c['fonti'] if x.get('licenza') == 'CC BY-SA 3.0']})
     for a in arr:  # alias/interpreti di voci GIA' esistenti: servono solo alla ricerca (aprono la scheda esistente)

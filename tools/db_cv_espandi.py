@@ -55,8 +55,57 @@ def titoli_md(b):
     return [n, n + ' (Event)']
 def main():
     cv = carica_cv(); canon = canon_tutto(); abb, nuovi = candidati(cv, canon)
+    if '--scrivi' in sys.argv: return
     if '--bersagli' in sys.argv:
         json.dump({'v': 1, 'bersagli': [dict(b, titoli=titoli_md(b)) for b in nuovi]}, open(E / 'cv_bersagli.json', 'w'), ensure_ascii=False, separators=(',', ':'))
         print('abbinati', len(abb), 'nuovi bersagli', len(nuovi), collections.Counter(b['ris'] for b in nuovi))
         json.dump(abb, open(E / 'cv_match.json', 'w'), ensure_ascii=False, separators=(',', ':')); return
+PREF = {'identita': 'id', 'organizzazione': 'org', 'evento': 'ev', 'opera': 'op'}
+CVF = lambda x: {'fonte': 'Comic Vine', 'url': x['u'], 'licenza': 'solo ID/nome/conteggi (nessun testo copiato)'}
+def scrivi():
+    cv = carica_cv(); canon = canon_tutto(); abb, nuovi = candidati(cv, canon)
+    md = json.load(open(E / 'raw/cvmd.json'))['pagine'] if (E / 'raw/cvmd.json').exists() else {}
+    reg = json.load(open(E / 'ids_registro.json'))['ids']; usati = set(reg) | {c['id'] for c in canon}
+    cvx = {(r, norm(base(x['n']))): x for r, l in cv.items() for x in l}
+    ricon = {(c['nome'], c['tipo']) for c in canon}
+    out, stag, cont = [], [], collections.Counter()
+    nomi_esist = {norm(base(c['nome'])) for c in canon} | {norm(base(v['n'])) for v in storico()}
+    def nuovo_id(tipo, nome, cvid):
+        b = PREF[tipo] + '-' + (slug(nome) or 'cv-%d' % cvid)
+        if b in usati: b = b + '-cv%d' % cvid
+        usati.add(b); return b
+    for b in nuovi:
+        pag = None
+        for t in b['titoli'] if 'titoli' in b else titoli_md(b):
+            v = md.get(t)
+            if v and not v['disambigua'] and norm(base(v['titolo'])) == norm(base(t)) and v['categorie']: pag = v; break
+        if not pag: stag.append({'nome': b['nome'], 'tipo': b['tipo'], 'cv': b['cv'], 'motivo': 'una sola fonte (Comic Vine; nessuna pagina omonima su Marvel Database): resta in staging (D12)'}); cont['staging'] += 1; continue
+        nome = b['nome'] + (' (Earth-616)' if b['omonimo_storico'] and b['tipo'] == 'identita' else '')
+        rid = nuovo_id(b['tipo'], nome, b['cv'])
+        rec = {'id': rid, 'tipo': b['tipo'], 'nome': nome, 'livello': 'C', 'stato_verifica': 'verificata', 'origine': 'W5c', 'universo': 'uni-earth-616', 'gruppi': ['cv:' + b['ris']],
+               'ids_esterni': {'comicvine': str(b['cv']), 'marveldb': pag['titolo']},
+               'fonti': [CVF(b), {'fonte': 'Marvel Database', 'url': pag['url'], 'licenza': 'CC BY-SA 3.0'}]}
+        out.append(rec); cont['nuovi:' + b['tipo']] += 1
+    # promozione dello staging «una sola fonte» di W5/W6 (Wikidata) con corrispondenza esatta Comic Vine = seconda fonte indipendente
+    prom = 0
+    for f in ('w5_staging', 'w6_staging'):
+        for l in (E / 'staging' / (f + '.jsonl')).read_text().splitlines():
+            r = json.loads(l)
+            if 'una sola fonte' not in r.get('motivo', '') or not r.get('nome') or r.get('tipo') not in ('identita', 'organizzazione', 'evento'): continue
+            ris = {'identita': 'characters', 'organizzazione': 'teams', 'evento': 'story_arcs'}[r['tipo']]
+            x = cvx.get((ris, norm(base(r['nome']))))
+            if not x or any(o['ids_esterni'].get('comicvine') == str(x['id']) for o in out): continue
+            if any(c.get('ids_esterni', {}).get('wikidata') == r['q'] for c in canon): continue
+            rid = nuovo_id(r['tipo'], r['nome'], x['id'])
+            out.append({'id': rid, 'tipo': r['tipo'], 'nome': r['nome'], 'livello': 'C', 'stato_verifica': 'verificata', 'origine': 'W5c', 'universo': 'uni-earth-616', 'gruppi': ['cv:promozione'],
+                        'ids_esterni': {'wikidata': r['q'], 'comicvine': str(x['id'])},
+                        'fonti': [{'fonte': 'Wikidata', 'url': 'https://www.wikidata.org/wiki/' + r['q'], 'licenza': 'CC0'}, CVF({'u': x['u']})]})
+            prom += 1
+    cont['staging_promosse'] = prom
+    (E / 'canon/w5_cv.jsonl').write_text('\n'.join(json.dumps(r, ensure_ascii=False, sort_keys=True) for r in out) + '\n')
+    (E / 'staging/w5_cv_staging.jsonl').write_text('\n'.join(json.dumps(r, ensure_ascii=False, sort_keys=True) for r in stag) + ('\n' if stag else ''))
+    json.dump(abb, open(E / 'cv_match.json', 'w'), ensure_ascii=False, separators=(',', ':'))
+    json.dump({'abbinati': len(abb), 'nuovi': len(out) - prom, 'promosse': prom, 'staging': len(stag), 'dettaglio': dict(cont)}, open(E / 'w5c_conteggi.json', 'w'), ensure_ascii=False, indent=1)
+    print(dict(cont), 'abbinati', len(abb))
+if '--scrivi' in sys.argv: scrivi(); sys.exit(0)
 if __name__ == '__main__': main()

@@ -20,13 +20,15 @@ def costruisci():
     for i, r in sorted(canon.items()):
         u = un.get(r.get('universo') or '', '')
         d = ((r.get('descrizione') or {}).get('en') or '').strip()
-        t = '%s è %s%s.' % (r['nome'], TIPO.get(r['tipo'], 'una voce'), (' nella continuità «%s»' % u) if u else '')
+        nome = r['nome'] + (' (testata)' if r.get('origine') == 'W5c' and r['tipo'] == 'opera' else '')
+        tp = 'una testata a fumetti Marvel' if nome.endswith('(testata)') else TIPO.get(r['tipo'], 'una voce')
+        t = '%s è %s%s.' % (nome, tp, (' nella continuità «%s»' % u) if u else '')
         if d: t += ' Descrizione Wikidata: %s.' % d[:160].rstrip('.')
         if r.get('interpreti'): t += ' Interpreti: %s.' % ', '.join(r['interpreti'][:3])
         if i in dz: t += ' ' + ' '.join(s['x'] for s in dz[i]['sezioni'][:2])[:300]
         f = r.get('fatti', {})
-        out.append({'id': 'db:' + i, 'name': r['nome'], 'aliases': ([r['nome']] + r.get('alias', []))[:6], 'category': 'scheda',
-                    'universe': u, 'text': t[:620], 'source': 'TVA Atlas · Database Expansion (Wikidata CC0' + ('; MCU Wiki/Marvel Database CC BY-SA, fatti' if any('CC BY-SA' in (x.get('licenza') or '') for x in r.get('fonti', [])) else '') + ')',
+        out.append({'id': 'db:' + i, 'name': nome, 'aliases': ([nome] + r.get('alias', []))[:6], 'category': 'scheda',
+                    'universe': u, 'text': t[:620], 'source': 'TVA Atlas · Database Expansion (' + ('Wikidata CC0' if any(x['fonte'] == 'Wikidata' for x in r.get('fonti', [])) else 'Comic Vine (solo ID) + Marvel Database') + ('; MCU Wiki/Marvel Database CC BY-SA, fatti' if any('CC BY-SA' in (x.get('licenza') or '') for x in r.get('fonti', [])) else '') + ')',
                     'spoiler': bool(f.get('morte')), 'verification': 'verificata'})
     return {'schema': 'knowledge-db-1', 'note': 'Voci del canon della Database Expansion; dati pubblici, nessun dato personale; omonimi mai fusi (continuita\' nel campo universe).', 'records': out}
 def main():
