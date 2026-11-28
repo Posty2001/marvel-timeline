@@ -52,14 +52,15 @@ def costruisci(raw):
                 da, a = (T, S) if dire == 'in' else (S, T)
                 if dire == 'sim' and da > a: da, a = a, da
                 if tipo == 'appartenenza':
-                    if not (a.startswith('org-') and da.startswith('id-')): stag.append({'da': da, 'a': a, 'tipo': tipo, 'motivo': 'estremi non coerenti (serve identita -> organizzazione)'}); continue
+                    if a.startswith('id-') and da.startswith('id-') and uni(da) and uni(a) and uni(da) == uni(a): pass   # gruppo storicamente censito come identita' (es. X-Men), stessa continuita'
+                    elif not (a.startswith('org-') and da.startswith('id-')): stag.append({'da': da, 'a': a, 'tipo': tipo, 'motivo': 'estremi non coerenti (serve identita -> organizzazione)'}); continue
                 elif not (da.startswith('id-') and a.startswith('id-')): stag.append({'da': da, 'a': a, 'tipo': tipo, 'motivo': 'estremi non entrambi identita'}); continue
                 k = (tipo, da, a)
                 if k in visti: continue
                 visti.add(k)
                 if frozenset((da, a)) in paia: cont['gia nel registro'] += 1; continue
                 ua, ub = uni(da), uni(a)
-                if tipo != 'appartenenza' and ua and ub and ua != ub:
+                if (tipo != 'appartenenza' or a.startswith('id-')) and ua and ub and ua != ub:
                     stag.append({'da': da, 'a': a, 'tipo': tipo, 'motivo': 'continuita diverse (%s / %s): non e una relazione narrativa unica, possibile controparte' % (ua, ub)}); continue
                 conf = []
                 if tipo == 'appartenenza': conf = ['x'] if nome(a).split('(')[0].strip().lower() in testo_fatti(da) else []

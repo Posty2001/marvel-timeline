@@ -1,6 +1,6 @@
 {
- "arricchimenti": 18,
- "canon": 1308,
+ "arricchimenti": 27,
+ "canon": 1300,
  "coda": {
   "non_classificati": 39,
   "possibili_duplicati": 2
@@ -11,19 +11,20 @@
  ],
  "per_tipo": {
   "artefatto": 13,
+  "entita-cosmica": 20,
   "evento": 3,
-  "identita": 1243,
-  "luogo": 14,
-  "opera": 6,
-  "organizzazione": 25,
-  "specie": 1,
+  "identita": 1157,
+  "luogo": 15,
+  "opera": 8,
+  "organizzazione": 79,
+  "specie": 2,
   "universo": 3
  },
- "staging": 49,
+ "staging": 48,
  "staging_per_motivo": {
   "ambiguo": 2,
   "classe non riconosciuta": 39,
   "senza etichetta inglese": 5,
-  "una sola fonte (nessun articolo Wikipedia)": 3
+  "una sola fonte (nessun articolo Wikipedia; seconda fonte scartata": 2
  }
 }

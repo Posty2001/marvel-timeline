@@ -31,21 +31,26 @@ REGOLE = [
  ('identita', ('comics character','television character','film character','fictional human','fictional character','fictional alien','fictional robot','superhero','supervillain','fictional mutant','fictional animal','fictional cyborg','fictional android','fictional humanoid','fictional person','fictional hero','fictional villain','fictional antihero','fictional artificial intelligence','fictional extraterrestrial','fictional wizard','fictional sorcerer','fictional soldier','fictional spy','fictional scientist','fictional journalist','fictional lawyer','fictional physician','fictional criminal','fictional dog','fictional cat','fictional monkey','fictional bird','fictional dragon','fictional vampire','fictional zombie','fictional superhuman','fictional giant','fictional dwarf','fictional elf','fictional genius','fictional pirate','fictional president','fictional politician','fictional king','fictional queen','fictional prince','fictional princess','fictional warrior','fictional knight','fictional witch','fictional thief','fictional assassin','fictional mercenary','fictional detective','fictional doctor','fictional teacher','fictional student','fictional child','fictional woman','fictional man','fictional girl','fictional boy','fictional fictional character','fictional demigod','fictional ghost','fictional mutant character','fictional inventor','fictional engineer','fictional pilot','fictional astronaut','fictional agent','fictional officer','fictional commander','fictional captain','fictional general','fictional emperor','fictional priest','fictional monk','fictional sorceress')),
  ('opera', ('film','television series','animated series','animated film','video game','web series','short film','television film','miniseries','anthology','television program','animated television series','film series','media franchise','comic book series','novel','book series','tv series','streaming','documentary','television special','one-shot')),
 ]
-REGOLE_FUM = [   # solo W5/W6 (fumetti): saghe, eventi e testate sono OPERE/EVENTI documentati, non «raggruppamenti editoriali»
- ('evento', ('comic book crossover', 'comics crossover', 'comic book storyline', 'comics storyline', 'story arc', 'crossover event', 'comic book event', 'comics event')),
- ('identita', ('mutant', 'mutate', 'character', 'inhuman', 'human mutant', 'alien', 'superhero', 'supervillain', 'antihero', 'fictional human', 'cyborg', 'robot', 'android', 'mutate human')),
- ('opera', ('ongoing series', 'comic', 'magazine', 'written work', 'comic book', 'comic strip', 'graphic novel', 'comic series', 'limited series', 'miniseries', 'manga', 'webcomic', 'comics series', 'comics anthology', 'one-shot', 'comic magazine')),
+REGOLE_FUM_PRIMA = [('evento', ('comic book crossover', 'comics crossover', 'comic book storyline', 'comics storyline', 'story arc', 'crossover event', 'comic book event', 'comics event'))]
+REGOLE_FUM_DOPO = [   # solo se le regole generali non classificano: classi tipiche dei fumetti
+ ('identita', ('mutant', 'mutate', 'inhuman', 'human mutant', 'alien', 'superhero', 'supervillain', 'antihero', 'cyborg', 'robot', 'android', 'character')),
+ ('opera', ('ongoing series', 'comic strip', 'graphic novel', 'comic series', 'limited series', 'miniseries', 'manga', 'webcomic', 'comics series', 'comics anthology', 'one-shot', 'comic magazine', 'comic', 'magazine', 'written work')),
 ]
 FUMETTI = False
 def classifica(p31_labels, gruppi):
     L = [x.lower() for x in p31_labels if x]
-    if FUMETTI:
-        for tipo, keys in REGOLE_FUM:
+    def prova(regole):
+        for tipo, keys in regole:
             for l in L:
                 if any(l == k or l.startswith(k) or k in l for k in keys): return tipo
-    for tipo, keys in REGOLE:
-        for l in L:
-            if any(l == k or l.startswith(k) or k in l for k in keys): return tipo
+    if FUMETTI:
+        t = prova(REGOLE_FUM_PRIMA)
+        if t: return t
+    t = prova(REGOLE)
+    if t: return t
+    if FUMETTI:
+        t = prova(REGOLE_FUM_DOPO)
+        if t: return t
     if 'human' in L:
         if any(g == 'interpreti_MCU' or g.endswith(':interpreti') or g.startswith('interpreti:') for g in gruppi): return 'attore'
         if any(g == 'creatori_MCU' or g.endswith(':creatori') or g.startswith('creatori:') for g in gruppi): return 'creatore'

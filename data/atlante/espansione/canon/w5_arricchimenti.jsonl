@@ -1,11 +1,20 @@
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "art-adamantio", "interpreti": [], "wikidata": "Q12577"}
+{"alias_nuovi": ["The X-Men"], "fonte": "Wikidata (CC0)", "id": "org-x-men", "interpreti": [], "wikidata": "Q128452"}
+{"alias_nuovi": ["Fantastic 4", "Fantastici 4", "Fantastici Quattro", "I fantastici 4", "I fantastici quattro"], "fonte": "Wikidata (CC0)", "id": "org-fantastic-four", "interpreti": [], "wikidata": "Q152098"}
+{"alias_nuovi": ["I Vendicatori", "Vendicatori"], "fonte": "Wikidata (CC0)", "id": "org-avengers", "interpreti": [], "wikidata": "Q322646"}
+{"alias_nuovi": ["Difensori", "The Defenders"], "fonte": "Wikidata (CC0)", "id": "org-defenders", "interpreti": [], "wikidata": "Q609250"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "org-illuminati", "interpreti": [], "wikidata": "Q632771"}
+{"alias_nuovi": ["All-Father Odinson", "All-Father Thor", "Astonishing Thor", "Don Blake", "Donald Blake", "Mighty Thor", "Odinson", "Sigurd Jarlson", "The Mighty Thor", "Thor Odinson", "Thor: God of Thunder", "Thor: Son of Asgard", "Unworthy Thor"], "fonte": "Wikidata (CC0)", "id": "id-thor", "interpreti": ["Chris Wiggins", "Dave Boat", "Eric Allan Kramer", "Jack Angel", "John Rhys-Davies", "Michael Adamthwaite", "Rick D. Wasserman", "Travis Willingham"], "regola": "risoluzione assistita", "wikidata": "Q717588"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "luo-wakanda", "interpreti": [], "wikidata": "Q766099"}
 {"alias_nuovi": ["Strategic Hazard Intervention Espionage Logistics Directorate", "Strategic Homeland Intervention, Enforcement and Logistics Division", "Supreme Headquarters, International Espionage, Law-Enforcement Division"], "fonte": "Wikidata (CC0)", "id": "org-s-h-i-e-l-d", "interpreti": [], "wikidata": "Q911971"}
+{"alias_nuovi": ["All-father", "Odin Borson"], "fonte": "Wikidata (CC0)", "id": "id-odino", "interpreti": [], "wikidata": "Q1319513"}
 {"alias_nuovi": ["Arma X"], "fonte": "Wikidata (CC0)", "id": "org-weapon-x", "interpreti": [], "wikidata": "Q2053320"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "luo-latveria", "interpreti": [], "wikidata": "Q2415171"}
+{"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "org-thunderbolts", "interpreti": [], "wikidata": "Q2527918"}
 {"alias_nuovi": ["A.I.M.", "Advanced Idea Mechanics", "Avanzate Idee Meccaniche"], "fonte": "Wikidata (CC0)", "id": "org-a-i-m-advanced-idea-mechanics", "interpreti": [], "regola": "risoluzione assistita", "wikidata": "Q2548427"}
 {"alias_nuovi": ["Hand", "La Mano", "Mano", "Yasminito"], "fonte": "Wikidata (CC0)", "id": "org-the-hand", "interpreti": [], "wikidata": "Q2550236"}
+{"alias_nuovi": ["Ego il Pianeta vivente", "Egros"], "fonte": "Wikidata (CC0)", "id": "pia-ego", "interpreti": [], "wikidata": "Q2642342"}
+{"alias_nuovi": ["Marvel Hydra"], "fonte": "Wikidata (CC0)", "id": "org-hydra", "interpreti": [], "wikidata": "Q3052324"}
 {"alias_nuovi": ["Marvel Tails", "Peter Porker", "Peter Porker, the Spectacular Spider-Ham"], "fonte": "Wikidata (CC0)", "id": "id-spider-ham", "interpreti": ["John Mulaney"], "wikidata": "Q3966700"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "art-darkhold", "interpreti": [], "wikidata": "Q5223650"}
 {"alias_nuovi": [], "fonte": "Wikidata (CC0)", "id": "art-occhio-di-agamotto", "interpreti": [], "wikidata": "Q5422664"}

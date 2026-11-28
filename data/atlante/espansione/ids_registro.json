@@ -1,7 +1,7 @@
 {
  "conteggi": {
-  "attivi": 4539,
-  "totale": 4543
+  "attivi": 4531,
+  "totale": 4544
  },
  "ids": {
   "art-acura-2012-stark-industries-super-car": {
@@ -20302,8 +20302,9 @@
    "ondata": "W0",
    "origine": "W5",
    "rif": "canon",
-   "stato": "attivo",
-   "tipo": "identita"
+   "stato": "lapide",
+   "tipo": "identita",
+   "verso": "org-avengers"
   },
   "id-awesome-android": {
    "ids_esterni": {
@@ -22245,6 +22246,17 @@
    "stato": "attivo",
    "tipo": "identita"
   },
+  "id-cobra": {
+   "ids_esterni": {
+    "marveldb": "Klaus Voorhees (Earth-616)",
+    "wikidata": "Q3089125"
+   },
+   "ondata": "W0",
+   "origine": "W5b",
+   "rif": "canon",
+   "stato": "attivo",
+   "tipo": "identita"
+  },
   "id-cobra-marvel-comics": {
    "ids_esterni": {
     "wikidata": "Q26919651"
@@ -23028,8 +23040,9 @@
    "ondata": "W0",
    "origine": "W5",
    "rif": "canon",
-   "stato": "attivo",
-   "tipo": "identita"
+   "stato": "lapide",
+   "tipo": "identita",
+   "verso": "org-defenders"
   },
   "id-deke-shaw": {
    "ondata": "W0",
@@ -23655,8 +23668,9 @@
    "ondata": "W0",
    "origine": "W5",
    "rif": "canon",
-   "stato": "attivo",
-   "tipo": "identita"
+   "stato": "lapide",
+   "tipo": "identita",
+   "verso": "pia-ego"
   },
   "id-eir": {
    "ids_esterni": {
@@ -26099,8 +26113,9 @@
    "ondata": "W0",
    "origine": "W5",
    "rif": "canon",
-   "stato": "attivo",
-   "tipo": "identita"
+   "stato": "lapide",
+   "tipo": "identita",
+   "verso": "org-hydra"
   },
   "id-hydra-buyer": {
    "ids_esterni": {
@@ -30994,8 +31009,9 @@
    "ondata": "W0",
    "origine": "W5",
    "rif": "canon",
-   "stato": "attivo",
-   "tipo": "identita"
+   "stato": "lapide",
+   "tipo": "identita",
+   "verso": "id-odino"
   },
   "id-odino": {
    "ondata": "W0",
@@ -34486,8 +34502,9 @@
    "ondata": "W0",
    "origine": "W5",
    "rif": "canon",
-   "stato": "attivo",
-   "tipo": "identita"
+   "stato": "lapide",
+   "tipo": "identita",
+   "verso": "org-fantastic-four"
   },
   "id-the-leader": {
    "ids_esterni": {
@@ -34597,8 +34614,9 @@
    "ondata": "W0",
    "origine": "W5",
    "rif": "canon",
-   "stato": "attivo",
-   "tipo": "identita"
+   "stato": "lapide",
+   "tipo": "identita",
+   "verso": "id-thor"
   },
   "id-thor-girl": {
    "ids_esterni": {
@@ -34657,8 +34675,9 @@
    "ondata": "W0",
    "origine": "W5",
    "rif": "canon",
-   "stato": "attivo",
-   "tipo": "identita"
+   "stato": "lapide",
+   "tipo": "identita",
+   "verso": "org-thunderbolts"
   },
   "id-thunderstrike": {
    "ids_esterni": {
@@ -36171,8 +36190,9 @@
    "ondata": "W0",
    "origine": "W5",
    "rif": "canon",
-   "stato": "attivo",
-   "tipo": "identita"
+   "stato": "lapide",
+   "tipo": "identita",
+   "verso": "org-x-men"
   },
   "id-x-statix": {
    "ids_esterni": {
@@ -45269,7 +45289,7 @@
    "tipo": "U"
   }
  },
- "ids_sha256": "ec9620676b12d75e97e2e2aeb046d15006193ec8ab2057e21fb294b9332182c0",
+ "ids_sha256": "c4f980ef17faf5030b8b53532a44667c5e2cf339bcb1c1f8ff3585d6a40a0b50",
  "politica": "append-only; ID mai riusati; rimozioni solo come lapide con redirect",
  "versione": 1
 }

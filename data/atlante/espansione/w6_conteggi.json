@@ -1,6 +1,6 @@
 {
- "arricchimenti": 2,
- "canon": 496,
+ "arricchimenti": 5,
+ "canon": 493,
  "coda": {
   "non_classificati": 2
  },
@@ -9,14 +9,14 @@
  "per_tipo": {
   "creatore": 306,
   "evento": 36,
-  "identita": 34,
+  "identita": 10,
   "opera": 119,
-  "organizzazione": 1
+  "organizzazione": 22
  },
  "staging": 19,
  "staging_per_motivo": {
   "classe non riconosciuta": 2,
   "senza etichetta inglese": 16,
-  "una sola fonte (nessun articolo Wikipedia)": 1
+  "una sola fonte (nessun articolo Wikipedia; seconda fonte scartata": 1
  }
 }
