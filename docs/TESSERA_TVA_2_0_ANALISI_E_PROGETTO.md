@@ -1,6 +1,6 @@
 # Tessera TVA 2.0 — Analisi e progetto (macro-fase 4)
 
-Stato: **SOLO ANALISI E PROGETTAZIONE** (28/11/2026). Nessuna implementazione; nessun file dell'app modificato. In attesa di approvazione dell'utente.
+Stato: **PROGETTO APPROVATO dall'utente il 28/11/2026 (17:07) con le decisioni vincolanti D1–D13 (v. §8); autorizzata esclusivamente la fase T0** (eseguita: `docs/TESSERA_TVA_2_0_T0_REPORT.md`). Nessun file dell'app modificato; **T1 non avviata: serve l'approvazione del resoconto T0**.
 Nome: la macro-fase 4 si chiama «Tessera TVA 2.0», ma il **nome ufficiale visibile resta «Tessera TVA 3.0»** (decisione del 24/11, in continuità con la numerazione già pubblicata). Nel progetto: «Tessera 2.0» = la macro-fase; «Tessera TVA 3.0» = il prodotto.
 Vincolo prioritario (28/11, 16:09): **restyling esclusivamente evolutivo e additivo** (v. §0). Vincoli: produzione congelata (`main` = 82a73c7), solo `test/tva-archives`, 0 €, dati personali preservati, regole XP invariate, Missioni/Evolution e Friends 3.0 NON anticipati (solo predisposizioni), roadmap a 13 macro-fasi invariata.
 
@@ -173,7 +173,7 @@ Ordine consigliato: T0 → T1 → T2 → T3 → T4 → T5 → T6 → T7 (T1 e T2
 - Animazioni su iPhone datati → opzione «Effetti ridotti» e rispetto di *reduce motion*.
 - Friends su Firestore nel codice → non toccato; riallineamento rimandato.
 
-## 6. Decisioni richieste all'utente (non assumo specifiche mancanti)
+## 6. Decisioni richieste all'utente — RISOLTE il 28/11 (v. §8; la bozza originale è conservata sotto)
 1. **Nome**: confermare «Tessera TVA 3.0» come nome visibile.
 2. **Livelli oltre il 18** e nomi dei livelli: oggi non specificati (la curva è aperta); mantenere solo il numero?
 3. **Slot vetrina**: 6 va bene (oggi 3)?
@@ -186,3 +186,20 @@ Ordine consigliato: T0 → T1 → T2 → T3 → T4 → T5 → T6 → T7 (T1 e T2
 
 ## 7. Anteprime grafiche
 `docs/tessera2/anteprima.html` (statica, navigabile, nessun codice dell'app): carta fronte/retro, Hub iPhone (5 schede), Carriera, Atelier, Collezione, Identità con slot Missioni/Friends predisposti, layout iPad. Sono mockup di progetto, non l'implementazione.
+
+---
+
+## 8. Decisioni vincolanti del 28/11/2026 (D1–D13) — prevalgono sulle proposte precedenti
+- **D1** Nome visibile «Tessera TVA 3.0»; sezione «La mia Tessera»; roadmap «Tessera TVA 2.0».
+- **D2** Ranghi e livelli XP separati; nessuna modifica a soglie, calcoli, ricompense, regole; livelli senza nome restano numerici (risolve la domanda 2).
+- **D3** Vetrina a **6 slot** liberi, riordinabili, facoltativi; configurazioni salvate preservate (domanda 3).
+- **D4** **12 sfondi animati** (Sacra Linea Temporale, Terminale TVA, Multiverso, Archivio Dorato — subito; Yggdrasil, Dimensione Specchio, Dimensione Oscura, Regno Quantico, Bifrost, Il Vuoto, Spider-Verse, Infinito — sbloccabili). Condizioni di sblocco da approvare separatamente, senza toccare l'XP. SVG/CSS originali, leggeri, modalità statica, disattivazione, movimento ridotto; si aggiungono alle personalizzazioni esistenti (domanda 4). *Sostituisce la proposta §3.3 «portale temporale, nebulosa, griglia TVA, pioggia di glifi».*
+- **D5** Titolo libero **≤ 40 caratteri** (non 24); scelta tra personale e ufficiali; distinto dal rango (domanda 5).
+- **D6** Predisposizione della condivisione con il partner (carta fronte/retro, VAR-ID, rango e livello, titolo personale, universo e personaggio preferito, statistiche di carriera, emblemi e ricompense, vetrina, futuri trofei, futuro Legame Nexus) con controlli di visibilità; identità unica Tessera↔Friends; Realtime Database + Auth, niente Firestore; nessun collegamento ora (domanda 6).
+- **D7** Foto locale, esclusa da sync e backup automatici; valutazione in Friends 3.0 (domanda 7).
+- **D8** Solo contratti dati per Arcade, Quiz, Rankings, Missioni, Evolution, Legame Nexus; nessun XP aggiuntivo; niente slot inutilizzabili in interfaccia (domanda 8).
+- **D9** Direzione grafica: coerenza rigorosa con il design system reale di TVA Archives; screenshot dell'app reale prioritari sui concept; niente neon invasivo, oro metallizzato ovunque, aspetto da dashboard; effetti spettacolari solo sulla carta (domanda 9).
+- **D10** Preservazione integrale (8 avatar, 12 cornici, 10 temi, 6 effetti, 56 emblemi, 48 ricompense, tutti i preset — inclusi Archivio Classico, Cosmic, Mystic, Tech, Dark Multiverse, Royal e Temporal —, layout, rotazione 3D, condivisione, editor, VAR-ID, condizioni di sblocco, selezioni, ricompense ottenute, chiavi, compatibilità dati).
+- **D11** Cinque sezioni: Tessera · Carriera · Atelier · Collezione · Identità (contenuti in `docs/TESSERA_TVA_2_0_T0_REPORT.md` §5). *Sostituisce il vecchio elenco «Hub» di §3.2 dove differisce (es. «Universo di origine» e «Titolo personale» in Identità).*
+- **D12** iPhone verticale compatto coerente con Centrale TVA; iPad a due colonne (tessera e anteprima a sinistra, contenuto a destra), verticale/orizzontale/Split View.
+- **D13** Solo T0 autorizzata; poi resoconto e attesa; dopo l'approvazione le fasi successive potranno essere accorpate.

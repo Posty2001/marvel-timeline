@@ -1,0 +1,76 @@
+{
+ "medio": {
+  "distintivi": "1/14",
+  "info": {
+   "livello": 3,
+   "xp": 376
+  },
+  "livello": "3",
+  "pct": "9%",
+  "rango": "Analista Junior",
+  "rw": [
+   "cornice-bronzo-temporale",
+   "cornice-standard-tva",
+   "tema-cronologia-dorata",
+   "tema-tva-classico",
+   "titolo-custode-archivi",
+   "titolo-esploratore-multiverso",
+   "titolo-nuova-variante",
+   "titolo-osservatore-temporale",
+   "titolo-recluta-tva"
+  ],
+  "sub": "146 / 160 al prossimo livello",
+  "xp": "376"
+ },
+ "ricco": {
+  "distintivi": "3/14",
+  "info": {
+   "livello": 7,
+   "xp": 1117
+  },
+  "livello": "7",
+  "pct": "23%",
+  "rango": "Analista TVA",
+  "rw": [
+   "cornice-argento-cronologico",
+   "cornice-bronzo-temporale",
+   "cornice-standard-tva",
+   "effetto-bagliore-dorato",
+   "effetto-energia-cremisi",
+   "effetto-scansione-temporale",
+   "tema-archivio-notturno",
+   "tema-cronologia-dorata",
+   "tema-tecnologia-futuristica",
+   "tema-tva-classico",
+   "tema-universo-mutante",
+   "titolo-agente-del-tempo",
+   "titolo-analista-linee-temporali",
+   "titolo-archivista-supremo",
+   "titolo-cacciatore-anomalie",
+   "titolo-custode-archivi",
+   "titolo-esploratore-multiverso",
+   "titolo-nuova-variante",
+   "titolo-osservatore-temporale",
+   "titolo-recluta-tva"
+  ],
+  "sub": "67 / 280 al prossimo livello",
+  "xp": "1117"
+ },
+ "vuoto": {
+  "distintivi": "0/14",
+  "info": {
+   "livello": 1,
+   "xp": 0
+  },
+  "livello": "1",
+  "pct": "0%",
+  "rango": "Recluta",
+  "rw": [
+   "cornice-standard-tva",
+   "tema-tva-classico",
+   "titolo-nuova-variante"
+  ],
+  "sub": "0 / 100 al prossimo livello",
+  "xp": "0"
+ }
+}

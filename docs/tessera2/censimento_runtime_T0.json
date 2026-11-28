@@ -1,0 +1,863 @@
+{
+ "avatar": [
+  "agente",
+  "variante",
+  "esploratore",
+  "tecnologico",
+  "mistico",
+  "astratto",
+  "cronista",
+  "sentinella"
+ ],
+ "chiavi_identita": {
+  "BAKK": "marvel-ultimate-timeline-identity-premigration-v1",
+  "IDK": "marvel-ultimate-timeline-identity-v1",
+  "STYK": "marvel-ultimate-timeline-tessera-style-v1"
+ },
+ "cornici_arte": [
+  "cornice-standard-tva",
+  "cornice-bronzo-temporale",
+  "cornice-argento-cronologico",
+  "cornice-oro-archivista",
+  "cornice-acciaio-mutante",
+  "cornice-energia-arcana",
+  "cornice-tecnologia-stark",
+  "cornice-wakanda",
+  "cornice-asgard",
+  "cornice-vuoto-temporale",
+  "cornice-incursione-rossa",
+  "cornice-nexus-supremo"
+ ],
+ "cornici_stile": [
+  "tema",
+  "sottile",
+  "doppia",
+  "angoli",
+  "tecnica",
+  "reale",
+  "nessuna"
+ ],
+ "decorazioni": [
+  "stelle",
+  "portale",
+  "orologio",
+  "circuiti",
+  "glifi",
+  "raggi"
+ ],
+ "effetti_arte": [
+  "effetto-scansione-temporale",
+  "effetto-bagliore-dorato",
+  "effetto-energia-cremisi",
+  "effetto-distorsione-nexus",
+  "effetto-particelle-cosmiche",
+  "effetto-aura-leggendaria"
+ ],
+ "effetti_stile": [
+  "tema",
+  "none",
+  "alone",
+  "aurora",
+  "scan",
+  "spark"
+ ],
+ "emblemi_categorie": [
+  "Cosmici",
+  "Mistici",
+  "Tecnologici",
+  "Multiversali",
+  "Eroici",
+  "Oscuri",
+  "Astratti"
+ ],
+ "emblemi_count": 56,
+ "emblemi_finiture": [
+  "oro",
+  "argento",
+  "bronzo",
+  "rubino",
+  "neon",
+  "inchiostro"
+ ],
+ "emblemi_nomi": [
+  "Nova",
+  "Orbita",
+  "Cometa",
+  "Spirale galattica",
+  "Eclissi",
+  "Costellazione",
+  "Pulsar",
+  "Orizzonte degli eventi",
+  "Occhio arcano",
+  "Mandala",
+  "Sigillo",
+  "Runa",
+  "Fiamma mistica",
+  "Cristallo",
+  "Luna",
+  "Chiave arcana",
+  "Circuito",
+  "Reattore",
+  "Ingranaggio",
+  "Nucleo",
+  "Antenna",
+  "Processore",
+  "Cubo quantico",
+  "Radar",
+  "Portale",
+  "Doppio rombo",
+  "Linee temporali",
+  "Anelli intrecciati",
+  "Frattura",
+  "Clessidra",
+  "Prisma",
+  "Nexus",
+  "Scudo stellato",
+  "Fulmine",
+  "Ali",
+  "Corona",
+  "Spada",
+  "Maglio",
+  "Torre",
+  "Gheriglio",
+  "Occhio chiuso",
+  "Corvo",
+  "Spirale oscura",
+  "Maschera",
+  "Artiglio",
+  "Anello nero",
+  "Vortice",
+  "Cripta",
+  "Triangoli",
+  "Onde",
+  "Esagono",
+  "Croce",
+  "Cerchi",
+  "Linee",
+  "Labirinto",
+  "Punti"
+ ],
+ "font": [
+  "classico",
+  "moderno",
+  "cinema",
+  "archivio"
+ ],
+ "icone": [
+  "barre",
+  "matrix",
+  "none"
+ ],
+ "layout": [
+  "auto",
+  "vertical",
+  "wide",
+  "compact"
+ ],
+ "preset": [
+  "archivio",
+  "cosmic",
+  "mystic",
+  "tech",
+  "dark",
+  "royal",
+  "temporal"
+ ],
+ "preset_campi": [
+  "bg",
+  "tx",
+  "fr",
+  "fi",
+  "ty",
+  "ic",
+  "fx",
+  "pc",
+  "sc",
+  "dc",
+  "ac"
+ ],
+ "preset_valori": [
+  {
+   "id": "archivio",
+   "name": "Archivio Classico",
+   "st": {
+    "bg": "arch",
+    "dc": [
+     "glifi"
+    ],
+    "fi": "oro",
+    "fr": "doppia",
+    "fx": "none",
+    "ic": "barre",
+    "pc": "#2a1519",
+    "sc": "#e3c79b",
+    "tx": "grain",
+    "ty": "classico"
+   }
+  },
+  {
+   "id": "cosmic",
+   "name": "Cosmic",
+   "st": {
+    "bg": "cosm",
+    "dc": [
+     "stelle",
+     "portale"
+    ],
+    "fi": "argento",
+    "fr": "sottile",
+    "fx": "aurora",
+    "ic": "barre",
+    "pc": "#1b1f3b",
+    "sc": "#b9c4ff",
+    "tx": "none",
+    "ty": "moderno"
+   }
+  },
+  {
+   "id": "mystic",
+   "name": "Mystic",
+   "st": {
+    "bg": "mist",
+    "dc": [
+     "portale",
+     "glifi"
+    ],
+    "fi": "rubino",
+    "fr": "reale",
+    "fx": "alone",
+    "ic": "barre",
+    "pc": "#2b1238",
+    "sc": "#e6b8ff",
+    "tx": "onde",
+    "ty": "cinema"
+   }
+  },
+  {
+   "id": "tech",
+   "name": "Tech",
+   "st": {
+    "bg": "tech",
+    "dc": [
+     "circuiti"
+    ],
+    "fi": "neon",
+    "fr": "tecnica",
+    "fx": "scan",
+    "ic": "matrix",
+    "pc": "#0f2630",
+    "sc": "#8ff0ff",
+    "tx": "griglia",
+    "ty": "archivio"
+   }
+  },
+  {
+   "id": "dark",
+   "name": "Dark Multiverse",
+   "st": {
+    "bg": "dark",
+    "dc": [
+     "raggi"
+    ],
+    "fi": "inchiostro",
+    "fr": "angoli",
+    "fx": "none",
+    "ic": "matrix",
+    "pc": "#1a1a20",
+    "sc": "#9a9aa8",
+    "tx": "grain",
+    "ty": "moderno"
+   }
+  },
+  {
+   "id": "royal",
+   "name": "Royal",
+   "st": {
+    "bg": "royal",
+    "dc": [
+     "glifi"
+    ],
+    "fi": "oro",
+    "fr": "reale",
+    "fx": "alone",
+    "ic": "barre",
+    "pc": "#3a0f1a",
+    "sc": "#f3dfae",
+    "tx": "puntini",
+    "ty": "cinema"
+   }
+  },
+  {
+   "id": "temporal",
+   "name": "Temporal",
+   "st": {
+    "bg": "temp",
+    "dc": [
+     "orologio",
+     "stelle"
+    ],
+    "fi": "bronzo",
+    "fr": "tecnica",
+    "fx": "spark",
+    "ic": "barre",
+    "pc": "#2a1f10",
+    "sc": "#f0c49a",
+    "tx": "esagoni",
+    "ty": "archivio"
+   }
+  }
+ ],
+ "rarita": [
+  "c",
+  "n",
+  "r",
+  "e",
+  "l"
+ ],
+ "ricompense": [
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "always"
+   },
+   "id": "titolo-nuova-variante",
+   "nome": "Nuova Variante",
+   "rar": "c"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "titles",
+    "n": 1
+   },
+   "id": "titolo-recluta-tva",
+   "nome": "Recluta TVA",
+   "rar": "c"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "level",
+    "n": 2
+   },
+   "id": "titolo-osservatore-temporale",
+   "nome": "Osservatore Temporale",
+   "rar": "c"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "ratings",
+    "n": 1
+   },
+   "id": "titolo-custode-archivi",
+   "nome": "Custode degli Archivi",
+   "rar": "c"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "studios",
+    "n": 2
+   },
+   "id": "titolo-esploratore-multiverso",
+   "nome": "Esploratore del Multiverso",
+   "rar": "c"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "level",
+    "n": 5
+   },
+   "id": "titolo-agente-del-tempo",
+   "nome": "Agente del Tempo",
+   "rar": "n"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "titles",
+    "n": 25
+   },
+   "id": "titolo-analista-linee-temporali",
+   "nome": "Analista delle Linee Temporali",
+   "rar": "n"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "missions",
+    "n": 1
+   },
+   "id": "titolo-guardiano-nexus",
+   "nome": "Guardiano del Nexus",
+   "rar": "n"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "badges",
+    "n": 3
+   },
+   "id": "titolo-cacciatore-anomalie",
+   "nome": "Cacciatore di Anomalie",
+   "rar": "n"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "notes",
+    "n": 5
+   },
+   "id": "titolo-archivista-supremo",
+   "nome": "Archivista Supremo",
+   "rar": "n"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "rtd"
+   },
+   "id": "titolo-sorvegliante-incursioni",
+   "nome": "Sorvegliante delle Incursioni",
+   "rar": "r"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "id": "linea-sacra",
+    "k": "badge"
+   },
+   "id": "titolo-custode-sacra-timeline",
+   "nome": "Custode della Sacra Timeline",
+   "rar": "r"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "pct",
+    "n": 50
+   },
+   "id": "titolo-viaggiatore-vuoto",
+   "nome": "Viaggiatore del Vuoto",
+   "rar": "r"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "studios",
+    "n": 5
+   },
+   "id": "titolo-sentinella-multiverso",
+   "nome": "Sentinella del Multiverso",
+   "rar": "r"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "id": "cacciatore-varianti",
+    "k": "badge"
+   },
+   "id": "titolo-maestro-varianti",
+   "nome": "Maestro delle Varianti",
+   "rar": "r"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "level",
+    "n": 14
+   },
+   "id": "titolo-comandante-tva",
+   "nome": "Comandante TVA",
+   "rar": "e"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "id": "essenziale",
+    "k": "badge"
+   },
+   "id": "titolo-architetto-temporale",
+   "nome": "Architetto Temporale",
+   "rar": "e"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "seasons",
+    "n": 2
+   },
+   "id": "titolo-sovrano-linee-temporali",
+   "nome": "Sovrano delle Linee Temporali",
+   "rar": "e"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "titles",
+    "n": "all"
+   },
+   "id": "titolo-leggenda-multiverso",
+   "nome": "Leggenda del Multiverso",
+   "rar": "e"
+  },
+  {
+   "cat": "titolo",
+   "cond": {
+    "k": "rankmax"
+   },
+   "id": "titolo-colui-che-rimane",
+   "nome": "Colui che Rimane",
+   "rar": "l"
+  },
+  {
+   "cat": "cornice",
+   "cond": {
+    "k": "always"
+   },
+   "id": "cornice-standard-tva",
+   "nome": "Standard TVA",
+   "rar": "c"
+  },
+  {
+   "cat": "cornice",
+   "cond": {
+    "k": "titles",
+    "n": 5
+   },
+   "id": "cornice-bronzo-temporale",
+   "nome": "Bronzo Temporale",
+   "rar": "c"
+  },
+  {
+   "cat": "cornice",
+   "cond": {
+    "k": "level",
+    "n": 4
+   },
+   "id": "cornice-argento-cronologico",
+   "nome": "Argento Cronologico",
+   "rar": "c"
+  },
+  {
+   "cat": "cornice",
+   "cond": {
+    "k": "badges",
+    "n": 6
+   },
+   "id": "cornice-oro-archivista",
+   "nome": "Oro dell'Archivista",
+   "rar": "n"
+  },
+  {
+   "cat": "cornice",
+   "cond": {
+    "k": "studioall",
+    "s": "fox"
+   },
+   "id": "cornice-acciaio-mutante",
+   "nome": "Acciaio Mutante",
+   "rar": "n"
+  },
+  {
+   "cat": "cornice",
+   "cond": {
+    "id": "collezionista",
+    "k": "badge"
+   },
+   "id": "cornice-energia-arcana",
+   "nome": "Energia Arcana",
+   "rar": "r"
+  },
+  {
+   "cat": "cornice",
+   "cond": {
+    "k": "studiocount",
+    "n": 40,
+    "s": "mcu"
+   },
+   "id": "cornice-tecnologia-stark",
+   "nome": "Tecnologia Stark",
+   "rar": "r"
+  },
+  {
+   "cat": "cornice",
+   "cond": {
+    "k": "typecount",
+    "n": 20,
+    "t": "serie"
+   },
+   "id": "cornice-wakanda",
+   "nome": "Wakanda",
+   "rar": "r"
+  },
+  {
+   "cat": "cornice",
+   "cond": {
+    "id": "cinefilo",
+    "k": "badge"
+   },
+   "id": "cornice-asgard",
+   "nome": "Asgard",
+   "rar": "e"
+  },
+  {
+   "cat": "cornice",
+   "cond": {
+    "k": "pct",
+    "n": 75
+   },
+   "id": "cornice-vuoto-temporale",
+   "nome": "Vuoto Temporale",
+   "rar": "e"
+  },
+  {
+   "cat": "cornice",
+   "cond": {
+    "k": "seasons",
+    "n": 1
+   },
+   "id": "cornice-incursione-rossa",
+   "nome": "Incursione Rossa",
+   "rar": "e"
+  },
+  {
+   "cat": "cornice",
+   "cond": {
+    "k": "all",
+    "of": [
+     {
+      "k": "titles",
+      "n": "all"
+     },
+     {
+      "k": "seasons",
+      "n": 3
+     }
+    ]
+   },
+   "id": "cornice-nexus-supremo",
+   "nome": "Nexus Supremo",
+   "rar": "l"
+  },
+  {
+   "cat": "tema",
+   "cond": {
+    "k": "always"
+   },
+   "id": "tema-tva-classico",
+   "nome": "TVA Classico",
+   "rar": "c"
+  },
+  {
+   "cat": "tema",
+   "cond": {
+    "k": "favs",
+    "n": 3
+   },
+   "id": "tema-archivio-notturno",
+   "nome": "Archivio Notturno",
+   "rar": "c"
+  },
+  {
+   "cat": "tema",
+   "cond": {
+    "k": "notes",
+    "n": 1
+   },
+   "id": "tema-cronologia-dorata",
+   "nome": "Cronologia Dorata",
+   "rar": "c"
+  },
+  {
+   "cat": "tema",
+   "cond": {
+    "k": "missions",
+    "n": 3
+   },
+   "id": "tema-multiverso-cremisi",
+   "nome": "Multiverso Cremisi",
+   "rar": "n"
+  },
+  {
+   "cat": "tema",
+   "cond": {
+    "k": "ratings",
+    "n": 10
+   },
+   "id": "tema-tecnologia-futuristica",
+   "nome": "Tecnologia Futuristica",
+   "rar": "n"
+  },
+  {
+   "cat": "tema",
+   "cond": {
+    "k": "studiocount",
+    "n": 5,
+    "s": "fox"
+   },
+   "id": "tema-universo-mutante",
+   "nome": "Universo Mutante",
+   "rar": "n"
+  },
+  {
+   "cat": "tema",
+   "cond": {
+    "k": "level",
+    "n": 10
+   },
+   "id": "tema-energia-mistica",
+   "nome": "Energia Mistica",
+   "rar": "r"
+  },
+  {
+   "cat": "tema",
+   "cond": {
+    "k": "anim",
+    "n": 10
+   },
+   "id": "tema-ombre-del-vuoto",
+   "nome": "Ombre del Vuoto",
+   "rar": "r"
+  },
+  {
+   "cat": "tema",
+   "cond": {
+    "k": "anim",
+    "n": "all"
+   },
+   "id": "tema-nexus-cosmico",
+   "nome": "Nexus Cosmico",
+   "rar": "e"
+  },
+  {
+   "cat": "tema",
+   "cond": {
+    "k": "level",
+    "n": 18
+   },
+   "id": "tema-fine-del-tempo",
+   "nome": "Fine del Tempo",
+   "rar": "l"
+  },
+  {
+   "cat": "effetto",
+   "cond": {
+    "k": "titles",
+    "n": 15
+   },
+   "id": "effetto-scansione-temporale",
+   "nome": "Scansione Temporale",
+   "rar": "c"
+  },
+  {
+   "cat": "effetto",
+   "cond": {
+    "k": "badges",
+    "n": 2
+   },
+   "id": "effetto-bagliore-dorato",
+   "nome": "Bagliore Dorato",
+   "rar": "c"
+  },
+  {
+   "cat": "effetto",
+   "cond": {
+    "k": "favs",
+    "n": 5
+   },
+   "id": "effetto-energia-cremisi",
+   "nome": "Energia Cremisi",
+   "rar": "c"
+  },
+  {
+   "cat": "effetto",
+   "cond": {
+    "k": "missions",
+    "n": 5
+   },
+   "id": "effetto-distorsione-nexus",
+   "nome": "Distorsione Nexus",
+   "rar": "n"
+  },
+  {
+   "cat": "effetto",
+   "cond": {
+    "k": "anim",
+    "n": 5
+   },
+   "id": "effetto-particelle-cosmiche",
+   "nome": "Particelle Cosmiche",
+   "rar": "r"
+  },
+  {
+   "cat": "effetto",
+   "cond": {
+    "k": "badges",
+    "n": "all"
+   },
+   "id": "effetto-aura-leggendaria",
+   "nome": "Aura Leggendaria",
+   "rar": "l"
+  }
+ ],
+ "ricompense_categorie": [
+  "titolo",
+  "cornice",
+  "tema",
+  "effetto"
+ ],
+ "ricompense_default": {
+  "cornice": "cornice-standard-tva",
+  "effetto": null,
+  "tema": "tema-tva-classico",
+  "titolo": "titolo-nuova-variante"
+ },
+ "sfondi": [
+  "tema",
+  "arch",
+  "cosm",
+  "mist",
+  "tech",
+  "dark",
+  "royal",
+  "temp",
+  "plain"
+ ],
+ "stile_default": {
+  "bg": "tema",
+  "fi": "oro",
+  "fr": "tema",
+  "fx": "tema",
+  "fxi": 55,
+  "ic": "barre",
+  "ly": "auto",
+  "pc": "#2a1519",
+  "sc": "#e3c79b",
+  "tx": "none",
+  "ty": "classico"
+ },
+ "storageKey": "marvel-ultimate-timeline-rewards",
+ "temi_arte": [
+  "tema-tva-classico",
+  "tema-archivio-notturno",
+  "tema-cronologia-dorata",
+  "tema-multiverso-cremisi",
+  "tema-tecnologia-futuristica",
+  "tema-universo-mutante",
+  "tema-energia-mistica",
+  "tema-ombre-del-vuoto",
+  "tema-nexus-cosmico",
+  "tema-fine-del-tempo"
+ ],
+ "texture": [
+  "none",
+  "grain",
+  "griglia",
+  "onde",
+  "puntini",
+  "esagoni"
+ ]
+}
