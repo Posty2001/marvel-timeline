@@ -68,13 +68,45 @@ def costruisci(raw):
                 rid = 'rel-db-' + hashlib.sha1('|'.join(k).encode()).hexdigest()[:10]
                 out.append({'id': rid, 'tipo': tipo, 'classe': CLASSE.get(tipo, 'narrativa'), 'da': da, 'a': a, 'simmetrica': tipo in SIMM, 'qualifica': qual, 'fonte': ['https://www.wikidata.org/wiki/' + q] + (['parametri infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)'] if conf else []),
                             'verifica': ver, 'origine': 'db:wikidata:' + p, 'controversa': False})
+    # --- seconda via: parenti documentati nelle infobox (MCU Wiki / Marvel Database): solo nomi risolti in modo UNIVOCO nella stessa continuita' ---
+    def nn(x): return re.sub(r'\s+', ' ', re.sub(r'\(.*?\)', ' ', x or '')).strip().lower()
+    per_nome = collections.defaultdict(set)
+    for i in list(canon) + list(ident): 
+        if i.startswith('id-'): per_nome[nn(nome(i))].add(i)
+    GEN = {'father': ('g', 'padre'), 'mother': ('g', 'madre'), 'son': ('f', 'figlio'), 'daughter': ('f', 'figlia'), 'adopted son': ('f', 'figlio adottivo'), 'adopted daughter': ('f', 'figlia adottiva'),
+           'husband': ('s', None), 'wife': ('s', None), 'brother': ('b', None), 'sister': ('b', None), 'ex-wife': None, 'ex-husband': None}
+    for S, rec in sorted(canon.items()):
+        if not S.startswith('id-'): continue
+        for par in ((rec.get('fatti') or {}).get('parenti') or []):
+            m = re.match(r'^(.*?)\s*\(([^)]*)\)\s*$', par)
+            if not m: continue
+            rel = re.split(r'[,;]', m.group(2))[0].strip().lower(); g_ = GEN.get(rel)
+            if not g_: cont['parente non mappato'] += 1; continue
+            cand = {c for c in per_nome.get(nn(m.group(1)), ()) if c != S and (uni(c) == uni(S) or not uni(c) or not uni(S))}
+            if len(cand) != 1: cont['parente non univoco/assente'] += 1; continue
+            T = next(iter(cand)); kind, qual = g_
+            if kind == 'g': tipo, da, a = 'famiglia_genitore', T, S
+            elif kind == 'f': tipo, da, a = 'famiglia_genitore', S, T
+            elif kind == 's': tipo, da, a = 'famiglia_coniugi', min(S, T), max(S, T)
+            else: tipo, da, a = 'famiglia_fratelli', min(S, T), max(S, T)
+            if frozenset((da, a)) in paia: cont['parente gia presente'] += 1; continue
+            ex = [x for x in out if x['tipo'] == tipo and {x['da'], x['a']} == {da, a}]
+            if ex:
+                if ex[0]['verifica'] != 'verificata': ex[0]['verifica'] = 'verificata'; ex[0]['fonte'].append('parametro "parenti" infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)')
+                cont['parente confermato (seconda fonte)'] += 1; continue
+            k = (tipo, da, a)
+            if k in visti: continue
+            visti.add(k)
+            rid = 'rel-db-' + hashlib.sha1('|'.join(k).encode()).hexdigest()[:10]
+            out.append({'id': rid, 'tipo': tipo, 'classe': 'narrativa', 'da': da, 'a': a, 'simmetrica': tipo in SIMM, 'qualifica': qual, 'fonte': ['parametro "parenti" infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)'],
+                        'verifica': 'da verificare', 'origine': 'db:infobox:parenti', 'controversa': False})
     return {'versione': 1, 'fonte': 'Wikidata CC0 (+ seconda fonte dove indicata)', 'relazioni': out, 'staging': stag, 'conteggi': dict(cont) | {'relazioni': len(out), 'verificate': sum(1 for x in out if x['verifica'] == 'verificata'), 'staging': len(stag)}}
 def runtime(g):
     tipi = sorted({x['tipo'] for x in g['relazioni']}); V = {'verificata': 2, 'da verificare': 0}
     rows = [[x['da'], x['a'], tipi.index(x['tipo']), 'c' if x['classe'] == 'controparte' else 'n', V[x['verifica']], x['qualifica'] or '', 0] for x in g['relazioni']]
     return {'v': 1, 'tipi': tipi, 'r': rows}
 def main():
-    raw = json.load(open(sys.argv[1])); g = costruisci(raw)
+    raw = json.load(open(sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith('--') else str(R / 'data/atlante/espansione/raw/rel_wikidata.json'))); g = costruisci(raw)
     print(json.dumps(g['conteggi'], ensure_ascii=False, indent=1))
     if '--scrivi' in sys.argv:
         (E / 'relazioni_db.json').write_text(json.dumps(g, ensure_ascii=False, indent=1) + '\n')

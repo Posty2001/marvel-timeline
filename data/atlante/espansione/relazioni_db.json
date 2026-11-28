@@ -1,0 +1,2431 @@
+{
+ "versione": 1,
+ "fonte": "Wikidata CC0 (+ seconda fonte dove indicata)",
+ "relazioni": [
+  {
+   "id": "rel-db-7466a5735a",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-destiny",
+   "a": "id-rogue",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q1051111"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-96280aa5eb",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-destiny",
+   "a": "id-nightcrawler",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q1051111"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-a15d58007d",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-red-guardian",
+   "a": "id-yelena-belova",
+   "simmetrica": false,
+   "qualifica": "padre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q107506977"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P22",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-3681964f32",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-maggie-grace",
+   "a": "id-matt-murdock-mcu",
+   "simmetrica": false,
+   "qualifica": "madre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q110414906"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P25",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-39f1bc25be",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-blade",
+   "a": "id-jared-nomak",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q110633875"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-b3abc40bf1",
+   "tipo": "mentorato",
+   "classe": "narrativa",
+   "da": "id-abraham-whistler",
+   "a": "id-blade",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q110633875"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P1066",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-3237d3bd99",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-yusuf-khan",
+   "a": "id-kamala-khan-ms-marvel",
+   "simmetrica": false,
+   "qualifica": "padre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q113169240"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P22",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-227486007c",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-blade",
+   "a": "id-dracula",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q1131724"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-a9c7c5206a",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-wade-wilson-deadpool",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q113485245"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-da0c7b1b67",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-abraham-whistler",
+   "a": "id-abigail-whistler",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q1137153"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-ac08f4c6a6",
+   "tipo": "famiglia_coniugi",
+   "classe": "narrativa",
+   "da": "id-frank-castle-punisher",
+   "a": "id-maria-castle",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q114888777"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P26",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-e7053ea7cd",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-maria-castle",
+   "a": "id-lisa-barbara-castle",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q114888777"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-e2d55a55d1",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-maria-castle",
+   "a": "id-frank-castle-jr",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q114888777"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-6276c246a9",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-frank-castle-punisher",
+   "a": "id-lisa-barbara-castle",
+   "simmetrica": false,
+   "qualifica": "padre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q114889845"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P22",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-254a876e36",
+   "tipo": "famiglia_fratelli",
+   "classe": "narrativa",
+   "da": "id-frank-castle-jr",
+   "a": "id-lisa-barbara-castle",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q114889845"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P3373",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-c457dd072a",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-frank-castle-punisher",
+   "a": "id-frank-castle-jr",
+   "simmetrica": false,
+   "qualifica": "padre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q114890103"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P22",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-227c1f03d7",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-vanisher",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q1168830"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-bdd5e2cd15",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-cannonball",
+   "a": "id-donald-pierce",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q1194236"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-e69fe23a84",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-cannonball",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q1194236"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-5a3b58476d",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-sue-storm",
+   "a": "id-victor-von-doom",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q125179108"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-92f8e49588",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-johnny-storm-human-torch",
+   "a": "id-victor-von-doom",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q125179108"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-ceceab7c56",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-ben-grimm",
+   "a": "id-victor-von-doom",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q125179108"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-02cae14be0",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-silver-surfer",
+   "a": "id-victor-von-doom",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q125179108"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-d73a67e966",
+   "tipo": "famiglia_fratelli",
+   "classe": "narrativa",
+   "da": "id-johnny-storm-human-torch",
+   "a": "id-sue-storm",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q125179110"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P3373",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-003f35583f",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-reed-richards-trank",
+   "a": "id-victor-von-doom-trank",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q125179111"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-80391e60b5",
+   "tipo": "famiglia_fratelli",
+   "classe": "narrativa",
+   "da": "id-johnny-storm-human-torch-trank",
+   "a": "id-sue-storm-trank",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q125179116"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P3373",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-2268e35acc",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-johnny-storm-human-torch-trank",
+   "a": "id-victor-von-doom-trank",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q125179116"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-4905c6aedb",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-sue-storm-trank",
+   "a": "id-victor-von-doom-trank",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q125179117"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-9001773a19",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-ben-grimm-trank",
+   "a": "id-victor-von-doom-trank",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q125179117"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-bc55f5452c",
+   "tipo": "famiglia_coniugi",
+   "classe": "narrativa",
+   "da": "id-fisk-mcu",
+   "a": "id-vanessa-fisk",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q129167347",
+    "parametri infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "verificata",
+   "origine": "db:wikidata:P26",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-4f58226556",
+   "tipo": "famiglia_fratelli",
+   "classe": "narrativa",
+   "da": "id-johnny-storm-human-torch-first-steps",
+   "a": "id-sue-storm-first-steps",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q133697747"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P3373",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-ef6dc34846",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-ajax",
+   "a": "id-wade-wilson-deadpool",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q1631090"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-58bec41e4b",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-wade-wilson-deadpool",
+   "a": "id-william-stryker",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q1631090"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-e1b2916272",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-hiro-hamada",
+   "a": "org-big-hero-6",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q16995485"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-aabe5402cd",
+   "tipo": "partner",
+   "classe": "narrativa",
+   "da": "id-storm",
+   "a": "id-wolverine",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q186422"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P451",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-933ca235bf",
+   "tipo": "partner",
+   "classe": "narrativa",
+   "da": "id-domino",
+   "a": "id-wolverine",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q186422"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P451",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-773c9c082b",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-lady-deathstrike",
+   "a": "id-wolverine",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q186422"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-9bd06024e6",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-omega-red",
+   "a": "id-wolverine",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q186422"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-ed3ebeff12",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-shingen-yashida",
+   "a": "id-wolverine",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q186422"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-12e829e90e",
+   "tipo": "mentorato",
+   "classe": "narrativa",
+   "da": "id-wolverine",
+   "a": "id-jubilee",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q186422"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P802",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-9800c7fdc5",
+   "tipo": "mentorato",
+   "classe": "narrativa",
+   "da": "id-wolverine",
+   "a": "id-storm",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q186422"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P802",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-2005f3a1a7",
+   "tipo": "mentorato",
+   "classe": "narrativa",
+   "da": "id-wolverine",
+   "a": "id-colossus",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q186422"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P802",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-690ccfee39",
+   "tipo": "mentorato",
+   "classe": "narrativa",
+   "da": "id-wolverine",
+   "a": "id-sunspot",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q186422"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P802",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-ff149ba866",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-wolverine",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q186422"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-74563c181f",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-laura-x-23",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q1872439"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-5b0cecf574",
+   "tipo": "famiglia_fratelli",
+   "classe": "narrativa",
+   "da": "id-hiro-hamada-q28019254",
+   "a": "id-tadashi-hamada",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q19363616"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P3373",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-ba7d5d42aa",
+   "tipo": "mentorato",
+   "classe": "narrativa",
+   "da": "id-robert-callaghan",
+   "a": "id-tadashi-hamada",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q19363616"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P1066",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-decfe5c610",
+   "tipo": "partner",
+   "classe": "narrativa",
+   "da": "id-ciclope",
+   "a": "id-emma-frost",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q1995969"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P451",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-c750e96dd4",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-emma-frost",
+   "a": "id-sebastian-shaw",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q1995969"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-2aac7bb416",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-magneto",
+   "a": "id-polaris",
+   "simmetrica": false,
+   "qualifica": "padre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2071256"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P22",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-7297ff6b69",
+   "tipo": "famiglia_fratelli",
+   "classe": "narrativa",
+   "da": "id-polaris",
+   "a": "id-quicksilver",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2071256"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P3373",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-bcf0d948e8",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-apocalypse",
+   "a": "id-cable",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2071805"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-a4425112b6",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-apocalypse",
+   "a": "id-magneto",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2071805"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-8c4b88a79d",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-william-stryker",
+   "a": "id-jason-stryker",
+   "simmetrica": false,
+   "qualifica": "padre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q20979405"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P22",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-3371b27213",
+   "tipo": "famiglia_coniugi",
+   "classe": "narrativa",
+   "da": "id-jack-murdock",
+   "a": "id-maggie-murdock",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q21188801"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P26",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-8ad8b00960",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-jack-murdock",
+   "a": "id-matt-murdock-mcu",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q21188801"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-481b7ea853",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-ciclope",
+   "a": "id-cable",
+   "simmetrica": false,
+   "qualifica": "padre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2267017"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P22",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-ebc4235e3d",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-cable",
+   "a": "id-hope-summers",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2267017"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-1cadbe2bff",
+   "tipo": "partner",
+   "classe": "narrativa",
+   "da": "id-cable",
+   "a": "id-domino",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2267017"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P451",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-796c0c2d42",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-cable",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2267017"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-ff722adc26",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-diamondback",
+   "a": "id-luke-cage",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2267760"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-202f28d40f",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-shatterstar",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2275950"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-2b76011953",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-red-guardian",
+   "a": "id-natasha-romanoff",
+   "simmetrica": false,
+   "qualifica": "padre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q23895063"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P22",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-b15a1c3a71",
+   "tipo": "famiglia_coniugi",
+   "classe": "narrativa",
+   "da": "id-howard-stark",
+   "a": "id-maria-stark",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q23900446"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P26",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-9f83baf80c",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-hope-summers",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2398372"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-b036365f34",
+   "tipo": "famiglia_fratelli",
+   "classe": "narrativa",
+   "da": "id-n-jobu",
+   "a": "id-t-chaka",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24004905",
+    "parametri infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "verificata",
+   "origine": "db:wikidata:P3373",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-1eb6f50c2b",
+   "tipo": "famiglia_fratelli",
+   "classe": "narrativa",
+   "da": "id-pietro-maximoff",
+   "a": "id-wanda-maximoff",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24022542",
+    "parametri infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "verificata",
+   "origine": "db:wikidata:P3373",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-7aaa4d9113",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-wanda-maximoff",
+   "a": "org-avengers",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24022542"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-bcb6276309",
+   "tipo": "famiglia_coniugi",
+   "classe": "narrativa",
+   "da": "id-clint-barton",
+   "a": "id-laura-barton",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24026688"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P26",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-16547f906c",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-clint-barton",
+   "a": "id-lila-barton",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24026688"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-5908e2c8be",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-clint-barton",
+   "a": "id-cooper-barton",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24026688"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-e1b17e3698",
+   "tipo": "famiglia_coniugi",
+   "classe": "narrativa",
+   "da": "id-maggie-lang",
+   "a": "id-scott-lang-ant-man",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24026703"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P26",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-533ad6724e",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-stephen-strange",
+   "a": "org-avengers",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24034722"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-cf007f86bf",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-odin",
+   "a": "id-thor",
+   "simmetrica": false,
+   "qualifica": "padre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24046102",
+    "parametri infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "verificata",
+   "origine": "db:wikidata:P22",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-9f5b36a968",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-thanos",
+   "a": "id-thor",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24046102"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-3ec0f8cb6e",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-gorr",
+   "a": "id-thor",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24046102"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-aded10985f",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-thor",
+   "a": "org-guardians-of-the-galaxy",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24046102"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-bdf8d669ad",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-odin",
+   "a": "id-loki",
+   "simmetrica": false,
+   "qualifica": "padre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24046118",
+    "parametri infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "verificata",
+   "origine": "db:wikidata:P22",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-7a524a351a",
+   "tipo": "famiglia_coniugi",
+   "classe": "narrativa",
+   "da": "id-frigga",
+   "a": "id-odin",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24046126",
+    "parametri infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "verificata",
+   "origine": "db:wikidata:P26",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-a2e22c4fc3",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-odin",
+   "a": "id-hela",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24046126",
+    "parametri infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "verificata",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-7fcba9c0f6",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-laufey",
+   "a": "id-odin",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24046126",
+    "parametri infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "verificata",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-9d1a342877",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-hela",
+   "a": "id-odin",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24046126",
+    "parametri infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "verificata",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-6a4786dcc9",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-laufey",
+   "a": "id-thor",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24046153"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-4d41bfbde8",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-frigga",
+   "a": "id-hela",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24049999"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-a48e3c354c",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-meredith-quill",
+   "a": "id-peter-quill-star-lord",
+   "simmetrica": false,
+   "qualifica": "madre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24050065"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P25",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-85994afed0",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-maggie-lang",
+   "a": "id-cassie-lang",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q24276092",
+    "parametri infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "verificata",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-71435c33e8",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-frank-castle-punisher",
+   "a": "id-russian",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2438411"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-cd288dc3cb",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-lady-deathstrike",
+   "a": "org-reavers",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2448071"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-616072edbe",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-magneto",
+   "a": "id-william-stryker",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2551564"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-0bdcd9eba5",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-caliban",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2624756"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-9cda6a1677",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-n-jobu",
+   "a": "id-erik-killmonger",
+   "simmetrica": false,
+   "qualifica": "padre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q26268850"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P22",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-346883365d",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-azazel",
+   "a": "id-nightcrawler",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2642022"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-5519f90fb6",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-azazel",
+   "a": "id-nightcrawler",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2642022"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-3cca9bd228",
+   "tipo": "famiglia_fratelli",
+   "classe": "narrativa",
+   "da": "id-colossus",
+   "a": "id-illyana-rasputin-magik",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2651308"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P3373",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-a1ea78ea01",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-arnim-zola",
+   "a": "id-steve-rogers-capitan-america",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q26817985"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-c562f09aef",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-juggernaut",
+   "a": "id-new-warriors",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2731643"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-37f936a829",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-danielle-moonstar",
+   "a": "id-donald-pierce",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2741605"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-28d3627f49",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-donald-pierce",
+   "a": "org-reavers",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2741605"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-b6bd6fd15b",
+   "tipo": "famiglia_coniugi",
+   "classe": "narrativa",
+   "da": "id-adrian-toomes-avvoltoio",
+   "a": "id-doris-toomes",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q27813421"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P26",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-38a8c4aeea",
+   "tipo": "mentorato",
+   "classe": "narrativa",
+   "da": "id-robert-callaghan",
+   "a": "id-go-go-tomago",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q28026326"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P1066",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-245703e856",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-bedlam",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2893582"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-ec81cc7d1b",
+   "tipo": "partner",
+   "classe": "narrativa",
+   "da": "id-copycat",
+   "a": "id-wade-wilson-deadpool",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2916404"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P451",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-2d38f9ec88",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-copycat",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q2916404"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-0aa75a19b8",
+   "tipo": "famiglia_fratelli",
+   "classe": "narrativa",
+   "da": "id-daimon-hellstrom",
+   "a": "id-satana",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q3012120"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P3373",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-afeeb92c5b",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-ciclope",
+   "a": "id-mister-sinister",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q302534"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-820d0ee7dd",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-sabretooth",
+   "a": "id-graydon-creed",
+   "simmetrica": false,
+   "qualifica": "padre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q3115851"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P22",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-6361249792",
+   "tipo": "famiglia_fratelli",
+   "classe": "narrativa",
+   "da": "id-graydon-creed",
+   "a": "id-nightcrawler",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q3115851"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P3373",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-df59c5ca41",
+   "tipo": "famiglia_fratelli",
+   "classe": "narrativa",
+   "da": "id-graydon-creed",
+   "a": "id-rogue",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q3115851"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P3373",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-6c1fefc76a",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-graydon-creed",
+   "a": "id-nightcrawler",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q3115851"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-44362ef10c",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-graydon-creed",
+   "a": "id-sabretooth",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q3115851"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-6a75b37936",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-matt-murdock-mcu",
+   "a": "id-nuke",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q327553"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-8265cce563",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-shingen-yashida",
+   "a": "id-mariko-yashida",
+   "simmetrica": false,
+   "qualifica": "padre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q3293073"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P22",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-df6a58a25f",
+   "tipo": "partner",
+   "classe": "narrativa",
+   "da": "id-negasonic-teenage-warhead",
+   "a": "id-yukio",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q3985214"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P451",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-a0df80c73b",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-abigail-whistler",
+   "a": "org-nightstalkers",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q52199842"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-9854e04383",
+   "tipo": "famiglia_fratelli",
+   "classe": "narrativa",
+   "da": "id-nightcrawler",
+   "a": "id-rogue",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q5342183"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P3373",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-fecb92f31f",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-jean-grey-fenice",
+   "a": "id-magneto",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q5350072"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-84c5be4e7d",
+   "tipo": "partner",
+   "classe": "narrativa",
+   "da": "id-colossus",
+   "a": "id-domino",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q59644"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P451",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-cc47e84793",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-domino",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q59644"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-3945c2f883",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-colossus",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q60002"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-c0f587cfc8",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-sunspot",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q601199"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-6a89be223c",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-joseph-danvers",
+   "a": "id-carol-danvers-captain-marvel",
+   "simmetrica": false,
+   "qualifica": "padre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q64658380"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P22",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-b8e227682a",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-thanos",
+   "a": "id-corvus-glaive",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q64825451"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-757107f250",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-thanos",
+   "a": "id-cull-obsidian",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q64825451"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-7d5e7d9bd4",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-thanos",
+   "a": "id-ebony-maw",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q64825451"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-75da66f318",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-thanos",
+   "a": "id-proxima-midnight",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q64825451"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-5fa45e1afb",
+   "tipo": "rivalita",
+   "classe": "narrativa",
+   "da": "id-malekith",
+   "a": "id-thor",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q65929729"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P7047",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-df6d8338be",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-laura-barton",
+   "a": "id-cooper-barton",
+   "simmetrica": false,
+   "qualifica": "madre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q66132777",
+    "parametri infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "verificata",
+   "origine": "db:wikidata:P25",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-c042751dd1",
+   "tipo": "famiglia_coniugi",
+   "classe": "narrativa",
+   "da": "id-catherine-starr",
+   "a": "id-elihas-starr",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q66133383",
+    "parametri infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "verificata",
+   "origine": "db:wikidata:P26",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-0d357836fc",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-maria-rambeau",
+   "a": "id-monica-rambeau",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q66133432",
+    "parametri infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "verificata",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-6341dcfdd5",
+   "tipo": "famiglia_coniugi",
+   "classe": "narrativa",
+   "da": "id-soren",
+   "a": "id-talos",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q66189316",
+    "parametri infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "verificata",
+   "origine": "db:wikidata:P26",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-2967dcf71f",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-laura-barton",
+   "a": "id-lila-barton",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q66190494",
+    "parametri infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "verificata",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-7db1778114",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-mrs-davis",
+   "a": "id-chad-davis",
+   "simmetrica": false,
+   "qualifica": "madre",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q66191655"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P25",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-725eaf1656",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-danielle-moonstar",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q767790"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-ef12b3d697",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-zeitgeist",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q8068621"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-c95376e2d5",
+   "tipo": "partner",
+   "classe": "narrativa",
+   "da": "id-magneto",
+   "a": "id-rogue",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q838097"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P451",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-f3d4859a8d",
+   "tipo": "famiglia_genitore",
+   "classe": "narrativa",
+   "da": "id-magneto",
+   "a": "id-quicksilver",
+   "simmetrica": false,
+   "qualifica": null,
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q840291"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P40",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-0e5bd347d0",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-ciclope",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q857921"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-086b47139e",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-blade",
+   "a": "org-nightstalkers",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q881024"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-9526e529e3",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-betsy-braddock",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q973050"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-5fc6d1ed7b",
+   "tipo": "appartenenza",
+   "classe": "narrativa",
+   "da": "id-wolfsbane",
+   "a": "org-x-force",
+   "simmetrica": false,
+   "qualifica": "membro",
+   "fonte": [
+    "https://www.wikidata.org/wiki/Q996154"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:wikidata:P463",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-47497fc665",
+   "tipo": "famiglia_coniugi",
+   "classe": "narrativa",
+   "da": "id-aleta-ogord",
+   "a": "id-stakar-ogord",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "parametro \"parenti\" infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "da verificare",
+   "origine": "db:infobox:parenti",
+   "controversa": false
+  },
+  {
+   "id": "rel-db-9ec9f82f71",
+   "tipo": "famiglia_fratelli",
+   "classe": "narrativa",
+   "da": "id-cooper-barton",
+   "a": "id-lila-barton",
+   "simmetrica": true,
+   "qualifica": null,
+   "fonte": [
+    "parametro \"parenti\" infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)",
+    "parametro \"parenti\" infobox MCU Wiki/Marvel Database (CC BY-SA 3.0)"
+   ],
+   "verifica": "verificata",
+   "origine": "db:infobox:parenti",
+   "controversa": false
+  }
+ ],
+ "staging": [
+  {
+   "da": "id-apocalypse",
+   "a": "id-dracula",
+   "tipo": "rivalita",
+   "motivo": "continuita diverse (uni-earth-10005-fox-verse / uni-blade-verse): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "id-phyla-vell",
+   "a": "id-thanos",
+   "tipo": "rivalita",
+   "motivo": "continuita diverse (uni-marvel-animation-universe-2006-2017 / uni-earth-199999-mcu): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "id-daisy-johnson",
+   "a": "id-magneto",
+   "tipo": "rivalita",
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-earth-10005-fox-verse): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "id-eddie-brock-venom",
+   "a": "id-spider-punk",
+   "tipo": "rivalita",
+   "motivo": "continuita diverse (uni-earth-96283-raimi-verse / uni-marvel-animation-universe-2006-2017): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "att-chris-evans",
+   "a": "att-jessica-biel",
+   "tipo": "partner",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "att-chris-evans",
+   "a": "att-jenny-slate",
+   "tipo": "partner",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "cos-mephisto",
+   "a": "cos-blackheart",
+   "tipo": "famiglia_genitore",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "id-domino",
+   "a": "id-thaddeus-ross-mcu",
+   "tipo": "rivalita",
+   "motivo": "continuita diverse (uni-earth-10005-fox-verse / uni-earth-199999-mcu): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "id-elektra-natchios",
+   "a": "id-wolverine",
+   "tipo": "partner",
+   "motivo": "continuita diverse (uni-daredevil-elektra-verse / uni-earth-10005-fox-verse): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "id-professor-thorton",
+   "a": "id-wolverine",
+   "tipo": "rivalita",
+   "motivo": "continuita diverse (uni-marvel-animation-universe-2006-2017 / uni-earth-10005-fox-verse): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "att-tom-holland",
+   "a": "att-zendaya",
+   "tipo": "famiglia_coniugi",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "id-magneto",
+   "a": "id-teschio-rosso",
+   "tipo": "rivalita",
+   "motivo": "continuita diverse (uni-earth-10005-fox-verse / uni-earth-199999-mcu): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "id-chemistro",
+   "a": "id-luke-cage",
+   "tipo": "rivalita",
+   "motivo": "continuita diverse (uni-marvel-animation-universe-2006-2017 / uni-earth-199999-mcu): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "id-silver-surfer",
+   "a": "id-thanos",
+   "tipo": "rivalita",
+   "motivo": "continuita diverse (uni-earth-121698 / uni-earth-199999-mcu): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "id-maggie-murdock",
+   "a": "id-matt-murdock-mcu",
+   "tipo": "famiglia_genitore",
+   "motivo": "continuita diverse (uni-daredevil-elektra-verse / uni-earth-199999-mcu): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "id-thaddeus-ross-mcu",
+   "a": "id-betty-ross",
+   "tipo": "famiglia_genitore",
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-hulk-2003-verse): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "id-loki",
+   "a": "id-mobius",
+   "tipo": "partner",
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-tva-fuori-dal-tempo): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "pia-ego",
+   "a": "id-peter-quill-star-lord",
+   "tipo": "famiglia_genitore",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "pia-ego",
+   "a": "id-mantis",
+   "tipo": "famiglia_genitore",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "pia-ego",
+   "a": "id-peter-quill-star-lord",
+   "tipo": "famiglia_genitore",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "pia-ego",
+   "a": "id-mantis",
+   "tipo": "famiglia_genitore",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "cos-mephisto",
+   "a": "cos-blackheart",
+   "tipo": "famiglia_genitore",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "cos-doctor-doom",
+   "a": "cos-mephisto",
+   "tipo": "rivalita",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "cos-mephisto",
+   "a": "id-silver-surfer",
+   "tipo": "rivalita",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "cos-mephisto",
+   "a": "id-johnny-blaze-ghost-rider",
+   "tipo": "rivalita",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "id-tigra",
+   "a": "id-new-warriors",
+   "tipo": "appartenenza",
+   "motivo": "estremi non coerenti (serve identita -> organizzazione)"
+  },
+  {
+   "da": "id-professor-x-terra-838",
+   "a": "id-beast",
+   "tipo": "mentorato",
+   "motivo": "continuita diverse (uni-earth-838 / uni-earth-10005-fox-verse): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "id-elektra-natchios",
+   "a": "id-matt-murdock-mcu",
+   "tipo": "partner",
+   "motivo": "continuita diverse (uni-daredevil-elektra-verse / uni-earth-199999-mcu): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "id-bullseye",
+   "a": "id-matt-murdock-mcu",
+   "tipo": "rivalita",
+   "motivo": "continuita diverse (uni-daredevil-elektra-verse / uni-earth-199999-mcu): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "cos-surtur",
+   "a": "id-thor",
+   "tipo": "rivalita",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "cos-doctor-doom",
+   "a": "id-morgan-le-fay",
+   "tipo": "partner",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "cos-doctor-doom",
+   "a": "cos-mephisto",
+   "tipo": "rivalita",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "cos-doctor-doom",
+   "a": "id-silver-surfer",
+   "tipo": "rivalita",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "cos-demon-bear",
+   "a": "id-danielle-moonstar",
+   "tipo": "rivalita",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "id-jubilee",
+   "a": "id-new-warriors",
+   "tipo": "appartenenza",
+   "motivo": "estremi non coerenti (serve identita -> organizzazione)"
+  },
+  {
+   "da": "cos-doctor-doom",
+   "a": "id-morgan-le-fay",
+   "tipo": "partner",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "cos-demon-bear",
+   "a": "id-danielle-moonstar",
+   "tipo": "rivalita",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "cos-mephisto",
+   "a": "id-johnny-blaze-ghost-rider",
+   "tipo": "rivalita",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "id-juggernaut",
+   "a": "id-professor-x-terra-838",
+   "tipo": "famiglia_fratelli",
+   "motivo": "continuita diverse (uni-marvel-animation-universe-2006-2017 / uni-earth-838): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "id-magneto",
+   "a": "id-professor-x-terra-838",
+   "tipo": "rivalita",
+   "motivo": "continuita diverse (uni-earth-10005-fox-verse / uni-earth-838): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "id-juggernaut",
+   "a": "id-professor-x-terra-838",
+   "tipo": "rivalita",
+   "motivo": "continuita diverse (uni-marvel-animation-universe-2006-2017 / uni-earth-838): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "id-carol-danvers-captain-marvel",
+   "a": "id-rogue",
+   "tipo": "rivalita",
+   "motivo": "continuita diverse (uni-earth-199999-mcu / uni-earth-10005-fox-verse): non e una relazione narrativa unica, possibile controparte"
+  },
+  {
+   "da": "cos-doctor-doom",
+   "a": "id-silver-surfer",
+   "tipo": "rivalita",
+   "motivo": "estremi non entrambi identita"
+  },
+  {
+   "da": "cos-mephisto",
+   "a": "id-silver-surfer",
+   "tipo": "rivalita",
+   "motivo": "estremi non entrambi identita"
+  }
+ ],
+ "conteggi": {
+  "bersaglio non nel registro": 973,
+  "proprieta ignorata P144": 222,
+  "gia nel registro": 61,
+  "proprieta ignorata P1038": 34,
+  "proprieta ignorata P1344": 2,
+  "parente non mappato": 23,
+  "parente non univoco/assente": 32,
+  "parente confermato (seconda fonte)": 8,
+  "relazioni": 142,
+  "verificate": 16,
+  "staging": 44
+ }
+}

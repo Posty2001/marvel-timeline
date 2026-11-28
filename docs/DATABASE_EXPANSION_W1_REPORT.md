@@ -70,3 +70,15 @@ Rigenerazione: il raw (`data/atlante/espansione/raw/`, ignorato da git) si scari
 
 Fonti: Wikidata CC0; MCU Wiki e Marvel Database (Fandom, CC BY-SA 3.0) solo parametri brevi di infobox con attribuzione e URL; nessun testo di prosa; marvel.com non usato; nessun nuovo metadato TMDB. Il campo «Apparizioni» riporta i titoli elencati dalla fonte (include media non canonici come LEGO/giochi, indicati dalla fonte).
 Limiti noti: le relazioni narrative Wikidata, i ritratti privati delle nuove identità e l'integrazione nei cataloghi nativi (Atlas/Multiverso/Nexus) NON sono ancora fatti; Ghost Rider: Spirit of Vengeance (2011) non risolto su Wikidata.
+
+## Aggiornamento 28/11 08:40 – integrazione nativa, W3/W4, relazioni
+
+| Voce | Contenuti |
+|---|---|
+| Canon | W1 1.006, W2 605, W3 585, W4 153 (+322 arricchimenti di voci storiche) |
+| Staging / code | W3 428 / 8 ambigui; W4 165 / 26 ambigui; W2 114 / 16 ambigui |
+| Integrazione | voci native in cataloghi, ricerca, Multiverso (universi db = «luogo narrativo», orbita 3) e Nexus; nessun archivio separato; XP/badge esclusi per le voci db |
+| Relazioni narrative | 142 (16 verificate, 126 da verificare), 44 in staging; solo narrative, mai co-apparizioni |
+| Registro / runtime | 2.891 ID; 2.671 record, ~289 KB gz |
+
+Non fatto: risoluzione delle code ambigue W2–W4, promozione Livelli A/B, ritratti (termini TMDB da chiarire), W5+.
