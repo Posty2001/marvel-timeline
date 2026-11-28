@@ -1,0 +1,116 @@
+{
+ "voci_canoniche": 4232,
+ "duplicati_id_scartati": 698,
+ "duplicati_qid_scartati": 0,
+ "per_categoria": {
+  "identita": 1717,
+  "hub": 3,
+  "mantello": 2,
+  "universo": 40,
+  "organizzazione": 127,
+  "artefatto": 114,
+  "luogo": 395,
+  "evento": 43,
+  "titolo": 49,
+  "creatore": 458,
+  "attore": 979,
+  "opera": 243,
+  "entita-cosmica": 21,
+  "specie": 10,
+  "battaglia": 20,
+  "pianeta": 11
+ },
+ "per_livello": {
+  "A": 315,
+  "B": 351,
+  "C": 3566
+ },
+ "per_ondata": {
+  "w1_mcu": {
+   "totale": 1006,
+   "creatore": 53,
+   "artefatto": 85,
+   "attore": 163,
+   "opera": 39,
+   "identita": 223,
+   "luogo": 363,
+   "entita-cosmica": 1,
+   "specie": 8,
+   "universo": 10,
+   "organizzazione": 30,
+   "battaglia": 20,
+   "pianeta": 11
+  },
+  "w2_pre_mcu": {
+   "totale": 592,
+   "creatore": 60,
+   "attore": 455,
+   "opera": 21,
+   "identita": 45,
+   "entita-cosmica": 4,
+   "organizzazione": 5,
+   "luogo": 1,
+   "artefatto": 1
+  },
+  "w3_tv_live_action": {
+   "totale": 433,
+   "attore": 341,
+   "creatore": 44,
+   "identita": 21,
+   "opera": 25,
+   "organizzazione": 1,
+   "luogo": 1
+  },
+  "w4_animazione": {
+   "totale": 110,
+   "creatore": 24,
+   "attore": 20,
+   "opera": 32,
+   "identita": 33,
+   "organizzazione": 1
+  },
+  "w5_fumetti_entita": {
+   "totale": 1208,
+   "artefatto": 12,
+   "identita": 1079,
+   "organizzazione": 72,
+   "entita-cosmica": 16,
+   "luogo": 14,
+   "opera": 7,
+   "universo": 3,
+   "specie": 2,
+   "evento": 3
+  },
+  "w6_fumetti_opere": {
+   "totale": 431,
+   "creatore": 277,
+   "evento": 33,
+   "opera": 119,
+   "organizzazione": 1,
+   "identita": 1
+  }
+ },
+ "storico": {
+  "identita": 315,
+  "hub": 3,
+  "mantello": 2,
+  "universo": 27,
+  "organizzazione": 17,
+  "artefatto": 16,
+  "luogo": 16,
+  "evento": 7,
+  "titolo": 49
+ },
+ "relazioni_db": {
+  "narrative": 1786,
+  "controparti": 0,
+  "verificate": 1412,
+  "da_verificare": 374
+ },
+ "relazioni_storiche": {
+  "narrative_verificate": 207,
+  "narrative_totali": 245,
+  "editoriali_escluse": 1027
+ },
+ "note": "co-apparizioni e collegamenti editoriali NON sono relazioni narrative e non entrano nei conteggi"
+}

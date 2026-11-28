@@ -371,6 +371,22 @@ def costruisci_runtime():
     for f in sorted((E/'canon').glob('w*_*.jsonl')):
         rows = [json.loads(l) for l in f.read_text().splitlines() if l.strip()]
         (arr if 'arricchimenti' in f.name else canon).extend(rows)
+    # deduplica per ID: la stessa entita' puo' ricorrere in piu' ondate (stesso QID/ID): si tiene un solo record (livello piu' alto, poi piu' fatti) e si uniscono alias, interpreti, fatti e fonti
+    dd = {}
+    for c in canon:
+        a = dd.get(c['id'])
+        if not a: dd[c['id']] = c; continue
+        base, altro = (c, a) if (c.get('livello') == 'B' and a.get('livello') != 'B') or (c.get('livello') == a.get('livello') and len(c.get('fatti', {})) > len(a.get('fatti', {}))) else (a, c)
+        base = dict(base)
+        for k in ('alias', 'interpreti'): base[k] = sorted(set(base.get(k, [])) | set(altro.get(k, [])))
+        ft = {k: (list(v) if isinstance(v, list) else v) for k, v in base.get('fatti', {}).items()}
+        for k, v in altro.get('fatti', {}).items():
+            if k not in ft: ft[k] = v
+            elif isinstance(ft[k], list) and isinstance(v, list): ft[k] = ft[k] + [x for x in v if x not in ft[k]]
+        if ft: base['fatti'] = ft
+        base['fonti'] = base.get('fonti', []) + [f for f in altro.get('fonti', []) if f not in base.get('fonti', [])]
+        dd[c['id']] = base
+    canon = list(dd.values())
     import shutil
     if OUTRT.exists(): shutil.rmtree(OUTRT)
     (OUTRT/'n').mkdir(parents=True); (OUTRT/'t').mkdir()
