@@ -1,33 +1,59 @@
 {
- "avvio": "2026-11-28T08:27:51Z",
+ "avvio": "2026-11-28T08:35:00Z",
  "gruppi": {
   "fumetti:40-max": {
    "ok": true,
-   "n": 22
+   "n": 22,
+   "da_checkpoint": true
   },
   "fumetti:20-40": {
    "ok": true,
-   "n": 105
+   "n": 105,
+   "da_checkpoint": true
   },
   "fumetti:12-20": {
    "ok": true,
-   "n": 157
+   "n": 157,
+   "da_checkpoint": true
   },
   "fumetti:8-12": {
    "ok": true,
-   "n": 192
+   "n": 192,
+   "da_checkpoint": true
   },
   "fumetti:5-8": {
    "ok": true,
-   "n": 331
+   "n": 331,
+   "da_checkpoint": true
   },
   "fumetti:3-5": {
    "ok": true,
-   "n": 521
+   "n": 521,
+   "da_checkpoint": true
+  },
+  "fumetti_pubbl:40-max": {
+   "ok": true,
+   "n": 31
+  },
+  "fumetti_pubbl:20-40": {
+   "ok": true,
+   "n": 102
+  },
+  "fumetti_pubbl:12-20": {
+   "ok": true,
+   "n": 115
+  },
+  "fumetti_pubbl:8-12": {
+   "ok": true,
+   "n": 124
+  },
+  "fumetti_pubbl:5-8": {
+   "ok": true,
+   "n": 158
   }
  },
  "anomalie": [],
- "entita": 1331,
- "fine": "2026-11-28T08:29:04Z",
+ "entita": 1375,
+ "fine": "2026-11-28T08:36:13Z",
  "completa": true
 }
