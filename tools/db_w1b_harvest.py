@@ -49,10 +49,10 @@ def bersagli():
         if b['q'] not in seen: seen.add(b['q']); res.append(b)
     return res
 # Solo parametri-FATTO (mai prosa: history/notes/trivia/personality/quotation/overview... non si conservano)
-CHIAVI_FATTO = {'name', 'status', 'gender', 'sex', 'species', 'race', 'races', 'origin', 'reality', 'identity', 'citizenship', 'occupation', 'baseofoperations', 'homeworld', 'affiliation', 'affiliations', 'team', 'teams',
-                'organization', 'organizations', 'first', 'firstappearance', 'firstappearances', 'debut', 'creators', 'aliases', 'alias', 'currentalias', 'nicknames', 'nickname', 'otheraliases', 'codenames', 'actor', 'actors',
-                'portrayedby', 'portrayed', 'playedby', 'relatives', 'family', 'relations', 'powers', 'abilities', 'weapons', 'equipment', 'transportation', 'weaknesses', 'allies', 'enemies', 'education', 'eyes', 'hair',
-                'placeofbirth', 'maritalstatus', 'causeofdeath', 'death', 'killedby', 'currentowner', 'type', 'leaders', 'currentmembers', 'formermembers', 'height', 'weight'}
+BLOCCA = {'history', 'notes', 'trivia', 'personality', 'quotation', 'quote', 'speaker', 'quotesource', 'overview', 'biography', 'description', 'summary', 'image', 'caption', 'gallery', 'nogallery', 'links', 'wikipedia', 'imdb',
+          'appearances', 'powersandabilities', 'unusualfeatures', 'distinguish1', 'distinguish2', 'marvel', 'mcu', 'marvelmovies', 'marvelcinematicuniverse', 'impersonations', 'editorialnames', 'additionalattributes'}   # prosa/non-fatti
+LUN_MAX = 160   # un fatto e' breve: valori piu' lunghi sono prosa e non si conservano
+def fatto_ok(k, v): return k not in BLOCCA and len(v) <= LUN_MAX and not k.startswith('image')
 CACHE_CAR = 15000   # caratteri di wikitext per pagina nella cache LOCALE (artifact Actions, non committata): serve a riparsare senza nuova raccolta
 def pagine(wiki, titoli, cache=None):
     """Per ogni titolo trovato: categorie + fatti. Batch da 20 titoli (contenuto), redirect risolti."""
@@ -71,7 +71,7 @@ def pagine(wiki, titoli, cache=None):
             rev = (p.get('revisions') or [{}])[0]; wt = (rev.get('slots', {}).get('main', {}).get('content')) or ''
             if cache is not None: cache[t] = wt[:CACHE_CAR]
             cats = [c['title'].split(':', 1)[-1] for c in p.get('categories', [])] or P.categorie_wikitext(wt)
-            out[t] = {'titolo': p['title'], 'pageid': p.get('pageid'), 'revid': rev.get('revid'), 'categorie': cats[:40], 'infobox': {k: v for k, v in P.infobox(wt).items() if k in CHIAVI_FATTO}, 'sezioni': P.sezioni(wt), 'modelli': P.modelli(wt),
+            out[t] = {'titolo': p['title'], 'pageid': p.get('pageid'), 'revid': rev.get('revid'), 'categorie': cats[:40], 'infobox': {k: v for k, v in P.infobox(wt).items() if fatto_ok(k, v)}, 'sezioni': P.sezioni(wt), 'modelli': P.modelli(wt),
                       'disambigua': ('disambig' in wt[:600].lower()) or any('disambiguation' in c.lower() for c in cats), 'url': 'https://%s/wiki/%s' % (base.split('/')[2], urllib.parse.quote(p['title'].replace(' ', '_')))}
     return out
 def cerca_marveldb(nome):
@@ -85,7 +85,7 @@ def main():
     ogni blocco e' isolato, errori/anomalie nel manifest, risultati parziali sempre salvati."""
     out = pathlib.Path(sys.argv[1]); out.mkdir(parents=True, exist_ok=True); ANOM = []
     mx = int(sys.argv[sys.argv.index('--max') + 1]) if '--max' in sys.argv else 10**9
-    ck = {'v': 2, 'mcuwiki': {}, 'marveldb': {}, 'ricerca': {}}
+    ck = {'v': 3, 'mcuwiki': {}, 'marveldb': {}, 'ricerca': {}}
     cdir = out / '_cache'; cdir.mkdir(exist_ok=True); cache = {'mcuwiki': {}, 'marveldb': {}}
     for w in cache:
         if (cdir / (w + '.json')).exists():
@@ -94,7 +94,7 @@ def main():
     if (out/'w1b_checkpoint.json').exists():
         try:
             c0 = json.load(open(out/'w1b_checkpoint.json'))
-            if c0.get('v') == 2: ck = c0; print('ripresa da checkpoint')
+            if c0.get('v') == 3: ck = c0; print('ripresa da checkpoint')
             else: ck['ricerca'] = c0.get('ricerca', {}); print('checkpoint v1: pagine da rileggere (parser aggiornato), ricerche mantenute')
         except Exception as e: ANOM.append('checkpoint illeggibile: %s' % e)
     def salva_ck(): json.dump(ck, open(out/'w1b_checkpoint.json', 'w'), ensure_ascii=False, separators=(',', ':'))
@@ -126,6 +126,15 @@ def main():
         pp = [v for v in dd.values() if v]
         man['diag_' + w] = {'pagine': len(pp), 'con_infobox': sum(1 for v in pp if v['infobox']), 'modelli_primi': collections.Counter(m for v in pp for m in v.get('modelli', [])[:3]).most_common(25),
                             'chiavi': collections.Counter(k for v in pp for k in v['infobox']).most_common(40), 'sezioni': collections.Counter(k for v in pp for k in v['sezioni']).most_common()}
+    chm = {}   # diagnostica: chiavi osservate per modello (solo nomi dei parametri, nessun valore)
+    for w in ('mcuwiki', 'marveldb'):
+        for t, wt in cache[w].items():
+            for nm, parti in P._template_toplevel(wt)[:3]:
+                for q in parti:
+                    if '=' in q:
+                        kk = q.split('=', 1)[0].strip().lower()
+                        if P.KEY_OK.match(kk): chm.setdefault(w + ':' + nm.lower(), collections.Counter())[kk] += 1
+    man['diag_chiavi_per_modello'] = {k: v.most_common(30) for k, v in chm.items() if sum(v.values()) >= 8}
     man['non_ottenuti'] = sum(1 for b in B if b['nome'] not in mcu)
     man['anomalie'] = (ANOM + ERRLOG)[:300]; man['completa'] = not man['non_ottenuti'] and not ANOM and not ERRLOG
     json.dump({'fonte': 'Marvel Cinematic Universe Wiki (Fandom), CC BY-SA 3.0, solo fatti strutturati', 'pagine': mcu}, open(out/'w1b_mcuwiki.json', 'w'), ensure_ascii=False, separators=(',', ':'))

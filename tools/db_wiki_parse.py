@@ -21,6 +21,7 @@ def _split_params(body):
         cur += body[i]; i += 1
     out.append(cur); return out
 CHIAVI_NOTE = {'name', 'image', 'status', 'actor', 'actors', 'portrayedby', 'species', 'race', 'gender', 'sex', 'first', 'firstappearance', 'debut', 'aliases', 'alias', 'affiliation', 'affiliations', 'occupation', 'relatives', 'family', 'eyes', 'hair', 'homeworld', 'origin', 'reality', 'powers', 'abilities', 'equipment', 'weapons'}
+NOMI_INFOBOX = {'character', 'organization', 'organisation', 'item', 'location', 'weapon', 'vehicle', 'species', 'event', 'film', 'team'}   # nomi osservati nei modelli reali della MCU Wiki
 KEY_OK = re.compile(r'^[A-Za-z][A-Za-z0-9 _\-]{0,40}$')
 def _template_toplevel(wt, limite=20000):
     """[(nome_modello, corpo)] dei modelli di primo livello nei primi `limite` caratteri."""
@@ -56,7 +57,7 @@ def infobox(wt):
     tl = _template_toplevel(wt)
     for nome, parti in tl:
         n = nome.lower()
-        if 'infobox' in n or n.endswith('template'): return _params(parti)
+        if 'infobox' in n or n.endswith('template') or n in NOMI_INFOBOX: return _params(parti)
     for nome, parti in tl:
         d = _params(parti)
         if len(set(d) & CHIAVI_NOTE) >= 3: return d
