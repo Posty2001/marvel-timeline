@@ -947,7 +947,7 @@ jobs:
       - name: Riprendi checkpoint da db-raw (se presente)
         run: |
           mkdir -p raw_out
-          if git fetch -q --depth=1 origin db-raw 2>/dev/null; then for f in cv_checkpoint.json cv_marvel.json; do git show FETCH_HEAD:$f > raw_out/$f 2>/dev/null || rm -f raw_out/$f; done; fi
+          if git fetch -q --depth=1 origin db-raw 2>/dev/null; then for f in cv2_checkpoint.json cv2_marvel.json; do git show FETCH_HEAD:$f > raw_out/$f 2>/dev/null || rm -f raw_out/$f; done; fi
           ls -la raw_out
       - name: Raccolta
         id: raccolta
