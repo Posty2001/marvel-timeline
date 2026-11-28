@@ -15,6 +15,28 @@ FILM = {
 Q_FILM = 'SELECT DISTINCT ?x WHERE { ?x rdfs:label "%s"@en . ?x wdt:P31/wdt:P279* wd:Q11424 . ?x wdt:P577 ?d . FILTER(YEAR(?d)=%d) }'
 Q_REL = (('personaggi', 'SELECT DISTINCT ?x WHERE { ?x wdt:P1441 wd:%s . }'), ('interpreti', 'SELECT DISTINCT ?x WHERE { wd:%s wdt:P161 ?x . ?x wdt:P31 wd:Q5 }'),
          ('creatori', 'SELECT DISTINCT ?x WHERE { { wd:%s wdt:P57 ?x } UNION { wd:%s wdt:P58 ?x } }'))
+def anno_di(e):
+    for c in e.get('claims', {}).get('P577', []):
+        v = c.get('mainsnak', {}).get('datavalue', {}).get('value')
+        if isinstance(v, dict) and v.get('time'):
+            try: yield int(v['time'].lstrip('+')[:4])
+            except Exception: pass
+def cerca_film(titolo, anno):
+    """Fallback quando la query per etichetta esatta non trova nulla: ricerca testuale Wikidata (wbsearchentities) + verifica rigida
+    (anno di uscita P577 uguale E P31 coerente con un film via descrizione/classe). Ritorna lista di QID verificati (puo' essere vuota) o None se la rete fallisce."""
+    import urllib.parse
+    r = H.get('https://www.wikidata.org/w/api.php?action=wbsearchentities&format=json&language=en&type=item&limit=10&search=' + urllib.parse.quote(titolo)); H.time.sleep(1)
+    if 'search' not in r: return None
+    cand = [x['id'] for x in r['search'] if 'film' in (x.get('description') or '').lower() or x.get('label', '').lower() == titolo.lower()]
+    if not cand: return []
+    ents = H.fetch_entities(cand, 'labels|claims')
+    out = []
+    for q, e in ents.items():
+        if not isinstance(e, dict) or 'missing' in e: continue
+        desc = next((x.get('description') or '' for x in r['search'] if x['id'] == q), '').lower()
+        classi = set(H.claim_ids(e.get('claims', {}), 'P31')) | set(H.claim_ids(e.get('claims', {}), 'P279'))
+        if anno in set(anno_di(e)) and ('Q11424' in classi or 'film' in desc): out.append(q)
+    return out
 def salva(out, nome, obj): json.dump(obj, open(out / nome, 'w'), ensure_ascii=False, separators=(',', ':'))
 def main():
     """Robusta e riprendibile: ogni film e' isolato (try/except), il checkpoint w2_checkpoint.json si salva dopo ogni film e viene ripreso se presente in <out_dir>;
@@ -24,17 +46,22 @@ def main():
     if (out / 'w2_checkpoint.json').exists():
         try: ck = json.load(open(out / 'w2_checkpoint.json')); print('ripresa da checkpoint:', len(ck['film']), 'film')
         except Exception as e: H.anom('checkpoint illeggibile, si riparte: %s' % e)
+    ck.setdefault('fb', []); ck.setdefault('film', {}); ck.setdefault('rel', {})
     man = {'avvio': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'film': {}, 'film_errori': []}
     membri = {}
     for g, lista in FILM.items():
         for titolo, anno in lista:
             k = '%s|%s|%d' % (g, titolo, anno)
             try:
-                if k not in ck['film']:
+                if k not in ck['film'] or (not ck['film'][k] and k not in ck.setdefault('fb', [])):
                     r = H.sparql(Q_FILM % (titolo.replace('"', '\\"'), anno)); ws = H.qids(r)
                     if ws is None: man['film_errori'].append(k); H.anom('film senza risposta valida: %s' % k); continue
                     ck['film'][k] = ws
-                    if not ws: H.anom('film non trovato su Wikidata: %s' % k)
+                    if not ws:
+                        fb = cerca_film(titolo, anno)
+                        if fb is not None: ck['fb'].append(k)
+                        if fb: ws = fb; ck['film'][k] = ws; H.anom('film trovato solo con ricerca testuale (fallback verificato per anno): %s -> %s' % (k, ws))
+                        else: H.anom('film non trovato su Wikidata (query e ricerca): %s' % k)
                 ws = ck['film'][k]; man['film'][k] = ws
                 for w in ws:
                     membri.setdefault(w, set()).add(g)
