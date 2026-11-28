@@ -67,10 +67,6 @@ on:
         description: Database Expansion W0 - censimento in SOLA LETTURA (conteggi interni + Wikidata/TMDB/Comic Vine se la chiave c e; artifact db-censimento, nessun commit) e salta il resto
         type: boolean
         default: false
-      db_w1:
-        description: Database Expansion W1 - raccolta MCU da Wikidata (CC0, nessun dato TMDB) e salvataggio SOLO sul branch dati db-raw (mai su main ne su test/tva-archives); artifact db-w1
-        type: boolean
-        default: false
       db_w1b:
         description: Database Expansion W1.b - raccolta di FATTI da MCU Wiki e Marvel Database (Fandom, API MediaWiki, CC BY-SA 3.0, solo fatti strutturati) per le voci in staging; scrive SOLO sul branch dati db-raw
         type: boolean
