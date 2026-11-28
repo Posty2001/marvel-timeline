@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tessera TVA — anteprime di progetto</title>
+<style>
+:root{--bg:#07060a;--bg2:#12101a;--fg:#f3ead9;--mute:#9b92a6;--gold:#d2b184;--rose:#db777c;--line:rgba(210,177,132,.28);--ok:#7fb38a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;padding:16px max(16px,env(safe-area-inset-left))}
+h1{font:600 22px/1.2 Georgia,"Spectral",serif;margin:8px 0 4px;color:var(--gold)}h2{font:600 15px Georgia,serif;color:var(--gold);margin:28px 0 10px;letter-spacing:.04em;text-transform:uppercase}
+p.n{color:var(--mute);margin:0 0 12px;max-width:70ch}.row{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start}
+.cap{color:var(--mute);font-size:12px;margin:6px 0 0;max-width:340px}
+.ph{width:360px;max-width:100%;border:1px solid var(--line);border-radius:34px;padding:10px;background:#000;box-shadow:0 8px 40px rgba(210,177,132,.08)}
+.ph .scr{border-radius:26px;overflow:hidden;background:radial-gradient(120% 70% at 50% 0,#1c1424,var(--bg) 60%);min-height:640px;display:flex;flex-direction:column}
+.ipad{width:min(100%,780px);border:1px solid var(--line);border-radius:26px;padding:12px;background:#000}.ipad .scr{border-radius:16px;overflow:hidden;background:radial-gradient(100% 60% at 30% 0,#1c1424,var(--bg) 65%);min-height:430px;display:grid;grid-template-columns:300px 1fr}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 6px;font-size:12px;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}.bar b{color:var(--fg);font:600 14px Georgia,serif;letter-spacing:.05em}
+.card{margin:8px 14px;border-radius:18px;padding:14px;position:relative;overflow:hidden;border:1.5px solid var(--gold);background:linear-gradient(135deg,#2a1420,#0c0710 55%,#16222a);box-shadow:0 0 0 1px #000 inset,0 12px 30px rgba(0,0,0,.6)}
+.card:before{content:"";position:absolute;inset:0;background:conic-gradient(from 210deg at 80% 10%,transparent,rgba(210,177,132,.16),transparent 30%,rgba(219,119,124,.12),transparent 60%);pointer-events:none}
+.card.anim:after{content:"";position:absolute;inset:-40%;background:radial-gradient(circle,rgba(255,255,255,.07),transparent 40%);animation:dr 9s linear infinite}@keyframes dr{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.card.anim:after{animation:none}}
+.top{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.id{display:flex;gap:12px;align-items:center;margin:12px 0}.av{width:62px;height:62px;border-radius:50%;border:2px solid var(--gold);background:radial-gradient(circle at 40% 35%,#e9a06a,#3a1620);display:grid;place-items:center;font:700 22px Georgia,serif;color:#fff3d6;flex:none}
+.nm{font:600 18px Georgia,serif}.ti{color:var(--rose);font-size:12px;letter-spacing:.06em}.vid{font:12px ui-monospace,Menlo,monospace;color:var(--gold)}
+.xp{height:7px;border-radius:9px;background:rgba(255,255,255,.1);overflow:hidden}.xp i{display:block;height:100%;width:62%;background:linear-gradient(90deg,var(--rose),var(--gold))}
+.kv{display:flex;justify-content:space-between;font-size:11px;color:var(--mute);margin-top:5px}
+.slots{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:12px}.slots span{aspect-ratio:1;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;font-size:15px;background:rgba(255,255,255,.04)}.slots span.e{border-style:dashed;color:var(--mute);font-size:11px}
+.tabs{display:flex;margin-top:auto;border-top:1px solid var(--line);background:rgba(7,6,10,.9);padding:6px 4px calc(8px + env(safe-area-inset-bottom))}.tabs span{flex:1;text-align:center;font-size:10px;color:var(--mute);padding:6px 0;min-height:44px}.tabs span.on{color:var(--gold)}.tabs b{display:block;font-size:17px;font-weight:400}
+.sec{padding:6px 14px}.sec h3{font:600 12px Georgia,serif;margin:12px 0 6px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase}
+.box{border:1px solid var(--line);border-radius:14px;padding:10px 12px;margin:6px 0;background:rgba(255,255,255,.03)}.box small{color:var(--mute)}
+.g{display:grid;gap:8px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.it{border:1px solid var(--line);border-radius:12px;padding:8px 4px;text-align:center;font-size:11px;background:rgba(255,255,255,.03);min-height:64px}.it b{display:block;font-size:20px;font-weight:400}
+.it.lock{opacity:.45;border-style:dashed}.it.sel{outline:2px solid var(--gold)}
+.r-c{color:#b9b3c4}.r-n{color:#7fd0a0}.r-r{color:#6fb4ff}.r-e{color:#c58bff}.r-l{color:#ffc65c}
+.pill{display:inline-block;font-size:10px;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--mute);margin:2px 2px 0 0}.pill.pre{border-style:dashed;color:var(--rose)}
+.rank{display:flex;gap:8px}.rank>div{flex:1}.big{font:700 26px Georgia,serif;color:var(--fg)}
+.bg{height:46px;border-radius:10px;border:1px solid var(--line);margin:3px 0}.bg1{background:linear-gradient(135deg,#2a1420,#0c0710)}.bg2{background:radial-gradient(circle at 30% 40%,#3b2a6b,#12091c)}.bg3{background:repeating-linear-gradient(135deg,#0e3a42 0 8px,#031014 8px 16px)}
+.tag{position:absolute;right:10px;top:10px;font-size:10px;color:var(--rose);border:1px dashed var(--rose);border-radius:99px;padding:1px 7px}
+.side{padding:10px 8px 10px 14px;display:flex;flex-direction:column}
+@media(max-width:700px){.ipad .scr{grid-template-columns:1fr}}
+</style></head><body>
+<h1>Tessera TVA — anteprime di progetto</h1>
+<p class="n">Mockup statici per approvare direzione grafica e struttura (nero e oro, stile TVA, grafica originale). Non sono l'implementazione. Nessuna regola XP modificata; i valori mostrati sono d'esempio. Le funzioni di Missioni e Friends sono solo <i>predisposte</i> (tratteggiate).</p>
+
+<h2>1 · Hub «La mia Tessera» — iPhone</h2>
+<div class="row">
+<div><div class="ph"><div class="scr">
+ <div class="bar"><span>‹ Indietro</span><b>La mia Tessera</b><span>⋯</span></div>
+ <div class="card anim"><div class="top"><span>Time Variance Authority</span><span>Fronte ⟳</span></div>
+  <div class="id"><div class="av">F</div><div><div class="nm">Franco</div><div class="ti">Cacciatore di Anomalie</div><div class="vid">VAR-482915</div></div></div>
+  <div class="xp"><i></i></div><div class="kv"><span>Lv. 12 · Cacciatore di Varianti</span><span>312 / 440 XP</span></div>
+  <div class="slots"><span>🏅</span><span>⏳</span><span>🛡️</span><span class="e">+</span><span class="e">+</span><span class="e">+</span></div></div>
+ <div class="sec"><h3>Prossimo traguardo</h3><div class="box">Agente Specializzato · mancano 6% <small>• prossima ricompensa: cornice «Oro dell'Archivista»</small></div></div>
+ <div class="tabs"><span class="on"><b>🪪</b>Tessera</span><span><b>📈</b>Carriera</span><span><b>🎨</b>Atelier</span><span><b>🗂️</b>Collezione</span><span><b>🧬</b>Identità</span></div>
+</div></div><p class="cap">Carta 3D con flip fronte/retro, aloni olografici (si fermano con «Riduci movimento»), 6 slot vetrina (oggi 3), rango e livello affiancati, safe area rispettata, aree di tocco ≥ 44 px.</p></div>
+
+<div><div class="ph"><div class="scr">
+ <div class="bar"><span>‹ Indietro</span><b>Carriera TVA</b><span></span></div>
+ <div class="sec"><h3>Passaporto di carriera</h3>
+  <div class="rank"><div class="box"><small>Rango (guida completata)</small><div class="big">64%</div>Agente Specializzato</div><div class="box"><small>Livello (XP)</small><div class="big">12</div>312 / 440</div></div>
+  <h3>Registro XP per fonte</h3>
+  <div class="box">Titoli visti <b style="float:right">1.240</b><br>Serie animate <b style="float:right">96</b><br>Voti e note <b style="float:right">210</b><br>Preferiti <b style="float:right">45</b><br>Distintivi (×40) <b style="float:right">320</b><br>Missioni <b style="float:right">180</b><br>Esplorazione Atlas <b style="float:right">135</b></div>
+  <h3>Distintivi 9/14</h3><div class="g g4"><div class="it"><b>👣</b>Primo Passo</div><div class="it"><b>🕰️</b>Linea Sacra</div><div class="it"><b>🔎</b>Archivista</div><div class="it lock"><b>🔒</b>Cinefilo</div></div>
+  <h3>Statistiche</h3><span class="pill">132 h viste</span><span class="pill">5/5 studi</span><span class="pill">Voto medio 7,8</span><span class="pill">Serie 11</span><span class="pill">Atlas 42 dossier</span></div>
+ <div class="tabs"><span><b>🪪</b>Tessera</span><span class="on"><b>📈</b>Carriera</span><span><b>🎨</b>Atelier</span><span><b>🗂️</b>Collezione</span><span><b>🧬</b>Identità</span></div>
+</div></div><p class="cap">Stesse regole XP e soglie di oggi, solo presentate meglio: nessun calcolo nuovo. Fonti Atlas, Episodi e Quiz in sola lettura.</p></div>
+
+<div><div class="ph"><div class="scr">
+ <div class="bar"><span>‹ Indietro</span><b>Atelier</b><span>Salva</span></div>
+ <div class="card" style="margin-bottom:4px;padding:8px 12px"><div class="top"><span>Anteprima viva</span><span>Sfondo animato</span></div><div class="id" style="margin:6px 0 2px"><div class="av" style="width:44px;height:44px;font-size:16px">F</div><div><div class="nm" style="font-size:15px">Franco</div><div class="vid">VAR-482915</div></div></div></div>
+ <div class="sec"><h3>Sfondo</h3><div class="g g3"><div class="it sel"><div class="bg bg1"></div>Archivio</div><div class="it"><div class="bg bg2"></div>Nebulosa ✦ animato</div><div class="it lock"><div class="bg bg3"></div>Portale 🔒 <span class="r-e">Epico</span></div></div>
+ <h3>Cornice</h3><div class="g g4"><div class="it sel"><b>▢</b><span class="r-c">Standard</span></div><div class="it"><b>◫</b><span class="r-n">Bronzo</span></div><div class="it"><b>◰</b><span class="r-r">Tecnologia</span></div><div class="it lock"><b>🔒</b><span class="r-l">Nexus</span></div></div>
+ <h3>Titolo · Emblema · Universo · Preferito</h3><div class="box"><span class="pill">Cacciatore di Anomalie</span><span class="pill">Titolo libero ≤ 24</span><span class="pill">Emblema «Orologio»</span><span class="pill">Universo: Earth-616</span><span class="pill">Preferito: dal TVA Atlas</span></div></div>
+ <div class="tabs"><span><b>🪪</b>Tessera</span><span><b>📈</b>Carriera</span><span class="on"><b>🎨</b>Atelier</span><span><b>🗂️</b>Collezione</span><span><b>🧬</b>Identità</span></div>
+</div></div><p class="cap">Flusso a scelte con anteprima sempre visibile; ogni voce mostra rarità e condizione di sblocco. Sfondi animati leggeri (CSS/SVG), disattivabili.</p></div>
+</div>
+
+<h2>2 · Collezione e Identità — iPhone</h2>
+<div class="row">
+<div><div class="ph"><div class="scr">
+ <div class="bar"><span>‹ Indietro</span><b>Collezione</b><span>31/48</span></div>
+ <div class="sec"><div class="xp" style="margin:6px 0"><i style="width:65%"></i></div><span class="pill">Titoli 14/20</span><span class="pill">Cornici 8/12</span><span class="pill">Temi 6/10</span><span class="pill">Effetti 3/6</span>
+ <h3>Prossime da sbloccare</h3><div class="g g3"><div class="it"><b>🖼️</b><span class="r-r">Wakanda</span><br><small>20 serie</small></div><div class="it"><b>🌌</b><span class="r-e">Vuoto</span><br><small>75% guida</small></div><div class="it"><b>🔥</b><span class="r-n">Distorsione</span><br><small>5 missioni</small></div></div>
+ <h3>Rarità</h3><span class="pill r-c">Comune</span><span class="pill r-n">Non comune</span><span class="pill r-r">Raro</span><span class="pill r-e">Epico</span><span class="pill r-l">Leggendario</span></div>
+ <div class="tabs"><span><b>🪪</b>Tessera</span><span><b>📈</b>Carriera</span><span><b>🎨</b>Atelier</span><span class="on"><b>🗂️</b>Collezione</span><span><b>🧬</b>Identità</span></div>
+</div></div><p class="cap">Le 48 ricompense attuali, stessa logica di sblocco; nuove personalizzazioni con condizioni già esistenti, nessun XP nuovo.</p></div>
+
+<div><div class="ph"><div class="scr">
+ <div class="bar"><span>‹ Indietro</span><b>Passaporto Variante</b><span></span></div>
+ <div class="sec"><div class="box"><small>Identità unica</small><div class="nm">Franco</div><div class="vid">VAR-482915</div><span class="pill">Universo: Earth-616</span><span class="pill">Motto personale</span></div>
+ <h3>Sicurezza dell'identità</h3><div class="box">Copia di sicurezza verificata · Ripristino guidato <small>(nessuna sovrascrittura silenziosa)</small></div>
+ <h3>Predisposizioni <small style="color:var(--rose)">— non attive</small></h3>
+ <div class="box" style="border-style:dashed"><b>Legame Nexus</b> <span class="pill pre">Friends 3.0 · predisposto</span><br><small>Nessun collegamento in rete in questa fase (Realtime Database + Auth, più avanti).</small></div>
+ <div class="box" style="border-style:dashed"><b>Ricompense di missione</b> <span class="pill pre">Missioni ed Evolution · predisposto</span></div>
+ <div class="box" style="border-style:dashed"><b>Trofei Arcade · Quiz · Rankings</b> <span class="pill pre">slot vetrina vuoti</span></div></div>
+ <div class="tabs"><span><b>🪪</b>Tessera</span><span><b>📈</b>Carriera</span><span><b>🎨</b>Atelier</span><span><b>🗂️</b>Collezione</span><span class="on"><b>🧬</b>Identità</span></div>
+</div></div><p class="cap">Identità condivisa Tessera↔Variante già esistente, resa visibile. Gli elementi tratteggiati sono soltanto contratti dati, senza logica.</p></div>
+
+<div><div class="ph"><div class="scr">
+ <div class="bar"><span>‹ Retro</span><b>Retro della Tessera</b><span>⟳</span></div>
+ <div class="card"><div class="top"><span>Dossier agente</span><span>Retro</span></div>
+ <div style="margin:12px 0;font-size:12px;color:var(--mute)">Motto · «Ogni universo. Ogni identità.»<br>Universo: Earth-616 · Preferito: Doctor Strange<br>Statistiche: 132 h · 9/14 distintivi · Atlas 42 dossier · Voto 7,8</div>
+ <div style="height:44px;border-radius:8px;background:repeating-linear-gradient(90deg,var(--gold) 0 2px,transparent 2px 5px);opacity:.55"></div>
+ <div class="vid" style="text-align:center;margin-top:8px">VAR-482915 · TVA</div></div>
+ <div class="sec"><div class="box">Esporta come immagine (PNG, locale) · Condividi la vetrina</div></div>
+ <div class="tabs"><span class="on"><b>🪪</b>Tessera</span><span><b>📈</b>Carriera</span><span><b>🎨</b>Atelier</span><span><b>🗂️</b>Collezione</span><span><b>🧬</b>Identità</span></div>
+</div></div><p class="cap">Retro con statistiche scelte dall'utente. Esportazione PNG locale; la foto personale non lascia il dispositivo.</p></div>
+</div>
+
+<h2>3 · iPad (portrait e landscape) — due colonne</h2>
+<div class="ipad"><div class="scr">
+ <div class="side"><div class="bar" style="padding-left:0"><b>La mia Tessera</b></div><div class="card anim" style="margin:6px 0"><div class="top"><span>TVA</span><span>⟳</span></div><div class="id"><div class="av">F</div><div><div class="nm">Franco</div><div class="ti">Cacciatore di Anomalie</div><div class="vid">VAR-482915</div></div></div><div class="xp"><i></i></div><div class="kv"><span>Lv. 12</span><span>312 / 440</span></div><div class="slots"><span>🏅</span><span>⏳</span><span>🛡️</span><span class="e">+</span><span class="e">+</span><span class="e">+</span></div></div><small style="color:var(--mute)">Carta fissa a sinistra (sticky)</small></div>
+ <div style="padding:10px 14px"><div class="tabs" style="margin:0 0 8px;border:0;background:none;padding:0"><span class="on">Carriera</span><span>Atelier</span><span>Collezione</span><span>Identità</span></div>
+ <div class="rank"><div class="box"><small>Rango</small><div class="big">64%</div>Agente Specializzato</div><div class="box"><small>Livello</small><div class="big">12</div>312 / 440</div><div class="box"><small>Distintivi</small><div class="big">9/14</div></div></div>
+ <div class="g g4" style="margin-top:6px"><div class="it"><b>👣</b>Primo Passo</div><div class="it"><b>🕰️</b>Linea Sacra</div><div class="it"><b>🔎</b>Archivista</div><div class="it lock"><b>🔒</b>Cinefilo</div></div>
+ <div class="box" style="margin-top:8px">Registro XP per fonte · Statistiche · Atlas · Episodi <small>(pannello largo con griglie a 4 colonne)</small></div></div>
+</div></div>
+<p class="cap" style="max-width:700px">Da ≥ 768 px: carta sticky + pannello a destra; Atelier con anteprima grande e griglia di scelta; si riusano i criteri di <code>assets/tablet.css</code>.</p>
+</body></html>

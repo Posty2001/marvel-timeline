@@ -4,6 +4,8 @@ Stato: **CONGELATA su decisione dell'utente (28/11/2026)**; build in attesa di a
 Engine, gateway, quote e verificatore di Miss Minutes e regole XP: invariati (unica modifica a `a5.js`: `eligible()` esclude le voci «fonte singola»).
 
 ## 1. Decisione D12 — deroga controllata (tre stati)
+*Precisazione dell'utente (28/11, dopo l'approvazione): resta valido anche il criterio della singola fonte primaria inequivocabile per la verifica; la deroga riguarda le singole fonti secondarie attendibili.*
+
 | Stato | Significato | Progressione/XP | Dove |
 |---|---|---|---|
 | **Verificata** | almeno 2 fonti indipendenti (regola D12) | sì (regole invariate) | canon |
