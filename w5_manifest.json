@@ -1,0 +1,33 @@
+{
+ "avvio": "2026-11-28T08:27:51Z",
+ "gruppi": {
+  "fumetti:40-max": {
+   "ok": true,
+   "n": 22
+  },
+  "fumetti:20-40": {
+   "ok": true,
+   "n": 105
+  },
+  "fumetti:12-20": {
+   "ok": true,
+   "n": 157
+  },
+  "fumetti:8-12": {
+   "ok": true,
+   "n": 192
+  },
+  "fumetti:5-8": {
+   "ok": true,
+   "n": 331
+  },
+  "fumetti:3-5": {
+   "ok": true,
+   "n": 521
+  }
+ },
+ "anomalie": [],
+ "entita": 1331,
+ "fine": "2026-11-28T08:29:04Z",
+ "completa": true
+}
