@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """W2 raccolta Wikidata (CC0) per film Marvel pre-MCU e paralleli: opere per titolo+anno (P31 film, P577), personaggi (P1441 presente-in), cast (P161), regia/sceneggiatura (P57/P58).
 Il gruppo (franchise) determina la continuita' (mappa in db_w1_build.py GRP_UNI); personaggi presenti in piu' gruppi NON ricevono continuita' automatica.
-Rete richiesta -> Actions. Uso: python3 tools/db_w2_harvest.py <out_dir>"""
+Rete richiesta -> Actions. Uso: python3 tools/db_w2_harvest.py <out_dir> [w2|w3|w4]   (w3 = serie TV e film live-action non MCU, w4 = animazione: liste in db_w34_liste.py)"""
 import json, sys, time, pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import db_w1_harvest as H
@@ -10,13 +10,14 @@ FILM = {
  'deadpool-fox': [('Deadpool', 2016), ('Deadpool 2', 2018)], 'new-mutants-fox': [('The New Mutants', 2020)],
  'spider-man-raimi': [('Spider-Man', 2002), ('Spider-Man 2', 2004), ('Spider-Man 3', 2007)], 'spider-man-garfield': [('The Amazing Spider-Man', 2012), ('The Amazing Spider-Man 2', 2014)],
  'venom-ssu': [('Venom', 2018), ('Venom: Let There Be Carnage', 2021), ('Venom: The Last Dance', 2024)], 'morbius-ssu': [('Morbius', 2022)], 'madame-web-ssu': [('Madame Web', 2024)], 'kraven-ssu': [('Kraven the Hunter', 2024)],
- 'blade': [('Blade', 1998), ('Blade II', 2002), ('Blade: Trinity', 2004)], 'daredevil-elektra': [('Daredevil', 2003), ('Elektra', 2005)], 'ghost-rider': [('Ghost Rider', 2007), ('Ghost Rider: Spirit of Vengeance', 2011)],
+ 'blade': [('Blade', 1998), ('Blade II', 2002), ('Blade: Trinity', 2004)], 'daredevil-elektra': [('Daredevil', 2003), ('Elektra', 2005)], 'ghost-rider': [('Ghost Rider', 2007), ('Ghost Rider: Spirit of Vengeance', 2012)],
  'hulk-2003': [('Hulk', 2003)], 'fantastic-four-1994': [('The Fantastic Four', 1994)], 'fantastic-four-fox': [('Fantastic Four', 2005), ('Fantastic Four: Rise of the Silver Surfer', 2007)], 'fantastic-four-trank': [('Fantastic Four', 2015)]}
-Q_FILM = 'SELECT DISTINCT ?x WHERE { ?x rdfs:label "%s"@en . ?x wdt:P31/wdt:P279* wd:Q11424 . ?x wdt:P577 ?d . FILTER(YEAR(?d)=%d) }'
+CLASSI = ('Q11424', 'Q5398426', 'Q202866', 'Q581714', 'Q1259759')   # film, serie TV, film d'animazione, serie animata, miniserie
+Q_FILM = 'SELECT DISTINCT ?x WHERE { ?x rdfs:label "%s"@en . ?x wdt:P31/wdt:P279* ?c . VALUES ?c { wd:Q11424 wd:Q5398426 wd:Q202866 wd:Q581714 wd:Q1259759 } . ?x wdt:P577|wdt:P580 ?d . FILTER(YEAR(?d)=%d) }'
 Q_REL = (('personaggi', 'SELECT DISTINCT ?x WHERE { ?x wdt:P1441 wd:%s . }'), ('interpreti', 'SELECT DISTINCT ?x WHERE { wd:%s wdt:P161 ?x . ?x wdt:P31 wd:Q5 }'),
          ('creatori', 'SELECT DISTINCT ?x WHERE { { wd:%s wdt:P57 ?x } UNION { wd:%s wdt:P58 ?x } }'))
 def anno_di(e):
-    for c in e.get('claims', {}).get('P577', []):
+    for c in e.get('claims', {}).get('P577', []) + e.get('claims', {}).get('P580', []):
         v = c.get('mainsnak', {}).get('datavalue', {}).get('value')
         if isinstance(v, dict) and v.get('time'):
             try: yield int(v['time'].lstrip('+')[:4])
@@ -27,7 +28,7 @@ def cerca_film(titolo, anno):
     import urllib.parse
     r = H.get('https://www.wikidata.org/w/api.php?action=wbsearchentities&format=json&language=en&type=item&limit=10&search=' + urllib.parse.quote(titolo)); H.time.sleep(1)
     if 'search' not in r: return None
-    cand = [x['id'] for x in r['search'] if 'film' in (x.get('description') or '').lower() or x.get('label', '').lower() == titolo.lower()]
+    cand = [x['id'] for x in r['search'] if any(w in (x.get('description') or '').lower() for w in ('film', 'series', 'television')) or x.get('label', '').lower() == titolo.lower()]
     if not cand: return []
     ents = H.fetch_entities(cand, 'labels|claims')
     out = []
@@ -35,16 +36,21 @@ def cerca_film(titolo, anno):
         if not isinstance(e, dict) or 'missing' in e: continue
         desc = next((x.get('description') or '' for x in r['search'] if x['id'] == q), '').lower()
         classi = set(H.claim_ids(e.get('claims', {}), 'P31')) | set(H.claim_ids(e.get('claims', {}), 'P279'))
-        if anno in set(anno_di(e)) and ('Q11424' in classi or 'film' in desc) and not any(w in desc for w in ('soundtrack', 'album', 'score', 'song', 'video game', 'novel')): out.append(q)
+        if anno in set(anno_di(e)) and (set(CLASSI) & classi or any(w in desc for w in ('film', 'series', 'television'))) and not any(w in desc for w in ('soundtrack', 'album', 'score', 'song', 'video game', 'novel', 'comic')): out.append(q)
     return out
 def salva(out, nome, obj): json.dump(obj, open(out / nome, 'w'), ensure_ascii=False, separators=(',', ':'))
+ONDA = sys.argv[2] if len(sys.argv) > 2 else 'w2'
+if ONDA in ('w3', 'w4'):
+    import db_w34_liste as L
+    FILM = L.W3 if ONDA == 'w3' else L.W4
+def NM(x): return ONDA + '_' + x
 def main():
     """Robusta e riprendibile: ogni film e' isolato (try/except), il checkpoint w2_checkpoint.json si salva dopo ogni film e viene ripreso se presente in <out_dir>;
     anomalie registrate nel manifest; risultati parziali validi sempre salvati."""
     out = pathlib.Path(sys.argv[1]); out.mkdir(parents=True, exist_ok=True); H.ANOM.clear()
     ck = {'film': {}, 'rel': {}}
-    if (out / 'w2_checkpoint.json').exists():
-        try: ck = json.load(open(out / 'w2_checkpoint.json')); print('ripresa da checkpoint:', len(ck['film']), 'film')
+    if (out / NM('checkpoint.json')).exists():
+        try: ck = json.load(open(out / NM('checkpoint.json'))); print('ripresa da checkpoint:', len(ck['film']), 'film')
         except Exception as e: H.anom('checkpoint illeggibile, si riparte: %s' % e)
     ck.setdefault('fb', []); ck.setdefault('film', {}); ck.setdefault('rel', {})
     man = {'avvio': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'film': {}, 'film_errori': []}
@@ -77,7 +83,7 @@ def main():
                         for x in xs: membri.setdefault(x, set()).add(g if nome == 'personaggi' else g + ':' + nome)
             except Exception as e:
                 man['film_errori'].append(k); H.anom('film %s: eccezione %s' % (k, str(e)[:120]))
-            salva(out, 'w2_checkpoint.json', ck)
+            salva(out, NM('checkpoint.json'), ck)
     ids = sorted(membri); rec = {}; et = {}
     try:
         ents = H.fetch_entities(ids, 'labels|aliases|descriptions|claims|sitelinks')
@@ -95,8 +101,8 @@ def main():
     except Exception as e: H.anom('fase entita: %s' % e)
     man['entita'] = len(rec); man['fine'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()); man['anomalie'] = H.ANOM[:300]
     man['completa'] = not man['film_errori'] and len(rec) == len(ids)
-    salva(out, 'w2_wikidata.json', {'fonte': 'Wikidata (CC0)', 'recuperato': man['fine'], 'completa': man['completa'], 'entita': rec, 'etichette': et})
-    json.dump(man, open(out / 'w2_manifest.json', 'w'), indent=1)
+    salva(out, NM('wikidata.json'), {'fonte': 'Wikidata (CC0)', 'recuperato': man['fine'], 'completa': man['completa'], 'entita': rec, 'etichette': et})
+    json.dump(man, open(out / NM('manifest.json'), 'w'), indent=1)
     print(json.dumps({k: v for k, v in man.items() if k not in ('film', 'anomalie')}), 'film trovati', sum(1 for v in man['film'].values() if v), '/', len(man['film']), '| anomalie', len(H.ANOM))
     sys.exit(0 if rec else 1)
 if __name__ == '__main__': main()
