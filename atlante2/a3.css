@@ -295,3 +295,4 @@ html:has(#atlas2Toggle:checked + #atlas2 .a3) #mmFab:focus-visible, html:has(#at
 .a3-dbtiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; padding: 4px 0 20px; }
 .a3-dbtile { min-height: 54px; text-align: left; }
 .a3-dbopen { margin-top: 14px; }
+/* dossier discorsivo db */ .a3-dz{display:flex;flex-direction:column;gap:12px;margin:10px 0}.a3-dz h3{margin:0 0 4px;font-size:.95rem}.a3-dz p{margin:0;line-height:1.5}

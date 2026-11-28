@@ -398,6 +398,9 @@ def costruisci_runtime():
                      'ff': {k: len(set(v)) for k, v in c.get('fatti_fonti', {}).items()} or None, 'xs': [[x['fonte'].split(' (')[0], x['url']] for x in c['fonti'] if x.get('licenza') == 'CC BY-SA 3.0']})
     for a in arr:  # alias/interpreti di voci GIA' esistenti: servono solo alla ricerca (aprono la scheda esistente)
         recs.append({'i': a['id'], 'x': a['id'], 'n': a['id'], 't': 'x', 'al': a['alias_nuovi'] + a['interpreti'], 'wd': a['wikidata']})
+    dz = json.load(open(E/'dossier_it.json')) if (E/'dossier_it.json').exists() else {}
+    for r in recs:
+        if r['i'] in dz and r.get('t') != 'x': r['dz'] = [[x['t'], x['x']] for x in dz[r['i']]['sezioni']]
     sh = [dict() for _ in range(SH)]
     for o, r in enumerate(recs):
         keys = [r['n'], r.get('it') or ''] + r['al'] + r.get('ip', []) if r['t'] != 'x' else r['al']

@@ -1025,6 +1025,7 @@
     try { var ar = await fetch('mascot/manifest.json', { cache: 'no-store' }); if (ar.ok) { var aj = await ar.json(); if (aj && typeof aj === 'object' && aj.idle) ART = aj; } } catch (e) { ART = null; }
     buildHome();
     var kc = []; try { var r = await fetch('knowledge/core.json'); kc = (await r.json()).records || []; } catch (e) { banner('Archivio locale non caricato: riapri Miss Minutes.'); }
+    try { var rdb = await fetch('knowledge/atlas_db.json'); if (rdb.ok) { var kdb = (await rdb.json()).records || []; kc = kc.concat(kdb); } } catch (e) { /* archivio esteso opzionale: se manca, resta l'archivio base */ }
     var data = {};
     if (host) {
       try {
